@@ -104,7 +104,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     JOURNEYANALYTICS("JourneyAnalytics"),
     NERSERVICE("NerService"),
     ONBOARDING("Onboarding"),
-    SOCIALLISTENING("SocialListening");
+    SOCIALLISTENING("SocialListening"),
+    BUSINESSRULES("BusinessRules");
 
     private String value;
 
@@ -474,6 +475,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DASHBOARDSETTINGS("DashboardSettings"),
     INSIGHTSETTINGS("InsightSettings"),
     ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
+    CUSTOMCALCULATIONS("CustomCalculations"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     EXPORTS("Exports"),
     CHANGEREQUEST("ChangeRequest"),
@@ -534,7 +536,11 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SOFTSUSPENSION("SoftSuspension"),
     JOURNEYVIEW("JourneyView"),
     CUSTOMENTITY("CustomEntity"),
-    DIRECTORYFEATURE("DirectoryFeature");
+    DIRECTORYFEATURE("DirectoryFeature"),
+    RULECATEGORY("RuleCategory"),
+    DECISIONTABLE("DecisionTable"),
+    DECISIONTABLEVERSION("DecisionTableVersion"),
+    DECISIONTABLEROW("DecisionTableRow");
 
     private String value;
 

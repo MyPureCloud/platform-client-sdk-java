@@ -793,6 +793,16 @@ docs/ContactColumnTimeZone.md
 docs/ContactColumnToDataActionFieldMapping.md
 docs/ContactDetailEventTopicContactUpdateEvent.md
 docs/ContactIdentifier.md
+docs/ContactIdentifierListing.md
+docs/ContactImportField.md
+docs/ContactImportJobEntityListing.md
+docs/ContactImportJobMetadata.md
+docs/ContactImportJobRequest.md
+docs/ContactImportJobResponse.md
+docs/ContactImportJobStatusUpdateRequest.md
+docs/ContactImportJobStatusUpdateResponse.md
+docs/ContactImportSettings.md
+docs/ContactImportSettingsEntityListing.md
 docs/ContactList.md
 docs/ContactListDivisionView.md
 docs/ContactListDivisionViewListing.md
@@ -967,6 +977,8 @@ docs/ConversationContentButtonResponse.md
 docs/ConversationContentCard.md
 docs/ConversationContentCardAction.md
 docs/ConversationContentCarousel.md
+docs/ConversationContentDatePicker.md
+docs/ConversationContentDatePickerAvailableTime.md
 docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
@@ -1331,6 +1343,8 @@ docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
 docs/DataIngestionRuleStatusPatchRequest.md
 docs/DataIngestionRules.md
+docs/DataPrivacyApi.json
+docs/DataPrivacyApi.md
 docs/DataSchema.md
 docs/DataSchemaListing.md
 docs/DataTable.md
@@ -2534,6 +2548,7 @@ docs/KnowledgeImportJobRequest.md
 docs/KnowledgeImportJobResponse.md
 docs/KnowledgeImportJobSettings.md
 docs/KnowledgeImportJobStatistics.md
+docs/KnowledgeIntegrationDefaultSettings.md
 docs/KnowledgeIntegrationFilter.md
 docs/KnowledgeIntegrationFilterValue.md
 docs/KnowledgeIntegrationOptionsResponse.md
@@ -2753,6 +2768,10 @@ docs/Manager.md
 docs/MarkContactAddressUncontactableActionSettings.md
 docs/MarkContactUncontactableActionSettings.md
 docs/Markdown.md
+docs/MaskingRule.md
+docs/MaskingRuleListing.md
+docs/MaskingRuleValidateRequest.md
+docs/MaskingRuleValidateResponse.md
 docs/MatchCriteria.md
 docs/MatchCriteriaTestResult.md
 docs/MatchShiftTradeRequest.md
@@ -3172,6 +3191,10 @@ docs/PerformanceProfile.md
 docs/PermissionCollectionEntityListing.md
 docs/PermissionDetails.md
 docs/Permissions.md
+docs/PersistentConnectionChangeTopicErrorInfo.md
+docs/PersistentConnectionChangeTopicErrorInfoDetails.md
+docs/PersistentConnectionChangeTopicErrorLocation.md
+docs/PersistentConnectionChangeTopicPersistentConnectionChangeEvent.md
 docs/Phone.md
 docs/PhoneBase.md
 docs/PhoneBaseEntityListing.md
@@ -5037,6 +5060,7 @@ docs/WorkitemsAttributeChangeList.md
 docs/WorkitemsAttributeChangeMap.md
 docs/WorkitemsAttributeChangeString.md
 docs/WorkitemsAttributeChangeWorkitemStatusCategory.md
+docs/WorkitemsAttributeChangeWrapupDelta.md
 docs/WorkitemsChangeWorkbinDelta.md
 docs/WorkitemsChangeWorkitemDelta.md
 docs/WorkitemsChangeWorktypeDelta.md
@@ -5083,6 +5107,7 @@ docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
 docs/WrapupCodePredictionConfig.md
 docs/WrapupCodeRequest.md
+docs/WrapupDelta.md
 docs/WrapupDetailEventTopicWrapupEvent.md
 docs/WrapupIdReference.md
 docs/WrapupInput.md
@@ -5145,6 +5170,7 @@ docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteDataprivacyMaskingrule-example.txt
 docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
 docs/deleteEmployeeengagementCelebration-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
@@ -5153,6 +5179,7 @@ docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
 docs/deleteExternalcontactsExternalsource-example.txt
 docs/deleteExternalcontactsImportCsvSetting-example.txt
+docs/deleteExternalcontactsImportSetting-example.txt
 docs/deleteExternalcontactsOrganization-example.txt
 docs/deleteExternalcontactsOrganizationNote-example.txt
 docs/deleteExternalcontactsOrganizationTrustor-example.txt
@@ -5660,6 +5687,8 @@ docs/getConversationsVideosMeeting-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
+docs/getDataprivacyMaskingrule-example.txt
+docs/getDataprivacyMaskingrules-example.txt
 docs/getDate-example.txt
 docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
 docs/getDiagnosticsLogcaptureBrowserUser-example.txt
@@ -5691,6 +5720,10 @@ docs/getExternalcontactsImportCsvSetting-example.txt
 docs/getExternalcontactsImportCsvSettings-example.txt
 docs/getExternalcontactsImportCsvUploadDetails-example.txt
 docs/getExternalcontactsImportCsvUploadPreview-example.txt
+docs/getExternalcontactsImportJob-example.txt
+docs/getExternalcontactsImportJobs-example.txt
+docs/getExternalcontactsImportSetting-example.txt
+docs/getExternalcontactsImportSettings-example.txt
 docs/getExternalcontactsOrganization-example.txt
 docs/getExternalcontactsOrganizationContacts-example.txt
 docs/getExternalcontactsOrganizationNote-example.txt
@@ -6712,6 +6745,7 @@ docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSetting-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchConversationsSettings-example.txt
+docs/patchDataprivacyMaskingrule-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmployeeengagementCelebration-example.txt
@@ -7059,6 +7093,8 @@ docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
+docs/postDataprivacyMaskingrules-example.txt
+docs/postDataprivacyMaskingrulesValidate-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesQuery-example.txt
 docs/postDiagnosticsLogcaptureBrowserUser-example.txt
@@ -7097,6 +7133,8 @@ docs/postExternalcontactsIdentifierlookup-example.txt
 docs/postExternalcontactsImportCsvJobs-example.txt
 docs/postExternalcontactsImportCsvSettings-example.txt
 docs/postExternalcontactsImportCsvUploads-example.txt
+docs/postExternalcontactsImportJobs-example.txt
+docs/postExternalcontactsImportSettings-example.txt
 docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
@@ -7611,6 +7649,8 @@ docs/putExternalcontactsContactsSchema-example.txt
 docs/putExternalcontactsConversation-example.txt
 docs/putExternalcontactsExternalsource-example.txt
 docs/putExternalcontactsImportCsvSetting-example.txt
+docs/putExternalcontactsImportJob-example.txt
+docs/putExternalcontactsImportSetting-example.txt
 docs/putExternalcontactsOrganization-example.txt
 docs/putExternalcontactsOrganizationNote-example.txt
 docs/putExternalcontactsOrganizationTrustorTrustorId-example.txt
@@ -7843,6 +7883,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/ConversationsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/ConversationsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/DataExtensionsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/DataExtensionsApiAsync.java
+src/main/java/com/mypurecloud/sdk/v2/api/DataPrivacyApi.java
+src/main/java/com/mypurecloud/sdk/v2/api/DataPrivacyApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/DownloadsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/DownloadsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/EmailsApi.java
@@ -8026,6 +8068,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingInt
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSettingsDefaultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteDataprivacyMaskingruleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteDiagnosticsLogcaptureBrowserUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteEmployeeengagementCelebrationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteEmployeeperformanceExternalmetricsDefinitionRequest.java
@@ -8034,6 +8077,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactRe
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactsSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsExternalsourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsImportCsvSettingRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsImportSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsOrganizationNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsOrganizationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsOrganizationTrustorRequest.java
@@ -8541,6 +8585,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsVideosMeetingRe
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataprivacyMaskingruleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataprivacyMaskingrulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDiagnosticsLogcaptureBrowserEntriesDownloadJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDiagnosticsLogcaptureBrowserUserRequest.java
@@ -8572,6 +8618,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportCsvSet
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportCsvSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportCsvUploadDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportCsvUploadPreviewRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportSettingRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsImportSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsOrganizationNotesRequest.java
@@ -9593,6 +9643,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingInte
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchDataprivacyMaskingruleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmailsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmailsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmployeeengagementCelebrationRequest.java
@@ -9940,6 +9991,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsScreensharePar
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsSocialParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideoParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideosMeetingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostDataprivacyMaskingrulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostDataprivacyMaskingrulesValidateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserEntriesDownloadJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserEntriesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserUserRequest.java
@@ -9978,6 +10031,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierl
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportCsvJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportCsvSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportCsvUploadsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsImportSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsMergeContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationNotesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationsRequest.java
@@ -10492,6 +10547,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsContactsSche
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsExternalsourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsImportCsvSettingRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsImportJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsImportSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsOrganizationNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsOrganizationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsOrganizationTrustorTrustorIdRequest.java
@@ -11452,6 +11509,16 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactColumnTimeZone.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactColumnToDataActionFieldMapping.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactDetailEventTopicContactUpdateEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactIdentifier.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactIdentifierListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportField.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobMetadata.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobStatusUpdateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportJobStatusUpdateResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactImportSettingsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactList.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListDivisionView.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListDivisionViewListing.java
@@ -11624,6 +11691,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentButtonResponse.jav
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentCard.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentCardAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentCarousel.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentDatePicker.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentDatePickerAvailableTime.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentNotificationTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReply.java
@@ -13153,6 +13222,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobStatistics.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationDefaultSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationFilterValue.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationOptionsResponse.java
@@ -13360,6 +13430,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/Manager.java
 src/main/java/com/mypurecloud/sdk/v2/model/MarkContactAddressUncontactableActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/MarkContactUncontactableActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Markdown.java
+src/main/java/com/mypurecloud/sdk/v2/model/MaskingRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/MaskingRuleListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/MaskingRuleValidateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/MaskingRuleValidateResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/MatchCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/MatchCriteriaTestResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/MatchShiftTradeRequest.java
@@ -13761,6 +13835,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/PerformanceProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/PermissionCollectionEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PermissionDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/Permissions.java
+src/main/java/com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicErrorInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicErrorInfoDetails.java
+src/main/java/com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicErrorLocation.java
+src/main/java/com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicPersistentConnectionChangeEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/Phone.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneBase.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneBaseEntityListing.java
@@ -15562,6 +15640,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsAttributeChangeList.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsAttributeChangeMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsAttributeChangeString.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsAttributeChangeWorkitemStatusCategory.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsAttributeChangeWrapupDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsChangeWorkbinDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsChangeWorkitemDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsChangeWorktypeDelta.java
@@ -15608,6 +15687,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WrapupCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodePredictionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/WrapupDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupDetailEventTopicWrapupEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupIdReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupInput.java

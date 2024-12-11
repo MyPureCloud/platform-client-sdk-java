@@ -21,40 +21,13 @@ import java.io.Serializable;
 
 public class BatchDownloadJobResult  implements Serializable {
   
-  private String id = null;
-  private String name = null;
   private String conversationId = null;
   private String recordingId = null;
   private String resultUrl = null;
   private String contentType = null;
   private String errorMsg = null;
-  private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
-  /**
-   **/
-  public BatchDownloadJobResult name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
   /**
    * Conversation id of the result
    **/
@@ -145,13 +118,6 @@ public class BatchDownloadJobResult  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -162,19 +128,16 @@ public class BatchDownloadJobResult  implements Serializable {
     }
     BatchDownloadJobResult batchDownloadJobResult = (BatchDownloadJobResult) o;
 
-    return Objects.equals(this.id, batchDownloadJobResult.id) &&
-            Objects.equals(this.name, batchDownloadJobResult.name) &&
-            Objects.equals(this.conversationId, batchDownloadJobResult.conversationId) &&
+    return Objects.equals(this.conversationId, batchDownloadJobResult.conversationId) &&
             Objects.equals(this.recordingId, batchDownloadJobResult.recordingId) &&
             Objects.equals(this.resultUrl, batchDownloadJobResult.resultUrl) &&
             Objects.equals(this.contentType, batchDownloadJobResult.contentType) &&
-            Objects.equals(this.errorMsg, batchDownloadJobResult.errorMsg) &&
-            Objects.equals(this.selfUri, batchDownloadJobResult.selfUri);
+            Objects.equals(this.errorMsg, batchDownloadJobResult.errorMsg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, recordingId, resultUrl, contentType, errorMsg, selfUri);
+    return Objects.hash(conversationId, recordingId, resultUrl, contentType, errorMsg);
   }
 
   @Override
@@ -182,14 +145,11 @@ public class BatchDownloadJobResult  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchDownloadJobResult {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    recordingId: ").append(toIndentedString(recordingId)).append("\n");
     sb.append("    resultUrl: ").append(toIndentedString(resultUrl)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,6 +25,14 @@ import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
+import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportSettings;
+import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
@@ -41,7 +49,6 @@ import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
-import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -64,6 +71,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteReque
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -85,6 +93,10 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingReq
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadPreviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
@@ -128,6 +140,8 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRe
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
@@ -139,6 +153,8 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaReque
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
@@ -529,6 +545,81 @@ public class ExternalContactsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteExternalcontactsImportCsvSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param settingsId Settings id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsImportSetting(String settingsId) throws IOException, ApiException {
+     deleteExternalcontactsImportSetting(createDeleteExternalcontactsImportSettingRequest(settingsId));
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param settingsId Settings id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsImportSettingWithHttpInfo(String settingsId) throws IOException {
+    return deleteExternalcontactsImportSetting(createDeleteExternalcontactsImportSettingRequest(settingsId).withHttpInfo());
+  }
+
+  private DeleteExternalcontactsImportSettingRequest createDeleteExternalcontactsImportSettingRequest(String settingsId) {
+    return DeleteExternalcontactsImportSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .build();
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsImportSetting(DeleteExternalcontactsImportSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsImportSetting(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -949,11 +1040,11 @@ public class ExternalContactsApi {
    * List the identifiers for a contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @return EntityListing
+   * @return ContactIdentifierListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EntityListing getExternalcontactsContactIdentifiers(String contactId) throws IOException, ApiException {
+  public ContactIdentifierListing getExternalcontactsContactIdentifiers(String contactId) throws IOException, ApiException {
     return  getExternalcontactsContactIdentifiers(createGetExternalcontactsContactIdentifiersRequest(contactId));
   }
 
@@ -961,10 +1052,10 @@ public class ExternalContactsApi {
    * List the identifiers for a contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @return EntityListing
+   * @return ContactIdentifierListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EntityListing> getExternalcontactsContactIdentifiersWithHttpInfo(String contactId) throws IOException {
+  public ApiResponse<ContactIdentifierListing> getExternalcontactsContactIdentifiersWithHttpInfo(String contactId) throws IOException {
     return getExternalcontactsContactIdentifiers(createGetExternalcontactsContactIdentifiersRequest(contactId).withHttpInfo());
   }
 
@@ -979,13 +1070,13 @@ public class ExternalContactsApi {
    * List the identifiers for a contact
    * 
    * @param request The request object
-   * @return EntityListing
+   * @return ContactIdentifierListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EntityListing getExternalcontactsContactIdentifiers(GetExternalcontactsContactIdentifiersRequest request) throws IOException, ApiException {
+  public ContactIdentifierListing getExternalcontactsContactIdentifiers(GetExternalcontactsContactIdentifiersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      ApiResponse<ContactIdentifierListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactIdentifierListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1001,13 +1092,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EntityListing> getExternalcontactsContactIdentifiers(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ContactIdentifierListing> getExternalcontactsContactIdentifiers(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<ContactIdentifierListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<ContactIdentifierListing> response = (ApiResponse<ContactIdentifierListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1018,7 +1109,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ContactIdentifierListing> response = (ApiResponse<ContactIdentifierListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2265,6 +2356,342 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param jobId Job id (required)
+   * @return ContactImportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobResponse getExternalcontactsImportJob(String jobId) throws IOException, ApiException {
+    return  getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId));
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param jobId Job id (required)
+   * @return ContactImportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobResponse> getExternalcontactsImportJobWithHttpInfo(String jobId) throws IOException {
+    return getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportJobRequest createGetExternalcontactsImportJobRequest(String jobId) {
+    return GetExternalcontactsImportJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param request The request object
+   * @return ContactImportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobResponse getExternalcontactsImportJob(GetExternalcontactsImportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobResponse> getExternalcontactsImportJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
+   * @param sortOrder Direction of sorting. (optional, default to Ascending)
+   * @param jobStatus Search term to filter by jobStatus (optional)
+   * @return ContactImportJobEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobEntityListing getExternalcontactsImportJobs(String after, String pageSize, String sortOrder, String jobStatus) throws IOException, ApiException {
+    return  getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(after, pageSize, sortOrder, jobStatus));
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
+   * @param sortOrder Direction of sorting. (optional, default to Ascending)
+   * @param jobStatus Search term to filter by jobStatus (optional)
+   * @return ContactImportJobEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobEntityListing> getExternalcontactsImportJobsWithHttpInfo(String after, String pageSize, String sortOrder, String jobStatus) throws IOException {
+    return getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(after, pageSize, sortOrder, jobStatus).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportJobsRequest createGetExternalcontactsImportJobsRequest(String after, String pageSize, String sortOrder, String jobStatus) {
+    return GetExternalcontactsImportJobsRequest.builder()
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withSortOrder(sortOrder)
+
+            .withJobStatus(jobStatus)
+
+            .build();
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param request The request object
+   * @return ContactImportJobEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobEntityListing getExternalcontactsImportJobs(GetExternalcontactsImportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportJobEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportJobEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobEntityListing> getExternalcontactsImportJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportJobEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobEntityListing> response = (ApiResponse<ContactImportJobEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobEntityListing> response = (ApiResponse<ContactImportJobEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param settingsId Settings id (required)
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings getExternalcontactsImportSetting(String settingsId) throws IOException, ApiException {
+    return  getExternalcontactsImportSetting(createGetExternalcontactsImportSettingRequest(settingsId));
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param settingsId Settings id (required)
+   * @return ContactImportSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> getExternalcontactsImportSettingWithHttpInfo(String settingsId) throws IOException {
+    return getExternalcontactsImportSetting(createGetExternalcontactsImportSettingRequest(settingsId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportSettingRequest createGetExternalcontactsImportSettingRequest(String settingsId) {
+    return GetExternalcontactsImportSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .build();
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param request The request object
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings getExternalcontactsImportSetting(GetExternalcontactsImportSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> getExternalcontactsImportSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
+   * @param sortOrder Direction of sorting. (optional, default to Ascending)
+   * @param name Search term to filter by settings name (optional)
+   * @return ContactImportSettingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettingsEntityListing getExternalcontactsImportSettings(String after, String pageSize, String sortOrder, String name) throws IOException, ApiException {
+    return  getExternalcontactsImportSettings(createGetExternalcontactsImportSettingsRequest(after, pageSize, sortOrder, name));
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
+   * @param sortOrder Direction of sorting. (optional, default to Ascending)
+   * @param name Search term to filter by settings name (optional)
+   * @return ContactImportSettingsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettingsEntityListing> getExternalcontactsImportSettingsWithHttpInfo(String after, String pageSize, String sortOrder, String name) throws IOException {
+    return getExternalcontactsImportSettings(createGetExternalcontactsImportSettingsRequest(after, pageSize, sortOrder, name).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportSettingsRequest createGetExternalcontactsImportSettingsRequest(String after, String pageSize, String sortOrder, String name) {
+    return GetExternalcontactsImportSettingsRequest.builder()
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withSortOrder(sortOrder)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param request The request object
+   * @return ContactImportSettingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettingsEntityListing getExternalcontactsImportSettings(GetExternalcontactsImportSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportSettingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportSettingsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettingsEntityListing> getExternalcontactsImportSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportSettingsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettingsEntityListing> response = (ApiResponse<ContactImportSettingsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettingsEntityListing> response = (ApiResponse<ContactImportSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5752,6 +6179,162 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Create a new job
+   * 
+   * @param body Job (required)
+   * @return ContactImportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobResponse postExternalcontactsImportJobs(ContactImportJobRequest body) throws IOException, ApiException {
+    return  postExternalcontactsImportJobs(createPostExternalcontactsImportJobsRequest(body));
+  }
+
+  /**
+   * Create a new job
+   * 
+   * @param body Job (required)
+   * @return ContactImportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobResponse> postExternalcontactsImportJobsWithHttpInfo(ContactImportJobRequest body) throws IOException {
+    return postExternalcontactsImportJobs(createPostExternalcontactsImportJobsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsImportJobsRequest createPostExternalcontactsImportJobsRequest(ContactImportJobRequest body) {
+    return PostExternalcontactsImportJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new job
+   * 
+   * @param request The request object
+   * @return ContactImportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobResponse postExternalcontactsImportJobs(PostExternalcontactsImportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobResponse> postExternalcontactsImportJobs(ApiRequest<ContactImportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param body Setting (required)
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings postExternalcontactsImportSettings(ContactImportSettings body) throws IOException, ApiException {
+    return  postExternalcontactsImportSettings(createPostExternalcontactsImportSettingsRequest(body));
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param body Setting (required)
+   * @return ContactImportSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> postExternalcontactsImportSettingsWithHttpInfo(ContactImportSettings body) throws IOException {
+    return postExternalcontactsImportSettings(createPostExternalcontactsImportSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsImportSettingsRequest createPostExternalcontactsImportSettingsRequest(ContactImportSettings body) {
+    return PostExternalcontactsImportSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param request The request object
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings postExternalcontactsImportSettings(PostExternalcontactsImportSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> postExternalcontactsImportSettings(ApiRequest<ContactImportSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Merge two contacts into a new contact record
    * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param body MergeRequest (required)
@@ -6634,6 +7217,170 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param jobId Job id (required)
+   * @param body Status of the Job's workflow (required)
+   * @return ContactImportJobStatusUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobStatusUpdateResponse putExternalcontactsImportJob(String jobId, ContactImportJobStatusUpdateRequest body) throws IOException, ApiException {
+    return  putExternalcontactsImportJob(createPutExternalcontactsImportJobRequest(jobId, body));
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param jobId Job id (required)
+   * @param body Status of the Job's workflow (required)
+   * @return ContactImportJobStatusUpdateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobStatusUpdateResponse> putExternalcontactsImportJobWithHttpInfo(String jobId, ContactImportJobStatusUpdateRequest body) throws IOException {
+    return putExternalcontactsImportJob(createPutExternalcontactsImportJobRequest(jobId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsImportJobRequest createPutExternalcontactsImportJobRequest(String jobId, ContactImportJobStatusUpdateRequest body) {
+    return PutExternalcontactsImportJobRequest.builder()
+            .withJobId(jobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param request The request object
+   * @return ContactImportJobStatusUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportJobStatusUpdateResponse putExternalcontactsImportJob(PutExternalcontactsImportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportJobStatusUpdateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportJobStatusUpdateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportJobStatusUpdateResponse> putExternalcontactsImportJob(ApiRequest<ContactImportJobStatusUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportJobStatusUpdateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobStatusUpdateResponse> response = (ApiResponse<ContactImportJobStatusUpdateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportJobStatusUpdateResponse> response = (ApiResponse<ContactImportJobStatusUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param settingsId Settings id (required)
+   * @param body Setting (required)
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings putExternalcontactsImportSetting(String settingsId, ContactImportSettings body) throws IOException, ApiException {
+    return  putExternalcontactsImportSetting(createPutExternalcontactsImportSettingRequest(settingsId, body));
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param settingsId Settings id (required)
+   * @param body Setting (required)
+   * @return ContactImportSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> putExternalcontactsImportSettingWithHttpInfo(String settingsId, ContactImportSettings body) throws IOException {
+    return putExternalcontactsImportSetting(createPutExternalcontactsImportSettingRequest(settingsId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsImportSettingRequest createPutExternalcontactsImportSettingRequest(String settingsId, ContactImportSettings body) {
+    return PutExternalcontactsImportSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param request The request object
+   * @return ContactImportSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactImportSettings putExternalcontactsImportSetting(PutExternalcontactsImportSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactImportSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactImportSettings> putExternalcontactsImportSetting(ApiRequest<ContactImportSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactImportSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

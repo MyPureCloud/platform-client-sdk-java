@@ -22,29 +22,10 @@ import java.io.Serializable;
 
 public class QuestionSettings  implements Serializable {
   
-  private Integer questionIndex = null;
   private String questionContextId = null;
   private AiScoringSetting settings = null;
 
   
-  /**
-   * This field represents the location of the Question in the form. Note: Indexes are zero-based
-   **/
-  public QuestionSettings questionIndex(Integer questionIndex) {
-    this.questionIndex = questionIndex;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "This field represents the location of the Question in the form. Note: Indexes are zero-based")
-  @JsonProperty("questionIndex")
-  public Integer getQuestionIndex() {
-    return questionIndex;
-  }
-  public void setQuestionIndex(Integer questionIndex) {
-    this.questionIndex = questionIndex;
-  }
-
-
   /**
    * The context id of the question in the group
    **/
@@ -90,14 +71,13 @@ public class QuestionSettings  implements Serializable {
     }
     QuestionSettings questionSettings = (QuestionSettings) o;
 
-    return Objects.equals(this.questionIndex, questionSettings.questionIndex) &&
-            Objects.equals(this.questionContextId, questionSettings.questionContextId) &&
+    return Objects.equals(this.questionContextId, questionSettings.questionContextId) &&
             Objects.equals(this.settings, questionSettings.settings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionIndex, questionContextId, settings);
+    return Objects.hash(questionContextId, settings);
   }
 
   @Override
@@ -105,7 +85,6 @@ public class QuestionSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionSettings {\n");
     
-    sb.append("    questionIndex: ").append(toIndentedString(questionIndex)).append("\n");
     sb.append("    questionContextId: ").append(toIndentedString(questionContextId)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("}");

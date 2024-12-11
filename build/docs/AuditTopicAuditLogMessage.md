@@ -76,6 +76,7 @@
 | NERSERVICE | &quot;NerService&quot; | 
 | ONBOARDING | &quot;Onboarding&quot; | 
 | SOCIALLISTENING | &quot;SocialListening&quot; | 
+| BUSINESSRULES | &quot;BusinessRules&quot; | 
 
 
 ## Enum: ActionEnum
@@ -364,6 +365,7 @@
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; | 
+| CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
@@ -425,8 +427,12 @@
 | JOURNEYVIEW | &quot;JourneyView&quot; | 
 | CUSTOMENTITY | &quot;CustomEntity&quot; | 
 | DIRECTORYFEATURE | &quot;DirectoryFeature&quot; | 
+| RULECATEGORY | &quot;RuleCategory&quot; | 
+| DECISIONTABLE | &quot;DecisionTable&quot; | 
+| DECISIONTABLEVERSION | &quot;DecisionTableVersion&quot; | 
+| DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

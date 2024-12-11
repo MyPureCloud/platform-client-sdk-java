@@ -24,29 +24,10 @@ import java.io.Serializable;
 
 public class QuestionGroupSettings  implements Serializable {
   
-  private Integer questionGroupIndex = null;
   private String questionGroupContextId = null;
   private List<QuestionSettings> questionSettings = new ArrayList<QuestionSettings>();
 
   
-  /**
-   * This field represents the location of the Question Group in the form. Note: Indexes are zero-based
-   **/
-  public QuestionGroupSettings questionGroupIndex(Integer questionGroupIndex) {
-    this.questionGroupIndex = questionGroupIndex;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "This field represents the location of the Question Group in the form. Note: Indexes are zero-based")
-  @JsonProperty("questionGroupIndex")
-  public Integer getQuestionGroupIndex() {
-    return questionGroupIndex;
-  }
-  public void setQuestionGroupIndex(Integer questionGroupIndex) {
-    this.questionGroupIndex = questionGroupIndex;
-  }
-
-
   /**
    * The context id of the question group in the form.
    **/
@@ -92,14 +73,13 @@ public class QuestionGroupSettings  implements Serializable {
     }
     QuestionGroupSettings questionGroupSettings = (QuestionGroupSettings) o;
 
-    return Objects.equals(this.questionGroupIndex, questionGroupSettings.questionGroupIndex) &&
-            Objects.equals(this.questionGroupContextId, questionGroupSettings.questionGroupContextId) &&
+    return Objects.equals(this.questionGroupContextId, questionGroupSettings.questionGroupContextId) &&
             Objects.equals(this.questionSettings, questionGroupSettings.questionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionGroupIndex, questionGroupContextId, questionSettings);
+    return Objects.hash(questionGroupContextId, questionSettings);
   }
 
   @Override
@@ -107,7 +87,6 @@ public class QuestionGroupSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionGroupSettings {\n");
     
-    sb.append("    questionGroupIndex: ").append(toIndentedString(questionGroupIndex)).append("\n");
     sb.append("    questionGroupContextId: ").append(toIndentedString(questionGroupContextId)).append("\n");
     sb.append("    questionSettings: ").append(toIndentedString(questionSettings)).append("\n");
     sb.append("}");

@@ -28,6 +28,14 @@ import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
+import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactImportJobRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ContactImportJobStatusUpdateResponse;
+import com.mypurecloud.sdk.v2.model.ContactImportSettings;
+import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
@@ -44,7 +52,6 @@ import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
-import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -67,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteReque
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -88,6 +96,10 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingReq
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadPreviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
@@ -131,6 +143,8 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRe
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
@@ -142,6 +156,8 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaReque
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
@@ -508,6 +524,81 @@ public class ExternalContactsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsImportCsvSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteExternalcontactsImportSettingAsync(DeleteExternalcontactsImportSettingRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteExternalcontactsImportSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -923,13 +1014,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EntityListing> getExternalcontactsContactIdentifiersAsync(GetExternalcontactsContactIdentifiersRequest request, final AsyncApiCallback<EntityListing> callback) {
+  public Future<ContactIdentifierListing> getExternalcontactsContactIdentifiersAsync(GetExternalcontactsContactIdentifiersRequest request, final AsyncApiCallback<ContactIdentifierListing> callback) {
     try {
-      final SettableFuture<EntityListing> future = SettableFuture.create();
+      final SettableFuture<ContactIdentifierListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactIdentifierListing>() {}, new AsyncApiCallback<ApiResponse<ContactIdentifierListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EntityListing> response) {
+        public void onCompleted(ApiResponse<ContactIdentifierListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -957,13 +1048,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EntityListing>> getExternalcontactsContactIdentifiersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EntityListing>> callback) {
+  public Future<ApiResponse<ContactIdentifierListing>> getExternalcontactsContactIdentifiersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactIdentifierListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<EntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ContactIdentifierListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ContactIdentifierListing>() {}, new AsyncApiCallback<ApiResponse<ContactIdentifierListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EntityListing> response) {
+        public void onCompleted(ApiResponse<ContactIdentifierListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -971,7 +1062,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<ContactIdentifierListing> response = (ApiResponse<ContactIdentifierListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -979,7 +1070,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ContactIdentifierListing> response = (ApiResponse<ContactIdentifierListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2105,6 +2196,306 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportJobResponse> getExternalcontactsImportJobAsync(GetExternalcontactsImportJobRequest request, final AsyncApiCallback<ContactImportJobResponse> callback) {
+    try {
+      final SettableFuture<ContactImportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportJobResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get job based on id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportJobResponse>> getExternalcontactsImportJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactImportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportJobResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportJobEntityListing> getExternalcontactsImportJobsAsync(GetExternalcontactsImportJobsRequest request, final AsyncApiCallback<ContactImportJobEntityListing> callback) {
+    try {
+      final SettableFuture<ContactImportJobEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportJobEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List jobs for organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportJobEntityListing>> getExternalcontactsImportJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactImportJobEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportJobEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportJobEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobEntityListing> response = (ApiResponse<ContactImportJobEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobEntityListing> response = (ApiResponse<ContactImportJobEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportSettings> getExternalcontactsImportSettingAsync(GetExternalcontactsImportSettingRequest request, final AsyncApiCallback<ContactImportSettings> callback) {
+    try {
+      final SettableFuture<ContactImportSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get setting based on id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportSettings>> getExternalcontactsImportSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactImportSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportSettingsEntityListing> getExternalcontactsImportSettingsAsync(GetExternalcontactsImportSettingsRequest request, final AsyncApiCallback<ContactImportSettingsEntityListing> callback) {
+    try {
+      final SettableFuture<ContactImportSettingsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettingsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List settings for organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportSettingsEntityListing>> getExternalcontactsImportSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactImportSettingsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportSettingsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettingsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettingsEntityListing> response = (ApiResponse<ContactImportSettingsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettingsEntityListing> response = (ApiResponse<ContactImportSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5342,6 +5733,156 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Create a new job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportJobResponse> postExternalcontactsImportJobsAsync(PostExternalcontactsImportJobsRequest request, final AsyncApiCallback<ContactImportJobResponse> callback) {
+    try {
+      final SettableFuture<ContactImportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportJobResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportJobResponse>> postExternalcontactsImportJobsAsync(ApiRequest<ContactImportJobRequest> request, final AsyncApiCallback<ApiResponse<ContactImportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportJobResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobResponse> response = (ApiResponse<ContactImportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportSettings> postExternalcontactsImportSettingsAsync(PostExternalcontactsImportSettingsRequest request, final AsyncApiCallback<ContactImportSettings> callback) {
+    try {
+      final SettableFuture<ContactImportSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportSettings>> postExternalcontactsImportSettingsAsync(ApiRequest<ContactImportSettings> request, final AsyncApiCallback<ApiResponse<ContactImportSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Merge two contacts into a new contact record
    * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request the request object
@@ -6155,6 +6696,156 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportJobStatusUpdateResponse> putExternalcontactsImportJobAsync(PutExternalcontactsImportJobRequest request, final AsyncApiCallback<ContactImportJobStatusUpdateResponse> callback) {
+    try {
+      final SettableFuture<ContactImportJobStatusUpdateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportJobStatusUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobStatusUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobStatusUpdateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Job's workflow status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportJobStatusUpdateResponse>> putExternalcontactsImportJobAsync(ApiRequest<ContactImportJobStatusUpdateRequest> request, final AsyncApiCallback<ApiResponse<ContactImportJobStatusUpdateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportJobStatusUpdateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportJobStatusUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<ContactImportJobStatusUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportJobStatusUpdateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobStatusUpdateResponse> response = (ApiResponse<ContactImportJobStatusUpdateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportJobStatusUpdateResponse> response = (ApiResponse<ContactImportJobStatusUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactImportSettings> putExternalcontactsImportSettingAsync(PutExternalcontactsImportSettingRequest request, final AsyncApiCallback<ContactImportSettings> callback) {
+    try {
+      final SettableFuture<ContactImportSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactImportSettings>> putExternalcontactsImportSettingAsync(ApiRequest<ContactImportSettings> request, final AsyncApiCallback<ApiResponse<ContactImportSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactImportSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactImportSettings>() {}, new AsyncApiCallback<ApiResponse<ContactImportSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactImportSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactImportSettings> response = (ApiResponse<ContactImportSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

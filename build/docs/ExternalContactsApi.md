@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteExternalcontactsContactsSchema**](ExternalContactsApi#deleteExternalcontactsContactsSchema) | Delete a schema |
 | [**deleteExternalcontactsExternalsource**](ExternalContactsApi#deleteExternalcontactsExternalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable. |
 | [**deleteExternalcontactsImportCsvSetting**](ExternalContactsApi#deleteExternalcontactsImportCsvSetting) | Delete settings for CSV import |
+| [**deleteExternalcontactsImportSetting**](ExternalContactsApi#deleteExternalcontactsImportSetting) | Delete Settings |
 | [**deleteExternalcontactsOrganization**](ExternalContactsApi#deleteExternalcontactsOrganization) | Delete an external organization |
 | [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi#deleteExternalcontactsOrganizationNote) | Delete a note for an external organization |
 | [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi#deleteExternalcontactsOrganizationTrustor) | Unlink the Trustor for this External Organization |
@@ -30,6 +31,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsImportCsvSettings**](ExternalContactsApi#getExternalcontactsImportCsvSettings) | Retrieve all settings for organization filtered by externalSettingsId if provided |
 | [**getExternalcontactsImportCsvUploadDetails**](ExternalContactsApi#getExternalcontactsImportCsvUploadDetails) | Get details for CSV upload |
 | [**getExternalcontactsImportCsvUploadPreview**](ExternalContactsApi#getExternalcontactsImportCsvUploadPreview) | Get preview for CSV upload |
+| [**getExternalcontactsImportJob**](ExternalContactsApi#getExternalcontactsImportJob) | Get job based on id |
+| [**getExternalcontactsImportJobs**](ExternalContactsApi#getExternalcontactsImportJobs) | List jobs for organization |
+| [**getExternalcontactsImportSetting**](ExternalContactsApi#getExternalcontactsImportSetting) | Get setting based on id |
+| [**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | List settings for organization |
 | [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
 | [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | Fetch a note for an external organization |
@@ -73,6 +78,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsImportCsvJobs**](ExternalContactsApi#postExternalcontactsImportCsvJobs) | Create CSV import job |
 | [**postExternalcontactsImportCsvSettings**](ExternalContactsApi#postExternalcontactsImportCsvSettings) | Create settings for CSV import |
 | [**postExternalcontactsImportCsvUploads**](ExternalContactsApi#postExternalcontactsImportCsvUploads) | Get url for CSV upload |
+| [**postExternalcontactsImportJobs**](ExternalContactsApi#postExternalcontactsImportJobs) | Create a new job |
+| [**postExternalcontactsImportSettings**](ExternalContactsApi#postExternalcontactsImportSettings) | Create a new settings |
 | [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | Merge two contacts into a new contact record |
 | [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | Create a note for an external organization |
 | [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | Create an external organization |
@@ -84,6 +91,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | Associate/disassociate an external contact with a conversation |
 | [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | Update an External Source |
 | [**putExternalcontactsImportCsvSetting**](ExternalContactsApi#putExternalcontactsImportCsvSetting) | Update settings for CSV import |
+| [**putExternalcontactsImportJob**](ExternalContactsApi#putExternalcontactsImportJob) | Update Job's workflow status |
+| [**putExternalcontactsImportSetting**](ExternalContactsApi#putExternalcontactsImportSetting) | Update settings |
 | [**putExternalcontactsOrganization**](ExternalContactsApi#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi#putExternalcontactsOrganizationNote) | Update a note for an external organization |
 | [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
@@ -371,6 +380,64 @@ try {
     apiInstance.deleteExternalcontactsImportCsvSetting(settingsId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsImportCsvSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **settingsId** | **String**| Settings id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteExternalcontactsImportSetting**
+
+
+> Void deleteExternalcontactsImportSetting(settingsId)
+
+Delete Settings
+
+Wraps DELETE /api/v2/externalcontacts/import/settings/{settingsId}  
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String settingsId = "settingsId_example"; // String | Settings id
+try {
+    apiInstance.deleteExternalcontactsImportSetting(settingsId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsImportSetting");
     e.printStackTrace();
 }
 ```
@@ -694,7 +761,7 @@ try {
 # **getExternalcontactsContactIdentifiers**
 
 
-> [EntityListing](EntityListing) getExternalcontactsContactIdentifiers(contactId)
+> [ContactIdentifierListing](ContactIdentifierListing) getExternalcontactsContactIdentifiers(contactId)
 
 List the identifiers for a contact
 
@@ -728,7 +795,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
 try {
-    EntityListing result = apiInstance.getExternalcontactsContactIdentifiers(contactId);
+    ContactIdentifierListing result = apiInstance.getExternalcontactsContactIdentifiers(contactId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactIdentifiers");
@@ -747,7 +814,7 @@ try {
 
 ### Return type
 
-[**EntityListing**](EntityListing)
+[**ContactIdentifierListing**](ContactIdentifierListing)
 
 
 # **getExternalcontactsContactJourneySessions**
@@ -1676,6 +1743,254 @@ try {
 ### Return type
 
 [**CsvUploadPreviewResponse**](CsvUploadPreviewResponse)
+
+
+# **getExternalcontactsImportJob**
+
+
+> [ContactImportJobResponse](ContactImportJobResponse) getExternalcontactsImportJob(jobId)
+
+Get job based on id
+
+Wraps GET /api/v2/externalcontacts/import/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String jobId = "jobId_example"; // String | Job id
+try {
+    ContactImportJobResponse result = apiInstance.getExternalcontactsImportJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportJobResponse**](ContactImportJobResponse)
+
+
+# **getExternalcontactsImportJobs**
+
+
+> [ContactImportJobEntityListing](ContactImportJobEntityListing) getExternalcontactsImportJobs(after, pageSize, sortOrder, jobStatus)
+
+List jobs for organization
+
+Wraps GET /api/v2/externalcontacts/import/jobs  
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | Number of entities to return. Maximum of 100.
+String sortOrder = "Ascending"; // String | Direction of sorting.
+String jobStatus = "jobStatus_example"; // String | Search term to filter by jobStatus
+try {
+    ContactImportJobEntityListing result = apiInstance.getExternalcontactsImportJobs(after, pageSize, sortOrder, jobStatus);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] [default to 25] 
+| **sortOrder** | **String**| Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending 
+| **jobStatus** | **String**| Search term to filter by jobStatus | [optional]<br />**Values**: Created, Running, Completed, Failed, Cancelled 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportJobEntityListing**](ContactImportJobEntityListing)
+
+
+# **getExternalcontactsImportSetting**
+
+
+> [ContactImportSettings](ContactImportSettings) getExternalcontactsImportSetting(settingsId)
+
+Get setting based on id
+
+Wraps GET /api/v2/externalcontacts/import/settings/{settingsId}  
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String settingsId = "settingsId_example"; // String | Settings id
+try {
+    ContactImportSettings result = apiInstance.getExternalcontactsImportSetting(settingsId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **settingsId** | **String**| Settings id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
+# **getExternalcontactsImportSettings**
+
+
+> [ContactImportSettingsEntityListing](ContactImportSettingsEntityListing) getExternalcontactsImportSettings(after, pageSize, sortOrder, name)
+
+List settings for organization
+
+Wraps GET /api/v2/externalcontacts/import/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | Number of entities to return. Maximum of 100.
+String sortOrder = "Ascending"; // String | Direction of sorting.
+String name = "name_example"; // String | Search term to filter by settings name
+try {
+    ContactImportSettingsEntityListing result = apiInstance.getExternalcontactsImportSettings(after, pageSize, sortOrder, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] [default to 25] 
+| **sortOrder** | **String**| Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending 
+| **name** | **String**| Search term to filter by settings name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing)
 
 
 # **getExternalcontactsOrganization**
@@ -4301,6 +4616,124 @@ try {
 [**CsvUploadResponse**](CsvUploadResponse)
 
 
+# **postExternalcontactsImportJobs**
+
+
+> [ContactImportJobResponse](ContactImportJobResponse) postExternalcontactsImportJobs(body)
+
+Create a new job
+
+Wraps POST /api/v2/externalcontacts/import/jobs  
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ContactImportJobRequest body = new ContactImportJobRequest(); // ContactImportJobRequest | Job
+try {
+    ContactImportJobResponse result = apiInstance.postExternalcontactsImportJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsImportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactImportJobRequest**](ContactImportJobRequest)| Job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportJobResponse**](ContactImportJobResponse)
+
+
+# **postExternalcontactsImportSettings**
+
+
+> [ContactImportSettings](ContactImportSettings) postExternalcontactsImportSettings(body)
+
+Create a new settings
+
+Wraps POST /api/v2/externalcontacts/import/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ContactImportSettings body = new ContactImportSettings(); // ContactImportSettings | Setting
+try {
+    ContactImportSettings result = apiInstance.postExternalcontactsImportSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsImportSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactImportSettings**](ContactImportSettings)| Setting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
 # **postExternalcontactsMergeContacts**
 
 
@@ -4975,6 +5408,128 @@ try {
 [**CsvSettings**](CsvSettings)
 
 
+# **putExternalcontactsImportJob**
+
+
+> [ContactImportJobStatusUpdateResponse](ContactImportJobStatusUpdateResponse) putExternalcontactsImportJob(jobId, body)
+
+Update Job's workflow status
+
+Wraps PUT /api/v2/externalcontacts/import/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String jobId = "jobId_example"; // String | Job id
+ContactImportJobStatusUpdateRequest body = new ContactImportJobStatusUpdateRequest(); // ContactImportJobStatusUpdateRequest | Status of the Job's workflow
+try {
+    ContactImportJobStatusUpdateResponse result = apiInstance.putExternalcontactsImportJob(jobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsImportJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job id | 
+| **body** | [**ContactImportJobStatusUpdateRequest**](ContactImportJobStatusUpdateRequest)| Status of the Job&#39;s workflow | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportJobStatusUpdateResponse**](ContactImportJobStatusUpdateResponse)
+
+
+# **putExternalcontactsImportSetting**
+
+
+> [ContactImportSettings](ContactImportSettings) putExternalcontactsImportSetting(settingsId, body)
+
+Update settings
+
+Wraps PUT /api/v2/externalcontacts/import/settings/{settingsId}  
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String settingsId = "settingsId_example"; // String | Settings id
+ContactImportSettings body = new ContactImportSettings(); // ContactImportSettings | Setting
+try {
+    ContactImportSettings result = apiInstance.putExternalcontactsImportSetting(settingsId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsImportSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **settingsId** | **String**| Settings id | 
+| **body** | [**ContactImportSettings**](ContactImportSettings)| Setting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
 # **putExternalcontactsOrganization**
 
 
@@ -5285,4 +5840,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

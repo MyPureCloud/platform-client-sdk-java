@@ -199,6 +199,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     }
   }
   private ErrorTypeEnum errorType = null;
+  private Integer durationMs = null;
 
   
   /**
@@ -473,6 +474,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   }
 
 
+  /**
+   **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent durationMs(Integer durationMs) {
+    this.durationMs = durationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("durationMs")
+  public Integer getDurationMs() {
+    return durationMs;
+  }
+  public void setDurationMs(Integer durationMs) {
+    this.durationMs = durationMs;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -498,12 +516,13 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.triggerSource) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.lastEditedBy) &&
-            Objects.equals(this.errorType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.errorType);
+            Objects.equals(this.errorType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.errorType) &&
+            Objects.equals(this.durationMs, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.durationMs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType);
+    return Objects.hash(conversationId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -527,6 +546,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");
     sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
+    sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

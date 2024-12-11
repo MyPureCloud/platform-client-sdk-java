@@ -285,20 +285,6 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 	    return this;
 	} 
 
-	private Boolean recentlyReviewed;
-	public Boolean getRecentlyReviewed() {
-		return this.recentlyReviewed;
-	}
-
-	public void setRecentlyReviewed(Boolean recentlyReviewed) {
-		this.recentlyReviewed = recentlyReviewed;
-	}
-
-	public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest withRecentlyReviewed(Boolean recentlyReviewed) {
-	    this.setRecentlyReviewed(recentlyReviewed);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -336,9 +322,6 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
         
                 .withPathParameter("userId", userId)
         
-
-                .withQueryParameters("recentlyReviewed", "", recentlyReviewed)
-        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -372,11 +355,6 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
-			return this;
-		}
-
-		public Builder withRecentlyReviewed(Boolean recentlyReviewed) {
-			request.setRecentlyReviewed(recentlyReviewed);
 			return this;
 		}
 

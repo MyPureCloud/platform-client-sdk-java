@@ -1530,7 +1530,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
-| **expands** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow 
+| **expands** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript 
 {: class="table-striped"}
 
 
@@ -3563,4 +3563,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

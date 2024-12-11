@@ -44,7 +44,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     }
   }
   /**
-   * Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+   * Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -162,14 +162,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+   * Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
    **/
   public BatchDownloadJobStatusResult status(StatusEnum status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.")
+  @ApiModelProperty(example = "null", value = "Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;

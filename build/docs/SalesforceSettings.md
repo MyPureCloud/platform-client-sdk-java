@@ -8,6 +8,7 @@
 | **channel** | [**ChannelEnum**](#Enum--ChannelEnum) | Filter source by channel. |  [optional] |
 | **language** | **String** | Filter source by language. |  [optional] |
 | **categories** | **List&lt;String&gt;** | Filter source by categories. |  [optional] |
+| **baseUrl** | **String** | The base URL to resources. |  [optional] |
 
 
 ## Enum: ChannelEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

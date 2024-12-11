@@ -8484,13 +8484,12 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
-   * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String managementUnitId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId, recentlyReviewed));
+  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String managementUnitId, String userId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId));
   }
 
   /**
@@ -8498,21 +8497,18 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
-   * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String managementUnitId, String userId, Boolean recentlyReviewed) throws IOException {
-    return getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId, recentlyReviewed).withHttpInfo());
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String managementUnitId, String userId) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String managementUnitId, String userId, Boolean recentlyReviewed) {
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String managementUnitId, String userId) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withUserId(userId)
-
-            .withRecentlyReviewed(recentlyReviewed)
 
             .build();
   }
@@ -9978,30 +9974,26 @@ public class WorkforceManagementApi {
   /**
    * Get a list of time off requests for the current user
    * 
-   * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestList getWorkforcemanagementTimeoffrequests(Boolean recentlyReviewed) throws IOException, ApiException {
-    return  getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest(recentlyReviewed));
+  public TimeOffRequestList getWorkforcemanagementTimeoffrequests() throws IOException, ApiException {
+    return  getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest());
   }
 
   /**
    * Get a list of time off requests for the current user
    * 
-   * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo(Boolean recentlyReviewed) throws IOException {
-    return getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest(recentlyReviewed).withHttpInfo());
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest().withHttpInfo());
   }
 
-  private GetWorkforcemanagementTimeoffrequestsRequest createGetWorkforcemanagementTimeoffrequestsRequest(Boolean recentlyReviewed) {
+  private GetWorkforcemanagementTimeoffrequestsRequest createGetWorkforcemanagementTimeoffrequestsRequest() {
     return GetWorkforcemanagementTimeoffrequestsRequest.builder()
-            .withRecentlyReviewed(recentlyReviewed)
-
             .build();
   }
 

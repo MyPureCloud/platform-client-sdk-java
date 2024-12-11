@@ -615,7 +615,7 @@ public class JourneyApi {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @return JourneyViewSchedule
    * @throws ApiException if the request fails on the server
@@ -627,7 +627,7 @@ public class JourneyApi {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @return JourneyViewSchedule
    * @throws IOException if the request fails to be processed
@@ -645,7 +645,7 @@ public class JourneyApi {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewSchedule
    * @throws ApiException if the request fails on the server
@@ -664,7 +664,7 @@ public class JourneyApi {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2729,7 +2729,7 @@ public class JourneyApi {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @return JourneyViewSchedule
    * @throws ApiException if the request fails on the server
@@ -2741,7 +2741,7 @@ public class JourneyApi {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @return JourneyViewSchedule
    * @throws IOException if the request fails to be processed
@@ -2759,7 +2759,7 @@ public class JourneyApi {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewSchedule
    * @throws ApiException if the request fails on the server
@@ -2778,7 +2778,7 @@ public class JourneyApi {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3065,7 +3065,7 @@ public class JourneyApi {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -3079,7 +3079,7 @@ public class JourneyApi {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -3103,7 +3103,7 @@ public class JourneyApi {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -3122,7 +3122,7 @@ public class JourneyApi {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3151,7 +3151,7 @@ public class JourneyApi {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId JourneyViewResult id (required)
    * @param journeyViewVersion Journey View Version (required)
    * @param jobId Id of the executing job (required)
@@ -3165,7 +3165,7 @@ public class JourneyApi {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId JourneyViewResult id (required)
    * @param journeyViewVersion Journey View Version (required)
    * @param jobId Id of the executing job (required)
@@ -3189,7 +3189,7 @@ public class JourneyApi {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewResult
    * @throws ApiException if the request fails on the server
@@ -3208,7 +3208,7 @@ public class JourneyApi {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3327,7 +3327,7 @@ public class JourneyApi {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -3340,7 +3340,7 @@ public class JourneyApi {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -3361,7 +3361,7 @@ public class JourneyApi {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -3380,7 +3380,7 @@ public class JourneyApi {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4237,7 +4237,7 @@ public class JourneyApi {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -4252,7 +4252,7 @@ public class JourneyApi {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -4279,7 +4279,7 @@ public class JourneyApi {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -4298,7 +4298,7 @@ public class JourneyApi {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5440,7 +5440,7 @@ public class JourneyApi {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -5453,7 +5453,7 @@ public class JourneyApi {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -5474,7 +5474,7 @@ public class JourneyApi {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -5493,7 +5493,7 @@ public class JourneyApi {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5760,7 +5760,7 @@ public class JourneyApi {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param body journeyViewSchedule (required)
    * @return JourneyViewSchedule
@@ -5773,7 +5773,7 @@ public class JourneyApi {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param viewId Journey View Id (required)
    * @param body journeyViewSchedule (required)
    * @return JourneyViewSchedule
@@ -5794,7 +5794,7 @@ public class JourneyApi {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return JourneyViewSchedule
    * @throws ApiException if the request fails on the server
@@ -5813,7 +5813,7 @@ public class JourneyApi {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

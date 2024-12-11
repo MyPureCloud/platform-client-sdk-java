@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeList;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeMap;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeString;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeWorkitemStatusCategory;
+import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeWrapupDelta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -46,6 +47,7 @@ public class WorkitemDelta  implements Serializable {
   private WorkitemsAttributeChangeString queueId = null;
   private WorkitemsAttributeChangeString externalTag = null;
   private WorkitemsAttributeChangeString wrapupId = null;
+  private WorkitemsAttributeChangeWrapupDelta wrapup = null;
   private WorkitemsAttributeChangeInteger ttl = null;
   private WorkitemsAttributeChangeInstant dateClosed = null;
   private WorkitemsAttributeChangeString assignmentState = null;
@@ -365,6 +367,23 @@ public class WorkitemDelta  implements Serializable {
 
   /**
    **/
+  public WorkitemDelta wrapup(WorkitemsAttributeChangeWrapupDelta wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public WorkitemsAttributeChangeWrapupDelta getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(WorkitemsAttributeChangeWrapupDelta wrapup) {
+    this.wrapup = wrapup;
+  }
+
+
+  /**
+   **/
   public WorkitemDelta ttl(WorkitemsAttributeChangeInteger ttl) {
     this.ttl = ttl;
     return this;
@@ -544,6 +563,7 @@ public class WorkitemDelta  implements Serializable {
             Objects.equals(this.queueId, workitemDelta.queueId) &&
             Objects.equals(this.externalTag, workitemDelta.externalTag) &&
             Objects.equals(this.wrapupId, workitemDelta.wrapupId) &&
+            Objects.equals(this.wrapup, workitemDelta.wrapup) &&
             Objects.equals(this.ttl, workitemDelta.ttl) &&
             Objects.equals(this.dateClosed, workitemDelta.dateClosed) &&
             Objects.equals(this.assignmentState, workitemDelta.assignmentState) &&
@@ -557,7 +577,7 @@ public class WorkitemDelta  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory, scriptId);
+    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, wrapup, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory, scriptId);
   }
 
   @Override
@@ -583,6 +603,7 @@ public class WorkitemDelta  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    wrapupId: ").append(toIndentedString(wrapupId)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    dateClosed: ").append(toIndentedString(dateClosed)).append("\n");
     sb.append("    assignmentState: ").append(toIndentedString(assignmentState)).append("\n");

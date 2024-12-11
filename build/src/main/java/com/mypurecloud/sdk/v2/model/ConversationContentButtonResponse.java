@@ -43,7 +43,8 @@ public class ConversationContentButtonResponse  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BUTTON("Button"),
-    QUICKREPLY("QuickReply");
+    QUICKREPLY("QuickReply"),
+    DATEPICKER("DatePicker");
 
     private String value;
 

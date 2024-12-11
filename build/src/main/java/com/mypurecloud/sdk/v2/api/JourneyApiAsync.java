@@ -615,7 +615,7 @@ public class JourneyApiAsync {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -649,7 +649,7 @@ public class JourneyApiAsync {
 
   /**
    * Delete the Schedule of a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2498,7 +2498,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2532,7 +2532,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2798,7 +2798,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2832,7 +2832,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2873,7 +2873,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2907,7 +2907,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the result of a job for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3023,7 +3023,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3057,7 +3057,7 @@ public class JourneyApiAsync {
 
   /**
    * Get the latest job of a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3848,7 +3848,7 @@ public class JourneyApiAsync {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3882,7 +3882,7 @@ public class JourneyApiAsync {
 
   /**
    * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4977,7 +4977,7 @@ public class JourneyApiAsync {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5011,7 +5011,7 @@ public class JourneyApiAsync {
 
   /**
    * Submit a job request for a journey view version.
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5277,7 +5277,7 @@ public class JourneyApiAsync {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5311,7 +5311,7 @@ public class JourneyApiAsync {
 
   /**
    * Update the Schedule for a JourneyView
-   * used for long descriptions
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

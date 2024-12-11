@@ -41,14 +41,14 @@ public class WorkitemCreate  implements Serializable {
   private Map<String, Object> customFields = null;
   private String queueId = null;
   private String assigneeId = null;
-  private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
   private String languageId = null;
   private String externalContactId = null;
   private String externalTag = null;
   private List<String> skillIds = new ArrayList<String>();
-  private List<String> preferredAgentIds = new ArrayList<String>();
   private String wrapupCode = null;
   private String utilizationLabelId = null;
+  private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+  private List<String> preferredAgentIds = new ArrayList<String>();
 
   
   /**
@@ -304,24 +304,6 @@ public class WorkitemCreate  implements Serializable {
 
 
   /**
-   * A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
-   **/
-  public WorkitemCreate scoredAgents(List<WorkitemScoredAgentRequest> scoredAgents) {
-    this.scoredAgents = scoredAgents;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.")
-  @JsonProperty("scoredAgents")
-  public List<WorkitemScoredAgentRequest> getScoredAgents() {
-    return scoredAgents;
-  }
-  public void setScoredAgents(List<WorkitemScoredAgentRequest> scoredAgents) {
-    this.scoredAgents = scoredAgents;
-  }
-
-
-  /**
    * The ID of language of the Workitem. Must be a valid UUID.
    **/
   public WorkitemCreate languageId(String languageId) {
@@ -394,24 +376,6 @@ public class WorkitemCreate  implements Serializable {
 
 
   /**
-   * The preferred agent IDs of the Workitem. Must be valid UUIDs.
-   **/
-  public WorkitemCreate preferredAgentIds(List<String> preferredAgentIds) {
-    this.preferredAgentIds = preferredAgentIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The preferred agent IDs of the Workitem. Must be valid UUIDs.")
-  @JsonProperty("preferredAgentIds")
-  public List<String> getPreferredAgentIds() {
-    return preferredAgentIds;
-  }
-  public void setPreferredAgentIds(List<String> preferredAgentIds) {
-    this.preferredAgentIds = preferredAgentIds;
-  }
-
-
-  /**
    * The ID of the wrapup. Must be a valid UUID.
    **/
   public WorkitemCreate wrapupCode(String wrapupCode) {
@@ -447,6 +411,42 @@ public class WorkitemCreate  implements Serializable {
   }
 
 
+  /**
+   * A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
+   **/
+  public WorkitemCreate scoredAgents(List<WorkitemScoredAgentRequest> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.")
+  @JsonProperty("scoredAgents")
+  public List<WorkitemScoredAgentRequest> getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(List<WorkitemScoredAgentRequest> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+  }
+
+
+  /**
+   * The preferred agent IDs of the Workitem. Must be valid UUIDs.
+   **/
+  public WorkitemCreate preferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The preferred agent IDs of the Workitem. Must be valid UUIDs.")
+  @JsonProperty("preferredAgentIds")
+  public List<String> getPreferredAgentIds() {
+    return preferredAgentIds;
+  }
+  public void setPreferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -471,19 +471,19 @@ public class WorkitemCreate  implements Serializable {
             Objects.equals(this.customFields, workitemCreate.customFields) &&
             Objects.equals(this.queueId, workitemCreate.queueId) &&
             Objects.equals(this.assigneeId, workitemCreate.assigneeId) &&
-            Objects.equals(this.scoredAgents, workitemCreate.scoredAgents) &&
             Objects.equals(this.languageId, workitemCreate.languageId) &&
             Objects.equals(this.externalContactId, workitemCreate.externalContactId) &&
             Objects.equals(this.externalTag, workitemCreate.externalTag) &&
             Objects.equals(this.skillIds, workitemCreate.skillIds) &&
-            Objects.equals(this.preferredAgentIds, workitemCreate.preferredAgentIds) &&
             Objects.equals(this.wrapupCode, workitemCreate.wrapupCode) &&
-            Objects.equals(this.utilizationLabelId, workitemCreate.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, workitemCreate.utilizationLabelId) &&
+            Objects.equals(this.scoredAgents, workitemCreate.scoredAgents) &&
+            Objects.equals(this.preferredAgentIds, workitemCreate.preferredAgentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, scoredAgents, languageId, externalContactId, externalTag, skillIds, preferredAgentIds, wrapupCode, utilizationLabelId);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, languageId, externalContactId, externalTag, skillIds, wrapupCode, utilizationLabelId, scoredAgents, preferredAgentIds);
   }
 
   @Override
@@ -505,14 +505,14 @@ public class WorkitemCreate  implements Serializable {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    assigneeId: ").append(toIndentedString(assigneeId)).append("\n");
-    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
-    sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
     sb.append("    wrapupCode: ").append(toIndentedString(wrapupCode)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

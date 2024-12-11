@@ -257,20 +257,6 @@ import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 
 public class GetWorkforcemanagementTimeoffrequestsRequest {
 
-	private Boolean recentlyReviewed;
-	public Boolean getRecentlyReviewed() {
-		return this.recentlyReviewed;
-	}
-
-	public void setRecentlyReviewed(Boolean recentlyReviewed) {
-		this.recentlyReviewed = recentlyReviewed;
-	}
-
-	public GetWorkforcemanagementTimeoffrequestsRequest withRecentlyReviewed(Boolean recentlyReviewed) {
-	    this.setRecentlyReviewed(recentlyReviewed);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -294,9 +280,6 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/timeoffrequests")
-
-                .withQueryParameters("recentlyReviewed", "", recentlyReviewed)
-        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -317,11 +300,6 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 			request = new GetWorkforcemanagementTimeoffrequestsRequest();
 		}
 
-
-		public Builder withRecentlyReviewed(Boolean recentlyReviewed) {
-			request.setRecentlyReviewed(recentlyReviewed);
-			return this;
-		}
 
 
 

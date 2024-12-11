@@ -64,6 +64,7 @@ public class ConversationMessageContent  implements Serializable {
     CAROUSEL("Carousel"),
     TEXT("Text"),
     QUICKREPLYV2("QuickReplyV2"),
+    DATEPICKER("DatePicker"),
     UNKNOWN("Unknown");
 
     private String value;

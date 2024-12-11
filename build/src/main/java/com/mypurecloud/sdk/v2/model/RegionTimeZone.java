@@ -24,6 +24,7 @@ public class RegionTimeZone  implements Serializable {
   private String id = null;
   private String name = null;
   private Long offset = null;
+  private String canonicalId = null;
   private String selfUri = null;
 
   
@@ -68,6 +69,24 @@ public class RegionTimeZone  implements Serializable {
   }
 
 
+  /**
+   * Canonical identifier for this time zone, if applicable
+   **/
+  public RegionTimeZone canonicalId(String canonicalId) {
+    this.canonicalId = canonicalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Canonical identifier for this time zone, if applicable")
+  @JsonProperty("canonicalId")
+  public String getCanonicalId() {
+    return canonicalId;
+  }
+  public void setCanonicalId(String canonicalId) {
+    this.canonicalId = canonicalId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -88,12 +107,13 @@ public class RegionTimeZone  implements Serializable {
     return Objects.equals(this.id, regionTimeZone.id) &&
             Objects.equals(this.name, regionTimeZone.name) &&
             Objects.equals(this.offset, regionTimeZone.offset) &&
+            Objects.equals(this.canonicalId, regionTimeZone.canonicalId) &&
             Objects.equals(this.selfUri, regionTimeZone.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, offset, selfUri);
+    return Objects.hash(id, name, offset, canonicalId, selfUri);
   }
 
   @Override
@@ -104,6 +124,7 @@ public class RegionTimeZone  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    canonicalId: ").append(toIndentedString(canonicalId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

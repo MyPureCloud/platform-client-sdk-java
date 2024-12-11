@@ -26,6 +26,7 @@ public class ServiceNowSettings  implements Serializable {
   private List<String> knowledgeBaseIds = new ArrayList<String>();
   private String language = null;
   private List<String> categories = new ArrayList<String>();
+  private String baseUrl = null;
 
   
   /**
@@ -82,6 +83,24 @@ public class ServiceNowSettings  implements Serializable {
   }
 
 
+  /**
+   * The base URL to resources.
+   **/
+  public ServiceNowSettings baseUrl(String baseUrl) {
+    this.baseUrl = baseUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The base URL to resources.")
+  @JsonProperty("baseUrl")
+  public String getBaseUrl() {
+    return baseUrl;
+  }
+  public void setBaseUrl(String baseUrl) {
+    this.baseUrl = baseUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -94,12 +113,13 @@ public class ServiceNowSettings  implements Serializable {
 
     return Objects.equals(this.knowledgeBaseIds, serviceNowSettings.knowledgeBaseIds) &&
             Objects.equals(this.language, serviceNowSettings.language) &&
-            Objects.equals(this.categories, serviceNowSettings.categories);
+            Objects.equals(this.categories, serviceNowSettings.categories) &&
+            Objects.equals(this.baseUrl, serviceNowSettings.baseUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(knowledgeBaseIds, language, categories);
+    return Objects.hash(knowledgeBaseIds, language, categories, baseUrl);
   }
 
   @Override
@@ -110,6 +130,7 @@ public class ServiceNowSettings  implements Serializable {
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    baseUrl: ").append(toIndentedString(baseUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -103,7 +103,8 @@ public class GetTaskmanagementWorktypeRequest {
 		DEFAULTSKILLS("defaultSkills"),
 		DEFAULTLANGUAGE("defaultLanguage"),
 		SCHEMA("schema"),
-		FLOW("flow");
+		FLOW("flow"),
+		DEFAULTSCRIPT("defaultScript");
 
 		private String value;
 

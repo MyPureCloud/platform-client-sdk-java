@@ -76,6 +76,7 @@ public class SalesforceSettings  implements Serializable {
   private ChannelEnum channel = null;
   private String language = null;
   private List<String> categories = new ArrayList<String>();
+  private String baseUrl = null;
 
   
   /**
@@ -132,6 +133,24 @@ public class SalesforceSettings  implements Serializable {
   }
 
 
+  /**
+   * The base URL to resources.
+   **/
+  public SalesforceSettings baseUrl(String baseUrl) {
+    this.baseUrl = baseUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The base URL to resources.")
+  @JsonProperty("baseUrl")
+  public String getBaseUrl() {
+    return baseUrl;
+  }
+  public void setBaseUrl(String baseUrl) {
+    this.baseUrl = baseUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -144,12 +163,13 @@ public class SalesforceSettings  implements Serializable {
 
     return Objects.equals(this.channel, salesforceSettings.channel) &&
             Objects.equals(this.language, salesforceSettings.language) &&
-            Objects.equals(this.categories, salesforceSettings.categories);
+            Objects.equals(this.categories, salesforceSettings.categories) &&
+            Objects.equals(this.baseUrl, salesforceSettings.baseUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channel, language, categories);
+    return Objects.hash(channel, language, categories, baseUrl);
   }
 
   @Override
@@ -160,6 +180,7 @@ public class SalesforceSettings  implements Serializable {
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    baseUrl: ").append(toIndentedString(baseUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
