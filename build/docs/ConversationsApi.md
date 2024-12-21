@@ -12882,7 +12882,7 @@ try {
 # **postConversationsMessagesAgentless**
 
 
-> [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse) postConversationsMessagesAgentless(body)
+> [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse) postConversationsMessagesAgentless(body, useNormalizedMessage)
 
 Send an agentless outbound message
 
@@ -12917,8 +12917,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 SendAgentlessOutboundMessageRequest body = new SendAgentlessOutboundMessageRequest(); // SendAgentlessOutboundMessageRequest | Create agentless outbound messaging request
+Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
 try {
-    SendAgentlessOutboundMessageResponse result = apiInstance.postConversationsMessagesAgentless(body);
+    SendAgentlessOutboundMessageResponse result = apiInstance.postConversationsMessagesAgentless(body, useNormalizedMessage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagesAgentless");
@@ -12932,6 +12933,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request | 
+| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -14846,4 +14848,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

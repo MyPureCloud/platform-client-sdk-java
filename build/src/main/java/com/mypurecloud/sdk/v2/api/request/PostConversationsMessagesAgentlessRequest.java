@@ -188,6 +188,20 @@ public class PostConversationsMessagesAgentlessRequest {
 	    return this;
 	} 
 
+	private Boolean useNormalizedMessage;
+	public Boolean getUseNormalizedMessage() {
+		return this.useNormalizedMessage;
+	}
+
+	public void setUseNormalizedMessage(Boolean useNormalizedMessage) {
+		this.useNormalizedMessage = useNormalizedMessage;
+	}
+
+	public PostConversationsMessagesAgentlessRequest withUseNormalizedMessage(Boolean useNormalizedMessage) {
+	    this.setUseNormalizedMessage(useNormalizedMessage);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -216,6 +230,9 @@ public class PostConversationsMessagesAgentlessRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/messages/agentless")
+
+                .withQueryParameters("useNormalizedMessage", "", useNormalizedMessage)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -246,6 +263,11 @@ public class PostConversationsMessagesAgentlessRequest {
 
 		public Builder withBody(SendAgentlessOutboundMessageRequest body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withUseNormalizedMessage(Boolean useNormalizedMessage) {
+			request.setUseNormalizedMessage(useNormalizedMessage);
 			return this;
 		}
 

@@ -17393,28 +17393,32 @@ public class ConversationsApi {
    * Send an agentless outbound message
    * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
+   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(SendAgentlessOutboundMessageRequest body) throws IOException, ApiException {
-    return  postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body));
+  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) throws IOException, ApiException {
+    return  postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body, useNormalizedMessage));
   }
 
   /**
    * Send an agentless outbound message
    * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
    * @param body Create agentless outbound messaging request (required)
+   * @param useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (optional, default to false)
    * @return SendAgentlessOutboundMessageResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentlessWithHttpInfo(SendAgentlessOutboundMessageRequest body) throws IOException {
-    return postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body).withHttpInfo());
+  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentlessWithHttpInfo(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) throws IOException {
+    return postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body, useNormalizedMessage).withHttpInfo());
   }
 
-  private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body) {
+  private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body, Boolean useNormalizedMessage) {
     return PostConversationsMessagesAgentlessRequest.builder()
             .withBody(body)
+
+            .withUseNormalizedMessage(useNormalizedMessage)
 
             .build();
   }

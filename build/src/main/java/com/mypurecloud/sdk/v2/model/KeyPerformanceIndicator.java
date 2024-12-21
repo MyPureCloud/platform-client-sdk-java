@@ -151,7 +151,8 @@ public class KeyPerformanceIndicator  implements Serializable {
     CHURN("Churn"),
     RETENTION("Retention"),
     SALESVALUE("SalesValue"),
-    HANDLETIME("HandleTime");
+    HANDLETIME("HandleTime"),
+    NEXTCONTACTAVOIDANCE("NextContactAvoidance");
 
     private String value;
 

@@ -20,6 +20,7 @@
 | **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#Enum--NameIdentifierFormatEnum) |  |  [optional] |
 | **ssoBinding** | [**SsoBindingEnum**](#Enum--SsoBindingEnum) |  |  [optional] |
 | **signAuthnRequests** | **Boolean** |  |  [optional] |
+| **providerName** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -49,4 +50,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

@@ -98,6 +98,7 @@ public class Check  implements Serializable {
     SALESAMOUNTVALUE("SalesAmountValue"),
     RETENTIONRATEVALUE("RetentionRateValue"),
     CHURNRATEVALUE("ChurnRateValue"),
+    NEXTCONTACTAVOIDANCERATEVALUE("NextContactAvoidanceRateValue"),
     INTERACTIONVOLUME("InteractionVolume"),
     USERVARIANCE("UserVariance"),
     DATACOVERAGE("DataCoverage"),

@@ -5434,10 +5434,11 @@ public class ExternalContactsApiAsync {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ExternalContact> postExternalcontactsIdentifierlookupAsync(PostExternalcontactsIdentifierlookupRequest request, final AsyncApiCallback<ExternalContact> callback) {
     try {
@@ -5468,10 +5469,11 @@ public class ExternalContactsApiAsync {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ExternalContact>> postExternalcontactsIdentifierlookupAsync(ApiRequest<ContactIdentifier> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     try {

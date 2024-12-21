@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | Get status for async query for action aggregates |
 | [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsAgentStatus**](AnalyticsApi#getAnalyticsAgentStatus) | Get an agent and their active sessions by user ID |
 | [**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | Get status for async query for agent copilot aggregates |
 | [**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | Get Reporting Turns (division aware). |
@@ -42,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi#getAnalyticsReportingSettingsUserDashboards) | Get list of dashboards for an user |
 | [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi#getAnalyticsResolutionsAggregatesJob) | Get status for async query for resolution aggregates |
 | [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsResolutionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsSummariesAggregatesJob**](AnalyticsApi#getAnalyticsSummariesAggregatesJob) | Get status for async query for summary aggregates |
+| [**getAnalyticsSummariesAggregatesJobResults**](AnalyticsApi#getAnalyticsSummariesAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsSurveysAggregatesJob**](AnalyticsApi#getAnalyticsSurveysAggregatesJob) | Get status for async query for survey aggregates |
 | [**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi#getAnalyticsSurveysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJob) | Get status for async query for task management aggregates |
@@ -58,6 +61,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | Query for action aggregates |
 | [**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | Query for agent copilot aggregates asynchronously |
 | [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | Query for agent copilot aggregates |
+| [**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | Count agents by segment type |
+| [**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | Retrieve the top 50 agents matching the query filters |
 | [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | Query for bot aggregates asynchronously |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi#postAnalyticsConversationDetailsProperties) | Index conversation properties |
@@ -87,6 +92,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | Query dashboard configurations |
 | [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | Query for resolution aggregates asynchronously |
 | [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
+| [**postAnalyticsSummariesAggregatesJobs**](AnalyticsApi#postAnalyticsSummariesAggregatesJobs) | Query for summary aggregates asynchronously |
+| [**postAnalyticsSummariesAggregatesQuery**](AnalyticsApi#postAnalyticsSummariesAggregatesQuery) | Query for summary aggregates |
 | [**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi#postAnalyticsSurveysAggregatesJobs) | Query for survey aggregates asynchronously |
 | [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | Query for survey aggregates |
 | [**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | Query for task management aggregates asynchronously |
@@ -345,6 +352,67 @@ try {
 ### Return type
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse)
+
+
+# **getAnalyticsAgentStatus**
+
+
+> [AnalyticsAgentStateAgentResponse](AnalyticsAgentStateAgentResponse) getAnalyticsAgentStatus(userId)
+
+Get an agent and their active sessions by user ID
+
+getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agents/{userId}/status  
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String userId = "userId_example"; // String | userId
+try {
+    AnalyticsAgentStateAgentResponse result = apiInstance.getAnalyticsAgentStatus(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsAgentStatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsAgentStateAgentResponse**](AnalyticsAgentStateAgentResponse)
 
 
 # **getAnalyticsAgentcopilotsAggregatesJob**
@@ -2481,6 +2549,130 @@ try {
 [**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse)
 
 
+# **getAnalyticsSummariesAggregatesJob**
+
+
+> [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsSummariesAggregatesJob(jobId)
+
+Get status for async query for summary aggregates
+
+getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsSummariesAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsSummariesAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+# **getAnalyticsSummariesAggregatesJobResults**
+
+
+> [SummaryAsyncAggregateQueryResponse](SummaryAsyncAggregateQueryResponse) getAnalyticsSummariesAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    SummaryAsyncAggregateQueryResponse result = apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsSummariesAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummaryAsyncAggregateQueryResponse**](SummaryAsyncAggregateQueryResponse)
+
+
 # **getAnalyticsSurveysAggregatesJob**
 
 
@@ -3453,6 +3645,128 @@ try {
 ### Return type
 
 [**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse)
+
+
+# **postAnalyticsAgentsStatusCounts**
+
+
+> [AnalyticsAgentStateCountsResponse](AnalyticsAgentStateCountsResponse) postAnalyticsAgentsStatusCounts(body)
+
+Count agents by segment type
+
+postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agents/status/counts  
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AgentStateCountsRequest body = new AgentStateCountsRequest(); // AgentStateCountsRequest | query
+try {
+    AnalyticsAgentStateCountsResponse result = apiInstance.postAnalyticsAgentsStatusCounts(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsAgentsStatusCounts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentStateCountsRequest**](AgentStateCountsRequest)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse)
+
+
+# **postAnalyticsAgentsStatusQuery**
+
+
+> [AnalyticsAgentStateQueryResponse](AnalyticsAgentStateQueryResponse) postAnalyticsAgentsStatusQuery(body)
+
+Retrieve the top 50 agents matching the query filters
+
+postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agents/status/query  
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AgentStateQueryRequest body = new AgentStateQueryRequest(); // AgentStateQueryRequest | query
+try {
+    AnalyticsAgentStateQueryResponse result = apiInstance.postAnalyticsAgentsStatusQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsAgentsStatusQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentStateQueryRequest**](AgentStateQueryRequest)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsAgentStateQueryResponse**](AnalyticsAgentStateQueryResponse)
 
 
 # **postAnalyticsBotsAggregatesJobs**
@@ -5201,6 +5515,128 @@ try {
 [**RoutingActivityResponse**](RoutingActivityResponse)
 
 
+# **postAnalyticsSummariesAggregatesJobs**
+
+
+> [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsSummariesAggregatesJobs(body)
+
+Query for summary aggregates asynchronously
+
+postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/summaries/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+SummaryAsyncAggregationQuery body = new SummaryAsyncAggregationQuery(); // SummaryAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsSummariesAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsSummariesAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SummaryAsyncAggregationQuery**](SummaryAsyncAggregationQuery)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+# **postAnalyticsSummariesAggregatesQuery**
+
+
+> [SummaryAggregateQueryResponse](SummaryAggregateQueryResponse) postAnalyticsSummariesAggregatesQuery(body)
+
+Query for summary aggregates
+
+postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/summaries/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+SummaryAggregationQuery body = new SummaryAggregationQuery(); // SummaryAggregationQuery | query
+try {
+    SummaryAggregateQueryResponse result = apiInstance.postAnalyticsSummariesAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsSummariesAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SummaryAggregationQuery**](SummaryAggregationQuery)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummaryAggregateQueryResponse**](SummaryAggregateQueryResponse)
+
+
 # **postAnalyticsSurveysAggregatesJobs**
 
 
@@ -6043,4 +6479,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

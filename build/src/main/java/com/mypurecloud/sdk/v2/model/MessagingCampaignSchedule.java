@@ -112,14 +112,14 @@ public class MessagingCampaignSchedule  implements Serializable {
 
 
   /**
-   * The time zone for this messaging campaign schedule.
+   * The time zone for this messaging campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
    **/
   public MessagingCampaignSchedule timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", value = "The time zone for this messaging campaign schedule.")
+  @ApiModelProperty(example = "Africa/Abidjan", value = "The time zone for this messaging campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;

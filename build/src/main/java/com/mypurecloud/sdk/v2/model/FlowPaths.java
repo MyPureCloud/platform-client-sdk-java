@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowPathsElement;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,6 +81,8 @@ public class FlowPaths  implements Serializable {
     }
   }
   private CategoryEnum category = null;
+  private Date dateStart = null;
+  private Date dateEnd = null;
   private Map<String, FlowPathsElement> elements = null;
 
   
@@ -98,6 +101,42 @@ public class FlowPaths  implements Serializable {
   }
   public void setCategory(CategoryEnum category) {
     this.category = category;
+  }
+
+
+  /**
+   * Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public FlowPaths dateStart(Date dateStart) {
+    this.dateStart = dateStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateStart")
+  public Date getDateStart() {
+    return dateStart;
+  }
+  public void setDateStart(Date dateStart) {
+    this.dateStart = dateStart;
+  }
+
+
+  /**
+   * End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public FlowPaths dateEnd(Date dateEnd) {
+    this.dateEnd = dateEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateEnd")
+  public Date getDateEnd() {
+    return dateEnd;
+  }
+  public void setDateEnd(Date dateEnd) {
+    this.dateEnd = dateEnd;
   }
 
 
@@ -130,12 +169,14 @@ public class FlowPaths  implements Serializable {
     FlowPaths flowPaths = (FlowPaths) o;
 
     return Objects.equals(this.category, flowPaths.category) &&
+            Objects.equals(this.dateStart, flowPaths.dateStart) &&
+            Objects.equals(this.dateEnd, flowPaths.dateEnd) &&
             Objects.equals(this.elements, flowPaths.elements);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, elements);
+    return Objects.hash(category, dateStart, dateEnd, elements);
   }
 
   @Override
@@ -144,6 +185,8 @@ public class FlowPaths  implements Serializable {
     sb.append("class FlowPaths {\n");
     
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
+    sb.append("    dateEnd: ").append(toIndentedString(dateEnd)).append("\n");
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("}");
     return sb.toString();

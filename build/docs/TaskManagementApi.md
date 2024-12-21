@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | Delete a workitem |
 | [**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | Delete a schema |
 | [**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | Delete a worktype |
+| [**deleteTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsDatebasedRule) | Delete a date based rule |
 | [**deleteTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOnattributechangeRule) | Delete a rule |
 | [**deleteTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOncreateRule) | Delete a rule |
 | [**deleteTaskmanagementWorktypeStatus**](TaskManagementApi#deleteTaskmanagementWorktypeStatus) | Delete a status |
@@ -28,6 +29,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | Get all versions of a schema |
 | [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | Get a list of schemas. |
 | [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | Get a worktype |
+| [**getTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRule) | Get a date based rule |
+| [**getTaskmanagementWorktypeFlowsDatebasedRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRules) | Get all date based rules for a worktype |
 | [**getTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRule) | Get an attribute change rule |
 | [**getTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRules) | Get all attribute-change rules for a worktype |
 | [**getTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRule) | Get an on-create rule |
@@ -43,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | Add/Remove a wrapup code for a given user in a workitem. |
 | [**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | Add/Remove a wrapup code for the current user in a workitem. |
 | [**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | Update the attributes of a worktype |
+| [**patchTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsDatebasedRule) | Update the attributes of a date based rule |
 | [**patchTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule) | Update the attributes of a rule |
 | [**patchTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOncreateRule) | Update the attributes of a rule |
 | [**patchTaskmanagementWorktypeStatus**](TaskManagementApi#patchTaskmanagementWorktypeStatus) | Update the attributes of a status |
@@ -55,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | Query for workitems |
 | [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | Create a workitem query job |
 | [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | Create a schema |
+| [**postTaskmanagementWorktypeFlowsDatebasedRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsDatebasedRules) | Add a date based rule to a worktype |
 | [**postTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOnattributechangeRules) | Add an attribute-change rule to a worktype |
 | [**postTaskmanagementWorktypeFlowsOncreateRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOncreateRules) | Add an on-create rule to a worktype |
 | [**postTaskmanagementWorktypeStatuses**](TaskManagementApi#postTaskmanagementWorktypeStatuses) | Add a status to a worktype |
@@ -288,6 +293,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteTaskmanagementWorktypeFlowsDatebasedRule**
+
+
+> Void deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+
+Delete a date based rule
+
+Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    apiInstance.deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#deleteTaskmanagementWorktypeFlowsDatebasedRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
 {: class="table-striped"}
 
 
@@ -1539,6 +1604,130 @@ try {
 [**Worktype**](Worktype)
 
 
+# **getTaskmanagementWorktypeFlowsDatebasedRule**
+
+
+> [WorkitemDateBasedRule](WorkitemDateBasedRule) getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+
+Get a date based rule
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    WorkitemDateBasedRule result = apiInstance.getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
+# **getTaskmanagementWorktypeFlowsDatebasedRules**
+
+
+> [WorkitemDateBasedRuleListing](WorkitemDateBasedRuleListing) getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, after, pageSize)
+
+Get all date based rules for a worktype
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+try {
+    WorkitemDateBasedRuleListing result = apiInstance.getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemDateBasedRuleListing**](WorkitemDateBasedRuleListing)
+
+
 # **getTaskmanagementWorktypeFlowsOnattributechangeRule**
 
 
@@ -2475,6 +2664,69 @@ try {
 [**Worktype**](Worktype)
 
 
+# **patchTaskmanagementWorktypeFlowsDatebasedRule**
+
+
+> [WorkitemDateBasedRule](WorkitemDateBasedRule) patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body)
+
+Update the attributes of a date based rule
+
+Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+WorkitemDateBasedRuleUpdate body = new WorkitemDateBasedRuleUpdate(); // WorkitemDateBasedRuleUpdate | Rule
+try {
+    WorkitemDateBasedRule result = apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorktypeFlowsDatebasedRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+| **body** | [**WorkitemDateBasedRuleUpdate**](WorkitemDateBasedRuleUpdate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
 # **patchTaskmanagementWorktypeFlowsOnattributechangeRule**
 
 
@@ -3201,6 +3453,67 @@ try {
 [**DataSchema**](DataSchema)
 
 
+# **postTaskmanagementWorktypeFlowsDatebasedRules**
+
+
+> [WorkitemDateBasedRule](WorkitemDateBasedRule) postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body)
+
+Add a date based rule to a worktype
+
+Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+WorkitemDateBasedRuleCreate body = new WorkitemDateBasedRuleCreate(); // WorkitemDateBasedRuleCreate | Rule
+try {
+    WorkitemDateBasedRule result = apiInstance.postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorktypeFlowsDatebasedRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **body** | [**WorkitemDateBasedRuleCreate**](WorkitemDateBasedRuleCreate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
 # **postTaskmanagementWorktypeFlowsOnattributechangeRules**
 
 
@@ -3563,4 +3876,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

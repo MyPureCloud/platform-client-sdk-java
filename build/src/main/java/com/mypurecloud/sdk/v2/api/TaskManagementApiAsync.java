@@ -27,6 +27,10 @@ import com.mypurecloud.sdk.v2.model.WorkbinVersionListing;
 import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRule;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
 import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRule;
 import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleCreate;
@@ -66,6 +70,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeStatusRequest;
@@ -86,6 +91,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersio
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRuleRequest;
@@ -101,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentR
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeStatusRequest;
@@ -113,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsDatebasedRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
@@ -405,6 +414,81 @@ public class TaskManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTaskmanagementWorktypeFlowsDatebasedRuleAsync(DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeFlowsDatebasedRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1951,6 +2035,156 @@ public class TaskManagementApiAsync {
   }
 
   /**
+   * Get a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemDateBasedRule> getTaskmanagementWorktypeFlowsDatebasedRuleAsync(GetTaskmanagementWorktypeFlowsDatebasedRuleRequest request, final AsyncApiCallback<WorkitemDateBasedRule> callback) {
+    try {
+      final SettableFuture<WorkitemDateBasedRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemDateBasedRule>> getTaskmanagementWorktypeFlowsDatebasedRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemDateBasedRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemDateBasedRuleListing> getTaskmanagementWorktypeFlowsDatebasedRulesAsync(GetTaskmanagementWorktypeFlowsDatebasedRulesRequest request, final AsyncApiCallback<WorkitemDateBasedRuleListing> callback) {
+    try {
+      final SettableFuture<WorkitemDateBasedRuleListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRuleListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemDateBasedRuleListing>> getTaskmanagementWorktypeFlowsDatebasedRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemDateBasedRuleListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemDateBasedRuleListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemDateBasedRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRuleListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRuleListing> response = (ApiResponse<WorkitemDateBasedRuleListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRuleListing> response = (ApiResponse<WorkitemDateBasedRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get an attribute change rule
    * 
    * @param request the request object
@@ -3082,6 +3316,81 @@ public class TaskManagementApiAsync {
   }
 
   /**
+   * Update the attributes of a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemDateBasedRule> patchTaskmanagementWorktypeFlowsDatebasedRuleAsync(PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest request, final AsyncApiCallback<WorkitemDateBasedRule> callback) {
+    try {
+      final SettableFuture<WorkitemDateBasedRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the attributes of a date based rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemDateBasedRule>> patchTaskmanagementWorktypeFlowsDatebasedRuleAsync(ApiRequest<WorkitemDateBasedRuleUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemDateBasedRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the attributes of a rule
    * 
    * @param request the request object
@@ -3972,6 +4281,81 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemDateBasedRule> postTaskmanagementWorktypeFlowsDatebasedRulesAsync(PostTaskmanagementWorktypeFlowsDatebasedRulesRequest request, final AsyncApiCallback<WorkitemDateBasedRule> callback) {
+    try {
+      final SettableFuture<WorkitemDateBasedRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemDateBasedRule>> postTaskmanagementWorktypeFlowsDatebasedRulesAsync(ApiRequest<WorkitemDateBasedRuleCreate> request, final AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemDateBasedRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemDateBasedRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemDateBasedRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemDateBasedRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

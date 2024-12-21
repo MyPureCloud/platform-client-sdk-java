@@ -139,6 +139,7 @@ public class CustomProvider  implements Serializable {
   }
   private SsoBindingEnum ssoBinding = null;
   private Boolean signAuthnRequests = null;
+  private String providerName = null;
   private String selfUri = null;
 
   
@@ -387,6 +388,23 @@ public class CustomProvider  implements Serializable {
   }
 
 
+  /**
+   **/
+  public CustomProvider providerName(String providerName) {
+    this.providerName = providerName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("providerName")
+  public String getProviderName() {
+    return providerName;
+  }
+  public void setProviderName(String providerName) {
+    this.providerName = providerName;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -419,12 +437,13 @@ public class CustomProvider  implements Serializable {
             Objects.equals(this.nameIdentifierFormat, customProvider.nameIdentifierFormat) &&
             Objects.equals(this.ssoBinding, customProvider.ssoBinding) &&
             Objects.equals(this.signAuthnRequests, customProvider.signAuthnRequests) &&
+            Objects.equals(this.providerName, customProvider.providerName) &&
             Objects.equals(this.selfUri, customProvider.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, ssoBinding, signAuthnRequests, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, selfUri);
   }
 
   @Override
@@ -447,6 +466,7 @@ public class CustomProvider  implements Serializable {
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
     sb.append("    ssoBinding: ").append(toIndentedString(ssoBinding)).append("\n");
     sb.append("    signAuthnRequests: ").append(toIndentedString(signAuthnRequests)).append("\n");
+    sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

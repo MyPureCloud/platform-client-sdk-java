@@ -112,14 +112,14 @@ public class SequenceSchedule  implements Serializable {
 
 
   /**
-   * The time zone for this SequenceSchedule. For example, Africa/Abidjan.
+   * The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
    **/
   public SequenceSchedule timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "The time zone for this SequenceSchedule. For example, Africa/Abidjan.")
+  @ApiModelProperty(example = "Africa/Abidjan", value = "The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;

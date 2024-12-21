@@ -146,6 +146,15 @@ docs/AgentPossibleWorkShiftsResponse.md
 docs/AgentQueryAdherenceExplanationsRequest.md
 docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentQueueTimeRequest.md
+docs/AgentStateAgentQueryClause.md
+docs/AgentStateAgentQueryPredicate.md
+docs/AgentStateCountsRequest.md
+docs/AgentStateQueryRequest.md
+docs/AgentStateSegmentTypeCount.md
+docs/AgentStateSessionFilter.md
+docs/AgentStateSessionQueryClause.md
+docs/AgentStateSessionQueryPredicate.md
+docs/AgentStateUserFilter.md
 docs/AgentTimeOffRequestPatch.md
 docs/AgentUIApi.json
 docs/AgentUIApi.md
@@ -204,6 +213,10 @@ docs/AlternativeShiftTradeResponse.md
 docs/AlternativeShiftTradesViewResponseTemplate.md
 docs/AmazonLexRequest.md
 docs/AnalyticsAgentGroup.md
+docs/AnalyticsAgentStateAgentResponse.md
+docs/AnalyticsAgentStateAgentSessionResult.md
+docs/AnalyticsAgentStateCountsResponse.md
+docs/AnalyticsAgentStateQueryResponse.md
 docs/AnalyticsApi.json
 docs/AnalyticsApi.md
 docs/AnalyticsConversation.md
@@ -1683,7 +1696,6 @@ docs/EmailColumn.md
 docs/EmailCommunicationAnsweredEvent.md
 docs/EmailCommunicationDispositionAppliedEvent.md
 docs/EmailCommunicationEndedEvent.md
-docs/EmailCommunicationRepliedEvent.md
 docs/EmailCommunicationSentMessageEvent.md
 docs/EmailConfig.md
 docs/EmailConversation.md
@@ -1908,6 +1920,7 @@ docs/ExternalMetricDefinitionCreateRequest.md
 docs/ExternalMetricDefinitionListing.md
 docs/ExternalMetricDefinitionUpdateRequest.md
 docs/ExternalOrganization.md
+docs/ExternalOrganizationIdentifier.md
 docs/ExternalOrganizationListing.md
 docs/ExternalOrganizationTrustorLink.md
 docs/ExternalSegment.md
@@ -4095,6 +4108,15 @@ docs/SuggestionKnowledgeArticle.md
 docs/SuggestionKnowledgeSearch.md
 docs/SuggestionListing.md
 docs/SuggestionScript.md
+docs/SummaryAggregateDataContainer.md
+docs/SummaryAggregateQueryClause.md
+docs/SummaryAggregateQueryFilter.md
+docs/SummaryAggregateQueryPredicate.md
+docs/SummaryAggregateQueryResponse.md
+docs/SummaryAggregationQuery.md
+docs/SummaryAggregationView.md
+docs/SummaryAsyncAggregateQueryResponse.md
+docs/SummaryAsyncAggregationQuery.md
 docs/SummaryGenerationConfig.md
 docs/SupportCenterCategory.md
 docs/SupportCenterCompactCategoryModuleTemplate.md
@@ -4931,6 +4953,7 @@ docs/WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.md
 docs/WfmVersionedEntityMetadata.md
 docs/WhatsAppAvailablePhoneNumberDetails.md
 docs/WhatsAppAvailablePhoneNumberDetailsListing.md
+docs/WhatsAppConfig.md
 docs/WhatsAppDefinition.md
 docs/WhatsAppEmbeddedSignupIntegrationActivationRequest.md
 docs/WhatsAppEmbeddedSignupIntegrationRequest.md
@@ -5005,6 +5028,12 @@ docs/WorkforceManagementApi.md
 docs/Workitem.md
 docs/WorkitemChangeListing.md
 docs/WorkitemCreate.md
+docs/WorkitemDateBasedCondition.md
+docs/WorkitemDateBasedConditionUpdate.md
+docs/WorkitemDateBasedRule.md
+docs/WorkitemDateBasedRuleCreate.md
+docs/WorkitemDateBasedRuleListing.md
+docs/WorkitemDateBasedRuleUpdate.md
 docs/WorkitemDelta.md
 docs/WorkitemFilter.md
 docs/WorkitemFlowReference.md
@@ -5349,6 +5378,7 @@ docs/deleteTaskmanagementWorkbin-example.txt
 docs/deleteTaskmanagementWorkitem-example.txt
 docs/deleteTaskmanagementWorkitemsSchema-example.txt
 docs/deleteTaskmanagementWorktype-example.txt
+docs/deleteTaskmanagementWorktypeFlowsDatebasedRule-example.txt
 docs/deleteTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/deleteTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/deleteTaskmanagementWorktypeStatus-example.txt
@@ -5418,6 +5448,7 @@ docs/getAlertingInteractionstatsRules-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
+docs/getAnalyticsAgentStatus-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJob-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
@@ -5465,6 +5496,8 @@ docs/getAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/getAnalyticsReportingSettingsUserDashboards-example.txt
 docs/getAnalyticsResolutionsAggregatesJob-example.txt
 docs/getAnalyticsResolutionsAggregatesJobResults-example.txt
+docs/getAnalyticsSummariesAggregatesJob-example.txt
+docs/getAnalyticsSummariesAggregatesJobResults-example.txt
 docs/getAnalyticsSurveysAggregatesJob-example.txt
 docs/getAnalyticsSurveysAggregatesJob-example.txt
 docs/getAnalyticsSurveysAggregatesJobResults-example.txt
@@ -6398,6 +6431,8 @@ docs/getTaskmanagementWorkitemsSchemaVersion-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersions-example.txt
 docs/getTaskmanagementWorkitemsSchemas-example.txt
 docs/getTaskmanagementWorktype-example.txt
+docs/getTaskmanagementWorktypeFlowsDatebasedRule-example.txt
+docs/getTaskmanagementWorktypeFlowsDatebasedRules-example.txt
 docs/getTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/getTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
 docs/getTaskmanagementWorktypeFlowsOncreateRule-example.txt
@@ -6825,6 +6860,7 @@ docs/patchTaskmanagementWorkitemAssignment-example.txt
 docs/patchTaskmanagementWorkitemUserWrapups-example.txt
 docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
 docs/patchTaskmanagementWorktype-example.txt
+docs/patchTaskmanagementWorktypeFlowsDatebasedRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
@@ -6892,6 +6928,8 @@ docs/postAnalyticsActionsAggregatesJobs-example.txt
 docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesJobs-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesQuery-example.txt
+docs/postAnalyticsAgentsStatusCounts-example.txt
+docs/postAnalyticsAgentsStatusQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
@@ -6938,6 +6976,8 @@ docs/postAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/postAnalyticsResolutionsAggregatesJobs-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
+docs/postAnalyticsSummariesAggregatesJobs-example.txt
+docs/postAnalyticsSummariesAggregatesQuery-example.txt
 docs/postAnalyticsSurveysAggregatesJobs-example.txt
 docs/postAnalyticsSurveysAggregatesJobs-example.txt
 docs/postAnalyticsSurveysAggregatesQuery-example.txt
@@ -7433,6 +7473,7 @@ docs/postTaskmanagementWorkitems-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
 docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt
+docs/postTaskmanagementWorktypeFlowsDatebasedRules-example.txt
 docs/postTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
 docs/postTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/postTaskmanagementWorktypeStatuses-example.txt
@@ -8246,6 +8287,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteStationAssociateduserRequ
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkbinRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkitemRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkitemsSchemaRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeRequest.java
@@ -8316,6 +8358,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetAlertingInteractionstatsRule
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAlertingRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsActionsAggregatesJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsActionsAggregatesJobResultsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsAgentStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsAgentcopilotsAggregatesJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsAgentcopilotsAggregatesJobResultsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsBotflowDivisionsReportingturnsRequest.java
@@ -8363,6 +8406,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsReportingSettingsRe
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsReportingSettingsUserDashboardsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsResolutionsAggregatesJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsResolutionsAggregatesJobResultsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsSummariesAggregatesJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsSummariesAggregatesJobResultsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsSurveysAggregatesJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsSurveysAggregatesJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAnalyticsSurveysAggregatesJobResultsRequest.java
@@ -9295,6 +9340,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchem
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsDatebasedRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsDatebasedRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOncreateRuleRequest.java
@@ -9722,6 +9769,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemAssi
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemUserWrapupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemUsersMeWrapupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeFlowsOncreateRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeRequest.java
@@ -9790,6 +9838,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsActionsAggregatesJ
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsActionsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentcopilotsAggregatesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentcopilotsAggregatesQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentsStatusCountsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsAgentsStatusQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsBotsAggregatesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsBotsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsConversationDetailsPropertiesRequest.java
@@ -9836,6 +9886,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsReportingSettingsD
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsResolutionsAggregatesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsRoutingActivityQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsRoutingActivityQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsSummariesAggregatesJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsSummariesAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsSurveysAggregatesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsSurveysAggregatesJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsSurveysAggregatesQueryRequest.java
@@ -10331,6 +10383,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQuer
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsDatebasedRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsOncreateRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeStatusesRequest.java
@@ -10882,6 +10935,15 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentPossibleWorkShiftsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryAdherenceExplanationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryAdherenceExplanationsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueueTimeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryClause.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateCountsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateSegmentTypeCount.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateSessionFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateSessionQueryClause.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateSessionQueryPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateUserFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentTimeOffRequestPatch.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentUpdateAlternativeShiftTradeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentVideoSettings.java
@@ -10936,6 +10998,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/AlternativeShiftTradeResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlternativeShiftTradesViewResponseTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/AmazonLexRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentGroup.java
+src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentStateAgentResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentStateAgentSessionResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentStateCountsResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentStateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversationAsyncQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversationQueryResponse.java
@@ -12389,7 +12455,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmailColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationAnsweredEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationDispositionAppliedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationEndedEvent.java
-src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationRepliedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationSentMessageEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConversation.java
@@ -12606,6 +12671,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionCreateRequest
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganization.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationTrustorLink.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalSegment.java
@@ -14709,6 +14775,15 @@ src/main/java/com/mypurecloud/sdk/v2/model/SuggestionKnowledgeArticle.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionKnowledgeSearch.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionScript.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregateDataContainer.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregateQueryClause.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregateQueryFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregateQueryPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregateQueryResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregationQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAggregationView.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAsyncAggregateQueryResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryAsyncAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/SummaryGenerationConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterCompactCategoryModuleTemplate.java
@@ -15515,6 +15590,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmUserScheduleAdherenceUpdatedTopicU
 src/main/java/com/mypurecloud/sdk/v2/model/WfmVersionedEntityMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppAvailablePhoneNumberDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppAvailablePhoneNumberDetailsListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppEmbeddedSignupIntegrationActivationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WhatsAppEmbeddedSignupIntegrationRequest.java
@@ -15585,6 +15661,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkflowTargetSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Workitem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemChangeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemCreate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedConditionUpdate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedRuleCreate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedRuleListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDateBasedRuleUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemFlowReference.java

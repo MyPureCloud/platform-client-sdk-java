@@ -24,6 +24,10 @@ import com.mypurecloud.sdk.v2.model.WorkbinVersionListing;
 import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRule;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
 import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRule;
 import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleCreate;
@@ -63,6 +67,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeStatusRequest;
@@ -83,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersio
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRuleRequest;
@@ -98,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentR
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeStatusRequest;
@@ -110,6 +118,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsDatebasedRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
@@ -413,6 +422,85 @@ public class TaskManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTaskmanagementWorktype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsDatebasedRule(String worktypeId, String ruleId) throws IOException, ApiException {
+     deleteTaskmanagementWorktypeFlowsDatebasedRule(createDeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsDatebasedRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return deleteTaskmanagementWorktypeFlowsDatebasedRule(createDeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest createDeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest(String worktypeId, String ruleId) {
+    return DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsDatebasedRule(DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a date based rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsDatebasedRule(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2122,6 +2210,174 @@ public class TaskManagementApi {
   }
 
   /**
+   * Get a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule getTaskmanagementWorktypeFlowsDatebasedRule(String worktypeId, String ruleId) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsDatebasedRule(createGetTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Get a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemDateBasedRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> getTaskmanagementWorktypeFlowsDatebasedRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return getTaskmanagementWorktypeFlowsDatebasedRule(createGetTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsDatebasedRuleRequest createGetTaskmanagementWorktypeFlowsDatebasedRuleRequest(String worktypeId, String ruleId) {
+    return GetTaskmanagementWorktypeFlowsDatebasedRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Get a date based rule
+   * 
+   * @param request The request object
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule getTaskmanagementWorktypeFlowsDatebasedRule(GetTaskmanagementWorktypeFlowsDatebasedRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemDateBasedRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a date based rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> getTaskmanagementWorktypeFlowsDatebasedRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemDateBasedRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemDateBasedRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRuleListing getTaskmanagementWorktypeFlowsDatebasedRules(String worktypeId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsDatebasedRules(createGetTaskmanagementWorktypeFlowsDatebasedRulesRequest(worktypeId, after, pageSize));
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemDateBasedRuleListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRuleListing> getTaskmanagementWorktypeFlowsDatebasedRulesWithHttpInfo(String worktypeId, String after, Integer pageSize) throws IOException {
+    return getTaskmanagementWorktypeFlowsDatebasedRules(createGetTaskmanagementWorktypeFlowsDatebasedRulesRequest(worktypeId, after, pageSize).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsDatebasedRulesRequest createGetTaskmanagementWorktypeFlowsDatebasedRulesRequest(String worktypeId, String after, Integer pageSize) {
+    return GetTaskmanagementWorktypeFlowsDatebasedRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemDateBasedRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRuleListing getTaskmanagementWorktypeFlowsDatebasedRules(GetTaskmanagementWorktypeFlowsDatebasedRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemDateBasedRuleListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRuleListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all date based rules for a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRuleListing> getTaskmanagementWorktypeFlowsDatebasedRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemDateBasedRuleListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRuleListing> response = (ApiResponse<WorkitemDateBasedRuleListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRuleListing> response = (ApiResponse<WorkitemDateBasedRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get an attribute change rule
    * 
    * @param worktypeId Worktype id (required)
@@ -3389,6 +3645,92 @@ public class TaskManagementApi {
   }
 
   /**
+   * Update the attributes of a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule patchTaskmanagementWorktypeFlowsDatebasedRule(String worktypeId, String ruleId, WorkitemDateBasedRuleUpdate body) throws IOException, ApiException {
+    return  patchTaskmanagementWorktypeFlowsDatebasedRule(createPatchTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId, body));
+  }
+
+  /**
+   * Update the attributes of a date based rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemDateBasedRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> patchTaskmanagementWorktypeFlowsDatebasedRuleWithHttpInfo(String worktypeId, String ruleId, WorkitemDateBasedRuleUpdate body) throws IOException {
+    return patchTaskmanagementWorktypeFlowsDatebasedRule(createPatchTaskmanagementWorktypeFlowsDatebasedRuleRequest(worktypeId, ruleId, body).withHttpInfo());
+  }
+
+  private PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest createPatchTaskmanagementWorktypeFlowsDatebasedRuleRequest(String worktypeId, String ruleId, WorkitemDateBasedRuleUpdate body) {
+    return PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the attributes of a date based rule
+   * 
+   * @param request The request object
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule patchTaskmanagementWorktypeFlowsDatebasedRule(PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemDateBasedRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the attributes of a date based rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> patchTaskmanagementWorktypeFlowsDatebasedRule(ApiRequest<WorkitemDateBasedRuleUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemDateBasedRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the attributes of a rule
    * 
    * @param worktypeId Worktype id (required)
@@ -4352,6 +4694,88 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule postTaskmanagementWorktypeFlowsDatebasedRules(String worktypeId, WorkitemDateBasedRuleCreate body) throws IOException, ApiException {
+    return  postTaskmanagementWorktypeFlowsDatebasedRules(createPostTaskmanagementWorktypeFlowsDatebasedRulesRequest(worktypeId, body));
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemDateBasedRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> postTaskmanagementWorktypeFlowsDatebasedRulesWithHttpInfo(String worktypeId, WorkitemDateBasedRuleCreate body) throws IOException {
+    return postTaskmanagementWorktypeFlowsDatebasedRules(createPostTaskmanagementWorktypeFlowsDatebasedRulesRequest(worktypeId, body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorktypeFlowsDatebasedRulesRequest createPostTaskmanagementWorktypeFlowsDatebasedRulesRequest(String worktypeId, WorkitemDateBasedRuleCreate body) {
+    return PostTaskmanagementWorktypeFlowsDatebasedRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemDateBasedRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemDateBasedRule postTaskmanagementWorktypeFlowsDatebasedRules(PostTaskmanagementWorktypeFlowsDatebasedRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemDateBasedRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemDateBasedRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a date based rule to a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemDateBasedRule> postTaskmanagementWorktypeFlowsDatebasedRules(ApiRequest<WorkitemDateBasedRuleCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemDateBasedRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemDateBasedRule> response = (ApiResponse<WorkitemDateBasedRule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

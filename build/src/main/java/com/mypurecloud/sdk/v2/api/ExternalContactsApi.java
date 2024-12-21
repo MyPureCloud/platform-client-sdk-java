@@ -5864,12 +5864,13 @@ public class ExternalContactsApi {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ExternalContact postExternalcontactsIdentifierlookup(ContactIdentifier identifier, List<String> expand) throws IOException, ApiException {
     return  postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier, expand));
@@ -5877,11 +5878,12 @@ public class ExternalContactsApi {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupWithHttpInfo(ContactIdentifier identifier, List<String> expand) throws IOException {
     return postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier, expand).withHttpInfo());
@@ -5898,11 +5900,12 @@ public class ExternalContactsApi {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ExternalContact postExternalcontactsIdentifierlookup(PostExternalcontactsIdentifierlookupRequest request) throws IOException, ApiException {
     try {
@@ -5917,10 +5920,11 @@ public class ExternalContactsApi {
 
   /**
    * Fetch a contact using an identifier type and value.
-   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookup(ApiRequest<ContactIdentifier> request) throws IOException {
     try {

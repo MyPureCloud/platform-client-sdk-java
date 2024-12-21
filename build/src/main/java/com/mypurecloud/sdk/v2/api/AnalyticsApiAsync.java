@@ -21,6 +21,11 @@ import com.mypurecloud.sdk.v2.model.AgentCopilotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.AgentStateCountsRequest;
+import com.mypurecloud.sdk.v2.model.AgentStateQueryRequest;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateAgentResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateCountsResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -90,6 +95,10 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.SessionsResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SummaryAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
@@ -121,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJob
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowDivisionsReportingturnsRequest;
@@ -155,6 +165,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsDashboard
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsUserDashboardsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSummariesAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSummariesAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTaskmanagementAggregatesJobRequest;
@@ -171,6 +183,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusCountsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
@@ -200,6 +214,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboar
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesJobsRequest;
@@ -526,6 +542,83 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActionAsyncAggregateQueryResponse> response = (ApiResponse<ActionAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsAgentStateAgentResponse> getAnalyticsAgentStatusAsync(GetAnalyticsAgentStatusRequest request, final AsyncApiCallback<AnalyticsAgentStateAgentResponse> callback) {
+    try {
+      final SettableFuture<AnalyticsAgentStateAgentResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateAgentResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateAgentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateAgentResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsAgentStateAgentResponse>> getAnalyticsAgentStatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsAgentStateAgentResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsAgentStateAgentResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsAgentStateAgentResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateAgentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateAgentResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateAgentResponse> response = (ApiResponse<AnalyticsAgentStateAgentResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateAgentResponse> response = (ApiResponse<AnalyticsAgentStateAgentResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3126,6 +3219,160 @@ public class AnalyticsApiAsync {
   }
 
   /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsyncQueryStatus> getAnalyticsSummariesAggregatesJobAsync(GetAnalyticsSummariesAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
+    try {
+      final SettableFuture<AsyncQueryStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsSummariesAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsyncQueryStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsyncQueryStatus>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SummaryAsyncAggregateQueryResponse> getAnalyticsSummariesAggregatesJobResultsAsync(GetAnalyticsSummariesAggregatesJobResultsRequest request, final AsyncApiCallback<SummaryAsyncAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<SummaryAsyncAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SummaryAsyncAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SummaryAsyncAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SummaryAsyncAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SummaryAsyncAggregateQueryResponse>> getAnalyticsSummariesAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SummaryAsyncAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SummaryAsyncAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SummaryAsyncAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SummaryAsyncAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SummaryAsyncAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SummaryAsyncAggregateQueryResponse> response = (ApiResponse<SummaryAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SummaryAsyncAggregateQueryResponse> response = (ApiResponse<SummaryAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get status for async query for survey aggregates
    * 
    * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -4334,6 +4581,160 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentCopilotAggregateQueryResponse> response = (ApiResponse<AgentCopilotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsAgentStateCountsResponse> postAnalyticsAgentsStatusCountsAsync(PostAnalyticsAgentsStatusCountsRequest request, final AsyncApiCallback<AnalyticsAgentStateCountsResponse> callback) {
+    try {
+      final SettableFuture<AnalyticsAgentStateCountsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateCountsResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateCountsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateCountsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsAgentStateCountsResponse>> postAnalyticsAgentsStatusCountsAsync(ApiRequest<AgentStateCountsRequest> request, final AsyncApiCallback<ApiResponse<AnalyticsAgentStateCountsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsAgentStateCountsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsAgentStateCountsResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateCountsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateCountsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateCountsResponse> response = (ApiResponse<AnalyticsAgentStateCountsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateCountsResponse> response = (ApiResponse<AnalyticsAgentStateCountsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsAgentStateQueryResponse> postAnalyticsAgentsStatusQueryAsync(PostAnalyticsAgentsStatusQueryRequest request, final AsyncApiCallback<AnalyticsAgentStateQueryResponse> callback) {
+    try {
+      final SettableFuture<AnalyticsAgentStateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsAgentStateQueryResponse>> postAnalyticsAgentsStatusQueryAsync(ApiRequest<AgentStateQueryRequest> request, final AsyncApiCallback<ApiResponse<AnalyticsAgentStateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsAgentStateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsAgentStateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsAgentStateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsAgentStateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateQueryResponse> response = (ApiResponse<AnalyticsAgentStateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsAgentStateQueryResponse> response = (ApiResponse<AnalyticsAgentStateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6525,6 +6926,160 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsyncQueryResponse> postAnalyticsSummariesAggregatesJobsAsync(PostAnalyticsSummariesAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
+    try {
+      final SettableFuture<AsyncQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsSummariesAggregatesJobsAsync(ApiRequest<SummaryAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsyncQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsyncQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SummaryAggregateQueryResponse> postAnalyticsSummariesAggregatesQueryAsync(PostAnalyticsSummariesAggregatesQueryRequest request, final AsyncApiCallback<SummaryAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<SummaryAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SummaryAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SummaryAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SummaryAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SummaryAggregateQueryResponse>> postAnalyticsSummariesAggregatesQueryAsync(ApiRequest<SummaryAggregationQuery> request, final AsyncApiCallback<ApiResponse<SummaryAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SummaryAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SummaryAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SummaryAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SummaryAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SummaryAggregateQueryResponse> response = (ApiResponse<SummaryAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SummaryAggregateQueryResponse> response = (ApiResponse<SummaryAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -18,6 +18,11 @@ import com.mypurecloud.sdk.v2.model.AgentCopilotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.AgentStateCountsRequest;
+import com.mypurecloud.sdk.v2.model.AgentStateQueryRequest;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateAgentResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateCountsResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -87,6 +92,10 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.SessionsResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SummaryAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SummaryAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
@@ -118,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJob
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsAgentcopilotsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowDivisionsReportingturnsRequest;
@@ -152,6 +162,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsDashboard
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsUserDashboardsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSummariesAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSummariesAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTaskmanagementAggregatesJobRequest;
@@ -168,6 +180,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentcopilotsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusCountsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
@@ -197,6 +211,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboar
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesJobsRequest;
@@ -543,6 +559,88 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionAsyncAggregateQueryResponse> response = (ApiResponse<ActionAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @return AnalyticsAgentStateAgentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(String userId) throws IOException, ApiException {
+    return  getAnalyticsAgentStatus(createGetAnalyticsAgentStatusRequest(userId));
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @return AnalyticsAgentStateAgentResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateAgentResponse> getAnalyticsAgentStatusWithHttpInfo(String userId) throws IOException {
+    return getAnalyticsAgentStatus(createGetAnalyticsAgentStatusRequest(userId).withHttpInfo());
+  }
+
+  private GetAnalyticsAgentStatusRequest createGetAnalyticsAgentStatusRequest(String userId) {
+    return GetAnalyticsAgentStatusRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AnalyticsAgentStateAgentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(GetAnalyticsAgentStatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsAgentStateAgentResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateAgentResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an agent and their active sessions by user ID
+   * 
+   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateAgentResponse> getAnalyticsAgentStatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsAgentStateAgentResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateAgentResponse> response = (ApiResponse<AnalyticsAgentStateAgentResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateAgentResponse> response = (ApiResponse<AnalyticsAgentStateAgentResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3452,6 +3550,174 @@ public class AnalyticsApi {
   }
 
   /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsSummariesAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsSummariesAggregatesJob(createGetAnalyticsSummariesAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsSummariesAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsSummariesAggregatesJob(createGetAnalyticsSummariesAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsSummariesAggregatesJobRequest createGetAnalyticsSummariesAggregatesJobRequest(String jobId) {
+    return GetAnalyticsSummariesAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsSummariesAggregatesJob(GetAnalyticsSummariesAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for summary aggregates
+   * 
+   * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsSummariesAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SummaryAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummaryAsyncAggregateQueryResponse getAnalyticsSummariesAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsSummariesAggregatesJobResults(createGetAnalyticsSummariesAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SummaryAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummaryAsyncAggregateQueryResponse> getAnalyticsSummariesAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsSummariesAggregatesJobResults(createGetAnalyticsSummariesAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsSummariesAggregatesJobResultsRequest createGetAnalyticsSummariesAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsSummariesAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SummaryAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummaryAsyncAggregateQueryResponse getAnalyticsSummariesAggregatesJobResults(GetAnalyticsSummariesAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummaryAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummaryAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummaryAsyncAggregateQueryResponse> getAnalyticsSummariesAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummaryAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummaryAsyncAggregateQueryResponse> response = (ApiResponse<SummaryAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummaryAsyncAggregateQueryResponse> response = (ApiResponse<SummaryAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get status for async query for survey aggregates
    * 
    * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -4755,6 +5021,170 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentCopilotAggregateQueryResponse> response = (ApiResponse<AgentCopilotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AnalyticsAgentStateCountsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(AgentStateCountsRequest body) throws IOException, ApiException {
+    return  postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body));
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AnalyticsAgentStateCountsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateCountsResponse> postAnalyticsAgentsStatusCountsWithHttpInfo(AgentStateCountsRequest body) throws IOException {
+    return postAnalyticsAgentsStatusCounts(createPostAnalyticsAgentsStatusCountsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsAgentsStatusCountsRequest createPostAnalyticsAgentsStatusCountsRequest(AgentStateCountsRequest body) {
+    return PostAnalyticsAgentsStatusCountsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AnalyticsAgentStateCountsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(PostAnalyticsAgentsStatusCountsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsAgentStateCountsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateCountsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Count agents by segment type
+   * 
+   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateCountsResponse> postAnalyticsAgentsStatusCounts(ApiRequest<AgentStateCountsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsAgentStateCountsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateCountsResponse> response = (ApiResponse<AnalyticsAgentStateCountsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateCountsResponse> response = (ApiResponse<AnalyticsAgentStateCountsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AnalyticsAgentStateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(AgentStateQueryRequest body) throws IOException, ApiException {
+    return  postAnalyticsAgentsStatusQuery(createPostAnalyticsAgentsStatusQueryRequest(body));
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AnalyticsAgentStateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateQueryResponse> postAnalyticsAgentsStatusQueryWithHttpInfo(AgentStateQueryRequest body) throws IOException {
+    return postAnalyticsAgentsStatusQuery(createPostAnalyticsAgentsStatusQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsAgentsStatusQueryRequest createPostAnalyticsAgentsStatusQueryRequest(AgentStateQueryRequest body) {
+    return PostAnalyticsAgentsStatusQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AnalyticsAgentStateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(PostAnalyticsAgentsStatusQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsAgentStateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsAgentStateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the top 50 agents matching the query filters
+   * 
+   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsAgentStateQueryResponse> postAnalyticsAgentsStatusQuery(ApiRequest<AgentStateQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsAgentStateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateQueryResponse> response = (ApiResponse<AnalyticsAgentStateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsAgentStateQueryResponse> response = (ApiResponse<AnalyticsAgentStateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7071,6 +7501,170 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(SummaryAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsSummariesAggregatesJobs(createPostAnalyticsSummariesAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsSummariesAggregatesJobsWithHttpInfo(SummaryAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsSummariesAggregatesJobs(createPostAnalyticsSummariesAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsSummariesAggregatesJobsRequest createPostAnalyticsSummariesAggregatesJobsRequest(SummaryAsyncAggregationQuery body) {
+    return PostAnalyticsSummariesAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(PostAnalyticsSummariesAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for summary aggregates asynchronously
+   * 
+   * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsSummariesAggregatesJobs(ApiRequest<SummaryAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return SummaryAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(SummaryAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsSummariesAggregatesQuery(createPostAnalyticsSummariesAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return SummaryAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummaryAggregateQueryResponse> postAnalyticsSummariesAggregatesQueryWithHttpInfo(SummaryAggregationQuery body) throws IOException {
+    return postAnalyticsSummariesAggregatesQuery(createPostAnalyticsSummariesAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsSummariesAggregatesQueryRequest createPostAnalyticsSummariesAggregatesQueryRequest(SummaryAggregationQuery body) {
+    return PostAnalyticsSummariesAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SummaryAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(PostAnalyticsSummariesAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummaryAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummaryAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for summary aggregates
+   * 
+   * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummaryAggregateQueryResponse> postAnalyticsSummariesAggregatesQuery(ApiRequest<SummaryAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummaryAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummaryAggregateQueryResponse> response = (ApiResponse<SummaryAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummaryAggregateQueryResponse> response = (ApiResponse<SummaryAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

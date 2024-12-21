@@ -8336,7 +8336,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -8349,7 +8349,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -8370,7 +8370,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param request The request object
    * @return QueueMemberEntityListing
@@ -8389,7 +8389,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param request The request object
    * @return the response

@@ -280,7 +280,8 @@ public class GetOutboundMessagingcampaignsRequest {
 
 	public enum typeValues { 
 		EMAIL("EMAIL"),
-		SMS("SMS");
+		SMS("SMS"),
+		WHATSAPP("WHATSAPP");
 
 		private String value;
 

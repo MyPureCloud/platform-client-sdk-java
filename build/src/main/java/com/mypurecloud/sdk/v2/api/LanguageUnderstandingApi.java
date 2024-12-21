@@ -1851,7 +1851,6 @@ public class LanguageUnderstandingApi {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return NluOrganization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1863,7 +1862,6 @@ public class LanguageUnderstandingApi {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return NluOrganization
    * @throws IOException if the request fails to be processed
    */
@@ -1879,7 +1877,6 @@ public class LanguageUnderstandingApi {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NluOrganization
    * @throws ApiException if the request fails on the server
@@ -1899,7 +1896,6 @@ public class LanguageUnderstandingApi {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

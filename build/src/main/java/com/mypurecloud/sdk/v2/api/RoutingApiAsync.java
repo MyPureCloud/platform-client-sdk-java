@@ -7564,7 +7564,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7598,7 +7598,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * Join or unjoin a set of up to 100 users for a queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

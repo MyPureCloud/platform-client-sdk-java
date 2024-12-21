@@ -1480,6 +1480,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:delete
 * outbound:emailCampaign:delete
+* outbound:whatsAppCampaign:delete
 
 ### Example
 
@@ -1541,9 +1542,11 @@ Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:edit
-* outbound:emailCampaign:edit
 * outbound:messagingCampaign:recycle
+* outbound:emailCampaign:edit
 * outbound:emailCampaign:recycle
+* outbound:whatsAppCampaign:edit
+* outbound:whatsAppCampaign:recycle
 
 ### Example
 
@@ -5223,6 +5226,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -5283,6 +5287,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -5343,6 +5348,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -5403,6 +5409,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -5457,7 +5464,7 @@ try {
 | **name** | **String**| Name | [optional] 
 | **contactListId** | **String**| Contact List ID | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
-| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
+| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS, WHATSAPP 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 | **id** | [**List&lt;String&gt;**](String)| A list of messaging campaign ids to bulk fetch | [optional] 
 {: class="table-striped"}
@@ -5593,7 +5600,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
-| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
+| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS, WHATSAPP 
 | **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 {: class="table-striped"}
@@ -8732,6 +8739,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:start
 * outbound:emailCampaign:start
+* outbound:whatsAppCampaign:start
 
 ### Example
 
@@ -8793,6 +8801,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:stop
 * outbound:emailCampaign:stop
+* outbound:whatsAppCampaign:stop
 
 ### Example
 
@@ -8852,6 +8861,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:add
 * outbound:emailCampaign:add
+* outbound:whatsAppCampaign:add
 
 ### Example
 
@@ -9949,6 +9959,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
 * outbound:emailCampaign:edit
+* outbound:whatsAppCampaign:edit
 
 ### Example
 
@@ -10423,4 +10434,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

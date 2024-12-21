@@ -55,7 +55,17 @@ public class FlowPathsElement  implements Serializable {
     OUTCOME("Outcome"),
     RECOGNITIONFAILURE("RecognitionFailure"),
     ROOT("Root"),
-    TRANSFERTOACD("TransferToAcd");
+    TRANSFERRETURNTOAGENT("TransferReturnToAgent"),
+    TRANSFERTOACD("TransferToAcd"),
+    TRANSFERTOACDVOICEMAIL("TransferToAcdVoicemail"),
+    TRANSFERTOFLOW("TransferToFlow"),
+    TRANSFERTOGROUP("TransferToGroup"),
+    TRANSFERTOGROUPVOICEMAIL("TransferToGroupVoicemail"),
+    TRANSFERTONUMBER("TransferToNumber"),
+    TRANSFERTOSECUREFLOW("TransferToSecureFlow"),
+    TRANSFERTOUNKNOWN("TransferToUnknown"),
+    TRANSFERTOUSER("TransferToUser"),
+    TRANSFERTOUSERVOICEMAIL("TransferToUserVoicemail");
 
     private String value;
 

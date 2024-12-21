@@ -207,7 +207,8 @@ public class GetOutboundMessagingcampaignsDivisionviewsRequest {
 
 	public enum typeValues { 
 		EMAIL("EMAIL"),
-		SMS("SMS");
+		SMS("SMS"),
+		WHATSAPP("WHATSAPP");
 
 		private String value;
 

@@ -1671,7 +1671,6 @@ public class LanguageUnderstandingApiAsync {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1706,7 +1705,6 @@ public class LanguageUnderstandingApiAsync {
   /**
    * Get Organization Configuration
    * 
-   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
