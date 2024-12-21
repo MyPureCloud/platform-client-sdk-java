@@ -28,7 +28,17 @@
 | OUTCOME | &quot;Outcome&quot; | 
 | RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
 | ROOT | &quot;Root&quot; | 
+| TRANSFERRETURNTOAGENT | &quot;TransferReturnToAgent&quot; | 
 | TRANSFERTOACD | &quot;TransferToAcd&quot; | 
+| TRANSFERTOACDVOICEMAIL | &quot;TransferToAcdVoicemail&quot; | 
+| TRANSFERTOFLOW | &quot;TransferToFlow&quot; | 
+| TRANSFERTOGROUP | &quot;TransferToGroup&quot; | 
+| TRANSFERTOGROUPVOICEMAIL | &quot;TransferToGroupVoicemail&quot; | 
+| TRANSFERTONUMBER | &quot;TransferToNumber&quot; | 
+| TRANSFERTOSECUREFLOW | &quot;TransferToSecureFlow&quot; | 
+| TRANSFERTOUNKNOWN | &quot;TransferToUnknown&quot; | 
+| TRANSFERTOUSER | &quot;TransferToUser&quot; | 
+| TRANSFERTOUSERVOICEMAIL | &quot;TransferToUserVoicemail&quot; | 
 
 
 ## Enum: FlowOutcomeValueEnum
@@ -43,4 +53,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

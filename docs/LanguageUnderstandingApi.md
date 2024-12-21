@@ -1360,8 +1360,6 @@ try {
 
 Get Organization Configuration
 
-getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/languageunderstanding/settings  
 
 Requires ANY permissions: 
@@ -2154,4 +2152,4 @@ try {
 [**NluDomainVersion**](NluDomainVersion)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

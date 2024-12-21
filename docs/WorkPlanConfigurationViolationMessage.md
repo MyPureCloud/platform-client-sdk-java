@@ -37,9 +37,11 @@
 | MAXDAYSOFFPERPLANNINGPERIODNOTCORRECT | &quot;MaxDaysOffPerPlanningPeriodNotCorrect&quot; | 
 | MAXPAIDTIMEISMORETHANSHIFTLENGTH | &quot;MaxPaidTimeIsMoreThanShiftLength&quot; | 
 | MAXPAIDTIMENOTDIVISIBLEBYGRANULARITY | &quot;MaxPaidTimeNotDivisibleByGranularity&quot; | 
+| MAXPAIDTIMEPERMONTHLYPLANNINGPERIOD | &quot;MaxPaidTimePerMonthlyPlanningPeriod&quot; | 
 | MAXPAIDTIMEPERPLANNINGPERIOD | &quot;MaxPaidTimePerPlanningPeriod&quot; | 
 | MAXSHIFTS | &quot;MaxShifts&quot; | 
 | MINPAIDTIMENOTDIVISIBLEBYGRANULARITY | &quot;MinPaidTimeNotDivisibleByGranularity&quot; | 
+| MINPAIDTIMEPERMONTHLYPLANNINGPERIOD | &quot;MinPaidTimePerMonthlyPlanningPeriod&quot; | 
 | MINPAIDTIMEPERPLANNINGPERIOD | &quot;MinPaidTimePerPlanningPeriod&quot; | 
 | NOSHIFTS | &quot;NoShifts&quot; | 
 | PAIDTIMEGREATERTHANMAXWORKTIME | &quot;PaidTimeGreaterThanMaxWorkTime&quot; | 
@@ -63,4 +65,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

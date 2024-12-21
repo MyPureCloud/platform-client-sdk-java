@@ -49,6 +49,7 @@
 | PT_BR | &quot;pt-br&quot; | 
 | IT_IT | &quot;it-it&quot; | 
 | NL_NL | &quot;nl-nl&quot; | 
+| DE_CH | &quot;de-ch&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -108,4 +109,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

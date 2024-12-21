@@ -101,7 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | Validate domain settings |
 | [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
-| [**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
+| [**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | Join or unjoin a set of up to 100 users for a queue |
 | [**patchRoutingQueueUser**](RoutingApi#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
 | [**patchRoutingQueueUsers**](RoutingApi#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**patchRoutingSettingsContactcenter**](RoutingApi#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
@@ -5577,8 +5577,6 @@ Wraps GET /api/v2/users/{userId}/queues
 Requires ANY permissions: 
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example
 
@@ -6142,7 +6140,7 @@ null (empty response body)
 
 > [QueueMemberEntityListing](QueueMemberEntityListing) patchRoutingQueueMembers(queueId, body)
 
-Join or unjoin a set of users for a queue
+Join or unjoin a set of up to 100 users for a queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members  
 
@@ -9360,4 +9358,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_

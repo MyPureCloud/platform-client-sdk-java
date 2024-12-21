@@ -32,6 +32,7 @@
 | SALESAMOUNTVALUE | &quot;SalesAmountValue&quot; | 
 | RETENTIONRATEVALUE | &quot;RetentionRateValue&quot; | 
 | CHURNRATEVALUE | &quot;ChurnRateValue&quot; | 
+| NEXTCONTACTAVOIDANCERATEVALUE | &quot;NextContactAvoidanceRateValue&quot; | 
 | INTERACTIONVOLUME | &quot;InteractionVolume&quot; | 
 | USERVARIANCE | &quot;UserVariance&quot; | 
 | DATACOVERAGE | &quot;DataCoverage&quot; | 
@@ -40,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
