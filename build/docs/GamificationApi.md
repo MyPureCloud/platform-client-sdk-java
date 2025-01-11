@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | Get insights overall trend for the current user |
 | [**getGamificationInsightsGroupsTrendsAll**](GamificationApi#getGamificationInsightsGroupsTrendsAll) | Get insights overall trend |
 | [**getGamificationInsightsMembers**](GamificationApi#getGamificationInsightsMembers) | Query users in a profile during a period of time |
+| [**getGamificationInsightsRankings**](GamificationApi#getGamificationInsightsRankings) | Get insights rankings |
 | [**getGamificationInsightsTrends**](GamificationApi#getGamificationInsightsTrends) | Get insights user trend for the current user |
 | [**getGamificationInsightsUserDetails**](GamificationApi#getGamificationInsightsUserDetails) | Get insights details for the user |
 | [**getGamificationInsightsUserTrends**](GamificationApi#getGamificationInsightsUserTrends) | Get insights user trend for the user |
@@ -599,6 +600,81 @@ try {
 ### Return type
 
 [**InsightsAgents**](InsightsAgents)
+
+
+# **getGamificationInsightsRankings**
+
+
+> [InsightsRankings](InsightsRankings) getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds)
+
+Get insights rankings
+
+Wraps GET /api/v2/gamification/insights/rankings  
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String filterType = "filterType_example"; // String | Filter type for the query request.
+String filterId = "filterId_example"; // String | ID for the filter type.
+String granularity = "granularity_example"; // String | Granularity
+LocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String sortKey = "sortKey_example"; // String | Sort key
+String sortMetricId = "sortMetricId_example"; // String | Sort Metric Id
+Integer sectionSize = 56; // Integer | The number of top and bottom users to return before ties
+String userIds = "userIds_example"; // String | A list of up to 100 comma-separated user Ids
+try {
+    InsightsRankings result = apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationInsightsRankings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
+| **filterId** | **String**| ID for the filter type. | 
+| **granularity** | **String**| Granularity |<br />**Values**: Weekly, Monthly 
+| **comparativePeriodStartWorkday** | **LocalDate**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **primaryPeriodStartWorkday** | **LocalDate**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **sortKey** | **String**| Sort key |<br />**Values**: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange 
+| **sortMetricId** | **String**| Sort Metric Id | [optional] 
+| **sectionSize** | **Integer**| The number of top and bottom users to return before ties | [optional] 
+| **userIds** | **String**| A list of up to 100 comma-separated user Ids | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InsightsRankings**](InsightsRankings)
 
 
 # **getGamificationInsightsTrends**
@@ -4018,4 +4094,4 @@ try {
 [**GamificationStatus**](GamificationStatus)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

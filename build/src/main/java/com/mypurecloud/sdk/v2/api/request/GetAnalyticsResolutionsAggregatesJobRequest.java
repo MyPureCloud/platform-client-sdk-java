@@ -97,6 +97,8 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;

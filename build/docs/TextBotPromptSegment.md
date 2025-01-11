@@ -18,8 +18,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT | &quot;Text&quot; | 
 | RICHMEDIA | &quot;RichMedia&quot; | 
+| MESSAGEEVENT | &quot;MessageEvent&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

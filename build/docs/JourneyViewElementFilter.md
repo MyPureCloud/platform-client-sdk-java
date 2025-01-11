@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Boolean operation to apply to the provided predicates and clauses. Valid values: And |  |
 | **predicates** | [**List&lt;JourneyViewElementFilterPredicate&gt;**](JourneyViewElementFilterPredicate) | predicates |  [optional] |
+| **numberPredicates** | [**List&lt;JourneyViewElementFilterNumberPredicate&gt;**](JourneyViewElementFilterNumberPredicate) | numberPredicates |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -19,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

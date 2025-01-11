@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JourneyViewElementFilterNumberPredicate;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementFilterPredicate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -74,6 +75,7 @@ public class JourneyViewElementFilter  implements Serializable {
   }
   private TypeEnum type = null;
   private List<JourneyViewElementFilterPredicate> predicates = new ArrayList<JourneyViewElementFilterPredicate>();
+  private List<JourneyViewElementFilterNumberPredicate> numberPredicates = new ArrayList<JourneyViewElementFilterNumberPredicate>();
 
   
   /**
@@ -112,6 +114,24 @@ public class JourneyViewElementFilter  implements Serializable {
   }
 
 
+  /**
+   * numberPredicates
+   **/
+  public JourneyViewElementFilter numberPredicates(List<JourneyViewElementFilterNumberPredicate> numberPredicates) {
+    this.numberPredicates = numberPredicates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "numberPredicates")
+  @JsonProperty("numberPredicates")
+  public List<JourneyViewElementFilterNumberPredicate> getNumberPredicates() {
+    return numberPredicates;
+  }
+  public void setNumberPredicates(List<JourneyViewElementFilterNumberPredicate> numberPredicates) {
+    this.numberPredicates = numberPredicates;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,12 +143,13 @@ public class JourneyViewElementFilter  implements Serializable {
     JourneyViewElementFilter journeyViewElementFilter = (JourneyViewElementFilter) o;
 
     return Objects.equals(this.type, journeyViewElementFilter.type) &&
-            Objects.equals(this.predicates, journeyViewElementFilter.predicates);
+            Objects.equals(this.predicates, journeyViewElementFilter.predicates) &&
+            Objects.equals(this.numberPredicates, journeyViewElementFilter.numberPredicates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, predicates);
+    return Objects.hash(type, predicates, numberPredicates);
   }
 
   @Override
@@ -138,6 +159,7 @@ public class JourneyViewElementFilter  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    numberPredicates: ").append(toIndentedString(numberPredicates)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
 import com.mypurecloud.sdk.v2.model.InsightsAgents;
 import com.mypurecloud.sdk.v2.model.InsightsDetails;
+import com.mypurecloud.sdk.v2.model.InsightsRankings;
 import com.mypurecloud.sdk.v2.model.InsightsSummary;
 import com.mypurecloud.sdk.v2.model.InsightsTrend;
 import com.mypurecloud.sdk.v2.model.Leaderboard;

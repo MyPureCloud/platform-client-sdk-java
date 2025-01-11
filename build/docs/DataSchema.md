@@ -25,8 +25,9 @@
 | EXTERNAL_ORGANIZATION | &quot;EXTERNAL_ORGANIZATION&quot; |
 | OPEN_ACTION | &quot;OPEN_ACTION&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
+| DECISION_TABLE | &quot;DECISION_TABLE&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

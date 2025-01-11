@@ -12,7 +12,7 @@
 -Xdoclint:none
 -author
 -bottom
-'Copyright &#169; 2024. All rights reserved.'
+'Copyright &#169; 2025. All rights reserved.'
 -charset
 'UTF-8'
 -d
@@ -21,12 +21,12 @@
 'UTF-8'
 -Xdoclint:none
 -doctitle
-'platform-client-v2 217.0.0 API'
+'platform-client-v2 217.1.0 API'
 -linkoffline
 'https://docs.oracle.com/javase/8/docs/api' '/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/javadoc-bundle-options'
 -use
 -windowtitle
-'platform-client-v2 217.0.0 API'
+'platform-client-v2 217.1.0 API'
 com.mypurecloud.sdk.v2.model
 com.mypurecloud.sdk.v2.api
 com.mypurecloud.sdk.v2.api.request
@@ -38,7 +38,7 @@ com.mypurecloud.sdk.v2.connector.ning
 com.mypurecloud.sdk.v2.connector.okhttp
 com.mypurecloud.sdk.v2.extensions
 com.mypurecloud.sdk.v2.extensions.notifications
-/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.14/swagger-annotations-1.6.14.jar = 1734770092009
+/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.14/swagger-annotations-1.6.14.jar = 1736580596937
 /home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar = 1536758932000
 /home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar = 1504739599000
 /home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar = 1723281306000
@@ -46,50 +46,50 @@ com.mypurecloud.sdk.v2.extensions.notifications
 /home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar = 1669833653000
 /home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar = 1669455900000
 /home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar = 1404583920000
-/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar = 1734770092197
-/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1734770092453
-/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1734770092085
-/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1734770092261
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1734770092229
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1734770092153
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1734770092773
-/home/jenkins/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar = 1734770092225
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1734770092261
+/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar = 1508252044000
+/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1697509437000
+/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1696213723000
+/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1696213713000
+/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1692781294000
+/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1736580596989
+/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1736580597653
+/home/jenkins/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar = 1387282200000
+/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1736580596993
 /home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/2.12.3/async-http-client-2.12.3.jar = 1616858917000
 /home/jenkins/.m2/repository/org/asynchttpclient/async-http-client-netty-utils/2.12.3/async-http-client-netty-utils-2.12.3.jar = 1616858707000
-/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.60.Final/netty-codec-http-4.1.60.Final.jar = 1734770092625
-/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.60.Final/netty-handler-4.1.60.Final.jar = 1734770092609
-/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.60.Final/netty-codec-socks-4.1.60.Final.jar = 1734770092421
-/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.60.Final/netty-handler-proxy-4.1.60.Final.jar = 1734770092449
-/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.1.60.Final/netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar = 1734770092601
-/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.60.Final/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar = 1734770092537
-/home/jenkins/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar = 1734770092605
+/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.60.Final/netty-codec-http-4.1.60.Final.jar = 1736580597301
+/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.60.Final/netty-handler-4.1.60.Final.jar = 1736580597253
+/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.60.Final/netty-codec-socks-4.1.60.Final.jar = 1736580597029
+/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.60.Final/netty-handler-proxy-4.1.60.Final.jar = 1736580597009
+/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.1.60.Final/netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar = 1615278722000
+/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.60.Final/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar = 1615279865000
+/home/jenkins/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar = 1566550189000
 /home/jenkins/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar = 1574135230000
-/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar = 1734770092629
-/home/jenkins/.m2/repository/io/netty/netty-all/4.1.113.Final/netty-all-4.1.113.Final.jar = 1734772999896
-/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.113.Final/netty-buffer-4.1.113.Final.jar = 1734773000000
-/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.113.Final/netty-codec-4.1.113.Final.jar = 1734773000108
-/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.1.113.Final/netty-codec-dns-4.1.113.Final.jar = 1734772999988
-/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.1.113.Final/netty-codec-haproxy-4.1.113.Final.jar = 1734772999952
-/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.1.113.Final/netty-codec-http2-4.1.113.Final.jar = 1734773000188
-/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.1.113.Final/netty-codec-memcache-4.1.113.Final.jar = 1734772999976
-/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.1.113.Final/netty-codec-mqtt-4.1.113.Final.jar = 1734773000060
-/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.1.113.Final/netty-codec-redis-4.1.113.Final.jar = 1734773000024
-/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.1.113.Final/netty-codec-smtp-4.1.113.Final.jar = 1734773000040
-/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.1.113.Final/netty-codec-stomp-4.1.113.Final.jar = 1734773000064
-/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.1.113.Final/netty-codec-xml-4.1.113.Final.jar = 1734773000072
-/home/jenkins/.m2/repository/io/netty/netty-common/4.1.113.Final/netty-common-4.1.113.Final.jar = 1734773000416
-/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.113.Final/netty-transport-native-unix-common-4.1.113.Final.jar = 1734773000120
-/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.1.113.Final/netty-handler-ssl-ocsp-4.1.113.Final.jar = 1734773000092
-/home/jenkins/.m2/repository/io/netty/netty-resolver/4.1.113.Final/netty-resolver-4.1.113.Final.jar = 1734773000136
-/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.113.Final/netty-resolver-dns-4.1.113.Final.jar = 1734773000180
-/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.113.Final/netty-transport-4.1.113.Final.jar = 1734773000316
-/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.1.113.Final/netty-transport-rxtx-4.1.113.Final.jar = 1734773000188
-/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.1.113.Final/netty-transport-sctp-4.1.113.Final.jar = 1734773000228
-/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.1.113.Final/netty-transport-udt-4.1.113.Final.jar = 1734773000240
-/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.113.Final/netty-transport-classes-epoll-4.1.113.Final.jar = 1734773000252
-/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.113.Final/netty-transport-classes-kqueue-4.1.113.Final.jar = 1734773000264
-/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.113.Final/netty-resolver-dns-classes-macos-4.1.113.Final.jar = 1734773000264
+/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar = 1582223854000
+/home/jenkins/.m2/repository/io/netty/netty-all/4.1.113.Final/netty-all-4.1.113.Final.jar = 1736583668689
+/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.113.Final/netty-buffer-4.1.113.Final.jar = 1736583668785
+/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.113.Final/netty-codec-4.1.113.Final.jar = 1736583669021
+/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.1.113.Final/netty-codec-dns-4.1.113.Final.jar = 1736583668817
+/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.1.113.Final/netty-codec-haproxy-4.1.113.Final.jar = 1736583668781
+/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.1.113.Final/netty-codec-http2-4.1.113.Final.jar = 1736583669081
+/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.1.113.Final/netty-codec-memcache-4.1.113.Final.jar = 1736583668813
+/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.1.113.Final/netty-codec-mqtt-4.1.113.Final.jar = 1736583668925
+/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.1.113.Final/netty-codec-redis-4.1.113.Final.jar = 1736583668889
+/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.1.113.Final/netty-codec-smtp-4.1.113.Final.jar = 1736583668893
+/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.1.113.Final/netty-codec-stomp-4.1.113.Final.jar = 1736583668981
+/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.1.113.Final/netty-codec-xml-4.1.113.Final.jar = 1736583668933
+/home/jenkins/.m2/repository/io/netty/netty-common/4.1.113.Final/netty-common-4.1.113.Final.jar = 1736583669277
+/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.113.Final/netty-transport-native-unix-common-4.1.113.Final.jar = 1736583669037
+/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.1.113.Final/netty-handler-ssl-ocsp-4.1.113.Final.jar = 1736583668993
+/home/jenkins/.m2/repository/io/netty/netty-resolver/4.1.113.Final/netty-resolver-4.1.113.Final.jar = 1736583669077
+/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.113.Final/netty-resolver-dns-4.1.113.Final.jar = 1736583669105
+/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.113.Final/netty-transport-4.1.113.Final.jar = 1736583669301
+/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.1.113.Final/netty-transport-rxtx-4.1.113.Final.jar = 1736583669097
+/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.1.113.Final/netty-transport-sctp-4.1.113.Final.jar = 1736583669113
+/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.1.113.Final/netty-transport-udt-4.1.113.Final.jar = 1736583669121
+/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.113.Final/netty-transport-classes-epoll-4.1.113.Final.jar = 1736583669237
+/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.113.Final/netty-transport-classes-kqueue-4.1.113.Final.jar = 1736583669253
+/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.113.Final/netty-resolver-dns-classes-macos-4.1.113.Final.jar = 1736583669209
 /home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar = 1643278662000
 /home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar = 1313799071000
 /home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar = 1720199024000
@@ -99,36 +99,36 @@ com.mypurecloud.sdk.v2.extensions.notifications
 /home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.17.2/jackson-jaxrs-base-2.17.2.jar = 1720203134000
 /home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.17.2/jackson-module-jaxb-annotations-2.17.2.jar = 1720200757000
 /home/jenkins/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar = 1580117728000
-/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1734770093297
+/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1582223866000
 /home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.17.2/jackson-datatype-joda-2.17.2.jar = 1720202100000
-/home/jenkins/.m2/repository/joda-time/joda-time/2.13.0/joda-time-2.13.0.jar = 1734770093565
+/home/jenkins/.m2/repository/joda-time/joda-time/2.13.0/joda-time-2.13.0.jar = 1736566387043
 /home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar = 1398270780000
 /home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar = 1615855178000
-/home/jenkins/.m2/repository/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar = 1734770093905
+/home/jenkins/.m2/repository/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar = 1736580598301
 /home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar = 1697548569000
 /home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1536694843000
 /home/jenkins/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar = 1490936147000
-/home/jenkins/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar = 1734770093449
-/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar = 1734770093405
+/home/jenkins/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar = 1736580597917
+/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar = 1736580597873
 /home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar = 1710004379000
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java = 1734772725425
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/generated-sources/annotations = 1734773002244
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/element-list = 1734773479136
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1734773482656
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1734773504636
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1734773504664
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index.html = 1734773504664
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1734773546100
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1734773546104
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1734773546104
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1734773546104
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1734773546120
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1734773546436
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1734773546436
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index-all.html = 1734773550952
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1734773550956
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1734773550956
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1734773550960
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/script.js = 1734773550960
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/search.js = 1734773550960
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1734773550964
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java = 1736583317662
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/generated-sources/annotations = 1736583672605
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/element-list = 1736584095929
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1736584099157
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1736584118849
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1736584118885
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index.html = 1736584118889
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1736584158881
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1736584158885
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1736584158885
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1736584158885
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1736584158897
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1736584159133
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1736584159133
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index-all.html = 1736584163777
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1736584163777
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1736584163781
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1736584163781
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/script.js = 1736584163781
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/search.js = 1736584163785
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1736584163785

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContestCompleteData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -45,7 +46,11 @@ public class SourceEntity  implements Serializable {
     THANKYOU("ThankYou"),
     CONGRATULATIONS("Congratulations"),
     HIGHPERFORMANCE("HighPerformance"),
-    COMPANYVALUES("CompanyValues");
+    COMPANYVALUES("CompanyValues"),
+    COMPETITION("Competition"),
+    RACE("Race"),
+    RAFFLE("Raffle"),
+    TEAMGOAL("TeamGoal");
 
     private String value;
 
@@ -73,6 +78,7 @@ public class SourceEntity  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private ContestCompleteData contestCompleteData = null;
   private String selfUri = null;
 
   
@@ -101,6 +107,24 @@ public class SourceEntity  implements Serializable {
   }
 
 
+  /**
+   * The contest data - Only supplied when celebration is of type ContestComplete
+   **/
+  public SourceEntity contestCompleteData(ContestCompleteData contestCompleteData) {
+    this.contestCompleteData = contestCompleteData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The contest data - Only supplied when celebration is of type ContestComplete")
+  @JsonProperty("contestCompleteData")
+  public ContestCompleteData getContestCompleteData() {
+    return contestCompleteData;
+  }
+  public void setContestCompleteData(ContestCompleteData contestCompleteData) {
+    this.contestCompleteData = contestCompleteData;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -120,12 +144,13 @@ public class SourceEntity  implements Serializable {
 
     return Objects.equals(this.id, sourceEntity.id) &&
             Objects.equals(this.type, sourceEntity.type) &&
+            Objects.equals(this.contestCompleteData, sourceEntity.contestCompleteData) &&
             Objects.equals(this.selfUri, sourceEntity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, selfUri);
+    return Objects.hash(id, type, contestCompleteData, selfUri);
   }
 
   @Override
@@ -135,6 +160,7 @@ public class SourceEntity  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contestCompleteData: ").append(toIndentedString(contestCompleteData)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

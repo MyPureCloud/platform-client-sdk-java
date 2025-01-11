@@ -45,7 +45,8 @@ public class MessageEvaluation  implements Serializable {
   public enum MessageTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("Sms"),
-    EMAIL("Email");
+    EMAIL("Email"),
+    WHATSAPP("WhatsApp");
 
     private String value;
 

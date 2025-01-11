@@ -95,6 +95,9 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastGetSessionResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
@@ -290,6 +293,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlte
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
@@ -3983,6 +3989,264 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmIntradayPlanningGroupListing> response = (ApiResponse<WfmIntradayPlanningGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @return ContinuousForecastGetSessionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastGetSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest(businessUnitId));
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @return ContinuousForecastGetSessionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastGetSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ContinuousForecastGetSessionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastGetSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContinuousForecastGetSessionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContinuousForecastGetSessionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastGetSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContinuousForecastGetSessionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @param sessionId  (required)
+   * @return ContinuousForecastSessionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(String businessUnitId, String sessionId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest(businessUnitId, sessionId));
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @param sessionId  (required)
+   * @return ContinuousForecastSessionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdWithHttpInfo(String businessUnitId, String sessionId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest(businessUnitId, sessionId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest(String businessUnitId, String sessionId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withSessionId(sessionId)
+
+            .build();
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ContinuousForecastSessionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContinuousForecastSessionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContinuousForecastSessionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContinuousForecastSessionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastSessionResponse> response = (ApiResponse<ContinuousForecastSessionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastSessionResponse> response = (ApiResponse<ContinuousForecastSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @param sessionId  (required)
+   * @param snapshotId  (required)
+   * @return ContinuousForecastSnapshotResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastSnapshotResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(String businessUnitId, String sessionId, String snapshotId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest(businessUnitId, sessionId, snapshotId));
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId  (required)
+   * @param sessionId  (required)
+   * @param snapshotId  (required)
+   * @return ContinuousForecastSnapshotResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastSnapshotResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdWithHttpInfo(String businessUnitId, String sessionId, String snapshotId) throws IOException {
+    return getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest(businessUnitId, sessionId, snapshotId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest createGetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest(String businessUnitId, String sessionId, String snapshotId) {
+    return GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withSessionId(sessionId)
+
+            .withSnapshotId(snapshotId)
+
+            .build();
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ContinuousForecastSnapshotResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContinuousForecastSnapshotResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContinuousForecastSnapshotResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContinuousForecastSnapshotResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContinuousForecastSnapshotResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContinuousForecastSnapshotResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastSnapshotResponse> response = (ApiResponse<ContinuousForecastSnapshotResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContinuousForecastSnapshotResponse> response = (ApiResponse<ContinuousForecastSnapshotResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

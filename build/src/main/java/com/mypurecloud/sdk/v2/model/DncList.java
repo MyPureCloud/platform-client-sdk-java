@@ -104,7 +104,8 @@ public class DncList  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("Email"),
     PHONE("Phone"),
-    ANY("Any");
+    ANY("Any"),
+    WHATSAPP("WhatsApp");
 
     private String value;
 

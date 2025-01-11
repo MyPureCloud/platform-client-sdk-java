@@ -6,6 +6,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteTaskmanagementWorkbin**](TaskManagementApi#deleteTaskmanagementWorkbin) | Delete a workbin |
 | [**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | Delete a workitem |
+| [**deleteTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#deleteTaskmanagementWorkitemsBulkAddJob) | Delete a bulk add job |
+| [**deleteTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#deleteTaskmanagementWorkitemsBulkTerminateJob) | Delete a Bulk job |
 | [**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | Delete a schema |
 | [**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | Delete a worktype |
 | [**deleteTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsDatebasedRule) | Delete a date based rule |
@@ -22,6 +24,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemVersion**](TaskManagementApi#getTaskmanagementWorkitemVersion) | Get a version of a workitem |
 | [**getTaskmanagementWorkitemVersions**](TaskManagementApi#getTaskmanagementWorkitemVersions) | Get all versions of a workitem |
 | [**getTaskmanagementWorkitemWrapups**](TaskManagementApi#getTaskmanagementWorkitemWrapups) | Get all wrapup codes added for all users for a workitem. |
+| [**getTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#getTaskmanagementWorkitemsBulkAddJob) | Get the bulk add job associated with the job id. |
+| [**getTaskmanagementWorkitemsBulkAddJobResults**](TaskManagementApi#getTaskmanagementWorkitemsBulkAddJobResults) | Get bulk add job results. |
+| [**getTaskmanagementWorkitemsBulkJobsUsersMe**](TaskManagementApi#getTaskmanagementWorkitemsBulkJobsUsersMe) | Get bulk jobs created by the currently logged in user. |
+| [**getTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJob) | Get the bulk job associated with the job id. |
+| [**getTaskmanagementWorkitemsBulkTerminateJobResults**](TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJobResults) | Get bulk terminate job results. |
 | [**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi#getTaskmanagementWorkitemsQueryJob) | Get the workitem query job associated with the job id. |
 | [**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi#getTaskmanagementWorkitemsQueryJobResults) | Get results from for workitem query job  |
 | [**getTaskmanagementWorkitemsSchema**](TaskManagementApi#getTaskmanagementWorkitemsSchema) | Get a schema |
@@ -45,6 +52,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchTaskmanagementWorkitemAssignment**](TaskManagementApi#patchTaskmanagementWorkitemAssignment) | Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages. |
 | [**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | Add/Remove a wrapup code for a given user in a workitem. |
 | [**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | Add/Remove a wrapup code for the current user in a workitem. |
+| [**patchTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#patchTaskmanagementWorkitemsBulkAddJob) | Update workitem bulk add job. |
+| [**patchTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#patchTaskmanagementWorkitemsBulkTerminateJob) | Update workitem bulk terminate job. |
 | [**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | Update the attributes of a worktype |
 | [**patchTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsDatebasedRule) | Update the attributes of a date based rule |
 | [**patchTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule) | Update the attributes of a rule |
@@ -56,6 +65,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTaskmanagementWorkitemDisconnect**](TaskManagementApi#postTaskmanagementWorkitemDisconnect) | Disconnect the assignee of the workitem |
 | [**postTaskmanagementWorkitemTerminate**](TaskManagementApi#postTaskmanagementWorkitemTerminate) | Terminate a workitem |
 | [**postTaskmanagementWorkitems**](TaskManagementApi#postTaskmanagementWorkitems) | Create a workitem |
+| [**postTaskmanagementWorkitemsBulkAddJobs**](TaskManagementApi#postTaskmanagementWorkitemsBulkAddJobs) | Create a workitem bulk add job. |
+| [**postTaskmanagementWorkitemsBulkTerminateJobs**](TaskManagementApi#postTaskmanagementWorkitemsBulkTerminateJobs) | Create a workitem bulk terminate job. |
 | [**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | Query for workitems |
 | [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | Create a workitem query job |
 | [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | Create a schema |
@@ -177,6 +188,122 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workitemId** | **String**| Workitem ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteTaskmanagementWorkitemsBulkAddJob**
+
+
+> Void deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+
+Delete a bulk add job
+
+Wraps DELETE /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}  
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    apiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#deleteTaskmanagementWorkitemsBulkAddJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteTaskmanagementWorkitemsBulkTerminateJob**
+
+
+> Void deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+
+Delete a Bulk job
+
+Wraps DELETE /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}  
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    apiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#deleteTaskmanagementWorkitemsBulkTerminateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
 {: class="table-striped"}
 
 
@@ -1189,6 +1316,307 @@ try {
 ### Return type
 
 [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing)
+
+
+# **getTaskmanagementWorkitemsBulkAddJob**
+
+
+> [BulkJob](BulkJob) getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+
+Get the bulk add job associated with the job id.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}  
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    BulkJob result = apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsBulkAddJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+# **getTaskmanagementWorkitemsBulkAddJobResults**
+
+
+> [BulkJobAddResponse](BulkJobAddResponse) getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
+
+Get bulk add job results.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results  
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJobResults:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    BulkJobAddResponse result = apiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsBulkAddJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJobAddResponse**](BulkJobAddResponse)
+
+
+# **getTaskmanagementWorkitemsBulkJobsUsersMe**
+
+
+> [BulkJobsListing](BulkJobsListing) getTaskmanagementWorkitemsBulkJobsUsersMe(after, pageSize, sortOrder, action)
+
+Get bulk jobs created by the currently logged in user.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/jobs/users/me  
+
+Requires ANY permissions: 
+
+* workitems:bulkJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+String sortOrder = "descending"; // String | Ascending or descending sort order
+String action = "action_example"; // String | The bulk job action.
+try {
+    BulkJobsListing result = apiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(after, pageSize, sortOrder, action);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsBulkJobsUsersMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending 
+| **action** | **String**| The bulk job action. | [optional]<br />**Values**: TerminateWorkitems, AddWorkitems 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJobsListing**](BulkJobsListing)
+
+
+# **getTaskmanagementWorkitemsBulkTerminateJob**
+
+
+> [BulkJob](BulkJob) getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+
+Get the bulk job associated with the job id.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}  
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    BulkJob result = apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+# **getTaskmanagementWorkitemsBulkTerminateJobResults**
+
+
+> [BulkJobTerminateResultsResponse](BulkJobTerminateResultsResponse) getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
+
+Get bulk terminate job results.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results  
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJobResults:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+try {
+    BulkJobTerminateResultsResponse result = apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJobTerminateResultsResponse**](BulkJobTerminateResultsResponse)
 
 
 # **getTaskmanagementWorkitemsQueryJob**
@@ -2603,6 +3031,128 @@ try {
 [**WorkitemWrapup**](WorkitemWrapup)
 
 
+# **patchTaskmanagementWorkitemsBulkAddJob**
+
+
+> [BulkJob](BulkJob) patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
+
+Update workitem bulk add job.
+
+Wraps PATCH /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}  
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+BulkJobUpdate body = new BulkJobUpdate(); // BulkJobUpdate | Bulk add job update request
+try {
+    BulkJob result = apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemsBulkAddJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+| **body** | [**BulkJobUpdate**](BulkJobUpdate)| Bulk add job update request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+# **patchTaskmanagementWorkitemsBulkTerminateJob**
+
+
+> [BulkJob](BulkJob) patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
+
+Update workitem bulk terminate job.
+
+Wraps PATCH /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}  
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String bulkJobId = "bulkJobId_example"; // String | Bulk job id
+BulkJobUpdate body = new BulkJobUpdate(); // BulkJobUpdate | Bulk job update request
+try {
+    BulkJob result = apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemsBulkTerminateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bulkJobId** | **String**| Bulk job id | 
+| **body** | [**BulkJobUpdate**](BulkJobUpdate)| Bulk job update request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
 # **patchTaskmanagementWorktype**
 
 
@@ -3272,6 +3822,124 @@ try {
 [**Workitem**](Workitem)
 
 
+# **postTaskmanagementWorkitemsBulkAddJobs**
+
+
+> [BulkJob](BulkJob) postTaskmanagementWorkitemsBulkAddJobs(body)
+
+Create a workitem bulk add job.
+
+Wraps POST /api/v2/taskmanagement/workitems/bulk/add/jobs  
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+BulkJobAddRequest body = new BulkJobAddRequest(); // BulkJobAddRequest | Bulk job definition.
+try {
+    BulkJob result = apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorkitemsBulkAddJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkJobAddRequest**](BulkJobAddRequest)| Bulk job definition. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+# **postTaskmanagementWorkitemsBulkTerminateJobs**
+
+
+> [BulkJob](BulkJob) postTaskmanagementWorkitemsBulkTerminateJobs(body)
+
+Create a workitem bulk terminate job.
+
+Wraps POST /api/v2/taskmanagement/workitems/bulk/terminate/jobs  
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+BulkJobTerminateRequest body = new BulkJobTerminateRequest(); // BulkJobTerminateRequest | Bulk job definition.
+try {
+    BulkJob result = apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorkitemsBulkTerminateJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkJobTerminateRequest**](BulkJobTerminateRequest)| Bulk job definition. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
 # **postTaskmanagementWorkitemsQuery**
 
 
@@ -3876,4 +4544,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

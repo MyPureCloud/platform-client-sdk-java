@@ -90,6 +90,8 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
@@ -213,6 +215,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesQueryRequest;
@@ -6851,6 +6854,81 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResolutionAggregateQueryResponse> postAnalyticsResolutionsAggregatesQueryAsync(PostAnalyticsResolutionsAggregatesQueryRequest request, final AsyncApiCallback<ResolutionAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<ResolutionAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResolutionAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ResolutionAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResolutionAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResolutionAggregateQueryResponse>> postAnalyticsResolutionsAggregatesQueryAsync(ApiRequest<ResolutionAggregationQuery> request, final AsyncApiCallback<ApiResponse<ResolutionAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResolutionAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResolutionAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ResolutionAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResolutionAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResolutionAggregateQueryResponse> response = (ApiResponse<ResolutionAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResolutionAggregateQueryResponse> response = (ApiResponse<ResolutionAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -29,8 +29,8 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String lastUri = null;
+  private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
 
   /**
    **/
-  public FaxDocumentEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public FaxDocumentEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -136,6 +119,23 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public FaxDocumentEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -221,8 +221,8 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
             Objects.equals(this.pageSize, faxDocumentEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, faxDocumentEntityListing.pageNumber) &&
             Objects.equals(this.total, faxDocumentEntityListing.total) &&
-            Objects.equals(this.firstUri, faxDocumentEntityListing.firstUri) &&
             Objects.equals(this.lastUri, faxDocumentEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, faxDocumentEntityListing.firstUri) &&
             Objects.equals(this.selfUri, faxDocumentEntityListing.selfUri) &&
             Objects.equals(this.nextUri, faxDocumentEntityListing.nextUri) &&
             Objects.equals(this.previousUri, faxDocumentEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

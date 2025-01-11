@@ -100,7 +100,8 @@ public class DncListDivisionView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("Email"),
     PHONE("Phone"),
-    ANY("Any");
+    ANY("Any"),
+    WHATSAPP("WhatsApp");
 
     private String value;
 

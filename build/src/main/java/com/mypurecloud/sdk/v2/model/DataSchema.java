@@ -51,7 +51,8 @@ public class DataSchema  implements Serializable {
     CONVERSATION("CONVERSATION"),
     EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION"),
     OPEN_ACTION("OPEN_ACTION"),
-    WORKITEM("WORKITEM");
+    WORKITEM("WORKITEM"),
+    DECISION_TABLE("DECISION_TABLE");
 
     private String value;
 

@@ -48,7 +48,8 @@ public class Celebration  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    RECOGNITION("Recognition");
+    RECOGNITION("Recognition"),
+    CONTESTCOMPLETE("ContestComplete");
 
     private String value;
 

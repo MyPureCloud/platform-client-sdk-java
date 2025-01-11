@@ -39,7 +39,7 @@ public class JourneyViewChartMetric  implements Serializable {
     }
   }
   /**
-   * How to aggregate the given element, defaults to EventCount
+   * How to aggregate the given element, defaults to CustomerCount
    */
  @JsonDeserialize(using = AggregateEnumDeserializer.class)
   public enum AggregateEnum {
@@ -113,14 +113,14 @@ public class JourneyViewChartMetric  implements Serializable {
 
 
   /**
-   * How to aggregate the given element, defaults to EventCount
+   * How to aggregate the given element, defaults to CustomerCount
    **/
   public JourneyViewChartMetric aggregate(AggregateEnum aggregate) {
     this.aggregate = aggregate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How to aggregate the given element, defaults to EventCount")
+  @ApiModelProperty(example = "null", value = "How to aggregate the given element, defaults to CustomerCount")
   @JsonProperty("aggregate")
   public AggregateEnum getAggregate() {
     return aggregate;

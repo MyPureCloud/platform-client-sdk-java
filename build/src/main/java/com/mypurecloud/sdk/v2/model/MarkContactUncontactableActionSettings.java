@@ -43,7 +43,8 @@ public class MarkContactUncontactableActionSettings  implements Serializable {
   public enum MediaTypesEnum {
     VOICE("Voice"),
     EMAIL("Email"),
-    SMS("Sms");
+    SMS("Sms"),
+    WHATSAPP("WhatsApp");
 
     private String value;
 

@@ -10,6 +10,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkJob;
+import com.mypurecloud.sdk.v2.model.BulkJobAddRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobAddResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
+import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -65,6 +72,8 @@ import com.mypurecloud.sdk.v2.model.WorktypeVersionListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsBulkTerminateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest;
@@ -81,6 +90,11 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemUserWrapupsRe
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkAddJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkJobsUsersMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkTerminateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaRequest;
@@ -104,6 +118,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemsBulkTerminateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
@@ -115,6 +131,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemAcdCancelReq
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemTerminateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsBulkAddJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsBulkTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
@@ -272,6 +290,156 @@ public class TaskManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTaskmanagementWorkitem(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorkitemsBulkAddJob(String bulkJobId) throws IOException, ApiException {
+     deleteTaskmanagementWorkitemsBulkAddJob(createDeleteTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId));
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorkitemsBulkAddJobWithHttpInfo(String bulkJobId) throws IOException {
+    return deleteTaskmanagementWorkitemsBulkAddJob(createDeleteTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId).withHttpInfo());
+  }
+
+  private DeleteTaskmanagementWorkitemsBulkAddJobRequest createDeleteTaskmanagementWorkitemsBulkAddJobRequest(String bulkJobId) {
+    return DeleteTaskmanagementWorkitemsBulkAddJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorkitemsBulkAddJob(DeleteTaskmanagementWorkitemsBulkAddJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorkitemsBulkAddJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorkitemsBulkTerminateJob(String bulkJobId) throws IOException, ApiException {
+     deleteTaskmanagementWorkitemsBulkTerminateJob(createDeleteTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId));
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorkitemsBulkTerminateJobWithHttpInfo(String bulkJobId) throws IOException {
+    return deleteTaskmanagementWorkitemsBulkTerminateJob(createDeleteTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId).withHttpInfo());
+  }
+
+  private DeleteTaskmanagementWorkitemsBulkTerminateJobRequest createDeleteTaskmanagementWorkitemsBulkTerminateJobRequest(String bulkJobId) {
+    return DeleteTaskmanagementWorkitemsBulkTerminateJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorkitemsBulkTerminateJob(DeleteTaskmanagementWorkitemsBulkTerminateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorkitemsBulkTerminateJob(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1655,6 +1823,408 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob getTaskmanagementWorkitemsBulkAddJob(String bulkJobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsBulkAddJob(createGetTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId));
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> getTaskmanagementWorkitemsBulkAddJobWithHttpInfo(String bulkJobId) throws IOException {
+    return getTaskmanagementWorkitemsBulkAddJob(createGetTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsBulkAddJobRequest createGetTaskmanagementWorkitemsBulkAddJobRequest(String bulkJobId) {
+    return GetTaskmanagementWorkitemsBulkAddJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob getTaskmanagementWorkitemsBulkAddJob(GetTaskmanagementWorkitemsBulkAddJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> getTaskmanagementWorkitemsBulkAddJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJobAddResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobAddResponse getTaskmanagementWorkitemsBulkAddJobResults(String bulkJobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsBulkAddJobResults(createGetTaskmanagementWorkitemsBulkAddJobResultsRequest(bulkJobId));
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJobAddResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobAddResponse> getTaskmanagementWorkitemsBulkAddJobResultsWithHttpInfo(String bulkJobId) throws IOException {
+    return getTaskmanagementWorkitemsBulkAddJobResults(createGetTaskmanagementWorkitemsBulkAddJobResultsRequest(bulkJobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsBulkAddJobResultsRequest createGetTaskmanagementWorkitemsBulkAddJobResultsRequest(String bulkJobId) {
+    return GetTaskmanagementWorkitemsBulkAddJobResultsRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param request The request object
+   * @return BulkJobAddResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobAddResponse getTaskmanagementWorkitemsBulkAddJobResults(GetTaskmanagementWorkitemsBulkAddJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJobAddResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJobAddResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobAddResponse> getTaskmanagementWorkitemsBulkAddJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJobAddResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobAddResponse> response = (ApiResponse<BulkJobAddResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobAddResponse> response = (ApiResponse<BulkJobAddResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @param sortOrder Ascending or descending sort order (optional, default to descending)
+   * @param action The bulk job action. (optional)
+   * @return BulkJobsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobsListing getTaskmanagementWorkitemsBulkJobsUsersMe(String after, Integer pageSize, String sortOrder, String action) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsBulkJobsUsersMe(createGetTaskmanagementWorkitemsBulkJobsUsersMeRequest(after, pageSize, sortOrder, action));
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @param sortOrder Ascending or descending sort order (optional, default to descending)
+   * @param action The bulk job action. (optional)
+   * @return BulkJobsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobsListing> getTaskmanagementWorkitemsBulkJobsUsersMeWithHttpInfo(String after, Integer pageSize, String sortOrder, String action) throws IOException {
+    return getTaskmanagementWorkitemsBulkJobsUsersMe(createGetTaskmanagementWorkitemsBulkJobsUsersMeRequest(after, pageSize, sortOrder, action).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsBulkJobsUsersMeRequest createGetTaskmanagementWorkitemsBulkJobsUsersMeRequest(String after, Integer pageSize, String sortOrder, String action) {
+    return GetTaskmanagementWorkitemsBulkJobsUsersMeRequest.builder()
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withSortOrder(sortOrder)
+
+            .withAction(action)
+
+            .build();
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param request The request object
+   * @return BulkJobsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobsListing getTaskmanagementWorkitemsBulkJobsUsersMe(GetTaskmanagementWorkitemsBulkJobsUsersMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJobsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJobsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobsListing> getTaskmanagementWorkitemsBulkJobsUsersMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJobsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobsListing> response = (ApiResponse<BulkJobsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobsListing> response = (ApiResponse<BulkJobsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob getTaskmanagementWorkitemsBulkTerminateJob(String bulkJobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsBulkTerminateJob(createGetTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId));
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> getTaskmanagementWorkitemsBulkTerminateJobWithHttpInfo(String bulkJobId) throws IOException {
+    return getTaskmanagementWorkitemsBulkTerminateJob(createGetTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsBulkTerminateJobRequest createGetTaskmanagementWorkitemsBulkTerminateJobRequest(String bulkJobId) {
+    return GetTaskmanagementWorkitemsBulkTerminateJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob getTaskmanagementWorkitemsBulkTerminateJob(GetTaskmanagementWorkitemsBulkTerminateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> getTaskmanagementWorkitemsBulkTerminateJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJobTerminateResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobTerminateResultsResponse getTaskmanagementWorkitemsBulkTerminateJobResults(String bulkJobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsBulkTerminateJobResults(createGetTaskmanagementWorkitemsBulkTerminateJobResultsRequest(bulkJobId));
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @return BulkJobTerminateResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobTerminateResultsResponse> getTaskmanagementWorkitemsBulkTerminateJobResultsWithHttpInfo(String bulkJobId) throws IOException {
+    return getTaskmanagementWorkitemsBulkTerminateJobResults(createGetTaskmanagementWorkitemsBulkTerminateJobResultsRequest(bulkJobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest createGetTaskmanagementWorkitemsBulkTerminateJobResultsRequest(String bulkJobId) {
+    return GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .build();
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param request The request object
+   * @return BulkJobTerminateResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJobTerminateResultsResponse getTaskmanagementWorkitemsBulkTerminateJobResults(GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJobTerminateResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJobTerminateResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJobTerminateResultsResponse> getTaskmanagementWorkitemsBulkTerminateJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJobTerminateResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobTerminateResultsResponse> response = (ApiResponse<BulkJobTerminateResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJobTerminateResultsResponse> response = (ApiResponse<BulkJobTerminateResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3563,6 +4133,170 @@ public class TaskManagementApi {
   }
 
   /**
+   * Update workitem bulk add job.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @param body Bulk add job update request (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob patchTaskmanagementWorkitemsBulkAddJob(String bulkJobId, BulkJobUpdate body) throws IOException, ApiException {
+    return  patchTaskmanagementWorkitemsBulkAddJob(createPatchTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId, body));
+  }
+
+  /**
+   * Update workitem bulk add job.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @param body Bulk add job update request (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> patchTaskmanagementWorkitemsBulkAddJobWithHttpInfo(String bulkJobId, BulkJobUpdate body) throws IOException {
+    return patchTaskmanagementWorkitemsBulkAddJob(createPatchTaskmanagementWorkitemsBulkAddJobRequest(bulkJobId, body).withHttpInfo());
+  }
+
+  private PatchTaskmanagementWorkitemsBulkAddJobRequest createPatchTaskmanagementWorkitemsBulkAddJobRequest(String bulkJobId, BulkJobUpdate body) {
+    return PatchTaskmanagementWorkitemsBulkAddJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update workitem bulk add job.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob patchTaskmanagementWorkitemsBulkAddJob(PatchTaskmanagementWorkitemsBulkAddJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update workitem bulk add job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> patchTaskmanagementWorkitemsBulkAddJob(ApiRequest<BulkJobUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @param body Bulk job update request (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob patchTaskmanagementWorkitemsBulkTerminateJob(String bulkJobId, BulkJobUpdate body) throws IOException, ApiException {
+    return  patchTaskmanagementWorkitemsBulkTerminateJob(createPatchTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId, body));
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param bulkJobId Bulk job id (required)
+   * @param body Bulk job update request (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> patchTaskmanagementWorkitemsBulkTerminateJobWithHttpInfo(String bulkJobId, BulkJobUpdate body) throws IOException {
+    return patchTaskmanagementWorkitemsBulkTerminateJob(createPatchTaskmanagementWorkitemsBulkTerminateJobRequest(bulkJobId, body).withHttpInfo());
+  }
+
+  private PatchTaskmanagementWorkitemsBulkTerminateJobRequest createPatchTaskmanagementWorkitemsBulkTerminateJobRequest(String bulkJobId, BulkJobUpdate body) {
+    return PatchTaskmanagementWorkitemsBulkTerminateJobRequest.builder()
+            .withBulkJobId(bulkJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob patchTaskmanagementWorkitemsBulkTerminateJob(PatchTaskmanagementWorkitemsBulkTerminateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> patchTaskmanagementWorkitemsBulkTerminateJob(ApiRequest<BulkJobUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the attributes of a worktype
    * 
    * @param worktypeId Worktype id (required)
@@ -4456,6 +5190,162 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Workitem> response = (ApiResponse<Workitem>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param body Bulk job definition. (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob postTaskmanagementWorkitemsBulkAddJobs(BulkJobAddRequest body) throws IOException, ApiException {
+    return  postTaskmanagementWorkitemsBulkAddJobs(createPostTaskmanagementWorkitemsBulkAddJobsRequest(body));
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param body Bulk job definition. (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> postTaskmanagementWorkitemsBulkAddJobsWithHttpInfo(BulkJobAddRequest body) throws IOException {
+    return postTaskmanagementWorkitemsBulkAddJobs(createPostTaskmanagementWorkitemsBulkAddJobsRequest(body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorkitemsBulkAddJobsRequest createPostTaskmanagementWorkitemsBulkAddJobsRequest(BulkJobAddRequest body) {
+    return PostTaskmanagementWorkitemsBulkAddJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob postTaskmanagementWorkitemsBulkAddJobs(PostTaskmanagementWorkitemsBulkAddJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> postTaskmanagementWorkitemsBulkAddJobs(ApiRequest<BulkJobAddRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param body Bulk job definition. (required)
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob postTaskmanagementWorkitemsBulkTerminateJobs(BulkJobTerminateRequest body) throws IOException, ApiException {
+    return  postTaskmanagementWorkitemsBulkTerminateJobs(createPostTaskmanagementWorkitemsBulkTerminateJobsRequest(body));
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param body Bulk job definition. (required)
+   * @return BulkJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> postTaskmanagementWorkitemsBulkTerminateJobsWithHttpInfo(BulkJobTerminateRequest body) throws IOException {
+    return postTaskmanagementWorkitemsBulkTerminateJobs(createPostTaskmanagementWorkitemsBulkTerminateJobsRequest(body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorkitemsBulkTerminateJobsRequest createPostTaskmanagementWorkitemsBulkTerminateJobsRequest(BulkJobTerminateRequest body) {
+    return PostTaskmanagementWorkitemsBulkTerminateJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param request The request object
+   * @return BulkJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkJob postTaskmanagementWorkitemsBulkTerminateJobs(PostTaskmanagementWorkitemsBulkTerminateJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkJob> postTaskmanagementWorkitemsBulkTerminateJobs(ApiRequest<BulkJobTerminateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

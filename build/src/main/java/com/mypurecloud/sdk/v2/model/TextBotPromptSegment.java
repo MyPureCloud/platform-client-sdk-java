@@ -48,7 +48,8 @@ public class TextBotPromptSegment  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
-    RICHMEDIA("RichMedia");
+    RICHMEDIA("RichMedia"),
+    MESSAGEEVENT("MessageEvent");
 
     private String value;
 

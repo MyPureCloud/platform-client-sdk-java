@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
 import com.mypurecloud.sdk.v2.model.InsightsAgents;
 import com.mypurecloud.sdk.v2.model.InsightsDetails;
+import com.mypurecloud.sdk.v2.model.InsightsRankings;
 import com.mypurecloud.sdk.v2.model.InsightsSummary;
 import com.mypurecloud.sdk.v2.model.InsightsTrend;
 import com.mypurecloud.sdk.v2.model.Leaderboard;
@@ -64,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRankingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserTrendsRequest;
@@ -874,6 +876,116 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights rankings
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param sortKey Sort key (required)
+   * @param sortMetricId Sort Metric Id (optional)
+   * @param sectionSize The number of top and bottom users to return before ties (optional)
+   * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @return InsightsRankings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsRankings getGamificationInsightsRankings(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) throws IOException, ApiException {
+    return  getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds));
+  }
+
+  /**
+   * Get insights rankings
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param sortKey Sort key (required)
+   * @param sortMetricId Sort Metric Id (optional)
+   * @param sectionSize The number of top and bottom users to return before ties (optional)
+   * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @return InsightsRankings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsRankings> getGamificationInsightsRankingsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) throws IOException {
+    return getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds).withHttpInfo());
+  }
+
+  private GetGamificationInsightsRankingsRequest createGetGamificationInsightsRankingsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) {
+    return GetGamificationInsightsRankingsRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withSortKey(sortKey)
+
+            .withSortMetricId(sortMetricId)
+
+            .withSectionSize(sectionSize)
+
+            .withUserIds(userIds)
+
+            .build();
+  }
+
+  /**
+   * Get insights rankings
+   * 
+   * @param request The request object
+   * @return InsightsRankings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsRankings getGamificationInsightsRankings(GetGamificationInsightsRankingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsRankings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsRankings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights rankings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsRankings> getGamificationInsightsRankings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsRankings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsRankings> response = (ApiResponse<InsightsRankings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsRankings> response = (ApiResponse<InsightsRankings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

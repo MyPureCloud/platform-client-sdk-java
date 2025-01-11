@@ -47,7 +47,8 @@ public class CommonCampaign  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("email"),
     SMS("sms"),
-    VOICE("voice");
+    VOICE("voice"),
+    WHATSAPP("whatsapp");
 
     private String value;
 

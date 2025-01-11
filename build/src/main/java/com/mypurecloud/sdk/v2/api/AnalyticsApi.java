@@ -87,6 +87,8 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
@@ -210,6 +212,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSummariesAggregatesQueryRequest;
@@ -7415,6 +7418,84 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param body query (required)
+   * @return ResolutionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(ResolutionAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsResolutionsAggregatesQuery(createPostAnalyticsResolutionsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param body query (required)
+   * @return ResolutionAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResolutionAggregateQueryResponse> postAnalyticsResolutionsAggregatesQueryWithHttpInfo(ResolutionAggregationQuery body) throws IOException {
+    return postAnalyticsResolutionsAggregatesQuery(createPostAnalyticsResolutionsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsResolutionsAggregatesQueryRequest createPostAnalyticsResolutionsAggregatesQueryRequest(ResolutionAggregationQuery body) {
+    return PostAnalyticsResolutionsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param request The request object
+   * @return ResolutionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(PostAnalyticsResolutionsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResolutionAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResolutionAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for resolution aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResolutionAggregateQueryResponse> postAnalyticsResolutionsAggregatesQuery(ApiRequest<ResolutionAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResolutionAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResolutionAggregateQueryResponse> response = (ApiResponse<ResolutionAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResolutionAggregateQueryResponse> response = (ApiResponse<ResolutionAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

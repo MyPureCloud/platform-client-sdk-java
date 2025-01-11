@@ -98,6 +98,9 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastGetSessionResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
+import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
@@ -293,6 +296,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlte
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
@@ -3795,6 +3801,237 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmIntradayPlanningGroupListing> response = (ApiResponse<WfmIntradayPlanningGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContinuousForecastGetSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest request, final AsyncApiCallback<ContinuousForecastGetSessionResponse> callback) {
+    try {
+      final SettableFuture<ContinuousForecastGetSessionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContinuousForecastGetSessionResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastGetSessionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastGetSessionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the latest session for the business unit ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContinuousForecastGetSessionResponse>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContinuousForecastGetSessionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContinuousForecastGetSessionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContinuousForecastGetSessionResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastGetSessionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastGetSessionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastGetSessionResponse> response = (ApiResponse<ContinuousForecastGetSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContinuousForecastSessionResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest request, final AsyncApiCallback<ContinuousForecastSessionResponse> callback) {
+    try {
+      final SettableFuture<ContinuousForecastSessionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContinuousForecastSessionResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastSessionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastSessionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the session details for the session ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContinuousForecastSessionResponse>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContinuousForecastSessionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContinuousForecastSessionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContinuousForecastSessionResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastSessionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastSessionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastSessionResponse> response = (ApiResponse<ContinuousForecastSessionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastSessionResponse> response = (ApiResponse<ContinuousForecastSessionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContinuousForecastSnapshotResponse> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdAsync(GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdRequest request, final AsyncApiCallback<ContinuousForecastSnapshotResponse> callback) {
+    try {
+      final SettableFuture<ContinuousForecastSnapshotResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContinuousForecastSnapshotResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastSnapshotResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastSnapshotResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the snapshot details for the snapshot ID
+   * 
+   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContinuousForecastSnapshotResponse>> getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContinuousForecastSnapshotResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContinuousForecastSnapshotResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContinuousForecastSnapshotResponse>() {}, new AsyncApiCallback<ApiResponse<ContinuousForecastSnapshotResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContinuousForecastSnapshotResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastSnapshotResponse> response = (ApiResponse<ContinuousForecastSnapshotResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContinuousForecastSnapshotResponse> response = (ApiResponse<ContinuousForecastSnapshotResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

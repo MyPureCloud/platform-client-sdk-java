@@ -13,6 +13,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkJob;
+import com.mypurecloud.sdk.v2.model.BulkJobAddRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobAddResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
+import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -68,6 +75,8 @@ import com.mypurecloud.sdk.v2.model.WorktypeVersionListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsBulkTerminateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsDatebasedRuleRequest;
@@ -84,6 +93,11 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemUserWrapupsRe
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkAddJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkJobsUsersMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkTerminateJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaRequest;
@@ -107,6 +121,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemsBulkAddJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemsBulkTerminateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
@@ -118,6 +134,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemAcdCancelReq
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemTerminateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsBulkAddJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsBulkTerminateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
@@ -264,6 +282,156 @@ public class TaskManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorkitemAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTaskmanagementWorkitemsBulkAddJobAsync(DeleteTaskmanagementWorkitemsBulkAddJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a bulk add job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTaskmanagementWorkitemsBulkAddJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTaskmanagementWorkitemsBulkTerminateJobAsync(DeleteTaskmanagementWorkitemsBulkTerminateJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTaskmanagementWorkitemsBulkTerminateJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1498,6 +1666,381 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> getTaskmanagementWorkitemsBulkAddJobAsync(GetTaskmanagementWorkitemsBulkAddJobRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the bulk add job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> getTaskmanagementWorkitemsBulkAddJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJobAddResponse> getTaskmanagementWorkitemsBulkAddJobResultsAsync(GetTaskmanagementWorkitemsBulkAddJobResultsRequest request, final AsyncApiCallback<BulkJobAddResponse> callback) {
+    try {
+      final SettableFuture<BulkJobAddResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJobAddResponse>() {}, new AsyncApiCallback<ApiResponse<BulkJobAddResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobAddResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk add job results.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJobAddResponse>> getTaskmanagementWorkitemsBulkAddJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BulkJobAddResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJobAddResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJobAddResponse>() {}, new AsyncApiCallback<ApiResponse<BulkJobAddResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobAddResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobAddResponse> response = (ApiResponse<BulkJobAddResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobAddResponse> response = (ApiResponse<BulkJobAddResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJobsListing> getTaskmanagementWorkitemsBulkJobsUsersMeAsync(GetTaskmanagementWorkitemsBulkJobsUsersMeRequest request, final AsyncApiCallback<BulkJobsListing> callback) {
+    try {
+      final SettableFuture<BulkJobsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJobsListing>() {}, new AsyncApiCallback<ApiResponse<BulkJobsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk jobs created by the currently logged in user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJobsListing>> getTaskmanagementWorkitemsBulkJobsUsersMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BulkJobsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJobsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJobsListing>() {}, new AsyncApiCallback<ApiResponse<BulkJobsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobsListing> response = (ApiResponse<BulkJobsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobsListing> response = (ApiResponse<BulkJobsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> getTaskmanagementWorkitemsBulkTerminateJobAsync(GetTaskmanagementWorkitemsBulkTerminateJobRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the bulk job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> getTaskmanagementWorkitemsBulkTerminateJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJobTerminateResultsResponse> getTaskmanagementWorkitemsBulkTerminateJobResultsAsync(GetTaskmanagementWorkitemsBulkTerminateJobResultsRequest request, final AsyncApiCallback<BulkJobTerminateResultsResponse> callback) {
+    try {
+      final SettableFuture<BulkJobTerminateResultsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJobTerminateResultsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkJobTerminateResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobTerminateResultsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk terminate job results.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJobTerminateResultsResponse>> getTaskmanagementWorkitemsBulkTerminateJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BulkJobTerminateResultsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJobTerminateResultsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJobTerminateResultsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkJobTerminateResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJobTerminateResultsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobTerminateResultsResponse> response = (ApiResponse<BulkJobTerminateResultsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJobTerminateResultsResponse> response = (ApiResponse<BulkJobTerminateResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3241,6 +3784,156 @@ public class TaskManagementApiAsync {
   }
 
   /**
+   * Update workitem bulk add job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> patchTaskmanagementWorkitemsBulkAddJobAsync(PatchTaskmanagementWorkitemsBulkAddJobRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update workitem bulk add job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> patchTaskmanagementWorkitemsBulkAddJobAsync(ApiRequest<BulkJobUpdate> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> patchTaskmanagementWorkitemsBulkTerminateJobAsync(PatchTaskmanagementWorkitemsBulkTerminateJobRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update workitem bulk terminate job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> patchTaskmanagementWorkitemsBulkTerminateJobAsync(ApiRequest<BulkJobUpdate> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the attributes of a worktype
    * 
    * @param request the request object
@@ -4054,6 +4747,156 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Workitem> response = (ApiResponse<Workitem>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> postTaskmanagementWorkitemsBulkAddJobsAsync(PostTaskmanagementWorkitemsBulkAddJobsRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem bulk add job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> postTaskmanagementWorkitemsBulkAddJobsAsync(ApiRequest<BulkJobAddRequest> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkJob> postTaskmanagementWorkitemsBulkTerminateJobsAsync(PostTaskmanagementWorkitemsBulkTerminateJobsRequest request, final AsyncApiCallback<BulkJob> callback) {
+    try {
+      final SettableFuture<BulkJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem bulk terminate job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkJob>> postTaskmanagementWorkitemsBulkTerminateJobsAsync(ApiRequest<BulkJobTerminateRequest> request, final AsyncApiCallback<ApiResponse<BulkJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkJob>() {}, new AsyncApiCallback<ApiResponse<BulkJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkJob> response = (ApiResponse<BulkJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

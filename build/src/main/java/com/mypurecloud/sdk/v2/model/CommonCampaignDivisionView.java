@@ -47,7 +47,8 @@ public class CommonCampaignDivisionView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("email"),
     SMS("sms"),
-    VOICE("voice");
+    VOICE("voice"),
+    WHATSAPP("whatsapp");
 
     private String value;
 

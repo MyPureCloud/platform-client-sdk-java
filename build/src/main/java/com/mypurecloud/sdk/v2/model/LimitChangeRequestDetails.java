@@ -49,6 +49,7 @@ public class LimitChangeRequestDetails  implements Serializable {
   public enum NamespaceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENT_ASSISTANT("agent.assistant"),
+    ANALYTICS_AGENTS("analytics.agents"),
     ANALYTICS_ALERTING("analytics.alerting"),
     ANALYTICS("analytics"),
     ANALYTICS_REALTIME("analytics.realtime"),
@@ -90,6 +91,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     MARKETPLACE("marketplace"),
     MEDIA_COMMUNICATIONS("media.communications"),
     MESSAGING("messaging"),
+    MICRO_FRONTEND("micro.frontend"),
     NOTIFICATIONS("notifications"),
     ONBOARDING("onboarding"),
     OUTBOUND("outbound"),

@@ -20,6 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BulkJob;
+import com.mypurecloud.sdk.v2.model.BulkJobAddRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobAddResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
+import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;

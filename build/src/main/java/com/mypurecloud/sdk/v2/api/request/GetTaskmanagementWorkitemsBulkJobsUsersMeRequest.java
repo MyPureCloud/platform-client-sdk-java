@@ -1,0 +1,302 @@
+package com.mypurecloud.sdk.v2.api.request;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiRequest;
+import com.mypurecloud.sdk.v2.ApiRequestBuilder;
+import com.mypurecloud.sdk.v2.ApiResponse;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.Pair;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+import com.mypurecloud.sdk.v2.model.BulkJob;
+import com.mypurecloud.sdk.v2.model.BulkJobAddRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobAddResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
+import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
+import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
+import com.mypurecloud.sdk.v2.model.BulkJobsListing;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Workbin;
+import com.mypurecloud.sdk.v2.model.WorkbinChangeListing;
+import com.mypurecloud.sdk.v2.model.WorkbinCreate;
+import com.mypurecloud.sdk.v2.model.WorkbinQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkbinQueryRequest;
+import com.mypurecloud.sdk.v2.model.WorkbinUpdate;
+import com.mypurecloud.sdk.v2.model.WorkbinVersion;
+import com.mypurecloud.sdk.v2.model.WorkbinVersionListing;
+import com.mypurecloud.sdk.v2.model.Workitem;
+import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
+import com.mypurecloud.sdk.v2.model.WorkitemCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRule;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemDateBasedRuleUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemPagedEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobResponse;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
+import com.mypurecloud.sdk.v2.model.WorkitemStatus;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusListing;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
+import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemVersion;
+import com.mypurecloud.sdk.v2.model.WorkitemVersionListing;
+import com.mypurecloud.sdk.v2.model.WorkitemWrapup;
+import com.mypurecloud.sdk.v2.model.WorkitemWrapupEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkitemWrapupUpdate;
+import com.mypurecloud.sdk.v2.model.Worktype;
+import com.mypurecloud.sdk.v2.model.WorktypeChangeListing;
+import com.mypurecloud.sdk.v2.model.WorktypeCreate;
+import com.mypurecloud.sdk.v2.model.WorktypeQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.WorktypeQueryRequest;
+import com.mypurecloud.sdk.v2.model.WorktypeUpdate;
+import com.mypurecloud.sdk.v2.model.WorktypeVersion;
+import com.mypurecloud.sdk.v2.model.WorktypeVersionListing;
+
+public class GetTaskmanagementWorkitemsBulkJobsUsersMeRequest {
+
+	private String after;
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+	}
+
+	public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest withAfter(String after) {
+	    this.setAfter(after);
+	    return this;
+	} 
+
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASCENDING("ascending"),
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
+	private String action;
+	public String getAction() {
+		return this.action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
+	public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest withAction(String action) {
+	    this.setAction(action);
+	    return this;
+	} 
+
+	public enum actionValues { 
+		TERMINATEWORKITEMS("TerminateWorkitems"),
+		ADDWORKITEMS("AddWorkitems");
+
+		private String value;
+
+		actionValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static actionValues fromString(String key) {
+			if (key == null) return null;
+
+			for (actionValues value : actionValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return actionValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
+	private final Map<String, String> customHeaders = new HashMap<>();
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    public void setCustomHeaders(Map<String, String> customHeaders) {
+        this.customHeaders.clear();
+        this.customHeaders.putAll(customHeaders);
+    }
+
+    public void addCustomHeader(String name, String value) {
+        this.customHeaders.put(name, value);
+    }
+
+    public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest withCustomHeader(String name, String value) {
+        this.addCustomHeader(name, value);
+        return this;
+    }
+
+    public ApiRequest<Void> withHttpInfo() {
+        
+
+        return ApiRequestBuilder.create("GET", "/api/v2/taskmanagement/workitems/bulk/jobs/users/me")
+
+                .withQueryParameters("after", "", after)
+        
+
+                .withQueryParameters("pageSize", "", pageSize)
+        
+
+                .withQueryParameters("sortOrder", "", sortOrder)
+        
+
+                .withQueryParameters("action", "", action)
+        
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
+                .withAccepts("application/json")
+                .withAuthNames("PureCloud OAuth")
+                .build();
+    }
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+
+
+	public static class Builder {
+		private final GetTaskmanagementWorkitemsBulkJobsUsersMeRequest request;
+
+		private Builder() {
+			request = new GetTaskmanagementWorkitemsBulkJobsUsersMeRequest();
+		}
+
+
+		public Builder withAfter(String after) {
+			request.setAfter(after);
+			return this;
+		}
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+
+
+		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+		public Builder withAction(String action) {
+			request.setAction(action);
+			return this;
+		}
+
+
+
+		
+		public Builder withAction(actionValues action) {
+		    request.setAction(action.toString());
+
+		    return this;
+		}
+
+
+
+
+		public GetTaskmanagementWorkitemsBulkJobsUsersMeRequest build() {
+            
+			return request;
+		}
+	}
+}

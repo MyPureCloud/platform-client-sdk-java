@@ -3048,6 +3048,7 @@ Requires ANY permissions:
 * outbound:campaign:view
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -3097,7 +3098,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String)| Campaign ID(s) | [optional] 
 | **name** | **String**| Campaign name(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
-| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
+| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice, whatsapp 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
@@ -3121,6 +3122,7 @@ Requires ANY permissions:
 * outbound:campaign:search
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example
 
@@ -3170,7 +3172,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String)| Campaign ID(s) | [optional] 
 | **name** | **String**| Campaign name(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
-| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
+| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice, whatsapp 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
@@ -10434,4 +10436,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

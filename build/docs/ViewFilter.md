@@ -217,6 +217,9 @@
 | **filterUsersByManagerIds** | **List&lt;String&gt;** | The manager ids used to fetch associated users for the view |  [optional] |
 | **slideshowIds** | **List&lt;String&gt;** | List of Dashboard slideshowIds to be filtered |  [optional] |
 | **conferenced** | **Boolean** | Filter to indicate if the conversation has conference |  [optional] |
+| **video** | **Boolean** | Filter to indicate if the conversation has video |  [optional] |
+| **linkedInteraction** | **Boolean** | Filter to indicate if the conversation has linked interaction |  [optional] |
+| **recommendationSources** | [**List<RecommendationSourcesEnum>**](#Enum--RecommendationSourcesEnum) | List of recommendation sources for filtering recommendation details pane |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -645,6 +648,15 @@
 | PRIVATE | &quot;Private&quot; |
 
 
+## Enum: RecommendationSourcesEnum
+
+| Name | Value |
+| ---- | ----- |
+| KNOWLEDGESEARCH | &quot;KnowledgeSearch&quot; |
+| RULESENGINE | &quot;RulesEngine&quot; |
+| MANUALSEARCH | &quot;ManualSearch&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
