@@ -59,6 +59,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
 | ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
 | ANALYTICS | &quot;analytics&quot; | 
 | ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
@@ -100,6 +101,7 @@
 | MARKETPLACE | &quot;marketplace&quot; | 
 | MEDIA_COMMUNICATIONS | &quot;media.communications&quot; | 
 | MESSAGING | &quot;messaging&quot; | 
+| MICRO_FRONTEND | &quot;micro.frontend&quot; | 
 | NOTIFICATIONS | &quot;notifications&quot; | 
 | ONBOARDING | &quot;onboarding&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
@@ -145,4 +147,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

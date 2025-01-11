@@ -15,8 +15,9 @@
 | VOICE | &quot;Voice&quot; |
 | EMAIL | &quot;Email&quot; |
 | SMS | &quot;Sms&quot; |
+| WHATSAPP | &quot;WhatsApp&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

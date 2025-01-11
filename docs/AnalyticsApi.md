@@ -91,6 +91,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk soft delete dashboard configurations |
 | [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | Query dashboard configurations |
 | [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | Query for resolution aggregates asynchronously |
+| [**postAnalyticsResolutionsAggregatesQuery**](AnalyticsApi#postAnalyticsResolutionsAggregatesQuery) | Query for resolution aggregates |
 | [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
 | [**postAnalyticsSummariesAggregatesJobs**](AnalyticsApi#postAnalyticsSummariesAggregatesJobs) | Query for summary aggregates asynchronously |
 | [**postAnalyticsSummariesAggregatesQuery**](AnalyticsApi#postAnalyticsSummariesAggregatesQuery) | Query for summary aggregates |
@@ -5452,6 +5453,65 @@ try {
 [**AsyncQueryResponse**](AsyncQueryResponse)
 
 
+# **postAnalyticsResolutionsAggregatesQuery**
+
+
+> [ResolutionAggregateQueryResponse](ResolutionAggregateQueryResponse) postAnalyticsResolutionsAggregatesQuery(body)
+
+Query for resolution aggregates
+
+Wraps POST /api/v2/analytics/resolutions/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+ResolutionAggregationQuery body = new ResolutionAggregationQuery(); // ResolutionAggregationQuery | query
+try {
+    ResolutionAggregateQueryResponse result = apiInstance.postAnalyticsResolutionsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsResolutionsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ResolutionAggregationQuery**](ResolutionAggregationQuery)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResolutionAggregateQueryResponse**](ResolutionAggregateQueryResponse)
+
+
 # **postAnalyticsRoutingActivityQuery**
 
 
@@ -6479,4 +6539,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

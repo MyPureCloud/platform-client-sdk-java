@@ -1,0 +1,14 @@
+# BulkJobAddResult
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **error** | [**BulkJobError**](BulkJobError) | Error details if the operation failed. |  [optional] |
+| **entity** | [**BulkJobAddWorkitemSummary**](BulkJobAddWorkitemSummary) | The result of the operation if it succeeded. For Workitem Bulk Add this is a summary. |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_

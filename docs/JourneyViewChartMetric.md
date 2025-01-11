@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The unique identifier of the metric within the chart |  |
 | **elementId** | **String** | The element in the list of elements which the metric is measuring |  |
-| **aggregate** | [**AggregateEnum**](#Enum--AggregateEnum) | How to aggregate the given element, defaults to EventCount |  [optional] |
+| **aggregate** | [**AggregateEnum**](#Enum--AggregateEnum) | How to aggregate the given element, defaults to CustomerCount |  [optional] |
 | **displayLabel** | **String** | A display label for the metric |  [optional] |
 
 
@@ -22,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
