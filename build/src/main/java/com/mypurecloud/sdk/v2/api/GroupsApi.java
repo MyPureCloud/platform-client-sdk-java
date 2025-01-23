@@ -221,7 +221,7 @@ public class GroupsApi {
    * Remove members
    * 
    * @param groupId Group ID (required)
-   * @param ids Comma separated list of userIds to remove (required)
+   * @param ids Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. (required)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -234,7 +234,7 @@ public class GroupsApi {
    * Remove members
    * 
    * @param groupId Group ID (required)
-   * @param ids Comma separated list of userIds to remove (required)
+   * @param ids Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */

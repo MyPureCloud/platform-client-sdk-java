@@ -11,6 +11,7 @@ import org.asynchttpclient.DefaultAsyncHttpClientConfig;
 import org.asynchttpclient.proxy.ProxyServerSelector;
 import org.asynchttpclient.util.ProxyUtils;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvider {
@@ -18,8 +19,8 @@ public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvi
     public ApiClientConnector create(ApiClientConnectorProperties properties) {
         DefaultAsyncHttpClientConfig.Builder builder = new DefaultAsyncHttpClientConfig.Builder();
 
-        Integer connectionTimeout = properties.getProperty(ApiClientConnectorProperty.CONNECTION_TIMEOUT, Integer.class, null);
-        if (connectionTimeout != null && connectionTimeout > 0) {
+        Duration connectionTimeout = properties.getProperty(ApiClientConnectorProperty.CONNECTION_TIMEOUT, Duration.class, null);
+        if (connectionTimeout != null && !connectionTimeout.isNegative() && !connectionTimeout.isZero()) {
             builder.setConnectTimeout(connectionTimeout);
             builder.setReadTimeout(connectionTimeout);
             builder.setRequestTimeout(connectionTimeout);

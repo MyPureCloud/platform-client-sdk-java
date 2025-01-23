@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DivisionedDomainEntityRef;
+import com.mypurecloud.sdk.v2.model.Reoccurrence;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class CampaignSchedule  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
+  private List<Reoccurrence> recurrences = new ArrayList<Reoccurrence>();
   private String timeZone = null;
   private DivisionedDomainEntityRef campaign = null;
   private String selfUri = null;
@@ -112,6 +114,24 @@ public class CampaignSchedule  implements Serializable {
 
 
   /**
+   * Recurring schedules of the campaign
+   **/
+  public CampaignSchedule recurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Recurring schedules of the campaign")
+  @JsonProperty("recurrences")
+  public List<Reoccurrence> getRecurrences() {
+    return recurrences;
+  }
+  public void setRecurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+  }
+
+
+  /**
    * The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
    **/
   public CampaignSchedule timeZone(String timeZone) {
@@ -170,6 +190,7 @@ public class CampaignSchedule  implements Serializable {
             Objects.equals(this.dateModified, campaignSchedule.dateModified) &&
             Objects.equals(this.version, campaignSchedule.version) &&
             Objects.equals(this.intervals, campaignSchedule.intervals) &&
+            Objects.equals(this.recurrences, campaignSchedule.recurrences) &&
             Objects.equals(this.timeZone, campaignSchedule.timeZone) &&
             Objects.equals(this.campaign, campaignSchedule.campaign) &&
             Objects.equals(this.selfUri, campaignSchedule.selfUri);
@@ -177,7 +198,7 @@ public class CampaignSchedule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, timeZone, campaign, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, recurrences, timeZone, campaign, selfUri);
   }
 
   @Override
@@ -191,6 +212,7 @@ public class CampaignSchedule  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
+    sb.append("    recurrences: ").append(toIndentedString(recurrences)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -29,8 +29,8 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
+  private String lastUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
 
   /**
    **/
-  public TagValueEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public TagValueEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -136,6 +119,23 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public TagValueEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -221,8 +221,8 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
             Objects.equals(this.pageSize, tagValueEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, tagValueEntityListing.pageNumber) &&
             Objects.equals(this.total, tagValueEntityListing.total) &&
-            Objects.equals(this.lastUri, tagValueEntityListing.lastUri) &&
             Objects.equals(this.firstUri, tagValueEntityListing.firstUri) &&
+            Objects.equals(this.lastUri, tagValueEntityListing.lastUri) &&
             Objects.equals(this.selfUri, tagValueEntityListing.selfUri) &&
             Objects.equals(this.nextUri, tagValueEntityListing.nextUri) &&
             Objects.equals(this.previousUri, tagValueEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

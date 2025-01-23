@@ -94,19 +94,20 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| UNKNOWN | &quot;unknown&quot; | 
-| SMS | &quot;sms&quot; | 
-| TWITTER | &quot;twitter&quot; | 
+| APPLE | &quot;apple&quot; | 
 | FACEBOOK | &quot;facebook&quot; | 
-| LINE | &quot;line&quot; | 
-| WHATSAPP | &quot;whatsapp&quot; | 
-| TELEGRAM | &quot;telegram&quot; | 
-| KAKAO | &quot;kakao&quot; | 
-| WEBMESSAGING | &quot;webmessaging&quot; | 
-| OPEN | &quot;open&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
+| KAKAO | &quot;kakao&quot; | 
+| LINE | &quot;line&quot; | 
+| OPEN | &quot;open&quot; | 
+| SMS | &quot;sms&quot; | 
+| TELEGRAM | &quot;telegram&quot; | 
+| TWITTER | &quot;twitter&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
+| WHATSAPP | &quot;whatsapp&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

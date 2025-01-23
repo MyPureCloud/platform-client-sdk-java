@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -36,7 +37,7 @@ public class TeamActivityMetricValue  implements Serializable {
     }
   }
   /**
-   * metric
+   * Metric
    */
  @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
@@ -72,18 +73,21 @@ public class TeamActivityMetricValue  implements Serializable {
     }
   }
   private MetricEnum metric = null;
+  private String qualifier = null;
+  private String secondaryQualifier = null;
+  private List<String> entityIds = new ArrayList<String>();
   private Integer count = null;
 
   
   /**
-   * metric
+   * Metric
    **/
   public TeamActivityMetricValue metric(MetricEnum metric) {
     this.metric = metric;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "metric")
+  @ApiModelProperty(example = "null", value = "Metric")
   @JsonProperty("metric")
   public MetricEnum getMetric() {
     return metric;
@@ -94,14 +98,68 @@ public class TeamActivityMetricValue  implements Serializable {
 
 
   /**
-   * metric count
+   * Metric qualifier
+   **/
+  public TeamActivityMetricValue qualifier(String qualifier) {
+    this.qualifier = qualifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metric qualifier")
+  @JsonProperty("qualifier")
+  public String getQualifier() {
+    return qualifier;
+  }
+  public void setQualifier(String qualifier) {
+    this.qualifier = qualifier;
+  }
+
+
+  /**
+   * Secondary metric qualifier
+   **/
+  public TeamActivityMetricValue secondaryQualifier(String secondaryQualifier) {
+    this.secondaryQualifier = secondaryQualifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Secondary metric qualifier")
+  @JsonProperty("secondaryQualifier")
+  public String getSecondaryQualifier() {
+    return secondaryQualifier;
+  }
+  public void setSecondaryQualifier(String secondaryQualifier) {
+    this.secondaryQualifier = secondaryQualifier;
+  }
+
+
+  /**
+   * Entity ids for matching entities if details were requested
+   **/
+  public TeamActivityMetricValue entityIds(List<String> entityIds) {
+    this.entityIds = entityIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Entity ids for matching entities if details were requested")
+  @JsonProperty("entityIds")
+  public List<String> getEntityIds() {
+    return entityIds;
+  }
+  public void setEntityIds(List<String> entityIds) {
+    this.entityIds = entityIds;
+  }
+
+
+  /**
+   * Metric count
    **/
   public TeamActivityMetricValue count(Integer count) {
     this.count = count;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "metric count")
+  @ApiModelProperty(example = "null", value = "Metric count")
   @JsonProperty("count")
   public Integer getCount() {
     return count;
@@ -122,12 +180,15 @@ public class TeamActivityMetricValue  implements Serializable {
     TeamActivityMetricValue teamActivityMetricValue = (TeamActivityMetricValue) o;
 
     return Objects.equals(this.metric, teamActivityMetricValue.metric) &&
+            Objects.equals(this.qualifier, teamActivityMetricValue.qualifier) &&
+            Objects.equals(this.secondaryQualifier, teamActivityMetricValue.secondaryQualifier) &&
+            Objects.equals(this.entityIds, teamActivityMetricValue.entityIds) &&
             Objects.equals(this.count, teamActivityMetricValue.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, count);
+    return Objects.hash(metric, qualifier, secondaryQualifier, entityIds, count);
   }
 
   @Override
@@ -136,6 +197,9 @@ public class TeamActivityMetricValue  implements Serializable {
     sb.append("class TeamActivityMetricValue {\n");
     
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
+    sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
+    sb.append("    secondaryQualifier: ").append(toIndentedString(secondaryQualifier)).append("\n");
+    sb.append("    entityIds: ").append(toIndentedString(entityIds)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
     return sb.toString();

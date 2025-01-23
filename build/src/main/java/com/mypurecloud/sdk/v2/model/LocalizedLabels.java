@@ -43,7 +43,9 @@ public class LocalizedLabels  implements Serializable {
   public enum KeyEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSENGERHOMEHEADERTITLE("MessengerHomeHeaderTitle"),
-    MESSENGERHOMEHEADERSUBTITLE("MessengerHomeHeaderSubTitle");
+    MESSENGERHOMEHEADERSUBTITLE("MessengerHomeHeaderSubTitle"),
+    PUSHNOTIFICATIONTITLE("PushNotificationTitle"),
+    PUSHNOTIFICATIONBODY("PushNotificationBody");
 
     private String value;
 

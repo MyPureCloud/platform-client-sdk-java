@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DivisionedDomainEntityRef;
+import com.mypurecloud.sdk.v2.model.Reoccurrence;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class EmailCampaignSchedule  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
+  private List<Reoccurrence> recurrences = new ArrayList<Reoccurrence>();
   private String timeZone = null;
   private DivisionedDomainEntityRef emailCampaign = null;
   private String selfUri = null;
@@ -112,6 +114,24 @@ public class EmailCampaignSchedule  implements Serializable {
 
 
   /**
+   * Recurring schedules of the campaign
+   **/
+  public EmailCampaignSchedule recurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Recurring schedules of the campaign")
+  @JsonProperty("recurrences")
+  public List<Reoccurrence> getRecurrences() {
+    return recurrences;
+  }
+  public void setRecurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+  }
+
+
+  /**
    * The time zone for this email campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
    **/
   public EmailCampaignSchedule timeZone(String timeZone) {
@@ -170,6 +190,7 @@ public class EmailCampaignSchedule  implements Serializable {
             Objects.equals(this.dateModified, emailCampaignSchedule.dateModified) &&
             Objects.equals(this.version, emailCampaignSchedule.version) &&
             Objects.equals(this.intervals, emailCampaignSchedule.intervals) &&
+            Objects.equals(this.recurrences, emailCampaignSchedule.recurrences) &&
             Objects.equals(this.timeZone, emailCampaignSchedule.timeZone) &&
             Objects.equals(this.emailCampaign, emailCampaignSchedule.emailCampaign) &&
             Objects.equals(this.selfUri, emailCampaignSchedule.selfUri);
@@ -177,7 +198,7 @@ public class EmailCampaignSchedule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, timeZone, emailCampaign, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, recurrences, timeZone, emailCampaign, selfUri);
   }
 
   @Override
@@ -191,6 +212,7 @@ public class EmailCampaignSchedule  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
+    sb.append("    recurrences: ").append(toIndentedString(recurrences)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    emailCampaign: ").append(toIndentedString(emailCampaign)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

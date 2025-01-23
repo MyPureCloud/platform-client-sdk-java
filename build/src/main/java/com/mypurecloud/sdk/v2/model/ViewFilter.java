@@ -1715,8 +1715,7 @@ public class ViewFilter  implements Serializable {
     PUBLIC("Public"),
     PRIVATE("Private"),
     SHARED("Shared"),
-    FAVORITES("Favorites"),
-    DELETED("Deleted");
+    FAVORITES("Favorites");
 
     private String value;
 

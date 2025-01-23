@@ -104,6 +104,7 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		FR_CA("fr-CA"),
 		FR_FR("fr-FR"),
 		HE_IL("he-IL"),
+		HI_IN("hi-IN"),
 		IT_IT("it-IT"),
 		JA_JP("ja-JP"),
 		KO_KR("ko-KR"),

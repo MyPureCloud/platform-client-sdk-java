@@ -3789,11 +3789,12 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversation getConversationsChat(String conversationId) throws IOException, ApiException {
     return  getConversationsChat(createGetConversationsChatRequest(conversationId));
@@ -3801,10 +3802,11 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @return ChatConversation
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversation> getConversationsChatWithHttpInfo(String conversationId) throws IOException {
     return getConversationsChat(createGetConversationsChatRequest(conversationId).withHttpInfo());
@@ -3819,11 +3821,12 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversation getConversationsChat(GetConversationsChatRequest request) throws IOException, ApiException {
     try {
@@ -3838,10 +3841,11 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversation> getConversationsChat(ApiRequest<Void> request) throws IOException {
     try {
@@ -3867,12 +3871,13 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessage getConversationsChatMessage(String conversationId, String messageId) throws IOException, ApiException {
     return  getConversationsChatMessage(createGetConversationsChatMessageRequest(conversationId, messageId));
@@ -3880,11 +3885,12 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessage> getConversationsChatMessageWithHttpInfo(String conversationId, String messageId) throws IOException {
     return getConversationsChatMessage(createGetConversationsChatMessageRequest(conversationId, messageId).withHttpInfo());
@@ -3901,11 +3907,12 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessage getConversationsChatMessage(GetConversationsChatMessageRequest request) throws IOException, ApiException {
     try {
@@ -3920,10 +3927,11 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessage> getConversationsChatMessage(ApiRequest<Void> request) throws IOException {
     try {
@@ -3949,7 +3957,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -3958,6 +3966,7 @@ public class ConversationsApi {
    * @return WebChatMessageEntityList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessageEntityList getConversationsChatMessages(String conversationId, String after, String before, String sortOrder, Integer maxResults) throws IOException, ApiException {
     return  getConversationsChatMessages(createGetConversationsChatMessagesRequest(conversationId, after, before, sortOrder, maxResults));
@@ -3965,7 +3974,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -3973,6 +3982,7 @@ public class ConversationsApi {
    * @param maxResults Limit the returned number of messages, up to a maximum of 100 (optional, default to 100)
    * @return WebChatMessageEntityList
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessageEntityList> getConversationsChatMessagesWithHttpInfo(String conversationId, String after, String before, String sortOrder, Integer maxResults) throws IOException {
     return getConversationsChatMessages(createGetConversationsChatMessagesRequest(conversationId, after, before, sortOrder, maxResults).withHttpInfo());
@@ -3995,11 +4005,12 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessageEntityList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessageEntityList getConversationsChatMessages(GetConversationsChatMessagesRequest request) throws IOException, ApiException {
     try {
@@ -4014,10 +4025,11 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessageEntityList> getConversationsChatMessages(ApiRequest<Void> request) throws IOException {
     try {
@@ -4043,7 +4055,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4051,6 +4063,7 @@ public class ConversationsApi {
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsChatParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsChatParticipantCommunicationWrapup(createGetConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional));
@@ -4058,13 +4071,14 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException {
     return getConversationsChatParticipantCommunicationWrapup(createGetConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional).withHttpInfo());
@@ -4085,11 +4099,12 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsChatParticipantCommunicationWrapup(GetConversationsChatParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -4104,10 +4119,11 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantCommunicationWrapup(ApiRequest<Void> request) throws IOException {
     try {
@@ -4133,13 +4149,14 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsChatParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(conversationId, participantId, provisional));
@@ -4147,12 +4164,13 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
@@ -4171,11 +4189,12 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws IOException, ApiException {
     try {
@@ -4190,10 +4209,11 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
@@ -4219,12 +4239,13 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<WrapupCode> getConversationsChatParticipantWrapupcodes(String conversationId, String participantId) throws IOException, ApiException {
     return  getConversationsChatParticipantWrapupcodes(createGetConversationsChatParticipantWrapupcodesRequest(conversationId, participantId));
@@ -4232,11 +4253,12 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException {
     return getConversationsChatParticipantWrapupcodes(createGetConversationsChatParticipantWrapupcodesRequest(conversationId, participantId).withHttpInfo());
@@ -4253,11 +4275,12 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<WrapupCode> getConversationsChatParticipantWrapupcodes(GetConversationsChatParticipantWrapupcodesRequest request) throws IOException, ApiException {
     try {
@@ -4272,10 +4295,11 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
     try {
@@ -4301,10 +4325,11 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @return ChatConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversationEntityListing getConversationsChats() throws IOException, ApiException {
     return  getConversationsChats(createGetConversationsChatsRequest());
@@ -4312,9 +4337,10 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @return ChatConversationEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversationEntityListing> getConversationsChatsWithHttpInfo() throws IOException {
     return getConversationsChats(createGetConversationsChatsRequest().withHttpInfo());
@@ -4327,11 +4353,12 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversationEntityListing getConversationsChats(GetConversationsChatsRequest request) throws IOException, ApiException {
     try {
@@ -4346,10 +4373,11 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversationEntityListing> getConversationsChats(ApiRequest<Void> request) throws IOException {
     try {
@@ -9769,12 +9797,13 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Conversation patchConversationsChat(String conversationId, Conversation body) throws IOException, ApiException {
     return  patchConversationsChat(createPatchConversationsChatRequest(conversationId, body));
@@ -9782,11 +9811,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Conversation> patchConversationsChatWithHttpInfo(String conversationId, Conversation body) throws IOException {
     return patchConversationsChat(createPatchConversationsChatRequest(conversationId, body).withHttpInfo());
@@ -9803,11 +9833,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return Conversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Conversation patchConversationsChat(PatchConversationsChatRequest request) throws IOException, ApiException {
     try {
@@ -9822,10 +9853,11 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Conversation> patchConversationsChat(ApiRequest<Conversation> request) throws IOException {
     try {
@@ -9851,12 +9883,13 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchConversationsChatParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
      patchConversationsChatParticipant(createPatchConversationsChatParticipantRequest(conversationId, participantId, body));
@@ -9864,11 +9897,12 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchConversationsChatParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException {
     return patchConversationsChatParticipant(createPatchConversationsChatParticipantRequest(conversationId, participantId, body).withHttpInfo());
@@ -9887,10 +9921,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchConversationsChatParticipant(PatchConversationsChatParticipantRequest request) throws IOException, ApiException {
     try {
@@ -9905,10 +9940,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchConversationsChatParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
     try {
@@ -9934,13 +9970,14 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ParticipantAttributes patchConversationsChatParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     return  patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(conversationId, participantId, body));
@@ -9948,12 +9985,13 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
    * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ParticipantAttributes> patchConversationsChatParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
@@ -9972,11 +10010,12 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ParticipantAttributes patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws IOException, ApiException {
     try {
@@ -9991,10 +10030,11 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ParticipantAttributes> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
@@ -10020,7 +10060,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -10028,6 +10068,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Empty patchConversationsChatParticipantCommunication(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return  patchConversationsChatParticipantCommunication(createPatchConversationsChatParticipantCommunicationRequest(conversationId, participantId, communicationId, body));
@@ -10035,13 +10076,14 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Empty> patchConversationsChatParticipantCommunicationWithHttpInfo(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
     return patchConversationsChatParticipantCommunication(createPatchConversationsChatParticipantCommunicationRequest(conversationId, participantId, communicationId, body).withHttpInfo());
@@ -10062,11 +10104,12 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Empty patchConversationsChatParticipantCommunication(PatchConversationsChatParticipantCommunicationRequest request) throws IOException, ApiException {
     try {
@@ -10081,10 +10124,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Empty> patchConversationsChatParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
     try {
@@ -14998,13 +15042,14 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessage postConversationsChatCommunicationMessages(String conversationId, String communicationId, CreateWebChatMessageRequest body) throws IOException, ApiException {
     return  postConversationsChatCommunicationMessages(createPostConversationsChatCommunicationMessagesRequest(conversationId, communicationId, body));
@@ -15012,12 +15057,13 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
    * @return WebChatMessage
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessage> postConversationsChatCommunicationMessagesWithHttpInfo(String conversationId, String communicationId, CreateWebChatMessageRequest body) throws IOException {
     return postConversationsChatCommunicationMessages(createPostConversationsChatCommunicationMessagesRequest(conversationId, communicationId, body).withHttpInfo());
@@ -15036,11 +15082,12 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatMessage postConversationsChatCommunicationMessages(PostConversationsChatCommunicationMessagesRequest request) throws IOException, ApiException {
     try {
@@ -15055,10 +15102,11 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatMessage> postConversationsChatCommunicationMessages(ApiRequest<CreateWebChatMessageRequest> request) throws IOException {
     try {
@@ -15084,12 +15132,13 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return WebChatTyping
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatTyping postConversationsChatCommunicationTyping(String conversationId, String communicationId) throws IOException, ApiException {
     return  postConversationsChatCommunicationTyping(createPostConversationsChatCommunicationTypingRequest(conversationId, communicationId));
@@ -15097,11 +15146,12 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return WebChatTyping
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatTyping> postConversationsChatCommunicationTypingWithHttpInfo(String conversationId, String communicationId) throws IOException {
     return postConversationsChatCommunicationTyping(createPostConversationsChatCommunicationTypingRequest(conversationId, communicationId).withHttpInfo());
@@ -15118,11 +15168,12 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return WebChatTyping
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatTyping postConversationsChatCommunicationTyping(PostConversationsChatCommunicationTypingRequest request) throws IOException, ApiException {
     try {
@@ -15137,10 +15188,11 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatTyping> postConversationsChatCommunicationTyping(ApiRequest<Void> request) throws IOException {
     try {
@@ -15166,13 +15218,14 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsChatParticipantCommunicationWrapup(createPostConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
@@ -15180,12 +15233,13 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsChatParticipantCommunicationWrapup(createPostConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
@@ -15206,10 +15260,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantCommunicationWrapup(PostConversationsChatParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -15224,10 +15279,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
@@ -15253,12 +15309,13 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body));
@@ -15266,11 +15323,12 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -15289,10 +15347,11 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -15307,10 +15366,11 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -15336,11 +15396,12 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param body Create web chat request (required)
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversation postConversationsChats(CreateWebChatRequest body) throws IOException, ApiException {
     return  postConversationsChats(createPostConversationsChatsRequest(body));
@@ -15348,10 +15409,11 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param body Create web chat request (required)
    * @return ChatConversation
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversation> postConversationsChatsWithHttpInfo(CreateWebChatRequest body) throws IOException {
     return postConversationsChats(createPostConversationsChatsRequest(body).withHttpInfo());
@@ -15366,11 +15428,12 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ChatConversation postConversationsChats(PostConversationsChatsRequest request) throws IOException, ApiException {
     try {
@@ -15385,10 +15448,11 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ChatConversation> postConversationsChats(ApiRequest<CreateWebChatRequest> request) throws IOException {
     try {
@@ -19027,12 +19091,13 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsChatRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
     return  putConversationsChatRecordingstate(createPutConversationsChatRecordingstateRequest(conversationId, body));
@@ -19040,11 +19105,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsChatRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
     return putConversationsChatRecordingstate(createPutConversationsChatRecordingstateRequest(conversationId, body).withHttpInfo());
@@ -19061,11 +19127,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsChatRecordingstate(PutConversationsChatRecordingstateRequest request) throws IOException, ApiException {
     try {
@@ -19080,10 +19147,11 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsChatRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
     try {

@@ -155,8 +155,7 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		PUBLIC("Public"),
 		PRIVATE("Private"),
 		SHARED("Shared"),
-		FAVORITES("Favorites"),
-		DELETED("Deleted");
+		FAVORITES("Favorites");
 
 		private String value;
 
@@ -243,6 +242,50 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 	    return this;
 	} 
 
+	private String dashboardState;
+	public String getDashboardState() {
+		return this.dashboardState;
+	}
+
+	public void setDashboardState(String dashboardState) {
+		this.dashboardState = dashboardState;
+	}
+
+	public GetAnalyticsReportingSettingsDashboardsQueryRequest withDashboardState(String dashboardState) {
+	    this.setDashboardState(dashboardState);
+	    return this;
+	} 
+
+	public enum dashboardStateValues { 
+		ACTIVE("Active"),
+		DELETED("Deleted");
+
+		private String value;
+
+		dashboardStateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dashboardStateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dashboardStateValues value : dashboardStateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dashboardStateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -325,6 +368,9 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
                 .withQueryParameters("dashboardType", "", dashboardType)
         
 
+                .withQueryParameters("dashboardState", "", dashboardState)
+        
+
                 .withQueryParameters("dashboardAccessFilter", "", dashboardAccessFilter)
         
 
@@ -393,6 +439,20 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
+		}
+
+		public Builder withDashboardState(String dashboardState) {
+			request.setDashboardState(dashboardState);
+			return this;
+		}
+
+
+
+		
+		public Builder withDashboardState(dashboardStateValues dashboardState) {
+		    request.setDashboardState(dashboardState.toString());
+
+		    return this;
 		}
 
 		public Builder withSortBy(String sortBy) {

@@ -10,6 +10,10 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -19,7 +23,91 @@ import java.io.Serializable;
 public class MessageFooter  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Defines the content type of the footer in message
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TEXT("Text");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private String content = null;
+
   
+  /**
+   * Defines the content type of the footer in message
+   **/
+  public MessageFooter type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the content type of the footer in message")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
+  /**
+   * Content associated with the footer in the message
+   **/
+  public MessageFooter content(String content) {
+    this.content = content;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Content associated with the footer in the message")
+  @JsonProperty("content")
+  public String getContent() {
+    return content;
+  }
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -28,13 +116,15 @@ public class MessageFooter  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    MessageFooter messageFooter = (MessageFooter) o;
 
-    return true;
+    return Objects.equals(this.type, messageFooter.type) &&
+            Objects.equals(this.content, messageFooter.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(type, content);
   }
 
   @Override
@@ -42,6 +132,8 @@ public class MessageFooter  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageFooter {\n");
     
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }

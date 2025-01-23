@@ -126,6 +126,7 @@ import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
+import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesResponse;
@@ -216,6 +217,7 @@ import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.ValidationServiceAsyncResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
 import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
@@ -335,6 +337,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
@@ -7521,6 +7524,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<HistoricalImportStatusListing> response = (ApiResponse<HistoricalImportStatusListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param jobId The job Id of the historical data import request (required)
+   * @return HistoricalImportStatusJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementHistoricaldataImportstatusJobId(createGetWorkforcemanagementHistoricaldataImportstatusJobIdRequest(jobId));
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param jobId The job Id of the historical data import request (required)
+   * @return HistoricalImportStatusJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportStatusJobResponse> getWorkforcemanagementHistoricaldataImportstatusJobIdWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementHistoricaldataImportstatusJobId(createGetWorkforcemanagementHistoricaldataImportstatusJobIdRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest createGetWorkforcemanagementHistoricaldataImportstatusJobIdRequest(String jobId) {
+    return GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param request The request object
+   * @return HistoricalImportStatusJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoricalImportStatusJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoricalImportStatusJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportStatusJobResponse> getWorkforcemanagementHistoricaldataImportstatusJobId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoricalImportStatusJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportStatusJobResponse> response = (ApiResponse<HistoricalImportStatusJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportStatusJobResponse> response = (ApiResponse<HistoricalImportStatusJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17117,20 +17198,22 @@ public class WorkforceManagementApi {
    * Trigger validation process for historical import
    * 
    * @param body body (optional)
+   * @return ValidationServiceAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postWorkforcemanagementHistoricaldataValidate(ValidationServiceRequest body) throws IOException, ApiException {
-     postWorkforcemanagementHistoricaldataValidate(createPostWorkforcemanagementHistoricaldataValidateRequest(body));
+  public ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(ValidationServiceRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementHistoricaldataValidate(createPostWorkforcemanagementHistoricaldataValidateRequest(body));
   }
 
   /**
    * Trigger validation process for historical import
    * 
    * @param body body (optional)
+   * @return ValidationServiceAsyncResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postWorkforcemanagementHistoricaldataValidateWithHttpInfo(ValidationServiceRequest body) throws IOException {
+  public ApiResponse<ValidationServiceAsyncResponse> postWorkforcemanagementHistoricaldataValidateWithHttpInfo(ValidationServiceRequest body) throws IOException {
     return postWorkforcemanagementHistoricaldataValidate(createPostWorkforcemanagementHistoricaldataValidateRequest(body).withHttpInfo());
   }
 
@@ -17145,17 +17228,18 @@ public class WorkforceManagementApi {
    * Trigger validation process for historical import
    * 
    * @param request The request object
+   * @return ValidationServiceAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postWorkforcemanagementHistoricaldataValidate(PostWorkforcemanagementHistoricaldataValidateRequest request) throws IOException, ApiException {
+  public ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(PostWorkforcemanagementHistoricaldataValidateRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ValidationServiceAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ValidationServiceAsyncResponse>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -17166,13 +17250,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postWorkforcemanagementHistoricaldataValidate(ApiRequest<ValidationServiceRequest> request) throws IOException {
+  public ApiResponse<ValidationServiceAsyncResponse> postWorkforcemanagementHistoricaldataValidate(ApiRequest<ValidationServiceRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ValidationServiceAsyncResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ValidationServiceAsyncResponse> response = (ApiResponse<ValidationServiceAsyncResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -17183,7 +17267,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ValidationServiceAsyncResponse> response = (ApiResponse<ValidationServiceAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

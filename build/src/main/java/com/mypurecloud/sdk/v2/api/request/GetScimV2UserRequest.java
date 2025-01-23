@@ -253,10 +253,10 @@ public class GetScimV2UserRequest {
                 .withPathParameter("userId", userId)
         
 
-                .withQueryParameters("attributes", "multi", attributes)
+                .withQueryParameters("attributes", "csv", attributes)
         
 
-                .withQueryParameters("excludedAttributes", "multi", excludedAttributes)
+                .withQueryParameters("excludedAttributes", "csv", excludedAttributes)
         
                 .withHeaderParameter("If-None-Match", ifNoneMatch)
         

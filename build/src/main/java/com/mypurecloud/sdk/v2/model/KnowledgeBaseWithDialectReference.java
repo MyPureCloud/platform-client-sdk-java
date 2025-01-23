@@ -67,6 +67,8 @@ public class KnowledgeBaseWithDialectReference  implements Serializable {
     FR_CH("fr-CH"),
     ES_MX("es-MX"),
     ES_CO("es-CO"),
+    KO_KR("ko-KR"),
+    HI_IN("hi-IN"),
     ES_AR("es-AR");
 
     private String value;

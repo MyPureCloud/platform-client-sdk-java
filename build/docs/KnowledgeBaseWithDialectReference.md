@@ -40,9 +40,11 @@
 | FR_CH | &quot;fr-CH&quot; | 
 | ES_MX | &quot;es-MX&quot; | 
 | ES_CO | &quot;es-CO&quot; | 
+| KO_KR | &quot;ko-KR&quot; | 
+| HI_IN | &quot;hi-IN&quot; | 
 | ES_AR | &quot;es-AR&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

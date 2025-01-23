@@ -48,6 +48,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AI("AI"),
+    DYNAMICDATETIME("DynamicDateTime"),
     DYNAMICLIST("DynamicList"),
     LIST("List"),
     REGEX("Regex"),

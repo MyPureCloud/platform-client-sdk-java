@@ -303,17 +303,18 @@ public class MessageMediaParticipant  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    UNKNOWN("unknown"),
-    SMS("sms"),
-    TWITTER("twitter"),
+    APPLE("apple"),
     FACEBOOK("facebook"),
-    LINE("line"),
-    WHATSAPP("whatsapp"),
-    TELEGRAM("telegram"),
+    INSTAGRAM("instagram"),
     KAKAO("kakao"),
-    WEBMESSAGING("webmessaging"),
+    LINE("line"),
     OPEN("open"),
-    INSTAGRAM("instagram");
+    SMS("sms"),
+    TELEGRAM("telegram"),
+    TWITTER("twitter"),
+    WEBMESSAGING("webmessaging"),
+    WHATSAPP("whatsapp"),
+    UNKNOWN("unknown");
 
     private String value;
 

@@ -19,6 +19,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AI | &quot;AI&quot; | 
+| DYNAMICDATETIME | &quot;DynamicDateTime&quot; | 
 | DYNAMICLIST | &quot;DynamicList&quot; | 
 | LIST | &quot;List&quot; | 
 | REGEX | &quot;Regex&quot; | 
@@ -37,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

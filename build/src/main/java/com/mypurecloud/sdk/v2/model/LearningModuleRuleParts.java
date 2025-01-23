@@ -98,7 +98,8 @@ public class LearningModuleRuleParts  implements Serializable {
     LOCATION("Location"),
     QUEUE("Queue"),
     ROLE("Role"),
-    TEAM("Team");
+    TEAM("Team"),
+    USER("User");
 
     private String value;
 

@@ -129,6 +129,7 @@ import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
+import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesResponse;
@@ -219,6 +220,7 @@ import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.ValidationServiceAsyncResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
 import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
@@ -338,6 +340,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
@@ -6957,6 +6960,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<HistoricalImportStatusListing> response = (ApiResponse<HistoricalImportStatusListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoricalImportStatusJobResponse> getWorkforcemanagementHistoricaldataImportstatusJobIdAsync(GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest request, final AsyncApiCallback<HistoricalImportStatusJobResponse> callback) {
+    try {
+      final SettableFuture<HistoricalImportStatusJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportStatusJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportStatusJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportStatusJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves status of the historical data imports associated with job id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoricalImportStatusJobResponse>> getWorkforcemanagementHistoricaldataImportstatusJobIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportStatusJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoricalImportStatusJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportStatusJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportStatusJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportStatusJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportStatusJobResponse> response = (ApiResponse<HistoricalImportStatusJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportStatusJobResponse> response = (ApiResponse<HistoricalImportStatusJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15608,13 +15686,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postWorkforcemanagementHistoricaldataValidateAsync(PostWorkforcemanagementHistoricaldataValidateRequest request, final AsyncApiCallback<Void> callback) {
+  public Future<ValidationServiceAsyncResponse> postWorkforcemanagementHistoricaldataValidateAsync(PostWorkforcemanagementHistoricaldataValidateRequest request, final AsyncApiCallback<ValidationServiceAsyncResponse> callback) {
     try {
-      final SettableFuture<Void> future = SettableFuture.create();
+      final SettableFuture<ValidationServiceAsyncResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ValidationServiceAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<ValidationServiceAsyncResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<ValidationServiceAsyncResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -15642,13 +15720,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postWorkforcemanagementHistoricaldataValidateAsync(ApiRequest<ValidationServiceRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<ValidationServiceAsyncResponse>> postWorkforcemanagementHistoricaldataValidateAsync(ApiRequest<ValidationServiceRequest> request, final AsyncApiCallback<ApiResponse<ValidationServiceAsyncResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ValidationServiceAsyncResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ValidationServiceAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<ValidationServiceAsyncResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<ValidationServiceAsyncResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -15656,7 +15734,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            ApiResponse<ValidationServiceAsyncResponse> response = (ApiResponse<ValidationServiceAsyncResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -15664,7 +15742,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ValidationServiceAsyncResponse> response = (ApiResponse<ValidationServiceAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

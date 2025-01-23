@@ -225,10 +225,10 @@ public class GetScimV2GroupsRequest {
                 .withQueryParameters("count", "", count)
         
 
-                .withQueryParameters("attributes", "multi", attributes)
+                .withQueryParameters("attributes", "csv", attributes)
         
 
-                .withQueryParameters("excludedAttributes", "multi", excludedAttributes)
+                .withQueryParameters("excludedAttributes", "csv", excludedAttributes)
         
 
                 .withQueryParameters("filter", "", filter)

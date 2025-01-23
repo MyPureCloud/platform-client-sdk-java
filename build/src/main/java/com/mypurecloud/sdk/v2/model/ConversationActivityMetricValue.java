@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -36,7 +37,7 @@ public class ConversationActivityMetricValue  implements Serializable {
     }
   }
   /**
-   * metric
+   * Metric
    */
  @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
@@ -71,18 +72,20 @@ public class ConversationActivityMetricValue  implements Serializable {
     }
   }
   private MetricEnum metric = null;
+  private String qualifier = null;
+  private List<String> entityIds = new ArrayList<String>();
   private Integer count = null;
 
   
   /**
-   * metric
+   * Metric
    **/
   public ConversationActivityMetricValue metric(MetricEnum metric) {
     this.metric = metric;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "metric")
+  @ApiModelProperty(example = "null", value = "Metric")
   @JsonProperty("metric")
   public MetricEnum getMetric() {
     return metric;
@@ -93,14 +96,50 @@ public class ConversationActivityMetricValue  implements Serializable {
 
 
   /**
-   * metric count
+   * Metric qualifier
+   **/
+  public ConversationActivityMetricValue qualifier(String qualifier) {
+    this.qualifier = qualifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metric qualifier")
+  @JsonProperty("qualifier")
+  public String getQualifier() {
+    return qualifier;
+  }
+  public void setQualifier(String qualifier) {
+    this.qualifier = qualifier;
+  }
+
+
+  /**
+   * Entity ids for matching entities if details were requested
+   **/
+  public ConversationActivityMetricValue entityIds(List<String> entityIds) {
+    this.entityIds = entityIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Entity ids for matching entities if details were requested")
+  @JsonProperty("entityIds")
+  public List<String> getEntityIds() {
+    return entityIds;
+  }
+  public void setEntityIds(List<String> entityIds) {
+    this.entityIds = entityIds;
+  }
+
+
+  /**
+   * Metric count
    **/
   public ConversationActivityMetricValue count(Integer count) {
     this.count = count;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "metric count")
+  @ApiModelProperty(example = "null", value = "Metric count")
   @JsonProperty("count")
   public Integer getCount() {
     return count;
@@ -121,12 +160,14 @@ public class ConversationActivityMetricValue  implements Serializable {
     ConversationActivityMetricValue conversationActivityMetricValue = (ConversationActivityMetricValue) o;
 
     return Objects.equals(this.metric, conversationActivityMetricValue.metric) &&
+            Objects.equals(this.qualifier, conversationActivityMetricValue.qualifier) &&
+            Objects.equals(this.entityIds, conversationActivityMetricValue.entityIds) &&
             Objects.equals(this.count, conversationActivityMetricValue.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, count);
+    return Objects.hash(metric, qualifier, entityIds, count);
   }
 
   @Override
@@ -135,6 +176,8 @@ public class ConversationActivityMetricValue  implements Serializable {
     sb.append("class ConversationActivityMetricValue {\n");
     
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
+    sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
+    sb.append("    entityIds: ").append(toIndentedString(entityIds)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
     return sb.toString();

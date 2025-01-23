@@ -337,6 +337,69 @@ public class GetOutboundMessagingcampaignsRequest {
 	    return this;
 	} 
 
+	private String contentTemplateId;
+	public String getContentTemplateId() {
+		return this.contentTemplateId;
+	}
+
+	public void setContentTemplateId(String contentTemplateId) {
+		this.contentTemplateId = contentTemplateId;
+	}
+
+	public GetOutboundMessagingcampaignsRequest withContentTemplateId(String contentTemplateId) {
+	    this.setContentTemplateId(contentTemplateId);
+	    return this;
+	} 
+
+	private String campaignStatus;
+	public String getCampaignStatus() {
+		return this.campaignStatus;
+	}
+
+	public void setCampaignStatus(String campaignStatus) {
+		this.campaignStatus = campaignStatus;
+	}
+
+	public GetOutboundMessagingcampaignsRequest withCampaignStatus(String campaignStatus) {
+	    this.setCampaignStatus(campaignStatus);
+	    return this;
+	} 
+
+	public enum campaignStatusValues { 
+		ON("on"),
+		STOPPING("stopping"),
+		OFF("off"),
+		COMPLETE("complete"),
+		INVALID("invalid"),
+		FORCED_OFF("forced_off"),
+		FORCED_STOPPING("forced_stopping");
+
+		private String value;
+
+		campaignStatusValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static campaignStatusValues fromString(String key) {
+			if (key == null) return null;
+
+			for (campaignStatusValues value : campaignStatusValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return campaignStatusValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -389,6 +452,12 @@ public class GetOutboundMessagingcampaignsRequest {
         
 
                 .withQueryParameters("id", "multi", id)
+        
+
+                .withQueryParameters("contentTemplateId", "", contentTemplateId)
+        
+
+                .withQueryParameters("campaignStatus", "", campaignStatus)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -486,6 +555,25 @@ public class GetOutboundMessagingcampaignsRequest {
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
+		}
+
+		public Builder withContentTemplateId(String contentTemplateId) {
+			request.setContentTemplateId(contentTemplateId);
+			return this;
+		}
+
+		public Builder withCampaignStatus(String campaignStatus) {
+			request.setCampaignStatus(campaignStatus);
+			return this;
+		}
+
+
+
+		
+		public Builder withCampaignStatus(campaignStatusValues campaignStatus) {
+		    request.setCampaignStatus(campaignStatus.toString());
+
+		    return this;
 		}
 
 

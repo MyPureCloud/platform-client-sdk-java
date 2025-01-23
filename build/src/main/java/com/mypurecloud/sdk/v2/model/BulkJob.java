@@ -48,7 +48,8 @@ public class BulkJob  implements Serializable {
     RUNNING("Running"),
     SUCCEEDED("Succeeded"),
     FAILED("Failed"),
-    CANCELLED("Cancelled");
+    CANCELLED("Cancelled"),
+    TERMINATED("Terminated");
 
     private String value;
 

@@ -28,14 +28,14 @@ public class GroupMembersUpdate  implements Serializable {
 
   
   /**
-   * A list of the ids of the members to add.
+   * A list of the ids of the members to add. A maximum of 50 members are allowed per request.
    **/
   public GroupMembersUpdate memberIds(List<String> memberIds) {
     this.memberIds = memberIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A list of the ids of the members to add.")
+  @ApiModelProperty(example = "null", required = true, value = "A list of the ids of the members to add. A maximum of 50 members are allowed per request.")
   @JsonProperty("memberIds")
   public List<String> getMemberIds() {
     return memberIds;

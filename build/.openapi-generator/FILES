@@ -970,6 +970,7 @@ docs/ConversationCallbackEventTopicWrapup.md
 docs/ConversationCategoriesEntityListing.md
 docs/ConversationCategory.md
 docs/ConversationChannel.md
+docs/ConversationChannelLocation.md
 docs/ConversationChannelMetadata.md
 docs/ConversationChat.md
 docs/ConversationChatEventTopicChatConversation.md
@@ -2206,6 +2207,7 @@ docs/HistoricalAdherenceQueryResult.md
 docs/HistoricalData.md
 docs/HistoricalImportDeleteJobResponse.md
 docs/HistoricalImportStatus.md
+docs/HistoricalImportStatusJobResponse.md
 docs/HistoricalImportStatusListing.md
 docs/HistoricalShrinkageActivityCategoryResponse.md
 docs/HistoricalShrinkageActivityCodeResponse.md
@@ -3349,6 +3351,7 @@ docs/PublishedSurveyFormReference.md
 docs/PunctualityEvent.md
 docs/PureCloud.md
 docs/PureEngage.md
+docs/PushIntegration.md
 docs/QMAuditQueryRequest.md
 docs/QualityApi.json
 docs/QualityApi.md
@@ -4712,6 +4715,7 @@ docs/ValidateWorkPlanResponse.md
 docs/ValidationError.md
 docs/ValidationLimits.md
 docs/ValidationResult.md
+docs/ValidationServiceAsyncResponse.md
 docs/ValidationServiceRequest.md
 docs/ValueWrapperActivityPlanServiceGoalImpactOverrides.md
 docs/ValueWrapperDate.md
@@ -6746,6 +6750,7 @@ docs/getWorkforcemanagementCalendarDataIcs-example.txt
 docs/getWorkforcemanagementCalendarUrlIcs-example.txt
 docs/getWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/getWorkforcemanagementHistoricaldataImportstatus-example.txt
+docs/getWorkforcemanagementHistoricaldataImportstatusJobId-example.txt
 docs/getWorkforcemanagementIntegrationsHris-example.txt
 docs/getWorkforcemanagementIntegrationsHrisTimeofftypesJob-example.txt
 docs/getWorkforcemanagementManagementunit-example.txt
@@ -9671,6 +9676,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessu
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementCalendarDataIcsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementCalendarUrlIcsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementHistoricaldataDeletejobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementHistoricaldataImportstatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementIntegrationsHrisRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest.java
@@ -11825,6 +11831,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicWrapup.
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCategoriesEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChannel.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationChannelLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChannelMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChat.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicChatConversation.java
@@ -13031,6 +13038,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/HistoricalAdherenceQueryResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalData.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportDeleteJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatus.java
+src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatusJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatusListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalShrinkageActivityCategoryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalShrinkageActivityCodeResponse.java
@@ -14130,6 +14138,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PublishedSurveyFormReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/PunctualityEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/PureCloud.java
 src/main/java/com/mypurecloud/sdk/v2/model/PureEngage.java
+src/main/java/com/mypurecloud/sdk/v2/model/PushIntegration.java
 src/main/java/com/mypurecloud/sdk/v2/model/QMAuditQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditLogMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditQueryExecutionResultsResponse.java
@@ -15445,6 +15454,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValidateWorkPlanResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationError.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationLimits.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/ValidationServiceAsyncResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationServiceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperActivityPlanServiceGoalImpactOverrides.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperDate.java

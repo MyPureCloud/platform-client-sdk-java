@@ -5,8 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#Enum--MetricEnum) | metric |  [optional] |
-| **count** | **Integer** | metric count |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | Metric |  [optional] |
+| **qualifier** | **String** | Metric qualifier |  [optional] |
+| **entityIds** | **List&lt;String&gt;** | Entity ids for matching entities if details were requested |  [optional] |
+| **count** | **Integer** | Metric count |  [optional] |
 
 
 ## Enum: MetricEnum
@@ -19,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

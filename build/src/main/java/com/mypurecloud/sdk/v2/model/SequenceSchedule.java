@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.Reoccurrence;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class SequenceSchedule  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
+  private List<Reoccurrence> recurrences = new ArrayList<Reoccurrence>();
   private String timeZone = null;
   private DomainEntityRef sequence = null;
   private String selfUri = null;
@@ -112,6 +114,24 @@ public class SequenceSchedule  implements Serializable {
 
 
   /**
+   * Recurring schedules of the campaign
+   **/
+  public SequenceSchedule recurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Recurring schedules of the campaign")
+  @JsonProperty("recurrences")
+  public List<Reoccurrence> getRecurrences() {
+    return recurrences;
+  }
+  public void setRecurrences(List<Reoccurrence> recurrences) {
+    this.recurrences = recurrences;
+  }
+
+
+  /**
    * The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
    **/
   public SequenceSchedule timeZone(String timeZone) {
@@ -170,6 +190,7 @@ public class SequenceSchedule  implements Serializable {
             Objects.equals(this.dateModified, sequenceSchedule.dateModified) &&
             Objects.equals(this.version, sequenceSchedule.version) &&
             Objects.equals(this.intervals, sequenceSchedule.intervals) &&
+            Objects.equals(this.recurrences, sequenceSchedule.recurrences) &&
             Objects.equals(this.timeZone, sequenceSchedule.timeZone) &&
             Objects.equals(this.sequence, sequenceSchedule.sequence) &&
             Objects.equals(this.selfUri, sequenceSchedule.selfUri);
@@ -177,7 +198,7 @@ public class SequenceSchedule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, timeZone, sequence, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, intervals, recurrences, timeZone, sequence, selfUri);
   }
 
   @Override
@@ -191,6 +212,7 @@ public class SequenceSchedule  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
+    sb.append("    recurrences: ").append(toIndentedString(recurrences)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

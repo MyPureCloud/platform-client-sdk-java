@@ -3579,10 +3579,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatConversation> getConversationsChatAsync(GetConversationsChatRequest request, final AsyncApiCallback<ChatConversation> callback) {
     try {
@@ -3613,10 +3614,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatConversation>> getConversationsChatAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
     try {
@@ -3654,10 +3656,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatMessage> getConversationsChatMessageAsync(GetConversationsChatMessageRequest request, final AsyncApiCallback<WebChatMessage> callback) {
     try {
@@ -3688,10 +3691,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get a web chat conversation message
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatMessage>> getConversationsChatMessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatMessage>> callback) {
     try {
@@ -3729,10 +3733,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatMessageEntityList> getConversationsChatMessagesAsync(GetConversationsChatMessagesRequest request, final AsyncApiCallback<WebChatMessageEntityList> callback) {
     try {
@@ -3763,10 +3768,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the messages of a chat conversation.
-   * The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatMessageEntityList>> getConversationsChatMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatMessageEntityList>> callback) {
     try {
@@ -3804,10 +3810,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AssignedWrapupCode> getConversationsChatParticipantCommunicationWrapupAsync(GetConversationsChatParticipantCommunicationWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
@@ -3838,10 +3845,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AssignedWrapupCode>> getConversationsChatParticipantCommunicationWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
@@ -3879,10 +3887,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AssignedWrapupCode> getConversationsChatParticipantWrapupAsync(GetConversationsChatParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
@@ -3913,10 +3922,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AssignedWrapupCode>> getConversationsChatParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
@@ -3954,10 +3964,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<List<WrapupCode>> getConversationsChatParticipantWrapupcodesAsync(GetConversationsChatParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
@@ -3988,10 +3999,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<List<WrapupCode>>> getConversationsChatParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
@@ -4029,10 +4041,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatConversationEntityListing> getConversationsChatsAsync(GetConversationsChatsRequest request, final AsyncApiCallback<ChatConversationEntityListing> callback) {
     try {
@@ -4063,10 +4076,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get active chat conversations for the logged in user
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatConversationEntityListing>> getConversationsChatsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatConversationEntityListing>> callback) {
     try {
@@ -8991,10 +9005,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Conversation> patchConversationsChatAsync(PatchConversationsChatRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
@@ -9025,10 +9040,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Conversation>> patchConversationsChatAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
@@ -9066,10 +9082,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> patchConversationsChatParticipantAsync(PatchConversationsChatParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -9100,10 +9117,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> patchConversationsChatParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -9141,10 +9159,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ParticipantAttributes> patchConversationsChatParticipantAttributesAsync(PatchConversationsChatParticipantAttributesRequest request, final AsyncApiCallback<ParticipantAttributes> callback) {
     try {
@@ -9175,10 +9194,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ParticipantAttributes>> patchConversationsChatParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<ParticipantAttributes>> callback) {
     try {
@@ -9216,10 +9236,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Empty> patchConversationsChatParticipantCommunicationAsync(PatchConversationsChatParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
@@ -9250,10 +9271,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Empty>> patchConversationsChatParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
@@ -13728,10 +13750,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatMessage> postConversationsChatCommunicationMessagesAsync(PostConversationsChatCommunicationMessagesRequest request, final AsyncApiCallback<WebChatMessage> callback) {
     try {
@@ -13762,10 +13785,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatMessage>> postConversationsChatCommunicationMessagesAsync(ApiRequest<CreateWebChatMessageRequest> request, final AsyncApiCallback<ApiResponse<WebChatMessage>> callback) {
     try {
@@ -13803,10 +13827,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatTyping> postConversationsChatCommunicationTypingAsync(PostConversationsChatCommunicationTypingRequest request, final AsyncApiCallback<WebChatTyping> callback) {
     try {
@@ -13837,10 +13862,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatTyping>> postConversationsChatCommunicationTypingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatTyping>> callback) {
     try {
@@ -13878,10 +13904,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsChatParticipantCommunicationWrapupAsync(PostConversationsChatParticipantCommunicationWrapupRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -13912,10 +13939,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsChatParticipantCommunicationWrapupAsync(ApiRequest<WrapupInput> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -13953,10 +13981,11 @@ public class ConversationsApiAsync {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsChatParticipantReplaceAsync(PostConversationsChatParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -13987,10 +14016,11 @@ public class ConversationsApiAsync {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsChatParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -14028,10 +14058,11 @@ public class ConversationsApiAsync {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatConversation> postConversationsChatsAsync(PostConversationsChatsRequest request, final AsyncApiCallback<ChatConversation> callback) {
     try {
@@ -14062,10 +14093,11 @@ public class ConversationsApiAsync {
 
   /**
    * Create a web chat conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatConversation>> postConversationsChatsAsync(ApiRequest<CreateWebChatRequest> request, final AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
     try {
@@ -17415,10 +17447,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<String> putConversationsChatRecordingstateAsync(PutConversationsChatRecordingstateRequest request, final AsyncApiCallback<String> callback) {
     try {
@@ -17449,10 +17482,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<String>> putConversationsChatRecordingstateAsync(ApiRequest<SetRecordingState> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {

@@ -178,7 +178,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | Group ID
-String ids = "ids_example"; // String | Comma separated list of userIds to remove
+String ids = "ids_example"; // String | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
 try {
     Empty result = apiInstance.deleteGroupMembers(groupId, ids);
     System.out.println(result);
@@ -194,7 +194,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **ids** | **String**| Comma separated list of userIds to remove | 
+| **ids** | **String**| Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. | 
 {: class="table-striped"}
 
 
@@ -1133,4 +1133,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

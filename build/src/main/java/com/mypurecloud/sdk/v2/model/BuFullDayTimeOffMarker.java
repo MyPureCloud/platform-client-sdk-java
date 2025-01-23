@@ -30,6 +30,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
   private Integer payableMinutes = null;
   private String timeOffRequestId = null;
   private Integer timeOffRequestSyncVersion = null;
+  private Boolean delete = null;
 
   
   /**
@@ -176,6 +177,24 @@ public class BuFullDayTimeOffMarker  implements Serializable {
   }
 
 
+  /**
+   * Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update
+   **/
+  public BuFullDayTimeOffMarker delete(Boolean delete) {
+    this.delete = delete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update")
+  @JsonProperty("delete")
+  public Boolean getDelete() {
+    return delete;
+  }
+  public void setDelete(Boolean delete) {
+    this.delete = delete;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -193,12 +212,13 @@ public class BuFullDayTimeOffMarker  implements Serializable {
             Objects.equals(this.paid, buFullDayTimeOffMarker.paid) &&
             Objects.equals(this.payableMinutes, buFullDayTimeOffMarker.payableMinutes) &&
             Objects.equals(this.timeOffRequestId, buFullDayTimeOffMarker.timeOffRequestId) &&
-            Objects.equals(this.timeOffRequestSyncVersion, buFullDayTimeOffMarker.timeOffRequestSyncVersion);
+            Objects.equals(this.timeOffRequestSyncVersion, buFullDayTimeOffMarker.timeOffRequestSyncVersion) &&
+            Objects.equals(this.delete, buFullDayTimeOffMarker.delete);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessUnitDate, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion);
+    return Objects.hash(businessUnitDate, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion, delete);
   }
 
   @Override
@@ -214,6 +234,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    timeOffRequestId: ").append(toIndentedString(timeOffRequestId)).append("\n");
     sb.append("    timeOffRequestSyncVersion: ").append(toIndentedString(timeOffRequestSyncVersion)).append("\n");
+    sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
     sb.append("}");
     return sb.toString();
   }

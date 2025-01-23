@@ -3186,6 +3186,7 @@ public class AnalyticsApi {
    * @param dashboardType List dashboard of given type (required)
    * @param dashboardAccessFilter Filter dashboard based on the owner of dashboard (required)
    * @param name name of the dashboard (optional)
+   * @param dashboardState List dashboard of given state (optional, default to Active)
    * @param sortBy  (optional, default to desc)
    * @param pageNumber  (optional, default to 1)
    * @param pageSize  (optional, default to 9)
@@ -3193,8 +3194,8 @@ public class AnalyticsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize));
+  public DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(String dashboardType, String dashboardAccessFilter, String name, String dashboardState, String sortBy, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, dashboardState, sortBy, pageNumber, pageSize));
   }
 
   /**
@@ -3203,23 +3204,26 @@ public class AnalyticsApi {
    * @param dashboardType List dashboard of given type (required)
    * @param dashboardAccessFilter Filter dashboard based on the owner of dashboard (required)
    * @param name name of the dashboard (optional)
+   * @param dashboardState List dashboard of given state (optional, default to Active)
    * @param sortBy  (optional, default to desc)
    * @param pageNumber  (optional, default to 1)
    * @param pageSize  (optional, default to 9)
    * @return DashboardConfigurationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsDashboardsQueryWithHttpInfo(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) throws IOException {
-    return getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize).withHttpInfo());
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsDashboardsQueryWithHttpInfo(String dashboardType, String dashboardAccessFilter, String name, String dashboardState, String sortBy, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, dashboardState, sortBy, pageNumber, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsReportingSettingsDashboardsQueryRequest createGetAnalyticsReportingSettingsDashboardsQueryRequest(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) {
+  private GetAnalyticsReportingSettingsDashboardsQueryRequest createGetAnalyticsReportingSettingsDashboardsQueryRequest(String dashboardType, String dashboardAccessFilter, String name, String dashboardState, String sortBy, Integer pageNumber, Integer pageSize) {
     return GetAnalyticsReportingSettingsDashboardsQueryRequest.builder()
             .withDashboardType(dashboardType)
 
             .withDashboardAccessFilter(dashboardAccessFilter)
 
             .withName(name)
+
+            .withDashboardState(dashboardState)
 
             .withSortBy(sortBy)
 

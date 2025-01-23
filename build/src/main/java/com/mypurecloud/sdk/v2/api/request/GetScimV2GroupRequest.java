@@ -207,10 +207,10 @@ public class GetScimV2GroupRequest {
                 .withPathParameter("groupId", groupId)
         
 
-                .withQueryParameters("attributes", "multi", attributes)
+                .withQueryParameters("attributes", "csv", attributes)
         
 
-                .withQueryParameters("excludedAttributes", "multi", excludedAttributes)
+                .withQueryParameters("excludedAttributes", "csv", excludedAttributes)
         
                 .withHeaderParameter("If-None-Match", ifNoneMatch)
         

@@ -11,8 +11,13 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Button;
+import com.mypurecloud.sdk.v2.model.MessageFooter;
+import com.mypurecloud.sdk.v2.model.MessageHeader;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -25,6 +30,9 @@ public class WhatsAppDefinition  implements Serializable {
   private String name = null;
   private String namespace = null;
   private String language = null;
+  private List<Button> buttons = new ArrayList<Button>();
+  private MessageFooter messageFooter = null;
+  private MessageHeader header = null;
 
   
   /**
@@ -81,6 +89,60 @@ public class WhatsAppDefinition  implements Serializable {
   }
 
 
+  /**
+   * List of buttons to be included in the WhatsApp messages channel
+   **/
+  public WhatsAppDefinition buttons(List<Button> buttons) {
+    this.buttons = buttons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of buttons to be included in the WhatsApp messages channel")
+  @JsonProperty("buttons")
+  public List<Button> getButtons() {
+    return buttons;
+  }
+  public void setButtons(List<Button> buttons) {
+    this.buttons = buttons;
+  }
+
+
+  /**
+   * Footer for the message in the WhatsApp messages channel
+   **/
+  public WhatsAppDefinition messageFooter(MessageFooter messageFooter) {
+    this.messageFooter = messageFooter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Footer for the message in the WhatsApp messages channel")
+  @JsonProperty("messageFooter")
+  public MessageFooter getMessageFooter() {
+    return messageFooter;
+  }
+  public void setMessageFooter(MessageFooter messageFooter) {
+    this.messageFooter = messageFooter;
+  }
+
+
+  /**
+   * Header for the message in the WhatsApp messages channel
+   **/
+  public WhatsAppDefinition header(MessageHeader header) {
+    this.header = header;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Header for the message in the WhatsApp messages channel")
+  @JsonProperty("header")
+  public MessageHeader getHeader() {
+    return header;
+  }
+  public void setHeader(MessageHeader header) {
+    this.header = header;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +155,15 @@ public class WhatsAppDefinition  implements Serializable {
 
     return Objects.equals(this.name, whatsAppDefinition.name) &&
             Objects.equals(this.namespace, whatsAppDefinition.namespace) &&
-            Objects.equals(this.language, whatsAppDefinition.language);
+            Objects.equals(this.language, whatsAppDefinition.language) &&
+            Objects.equals(this.buttons, whatsAppDefinition.buttons) &&
+            Objects.equals(this.messageFooter, whatsAppDefinition.messageFooter) &&
+            Objects.equals(this.header, whatsAppDefinition.header);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, namespace, language);
+    return Objects.hash(name, namespace, language, buttons, messageFooter, header);
   }
 
   @Override
@@ -109,6 +174,9 @@ public class WhatsAppDefinition  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    buttons: ").append(toIndentedString(buttons)).append("\n");
+    sb.append("    messageFooter: ").append(toIndentedString(messageFooter)).append("\n");
+    sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("}");
     return sb.toString();
   }
