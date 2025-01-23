@@ -90,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs) | Get existing calendar link for the current user |
 | [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataDeletejob) | Retrieves delete job status for historical data imports of the organization |
 | [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatus) | Retrieves status of the historical data imports of the organization |
+| [**getWorkforcemanagementHistoricaldataImportstatusJobId**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId) | Retrieves status of the historical data imports associated with job id |
 | [**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHris) | Get integrations |
 | [**getWorkforcemanagementIntegrationsHrisTimeofftypesJob**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHrisTimeofftypesJob) | Query the results of time off types job |
 | [**getWorkforcemanagementManagementunit**](WorkforceManagementApi#getWorkforcemanagementManagementunit) | Get management unit |
@@ -5698,6 +5699,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**HistoricalImportStatusListing**](HistoricalImportStatusListing)
+
+
+# **getWorkforcemanagementHistoricaldataImportstatusJobId**
+
+
+> [HistoricalImportStatusJobResponse](HistoricalImportStatusJobResponse) getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+
+Retrieves status of the historical data imports associated with job id
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/importstatus/{jobId}  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The job Id of the historical data import request
+try {
+    HistoricalImportStatusJobResponse result = apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The job Id of the historical data import request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**HistoricalImportStatusJobResponse**](HistoricalImportStatusJobResponse)
 
 
 # **getWorkforcemanagementIntegrationsHris**
@@ -12947,7 +13007,7 @@ This endpoint does not require any parameters.
 # **postWorkforcemanagementHistoricaldataValidate**
 
 
-> Void postWorkforcemanagementHistoricaldataValidate(body)
+> [ValidationServiceAsyncResponse](ValidationServiceAsyncResponse) postWorkforcemanagementHistoricaldataValidate(body)
 
 Trigger validation process for historical import
 
@@ -12981,7 +13041,8 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 ValidationServiceRequest body = new ValidationServiceRequest(); // ValidationServiceRequest | body
 try {
-    apiInstance.postWorkforcemanagementHistoricaldataValidate(body);
+    ValidationServiceAsyncResponse result = apiInstance.postWorkforcemanagementHistoricaldataValidate(body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementHistoricaldataValidate");
     e.printStackTrace();
@@ -12999,7 +13060,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ValidationServiceAsyncResponse**](ValidationServiceAsyncResponse)
 
 
 # **postWorkforcemanagementIntegrationsHriTimeofftypesJobs**
@@ -15436,4 +15497,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

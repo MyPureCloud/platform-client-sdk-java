@@ -9142,4 +9142,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

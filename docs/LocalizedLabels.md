@@ -16,8 +16,10 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MESSENGERHOMEHEADERTITLE | &quot;MessengerHomeHeaderTitle&quot; | 
 | MESSENGERHOMEHEADERSUBTITLE | &quot;MessengerHomeHeaderSubTitle&quot; | 
+| PUSHNOTIFICATIONTITLE | &quot;PushNotificationTitle&quot; | 
+| PUSHNOTIFICATIONBODY | &quot;PushNotificationBody&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

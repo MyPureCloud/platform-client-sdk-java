@@ -39,6 +39,7 @@
 | FR_CA | &quot;fr-CA&quot; | 
 | FR_FR | &quot;fr-FR&quot; | 
 | HE_IL | &quot;he-IL&quot; | 
+| HI_IN | &quot;hi-IN&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
 | KO_KR | &quot;ko-KR&quot; | 
@@ -62,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

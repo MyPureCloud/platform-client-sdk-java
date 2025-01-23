@@ -33,8 +33,9 @@
 | QUEUE | &quot;Queue&quot; | 
 | ROLE | &quot;Role&quot; | 
 | TEAM | &quot;Team&quot; | 
+| USER | &quot;User&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_

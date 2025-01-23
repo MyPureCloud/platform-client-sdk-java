@@ -5401,7 +5401,7 @@ try {
 # **getOutboundMessagingcampaigns**
 
 
-> [MessagingCampaignEntityListing](MessagingCampaignEntityListing) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)
+> [MessagingCampaignEntityListing](MessagingCampaignEntityListing) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus)
 
 Query a list of Messaging Campaigns
 
@@ -5445,8 +5445,10 @@ List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 String type = "type_example"; // String | Campaign Type
 String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
 List<String> id = Arrays.asList(null); // List<String> | A list of messaging campaign ids to bulk fetch
+String contentTemplateId = "contentTemplateId_example"; // String | Content template ID
+String campaignStatus = "campaignStatus_example"; // String | Campaign Status
 try {
-    MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id);
+    MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaigns");
@@ -5469,6 +5471,8 @@ try {
 | **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS, WHATSAPP 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 | **id** | [**List&lt;String&gt;**](String)| A list of messaging campaign ids to bulk fetch | [optional] 
+| **contentTemplateId** | **String**| Content template ID | [optional] 
+| **campaignStatus** | **String**| Campaign Status | [optional]<br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping 
 {: class="table-striped"}
 
 
@@ -5542,7 +5546,7 @@ try {
 # **getOutboundMessagingcampaignsDivisionviews**
 
 
-> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)
+> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber, contentTemplateId, campaignStatus)
 
 Query a list of basic Messaging Campaign information objects
 
@@ -5584,8 +5588,10 @@ String name = "name_example"; // String | Name
 String type = "type_example"; // String | Campaign Type
 List<String> id = Arrays.asList(null); // List<String> | id
 String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
+String contentTemplateId = "contentTemplateId_example"; // String | Content template ID
+String campaignStatus = "campaignStatus_example"; // String | Campaign Status
 try {
-    MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber);
+    MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber, contentTemplateId, campaignStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignsDivisionviews");
@@ -5605,6 +5611,8 @@ try {
 | **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS, WHATSAPP 
 | **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
+| **contentTemplateId** | **String**| Content template ID | [optional] 
+| **campaignStatus** | **String**| Campaign Status | [optional]<br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping 
 {: class="table-striped"}
 
 
@@ -10436,4 +10444,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:217.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
