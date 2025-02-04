@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class ChatSettings  implements Serializable {
   
   private Integer messageRetentionPeriodDays = null;
+  private Boolean reactionsEnabled = null;
 
   
   /**
@@ -42,6 +43,24 @@ public class ChatSettings  implements Serializable {
   }
 
 
+  /**
+   * Reactions enabled for org
+   **/
+  public ChatSettings reactionsEnabled(Boolean reactionsEnabled) {
+    this.reactionsEnabled = reactionsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reactions enabled for org")
+  @JsonProperty("reactionsEnabled")
+  public Boolean getReactionsEnabled() {
+    return reactionsEnabled;
+  }
+  public void setReactionsEnabled(Boolean reactionsEnabled) {
+    this.reactionsEnabled = reactionsEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +71,13 @@ public class ChatSettings  implements Serializable {
     }
     ChatSettings chatSettings = (ChatSettings) o;
 
-    return Objects.equals(this.messageRetentionPeriodDays, chatSettings.messageRetentionPeriodDays);
+    return Objects.equals(this.messageRetentionPeriodDays, chatSettings.messageRetentionPeriodDays) &&
+            Objects.equals(this.reactionsEnabled, chatSettings.reactionsEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageRetentionPeriodDays);
+    return Objects.hash(messageRetentionPeriodDays, reactionsEnabled);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class ChatSettings  implements Serializable {
     sb.append("class ChatSettings {\n");
     
     sb.append("    messageRetentionPeriodDays: ").append(toIndentedString(messageRetentionPeriodDays)).append("\n");
+    sb.append("    reactionsEnabled: ").append(toIndentedString(reactionsEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,8 +26,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.InsightsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramInsightsSettings;
+import com.mypurecloud.sdk.v2.model.ProgramInsightsSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
@@ -38,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsConversationSummaryListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.StaCategory;
@@ -68,15 +72,18 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
@@ -104,6 +111,7 @@ import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsCategoryReque
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
@@ -1027,6 +1035,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SpeechTextAnalyticsConversationSummaryListing> getSpeechandtextanalyticsConversationSummariesAsync(GetSpeechandtextanalyticsConversationSummariesRequest request, final AsyncApiCallback<SpeechTextAnalyticsConversationSummaryListing> callback) {
+    try {
+      final SettableFuture<SpeechTextAnalyticsConversationSummaryListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsConversationSummaryListing>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsConversationSummaryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SpeechTextAnalyticsConversationSummaryListing>> getSpeechandtextanalyticsConversationSummariesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SpeechTextAnalyticsConversationSummaryListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SpeechTextAnalyticsConversationSummaryListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SpeechTextAnalyticsConversationSummaryListing>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsConversationSummaryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response = (ApiResponse<SpeechTextAnalyticsConversationSummaryListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response = (ApiResponse<SpeechTextAnalyticsConversationSummaryListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param request the request object
@@ -1315,6 +1398,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramInsightsSettings> getSpeechandtextanalyticsProgramSettingsInsightsAsync(GetSpeechandtextanalyticsProgramSettingsInsightsRequest request, final AsyncApiCallback<ProgramInsightsSettings> callback) {
+    try {
+      final SettableFuture<ProgramInsightsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramInsightsSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramInsightsSettings>> getSpeechandtextanalyticsProgramSettingsInsightsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramInsightsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramInsightsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramInsightsSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1690,6 +1848,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramInsightsSettingsEntityListing> getSpeechandtextanalyticsProgramsSettingsInsightsAsync(GetSpeechandtextanalyticsProgramsSettingsInsightsRequest request, final AsyncApiCallback<ProgramInsightsSettingsEntityListing> callback) {
+    try {
+      final SettableFuture<ProgramInsightsSettingsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramInsightsSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettingsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramInsightsSettingsEntityListing>> getSpeechandtextanalyticsProgramsSettingsInsightsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramInsightsSettingsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramInsightsSettingsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramInsightsSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettingsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3719,6 +3952,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramInsightsSettings> putSpeechandtextanalyticsProgramSettingsInsightsAsync(PutSpeechandtextanalyticsProgramSettingsInsightsRequest request, final AsyncApiCallback<ProgramInsightsSettings> callback) {
+    try {
+      final SettableFuture<ProgramInsightsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramInsightsSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramInsightsSettings>> putSpeechandtextanalyticsProgramSettingsInsightsAsync(ApiRequest<InsightsSettingsRequest> request, final AsyncApiCallback<ApiResponse<ProgramInsightsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramInsightsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramInsightsSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramInsightsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramInsightsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

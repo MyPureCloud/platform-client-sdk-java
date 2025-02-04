@@ -245,14 +245,14 @@ public class ShiftTradeResponse  implements Serializable {
 
 
   /**
-   * The user matching the trade, or if the state is not Matched, the user to whom the trade request was sent
+   * The user matching the trade, or if the state is not 'Matched', the user to whom the trade request was sent
    **/
   public ShiftTradeResponse receivingUser(UserReference receivingUser) {
     this.receivingUser = receivingUser;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user matching the trade, or if the state is not Matched, the user to whom the trade request was sent")
+  @ApiModelProperty(example = "null", value = "The user matching the trade, or if the state is not 'Matched', the user to whom the trade request was sent")
   @JsonProperty("receivingUser")
   public UserReference getReceivingUser() {
     return receivingUser;
@@ -353,14 +353,14 @@ public class ShiftTradeResponse  implements Serializable {
 
 
   /**
-   * Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   * Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public ShiftTradeResponse acceptableIntervals(List<String> acceptableIntervals) {
     this.acceptableIntervals = acceptableIntervals;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", value = "Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("acceptableIntervals")
   public List<String> getAcceptableIntervals() {
     return acceptableIntervals;

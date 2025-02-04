@@ -5,12 +5,12 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;IdentityProvider&gt;**](IdentityProvider) |  |  [optional] |
+| **entities** | [**List&lt;CustomProvider&gt;**](CustomProvider) |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
 | **pageNumber** | **Integer** |  |  [optional] |
 | **total** | **Long** |  |  [optional] |
-| **firstUri** | **String** |  |  [optional] |
 | **lastUri** | **String** |  |  [optional] |
+| **firstUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **nextUri** | **String** |  |  [optional] |
 | **previousUri** | **String** |  |  [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

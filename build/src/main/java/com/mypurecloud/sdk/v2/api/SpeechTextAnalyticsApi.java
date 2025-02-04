@@ -23,8 +23,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.InsightsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramInsightsSettings;
+import com.mypurecloud.sdk.v2.model.ProgramInsightsSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
@@ -35,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsConversationSummaryListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.StaCategory;
@@ -65,15 +69,18 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
@@ -101,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsCategoryReque
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
@@ -1080,6 +1088,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param conversationId The conversation ID of the summaries (required)
+   * @return SpeechTextAnalyticsConversationSummaryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SpeechTextAnalyticsConversationSummaryListing getSpeechandtextanalyticsConversationSummaries(String conversationId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversationSummaries(createGetSpeechandtextanalyticsConversationSummariesRequest(conversationId));
+  }
+
+  /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param conversationId The conversation ID of the summaries (required)
+   * @return SpeechTextAnalyticsConversationSummaryListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SpeechTextAnalyticsConversationSummaryListing> getSpeechandtextanalyticsConversationSummariesWithHttpInfo(String conversationId) throws IOException {
+    return getSpeechandtextanalyticsConversationSummaries(createGetSpeechandtextanalyticsConversationSummariesRequest(conversationId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationSummariesRequest createGetSpeechandtextanalyticsConversationSummariesRequest(String conversationId) {
+    return GetSpeechandtextanalyticsConversationSummariesRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param request The request object
+   * @return SpeechTextAnalyticsConversationSummaryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SpeechTextAnalyticsConversationSummaryListing getSpeechandtextanalyticsConversationSummaries(GetSpeechandtextanalyticsConversationSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsConversationSummaryListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get conversation summaries by conversation id.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SpeechTextAnalyticsConversationSummaryListing> getSpeechandtextanalyticsConversationSummaries(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SpeechTextAnalyticsConversationSummaryListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response = (ApiResponse<SpeechTextAnalyticsConversationSummaryListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SpeechTextAnalyticsConversationSummaryListing> response = (ApiResponse<SpeechTextAnalyticsConversationSummaryListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of Speech & Text Analytics dictionary feedbacks
    * 
    * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
@@ -1395,6 +1481,84 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramInsightsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettings getSpeechandtextanalyticsProgramSettingsInsights(String programId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramSettingsInsights(createGetSpeechandtextanalyticsProgramSettingsInsightsRequest(programId));
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramInsightsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettings> getSpeechandtextanalyticsProgramSettingsInsightsWithHttpInfo(String programId) throws IOException {
+    return getSpeechandtextanalyticsProgramSettingsInsights(createGetSpeechandtextanalyticsProgramSettingsInsightsRequest(programId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramSettingsInsightsRequest createGetSpeechandtextanalyticsProgramSettingsInsightsRequest(String programId) {
+    return GetSpeechandtextanalyticsProgramSettingsInsightsRequest.builder()
+            .withProgramId(programId)
+
+            .build();
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param request The request object
+   * @return ProgramInsightsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettings getSpeechandtextanalyticsProgramSettingsInsights(GetSpeechandtextanalyticsProgramSettingsInsightsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramInsightsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramInsightsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get AI Insights settings of a program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettings> getSpeechandtextanalyticsProgramSettingsInsights(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramInsightsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1797,6 +1961,92 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param pageSize The page size for the listing. The max that will be returned is 100. (optional, default to 100)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. (optional)
+   * @return ProgramInsightsSettingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettingsEntityListing getSpeechandtextanalyticsProgramsSettingsInsights(Integer pageSize, Integer pageNumber, List<String> programIds) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsSettingsInsights(createGetSpeechandtextanalyticsProgramsSettingsInsightsRequest(pageSize, pageNumber, programIds));
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param pageSize The page size for the listing. The max that will be returned is 100. (optional, default to 100)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. (optional)
+   * @return ProgramInsightsSettingsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettingsEntityListing> getSpeechandtextanalyticsProgramsSettingsInsightsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> programIds) throws IOException {
+    return getSpeechandtextanalyticsProgramsSettingsInsights(createGetSpeechandtextanalyticsProgramsSettingsInsightsRequest(pageSize, pageNumber, programIds).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsSettingsInsightsRequest createGetSpeechandtextanalyticsProgramsSettingsInsightsRequest(Integer pageSize, Integer pageNumber, List<String> programIds) {
+    return GetSpeechandtextanalyticsProgramsSettingsInsightsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withProgramIds(programIds)
+
+            .build();
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param request The request object
+   * @return ProgramInsightsSettingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettingsEntityListing getSpeechandtextanalyticsProgramsSettingsInsights(GetSpeechandtextanalyticsProgramsSettingsInsightsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramInsightsSettingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramInsightsSettingsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of program AI Insights settings for the organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettingsEntityListing> getSpeechandtextanalyticsProgramsSettingsInsights(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramInsightsSettingsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3951,6 +4201,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @param body Program AI Insights setting (required)
+   * @return ProgramInsightsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettings putSpeechandtextanalyticsProgramSettingsInsights(String programId, InsightsSettingsRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsProgramSettingsInsights(createPutSpeechandtextanalyticsProgramSettingsInsightsRequest(programId, body));
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @param body Program AI Insights setting (required)
+   * @return ProgramInsightsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettings> putSpeechandtextanalyticsProgramSettingsInsightsWithHttpInfo(String programId, InsightsSettingsRequest body) throws IOException {
+    return putSpeechandtextanalyticsProgramSettingsInsights(createPutSpeechandtextanalyticsProgramSettingsInsightsRequest(programId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsProgramSettingsInsightsRequest createPutSpeechandtextanalyticsProgramSettingsInsightsRequest(String programId, InsightsSettingsRequest body) {
+    return PutSpeechandtextanalyticsProgramSettingsInsightsRequest.builder()
+            .withProgramId(programId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param request The request object
+   * @return ProgramInsightsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramInsightsSettings putSpeechandtextanalyticsProgramSettingsInsights(PutSpeechandtextanalyticsProgramSettingsInsightsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramInsightsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramInsightsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update AI Insights settings of a program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramInsightsSettings> putSpeechandtextanalyticsProgramSettingsInsights(ApiRequest<InsightsSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramInsightsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramInsightsSettings> response = (ApiResponse<ProgramInsightsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

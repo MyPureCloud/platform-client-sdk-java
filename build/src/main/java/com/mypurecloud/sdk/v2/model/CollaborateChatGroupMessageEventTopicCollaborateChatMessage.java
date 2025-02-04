@@ -80,6 +80,7 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
   private CollaborateChatGroupMessageEventTopicCollaborateChatEntity from = null;
   private CollaborateChatGroupMessageEventTopicCollaborateChatEntity to = null;
   private List<CollaborateChatGroupMessageEventTopicCollaborateChatEntity> mentions = new ArrayList<CollaborateChatGroupMessageEventTopicCollaborateChatEntity>();
+  private Boolean notifyAll = null;
 
   
   /**
@@ -201,6 +202,23 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
   }
 
 
+  /**
+   **/
+  public CollaborateChatGroupMessageEventTopicCollaborateChatMessage notifyAll(Boolean notifyAll) {
+    this.notifyAll = notifyAll;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("notifyAll")
+  public Boolean getNotifyAll() {
+    return notifyAll;
+  }
+  public void setNotifyAll(Boolean notifyAll) {
+    this.notifyAll = notifyAll;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -217,12 +235,13 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
             Objects.equals(this.body, collaborateChatGroupMessageEventTopicCollaborateChatMessage.body) &&
             Objects.equals(this.from, collaborateChatGroupMessageEventTopicCollaborateChatMessage.from) &&
             Objects.equals(this.to, collaborateChatGroupMessageEventTopicCollaborateChatMessage.to) &&
-            Objects.equals(this.mentions, collaborateChatGroupMessageEventTopicCollaborateChatMessage.mentions);
+            Objects.equals(this.mentions, collaborateChatGroupMessageEventTopicCollaborateChatMessage.mentions) &&
+            Objects.equals(this.notifyAll, collaborateChatGroupMessageEventTopicCollaborateChatMessage.notifyAll);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, created, actionType, body, from, to, mentions);
+    return Objects.hash(messageId, created, actionType, body, from, to, mentions, notifyAll);
   }
 
   @Override
@@ -237,6 +256,7 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    mentions: ").append(toIndentedString(mentions)).append("\n");
+    sb.append("    notifyAll: ").append(toIndentedString(notifyAll)).append("\n");
     sb.append("}");
     return sb.toString();
   }

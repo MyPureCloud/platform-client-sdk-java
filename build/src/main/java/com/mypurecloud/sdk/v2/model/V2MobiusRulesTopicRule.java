@@ -52,6 +52,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     CONVERSATIONMETRICS("ConversationMetrics"),
     USERPRESENCE("UserPresence"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
+    OPERATIONALCONSOLE("OperationalConsole"),
     UNKNOWN("Unknown");
 
     private String value;

@@ -659,8 +659,6 @@ try {
 
 Get draft function settings for Action
 
-getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/function  
 
 Requires ANY permissions: 
@@ -904,8 +902,6 @@ try {
 > [FunctionConfig](FunctionConfig) getIntegrationsActionFunction(actionId)
 
 Get published function settings for Action
-
-getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/actions/{actionId}/function  
 
@@ -1439,8 +1435,6 @@ try {
 > [List&lt;FunctionRuntime&gt;](FunctionRuntime) getIntegrationsActionsFunctionsRuntimes()
 
 Get action function settings for Action
-
-getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/actions/functions/runtimes  
 
@@ -4319,8 +4313,6 @@ try {
 
 Create upload presigned URL for draft function package file.
 
-postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload  
 
 Requires ANY permissions: 
@@ -5062,8 +5054,6 @@ try {
 
 Update draft function settings.
 
-putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/integrations/actions/{actionId}/draft/function  
 
 Requires ANY permissions: 
@@ -5421,4 +5411,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

@@ -13,13 +13,13 @@
 | **initiatingShiftId** | **String** | The ID of the shift offered for trade by the initiating user |  [optional] |
 | **initiatingShiftStart** | [**Date**](Date) | The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **initiatingShiftEnd** | [**Date**](Date) | The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **receivingUser** | [**UserReference**](UserReference) | The user matching the trade, or if the state is not Matched, the user to whom the trade request was sent |  [optional] |
+| **receivingUser** | [**UserReference**](UserReference) | The user matching the trade, or if the state is not 'Matched', the user to whom the trade request was sent |  [optional] |
 | **receivingShiftId** | **String** | The ID of the shift being exchanged for the initiating shift, null if the receiving user is picking up a shift |  [optional] |
 | **receivingShiftStart** | [**Date**](Date) | The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **receivingShiftEnd** | [**Date**](Date) | The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **expiration** | [**Date**](Date) | When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **oneSided** | **Boolean** | Whether this is a one-sided shift trade (e.g. the initiating user is not asking for a shift in return) |  [optional] |
-| **acceptableIntervals** | **List&lt;String&gt;** | Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
+| **acceptableIntervals** | **List&lt;String&gt;** | Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
 | **reviewedBy** | [**UserReference**](UserReference) | The user who reviewed this shift trade |  [optional] |
 | **reviewedDate** | [**Date**](Date) | The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version data for this trade |  [optional] |
@@ -40,4 +40,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

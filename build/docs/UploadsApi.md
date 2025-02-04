@@ -86,8 +86,6 @@ try {
 
 Create upload presigned URL for draft function package file.
 
-postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload  
 
 Requires ANY permissions: 
@@ -561,4 +559,4 @@ try {
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

@@ -859,7 +859,6 @@ public class IntegrationsApiAsync {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -894,7 +893,6 @@ public class IntegrationsApiAsync {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1161,7 +1159,6 @@ public class IntegrationsApiAsync {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1196,7 +1193,6 @@ public class IntegrationsApiAsync {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1763,7 +1759,6 @@ public class IntegrationsApiAsync {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1798,7 +1793,6 @@ public class IntegrationsApiAsync {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5217,7 +5211,6 @@ public class IntegrationsApiAsync {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5252,7 +5245,6 @@ public class IntegrationsApiAsync {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6119,7 +6111,6 @@ public class IntegrationsApiAsync {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6154,7 +6145,6 @@ public class IntegrationsApiAsync {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

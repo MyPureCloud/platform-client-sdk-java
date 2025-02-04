@@ -26,6 +26,8 @@ public class CampaignRuleEntities  implements Serializable {
   
   private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
   private List<DomainEntityRef> sequences = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> emailCampaigns = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> smsCampaigns = new ArrayList<DomainEntityRef>();
 
   
   /**
@@ -64,6 +66,42 @@ public class CampaignRuleEntities  implements Serializable {
   }
 
 
+  /**
+   * The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+   **/
+  public CampaignRuleEntities emailCampaigns(List<DomainEntityRef> emailCampaigns) {
+    this.emailCampaigns = emailCampaigns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.")
+  @JsonProperty("emailCampaigns")
+  public List<DomainEntityRef> getEmailCampaigns() {
+    return emailCampaigns;
+  }
+  public void setEmailCampaigns(List<DomainEntityRef> emailCampaigns) {
+    this.emailCampaigns = emailCampaigns;
+  }
+
+
+  /**
+   * The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+   **/
+  public CampaignRuleEntities smsCampaigns(List<DomainEntityRef> smsCampaigns) {
+    this.smsCampaigns = smsCampaigns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.")
+  @JsonProperty("smsCampaigns")
+  public List<DomainEntityRef> getSmsCampaigns() {
+    return smsCampaigns;
+  }
+  public void setSmsCampaigns(List<DomainEntityRef> smsCampaigns) {
+    this.smsCampaigns = smsCampaigns;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,12 +113,14 @@ public class CampaignRuleEntities  implements Serializable {
     CampaignRuleEntities campaignRuleEntities = (CampaignRuleEntities) o;
 
     return Objects.equals(this.campaigns, campaignRuleEntities.campaigns) &&
-            Objects.equals(this.sequences, campaignRuleEntities.sequences);
+            Objects.equals(this.sequences, campaignRuleEntities.sequences) &&
+            Objects.equals(this.emailCampaigns, campaignRuleEntities.emailCampaigns) &&
+            Objects.equals(this.smsCampaigns, campaignRuleEntities.smsCampaigns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaigns, sequences);
+    return Objects.hash(campaigns, sequences, emailCampaigns, smsCampaigns);
   }
 
   @Override
@@ -90,6 +130,8 @@ public class CampaignRuleEntities  implements Serializable {
     
     sb.append("    campaigns: ").append(toIndentedString(campaigns)).append("\n");
     sb.append("    sequences: ").append(toIndentedString(sequences)).append("\n");
+    sb.append("    emailCampaigns: ").append(toIndentedString(emailCampaigns)).append("\n");
+    sb.append("    smsCampaigns: ").append(toIndentedString(smsCampaigns)).append("\n");
     sb.append("}");
     return sb.toString();
   }

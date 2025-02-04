@@ -278,6 +278,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   public enum DeliveryStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DELIVERYFAILED("DeliveryFailed"),
+    DELIVERYPUSHED("DeliveryPushed"),
     DELIVERYSUCCESS("DeliverySuccess"),
     FAILED("Failed"),
     PUBLISHED("Published"),

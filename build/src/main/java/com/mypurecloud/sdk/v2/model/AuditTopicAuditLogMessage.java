@@ -105,7 +105,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     NERSERVICE("NerService"),
     ONBOARDING("Onboarding"),
     SOCIALLISTENING("SocialListening"),
-    BUSINESSRULES("BusinessRules");
+    BUSINESSRULES("BusinessRules"),
+    SOCIALESCALATIONRULES("SocialEscalationRules");
 
     private String value;
 
@@ -270,6 +271,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DOWNLOADCAPTURE("DownloadCapture"),
     INITIATE("Initiate"),
     REVERSEMANUALLY("ReverseManually"),
+    CALCULATE("Calculate"),
     PROVISIONED("Provisioned"),
     UPDATEABORTED("UpdateAborted");
 
@@ -366,6 +368,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CATEGORY("Category"),
     SENTIMENTFEEDBACK("SentimentFeedback"),
     DICTIONARYFEEDBACK("DictionaryFeedback"),
+    INTERACTIONREPROCESSINGJOB("InteractionReprocessingJob"),
     SEGMENT("Segment"),
     OUTCOME("Outcome"),
     ACTIONMAP("ActionMap"),
@@ -478,6 +481,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CUSTOMCALCULATIONS("CustomCalculations"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     EXPORTS("Exports"),
+    EXPORTPDFTEMPLATES("ExportPdfTemplates"),
     CHANGEREQUEST("ChangeRequest"),
     MIGRATION("Migration"),
     EXTERNALMETRICSDEFINITION("ExternalMetricsDefinition"),
@@ -540,7 +544,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     RULECATEGORY("RuleCategory"),
     DECISIONTABLE("DecisionTable"),
     DECISIONTABLEVERSION("DecisionTableVersion"),
-    DECISIONTABLEROW("DecisionTableRow");
+    DECISIONTABLEROW("DecisionTableRow"),
+    ESCALATIONRULE("EscalationRule");
 
     private String value;
 

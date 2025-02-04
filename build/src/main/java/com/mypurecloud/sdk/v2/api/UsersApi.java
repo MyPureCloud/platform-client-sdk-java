@@ -81,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettin
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
@@ -105,6 +106,8 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserDirectreportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserExternalidRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserExternalidAuthorityNameRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserFavoritesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserOutofofficeRequest;
@@ -126,6 +129,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
@@ -644,6 +648,89 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param userId User ID (required)
+   * @param authorityName Authority Name (required)
+   * @param externalKey External Key (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserExternalidAuthorityNameExternalKey(String userId, String authorityName, String externalKey) throws IOException, ApiException {
+     deleteUserExternalidAuthorityNameExternalKey(createDeleteUserExternalidAuthorityNameExternalKeyRequest(userId, authorityName, externalKey));
+  }
+
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param userId User ID (required)
+   * @param authorityName Authority Name (required)
+   * @param externalKey External Key (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserExternalidAuthorityNameExternalKeyWithHttpInfo(String userId, String authorityName, String externalKey) throws IOException {
+    return deleteUserExternalidAuthorityNameExternalKey(createDeleteUserExternalidAuthorityNameExternalKeyRequest(userId, authorityName, externalKey).withHttpInfo());
+  }
+
+  private DeleteUserExternalidAuthorityNameExternalKeyRequest createDeleteUserExternalidAuthorityNameExternalKeyRequest(String userId, String authorityName, String externalKey) {
+    return DeleteUserExternalidAuthorityNameExternalKeyRequest.builder()
+            .withUserId(userId)
+
+            .withAuthorityName(authorityName)
+
+            .withExternalKey(externalKey)
+
+            .build();
+  }
+
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserExternalidAuthorityNameExternalKey(DeleteUserExternalidAuthorityNameExternalKeyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserExternalidAuthorityNameExternalKey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2618,6 +2705,166 @@ public class UsersApi {
   }
 
   /**
+   * Get the external identifiers for a user.
+   * 
+   * @param userId User ID (required)
+   * @return List<UserExternalIdentifier>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserExternalIdentifier> getUserExternalid(String userId) throws IOException, ApiException {
+    return  getUserExternalid(createGetUserExternalidRequest(userId));
+  }
+
+  /**
+   * Get the external identifiers for a user.
+   * 
+   * @param userId User ID (required)
+   * @return List<UserExternalIdentifier>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserExternalIdentifier>> getUserExternalidWithHttpInfo(String userId) throws IOException {
+    return getUserExternalid(createGetUserExternalidRequest(userId).withHttpInfo());
+  }
+
+  private GetUserExternalidRequest createGetUserExternalidRequest(String userId) {
+    return GetUserExternalidRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get the external identifiers for a user.
+   * 
+   * @param request The request object
+   * @return List<UserExternalIdentifier>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserExternalIdentifier> getUserExternalid(GetUserExternalidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UserExternalIdentifier>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserExternalIdentifier>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the external identifiers for a user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserExternalIdentifier>> getUserExternalid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UserExternalIdentifier>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param userId User ID (required)
+   * @param authorityName Authority Name (required)
+   * @return UserExternalIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserExternalIdentifier getUserExternalidAuthorityName(String userId, String authorityName) throws IOException, ApiException {
+    return  getUserExternalidAuthorityName(createGetUserExternalidAuthorityNameRequest(userId, authorityName));
+  }
+
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param userId User ID (required)
+   * @param authorityName Authority Name (required)
+   * @return UserExternalIdentifier
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserExternalIdentifier> getUserExternalidAuthorityNameWithHttpInfo(String userId, String authorityName) throws IOException {
+    return getUserExternalidAuthorityName(createGetUserExternalidAuthorityNameRequest(userId, authorityName).withHttpInfo());
+  }
+
+  private GetUserExternalidAuthorityNameRequest createGetUserExternalidAuthorityNameRequest(String userId, String authorityName) {
+    return GetUserExternalidAuthorityNameRequest.builder()
+            .withUserId(userId)
+
+            .withAuthorityName(authorityName)
+
+            .build();
+  }
+
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param request The request object
+   * @return UserExternalIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserExternalIdentifier getUserExternalidAuthorityName(GetUserExternalidAuthorityNameRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserExternalIdentifier> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserExternalIdentifier>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserExternalIdentifier> getUserExternalidAuthorityName(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserExternalIdentifier>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserExternalIdentifier> response = (ApiResponse<UserExternalIdentifier>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserExternalIdentifier> response = (ApiResponse<UserExternalIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Deprecated; will be revived with new contract
    * 
    * @param userId User ID (required)
@@ -4475,6 +4722,92 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DevelopmentActivity> response = (ApiResponse<DevelopmentActivity>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param authorityName Authority Name (required)
+   * @param externalKey External Key (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return User
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public User getUsersExternalidAuthorityNameExternalKey(String authorityName, String externalKey, List<String> expand) throws IOException, ApiException {
+    return  getUsersExternalidAuthorityNameExternalKey(createGetUsersExternalidAuthorityNameExternalKeyRequest(authorityName, externalKey, expand));
+  }
+
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param authorityName Authority Name (required)
+   * @param externalKey External Key (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return User
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<User> getUsersExternalidAuthorityNameExternalKeyWithHttpInfo(String authorityName, String externalKey, List<String> expand) throws IOException {
+    return getUsersExternalidAuthorityNameExternalKey(createGetUsersExternalidAuthorityNameExternalKeyRequest(authorityName, externalKey, expand).withHttpInfo());
+  }
+
+  private GetUsersExternalidAuthorityNameExternalKeyRequest createGetUsersExternalidAuthorityNameExternalKeyRequest(String authorityName, String externalKey, List<String> expand) {
+    return GetUsersExternalidAuthorityNameExternalKeyRequest.builder()
+            .withAuthorityName(authorityName)
+
+            .withExternalKey(externalKey)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param request The request object
+   * @return User
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public User getUsersExternalidAuthorityNameExternalKey(GetUsersExternalidAuthorityNameExternalKeyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<User> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<User>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<User> getUsersExternalidAuthorityNameExternalKey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<User>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

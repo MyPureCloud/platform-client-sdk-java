@@ -146,7 +146,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingQueue**](RoutingApi#putRoutingQueue) | Update a queue |
 | [**putRoutingSettings**](RoutingApi#putRoutingSettings) | Update an organization's routing settings |
 | [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | Update Transcription Settings |
-| [**putRoutingSmsPhonenumber**](RoutingApi#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
@@ -8870,67 +8869,6 @@ try {
 [**TranscriptionSettings**](TranscriptionSettings)
 
 
-# **putRoutingSmsPhonenumber**
-
-
-> [SmsPhoneNumber](SmsPhoneNumber) putRoutingSmsPhonenumber(phoneNumberId, body)
-
-Update a phone number provisioned for SMS.
-
-Wraps PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId}  
-
-Requires ALL permissions: 
-
-* sms:phoneNumber:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RoutingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RoutingApi apiInstance = new RoutingApi();
-String phoneNumberId = "phoneNumberId_example"; // String | phone number
-SmsPhoneNumber body = new SmsPhoneNumber(); // SmsPhoneNumber | SmsPhoneNumber
-try {
-    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(phoneNumberId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RoutingApi#putRoutingSmsPhonenumber");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **phoneNumberId** | **String**| phone number | 
-| **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**SmsPhoneNumber**](SmsPhoneNumber)
-
-
 # **putRoutingUserDirectroutingbackupSettings**
 
 
@@ -9358,4 +9296,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

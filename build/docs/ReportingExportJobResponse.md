@@ -187,6 +187,7 @@
 | DASHBOARD_SLIDESHOWS | &quot;DASHBOARD_SLIDESHOWS&quot; | 
 | DASHBOARD_SLIDESHOWS_DETAIL | &quot;DASHBOARD_SLIDESHOWS_DETAIL&quot; | 
 | AGENT_COPILOT_PERFORMANCE_VIEW | &quot;AGENT_COPILOT_PERFORMANCE_VIEW&quot; | 
+| AGENT_ASSIGNED_EVALUATION_ME_VIEW | &quot;AGENT_ASSIGNED_EVALUATION_ME_VIEW&quot; | 
 
 
 ## Enum: ExportErrorMessagesTypeEnum
@@ -247,4 +248,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

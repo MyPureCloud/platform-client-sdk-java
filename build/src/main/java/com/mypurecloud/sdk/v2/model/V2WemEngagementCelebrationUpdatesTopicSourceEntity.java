@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.V2WemEngagementCelebrationUpdatesTopicContestCompleteData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -78,6 +79,7 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
     }
   }
   private TypeEnum type = null;
+  private V2WemEngagementCelebrationUpdatesTopicContestCompleteData contestCompleteData = null;
 
   
   /**
@@ -114,6 +116,23 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
   }
 
 
+  /**
+   **/
+  public V2WemEngagementCelebrationUpdatesTopicSourceEntity contestCompleteData(V2WemEngagementCelebrationUpdatesTopicContestCompleteData contestCompleteData) {
+    this.contestCompleteData = contestCompleteData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contestCompleteData")
+  public V2WemEngagementCelebrationUpdatesTopicContestCompleteData getContestCompleteData() {
+    return contestCompleteData;
+  }
+  public void setContestCompleteData(V2WemEngagementCelebrationUpdatesTopicContestCompleteData contestCompleteData) {
+    this.contestCompleteData = contestCompleteData;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,12 +144,13 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
     V2WemEngagementCelebrationUpdatesTopicSourceEntity v2WemEngagementCelebrationUpdatesTopicSourceEntity = (V2WemEngagementCelebrationUpdatesTopicSourceEntity) o;
 
     return Objects.equals(this.id, v2WemEngagementCelebrationUpdatesTopicSourceEntity.id) &&
-            Objects.equals(this.type, v2WemEngagementCelebrationUpdatesTopicSourceEntity.type);
+            Objects.equals(this.type, v2WemEngagementCelebrationUpdatesTopicSourceEntity.type) &&
+            Objects.equals(this.contestCompleteData, v2WemEngagementCelebrationUpdatesTopicSourceEntity.contestCompleteData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type);
+    return Objects.hash(id, type, contestCompleteData);
   }
 
   @Override
@@ -140,6 +160,7 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contestCompleteData: ").append(toIndentedString(contestCompleteData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

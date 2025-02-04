@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.AlertingUnreadStatus;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.CommonAlert;
 import com.mypurecloud.sdk.v2.model.CommonAlertBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CommonAllAlertUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CommonRule;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkDeleteRequest;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkUpdateNotificationsRequest;

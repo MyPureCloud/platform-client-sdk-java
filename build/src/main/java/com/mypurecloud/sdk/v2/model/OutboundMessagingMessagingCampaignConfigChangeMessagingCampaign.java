@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChan
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeErrorDetail;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeSmsConfig;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeUriReference;
+import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -91,6 +92,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
   private List<OutboundMessagingMessagingCampaignConfigChangeUriReference> ruleSets = new ArrayList<OutboundMessagingMessagingCampaignConfigChangeUriReference>();
   private OutboundMessagingMessagingCampaignConfigChangeSmsConfig smsConfig = null;
   private OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig = null;
+  private OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig whatsAppConfig = null;
   private List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingMessagingCampaignConfigChangeErrorDetail>();
   private String id = null;
   private String name = null;
@@ -294,6 +296,23 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
 
   /**
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign whatsAppConfig(OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("whatsAppConfig")
+  public OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig getWhatsAppConfig() {
+    return whatsAppConfig;
+  }
+  public void setWhatsAppConfig(OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+  }
+
+
+  /**
    * A list of current error conditions associated with this messaging campaign
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign errors(List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors) {
@@ -440,6 +459,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
             Objects.equals(this.ruleSets, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.ruleSets) &&
             Objects.equals(this.smsConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.smsConfig) &&
             Objects.equals(this.emailConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.emailConfig) &&
+            Objects.equals(this.whatsAppConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.whatsAppConfig) &&
             Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors) &&
             Objects.equals(this.id, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.id) &&
             Objects.equals(this.name, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.name) &&
@@ -451,7 +471,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, smsConfig, emailConfig, errors, id, name, dateCreated, dateModified, version, division);
+    return Objects.hash(campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, smsConfig, emailConfig, whatsAppConfig, errors, id, name, dateCreated, dateModified, version, division);
   }
 
   @Override
@@ -470,6 +490,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     sb.append("    ruleSets: ").append(toIndentedString(ruleSets)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
+    sb.append("    whatsAppConfig: ").append(toIndentedString(whatsAppConfig)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

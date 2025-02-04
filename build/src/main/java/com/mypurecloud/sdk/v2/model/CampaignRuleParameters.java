@@ -185,6 +185,8 @@ public class CampaignRuleParameters  implements Serializable {
   private BigDecimal maxCallsPerAgent = null;
   private DomainEntityRef queue = null;
   private Integer messagesPerMinute = null;
+  private Integer smsMessagesPerMinute = null;
+  private Integer emailMessagesPerMinute = null;
   private DomainEntityRef smsContentTemplate = null;
   private DomainEntityRef emailContentTemplate = null;
 
@@ -370,6 +372,42 @@ public class CampaignRuleParameters  implements Serializable {
 
 
   /**
+   * The number of messages per minute to set a SMS messaging campaign to.
+   **/
+  public CampaignRuleParameters smsMessagesPerMinute(Integer smsMessagesPerMinute) {
+    this.smsMessagesPerMinute = smsMessagesPerMinute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of messages per minute to set a SMS messaging campaign to.")
+  @JsonProperty("smsMessagesPerMinute")
+  public Integer getSmsMessagesPerMinute() {
+    return smsMessagesPerMinute;
+  }
+  public void setSmsMessagesPerMinute(Integer smsMessagesPerMinute) {
+    this.smsMessagesPerMinute = smsMessagesPerMinute;
+  }
+
+
+  /**
+   * The number of messages per minute to set a Email messaging campaign to.
+   **/
+  public CampaignRuleParameters emailMessagesPerMinute(Integer emailMessagesPerMinute) {
+    this.emailMessagesPerMinute = emailMessagesPerMinute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of messages per minute to set a Email messaging campaign to.")
+  @JsonProperty("emailMessagesPerMinute")
+  public Integer getEmailMessagesPerMinute() {
+    return emailMessagesPerMinute;
+  }
+  public void setEmailMessagesPerMinute(Integer emailMessagesPerMinute) {
+    this.emailMessagesPerMinute = emailMessagesPerMinute;
+  }
+
+
+  /**
    * The content template to set a SMS campaign to.
    **/
   public CampaignRuleParameters smsContentTemplate(DomainEntityRef smsContentTemplate) {
@@ -425,13 +463,15 @@ public class CampaignRuleParameters  implements Serializable {
             Objects.equals(this.maxCallsPerAgent, campaignRuleParameters.maxCallsPerAgent) &&
             Objects.equals(this.queue, campaignRuleParameters.queue) &&
             Objects.equals(this.messagesPerMinute, campaignRuleParameters.messagesPerMinute) &&
+            Objects.equals(this.smsMessagesPerMinute, campaignRuleParameters.smsMessagesPerMinute) &&
+            Objects.equals(this.emailMessagesPerMinute, campaignRuleParameters.emailMessagesPerMinute) &&
             Objects.equals(this.smsContentTemplate, campaignRuleParameters.smsContentTemplate) &&
             Objects.equals(this.emailContentTemplate, campaignRuleParameters.emailContentTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue, messagesPerMinute, smsContentTemplate, emailContentTemplate);
+    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue, messagesPerMinute, smsMessagesPerMinute, emailMessagesPerMinute, smsContentTemplate, emailContentTemplate);
   }
 
   @Override
@@ -449,6 +489,8 @@ public class CampaignRuleParameters  implements Serializable {
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
+    sb.append("    smsMessagesPerMinute: ").append(toIndentedString(smsMessagesPerMinute)).append("\n");
+    sb.append("    emailMessagesPerMinute: ").append(toIndentedString(emailMessagesPerMinute)).append("\n");
     sb.append("    smsContentTemplate: ").append(toIndentedString(smsContentTemplate)).append("\n");
     sb.append("    emailContentTemplate: ").append(toIndentedString(emailContentTemplate)).append("\n");
     sb.append("}");

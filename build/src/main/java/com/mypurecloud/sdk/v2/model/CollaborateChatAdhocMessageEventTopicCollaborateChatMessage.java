@@ -80,6 +80,7 @@ public class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage  implem
   private CollaborateChatAdhocMessageEventTopicCollaborateChatEntity from = null;
   private CollaborateChatAdhocMessageEventTopicCollaborateChatEntity to = null;
   private List<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity> mentions = new ArrayList<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity>();
+  private Boolean notifyAll = null;
 
   
   /**
@@ -201,6 +202,23 @@ public class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage  implem
   }
 
 
+  /**
+   **/
+  public CollaborateChatAdhocMessageEventTopicCollaborateChatMessage notifyAll(Boolean notifyAll) {
+    this.notifyAll = notifyAll;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("notifyAll")
+  public Boolean getNotifyAll() {
+    return notifyAll;
+  }
+  public void setNotifyAll(Boolean notifyAll) {
+    this.notifyAll = notifyAll;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -217,12 +235,13 @@ public class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage  implem
             Objects.equals(this.body, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.body) &&
             Objects.equals(this.from, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.from) &&
             Objects.equals(this.to, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.to) &&
-            Objects.equals(this.mentions, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.mentions);
+            Objects.equals(this.mentions, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.mentions) &&
+            Objects.equals(this.notifyAll, collaborateChatAdhocMessageEventTopicCollaborateChatMessage.notifyAll);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, created, actionType, body, from, to, mentions);
+    return Objects.hash(messageId, created, actionType, body, from, to, mentions, notifyAll);
   }
 
   @Override
@@ -237,6 +256,7 @@ public class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage  implem
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    mentions: ").append(toIndentedString(mentions)).append("\n");
+    sb.append("    notifyAll: ").append(toIndentedString(notifyAll)).append("\n");
     sb.append("}");
     return sb.toString();
   }

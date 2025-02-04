@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeEm
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeErrorDetail;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeSmsConfig;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeUriReference;
+import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -91,6 +92,7 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
   private List<OutboundMessagingEmailCampaignConfigChangeUriReference> ruleSets = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
   private OutboundMessagingEmailCampaignConfigChangeSmsConfig smsConfig = null;
   private OutboundMessagingEmailCampaignConfigChangeEmailConfig emailConfig = null;
+  private OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig whatsAppConfig = null;
   private List<OutboundMessagingEmailCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingEmailCampaignConfigChangeErrorDetail>();
   private String id = null;
   private String name = null;
@@ -294,6 +296,23 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
 
 
   /**
+   **/
+  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign whatsAppConfig(OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("whatsAppConfig")
+  public OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig getWhatsAppConfig() {
+    return whatsAppConfig;
+  }
+  public void setWhatsAppConfig(OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+  }
+
+
+  /**
    * A list of current error conditions associated with this messaging campaign
    **/
   public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign errors(List<OutboundMessagingEmailCampaignConfigChangeErrorDetail> errors) {
@@ -440,6 +459,7 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
             Objects.equals(this.ruleSets, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.ruleSets) &&
             Objects.equals(this.smsConfig, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.smsConfig) &&
             Objects.equals(this.emailConfig, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.emailConfig) &&
+            Objects.equals(this.whatsAppConfig, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.whatsAppConfig) &&
             Objects.equals(this.errors, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.errors) &&
             Objects.equals(this.id, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.id) &&
             Objects.equals(this.name, outboundMessagingEmailCampaignConfigChangeMessagingCampaign.name) &&
@@ -451,7 +471,7 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, smsConfig, emailConfig, errors, id, name, dateCreated, dateModified, version, division);
+    return Objects.hash(campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, smsConfig, emailConfig, whatsAppConfig, errors, id, name, dateCreated, dateModified, version, division);
   }
 
   @Override
@@ -470,6 +490,7 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
     sb.append("    ruleSets: ").append(toIndentedString(ruleSets)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
+    sb.append("    whatsAppConfig: ").append(toIndentedString(whatsAppConfig)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

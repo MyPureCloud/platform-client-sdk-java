@@ -933,7 +933,6 @@ public class IntegrationsApi {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @return FunctionConfig
    * @throws ApiException if the request fails on the server
@@ -946,7 +945,6 @@ public class IntegrationsApi {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @return FunctionConfig
    * @throws IOException if the request fails to be processed
@@ -965,7 +963,6 @@ public class IntegrationsApi {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FunctionConfig
    * @throws ApiException if the request fails on the server
@@ -985,7 +982,6 @@ public class IntegrationsApi {
   /**
    * Get draft function settings for Action
    * 
-   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1261,7 +1257,6 @@ public class IntegrationsApi {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @return FunctionConfig
    * @throws ApiException if the request fails on the server
@@ -1274,7 +1269,6 @@ public class IntegrationsApi {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @return FunctionConfig
    * @throws IOException if the request fails to be processed
@@ -1293,7 +1287,6 @@ public class IntegrationsApi {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FunctionConfig
    * @throws ApiException if the request fails on the server
@@ -1313,7 +1306,6 @@ public class IntegrationsApi {
   /**
    * Get published function settings for Action
    * 
-   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2005,7 +1997,6 @@ public class IntegrationsApi {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return List<FunctionRuntime>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2017,7 +2008,6 @@ public class IntegrationsApi {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return List<FunctionRuntime>
    * @throws IOException if the request fails to be processed
    */
@@ -2033,7 +2023,6 @@ public class IntegrationsApi {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return List<FunctionRuntime>
    * @throws ApiException if the request fails on the server
@@ -2053,7 +2042,6 @@ public class IntegrationsApi {
   /**
    * Get action function settings for Action
    * 
-   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5921,7 +5909,6 @@ public class IntegrationsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to request URL upload. (required)
    * @return FunctionUploadResponse
@@ -5935,7 +5922,6 @@ public class IntegrationsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to request URL upload. (required)
    * @return FunctionUploadResponse
@@ -5957,7 +5943,6 @@ public class IntegrationsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FunctionUploadResponse
    * @throws ApiException if the request fails on the server
@@ -5977,7 +5962,6 @@ public class IntegrationsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6922,7 +6906,6 @@ public class IntegrationsApi {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to update function settings. (required)
    * @return FunctionConfig
@@ -6936,7 +6919,6 @@ public class IntegrationsApi {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to update function settings. (required)
    * @return FunctionConfig
@@ -6958,7 +6940,6 @@ public class IntegrationsApi {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FunctionConfig
    * @throws ApiException if the request fails on the server
@@ -6978,7 +6959,6 @@ public class IntegrationsApi {
   /**
    * Update draft function settings.
    * 
-   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

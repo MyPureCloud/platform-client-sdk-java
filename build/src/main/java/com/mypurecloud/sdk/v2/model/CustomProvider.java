@@ -140,6 +140,7 @@ public class CustomProvider  implements Serializable {
   private SsoBindingEnum ssoBinding = null;
   private Boolean signAuthnRequests = null;
   private String providerName = null;
+  private Boolean displayOnLogin = null;
   private String selfUri = null;
 
   
@@ -405,6 +406,23 @@ public class CustomProvider  implements Serializable {
   }
 
 
+  /**
+   **/
+  public CustomProvider displayOnLogin(Boolean displayOnLogin) {
+    this.displayOnLogin = displayOnLogin;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("displayOnLogin")
+  public Boolean getDisplayOnLogin() {
+    return displayOnLogin;
+  }
+  public void setDisplayOnLogin(Boolean displayOnLogin) {
+    this.displayOnLogin = displayOnLogin;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -438,12 +456,13 @@ public class CustomProvider  implements Serializable {
             Objects.equals(this.ssoBinding, customProvider.ssoBinding) &&
             Objects.equals(this.signAuthnRequests, customProvider.signAuthnRequests) &&
             Objects.equals(this.providerName, customProvider.providerName) &&
+            Objects.equals(this.displayOnLogin, customProvider.displayOnLogin) &&
             Objects.equals(this.selfUri, customProvider.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, selfUri);
   }
 
   @Override
@@ -467,6 +486,7 @@ public class CustomProvider  implements Serializable {
     sb.append("    ssoBinding: ").append(toIndentedString(ssoBinding)).append("\n");
     sb.append("    signAuthnRequests: ").append(toIndentedString(signAuthnRequests)).append("\n");
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
+    sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

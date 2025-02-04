@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AlertingUnreadStatus;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.CommonAlert;
 import com.mypurecloud.sdk.v2.model.CommonAlertBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CommonAllAlertUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CommonRule;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkDeleteRequest;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkUpdateNotificationsRequest;
@@ -34,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingAlertRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAlertingAlertsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingRuleRequest;
@@ -46,6 +48,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsRuleRequest
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingRulesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAlertingAlertsQueryRequest;
@@ -146,6 +149,80 @@ public class AlertingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteAlertingAlertsAll() throws IOException, ApiException {
+    return  deleteAlertingAlertsAll(createDeleteAlertingAlertsAllRequest());
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteAlertingAlertsAllWithHttpInfo() throws IOException {
+    return deleteAlertingAlertsAll(createDeleteAlertingAlertsAllRequest().withHttpInfo());
+  }
+
+  private DeleteAlertingAlertsAllRequest createDeleteAlertingAlertsAllRequest() {
+    return DeleteAlertingAlertsAllRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteAlertingAlertsAll(DeleteAlertingAlertsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteAlertingAlertsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1109,6 +1186,84 @@ public class AlertingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CommonAlert> response = (ApiResponse<CommonAlert>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param body  (optional)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty patchAlertingAlertsAll(CommonAllAlertUpdateRequest body) throws IOException, ApiException {
+    return  patchAlertingAlertsAll(createPatchAlertingAlertsAllRequest(body));
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param body  (optional)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> patchAlertingAlertsAllWithHttpInfo(CommonAllAlertUpdateRequest body) throws IOException {
+    return patchAlertingAlertsAll(createPatchAlertingAlertsAllRequest(body).withHttpInfo());
+  }
+
+  private PatchAlertingAlertsAllRequest createPatchAlertingAlertsAllRequest(CommonAllAlertUpdateRequest body) {
+    return PatchAlertingAlertsAllRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty patchAlertingAlertsAll(PatchAlertingAlertsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> patchAlertingAlertsAll(ApiRequest<CommonAllAlertUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -33,6 +33,7 @@ import java.io.Serializable;
 public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  implements Serializable {
   
   private String conversationId = null;
+  private String queueId = null;
   private List<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant> participants = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant>();
   private List<String> communicationIds = new ArrayList<String>();
   private Date createdDate = null;
@@ -63,7 +64,8 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     LINE("LINE"),
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
-    OPEN("OPEN");
+    OPEN("OPEN"),
+    APPLE("APPLE");
 
     private String value;
 
@@ -171,7 +173,8 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),
     CONVERSATION_TOO_LONG("CONVERSATION_TOO_LONG"),
-    CONVERSATION_TOO_SHORT("CONVERSATION_TOO_SHORT");
+    CONVERSATION_TOO_SHORT("CONVERSATION_TOO_SHORT"),
+    RATE_LIMITED("RATE_LIMITED");
 
     private String value;
 
@@ -216,6 +219,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   }
   public void setConversationId(String conversationId) {
     this.conversationId = conversationId;
+  }
+
+
+  /**
+   **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent queueId(String queueId) {
+    this.queueId = queueId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueId")
+  public String getQueueId() {
+    return queueId;
+  }
+  public void setQueueId(String queueId) {
+    this.queueId = queueId;
   }
 
 
@@ -502,6 +522,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     ConversationSummaryTopicVirtualAgentsConversationSummaryEvent conversationSummaryTopicVirtualAgentsConversationSummaryEvent = (ConversationSummaryTopicVirtualAgentsConversationSummaryEvent) o;
 
     return Objects.equals(this.conversationId, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.conversationId) &&
+            Objects.equals(this.queueId, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.queueId) &&
             Objects.equals(this.participants, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.participants) &&
             Objects.equals(this.communicationIds, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.communicationIds) &&
             Objects.equals(this.createdDate, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.createdDate) &&
@@ -522,7 +543,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -531,6 +552,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent {\n");
     
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    communicationIds: ").append(toIndentedString(communicationIds)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");

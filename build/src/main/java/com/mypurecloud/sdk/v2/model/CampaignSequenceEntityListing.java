@@ -29,8 +29,8 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String lastUri = null;
+  private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
 
   /**
    **/
-  public CampaignSequenceEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public CampaignSequenceEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -136,6 +119,23 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public CampaignSequenceEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -221,8 +221,8 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
             Objects.equals(this.pageSize, campaignSequenceEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, campaignSequenceEntityListing.pageNumber) &&
             Objects.equals(this.total, campaignSequenceEntityListing.total) &&
-            Objects.equals(this.firstUri, campaignSequenceEntityListing.firstUri) &&
             Objects.equals(this.lastUri, campaignSequenceEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, campaignSequenceEntityListing.firstUri) &&
             Objects.equals(this.selfUri, campaignSequenceEntityListing.selfUri) &&
             Objects.equals(this.nextUri, campaignSequenceEntityListing.nextUri) &&
             Objects.equals(this.previousUri, campaignSequenceEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class CampaignSequenceEntityListing  implements Serializable, PagedResour
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.CampaignRuleCondition;
 import com.mypurecloud.sdk.v2.model.CampaignRuleConditionGroup;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntities;
 import com.mypurecloud.sdk.v2.model.CampaignRuleExecutionSettings;
+import com.mypurecloud.sdk.v2.model.CampaignRuleWarning;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -89,6 +90,7 @@ public class CampaignRule  implements Serializable {
   private CampaignRuleProcessingEnum campaignRuleProcessing = null;
   private List<CampaignRuleConditionGroup> conditionGroups = new ArrayList<CampaignRuleConditionGroup>();
   private CampaignRuleExecutionSettings executionSettings = null;
+  private List<CampaignRuleWarning> warnings = new ArrayList<CampaignRuleWarning>();
   private String selfUri = null;
 
   
@@ -292,6 +294,13 @@ public class CampaignRule  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "A list of current warning conditions associated with the campaign rule.")
+  @JsonProperty("warnings")
+  public List<CampaignRuleWarning> getWarnings() {
+    return warnings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -322,12 +331,13 @@ public class CampaignRule  implements Serializable {
             Objects.equals(this.campaignRuleProcessing, campaignRule.campaignRuleProcessing) &&
             Objects.equals(this.conditionGroups, campaignRule.conditionGroups) &&
             Objects.equals(this.executionSettings, campaignRule.executionSettings) &&
+            Objects.equals(this.warnings, campaignRule.warnings) &&
             Objects.equals(this.selfUri, campaignRule.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, campaignRuleProcessing, conditionGroups, executionSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, campaignRuleProcessing, conditionGroups, executionSettings, warnings, selfUri);
   }
 
   @Override
@@ -348,6 +358,7 @@ public class CampaignRule  implements Serializable {
     sb.append("    campaignRuleProcessing: ").append(toIndentedString(campaignRuleProcessing)).append("\n");
     sb.append("    conditionGroups: ").append(toIndentedString(conditionGroups)).append("\n");
     sb.append("    executionSettings: ").append(toIndentedString(executionSettings)).append("\n");
+    sb.append("    warnings: ").append(toIndentedString(warnings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

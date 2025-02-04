@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.AlertingUnreadStatus;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.CommonAlert;
 import com.mypurecloud.sdk.v2.model.CommonAlertBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CommonAllAlertUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CommonRule;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkDeleteRequest;
 import com.mypurecloud.sdk.v2.model.CommonRuleBulkUpdateNotificationsRequest;
@@ -37,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingAlertRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAlertingAlertsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingRuleRequest;
@@ -49,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsRuleRequest
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingAlertsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAlertingRulesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAlertingAlertsQueryRequest;
@@ -143,6 +146,81 @@ public class AlertingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteAlertingAlertsAllAsync(DeleteAlertingAlertsAllRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete all alerts for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteAlertingAlertsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1059,6 +1137,81 @@ public class AlertingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CommonAlert> response = (ApiResponse<CommonAlert>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> patchAlertingAlertsAllAsync(PatchAlertingAlertsAllRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates all alerts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> patchAlertingAlertsAllAsync(ApiRequest<CommonAllAlertUpdateRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

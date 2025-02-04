@@ -288,6 +288,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		AGENTS("Agents"),
 		BUACTIVITYCODES("BuActivityCodes"),
 		BUSINESSUNITS("BusinessUnits"),
+		CAPACITYPLAN("CapacityPlan"),
 		CONTINUOUSFORECAST("ContinuousForecast"),
 		HISTORICALADHERENCE("HistoricalAdherence"),
 		HISTORICALSHRINKAGE("HistoricalShrinkage"),

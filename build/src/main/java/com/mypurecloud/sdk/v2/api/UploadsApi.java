@@ -137,7 +137,6 @@ public class UploadsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to request URL upload. (required)
    * @return FunctionUploadResponse
@@ -151,7 +150,6 @@ public class UploadsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param actionId actionId (required)
    * @param body Input used to request URL upload. (required)
    * @return FunctionUploadResponse
@@ -173,7 +171,6 @@ public class UploadsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FunctionUploadResponse
    * @throws ApiException if the request fails on the server
@@ -193,7 +190,6 @@ public class UploadsApi {
   /**
    * Create upload presigned URL for draft function package file.
    * 
-   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

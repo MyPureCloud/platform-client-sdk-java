@@ -26,6 +26,8 @@ public class CampaignRuleActionEntities  implements Serializable {
   
   private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
   private List<DomainEntityRef> sequences = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> emailCampaigns = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> smsCampaigns = new ArrayList<DomainEntityRef>();
   private Boolean useTriggeringEntity = null;
 
   
@@ -66,6 +68,42 @@ public class CampaignRuleActionEntities  implements Serializable {
 
 
   /**
+   * The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+   **/
+  public CampaignRuleActionEntities emailCampaigns(List<DomainEntityRef> emailCampaigns) {
+    this.emailCampaigns = emailCampaigns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.")
+  @JsonProperty("emailCampaigns")
+  public List<DomainEntityRef> getEmailCampaigns() {
+    return emailCampaigns;
+  }
+  public void setEmailCampaigns(List<DomainEntityRef> emailCampaigns) {
+    this.emailCampaigns = emailCampaigns;
+  }
+
+
+  /**
+   * The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+   **/
+  public CampaignRuleActionEntities smsCampaigns(List<DomainEntityRef> smsCampaigns) {
+    this.smsCampaigns = smsCampaigns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.")
+  @JsonProperty("smsCampaigns")
+  public List<DomainEntityRef> getSmsCampaigns() {
+    return smsCampaigns;
+  }
+  public void setSmsCampaigns(List<DomainEntityRef> smsCampaigns) {
+    this.smsCampaigns = smsCampaigns;
+  }
+
+
+  /**
    * If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
    **/
   public CampaignRuleActionEntities useTriggeringEntity(Boolean useTriggeringEntity) {
@@ -95,12 +133,14 @@ public class CampaignRuleActionEntities  implements Serializable {
 
     return Objects.equals(this.campaigns, campaignRuleActionEntities.campaigns) &&
             Objects.equals(this.sequences, campaignRuleActionEntities.sequences) &&
+            Objects.equals(this.emailCampaigns, campaignRuleActionEntities.emailCampaigns) &&
+            Objects.equals(this.smsCampaigns, campaignRuleActionEntities.smsCampaigns) &&
             Objects.equals(this.useTriggeringEntity, campaignRuleActionEntities.useTriggeringEntity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaigns, sequences, useTriggeringEntity);
+    return Objects.hash(campaigns, sequences, emailCampaigns, smsCampaigns, useTriggeringEntity);
   }
 
   @Override
@@ -110,6 +150,8 @@ public class CampaignRuleActionEntities  implements Serializable {
     
     sb.append("    campaigns: ").append(toIndentedString(campaigns)).append("\n");
     sb.append("    sequences: ").append(toIndentedString(sequences)).append("\n");
+    sb.append("    emailCampaigns: ").append(toIndentedString(emailCampaigns)).append("\n");
+    sb.append("    smsCampaigns: ").append(toIndentedString(smsCampaigns)).append("\n");
     sb.append("    useTriggeringEntity: ").append(toIndentedString(useTriggeringEntity)).append("\n");
     sb.append("}");
     return sb.toString();

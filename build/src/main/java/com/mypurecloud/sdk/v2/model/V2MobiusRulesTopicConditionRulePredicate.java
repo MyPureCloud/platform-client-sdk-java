@@ -186,6 +186,7 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+  private String topic = null;
 
   private static class ComparisonOperatorEnumDeserializer extends StdDeserializer<ComparisonOperatorEnum> {
     public ComparisonOperatorEnumDeserializer() {
@@ -379,6 +380,23 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
 
   /**
    **/
+  public V2MobiusRulesTopicConditionRulePredicate topic(String topic) {
+    this.topic = topic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("topic")
+  public String getTopic() {
+    return topic;
+  }
+  public void setTopic(String topic) {
+    this.topic = topic;
+  }
+
+
+  /**
+   **/
   public V2MobiusRulesTopicConditionRulePredicate comparisonOperator(ComparisonOperatorEnum comparisonOperator) {
     this.comparisonOperator = comparisonOperator;
     return this;
@@ -412,12 +430,13 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
             Objects.equals(this.value, v2MobiusRulesTopicConditionRulePredicate.value) &&
             Objects.equals(this.status, v2MobiusRulesTopicConditionRulePredicate.status) &&
             Objects.equals(this.mediaType, v2MobiusRulesTopicConditionRulePredicate.mediaType) &&
+            Objects.equals(this.topic, v2MobiusRulesTopicConditionRulePredicate.topic) &&
             Objects.equals(this.comparisonOperator, v2MobiusRulesTopicConditionRulePredicate.comparisonOperator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, entity, metric, metricType, metricValueType, value, status, mediaType, comparisonOperator);
+    return Objects.hash(id, entity, metric, metricType, metricValueType, value, status, mediaType, topic, comparisonOperator);
   }
 
   @Override
@@ -433,6 +452,7 @@ public class V2MobiusRulesTopicConditionRulePredicate  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
     sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
     sb.append("}");
     return sb.toString();
