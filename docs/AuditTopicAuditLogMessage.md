@@ -77,6 +77,7 @@
 | ONBOARDING | &quot;Onboarding&quot; | 
 | SOCIALLISTENING | &quot;SocialListening&quot; | 
 | BUSINESSRULES | &quot;BusinessRules&quot; | 
+| SOCIALESCALATIONRULES | &quot;SocialEscalationRules&quot; | 
 
 
 ## Enum: ActionEnum
@@ -199,6 +200,7 @@
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
+| CALCULATE | &quot;Calculate&quot; | 
 | PROVISIONED | &quot;Provisioned&quot; | 
 | UPDATEABORTED | &quot;UpdateAborted&quot; | 
 
@@ -256,6 +258,7 @@
 | CATEGORY | &quot;Category&quot; | 
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; | 
 | DICTIONARYFEEDBACK | &quot;DictionaryFeedback&quot; | 
+| INTERACTIONREPROCESSINGJOB | &quot;InteractionReprocessingJob&quot; | 
 | SEGMENT | &quot;Segment&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | ACTIONMAP | &quot;ActionMap&quot; | 
@@ -368,6 +371,7 @@
 | CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
+| EXPORTPDFTEMPLATES | &quot;ExportPdfTemplates&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
 | MIGRATION | &quot;Migration&quot; | 
 | EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; | 
@@ -431,8 +435,9 @@
 | DECISIONTABLE | &quot;DecisionTable&quot; | 
 | DECISIONTABLEVERSION | &quot;DecisionTableVersion&quot; | 
 | DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
+| ESCALATIONRULE | &quot;EscalationRule&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

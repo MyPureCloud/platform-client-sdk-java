@@ -220,6 +220,8 @@
 | **video** | **Boolean** | Filter to indicate if the conversation has video |  [optional] |
 | **linkedInteraction** | **Boolean** | Filter to indicate if the conversation has linked interaction |  [optional] |
 | **recommendationSources** | [**List<RecommendationSourcesEnum>**](#Enum--RecommendationSourcesEnum) | List of recommendation sources for filtering recommendation details pane |  [optional] |
+| **evaluationRole** | [**EvaluationRoleEnum**](#Enum--EvaluationRoleEnum) | Sets the role when viewing agent evaluations |  [optional] |
+| **comparisonQueueIds** | **List&lt;String&gt;** | The queue ids are used to for comparison to the primary queue filter in reporting |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -521,6 +523,7 @@
 | Name | Value |
 | ---- | ----- |
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; |
+| DELIVERYPUSHED | &quot;DeliveryPushed&quot; |
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
 | FAILED | &quot;Failed&quot; |
 | PUBLISHED | &quot;Published&quot; |
@@ -656,6 +659,15 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; |
 
 
+## Enum: EvaluationRoleEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EVALUATOR | &quot;Evaluator&quot; | 
+| SUPERVISOR | &quot;Supervisor&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

@@ -17,7 +17,10 @@
 | AGENTCAPABILITYMISMATCH | &quot;AgentCapabilityMismatch&quot; | 
 | CANNOTTRADEWITHYOURSELF | &quot;CannotTradeWithYourself&quot; | 
 | DIRECTTRADEFOROTHERUSER | &quot;DirectTradeForOtherUser&quot; | 
+| INITIATINGAGENTMINIMUMTIMEBETWEENSHIFTS | &quot;InitiatingAgentMinimumTimeBetweenShifts&quot; | 
 | INITIATINGAGENTSCHEDULEDOESNOTEXIST | &quot;InitiatingAgentScheduleDoesNotExist&quot; | 
+| INITIATINGPLANNINGPERIODMAXPAIDTIME | &quot;InitiatingPlanningPeriodMaxPaidTime&quot; | 
+| INITIATINGPLANNINGPERIODMINPAIDTIME | &quot;InitiatingPlanningPeriodMinPaidTime&quot; | 
 | INITIATINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;InitiatingShiftDisallowedActivityCategory&quot; | 
 | INITIATINGSHIFTDOESNOTEXIST | &quot;InitiatingShiftDoesNotExist&quot; | 
 | INITIATINGSHIFTHASEXTERNALACTIVITIES | &quot;InitiatingShiftHasExternalActivities&quot; | 
@@ -28,7 +31,10 @@
 | INITIATINGWEEKLYMINPAIDTIME | &quot;InitiatingWeeklyMinPaidTime&quot; | 
 | INVALIDSTATE | &quot;InvalidState&quot; | 
 | ONESIDEDTRADECREATION | &quot;OneSidedTradeCreation&quot; | 
+| RECEIVINGAGENTMINIMUMTIMEBETWEENSHIFTS | &quot;ReceivingAgentMinimumTimeBetweenShifts&quot; | 
 | RECEIVINGAGENTSCHEDULEDOESNOTEXIST | &quot;ReceivingAgentScheduleDoesNotExist&quot; | 
+| RECEIVINGPLANNINGPERIODMAXPAIDTIME | &quot;ReceivingPlanningPeriodMaxPaidTime&quot; | 
+| RECEIVINGPLANNINGPERIODMINPAIDTIME | &quot;ReceivingPlanningPeriodMinPaidTime&quot; | 
 | RECEIVINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;ReceivingShiftDisallowedActivityCategory&quot; | 
 | RECEIVINGSHIFTDOESNOTEXIST | &quot;ReceivingShiftDoesNotExist&quot; | 
 | RECEIVINGSHIFTFORONESIDEDTRADE | &quot;ReceivingShiftForOneSidedTrade&quot; | 
@@ -49,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

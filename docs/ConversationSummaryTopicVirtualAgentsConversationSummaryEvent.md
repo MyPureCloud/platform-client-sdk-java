@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **conversationId** | **String** |  |  [optional] |
+| **queueId** | **String** |  |  [optional] |
 | **participants** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant&gt;**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
 | **communicationIds** | **List&lt;String&gt;** |  |  [optional] |
 | **createdDate** | [**Date**](Date) |  |  [optional] |
@@ -38,6 +39,7 @@
 | WHATSAPP | &quot;WHATSAPP&quot; | 
 | WEBMESSAGING | &quot;WEBMESSAGING&quot; | 
 | OPEN | &quot;OPEN&quot; | 
+| APPLE | &quot;APPLE&quot; | 
 
 
 ## Enum: MediaTypeEnum
@@ -59,8 +61,9 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | CONVERSATION_TOO_LONG | &quot;CONVERSATION_TOO_LONG&quot; | 
 | CONVERSATION_TOO_SHORT | &quot;CONVERSATION_TOO_SHORT&quot; | 
+| RATE_LIMITED | &quot;RATE_LIMITED&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

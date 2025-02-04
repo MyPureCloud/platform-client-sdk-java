@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteUser**](UsersApi#deleteUser) | Delete user |
+| [**deleteUserExternalidAuthorityNameExternalKey**](UsersApi#deleteUserExternalidAuthorityNameExternalKey) | Delete the external identifier for user. |
 | [**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | Remove a routing language from a user |
 | [**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | Remove a routing skill from a user |
 | [**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | Clear associated station |
@@ -34,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserAdjacents**](UsersApi#getUserAdjacents) | Get adjacents |
 | [**getUserCallforwarding**](UsersApi#getUserCallforwarding) | Get a user's CallForwarding |
 | [**getUserDirectreports**](UsersApi#getUserDirectreports) | Get direct reports |
+| [**getUserExternalid**](UsersApi#getUserExternalid) | Get the external identifiers for a user. |
+| [**getUserExternalidAuthorityName**](UsersApi#getUserExternalidAuthorityName) | Get the external identifier of user for an authority. |
 | [**getUserFavorites**](UsersApi#getUserFavorites) | Deprecated; will be revived with new contract |
 | [**getUserGeolocation**](UsersApi#getUserGeolocation) | Get a user's Geolocation |
 | [**getUserOutofoffice**](UsersApi#getUserOutofoffice) | Get a OutOfOffice |
@@ -55,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | Get list of Development Activities |
 | [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | Get list of Development Activities for current user |
 | [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | Get a Development Activity |
+| [**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | Get the user associated with external identifier. |
 | [**getUsersMe**](UsersApi#getUsersMe) | Get current user details. |
 | [**getUsersSearch**](UsersApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**patchUser**](UsersApi#patchUser) | Update user |
@@ -454,6 +458,68 @@ try {
 ### Return type
 
 **Empty**
+
+
+# **deleteUserExternalidAuthorityNameExternalKey**
+
+
+> Void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+
+Delete the external identifier for user.
+
+Wraps DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey}  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String authorityName = "authorityName_example"; // String | Authority Name
+String externalKey = "externalKey_example"; // String | External Key
+try {
+    apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUserExternalidAuthorityNameExternalKey");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **authorityName** | **String**| Authority Name | 
+| **externalKey** | **String**| External Key | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteUserRoutinglanguage**
@@ -1921,6 +1987,126 @@ try {
 [**List&lt;User&gt;**](User)
 
 
+# **getUserExternalid**
+
+
+> [List&lt;UserExternalIdentifier&gt;](UserExternalIdentifier) getUserExternalid(userId)
+
+Get the external identifiers for a user.
+
+Wraps GET /api/v2/users/{userId}/externalid  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+try {
+    List<UserExternalIdentifier> result = apiInstance.getUserExternalid(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserExternalid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;UserExternalIdentifier&gt;**](UserExternalIdentifier)
+
+
+# **getUserExternalidAuthorityName**
+
+
+> [UserExternalIdentifier](UserExternalIdentifier) getUserExternalidAuthorityName(userId, authorityName)
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/{userId}/externalid/{authorityName}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String authorityName = "authorityName_example"; // String | Authority Name
+try {
+    UserExternalIdentifier result = apiInstance.getUserExternalidAuthorityName(userId, authorityName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserExternalidAuthorityName");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **authorityName** | **String**| Authority Name | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserExternalIdentifier**](UserExternalIdentifier)
+
+
 # **getUserFavorites**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -3272,6 +3458,70 @@ try {
 ### Return type
 
 [**DevelopmentActivity**](DevelopmentActivity)
+
+
+# **getUsersExternalidAuthorityNameExternalKey**
+
+
+> [User](User) getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, expand)
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/externalid/{authorityName}/{externalKey}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String authorityName = "authorityName_example"; // String | Authority Name
+String externalKey = "externalKey_example"; // String | External Key
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+try {
+    User result = apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersExternalidAuthorityNameExternalKey");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **authorityName** | **String**| Authority Name | 
+| **externalKey** | **String**| External Key | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+{: class="table-striped"}
+
+
+### Return type
+
+[**User**](User)
 
 
 # **getUsersMe**
@@ -6154,4 +6404,4 @@ try {
 [**Verifier**](Verifier)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

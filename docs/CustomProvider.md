@@ -21,6 +21,7 @@
 | **ssoBinding** | [**SsoBindingEnum**](#Enum--SsoBindingEnum) |  |  [optional] |
 | **signAuthnRequests** | **Boolean** |  |  [optional] |
 | **providerName** | **String** |  |  [optional] |
+| **displayOnLogin** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -50,4 +51,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_

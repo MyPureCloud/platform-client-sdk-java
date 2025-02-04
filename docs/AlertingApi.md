@@ -5,6 +5,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteAlertingAlert**](AlertingApi#deleteAlertingAlert) | Delete an alert |
+| [**deleteAlertingAlertsAll**](AlertingApi#deleteAlertingAlertsAll) | Delete all alerts for the user |
 | [**deleteAlertingInteractionstatsAlert**](AlertingApi#deleteAlertingInteractionstatsAlert) | Delete an interaction stats alert |
 | [**deleteAlertingInteractionstatsRule**](AlertingApi#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule |
 | [**deleteAlertingRule**](AlertingApi#deleteAlertingRule) | Delete a rule. |
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAlertingInteractionstatsRules**](AlertingApi#getAlertingInteractionstatsRules) | Get an interaction stats rule list |
 | [**getAlertingRule**](AlertingApi#getAlertingRule) | Get a rule. |
 | [**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | Allows an entity to mute/snooze an alert or update the unread status of the alert. |
+| [**patchAlertingAlertsAll**](AlertingApi#patchAlertingAlertsAll) | Updates all alerts |
 | [**patchAlertingAlertsBulk**](AlertingApi#patchAlertingAlertsBulk) | Bulk alert updates |
 | [**patchAlertingRulesBulk**](AlertingApi#patchAlertingRulesBulk) | Bulk update of notification lists |
 | [**postAlertingAlertsQuery**](AlertingApi#postAlertingAlertsQuery) | Gets a paged list of alerts. The max page size is 50 |
@@ -87,6 +89,61 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **deleteAlertingAlertsAll**
+
+
+> Empty deleteAlertingAlertsAll()
+
+Delete all alerts for the user
+
+Wraps DELETE /api/v2/alerting/alerts/all  
+
+Requires ALL permissions: 
+
+* alerting:alert:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AlertingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AlertingApi apiInstance = new AlertingApi();
+try {
+    Empty result = apiInstance.deleteAlertingAlertsAll();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AlertingApi#deleteAlertingAlertsAll");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+**Empty**
 
 
 # **deleteAlertingInteractionstatsAlert**
@@ -832,6 +889,65 @@ try {
 [**CommonAlert**](CommonAlert)
 
 
+# **patchAlertingAlertsAll**
+
+
+> Empty patchAlertingAlertsAll(body)
+
+Updates all alerts
+
+Wraps PATCH /api/v2/alerting/alerts/all  
+
+Requires ALL permissions: 
+
+* alerting:alert:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AlertingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AlertingApi apiInstance = new AlertingApi();
+CommonAllAlertUpdateRequest body = new CommonAllAlertUpdateRequest(); // CommonAllAlertUpdateRequest | 
+try {
+    Empty result = apiInstance.patchAlertingAlertsAll(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AlertingApi#patchAlertingAlertsAll");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CommonAllAlertUpdateRequest**](CommonAllAlertUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+
 # **patchAlertingAlertsBulk**
 
 
@@ -1510,4 +1626,4 @@ try {
 [**CommonRule**](CommonRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:218.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
