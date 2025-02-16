@@ -22,6 +22,7 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BUILDINCOMPLETE | &quot;BUILDINCOMPLETE&quot; | 
 | BUILDINITIALIZING | &quot;BUILDINITIALIZING&quot; | 
 | BUILDINPROGRESS | &quot;BUILDINPROGRESS&quot; | 
 | NOTBUILT | &quot;NOTBUILT&quot; | 
@@ -31,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

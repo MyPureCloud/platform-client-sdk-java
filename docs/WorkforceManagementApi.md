@@ -88,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi#getWorkforcemanagementBusinessunitsDivisionviews) | Get business units across divisions |
 | [**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarDataIcs) | Get ics formatted calendar based on shareable link |
 | [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs) | Get existing calendar link for the current user |
+| [**getWorkforcemanagementHistoricaldataBulkRemoveJob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJob) | Retrieves delete job status for historical data imports associated with the job id |
+| [**getWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJobs) | Retrieves all delete job status for historical data |
 | [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataDeletejob) | Retrieves delete job status for historical data imports of the organization |
 | [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatus) | Retrieves status of the historical data imports of the organization |
 | [**getWorkforcemanagementHistoricaldataImportstatusJobId**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId) | Retrieves status of the historical data imports associated with job id |
@@ -205,6 +207,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitWorkplanbids**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbids) | Create a new work plan bid |
 | [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi#postWorkforcemanagementBusinessunits) | Add a new business unit |
 | [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#postWorkforcemanagementCalendarUrlIcs) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned |
+| [**postWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataBulkRemoveJobs) | Delete the list of the historical data import entries |
 | [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataDeletejob) | Delete the entries of the historical data imports in the organization |
 | [**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataValidate) | Trigger validation process for historical import |
 | [**postWorkforcemanagementIntegrationsHriTimeofftypesJobs**](WorkforceManagementApi#postWorkforcemanagementIntegrationsHriTimeofftypesJobs) | Get list of time off types configured in integration |
@@ -5589,6 +5592,120 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**CalendarUrlResponse**](CalendarUrlResponse)
+
+
+# **getWorkforcemanagementHistoricaldataBulkRemoveJob**
+
+
+> [HistoricalImportDeleteFilesJobResponse](HistoricalImportDeleteFilesJobResponse) getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
+
+Retrieves delete job status for historical data imports associated with the job id
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The job ID of the historical data delete request
+try {
+    HistoricalImportDeleteFilesJobResponse result = apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The job ID of the historical data delete request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse)
+
+
+# **getWorkforcemanagementHistoricaldataBulkRemoveJobs**
+
+
+> [HistoricalImportOverallDeleteStatusResponse](HistoricalImportOverallDeleteStatusResponse) getWorkforcemanagementHistoricaldataBulkRemoveJobs()
+
+Retrieves all delete job status for historical data
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    HistoricalImportOverallDeleteStatusResponse result = apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJobs();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**HistoricalImportOverallDeleteStatusResponse**](HistoricalImportOverallDeleteStatusResponse)
 
 
 # **getWorkforcemanagementHistoricaldataDeletejob**
@@ -12949,6 +13066,65 @@ try {
 [**CalendarUrlResponse**](CalendarUrlResponse)
 
 
+# **postWorkforcemanagementHistoricaldataBulkRemoveJobs**
+
+
+> [HistoricalImportDeleteFilesJobResponse](HistoricalImportDeleteFilesJobResponse) postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
+
+Delete the list of the historical data import entries
+
+Wraps POST /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+HistoricalImportDeleteFilesJobRequest body = new HistoricalImportDeleteFilesJobRequest(); // HistoricalImportDeleteFilesJobRequest | body
+try {
+    HistoricalImportDeleteFilesJobResponse result = apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementHistoricaldataBulkRemoveJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**HistoricalImportDeleteFilesJobRequest**](HistoricalImportDeleteFilesJobRequest)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse)
+
+
 # **postWorkforcemanagementHistoricaldataDeletejob**
 
 
@@ -15497,4 +15673,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

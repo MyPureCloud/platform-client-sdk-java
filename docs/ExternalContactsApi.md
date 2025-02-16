@@ -1748,7 +1748,7 @@ try {
 # **getExternalcontactsImportJob**
 
 
-> [ContactImportJobResponse](ContactImportJobResponse) getExternalcontactsImportJob(jobId)
+> [ContactImportJobResponse](ContactImportJobResponse) getExternalcontactsImportJob(jobId, expand)
 
 Get job based on id
 
@@ -1781,8 +1781,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String jobId = "jobId_example"; // String | Job id
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
-    ContactImportJobResponse result = apiInstance.getExternalcontactsImportJob(jobId);
+    ContactImportJobResponse result = apiInstance.getExternalcontactsImportJob(jobId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportJob");
@@ -1796,6 +1797,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jobId** | **String**| Job id | 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: division 
 {: class="table-striped"}
 
 
@@ -1807,7 +1809,7 @@ try {
 # **getExternalcontactsImportJobs**
 
 
-> [ContactImportJobEntityListing](ContactImportJobEntityListing) getExternalcontactsImportJobs(after, pageSize, sortOrder, jobStatus)
+> [ContactImportJobEntityListing](ContactImportJobEntityListing) getExternalcontactsImportJobs(expand, after, pageSize, sortOrder, jobStatus)
 
 List jobs for organization
 
@@ -1839,12 +1841,13 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "25"; // String | Number of entities to return. Maximum of 100.
 String sortOrder = "Ascending"; // String | Direction of sorting.
 String jobStatus = "jobStatus_example"; // String | Search term to filter by jobStatus
 try {
-    ContactImportJobEntityListing result = apiInstance.getExternalcontactsImportJobs(after, pageSize, sortOrder, jobStatus);
+    ContactImportJobEntityListing result = apiInstance.getExternalcontactsImportJobs(expand, after, pageSize, sortOrder, jobStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsImportJobs");
@@ -1857,6 +1860,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: division 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] [default to 25] 
 | **sortOrder** | **String**| Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending 
@@ -5843,4 +5847,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

@@ -68,6 +68,7 @@
 | MARKETPLACE | &quot;Marketplace&quot; | 
 | LOGCAPTURE | &quot;LogCapture&quot; | 
 | GDPR | &quot;GDPR&quot; | 
+| EXTERNALCONTACTSEXPORT | &quot;ExternalContactsExport&quot; | 
 | AGENTCONFIG | &quot;AgentConfig&quot; | 
 | EMAILS | &quot;Emails&quot; | 
 | SCRIPTER | &quot;Scripter&quot; | 
@@ -198,6 +199,8 @@
 | SUBMIT | &quot;Submit&quot; | 
 | ENABLECAPTURE | &quot;EnableCapture&quot; | 
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
+| SUCCEEDED | &quot;Succeeded&quot; | 
+| FAILED | &quot;Failed&quot; | 
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
 | CALCULATE | &quot;Calculate&quot; | 
@@ -308,6 +311,7 @@
 | STAFFINGGROUP | &quot;StaffingGroup&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
+| RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 
 | SKILLGROUP | &quot;SkillGroup&quot; | 
 | DIRECTORYGROUP | &quot;DirectoryGroup&quot; | 
@@ -414,6 +418,7 @@
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | VENDORLISTING | &quot;VendorListing&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
+| EXPORTREQUEST | &quot;ExportRequest&quot; | 
 | DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
 | OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
@@ -440,4 +445,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteAuthorizationDivision**](AuthorizationApi#deleteAuthorizationDivision) | Delete a division. |
+| [**deleteAuthorizationPoliciesTargetSubjectSubjectId**](AuthorizationApi#deleteAuthorizationPoliciesTargetSubjectSubjectId) | Delete an access control policy |
 | [**deleteAuthorizationRole**](AuthorizationApi#deleteAuthorizationRole) | Delete an organization role. |
 | [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
 | [**getAuthorizationDivision**](AuthorizationApi#getAuthorizationDivision) | Returns an authorization division. |
@@ -16,6 +17,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi#getAuthorizationDivisionspermittedPagedMe) | Returns which divisions the current user has the given permission in. |
 | [**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi#getAuthorizationDivisionspermittedPagedSubjectId) | Returns which divisions the specified user has the given permission in. |
 | [**getAuthorizationPermissions**](AuthorizationApi#getAuthorizationPermissions) | Get all permissions. |
+| [**getAuthorizationPolicies**](AuthorizationApi#getAuthorizationPolicies) | Get a page of access policies for an organization |
+| [**getAuthorizationPoliciesSubjectSubjectId**](AuthorizationApi#getAuthorizationPoliciesSubjectSubjectId) | Get a page of access policies for a given subject |
+| [**getAuthorizationPoliciesTarget**](AuthorizationApi#getAuthorizationPoliciesTarget) | Get a page of access policies for a given policy target |
+| [**getAuthorizationPoliciesTargetSubjectSubjectId**](AuthorizationApi#getAuthorizationPoliciesTargetSubjectSubjectId) | Get an access control policy for a specified resource target and subject |
+| [**getAuthorizationPoliciesTargets**](AuthorizationApi#getAuthorizationPoliciesTargets) | Get a map of policy targets to valid attributes for those targets |
+| [**getAuthorizationPolicy**](AuthorizationApi#getAuthorizationPolicy) | Get an access control policy with the specified policy ID |
+| [**getAuthorizationPolicyAttributes**](AuthorizationApi#getAuthorizationPolicyAttributes) | Get the list of attributes used to evaluate an access control policy with the specified policy ID |
 | [**getAuthorizationProducts**](AuthorizationApi#getAuthorizationProducts) | Get the list of enabled products |
 | [**getAuthorizationRole**](AuthorizationApi#getAuthorizationRole) | Get a single organization role. |
 | [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#getAuthorizationRoleComparedefaultRightRoleId) | Get an org role to default role comparison |
@@ -33,6 +41,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationDivisionObject**](AuthorizationApi#postAuthorizationDivisionObject) | Assign a list of objects to a division |
 | [**postAuthorizationDivisionRestore**](AuthorizationApi#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
 | [**postAuthorizationDivisions**](AuthorizationApi#postAuthorizationDivisions) | Create a division. |
+| [**postAuthorizationPoliciesTarget**](AuthorizationApi#postAuthorizationPoliciesTarget) | Add an access control policy for a specified resource target and subject |
+| [**postAuthorizationPoliciesTargetValidate**](AuthorizationApi#postAuthorizationPoliciesTargetValidate) | Validate the conditions and attributes of an access control policy for a specified resource target |
+| [**postAuthorizationPolicySimulate**](AuthorizationApi#postAuthorizationPolicySimulate) | Simulate a request and evaluate the specified policy ID against the provided values |
 | [**postAuthorizationRole**](AuthorizationApi#postAuthorizationRole) | Bulk-grant subjects and divisions with an organization role. |
 | [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#postAuthorizationRoleComparedefaultRightRoleId) | Get an unsaved org role to default role comparison |
 | [**postAuthorizationRoles**](AuthorizationApi#postAuthorizationRoles) | Create an organization role. |
@@ -42,6 +53,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationSubjectBulkreplace**](AuthorizationApi#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
 | [**postAuthorizationSubjectDivisionRole**](AuthorizationApi#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
 | [**putAuthorizationDivision**](AuthorizationApi#putAuthorizationDivision) | Update a division. |
+| [**putAuthorizationPoliciesTarget**](AuthorizationApi#putAuthorizationPoliciesTarget) | Add an access control policy for a specified resource target and subject, overwriting any existing policy |
+| [**putAuthorizationPolicy**](AuthorizationApi#putAuthorizationPolicy) | Update an access control policy with a given ID |
 | [**putAuthorizationRole**](AuthorizationApi#putAuthorizationRole) | Update an organization role. |
 | [**putAuthorizationRoleUsersAdd**](AuthorizationApi#putAuthorizationRoleUsersAdd) | Sets the users for the role |
 | [**putAuthorizationRoleUsersRemove**](AuthorizationApi#putAuthorizationRoleUsersRemove) | Removes the users from the role |
@@ -103,6 +116,68 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
 | **force** | **Boolean**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAuthorizationPoliciesTargetSubjectSubjectId**
+
+
+> Void deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+
+Delete an access control policy
+
+deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}  
+
+Requires ANY permissions: 
+
+* authorization:policy:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy is applied
+String subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+try {
+    apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#deleteAuthorizationPoliciesTargetSubjectSubjectId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action target to which the policy is applied | 
+| **subjectId** | **String**| The ID of the subject to which the policy is applied | 
 {: class="table-striped"}
 
 
@@ -802,6 +877,441 @@ try {
 ### Return type
 
 [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
+
+
+# **getAuthorizationPolicies**
+
+
+> [AuthorizationPolicyEntityListing](AuthorizationPolicyEntityListing) getAuthorizationPolicies(after, pageSize)
+
+Get a page of access policies for an organization
+
+getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Number of entities to return. Maximum of 200.
+try {
+    AuthorizationPolicyEntityListing result = apiInstance.getAuthorizationPolicies(after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPolicies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+# **getAuthorizationPoliciesSubjectSubjectId**
+
+
+> [AuthorizationPolicyEntityListing](AuthorizationPolicyEntityListing) getAuthorizationPoliciesSubjectSubjectId(subjectId, after, pageSize)
+
+Get a page of access policies for a given subject
+
+getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/subject/{subjectId}  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String subjectId = "subjectId_example"; // String | The ID of the subject to which policies are applied
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Number of entities to return. Maximum of 200.
+try {
+    AuthorizationPolicyEntityListing result = apiInstance.getAuthorizationPoliciesSubjectSubjectId(subjectId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPoliciesSubjectSubjectId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| The ID of the subject to which policies are applied | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+# **getAuthorizationPoliciesTarget**
+
+
+> [AuthorizationPolicyEntityListing](AuthorizationPolicyEntityListing) getAuthorizationPoliciesTarget(targetName, after, pageSize)
+
+Get a page of access policies for a given policy target
+
+getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets/{targetName}  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action resource target to which policies are applied
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Number of entities to return. Maximum of 200.
+try {
+    AuthorizationPolicyEntityListing result = apiInstance.getAuthorizationPoliciesTarget(targetName, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPoliciesTarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action resource target to which policies are applied | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+# **getAuthorizationPoliciesTargetSubjectSubjectId**
+
+
+> [AuthorizationPolicy](AuthorizationPolicy) getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+
+Get an access control policy for a specified resource target and subject
+
+getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action resource target to which the policy is applied
+String subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+try {
+    AuthorizationPolicy result = apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPoliciesTargetSubjectSubjectId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action resource target to which the policy is applied | 
+| **subjectId** | **String**| The ID of the subject to which the policy is applied | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+# **getAuthorizationPoliciesTargets**
+
+
+> [TargetAttributes](TargetAttributes) getAuthorizationPoliciesTargets()
+
+Get a map of policy targets to valid attributes for those targets
+
+getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+try {
+    TargetAttributes result = apiInstance.getAuthorizationPoliciesTargets();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPoliciesTargets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TargetAttributes**](TargetAttributes)
+
+
+# **getAuthorizationPolicy**
+
+
+> [AuthorizationPolicy](AuthorizationPolicy) getAuthorizationPolicy(policyId)
+
+Get an access control policy with the specified policy ID
+
+getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/{policyId}  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String policyId = "policyId_example"; // String | The ID of the policy to retrieve
+try {
+    AuthorizationPolicy result = apiInstance.getAuthorizationPolicy(policyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| The ID of the policy to retrieve | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+# **getAuthorizationPolicyAttributes**
+
+
+> [PolicyAttributeSet](PolicyAttributeSet) getAuthorizationPolicyAttributes(policyId)
+
+Get the list of attributes used to evaluate an access control policy with the specified policy ID
+
+getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/{policyId}/attributes  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String policyId = "policyId_example"; // String | The ID of the policy to retrieve attributes
+try {
+    PolicyAttributeSet result = apiInstance.getAuthorizationPolicyAttributes(policyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationPolicyAttributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| The ID of the policy to retrieve attributes | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PolicyAttributeSet**](PolicyAttributeSet)
 
 
 # **getAuthorizationProducts**
@@ -1862,6 +2372,195 @@ try {
 [**AuthzDivision**](AuthzDivision)
 
 
+# **postAuthorizationPoliciesTarget**
+
+
+> [AuthorizationPolicy](AuthorizationPolicy) postAuthorizationPoliciesTarget(targetName, body)
+
+Add an access control policy for a specified resource target and subject
+
+postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/targets/{targetName}  
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+try {
+    AuthorizationPolicy result = apiInstance.postAuthorizationPoliciesTarget(targetName, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationPoliciesTarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action target to which the policy will be applied | 
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+# **postAuthorizationPoliciesTargetValidate**
+
+
+> [ValidationErrorListing](ValidationErrorListing) postAuthorizationPoliciesTargetValidate(targetName, body)
+
+Validate the conditions and attributes of an access control policy for a specified resource target
+
+postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/targets/{targetName}/validate  
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+try {
+    ValidationErrorListing result = apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationPoliciesTargetValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action target to which the policy will be applied | 
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ValidationErrorListing**](ValidationErrorListing)
+
+
+# **postAuthorizationPolicySimulate**
+
+
+> [PolicyTestResult](PolicyTestResult) postAuthorizationPolicySimulate(policyId, body)
+
+Simulate a request and evaluate the specified policy ID against the provided values
+
+postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/{policyId}/simulate  
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String policyId = "policyId_example"; // String | The ID of the policy to test the simulated data against
+PolicyTestPayload body = new PolicyTestPayload(); // PolicyTestPayload | A map of attribute names to type and simulated data value
+try {
+    PolicyTestResult result = apiInstance.postAuthorizationPolicySimulate(policyId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationPolicySimulate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| The ID of the policy to test the simulated data against | 
+| **body** | [**PolicyTestPayload**](PolicyTestPayload)| A map of attribute names to type and simulated data value | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PolicyTestResult**](PolicyTestResult)
+
+
 # **postAuthorizationRole**
 
 
@@ -2421,6 +3120,133 @@ try {
 [**AuthzDivision**](AuthzDivision)
 
 
+# **putAuthorizationPoliciesTarget**
+
+
+> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPoliciesTarget(targetName, body)
+
+Add an access control policy for a specified resource target and subject, overwriting any existing policy
+
+putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/authorization/policies/targets/{targetName}  
+
+Requires ANY permissions: 
+
+* authorization:policy:edit
+* authorization:policy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+try {
+    AuthorizationPolicy result = apiInstance.putAuthorizationPoliciesTarget(targetName, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#putAuthorizationPoliciesTarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **targetName** | **String**| The domain:entity:action target to which the policy will be applied | 
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+# **putAuthorizationPolicy**
+
+
+> [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPolicy(policyId, body)
+
+Update an access control policy with a given ID
+
+putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/authorization/policies/{policyId}  
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String policyId = "policyId_example"; // String | The ID of the policy to update
+AuthorizationPolicy body = new AuthorizationPolicy(); // AuthorizationPolicy | Access control policy
+try {
+    AuthorizationPolicy result = apiInstance.putAuthorizationPolicy(policyId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#putAuthorizationPolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| The ID of the policy to update | 
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
 # **putAuthorizationRole**
 
 
@@ -2788,4 +3614,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

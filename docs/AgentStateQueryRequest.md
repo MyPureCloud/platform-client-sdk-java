@@ -10,7 +10,7 @@
 | **userOrderBy** | [**UserOrderByEnum**](#Enum--UserOrderByEnum) | Search user order dimension names; default to userName |  [optional] |
 | **userOrder** | [**UserOrderEnum**](#Enum--UserOrderEnum) | Search user order direction; default to asc |  [optional] |
 | **sessionOrderBy** | [**SessionOrderByEnum**](#Enum--SessionOrderByEnum) | Search session order dimension names; default to segmentStart |  [optional] |
-| **sessionOrder** | [**SessionOrderEnum**](#Enum--SessionOrderEnum) | Search session order direction; default to desc |  [optional] |
+| **sessionOrder** | [**SessionOrderEnum**](#Enum--SessionOrderEnum) | Search session order direction; default to asc |  [optional] |
 
 
 ## Enum: UserOrderByEnum
@@ -52,4 +52,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

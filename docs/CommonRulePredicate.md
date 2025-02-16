@@ -10,6 +10,7 @@
 | **comparisonOperator** | [**ComparisonOperatorEnum**](#Enum--ComparisonOperatorEnum) | The comparison operator being performed on the metric. |  |
 | **value** | **Double** | The value the metric will be compared to. |  |
 | **status** | **String** | The status of the entity corresponding to the metric. |  [optional] |
+| **topic** | **String** | The operational console topic corresponding to the metric. |  [optional] |
 | **entity** | [**CommonRulePredicateEntity**](CommonRulePredicateEntity) | The entity whose metric is being represented. |  |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation the metric describes. |  [optional] |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric being evaluated. |  |
@@ -95,8 +96,9 @@
 | OINTERACTING | &quot;oInteracting&quot; | 
 | TFLOWOUT | &quot;tFlowOut&quot; | 
 | TADHERENCESTATUS | &quot;tAdherenceStatus&quot; | 
+| NEVENTS | &quot;nEvents&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

@@ -39,7 +39,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | Retrieves an object containing the total number of concurrent active screen recordings |
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
-| [**patchRecordingsScreensession**](RecordingApi#patchRecordingsScreensession) | Update a screen recording session |
 | [**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | Create annotation |
 | [**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
 | [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | Create media retention policy |
@@ -2270,71 +2269,6 @@ try {
 [**Policy**](Policy)
 
 
-# **patchRecordingsScreensession**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> Void patchRecordingsScreensession(recordingSessionId, body)
-
-Update a screen recording session
-
-This API is deprecated and the functionality to stop screen recording will be no longer supported.
-
-Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId}  
-
-Requires ANY permissions: 
-
-* recording:screenRecording:stop
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-String recordingSessionId = "recordingSessionId_example"; // String | Screen recording session ID
-ScreenRecordingSessionRequest body = new ScreenRecordingSessionRequest(); // ScreenRecordingSessionRequest | 
-try {
-    apiInstance.patchRecordingsScreensession(recordingSessionId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#patchRecordingsScreensession");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **recordingSessionId** | **String**| Screen recording session ID | 
-| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest)|  | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-
 # **postConversationRecordingAnnotations**
 
 
@@ -3736,4 +3670,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
