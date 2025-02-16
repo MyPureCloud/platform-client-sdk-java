@@ -27,8 +27,6 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -82,6 +80,9 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private Integer version = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private String platform = null;
   private DomainEntityRef externalSource = null;
   private String selfUri = null;
 
@@ -141,42 +142,6 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
 
 
   /**
-   * Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public OpenDataIngestionRuleResponse dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  /**
-   * Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public OpenDataIngestionRuleResponse dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-
-  /**
    * The status of the data ingestion rule.
    **/
   public OpenDataIngestionRuleResponse status(StatusEnum status) {
@@ -209,6 +174,27 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
   }
   public void setVersion(Integer version) {
     this.version = version;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The platform of the data ingestion rule.")
+  @JsonProperty("platform")
+  public String getPlatform() {
+    return platform;
   }
 
 
@@ -250,17 +236,18 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
     return Objects.equals(this.id, openDataIngestionRuleResponse.id) &&
             Objects.equals(this.name, openDataIngestionRuleResponse.name) &&
             Objects.equals(this.description, openDataIngestionRuleResponse.description) &&
-            Objects.equals(this.dateCreated, openDataIngestionRuleResponse.dateCreated) &&
-            Objects.equals(this.dateModified, openDataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.status, openDataIngestionRuleResponse.status) &&
             Objects.equals(this.version, openDataIngestionRuleResponse.version) &&
+            Objects.equals(this.dateCreated, openDataIngestionRuleResponse.dateCreated) &&
+            Objects.equals(this.dateModified, openDataIngestionRuleResponse.dateModified) &&
+            Objects.equals(this.platform, openDataIngestionRuleResponse.platform) &&
             Objects.equals(this.externalSource, openDataIngestionRuleResponse.externalSource) &&
             Objects.equals(this.selfUri, openDataIngestionRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, status, version, externalSource, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, externalSource, selfUri);
   }
 
   @Override
@@ -271,10 +258,11 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

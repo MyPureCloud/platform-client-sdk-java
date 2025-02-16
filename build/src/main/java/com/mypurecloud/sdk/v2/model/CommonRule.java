@@ -57,6 +57,7 @@ public class CommonRule  implements Serializable {
     CONVERSATIONMETRICS("ConversationMetrics"),
     USERPRESENCE("UserPresence"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
+    OPERATIONALCONSOLE("OperationalConsole"),
     UNKNOWN("Unknown");
 
     private String value;

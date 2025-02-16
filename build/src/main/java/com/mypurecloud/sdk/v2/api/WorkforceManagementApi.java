@@ -125,7 +125,10 @@ import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
+import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobRequest;
+import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
+import com.mypurecloud.sdk.v2.model.HistoricalImportOverallDeleteStatusResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
@@ -335,6 +338,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest;
@@ -452,6 +457,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWorkplanbidsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
@@ -7376,6 +7382,158 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param jobId The job ID of the historical data delete request (required)
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportDeleteFilesJobResponse getWorkforcemanagementHistoricaldataBulkRemoveJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementHistoricaldataBulkRemoveJob(createGetWorkforcemanagementHistoricaldataBulkRemoveJobRequest(jobId));
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param jobId The job ID of the historical data delete request (required)
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportDeleteFilesJobResponse> getWorkforcemanagementHistoricaldataBulkRemoveJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementHistoricaldataBulkRemoveJob(createGetWorkforcemanagementHistoricaldataBulkRemoveJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest createGetWorkforcemanagementHistoricaldataBulkRemoveJobRequest(String jobId) {
+    return GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param request The request object
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportDeleteFilesJobResponse getWorkforcemanagementHistoricaldataBulkRemoveJob(GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteFilesJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportDeleteFilesJobResponse> getWorkforcemanagementHistoricaldataBulkRemoveJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoricalImportDeleteFilesJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @return HistoricalImportOverallDeleteStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportOverallDeleteStatusResponse getWorkforcemanagementHistoricaldataBulkRemoveJobs() throws IOException, ApiException {
+    return  getWorkforcemanagementHistoricaldataBulkRemoveJobs(createGetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest());
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @return HistoricalImportOverallDeleteStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportOverallDeleteStatusResponse> getWorkforcemanagementHistoricaldataBulkRemoveJobsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementHistoricaldataBulkRemoveJobs(createGetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest createGetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest() {
+    return GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @param request The request object
+   * @return HistoricalImportOverallDeleteStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportOverallDeleteStatusResponse getWorkforcemanagementHistoricaldataBulkRemoveJobs(GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoricalImportOverallDeleteStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportOverallDeleteStatusResponse> getWorkforcemanagementHistoricaldataBulkRemoveJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoricalImportOverallDeleteStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = (ApiResponse<HistoricalImportOverallDeleteStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = (ApiResponse<HistoricalImportOverallDeleteStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17116,6 +17274,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param body body (optional)
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(HistoricalImportDeleteFilesJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementHistoricaldataBulkRemoveJobs(createPostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest(body));
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param body body (optional)
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportDeleteFilesJobResponse> postWorkforcemanagementHistoricaldataBulkRemoveJobsWithHttpInfo(HistoricalImportDeleteFilesJobRequest body) throws IOException {
+    return postWorkforcemanagementHistoricaldataBulkRemoveJobs(createPostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest createPostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest(HistoricalImportDeleteFilesJobRequest body) {
+    return PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param request The request object
+   * @return HistoricalImportDeleteFilesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteFilesJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoricalImportDeleteFilesJobResponse> postWorkforcemanagementHistoricaldataBulkRemoveJobs(ApiRequest<HistoricalImportDeleteFilesJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoricalImportDeleteFilesJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -70,7 +70,7 @@ public class CreateQueueRequest  implements Serializable {
     }
   }
   /**
-   * The Scoring Method for the queue
+   * The Scoring Method for the queue.
    */
  @JsonDeserialize(using = ScoringMethodEnumDeserializer.class)
   public enum ScoringMethodEnum {
@@ -104,6 +104,55 @@ public class CreateQueueRequest  implements Serializable {
     }
   }
   private ScoringMethodEnum scoringMethod = null;
+
+  private static class LastAgentRoutingModeEnumDeserializer extends StdDeserializer<LastAgentRoutingModeEnum> {
+    public LastAgentRoutingModeEnumDeserializer() {
+      super(LastAgentRoutingModeEnumDeserializer.class);
+    }
+
+    @Override
+    public LastAgentRoutingModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LastAgentRoutingModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The Last Agent Routing Mode for the queue.
+   */
+ @JsonDeserialize(using = LastAgentRoutingModeEnumDeserializer.class)
+  public enum LastAgentRoutingModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DISABLED("Disabled"),
+    QUEUEMEMBERSONLY("QueueMembersOnly"),
+    ANYAGENT("AnyAgent");
+
+    private String value;
+
+    LastAgentRoutingModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LastAgentRoutingModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LastAgentRoutingModeEnum value : LastAgentRoutingModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LastAgentRoutingModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LastAgentRoutingModeEnum lastAgentRoutingMode = null;
   private AcwSettings acwSettings = null;
 
   private static class SkillEvaluationMethodEnumDeserializer extends StdDeserializer<SkillEvaluationMethodEnum> {
@@ -405,20 +454,38 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
-   * The Scoring Method for the queue
+   * The Scoring Method for the queue.
    **/
   public CreateQueueRequest scoringMethod(ScoringMethodEnum scoringMethod) {
     this.scoringMethod = scoringMethod;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Scoring Method for the queue")
+  @ApiModelProperty(example = "null", value = "The Scoring Method for the queue.")
   @JsonProperty("scoringMethod")
   public ScoringMethodEnum getScoringMethod() {
     return scoringMethod;
   }
   public void setScoringMethod(ScoringMethodEnum scoringMethod) {
     this.scoringMethod = scoringMethod;
+  }
+
+
+  /**
+   * The Last Agent Routing Mode for the queue.
+   **/
+  public CreateQueueRequest lastAgentRoutingMode(LastAgentRoutingModeEnum lastAgentRoutingMode) {
+    this.lastAgentRoutingMode = lastAgentRoutingMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Last Agent Routing Mode for the queue.")
+  @JsonProperty("lastAgentRoutingMode")
+  public LastAgentRoutingModeEnum getLastAgentRoutingMode() {
+    return lastAgentRoutingMode;
+  }
+  public void setLastAgentRoutingMode(LastAgentRoutingModeEnum lastAgentRoutingMode) {
+    this.lastAgentRoutingMode = lastAgentRoutingMode;
   }
 
 
@@ -869,6 +936,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.conditionalGroupRouting, createQueueRequest.conditionalGroupRouting) &&
             Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
             Objects.equals(this.scoringMethod, createQueueRequest.scoringMethod) &&
+            Objects.equals(this.lastAgentRoutingMode, createQueueRequest.lastAgentRoutingMode) &&
             Objects.equals(this.acwSettings, createQueueRequest.acwSettings) &&
             Objects.equals(this.skillEvaluationMethod, createQueueRequest.skillEvaluationMethod) &&
             Objects.equals(this.memberGroups, createQueueRequest.memberGroups) &&
@@ -897,7 +965,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
   }
 
   @Override
@@ -921,6 +989,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    conditionalGroupRouting: ").append(toIndentedString(conditionalGroupRouting)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    scoringMethod: ").append(toIndentedString(scoringMethod)).append("\n");
+    sb.append("    lastAgentRoutingMode: ").append(toIndentedString(lastAgentRoutingMode)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");

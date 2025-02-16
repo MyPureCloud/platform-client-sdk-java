@@ -13,6 +13,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuthorizationPolicy;
+import com.mypurecloud.sdk.v2.model.AuthorizationPolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthorizationSettings;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
@@ -27,15 +29,21 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyAttributeSet;
+import com.mypurecloud.sdk.v2.model.PolicyTestPayload;
+import com.mypurecloud.sdk.v2.model.PolicyTestResult;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.TargetAttributes;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserReferenceEntityListing;
+import com.mypurecloud.sdk.v2.model.ValidationErrorListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
@@ -47,6 +55,13 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRe
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesSubjectSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetSubjectSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPolicyAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRightRoleIdRequest;
@@ -64,6 +79,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPoliciesTargetValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPolicySimulateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleComparedefaultRightRoleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesRequest;
@@ -73,6 +91,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequ
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkreplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest;
@@ -140,6 +160,83 @@ public class AuthorizationApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteAuthorizationDivisionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteAuthorizationPoliciesTargetSubjectSubjectIdAsync(DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteAuthorizationPoliciesTargetSubjectSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -991,6 +1088,545 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicyEntityListing> getAuthorizationPoliciesAsync(GetAuthorizationPoliciesRequest request, final AsyncApiCallback<AuthorizationPolicyEntityListing> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicyEntityListing>> getAuthorizationPoliciesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicyEntityListing> getAuthorizationPoliciesSubjectSubjectIdAsync(GetAuthorizationPoliciesSubjectSubjectIdRequest request, final AsyncApiCallback<AuthorizationPolicyEntityListing> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicyEntityListing>> getAuthorizationPoliciesSubjectSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicyEntityListing> getAuthorizationPoliciesTargetAsync(GetAuthorizationPoliciesTargetRequest request, final AsyncApiCallback<AuthorizationPolicyEntityListing> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicyEntityListing>> getAuthorizationPoliciesTargetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicy> getAuthorizationPoliciesTargetSubjectSubjectIdAsync(GetAuthorizationPoliciesTargetSubjectSubjectIdRequest request, final AsyncApiCallback<AuthorizationPolicy> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicy>> getAuthorizationPoliciesTargetSubjectSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TargetAttributes> getAuthorizationPoliciesTargetsAsync(GetAuthorizationPoliciesTargetsRequest request, final AsyncApiCallback<TargetAttributes> callback) {
+    try {
+      final SettableFuture<TargetAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TargetAttributes>() {}, new AsyncApiCallback<ApiResponse<TargetAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<TargetAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TargetAttributes>> getAuthorizationPoliciesTargetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TargetAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TargetAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TargetAttributes>() {}, new AsyncApiCallback<ApiResponse<TargetAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<TargetAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TargetAttributes> response = (ApiResponse<TargetAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TargetAttributes> response = (ApiResponse<TargetAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicy> getAuthorizationPolicyAsync(GetAuthorizationPolicyRequest request, final AsyncApiCallback<AuthorizationPolicy> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicy>> getAuthorizationPolicyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PolicyAttributeSet> getAuthorizationPolicyAttributesAsync(GetAuthorizationPolicyAttributesRequest request, final AsyncApiCallback<PolicyAttributeSet> callback) {
+    try {
+      final SettableFuture<PolicyAttributeSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PolicyAttributeSet>() {}, new AsyncApiCallback<ApiResponse<PolicyAttributeSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyAttributeSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PolicyAttributeSet>> getAuthorizationPolicyAttributesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PolicyAttributeSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PolicyAttributeSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PolicyAttributeSet>() {}, new AsyncApiCallback<ApiResponse<PolicyAttributeSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyAttributeSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyAttributeSet> response = (ApiResponse<PolicyAttributeSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyAttributeSet> response = (ApiResponse<PolicyAttributeSet>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2278,6 +2914,237 @@ public class AuthorizationApiAsync {
   }
 
   /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicy> postAuthorizationPoliciesTargetAsync(PostAuthorizationPoliciesTargetRequest request, final AsyncApiCallback<AuthorizationPolicy> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicy>> postAuthorizationPoliciesTargetAsync(ApiRequest<AuthorizationPolicy> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ValidationErrorListing> postAuthorizationPoliciesTargetValidateAsync(PostAuthorizationPoliciesTargetValidateRequest request, final AsyncApiCallback<ValidationErrorListing> callback) {
+    try {
+      final SettableFuture<ValidationErrorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ValidationErrorListing>() {}, new AsyncApiCallback<ApiResponse<ValidationErrorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidationErrorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ValidationErrorListing>> postAuthorizationPoliciesTargetValidateAsync(ApiRequest<AuthorizationPolicy> request, final AsyncApiCallback<ApiResponse<ValidationErrorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ValidationErrorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ValidationErrorListing>() {}, new AsyncApiCallback<ApiResponse<ValidationErrorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidationErrorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidationErrorListing> response = (ApiResponse<ValidationErrorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidationErrorListing> response = (ApiResponse<ValidationErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PolicyTestResult> postAuthorizationPolicySimulateAsync(PostAuthorizationPolicySimulateRequest request, final AsyncApiCallback<PolicyTestResult> callback) {
+    try {
+      final SettableFuture<PolicyTestResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PolicyTestResult>() {}, new AsyncApiCallback<ApiResponse<PolicyTestResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyTestResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PolicyTestResult>> postAuthorizationPolicySimulateAsync(ApiRequest<PolicyTestPayload> request, final AsyncApiCallback<ApiResponse<PolicyTestResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PolicyTestResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PolicyTestResult>() {}, new AsyncApiCallback<ApiResponse<PolicyTestResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyTestResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyTestResult> response = (ApiResponse<PolicyTestResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyTestResult> response = (ApiResponse<PolicyTestResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Bulk-grant subjects and divisions with an organization role.
    * 
    * @param request the request object
@@ -2941,6 +3808,160 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicy> putAuthorizationPoliciesTargetAsync(PutAuthorizationPoliciesTargetRequest request, final AsyncApiCallback<AuthorizationPolicy> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicy>> putAuthorizationPoliciesTargetAsync(ApiRequest<AuthorizationPolicy> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationPolicy> putAuthorizationPolicyAsync(PutAuthorizationPolicyRequest request, final AsyncApiCallback<AuthorizationPolicy> callback) {
+    try {
+      final SettableFuture<AuthorizationPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationPolicy>> putAuthorizationPolicyAsync(ApiRequest<AuthorizationPolicy> request, final AsyncApiCallback<ApiResponse<AuthorizationPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationPolicy>() {}, new AsyncApiCallback<ApiResponse<AuthorizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

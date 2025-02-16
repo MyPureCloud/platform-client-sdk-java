@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RealTimeAdherenceExplanation;
 import com.mypurecloud.sdk.v2.model.TeamReference;
+import com.mypurecloud.sdk.v2.model.UserNextActivityReminder;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -366,6 +367,8 @@ public class UserScheduleAdherence  implements Serializable {
   private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
+  private List<UserNextActivityReminder> nextActivityReminders = new ArrayList<UserNextActivityReminder>();
+  private Boolean suppressOnTimeReminder = null;
   private String selfUri = null;
 
   
@@ -526,6 +529,20 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "A list of upcoming activities for which the user is scheduled")
+  @JsonProperty("nextActivityReminders")
+  public List<UserNextActivityReminder> getNextActivityReminders() {
+    return nextActivityReminders;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Indicates whether the on-time adherence notification should be suppressed for the user")
+  @JsonProperty("suppressOnTimeReminder")
+  public Boolean getSuppressOnTimeReminder() {
+    return suppressOnTimeReminder;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -564,12 +581,14 @@ public class UserScheduleAdherence  implements Serializable {
             Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
             Objects.equals(this.activeQueuesModifiedTime, userScheduleAdherence.activeQueuesModifiedTime) &&
             Objects.equals(this.removedFromManagementUnit, userScheduleAdherence.removedFromManagementUnit) &&
+            Objects.equals(this.nextActivityReminders, userScheduleAdherence.nextActivityReminders) &&
+            Objects.equals(this.suppressOnTimeReminder, userScheduleAdherence.suppressOnTimeReminder) &&
             Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, businessUnit, managementUnit, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
+    return Objects.hash(id, name, user, businessUnit, managementUnit, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, nextActivityReminders, suppressOnTimeReminder, selfUri);
   }
 
   @Override
@@ -598,6 +617,8 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
     sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
     sb.append("    removedFromManagementUnit: ").append(toIndentedString(removedFromManagementUnit)).append("\n");
+    sb.append("    nextActivityReminders: ").append(toIndentedString(nextActivityReminders)).append("\n");
+    sb.append("    suppressOnTimeReminder: ").append(toIndentedString(suppressOnTimeReminder)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

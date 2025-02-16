@@ -107,14 +107,14 @@ public class Browser  implements Serializable {
 
 
   /**
-   * Flag that is true for mobile devices.
+   * (Deprecated, use Device.isMobile instead) Flag that is true for mobile devices.
    **/
   public Browser isMobile(Boolean isMobile) {
     this.isMobile = isMobile;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Flag that is true for mobile devices.")
+  @ApiModelProperty(example = "null", value = "(Deprecated, use Device.isMobile instead) Flag that is true for mobile devices.")
   @JsonProperty("isMobile")
   public Boolean getIsMobile() {
     return isMobile;

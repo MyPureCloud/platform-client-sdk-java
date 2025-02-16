@@ -586,12 +586,12 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get the list of Speech and Text Analytics categories
    * 
-   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageSize The page size for the listing. The max that will be returned is 25. (optional, default to 25)
    * @param pageNumber The page number for the listing (optional, default to 1)
    * @param name The category name filter applied to the listing (optional)
    * @param sortOrder The sort order for the listing (optional, default to asc)
    * @param sortBy The field to sort by for the listing (optional, default to name)
-   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. (optional)
    * @return CategoriesEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -603,12 +603,12 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get the list of Speech and Text Analytics categories
    * 
-   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageSize The page size for the listing. The max that will be returned is 25. (optional, default to 25)
    * @param pageNumber The page number for the listing (optional, default to 1)
    * @param name The category name filter applied to the listing (optional)
    * @param sortOrder The sort order for the listing (optional, default to asc)
    * @param sortBy The field to sort by for the listing (optional, default to name)
-   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. (optional)
    * @return CategoriesEntityListing
    * @throws IOException if the request fails to be processed
    */

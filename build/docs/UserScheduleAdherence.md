@@ -26,6 +26,8 @@
 | **activeQueues** | [**List&lt;QueueReference&gt;**](QueueReference) | The list of queues to which this user is joined |  [optional] |
 | **activeQueuesModifiedTime** | [**Date**](Date) | Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **removedFromManagementUnit** | **Boolean** | For notification purposes. Used to indicate that a user was removed from the management unit |  [optional] |
+| **nextActivityReminders** | [**List&lt;UserNextActivityReminder&gt;**](UserNextActivityReminder) | A list of upcoming activities for which the user is scheduled |  [optional] |
+| **suppressOnTimeReminder** | **Boolean** | Indicates whether the on-time adherence notification should be suppressed for the user |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -116,4 +118,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

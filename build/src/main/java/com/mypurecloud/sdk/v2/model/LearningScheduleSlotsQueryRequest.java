@@ -48,14 +48,14 @@ public class LearningScheduleSlotsQueryRequest  implements Serializable {
 
 
   /**
-   * The duration of coaching appointment to schedule in 15 minutes granularity
+   * The duration of Learning Assignment to schedule in 15 minutes granularity
    **/
   public LearningScheduleSlotsQueryRequest lengthInMinutes(Integer lengthInMinutes) {
     this.lengthInMinutes = lengthInMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The duration of coaching appointment to schedule in 15 minutes granularity")
+  @ApiModelProperty(example = "null", required = true, value = "The duration of Learning Assignment to schedule in 15 minutes granularity")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;

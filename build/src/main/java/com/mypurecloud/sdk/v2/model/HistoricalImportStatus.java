@@ -132,6 +132,8 @@ public class HistoricalImportStatus  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private String fileName = null;
+  private Long fileSize = null;
 
   
   @ApiModelProperty(example = "null", value = "Request id of the historical import in the organization")
@@ -197,6 +199,20 @@ public class HistoricalImportStatus  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Name of the file that you are importing.")
+  @JsonProperty("fileName")
+  public String getFileName() {
+    return fileName;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Size of the file that you are importing.")
+  @JsonProperty("fileSize")
+  public Long getFileSize() {
+    return fileSize;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,12 +231,14 @@ public class HistoricalImportStatus  implements Serializable {
             Objects.equals(this.dateCreated, historicalImportStatus.dateCreated) &&
             Objects.equals(this.dateModified, historicalImportStatus.dateModified) &&
             Objects.equals(this.active, historicalImportStatus.active) &&
-            Objects.equals(this.type, historicalImportStatus.type);
+            Objects.equals(this.type, historicalImportStatus.type) &&
+            Objects.equals(this.fileName, historicalImportStatus.fileName) &&
+            Objects.equals(this.fileSize, historicalImportStatus.fileSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestId, dateImportEnded, dateImportStarted, status, error, dateCreated, dateModified, active, type);
+    return Objects.hash(requestId, dateImportEnded, dateImportStarted, status, error, dateCreated, dateModified, active, type, fileName, fileSize);
   }
 
   @Override
@@ -237,6 +255,8 @@ public class HistoricalImportStatus  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -82,7 +82,8 @@ public class RecordingMessagingMessage  implements Serializable {
     POSTBACK("Postback"),
     REACTIONS("Reactions"),
     MENTION("Mention"),
-    BUTTONRESPONSE("ButtonResponse");
+    BUTTONRESPONSE("ButtonResponse"),
+    DATEPICKER("DatePicker");
 
     private String value;
 

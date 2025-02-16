@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.WorkbinReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgent;
+import com.mypurecloud.sdk.v2.model.WorkitemScriptReference;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
 import com.mypurecloud.sdk.v2.model.WorkitemUtilizationLabelReference;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
@@ -184,6 +185,7 @@ public class Workitem  implements Serializable {
   private Map<String, Object> customFields = null;
   private AutoStatusTransitionDetail autoStatusTransitionDetail = null;
   private List<WorkitemScoredAgent> scoredAgents = new ArrayList<WorkitemScoredAgent>();
+  private WorkitemScriptReference script = null;
   private String selfUri = null;
 
   
@@ -806,6 +808,24 @@ public class Workitem  implements Serializable {
   }
 
 
+  /**
+   * The script that will be executed for the Workitem.
+   **/
+  public Workitem script(WorkitemScriptReference script) {
+    this.script = script;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The script that will be executed for the Workitem.")
+  @JsonProperty("script")
+  public WorkitemScriptReference getScript() {
+    return script;
+  }
+  public void setScript(WorkitemScriptReference script) {
+    this.script = script;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -858,12 +878,13 @@ public class Workitem  implements Serializable {
             Objects.equals(this.customFields, workitem.customFields) &&
             Objects.equals(this.autoStatusTransitionDetail, workitem.autoStatusTransitionDetail) &&
             Objects.equals(this.scoredAgents, workitem.scoredAgents) &&
+            Objects.equals(this.script, workitem.script) &&
             Objects.equals(this.selfUri, workitem.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, description, language, utilizationLabel, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, selfUri);
+    return Objects.hash(id, name, division, type, description, language, utilizationLabel, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, script, selfUri);
   }
 
   @Override
@@ -906,6 +927,7 @@ public class Workitem  implements Serializable {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    autoStatusTransitionDetail: ").append(toIndentedString(autoStatusTransitionDetail)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

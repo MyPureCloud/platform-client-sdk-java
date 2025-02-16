@@ -128,7 +128,10 @@ import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
+import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobRequest;
+import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
+import com.mypurecloud.sdk.v2.model.HistoricalImportOverallDeleteStatusResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
@@ -338,6 +341,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest;
@@ -455,6 +460,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWorkplanbidsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
@@ -6810,6 +6816,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoricalImportDeleteFilesJobResponse> getWorkforcemanagementHistoricaldataBulkRemoveJobAsync(GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest request, final AsyncApiCallback<HistoricalImportDeleteFilesJobResponse> callback) {
+    try {
+      final SettableFuture<HistoricalImportDeleteFilesJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteFilesJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportDeleteFilesJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves delete job status for historical data imports associated with the job id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoricalImportDeleteFilesJobResponse>> getWorkforcemanagementHistoricaldataBulkRemoveJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoricalImportDeleteFilesJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportDeleteFilesJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportDeleteFilesJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoricalImportOverallDeleteStatusResponse> getWorkforcemanagementHistoricaldataBulkRemoveJobsAsync(GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest request, final AsyncApiCallback<HistoricalImportOverallDeleteStatusResponse> callback) {
+    try {
+      final SettableFuture<HistoricalImportOverallDeleteStatusResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportOverallDeleteStatusResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportOverallDeleteStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportOverallDeleteStatusResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves all delete job status for historical data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoricalImportOverallDeleteStatusResponse>> getWorkforcemanagementHistoricaldataBulkRemoveJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportOverallDeleteStatusResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoricalImportOverallDeleteStatusResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportOverallDeleteStatusResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportOverallDeleteStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportOverallDeleteStatusResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = (ApiResponse<HistoricalImportOverallDeleteStatusResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = (ApiResponse<HistoricalImportOverallDeleteStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15593,6 +15749,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoricalImportDeleteFilesJobResponse> postWorkforcemanagementHistoricaldataBulkRemoveJobsAsync(PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest request, final AsyncApiCallback<HistoricalImportDeleteFilesJobResponse> callback) {
+    try {
+      final SettableFuture<HistoricalImportDeleteFilesJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteFilesJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportDeleteFilesJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the list of the historical data import entries
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoricalImportDeleteFilesJobResponse>> postWorkforcemanagementHistoricaldataBulkRemoveJobsAsync(ApiRequest<HistoricalImportDeleteFilesJobRequest> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoricalImportDeleteFilesJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportDeleteFilesJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteFilesJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoricalImportDeleteFilesJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

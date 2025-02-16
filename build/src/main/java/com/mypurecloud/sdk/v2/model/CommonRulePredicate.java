@@ -178,6 +178,7 @@ public class CommonRulePredicate  implements Serializable {
   private ComparisonOperatorEnum comparisonOperator = null;
   private Double value = null;
   private String status = null;
+  private String topic = null;
   private CommonRulePredicateEntity entity = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -275,7 +276,8 @@ public class CommonRulePredicate  implements Serializable {
     OUSERPRESENCES("oUserPresences"),
     OINTERACTING("oInteracting"),
     TFLOWOUT("tFlowOut"),
-    TADHERENCESTATUS("tAdherenceStatus");
+    TADHERENCESTATUS("tAdherenceStatus"),
+    NEVENTS("nEvents");
 
     private String value;
 
@@ -396,6 +398,24 @@ public class CommonRulePredicate  implements Serializable {
 
 
   /**
+   * The operational console topic corresponding to the metric.
+   **/
+  public CommonRulePredicate topic(String topic) {
+    this.topic = topic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The operational console topic corresponding to the metric.")
+  @JsonProperty("topic")
+  public String getTopic() {
+    return topic;
+  }
+  public void setTopic(String topic) {
+    this.topic = topic;
+  }
+
+
+  /**
    * The entity whose metric is being represented.
    **/
   public CommonRulePredicate entity(CommonRulePredicateEntity entity) {
@@ -464,6 +484,7 @@ public class CommonRulePredicate  implements Serializable {
             Objects.equals(this.comparisonOperator, commonRulePredicate.comparisonOperator) &&
             Objects.equals(this.value, commonRulePredicate.value) &&
             Objects.equals(this.status, commonRulePredicate.status) &&
+            Objects.equals(this.topic, commonRulePredicate.topic) &&
             Objects.equals(this.entity, commonRulePredicate.entity) &&
             Objects.equals(this.mediaType, commonRulePredicate.mediaType) &&
             Objects.equals(this.metric, commonRulePredicate.metric);
@@ -471,7 +492,7 @@ public class CommonRulePredicate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metricType, metricValueType, comparisonOperator, value, status, entity, mediaType, metric);
+    return Objects.hash(metricType, metricValueType, comparisonOperator, value, status, topic, entity, mediaType, metric);
   }
 
   @Override
@@ -484,6 +505,7 @@ public class CommonRulePredicate  implements Serializable {
     sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");

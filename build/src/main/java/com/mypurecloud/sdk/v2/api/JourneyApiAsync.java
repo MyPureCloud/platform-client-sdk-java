@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.DataRange;
 import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -114,6 +115,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsRequest
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsChartRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
@@ -3160,6 +3162,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataRange> getJourneyViewsDataDetailsAsync(GetJourneyViewsDataDetailsRequest request, final AsyncApiCallback<DataRange> callback) {
+    try {
+      final SettableFuture<DataRange> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataRange>() {}, new AsyncApiCallback<ApiResponse<DataRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataRange> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataRange>> getJourneyViewsDataDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataRange>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataRange>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataRange>() {}, new AsyncApiCallback<ApiResponse<DataRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataRange> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataRange> response = (ApiResponse<DataRange>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataRange> response = (ApiResponse<DataRange>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

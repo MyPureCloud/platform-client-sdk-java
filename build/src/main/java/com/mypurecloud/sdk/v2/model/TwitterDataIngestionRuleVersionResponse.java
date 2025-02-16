@@ -28,10 +28,6 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private String searchTerms = null;
-  private List<String> countries = new ArrayList<String>();
-  private Date dateCreated = null;
-  private Date dateModified = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -85,6 +81,11 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private Integer version = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private String platform = null;
+  private String searchTerms = null;
+  private List<String> countries = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -143,78 +144,6 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
 
 
   /**
-   * Search terms for X (formally Twitter).
-   **/
-  public TwitterDataIngestionRuleVersionResponse searchTerms(String searchTerms) {
-    this.searchTerms = searchTerms;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Search terms for X (formally Twitter).")
-  @JsonProperty("searchTerms")
-  public String getSearchTerms() {
-    return searchTerms;
-  }
-  public void setSearchTerms(String searchTerms) {
-    this.searchTerms = searchTerms;
-  }
-
-
-  /**
-   * ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-   **/
-  public TwitterDataIngestionRuleVersionResponse countries(List<String> countries) {
-    this.countries = countries;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
-  @JsonProperty("countries")
-  public List<String> getCountries() {
-    return countries;
-  }
-  public void setCountries(List<String> countries) {
-    this.countries = countries;
-  }
-
-
-  /**
-   * Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public TwitterDataIngestionRuleVersionResponse dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  /**
-   * Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public TwitterDataIngestionRuleVersionResponse dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-
-  /**
    * The status of the data ingestion rule.
    **/
   public TwitterDataIngestionRuleVersionResponse status(StatusEnum status) {
@@ -250,6 +179,63 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The platform of the data ingestion rule.")
+  @JsonProperty("platform")
+  public String getPlatform() {
+    return platform;
+  }
+
+
+  /**
+   * Search terms for X (formally Twitter).
+   **/
+  public TwitterDataIngestionRuleVersionResponse searchTerms(String searchTerms) {
+    this.searchTerms = searchTerms;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Search terms for X (formally Twitter).")
+  @JsonProperty("searchTerms")
+  public String getSearchTerms() {
+    return searchTerms;
+  }
+  public void setSearchTerms(String searchTerms) {
+    this.searchTerms = searchTerms;
+  }
+
+
+  /**
+   * ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+   **/
+  public TwitterDataIngestionRuleVersionResponse countries(List<String> countries) {
+    this.countries = countries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
+  @JsonProperty("countries")
+  public List<String> getCountries() {
+    return countries;
+  }
+  public void setCountries(List<String> countries) {
+    this.countries = countries;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -270,18 +256,19 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
     return Objects.equals(this.id, twitterDataIngestionRuleVersionResponse.id) &&
             Objects.equals(this.name, twitterDataIngestionRuleVersionResponse.name) &&
             Objects.equals(this.description, twitterDataIngestionRuleVersionResponse.description) &&
-            Objects.equals(this.searchTerms, twitterDataIngestionRuleVersionResponse.searchTerms) &&
-            Objects.equals(this.countries, twitterDataIngestionRuleVersionResponse.countries) &&
-            Objects.equals(this.dateCreated, twitterDataIngestionRuleVersionResponse.dateCreated) &&
-            Objects.equals(this.dateModified, twitterDataIngestionRuleVersionResponse.dateModified) &&
             Objects.equals(this.status, twitterDataIngestionRuleVersionResponse.status) &&
             Objects.equals(this.version, twitterDataIngestionRuleVersionResponse.version) &&
+            Objects.equals(this.dateCreated, twitterDataIngestionRuleVersionResponse.dateCreated) &&
+            Objects.equals(this.dateModified, twitterDataIngestionRuleVersionResponse.dateModified) &&
+            Objects.equals(this.platform, twitterDataIngestionRuleVersionResponse.platform) &&
+            Objects.equals(this.searchTerms, twitterDataIngestionRuleVersionResponse.searchTerms) &&
+            Objects.equals(this.countries, twitterDataIngestionRuleVersionResponse.countries) &&
             Objects.equals(this.selfUri, twitterDataIngestionRuleVersionResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, searchTerms, countries, dateCreated, dateModified, status, version, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, searchTerms, countries, selfUri);
   }
 
   @Override
@@ -292,12 +279,13 @@ public class TwitterDataIngestionRuleVersionResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    searchTerms: ").append(toIndentedString(searchTerms)).append("\n");
-    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    searchTerms: ").append(toIndentedString(searchTerms)).append("\n");
+    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

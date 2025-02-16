@@ -23,7 +23,6 @@ public class WhatsAppColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
-  private String contactableTimeColumn = null;
 
   
   /**
@@ -62,24 +61,6 @@ public class WhatsAppColumn  implements Serializable {
   }
 
 
-  /**
-   * A column that indicates the timezone to use for a given contact when checking contactable times.
-   **/
-  public WhatsAppColumn contactableTimeColumn(String contactableTimeColumn) {
-    this.contactableTimeColumn = contactableTimeColumn;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking contactable times.")
-  @JsonProperty("contactableTimeColumn")
-  public String getContactableTimeColumn() {
-    return contactableTimeColumn;
-  }
-  public void setContactableTimeColumn(String contactableTimeColumn) {
-    this.contactableTimeColumn = contactableTimeColumn;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,13 +72,12 @@ public class WhatsAppColumn  implements Serializable {
     WhatsAppColumn whatsAppColumn = (WhatsAppColumn) o;
 
     return Objects.equals(this.columnName, whatsAppColumn.columnName) &&
-            Objects.equals(this.type, whatsAppColumn.type) &&
-            Objects.equals(this.contactableTimeColumn, whatsAppColumn.contactableTimeColumn);
+            Objects.equals(this.type, whatsAppColumn.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, contactableTimeColumn);
+    return Objects.hash(columnName, type);
   }
 
   @Override
@@ -107,7 +87,6 @@ public class WhatsAppColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    contactableTimeColumn: ").append(toIndentedString(contactableTimeColumn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

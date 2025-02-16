@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.DataRange;
 import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -111,6 +112,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsRequest
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsChartRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
@@ -3497,6 +3499,80 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @return DataRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataRange getJourneyViewsDataDetails() throws IOException, ApiException {
+    return  getJourneyViewsDataDetails(createGetJourneyViewsDataDetailsRequest());
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @return DataRange
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataRange> getJourneyViewsDataDetailsWithHttpInfo() throws IOException {
+    return getJourneyViewsDataDetails(createGetJourneyViewsDataDetailsRequest().withHttpInfo());
+  }
+
+  private GetJourneyViewsDataDetailsRequest createGetJourneyViewsDataDetailsRequest() {
+    return GetJourneyViewsDataDetailsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @param request The request object
+   * @return DataRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataRange getJourneyViewsDataDetails(GetJourneyViewsDataDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataRange> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataRange>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about the data available for journey queries including oldest and newest event dates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataRange> getJourneyViewsDataDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataRange>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataRange> response = (ApiResponse<DataRange>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataRange> response = (ApiResponse<DataRange>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

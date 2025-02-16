@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.WorkbinReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgent;
+import com.mypurecloud.sdk.v2.model.WorkitemScriptReference;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
 import com.mypurecloud.sdk.v2.model.WorkitemUtilizationLabelReference;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
@@ -184,6 +185,7 @@ public class WorkitemVersion  implements Serializable {
   private Map<String, Object> customFields = null;
   private AutoStatusTransitionDetail autoStatusTransitionDetail = null;
   private List<WorkitemScoredAgent> scoredAgents = new ArrayList<WorkitemScoredAgent>();
+  private WorkitemScriptReference script = null;
   private Integer version = null;
   private String selfUri = null;
 
@@ -808,6 +810,24 @@ public class WorkitemVersion  implements Serializable {
 
 
   /**
+   * The script that will be executed for the Workitem.
+   **/
+  public WorkitemVersion script(WorkitemScriptReference script) {
+    this.script = script;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The script that will be executed for the Workitem.")
+  @JsonProperty("script")
+  public WorkitemScriptReference getScript() {
+    return script;
+  }
+  public void setScript(WorkitemScriptReference script) {
+    this.script = script;
+  }
+
+
+  /**
    * Version
    **/
   public WorkitemVersion version(Integer version) {
@@ -877,13 +897,14 @@ public class WorkitemVersion  implements Serializable {
             Objects.equals(this.customFields, workitemVersion.customFields) &&
             Objects.equals(this.autoStatusTransitionDetail, workitemVersion.autoStatusTransitionDetail) &&
             Objects.equals(this.scoredAgents, workitemVersion.scoredAgents) &&
+            Objects.equals(this.script, workitemVersion.script) &&
             Objects.equals(this.version, workitemVersion.version) &&
             Objects.equals(this.selfUri, workitemVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, description, language, utilizationLabel, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, version, selfUri);
+    return Objects.hash(id, name, division, type, description, language, utilizationLabel, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, script, version, selfUri);
   }
 
   @Override
@@ -926,6 +947,7 @@ public class WorkitemVersion  implements Serializable {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    autoStatusTransitionDetail: ").append(toIndentedString(autoStatusTransitionDetail)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

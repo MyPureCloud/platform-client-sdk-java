@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemFlowReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
+import com.mypurecloud.sdk.v2.model.WorkitemScriptReference;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
 import io.swagger.annotations.ApiModel;
@@ -58,6 +59,7 @@ public class WorktypeVersion  implements Serializable {
   private Integer serviceLevelTarget = null;
   private WorkitemRuleSettings ruleSettings = null;
   private WorkitemFlowReference flow = null;
+  private WorkitemScriptReference defaultScript = null;
   private Integer version = null;
   private String selfUri = null;
 
@@ -466,6 +468,24 @@ public class WorktypeVersion  implements Serializable {
 
 
   /**
+   * The default script for Workitems created from the Worktype.
+   **/
+  public WorktypeVersion defaultScript(WorkitemScriptReference defaultScript) {
+    this.defaultScript = defaultScript;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default script for Workitems created from the Worktype.")
+  @JsonProperty("defaultScript")
+  public WorkitemScriptReference getDefaultScript() {
+    return defaultScript;
+  }
+  public void setDefaultScript(WorkitemScriptReference defaultScript) {
+    this.defaultScript = defaultScript;
+  }
+
+
+  /**
    * Version
    **/
   public WorktypeVersion version(Integer version) {
@@ -523,13 +543,14 @@ public class WorktypeVersion  implements Serializable {
             Objects.equals(this.serviceLevelTarget, worktypeVersion.serviceLevelTarget) &&
             Objects.equals(this.ruleSettings, worktypeVersion.ruleSettings) &&
             Objects.equals(this.flow, worktypeVersion.flow) &&
+            Objects.equals(this.defaultScript, worktypeVersion.defaultScript) &&
             Objects.equals(this.version, worktypeVersion.version) &&
             Objects.equals(this.selfUri, worktypeVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, ruleSettings, flow, version, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, ruleSettings, flow, defaultScript, version, selfUri);
   }
 
   @Override
@@ -560,6 +581,7 @@ public class WorktypeVersion  implements Serializable {
     sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
+    sb.append("    defaultScript: ").append(toIndentedString(defaultScript)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

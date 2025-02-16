@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.JourneyEventsSettings;
 import com.mypurecloud.sdk.v2.model.MessengerSettings;
 import com.mypurecloud.sdk.v2.model.PositionSettings;
 import com.mypurecloud.sdk.v2.model.SupportCenterSettings;
+import com.mypurecloud.sdk.v2.model.VideoSettings;
 import com.mypurecloud.sdk.v2.model.WebDeploymentHeadlessMode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -49,6 +50,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private CobrowseSettings cobrowse = null;
   private JourneyEventsSettings journeyEvents = null;
   private AuthenticationSettings authenticationSettings = null;
+  private VideoSettings video = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private Date datePublished = null;
@@ -339,6 +341,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   }
 
 
+  /**
+   * The settings for video
+   **/
+  public WebDeploymentConfigurationVersion video(VideoSettings video) {
+    this.video = video;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for video")
+  @JsonProperty("video")
+  public VideoSettings getVideo() {
+    return video;
+  }
+  public void setVideo(VideoSettings video) {
+    this.video = video;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The date the configuration version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -430,6 +450,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
             Objects.equals(this.cobrowse, webDeploymentConfigurationVersion.cobrowse) &&
             Objects.equals(this.journeyEvents, webDeploymentConfigurationVersion.journeyEvents) &&
             Objects.equals(this.authenticationSettings, webDeploymentConfigurationVersion.authenticationSettings) &&
+            Objects.equals(this.video, webDeploymentConfigurationVersion.video) &&
             Objects.equals(this.dateCreated, webDeploymentConfigurationVersion.dateCreated) &&
             Objects.equals(this.dateModified, webDeploymentConfigurationVersion.dateModified) &&
             Objects.equals(this.datePublished, webDeploymentConfigurationVersion.datePublished) &&
@@ -442,7 +463,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, headlessMode, description, languages, defaultLanguage, customI18nLabels, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
+    return Objects.hash(id, name, version, headlessMode, description, languages, defaultLanguage, customI18nLabels, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, video, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
   }
 
   @Override
@@ -464,6 +485,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     sb.append("    cobrowse: ").append(toIndentedString(cobrowse)).append("\n");
     sb.append("    journeyEvents: ").append(toIndentedString(journeyEvents)).append("\n");
     sb.append("    authenticationSettings: ").append(toIndentedString(authenticationSettings)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");

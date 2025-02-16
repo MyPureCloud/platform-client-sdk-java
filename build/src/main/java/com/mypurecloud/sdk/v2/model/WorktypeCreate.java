@@ -42,6 +42,7 @@ public class WorktypeCreate  implements Serializable {
   private String defaultQueueId = null;
   private String defaultLanguageId = null;
   private List<String> defaultSkillIds = new ArrayList<String>();
+  private String defaultScriptId = null;
 
   
   /**
@@ -370,6 +371,24 @@ public class WorktypeCreate  implements Serializable {
   }
 
 
+  /**
+   * The default script for Workitems created from the Worktype. Must be a valid UUID.
+   **/
+  public WorktypeCreate defaultScriptId(String defaultScriptId) {
+    this.defaultScriptId = defaultScriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default script for Workitems created from the Worktype. Must be a valid UUID.")
+  @JsonProperty("defaultScriptId")
+  public String getDefaultScriptId() {
+    return defaultScriptId;
+  }
+  public void setDefaultScriptId(String defaultScriptId) {
+    this.defaultScriptId = defaultScriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -397,12 +416,13 @@ public class WorktypeCreate  implements Serializable {
             Objects.equals(this.schemaVersion, worktypeCreate.schemaVersion) &&
             Objects.equals(this.defaultQueueId, worktypeCreate.defaultQueueId) &&
             Objects.equals(this.defaultLanguageId, worktypeCreate.defaultLanguageId) &&
-            Objects.equals(this.defaultSkillIds, worktypeCreate.defaultSkillIds);
+            Objects.equals(this.defaultSkillIds, worktypeCreate.defaultSkillIds) &&
+            Objects.equals(this.defaultScriptId, worktypeCreate.defaultScriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds, defaultScriptId);
   }
 
   @Override
@@ -428,6 +448,7 @@ public class WorktypeCreate  implements Serializable {
     sb.append("    defaultQueueId: ").append(toIndentedString(defaultQueueId)).append("\n");
     sb.append("    defaultLanguageId: ").append(toIndentedString(defaultLanguageId)).append("\n");
     sb.append("    defaultSkillIds: ").append(toIndentedString(defaultSkillIds)).append("\n");
+    sb.append("    defaultScriptId: ").append(toIndentedString(defaultScriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

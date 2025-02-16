@@ -28,6 +28,7 @@
 | **languageId** | **String** | The ID of language of the Workitem. Must be a valid UUID. |  [optional] |
 | **utilizationLabelId** | **String** | The ID of the utilization label of the Workitem. Must be a valid UUID. |  [optional] |
 | **preferredAgentIds** | **List&lt;String&gt;** | The preferred agent IDs of the Workitem. Must be valid UUIDs. |  [optional] |
+| **scriptId** | **String** | The ID of the Workitems script. Must be a valid UUID. |  [optional] |
 
 
 ## Enum: AssignmentStateEnum
@@ -61,4 +62,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

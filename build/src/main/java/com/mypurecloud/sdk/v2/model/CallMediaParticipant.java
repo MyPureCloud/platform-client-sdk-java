@@ -280,6 +280,7 @@ public class CallMediaParticipant  implements Serializable {
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date parkTime = null;
+  private Date resumeTime = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -978,6 +979,24 @@ public class CallMediaParticipant  implements Serializable {
 
 
   /**
+   * The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CallMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
    * Value is true when the call is muted.
    **/
   public CallMediaParticipant muted(Boolean muted) {
@@ -1328,6 +1347,7 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.startAcwTime, callMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, callMediaParticipant.endAcwTime) &&
             Objects.equals(this.parkTime, callMediaParticipant.parkTime) &&
+            Objects.equals(this.resumeTime, callMediaParticipant.resumeTime) &&
             Objects.equals(this.muted, callMediaParticipant.muted) &&
             Objects.equals(this.confined, callMediaParticipant.confined) &&
             Objects.equals(this.recording, callMediaParticipant.recording) &&
@@ -1349,7 +1369,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
   }
 
   @Override
@@ -1392,6 +1412,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

@@ -14,6 +14,8 @@
 | **dateModified** | [**Date**](Date) | Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **active** | **Boolean** | Whether this historical import is active or not |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Whether this historical import is of type csv or json |  [optional] |
+| **fileName** | **String** | Name of the file that you are importing. |  [optional] |
+| **fileSize** | **Long** | Size of the file that you are importing. |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -42,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

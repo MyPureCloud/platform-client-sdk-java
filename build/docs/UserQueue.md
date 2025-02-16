@@ -20,7 +20,8 @@
 | **routingRules** | [**List&lt;RoutingRule&gt;**](RoutingRule) | The routing rules for the queue, used for Preferred Agent Routing. |  [optional] |
 | **conditionalGroupRouting** | [**ConditionalGroupRouting**](ConditionalGroupRouting) | The Conditional Group Routing settings for the queue. |  [optional] |
 | **bullseye** | [**Bullseye**](Bullseye) | The bullseye settings for the queue. |  [optional] |
-| **scoringMethod** | [**ScoringMethodEnum**](#Enum--ScoringMethodEnum) | The Scoring Method for the queue |  [optional] |
+| **scoringMethod** | [**ScoringMethodEnum**](#Enum--ScoringMethodEnum) | The Scoring Method for the queue. |  [optional] |
+| **lastAgentRoutingMode** | [**LastAgentRoutingModeEnum**](#Enum--LastAgentRoutingModeEnum) | The Last Agent Routing Mode for the queue. |  [optional] |
 | **acwSettings** | [**AcwSettings**](AcwSettings) | The ACW settings for the queue. |  [optional] |
 | **skillEvaluationMethod** | [**SkillEvaluationMethodEnum**](#Enum--SkillEvaluationMethodEnum) | The skill evaluation method to use when routing conversations. |  [optional] |
 | **memberGroups** | [**List&lt;MemberGroup&gt;**](MemberGroup) | The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes. |  [optional] |
@@ -55,6 +56,16 @@
 | PRIORITYONLY | &quot;PriorityOnly&quot; | 
 
 
+## Enum: LastAgentRoutingModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DISABLED | &quot;Disabled&quot; | 
+| QUEUEMEMBERSONLY | &quot;QueueMembersOnly&quot; | 
+| ANYAGENT | &quot;AnyAgent&quot; | 
+
+
 ## Enum: SkillEvaluationMethodEnum
 
 | Name | Value |
@@ -67,4 +78,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

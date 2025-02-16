@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ExternalSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class ContactIdentifier  implements Serializable {
   private TypeEnum type = null;
   private String value = null;
   private Date dateCreated = null;
+  private ExternalSource externalSource = null;
   private String selfUri = null;
 
   
@@ -145,6 +147,24 @@ public class ContactIdentifier  implements Serializable {
   }
 
 
+  /**
+   * The External Source ID of the identifier
+   **/
+  public ContactIdentifier externalSource(ExternalSource externalSource) {
+    this.externalSource = externalSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The External Source ID of the identifier")
+  @JsonProperty("externalSource")
+  public ExternalSource getExternalSource() {
+    return externalSource;
+  }
+  public void setExternalSource(ExternalSource externalSource) {
+    this.externalSource = externalSource;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -166,12 +186,13 @@ public class ContactIdentifier  implements Serializable {
             Objects.equals(this.type, contactIdentifier.type) &&
             Objects.equals(this.value, contactIdentifier.value) &&
             Objects.equals(this.dateCreated, contactIdentifier.dateCreated) &&
+            Objects.equals(this.externalSource, contactIdentifier.externalSource) &&
             Objects.equals(this.selfUri, contactIdentifier.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, value, dateCreated, selfUri);
+    return Objects.hash(id, type, value, dateCreated, externalSource, selfUri);
   }
 
   @Override
@@ -183,6 +204,7 @@ public class ContactIdentifier  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -45,6 +45,7 @@ public class WorkitemCreate  implements Serializable {
   private String externalContactId = null;
   private String externalTag = null;
   private List<String> skillIds = new ArrayList<String>();
+  private String scriptId = null;
   private String wrapupCode = null;
   private String utilizationLabelId = null;
   private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
@@ -376,6 +377,24 @@ public class WorkitemCreate  implements Serializable {
 
 
   /**
+   * The ID of the Workitems script. Must be a valid UUID.
+   **/
+  public WorkitemCreate scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the Workitems script. Must be a valid UUID.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
+  /**
    * The ID of the wrapup. Must be a valid UUID.
    **/
   public WorkitemCreate wrapupCode(String wrapupCode) {
@@ -475,6 +494,7 @@ public class WorkitemCreate  implements Serializable {
             Objects.equals(this.externalContactId, workitemCreate.externalContactId) &&
             Objects.equals(this.externalTag, workitemCreate.externalTag) &&
             Objects.equals(this.skillIds, workitemCreate.skillIds) &&
+            Objects.equals(this.scriptId, workitemCreate.scriptId) &&
             Objects.equals(this.wrapupCode, workitemCreate.wrapupCode) &&
             Objects.equals(this.utilizationLabelId, workitemCreate.utilizationLabelId) &&
             Objects.equals(this.scoredAgents, workitemCreate.scoredAgents) &&
@@ -483,7 +503,7 @@ public class WorkitemCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, languageId, externalContactId, externalTag, skillIds, wrapupCode, utilizationLabelId, scoredAgents, preferredAgentIds);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, languageId, externalContactId, externalTag, skillIds, scriptId, wrapupCode, utilizationLabelId, scoredAgents, preferredAgentIds);
   }
 
   @Override
@@ -509,6 +529,7 @@ public class WorkitemCreate  implements Serializable {
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    wrapupCode: ").append(toIndentedString(wrapupCode)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");

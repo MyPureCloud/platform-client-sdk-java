@@ -54,6 +54,7 @@ public class DependencyStatus  implements Serializable {
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BUILDINCOMPLETE("BUILDINCOMPLETE"),
     BUILDINITIALIZING("BUILDINITIALIZING"),
     BUILDINPROGRESS("BUILDINPROGRESS"),
     NOTBUILT("NOTBUILT"),

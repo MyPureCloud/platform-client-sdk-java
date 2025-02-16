@@ -44,12 +44,15 @@ public class IpAddressRange  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATA_ACTIONS("data-actions"),
     SMTP("smtp"),
+    IMAP("imap"),
+    GRAPHAPI("graphapi"),
     AUDIOHOOK("audiohook"),
     OPEN_MESSAGING("open-messaging"),
     API("api"),
     AUDIO_CONNECTOR("audio-connector"),
     BYOT_STT("byot-stt"),
-    BOT_CONNECTOR("bot-connector");
+    BOT_CONNECTOR("bot-connector"),
+    TTS_CONNECTOR("tts-connector");
 
     private String value;
 

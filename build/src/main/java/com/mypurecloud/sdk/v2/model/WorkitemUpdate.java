@@ -156,6 +156,7 @@ public class WorkitemUpdate  implements Serializable {
   private String languageId = null;
   private String utilizationLabelId = null;
   private List<String> preferredAgentIds = new ArrayList<String>();
+  private String scriptId = null;
 
   
   /**
@@ -572,6 +573,24 @@ public class WorkitemUpdate  implements Serializable {
   }
 
 
+  /**
+   * The ID of the Workitems script. Must be a valid UUID.
+   **/
+  public WorkitemUpdate scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the Workitems script. Must be a valid UUID.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -604,12 +623,13 @@ public class WorkitemUpdate  implements Serializable {
             Objects.equals(this.skillIds, workitemUpdate.skillIds) &&
             Objects.equals(this.languageId, workitemUpdate.languageId) &&
             Objects.equals(this.utilizationLabelId, workitemUpdate.utilizationLabelId) &&
-            Objects.equals(this.preferredAgentIds, workitemUpdate.preferredAgentIds);
+            Objects.equals(this.preferredAgentIds, workitemUpdate.preferredAgentIds) &&
+            Objects.equals(this.scriptId, workitemUpdate.scriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, dateClosed, assignmentState, assignmentOperation, customFields, queueId, assigneeId, scoredAgents, externalContactId, externalTag, skillIds, languageId, utilizationLabelId, preferredAgentIds);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, dateClosed, assignmentState, assignmentOperation, customFields, queueId, assigneeId, scoredAgents, externalContactId, externalTag, skillIds, languageId, utilizationLabelId, preferredAgentIds, scriptId);
   }
 
   @Override
@@ -640,6 +660,7 @@ public class WorkitemUpdate  implements Serializable {
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

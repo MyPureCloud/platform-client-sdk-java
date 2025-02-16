@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BuNotificationSettingsResponse;
 import com.mypurecloud.sdk.v2.model.BuSchedulingSettingsResponse;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastingSettings;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -81,6 +82,7 @@ public class BusinessUnitSettingsResponse  implements Serializable {
   private String timeZone = null;
   private BuShortTermForecastingSettings shortTermForecasting = null;
   private BuSchedulingSettingsResponse scheduling = null;
+  private BuNotificationSettingsResponse notifications = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   
@@ -157,6 +159,24 @@ public class BusinessUnitSettingsResponse  implements Serializable {
 
 
   /**
+   * Notification settings
+   **/
+  public BusinessUnitSettingsResponse notifications(BuNotificationSettingsResponse notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Notification settings")
+  @JsonProperty("notifications")
+  public BuNotificationSettingsResponse getNotifications() {
+    return notifications;
+  }
+  public void setNotifications(BuNotificationSettingsResponse notifications) {
+    this.notifications = notifications;
+  }
+
+
+  /**
    * Version metadata for this business unit
    **/
   public BusinessUnitSettingsResponse metadata(WfmVersionedEntityMetadata metadata) {
@@ -188,12 +208,13 @@ public class BusinessUnitSettingsResponse  implements Serializable {
             Objects.equals(this.timeZone, businessUnitSettingsResponse.timeZone) &&
             Objects.equals(this.shortTermForecasting, businessUnitSettingsResponse.shortTermForecasting) &&
             Objects.equals(this.scheduling, businessUnitSettingsResponse.scheduling) &&
+            Objects.equals(this.notifications, businessUnitSettingsResponse.notifications) &&
             Objects.equals(this.metadata, businessUnitSettingsResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, metadata);
+    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, notifications, metadata);
   }
 
   @Override
@@ -205,6 +226,7 @@ public class BusinessUnitSettingsResponse  implements Serializable {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
     sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

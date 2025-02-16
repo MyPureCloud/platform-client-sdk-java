@@ -79,9 +79,10 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private Integer version = null;
-  private String integrationId = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private String platform = null;
+  private String integrationId = null;
   private String selfUri = null;
 
   
@@ -175,6 +176,27 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The platform of the data ingestion rule.")
+  @JsonProperty("platform")
+  public String getPlatform() {
+    return platform;
+  }
+
+
   /**
    * The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
    **/
@@ -190,20 +212,6 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
   }
   public void setIntegrationId(String integrationId) {
     this.integrationId = integrationId;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "Date this ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "Date this ingestion rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
   }
 
 
@@ -229,15 +237,16 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
             Objects.equals(this.description, facebookDataIngestionRuleResponse.description) &&
             Objects.equals(this.status, facebookDataIngestionRuleResponse.status) &&
             Objects.equals(this.version, facebookDataIngestionRuleResponse.version) &&
-            Objects.equals(this.integrationId, facebookDataIngestionRuleResponse.integrationId) &&
             Objects.equals(this.dateCreated, facebookDataIngestionRuleResponse.dateCreated) &&
             Objects.equals(this.dateModified, facebookDataIngestionRuleResponse.dateModified) &&
+            Objects.equals(this.platform, facebookDataIngestionRuleResponse.platform) &&
+            Objects.equals(this.integrationId, facebookDataIngestionRuleResponse.integrationId) &&
             Objects.equals(this.selfUri, facebookDataIngestionRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, integrationId, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, integrationId, selfUri);
   }
 
   @Override
@@ -250,9 +259,10 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

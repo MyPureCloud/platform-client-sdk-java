@@ -281,6 +281,7 @@ public class MessageMediaParticipant  implements Serializable {
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date parkTime = null;
+  private Date resumeTime = null;
   private Address toAddress = null;
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
@@ -980,6 +981,24 @@ public class MessageMediaParticipant  implements Serializable {
 
 
   /**
+   * The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public MessageMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
   public MessageMediaParticipant toAddress(Address toAddress) {
@@ -1186,6 +1205,7 @@ public class MessageMediaParticipant  implements Serializable {
             Objects.equals(this.startAcwTime, messageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, messageMediaParticipant.endAcwTime) &&
             Objects.equals(this.parkTime, messageMediaParticipant.parkTime) &&
+            Objects.equals(this.resumeTime, messageMediaParticipant.resumeTime) &&
             Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
             Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
             Objects.equals(this.messages, messageMediaParticipant.messages) &&
@@ -1199,7 +1219,7 @@ public class MessageMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated, monitoredParticipantId, monitoredParticipant);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated, monitoredParticipantId, monitoredParticipant);
   }
 
   @Override
@@ -1242,6 +1262,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

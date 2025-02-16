@@ -57,6 +57,7 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
     SUMMARYID("summaryId"),
     TRIGGERSOURCEID("triggerSourceId"),
     TRIGGERSOURCETYPE("triggerSourceType"),
+    USERID("userId"),
     WRAPUPCODESGENERATED("wrapupCodesGenerated");
 
     private String value;

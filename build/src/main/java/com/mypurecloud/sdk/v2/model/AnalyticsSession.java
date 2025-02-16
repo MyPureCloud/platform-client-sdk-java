@@ -807,14 +807,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * A unique identifier for a PureCloud cobrowse room
+   * A unique identifier for a Genesys Cloud cobrowse room
    **/
   public AnalyticsSession cobrowseRoomId(String cobrowseRoomId) {
     this.cobrowseRoomId = cobrowseRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud cobrowse room")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a Genesys Cloud cobrowse room")
   @JsonProperty("cobrowseRoomId")
   public String getCobrowseRoomId() {
     return cobrowseRoomId;
@@ -1563,14 +1563,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * Direct ScreenShare address
+   * Direct screen share address
    **/
   public AnalyticsSession screenShareAddressSelf(String screenShareAddressSelf) {
     this.screenShareAddressSelf = screenShareAddressSelf;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Direct ScreenShare address")
+  @ApiModelProperty(example = "null", value = "Direct screen share address")
   @JsonProperty("screenShareAddressSelf")
   public String getScreenShareAddressSelf() {
     return screenShareAddressSelf;
@@ -1581,14 +1581,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * A unique identifier for a PureCloud ScreenShare room
+   * A unique identifier for a Genesys Cloud screen share room
    **/
   public AnalyticsSession screenShareRoomId(String screenShareRoomId) {
     this.screenShareRoomId = screenShareRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud ScreenShare room")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a Genesys Cloud screen share room")
   @JsonProperty("screenShareRoomId")
   public String getScreenShareRoomId() {
     return screenShareRoomId;
@@ -1689,14 +1689,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * Flag determining if screenShare is started or not (true/false)
+   * Flag determining if screen share is started or not (true/false)
    **/
   public AnalyticsSession sharingScreen(Boolean sharingScreen) {
     this.sharingScreen = sharingScreen;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Flag determining if screenShare is started or not (true/false)")
+  @ApiModelProperty(example = "null", value = "Flag determining if screen share is started or not (true/false)")
   @JsonProperty("sharingScreen")
   public Boolean getSharingScreen() {
     return sharingScreen;
@@ -1725,14 +1725,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+   * The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
    **/
   public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)")
+  @ApiModelProperty(example = "null", value = "The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)")
   @JsonProperty("timeoutSeconds")
   public Integer getTimeoutSeconds() {
     return timeoutSeconds;
@@ -1779,14 +1779,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * A unique identifier for a PureCloud video room
+   * A unique identifier for a Genesys Cloud video room
    **/
   public AnalyticsSession videoRoomId(String videoRoomId) {
     this.videoRoomId = videoRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud video room")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a Genesys Cloud video room")
   @JsonProperty("videoRoomId")
   public String getVideoRoomId() {
     return videoRoomId;

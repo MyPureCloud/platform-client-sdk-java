@@ -2364,28 +2364,32 @@ public class ExternalContactsApi {
    * Get job based on id
    * 
    * @param jobId Job id (required)
+   * @param expand which fields, if any, to expand (optional)
    * @return ContactImportJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactImportJobResponse getExternalcontactsImportJob(String jobId) throws IOException, ApiException {
-    return  getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId));
+  public ContactImportJobResponse getExternalcontactsImportJob(String jobId, List<String> expand) throws IOException, ApiException {
+    return  getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId, expand));
   }
 
   /**
    * Get job based on id
    * 
    * @param jobId Job id (required)
+   * @param expand which fields, if any, to expand (optional)
    * @return ContactImportJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactImportJobResponse> getExternalcontactsImportJobWithHttpInfo(String jobId) throws IOException {
-    return getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId).withHttpInfo());
+  public ApiResponse<ContactImportJobResponse> getExternalcontactsImportJobWithHttpInfo(String jobId, List<String> expand) throws IOException {
+    return getExternalcontactsImportJob(createGetExternalcontactsImportJobRequest(jobId, expand).withHttpInfo());
   }
 
-  private GetExternalcontactsImportJobRequest createGetExternalcontactsImportJobRequest(String jobId) {
+  private GetExternalcontactsImportJobRequest createGetExternalcontactsImportJobRequest(String jobId, List<String> expand) {
     return GetExternalcontactsImportJobRequest.builder()
             .withJobId(jobId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -2441,6 +2445,7 @@ public class ExternalContactsApi {
   /**
    * List jobs for organization
    * 
+   * @param expand which fields, if any, to expand (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
    * @param sortOrder Direction of sorting. (optional, default to Ascending)
@@ -2449,13 +2454,14 @@ public class ExternalContactsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactImportJobEntityListing getExternalcontactsImportJobs(String after, String pageSize, String sortOrder, String jobStatus) throws IOException, ApiException {
-    return  getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(after, pageSize, sortOrder, jobStatus));
+  public ContactImportJobEntityListing getExternalcontactsImportJobs(List<String> expand, String after, String pageSize, String sortOrder, String jobStatus) throws IOException, ApiException {
+    return  getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(expand, after, pageSize, sortOrder, jobStatus));
   }
 
   /**
    * List jobs for organization
    * 
+   * @param expand which fields, if any, to expand (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional, default to 25)
    * @param sortOrder Direction of sorting. (optional, default to Ascending)
@@ -2463,12 +2469,14 @@ public class ExternalContactsApi {
    * @return ContactImportJobEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactImportJobEntityListing> getExternalcontactsImportJobsWithHttpInfo(String after, String pageSize, String sortOrder, String jobStatus) throws IOException {
-    return getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(after, pageSize, sortOrder, jobStatus).withHttpInfo());
+  public ApiResponse<ContactImportJobEntityListing> getExternalcontactsImportJobsWithHttpInfo(List<String> expand, String after, String pageSize, String sortOrder, String jobStatus) throws IOException {
+    return getExternalcontactsImportJobs(createGetExternalcontactsImportJobsRequest(expand, after, pageSize, sortOrder, jobStatus).withHttpInfo());
   }
 
-  private GetExternalcontactsImportJobsRequest createGetExternalcontactsImportJobsRequest(String after, String pageSize, String sortOrder, String jobStatus) {
+  private GetExternalcontactsImportJobsRequest createGetExternalcontactsImportJobsRequest(List<String> expand, String after, String pageSize, String sortOrder, String jobStatus) {
     return GetExternalcontactsImportJobsRequest.builder()
+            .withExpand(expand)
+
             .withAfter(after)
 
             .withPageSize(pageSize)

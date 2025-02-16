@@ -185,7 +185,7 @@ public class AgentStateQueryRequest  implements Serializable {
     }
   }
   /**
-   * Search session order direction; default to desc
+   * Search session order direction; default to asc
    */
  @JsonDeserialize(using = SessionOrderEnumDeserializer.class)
   public enum SessionOrderEnum {
@@ -312,14 +312,14 @@ public class AgentStateQueryRequest  implements Serializable {
 
 
   /**
-   * Search session order direction; default to desc
+   * Search session order direction; default to asc
    **/
   public AgentStateQueryRequest sessionOrder(SessionOrderEnum sessionOrder) {
     this.sessionOrder = sessionOrder;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Search session order direction; default to desc")
+  @ApiModelProperty(example = "null", value = "Search session order direction; default to asc")
   @JsonProperty("sessionOrder")
   public SessionOrderEnum getSessionOrder() {
     return sessionOrder;

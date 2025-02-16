@@ -444,12 +444,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
-Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 50.
+Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 25.
 Integer pageNumber = 1; // Integer | The page number for the listing
 String name = "name_example"; // String | The category name filter applied to the listing
 String sortOrder = "asc"; // String | The sort order for the listing
 String sortBy = "name"; // String | The field to sort by for the listing
-List<String> ids = Arrays.asList(null); // List<String> | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+List<String> ids = Arrays.asList(null); // List<String> | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
 try {
     CategoriesEntityListing result = apiInstance.getSpeechandtextanalyticsCategories(pageSize, pageNumber, name, sortOrder, sortBy, ids);
     System.out.println(result);
@@ -464,12 +464,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] 
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 25. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number for the listing | [optional] [default to 1] 
 | **name** | **String**| The category name filter applied to the listing | [optional] 
 | **sortOrder** | **String**| The sort order for the listing | [optional] [default to asc]<br />**Values**: asc, desc 
 | **sortBy** | **String**| The field to sort by for the listing | [optional] [default to name]<br />**Values**: name, description 
-| **ids** | [**List&lt;String&gt;**](String)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
+| **ids** | [**List&lt;String&gt;**](String)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. | [optional] 
 {: class="table-striped"}
 
 
@@ -3364,4 +3364,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

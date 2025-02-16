@@ -32,6 +32,7 @@
 | SUMMARYID | &quot;summaryId&quot; |
 | TRIGGERSOURCEID | &quot;triggerSourceId&quot; |
 | TRIGGERSOURCETYPE | &quot;triggerSourceType&quot; |
+| USERID | &quot;userId&quot; |
 | WRAPUPCODESGENERATED | &quot;wrapupCodesGenerated&quot; |
 
 
@@ -62,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

@@ -44,6 +44,7 @@ public class WorkitemCommonCreate  implements Serializable {
   private String externalContactId = null;
   private String externalTag = null;
   private List<String> skillIds = new ArrayList<String>();
+  private String scriptId = null;
 
   
   /**
@@ -370,6 +371,24 @@ public class WorkitemCommonCreate  implements Serializable {
   }
 
 
+  /**
+   * The ID of the Workitems script. Must be a valid UUID.
+   **/
+  public WorkitemCommonCreate scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the Workitems script. Must be a valid UUID.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -397,12 +416,13 @@ public class WorkitemCommonCreate  implements Serializable {
             Objects.equals(this.languageId, workitemCommonCreate.languageId) &&
             Objects.equals(this.externalContactId, workitemCommonCreate.externalContactId) &&
             Objects.equals(this.externalTag, workitemCommonCreate.externalTag) &&
-            Objects.equals(this.skillIds, workitemCommonCreate.skillIds);
+            Objects.equals(this.skillIds, workitemCommonCreate.skillIds) &&
+            Objects.equals(this.scriptId, workitemCommonCreate.scriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, languageId, externalContactId, externalTag, skillIds);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, languageId, externalContactId, externalTag, skillIds, scriptId);
   }
 
   @Override
@@ -428,6 +448,7 @@ public class WorkitemCommonCreate  implements Serializable {
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

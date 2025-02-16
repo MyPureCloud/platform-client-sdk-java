@@ -278,6 +278,7 @@ public class CobrowseMediaParticipant  implements Serializable {
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date parkTime = null;
+  private Date resumeTime = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private List<String> controlling = new ArrayList<String>();
@@ -916,6 +917,24 @@ public class CobrowseMediaParticipant  implements Serializable {
 
 
   /**
+   * The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CobrowseMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
    * The co-browse session ID.
    **/
   public CobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -1050,6 +1069,7 @@ public class CobrowseMediaParticipant  implements Serializable {
             Objects.equals(this.startAcwTime, cobrowseMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, cobrowseMediaParticipant.endAcwTime) &&
             Objects.equals(this.parkTime, cobrowseMediaParticipant.parkTime) &&
+            Objects.equals(this.resumeTime, cobrowseMediaParticipant.resumeTime) &&
             Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
             Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
             Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
@@ -1059,7 +1079,7 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
   }
 
   @Override
@@ -1102,6 +1122,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");

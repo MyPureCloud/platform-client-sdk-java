@@ -30,8 +30,8 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
   private Integer pageNumber = null;
   private Long total = null;
   private Long contactsCount = null;
-  private String lastUri = null;
   private String firstUri = null;
+  private String lastUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -125,23 +125,6 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
 
   /**
    **/
-  public ContactListingResponse lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public ContactListingResponse firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -154,6 +137,23 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public ContactListingResponse lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -240,8 +240,8 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
             Objects.equals(this.pageNumber, contactListingResponse.pageNumber) &&
             Objects.equals(this.total, contactListingResponse.total) &&
             Objects.equals(this.contactsCount, contactListingResponse.contactsCount) &&
-            Objects.equals(this.lastUri, contactListingResponse.lastUri) &&
             Objects.equals(this.firstUri, contactListingResponse.firstUri) &&
+            Objects.equals(this.lastUri, contactListingResponse.lastUri) &&
             Objects.equals(this.selfUri, contactListingResponse.selfUri) &&
             Objects.equals(this.nextUri, contactListingResponse.nextUri) &&
             Objects.equals(this.previousUri, contactListingResponse.previousUri) &&
@@ -250,7 +250,7 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, contactsCount, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, contactsCount, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -263,8 +263,8 @@ public class ContactListingResponse  implements Serializable, PagedResource<Dial
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    contactsCount: ").append(toIndentedString(contactsCount)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

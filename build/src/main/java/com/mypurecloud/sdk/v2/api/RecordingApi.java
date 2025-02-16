@@ -48,7 +48,6 @@ import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
@@ -86,7 +85,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingCrossplatformMediaretentionpoliciesRequest;
@@ -3108,89 +3106,6 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update a screen recording session
-   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
-   * @param recordingSessionId Screen recording session ID (required)
-   * @param body  (optional)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void patchRecordingsScreensession(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
-     patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body));
-  }
-
-  /**
-   * Update a screen recording session
-   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
-   * @param recordingSessionId Screen recording session ID (required)
-   * @param body  (optional)
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException {
-    return patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body).withHttpInfo());
-  }
-
-  private PatchRecordingsScreensessionRequest createPatchRecordingsScreensessionRequest(String recordingSessionId, ScreenRecordingSessionRequest body) {
-    return PatchRecordingsScreensessionRequest.builder()
-            .withRecordingSessionId(recordingSessionId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update a screen recording session
-   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void patchRecordingsScreensession(PatchRecordingsScreensessionRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Update a screen recording session
-   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

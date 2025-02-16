@@ -292,14 +292,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
 
   /**
-   * Unique identifier for a PureCloud group
+   * Unique identifier for a Genesys Cloud group
    **/
   public AnalyticsConversationSegment groupId(String groupId) {
     this.groupId = groupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for a PureCloud group")
+  @ApiModelProperty(example = "null", value = "Unique identifier for a Genesys Cloud group")
   @JsonProperty("groupId")
   public String getGroupId() {
     return groupId;

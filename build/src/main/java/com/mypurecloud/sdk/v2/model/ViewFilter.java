@@ -1694,6 +1694,54 @@ public class ViewFilter  implements Serializable {
   private Boolean isScreenRecorded = null;
   private List<String> screenMonitorUserIds = new ArrayList<String>();
 
+  private static class DashboardStateEnumDeserializer extends StdDeserializer<DashboardStateEnum> {
+    public DashboardStateEnumDeserializer() {
+      super(DashboardStateEnumDeserializer.class);
+    }
+
+    @Override
+    public DashboardStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DashboardStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The state of dashboard being filtered
+   */
+ @JsonDeserialize(using = DashboardStateEnumDeserializer.class)
+  public enum DashboardStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("Active"),
+    DELETED("Deleted");
+
+    private String value;
+
+    DashboardStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DashboardStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DashboardStateEnum value : DashboardStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DashboardStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DashboardStateEnum dashboardState = null;
+
   private static class DashboardTypeEnumDeserializer extends StdDeserializer<DashboardTypeEnum> {
     public DashboardTypeEnumDeserializer() {
       super(DashboardTypeEnumDeserializer.class);
@@ -2097,6 +2145,272 @@ public class ViewFilter  implements Serializable {
   }
   private EvaluationRoleEnum evaluationRole = null;
   private List<String> comparisonQueueIds = new ArrayList<String>();
+
+  private static class ViewMetricsEnumDeserializer extends StdDeserializer<ViewMetricsEnum> {
+    public ViewMetricsEnumDeserializer() {
+      super(ViewMetricsEnumDeserializer.class);
+    }
+
+    @Override
+    public ViewMetricsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ViewMetricsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets viewMetrics
+   */
+ @JsonDeserialize(using = ViewMetricsEnumDeserializer.class)
+  public enum ViewMetricsEnum {
+    AVG_TALK_TIME("AVG_TALK_TIME"),
+    AVG_HOLD_TIME("AVG_HOLD_TIME"),
+    AVG_ACW_TIME("AVG_ACW_TIME"),
+    AVG_WAIT_TIME("AVG_WAIT_TIME"),
+    AVG_HANDLE_TIME("AVG_HANDLE_TIME"),
+    AVG_ALERT_TIME("AVG_ALERT_TIME"),
+    AVG_ANSWER_TIME("AVG_ANSWER_TIME"),
+    AVG_ABANDON_TIME("AVG_ABANDON_TIME"),
+    TOTAL_TALK_TIME("TOTAL_TALK_TIME"),
+    TOTAL_HANDLE_TIME("TOTAL_HANDLE_TIME"),
+    TOTAL_HOLD_TIME("TOTAL_HOLD_TIME"),
+    TOTAL_ACW_TIME("TOTAL_ACW_TIME"),
+    TOTAL_ALERT_TIME("TOTAL_ALERT_TIME"),
+    MAX_ABANDON_TIME("MAX_ABANDON_TIME"),
+    MAX_WAIT_TIME("MAX_WAIT_TIME"),
+    MAX_TALK_TIME("MAX_TALK_TIME"),
+    MAX_HOLD_TIME("MAX_HOLD_TIME"),
+    MAX_ACW_TIME("MAX_ACW_TIME"),
+    MIN_ABANDON_TIME("MIN_ABANDON_TIME"),
+    MIN_WAIT_TIME("MIN_WAIT_TIME"),
+    MIN_TALK_TIME("MIN_TALK_TIME"),
+    MIN_HOLD_TIME("MIN_HOLD_TIME"),
+    MIN_ACW_TIME("MIN_ACW_TIME"),
+    ALERT_COUNT("ALERT_COUNT"),
+    OFFERED_COUNT("OFFERED_COUNT"),
+    ABANDONED_COUNT("ABANDONED_COUNT"),
+    ABANDONED_PERCENT("ABANDONED_PERCENT"),
+    SHORT_ABANDONED_COUNT("SHORT_ABANDONED_COUNT"),
+    SHORT_ABANDONED_PERCENT("SHORT_ABANDONED_PERCENT"),
+    ABANDONED_NO_SHORT_COUNT("ABANDONED_NO_SHORT_COUNT"),
+    ABANDONED_NO_SHORT_PERCENT("ABANDONED_NO_SHORT_PERCENT"),
+    ANSWERED_COUNT("ANSWERED_COUNT"),
+    ANSWERED_PERCENT("ANSWERED_PERCENT"),
+    FLOWOUT_COUNT("FLOWOUT_COUNT"),
+    FLOWOUT_PERCENT("FLOWOUT_PERCENT"),
+    OUTBOUND_COUNT("OUTBOUND_COUNT"),
+    OUTBOUND_ATTEMPTED_COUNT("OUTBOUND_ATTEMPTED_COUNT"),
+    VOICEMAIL_COUNT("VOICEMAIL_COUNT"),
+    HANDLED_COUNT("HANDLED_COUNT"),
+    HELD_COUNT("HELD_COUNT"),
+    TRANSFERRED_COUNT("TRANSFERRED_COUNT"),
+    TRANSFERRED_PERCENT("TRANSFERRED_PERCENT"),
+    WAITING_CURRENT("WAITING_CURRENT"),
+    INTERACTING_CURRENT("INTERACTING_CURRENT"),
+    HELD_CURRENT("HELD_CURRENT"),
+    ALERTING_CURRENT("ALERTING_CURRENT"),
+    SERVICE_LEVEL("SERVICE_LEVEL"),
+    OVER_SERVICE_LEVEL("OVER_SERVICE_LEVEL"),
+    ONLINE_AGENTS("ONLINE_AGENTS"),
+    AVAILABLE_AGENTS("AVAILABLE_AGENTS"),
+    AWAY_AGENTS("AWAY_AGENTS"),
+    BREAK_AGENTS("BREAK_AGENTS"),
+    MEAL_AGENTS("MEAL_AGENTS"),
+    TRAINING_AGENTS("TRAINING_AGENTS"),
+    BUSY_AGENTS("BUSY_AGENTS"),
+    MEETING_AGENTS("MEETING_AGENTS"),
+    SYSTEM_AWAY_AGENTS("SYSTEM_AWAY_AGENTS"),
+    OFFLINE_AGENTS("OFFLINE_AGENTS"),
+    ON_QUEUE_AGENTS("ON_QUEUE_AGENTS"),
+    OFF_QUEUE_AGENTS("OFF_QUEUE_AGENTS"),
+    INTERACTING_AGENTS("INTERACTING_AGENTS"),
+    ACW_AGENTS("ACW_AGENTS"),
+    COMMUNICATING_AGENTS("COMMUNICATING_AGENTS"),
+    IDLE_AGENTS("IDLE_AGENTS"),
+    NOT_RESPONDING_AGENTS("NOT_RESPONDING_AGENTS"),
+    LONGEST_WAITING("LONGEST_WAITING"),
+    LONGEST_INTERACTING("LONGEST_INTERACTING"),
+    FLOW_ACTIVE_LONGEST("FLOW_ACTIVE_LONGEST"),
+    FLOW_ACTIVE_CURRENT("FLOW_ACTIVE_CURRENT"),
+    FLOW_ENTRIES_COUNT("FLOW_ENTRIES_COUNT"),
+    FLOW_TOTAL_DURATION("FLOW_TOTAL_DURATION"),
+    FLOW_MAX_DURATION("FLOW_MAX_DURATION"),
+    FLOW_AVG_DURATION("FLOW_AVG_DURATION"),
+    FLOW_DISCONNECT_COUNT("FLOW_DISCONNECT_COUNT"),
+    FLOW_DISCONNECT_PERCENT("FLOW_DISCONNECT_PERCENT"),
+    FLOW_TOTAL_DISCONNECT_DURATION("FLOW_TOTAL_DISCONNECT_DURATION"),
+    FLOW_AVG_DISCONNECT_DURATION("FLOW_AVG_DISCONNECT_DURATION"),
+    FLOW_MAX_DISCONNECT_DURATION("FLOW_MAX_DISCONNECT_DURATION"),
+    FLOW_FLOW_DISCONNECT("FLOW_FLOW_DISCONNECT"),
+    FLOW_FLOW_DISCONNECT_PERCENT("FLOW_FLOW_DISCONNECT_PERCENT"),
+    FLOW_SYSTEM_ERROR_DISCONNECT("FLOW_SYSTEM_ERROR_DISCONNECT"),
+    FLOW_SYSTEM_ERROR_DISCONNECT_PERCENT("FLOW_SYSTEM_ERROR_DISCONNECT_PERCENT"),
+    FLOW_CUSTOMER_DISCONNECT("FLOW_CUSTOMER_DISCONNECT"),
+    FLOW_CUSTOMER_DISCONNECT_PERCENT("FLOW_CUSTOMER_DISCONNECT_PERCENT"),
+    FLOW_SHORT_DISCONNECT("FLOW_SHORT_DISCONNECT"),
+    FLOW_SHORT_DISCONNECT_PERCENT("FLOW_SHORT_DISCONNECT_PERCENT"),
+    FLOW_EXIT_COUNT("FLOW_EXIT_COUNT"),
+    FLOW_EXIT_PERCENT("FLOW_EXIT_PERCENT"),
+    FLOW_TOTAL_EXIT_DURATION("FLOW_TOTAL_EXIT_DURATION"),
+    FLOW_MAX_EXIT_DURATION("FLOW_MAX_EXIT_DURATION"),
+    FLOW_AVG_EXIT_DURATION("FLOW_AVG_EXIT_DURATION"),
+    FLOW_ACD_EXIT_COUNT("FLOW_ACD_EXIT_COUNT"),
+    FLOW_ACD_EXIT_PERCENT("FLOW_ACD_EXIT_PERCENT"),
+    FLOW_GROUP_EXIT_COUNT("FLOW_GROUP_EXIT_COUNT"),
+    FLOW_GROUP_EXIT_PERCENT("FLOW_GROUP_EXIT_PERCENT"),
+    FLOW_NUMBER_EXIT_COUNT("FLOW_NUMBER_EXIT_COUNT"),
+    FLOW_NUMBER_EXIT_PERCENT("FLOW_NUMBER_EXIT_PERCENT"),
+    FLOW_USER_EXIT_COUNT("FLOW_USER_EXIT_COUNT"),
+    FLOW_USER_EXIT_PERCENT("FLOW_USER_EXIT_PERCENT"),
+    FLOW_FLOW_EXIT_COUNT("FLOW_FLOW_EXIT_COUNT"),
+    FLOW_FLOW_EXIT_PERCENT("FLOW_FLOW_EXIT_PERCENT"),
+    FLOW_SECURE_FLOW_EXIT_COUNT("FLOW_SECURE_FLOW_EXIT_COUNT"),
+    FLOW_SECURE_FLOW_EXIT_PERCENT("FLOW_SECURE_FLOW_EXIT_PERCENT"),
+    FLOW_ACD_VOICEMAIL_EXIT_COUNT("FLOW_ACD_VOICEMAIL_EXIT_COUNT"),
+    FLOW_ACD_VOICEMAIL_EXIT_PERCENT("FLOW_ACD_VOICEMAIL_EXIT_PERCENT"),
+    FLOW_USER_VOICEMAIL_EXIT_COUNT("FLOW_USER_VOICEMAIL_EXIT_COUNT"),
+    FLOW_USER_VOICEMAIL_EXIT_PERCENT("FLOW_USER_VOICEMAIL_EXIT_PERCENT"),
+    FLOW_OUTCOME_COUNT("FLOW_OUTCOME_COUNT"),
+    FLOW_AVG_OUTCOME_DECIMAL("FLOW_AVG_OUTCOME_DECIMAL"),
+    FLOW_OUTCOME_FAILURE_COUNT("FLOW_OUTCOME_FAILURE_COUNT"),
+    FLOW_OUTCOME_FAILURE_PERCENT("FLOW_OUTCOME_FAILURE_PERCENT"),
+    FLOW_OUTCOME_SUCCESS_COUNT("FLOW_OUTCOME_SUCCESS_COUNT"),
+    FLOW_OUTCOME_SUCCESS_PERCENT("FLOW_OUTCOME_SUCCESS_PERCENT"),
+    FLOW_OUTCOME_TOTAL_DURATION("FLOW_OUTCOME_TOTAL_DURATION"),
+    FLOW_OUTCOME_MAX_DURATION("FLOW_OUTCOME_MAX_DURATION"),
+    FLOW_OUTCOME_AVG_DURATION("FLOW_OUTCOME_AVG_DURATION"),
+    FLOW_OUTCOME_MIN_DURATION("FLOW_OUTCOME_MIN_DURATION"),
+    OFF_QUEUE_TIME("OFF_QUEUE_TIME"),
+    OFF_QUEUE_PERCENT("OFF_QUEUE_PERCENT"),
+    AVAILABLE_TIME("AVAILABLE_TIME"),
+    AVAILABLE_PERCENT("AVAILABLE_PERCENT"),
+    BUSY_TIME("BUSY_TIME"),
+    BUSY_PERCENT("BUSY_PERCENT"),
+    AWAY_TIME("AWAY_TIME"),
+    AWAY_PERCENT("AWAY_PERCENT"),
+    BREAK_TIME("BREAK_TIME"),
+    BREAK_PERCENT("BREAK_PERCENT"),
+    MEAL_TIME("MEAL_TIME"),
+    MEAL_PERCENT("MEAL_PERCENT"),
+    MEETING_TIME("MEETING_TIME"),
+    MEETING_PERCENT("MEETING_PERCENT"),
+    TRAINING_TIME("TRAINING_TIME"),
+    TRAINING_PERCENT("TRAINING_PERCENT"),
+    INTERACTING_TIME("INTERACTING_TIME"),
+    INTERACTING_PERCENT("INTERACTING_PERCENT"),
+    COMMUNICATING_TIME("COMMUNICATING_TIME"),
+    COMMUNICATING_PERCENT("COMMUNICATING_PERCENT"),
+    SYSTEM_AWAY_TIME("SYSTEM_AWAY_TIME"),
+    SYSTEM_AWAY_PERCENT("SYSTEM_AWAY_PERCENT"),
+    ON_QUEUE_TIME("ON_QUEUE_TIME"),
+    ON_QUEUE_PERCENT("ON_QUEUE_PERCENT"),
+    IDLE_TIME("IDLE_TIME"),
+    IDLE_PERCENT("IDLE_PERCENT"),
+    NOT_RESPONDING_TIME("NOT_RESPONDING_TIME"),
+    NOT_RESPONDING_PERCENT("NOT_RESPONDING_PERCENT"),
+    LOGGED_IN_TIME("LOGGED_IN_TIME"),
+    OCCUPANCY_PERCENT("OCCUPANCY_PERCENT"),
+    MIN_ALERT_TIME("MIN_ALERT_TIME"),
+    MAX_ALERT_TIME("MAX_ALERT_TIME"),
+    MIN_HANDLE_TIME("MIN_HANDLE_TIME"),
+    MAX_HANDLE_TIME("MAX_HANDLE_TIME"),
+    MIN_ANSWERED_TIME("MIN_ANSWERED_TIME"),
+    MAX_ANSWERED_TIME("MAX_ANSWERED_TIME"),
+    MIN_NOT_RESPONDING_TIME("MIN_NOT_RESPONDING_TIME"),
+    MAX_NOT_RESPONDING_TIME("MAX_NOT_RESPONDING_TIME"),
+    MET_SERVICE_LEVEL("MET_SERVICE_LEVEL"),
+    WFM_ADHERENCE_STATUS("WFM_ADHERENCE_STATUS"),
+    WFM_SCHEDULED_ACTIVITY("WFM_SCHEDULED_ACTIVITY"),
+    WFM_ADHERENCE_DURATION("WFM_ADHERENCE_DURATION"),
+    AGENT_TITLE("AGENT_TITLE"),
+    AGENT_DEPARTMENT("AGENT_DEPARTMENT"),
+    AGENT_EXTENSION("AGENT_EXTENSION"),
+    AGENT_SKILLS("AGENT_SKILLS"),
+    AGENT_LOCATION("AGENT_LOCATION"),
+    AGENT_REPORTS_TO("AGENT_REPORTS_TO"),
+    AGENT_EMAIL("AGENT_EMAIL"),
+    AGENT_ROLE("AGENT_ROLE"),
+    AGENT_GROUP("AGENT_GROUP"),
+    AGENT_TIME_IN_STATUS("AGENT_TIME_IN_STATUS"),
+    AGENT_TIME_IN_ROUTING_STATUS("AGENT_TIME_IN_ROUTING_STATUS"),
+    AGENT_STATUS("AGENT_STATUS"),
+    AGENT_SECONDARY_STATUS("AGENT_SECONDARY_STATUS"),
+    AGENT_ROUTING_STATUS("AGENT_ROUTING_STATUS"),
+    AGENT_MEDIA_TYPES("AGENT_MEDIA_TYPES"),
+    ACW_COUNT("ACW_COUNT"),
+    ANSWER_TRANSFERRED_PERCENT("ANSWER_TRANSFERRED_PERCENT"),
+    FLOW_AVG_MILESTONE_DECIMAL("FLOW_AVG_MILESTONE_DECIMAL"),
+    NOT_RESPONDING_COUNT("NOT_RESPONDING_COUNT"),
+    AVG_ACW_HANDLED("AVG_ACW_HANDLED"),
+    AVG_CONTACTING_TIME("AVG_CONTACTING_TIME"),
+    AVG_DIALING_TIME("AVG_DIALING_TIME"),
+    AVG_FLOWOUT_TIME("AVG_FLOWOUT_TIME"),
+    AVG_HOLD_HANDLED("AVG_HOLD_HANDLED"),
+    AVG_MONITOR("AVG_MONITOR"),
+    BLIND_TRANSFER_COUNT("BLIND_TRANSFER_COUNT"),
+    BLIND_TRANSFER_PERCENT("BLIND_TRANSFER_PERCENT"),
+    CONNECTED_COUNT("CONNECTED_COUNT"),
+    CONSULT_COUNT("CONSULT_COUNT"),
+    CONSULT_TRANSFER_COUNT("CONSULT_TRANSFER_COUNT"),
+    CONSULT_TRANSFER_PERCENT("CONSULT_TRANSFER_PERCENT"),
+    CONTACTING_COUNT("CONTACTING_COUNT"),
+    DIALING_COUNT("DIALING_COUNT"),
+    ERROR_COUNT("ERROR_COUNT"),
+    EXTERNAL_MEDIA_COUNT("EXTERNAL_MEDIA_COUNT"),
+    MAX_CONTACTING_TIME("MAX_CONTACTING_TIME"),
+    MAX_DIALING_TIME("MAX_DIALING_TIME"),
+    MAX_FLOWOUT_TIME("MAX_FLOWOUT_TIME"),
+    FLOW_MILESTONE_COUNT("FLOW_MILESTONE_COUNT"),
+    MIN_FLOWOUT_TIME("MIN_FLOWOUT_TIME"),
+    MAX_MONITOR("MAX_MONITOR"),
+    MIN_CONTACTING_TIME("MIN_CONTACTING_TIME"),
+    MIN_DIALING_TIME("MIN_DIALING_TIME"),
+    MIN_MONITOR("MIN_MONITOR"),
+    MONITOR_COUNT("MONITOR_COUNT"),
+    MEDIA_COUNT("MEDIA_COUNT"),
+    SERVICE_LEVEL_TARGET("SERVICE_LEVEL_TARGET"),
+    SERVICE_LEVEL_TARGET_CURRENT("SERVICE_LEVEL_TARGET_CURRENT"),
+    TALK_COUNT("TALK_COUNT"),
+    TOTAL_ABANDON_TIME("TOTAL_ABANDON_TIME"),
+    TOTAL_NOT_RESPONDING_TIME("TOTAL_NOT_RESPONDING_TIME"),
+    TOTAL_CONTACTING("TOTAL_CONTACTING"),
+    TOTAL_DIALING("TOTAL_DIALING"),
+    TOTAL_MONITOR("TOTAL_MONITOR"),
+    TOTAL_WAIT_TIME("TOTAL_WAIT_TIME"),
+    WAIT_COUNT("WAIT_COUNT"),
+    PARK_COUNT("PARK_COUNT"),
+    AVG_PARK_TIME("AVG_PARK_TIME"),
+    TOTAL_PARK_TIME("TOTAL_PARK_TIME"),
+    MIN_PARK_TIME("MIN_PARK_TIME"),
+    MAX_PARK_TIME("MAX_PARK_TIME");
+
+    private String value;
+
+    ViewMetricsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ViewMetricsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ViewMetricsEnum value : ViewMetricsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ViewMetricsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<ViewMetricsEnum> viewMetrics = new ArrayList<ViewMetricsEnum>();
+  private List<String> timelineCategories = new ArrayList<String>();
 
   
   /**
@@ -5592,6 +5906,24 @@ public class ViewFilter  implements Serializable {
 
 
   /**
+   * The state of dashboard being filtered
+   **/
+  public ViewFilter dashboardState(DashboardStateEnum dashboardState) {
+    this.dashboardState = dashboardState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The state of dashboard being filtered")
+  @JsonProperty("dashboardState")
+  public DashboardStateEnum getDashboardState() {
+    return dashboardState;
+  }
+  public void setDashboardState(DashboardStateEnum dashboardState) {
+    this.dashboardState = dashboardState;
+  }
+
+
+  /**
    * The type of dashboard being filtered
    **/
   public ViewFilter dashboardType(DashboardTypeEnum dashboardType) {
@@ -6005,6 +6337,42 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * A list of metrics selected for the view
+   **/
+  public ViewFilter viewMetrics(List<ViewMetricsEnum> viewMetrics) {
+    this.viewMetrics = viewMetrics;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of metrics selected for the view")
+  @JsonProperty("viewMetrics")
+  public List<ViewMetricsEnum> getViewMetrics() {
+    return viewMetrics;
+  }
+  public void setViewMetrics(List<ViewMetricsEnum> viewMetrics) {
+    this.viewMetrics = viewMetrics;
+  }
+
+
+  /**
+   * A list of timeline categories
+   **/
+  public ViewFilter timelineCategories(List<String> timelineCategories) {
+    this.timelineCategories = timelineCategories;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of timeline categories")
+  @JsonProperty("timelineCategories")
+  public List<String> getTimelineCategories() {
+    return timelineCategories;
+  }
+  public void setTimelineCategories(List<String> timelineCategories) {
+    this.timelineCategories = timelineCategories;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -6209,6 +6577,7 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.overtalkInstances, viewFilter.overtalkInstances) &&
             Objects.equals(this.isScreenRecorded, viewFilter.isScreenRecorded) &&
             Objects.equals(this.screenMonitorUserIds, viewFilter.screenMonitorUserIds) &&
+            Objects.equals(this.dashboardState, viewFilter.dashboardState) &&
             Objects.equals(this.dashboardType, viewFilter.dashboardType) &&
             Objects.equals(this.dashboardAccessFilter, viewFilter.dashboardAccessFilter) &&
             Objects.equals(this.transcriptDurationMilliseconds, viewFilter.transcriptDurationMilliseconds) &&
@@ -6231,12 +6600,14 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.linkedInteraction, viewFilter.linkedInteraction) &&
             Objects.equals(this.recommendationSources, viewFilter.recommendationSources) &&
             Objects.equals(this.evaluationRole, viewFilter.evaluationRole) &&
-            Objects.equals(this.comparisonQueueIds, viewFilter.comparisonQueueIds);
+            Objects.equals(this.comparisonQueueIds, viewFilter.comparisonQueueIds) &&
+            Objects.equals(this.viewMetrics, viewFilter.viewMetrics) &&
+            Objects.equals(this.timelineCategories, viewFilter.timelineCategories);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories);
   }
 
   @Override
@@ -6438,6 +6809,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    overtalkInstances: ").append(toIndentedString(overtalkInstances)).append("\n");
     sb.append("    isScreenRecorded: ").append(toIndentedString(isScreenRecorded)).append("\n");
     sb.append("    screenMonitorUserIds: ").append(toIndentedString(screenMonitorUserIds)).append("\n");
+    sb.append("    dashboardState: ").append(toIndentedString(dashboardState)).append("\n");
     sb.append("    dashboardType: ").append(toIndentedString(dashboardType)).append("\n");
     sb.append("    dashboardAccessFilter: ").append(toIndentedString(dashboardAccessFilter)).append("\n");
     sb.append("    transcriptDurationMilliseconds: ").append(toIndentedString(transcriptDurationMilliseconds)).append("\n");
@@ -6461,6 +6833,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    recommendationSources: ").append(toIndentedString(recommendationSources)).append("\n");
     sb.append("    evaluationRole: ").append(toIndentedString(evaluationRole)).append("\n");
     sb.append("    comparisonQueueIds: ").append(toIndentedString(comparisonQueueIds)).append("\n");
+    sb.append("    viewMetrics: ").append(toIndentedString(viewMetrics)).append("\n");
+    sb.append("    timelineCategories: ").append(toIndentedString(timelineCategories)).append("\n");
     sb.append("}");
     return sb.toString();
   }

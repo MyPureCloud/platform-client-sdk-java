@@ -44,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyViewVersionJobResultsChart**](JourneyApi#getJourneyViewVersionJobResultsChart) | Get the chart result associated with a journey view job. |
 | [**getJourneyViewVersionJobsLatest**](JourneyApi#getJourneyViewVersionJobsLatest) | Get the latest job of a journey view version. |
 | [**getJourneyViews**](JourneyApi#getJourneyViews) | Get a list of Journey Views |
+| [**getJourneyViewsDataDetails**](JourneyApi#getJourneyViewsDataDetails) | Get details about the data available for journey queries including oldest and newest event dates |
 | [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | Get an Event Definition |
 | [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
 | [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | Get the jobs for an organization. |
@@ -2542,6 +2543,61 @@ try {
 [**JourneyViewListing**](JourneyViewListing)
 
 
+# **getJourneyViewsDataDetails**
+
+
+> [DataRange](DataRange) getJourneyViewsDataDetails()
+
+Get details about the data available for journey queries including oldest and newest event dates
+
+Wraps GET /api/v2/journey/views/data/details  
+
+Requires ALL permissions: 
+
+* journey:dataDetails:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    DataRange result = apiInstance.getJourneyViewsDataDetails();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsDataDetails");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataRange**](DataRange)
+
+
 # **getJourneyViewsEventdefinition**
 
 
@@ -4317,4 +4373,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

@@ -43,8 +43,9 @@
 | REACTIONS | &quot;Reactions&quot; | 
 | MENTION | &quot;Mention&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
+| DATEPICKER | &quot;DatePicker&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:219.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_

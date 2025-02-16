@@ -10,6 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuthorizationPolicy;
+import com.mypurecloud.sdk.v2.model.AuthorizationPolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthorizationSettings;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
@@ -24,15 +26,21 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyAttributeSet;
+import com.mypurecloud.sdk.v2.model.PolicyTestPayload;
+import com.mypurecloud.sdk.v2.model.PolicyTestResult;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.TargetAttributes;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserReferenceEntityListing;
+import com.mypurecloud.sdk.v2.model.ValidationErrorListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
@@ -44,6 +52,13 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRe
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesSubjectSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetSubjectSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPoliciesTargetsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPolicyAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRightRoleIdRequest;
@@ -61,6 +76,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPoliciesTargetValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationPolicySimulateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleComparedefaultRightRoleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesRequest;
@@ -70,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequ
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkreplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationPoliciesTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest;
@@ -152,6 +172,89 @@ public class AuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAuthorizationDivision(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy is applied (required)
+   * @param subjectId The ID of the subject to which the policy is applied (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAuthorizationPoliciesTargetSubjectSubjectId(String targetName, String subjectId) throws IOException, ApiException {
+     deleteAuthorizationPoliciesTargetSubjectSubjectId(createDeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest(targetName, subjectId));
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy is applied (required)
+   * @param subjectId The ID of the subject to which the policy is applied (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAuthorizationPoliciesTargetSubjectSubjectIdWithHttpInfo(String targetName, String subjectId) throws IOException {
+    return deleteAuthorizationPoliciesTargetSubjectSubjectId(createDeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest(targetName, subjectId).withHttpInfo());
+  }
+
+  private DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest createDeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest(String targetName, String subjectId) {
+    return DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest.builder()
+            .withTargetName(targetName)
+
+            .withSubjectId(subjectId)
+
+            .build();
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAuthorizationPoliciesTargetSubjectSubjectId(DeleteAuthorizationPoliciesTargetSubjectSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an access control policy
+   * 
+   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAuthorizationPoliciesTargetSubjectSubjectId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1109,6 +1212,600 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPolicies(String after, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationPolicies(createGetAuthorizationPoliciesRequest(after, pageSize));
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPoliciesWithHttpInfo(String after, Integer pageSize) throws IOException {
+    return getAuthorizationPolicies(createGetAuthorizationPoliciesRequest(after, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationPoliciesRequest createGetAuthorizationPoliciesRequest(String after, Integer pageSize) {
+    return GetAuthorizationPoliciesRequest.builder()
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPolicies(GetAuthorizationPoliciesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a page of access policies for an organization
+   * 
+   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPolicies(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param subjectId The ID of the subject to which policies are applied (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPoliciesSubjectSubjectId(String subjectId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationPoliciesSubjectSubjectId(createGetAuthorizationPoliciesSubjectSubjectIdRequest(subjectId, after, pageSize));
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param subjectId The ID of the subject to which policies are applied (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPoliciesSubjectSubjectIdWithHttpInfo(String subjectId, String after, Integer pageSize) throws IOException {
+    return getAuthorizationPoliciesSubjectSubjectId(createGetAuthorizationPoliciesSubjectSubjectIdRequest(subjectId, after, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationPoliciesSubjectSubjectIdRequest createGetAuthorizationPoliciesSubjectSubjectIdRequest(String subjectId, String after, Integer pageSize) {
+    return GetAuthorizationPoliciesSubjectSubjectIdRequest.builder()
+            .withSubjectId(subjectId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPoliciesSubjectSubjectId(GetAuthorizationPoliciesSubjectSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given subject
+   * 
+   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPoliciesSubjectSubjectId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action resource target to which policies are applied (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPoliciesTarget(String targetName, String after, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationPoliciesTarget(createGetAuthorizationPoliciesTargetRequest(targetName, after, pageSize));
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action resource target to which policies are applied (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return AuthorizationPolicyEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPoliciesTargetWithHttpInfo(String targetName, String after, Integer pageSize) throws IOException {
+    return getAuthorizationPoliciesTarget(createGetAuthorizationPoliciesTargetRequest(targetName, after, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationPoliciesTargetRequest createGetAuthorizationPoliciesTargetRequest(String targetName, String after, Integer pageSize) {
+    return GetAuthorizationPoliciesTargetRequest.builder()
+            .withTargetName(targetName)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicyEntityListing getAuthorizationPoliciesTarget(GetAuthorizationPoliciesTargetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a page of access policies for a given policy target
+   * 
+   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicyEntityListing> getAuthorizationPoliciesTarget(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicyEntityListing> response = (ApiResponse<AuthorizationPolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action resource target to which the policy is applied (required)
+   * @param subjectId The ID of the subject to which the policy is applied (required)
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy getAuthorizationPoliciesTargetSubjectSubjectId(String targetName, String subjectId) throws IOException, ApiException {
+    return  getAuthorizationPoliciesTargetSubjectSubjectId(createGetAuthorizationPoliciesTargetSubjectSubjectIdRequest(targetName, subjectId));
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action resource target to which the policy is applied (required)
+   * @param subjectId The ID of the subject to which the policy is applied (required)
+   * @return AuthorizationPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> getAuthorizationPoliciesTargetSubjectSubjectIdWithHttpInfo(String targetName, String subjectId) throws IOException {
+    return getAuthorizationPoliciesTargetSubjectSubjectId(createGetAuthorizationPoliciesTargetSubjectSubjectIdRequest(targetName, subjectId).withHttpInfo());
+  }
+
+  private GetAuthorizationPoliciesTargetSubjectSubjectIdRequest createGetAuthorizationPoliciesTargetSubjectSubjectIdRequest(String targetName, String subjectId) {
+    return GetAuthorizationPoliciesTargetSubjectSubjectIdRequest.builder()
+            .withTargetName(targetName)
+
+            .withSubjectId(subjectId)
+
+            .build();
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy getAuthorizationPoliciesTargetSubjectSubjectId(GetAuthorizationPoliciesTargetSubjectSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an access control policy for a specified resource target and subject
+   * 
+   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> getAuthorizationPoliciesTargetSubjectSubjectId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return TargetAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TargetAttributes getAuthorizationPoliciesTargets() throws IOException, ApiException {
+    return  getAuthorizationPoliciesTargets(createGetAuthorizationPoliciesTargetsRequest());
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return TargetAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TargetAttributes> getAuthorizationPoliciesTargetsWithHttpInfo() throws IOException {
+    return getAuthorizationPoliciesTargets(createGetAuthorizationPoliciesTargetsRequest().withHttpInfo());
+  }
+
+  private GetAuthorizationPoliciesTargetsRequest createGetAuthorizationPoliciesTargetsRequest() {
+    return GetAuthorizationPoliciesTargetsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return TargetAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TargetAttributes getAuthorizationPoliciesTargets(GetAuthorizationPoliciesTargetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TargetAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TargetAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a map of policy targets to valid attributes for those targets
+   * 
+   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TargetAttributes> getAuthorizationPoliciesTargets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TargetAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TargetAttributes> response = (ApiResponse<TargetAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TargetAttributes> response = (ApiResponse<TargetAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to retrieve (required)
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy getAuthorizationPolicy(String policyId) throws IOException, ApiException {
+    return  getAuthorizationPolicy(createGetAuthorizationPolicyRequest(policyId));
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to retrieve (required)
+   * @return AuthorizationPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> getAuthorizationPolicyWithHttpInfo(String policyId) throws IOException {
+    return getAuthorizationPolicy(createGetAuthorizationPolicyRequest(policyId).withHttpInfo());
+  }
+
+  private GetAuthorizationPolicyRequest createGetAuthorizationPolicyRequest(String policyId) {
+    return GetAuthorizationPolicyRequest.builder()
+            .withPolicyId(policyId)
+
+            .build();
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy getAuthorizationPolicy(GetAuthorizationPolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> getAuthorizationPolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to retrieve attributes (required)
+   * @return PolicyAttributeSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyAttributeSet getAuthorizationPolicyAttributes(String policyId) throws IOException, ApiException {
+    return  getAuthorizationPolicyAttributes(createGetAuthorizationPolicyAttributesRequest(policyId));
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to retrieve attributes (required)
+   * @return PolicyAttributeSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyAttributeSet> getAuthorizationPolicyAttributesWithHttpInfo(String policyId) throws IOException {
+    return getAuthorizationPolicyAttributes(createGetAuthorizationPolicyAttributesRequest(policyId).withHttpInfo());
+  }
+
+  private GetAuthorizationPolicyAttributesRequest createGetAuthorizationPolicyAttributesRequest(String policyId) {
+    return GetAuthorizationPolicyAttributesRequest.builder()
+            .withPolicyId(policyId)
+
+            .build();
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return PolicyAttributeSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyAttributeSet getAuthorizationPolicyAttributes(GetAuthorizationPolicyAttributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PolicyAttributeSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PolicyAttributeSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+   * 
+   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyAttributeSet> getAuthorizationPolicyAttributes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PolicyAttributeSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyAttributeSet> response = (ApiResponse<PolicyAttributeSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyAttributeSet> response = (ApiResponse<PolicyAttributeSet>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2529,6 +3226,264 @@ public class AuthorizationApi {
   }
 
   /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy postAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body) throws IOException, ApiException {
+    return  postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body));
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> postAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body) throws IOException {
+    return postAuthorizationPoliciesTarget(createPostAuthorizationPoliciesTargetRequest(targetName, body).withHttpInfo());
+  }
+
+  private PostAuthorizationPoliciesTargetRequest createPostAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body) {
+    return PostAuthorizationPoliciesTargetRequest.builder()
+            .withTargetName(targetName)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy postAuthorizationPoliciesTarget(PostAuthorizationPoliciesTargetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject
+   * 
+   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> postAuthorizationPoliciesTarget(ApiRequest<AuthorizationPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return ValidationErrorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidationErrorListing postAuthorizationPoliciesTargetValidate(String targetName, AuthorizationPolicy body) throws IOException, ApiException {
+    return  postAuthorizationPoliciesTargetValidate(createPostAuthorizationPoliciesTargetValidateRequest(targetName, body));
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return ValidationErrorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidationErrorListing> postAuthorizationPoliciesTargetValidateWithHttpInfo(String targetName, AuthorizationPolicy body) throws IOException {
+    return postAuthorizationPoliciesTargetValidate(createPostAuthorizationPoliciesTargetValidateRequest(targetName, body).withHttpInfo());
+  }
+
+  private PostAuthorizationPoliciesTargetValidateRequest createPostAuthorizationPoliciesTargetValidateRequest(String targetName, AuthorizationPolicy body) {
+    return PostAuthorizationPoliciesTargetValidateRequest.builder()
+            .withTargetName(targetName)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ValidationErrorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidationErrorListing postAuthorizationPoliciesTargetValidate(PostAuthorizationPoliciesTargetValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ValidationErrorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ValidationErrorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate the conditions and attributes of an access control policy for a specified resource target
+   * 
+   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidationErrorListing> postAuthorizationPoliciesTargetValidate(ApiRequest<AuthorizationPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ValidationErrorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidationErrorListing> response = (ApiResponse<ValidationErrorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidationErrorListing> response = (ApiResponse<ValidationErrorListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to test the simulated data against (required)
+   * @param body A map of attribute names to type and simulated data value (required)
+   * @return PolicyTestResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyTestResult postAuthorizationPolicySimulate(String policyId, PolicyTestPayload body) throws IOException, ApiException {
+    return  postAuthorizationPolicySimulate(createPostAuthorizationPolicySimulateRequest(policyId, body));
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to test the simulated data against (required)
+   * @param body A map of attribute names to type and simulated data value (required)
+   * @return PolicyTestResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyTestResult> postAuthorizationPolicySimulateWithHttpInfo(String policyId, PolicyTestPayload body) throws IOException {
+    return postAuthorizationPolicySimulate(createPostAuthorizationPolicySimulateRequest(policyId, body).withHttpInfo());
+  }
+
+  private PostAuthorizationPolicySimulateRequest createPostAuthorizationPolicySimulateRequest(String policyId, PolicyTestPayload body) {
+    return PostAuthorizationPolicySimulateRequest.builder()
+            .withPolicyId(policyId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return PolicyTestResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyTestResult postAuthorizationPolicySimulate(PostAuthorizationPolicySimulateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PolicyTestResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PolicyTestResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Simulate a request and evaluate the specified policy ID against the provided values
+   * 
+   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyTestResult> postAuthorizationPolicySimulate(ApiRequest<PolicyTestPayload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PolicyTestResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyTestResult> response = (ApiResponse<PolicyTestResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyTestResult> response = (ApiResponse<PolicyTestResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk-grant subjects and divisions with an organization role.
    * 
    * @param roleId Role ID (required)
@@ -3263,6 +4218,178 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy putAuthorizationPoliciesTarget(String targetName, AuthorizationPolicy body) throws IOException, ApiException {
+    return  putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body));
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param targetName The domain:entity:action target to which the policy will be applied (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPoliciesTargetWithHttpInfo(String targetName, AuthorizationPolicy body) throws IOException {
+    return putAuthorizationPoliciesTarget(createPutAuthorizationPoliciesTargetRequest(targetName, body).withHttpInfo());
+  }
+
+  private PutAuthorizationPoliciesTargetRequest createPutAuthorizationPoliciesTargetRequest(String targetName, AuthorizationPolicy body) {
+    return PutAuthorizationPoliciesTargetRequest.builder()
+            .withTargetName(targetName)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy putAuthorizationPoliciesTarget(PutAuthorizationPoliciesTargetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+   * 
+   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPoliciesTarget(ApiRequest<AuthorizationPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to update (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy putAuthorizationPolicy(String policyId, AuthorizationPolicy body) throws IOException, ApiException {
+    return  putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body));
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param policyId The ID of the policy to update (required)
+   * @param body Access control policy (required)
+   * @return AuthorizationPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPolicyWithHttpInfo(String policyId, AuthorizationPolicy body) throws IOException {
+    return putAuthorizationPolicy(createPutAuthorizationPolicyRequest(policyId, body).withHttpInfo());
+  }
+
+  private PutAuthorizationPolicyRequest createPutAuthorizationPolicyRequest(String policyId, AuthorizationPolicy body) {
+    return PutAuthorizationPolicyRequest.builder()
+            .withPolicyId(policyId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AuthorizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthorizationPolicy putAuthorizationPolicy(PutAuthorizationPolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthorizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthorizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an access control policy with a given ID
+   * 
+   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthorizationPolicy> putAuthorizationPolicy(ApiRequest<AuthorizationPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthorizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthorizationPolicy> response = (ApiResponse<AuthorizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
