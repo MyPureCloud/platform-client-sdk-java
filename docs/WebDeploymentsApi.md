@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWebdeploymentsDeployment**](WebDeploymentsApi#getWebdeploymentsDeployment) | Get a deployment |
 | [**getWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi#getWebdeploymentsDeploymentCobrowseSessionId) | Retrieves a cobrowse session |
 | [**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi#getWebdeploymentsDeploymentConfigurations) | Get active configuration for a given deployment |
+| [**getWebdeploymentsDeploymentIdentityresolution**](WebDeploymentsApi#getWebdeploymentsDeploymentIdentityresolution) | Get a deployment identity resolution setting. |
 | [**getWebdeploymentsDeployments**](WebDeploymentsApi#getWebdeploymentsDeployments) | Get deployments |
 | [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi#postWebdeploymentsConfigurationVersionsDraftPublish) | Publish the configuration draft and create a new version |
 | [**postWebdeploymentsConfigurations**](WebDeploymentsApi#postWebdeploymentsConfigurations) | Create a configuration draft |
@@ -23,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWebdeploymentsTokenRefresh**](WebDeploymentsApi#postWebdeploymentsTokenRefresh) | Refresh a JWT. |
 | [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi#putWebdeploymentsConfigurationVersionsDraft) | Update the configuration draft |
 | [**putWebdeploymentsDeployment**](WebDeploymentsApi#putWebdeploymentsDeployment) | Update a deployment |
+| [**putWebdeploymentsDeploymentIdentityresolution**](WebDeploymentsApi#putWebdeploymentsDeploymentIdentityresolution) | Update identity resolution settings for a deployment. |
 {: class="table-striped"}
 
 
@@ -645,6 +647,68 @@ try {
 [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment)
 
 
+# **getWebdeploymentsDeploymentIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+
+Get a deployment identity resolution setting.
+
+getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution  
+
+Requires ALL permissions: 
+
+* webDeployments:deployment:view
+* webDeployments:identityResolution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String deploymentId = "deploymentId_example"; // String | The deployment ID
+try {
+    IdentityResolutionConfig result = apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| The deployment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 # **getWebdeploymentsDeployments**
 
 
@@ -1094,4 +1158,68 @@ try {
 [**WebDeployment**](WebDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+# **putWebdeploymentsDeploymentIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+
+Update identity resolution settings for a deployment.
+
+putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution  
+
+Requires ALL permissions: 
+
+* webDeployments:deployment:edit
+* webDeployments:identityResolution:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String deploymentId = "deploymentId_example"; // String | The deployment ID
+IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+try {
+    IdentityResolutionConfig result = apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#putWebdeploymentsDeploymentIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| The deployment ID | 
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

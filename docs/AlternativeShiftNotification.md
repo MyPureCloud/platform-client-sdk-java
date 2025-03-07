@@ -11,7 +11,7 @@
 | **newState** | [**NewStateEnum**](#Enum--NewStateEnum) | The new state of the alternative shift trade, null if there was no change |  [optional] |
 | **initiatingUser** | [**UserReference**](UserReference) | The user who initiated the alternative shift trade |  |
 | **initiatingShiftDate** | [**Date**](Date) | The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **receivingUser** | [**UserReference**](UserReference) | The user on the receiving this alternative shift trade |  [optional] |
+| **receivingUser** | [**UserReference**](UserReference) | The user on the receiving side of this alternative shift trade |  [optional] |
 | **receivingShiftDate** | [**Date**](Date) | The start date and time of the receiving alternative shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -38,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

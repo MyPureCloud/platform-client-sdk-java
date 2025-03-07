@@ -10,6 +10,7 @@
 | **typing** | [**EventTyping**](EventTyping) | Typing event. |  [optional] |
 | **presence** | [**EventPresence**](EventPresence) | Presence event. |  [optional] |
 | **video** | [**EventVideo**](EventVideo) | Video event. |  [optional] |
+| **reactions** | [**List&lt;ContentReaction&gt;**](ContentReaction) | A list of reactions to a message. |  [optional] |
 
 
 ## Enum: EventTypeEnum
@@ -21,8 +22,9 @@
 | TYPING | &quot;Typing&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
 | VIDEO | &quot;Video&quot; | 
+| REACTIONS | &quot;Reactions&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

@@ -52,7 +52,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ObjectsApi apiInstance = new ObjectsApi();
 String divisionId = "divisionId_example"; // String | Division ID
-Boolean force = false; // Boolean | Force delete this division as well as the grants and objects associated with it
+Boolean force = false; // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
 try {
     apiInstance.deleteAuthorizationDivision(divisionId, force);
 } catch (ApiException e) {
@@ -67,7 +67,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **force** | **Boolean**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] 
+| **force** | **Boolean**| DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -437,7 +437,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data | [optional] 
+| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data | 
 {: class="table-striped"}
 
 
@@ -567,4 +567,4 @@ try {
 [**AuthzDivision**](AuthzDivision)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

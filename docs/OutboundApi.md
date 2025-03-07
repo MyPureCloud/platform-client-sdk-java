@@ -6698,7 +6698,7 @@ null (empty response body)
 # **patchOutboundSettings**
 
 
-> Void patchOutboundSettings(body)
+> Void patchOutboundSettings(body, useMaxCallsPerAgentDecimal)
 
 Update the outbound settings for this organization
 
@@ -6731,8 +6731,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 OutboundSettings body = new OutboundSettings(); // OutboundSettings | outboundSettings
+Boolean useMaxCallsPerAgentDecimal = true; // Boolean | Use maxCallsPerAgent with decimal precision
 try {
-    apiInstance.patchOutboundSettings(body);
+    apiInstance.patchOutboundSettings(body, useMaxCallsPerAgentDecimal);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#patchOutboundSettings");
     e.printStackTrace();
@@ -6745,6 +6746,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**OutboundSettings**](OutboundSettings)| outboundSettings | 
+| **useMaxCallsPerAgentDecimal** | **Boolean**| Use maxCallsPerAgent with decimal precision | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -7234,7 +7236,7 @@ try {
 # **postOutboundCampaigns**
 
 
-> [Campaign](Campaign) postOutboundCampaigns(body)
+> [Campaign](Campaign) postOutboundCampaigns(body, useMaxCallsPerAgentDecimal)
 
 Create a campaign.
 
@@ -7267,8 +7269,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Campaign body = new Campaign(); // Campaign | Campaign
+Boolean useMaxCallsPerAgentDecimal = true; // Boolean | Use maxCallsPerAgent with decimal precision
 try {
-    Campaign result = apiInstance.postOutboundCampaigns(body);
+    Campaign result = apiInstance.postOutboundCampaigns(body, useMaxCallsPerAgentDecimal);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundCampaigns");
@@ -7282,6 +7285,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**Campaign**](Campaign)| Campaign | 
+| **useMaxCallsPerAgentDecimal** | **Boolean**| Use maxCallsPerAgent with decimal precision | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -9285,7 +9289,7 @@ try {
 # **putOutboundCampaign**
 
 
-> [Campaign](Campaign) putOutboundCampaign(campaignId, body)
+> [Campaign](Campaign) putOutboundCampaign(campaignId, body, useMaxCallsPerAgentDecimal)
 
 Update a campaign.
 
@@ -9319,8 +9323,9 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
 Campaign body = new Campaign(); // Campaign | Campaign
+Boolean useMaxCallsPerAgentDecimal = true; // Boolean | Use maxCallsPerAgent with decimal precision
 try {
-    Campaign result = apiInstance.putOutboundCampaign(campaignId, body);
+    Campaign result = apiInstance.putOutboundCampaign(campaignId, body, useMaxCallsPerAgentDecimal);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#putOutboundCampaign");
@@ -9335,6 +9340,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
 | **body** | [**Campaign**](Campaign)| Campaign | 
+| **useMaxCallsPerAgentDecimal** | **Boolean**| Use maxCallsPerAgent with decimal precision | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -10446,4 +10452,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

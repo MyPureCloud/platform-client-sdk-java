@@ -32,6 +32,7 @@
 | **showTimeInStatus** | **Boolean** | Indicates the show time in status of a widget configuration. |  [optional] |
 | **showOfflineAgents** | **Boolean** | Indicates to show offline agent widget. |  [optional] |
 | **selectedStatuses** | [**List<SelectedStatusesEnum>**](#Enum--SelectedStatusesEnum) | Indicates the selected statuses used to filter the agent widget in the dashboard. |  [optional] |
+| **selectedSegmentTypes** | [**List<SelectedSegmentTypesEnum>**](#Enum--SelectedSegmentTypesEnum) | Indicates the selected segment types used to filter the agent activity in the dashboard. |  [optional] |
 | **agentInteractionSortOrder** | [**AgentInteractionSortOrderEnum**](#Enum--AgentInteractionSortOrderEnum) | The sort order of the interactions in the agent status widget. |  [optional] |
 
 
@@ -48,6 +49,7 @@
 | AGENT_STATUS | &quot;AGENT_STATUS&quot; | 
 | REALTIME_ADHERENCE | &quot;REALTIME_ADHERENCE&quot; | 
 | WEB_CONTENT_URL | &quot;WEB_CONTENT_URL&quot; | 
+| AGENT_ACTIVITY | &quot;AGENT_ACTIVITY&quot; | 
 
 
 ## Enum: MetricsEnum
@@ -351,6 +353,33 @@
 | OFFLINE | &quot;Offline&quot; |
 
 
+## Enum: SelectedSegmentTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| ALERT | &quot;alert&quot; |
+| BARGING | &quot;barging&quot; |
+| CALLBACK | &quot;callback&quot; |
+| COACHING | &quot;coaching&quot; |
+| CONTACTING | &quot;contacting&quot; |
+| CONVERTING | &quot;converting&quot; |
+| DELAY | &quot;delay&quot; |
+| DIALING | &quot;dialing&quot; |
+| HOLD | &quot;hold&quot; |
+| INTERACT | &quot;interact&quot; |
+| IVR | &quot;ivr&quot; |
+| MONITORING | &quot;monitoring&quot; |
+| PARKED | &quot;parked&quot; |
+| SCHEDULED | &quot;scheduled&quot; |
+| SHARING | &quot;sharing&quot; |
+| SYSTEM | &quot;system&quot; |
+| TRANSMITTING | &quot;transmitting&quot; |
+| UNKNOWN | &quot;unknown&quot; |
+| UPLOADING | &quot;uploading&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
+| WRAPUP | &quot;wrapup&quot; |
+
+
 ## Enum: AgentInteractionSortOrderEnum
 
 | Name | Value |
@@ -362,4 +391,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

@@ -22,7 +22,9 @@
 | **buttonResponse** | [**ButtonResponse**](ButtonResponse) | Button Response selected by user for this message. |  [optional] |
 | **story** | [**RecordingContentStory**](RecordingContentStory) | Ephemeral story content. |  [optional] |
 | **cards** | [**List&lt;Card&gt;**](Card) | List of cards offered for this message |  [optional] |
+| **notificationTemplate** | [**RecordingNotificationTemplate**](RecordingNotificationTemplate) | Template notification content. |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
+| **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -48,4 +50,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

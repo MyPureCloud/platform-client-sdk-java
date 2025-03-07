@@ -559,6 +559,9 @@ try {
 
 # **getOrganizationsLimitsNamespaceCounts**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceCounts(namespaceName, cursor, entityId, userId)
 
@@ -684,6 +687,9 @@ try {
 
 # **getOrganizationsLimitsNamespaceLimitCounts**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, entityId, userId, cursor)
 
@@ -1291,4 +1297,4 @@ try {
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

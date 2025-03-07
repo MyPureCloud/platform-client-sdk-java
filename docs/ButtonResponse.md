@@ -17,8 +17,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BUTTON | &quot;Button&quot; | 
-| DATEPICKER | &quot;DatePicker&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
+| DATEPICKER | &quot;DatePicker&quot; | 
 
 
 ## Enum: MessageTypeEnum
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

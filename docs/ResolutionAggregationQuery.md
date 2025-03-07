@@ -21,6 +21,7 @@
 | Name | Value |
 | ---- | ----- |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | REQUESTEDROUTING | &quot;requestedRouting&quot; |
@@ -46,4 +47,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

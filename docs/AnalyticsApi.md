@@ -2085,7 +2085,7 @@ Integer pageNumber = 1; // Integer |
 Integer pageSize = 25; // Integer | 
 List<String> id = Arrays.asList(null); // List<String> | A list of user IDs to fetch by bulk
 String state = "state_example"; // String | Only list users of this state
-Boolean deletedOnly = true; // Boolean | Only list deleted dashboards that are still recoverable
+Boolean deletedOnly = true; // Boolean | Only list users with deleted dashboards
 try {
     DashboardUserListing result = apiInstance.getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state, deletedOnly);
     System.out.println(result);
@@ -2105,7 +2105,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] [default to 25] 
 | **id** | [**List&lt;String&gt;**](String)| A list of user IDs to fetch by bulk | [optional] 
 | **state** | **String**| Only list users of this state | [optional]<br />**Values**: active, inactive 
-| **deletedOnly** | **Boolean**| Only list deleted dashboards that are still recoverable | [optional] 
+| **deletedOnly** | **Boolean**| Only list users with deleted dashboards | [optional] 
 {: class="table-striped"}
 
 
@@ -6539,4 +6539,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

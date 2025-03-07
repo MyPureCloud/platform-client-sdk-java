@@ -16,8 +16,12 @@
 | **certificate** | **String** |  |  [optional] |
 | **certificates** | **List&lt;String&gt;** |  |  [optional] |
 | **logoImageData** | **String** |  |  [optional] |
-| **endpointCompression** | **Boolean** |  |  [optional] |
 | **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#Enum--NameIdentifierFormatEnum) |  |  [optional] |
+| **ssoBinding** | [**SsoBindingEnum**](#Enum--SsoBindingEnum) |  |  [optional] |
+| **signAuthnRequests** | **Boolean** |  |  [optional] |
+| **providerName** | **String** |  |  [optional] |
+| **displayOnLogin** | **Boolean** |  |  [optional] |
+| **endpointCompression** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -36,6 +40,15 @@
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:transient&quot; | 
 
 
+## Enum: SsoBindingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_POST | &quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&quot; | 
+| URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_REDIRECT | &quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

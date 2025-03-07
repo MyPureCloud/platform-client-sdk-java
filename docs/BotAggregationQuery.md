@@ -28,12 +28,14 @@
 | BOTFLOWTYPE | &quot;botFlowType&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |
+| BOTNAME | &quot;botName&quot; |
 | BOTPRODUCT | &quot;botProduct&quot; |
 | BOTPROVIDER | &quot;botProvider&quot; |
 | BOTRECOGNITIONFAILUREREASON | &quot;botRecognitionFailureReason&quot; |
 | BOTRESULT | &quot;botResult&quot; |
 | BOTSESSIONID | &quot;botSessionId&quot; |
 | BOTSLOT | &quot;botSlot&quot; |
+| BOTSLOTMECHANISM | &quot;botSlotMechanism&quot; |
 | BOTVERSION | &quot;botVersion&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
@@ -77,4 +79,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

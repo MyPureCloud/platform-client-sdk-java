@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingSettings**](RecordingApi#getRecordingSettings) | Get the Recording Settings for the Organization |
 | [**getRecordingUploadsReport**](RecordingApi#getRecordingUploadsReport) | Get the status of a recording upload status report |
 | [**getRecordingsRetentionQuery**](RecordingApi#getRecordingsRetentionQuery) | Query for recording retention data |
-| [**getRecordingsScreensessions**](RecordingApi#getRecordingsScreensessions) | Retrieves a paged listing of screen recording sessions |
 | [**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | Retrieves an object containing the total number of concurrent active screen recordings |
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
@@ -524,7 +523,7 @@ String chatFormatId = "ZIP"; // String | The desired media format when downloadi
 String messageFormatId = "ZIP"; // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
 Boolean download = false; // Boolean | requesting a download format of the recording. Valid values:true,false
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
-String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
+String locale = "locale_example"; // String | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
 List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 try {
     Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats);
@@ -548,7 +547,7 @@ try {
 | **messageFormatId** | **String**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
 | **download** | **Boolean**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false]<br />**Values**: true, false 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
-| **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
+| **locale** | **String**| The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code | [optional] 
 | **mediaFormats** | [**List&lt;String&gt;**](String)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional] 
 {: class="table-striped"}
 
@@ -807,7 +806,7 @@ try {
 # **getConversationRecordings**
 
 
-> [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats)
+> [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale)
 
 Get all of a Conversation's Recordings.
 
@@ -844,8 +843,9 @@ String conversationId = "conversationId_example"; // String | Conversation ID
 Integer maxWaitMs = 5000; // Integer | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
 String formatId = "WEBM"; // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
 List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+String locale = "locale_example"; // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
 try {
-    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats);
+    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecordings");
@@ -862,6 +862,7 @@ try {
 | **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] 
 | **formatId** | **String**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 | **mediaFormats** | [**List&lt;String&gt;**](String)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional] 
+| **locale** | **String**| The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional] 
 {: class="table-striped"}
 
 
@@ -2024,72 +2025,6 @@ try {
 ### Return type
 
 [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing)
-
-
-# **getRecordingsScreensessions**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [ScreenRecordingSessionListing](ScreenRecordingSessionListing) getRecordingsScreensessions(pageSize, pageNumber)
-
-Retrieves a paged listing of screen recording sessions
-
-Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-
-Wraps GET /api/v2/recordings/screensessions  
-
-Requires ANY permissions: 
-
-* recording:screenRecording:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-try {
-    ScreenRecordingSessionListing result = apiInstance.getRecordingsScreensessions(pageSize, pageNumber);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#getRecordingsScreensessions");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ScreenRecordingSessionListing**](ScreenRecordingSessionListing)
 
 
 # **getRecordingsScreensessionsDetails**
@@ -3670,4 +3605,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

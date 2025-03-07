@@ -78,6 +78,8 @@
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; | 
 | TALERT | &quot;tAlert&quot; | 
 | TANSWERED | &quot;tAnswered&quot; | 
+| TAVERAGEAGENTRESPONSETIME | &quot;tAverageAgentResponseTime&quot; | 
+| TAVERAGECUSTOMERRESPONSETIME | &quot;tAverageCustomerResponseTime&quot; | 
 | TBARGING | &quot;tBarging&quot; | 
 | TCOACHING | &quot;tCoaching&quot; | 
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
@@ -87,6 +89,8 @@
 | TDIALING | &quot;tDialing&quot; | 
 | TFIRSTCONNECT | &quot;tFirstConnect&quot; | 
 | TFIRSTDIAL | &quot;tFirstDial&quot; | 
+| TFIRSTENGAGEMENT | &quot;tFirstEngagement&quot; | 
+| TFIRSTRESPONSE | &quot;tFirstResponse&quot; | 
 | TFLOW | &quot;tFlow&quot; | 
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; | 
 | TFLOWEXIT | &quot;tFlowExit&quot; | 
@@ -120,4 +124,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

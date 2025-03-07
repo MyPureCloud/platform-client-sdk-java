@@ -36,7 +36,6 @@
 | TRANSFERTOGROUPVOICEMAIL | &quot;TransferToGroupVoicemail&quot; | 
 | TRANSFERTONUMBER | &quot;TransferToNumber&quot; | 
 | TRANSFERTOSECUREFLOW | &quot;TransferToSecureFlow&quot; | 
-| TRANSFERTOUNKNOWN | &quot;TransferToUnknown&quot; | 
 | TRANSFERTOUSER | &quot;TransferToUser&quot; | 
 | TRANSFERTOUSERVOICEMAIL | &quot;TransferToUserVoicemail&quot; | 
 
@@ -53,4 +52,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
