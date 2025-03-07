@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
@@ -136,6 +138,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
@@ -157,6 +160,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
@@ -177,6 +181,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsIdentityresolutionPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserDirectroutingbackupSettingsRequest;
@@ -241,11 +246,14 @@ import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailOutboundDomainActivationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsIdentityresolutionPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
@@ -2740,6 +2748,92 @@ public class RoutingApi {
   }
 
   /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param domainName email domain (required)
+   * @param routeId route ID (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId) throws IOException, ApiException {
+    return  getRoutingEmailDomainRouteIdentityresolution(createGetRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId));
+  }
+
+  /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param domainName email domain (required)
+   * @param routeId route ID (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId) throws IOException {
+    return getRoutingEmailDomainRouteIdentityresolution(createGetRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId).withHttpInfo());
+  }
+
+  private GetRoutingEmailDomainRouteIdentityresolutionRequest createGetRoutingEmailDomainRouteIdentityresolutionRequest(String domainName, String routeId) {
+    return GetRoutingEmailDomainRouteIdentityresolutionRequest.builder()
+            .withDomainName(domainName)
+
+            .withRouteId(routeId)
+
+            .build();
+  }
+
+  /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(GetRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolution(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get routes
    * 
    * @param domainName email domain (required)
@@ -4457,6 +4551,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EstimatedWaitTimePredictions> response = (ApiResponse<EstimatedWaitTimePredictions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param queueId Queue ID (required)
+   * @return IdentityResolutionQueueConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionQueueConfig getRoutingQueueIdentityresolution(String queueId) throws IOException, ApiException {
+    return  getRoutingQueueIdentityresolution(createGetRoutingQueueIdentityresolutionRequest(queueId));
+  }
+
+  /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param queueId Queue ID (required)
+   * @return IdentityResolutionQueueConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionQueueConfig> getRoutingQueueIdentityresolutionWithHttpInfo(String queueId) throws IOException {
+    return getRoutingQueueIdentityresolution(createGetRoutingQueueIdentityresolutionRequest(queueId).withHttpInfo());
+  }
+
+  private GetRoutingQueueIdentityresolutionRequest createGetRoutingQueueIdentityresolutionRequest(String queueId) {
+    return GetRoutingQueueIdentityresolutionRequest.builder()
+            .withQueueId(queueId)
+
+            .build();
+  }
+
+  /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionQueueConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionQueueConfig getRoutingQueueIdentityresolution(GetRoutingQueueIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionQueueConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionQueueConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionQueueConfig> getRoutingQueueIdentityresolution(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionQueueConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6265,6 +6441,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param addressId Address ID (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(String addressId) throws IOException, ApiException {
+    return  getRoutingSmsIdentityresolutionPhonenumber(createGetRoutingSmsIdentityresolutionPhonenumberRequest(addressId));
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param addressId Address ID (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId) throws IOException {
+    return getRoutingSmsIdentityresolutionPhonenumber(createGetRoutingSmsIdentityresolutionPhonenumberRequest(addressId).withHttpInfo());
+  }
+
+  private GetRoutingSmsIdentityresolutionPhonenumberRequest createGetRoutingSmsIdentityresolutionPhonenumberRequest(String addressId) {
+    return GetRoutingSmsIdentityresolutionPhonenumberRequest.builder()
+            .withAddressId(addressId)
+
+            .build();
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(GetRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumber(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11568,6 +11826,96 @@ public class RoutingApi {
   }
 
   /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param domainName email domain (required)
+   * @param routeId route ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putRoutingEmailDomainRouteIdentityresolution(createPutRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId, body));
+  }
+
+  /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param domainName email domain (required)
+   * @param routeId route ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId, IdentityResolutionConfig body) throws IOException {
+    return putRoutingEmailDomainRouteIdentityresolution(createPutRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId, body).withHttpInfo());
+  }
+
+  private PutRoutingEmailDomainRouteIdentityresolutionRequest createPutRoutingEmailDomainRouteIdentityresolutionRequest(String domainName, String routeId, IdentityResolutionConfig body) {
+    return PutRoutingEmailDomainRouteIdentityresolutionRequest.builder()
+            .withDomainName(domainName)
+
+            .withRouteId(routeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(PutRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolution(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Request an activation status (cname + dkim) update of an outbound domain
    * 
    * @param domainId domain ID (required)
@@ -11810,6 +12158,92 @@ public class RoutingApi {
   }
 
   /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionQueueConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionQueueConfig putRoutingQueueIdentityresolution(String queueId, IdentityResolutionQueueConfig body) throws IOException, ApiException {
+    return  putRoutingQueueIdentityresolution(createPutRoutingQueueIdentityresolutionRequest(queueId, body));
+  }
+
+  /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionQueueConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionQueueConfig> putRoutingQueueIdentityresolutionWithHttpInfo(String queueId, IdentityResolutionQueueConfig body) throws IOException {
+    return putRoutingQueueIdentityresolution(createPutRoutingQueueIdentityresolutionRequest(queueId, body).withHttpInfo());
+  }
+
+  private PutRoutingQueueIdentityresolutionRequest createPutRoutingQueueIdentityresolutionRequest(String queueId, IdentityResolutionQueueConfig body) {
+    return PutRoutingQueueIdentityresolutionRequest.builder()
+            .withQueueId(queueId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionQueueConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionQueueConfig putRoutingQueueIdentityresolution(PutRoutingQueueIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionQueueConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionQueueConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionQueueConfig> putRoutingQueueIdentityresolution(ApiRequest<IdentityResolutionQueueConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionQueueConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an organization's routing settings
    * 
    * @param body Organization Settings (required)
@@ -11961,6 +12395,92 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param addressId Address ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(String addressId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putRoutingSmsIdentityresolutionPhonenumber(createPutRoutingSmsIdentityresolutionPhonenumberRequest(addressId, body));
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param addressId Address ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId, IdentityResolutionConfig body) throws IOException {
+    return putRoutingSmsIdentityresolutionPhonenumber(createPutRoutingSmsIdentityresolutionPhonenumberRequest(addressId, body).withHttpInfo());
+  }
+
+  private PutRoutingSmsIdentityresolutionPhonenumberRequest createPutRoutingSmsIdentityresolutionPhonenumberRequest(String addressId, IdentityResolutionConfig body) {
+    return PutRoutingSmsIdentityresolutionPhonenumberRequest.builder()
+            .withAddressId(addressId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(PutRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumber(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

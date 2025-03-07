@@ -527,7 +527,7 @@ try {
 # **getIntegrationsAction**
 
 
-> [Action](Action) getIntegrationsAction(actionId, expand, includeConfig)
+> [Action](Action) getIntegrationsAction(actionId, expand, flatten, includeConfig)
 
 Retrieves a single Action matching id.
 
@@ -562,9 +562,10 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 String expand = "expand_example"; // String | Indicates a field in the response which should be expanded.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 Boolean includeConfig = false; // Boolean | Return config in response.
 try {
-    Action result = apiInstance.getIntegrationsAction(actionId, expand, includeConfig);
+    Action result = apiInstance.getIntegrationsAction(actionId, expand, flatten, includeConfig);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsAction");
@@ -579,6 +580,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false]<br />**Values**: true, false 
 | **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
@@ -591,7 +593,7 @@ try {
 # **getIntegrationsActionDraft**
 
 
-> [Action](Action) getIntegrationsActionDraft(actionId, expand, includeConfig)
+> [Action](Action) getIntegrationsActionDraft(actionId, expand, flatten, includeConfig)
 
 Retrieve a Draft
 
@@ -626,9 +628,10 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 String expand = "expand_example"; // String | Indicates a field in the response which should be expanded.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 Boolean includeConfig = false; // Boolean | Return config in response.
 try {
-    Action result = apiInstance.getIntegrationsActionDraft(actionId, expand, includeConfig);
+    Action result = apiInstance.getIntegrationsActionDraft(actionId, expand, flatten, includeConfig);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraft");
@@ -643,6 +646,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false]<br />**Values**: true, false 
 | **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
@@ -5411,4 +5415,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

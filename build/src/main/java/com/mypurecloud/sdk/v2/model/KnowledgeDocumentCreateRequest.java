@@ -31,6 +31,7 @@ public class KnowledgeDocumentCreateRequest  implements Serializable {
   private String categoryId = null;
   private List<String> labelIds = new ArrayList<String>();
   private String externalId = null;
+  private String externalUrl = null;
   private String selfUri = null;
 
   
@@ -149,6 +150,24 @@ public class KnowledgeDocumentCreateRequest  implements Serializable {
   }
 
 
+  /**
+   * The URL to external document.
+   **/
+  public KnowledgeDocumentCreateRequest externalUrl(String externalUrl) {
+    this.externalUrl = externalUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL to external document.")
+  @JsonProperty("externalUrl")
+  public String getExternalUrl() {
+    return externalUrl;
+  }
+  public void setExternalUrl(String externalUrl) {
+    this.externalUrl = externalUrl;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -173,12 +192,13 @@ public class KnowledgeDocumentCreateRequest  implements Serializable {
             Objects.equals(this.categoryId, knowledgeDocumentCreateRequest.categoryId) &&
             Objects.equals(this.labelIds, knowledgeDocumentCreateRequest.labelIds) &&
             Objects.equals(this.externalId, knowledgeDocumentCreateRequest.externalId) &&
+            Objects.equals(this.externalUrl, knowledgeDocumentCreateRequest.externalUrl) &&
             Objects.equals(this.selfUri, knowledgeDocumentCreateRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, categoryId, labelIds, externalId, selfUri);
+    return Objects.hash(id, title, visible, alternatives, categoryId, labelIds, externalId, externalUrl, selfUri);
   }
 
   @Override
@@ -193,6 +213,7 @@ public class KnowledgeDocumentCreateRequest  implements Serializable {
     sb.append("    categoryId: ").append(toIndentedString(categoryId)).append("\n");
     sb.append("    labelIds: ").append(toIndentedString(labelIds)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

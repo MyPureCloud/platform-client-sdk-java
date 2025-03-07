@@ -207,6 +207,20 @@ public class GetExternalcontactsOrganizationsRequest {
 	    return this;
 	} 
 
+	private List<String> divisionIds;
+	public List<String> getDivisionIds() {
+		return this.divisionIds;
+	}
+
+	public void setDivisionIds(List<String> divisionIds) {
+		this.divisionIds = divisionIds;
+	}
+
+	public GetExternalcontactsOrganizationsRequest withDivisionIds(List<String> divisionIds) {
+	    this.setDivisionIds(divisionIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -250,6 +264,9 @@ public class GetExternalcontactsOrganizationsRequest {
         
 
                 .withQueryParameters("includeTrustors", "", includeTrustors)
+        
+
+                .withQueryParameters("divisionIds", "multi", divisionIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -315,6 +332,11 @@ public class GetExternalcontactsOrganizationsRequest {
 
 		public Builder withIncludeTrustors(Boolean includeTrustors) {
 			request.setIncludeTrustors(includeTrustors);
+			return this;
+		}
+
+		public Builder withDivisionIds(List<String> divisionIds) {
+			request.setDivisionIds(divisionIds);
 			return this;
 		}
 

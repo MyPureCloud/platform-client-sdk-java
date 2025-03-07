@@ -10,6 +10,7 @@
 | **dateCompleted** | [**Date**](Date) | Timestamp of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the job |  |
 | **journeyView** | [**JourneyView**](JourneyView) | The journey view for which the job is executed |  |
+| **dateCompletionEstimated** | [**Date**](Date) | Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -27,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

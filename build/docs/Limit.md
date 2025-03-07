@@ -41,6 +41,7 @@
 | EMPLOYEE_ENGAGEMENT | &quot;employee.engagement&quot; | 
 | EVENT_ORCHESTRATION | &quot;event.orchestration&quot; | 
 | EXTERNAL_CONTACTS | &quot;external.contacts&quot; | 
+| EXTERNAL_EVENTS_DATA_INGESTION | &quot;external.events.data.ingestion&quot; | 
 | GAMIFICATION | &quot;gamification&quot; | 
 | GCV | &quot;gcv&quot; | 
 | GDPR | &quot;gdpr&quot; | 
@@ -92,4 +93,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

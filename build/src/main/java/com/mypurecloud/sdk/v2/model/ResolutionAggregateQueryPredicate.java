@@ -92,6 +92,7 @@ public class ResolutionAggregateQueryPredicate  implements Serializable {
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONID("conversationId"),
+    EXTERNALCONTACTID("externalContactId"),
     MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
     REQUESTEDROUTING("requestedRouting"),

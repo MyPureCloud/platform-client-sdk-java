@@ -589,14 +589,14 @@ public class ActivityPlanResponse  implements Serializable {
 
 
   /**
-   * The last user to modify this activity plan
+   * The last user to modify this activity plan. The id may be 'System' if it was an automated process
    **/
   public ActivityPlanResponse modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The last user to modify this activity plan")
+  @ApiModelProperty(example = "null", required = true, value = "The last user to modify this activity plan. The id may be 'System' if it was an automated process")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;

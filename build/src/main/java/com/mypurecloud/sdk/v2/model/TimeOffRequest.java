@@ -405,14 +405,14 @@ public class TimeOffRequest  implements Serializable {
 
 
   /**
-   * The user who submitted this time off request
+   * The user who submitted this time off request. The id may be 'System' if it was an automated process
    **/
   public TimeOffRequest submittedBy(UserReference submittedBy) {
     this.submittedBy = submittedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who submitted this time off request")
+  @ApiModelProperty(example = "null", value = "The user who submitted this time off request. The id may be 'System' if it was an automated process")
   @JsonProperty("submittedBy")
   public UserReference getSubmittedBy() {
     return submittedBy;
@@ -441,14 +441,14 @@ public class TimeOffRequest  implements Serializable {
 
 
   /**
-   * The user who reviewed this time off request
+   * The user who reviewed this time off request. The id may be 'System' if it was an automated process
    **/
   public TimeOffRequest reviewedBy(UserReference reviewedBy) {
     this.reviewedBy = reviewedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who reviewed this time off request")
+  @ApiModelProperty(example = "null", value = "The user who reviewed this time off request. The id may be 'System' if it was an automated process")
   @JsonProperty("reviewedBy")
   public UserReference getReviewedBy() {
     return reviewedBy;

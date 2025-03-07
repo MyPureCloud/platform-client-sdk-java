@@ -133,6 +133,20 @@ public class PutOutboundCampaignRequest {
 	    return this;
 	} 
 
+	private Boolean useMaxCallsPerAgentDecimal;
+	public Boolean getUseMaxCallsPerAgentDecimal() {
+		return this.useMaxCallsPerAgentDecimal;
+	}
+
+	public void setUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+		this.useMaxCallsPerAgentDecimal = useMaxCallsPerAgentDecimal;
+	}
+
+	public PutOutboundCampaignRequest withUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+	    this.setUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -167,6 +181,9 @@ public class PutOutboundCampaignRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/outbound/campaigns/{campaignId}")
                 .withPathParameter("campaignId", campaignId)
+        
+
+                .withQueryParameters("useMaxCallsPerAgentDecimal", "", useMaxCallsPerAgentDecimal)
         
                 .withBody(body)
 
@@ -203,6 +220,11 @@ public class PutOutboundCampaignRequest {
 
 		public Builder withBody(Campaign body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+			request.setUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal);
 			return this;
 		}
 

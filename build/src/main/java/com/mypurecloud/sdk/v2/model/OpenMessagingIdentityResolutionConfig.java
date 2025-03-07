@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +23,7 @@ import java.io.Serializable;
 public class OpenMessagingIdentityResolutionConfig  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private Boolean resolveIdentities = null;
   private String selfUri = null;
 
@@ -30,6 +32,24 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public OpenMessagingIdentityResolutionConfig division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -69,13 +89,14 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
     OpenMessagingIdentityResolutionConfig openMessagingIdentityResolutionConfig = (OpenMessagingIdentityResolutionConfig) o;
 
     return Objects.equals(this.id, openMessagingIdentityResolutionConfig.id) &&
+            Objects.equals(this.division, openMessagingIdentityResolutionConfig.division) &&
             Objects.equals(this.resolveIdentities, openMessagingIdentityResolutionConfig.resolveIdentities) &&
             Objects.equals(this.selfUri, openMessagingIdentityResolutionConfig.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resolveIdentities, selfUri);
+    return Objects.hash(id, division, resolveIdentities, selfUri);
   }
 
   @Override
@@ -84,6 +105,7 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
     sb.append("class OpenMessagingIdentityResolutionConfig {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    resolveIdentities: ").append(toIndentedString(resolveIdentities)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

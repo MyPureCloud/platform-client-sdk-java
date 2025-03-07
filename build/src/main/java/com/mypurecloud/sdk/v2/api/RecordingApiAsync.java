@@ -50,7 +50,6 @@ import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
@@ -84,7 +83,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationsched
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
@@ -2444,83 +2442,6 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, final AsyncApiCallback<ScreenRecordingSessionListing> callback) {
-    try {
-      final SettableFuture<ScreenRecordingSessionListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ScreenRecordingSessionListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

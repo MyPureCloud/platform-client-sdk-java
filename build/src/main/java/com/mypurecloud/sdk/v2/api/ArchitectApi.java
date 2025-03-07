@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ArchitectExportJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
@@ -65,12 +66,15 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
 import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
@@ -121,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
@@ -161,6 +166,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsExportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
@@ -207,6 +213,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
@@ -214,6 +221,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
@@ -3256,6 +3264,88 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param ivrId IVR id (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getArchitectIvrIdentityresolution(String ivrId) throws IOException, ApiException {
+    return  getArchitectIvrIdentityresolution(createGetArchitectIvrIdentityresolutionRequest(ivrId));
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param ivrId IVR id (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getArchitectIvrIdentityresolutionWithHttpInfo(String ivrId) throws IOException {
+    return getArchitectIvrIdentityresolution(createGetArchitectIvrIdentityresolutionRequest(ivrId).withHttpInfo());
+  }
+
+  private GetArchitectIvrIdentityresolutionRequest createGetArchitectIvrIdentityresolutionRequest(String ivrId) {
+    return GetArchitectIvrIdentityresolutionRequest.builder()
+            .withIvrId(ivrId)
+
+            .build();
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getArchitectIvrIdentityresolution(GetArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getArchitectIvrIdentityresolution(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7004,6 +7094,88 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectExportJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectExportJobStateResponse getFlowsExportJob(String jobId, List<String> expand) throws IOException, ApiException {
+    return  getFlowsExportJob(createGetFlowsExportJobRequest(jobId, expand));
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectExportJobStateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectExportJobStateResponse> getFlowsExportJobWithHttpInfo(String jobId, List<String> expand) throws IOException {
+    return getFlowsExportJob(createGetFlowsExportJobRequest(jobId, expand).withHttpInfo());
+  }
+
+  private GetFlowsExportJobRequest createGetFlowsExportJobRequest(String jobId, List<String> expand) {
+    return GetFlowsExportJobRequest.builder()
+            .withJobId(jobId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param request The request object
+   * @return ArchitectExportJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectExportJobStateResponse getFlowsExportJob(GetFlowsExportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ArchitectExportJobStateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ArchitectExportJobStateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectExportJobStateResponse> getFlowsExportJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ArchitectExportJobStateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectExportJobStateResponse> response = (ApiResponse<ArchitectExportJobStateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectExportJobStateResponse> response = (ApiResponse<ArchitectExportJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10778,6 +10950,84 @@ public class ArchitectApi {
   }
 
   /**
+   * Register Architect Export Job
+   * 
+   * @param body  (required)
+   * @return RegisterArchitectExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectExportJobResponse postFlowsExportJobs(RegisterArchitectExportJob body) throws IOException, ApiException {
+    return  postFlowsExportJobs(createPostFlowsExportJobsRequest(body));
+  }
+
+  /**
+   * Register Architect Export Job
+   * 
+   * @param body  (required)
+   * @return RegisterArchitectExportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectExportJobResponse> postFlowsExportJobsWithHttpInfo(RegisterArchitectExportJob body) throws IOException {
+    return postFlowsExportJobs(createPostFlowsExportJobsRequest(body).withHttpInfo());
+  }
+
+  private PostFlowsExportJobsRequest createPostFlowsExportJobsRequest(RegisterArchitectExportJob body) {
+    return PostFlowsExportJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Register Architect Export Job
+   * 
+   * @param request The request object
+   * @return RegisterArchitectExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectExportJobResponse postFlowsExportJobs(PostFlowsExportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RegisterArchitectExportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RegisterArchitectExportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Register Architect Export Job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectExportJobResponse> postFlowsExportJobs(ApiRequest<RegisterArchitectExportJob> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RegisterArchitectExportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectExportJobResponse> response = (ApiResponse<RegisterArchitectExportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectExportJobResponse> response = (ApiResponse<RegisterArchitectExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
    * @param body Requested Flow Ids (required)
@@ -11335,6 +11585,92 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param ivrId IVR id (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putArchitectIvrIdentityresolution(String ivrId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putArchitectIvrIdentityresolution(createPutArchitectIvrIdentityresolutionRequest(ivrId, body));
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param ivrId IVR id (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putArchitectIvrIdentityresolutionWithHttpInfo(String ivrId, IdentityResolutionConfig body) throws IOException {
+    return putArchitectIvrIdentityresolution(createPutArchitectIvrIdentityresolutionRequest(ivrId, body).withHttpInfo());
+  }
+
+  private PutArchitectIvrIdentityresolutionRequest createPutArchitectIvrIdentityresolutionRequest(String ivrId, IdentityResolutionConfig body) {
+    return PutArchitectIvrIdentityresolutionRequest.builder()
+            .withIvrId(ivrId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putArchitectIvrIdentityresolution(PutArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putArchitectIvrIdentityresolution(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

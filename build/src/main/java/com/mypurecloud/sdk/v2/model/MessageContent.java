@@ -16,9 +16,9 @@ import com.mypurecloud.sdk.v2.model.ContentAttachment;
 import com.mypurecloud.sdk.v2.model.ContentButtonResponse;
 import com.mypurecloud.sdk.v2.model.ContentCard;
 import com.mypurecloud.sdk.v2.model.ContentCarousel;
+import com.mypurecloud.sdk.v2.model.ContentDatePicker;
 import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ContentList;
-import com.mypurecloud.sdk.v2.model.ContentLocation;
 import com.mypurecloud.sdk.v2.model.ContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ContentPostback;
 import com.mypurecloud.sdk.v2.model.ContentQuickReply;
@@ -60,7 +60,6 @@ public class MessageContent  implements Serializable {
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),
-    LOCATION("Location"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     GENERICTEMPLATE("GenericTemplate"),
@@ -73,7 +72,8 @@ public class MessageContent  implements Serializable {
     CARD("Card"),
     CAROUSEL("Carousel"),
     TEXT("Text"),
-    QUICKREPLYV2("QuickReplyV2");
+    QUICKREPLYV2("QuickReplyV2"),
+    DATEPICKER("DatePicker");
 
     private String value;
 
@@ -101,7 +101,6 @@ public class MessageContent  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
-  private ContentLocation location = null;
   private ContentAttachment attachment = null;
   private ContentQuickReply quickReply = null;
   private ContentButtonResponse buttonResponse = null;
@@ -116,6 +115,7 @@ public class MessageContent  implements Serializable {
   private ContentCarousel carousel = null;
   private ContentText text = null;
   private ContentQuickReplyV2 quickReplyV2 = null;
+  private ContentDatePicker datePicker = null;
 
   
   /**
@@ -133,24 +133,6 @@ public class MessageContent  implements Serializable {
   }
   public void setContentType(ContentTypeEnum contentType) {
     this.contentType = contentType;
-  }
-
-
-  /**
-   * Location content.
-   **/
-  public MessageContent location(ContentLocation location) {
-    this.location = location;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Location content.")
-  @JsonProperty("location")
-  public ContentLocation getLocation() {
-    return location;
-  }
-  public void setLocation(ContentLocation location) {
-    this.location = location;
   }
 
 
@@ -406,6 +388,24 @@ public class MessageContent  implements Serializable {
   }
 
 
+  /**
+   * DatePicker content.
+   **/
+  public MessageContent datePicker(ContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "DatePicker content.")
+  @JsonProperty("datePicker")
+  public ContentDatePicker getDatePicker() {
+    return datePicker;
+  }
+  public void setDatePicker(ContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -417,7 +417,6 @@ public class MessageContent  implements Serializable {
     MessageContent messageContent = (MessageContent) o;
 
     return Objects.equals(this.contentType, messageContent.contentType) &&
-            Objects.equals(this.location, messageContent.location) &&
             Objects.equals(this.attachment, messageContent.attachment) &&
             Objects.equals(this.quickReply, messageContent.quickReply) &&
             Objects.equals(this.buttonResponse, messageContent.buttonResponse) &&
@@ -431,12 +430,13 @@ public class MessageContent  implements Serializable {
             Objects.equals(this.card, messageContent.card) &&
             Objects.equals(this.carousel, messageContent.carousel) &&
             Objects.equals(this.text, messageContent.text) &&
-            Objects.equals(this.quickReplyV2, messageContent.quickReplyV2);
+            Objects.equals(this.quickReplyV2, messageContent.quickReplyV2) &&
+            Objects.equals(this.datePicker, messageContent.datePicker);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback, story, card, carousel, text, quickReplyV2);
+    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback, story, card, carousel, text, quickReplyV2, datePicker);
   }
 
   @Override
@@ -445,7 +445,6 @@ public class MessageContent  implements Serializable {
     sb.append("class MessageContent {\n");
     
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
@@ -460,6 +459,7 @@ public class MessageContent  implements Serializable {
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
+    sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
     sb.append("}");
     return sb.toString();
   }

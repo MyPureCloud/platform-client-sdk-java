@@ -2997,8 +2997,6 @@ try {
 
 Get parse job report
 
-getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}  
 
 Requires ALL permissions: 
@@ -3514,8 +3512,6 @@ try {
 > [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 Get content upload from URL job status
-
-getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}  
 
@@ -4476,8 +4472,6 @@ try {
 > Void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
 
 Send update to the parse operation
-
-patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}  
 
@@ -6623,8 +6617,6 @@ try {
 
 Import the parsed articles
 
-postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import  
 
 Requires ALL permissions: 
@@ -6686,8 +6678,6 @@ null (empty response body)
 > [KnowledgeParseJobResponse](KnowledgeParseJobResponse) postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
 
 Create parse job
-
-postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs  
 
@@ -6871,7 +6861,7 @@ try {
 # **postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync**
 
 
-> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, body)
 
 Start sync on Salesforce Knowledge integration source
 
@@ -6905,8 +6895,9 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String sourceId = "sourceId_example"; // String | Source ID
+Object body = null; // Object | 
 try {
-    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId);
+    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync");
@@ -6921,6 +6912,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **sourceId** | **String**| Source ID | 
+| **body** | **Object**|  | [optional] 
 {: class="table-striped"}
 
 
@@ -6993,7 +6985,7 @@ try {
 # **postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync**
 
 
-> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, body)
 
 Start synchronization on ServiceNow Knowledge integration source
 
@@ -7027,8 +7019,9 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String sourceId = "sourceId_example"; // String | Source ID
+Object body = null; // Object | 
 try {
-    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId);
+    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync");
@@ -7043,6 +7036,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **sourceId** | **String**| Source ID | 
+| **body** | **Object**|  | [optional] 
 {: class="table-striped"}
 
 
@@ -7118,8 +7112,6 @@ try {
 > [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 
 Create content upload from URL job
-
-postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs  
 
@@ -7360,4 +7352,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

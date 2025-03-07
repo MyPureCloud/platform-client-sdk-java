@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;

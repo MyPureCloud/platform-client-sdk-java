@@ -48,7 +48,7 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The user who last modified the associated entity")
+  @ApiModelProperty(example = "null", value = "The user who last modified the associated entity. The id may be 'System' if it was an automated process")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
@@ -62,7 +62,7 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The user who created the associated entity, if available")
+  @ApiModelProperty(example = "null", value = "The user who created the associated entity, if available. The id may be 'System' if it was an automated process")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;

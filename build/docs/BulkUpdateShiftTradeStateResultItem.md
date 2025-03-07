@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of the shift trade after the update request is processed |  [optional] |
-| **reviewedBy** | [**UserReference**](UserReference) | The user who reviewed the request, if applicable |  [optional] |
+| **reviewedBy** | [**UserReference**](UserReference) | The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process |  [optional] |
 | **reviewedDate** | [**Date**](Date) | The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **failureReason** | [**FailureReasonEnum**](#Enum--FailureReasonEnum) | The reason the update failed, if applicable |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the shift trade |  [optional] |
@@ -44,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

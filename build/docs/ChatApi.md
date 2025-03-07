@@ -1034,8 +1034,6 @@ try {
 
 Get a user's chat settings
 
-getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/users/{userId}/settings  
 
 Requires ANY permissions: 
@@ -1095,8 +1093,6 @@ try {
 > [ChatUserSettings](ChatUserSettings) getChatsUsersMeSettings()
 
 Get a user's chat settings
-
-getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/me/settings  
 
@@ -1400,8 +1396,6 @@ try {
 
 Update a user's chat settings
 
-patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/chats/users/{userId}/settings  
 
 Requires ANY permissions: 
@@ -1463,8 +1457,6 @@ try {
 > [ChatUserSettings](ChatUserSettings) patchChatsUsersMeSettings(body)
 
 Update a user's chat settings
-
-patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/users/me/settings  
 
@@ -2006,4 +1998,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

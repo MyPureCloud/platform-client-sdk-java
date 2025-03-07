@@ -786,6 +786,7 @@ public class OrganizationApi {
    * @return LimitCountListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LimitCountListing getOrganizationsLimitsNamespaceCounts(String namespaceName, String cursor, String entityId, String userId) throws IOException, ApiException {
     return  getOrganizationsLimitsNamespaceCounts(createGetOrganizationsLimitsNamespaceCountsRequest(namespaceName, cursor, entityId, userId));
@@ -800,6 +801,7 @@ public class OrganizationApi {
    * @param userId userid of the count (optional)
    * @return LimitCountListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceCountsWithHttpInfo(String namespaceName, String cursor, String entityId, String userId) throws IOException {
     return getOrganizationsLimitsNamespaceCounts(createGetOrganizationsLimitsNamespaceCountsRequest(namespaceName, cursor, entityId, userId).withHttpInfo());
@@ -825,6 +827,7 @@ public class OrganizationApi {
    * @return LimitCountListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LimitCountListing getOrganizationsLimitsNamespaceCounts(GetOrganizationsLimitsNamespaceCountsRequest request) throws IOException, ApiException {
     try {
@@ -843,6 +846,7 @@ public class OrganizationApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceCounts(ApiRequest<Void> request) throws IOException {
     try {
@@ -955,6 +959,7 @@ public class OrganizationApi {
    * @return LimitCountListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(String namespaceName, String limitName, String entityId, String userId, String cursor) throws IOException, ApiException {
     return  getOrganizationsLimitsNamespaceLimitCounts(createGetOrganizationsLimitsNamespaceLimitCountsRequest(namespaceName, limitName, entityId, userId, cursor));
@@ -970,6 +975,7 @@ public class OrganizationApi {
    * @param cursor Cursor provided when retrieving the last page (optional)
    * @return LimitCountListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceLimitCountsWithHttpInfo(String namespaceName, String limitName, String entityId, String userId, String cursor) throws IOException {
     return getOrganizationsLimitsNamespaceLimitCounts(createGetOrganizationsLimitsNamespaceLimitCountsRequest(namespaceName, limitName, entityId, userId, cursor).withHttpInfo());
@@ -997,6 +1003,7 @@ public class OrganizationApi {
    * @return LimitCountListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(GetOrganizationsLimitsNamespaceLimitCountsRequest request) throws IOException, ApiException {
     try {
@@ -1015,6 +1022,7 @@ public class OrganizationApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceLimitCounts(ApiRequest<Void> request) throws IOException {
     try {

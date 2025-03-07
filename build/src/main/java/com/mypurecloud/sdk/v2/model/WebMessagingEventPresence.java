@@ -45,7 +45,8 @@ public class WebMessagingEventPresence  implements Serializable {
     JOIN("Join"),
     DISCONNECT("Disconnect"),
     CLEAR("Clear"),
-    SIGNIN("SignIn");
+    SIGNIN("SignIn"),
+    SESSIONEXPIRED("SessionExpired");
 
     private String value;
 

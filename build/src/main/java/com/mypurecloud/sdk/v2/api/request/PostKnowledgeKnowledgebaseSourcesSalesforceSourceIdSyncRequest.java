@@ -154,6 +154,20 @@ public class PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest {
 	    return this;
 	} 
 
+	private Object body;
+	public Object getBody() {
+		return this.body;
+	}
+
+	public void setBody(Object body) {
+		this.body = body;
+	}
+
+	public PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest withBody(Object body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -173,7 +187,7 @@ public class PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() {
+    public ApiRequest<Object> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -191,6 +205,8 @@ public class PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest {
         
                 .withPathParameter("sourceId", sourceId)
         
+                .withBody(body)
+
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -224,6 +240,11 @@ public class PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest {
 
 		public Builder withSourceId(String sourceId) {
 			request.setSourceId(sourceId);
+			return this;
+		}
+
+		public Builder withBody(Object body) {
+			request.setBody(body);
 			return this;
 		}
 

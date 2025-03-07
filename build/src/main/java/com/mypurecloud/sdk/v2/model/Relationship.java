@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ import java.io.Serializable;
 public class Relationship  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private User user = null;
   private ExternalOrganization externalOrganization = null;
   private String relationship = null;
@@ -38,6 +40,24 @@ public class Relationship  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Relationship division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -120,6 +140,7 @@ public class Relationship  implements Serializable {
     Relationship relationship = (Relationship) o;
 
     return Objects.equals(this.id, relationship.id) &&
+            Objects.equals(this.division, relationship.division) &&
             Objects.equals(this.user, relationship.user) &&
             Objects.equals(this.externalOrganization, relationship.externalOrganization) &&
             Objects.equals(this.relationship, relationship.relationship) &&
@@ -129,7 +150,7 @@ public class Relationship  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, externalOrganization, relationship, externalDataSources, selfUri);
+    return Objects.hash(id, division, user, externalOrganization, relationship, externalDataSources, selfUri);
   }
 
   @Override
@@ -138,6 +159,7 @@ public class Relationship  implements Serializable {
     sb.append("class Relationship {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    relationship: ").append(toIndentedString(relationship)).append("\n");

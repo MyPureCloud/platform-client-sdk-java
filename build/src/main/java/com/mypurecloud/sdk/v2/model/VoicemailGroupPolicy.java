@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Group;
+import com.mypurecloud.sdk.v2.model.GroupEmailPolicy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -30,6 +31,7 @@ public class VoicemailGroupPolicy  implements Serializable {
   private Boolean disableEmailPii = null;
   private Boolean includeEmailTranscriptions = null;
   private String languagePreference = null;
+  private GroupEmailPolicy emailPolicy = null;
   private Integer rotateCallsSecs = null;
   private Integer stopRingingAfterRotations = null;
   private String overflowGroupId = null;
@@ -201,6 +203,24 @@ public class VoicemailGroupPolicy  implements Serializable {
 
 
   /**
+   * The email policy for the group
+   **/
+  public VoicemailGroupPolicy emailPolicy(GroupEmailPolicy emailPolicy) {
+    this.emailPolicy = emailPolicy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email policy for the group")
+  @JsonProperty("emailPolicy")
+  public GroupEmailPolicy getEmailPolicy() {
+    return emailPolicy;
+  }
+  public void setEmailPolicy(GroupEmailPolicy emailPolicy) {
+    this.emailPolicy = emailPolicy;
+  }
+
+
+  /**
    * How many seconds to ring before rotating to the next member in the group
    **/
   public VoicemailGroupPolicy rotateCallsSecs(Integer rotateCallsSecs) {
@@ -325,6 +345,7 @@ public class VoicemailGroupPolicy  implements Serializable {
             Objects.equals(this.disableEmailPii, voicemailGroupPolicy.disableEmailPii) &&
             Objects.equals(this.includeEmailTranscriptions, voicemailGroupPolicy.includeEmailTranscriptions) &&
             Objects.equals(this.languagePreference, voicemailGroupPolicy.languagePreference) &&
+            Objects.equals(this.emailPolicy, voicemailGroupPolicy.emailPolicy) &&
             Objects.equals(this.rotateCallsSecs, voicemailGroupPolicy.rotateCallsSecs) &&
             Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations) &&
             Objects.equals(this.overflowGroupId, voicemailGroupPolicy.overflowGroupId) &&
@@ -335,7 +356,7 @@ public class VoicemailGroupPolicy  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, group, enabled, sendEmailNotifications, disableEmailPii, includeEmailTranscriptions, languagePreference, rotateCallsSecs, stopRingingAfterRotations, overflowGroupId, groupAlertType, interactiveResponsePromptId, interactiveResponseRequired);
+    return Objects.hash(name, group, enabled, sendEmailNotifications, disableEmailPii, includeEmailTranscriptions, languagePreference, emailPolicy, rotateCallsSecs, stopRingingAfterRotations, overflowGroupId, groupAlertType, interactiveResponsePromptId, interactiveResponseRequired);
   }
 
   @Override
@@ -350,6 +371,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     sb.append("    disableEmailPii: ").append(toIndentedString(disableEmailPii)).append("\n");
     sb.append("    includeEmailTranscriptions: ").append(toIndentedString(includeEmailTranscriptions)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    sb.append("    emailPolicy: ").append(toIndentedString(emailPolicy)).append("\n");
     sb.append("    rotateCallsSecs: ").append(toIndentedString(rotateCallsSecs)).append("\n");
     sb.append("    stopRingingAfterRotations: ").append(toIndentedString(stopRingingAfterRotations)).append("\n");
     sb.append("    overflowGroupId: ").append(toIndentedString(overflowGroupId)).append("\n");

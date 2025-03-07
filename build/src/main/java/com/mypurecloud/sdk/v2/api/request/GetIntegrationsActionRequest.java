@@ -142,6 +142,20 @@ public class GetIntegrationsActionRequest {
 		}
 	}
 
+	private Boolean flatten;
+	public Boolean getFlatten() {
+		return this.flatten;
+	}
+
+	public void setFlatten(Boolean flatten) {
+		this.flatten = flatten;
+	}
+
+	public GetIntegrationsActionRequest withFlatten(Boolean flatten) {
+	    this.setFlatten(flatten);
+	    return this;
+	} 
+
 	private Boolean includeConfig;
 	public Boolean getIncludeConfig() {
 		return this.includeConfig;
@@ -190,6 +204,9 @@ public class GetIntegrationsActionRequest {
                 .withQueryParameters("expand", "", expand)
         
 
+                .withQueryParameters("flatten", "", flatten)
+        
+
                 .withQueryParameters("includeConfig", "", includeConfig)
         
 		.withCustomHeaders(customHeaders)
@@ -235,6 +252,11 @@ public class GetIntegrationsActionRequest {
 		    request.setExpand(expand.toString());
 
 		    return this;
+		}
+
+		public Builder withFlatten(Boolean flatten) {
+			request.setFlatten(flatten);
+			return this;
 		}
 
 		public Builder withIncludeConfig(Boolean includeConfig) {

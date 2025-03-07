@@ -164,14 +164,14 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
 
 
   /**
-   * The user who reviewed the request, if applicable
+   * The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process
    **/
   public BulkUpdateShiftTradeStateResultItem reviewedBy(UserReference reviewedBy) {
     this.reviewedBy = reviewedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who reviewed the request, if applicable")
+  @ApiModelProperty(example = "null", value = "The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process")
   @JsonProperty("reviewedBy")
   public UserReference getReviewedBy() {
     return reviewedBy;

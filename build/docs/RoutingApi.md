@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
 | [**getRoutingEmailDomain**](RoutingApi#getRoutingEmailDomain) | Get domain |
 | [**getRoutingEmailDomainRoute**](RoutingApi#getRoutingEmailDomainRoute) | Get a route |
+| [**getRoutingEmailDomainRouteIdentityresolution**](RoutingApi#getRoutingEmailDomainRouteIdentityresolution) | Get a route identity resolution setting. |
 | [**getRoutingEmailDomainRoutes**](RoutingApi#getRoutingEmailDomainRoutes) | Get routes |
 | [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | Get domains |
 | [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | Get domain |
@@ -57,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
 | [**getRoutingQueueComparisonperiods**](RoutingApi#getRoutingQueueComparisonperiods) | Get list of comparison periods |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
+| [**getRoutingQueueIdentityresolution**](RoutingApi#getRoutingQueueIdentityresolution) | Get Queue IdentityResolution Settings. |
 | [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
 | [**getRoutingQueueMembers**](RoutingApi#getRoutingQueueMembers) | Get the members of this queue. |
 | [**getRoutingQueueUsers**](RoutingApi#getRoutingQueueUsers) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue. |
@@ -77,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | Get an Address by Id for SMS |
 | [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
+| [**getRoutingSmsIdentityresolutionPhonenumber**](RoutingApi#getRoutingSmsIdentityresolutionPhonenumber) | Get a SMS identity resolution settings. |
 | [**getRoutingSmsPhonenumber**](RoutingApi#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
 | [**getRoutingSmsPhonenumbers**](RoutingApi#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
 | [**getRoutingUserDirectroutingbackupSettings**](RoutingApi#getRoutingUserDirectroutingbackupSettings) | Get the user's Direct Routing Backup settings. |
@@ -141,11 +144,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUserRoutingskills**](RoutingApi#postUserRoutingskills) | Assign a routing skill to a user |
 | [**putRoutingDirectroutingbackupSettingsMe**](RoutingApi#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingEmailDomainRoute**](RoutingApi#putRoutingEmailDomainRoute) | Update a route |
+| [**putRoutingEmailDomainRouteIdentityresolution**](RoutingApi#putRoutingEmailDomainRouteIdentityresolution) | Update identity resolution settings for a route. |
 | [**putRoutingEmailOutboundDomainActivation**](RoutingApi#putRoutingEmailOutboundDomainActivation) | Request an activation status (cname + dkim) update of an outbound domain |
 | [**putRoutingMessageRecipient**](RoutingApi#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi#putRoutingQueue) | Update a queue |
+| [**putRoutingQueueIdentityresolution**](RoutingApi#putRoutingQueueIdentityresolution) | Update Queue IdentityResolution Settings. |
 | [**putRoutingSettings**](RoutingApi#putRoutingSettings) | Update an organization's routing settings |
 | [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | Update Transcription Settings |
+| [**putRoutingSmsIdentityresolutionPhonenumber**](RoutingApi#putRoutingSmsIdentityresolutionPhonenumber) | Update an SMS identity resolution settings. |
 | [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
@@ -2037,6 +2043,70 @@ try {
 [**InboundRoute**](InboundRoute)
 
 
+# **getRoutingEmailDomainRouteIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+
+Get a route identity resolution setting.
+
+getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainName = "domainName_example"; // String | email domain
+String routeId = "routeId_example"; // String | route ID
+try {
+    IdentityResolutionConfig result = apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainRouteIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainName** | **String**| email domain | 
+| **routeId** | **String**| route ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 # **getRoutingEmailDomainRoutes**
 
 
@@ -3315,6 +3385,68 @@ try {
 ### Return type
 
 [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
+
+
+# **getRoutingQueueIdentityresolution**
+
+
+> [IdentityResolutionQueueConfig](IdentityResolutionQueueConfig) getRoutingQueueIdentityresolution(queueId)
+
+Get Queue IdentityResolution Settings.
+
+getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/queues/{queueId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:queue:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+try {
+    IdentityResolutionQueueConfig result = apiInstance.getRoutingQueueIdentityresolution(queueId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)
 
 
 # **getRoutingQueueMediatypeEstimatedwaittime**
@@ -4615,6 +4747,68 @@ try {
 ### Return type
 
 [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing)
+
+
+# **getRoutingSmsIdentityresolutionPhonenumber**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) getRoutingSmsIdentityresolutionPhonenumber(addressId)
+
+Get a SMS identity resolution settings.
+
+getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}  
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    IdentityResolutionConfig result = apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsIdentityresolutionPhonenumber");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 # **getRoutingSmsPhonenumber**
@@ -8570,6 +8764,72 @@ try {
 [**InboundRoute**](InboundRoute)
 
 
+# **putRoutingEmailDomainRouteIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+
+Update identity resolution settings for a route.
+
+putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainName = "domainName_example"; // String | email domain
+String routeId = "routeId_example"; // String | route ID
+IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+try {
+    IdentityResolutionConfig result = apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingEmailDomainRouteIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainName** | **String**| email domain | 
+| **routeId** | **String**| route ID | 
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 # **putRoutingEmailOutboundDomainActivation**
 
 
@@ -8751,6 +9011,70 @@ try {
 [**Queue**](Queue)
 
 
+# **putRoutingQueueIdentityresolution**
+
+
+> [IdentityResolutionQueueConfig](IdentityResolutionQueueConfig) putRoutingQueueIdentityresolution(queueId, body)
+
+Update Queue IdentityResolution Settings.
+
+putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:queue:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+IdentityResolutionQueueConfig body = new IdentityResolutionQueueConfig(); // IdentityResolutionQueueConfig | 
+try {
+    IdentityResolutionQueueConfig result = apiInstance.putRoutingQueueIdentityresolution(queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingQueueIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **body** | [**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)
+
+
 # **putRoutingSettings**
 
 
@@ -8867,6 +9191,70 @@ try {
 ### Return type
 
 [**TranscriptionSettings**](TranscriptionSettings)
+
+
+# **putRoutingSmsIdentityresolutionPhonenumber**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+
+Update an SMS identity resolution settings.
+
+putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}  
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+try {
+    IdentityResolutionConfig result = apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingSmsIdentityresolutionPhonenumber");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | 
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 # **putRoutingUserDirectroutingbackupSettings**
@@ -9296,4 +9684,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

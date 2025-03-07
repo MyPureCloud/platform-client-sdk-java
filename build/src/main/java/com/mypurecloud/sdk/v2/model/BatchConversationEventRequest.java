@@ -16,6 +16,20 @@ import com.mypurecloud.sdk.v2.model.CommunicationAnsweredEvent;
 import com.mypurecloud.sdk.v2.model.CommunicationDispositionAppliedEvent;
 import com.mypurecloud.sdk.v2.model.CommunicationEndedEvent;
 import com.mypurecloud.sdk.v2.model.ConsultTransferEvent;
+import com.mypurecloud.sdk.v2.model.EmailBeginTransmittingEvent;
+import com.mypurecloud.sdk.v2.model.EmailCommunicationAnsweredEvent;
+import com.mypurecloud.sdk.v2.model.EmailCommunicationDispositionAppliedEvent;
+import com.mypurecloud.sdk.v2.model.EmailCommunicationEndedEvent;
+import com.mypurecloud.sdk.v2.model.EmailCommunicationSentMessageEvent;
+import com.mypurecloud.sdk.v2.model.EmailEndTransferEvent;
+import com.mypurecloud.sdk.v2.model.EmailExternalEstablishedEvent;
+import com.mypurecloud.sdk.v2.model.EmailFlowEstablishedEvent;
+import com.mypurecloud.sdk.v2.model.EmailHoldUpdatedEvent;
+import com.mypurecloud.sdk.v2.model.EmailProgressTransferEvent;
+import com.mypurecloud.sdk.v2.model.EmailRoutingEstablishedEvent;
+import com.mypurecloud.sdk.v2.model.EmailRoutingTransferEvent;
+import com.mypurecloud.sdk.v2.model.EmailUserEstablishedEvent;
+import com.mypurecloud.sdk.v2.model.EmailUserTransferEvent;
 import com.mypurecloud.sdk.v2.model.EndConsultTransferEvent;
 import com.mypurecloud.sdk.v2.model.EndTransferEvent;
 import com.mypurecloud.sdk.v2.model.ExternalEstablishedEvent;
@@ -60,6 +74,20 @@ public class BatchConversationEventRequest  implements Serializable {
   private List<ConsultTransferEvent> consultTransferEvents = new ArrayList<ConsultTransferEvent>();
   private List<ProgressConsultTransferEvent> progressConsultTransferEvents = new ArrayList<ProgressConsultTransferEvent>();
   private List<EndConsultTransferEvent> endConsultTransferEvents = new ArrayList<EndConsultTransferEvent>();
+  private List<EmailBeginTransmittingEvent> emailBeginTransmittingEvents = new ArrayList<EmailBeginTransmittingEvent>();
+  private List<EmailCommunicationEndedEvent> emailCommunicationEndedEvents = new ArrayList<EmailCommunicationEndedEvent>();
+  private List<EmailExternalEstablishedEvent> emailExternalEstablishedEvents = new ArrayList<EmailExternalEstablishedEvent>();
+  private List<EmailFlowEstablishedEvent> emailFlowEstablishedEvents = new ArrayList<EmailFlowEstablishedEvent>();
+  private List<EmailRoutingEstablishedEvent> emailRoutingEstablishedEvents = new ArrayList<EmailRoutingEstablishedEvent>();
+  private List<EmailUserEstablishedEvent> emailUserEstablishedEvents = new ArrayList<EmailUserEstablishedEvent>();
+  private List<EmailCommunicationAnsweredEvent> emailCommunicationAnsweredEvents = new ArrayList<EmailCommunicationAnsweredEvent>();
+  private List<EmailCommunicationDispositionAppliedEvent> emailCommunicationDispositionAppliedEvents = new ArrayList<EmailCommunicationDispositionAppliedEvent>();
+  private List<EmailCommunicationSentMessageEvent> emailCommunicationSentMessageEvents = new ArrayList<EmailCommunicationSentMessageEvent>();
+  private List<EmailHoldUpdatedEvent> emailHoldUpdatedEvents = new ArrayList<EmailHoldUpdatedEvent>();
+  private List<EmailEndTransferEvent> emailEndTransferEvents = new ArrayList<EmailEndTransferEvent>();
+  private List<EmailProgressTransferEvent> emailProgressTransferEvents = new ArrayList<EmailProgressTransferEvent>();
+  private List<EmailRoutingTransferEvent> emailRoutingTransferEvents = new ArrayList<EmailRoutingTransferEvent>();
+  private List<EmailUserTransferEvent> emailUserTransferEvents = new ArrayList<EmailUserTransferEvent>();
 
   
   /**
@@ -386,6 +414,258 @@ public class BatchConversationEventRequest  implements Serializable {
   }
 
 
+  /**
+   * Email - EmailBeginTransmittingEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailBeginTransmittingEvents(List<EmailBeginTransmittingEvent> emailBeginTransmittingEvents) {
+    this.emailBeginTransmittingEvents = emailBeginTransmittingEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailBeginTransmittingEvent events for this batch")
+  @JsonProperty("emailBeginTransmittingEvents")
+  public List<EmailBeginTransmittingEvent> getEmailBeginTransmittingEvents() {
+    return emailBeginTransmittingEvents;
+  }
+  public void setEmailBeginTransmittingEvents(List<EmailBeginTransmittingEvent> emailBeginTransmittingEvents) {
+    this.emailBeginTransmittingEvents = emailBeginTransmittingEvents;
+  }
+
+
+  /**
+   * Email - EmailCommunicationEndedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailCommunicationEndedEvents(List<EmailCommunicationEndedEvent> emailCommunicationEndedEvents) {
+    this.emailCommunicationEndedEvents = emailCommunicationEndedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailCommunicationEndedEvent events for this batch")
+  @JsonProperty("emailCommunicationEndedEvents")
+  public List<EmailCommunicationEndedEvent> getEmailCommunicationEndedEvents() {
+    return emailCommunicationEndedEvents;
+  }
+  public void setEmailCommunicationEndedEvents(List<EmailCommunicationEndedEvent> emailCommunicationEndedEvents) {
+    this.emailCommunicationEndedEvents = emailCommunicationEndedEvents;
+  }
+
+
+  /**
+   * Email - EmailExternalEstablishedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailExternalEstablishedEvents(List<EmailExternalEstablishedEvent> emailExternalEstablishedEvents) {
+    this.emailExternalEstablishedEvents = emailExternalEstablishedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailExternalEstablishedEvent events for this batch")
+  @JsonProperty("emailExternalEstablishedEvents")
+  public List<EmailExternalEstablishedEvent> getEmailExternalEstablishedEvents() {
+    return emailExternalEstablishedEvents;
+  }
+  public void setEmailExternalEstablishedEvents(List<EmailExternalEstablishedEvent> emailExternalEstablishedEvents) {
+    this.emailExternalEstablishedEvents = emailExternalEstablishedEvents;
+  }
+
+
+  /**
+   * Email - EmailFlowEstablishedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailFlowEstablishedEvents(List<EmailFlowEstablishedEvent> emailFlowEstablishedEvents) {
+    this.emailFlowEstablishedEvents = emailFlowEstablishedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailFlowEstablishedEvent events for this batch")
+  @JsonProperty("emailFlowEstablishedEvents")
+  public List<EmailFlowEstablishedEvent> getEmailFlowEstablishedEvents() {
+    return emailFlowEstablishedEvents;
+  }
+  public void setEmailFlowEstablishedEvents(List<EmailFlowEstablishedEvent> emailFlowEstablishedEvents) {
+    this.emailFlowEstablishedEvents = emailFlowEstablishedEvents;
+  }
+
+
+  /**
+   * Email - EmailRoutingEstablishedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailRoutingEstablishedEvents(List<EmailRoutingEstablishedEvent> emailRoutingEstablishedEvents) {
+    this.emailRoutingEstablishedEvents = emailRoutingEstablishedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailRoutingEstablishedEvent events for this batch")
+  @JsonProperty("emailRoutingEstablishedEvents")
+  public List<EmailRoutingEstablishedEvent> getEmailRoutingEstablishedEvents() {
+    return emailRoutingEstablishedEvents;
+  }
+  public void setEmailRoutingEstablishedEvents(List<EmailRoutingEstablishedEvent> emailRoutingEstablishedEvents) {
+    this.emailRoutingEstablishedEvents = emailRoutingEstablishedEvents;
+  }
+
+
+  /**
+   * Email - EmailUserEstablishedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailUserEstablishedEvents(List<EmailUserEstablishedEvent> emailUserEstablishedEvents) {
+    this.emailUserEstablishedEvents = emailUserEstablishedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailUserEstablishedEvent events for this batch")
+  @JsonProperty("emailUserEstablishedEvents")
+  public List<EmailUserEstablishedEvent> getEmailUserEstablishedEvents() {
+    return emailUserEstablishedEvents;
+  }
+  public void setEmailUserEstablishedEvents(List<EmailUserEstablishedEvent> emailUserEstablishedEvents) {
+    this.emailUserEstablishedEvents = emailUserEstablishedEvents;
+  }
+
+
+  /**
+   * Email - EmailCommunicationAnsweredEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailCommunicationAnsweredEvents(List<EmailCommunicationAnsweredEvent> emailCommunicationAnsweredEvents) {
+    this.emailCommunicationAnsweredEvents = emailCommunicationAnsweredEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailCommunicationAnsweredEvent events for this batch")
+  @JsonProperty("emailCommunicationAnsweredEvents")
+  public List<EmailCommunicationAnsweredEvent> getEmailCommunicationAnsweredEvents() {
+    return emailCommunicationAnsweredEvents;
+  }
+  public void setEmailCommunicationAnsweredEvents(List<EmailCommunicationAnsweredEvent> emailCommunicationAnsweredEvents) {
+    this.emailCommunicationAnsweredEvents = emailCommunicationAnsweredEvents;
+  }
+
+
+  /**
+   * Email - EmailCommunicationDispositionAppliedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailCommunicationDispositionAppliedEvents(List<EmailCommunicationDispositionAppliedEvent> emailCommunicationDispositionAppliedEvents) {
+    this.emailCommunicationDispositionAppliedEvents = emailCommunicationDispositionAppliedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailCommunicationDispositionAppliedEvent events for this batch")
+  @JsonProperty("emailCommunicationDispositionAppliedEvents")
+  public List<EmailCommunicationDispositionAppliedEvent> getEmailCommunicationDispositionAppliedEvents() {
+    return emailCommunicationDispositionAppliedEvents;
+  }
+  public void setEmailCommunicationDispositionAppliedEvents(List<EmailCommunicationDispositionAppliedEvent> emailCommunicationDispositionAppliedEvents) {
+    this.emailCommunicationDispositionAppliedEvents = emailCommunicationDispositionAppliedEvents;
+  }
+
+
+  /**
+   * Email - EmailCommunicationSentMessageEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailCommunicationSentMessageEvents(List<EmailCommunicationSentMessageEvent> emailCommunicationSentMessageEvents) {
+    this.emailCommunicationSentMessageEvents = emailCommunicationSentMessageEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailCommunicationSentMessageEvent events for this batch")
+  @JsonProperty("emailCommunicationSentMessageEvents")
+  public List<EmailCommunicationSentMessageEvent> getEmailCommunicationSentMessageEvents() {
+    return emailCommunicationSentMessageEvents;
+  }
+  public void setEmailCommunicationSentMessageEvents(List<EmailCommunicationSentMessageEvent> emailCommunicationSentMessageEvents) {
+    this.emailCommunicationSentMessageEvents = emailCommunicationSentMessageEvents;
+  }
+
+
+  /**
+   * Email - EmailHoldUpdatedEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailHoldUpdatedEvents(List<EmailHoldUpdatedEvent> emailHoldUpdatedEvents) {
+    this.emailHoldUpdatedEvents = emailHoldUpdatedEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailHoldUpdatedEvent events for this batch")
+  @JsonProperty("emailHoldUpdatedEvents")
+  public List<EmailHoldUpdatedEvent> getEmailHoldUpdatedEvents() {
+    return emailHoldUpdatedEvents;
+  }
+  public void setEmailHoldUpdatedEvents(List<EmailHoldUpdatedEvent> emailHoldUpdatedEvents) {
+    this.emailHoldUpdatedEvents = emailHoldUpdatedEvents;
+  }
+
+
+  /**
+   * Email - EmailEndTransferEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailEndTransferEvents(List<EmailEndTransferEvent> emailEndTransferEvents) {
+    this.emailEndTransferEvents = emailEndTransferEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailEndTransferEvent events for this batch")
+  @JsonProperty("emailEndTransferEvents")
+  public List<EmailEndTransferEvent> getEmailEndTransferEvents() {
+    return emailEndTransferEvents;
+  }
+  public void setEmailEndTransferEvents(List<EmailEndTransferEvent> emailEndTransferEvents) {
+    this.emailEndTransferEvents = emailEndTransferEvents;
+  }
+
+
+  /**
+   * Email - EmailProgressTransferEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailProgressTransferEvents(List<EmailProgressTransferEvent> emailProgressTransferEvents) {
+    this.emailProgressTransferEvents = emailProgressTransferEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailProgressTransferEvent events for this batch")
+  @JsonProperty("emailProgressTransferEvents")
+  public List<EmailProgressTransferEvent> getEmailProgressTransferEvents() {
+    return emailProgressTransferEvents;
+  }
+  public void setEmailProgressTransferEvents(List<EmailProgressTransferEvent> emailProgressTransferEvents) {
+    this.emailProgressTransferEvents = emailProgressTransferEvents;
+  }
+
+
+  /**
+   * Email - EmailRoutingTransferEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailRoutingTransferEvents(List<EmailRoutingTransferEvent> emailRoutingTransferEvents) {
+    this.emailRoutingTransferEvents = emailRoutingTransferEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailRoutingTransferEvent events for this batch")
+  @JsonProperty("emailRoutingTransferEvents")
+  public List<EmailRoutingTransferEvent> getEmailRoutingTransferEvents() {
+    return emailRoutingTransferEvents;
+  }
+  public void setEmailRoutingTransferEvents(List<EmailRoutingTransferEvent> emailRoutingTransferEvents) {
+    this.emailRoutingTransferEvents = emailRoutingTransferEvents;
+  }
+
+
+  /**
+   * Email - EmailUserTransferEvent events for this batch
+   **/
+  public BatchConversationEventRequest emailUserTransferEvents(List<EmailUserTransferEvent> emailUserTransferEvents) {
+    this.emailUserTransferEvents = emailUserTransferEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email - EmailUserTransferEvent events for this batch")
+  @JsonProperty("emailUserTransferEvents")
+  public List<EmailUserTransferEvent> getEmailUserTransferEvents() {
+    return emailUserTransferEvents;
+  }
+  public void setEmailUserTransferEvents(List<EmailUserTransferEvent> emailUserTransferEvents) {
+    this.emailUserTransferEvents = emailUserTransferEvents;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -413,12 +693,26 @@ public class BatchConversationEventRequest  implements Serializable {
             Objects.equals(this.communicationEndedEvents, batchConversationEventRequest.communicationEndedEvents) &&
             Objects.equals(this.consultTransferEvents, batchConversationEventRequest.consultTransferEvents) &&
             Objects.equals(this.progressConsultTransferEvents, batchConversationEventRequest.progressConsultTransferEvents) &&
-            Objects.equals(this.endConsultTransferEvents, batchConversationEventRequest.endConsultTransferEvents);
+            Objects.equals(this.endConsultTransferEvents, batchConversationEventRequest.endConsultTransferEvents) &&
+            Objects.equals(this.emailBeginTransmittingEvents, batchConversationEventRequest.emailBeginTransmittingEvents) &&
+            Objects.equals(this.emailCommunicationEndedEvents, batchConversationEventRequest.emailCommunicationEndedEvents) &&
+            Objects.equals(this.emailExternalEstablishedEvents, batchConversationEventRequest.emailExternalEstablishedEvents) &&
+            Objects.equals(this.emailFlowEstablishedEvents, batchConversationEventRequest.emailFlowEstablishedEvents) &&
+            Objects.equals(this.emailRoutingEstablishedEvents, batchConversationEventRequest.emailRoutingEstablishedEvents) &&
+            Objects.equals(this.emailUserEstablishedEvents, batchConversationEventRequest.emailUserEstablishedEvents) &&
+            Objects.equals(this.emailCommunicationAnsweredEvents, batchConversationEventRequest.emailCommunicationAnsweredEvents) &&
+            Objects.equals(this.emailCommunicationDispositionAppliedEvents, batchConversationEventRequest.emailCommunicationDispositionAppliedEvents) &&
+            Objects.equals(this.emailCommunicationSentMessageEvents, batchConversationEventRequest.emailCommunicationSentMessageEvents) &&
+            Objects.equals(this.emailHoldUpdatedEvents, batchConversationEventRequest.emailHoldUpdatedEvents) &&
+            Objects.equals(this.emailEndTransferEvents, batchConversationEventRequest.emailEndTransferEvents) &&
+            Objects.equals(this.emailProgressTransferEvents, batchConversationEventRequest.emailProgressTransferEvents) &&
+            Objects.equals(this.emailRoutingTransferEvents, batchConversationEventRequest.emailRoutingTransferEvents) &&
+            Objects.equals(this.emailUserTransferEvents, batchConversationEventRequest.emailUserTransferEvents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endTransferEvents, phoneTransferEvents, progressTransferEvents, routingTransferEvents, userTransferEvents, communicationAnsweredEvents, communicationDispositionAppliedEvents, holdUpdatedEvents, externalEstablishedEvents, ivrEstablishedEvents, phoneEstablishedEvents, routingEstablishedEvents, userEstablishedEvents, audioUpdatedEvents, communicationEndedEvents, consultTransferEvents, progressConsultTransferEvents, endConsultTransferEvents);
+    return Objects.hash(endTransferEvents, phoneTransferEvents, progressTransferEvents, routingTransferEvents, userTransferEvents, communicationAnsweredEvents, communicationDispositionAppliedEvents, holdUpdatedEvents, externalEstablishedEvents, ivrEstablishedEvents, phoneEstablishedEvents, routingEstablishedEvents, userEstablishedEvents, audioUpdatedEvents, communicationEndedEvents, consultTransferEvents, progressConsultTransferEvents, endConsultTransferEvents, emailBeginTransmittingEvents, emailCommunicationEndedEvents, emailExternalEstablishedEvents, emailFlowEstablishedEvents, emailRoutingEstablishedEvents, emailUserEstablishedEvents, emailCommunicationAnsweredEvents, emailCommunicationDispositionAppliedEvents, emailCommunicationSentMessageEvents, emailHoldUpdatedEvents, emailEndTransferEvents, emailProgressTransferEvents, emailRoutingTransferEvents, emailUserTransferEvents);
   }
 
   @Override
@@ -444,6 +738,20 @@ public class BatchConversationEventRequest  implements Serializable {
     sb.append("    consultTransferEvents: ").append(toIndentedString(consultTransferEvents)).append("\n");
     sb.append("    progressConsultTransferEvents: ").append(toIndentedString(progressConsultTransferEvents)).append("\n");
     sb.append("    endConsultTransferEvents: ").append(toIndentedString(endConsultTransferEvents)).append("\n");
+    sb.append("    emailBeginTransmittingEvents: ").append(toIndentedString(emailBeginTransmittingEvents)).append("\n");
+    sb.append("    emailCommunicationEndedEvents: ").append(toIndentedString(emailCommunicationEndedEvents)).append("\n");
+    sb.append("    emailExternalEstablishedEvents: ").append(toIndentedString(emailExternalEstablishedEvents)).append("\n");
+    sb.append("    emailFlowEstablishedEvents: ").append(toIndentedString(emailFlowEstablishedEvents)).append("\n");
+    sb.append("    emailRoutingEstablishedEvents: ").append(toIndentedString(emailRoutingEstablishedEvents)).append("\n");
+    sb.append("    emailUserEstablishedEvents: ").append(toIndentedString(emailUserEstablishedEvents)).append("\n");
+    sb.append("    emailCommunicationAnsweredEvents: ").append(toIndentedString(emailCommunicationAnsweredEvents)).append("\n");
+    sb.append("    emailCommunicationDispositionAppliedEvents: ").append(toIndentedString(emailCommunicationDispositionAppliedEvents)).append("\n");
+    sb.append("    emailCommunicationSentMessageEvents: ").append(toIndentedString(emailCommunicationSentMessageEvents)).append("\n");
+    sb.append("    emailHoldUpdatedEvents: ").append(toIndentedString(emailHoldUpdatedEvents)).append("\n");
+    sb.append("    emailEndTransferEvents: ").append(toIndentedString(emailEndTransferEvents)).append("\n");
+    sb.append("    emailProgressTransferEvents: ").append(toIndentedString(emailProgressTransferEvents)).append("\n");
+    sb.append("    emailRoutingTransferEvents: ").append(toIndentedString(emailRoutingTransferEvents)).append("\n");
+    sb.append("    emailUserTransferEvents: ").append(toIndentedString(emailUserTransferEvents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

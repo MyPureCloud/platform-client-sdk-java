@@ -68,6 +68,7 @@ public class Limit  implements Serializable {
     EMPLOYEE_ENGAGEMENT("employee.engagement"),
     EVENT_ORCHESTRATION("event.orchestration"),
     EXTERNAL_CONTACTS("external.contacts"),
+    EXTERNAL_EVENTS_DATA_INGESTION("external.events.data.ingestion"),
     GAMIFICATION("gamification"),
     GCV("gcv"),
     GDPR("gdpr"),

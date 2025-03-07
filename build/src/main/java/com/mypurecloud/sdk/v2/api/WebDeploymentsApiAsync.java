@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
@@ -37,6 +38,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationsRequest
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentCobrowseSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentConfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationsRequest;
@@ -45,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenOauthcodegrantj
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenRefreshRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsDeploymentIdentityresolutionRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -890,6 +893,83 @@ public class WebDeploymentsApiAsync {
   }
 
   /**
+   * Get a deployment identity resolution setting.
+   * 
+   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolutionAsync(GetWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a deployment identity resolution setting.
+   * 
+   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get deployments
    * 
    * @param request the request object
@@ -1478,6 +1558,83 @@ public class WebDeploymentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update identity resolution settings for a deployment.
+   * 
+   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolutionAsync(PutWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update identity resolution settings for a deployment.
+   * 
+   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

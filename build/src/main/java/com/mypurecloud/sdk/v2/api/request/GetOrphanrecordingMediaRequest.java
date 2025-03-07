@@ -57,7 +57,6 @@ import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 
 public class GetOrphanrecordingMediaRequest {
 

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -25,6 +26,7 @@ import java.io.Serializable;
 public class ExternalOrganizationIdentifier  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -82,6 +84,24 @@ public class ExternalOrganizationIdentifier  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public ExternalOrganizationIdentifier division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -175,6 +195,7 @@ public class ExternalOrganizationIdentifier  implements Serializable {
     ExternalOrganizationIdentifier externalOrganizationIdentifier = (ExternalOrganizationIdentifier) o;
 
     return Objects.equals(this.id, externalOrganizationIdentifier.id) &&
+            Objects.equals(this.division, externalOrganizationIdentifier.division) &&
             Objects.equals(this.type, externalOrganizationIdentifier.type) &&
             Objects.equals(this.value, externalOrganizationIdentifier.value) &&
             Objects.equals(this.dateCreated, externalOrganizationIdentifier.dateCreated) &&
@@ -184,7 +205,7 @@ public class ExternalOrganizationIdentifier  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, value, dateCreated, externalSource, selfUri);
+    return Objects.hash(id, division, type, value, dateCreated, externalSource, selfUri);
   }
 
   @Override
@@ -193,6 +214,7 @@ public class ExternalOrganizationIdentifier  implements Serializable {
     sb.append("class ExternalOrganizationIdentifier {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

@@ -9038,26 +9038,30 @@ public class OutboundApi {
    * Update the outbound settings for this organization
    * 
    * @param body outboundSettings (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchOutboundSettings(OutboundSettings body) throws IOException, ApiException {
-     patchOutboundSettings(createPatchOutboundSettingsRequest(body));
+  public void patchOutboundSettings(OutboundSettings body, Boolean useMaxCallsPerAgentDecimal) throws IOException, ApiException {
+     patchOutboundSettings(createPatchOutboundSettingsRequest(body, useMaxCallsPerAgentDecimal));
   }
 
   /**
    * Update the outbound settings for this organization
    * 
    * @param body outboundSettings (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchOutboundSettingsWithHttpInfo(OutboundSettings body) throws IOException {
-    return patchOutboundSettings(createPatchOutboundSettingsRequest(body).withHttpInfo());
+  public ApiResponse<Void> patchOutboundSettingsWithHttpInfo(OutboundSettings body, Boolean useMaxCallsPerAgentDecimal) throws IOException {
+    return patchOutboundSettings(createPatchOutboundSettingsRequest(body, useMaxCallsPerAgentDecimal).withHttpInfo());
   }
 
-  private PatchOutboundSettingsRequest createPatchOutboundSettingsRequest(OutboundSettings body) {
+  private PatchOutboundSettingsRequest createPatchOutboundSettingsRequest(OutboundSettings body, Boolean useMaxCallsPerAgentDecimal) {
     return PatchOutboundSettingsRequest.builder()
             .withBody(body)
+
+            .withUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal)
 
             .build();
   }
@@ -9739,28 +9743,32 @@ public class OutboundApi {
    * Create a campaign.
    * 
    * @param body Campaign (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @return Campaign
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Campaign postOutboundCampaigns(Campaign body) throws IOException, ApiException {
-    return  postOutboundCampaigns(createPostOutboundCampaignsRequest(body));
+  public Campaign postOutboundCampaigns(Campaign body, Boolean useMaxCallsPerAgentDecimal) throws IOException, ApiException {
+    return  postOutboundCampaigns(createPostOutboundCampaignsRequest(body, useMaxCallsPerAgentDecimal));
   }
 
   /**
    * Create a campaign.
    * 
    * @param body Campaign (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @return Campaign
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body) throws IOException {
-    return postOutboundCampaigns(createPostOutboundCampaignsRequest(body).withHttpInfo());
+  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body, Boolean useMaxCallsPerAgentDecimal) throws IOException {
+    return postOutboundCampaigns(createPostOutboundCampaignsRequest(body, useMaxCallsPerAgentDecimal).withHttpInfo());
   }
 
-  private PostOutboundCampaignsRequest createPostOutboundCampaignsRequest(Campaign body) {
+  private PostOutboundCampaignsRequest createPostOutboundCampaignsRequest(Campaign body, Boolean useMaxCallsPerAgentDecimal) {
     return PostOutboundCampaignsRequest.builder()
             .withBody(body)
+
+            .withUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal)
 
             .build();
   }
@@ -12434,12 +12442,13 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @param body Campaign (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @return Campaign
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Campaign putOutboundCampaign(String campaignId, Campaign body) throws IOException, ApiException {
-    return  putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body));
+  public Campaign putOutboundCampaign(String campaignId, Campaign body, Boolean useMaxCallsPerAgentDecimal) throws IOException, ApiException {
+    return  putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body, useMaxCallsPerAgentDecimal));
   }
 
   /**
@@ -12447,18 +12456,21 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @param body Campaign (required)
+   * @param useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision (optional)
    * @return Campaign
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body) throws IOException {
-    return putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body).withHttpInfo());
+  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body, Boolean useMaxCallsPerAgentDecimal) throws IOException {
+    return putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body, useMaxCallsPerAgentDecimal).withHttpInfo());
   }
 
-  private PutOutboundCampaignRequest createPutOutboundCampaignRequest(String campaignId, Campaign body) {
+  private PutOutboundCampaignRequest createPutOutboundCampaignRequest(String campaignId, Campaign body, Boolean useMaxCallsPerAgentDecimal) {
     return PutOutboundCampaignRequest.builder()
             .withCampaignId(campaignId)
 
             .withBody(body)
+
+            .withUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal)
 
             .build();
   }

@@ -51,7 +51,6 @@ public class UploadsApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param jobId Upload job ID (required)
    * @return GetUploadSourceUrlJobStatusResponse
@@ -65,7 +64,6 @@ public class UploadsApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param jobId Upload job ID (required)
    * @return GetUploadSourceUrlJobStatusResponse
@@ -87,7 +85,6 @@ public class UploadsApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetUploadSourceUrlJobStatusResponse
    * @throws ApiException if the request fails on the server
@@ -107,7 +104,6 @@ public class UploadsApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -297,7 +293,6 @@ public class UploadsApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body uploadRequest (required)
    * @return CreateUploadSourceUrlJobResponse
@@ -311,7 +306,6 @@ public class UploadsApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body uploadRequest (required)
    * @return CreateUploadSourceUrlJobResponse
@@ -333,7 +327,6 @@ public class UploadsApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CreateUploadSourceUrlJobResponse
    * @throws ApiException if the request fails on the server
@@ -353,7 +346,6 @@ public class UploadsApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

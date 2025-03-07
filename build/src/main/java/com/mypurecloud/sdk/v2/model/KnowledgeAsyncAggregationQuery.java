@@ -50,6 +50,7 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
     AGENTASSISTANTID("agentAssistantId"),
     APPDEPLOYMENTID("appDeploymentId"),
     APPTYPE("appType"),
+    BOTFLOWID("botFlowId"),
     CONVERSATIONCHANNELTYPE("conversationChannelType"),
     CONVERSATIONID("conversationId"),
     DOCUMENTENGAGEMENTTYPE("documentEngagementType"),

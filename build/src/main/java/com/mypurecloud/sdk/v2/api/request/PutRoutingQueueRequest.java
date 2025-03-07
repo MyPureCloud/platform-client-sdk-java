@@ -41,6 +41,8 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;

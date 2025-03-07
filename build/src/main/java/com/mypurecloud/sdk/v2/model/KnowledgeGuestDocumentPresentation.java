@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationReference;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSearchClientApplication;
+import com.mypurecloud.sdk.v2.model.PresentedKnowledgeDocument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class KnowledgeGuestDocumentPresentation  implements Serializable {
   
-  private List<KnowledgeDocumentVersionVariationReference> documents = new ArrayList<KnowledgeDocumentVersionVariationReference>();
+  private List<PresentedKnowledgeDocument> documents = new ArrayList<PresentedKnowledgeDocument>();
   private String searchId = null;
 
   private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
@@ -138,17 +138,17 @@ public class KnowledgeGuestDocumentPresentation  implements Serializable {
   /**
    * The presented documents
    **/
-  public KnowledgeGuestDocumentPresentation documents(List<KnowledgeDocumentVersionVariationReference> documents) {
+  public KnowledgeGuestDocumentPresentation documents(List<PresentedKnowledgeDocument> documents) {
     this.documents = documents;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The presented documents")
   @JsonProperty("documents")
-  public List<KnowledgeDocumentVersionVariationReference> getDocuments() {
+  public List<PresentedKnowledgeDocument> getDocuments() {
     return documents;
   }
-  public void setDocuments(List<KnowledgeDocumentVersionVariationReference> documents) {
+  public void setDocuments(List<PresentedKnowledgeDocument> documents) {
     this.documents = documents;
   }
 

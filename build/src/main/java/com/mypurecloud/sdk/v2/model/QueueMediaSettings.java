@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallbackMediaSettings;
 import com.mypurecloud.sdk.v2.model.EmailMediaSettings;
 import com.mypurecloud.sdk.v2.model.MediaSettings;
+import com.mypurecloud.sdk.v2.model.MessageMediaSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -28,7 +29,7 @@ public class QueueMediaSettings  implements Serializable {
   private CallbackMediaSettings callback = null;
   private MediaSettings chat = null;
   private EmailMediaSettings email = null;
-  private MediaSettings message = null;
+  private MessageMediaSettings message = null;
 
   
   /**
@@ -106,17 +107,17 @@ public class QueueMediaSettings  implements Serializable {
   /**
    * The queue media settings for message interactions.
    **/
-  public QueueMediaSettings message(MediaSettings message) {
+  public QueueMediaSettings message(MessageMediaSettings message) {
     this.message = message;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The queue media settings for message interactions.")
   @JsonProperty("message")
-  public MediaSettings getMessage() {
+  public MessageMediaSettings getMessage() {
     return message;
   }
-  public void setMessage(MediaSettings message) {
+  public void setMessage(MessageMediaSettings message) {
     this.message = message;
   }
 

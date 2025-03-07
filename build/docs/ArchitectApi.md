@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectGrammarLanguage**](ArchitectApi#getArchitectGrammarLanguage) | Get a grammar language. |
 | [**getArchitectGrammars**](ArchitectApi#getArchitectGrammars) | Get a pageable list of grammars, filtered by query parameters |
 | [**getArchitectIvr**](ArchitectApi#getArchitectIvr) | Get an IVR config. |
+| [**getArchitectIvrIdentityresolution**](ArchitectApi#getArchitectIvrIdentityresolution) | Get an IVR IdentityResolutionConfig. |
 | [**getArchitectIvrs**](ArchitectApi#getArchitectIvrs) | Get IVR configs. |
 | [**getArchitectIvrsDivisionviews**](ArchitectApi#getArchitectIvrsDivisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters. |
 | [**getArchitectPrompt**](ArchitectApi#getArchitectPrompt) | Get specified user prompt |
@@ -80,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatablesDivisionviews**](ArchitectApi#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
 | [**getFlowsExecution**](ArchitectApi#getFlowsExecution) | Get a flow execution's details. Flow execution details are available for several days after the flow is started. |
+| [**getFlowsExportJob**](ArchitectApi#getFlowsExportJob) | Fetch Architect Export Job Status |
 | [**getFlowsInstance**](ArchitectApi#getFlowsInstance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id |
 | [**getFlowsInstancesJob**](ArchitectApi#getFlowsInstancesJob) | Get the status and/or results of an asynchronous flow execution data retrieval job |
 | [**getFlowsInstancesQuerycapabilities**](ArchitectApi#getFlowsInstancesQuerycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data |
@@ -126,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsDatatableRows**](ArchitectApi#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
 | [**postFlowsExecutions**](ArchitectApi#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type. |
+| [**postFlowsExportJobs**](ArchitectApi#postFlowsExportJobs) | Register Architect Export Job |
 | [**postFlowsInstancesJobs**](ArchitectApi#postFlowsInstancesJobs) | Start a process (job) that will prepare a list of execution data IDs for download. |
 | [**postFlowsInstancesQuery**](ArchitectApi#postFlowsInstancesQuery) | Query the database of existing flow histories to look for particular flow criteria |
 | [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
@@ -133,6 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | Create a flow outcome |
 | [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | Updates a emergency group by ID |
 | [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | Update an IVR Config. |
+| [**putArchitectIvrIdentityresolution**](ArchitectApi#putArchitectIvrIdentityresolution) | Update an IVR IdentityResolutionConfig. |
 | [**putArchitectPrompt**](ArchitectApi#putArchitectPrompt) | Update specified user prompt |
 | [**putArchitectPromptResource**](ArchitectApi#putArchitectPromptResource) | Update specified user prompt resource |
 | [**putArchitectSchedule**](ArchitectApi#putArchitectSchedule) | Update schedule by ID |
@@ -2397,6 +2401,68 @@ try {
 ### Return type
 
 [**IVR**](IVR)
+
+
+# **getArchitectIvrIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) getArchitectIvrIdentityresolution(ivrId)
+
+Get an IVR IdentityResolutionConfig.
+
+getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/ivrs/{ivrId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:callRoute:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String ivrId = "ivrId_example"; // String | IVR id
+try {
+    IdentityResolutionConfig result = apiInstance.getArchitectIvrIdentityresolution(ivrId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectIvrIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ivrId** | **String**| IVR id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 # **getArchitectIvrs**
@@ -5104,6 +5170,67 @@ try {
 ### Return type
 
 [**FlowRuntimeExecution**](FlowRuntimeExecution)
+
+
+# **getFlowsExportJob**
+
+
+> [ArchitectExportJobStateResponse](ArchitectExportJobStateResponse) getFlowsExportJob(jobId, expand)
+
+Fetch Architect Export Job Status
+
+Wraps GET /api/v2/flows/export/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* architect:jobExport:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String jobId = "jobId_example"; // String | Job ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+try {
+    ArchitectExportJobStateResponse result = apiInstance.getFlowsExportJob(jobId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsExportJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Job ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: messages 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ArchitectExportJobStateResponse**](ArchitectExportJobStateResponse)
 
 
 # **getFlowsInstance**
@@ -7964,6 +8091,65 @@ try {
 [**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse)
 
 
+# **postFlowsExportJobs**
+
+
+> [RegisterArchitectExportJobResponse](RegisterArchitectExportJobResponse) postFlowsExportJobs(body)
+
+Register Architect Export Job
+
+Wraps POST /api/v2/flows/export/jobs  
+
+Requires ALL permissions: 
+
+* architect:jobExport:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+RegisterArchitectExportJob body = new RegisterArchitectExportJob(); // RegisterArchitectExportJob | 
+try {
+    RegisterArchitectExportJobResponse result = apiInstance.postFlowsExportJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsExportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RegisterArchitectExportJob**](RegisterArchitectExportJob)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RegisterArchitectExportJobResponse**](RegisterArchitectExportJobResponse)
+
+
 # **postFlowsInstancesJobs**
 
 
@@ -8387,6 +8573,70 @@ try {
 ### Return type
 
 [**IVR**](IVR)
+
+
+# **putArchitectIvrIdentityresolution**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) putArchitectIvrIdentityresolution(ivrId, body)
+
+Update an IVR IdentityResolutionConfig.
+
+putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/architect/ivrs/{ivrId}/identityresolution  
+
+Requires ALL permissions: 
+
+* routing:callRoute:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String ivrId = "ivrId_example"; // String | IVR id
+IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+try {
+    IdentityResolutionConfig result = apiInstance.putArchitectIvrIdentityresolution(ivrId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putArchitectIvrIdentityresolution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ivrId** | **String**| IVR id | 
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 # **putArchitectPrompt**
@@ -9142,4 +9392,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

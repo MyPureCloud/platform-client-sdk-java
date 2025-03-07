@@ -9,9 +9,10 @@
 | **language** | **String** | Template language. |  [optional] |
 | **header** | [**ConversationNotificationTemplateHeader**](ConversationNotificationTemplateHeader) | The template header. |  [optional] |
 | **body** | [**ConversationNotificationTemplateBody**](ConversationNotificationTemplateBody) | The template body. |  |
+| **buttons** | [**List&lt;ConversationNotificationTemplateButton&gt;**](ConversationNotificationTemplateButton) | Template buttons |  [optional] |
 | **footer** | [**ConversationNotificationTemplateFooter**](ConversationNotificationTemplateFooter) | The template footer. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

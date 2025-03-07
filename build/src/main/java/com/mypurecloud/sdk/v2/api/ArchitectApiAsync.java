@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ArchitectExportJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
@@ -68,12 +69,15 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
 import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
@@ -124,6 +128,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
@@ -164,6 +169,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsExportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
@@ -210,6 +216,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
@@ -217,6 +224,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
@@ -2937,6 +2945,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getArchitectIvrIdentityresolutionAsync(GetArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an IVR IdentityResolutionConfig.
+   * 
+   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getArchitectIvrIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5937,6 +6022,81 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ArchitectExportJobStateResponse> getFlowsExportJobAsync(GetFlowsExportJobRequest request, final AsyncApiCallback<ArchitectExportJobStateResponse> callback) {
+    try {
+      final SettableFuture<ArchitectExportJobStateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ArchitectExportJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectExportJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectExportJobStateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch Architect Export Job Status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ArchitectExportJobStateResponse>> getFlowsExportJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ArchitectExportJobStateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ArchitectExportJobStateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ArchitectExportJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectExportJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectExportJobStateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectExportJobStateResponse> response = (ApiResponse<ArchitectExportJobStateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectExportJobStateResponse> response = (ApiResponse<ArchitectExportJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9399,6 +9559,81 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Register Architect Export Job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RegisterArchitectExportJobResponse> postFlowsExportJobsAsync(PostFlowsExportJobsRequest request, final AsyncApiCallback<RegisterArchitectExportJobResponse> callback) {
+    try {
+      final SettableFuture<RegisterArchitectExportJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RegisterArchitectExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectExportJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register Architect Export Job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RegisterArchitectExportJobResponse>> postFlowsExportJobsAsync(ApiRequest<RegisterArchitectExportJob> request, final AsyncApiCallback<ApiResponse<RegisterArchitectExportJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RegisterArchitectExportJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RegisterArchitectExportJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectExportJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectExportJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectExportJobResponse> response = (ApiResponse<RegisterArchitectExportJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectExportJobResponse> response = (ApiResponse<RegisterArchitectExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
    * @param request the request object
@@ -9912,6 +10147,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putArchitectIvrIdentityresolutionAsync(PutArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an IVR IdentityResolutionConfig.
+   * 
+   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putArchitectIvrIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

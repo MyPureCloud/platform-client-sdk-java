@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import java.io.Serializable;
 public class Note  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private String entityId = null;
 
   private static class EntityTypeEnumDeserializer extends StdDeserializer<EntityTypeEnum> {
@@ -89,6 +91,24 @@ public class Note  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Note division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -224,6 +244,7 @@ public class Note  implements Serializable {
     Note note = (Note) o;
 
     return Objects.equals(this.id, note.id) &&
+            Objects.equals(this.division, note.division) &&
             Objects.equals(this.entityId, note.entityId) &&
             Objects.equals(this.entityType, note.entityType) &&
             Objects.equals(this.noteText, note.noteText) &&
@@ -236,7 +257,7 @@ public class Note  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, entityId, entityType, noteText, modifyDate, createDate, createdBy, externalDataSources, selfUri);
+    return Objects.hash(id, division, entityId, entityType, noteText, modifyDate, createDate, createdBy, externalDataSources, selfUri);
   }
 
   @Override
@@ -245,6 +266,7 @@ public class Note  implements Serializable {
     sb.append("class Note {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    noteText: ").append(toIndentedString(noteText)).append("\n");

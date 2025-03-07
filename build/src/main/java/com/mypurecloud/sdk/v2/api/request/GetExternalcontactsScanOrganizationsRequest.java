@@ -105,6 +105,20 @@ public class GetExternalcontactsScanOrganizationsRequest {
 	    return this;
 	} 
 
+	private String divisionId;
+	public String getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetExternalcontactsScanOrganizationsRequest withDivisionId(String divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -134,6 +148,9 @@ public class GetExternalcontactsScanOrganizationsRequest {
 
                 .withQueryParameters("cursor", "", cursor)
         
+
+                .withQueryParameters("divisionId", "", divisionId)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -162,6 +179,11 @@ public class GetExternalcontactsScanOrganizationsRequest {
 
 		public Builder withCursor(String cursor) {
 			request.setCursor(cursor);
+			return this;
+		}
+
+		public Builder withDivisionId(String divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 

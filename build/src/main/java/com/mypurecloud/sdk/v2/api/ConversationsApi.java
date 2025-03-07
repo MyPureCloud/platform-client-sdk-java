@@ -95,6 +95,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenMessagingIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
@@ -240,6 +242,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaReq
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermissionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -395,6 +400,9 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
@@ -6673,6 +6681,252 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest createGetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessagingIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest createGetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenMessagingIdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessagingIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenMessagingIdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest createGetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19177,12 +19431,13 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsCobrowsesessionRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
     return  putConversationsCobrowsesessionRecordingstate(createPutConversationsCobrowsesessionRecordingstateRequest(conversationId, body));
@@ -19190,11 +19445,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsCobrowsesessionRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
     return putConversationsCobrowsesessionRecordingstate(createPutConversationsCobrowsesessionRecordingstateRequest(conversationId, body).withHttpInfo());
@@ -19211,11 +19467,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsCobrowsesessionRecordingstate(PutConversationsCobrowsesessionRecordingstateRequest request) throws IOException, ApiException {
     try {
@@ -19230,10 +19487,11 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsCobrowsesessionRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
     try {
@@ -19581,6 +19839,264 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body IdentityResolutionConfig (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body IdentityResolutionConfig (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+    return putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+    return PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body  (required)
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(String integrationId, OpenMessagingIdentityResolutionConfig body) throws IOException, ApiException {
+    return  putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body  (required)
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessagingIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdWithHttpInfo(String integrationId, OpenMessagingIdentityResolutionConfig body) throws IOException {
+    return putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest(String integrationId, OpenMessagingIdentityResolutionConfig body) {
+    return PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OpenMessagingIdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenMessagingIdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessagingIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(ApiRequest<OpenMessagingIdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenMessagingIdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @param body  (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+    return putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+    return PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

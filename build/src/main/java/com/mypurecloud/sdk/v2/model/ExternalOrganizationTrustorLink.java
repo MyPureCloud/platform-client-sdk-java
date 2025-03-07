@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -23,6 +24,7 @@ import java.io.Serializable;
 public class ExternalOrganizationTrustorLink  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private String externalOrganizationId = null;
   private String trustorOrgId = null;
   private Date dateCreated = null;
@@ -34,6 +36,24 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public ExternalOrganizationTrustorLink division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -116,6 +136,7 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     ExternalOrganizationTrustorLink externalOrganizationTrustorLink = (ExternalOrganizationTrustorLink) o;
 
     return Objects.equals(this.id, externalOrganizationTrustorLink.id) &&
+            Objects.equals(this.division, externalOrganizationTrustorLink.division) &&
             Objects.equals(this.externalOrganizationId, externalOrganizationTrustorLink.externalOrganizationId) &&
             Objects.equals(this.trustorOrgId, externalOrganizationTrustorLink.trustorOrgId) &&
             Objects.equals(this.dateCreated, externalOrganizationTrustorLink.dateCreated) &&
@@ -125,7 +146,7 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalOrganizationId, trustorOrgId, dateCreated, externalOrganizationUri, selfUri);
+    return Objects.hash(id, division, externalOrganizationId, trustorOrgId, dateCreated, externalOrganizationUri, selfUri);
   }
 
   @Override
@@ -134,6 +155,7 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     sb.append("class ExternalOrganizationTrustorLink {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    trustorOrgId: ").append(toIndentedString(trustorOrgId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

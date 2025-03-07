@@ -36,6 +36,8 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
   private List<String> documentIds = new ArrayList<String>();
   private WfmScheduleReference wfmSchedule = null;
   private List<String> externalLinks = new ArrayList<String>();
+  private String location = null;
+  private Boolean shareInsightsData = null;
 
   
   /**
@@ -218,6 +220,42 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
   }
 
 
+  /**
+   * The location of the appointment
+   **/
+  public CreateCoachingAppointmentRequest location(String location) {
+    this.location = location;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The location of the appointment")
+  @JsonProperty("location")
+  public String getLocation() {
+    return location;
+  }
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+
+  /**
+   * Whether to share the insight data
+   **/
+  public CreateCoachingAppointmentRequest shareInsightsData(Boolean shareInsightsData) {
+    this.shareInsightsData = shareInsightsData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to share the insight data")
+  @JsonProperty("shareInsightsData")
+  public Boolean getShareInsightsData() {
+    return shareInsightsData;
+  }
+  public void setShareInsightsData(Boolean shareInsightsData) {
+    this.shareInsightsData = shareInsightsData;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -237,12 +275,14 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
             Objects.equals(this.conversationIds, createCoachingAppointmentRequest.conversationIds) &&
             Objects.equals(this.documentIds, createCoachingAppointmentRequest.documentIds) &&
             Objects.equals(this.wfmSchedule, createCoachingAppointmentRequest.wfmSchedule) &&
-            Objects.equals(this.externalLinks, createCoachingAppointmentRequest.externalLinks);
+            Objects.equals(this.externalLinks, createCoachingAppointmentRequest.externalLinks) &&
+            Objects.equals(this.location, createCoachingAppointmentRequest.location) &&
+            Objects.equals(this.shareInsightsData, createCoachingAppointmentRequest.shareInsightsData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, dateStart, lengthInMinutes, facilitatorId, attendeeIds, conversationIds, documentIds, wfmSchedule, externalLinks);
+    return Objects.hash(name, description, dateStart, lengthInMinutes, facilitatorId, attendeeIds, conversationIds, documentIds, wfmSchedule, externalLinks, location, shareInsightsData);
   }
 
   @Override
@@ -260,6 +300,8 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     sb.append("    documentIds: ").append(toIndentedString(documentIds)).append("\n");
     sb.append("    wfmSchedule: ").append(toIndentedString(wfmSchedule)).append("\n");
     sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    shareInsightsData: ").append(toIndentedString(shareInsightsData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

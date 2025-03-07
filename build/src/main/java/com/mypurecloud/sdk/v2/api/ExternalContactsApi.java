@@ -110,12 +110,17 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
@@ -125,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesRemoveReq
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRequest;
@@ -1474,12 +1480,13 @@ public class ExternalContactsApi {
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
+   * @param divisionIds which divisions to search, up to 50 (optional)
    * @return ContactListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListing getExternalcontactsContacts(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return  getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand));
+  public ContactListing getExternalcontactsContacts(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, List<String> divisionIds) throws IOException, ApiException {
+    return  getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand, divisionIds));
   }
 
   /**
@@ -1490,14 +1497,15 @@ public class ExternalContactsApi {
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
+   * @param divisionIds which divisions to search, up to 50 (optional)
    * @return ContactListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException {
-    return getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand).withHttpInfo());
+  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, List<String> divisionIds) throws IOException {
+    return getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand, divisionIds).withHttpInfo());
   }
 
-  private GetExternalcontactsContactsRequest createGetExternalcontactsContactsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) {
+  private GetExternalcontactsContactsRequest createGetExternalcontactsContactsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, List<String> divisionIds) {
     return GetExternalcontactsContactsRequest.builder()
             .withPageSize(pageSize)
 
@@ -1508,6 +1516,8 @@ public class ExternalContactsApi {
             .withSortOrder(sortOrder)
 
             .withExpand(expand)
+
+            .withDivisionIds(divisionIds)
 
             .build();
   }
@@ -3172,12 +3182,13 @@ public class ExternalContactsApi {
    * @param sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+   * @param divisionIds which divisions to search, up to 50 (optional)
    * @return ExternalOrganizationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException, ApiException {
-    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors));
+  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors, List<String> divisionIds) throws IOException, ApiException {
+    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors, divisionIds));
   }
 
   /**
@@ -3190,14 +3201,15 @@ public class ExternalContactsApi {
    * @param sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+   * @param divisionIds which divisions to search, up to 50 (optional)
    * @return ExternalOrganizationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException {
-    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors).withHttpInfo());
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors, List<String> divisionIds) throws IOException {
+    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors, divisionIds).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) {
+  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors, List<String> divisionIds) {
     return GetExternalcontactsOrganizationsRequest.builder()
             .withPageSize(pageSize)
 
@@ -3212,6 +3224,8 @@ public class ExternalContactsApi {
             .withExpand(expand)
 
             .withIncludeTrustors(includeTrustors)
+
+            .withDivisionIds(divisionIds)
 
             .build();
   }
@@ -3663,12 +3677,13 @@ public class ExternalContactsApi {
    * 
    * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
+   * @param divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional, default to *)
    * @return ReverseWhitepagesLookupResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(String lookupVal, List<String> expand) throws IOException, ApiException {
-    return  getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand));
+  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(String lookupVal, List<String> expand, String divisionId) throws IOException, ApiException {
+    return  getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand, divisionId));
   }
 
   /**
@@ -3676,18 +3691,21 @@ public class ExternalContactsApi {
    * 
    * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
+   * @param divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional, default to *)
    * @return ReverseWhitepagesLookupResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand) throws IOException {
-    return getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand).withHttpInfo());
+  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand, String divisionId) throws IOException {
+    return getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand, divisionId).withHttpInfo());
   }
 
-  private GetExternalcontactsReversewhitepageslookupRequest createGetExternalcontactsReversewhitepageslookupRequest(String lookupVal, List<String> expand) {
+  private GetExternalcontactsReversewhitepageslookupRequest createGetExternalcontactsReversewhitepageslookupRequest(String lookupVal, List<String> expand, String divisionId) {
     return GetExternalcontactsReversewhitepageslookupRequest.builder()
             .withLookupVal(lookupVal)
 
             .withExpand(expand)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -3745,12 +3763,13 @@ public class ExternalContactsApi {
    * 
    * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
    * @return CursorContactListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CursorContactListing getExternalcontactsScanContacts(Integer limit, String cursor) throws IOException, ApiException {
-    return  getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor));
+  public CursorContactListing getExternalcontactsScanContacts(Integer limit, String cursor, String divisionId) throws IOException, ApiException {
+    return  getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor, divisionId));
   }
 
   /**
@@ -3758,18 +3777,21 @@ public class ExternalContactsApi {
    * 
    * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
    * @return CursorContactListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CursorContactListing> getExternalcontactsScanContactsWithHttpInfo(Integer limit, String cursor) throws IOException {
-    return getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor).withHttpInfo());
+  public ApiResponse<CursorContactListing> getExternalcontactsScanContactsWithHttpInfo(Integer limit, String cursor, String divisionId) throws IOException {
+    return getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor, divisionId).withHttpInfo());
   }
 
-  private GetExternalcontactsScanContactsRequest createGetExternalcontactsScanContactsRequest(Integer limit, String cursor) {
+  private GetExternalcontactsScanContactsRequest createGetExternalcontactsScanContactsRequest(Integer limit, String cursor, String divisionId) {
     return GetExternalcontactsScanContactsRequest.builder()
             .withLimit(limit)
 
             .withCursor(cursor)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -3823,16 +3845,89 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Scan for notes using paging
+   * Scan for external contacts using paging
    * 
-   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
-   * @return CursorNoteListing
+   * @return CursorContactListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CursorNoteListing getExternalcontactsScanNotes(Integer limit, String cursor) throws IOException, ApiException {
-    return  getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor));
+  public CursorContactListing getExternalcontactsScanContactsDivisionviewsAll(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanContactsDivisionviewsAll(createGetExternalcontactsScanContactsDivisionviewsAllRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorContactListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorContactListing> getExternalcontactsScanContactsDivisionviewsAllWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanContactsDivisionviewsAll(createGetExternalcontactsScanContactsDivisionviewsAllRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanContactsDivisionviewsAllRequest createGetExternalcontactsScanContactsDivisionviewsAllRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanContactsDivisionviewsAllRequest.builder()
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CursorContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorContactListing getExternalcontactsScanContactsDivisionviewsAll(GetExternalcontactsScanContactsDivisionviewsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorContactListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorContactListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorContactListing> getExternalcontactsScanContactsDivisionviewsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorContactListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3840,18 +3935,35 @@ public class ExternalContactsApi {
    * 
    * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
+   * @return CursorNoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorNoteListing getExternalcontactsScanNotes(Integer limit, String cursor, String divisionId) throws IOException, ApiException {
+    return  getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor, divisionId));
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
    * @return CursorNoteListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotesWithHttpInfo(Integer limit, String cursor) throws IOException {
-    return getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor).withHttpInfo());
+  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotesWithHttpInfo(Integer limit, String cursor, String divisionId) throws IOException {
+    return getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor, divisionId).withHttpInfo());
   }
 
-  private GetExternalcontactsScanNotesRequest createGetExternalcontactsScanNotesRequest(Integer limit, String cursor) {
+  private GetExternalcontactsScanNotesRequest createGetExternalcontactsScanNotesRequest(Integer limit, String cursor, String divisionId) {
     return GetExternalcontactsScanNotesRequest.builder()
             .withLimit(limit)
 
             .withCursor(cursor)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -3905,16 +4017,89 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Scan for external organizations using paging
+   * Scan for notes using paging
    * 
-   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
-   * @return CursorOrganizationListing
+   * @return CursorNoteListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CursorOrganizationListing getExternalcontactsScanOrganizations(Integer limit, String cursor) throws IOException, ApiException {
-    return  getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor));
+  public CursorNoteListing getExternalcontactsScanNotesDivisionviewsAll(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanNotesDivisionviewsAll(createGetExternalcontactsScanNotesDivisionviewsAllRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorNoteListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotesDivisionviewsAllWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanNotesDivisionviewsAll(createGetExternalcontactsScanNotesDivisionviewsAllRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanNotesDivisionviewsAllRequest createGetExternalcontactsScanNotesDivisionviewsAllRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanNotesDivisionviewsAllRequest.builder()
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CursorNoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorNoteListing getExternalcontactsScanNotesDivisionviewsAll(GetExternalcontactsScanNotesDivisionviewsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorNoteListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorNoteListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotesDivisionviewsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorNoteListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3922,18 +4107,35 @@ public class ExternalContactsApi {
    * 
    * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
+   * @return CursorOrganizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorOrganizationListing getExternalcontactsScanOrganizations(Integer limit, String cursor, String divisionId) throws IOException, ApiException {
+    return  getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor, divisionId));
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
    * @return CursorOrganizationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizationsWithHttpInfo(Integer limit, String cursor) throws IOException {
-    return getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor).withHttpInfo());
+  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizationsWithHttpInfo(Integer limit, String cursor, String divisionId) throws IOException {
+    return getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor, divisionId).withHttpInfo());
   }
 
-  private GetExternalcontactsScanOrganizationsRequest createGetExternalcontactsScanOrganizationsRequest(Integer limit, String cursor) {
+  private GetExternalcontactsScanOrganizationsRequest createGetExternalcontactsScanOrganizationsRequest(Integer limit, String cursor, String divisionId) {
     return GetExternalcontactsScanOrganizationsRequest.builder()
             .withLimit(limit)
 
             .withCursor(cursor)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -3987,16 +4189,89 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Scan for relationships
+   * Scan for external organizations using paging
    * 
-   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
-   * @return CursorRelationshipListing
+   * @return CursorOrganizationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CursorRelationshipListing getExternalcontactsScanRelationships(Integer limit, String cursor) throws IOException, ApiException {
-    return  getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor));
+  public CursorOrganizationListing getExternalcontactsScanOrganizationsDivisionviewsAll(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanOrganizationsDivisionviewsAll(createGetExternalcontactsScanOrganizationsDivisionviewsAllRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorOrganizationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizationsDivisionviewsAllWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanOrganizationsDivisionviewsAll(createGetExternalcontactsScanOrganizationsDivisionviewsAllRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanOrganizationsDivisionviewsAllRequest createGetExternalcontactsScanOrganizationsDivisionviewsAllRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanOrganizationsDivisionviewsAllRequest.builder()
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CursorOrganizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorOrganizationListing getExternalcontactsScanOrganizationsDivisionviewsAll(GetExternalcontactsScanOrganizationsDivisionviewsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorOrganizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorOrganizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizationsDivisionviewsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorOrganizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4004,18 +4279,35 @@ public class ExternalContactsApi {
    * 
    * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
+   * @return CursorRelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorRelationshipListing getExternalcontactsScanRelationships(Integer limit, String cursor, String divisionId) throws IOException, ApiException {
+    return  getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor, divisionId));
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param divisionId The division to scan over (optional, default to *)
    * @return CursorRelationshipListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationshipsWithHttpInfo(Integer limit, String cursor) throws IOException {
-    return getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor).withHttpInfo());
+  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationshipsWithHttpInfo(Integer limit, String cursor, String divisionId) throws IOException {
+    return getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor, divisionId).withHttpInfo());
   }
 
-  private GetExternalcontactsScanRelationshipsRequest createGetExternalcontactsScanRelationshipsRequest(Integer limit, String cursor) {
+  private GetExternalcontactsScanRelationshipsRequest createGetExternalcontactsScanRelationshipsRequest(Integer limit, String cursor, String divisionId) {
     return GetExternalcontactsScanRelationshipsRequest.builder()
             .withLimit(limit)
 
             .withCursor(cursor)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -4047,6 +4339,92 @@ public class ExternalContactsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationships(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorRelationshipListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorRelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorRelationshipListing getExternalcontactsScanRelationshipsDivisionviewsAll(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanRelationshipsDivisionviewsAll(createGetExternalcontactsScanRelationshipsDivisionviewsAllRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorRelationshipListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationshipsDivisionviewsAllWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanRelationshipsDivisionviewsAll(createGetExternalcontactsScanRelationshipsDivisionviewsAllRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanRelationshipsDivisionviewsAllRequest createGetExternalcontactsScanRelationshipsDivisionviewsAllRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanRelationshipsDivisionviewsAllRequest.builder()
+            .withLimit(limit)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CursorRelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorRelationshipListing getExternalcontactsScanRelationshipsDivisionviewsAll(GetExternalcontactsScanRelationshipsDivisionviewsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorRelationshipListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorRelationshipListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationshipsDivisionviewsAll(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<CursorRelationshipListing>() {});
     }
@@ -4302,6 +4680,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContactsDivisionviews(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsDivisionviews(createPostExternalcontactsBulkContactsDivisionviewsRequest(body));
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContactsDivisionviewsWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkContactsDivisionviews(createPostExternalcontactsBulkContactsDivisionviewsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsDivisionviewsRequest createPostExternalcontactsBulkContactsDivisionviewsRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkContactsDivisionviewsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContactsDivisionviews(PostExternalcontactsBulkContactsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkFetchContactsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkFetchContactsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContactsDivisionviews(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkFetchContactsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5004,6 +5464,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Organizations ids (required)
+   * @return BulkFetchOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizationsDivisionviews(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizationsDivisionviews(createPostExternalcontactsBulkOrganizationsDivisionviewsRequest(body));
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Organizations ids (required)
+   * @return BulkFetchOrganizationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchOrganizationsResponse> postExternalcontactsBulkOrganizationsDivisionviewsWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkOrganizationsDivisionviews(createPostExternalcontactsBulkOrganizationsDivisionviewsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsDivisionviewsRequest createPostExternalcontactsBulkOrganizationsDivisionviewsRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkOrganizationsDivisionviewsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BulkFetchOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizationsDivisionviews(PostExternalcontactsBulkOrganizationsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkFetchOrganizationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkFetchOrganizationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchOrganizationsResponse> postExternalcontactsBulkOrganizationsDivisionviews(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkFetchOrganizationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

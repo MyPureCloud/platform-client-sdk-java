@@ -89,6 +89,7 @@ public class CreateEmailRequest  implements Serializable {
   private String htmlBody = null;
   private String textBody = null;
   private String externalContactId = null;
+  private String utilizationLabel = null;
 
   
   /**
@@ -379,6 +380,24 @@ public class CreateEmailRequest  implements Serializable {
   }
 
 
+  /**
+   * Optional. Controls the number of agent interactions for INBOUND communications
+   **/
+  public CreateEmailRequest utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional. Controls the number of agent interactions for INBOUND communications")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -404,12 +423,13 @@ public class CreateEmailRequest  implements Serializable {
             Objects.equals(this.direction, createEmailRequest.direction) &&
             Objects.equals(this.htmlBody, createEmailRequest.htmlBody) &&
             Objects.equals(this.textBody, createEmailRequest.textBody) &&
-            Objects.equals(this.externalContactId, createEmailRequest.externalContactId);
+            Objects.equals(this.externalContactId, createEmailRequest.externalContactId) &&
+            Objects.equals(this.utilizationLabel, createEmailRequest.utilizationLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody, externalContactId);
+    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody, externalContactId, utilizationLabel);
   }
 
   @Override
@@ -433,6 +453,7 @@ public class CreateEmailRequest  implements Serializable {
     sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

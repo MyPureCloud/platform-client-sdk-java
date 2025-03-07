@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Type of this content element. |  |
-| **location** | [**ContentLocation**](ContentLocation) | Location content. |  [optional] |
 | **attachment** | [**ContentAttachment**](ContentAttachment) | Attachment content. |  [optional] |
 | **quickReply** | [**ContentQuickReply**](ContentQuickReply) | Quick reply content. |  [optional] |
 | **buttonResponse** | [**ContentButtonResponse**](ContentButtonResponse) | Button response content. |  [optional] |
@@ -21,6 +20,7 @@
 | **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
 | **text** | [**ContentText**](ContentText) | Text content. |  [optional] |
 | **quickReplyV2** | [**ContentQuickReplyV2**](ContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
+| **datePicker** | [**ContentDatePicker**](ContentDatePicker) | DatePicker content. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -29,7 +29,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTACHMENT | &quot;Attachment&quot; | 
-| LOCATION | &quot;Location&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | NOTIFICATION | &quot;Notification&quot; | 
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
@@ -43,8 +42,9 @@
 | CAROUSEL | &quot;Carousel&quot; | 
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
+| DATEPICKER | &quot;DatePicker&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

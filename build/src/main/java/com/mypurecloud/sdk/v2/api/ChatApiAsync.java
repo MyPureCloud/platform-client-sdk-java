@@ -1289,7 +1289,6 @@ public class ChatApiAsync {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1324,7 +1323,6 @@ public class ChatApiAsync {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1366,7 +1364,6 @@ public class ChatApiAsync {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1401,7 +1398,6 @@ public class ChatApiAsync {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1743,7 +1739,6 @@ public class ChatApiAsync {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1778,7 +1773,6 @@ public class ChatApiAsync {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1820,7 +1814,6 @@ public class ChatApiAsync {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1855,7 +1848,6 @@ public class ChatApiAsync {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

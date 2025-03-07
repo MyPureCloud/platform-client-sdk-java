@@ -55,7 +55,8 @@ public class Widget  implements Serializable {
     FREE_TEXT("FREE_TEXT"),
     AGENT_STATUS("AGENT_STATUS"),
     REALTIME_ADHERENCE("REALTIME_ADHERENCE"),
-    WEB_CONTENT_URL("WEB_CONTENT_URL");
+    WEB_CONTENT_URL("WEB_CONTENT_URL"),
+    AGENT_ACTIVITY("AGENT_ACTIVITY");
 
     private String value;
 
@@ -636,6 +637,72 @@ public class Widget  implements Serializable {
   }
   private List<SelectedStatusesEnum> selectedStatuses = new ArrayList<SelectedStatusesEnum>();
 
+  private static class SelectedSegmentTypesEnumDeserializer extends StdDeserializer<SelectedSegmentTypesEnum> {
+    public SelectedSegmentTypesEnumDeserializer() {
+      super(SelectedSegmentTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public SelectedSegmentTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SelectedSegmentTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets selectedSegmentTypes
+   */
+ @JsonDeserialize(using = SelectedSegmentTypesEnumDeserializer.class)
+  public enum SelectedSegmentTypesEnum {
+    ALERT("alert"),
+    BARGING("barging"),
+    CALLBACK("callback"),
+    COACHING("coaching"),
+    CONTACTING("contacting"),
+    CONVERTING("converting"),
+    DELAY("delay"),
+    DIALING("dialing"),
+    HOLD("hold"),
+    INTERACT("interact"),
+    IVR("ivr"),
+    MONITORING("monitoring"),
+    PARKED("parked"),
+    SCHEDULED("scheduled"),
+    SHARING("sharing"),
+    SYSTEM("system"),
+    TRANSMITTING("transmitting"),
+    UNKNOWN("unknown"),
+    UPLOADING("uploading"),
+    VOICEMAIL("voicemail"),
+    WRAPUP("wrapup");
+
+    private String value;
+
+    SelectedSegmentTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SelectedSegmentTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SelectedSegmentTypesEnum value : SelectedSegmentTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SelectedSegmentTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SelectedSegmentTypesEnum> selectedSegmentTypes = new ArrayList<SelectedSegmentTypesEnum>();
+
   private static class AgentInteractionSortOrderEnumDeserializer extends StdDeserializer<AgentInteractionSortOrderEnum> {
     public AgentInteractionSortOrderEnumDeserializer() {
       super(AgentInteractionSortOrderEnumDeserializer.class);
@@ -1172,6 +1239,24 @@ public class Widget  implements Serializable {
 
 
   /**
+   * Indicates the selected segment types used to filter the agent activity in the dashboard.
+   **/
+  public Widget selectedSegmentTypes(List<SelectedSegmentTypesEnum> selectedSegmentTypes) {
+    this.selectedSegmentTypes = selectedSegmentTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the selected segment types used to filter the agent activity in the dashboard.")
+  @JsonProperty("selectedSegmentTypes")
+  public List<SelectedSegmentTypesEnum> getSelectedSegmentTypes() {
+    return selectedSegmentTypes;
+  }
+  public void setSelectedSegmentTypes(List<SelectedSegmentTypesEnum> selectedSegmentTypes) {
+    this.selectedSegmentTypes = selectedSegmentTypes;
+  }
+
+
+  /**
    * The sort order of the interactions in the agent status widget.
    **/
   public Widget agentInteractionSortOrder(AgentInteractionSortOrderEnum agentInteractionSortOrder) {
@@ -1226,12 +1311,13 @@ public class Widget  implements Serializable {
             Objects.equals(this.showTimeInStatus, widget.showTimeInStatus) &&
             Objects.equals(this.showOfflineAgents, widget.showOfflineAgents) &&
             Objects.equals(this.selectedStatuses, widget.selectedStatuses) &&
+            Objects.equals(this.selectedSegmentTypes, widget.selectedSegmentTypes) &&
             Objects.equals(this.agentInteractionSortOrder, widget.agentInteractionSortOrder);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(row, column, title, type, metrics, displayText, displayTextColor, webContentUrl, splitFilters, splitByMediaType, showLongest, displayAsTable, showDuration, sortOrder, sortKey, entityLimit, displayAggregates, isFullWidth, showPercentageChange, showProfilePicture, filter, periods, mediaTypes, warnings, showTimeInStatus, showOfflineAgents, selectedStatuses, agentInteractionSortOrder);
+    return Objects.hash(row, column, title, type, metrics, displayText, displayTextColor, webContentUrl, splitFilters, splitByMediaType, showLongest, displayAsTable, showDuration, sortOrder, sortKey, entityLimit, displayAggregates, isFullWidth, showPercentageChange, showProfilePicture, filter, periods, mediaTypes, warnings, showTimeInStatus, showOfflineAgents, selectedStatuses, selectedSegmentTypes, agentInteractionSortOrder);
   }
 
   @Override
@@ -1266,6 +1352,7 @@ public class Widget  implements Serializable {
     sb.append("    showTimeInStatus: ").append(toIndentedString(showTimeInStatus)).append("\n");
     sb.append("    showOfflineAgents: ").append(toIndentedString(showOfflineAgents)).append("\n");
     sb.append("    selectedStatuses: ").append(toIndentedString(selectedStatuses)).append("\n");
+    sb.append("    selectedSegmentTypes: ").append(toIndentedString(selectedSegmentTypes)).append("\n");
     sb.append("    agentInteractionSortOrder: ").append(toIndentedString(agentInteractionSortOrder)).append("\n");
     sb.append("}");
     return sb.toString();

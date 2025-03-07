@@ -30,6 +30,7 @@ public class OutboundSettings  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private Integer maxCallsPerAgent = null;
+  private Double maxCallsPerAgentDecimal = null;
   private Integer maxConfigurableCallsPerAgent = null;
   private Double maxLineUtilization = null;
   private Double abandonSeconds = null;
@@ -160,6 +161,24 @@ public class OutboundSettings  implements Serializable {
   }
 
 
+  /**
+   * The maximum number of calls that can be placed per agent on any campaign with decimal precision
+   **/
+  public OutboundSettings maxCallsPerAgentDecimal(Double maxCallsPerAgentDecimal) {
+    this.maxCallsPerAgentDecimal = maxCallsPerAgentDecimal;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of calls that can be placed per agent on any campaign with decimal precision")
+  @JsonProperty("maxCallsPerAgentDecimal")
+  public Double getMaxCallsPerAgentDecimal() {
+    return maxCallsPerAgentDecimal;
+  }
+  public void setMaxCallsPerAgentDecimal(Double maxCallsPerAgentDecimal) {
+    this.maxCallsPerAgentDecimal = maxCallsPerAgentDecimal;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The maximum number of calls that can be configured to be placed per agent on any campaign")
   @JsonProperty("maxConfigurableCallsPerAgent")
   public Integer getMaxConfigurableCallsPerAgent() {
@@ -280,6 +299,7 @@ public class OutboundSettings  implements Serializable {
             Objects.equals(this.dateModified, outboundSettings.dateModified) &&
             Objects.equals(this.version, outboundSettings.version) &&
             Objects.equals(this.maxCallsPerAgent, outboundSettings.maxCallsPerAgent) &&
+            Objects.equals(this.maxCallsPerAgentDecimal, outboundSettings.maxCallsPerAgentDecimal) &&
             Objects.equals(this.maxConfigurableCallsPerAgent, outboundSettings.maxConfigurableCallsPerAgent) &&
             Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
             Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
@@ -291,7 +311,7 @@ public class OutboundSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, rescheduleTimeZoneSkippedContacts, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxCallsPerAgentDecimal, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, rescheduleTimeZoneSkippedContacts, selfUri);
   }
 
   @Override
@@ -305,6 +325,7 @@ public class OutboundSettings  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
+    sb.append("    maxCallsPerAgentDecimal: ").append(toIndentedString(maxCallsPerAgentDecimal)).append("\n");
     sb.append("    maxConfigurableCallsPerAgent: ").append(toIndentedString(maxConfigurableCallsPerAgent)).append("\n");
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");

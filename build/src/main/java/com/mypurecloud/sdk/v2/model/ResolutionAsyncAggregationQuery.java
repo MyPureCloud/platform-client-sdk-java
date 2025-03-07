@@ -48,6 +48,7 @@ public class ResolutionAsyncAggregationQuery  implements Serializable {
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
     CONVERSATIONID("conversationId"),
+    EXTERNALCONTACTID("externalContactId"),
     MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
     REQUESTEDROUTING("requestedRouting"),

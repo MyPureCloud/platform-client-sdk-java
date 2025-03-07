@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
 import com.mypurecloud.sdk.v2.model.AlertListing;
 import com.mypurecloud.sdk.v2.model.AlertRequest;
 import com.mypurecloud.sdk.v2.model.AlertingUnreadStatus;
@@ -35,13 +34,7 @@ import com.mypurecloud.sdk.v2.model.CommonRuleContainer;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetAlertQuery;
 import com.mypurecloud.sdk.v2.model.GetRulesQuery;
-import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
-import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
-import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
 import com.mypurecloud.sdk.v2.model.ModifiableRuleProperties;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
-import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingAlertRequest {
 

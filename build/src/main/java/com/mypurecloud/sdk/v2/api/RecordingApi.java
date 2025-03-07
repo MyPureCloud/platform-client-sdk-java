@@ -47,7 +47,6 @@ import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
@@ -81,7 +80,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationsched
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
@@ -673,7 +671,7 @@ public class RecordingApi {
    * @param messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional, default to ZIP)
    * @param download requesting a download format of the recording. Valid values:true,false (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
-   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+   * @param locale The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
    * @return Recording
    * @throws ApiException if the request fails on the server
@@ -694,7 +692,7 @@ public class RecordingApi {
    * @param messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional, default to ZIP)
    * @param download requesting a download format of the recording. Valid values:true,false (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
-   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+   * @param locale The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
@@ -1111,12 +1109,13 @@ public class RecordingApi {
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
+   * @param locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
    * @return List<Recording>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats) throws IOException, ApiException {
-    return  getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats));
+  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) throws IOException, ApiException {
+    return  getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale));
   }
 
   /**
@@ -1126,14 +1125,15 @@ public class RecordingApi {
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
+   * @param locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
    * @return List<Recording>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats) throws IOException {
-    return getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats).withHttpInfo());
+  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) throws IOException {
+    return getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale).withHttpInfo());
   }
 
-  private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats) {
+  private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) {
     return GetConversationRecordingsRequest.builder()
             .withConversationId(conversationId)
 
@@ -1142,6 +1142,8 @@ public class RecordingApi {
             .withFormatId(formatId)
 
             .withMediaFormats(mediaFormats)
+
+            .withLocale(locale)
 
             .build();
   }
@@ -2782,92 +2784,6 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return ScreenRecordingSessionListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ScreenRecordingSessionListing getRecordingsScreensessions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber));
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return ScreenRecordingSessionListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber).withHttpInfo());
-  }
-
-  private GetRecordingsScreensessionsRequest createGetRecordingsScreensessionsRequest(Integer pageSize, Integer pageNumber) {
-    return GetRecordingsScreensessionsRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .build();
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param request The request object
-   * @return ScreenRecordingSessionListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ScreenRecordingSessionListing getRecordingsScreensessions(GetRecordingsScreensessionsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ScreenRecordingSessionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Retrieves a paged listing of screen recording sessions
-   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ScreenRecordingSessionListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

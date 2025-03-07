@@ -35,7 +35,6 @@ public class CustomProvider  implements Serializable {
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String logoImageData = null;
-  private Boolean endpointCompression = null;
 
   private static class NameIdentifierFormatEnumDeserializer extends StdDeserializer<NameIdentifierFormatEnum> {
     public NameIdentifierFormatEnumDeserializer() {
@@ -141,6 +140,7 @@ public class CustomProvider  implements Serializable {
   private Boolean signAuthnRequests = null;
   private String providerName = null;
   private Boolean displayOnLogin = null;
+  private Boolean endpointCompression = null;
   private String selfUri = null;
 
   
@@ -323,23 +323,6 @@ public class CustomProvider  implements Serializable {
 
   /**
    **/
-  public CustomProvider endpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("endpointCompression")
-  public Boolean getEndpointCompression() {
-    return endpointCompression;
-  }
-  public void setEndpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-  }
-
-
-  /**
-   **/
   public CustomProvider nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
     this.nameIdentifierFormat = nameIdentifierFormat;
     return this;
@@ -423,6 +406,23 @@ public class CustomProvider  implements Serializable {
   }
 
 
+  /**
+   **/
+  public CustomProvider endpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endpointCompression")
+  public Boolean getEndpointCompression() {
+    return endpointCompression;
+  }
+  public void setEndpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -451,18 +451,18 @@ public class CustomProvider  implements Serializable {
             Objects.equals(this.certificate, customProvider.certificate) &&
             Objects.equals(this.certificates, customProvider.certificates) &&
             Objects.equals(this.logoImageData, customProvider.logoImageData) &&
-            Objects.equals(this.endpointCompression, customProvider.endpointCompression) &&
             Objects.equals(this.nameIdentifierFormat, customProvider.nameIdentifierFormat) &&
             Objects.equals(this.ssoBinding, customProvider.ssoBinding) &&
             Objects.equals(this.signAuthnRequests, customProvider.signAuthnRequests) &&
             Objects.equals(this.providerName, customProvider.providerName) &&
             Objects.equals(this.displayOnLogin, customProvider.displayOnLogin) &&
+            Objects.equals(this.endpointCompression, customProvider.endpointCompression) &&
             Objects.equals(this.selfUri, customProvider.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, endpointCompression, selfUri);
   }
 
   @Override
@@ -481,12 +481,12 @@ public class CustomProvider  implements Serializable {
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
-    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
     sb.append("    ssoBinding: ").append(toIndentedString(ssoBinding)).append("\n");
     sb.append("    signAuthnRequests: ").append(toIndentedString(signAuthnRequests)).append("\n");
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
+    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

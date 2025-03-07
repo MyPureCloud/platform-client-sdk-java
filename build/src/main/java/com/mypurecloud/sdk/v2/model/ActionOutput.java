@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.FlattenedJsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,8 +28,8 @@ public class ActionOutput  implements Serializable {
   private String successSchemaUri = null;
   private JsonSchemaDocument errorSchema = null;
   private String errorSchemaUri = null;
-  private JsonSchemaDocument successSchemaFlattened = null;
-  private Object errorSchemaFlattened = null;
+  private FlattenedJsonSchemaDocument successSchemaFlattened = null;
+  private FlattenedJsonSchemaDocument errorSchemaFlattened = null;
 
   
   /**
@@ -106,17 +107,17 @@ public class ActionOutput  implements Serializable {
   /**
    * JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.
    **/
-  public ActionOutput successSchemaFlattened(JsonSchemaDocument successSchemaFlattened) {
+  public ActionOutput successSchemaFlattened(FlattenedJsonSchemaDocument successSchemaFlattened) {
     this.successSchemaFlattened = successSchemaFlattened;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.")
   @JsonProperty("successSchemaFlattened")
-  public JsonSchemaDocument getSuccessSchemaFlattened() {
+  public FlattenedJsonSchemaDocument getSuccessSchemaFlattened() {
     return successSchemaFlattened;
   }
-  public void setSuccessSchemaFlattened(JsonSchemaDocument successSchemaFlattened) {
+  public void setSuccessSchemaFlattened(FlattenedJsonSchemaDocument successSchemaFlattened) {
     this.successSchemaFlattened = successSchemaFlattened;
   }
 
@@ -124,17 +125,17 @@ public class ActionOutput  implements Serializable {
   /**
    * JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
    **/
-  public ActionOutput errorSchemaFlattened(Object errorSchemaFlattened) {
+  public ActionOutput errorSchemaFlattened(FlattenedJsonSchemaDocument errorSchemaFlattened) {
     this.errorSchemaFlattened = errorSchemaFlattened;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.")
   @JsonProperty("errorSchemaFlattened")
-  public Object getErrorSchemaFlattened() {
+  public FlattenedJsonSchemaDocument getErrorSchemaFlattened() {
     return errorSchemaFlattened;
   }
-  public void setErrorSchemaFlattened(Object errorSchemaFlattened) {
+  public void setErrorSchemaFlattened(FlattenedJsonSchemaDocument errorSchemaFlattened) {
     this.errorSchemaFlattened = errorSchemaFlattened;
   }
 

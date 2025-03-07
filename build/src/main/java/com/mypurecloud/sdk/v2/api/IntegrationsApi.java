@@ -763,13 +763,14 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param expand Indicates a field in the response which should be expanded. (optional)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @param includeConfig Return config in response. (optional, default to false)
    * @return Action
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Action getIntegrationsAction(String actionId, String expand, Boolean includeConfig) throws IOException, ApiException {
-    return  getIntegrationsAction(createGetIntegrationsActionRequest(actionId, expand, includeConfig));
+  public Action getIntegrationsAction(String actionId, String expand, Boolean flatten, Boolean includeConfig) throws IOException, ApiException {
+    return  getIntegrationsAction(createGetIntegrationsActionRequest(actionId, expand, flatten, includeConfig));
   }
 
   /**
@@ -777,19 +778,22 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param expand Indicates a field in the response which should be expanded. (optional)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @param includeConfig Return config in response. (optional, default to false)
    * @return Action
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Action> getIntegrationsActionWithHttpInfo(String actionId, String expand, Boolean includeConfig) throws IOException {
-    return getIntegrationsAction(createGetIntegrationsActionRequest(actionId, expand, includeConfig).withHttpInfo());
+  public ApiResponse<Action> getIntegrationsActionWithHttpInfo(String actionId, String expand, Boolean flatten, Boolean includeConfig) throws IOException {
+    return getIntegrationsAction(createGetIntegrationsActionRequest(actionId, expand, flatten, includeConfig).withHttpInfo());
   }
 
-  private GetIntegrationsActionRequest createGetIntegrationsActionRequest(String actionId, String expand, Boolean includeConfig) {
+  private GetIntegrationsActionRequest createGetIntegrationsActionRequest(String actionId, String expand, Boolean flatten, Boolean includeConfig) {
     return GetIntegrationsActionRequest.builder()
             .withActionId(actionId)
 
             .withExpand(expand)
+
+            .withFlatten(flatten)
 
             .withIncludeConfig(includeConfig)
 
@@ -849,13 +853,14 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param expand Indicates a field in the response which should be expanded. (optional)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @param includeConfig Return config in response. (optional, default to false)
    * @return Action
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Action getIntegrationsActionDraft(String actionId, String expand, Boolean includeConfig) throws IOException, ApiException {
-    return  getIntegrationsActionDraft(createGetIntegrationsActionDraftRequest(actionId, expand, includeConfig));
+  public Action getIntegrationsActionDraft(String actionId, String expand, Boolean flatten, Boolean includeConfig) throws IOException, ApiException {
+    return  getIntegrationsActionDraft(createGetIntegrationsActionDraftRequest(actionId, expand, flatten, includeConfig));
   }
 
   /**
@@ -863,19 +868,22 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param expand Indicates a field in the response which should be expanded. (optional)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @param includeConfig Return config in response. (optional, default to false)
    * @return Action
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Action> getIntegrationsActionDraftWithHttpInfo(String actionId, String expand, Boolean includeConfig) throws IOException {
-    return getIntegrationsActionDraft(createGetIntegrationsActionDraftRequest(actionId, expand, includeConfig).withHttpInfo());
+  public ApiResponse<Action> getIntegrationsActionDraftWithHttpInfo(String actionId, String expand, Boolean flatten, Boolean includeConfig) throws IOException {
+    return getIntegrationsActionDraft(createGetIntegrationsActionDraftRequest(actionId, expand, flatten, includeConfig).withHttpInfo());
   }
 
-  private GetIntegrationsActionDraftRequest createGetIntegrationsActionDraftRequest(String actionId, String expand, Boolean includeConfig) {
+  private GetIntegrationsActionDraftRequest createGetIntegrationsActionDraftRequest(String actionId, String expand, Boolean flatten, Boolean includeConfig) {
     return GetIntegrationsActionDraftRequest.builder()
             .withActionId(actionId)
 
             .withExpand(expand)
+
+            .withFlatten(flatten)
 
             .withIncludeConfig(includeConfig)
 

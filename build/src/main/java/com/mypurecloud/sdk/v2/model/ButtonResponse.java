@@ -42,8 +42,8 @@ public class ButtonResponse  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BUTTON("Button"),
-    DATEPICKER("DatePicker"),
-    QUICKREPLY("QuickReply");
+    QUICKREPLY("QuickReply"),
+    DATEPICKER("DatePicker");
 
     private String value;
 

@@ -2860,7 +2860,7 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 25)
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param state Only list users of this state (optional)
-   * @param deletedOnly Only list deleted dashboards that are still recoverable (optional)
+   * @param deletedOnly Only list users with deleted dashboards (optional)
    * @return DashboardUserListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2877,7 +2877,7 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 25)
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param state Only list users of this state (optional)
-   * @param deletedOnly Only list deleted dashboards that are still recoverable (optional)
+   * @param deletedOnly Only list users with deleted dashboards (optional)
    * @return DashboardUserListing
    * @throws IOException if the request fails to be processed
    */

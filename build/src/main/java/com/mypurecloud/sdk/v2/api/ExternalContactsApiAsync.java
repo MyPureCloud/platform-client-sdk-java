@@ -113,12 +113,17 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
@@ -128,6 +133,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesRemoveReq
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRequest;
@@ -3483,6 +3489,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Scan for external contacts using paging
+   * 
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorContactListing> getExternalcontactsScanContactsDivisionviewsAllAsync(GetExternalcontactsScanContactsDivisionviewsAllRequest request, final AsyncApiCallback<CursorContactListing> callback) {
+    try {
+      final SettableFuture<CursorContactListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorContactListing>() {}, new AsyncApiCallback<ApiResponse<CursorContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorContactListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorContactListing>> getExternalcontactsScanContactsDivisionviewsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorContactListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorContactListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorContactListing>() {}, new AsyncApiCallback<ApiResponse<CursorContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorContactListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Scan for notes using paging
    * 
    * @param request the request object
@@ -3524,6 +3607,83 @@ public class ExternalContactsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<CursorNoteListing>> getExternalcontactsScanNotesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorNoteListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorNoteListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorNoteListing>() {}, new AsyncApiCallback<ApiResponse<CursorNoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorNoteListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorNoteListing> getExternalcontactsScanNotesDivisionviewsAllAsync(GetExternalcontactsScanNotesDivisionviewsAllRequest request, final AsyncApiCallback<CursorNoteListing> callback) {
+    try {
+      final SettableFuture<CursorNoteListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorNoteListing>() {}, new AsyncApiCallback<ApiResponse<CursorNoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorNoteListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorNoteListing>> getExternalcontactsScanNotesDivisionviewsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorNoteListing>> callback) {
     try {
       final SettableFuture<ApiResponse<CursorNoteListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3633,6 +3793,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Scan for external organizations using paging
+   * 
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorOrganizationListing> getExternalcontactsScanOrganizationsDivisionviewsAllAsync(GetExternalcontactsScanOrganizationsDivisionviewsAllRequest request, final AsyncApiCallback<CursorOrganizationListing> callback) {
+    try {
+      final SettableFuture<CursorOrganizationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<CursorOrganizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorOrganizationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorOrganizationListing>> getExternalcontactsScanOrganizationsDivisionviewsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorOrganizationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorOrganizationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<CursorOrganizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorOrganizationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Scan for relationships
    * 
    * @param request the request object
@@ -3674,6 +3911,83 @@ public class ExternalContactsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<CursorRelationshipListing>> getExternalcontactsScanRelationshipsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorRelationshipListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorRelationshipListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorRelationshipListing>() {}, new AsyncApiCallback<ApiResponse<CursorRelationshipListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorRelationshipListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorRelationshipListing> getExternalcontactsScanRelationshipsDivisionviewsAllAsync(GetExternalcontactsScanRelationshipsDivisionviewsAllRequest request, final AsyncApiCallback<CursorRelationshipListing> callback) {
+    try {
+      final SettableFuture<CursorRelationshipListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorRelationshipListing>() {}, new AsyncApiCallback<ApiResponse<CursorRelationshipListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorRelationshipListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorRelationshipListing>> getExternalcontactsScanRelationshipsDivisionviewsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CursorRelationshipListing>> callback) {
     try {
       final SettableFuture<ApiResponse<CursorRelationshipListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3921,6 +4235,83 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkFetchContactsResponse> postExternalcontactsBulkContactsDivisionviewsAsync(PostExternalcontactsBulkContactsDivisionviewsRequest request, final AsyncApiCallback<BulkFetchContactsResponse> callback) {
+    try {
+      final SettableFuture<BulkFetchContactsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkFetchContactsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchContactsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchContactsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch contacts across divisions
+   * 
+   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkFetchContactsResponse>> postExternalcontactsBulkContactsDivisionviewsAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkFetchContactsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkFetchContactsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkFetchContactsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchContactsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchContactsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4596,6 +4987,83 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkFetchOrganizationsResponse> postExternalcontactsBulkOrganizationsDivisionviewsAsync(PostExternalcontactsBulkOrganizationsDivisionviewsRequest request, final AsyncApiCallback<BulkFetchOrganizationsResponse> callback) {
+    try {
+      final SettableFuture<BulkFetchOrganizationsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkFetchOrganizationsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchOrganizationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchOrganizationsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch organizations across divisions
+   * 
+   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkFetchOrganizationsResponse>> postExternalcontactsBulkOrganizationsDivisionviewsAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkFetchOrganizationsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkFetchOrganizationsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkFetchOrganizationsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchOrganizationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchOrganizationsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

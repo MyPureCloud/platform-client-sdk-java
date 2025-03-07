@@ -48,12 +48,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
 | [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | Scan for external contacts using paging |
+| [**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | Scan for external contacts using paging |
 | [**getExternalcontactsScanNotes**](ExternalContactsApi#getExternalcontactsScanNotes) | Scan for notes using paging |
+| [**getExternalcontactsScanNotesDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanNotesDivisionviewsAll) | Scan for notes using paging |
 | [**getExternalcontactsScanOrganizations**](ExternalContactsApi#getExternalcontactsScanOrganizations) | Scan for external organizations using paging |
+| [**getExternalcontactsScanOrganizationsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll) | Scan for external organizations using paging |
 | [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | Scan for relationships |
+| [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | Scan for relationships |
 | [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | Claim or release identifiers for a contact |
 | [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | Bulk fetch contacts |
 | [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | Bulk add contacts |
+| [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | Bulk fetch contacts across divisions |
 | [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi#postExternalcontactsBulkContactsRemove) | Bulk remove contacts |
 | [**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi#postExternalcontactsBulkContactsUnresolved) | Bulk fetch unresolved ancestor contacts |
 | [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi#postExternalcontactsBulkContactsUpdate) | Bulk update contacts |
@@ -63,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsBulkNotesUpdate**](ExternalContactsApi#postExternalcontactsBulkNotesUpdate) | Bulk update notes |
 | [**postExternalcontactsBulkOrganizations**](ExternalContactsApi#postExternalcontactsBulkOrganizations) | Bulk fetch organizations |
 | [**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd) | Bulk add organizations |
+| [**postExternalcontactsBulkOrganizationsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkOrganizationsDivisionviews) | Bulk fetch organizations across divisions |
 | [**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove) | Bulk remove organizations |
 | [**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate) | Bulk update organizations |
 | [**postExternalcontactsBulkRelationships**](ExternalContactsApi#postExternalcontactsBulkRelationships) | Bulk fetch relationships |
@@ -1078,7 +1084,7 @@ try {
 # **getExternalcontactsContacts**
 
 
-> [ContactListing](ContactListing) getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand)
+> [ContactListing](ContactListing) getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand, divisionIds)
 
 Search for external contacts
 
@@ -1116,8 +1122,9 @@ Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,00
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+List<String> divisionIds = Arrays.asList(null); // List<String> | which divisions to search, up to 50
 try {
-    ContactListing result = apiInstance.getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand);
+    ContactListing result = apiInstance.getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand, divisionIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContacts");
@@ -1135,6 +1142,7 @@ try {
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division 
+| **divisionIds** | [**List&lt;String&gt;**](String)| which divisions to search, up to 50 | [optional] 
 {: class="table-striped"}
 
 
@@ -2334,7 +2342,7 @@ try {
 # **getExternalcontactsOrganizations**
 
 
-> [ExternalOrganizationListing](ExternalOrganizationListing) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)
+> [ExternalOrganizationListing](ExternalOrganizationListing) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors, divisionIds)
 
 Search for external organizations
 
@@ -2374,8 +2382,9 @@ List<String> trustorId = Arrays.asList(null); // List<String> | Search for exter
 String sortOrder = "sortOrder_example"; // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+List<String> divisionIds = Arrays.asList(null); // List<String> | which divisions to search, up to 50
 try {
-    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors);
+    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors, divisionIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizations");
@@ -2395,6 +2404,7 @@ try {
 | **sortOrder** | **String**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources, division, identifiers, externalSources 
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
+| **divisionIds** | [**List&lt;String&gt;**](String)| which divisions to search, up to 50 | [optional] 
 {: class="table-striped"}
 
 
@@ -2702,7 +2712,7 @@ try {
 # **getExternalcontactsReversewhitepageslookup**
 
 
-> [ReverseWhitepagesLookupResult](ReverseWhitepagesLookupResult) getExternalcontactsReversewhitepageslookup(lookupVal, expand)
+> [ReverseWhitepagesLookupResult](ReverseWhitepagesLookupResult) getExternalcontactsReversewhitepageslookup(lookupVal, expand, divisionId)
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 
@@ -2736,8 +2746,9 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
 List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
+String divisionId = "*"; // String | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
 try {
-    ReverseWhitepagesLookupResult result = apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, expand);
+    ReverseWhitepagesLookupResult result = apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, expand, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsReversewhitepageslookup");
@@ -2752,6 +2763,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | 
 | **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources, division 
+| **divisionId** | **String**| Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to *] 
 {: class="table-striped"}
 
 
@@ -2763,7 +2775,7 @@ try {
 # **getExternalcontactsScanContacts**
 
 
-> [CursorContactListing](CursorContactListing) getExternalcontactsScanContacts(limit, cursor)
+> [CursorContactListing](CursorContactListing) getExternalcontactsScanContacts(limit, cursor, divisionId)
 
 Scan for external contacts using paging
 
@@ -2798,11 +2810,76 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer limit = 56; // Integer | The number of contacts per page; must be between 10 and 200, default is 100
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+String divisionId = "*"; // String | The division to scan over
 try {
-    CursorContactListing result = apiInstance.getExternalcontactsScanContacts(limit, cursor);
+    CursorContactListing result = apiInstance.getExternalcontactsScanContacts(limit, cursor, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanContacts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of contacts per page; must be between 10 and 200, default is 100 | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+| **divisionId** | **String**| The division to scan over | [optional] [default to *] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorContactListing**](CursorContactListing)
+
+
+# **getExternalcontactsScanContactsDivisionviewsAll**
+
+
+> [CursorContactListing](CursorContactListing) getExternalcontactsScanContactsDivisionviewsAll(limit, cursor)
+
+Scan for external contacts using paging
+
+getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/contacts/divisionviews/all  
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of contacts per page; must be between 10 and 200, default is 100
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorContactListing result = apiInstance.getExternalcontactsScanContactsDivisionviewsAll(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll");
     e.printStackTrace();
 }
 ```
@@ -2825,7 +2902,7 @@ try {
 # **getExternalcontactsScanNotes**
 
 
-> [CursorNoteListing](CursorNoteListing) getExternalcontactsScanNotes(limit, cursor)
+> [CursorNoteListing](CursorNoteListing) getExternalcontactsScanNotes(limit, cursor, divisionId)
 
 Scan for notes using paging
 
@@ -2860,11 +2937,76 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer limit = 56; // Integer | The number of notes per page; must be between 10 and 200, default is 100
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+String divisionId = "*"; // String | The division to scan over
 try {
-    CursorNoteListing result = apiInstance.getExternalcontactsScanNotes(limit, cursor);
+    CursorNoteListing result = apiInstance.getExternalcontactsScanNotes(limit, cursor, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanNotes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of notes per page; must be between 10 and 200, default is 100 | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+| **divisionId** | **String**| The division to scan over | [optional] [default to *] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorNoteListing**](CursorNoteListing)
+
+
+# **getExternalcontactsScanNotesDivisionviewsAll**
+
+
+> [CursorNoteListing](CursorNoteListing) getExternalcontactsScanNotesDivisionviewsAll(limit, cursor)
+
+Scan for notes using paging
+
+getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/notes/divisionviews/all  
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of notes per page; must be between 10 and 200, default is 100
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorNoteListing result = apiInstance.getExternalcontactsScanNotesDivisionviewsAll(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanNotesDivisionviewsAll");
     e.printStackTrace();
 }
 ```
@@ -2887,7 +3029,7 @@ try {
 # **getExternalcontactsScanOrganizations**
 
 
-> [CursorOrganizationListing](CursorOrganizationListing) getExternalcontactsScanOrganizations(limit, cursor)
+> [CursorOrganizationListing](CursorOrganizationListing) getExternalcontactsScanOrganizations(limit, cursor, divisionId)
 
 Scan for external organizations using paging
 
@@ -2922,11 +3064,76 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer limit = 56; // Integer | The number of organizations per page; must be between 10 and 200, default is 100
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+String divisionId = "*"; // String | The division to scan over
 try {
-    CursorOrganizationListing result = apiInstance.getExternalcontactsScanOrganizations(limit, cursor);
+    CursorOrganizationListing result = apiInstance.getExternalcontactsScanOrganizations(limit, cursor, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanOrganizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of organizations per page; must be between 10 and 200, default is 100 | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+| **divisionId** | **String**| The division to scan over | [optional] [default to *] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorOrganizationListing**](CursorOrganizationListing)
+
+
+# **getExternalcontactsScanOrganizationsDivisionviewsAll**
+
+
+> [CursorOrganizationListing](CursorOrganizationListing) getExternalcontactsScanOrganizationsDivisionviewsAll(limit, cursor)
+
+Scan for external organizations using paging
+
+getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/organizations/divisionviews/all  
+
+Requires ALL permissions: 
+
+* externalContacts:externalOrganization:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of organizations per page; must be between 10 and 200, default is 100
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorOrganizationListing result = apiInstance.getExternalcontactsScanOrganizationsDivisionviewsAll(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll");
     e.printStackTrace();
 }
 ```
@@ -2949,7 +3156,7 @@ try {
 # **getExternalcontactsScanRelationships**
 
 
-> [CursorRelationshipListing](CursorRelationshipListing) getExternalcontactsScanRelationships(limit, cursor)
+> [CursorRelationshipListing](CursorRelationshipListing) getExternalcontactsScanRelationships(limit, cursor, divisionId)
 
 Scan for relationships
 
@@ -2984,11 +3191,76 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer limit = 56; // Integer | The number of relationships per page; must be between 10 and 200, default is 100
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+String divisionId = "*"; // String | The division to scan over
 try {
-    CursorRelationshipListing result = apiInstance.getExternalcontactsScanRelationships(limit, cursor);
+    CursorRelationshipListing result = apiInstance.getExternalcontactsScanRelationships(limit, cursor, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanRelationships");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of relationships per page; must be between 10 and 200, default is 100 | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+| **divisionId** | **String**| The division to scan over | [optional] [default to *] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorRelationshipListing**](CursorRelationshipListing)
+
+
+# **getExternalcontactsScanRelationshipsDivisionviewsAll**
+
+
+> [CursorRelationshipListing](CursorRelationshipListing) getExternalcontactsScanRelationshipsDivisionviewsAll(limit, cursor)
+
+Scan for relationships
+
+getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/relationships/divisionviews/all  
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of relationships per page; must be between 10 and 200, default is 100
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorRelationshipListing result = apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll");
     e.printStackTrace();
 }
 ```
@@ -3185,6 +3457,67 @@ try {
 ### Return type
 
 [**BulkContactsResponse**](BulkContactsResponse)
+
+
+# **postExternalcontactsBulkContactsDivisionviews**
+
+
+> [BulkFetchContactsResponse](BulkFetchContactsResponse) postExternalcontactsBulkContactsDivisionviews(body)
+
+Bulk fetch contacts across divisions
+
+postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/divisionviews  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Contact ids
+try {
+    BulkFetchContactsResponse result = apiInstance.postExternalcontactsBulkContactsDivisionviews(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Contact ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse)
 
 
 # **postExternalcontactsBulkContactsRemove**
@@ -3720,6 +4053,67 @@ try {
 ### Return type
 
 [**BulkOrganizationsResponse**](BulkOrganizationsResponse)
+
+
+# **postExternalcontactsBulkOrganizationsDivisionviews**
+
+
+> [BulkFetchOrganizationsResponse](BulkFetchOrganizationsResponse) postExternalcontactsBulkOrganizationsDivisionviews(body)
+
+Bulk fetch organizations across divisions
+
+postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/divisionviews  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Organizations ids
+try {
+    BulkFetchOrganizationsResponse result = apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizationsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Organizations ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse)
 
 
 # **postExternalcontactsBulkOrganizationsRemove**
@@ -5847,4 +6241,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

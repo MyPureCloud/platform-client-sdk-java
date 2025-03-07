@@ -15,11 +15,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ButtonResponse;
 import com.mypurecloud.sdk.v2.model.Card;
+import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
 import com.mypurecloud.sdk.v2.model.QuickReply;
 import com.mypurecloud.sdk.v2.model.RecordingContentStory;
+import com.mypurecloud.sdk.v2.model.RecordingNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -51,6 +53,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private ButtonResponse buttonResponse = null;
   private RecordingContentStory story = null;
   private List<Card> cards = new ArrayList<Card>();
+  private RecordingNotificationTemplate notificationTemplate = null;
 
   private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
     public ContentTypeEnumDeserializer() {
@@ -111,6 +114,7 @@ public class RecordingMessagingMessage  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
+  private List<ConversationMessageEvent> events = new ArrayList<ConversationMessageEvent>();
 
   
   /**
@@ -420,6 +424,24 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * Template notification content.
+   **/
+  public RecordingMessagingMessage notificationTemplate(RecordingNotificationTemplate notificationTemplate) {
+    this.notificationTemplate = notificationTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Template notification content.")
+  @JsonProperty("notificationTemplate")
+  public RecordingNotificationTemplate getNotificationTemplate() {
+    return notificationTemplate;
+  }
+  public void setNotificationTemplate(RecordingNotificationTemplate notificationTemplate) {
+    this.notificationTemplate = notificationTemplate;
+  }
+
+
+  /**
    * Indicates the content type for this message
    **/
   public RecordingMessagingMessage contentType(ContentTypeEnum contentType) {
@@ -434,6 +456,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
   public void setContentType(ContentTypeEnum contentType) {
     this.contentType = contentType;
+  }
+
+
+  /**
+   * List of event elements
+   **/
+  public RecordingMessagingMessage events(List<ConversationMessageEvent> events) {
+    this.events = events;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of event elements")
+  @JsonProperty("events")
+  public List<ConversationMessageEvent> getEvents() {
+    return events;
+  }
+  public void setEvents(List<ConversationMessageEvent> events) {
+    this.events = events;
   }
 
 
@@ -464,12 +504,14 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
             Objects.equals(this.story, recordingMessagingMessage.story) &&
             Objects.equals(this.cards, recordingMessagingMessage.cards) &&
-            Objects.equals(this.contentType, recordingMessagingMessage.contentType);
+            Objects.equals(this.notificationTemplate, recordingMessagingMessage.notificationTemplate) &&
+            Objects.equals(this.contentType, recordingMessagingMessage.contentType) &&
+            Objects.equals(this.events, recordingMessagingMessage.events);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, contentType);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, contentType, events);
   }
 
   @Override
@@ -494,7 +536,9 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    cards: ").append(toIndentedString(cards)).append("\n");
+    sb.append("    notificationTemplate: ").append(toIndentedString(notificationTemplate)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ShrinkageOverrides;
+import com.mypurecloud.sdk.v2.model.ValueWrapperMonthlyPlanningPeriodSettings;
 import com.mypurecloud.sdk.v2.model.ValueWrapperPlanningPeriodSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +29,7 @@ public class SchedulingSettingsRequest  implements Serializable {
   private Double defaultShrinkagePercent = null;
   private ShrinkageOverrides shrinkageOverrides = null;
   private ValueWrapperPlanningPeriodSettings planningPeriod = null;
+  private ValueWrapperMonthlyPlanningPeriodSettings monthlyPlanningPeriod = null;
 
   private static class StartDayOfWeekendEnumDeserializer extends StdDeserializer<StartDayOfWeekendEnum> {
     public StartDayOfWeekendEnumDeserializer() {
@@ -138,20 +140,38 @@ public class SchedulingSettingsRequest  implements Serializable {
 
 
   /**
-   * Planning period settings for scheduling
+   * Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
    **/
   public SchedulingSettingsRequest planningPeriod(ValueWrapperPlanningPeriodSettings planningPeriod) {
     this.planningPeriod = planningPeriod;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Planning period settings for scheduling")
+  @ApiModelProperty(example = "null", value = "Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined")
   @JsonProperty("planningPeriod")
   public ValueWrapperPlanningPeriodSettings getPlanningPeriod() {
     return planningPeriod;
   }
   public void setPlanningPeriod(ValueWrapperPlanningPeriodSettings planningPeriod) {
     this.planningPeriod = planningPeriod;
+  }
+
+
+  /**
+   * Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
+   **/
+  public SchedulingSettingsRequest monthlyPlanningPeriod(ValueWrapperMonthlyPlanningPeriodSettings monthlyPlanningPeriod) {
+    this.monthlyPlanningPeriod = monthlyPlanningPeriod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined")
+  @JsonProperty("monthlyPlanningPeriod")
+  public ValueWrapperMonthlyPlanningPeriodSettings getMonthlyPlanningPeriod() {
+    return monthlyPlanningPeriod;
+  }
+  public void setMonthlyPlanningPeriod(ValueWrapperMonthlyPlanningPeriodSettings monthlyPlanningPeriod) {
+    this.monthlyPlanningPeriod = monthlyPlanningPeriod;
   }
 
 
@@ -187,12 +207,13 @@ public class SchedulingSettingsRequest  implements Serializable {
             Objects.equals(this.defaultShrinkagePercent, schedulingSettingsRequest.defaultShrinkagePercent) &&
             Objects.equals(this.shrinkageOverrides, schedulingSettingsRequest.shrinkageOverrides) &&
             Objects.equals(this.planningPeriod, schedulingSettingsRequest.planningPeriod) &&
+            Objects.equals(this.monthlyPlanningPeriod, schedulingSettingsRequest.monthlyPlanningPeriod) &&
             Objects.equals(this.startDayOfWeekend, schedulingSettingsRequest.startDayOfWeekend);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent, shrinkageOverrides, planningPeriod, startDayOfWeekend);
+    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent, shrinkageOverrides, planningPeriod, monthlyPlanningPeriod, startDayOfWeekend);
   }
 
   @Override
@@ -204,6 +225,7 @@ public class SchedulingSettingsRequest  implements Serializable {
     sb.append("    defaultShrinkagePercent: ").append(toIndentedString(defaultShrinkagePercent)).append("\n");
     sb.append("    shrinkageOverrides: ").append(toIndentedString(shrinkageOverrides)).append("\n");
     sb.append("    planningPeriod: ").append(toIndentedString(planningPeriod)).append("\n");
+    sb.append("    monthlyPlanningPeriod: ").append(toIndentedString(monthlyPlanningPeriod)).append("\n");
     sb.append("    startDayOfWeekend: ").append(toIndentedString(startDayOfWeekend)).append("\n");
     sb.append("}");
     return sb.toString();

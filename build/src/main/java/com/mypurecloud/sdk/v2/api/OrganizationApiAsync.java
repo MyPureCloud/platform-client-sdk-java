@@ -757,6 +757,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LimitCountListing> getOrganizationsLimitsNamespaceCountsAsync(GetOrganizationsLimitsNamespaceCountsRequest request, final AsyncApiCallback<LimitCountListing> callback) {
     try {
@@ -791,6 +792,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LimitCountListing>> getOrganizationsLimitsNamespaceCountsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitCountListing>> callback) {
     try {
@@ -907,6 +909,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LimitCountListing> getOrganizationsLimitsNamespaceLimitCountsAsync(GetOrganizationsLimitsNamespaceLimitCountsRequest request, final AsyncApiCallback<LimitCountListing> callback) {
     try {
@@ -941,6 +944,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LimitCountListing>> getOrganizationsLimitsNamespaceLimitCountsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitCountListing>> callback) {
     try {

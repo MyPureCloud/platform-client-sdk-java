@@ -12,12 +12,15 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContentReaction;
 import com.mypurecloud.sdk.v2.model.EventCoBrowse;
 import com.mypurecloud.sdk.v2.model.EventPresence;
 import com.mypurecloud.sdk.v2.model.EventTyping;
 import com.mypurecloud.sdk.v2.model.EventVideo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -49,7 +52,8 @@ public class MessageEvent  implements Serializable {
     COBROWSE("CoBrowse"),
     TYPING("Typing"),
     PRESENCE("Presence"),
-    VIDEO("Video");
+    VIDEO("Video"),
+    REACTIONS("Reactions");
 
     private String value;
 
@@ -81,6 +85,7 @@ public class MessageEvent  implements Serializable {
   private EventTyping typing = null;
   private EventPresence presence = null;
   private EventVideo video = null;
+  private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
 
   
   /**
@@ -173,6 +178,24 @@ public class MessageEvent  implements Serializable {
   }
 
 
+  /**
+   * A list of reactions to a message.
+   **/
+  public MessageEvent reactions(List<ContentReaction> reactions) {
+    this.reactions = reactions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of reactions to a message.")
+  @JsonProperty("reactions")
+  public List<ContentReaction> getReactions() {
+    return reactions;
+  }
+  public void setReactions(List<ContentReaction> reactions) {
+    this.reactions = reactions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -187,12 +210,13 @@ public class MessageEvent  implements Serializable {
             Objects.equals(this.coBrowse, messageEvent.coBrowse) &&
             Objects.equals(this.typing, messageEvent.typing) &&
             Objects.equals(this.presence, messageEvent.presence) &&
-            Objects.equals(this.video, messageEvent.video);
+            Objects.equals(this.video, messageEvent.video) &&
+            Objects.equals(this.reactions, messageEvent.reactions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, coBrowse, typing, presence, video);
+    return Objects.hash(eventType, coBrowse, typing, presence, video, reactions);
   }
 
   @Override
@@ -205,6 +229,7 @@ public class MessageEvent  implements Serializable {
     sb.append("    typing: ").append(toIndentedString(typing)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

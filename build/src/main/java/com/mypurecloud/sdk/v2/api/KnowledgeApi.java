@@ -4279,7 +4279,6 @@ public class KnowledgeApi {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
@@ -4294,7 +4293,6 @@ public class KnowledgeApi {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
@@ -4319,7 +4317,6 @@ public class KnowledgeApi {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeParseJobResponse
    * @throws ApiException if the request fails on the server
@@ -4339,7 +4336,6 @@ public class KnowledgeApi {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4995,7 +4991,6 @@ public class KnowledgeApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param jobId Upload job ID (required)
    * @return GetUploadSourceUrlJobStatusResponse
@@ -5009,7 +5004,6 @@ public class KnowledgeApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param jobId Upload job ID (required)
    * @return GetUploadSourceUrlJobStatusResponse
@@ -5031,7 +5025,6 @@ public class KnowledgeApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetUploadSourceUrlJobStatusResponse
    * @throws ApiException if the request fails on the server
@@ -5051,7 +5044,6 @@ public class KnowledgeApi {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6335,7 +6327,6 @@ public class KnowledgeApi {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param body  (required)
@@ -6349,7 +6340,6 @@ public class KnowledgeApi {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param body  (required)
@@ -6373,7 +6363,6 @@ public class KnowledgeApi {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6392,7 +6381,6 @@ public class KnowledgeApi {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9386,7 +9374,6 @@ public class KnowledgeApi {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param body  (required)
@@ -9400,7 +9387,6 @@ public class KnowledgeApi {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param parseJobId Parse job ID (required)
    * @param body  (required)
@@ -9424,7 +9410,6 @@ public class KnowledgeApi {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -9443,7 +9428,6 @@ public class KnowledgeApi {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9473,7 +9457,6 @@ public class KnowledgeApi {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeParseJobResponse
@@ -9487,7 +9470,6 @@ public class KnowledgeApi {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeParseJobResponse
@@ -9509,7 +9491,6 @@ public class KnowledgeApi {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeParseJobResponse
    * @throws ApiException if the request fails on the server
@@ -9529,7 +9510,6 @@ public class KnowledgeApi {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9729,12 +9709,13 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
+   * @param body  (optional)
    * @return SourceSyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
-    return  postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId));
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(String knowledgeBaseId, String sourceId, Object body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId, body));
   }
 
   /**
@@ -9742,18 +9723,21 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
+   * @param body  (optional)
    * @return SourceSyncResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
-    return postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId, Object body) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(String knowledgeBaseId, String sourceId) {
+  private PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(String knowledgeBaseId, String sourceId, Object body) {
     return PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withSourceId(sourceId)
+
+            .withBody(body)
 
             .build();
   }
@@ -9784,7 +9768,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(ApiRequest<Object> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<SourceSyncResponse>() {});
     }
@@ -9893,12 +9877,13 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
+   * @param body  (optional)
    * @return SourceSyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
-    return  postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId));
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(String knowledgeBaseId, String sourceId, Object body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId, body));
   }
 
   /**
@@ -9906,18 +9891,21 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
+   * @param body  (optional)
    * @return SourceSyncResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
-    return postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId, Object body) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(String knowledgeBaseId, String sourceId) {
+  private PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(String knowledgeBaseId, String sourceId, Object body) {
     return PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withSourceId(sourceId)
+
+            .withBody(body)
 
             .build();
   }
@@ -9948,7 +9936,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(ApiRequest<Object> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<SourceSyncResponse>() {});
     }
@@ -10055,7 +10043,6 @@ public class KnowledgeApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body uploadRequest (required)
    * @return CreateUploadSourceUrlJobResponse
@@ -10069,7 +10056,6 @@ public class KnowledgeApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body uploadRequest (required)
    * @return CreateUploadSourceUrlJobResponse
@@ -10091,7 +10077,6 @@ public class KnowledgeApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CreateUploadSourceUrlJobResponse
    * @throws ApiException if the request fails on the server
@@ -10111,7 +10096,6 @@ public class KnowledgeApi {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

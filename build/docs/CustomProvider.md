@@ -16,12 +16,12 @@
 | **certificate** | **String** |  |  [optional] |
 | **certificates** | **List&lt;String&gt;** |  |  [optional] |
 | **logoImageData** | **String** |  |  [optional] |
-| **endpointCompression** | **Boolean** |  |  [optional] |
 | **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#Enum--NameIdentifierFormatEnum) |  |  [optional] |
 | **ssoBinding** | [**SsoBindingEnum**](#Enum--SsoBindingEnum) |  |  [optional] |
 | **signAuthnRequests** | **Boolean** |  |  [optional] |
 | **providerName** | **String** |  |  [optional] |
 | **displayOnLogin** | **Boolean** |  |  [optional] |
+| **endpointCompression** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -51,4 +51,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

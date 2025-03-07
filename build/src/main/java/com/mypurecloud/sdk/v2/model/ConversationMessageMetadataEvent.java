@@ -102,6 +102,7 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     DISCONNECT("Disconnect"),
     CLEAR("Clear"),
     SIGNIN("SignIn"),
+    SESSIONEXPIRED("SessionExpired"),
     UNKNOWN("Unknown");
 
     private String value;

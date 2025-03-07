@@ -97,6 +97,8 @@ public class CoachingAppointmentResponse  implements Serializable {
   private WfmScheduleReference wfmSchedule = null;
   private Date dateCompleted = null;
   private List<String> externalLinks = new ArrayList<String>();
+  private String location = null;
+  private Boolean shareInsightsData = null;
   private String selfUri = null;
 
   
@@ -226,6 +228,20 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The location of the appointment")
+  @JsonProperty("location")
+  public String getLocation() {
+    return location;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Whether to share the insight data")
+  @JsonProperty("shareInsightsData")
+  public Boolean getShareInsightsData() {
+    return shareInsightsData;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -261,12 +277,14 @@ public class CoachingAppointmentResponse  implements Serializable {
             Objects.equals(this.wfmSchedule, coachingAppointmentResponse.wfmSchedule) &&
             Objects.equals(this.dateCompleted, coachingAppointmentResponse.dateCompleted) &&
             Objects.equals(this.externalLinks, coachingAppointmentResponse.externalLinks) &&
+            Objects.equals(this.location, coachingAppointmentResponse.location) &&
+            Objects.equals(this.shareInsightsData, coachingAppointmentResponse.shareInsightsData) &&
             Objects.equals(this.selfUri, coachingAppointmentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, isOverdue, wfmSchedule, dateCompleted, externalLinks, selfUri);
+    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, isOverdue, wfmSchedule, dateCompleted, externalLinks, location, shareInsightsData, selfUri);
   }
 
   @Override
@@ -292,6 +310,8 @@ public class CoachingAppointmentResponse  implements Serializable {
     sb.append("    wfmSchedule: ").append(toIndentedString(wfmSchedule)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    shareInsightsData: ").append(toIndentedString(shareInsightsData)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -119,6 +119,20 @@ public class PatchOutboundSettingsRequest {
 	    return this;
 	} 
 
+	private Boolean useMaxCallsPerAgentDecimal;
+	public Boolean getUseMaxCallsPerAgentDecimal() {
+		return this.useMaxCallsPerAgentDecimal;
+	}
+
+	public void setUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+		this.useMaxCallsPerAgentDecimal = useMaxCallsPerAgentDecimal;
+	}
+
+	public PatchOutboundSettingsRequest withUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+	    this.setUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -147,6 +161,9 @@ public class PatchOutboundSettingsRequest {
         
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/outbound/settings")
+
+                .withQueryParameters("useMaxCallsPerAgentDecimal", "", useMaxCallsPerAgentDecimal)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -177,6 +194,11 @@ public class PatchOutboundSettingsRequest {
 
 		public Builder withBody(OutboundSettings body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withUseMaxCallsPerAgentDecimal(Boolean useMaxCallsPerAgentDecimal) {
+			request.setUseMaxCallsPerAgentDecimal(useMaxCallsPerAgentDecimal);
 			return this;
 		}
 

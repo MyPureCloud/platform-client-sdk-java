@@ -57,7 +57,6 @@ import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 
 public class GetConversationRecordingsRequest {
 
@@ -152,6 +151,20 @@ public class GetConversationRecordingsRequest {
 	    return this;
 	} 
 
+	private String locale;
+	public String getLocale() {
+		return this.locale;
+	}
+
+	public void setLocale(String locale) {
+		this.locale = locale;
+	}
+
+	public GetConversationRecordingsRequest withLocale(String locale) {
+	    this.setLocale(locale);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -190,6 +203,9 @@ public class GetConversationRecordingsRequest {
         
 
                 .withQueryParameters("mediaFormats", "multi", mediaFormats)
+        
+
+                .withQueryParameters("locale", "", locale)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -243,6 +259,11 @@ public class GetConversationRecordingsRequest {
 
 		public Builder withMediaFormats(List<String> mediaFormats) {
 			request.setMediaFormats(mediaFormats);
+			return this;
+		}
+
+		public Builder withLocale(String locale) {
+			request.setLocale(locale);
 			return this;
 		}
 

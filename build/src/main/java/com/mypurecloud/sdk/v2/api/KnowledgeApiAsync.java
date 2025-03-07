@@ -3579,7 +3579,6 @@ public class KnowledgeApiAsync {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3614,7 +3613,6 @@ public class KnowledgeApiAsync {
   /**
    * Get parse job report
    * 
-   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4181,7 +4179,6 @@ public class KnowledgeApiAsync {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4216,7 +4213,6 @@ public class KnowledgeApiAsync {
   /**
    * Get content upload from URL job status
    * 
-   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5316,7 +5312,6 @@ public class KnowledgeApiAsync {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5351,7 +5346,6 @@ public class KnowledgeApiAsync {
   /**
    * Send update to the parse operation
    * 
-   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8038,7 +8032,6 @@ public class KnowledgeApiAsync {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8073,7 +8066,6 @@ public class KnowledgeApiAsync {
   /**
    * Import the parsed articles
    * 
-   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8115,7 +8107,6 @@ public class KnowledgeApiAsync {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8150,7 +8141,6 @@ public class KnowledgeApiAsync {
   /**
    * Create parse job
    * 
-   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8382,7 +8372,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
+  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<SourceSyncResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -8532,7 +8522,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
+  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<SourceSyncResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -8644,7 +8634,6 @@ public class KnowledgeApiAsync {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8679,7 +8668,6 @@ public class KnowledgeApiAsync {
   /**
    * Create content upload from URL job
    * 
-   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

@@ -34,6 +34,8 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
@@ -139,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
@@ -160,6 +163,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
@@ -180,6 +184,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsIdentityresolutionPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserDirectroutingbackupSettingsRequest;
@@ -244,11 +249,14 @@ import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailOutboundDomainActivationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsIdentityresolutionPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
@@ -2680,6 +2688,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionAsync(GetRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a route identity resolution setting.
+   * 
+   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get routes
    * 
    * @param request the request object
@@ -4255,6 +4340,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionQueueConfig> getRoutingQueueIdentityresolutionAsync(GetRoutingQueueIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionQueueConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionQueueConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionQueueConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionQueueConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Queue IdentityResolution Settings.
+   * 
+   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionQueueConfig>> getRoutingQueueIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionQueueConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionQueueConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionQueueConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get Estimated Wait Time
    * 
    * @param request the request object
@@ -5745,6 +5907,83 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberAsync(GetRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a SMS identity resolution settings.
+   * 
+   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10573,6 +10812,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionAsync(PutRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update identity resolution settings for a route.
+   * 
+   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Request an activation status (cname + dkim) update of an outbound domain
    * 
    * @param request the request object
@@ -10798,6 +11114,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionQueueConfig> putRoutingQueueIdentityresolutionAsync(PutRoutingQueueIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionQueueConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionQueueConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionQueueConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionQueueConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Queue IdentityResolution Settings.
+   * 
+   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionQueueConfig>> putRoutingQueueIdentityresolutionAsync(ApiRequest<IdentityResolutionQueueConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionQueueConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionQueueConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionQueueConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionQueueConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionQueueConfig> response = (ApiResponse<IdentityResolutionQueueConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an organization's routing settings
    * 
    * @param request the request object
@@ -10936,6 +11329,83 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberAsync(PutRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an SMS identity resolution settings.
+   * 
+   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

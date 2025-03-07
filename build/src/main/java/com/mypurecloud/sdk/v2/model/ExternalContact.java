@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.MergeOperation;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.TwitterId;
 import com.mypurecloud.sdk.v2.model.WhatsAppId;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ import java.io.Serializable;
 public class ExternalContact  implements Serializable {
   
   private String id = null;
+  private WritableStarrableDivision division = null;
   private String firstName = null;
   private String middleName = null;
   private String lastName = null;
@@ -136,6 +138,24 @@ public class ExternalContact  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public ExternalContact division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -625,6 +645,7 @@ public class ExternalContact  implements Serializable {
     ExternalContact externalContact = (ExternalContact) o;
 
     return Objects.equals(this.id, externalContact.id) &&
+            Objects.equals(this.division, externalContact.division) &&
             Objects.equals(this.firstName, externalContact.firstName) &&
             Objects.equals(this.middleName, externalContact.middleName) &&
             Objects.equals(this.lastName, externalContact.lastName) &&
@@ -660,7 +681,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
+    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
   }
 
   @Override
@@ -669,6 +690,7 @@ public class ExternalContact  implements Serializable {
     sb.append("class ExternalContact {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");

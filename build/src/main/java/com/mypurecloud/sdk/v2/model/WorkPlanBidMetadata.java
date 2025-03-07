@@ -66,14 +66,14 @@ public class WorkPlanBidMetadata  implements Serializable {
 
 
   /**
-   * The user who modified the entity
+   * The user who modified the entity. The id may be 'System' if it was an automated process
    **/
   public WorkPlanBidMetadata modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who modified the entity")
+  @ApiModelProperty(example = "null", value = "The user who modified the entity. The id may be 'System' if it was an automated process")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;

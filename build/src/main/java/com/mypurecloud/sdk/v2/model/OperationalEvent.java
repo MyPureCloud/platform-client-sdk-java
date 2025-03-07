@@ -25,6 +25,7 @@ public class OperationalEvent  implements Serializable {
   
   private AddressableEntityRef eventDefinition = null;
   private String entityId = null;
+  private String entityToken = null;
   private String entityName = null;
   private String previousValue = null;
   private String currentValue = null;
@@ -68,6 +69,24 @@ public class OperationalEvent  implements Serializable {
   }
   public void setEntityId(String entityId) {
     this.entityId = entityId;
+  }
+
+
+  /**
+   * A token representing the entity
+   **/
+  public OperationalEvent entityToken(String entityToken) {
+    this.entityToken = entityToken;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A token representing the entity")
+  @JsonProperty("entityToken")
+  public String getEntityToken() {
+    return entityToken;
+  }
+  public void setEntityToken(String entityToken) {
+    this.entityToken = entityToken;
   }
 
 
@@ -227,6 +246,7 @@ public class OperationalEvent  implements Serializable {
 
     return Objects.equals(this.eventDefinition, operationalEvent.eventDefinition) &&
             Objects.equals(this.entityId, operationalEvent.entityId) &&
+            Objects.equals(this.entityToken, operationalEvent.entityToken) &&
             Objects.equals(this.entityName, operationalEvent.entityName) &&
             Objects.equals(this.previousValue, operationalEvent.previousValue) &&
             Objects.equals(this.currentValue, operationalEvent.currentValue) &&
@@ -239,7 +259,7 @@ public class OperationalEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDefinition, entityId, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, entityVersion);
+    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, entityVersion);
   }
 
   @Override
@@ -249,6 +269,7 @@ public class OperationalEvent  implements Serializable {
     
     sb.append("    eventDefinition: ").append(toIndentedString(eventDefinition)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
+    sb.append("    entityToken: ").append(toIndentedString(entityToken)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
     sb.append("    previousValue: ").append(toIndentedString(previousValue)).append("\n");
     sb.append("    currentValue: ").append(toIndentedString(currentValue)).append("\n");

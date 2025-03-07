@@ -79,6 +79,7 @@ public class JourneyViewJob  implements Serializable {
   }
   private StatusEnum status = null;
   private JourneyView journeyView = null;
+  private Date dateCompletionEstimated = null;
   private String selfUri = null;
 
   
@@ -139,6 +140,13 @@ public class JourneyViewJob  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompletionEstimated")
+  public Date getDateCompletionEstimated() {
+    return dateCompletionEstimated;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -161,12 +169,13 @@ public class JourneyViewJob  implements Serializable {
             Objects.equals(this.dateCompleted, journeyViewJob.dateCompleted) &&
             Objects.equals(this.status, journeyViewJob.status) &&
             Objects.equals(this.journeyView, journeyViewJob.journeyView) &&
+            Objects.equals(this.dateCompletionEstimated, journeyViewJob.dateCompletionEstimated) &&
             Objects.equals(this.selfUri, journeyViewJob.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCreated, dateCompleted, status, journeyView, selfUri);
+    return Objects.hash(id, dateCreated, dateCompleted, status, journeyView, dateCompletionEstimated, selfUri);
   }
 
   @Override
@@ -179,6 +188,7 @@ public class JourneyViewJob  implements Serializable {
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    journeyView: ").append(toIndentedString(journeyView)).append("\n");
+    sb.append("    dateCompletionEstimated: ").append(toIndentedString(dateCompletionEstimated)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

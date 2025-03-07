@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BulkResponseResultNoteEntity;
+import com.mypurecloud.sdk.v2.model.BulkResponseResultNoteEntityBulkEntityErrorEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,36 +24,38 @@ import java.io.Serializable;
 
 public class BulkFetchNotesResponse  implements Serializable {
   
-  private List<BulkResponseResultNoteEntity> results = new ArrayList<BulkResponseResultNoteEntity>();
+  private List<BulkResponseResultNoteEntityBulkEntityErrorEntity> results = new ArrayList<BulkResponseResultNoteEntityBulkEntityErrorEntity>();
   private Integer errorCount = null;
   private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**
+   * A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
    **/
-  public BulkFetchNotesResponse results(List<BulkResponseResultNoteEntity> results) {
+  public BulkFetchNotesResponse results(List<BulkResponseResultNoteEntityBulkEntityErrorEntity> results) {
     this.results = results;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.")
   @JsonProperty("results")
-  public List<BulkResponseResultNoteEntity> getResults() {
+  public List<BulkResponseResultNoteEntityBulkEntityErrorEntity> getResults() {
     return results;
   }
-  public void setResults(List<BulkResponseResultNoteEntity> results) {
+  public void setResults(List<BulkResponseResultNoteEntityBulkEntityErrorEntity> results) {
     this.results = results;
   }
 
 
   /**
+   * The number of failed operations in the results.
    **/
   public BulkFetchNotesResponse errorCount(Integer errorCount) {
     this.errorCount = errorCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of failed operations in the results.")
   @JsonProperty("errorCount")
   public Integer getErrorCount() {
     return errorCount;
@@ -64,13 +66,14 @@ public class BulkFetchNotesResponse  implements Serializable {
 
 
   /**
+   * The indexes of all failed operations in the results field.
    **/
   public BulkFetchNotesResponse errorIndexes(List<Integer> errorIndexes) {
     this.errorIndexes = errorIndexes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The indexes of all failed operations in the results field.")
   @JsonProperty("errorIndexes")
   public List<Integer> getErrorIndexes() {
     return errorIndexes;

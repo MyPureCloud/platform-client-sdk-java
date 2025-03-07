@@ -35,7 +35,6 @@ public class GenericSAML  implements Serializable {
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String logoImageData = null;
-  private Boolean endpointCompression = null;
 
   private static class NameIdentifierFormatEnumDeserializer extends StdDeserializer<NameIdentifierFormatEnum> {
     public NameIdentifierFormatEnumDeserializer() {
@@ -90,6 +89,58 @@ public class GenericSAML  implements Serializable {
     }
   }
   private NameIdentifierFormatEnum nameIdentifierFormat = null;
+
+  private static class SsoBindingEnumDeserializer extends StdDeserializer<SsoBindingEnum> {
+    public SsoBindingEnumDeserializer() {
+      super(SsoBindingEnumDeserializer.class);
+    }
+
+    @Override
+    public SsoBindingEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SsoBindingEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets ssoBinding
+   */
+ @JsonDeserialize(using = SsoBindingEnumDeserializer.class)
+  public enum SsoBindingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_POST("urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"),
+    URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_REDIRECT("urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect");
+
+    private String value;
+
+    SsoBindingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SsoBindingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SsoBindingEnum value : SsoBindingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SsoBindingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SsoBindingEnum ssoBinding = null;
+  private Boolean signAuthnRequests = null;
+  private String providerName = null;
+  private Boolean displayOnLogin = null;
+  private Boolean endpointCompression = null;
   private String selfUri = null;
 
   
@@ -272,23 +323,6 @@ public class GenericSAML  implements Serializable {
 
   /**
    **/
-  public GenericSAML endpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("endpointCompression")
-  public Boolean getEndpointCompression() {
-    return endpointCompression;
-  }
-  public void setEndpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-  }
-
-
-  /**
-   **/
   public GenericSAML nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
     this.nameIdentifierFormat = nameIdentifierFormat;
     return this;
@@ -301,6 +335,91 @@ public class GenericSAML  implements Serializable {
   }
   public void setNameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
     this.nameIdentifierFormat = nameIdentifierFormat;
+  }
+
+
+  /**
+   **/
+  public GenericSAML ssoBinding(SsoBindingEnum ssoBinding) {
+    this.ssoBinding = ssoBinding;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("ssoBinding")
+  public SsoBindingEnum getSsoBinding() {
+    return ssoBinding;
+  }
+  public void setSsoBinding(SsoBindingEnum ssoBinding) {
+    this.ssoBinding = ssoBinding;
+  }
+
+
+  /**
+   **/
+  public GenericSAML signAuthnRequests(Boolean signAuthnRequests) {
+    this.signAuthnRequests = signAuthnRequests;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("signAuthnRequests")
+  public Boolean getSignAuthnRequests() {
+    return signAuthnRequests;
+  }
+  public void setSignAuthnRequests(Boolean signAuthnRequests) {
+    this.signAuthnRequests = signAuthnRequests;
+  }
+
+
+  /**
+   **/
+  public GenericSAML providerName(String providerName) {
+    this.providerName = providerName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("providerName")
+  public String getProviderName() {
+    return providerName;
+  }
+  public void setProviderName(String providerName) {
+    this.providerName = providerName;
+  }
+
+
+  /**
+   **/
+  public GenericSAML displayOnLogin(Boolean displayOnLogin) {
+    this.displayOnLogin = displayOnLogin;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("displayOnLogin")
+  public Boolean getDisplayOnLogin() {
+    return displayOnLogin;
+  }
+  public void setDisplayOnLogin(Boolean displayOnLogin) {
+    this.displayOnLogin = displayOnLogin;
+  }
+
+
+  /**
+   **/
+  public GenericSAML endpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endpointCompression")
+  public Boolean getEndpointCompression() {
+    return endpointCompression;
+  }
+  public void setEndpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
   }
 
 
@@ -332,14 +451,18 @@ public class GenericSAML  implements Serializable {
             Objects.equals(this.certificate, genericSAML.certificate) &&
             Objects.equals(this.certificates, genericSAML.certificates) &&
             Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
-            Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
             Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
+            Objects.equals(this.ssoBinding, genericSAML.ssoBinding) &&
+            Objects.equals(this.signAuthnRequests, genericSAML.signAuthnRequests) &&
+            Objects.equals(this.providerName, genericSAML.providerName) &&
+            Objects.equals(this.displayOnLogin, genericSAML.displayOnLogin) &&
+            Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
             Objects.equals(this.selfUri, genericSAML.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, endpointCompression, selfUri);
   }
 
   @Override
@@ -358,8 +481,12 @@ public class GenericSAML  implements Serializable {
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
-    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
+    sb.append("    ssoBinding: ").append(toIndentedString(ssoBinding)).append("\n");
+    sb.append("    signAuthnRequests: ").append(toIndentedString(signAuthnRequests)).append("\n");
+    sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
+    sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
+    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

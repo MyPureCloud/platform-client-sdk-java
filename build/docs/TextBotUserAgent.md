@@ -20,6 +20,7 @@
 | WECHAT | &quot;WeChat&quot; | 
 | WHATSAPP | &quot;Whatsapp&quot; | 
 | APPLEBUSINESSCHAT | &quot;AppleBusinessChat&quot; | 
+| APPLE | &quot;Apple&quot; | 
 | TELEGRAM | &quot;Telegram&quot; | 
 | SLACK | &quot;Slack&quot; | 
 | SIGNAL | &quot;Signal&quot; | 
@@ -34,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

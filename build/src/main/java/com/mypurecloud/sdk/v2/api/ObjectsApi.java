@@ -46,7 +46,7 @@ public class ObjectsApi {
    * Delete a division.
    * 
    * @param divisionId Division ID (required)
-   * @param force Force delete this division as well as the grants and objects associated with it (optional, default to false)
+   * @param force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -58,7 +58,7 @@ public class ObjectsApi {
    * Delete a division.
    * 
    * @param divisionId Division ID (required)
-   * @param force Force delete this division as well as the grants and objects associated with it (optional, default to false)
+   * @param force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (optional, default to false)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAuthorizationDivisionWithHttpInfo(String divisionId, Boolean force) throws IOException {
@@ -548,7 +548,7 @@ public class ObjectsApi {
    * Recreate a previously deleted division.
    * 
    * @param divisionId Division ID (required)
-   * @param body Recreated division data (optional)
+   * @param body Recreated division data (required)
    * @return AuthzDivision
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -561,7 +561,7 @@ public class ObjectsApi {
    * Recreate a previously deleted division.
    * 
    * @param divisionId Division ID (required)
-   * @param body Recreated division data (optional)
+   * @param body Recreated division data (required)
    * @return AuthzDivision
    * @throws IOException if the request fails to be processed
    */

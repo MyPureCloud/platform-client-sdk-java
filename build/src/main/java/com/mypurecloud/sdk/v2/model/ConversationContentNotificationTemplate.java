@@ -12,10 +12,13 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateBody;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateButton;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateFooter;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateHeader;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -29,6 +32,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
   private String language = null;
   private ConversationNotificationTemplateHeader header = null;
   private ConversationNotificationTemplateBody body = null;
+  private List<ConversationNotificationTemplateButton> buttons = new ArrayList<ConversationNotificationTemplateButton>();
   private ConversationNotificationTemplateFooter footer = null;
 
   
@@ -105,6 +109,24 @@ public class ConversationContentNotificationTemplate  implements Serializable {
 
 
   /**
+   * Template buttons
+   **/
+  public ConversationContentNotificationTemplate buttons(List<ConversationNotificationTemplateButton> buttons) {
+    this.buttons = buttons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Template buttons")
+  @JsonProperty("buttons")
+  public List<ConversationNotificationTemplateButton> getButtons() {
+    return buttons;
+  }
+  public void setButtons(List<ConversationNotificationTemplateButton> buttons) {
+    this.buttons = buttons;
+  }
+
+
+  /**
    * The template footer.
    **/
   public ConversationContentNotificationTemplate footer(ConversationNotificationTemplateFooter footer) {
@@ -136,12 +158,13 @@ public class ConversationContentNotificationTemplate  implements Serializable {
             Objects.equals(this.language, conversationContentNotificationTemplate.language) &&
             Objects.equals(this.header, conversationContentNotificationTemplate.header) &&
             Objects.equals(this.body, conversationContentNotificationTemplate.body) &&
+            Objects.equals(this.buttons, conversationContentNotificationTemplate.buttons) &&
             Objects.equals(this.footer, conversationContentNotificationTemplate.footer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, language, header, body, footer);
+    return Objects.hash(id, language, header, body, buttons, footer);
   }
 
   @Override
@@ -153,6 +176,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("    buttons: ").append(toIndentedString(buttons)).append("\n");
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
     sb.append("}");
     return sb.toString();

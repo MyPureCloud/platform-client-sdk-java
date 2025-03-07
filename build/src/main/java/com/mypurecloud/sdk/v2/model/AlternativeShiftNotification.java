@@ -230,14 +230,14 @@ public class AlternativeShiftNotification  implements Serializable {
 
 
   /**
-   * The user on the receiving this alternative shift trade
+   * The user on the receiving side of this alternative shift trade
    **/
   public AlternativeShiftNotification receivingUser(UserReference receivingUser) {
     this.receivingUser = receivingUser;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user on the receiving this alternative shift trade")
+  @ApiModelProperty(example = "null", value = "The user on the receiving side of this alternative shift trade")
   @JsonProperty("receivingUser")
   public UserReference getReceivingUser() {
     return receivingUser;

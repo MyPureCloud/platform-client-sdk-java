@@ -1386,7 +1386,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId User ID (required)
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -1399,7 +1398,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId User ID (required)
    * @return ChatUserSettings
    * @throws IOException if the request fails to be processed
@@ -1418,7 +1416,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -1438,7 +1435,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1468,7 +1464,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1480,7 +1475,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ChatUserSettings
    * @throws IOException if the request fails to be processed
    */
@@ -1496,7 +1490,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -1516,7 +1509,6 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1875,7 +1867,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId User ID (required)
    * @param body  (required)
    * @return ChatUserSettings
@@ -1889,7 +1880,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId User ID (required)
    * @param body  (required)
    * @return ChatUserSettings
@@ -1911,7 +1901,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -1931,7 +1920,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1961,7 +1949,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -1974,7 +1961,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return ChatUserSettings
    * @throws IOException if the request fails to be processed
@@ -1993,7 +1979,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatUserSettings
    * @throws ApiException if the request fails on the server
@@ -2013,7 +1998,6 @@ public class ChatApi {
   /**
    * Update a user's chat settings
    * 
-   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

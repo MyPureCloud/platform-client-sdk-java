@@ -49,6 +49,7 @@ public class TextBotUserAgent  implements Serializable {
     WECHAT("WeChat"),
     WHATSAPP("Whatsapp"),
     APPLEBUSINESSCHAT("AppleBusinessChat"),
+    APPLE("Apple"),
     TELEGRAM("Telegram"),
     SLACK("Slack"),
     SIGNAL("Signal"),

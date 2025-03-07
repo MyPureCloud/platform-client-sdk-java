@@ -46,14 +46,14 @@ public class BuAgentScheduleHistoryChangeMetadata  implements Serializable {
 
 
   /**
-   * The user that made the schedule change
+   * The user that made the schedule change. The id may be 'System' if it was an automated process
    **/
   public BuAgentScheduleHistoryChangeMetadata modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user that made the schedule change")
+  @ApiModelProperty(example = "null", value = "The user that made the schedule change. The id may be 'System' if it was an automated process")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;

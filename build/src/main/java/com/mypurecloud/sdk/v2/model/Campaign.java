@@ -170,6 +170,7 @@ public class Campaign  implements Serializable {
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private List<String> skillColumns = new ArrayList<String>();
   private Integer maxCallsPerAgent = null;
+  private Double maxCallsPerAgentDecimal = null;
   private Boolean callbackAutoAnswer = null;
   private DynamicLineBalancingSettings dynamicLineBalancingSettings = null;
   private String selfUri = null;
@@ -780,6 +781,24 @@ public class Campaign  implements Serializable {
 
 
   /**
+   * The maximum number of calls that can be placed per agent on this campaign with decimal precision
+   **/
+  public Campaign maxCallsPerAgentDecimal(Double maxCallsPerAgentDecimal) {
+    this.maxCallsPerAgentDecimal = maxCallsPerAgentDecimal;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of calls that can be placed per agent on this campaign with decimal precision")
+  @JsonProperty("maxCallsPerAgentDecimal")
+  public Double getMaxCallsPerAgentDecimal() {
+    return maxCallsPerAgentDecimal;
+  }
+  public void setMaxCallsPerAgentDecimal(Double maxCallsPerAgentDecimal) {
+    this.maxCallsPerAgentDecimal = maxCallsPerAgentDecimal;
+  }
+
+
+  /**
    * The option manages the auto-answer callback calls
    **/
   public Campaign callbackAutoAnswer(Boolean callbackAutoAnswer) {
@@ -868,6 +887,7 @@ public class Campaign  implements Serializable {
             Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.skillColumns, campaign.skillColumns) &&
             Objects.equals(this.maxCallsPerAgent, campaign.maxCallsPerAgent) &&
+            Objects.equals(this.maxCallsPerAgentDecimal, campaign.maxCallsPerAgentDecimal) &&
             Objects.equals(this.callbackAutoAnswer, campaign.callbackAutoAnswer) &&
             Objects.equals(this.dynamicLineBalancingSettings, campaign.dynamicLineBalancingSettings) &&
             Objects.equals(this.selfUri, campaign.selfUri);
@@ -875,7 +895,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
   }
 
   @Override
@@ -919,6 +939,7 @@ public class Campaign  implements Serializable {
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    skillColumns: ").append(toIndentedString(skillColumns)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
+    sb.append("    maxCallsPerAgentDecimal: ").append(toIndentedString(maxCallsPerAgentDecimal)).append("\n");
     sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");
     sb.append("    dynamicLineBalancingSettings: ").append(toIndentedString(dynamicLineBalancingSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

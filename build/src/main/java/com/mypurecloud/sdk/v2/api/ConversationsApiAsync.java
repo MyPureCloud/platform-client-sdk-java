@@ -98,6 +98,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
@@ -127,6 +128,7 @@ import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenMessagingIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
@@ -243,6 +245,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaReq
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermissionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -398,6 +403,9 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
@@ -6211,6 +6219,237 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Facebook messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenMessagingIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest request, final AsyncApiCallback<OpenMessagingIdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<OpenMessagingIdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenMessagingIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessagingIdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an open messaging integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenMessagingIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenMessagingIdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenMessagingIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessagingIdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a whatsApp integration Identity Resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -17524,10 +17763,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<String> putConversationsCobrowsesessionRecordingstateAsync(PutConversationsCobrowsesessionRecordingstateRequest request, final AsyncApiCallback<String> callback) {
     try {
@@ -17558,10 +17798,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<String>> putConversationsCobrowsesessionRecordingstateAsync(ApiRequest<SetRecordingState> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
@@ -17886,6 +18127,237 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for a Facebook messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenMessagingIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest request, final AsyncApiCallback<OpenMessagingIdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<OpenMessagingIdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenMessagingIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessagingIdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an open messaging integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenMessagingIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsync(ApiRequest<OpenMessagingIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenMessagingIdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenMessagingIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<OpenMessagingIdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessagingIdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a whatsApp integration Identity Resolution settings
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

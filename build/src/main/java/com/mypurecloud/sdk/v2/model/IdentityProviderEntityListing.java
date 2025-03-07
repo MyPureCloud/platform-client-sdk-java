@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
-import com.mypurecloud.sdk.v2.model.CustomProvider;
+import com.mypurecloud.sdk.v2.model.SAMLProvider;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import java.io.Serializable;
  * IdentityProviderEntityListing
  */
 
-public class IdentityProviderEntityListing  implements Serializable, PagedResource<CustomProvider> {
+public class IdentityProviderEntityListing  implements Serializable, PagedResource<SAMLProvider> {
   
-  private List<CustomProvider> entities = new ArrayList<CustomProvider>();
+  private List<SAMLProvider> entities = new ArrayList<SAMLProvider>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -39,17 +39,17 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
   
   /**
    **/
-  public IdentityProviderEntityListing entities(List<CustomProvider> entities) {
+  public IdentityProviderEntityListing entities(List<SAMLProvider> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<CustomProvider> getEntities() {
+  public List<SAMLProvider> getEntities() {
     return entities;
   }
-  public void setEntities(List<CustomProvider> entities) {
+  public void setEntities(List<SAMLProvider> entities) {
     this.entities = entities;
   }
 

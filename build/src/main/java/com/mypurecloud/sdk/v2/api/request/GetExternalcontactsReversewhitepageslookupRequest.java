@@ -136,6 +136,20 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 		}
 	}
 
+	private String divisionId;
+	public String getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetExternalcontactsReversewhitepageslookupRequest withDivisionId(String divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +183,9 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("divisionId", "", divisionId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -215,6 +232,11 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withDivisionId(String divisionId) {
+			request.setDivisionId(divisionId);
+			return this;
 		}
 
 

@@ -23,6 +23,8 @@
 | **wfmSchedule** | [**WfmScheduleReference**](WfmScheduleReference) | The Workforce Management schedule the appointment is associated with. |  [optional] |
 | **dateCompleted** | [**Date**](Date) | The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **externalLinks** | **List&lt;String&gt;** | The list of external links related to the appointment |  [optional] |
+| **location** | **String** | The location of the appointment |  [optional] |
+| **shareInsightsData** | **Boolean** | Whether to share the insight data |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -39,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:220.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_

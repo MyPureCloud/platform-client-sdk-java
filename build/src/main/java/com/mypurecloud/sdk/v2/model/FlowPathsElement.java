@@ -63,7 +63,6 @@ public class FlowPathsElement  implements Serializable {
     TRANSFERTOGROUPVOICEMAIL("TransferToGroupVoicemail"),
     TRANSFERTONUMBER("TransferToNumber"),
     TRANSFERTOSECUREFLOW("TransferToSecureFlow"),
-    TRANSFERTOUNKNOWN("TransferToUnknown"),
     TRANSFERTOUSER("TransferToUser"),
     TRANSFERTOUSERVOICEMAIL("TransferToUserVoicemail");
 

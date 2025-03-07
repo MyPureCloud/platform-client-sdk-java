@@ -27,13 +27,14 @@ public class BulkErrorDetail  implements Serializable {
 
   
   /**
+   * The name of the field which experienced an error.
    **/
   public BulkErrorDetail fieldName(String fieldName) {
     this.fieldName = fieldName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the field which experienced an error.")
   @JsonProperty("fieldName")
   public String getFieldName() {
     return fieldName;
@@ -44,13 +45,14 @@ public class BulkErrorDetail  implements Serializable {
 
 
   /**
+   * The field value from the request which caused the error.
    **/
   public BulkErrorDetail value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The field value from the request which caused the error.")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -61,13 +63,14 @@ public class BulkErrorDetail  implements Serializable {
 
 
   /**
+   * A field-specific error message describing why this operation was rejected.
    **/
   public BulkErrorDetail message(String message) {
     this.message = message;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A field-specific error message describing why this operation was rejected.")
   @JsonProperty("message")
   public String getMessage() {
     return message;
