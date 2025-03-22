@@ -13,9 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrganizationsLimitsDocs**](OrganizationApi#getOrganizationsLimitsDocs) | Get limit documentation |
 | [**getOrganizationsLimitsDocsFreetrial**](OrganizationApi#getOrganizationsLimitsDocsFreetrial) | Get free trial limit documentation |
 | [**getOrganizationsLimitsNamespace**](OrganizationApi#getOrganizationsLimitsNamespace) | Get the effective limits in a namespace for an organization |
-| [**getOrganizationsLimitsNamespaceCounts**](OrganizationApi#getOrganizationsLimitsNamespaceCounts) | Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking. |
 | [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi#getOrganizationsLimitsNamespaceDefaults) | Get the default limits in a namespace for an organization |
-| [**getOrganizationsLimitsNamespaceLimitCounts**](OrganizationApi#getOrganizationsLimitsNamespaceLimitCounts) | Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking. |
 | [**getOrganizationsLimitsNamespaces**](OrganizationApi#getOrganizationsLimitsNamespaces) | Get the available limit namespaces |
 | [**getOrganizationsMe**](OrganizationApi#getOrganizationsMe) | Get organization. |
 | [**getOrganizationsWhitelist**](OrganizationApi#getOrganizationsWhitelist) | This route is deprecated, please use /api/v2/organizations/authentication/settings instead |
@@ -557,76 +555,6 @@ try {
 [**LimitsEntityListing**](LimitsEntityListing)
 
 
-# **getOrganizationsLimitsNamespaceCounts**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceCounts(namespaceName, cursor, entityId, userId)
-
-Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/counts  
-
-Requires ANY permissions: 
-
-* limits:count:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.OrganizationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-OrganizationApi apiInstance = new OrganizationApi();
-String namespaceName = "namespaceName_example"; // String | The namespace to get
-String cursor = "cursor_example"; // String | Cursor provided when retrieving the last page
-String entityId = "entityId_example"; // String | entity id of the count
-String userId = "userId_example"; // String | userid of the count
-try {
-    LimitCountListing result = apiInstance.getOrganizationsLimitsNamespaceCounts(namespaceName, cursor, entityId, userId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaceCounts");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **namespaceName** | **String**| The namespace to get | 
-| **cursor** | **String**| Cursor provided when retrieving the last page | [optional] 
-| **entityId** | **String**| entity id of the count | [optional] 
-| **userId** | **String**| userid of the count | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LimitCountListing**](LimitCountListing)
-
-
 # **getOrganizationsLimitsNamespaceDefaults**
 
 
@@ -683,78 +611,6 @@ try {
 ### Return type
 
 [**LimitsEntityListing**](LimitsEntityListing)
-
-
-# **getOrganizationsLimitsNamespaceLimitCounts**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, entityId, userId, cursor)
-
-Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts  
-
-Requires ANY permissions: 
-
-* limits:count:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.OrganizationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-OrganizationApi apiInstance = new OrganizationApi();
-String namespaceName = "namespaceName_example"; // String | The namespace to get
-String limitName = "limitName_example"; // String | The limit to get
-String entityId = "entityId_example"; // String | entity id of the count
-String userId = "userId_example"; // String | userid of the count
-String cursor = "cursor_example"; // String | Cursor provided when retrieving the last page
-try {
-    LimitCountListing result = apiInstance.getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, entityId, userId, cursor);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaceLimitCounts");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **namespaceName** | **String**| The namespace to get | 
-| **limitName** | **String**| The limit to get | 
-| **entityId** | **String**| entity id of the count | [optional] 
-| **userId** | **String**| userid of the count | [optional] 
-| **cursor** | **String**| Cursor provided when retrieving the last page | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LimitCountListing**](LimitCountListing)
 
 
 # **getOrganizationsLimitsNamespaces**
@@ -1297,4 +1153,4 @@ try {
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

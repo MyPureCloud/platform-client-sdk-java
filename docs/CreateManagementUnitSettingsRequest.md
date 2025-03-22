@@ -7,11 +7,11 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **adherence** | [**AdherenceSettings**](AdherenceSettings) | Adherence settings for this management unit |  [optional] |
 | **shortTermForecasting** | [**ShortTermForecastingSettings**](ShortTermForecastingSettings) | Short term forecasting settings for this management unit.  Moving to Business Unit |  [optional] |
-| **timeOff** | [**TimeOffRequestSettings**](TimeOffRequestSettings) | Time off request settings for this management unit |  [optional] |
+| **timeOff** | [**TimeOffSettingsRequest**](TimeOffSettingsRequest) | Time off request settings for this management unit |  [optional] |
 | **scheduling** | [**SchedulingSettingsRequest**](SchedulingSettingsRequest) | Scheduling settings for this management unit |  [optional] |
 | **shiftTrading** | [**ShiftTradeSettings**](ShiftTradeSettings) | Shift trade settings for this management unit |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

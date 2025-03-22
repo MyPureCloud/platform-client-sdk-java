@@ -3816,8 +3816,6 @@ try {
 
 Update the AI Scoring settings of an evaluation form.
 
-putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings  
 
 Requires ANY permissions: 
@@ -3980,4 +3978,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

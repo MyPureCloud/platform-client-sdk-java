@@ -290,8 +290,6 @@ null (empty response body)
 
 Remove a pinned message from a 1on1
 
-deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}  
 
 Requires ANY permissions: 
@@ -843,8 +841,6 @@ try {
 > [OneOnOne](OneOnOne) getChatsUser(userId)
 
 Get information for a 1on1
-
-getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/{userId}  
 
@@ -1822,8 +1818,6 @@ try {
 
 Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
 
-postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/users/{userId}/messages/pins  
 
 Requires ANY permissions: 
@@ -1998,4 +1992,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

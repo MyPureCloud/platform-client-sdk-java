@@ -229,6 +229,8 @@
 | **timelineCategories** | **List&lt;String&gt;** | A list of timeline categories |  [optional] |
 | **acw** | **Boolean** | Filter to indicate for acw state |  [optional] |
 | **segmentTypes** | [**List<SegmentTypesEnum>**](#Enum--SegmentTypesEnum) | A list of filtered segment types |  [optional] |
+| **programIds** | **List&lt;String&gt;** | A list of program ids for filtering |  [optional] |
+| **categoryIds** | **List&lt;String&gt;** | A list of category ids for filtering |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -447,6 +449,9 @@
 | LINE | &quot;Line&quot; |
 | DISCORD | &quot;Discord&quot; |
 | TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; |
+| OPEN | &quot;Open&quot; |
+| INSTAGRAM | &quot;Instagram&quot; |
+| APPLE | &quot;Apple&quot; |
 | OTHER | &quot;Other&quot; |
 
 
@@ -478,6 +483,8 @@
 | GOOGLEDIALOGFLOWCXRESELL | &quot;GoogleDialogFlowCxResell&quot; |
 | GOOGLESTTBOTFLOW | &quot;GoogleSttBotFlow&quot; |
 | MICROSOFTSTTBOTFLOW | &quot;MicrosoftSttBotFlow&quot; |
+| AUDIOCONNECTOR | &quot;AudioConnector&quot; |
+| BOTCONNECTOR | &quot;BotConnector&quot; |
 
 
 ## Enum: BotRecognitionFailureReasonListEnum
@@ -492,6 +499,7 @@
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; |
 | NOMATCHDISAMBIGUATION | &quot;NoMatchDisambiguation&quot; |
 | MAXWRONGMATCH | &quot;MaxWrongMatch&quot; |
+| ALLOPTIONSREJECTED | &quot;AllOptionsRejected&quot; |
 
 
 ## Enum: BotResultListEnum
@@ -939,4 +947,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

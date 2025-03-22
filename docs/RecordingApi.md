@@ -806,7 +806,7 @@ try {
 # **getConversationRecordings**
 
 
-> [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale)
+> [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale, includePauseAnnotationsForScreenRecordings)
 
 Get all of a Conversation's Recordings.
 
@@ -844,8 +844,9 @@ Integer maxWaitMs = 5000; // Integer | The maximum number of milliseconds to wai
 String formatId = "WEBM"; // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
 List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 String locale = "locale_example"; // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+Boolean includePauseAnnotationsForScreenRecordings = false; // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
 try {
-    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale);
+    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats, locale, includePauseAnnotationsForScreenRecordings);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecordings");
@@ -863,6 +864,7 @@ try {
 | **formatId** | **String**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 | **mediaFormats** | [**List&lt;String&gt;**](String)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional] 
 | **locale** | **String**| The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional] 
+| **includePauseAnnotationsForScreenRecordings** | **Boolean**| Include applicable Secure Pause annotations from all audio recordings to all screen recordings | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3605,4 +3607,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

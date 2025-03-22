@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **cellType** | [**CellTypeEnum**](#Enum--CellTypeEnum) | The type of the table cell. |  [optional] |
 | **width** | **Float** | The width of the table cell converted to em unit. |  [optional] |
+| **widthWithUnit** | [**DocumentElementLength**](DocumentElementLength) | The width of the table cell in the specified unit. |  [optional] |
 | **height** | **Float** | The height for the table cell. |  [optional] |
 | **horizontalAlign** | [**HorizontalAlignEnum**](#Enum--HorizontalAlignEnum) | The horizontal alignment for the table cell. |  [optional] |
 | **verticalAlign** | [**VerticalAlignEnum**](#Enum--VerticalAlignEnum) | The vertical alignment for the table cell. |  [optional] |
@@ -79,4 +80,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

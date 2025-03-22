@@ -89,10 +89,15 @@ null (empty response body)
 
 # **deleteWebchatGuestConversationMember**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteWebchatGuestConversationMember(conversationId, memberId)
 
 Remove a member from a chat conversation
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}  
 
@@ -381,10 +386,15 @@ try {
 
 # **getWebchatGuestConversationMediarequests**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatGuestMediaRequestEntityList](WebChatGuestMediaRequestEntityList) getWebchatGuestConversationMediarequests(conversationId)
 
 Get all media requests to the guest in the conversation
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests  
 
@@ -436,10 +446,15 @@ try {
 
 # **getWebchatGuestConversationMember**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatMemberInfo](WebChatMemberInfo) getWebchatGuestConversationMember(conversationId, memberId)
 
 Get a web chat conversation member
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}  
 
@@ -493,10 +508,15 @@ try {
 
 # **getWebchatGuestConversationMembers**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatMemberInfoEntityList](WebChatMemberInfoEntityList) getWebchatGuestConversationMembers(conversationId, pageSize, pageNumber, excludeDisconnectedMembers)
 
 Get the members of a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/members  
 
@@ -554,10 +574,15 @@ try {
 
 # **getWebchatGuestConversationMessage**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatMessage](WebChatMessage) getWebchatGuestConversationMessage(conversationId, messageId)
 
 Get a web chat conversation message
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}  
 
@@ -611,10 +636,15 @@ try {
 
 # **getWebchatGuestConversationMessages**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatMessageEntityList](WebChatMessageEntityList) getWebchatGuestConversationMessages(conversationId, after, before, sortOrder, maxResults)
 
 Get the messages of a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/messages  
 
@@ -855,10 +885,15 @@ try {
 
 # **postWebchatGuestConversationMemberMessages**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatMessage](WebChatMessage) postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
 
 Send a message in a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages  
 
@@ -914,10 +949,15 @@ try {
 
 # **postWebchatGuestConversationMemberTyping**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatTyping](WebChatTyping) postWebchatGuestConversationMemberTyping(conversationId, memberId)
 
 Send a typing-indicator in a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/
 
 Wraps POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing  
 
@@ -971,12 +1011,15 @@ try {
 
 # **postWebchatGuestConversations**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [CreateWebChatConversationResponse](CreateWebChatConversationResponse) postWebchatGuestConversations(body)
 
 Create an ACD chat conversation from an external customer.
 
-This endpoint will create a new ACD Chat conversation under the specified Chat Deployment.  The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the 'memberAuthToken' field should include his JWT as generated by the 'POST /api/v2/signeddata' resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted.  The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the 'eventStreamUri' field of the response; the conversation is not routed until the event stream is attached.
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. This endpoint will create a new ACD Chat conversation under the specified Chat Deployment. The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the 'memberAuthToken' field should include his JWT as generated by the 'POST /api/v2/signeddata' resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted. The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the 'eventStreamUri' field of the response; the conversation is not routed until the event stream is attached.
 
 Wraps POST /api/v2/webchat/guest/conversations  
 
@@ -1139,4 +1182,4 @@ try {
 [**WebChatSettings**](WebChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

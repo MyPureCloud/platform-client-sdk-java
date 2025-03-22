@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
-| **conditions** | [**List&lt;V2MobiusRulesTopicCondition&gt;**](V2MobiusRulesTopicCondition) |  |  [optional] |
+| **clauses** | [**List&lt;V2MobiusRulesTopicCondition&gt;**](V2MobiusRulesTopicCondition) |  |  [optional] |
 | **predicates** | [**List&lt;V2MobiusRulesTopicConditionRulePredicate&gt;**](V2MobiusRulesTopicConditionRulePredicate) |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
@@ -24,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

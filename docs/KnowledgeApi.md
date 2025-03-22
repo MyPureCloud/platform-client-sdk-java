@@ -2508,8 +2508,6 @@ This resource has been deprecated
 
 Get document content upload status
 
-getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}  
 
 Requires ALL permissions: 
@@ -5600,8 +5598,6 @@ try {
 
 Bulk remove documents.
 
-postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove  
 
 Requires ALL permissions: 
@@ -5662,8 +5658,6 @@ try {
 > [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 
 Bulk update documents.
-
-postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update  
 
@@ -5972,8 +5966,6 @@ try {
 > [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
 
 Bulk add document versions.
-
-postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add  
 
@@ -6287,8 +6279,6 @@ This resource has been deprecated
 > [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
 
 Upload Article Content
-
-postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads  
 
@@ -7352,4 +7342,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

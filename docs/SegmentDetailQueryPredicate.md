@@ -43,6 +43,7 @@
 | CLEARED | &quot;cleared&quot; | 
 | COACHEDPARTICIPANTID | &quot;coachedParticipantId&quot; | 
 | CONFERENCE | &quot;conference&quot; | 
+| DELIVERYPUSHED | &quot;deliveryPushed&quot; | 
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; | 
 | DESTINATIONADDRESS | &quot;destinationAddress&quot; | 
 | DESTINATIONCONVERSATIONID | &quot;destinationConversationId&quot; | 
@@ -140,4 +141,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

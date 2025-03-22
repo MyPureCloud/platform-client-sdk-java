@@ -2791,7 +2791,7 @@ try {
 # **getTelephonyProvidersEdgesExtensionpools**
 
 
-> [ExtensionPoolEntityListing](ExtensionPoolEntityListing) getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number)
+> [ExtensionPoolEntityListing](ExtensionPoolEntityListing) getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number, divisionId)
 
 Get a listing of extension pools
 
@@ -2827,8 +2827,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | Sort by
 String number = "number_example"; // String | Deprecated, filtering by number not supported
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
 try {
-    ExtensionPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number);
+    ExtensionPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesExtensionpools");
@@ -2845,6 +2846,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **number** | **String**| Deprecated, filtering by number not supported | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
@@ -7810,4 +7812,4 @@ try {
 [**TrunkBase**](TrunkBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

@@ -5,12 +5,12 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address** | **String** | Address or phone number. |  |
-| **name** | **String** |  |  [optional] |
-| **userId** | **String** |  |  [optional] |
-| **queueId** | **String** |  |  [optional] |
+| **address** | **String** | Address or phone number. |  [optional] |
+| **name** | **String** | The name of the internal user. |  [optional] |
+| **userId** | **String** | The user ID. |  [optional] |
+| **queueId** | **String** | The queue ID. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

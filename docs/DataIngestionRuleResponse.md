@@ -1,4 +1,4 @@
-# GoogleBusinessProfileDataIngestionRuleResponse
+# DataIngestionRuleResponse
 
 
 ## Properties
@@ -13,8 +13,6 @@
 | **dateCreated** | [**Date**](Date) | Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **platform** | **String** | The platform of the data ingestion rule. |  [optional] |
-| **integrationId** | **String** | The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/open/extensions/googlebusinessprofile resource |  [optional] |
-| **externalSource** | [**DomainEntityRef**](DomainEntityRef) | The external source associated with this data ingestion rule, which is used when performing identity resolution |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -33,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
