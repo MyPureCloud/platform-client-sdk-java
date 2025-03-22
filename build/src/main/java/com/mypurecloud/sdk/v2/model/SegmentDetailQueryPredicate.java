@@ -104,6 +104,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     CLEARED("cleared"),
     COACHEDPARTICIPANTID("coachedParticipantId"),
     CONFERENCE("conference"),
+    DELIVERYPUSHED("deliveryPushed"),
     DELIVERYSTATUS("deliveryStatus"),
     DESTINATIONADDRESS("destinationAddress"),
     DESTINATIONCONVERSATIONID("destinationConversationId"),

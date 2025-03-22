@@ -3777,12 +3777,13 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional)
    * @param number Deprecated, filtering by number not supported (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
    * @return ExtensionPoolEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number));
+  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(Integer pageSize, Integer pageNumber, String sortBy, String number, List<String> divisionId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number, divisionId));
   }
 
   /**
@@ -3792,14 +3793,15 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional)
    * @param number Deprecated, filtering by number not supported (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
    * @return ExtensionPoolEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException {
-    return getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number).withHttpInfo());
+  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number, List<String> divisionId) throws IOException {
+    return getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number, divisionId).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesExtensionpoolsRequest createGetTelephonyProvidersEdgesExtensionpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy, String number) {
+  private GetTelephonyProvidersEdgesExtensionpoolsRequest createGetTelephonyProvidersEdgesExtensionpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy, String number, List<String> divisionId) {
     return GetTelephonyProvidersEdgesExtensionpoolsRequest.builder()
             .withPageSize(pageSize)
 
@@ -3808,6 +3810,8 @@ public class TelephonyProvidersEdgeApi {
             .withSortBy(sortBy)
 
             .withNumber(number)
+
+            .withDivisionId(divisionId)
 
             .build();
   }

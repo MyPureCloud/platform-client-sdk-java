@@ -18,7 +18,6 @@ import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.LimitCountListing;
 import com.mypurecloud.sdk.v2.model.LimitDocumentation;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
@@ -36,9 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRe
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsFreetrialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
-import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceLimitCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
@@ -777,100 +774,6 @@ public class OrganizationApi {
   }
 
   /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param namespaceName The namespace to get (required)
-   * @param cursor Cursor provided when retrieving the last page (optional)
-   * @param entityId entity id of the count (optional)
-   * @param userId userid of the count (optional)
-   * @return LimitCountListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LimitCountListing getOrganizationsLimitsNamespaceCounts(String namespaceName, String cursor, String entityId, String userId) throws IOException, ApiException {
-    return  getOrganizationsLimitsNamespaceCounts(createGetOrganizationsLimitsNamespaceCountsRequest(namespaceName, cursor, entityId, userId));
-  }
-
-  /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param namespaceName The namespace to get (required)
-   * @param cursor Cursor provided when retrieving the last page (optional)
-   * @param entityId entity id of the count (optional)
-   * @param userId userid of the count (optional)
-   * @return LimitCountListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceCountsWithHttpInfo(String namespaceName, String cursor, String entityId, String userId) throws IOException {
-    return getOrganizationsLimitsNamespaceCounts(createGetOrganizationsLimitsNamespaceCountsRequest(namespaceName, cursor, entityId, userId).withHttpInfo());
-  }
-
-  private GetOrganizationsLimitsNamespaceCountsRequest createGetOrganizationsLimitsNamespaceCountsRequest(String namespaceName, String cursor, String entityId, String userId) {
-    return GetOrganizationsLimitsNamespaceCountsRequest.builder()
-            .withNamespaceName(namespaceName)
-
-            .withCursor(cursor)
-
-            .withEntityId(entityId)
-
-            .withUserId(userId)
-
-            .build();
-  }
-
-  /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request The request object
-   * @return LimitCountListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LimitCountListing getOrganizationsLimitsNamespaceCounts(GetOrganizationsLimitsNamespaceCountsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LimitCountListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LimitCountListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceCounts(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LimitCountListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get the default limits in a namespace for an organization
    * 
    * @param namespaceName The namespace to fetch defaults limits for (required)
@@ -944,104 +847,6 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param namespaceName The namespace to get (required)
-   * @param limitName The limit to get (required)
-   * @param entityId entity id of the count (optional)
-   * @param userId userid of the count (optional)
-   * @param cursor Cursor provided when retrieving the last page (optional)
-   * @return LimitCountListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(String namespaceName, String limitName, String entityId, String userId, String cursor) throws IOException, ApiException {
-    return  getOrganizationsLimitsNamespaceLimitCounts(createGetOrganizationsLimitsNamespaceLimitCountsRequest(namespaceName, limitName, entityId, userId, cursor));
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param namespaceName The namespace to get (required)
-   * @param limitName The limit to get (required)
-   * @param entityId entity id of the count (optional)
-   * @param userId userid of the count (optional)
-   * @param cursor Cursor provided when retrieving the last page (optional)
-   * @return LimitCountListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceLimitCountsWithHttpInfo(String namespaceName, String limitName, String entityId, String userId, String cursor) throws IOException {
-    return getOrganizationsLimitsNamespaceLimitCounts(createGetOrganizationsLimitsNamespaceLimitCountsRequest(namespaceName, limitName, entityId, userId, cursor).withHttpInfo());
-  }
-
-  private GetOrganizationsLimitsNamespaceLimitCountsRequest createGetOrganizationsLimitsNamespaceLimitCountsRequest(String namespaceName, String limitName, String entityId, String userId, String cursor) {
-    return GetOrganizationsLimitsNamespaceLimitCountsRequest.builder()
-            .withNamespaceName(namespaceName)
-
-            .withLimitName(limitName)
-
-            .withEntityId(entityId)
-
-            .withUserId(userId)
-
-            .withCursor(cursor)
-
-            .build();
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request The request object
-   * @return LimitCountListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(GetOrganizationsLimitsNamespaceLimitCountsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LimitCountListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LimitCountListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LimitCountListing> getOrganizationsLimitsNamespaceLimitCounts(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LimitCountListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

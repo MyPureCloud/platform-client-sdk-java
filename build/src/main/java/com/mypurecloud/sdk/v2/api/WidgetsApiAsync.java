@@ -44,10 +44,11 @@ public class WidgetsApiAsync {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteWidgetsDeploymentAsync(DeleteWidgetsDeploymentRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -78,10 +79,11 @@ public class WidgetsApiAsync {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteWidgetsDeploymentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -119,10 +121,11 @@ public class WidgetsApiAsync {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WidgetDeployment> getWidgetsDeploymentAsync(GetWidgetsDeploymentRequest request, final AsyncApiCallback<WidgetDeployment> callback) {
     try {
@@ -153,10 +156,11 @@ public class WidgetsApiAsync {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WidgetDeployment>> getWidgetsDeploymentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WidgetDeployment>> callback) {
     try {
@@ -194,10 +198,11 @@ public class WidgetsApiAsync {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WidgetDeploymentEntityListing> getWidgetsDeploymentsAsync(GetWidgetsDeploymentsRequest request, final AsyncApiCallback<WidgetDeploymentEntityListing> callback) {
     try {
@@ -228,10 +233,11 @@ public class WidgetsApiAsync {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WidgetDeploymentEntityListing>> getWidgetsDeploymentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WidgetDeploymentEntityListing>> callback) {
     try {
@@ -269,10 +275,11 @@ public class WidgetsApiAsync {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WidgetDeployment> postWidgetsDeploymentsAsync(PostWidgetsDeploymentsRequest request, final AsyncApiCallback<WidgetDeployment> callback) {
     try {
@@ -303,10 +310,11 @@ public class WidgetsApiAsync {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WidgetDeployment>> postWidgetsDeploymentsAsync(ApiRequest<WidgetDeployment> request, final AsyncApiCallback<ApiResponse<WidgetDeployment>> callback) {
     try {
@@ -344,10 +352,11 @@ public class WidgetsApiAsync {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WidgetDeployment> putWidgetsDeploymentAsync(PutWidgetsDeploymentRequest request, final AsyncApiCallback<WidgetDeployment> callback) {
     try {
@@ -378,10 +387,11 @@ public class WidgetsApiAsync {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WidgetDeployment>> putWidgetsDeploymentAsync(ApiRequest<WidgetDeployment> request, final AsyncApiCallback<ApiResponse<WidgetDeployment>> callback) {
     try {

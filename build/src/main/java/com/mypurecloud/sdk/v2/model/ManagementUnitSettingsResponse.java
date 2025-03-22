@@ -15,7 +15,7 @@ import com.mypurecloud.sdk.v2.model.AdherenceSettings;
 import com.mypurecloud.sdk.v2.model.SchedulingSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeSettings;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastingSettings;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestSettings;
+import com.mypurecloud.sdk.v2.model.TimeOffSettingsResponse;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +29,7 @@ public class ManagementUnitSettingsResponse  implements Serializable {
   
   private AdherenceSettings adherence = null;
   private ShortTermForecastingSettings shortTermForecasting = null;
-  private TimeOffRequestSettings timeOff = null;
+  private TimeOffSettingsResponse timeOff = null;
   private SchedulingSettingsResponse scheduling = null;
   private ShiftTradeSettings shiftTrading = null;
   private WfmVersionedEntityMetadata metadata = null;
@@ -74,17 +74,17 @@ public class ManagementUnitSettingsResponse  implements Serializable {
   /**
    * Time off request settings for this management unit
    **/
-  public ManagementUnitSettingsResponse timeOff(TimeOffRequestSettings timeOff) {
+  public ManagementUnitSettingsResponse timeOff(TimeOffSettingsResponse timeOff) {
     this.timeOff = timeOff;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Time off request settings for this management unit")
   @JsonProperty("timeOff")
-  public TimeOffRequestSettings getTimeOff() {
+  public TimeOffSettingsResponse getTimeOff() {
     return timeOff;
   }
-  public void setTimeOff(TimeOffRequestSettings timeOff) {
+  public void setTimeOff(TimeOffSettingsResponse timeOff) {
     this.timeOff = timeOff;
   }
 

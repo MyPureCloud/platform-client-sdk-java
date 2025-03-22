@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentElementLength;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -71,6 +72,7 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
   }
   private CellTypeEnum cellType = null;
   private Float width = null;
+  private DocumentElementLength widthWithUnit = null;
   private Float height = null;
 
   private static class HorizontalAlignEnumDeserializer extends StdDeserializer<HorizontalAlignEnum> {
@@ -321,6 +323,24 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
 
 
   /**
+   * The width of the table cell in the specified unit.
+   **/
+  public DocumentBodyTableCellBlockProperties widthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The width of the table cell in the specified unit.")
+  @JsonProperty("widthWithUnit")
+  public DocumentElementLength getWidthWithUnit() {
+    return widthWithUnit;
+  }
+  public void setWidthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
+  }
+
+
+  /**
    * The height for the table cell.
    **/
   public DocumentBodyTableCellBlockProperties height(Float height) {
@@ -512,6 +532,7 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
 
     return Objects.equals(this.cellType, documentBodyTableCellBlockProperties.cellType) &&
             Objects.equals(this.width, documentBodyTableCellBlockProperties.width) &&
+            Objects.equals(this.widthWithUnit, documentBodyTableCellBlockProperties.widthWithUnit) &&
             Objects.equals(this.height, documentBodyTableCellBlockProperties.height) &&
             Objects.equals(this.horizontalAlign, documentBodyTableCellBlockProperties.horizontalAlign) &&
             Objects.equals(this.verticalAlign, documentBodyTableCellBlockProperties.verticalAlign) &&
@@ -526,7 +547,7 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cellType, width, height, horizontalAlign, verticalAlign, borderWidth, borderStyle, borderColor, backgroundColor, scope, colSpan, rowSpan);
+    return Objects.hash(cellType, width, widthWithUnit, height, horizontalAlign, verticalAlign, borderWidth, borderStyle, borderColor, backgroundColor, scope, colSpan, rowSpan);
   }
 
   @Override
@@ -536,6 +557,7 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
     
     sb.append("    cellType: ").append(toIndentedString(cellType)).append("\n");
     sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    widthWithUnit: ").append(toIndentedString(widthWithUnit)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("    horizontalAlign: ").append(toIndentedString(horizontalAlign)).append("\n");
     sb.append("    verticalAlign: ").append(toIndentedString(verticalAlign)).append("\n");

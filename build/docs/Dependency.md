@@ -38,6 +38,7 @@
 | DIALOGENGINEBOTVERSION | &quot;DIALOGENGINEBOTVERSION&quot; | 
 | DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; | 
 | DIALOGFLOWCXAGENT | &quot;DIALOGFLOWCXAGENT&quot; | 
+| DIGITALBOTCONNECTOR | &quot;DIGITALBOTCONNECTOR&quot; | 
 | DIGITALBOTFLOW | &quot;DIGITALBOTFLOW&quot; | 
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; | 
@@ -96,4 +97,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

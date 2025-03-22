@@ -10,7 +10,7 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation. |  [optional] |
 | **language** | **String** | The language of the conversation. |  [optional] |
 | **predictedWrapupCodes** | [**List&lt;ConversationSummaryWrapupCode&gt;**](ConversationSummaryWrapupCode) | The wrapup codes of the conversation summary. |  [optional] |
-| **editedSummary** | [**ConversationEditedSummary**](ConversationEditedSummary) | The edited summary of the conversation. |  [optional] |
+| **editedSummary** | [**ConversationEditedInput**](ConversationEditedInput) | The edited summary of the conversation. |  [optional] |
 | **reason** | [**ConversationSummaryReason**](ConversationSummaryReason) | The reason of the conversation summary. |  [optional] |
 | **followup** | [**ConversationSummaryFollowup**](ConversationSummaryFollowup) | The followup of the conversation summary. |  [optional] |
 | **resolution** | [**ConversationSummaryResolution**](ConversationSummaryResolution) | The resolution of the conversation summary. |  [optional] |
@@ -48,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

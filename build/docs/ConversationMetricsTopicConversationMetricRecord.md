@@ -42,7 +42,7 @@
 | **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) | Reason for which participant flagged conversation |  [optional] |
 | **flowInType** | **String** | Type of flow in that occurred when entering ACD. |  [optional] |
 | **flowOutType** | **String** | Type of flow out that occurred when emitting tFlowOut. |  [optional] |
-| **groupId** | **String** | Unique identifier for a PureCloud group |  [optional] |
+| **groupId** | **String** | Unique identifier for a Genesys Cloud group |  [optional] |
 | **interactionType** | **String** | The interaction type (enterprise or contactCenter) |  [optional] |
 | **journeyActionId** | **String** | Identifier of the journey action. |  [optional] |
 | **journeyActionMapId** | **String** | Identifier of the journey action map that triggered the action. |  [optional] |
@@ -123,6 +123,8 @@
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; | 
 | TALERT | &quot;tAlert&quot; | 
 | TANSWERED | &quot;tAnswered&quot; | 
+| TAVERAGEAGENTRESPONSETIME | &quot;tAverageAgentResponseTime&quot; | 
+| TAVERAGECUSTOMERRESPONSETIME | &quot;tAverageCustomerResponseTime&quot; | 
 | TBARGING | &quot;tBarging&quot; | 
 | TCOACHING | &quot;tCoaching&quot; | 
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
@@ -131,6 +133,8 @@
 | TDIALING | &quot;tDialing&quot; | 
 | TFIRSTCONNECT | &quot;tFirstConnect&quot; | 
 | TFIRSTDIAL | &quot;tFirstDial&quot; | 
+| TFIRSTENGAGEMENT | &quot;tFirstEngagement&quot; | 
+| TFIRSTRESPONSE | &quot;tFirstResponse&quot; | 
 | TFLOWOUT | &quot;tFlowOut&quot; | 
 | THANDLE | &quot;tHandle&quot; | 
 | THELD | &quot;tHeld&quot; | 
@@ -256,6 +260,7 @@
 | CHAT | &quot;chat&quot; | 
 | COBROWSE | &quot;cobrowse&quot; | 
 | EMAIL | &quot;email&quot; | 
+| INTERNALMESSAGE | &quot;internalmessage&quot; | 
 | MESSAGE | &quot;message&quot; | 
 | SCREENSHARE | &quot;screenshare&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
@@ -342,4 +347,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

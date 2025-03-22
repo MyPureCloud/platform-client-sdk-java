@@ -16,7 +16,9 @@ import com.mypurecloud.sdk.v2.model.CollaborateChatGroupMessageEventTopicCollabo
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -81,6 +83,7 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
   private CollaborateChatGroupMessageEventTopicCollaborateChatEntity to = null;
   private List<CollaborateChatGroupMessageEventTopicCollaborateChatEntity> mentions = new ArrayList<CollaborateChatGroupMessageEventTopicCollaborateChatEntity>();
   private Boolean notifyAll = null;
+  private Map<String, List<String>> reactions = null;
 
   
   /**
@@ -219,6 +222,23 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
   }
 
 
+  /**
+   **/
+  public CollaborateChatGroupMessageEventTopicCollaborateChatMessage reactions(Map<String, List<String>> reactions) {
+    this.reactions = reactions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("reactions")
+  public Map<String, List<String>> getReactions() {
+    return reactions;
+  }
+  public void setReactions(Map<String, List<String>> reactions) {
+    this.reactions = reactions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -236,12 +256,13 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
             Objects.equals(this.from, collaborateChatGroupMessageEventTopicCollaborateChatMessage.from) &&
             Objects.equals(this.to, collaborateChatGroupMessageEventTopicCollaborateChatMessage.to) &&
             Objects.equals(this.mentions, collaborateChatGroupMessageEventTopicCollaborateChatMessage.mentions) &&
-            Objects.equals(this.notifyAll, collaborateChatGroupMessageEventTopicCollaborateChatMessage.notifyAll);
+            Objects.equals(this.notifyAll, collaborateChatGroupMessageEventTopicCollaborateChatMessage.notifyAll) &&
+            Objects.equals(this.reactions, collaborateChatGroupMessageEventTopicCollaborateChatMessage.reactions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, created, actionType, body, from, to, mentions, notifyAll);
+    return Objects.hash(messageId, created, actionType, body, from, to, mentions, notifyAll, reactions);
   }
 
   @Override
@@ -257,6 +278,7 @@ public class CollaborateChatGroupMessageEventTopicCollaborateChatMessage  implem
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    mentions: ").append(toIndentedString(mentions)).append("\n");
     sb.append("    notifyAll: ").append(toIndentedString(notifyAll)).append("\n");
+    sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

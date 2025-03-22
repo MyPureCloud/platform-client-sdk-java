@@ -576,11 +576,14 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     INBOUNDCALL("inboundcall"),
     INBOUNDCHAT("inboundchat"),
     INBOUNDEMAIL("inboundemail"),
+    INBOUNDMESSAGE("inboundmessage"),
     INBOUNDSHORTMESSAGE("inboundshortmessage"),
     INQUEUECALL("inqueuecall"),
     INQUEUEEMAIL("inqueueemail"),
     INQUEUESHORTMESSAGE("inqueueshortmessage"),
     OUTBOUNDCALL("outboundcall"),
+    OUTBOUNDEMAIL("outboundemail"),
+    OUTBOUNDMESSAGE("outboundmessage"),
     SECURECALL("securecall"),
     SPEECH("speech"),
     SURVEYINVITE("surveyinvite"),
@@ -651,6 +654,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     CHAT("chat"),
     COBROWSE("cobrowse"),
     EMAIL("email"),
+    INTERNALMESSAGE("internalmessage"),
     MESSAGE("message"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
@@ -1839,14 +1843,14 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
 
   /**
-   * Unique identifier for a PureCloud group
+   * Unique identifier for a Genesys Cloud group
    **/
   public FlowMetricsTopicFlowMetricRecord groupId(String groupId) {
     this.groupId = groupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for a PureCloud group")
+  @ApiModelProperty(example = "null", value = "Unique identifier for a Genesys Cloud group")
   @JsonProperty("groupId")
   public String getGroupId() {
     return groupId;

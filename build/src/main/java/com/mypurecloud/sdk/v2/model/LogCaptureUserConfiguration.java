@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -25,6 +26,54 @@ public class LogCaptureUserConfiguration  implements Serializable {
   private String id = null;
   private Date dateStarted = null;
   private Date dateExpired = null;
+
+  private static class CaptureMethodEnumDeserializer extends StdDeserializer<CaptureMethodEnum> {
+    public CaptureMethodEnumDeserializer() {
+      super(CaptureMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public CaptureMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CaptureMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the method by which the logs were captured.
+   */
+ @JsonDeserialize(using = CaptureMethodEnumDeserializer.class)
+  public enum CaptureMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ONDEMAND("OnDemand"),
+    SCHEDULED("Scheduled");
+
+    private String value;
+
+    CaptureMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CaptureMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CaptureMethodEnum value : CaptureMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CaptureMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CaptureMethodEnum captureMethod = null;
   private String selfUri = null;
 
   
@@ -60,6 +109,13 @@ public class LogCaptureUserConfiguration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Indicates the method by which the logs were captured.")
+  @JsonProperty("captureMethod")
+  public CaptureMethodEnum getCaptureMethod() {
+    return captureMethod;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -80,12 +136,13 @@ public class LogCaptureUserConfiguration  implements Serializable {
     return Objects.equals(this.id, logCaptureUserConfiguration.id) &&
             Objects.equals(this.dateStarted, logCaptureUserConfiguration.dateStarted) &&
             Objects.equals(this.dateExpired, logCaptureUserConfiguration.dateExpired) &&
+            Objects.equals(this.captureMethod, logCaptureUserConfiguration.captureMethod) &&
             Objects.equals(this.selfUri, logCaptureUserConfiguration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateStarted, dateExpired, selfUri);
+    return Objects.hash(id, dateStarted, dateExpired, captureMethod, selfUri);
   }
 
   @Override
@@ -96,6 +153,7 @@ public class LogCaptureUserConfiguration  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    dateStarted: ").append(toIndentedString(dateStarted)).append("\n");
     sb.append("    dateExpired: ").append(toIndentedString(dateExpired)).append("\n");
+    sb.append("    captureMethod: ").append(toIndentedString(captureMethod)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

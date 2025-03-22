@@ -249,4 +249,4 @@ try {
 [**EventQueryResponse**](EventQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

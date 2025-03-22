@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentElementLength;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -74,6 +75,9 @@ public class DocumentBodyImageProperties  implements Serializable {
   }
   private AlignEnum align = null;
   private Float indentation = null;
+  private Float width = null;
+  private DocumentElementLength widthWithUnit = null;
+  private String altText = null;
 
   
   /**
@@ -130,6 +134,60 @@ public class DocumentBodyImageProperties  implements Serializable {
   }
 
 
+  /**
+   * The width of the image converted to em unit.
+   **/
+  public DocumentBodyImageProperties width(Float width) {
+    this.width = width;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The width of the image converted to em unit.")
+  @JsonProperty("width")
+  public Float getWidth() {
+    return width;
+  }
+  public void setWidth(Float width) {
+    this.width = width;
+  }
+
+
+  /**
+   * The width of the image in the specified unit.
+   **/
+  public DocumentBodyImageProperties widthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The width of the image in the specified unit.")
+  @JsonProperty("widthWithUnit")
+  public DocumentElementLength getWidthWithUnit() {
+    return widthWithUnit;
+  }
+  public void setWidthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
+  }
+
+
+  /**
+   * Alternate text for the image for accessibility and when the image can't be loaded.
+   **/
+  public DocumentBodyImageProperties altText(String altText) {
+    this.altText = altText;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Alternate text for the image for accessibility and when the image can't be loaded.")
+  @JsonProperty("altText")
+  public String getAltText() {
+    return altText;
+  }
+  public void setAltText(String altText) {
+    this.altText = altText;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -142,12 +200,15 @@ public class DocumentBodyImageProperties  implements Serializable {
 
     return Objects.equals(this.backgroundColor, documentBodyImageProperties.backgroundColor) &&
             Objects.equals(this.align, documentBodyImageProperties.align) &&
-            Objects.equals(this.indentation, documentBodyImageProperties.indentation);
+            Objects.equals(this.indentation, documentBodyImageProperties.indentation) &&
+            Objects.equals(this.width, documentBodyImageProperties.width) &&
+            Objects.equals(this.widthWithUnit, documentBodyImageProperties.widthWithUnit) &&
+            Objects.equals(this.altText, documentBodyImageProperties.altText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backgroundColor, align, indentation);
+    return Objects.hash(backgroundColor, align, indentation, width, widthWithUnit, altText);
   }
 
   @Override
@@ -158,6 +219,9 @@ public class DocumentBodyImageProperties  implements Serializable {
     sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("    align: ").append(toIndentedString(align)).append("\n");
     sb.append("    indentation: ").append(toIndentedString(indentation)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    widthWithUnit: ").append(toIndentedString(widthWithUnit)).append("\n");
+    sb.append("    altText: ").append(toIndentedString(altText)).append("\n");
     sb.append("}");
     return sb.toString();
   }

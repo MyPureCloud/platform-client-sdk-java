@@ -13,6 +13,7 @@
 | **to** | [**CollaborateChatAdhocMessageEventTopicCollaborateChatEntity**](CollaborateChatAdhocMessageEventTopicCollaborateChatEntity) |  |  [optional] |
 | **mentions** | [**List&lt;CollaborateChatAdhocMessageEventTopicCollaborateChatEntity&gt;**](CollaborateChatAdhocMessageEventTopicCollaborateChatEntity) |  |  [optional] |
 | **notifyAll** | **Boolean** |  |  [optional] |
+| **reactions** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) |  |  [optional] |
 
 
 ## Enum: ActionTypeEnum
@@ -27,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

@@ -42,6 +42,7 @@ public class WorkitemQueryJobSort  implements Serializable {
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATEDUE("dateDue"),
+    DATECREATED("dateCreated"),
     PRIORITY("priority");
 
     private String value;

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
 | [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
+| [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete Twitter messaging integration |
 | [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
 | [**deleteConversationsMessagingSetting**](ConversationsApi#deleteConversationsMessagingSetting) | Delete a messaging setting |
 | [**deleteConversationsMessagingSettingsDefault**](ConversationsApi#deleteConversationsMessagingSettingsDefault) | Delete the organization's default setting, a global default will be applied to integrations without settings |
@@ -84,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | Get Facebook messaging integration identity resolution settings |
 | [**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | Get an open messaging integration Identity Resolution settings |
 | [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | Get a whatsApp integration Identity Resolution settings |
+| [**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | Get twitter oauth settings to patch an integration |
 | [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | Get a list of Integrations |
 | [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi#getConversationsMessagingIntegrationsFacebook) | Get a list of Facebook Integrations |
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
@@ -91,6 +93,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | Get Instagram messaging integration |
 | [**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
 | [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | Get an Open messaging integration |
+| [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations |
+| [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | Get Twitter messaging integration |
+| [**getConversationsMessagingIntegrationsTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsTwitterOauthSettings) | Get twitter oauth settings |
 | [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#getConversationsMessagingIntegrationsWhatsapp) | Get a list of WhatsApp Integrations |
 | [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsWhatsappIntegrationId) | Get a WhatsApp messaging integration |
 | [**getConversationsMessagingSetting**](ConversationsApi#getConversationsMessagingSetting) | Get a messaging setting |
@@ -142,6 +147,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
 | [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | Update Instagram messaging integration |
 | [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | Update an Open messaging integration |
+| [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update a Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow |
 | [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update a WhatsApp messaging integration |
 | [**patchConversationsMessagingSetting**](ConversationsApi#patchConversationsMessagingSetting) | Update a messaging setting |
@@ -218,6 +224,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | Create Instagram Integration |
 | [**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
+| [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | Create Twitter Integration |
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration |
 | [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow |
 | [**postConversationsMessagingSettings**](ConversationsApi#postConversationsMessagingSettings) | Create a messaging setting |
@@ -225,6 +232,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsParticipantsAttributesSearch**](ConversationsApi#postConversationsParticipantsAttributesSearch) | Search conversations |
 | [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi#postConversationsScreenshareParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi#postConversationsSocialParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
+| [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | Create an Agent-Type video conference and assign an agent to it |
 | [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | Generate a meetingId for a given conferenceId |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
@@ -764,6 +772,64 @@ try {
     apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+> Void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+Delete Twitter messaging integration
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId");
     e.printStackTrace();
 }
 ```
@@ -5087,6 +5153,65 @@ try {
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
+# **getConversationsMessagingIntegrationTwitterOauthSettings**
+
+
+> [TwitterOAuthSettings](TwitterOAuthSettings) getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+
+Get twitter oauth settings to patch an integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings  
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration Id of an existing integration that needs to be patched with new oauth settings
+try {
+    TwitterOAuthSettings result = apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration Id of an existing integration that needs to be patched with new oauth settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterOAuthSettings**](TwitterOAuthSettings)
+
+
 # **getConversationsMessagingIntegrations**
 
 
@@ -5540,6 +5665,189 @@ try {
 ### Return type
 
 [**OpenIntegration**](OpenIntegration)
+
+
+# **getConversationsMessagingIntegrationsTwitter**
+
+
+> [TwitterIntegrationEntityListing](TwitterIntegrationEntityListing) getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
+
+Get a list of Twitter Integrations
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand instructions for the return value.
+String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
+try {
+    TwitterIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitter");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing)
+
+
+# **getConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+> [TwitterIntegration](TwitterIntegration) getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, expand)
+
+Get Twitter messaging integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+String expand = "expand_example"; // String | Expand instructions for the return value.
+try {
+    TwitterIntegration result = apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
+
+
+# **getConversationsMessagingIntegrationsTwitterOauthSettings**
+
+
+> [TwitterSignupOAuthSettings](TwitterSignupOAuthSettings) getConversationsMessagingIntegrationsTwitterOauthSettings()
+
+Get twitter oauth settings
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/oauth/settings  
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    TwitterSignupOAuthSettings result = apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitterOauthSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TwitterSignupOAuthSettings**](TwitterSignupOAuthSettings)
 
 
 # **getConversationsMessagingIntegrationsWhatsapp**
@@ -8731,6 +9039,67 @@ try {
 ### Return type
 
 [**OpenIntegration**](OpenIntegration)
+
+
+# **patchConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+> [TwitterIntegration](TwitterIntegration) patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+
+Update a Twitter messaging integration
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+TwitterIntegrationUpdateRequest body = new TwitterIntegrationUpdateRequest(); // TwitterIntegrationUpdateRequest | TwitterIntegrationUpdateRequest
+try {
+    TwitterIntegration result = apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**TwitterIntegrationUpdateRequest**](TwitterIntegrationUpdateRequest)| TwitterIntegrationUpdateRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
 
 
 # **patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**
@@ -13453,6 +13822,65 @@ try {
 [**OpenIntegration**](OpenIntegration)
 
 
+# **postConversationsMessagingIntegrationsTwitter**
+
+
+> [TwitterIntegration](TwitterIntegration) postConversationsMessagingIntegrationsTwitter(body)
+
+Create Twitter Integration
+
+Wraps POST /api/v2/conversations/messaging/integrations/twitter  
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
+try {
+    TwitterIntegration result = apiInstance.postConversationsMessagingIntegrationsTwitter(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsTwitter");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest)| TwitterIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
+
+
 # **postConversationsMessagingIntegrationsWhatsapp**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -13886,6 +14314,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **postConversationsVideoAgentconferenceCommunication**
+
+
+> [VideoConferenceDetails](VideoConferenceDetails) postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+
+Create an Agent-Type video conference and assign an agent to it
+
+postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}  
+
+Requires ANY permissions: 
+
+* conversation:video:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+try {
+    VideoConferenceDetails result = apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsVideoAgentconferenceCommunication");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VideoConferenceDetails**](VideoConferenceDetails)
 
 
 # **postConversationsVideoParticipantCommunicationWrapup**
@@ -15318,4 +15809,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

@@ -43,7 +43,8 @@ public class FeedbackAddRequest  implements Serializable {
   public enum RatingEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     POSITIVE("Positive"),
-    NEGATIVE("Negative");
+    NEGATIVE("Negative"),
+    UNKNOWN("Unknown");
 
     private String value;
 

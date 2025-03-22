@@ -40,10 +40,11 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWidgetsDeployment(String deploymentId) throws IOException, ApiException {
      deleteWidgetsDeployment(createDeleteWidgetsDeploymentRequest(deploymentId));
@@ -51,9 +52,10 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWidgetsDeploymentWithHttpInfo(String deploymentId) throws IOException {
     return deleteWidgetsDeployment(createDeleteWidgetsDeploymentRequest(deploymentId).withHttpInfo());
@@ -68,10 +70,11 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWidgetsDeployment(DeleteWidgetsDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -86,10 +89,11 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWidgetsDeployment(ApiRequest<Void> request) throws IOException {
     try {
@@ -115,11 +119,12 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment getWidgetsDeployment(String deploymentId) throws IOException, ApiException {
     return  getWidgetsDeployment(createGetWidgetsDeploymentRequest(deploymentId));
@@ -127,10 +132,11 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @return WidgetDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> getWidgetsDeploymentWithHttpInfo(String deploymentId) throws IOException {
     return getWidgetsDeployment(createGetWidgetsDeploymentRequest(deploymentId).withHttpInfo());
@@ -145,11 +151,12 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment getWidgetsDeployment(GetWidgetsDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -164,10 +171,11 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> getWidgetsDeployment(ApiRequest<Void> request) throws IOException {
     try {
@@ -193,10 +201,11 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @return WidgetDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeploymentEntityListing getWidgetsDeployments() throws IOException, ApiException {
     return  getWidgetsDeployments(createGetWidgetsDeploymentsRequest());
@@ -204,9 +213,10 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @return WidgetDeploymentEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeploymentEntityListing> getWidgetsDeploymentsWithHttpInfo() throws IOException {
     return getWidgetsDeployments(createGetWidgetsDeploymentsRequest().withHttpInfo());
@@ -219,11 +229,12 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeploymentEntityListing getWidgetsDeployments(GetWidgetsDeploymentsRequest request) throws IOException, ApiException {
     try {
@@ -238,10 +249,11 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeploymentEntityListing> getWidgetsDeployments(ApiRequest<Void> request) throws IOException {
     try {
@@ -267,11 +279,12 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment postWidgetsDeployments(WidgetDeployment body) throws IOException, ApiException {
     return  postWidgetsDeployments(createPostWidgetsDeploymentsRequest(body));
@@ -279,10 +292,11 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> postWidgetsDeploymentsWithHttpInfo(WidgetDeployment body) throws IOException {
     return postWidgetsDeployments(createPostWidgetsDeploymentsRequest(body).withHttpInfo());
@@ -297,11 +311,12 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment postWidgetsDeployments(PostWidgetsDeploymentsRequest request) throws IOException, ApiException {
     try {
@@ -316,10 +331,11 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> postWidgetsDeployments(ApiRequest<WidgetDeployment> request) throws IOException {
     try {
@@ -345,12 +361,13 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment putWidgetsDeployment(String deploymentId, WidgetDeployment body) throws IOException, ApiException {
     return  putWidgetsDeployment(createPutWidgetsDeploymentRequest(deploymentId, body));
@@ -358,11 +375,12 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> putWidgetsDeploymentWithHttpInfo(String deploymentId, WidgetDeployment body) throws IOException {
     return putWidgetsDeployment(createPutWidgetsDeploymentRequest(deploymentId, body).withHttpInfo());
@@ -379,11 +397,12 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WidgetDeployment putWidgetsDeployment(PutWidgetsDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -398,10 +417,11 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WidgetDeployment> putWidgetsDeployment(ApiRequest<WidgetDeployment> request) throws IOException {
     try {

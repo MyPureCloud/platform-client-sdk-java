@@ -5238,7 +5238,6 @@ public class QualityApi {
   /**
    * Update the AI Scoring settings of an evaluation form.
    * 
-   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param formId Form ID (required)
    * @param body AI Scoring Settings (required)
    * @return AiScoringSettings
@@ -5252,7 +5251,6 @@ public class QualityApi {
   /**
    * Update the AI Scoring settings of an evaluation form.
    * 
-   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param formId Form ID (required)
    * @param body AI Scoring Settings (required)
    * @return AiScoringSettings
@@ -5274,7 +5272,6 @@ public class QualityApi {
   /**
    * Update the AI Scoring settings of an evaluation form.
    * 
-   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AiScoringSettings
    * @throws ApiException if the request fails on the server
@@ -5294,7 +5291,6 @@ public class QualityApi {
   /**
    * Update the AI Scoring settings of an evaluation form.
    * 
-   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

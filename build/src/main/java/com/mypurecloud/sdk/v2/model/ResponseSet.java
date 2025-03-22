@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Reaction;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,56 @@ public class ResponseSet  implements Serializable {
   private Map<String, Reaction> responses = null;
   private Boolean beepDetectionEnabled = null;
   private Boolean amdSpeechDistinguishEnabled = null;
+
+  private static class LiveSpeakerDetectionModeEnumDeserializer extends StdDeserializer<LiveSpeakerDetectionModeEnum> {
+    public LiveSpeakerDetectionModeEnumDeserializer() {
+      super(LiveSpeakerDetectionModeEnumDeserializer.class);
+    }
+
+    @Override
+    public LiveSpeakerDetectionModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LiveSpeakerDetectionModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Setting level of live speaker detection based on ringbacks
+   */
+ @JsonDeserialize(using = LiveSpeakerDetectionModeEnumDeserializer.class)
+  public enum LiveSpeakerDetectionModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DISABLED("Disabled"),
+    LOW("Low"),
+    MEDIUM("Medium"),
+    HIGH("High");
+
+    private String value;
+
+    LiveSpeakerDetectionModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LiveSpeakerDetectionModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LiveSpeakerDetectionModeEnum value : LiveSpeakerDetectionModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LiveSpeakerDetectionModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LiveSpeakerDetectionModeEnum liveSpeakerDetectionMode = null;
   private String selfUri = null;
 
   
@@ -148,6 +199,24 @@ public class ResponseSet  implements Serializable {
   }
 
 
+  /**
+   * Setting level of live speaker detection based on ringbacks
+   **/
+  public ResponseSet liveSpeakerDetectionMode(LiveSpeakerDetectionModeEnum liveSpeakerDetectionMode) {
+    this.liveSpeakerDetectionMode = liveSpeakerDetectionMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting level of live speaker detection based on ringbacks")
+  @JsonProperty("liveSpeakerDetectionMode")
+  public LiveSpeakerDetectionModeEnum getLiveSpeakerDetectionMode() {
+    return liveSpeakerDetectionMode;
+  }
+  public void setLiveSpeakerDetectionMode(LiveSpeakerDetectionModeEnum liveSpeakerDetectionMode) {
+    this.liveSpeakerDetectionMode = liveSpeakerDetectionMode;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -173,12 +242,13 @@ public class ResponseSet  implements Serializable {
             Objects.equals(this.responses, responseSet.responses) &&
             Objects.equals(this.beepDetectionEnabled, responseSet.beepDetectionEnabled) &&
             Objects.equals(this.amdSpeechDistinguishEnabled, responseSet.amdSpeechDistinguishEnabled) &&
+            Objects.equals(this.liveSpeakerDetectionMode, responseSet.liveSpeakerDetectionMode) &&
             Objects.equals(this.selfUri, responseSet.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, amdSpeechDistinguishEnabled, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, amdSpeechDistinguishEnabled, liveSpeakerDetectionMode, selfUri);
   }
 
   @Override
@@ -194,6 +264,7 @@ public class ResponseSet  implements Serializable {
     sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
     sb.append("    beepDetectionEnabled: ").append(toIndentedString(beepDetectionEnabled)).append("\n");
     sb.append("    amdSpeechDistinguishEnabled: ").append(toIndentedString(amdSpeechDistinguishEnabled)).append("\n");
+    sb.append("    liveSpeakerDetectionMode: ").append(toIndentedString(liveSpeakerDetectionMode)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

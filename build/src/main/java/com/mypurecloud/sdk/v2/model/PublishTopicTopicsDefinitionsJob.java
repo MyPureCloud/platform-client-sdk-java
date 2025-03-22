@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.PublishTopicTestTopicPhraseResults;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -43,6 +46,7 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COMPLETED("Completed"),
+    RUNNING("Running"),
     FAILED("Failed");
 
     private String value;
@@ -71,6 +75,7 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private List<PublishTopicTestTopicPhraseResults> testTopicPhraseResults = new ArrayList<PublishTopicTestTopicPhraseResults>();
 
   
   /**
@@ -107,6 +112,23 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
   }
 
 
+  /**
+   **/
+  public PublishTopicTopicsDefinitionsJob testTopicPhraseResults(List<PublishTopicTestTopicPhraseResults> testTopicPhraseResults) {
+    this.testTopicPhraseResults = testTopicPhraseResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("testTopicPhraseResults")
+  public List<PublishTopicTestTopicPhraseResults> getTestTopicPhraseResults() {
+    return testTopicPhraseResults;
+  }
+  public void setTestTopicPhraseResults(List<PublishTopicTestTopicPhraseResults> testTopicPhraseResults) {
+    this.testTopicPhraseResults = testTopicPhraseResults;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,12 +140,13 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
     PublishTopicTopicsDefinitionsJob publishTopicTopicsDefinitionsJob = (PublishTopicTopicsDefinitionsJob) o;
 
     return Objects.equals(this.id, publishTopicTopicsDefinitionsJob.id) &&
-            Objects.equals(this.state, publishTopicTopicsDefinitionsJob.state);
+            Objects.equals(this.state, publishTopicTopicsDefinitionsJob.state) &&
+            Objects.equals(this.testTopicPhraseResults, publishTopicTopicsDefinitionsJob.testTopicPhraseResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state);
+    return Objects.hash(id, state, testTopicPhraseResults);
   }
 
   @Override
@@ -133,6 +156,7 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    testTopicPhraseResults: ").append(toIndentedString(testTopicPhraseResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

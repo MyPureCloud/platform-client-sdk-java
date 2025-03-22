@@ -35,7 +35,7 @@ public class Destination  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Address or phone number.")
+  @ApiModelProperty(example = "null", value = "Address or phone number.")
   @JsonProperty("address")
   public String getAddress() {
     return address;
@@ -46,13 +46,14 @@ public class Destination  implements Serializable {
 
 
   /**
+   * The name of the internal user.
    **/
   public Destination name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the internal user.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -63,13 +64,14 @@ public class Destination  implements Serializable {
 
 
   /**
+   * The user ID.
    **/
   public Destination userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The user ID.")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;
@@ -80,13 +82,14 @@ public class Destination  implements Serializable {
 
 
   /**
+   * The queue ID.
    **/
   public Destination queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The queue ID.")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;

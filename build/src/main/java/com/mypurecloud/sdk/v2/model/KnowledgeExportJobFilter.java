@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobDocumentsFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -73,6 +74,54 @@ public class KnowledgeExportJobFilter  implements Serializable {
   }
   private VersionFilterEnum versionFilter = null;
 
+  private static class ExcludeEnumDeserializer extends StdDeserializer<ExcludeEnum> {
+    public ExcludeEnumDeserializer() {
+      super(ExcludeEnumDeserializer.class);
+    }
+
+    @Override
+    public ExcludeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExcludeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets exclude
+   */
+ @JsonDeserialize(using = ExcludeEnumDeserializer.class)
+  public enum ExcludeEnum {
+    CATEGORIES("Categories"),
+    LABELS("Labels"),
+    VARIATIONS("Variations");
+
+    private String value;
+
+    ExcludeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ExcludeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ExcludeEnum value : ExcludeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ExcludeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<ExcludeEnum> exclude = new ArrayList<ExcludeEnum>();
+
   
   /**
    * Filters for narrowing down which documents to export.
@@ -110,6 +159,24 @@ public class KnowledgeExportJobFilter  implements Serializable {
   }
 
 
+  /**
+   * Reduce the size of the export file by excluding certain items.
+   **/
+  public KnowledgeExportJobFilter exclude(List<ExcludeEnum> exclude) {
+    this.exclude = exclude;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reduce the size of the export file by excluding certain items.")
+  @JsonProperty("exclude")
+  public List<ExcludeEnum> getExclude() {
+    return exclude;
+  }
+  public void setExclude(List<ExcludeEnum> exclude) {
+    this.exclude = exclude;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -121,12 +188,13 @@ public class KnowledgeExportJobFilter  implements Serializable {
     KnowledgeExportJobFilter knowledgeExportJobFilter = (KnowledgeExportJobFilter) o;
 
     return Objects.equals(this.documentsFilter, knowledgeExportJobFilter.documentsFilter) &&
-            Objects.equals(this.versionFilter, knowledgeExportJobFilter.versionFilter);
+            Objects.equals(this.versionFilter, knowledgeExportJobFilter.versionFilter) &&
+            Objects.equals(this.exclude, knowledgeExportJobFilter.exclude);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentsFilter, versionFilter);
+    return Objects.hash(documentsFilter, versionFilter, exclude);
   }
 
   @Override
@@ -136,6 +204,7 @@ public class KnowledgeExportJobFilter  implements Serializable {
     
     sb.append("    documentsFilter: ").append(toIndentedString(documentsFilter)).append("\n");
     sb.append("    versionFilter: ").append(toIndentedString(versionFilter)).append("\n");
+    sb.append("    exclude: ").append(toIndentedString(exclude)).append("\n");
     sb.append("}");
     return sb.toString();
   }

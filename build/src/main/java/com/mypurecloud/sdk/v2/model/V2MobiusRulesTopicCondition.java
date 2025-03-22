@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class V2MobiusRulesTopicCondition  implements Serializable {
   
   private String id = null;
-  private List<V2MobiusRulesTopicCondition> conditions = new ArrayList<V2MobiusRulesTopicCondition>();
+  private List<V2MobiusRulesTopicCondition> clauses = new ArrayList<V2MobiusRulesTopicCondition>();
   private List<V2MobiusRulesTopicConditionRulePredicate> predicates = new ArrayList<V2MobiusRulesTopicConditionRulePredicate>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -99,18 +99,18 @@ public class V2MobiusRulesTopicCondition  implements Serializable {
 
   /**
    **/
-  public V2MobiusRulesTopicCondition conditions(List<V2MobiusRulesTopicCondition> conditions) {
-    this.conditions = conditions;
+  public V2MobiusRulesTopicCondition clauses(List<V2MobiusRulesTopicCondition> clauses) {
+    this.clauses = clauses;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("conditions")
-  public List<V2MobiusRulesTopicCondition> getConditions() {
-    return conditions;
+  @JsonProperty("clauses")
+  public List<V2MobiusRulesTopicCondition> getClauses() {
+    return clauses;
   }
-  public void setConditions(List<V2MobiusRulesTopicCondition> conditions) {
-    this.conditions = conditions;
+  public void setClauses(List<V2MobiusRulesTopicCondition> clauses) {
+    this.clauses = clauses;
   }
 
 
@@ -159,14 +159,14 @@ public class V2MobiusRulesTopicCondition  implements Serializable {
     V2MobiusRulesTopicCondition v2MobiusRulesTopicCondition = (V2MobiusRulesTopicCondition) o;
 
     return Objects.equals(this.id, v2MobiusRulesTopicCondition.id) &&
-            Objects.equals(this.conditions, v2MobiusRulesTopicCondition.conditions) &&
+            Objects.equals(this.clauses, v2MobiusRulesTopicCondition.clauses) &&
             Objects.equals(this.predicates, v2MobiusRulesTopicCondition.predicates) &&
             Objects.equals(this.type, v2MobiusRulesTopicCondition.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conditions, predicates, type);
+    return Objects.hash(id, clauses, predicates, type);
   }
 
   @Override
@@ -175,7 +175,7 @@ public class V2MobiusRulesTopicCondition  implements Serializable {
     sb.append("class V2MobiusRulesTopicCondition {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

@@ -39,7 +39,6 @@ public class ExternalOrganization  implements Serializable {
   private WritableStarrableDivision division = null;
   private String companyType = null;
   private String industry = null;
-  private String primaryContactId = null;
   private ContactAddress address = null;
   private PhoneNumber phoneNumber = null;
   private PhoneNumber faxNumber = null;
@@ -144,23 +143,6 @@ public class ExternalOrganization  implements Serializable {
   }
   public void setIndustry(String industry) {
     this.industry = industry;
-  }
-
-
-  /**
-   **/
-  public ExternalOrganization primaryContactId(String primaryContactId) {
-    this.primaryContactId = primaryContactId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("primaryContactId")
-  public String getPrimaryContactId() {
-    return primaryContactId;
-  }
-  public void setPrimaryContactId(String primaryContactId) {
-    this.primaryContactId = primaryContactId;
   }
 
 
@@ -453,7 +435,6 @@ public class ExternalOrganization  implements Serializable {
             Objects.equals(this.division, externalOrganization.division) &&
             Objects.equals(this.companyType, externalOrganization.companyType) &&
             Objects.equals(this.industry, externalOrganization.industry) &&
-            Objects.equals(this.primaryContactId, externalOrganization.primaryContactId) &&
             Objects.equals(this.address, externalOrganization.address) &&
             Objects.equals(this.phoneNumber, externalOrganization.phoneNumber) &&
             Objects.equals(this.faxNumber, externalOrganization.faxNumber) &&
@@ -475,7 +456,7 @@ public class ExternalOrganization  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, schema, customFields, externalDataSources, selfUri);
+    return Objects.hash(id, name, division, companyType, industry, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, schema, customFields, externalDataSources, selfUri);
   }
 
   @Override
@@ -488,7 +469,6 @@ public class ExternalOrganization  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    companyType: ").append(toIndentedString(companyType)).append("\n");
     sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
-    sb.append("    primaryContactId: ").append(toIndentedString(primaryContactId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    faxNumber: ").append(toIndentedString(faxNumber)).append("\n");

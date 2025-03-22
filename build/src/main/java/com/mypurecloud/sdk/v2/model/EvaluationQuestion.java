@@ -27,6 +27,7 @@ import java.io.Serializable;
 public class EvaluationQuestion  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
   private String text = null;
   private String helpText = null;
 
@@ -101,6 +102,13 @@ public class EvaluationQuestion  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -269,6 +277,7 @@ public class EvaluationQuestion  implements Serializable {
     EvaluationQuestion evaluationQuestion = (EvaluationQuestion) o;
 
     return Objects.equals(this.id, evaluationQuestion.id) &&
+            Objects.equals(this.contextId, evaluationQuestion.contextId) &&
             Objects.equals(this.text, evaluationQuestion.text) &&
             Objects.equals(this.helpText, evaluationQuestion.helpText) &&
             Objects.equals(this.type, evaluationQuestion.type) &&
@@ -282,7 +291,7 @@ public class EvaluationQuestion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, isKill, isCritical);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, isKill, isCritical);
   }
 
   @Override
@@ -291,6 +300,7 @@ public class EvaluationQuestion  implements Serializable {
     sb.append("class EvaluationQuestion {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

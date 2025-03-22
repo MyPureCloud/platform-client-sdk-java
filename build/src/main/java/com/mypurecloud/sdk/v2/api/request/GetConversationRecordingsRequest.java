@@ -165,6 +165,20 @@ public class GetConversationRecordingsRequest {
 	    return this;
 	} 
 
+	private Boolean includePauseAnnotationsForScreenRecordings;
+	public Boolean getIncludePauseAnnotationsForScreenRecordings() {
+		return this.includePauseAnnotationsForScreenRecordings;
+	}
+
+	public void setIncludePauseAnnotationsForScreenRecordings(Boolean includePauseAnnotationsForScreenRecordings) {
+		this.includePauseAnnotationsForScreenRecordings = includePauseAnnotationsForScreenRecordings;
+	}
+
+	public GetConversationRecordingsRequest withIncludePauseAnnotationsForScreenRecordings(Boolean includePauseAnnotationsForScreenRecordings) {
+	    this.setIncludePauseAnnotationsForScreenRecordings(includePauseAnnotationsForScreenRecordings);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -206,6 +220,9 @@ public class GetConversationRecordingsRequest {
         
 
                 .withQueryParameters("locale", "", locale)
+        
+
+                .withQueryParameters("includePauseAnnotationsForScreenRecordings", "", includePauseAnnotationsForScreenRecordings)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -264,6 +281,11 @@ public class GetConversationRecordingsRequest {
 
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
+			return this;
+		}
+
+		public Builder withIncludePauseAnnotationsForScreenRecordings(Boolean includePauseAnnotationsForScreenRecordings) {
+			request.setIncludePauseAnnotationsForScreenRecordings(includePauseAnnotationsForScreenRecordings);
 			return this;
 		}
 

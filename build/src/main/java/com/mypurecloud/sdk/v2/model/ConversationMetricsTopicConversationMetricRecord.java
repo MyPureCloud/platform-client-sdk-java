@@ -73,6 +73,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
+    TAVERAGEAGENTRESPONSETIME("tAverageAgentResponseTime"),
+    TAVERAGECUSTOMERRESPONSETIME("tAverageCustomerResponseTime"),
     TBARGING("tBarging"),
     TCOACHING("tCoaching"),
     TCOACHINGCOMPLETE("tCoachingComplete"),
@@ -81,6 +83,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TDIALING("tDialing"),
     TFIRSTCONNECT("tFirstConnect"),
     TFIRSTDIAL("tFirstDial"),
+    TFIRSTENGAGEMENT("tFirstEngagement"),
+    TFIRSTRESPONSE("tFirstResponse"),
     TFLOWOUT("tFlowOut"),
     THANDLE("tHandle"),
     THELD("tHeld"),
@@ -520,6 +524,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     CHAT("chat"),
     COBROWSE("cobrowse"),
     EMAIL("email"),
+    INTERNALMESSAGE("internalmessage"),
     MESSAGE("message"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
@@ -1523,14 +1528,14 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
-   * Unique identifier for a PureCloud group
+   * Unique identifier for a Genesys Cloud group
    **/
   public ConversationMetricsTopicConversationMetricRecord groupId(String groupId) {
     this.groupId = groupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for a PureCloud group")
+  @ApiModelProperty(example = "null", value = "Unique identifier for a Genesys Cloud group")
   @JsonProperty("groupId")
   public String getGroupId() {
     return groupId;

@@ -95,14 +95,14 @@ public class WorkitemQueryJobQueryFiltersCriteria  implements Serializable {
 
 
   /**
-   * Query filter predicate.
+   * Query filter predicates. Number of predicates within the query filter should be between 1 and 5.
    **/
   public WorkitemQueryJobQueryFiltersCriteria predicates(List<WorkitemQueryJobQueryFiltersPredicate> predicates) {
     this.predicates = predicates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Query filter predicate.")
+  @ApiModelProperty(example = "null", required = true, value = "Query filter predicates. Number of predicates within the query filter should be between 1 and 5.")
   @JsonProperty("predicates")
   public List<WorkitemQueryJobQueryFiltersPredicate> getPredicates() {
     return predicates;

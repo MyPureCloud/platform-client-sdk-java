@@ -385,7 +385,6 @@ public class ChatApiAsync {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -420,7 +419,6 @@ public class ChatApiAsync {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1062,7 +1060,6 @@ public class ChatApiAsync {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1097,7 +1094,6 @@ public class ChatApiAsync {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2264,7 +2260,6 @@ public class ChatApiAsync {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2299,7 +2294,6 @@ public class ChatApiAsync {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

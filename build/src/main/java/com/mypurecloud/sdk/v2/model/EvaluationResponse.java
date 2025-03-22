@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AiScoring;
 import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponse;
@@ -213,6 +214,7 @@ public class EvaluationResponse  implements Serializable {
   private List<String> authorizedActions = new ArrayList<String>();
   private Boolean hasAssistanceFailed = null;
   private EvaluationSource evaluationSource = null;
+  private AiScoring aiScoring = null;
   private String selfUri = null;
 
   
@@ -741,6 +743,13 @@ public class EvaluationResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "AI scoring details for the evaluation.")
+  @JsonProperty("aiScoring")
+  public AiScoring getAiScoring() {
+    return aiScoring;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -789,12 +798,13 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.authorizedActions, evaluationResponse.authorizedActions) &&
             Objects.equals(this.hasAssistanceFailed, evaluationResponse.hasAssistanceFailed) &&
             Objects.equals(this.evaluationSource, evaluationResponse.evaluationSource) &&
+            Objects.equals(this.aiScoring, evaluationResponse.aiScoring) &&
             Objects.equals(this.selfUri, evaluationResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
   }
 
   @Override
@@ -833,6 +843,7 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    hasAssistanceFailed: ").append(toIndentedString(hasAssistanceFailed)).append("\n");
     sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
+    sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

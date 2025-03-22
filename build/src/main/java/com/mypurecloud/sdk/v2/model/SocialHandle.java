@@ -41,7 +41,8 @@ public class SocialHandle  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TWITTER("TWITTER");
+    TWITTER("TWITTER"),
+    FACEBOOK("FACEBOOK");
 
     private String value;
 

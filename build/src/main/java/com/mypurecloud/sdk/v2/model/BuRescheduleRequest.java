@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -33,6 +34,56 @@ public class BuRescheduleRequest  implements Serializable {
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;
   private Boolean doNotChangeManuallyEditedShifts = null;
+
+  private static class ActivitySmoothingTypeEnumDeserializer extends StdDeserializer<ActivitySmoothingTypeEnum> {
+    public ActivitySmoothingTypeEnumDeserializer() {
+      super(ActivitySmoothingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActivitySmoothingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActivitySmoothingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Overrides the default BU level activity smoothing type for this reschedule run
+   */
+ @JsonDeserialize(using = ActivitySmoothingTypeEnumDeserializer.class)
+  public enum ActivitySmoothingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REDUCECONCURRENTACTIVITIESACROSSBU("ReduceConcurrentActivitiesAcrossBu"),
+    REDUCECONCURRENTACTIVITIESACROSSMU("ReduceConcurrentActivitiesAcrossMu"),
+    CONSISTENTSERVICELEVEL("ConsistentServiceLevel");
+
+    private String value;
+
+    ActivitySmoothingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActivitySmoothingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActivitySmoothingTypeEnum value : ActivitySmoothingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActivitySmoothingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActivitySmoothingTypeEnum activitySmoothingType = null;
+  private Boolean induceScheduleVariability = null;
 
   
   /**
@@ -197,6 +248,42 @@ public class BuRescheduleRequest  implements Serializable {
   }
 
 
+  /**
+   * Overrides the default BU level activity smoothing type for this reschedule run
+   **/
+  public BuRescheduleRequest activitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Overrides the default BU level activity smoothing type for this reschedule run")
+  @JsonProperty("activitySmoothingType")
+  public ActivitySmoothingTypeEnum getActivitySmoothingType() {
+    return activitySmoothingType;
+  }
+  public void setActivitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+  }
+
+
+  /**
+   * Overrides the default BU level induce schedule variability setting for this reschedule run
+   **/
+  public BuRescheduleRequest induceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Overrides the default BU level induce schedule variability setting for this reschedule run")
+  @JsonProperty("induceScheduleVariability")
+  public Boolean getInduceScheduleVariability() {
+    return induceScheduleVariability;
+  }
+  public void setInduceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,12 +302,14 @@ public class BuRescheduleRequest  implements Serializable {
             Objects.equals(this.doNotChangeWeeklyPaidTime, buRescheduleRequest.doNotChangeWeeklyPaidTime) &&
             Objects.equals(this.doNotChangeDailyPaidTime, buRescheduleRequest.doNotChangeDailyPaidTime) &&
             Objects.equals(this.doNotChangeShiftStartTimes, buRescheduleRequest.doNotChangeShiftStartTimes) &&
-            Objects.equals(this.doNotChangeManuallyEditedShifts, buRescheduleRequest.doNotChangeManuallyEditedShifts);
+            Objects.equals(this.doNotChangeManuallyEditedShifts, buRescheduleRequest.doNotChangeManuallyEditedShifts) &&
+            Objects.equals(this.activitySmoothingType, buRescheduleRequest.activitySmoothingType) &&
+            Objects.equals(this.induceScheduleVariability, buRescheduleRequest.induceScheduleVariability);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, agentIds, activityCodeIds, managementUnitIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts);
+    return Objects.hash(startDate, endDate, agentIds, activityCodeIds, managementUnitIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts, activitySmoothingType, induceScheduleVariability);
   }
 
   @Override
@@ -237,6 +326,8 @@ public class BuRescheduleRequest  implements Serializable {
     sb.append("    doNotChangeDailyPaidTime: ").append(toIndentedString(doNotChangeDailyPaidTime)).append("\n");
     sb.append("    doNotChangeShiftStartTimes: ").append(toIndentedString(doNotChangeShiftStartTimes)).append("\n");
     sb.append("    doNotChangeManuallyEditedShifts: ").append(toIndentedString(doNotChangeManuallyEditedShifts)).append("\n");
+    sb.append("    activitySmoothingType: ").append(toIndentedString(activitySmoothingType)).append("\n");
+    sb.append("    induceScheduleVariability: ").append(toIndentedString(induceScheduleVariability)).append("\n");
     sb.append("}");
     return sb.toString();
   }

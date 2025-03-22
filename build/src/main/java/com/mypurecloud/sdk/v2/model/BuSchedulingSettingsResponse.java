@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageTypeSeverity;
 import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
 import io.swagger.annotations.ApiModel;
@@ -74,6 +75,56 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
   private WfmServiceGoalImpactSettings serviceGoalImpact = null;
   private Boolean allowWorkPlanPerMinuteGranularity = null;
+
+  private static class ActivitySmoothingTypeEnumDeserializer extends StdDeserializer<ActivitySmoothingTypeEnum> {
+    public ActivitySmoothingTypeEnumDeserializer() {
+      super(ActivitySmoothingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActivitySmoothingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActivitySmoothingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The activity smoothing type for schedule generation in this business unit
+   */
+ @JsonDeserialize(using = ActivitySmoothingTypeEnumDeserializer.class)
+  public enum ActivitySmoothingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REDUCECONCURRENTACTIVITIESACROSSBU("ReduceConcurrentActivitiesAcrossBu"),
+    REDUCECONCURRENTACTIVITIESACROSSMU("ReduceConcurrentActivitiesAcrossMu"),
+    CONSISTENTSERVICELEVEL("ConsistentServiceLevel");
+
+    private String value;
+
+    ActivitySmoothingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActivitySmoothingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActivitySmoothingTypeEnum value : ActivitySmoothingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActivitySmoothingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActivitySmoothingTypeEnum activitySmoothingType = null;
+  private Boolean induceScheduleVariability = null;
 
   
   /**
@@ -148,6 +199,42 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * The activity smoothing type for schedule generation in this business unit
+   **/
+  public BuSchedulingSettingsResponse activitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The activity smoothing type for schedule generation in this business unit")
+  @JsonProperty("activitySmoothingType")
+  public ActivitySmoothingTypeEnum getActivitySmoothingType() {
+    return activitySmoothingType;
+  }
+  public void setActivitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+  }
+
+
+  /**
+   * Indicates whether to provide variability in schedule generation
+   **/
+  public BuSchedulingSettingsResponse induceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Indicates whether to provide variability in schedule generation")
+  @JsonProperty("induceScheduleVariability")
+  public Boolean getInduceScheduleVariability() {
+    return induceScheduleVariability;
+  }
+  public void setInduceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -161,12 +248,14 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     return Objects.equals(this.messageSeverities, buSchedulingSettingsResponse.messageSeverities) &&
             Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsResponse.syncTimeOffProperties) &&
             Objects.equals(this.serviceGoalImpact, buSchedulingSettingsResponse.serviceGoalImpact) &&
-            Objects.equals(this.allowWorkPlanPerMinuteGranularity, buSchedulingSettingsResponse.allowWorkPlanPerMinuteGranularity);
+            Objects.equals(this.allowWorkPlanPerMinuteGranularity, buSchedulingSettingsResponse.allowWorkPlanPerMinuteGranularity) &&
+            Objects.equals(this.activitySmoothingType, buSchedulingSettingsResponse.activitySmoothingType) &&
+            Objects.equals(this.induceScheduleVariability, buSchedulingSettingsResponse.induceScheduleVariability);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact, allowWorkPlanPerMinuteGranularity);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact, allowWorkPlanPerMinuteGranularity, activitySmoothingType, induceScheduleVariability);
   }
 
   @Override
@@ -178,6 +267,8 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
     sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
     sb.append("    allowWorkPlanPerMinuteGranularity: ").append(toIndentedString(allowWorkPlanPerMinuteGranularity)).append("\n");
+    sb.append("    activitySmoothingType: ").append(toIndentedString(activitySmoothingType)).append("\n");
+    sb.append("    induceScheduleVariability: ").append(toIndentedString(induceScheduleVariability)).append("\n");
     sb.append("}");
     return sb.toString();
   }

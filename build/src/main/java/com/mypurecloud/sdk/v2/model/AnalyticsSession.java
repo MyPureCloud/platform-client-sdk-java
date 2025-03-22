@@ -53,6 +53,7 @@ public class AnalyticsSession  implements Serializable {
   private String coachedParticipantId = null;
   private String cobrowseRole = null;
   private String cobrowseRoomId = null;
+  private Boolean deliveryPushed = null;
 
   private static class DeliveryStatusEnumDeserializer extends StdDeserializer<DeliveryStatusEnum> {
     public DeliveryStatusEnumDeserializer() {
@@ -821,6 +822,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setCobrowseRoomId(String cobrowseRoomId) {
     this.cobrowseRoomId = cobrowseRoomId;
+  }
+
+
+  /**
+   * Flag that indicates that the push delivery mechanism was used
+   **/
+  public AnalyticsSession deliveryPushed(Boolean deliveryPushed) {
+    this.deliveryPushed = deliveryPushed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates that the push delivery mechanism was used")
+  @JsonProperty("deliveryPushed")
+  public Boolean getDeliveryPushed() {
+    return deliveryPushed;
+  }
+  public void setDeliveryPushed(Boolean deliveryPushed) {
+    this.deliveryPushed = deliveryPushed;
   }
 
 
@@ -1954,6 +1973,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.coachedParticipantId, analyticsSession.coachedParticipantId) &&
             Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
             Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
+            Objects.equals(this.deliveryPushed, analyticsSession.deliveryPushed) &&
             Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
             Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
             Objects.equals(this.destinationAddresses, analyticsSession.destinationAddresses) &&
@@ -2019,7 +2039,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2049,6 +2069,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    cobrowseRoomId: ").append(toIndentedString(cobrowseRoomId)).append("\n");
+    sb.append("    deliveryPushed: ").append(toIndentedString(deliveryPushed)).append("\n");
     sb.append("    deliveryStatus: ").append(toIndentedString(deliveryStatus)).append("\n");
     sb.append("    deliveryStatusChangeDate: ").append(toIndentedString(deliveryStatusChangeDate)).append("\n");
     sb.append("    destinationAddresses: ").append(toIndentedString(destinationAddresses)).append("\n");

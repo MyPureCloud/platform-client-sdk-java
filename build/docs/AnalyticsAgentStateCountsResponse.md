@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **counts** | [**List&lt;AgentStateSegmentTypeCount&gt;**](AgentStateSegmentTypeCount) | List of count by segment types |  [optional] |
+| **segmentCounts** | [**List&lt;AgentStateSegmentTypeCount&gt;**](AgentStateSegmentTypeCount) | List of count by segment types |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

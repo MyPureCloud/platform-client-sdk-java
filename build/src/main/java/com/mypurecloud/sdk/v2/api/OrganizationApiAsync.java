@@ -21,7 +21,6 @@ import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.LimitCountListing;
 import com.mypurecloud.sdk.v2.model.LimitDocumentation;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
@@ -39,9 +38,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRe
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsFreetrialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
-import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceLimitCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
@@ -752,83 +749,6 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LimitCountListing> getOrganizationsLimitsNamespaceCountsAsync(GetOrganizationsLimitsNamespaceCountsRequest request, final AsyncApiCallback<LimitCountListing> callback) {
-    try {
-      final SettableFuture<LimitCountListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitCountListing>() {}, new AsyncApiCallback<ApiResponse<LimitCountListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LimitCountListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LimitCountListing>> getOrganizationsLimitsNamespaceCountsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitCountListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LimitCountListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LimitCountListing>() {}, new AsyncApiCallback<ApiResponse<LimitCountListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LimitCountListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Get the default limits in a namespace for an organization
    * 
    * @param request the request object
@@ -892,83 +812,6 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LimitCountListing> getOrganizationsLimitsNamespaceLimitCountsAsync(GetOrganizationsLimitsNamespaceLimitCountsRequest request, final AsyncApiCallback<LimitCountListing> callback) {
-    try {
-      final SettableFuture<LimitCountListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitCountListing>() {}, new AsyncApiCallback<ApiResponse<LimitCountListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LimitCountListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-   * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LimitCountListing>> getOrganizationsLimitsNamespaceLimitCountsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitCountListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LimitCountListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LimitCountListing>() {}, new AsyncApiCallback<ApiResponse<LimitCountListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LimitCountListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LimitCountListing> response = (ApiResponse<LimitCountListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

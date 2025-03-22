@@ -36,7 +36,7 @@ public class ConsultTransferToExternal  implements Serializable {
     }
   }
   /**
-   * Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+   * Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
    */
  @JsonDeserialize(using = SpeakToEnumDeserializer.class)
   public enum SpeakToEnum {
@@ -77,14 +77,14 @@ public class ConsultTransferToExternal  implements Serializable {
 
   
   /**
-   * Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+   * Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
    **/
   public ConsultTransferToExternal speakTo(SpeakToEnum speakTo) {
     this.speakTo = speakTo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Determines to whom the initiating participant is speaking. Defaults to DESTINATION")
+  @ApiModelProperty(example = "null", required = true, value = "Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION")
   @JsonProperty("speakTo")
   public SpeakToEnum getSpeakTo() {
     return speakTo;

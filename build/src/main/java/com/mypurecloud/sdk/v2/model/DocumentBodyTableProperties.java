@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyTableCaptionBlock;
+import com.mypurecloud.sdk.v2.model.DocumentElementLength;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,7 @@ import java.io.Serializable;
 public class DocumentBodyTableProperties  implements Serializable {
   
   private Float width = null;
+  private DocumentElementLength widthWithUnit = null;
   private Float height = null;
   private Float cellSpacing = null;
   private Float cellPadding = null;
@@ -153,6 +155,24 @@ public class DocumentBodyTableProperties  implements Serializable {
   }
   public void setWidth(Float width) {
     this.width = width;
+  }
+
+
+  /**
+   * The width of the table in the specified unit.
+   **/
+  public DocumentBodyTableProperties widthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The width of the table in the specified unit.")
+  @JsonProperty("widthWithUnit")
+  public DocumentElementLength getWidthWithUnit() {
+    return widthWithUnit;
+  }
+  public void setWidthWithUnit(DocumentElementLength widthWithUnit) {
+    this.widthWithUnit = widthWithUnit;
   }
 
 
@@ -329,6 +349,7 @@ public class DocumentBodyTableProperties  implements Serializable {
     DocumentBodyTableProperties documentBodyTableProperties = (DocumentBodyTableProperties) o;
 
     return Objects.equals(this.width, documentBodyTableProperties.width) &&
+            Objects.equals(this.widthWithUnit, documentBodyTableProperties.widthWithUnit) &&
             Objects.equals(this.height, documentBodyTableProperties.height) &&
             Objects.equals(this.cellSpacing, documentBodyTableProperties.cellSpacing) &&
             Objects.equals(this.cellPadding, documentBodyTableProperties.cellPadding) &&
@@ -342,7 +363,7 @@ public class DocumentBodyTableProperties  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height, cellSpacing, cellPadding, borderWidth, alignment, borderStyle, borderColor, backgroundColor, caption);
+    return Objects.hash(width, widthWithUnit, height, cellSpacing, cellPadding, borderWidth, alignment, borderStyle, borderColor, backgroundColor, caption);
   }
 
   @Override
@@ -351,6 +372,7 @@ public class DocumentBodyTableProperties  implements Serializable {
     sb.append("class DocumentBodyTableProperties {\n");
     
     sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    widthWithUnit: ").append(toIndentedString(widthWithUnit)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("    cellSpacing: ").append(toIndentedString(cellSpacing)).append("\n");
     sb.append("    cellPadding: ").append(toIndentedString(cellPadding)).append("\n");

@@ -397,7 +397,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param pinnedMessageId pinnedMessageId (required)
    * @throws ApiException if the request fails on the server
@@ -410,7 +409,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param pinnedMessageId pinnedMessageId (required)
    * @throws IOException if the request fails to be processed
@@ -431,7 +429,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -450,7 +447,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a 1on1
    * 
-   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1132,7 +1128,6 @@ public class ChatApi {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @return OneOnOne
    * @throws ApiException if the request fails on the server
@@ -1145,7 +1140,6 @@ public class ChatApi {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @return OneOnOne
    * @throws IOException if the request fails to be processed
@@ -1164,7 +1158,6 @@ public class ChatApi {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OneOnOne
    * @throws ApiException if the request fails on the server
@@ -1184,7 +1177,6 @@ public class ChatApi {
   /**
    * Get information for a 1on1
    * 
-   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2427,7 +2419,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param body Pinned Message Ids (required)
    * @throws ApiException if the request fails on the server
@@ -2440,7 +2431,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param body Pinned Message Ids (required)
    * @throws IOException if the request fails to be processed
@@ -2461,7 +2451,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2480,7 +2469,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
    * 
-   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

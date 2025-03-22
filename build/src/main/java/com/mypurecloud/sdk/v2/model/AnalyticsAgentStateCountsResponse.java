@@ -24,24 +24,24 @@ import java.io.Serializable;
 
 public class AnalyticsAgentStateCountsResponse  implements Serializable {
   
-  private List<AgentStateSegmentTypeCount> counts = new ArrayList<AgentStateSegmentTypeCount>();
+  private List<AgentStateSegmentTypeCount> segmentCounts = new ArrayList<AgentStateSegmentTypeCount>();
 
   
   /**
    * List of count by segment types
    **/
-  public AnalyticsAgentStateCountsResponse counts(List<AgentStateSegmentTypeCount> counts) {
-    this.counts = counts;
+  public AnalyticsAgentStateCountsResponse segmentCounts(List<AgentStateSegmentTypeCount> segmentCounts) {
+    this.segmentCounts = segmentCounts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "List of count by segment types")
-  @JsonProperty("counts")
-  public List<AgentStateSegmentTypeCount> getCounts() {
-    return counts;
+  @JsonProperty("segmentCounts")
+  public List<AgentStateSegmentTypeCount> getSegmentCounts() {
+    return segmentCounts;
   }
-  public void setCounts(List<AgentStateSegmentTypeCount> counts) {
-    this.counts = counts;
+  public void setSegmentCounts(List<AgentStateSegmentTypeCount> segmentCounts) {
+    this.segmentCounts = segmentCounts;
   }
 
 
@@ -55,12 +55,12 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
     }
     AnalyticsAgentStateCountsResponse analyticsAgentStateCountsResponse = (AnalyticsAgentStateCountsResponse) o;
 
-    return Objects.equals(this.counts, analyticsAgentStateCountsResponse.counts);
+    return Objects.equals(this.segmentCounts, analyticsAgentStateCountsResponse.segmentCounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(counts);
+    return Objects.hash(segmentCounts);
   }
 
   @Override
@@ -68,7 +68,7 @@ public class AnalyticsAgentStateCountsResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsAgentStateCountsResponse {\n");
     
-    sb.append("    counts: ").append(toIndentedString(counts)).append("\n");
+    sb.append("    segmentCounts: ").append(toIndentedString(segmentCounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

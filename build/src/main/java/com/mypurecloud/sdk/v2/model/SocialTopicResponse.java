@@ -12,10 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DataIngestionRules;
+import com.mypurecloud.sdk.v2.model.DataIngestionRulesMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -79,7 +81,7 @@ public class SocialTopicResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private DataIngestionRules dataIngestionRules = null;
+  private List<DataIngestionRulesMetadata> dataIngestionRulesMetadata = new ArrayList<DataIngestionRulesMetadata>();
   private String selfUri = null;
 
   
@@ -210,20 +212,20 @@ public class SocialTopicResponse  implements Serializable {
 
 
   /**
-   * The data ingestion rules that apply to the social topic.
+   * The data ingestion rule metadata.
    **/
-  public SocialTopicResponse dataIngestionRules(DataIngestionRules dataIngestionRules) {
-    this.dataIngestionRules = dataIngestionRules;
+  public SocialTopicResponse dataIngestionRulesMetadata(List<DataIngestionRulesMetadata> dataIngestionRulesMetadata) {
+    this.dataIngestionRulesMetadata = dataIngestionRulesMetadata;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The data ingestion rules that apply to the social topic.")
-  @JsonProperty("dataIngestionRules")
-  public DataIngestionRules getDataIngestionRules() {
-    return dataIngestionRules;
+  @ApiModelProperty(example = "null", value = "The data ingestion rule metadata.")
+  @JsonProperty("dataIngestionRulesMetadata")
+  public List<DataIngestionRulesMetadata> getDataIngestionRulesMetadata() {
+    return dataIngestionRulesMetadata;
   }
-  public void setDataIngestionRules(DataIngestionRules dataIngestionRules) {
-    this.dataIngestionRules = dataIngestionRules;
+  public void setDataIngestionRulesMetadata(List<DataIngestionRulesMetadata> dataIngestionRulesMetadata) {
+    this.dataIngestionRulesMetadata = dataIngestionRulesMetadata;
   }
 
 
@@ -251,13 +253,13 @@ public class SocialTopicResponse  implements Serializable {
             Objects.equals(this.dateModified, socialTopicResponse.dateModified) &&
             Objects.equals(this.divisionId, socialTopicResponse.divisionId) &&
             Objects.equals(this.status, socialTopicResponse.status) &&
-            Objects.equals(this.dataIngestionRules, socialTopicResponse.dataIngestionRules) &&
+            Objects.equals(this.dataIngestionRulesMetadata, socialTopicResponse.dataIngestionRulesMetadata) &&
             Objects.equals(this.selfUri, socialTopicResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, divisionId, status, dataIngestionRules, selfUri);
+    return Objects.hash(id, name, description, dateCreated, dateModified, divisionId, status, dataIngestionRulesMetadata, selfUri);
   }
 
   @Override
@@ -272,7 +274,7 @@ public class SocialTopicResponse  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    dataIngestionRules: ").append(toIndentedString(dataIngestionRules)).append("\n");
+    sb.append("    dataIngestionRulesMetadata: ").append(toIndentedString(dataIngestionRulesMetadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

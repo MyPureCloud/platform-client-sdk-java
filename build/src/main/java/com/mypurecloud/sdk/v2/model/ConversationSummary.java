@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.ConversationEditedSummary;
+import com.mypurecloud.sdk.v2.model.ConversationEditedInput;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryFollowup;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryReason;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryResolution;
@@ -138,7 +138,7 @@ public class ConversationSummary  implements Serializable {
   private MediaTypeEnum mediaType = null;
   private String language = null;
   private List<ConversationSummaryWrapupCode> predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
-  private ConversationEditedSummary editedSummary = null;
+  private ConversationEditedInput editedSummary = null;
   private ConversationSummaryReason reason = null;
   private ConversationSummaryFollowup followup = null;
   private ConversationSummaryResolution resolution = null;
@@ -241,17 +241,17 @@ public class ConversationSummary  implements Serializable {
   /**
    * The edited summary of the conversation.
    **/
-  public ConversationSummary editedSummary(ConversationEditedSummary editedSummary) {
+  public ConversationSummary editedSummary(ConversationEditedInput editedSummary) {
     this.editedSummary = editedSummary;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The edited summary of the conversation.")
   @JsonProperty("editedSummary")
-  public ConversationEditedSummary getEditedSummary() {
+  public ConversationEditedInput getEditedSummary() {
     return editedSummary;
   }
-  public void setEditedSummary(ConversationEditedSummary editedSummary) {
+  public void setEditedSummary(ConversationEditedInput editedSummary) {
     this.editedSummary = editedSummary;
   }
 

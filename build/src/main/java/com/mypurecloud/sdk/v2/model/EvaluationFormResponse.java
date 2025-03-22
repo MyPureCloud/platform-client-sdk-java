@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import com.mypurecloud.sdk.v2.model.EvaluationSettings;
@@ -84,6 +85,7 @@ public class EvaluationFormResponse  implements Serializable {
   private WeightModeEnum weightMode = null;
   private EvaluationSettings evaluationSettings = null;
   private DomainEntityListingEvaluationForm publishedVersions = null;
+  private AiScoringSettings aiScoring = null;
   private String selfUri = null;
 
   
@@ -236,6 +238,13 @@ public class EvaluationFormResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "AI scoring settings for the evaluation form.")
+  @JsonProperty("aiScoring")
+  public AiScoringSettings getAiScoring() {
+    return aiScoring;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -262,12 +271,13 @@ public class EvaluationFormResponse  implements Serializable {
             Objects.equals(this.weightMode, evaluationFormResponse.weightMode) &&
             Objects.equals(this.evaluationSettings, evaluationFormResponse.evaluationSettings) &&
             Objects.equals(this.publishedVersions, evaluationFormResponse.publishedVersions) &&
+            Objects.equals(this.aiScoring, evaluationFormResponse.aiScoring) &&
             Objects.equals(this.selfUri, evaluationFormResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, evaluationSettings, publishedVersions, aiScoring, selfUri);
   }
 
   @Override
@@ -284,6 +294,7 @@ public class EvaluationFormResponse  implements Serializable {
     sb.append("    weightMode: ").append(toIndentedString(weightMode)).append("\n");
     sb.append("    evaluationSettings: ").append(toIndentedString(evaluationSettings)).append("\n");
     sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
+    sb.append("    aiScoring: ").append(toIndentedString(aiScoring)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

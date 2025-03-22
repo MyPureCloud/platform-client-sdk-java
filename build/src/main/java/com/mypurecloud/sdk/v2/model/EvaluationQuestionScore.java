@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AiAnswer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -29,6 +30,7 @@ public class EvaluationQuestionScore  implements Serializable {
   private String assistedAnswerId = null;
   private Boolean failedKillQuestion = null;
   private String comments = null;
+  private AiAnswer aiAnswer = null;
 
   
   /**
@@ -173,6 +175,13 @@ public class EvaluationQuestionScore  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Suggested AI answer")
+  @JsonProperty("aiAnswer")
+  public AiAnswer getAiAnswer() {
+    return aiAnswer;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -190,12 +199,13 @@ public class EvaluationQuestionScore  implements Serializable {
             Objects.equals(this.systemMarkedNA, evaluationQuestionScore.systemMarkedNA) &&
             Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
             Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
-            Objects.equals(this.comments, evaluationQuestionScore.comments);
+            Objects.equals(this.comments, evaluationQuestionScore.comments) &&
+            Objects.equals(this.aiAnswer, evaluationQuestionScore.aiAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, failedKillQuestion, comments);
+    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, failedKillQuestion, comments, aiAnswer);
   }
 
   @Override
@@ -211,6 +221,7 @@ public class EvaluationQuestionScore  implements Serializable {
     sb.append("    assistedAnswerId: ").append(toIndentedString(assistedAnswerId)).append("\n");
     sb.append("    failedKillQuestion: ").append(toIndentedString(failedKillQuestion)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    aiAnswer: ").append(toIndentedString(aiAnswer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

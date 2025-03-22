@@ -10,31 +10,54 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.DataIngestionRuleResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.DataIngestionRuleStatusPatchRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EscalationRuleRequest;
+import com.mypurecloud.sdk.v2.model.EscalationRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ManualEscalationRequest;
+import com.mypurecloud.sdk.v2.model.ManualEscalationResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialEscalationResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SocialMediaAsyncDetailQuery;
+import com.mypurecloud.sdk.v2.model.SocialMediaAsyncDetailQueryResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicPatchRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetRequest;
+import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleVersionResponseEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaEscalationruleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsMessagesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsMessagesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaEscalationruleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest;
@@ -49,10 +72,16 @@ import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsMessagesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSocialmediaEscalationruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
@@ -75,9 +104,162 @@ public class SocialMediaApi {
   }
 
   /**
+   * Delete an escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaEscalationrule(String escalationRuleId) throws IOException, ApiException {
+     deleteSocialmediaEscalationrule(createDeleteSocialmediaEscalationruleRequest(escalationRuleId));
+  }
+
+  /**
+   * Delete an escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaEscalationruleWithHttpInfo(String escalationRuleId) throws IOException {
+    return deleteSocialmediaEscalationrule(createDeleteSocialmediaEscalationruleRequest(escalationRuleId).withHttpInfo());
+  }
+
+  private DeleteSocialmediaEscalationruleRequest createDeleteSocialmediaEscalationruleRequest(String escalationRuleId) {
+    return DeleteSocialmediaEscalationruleRequest.builder()
+            .withEscalationRuleId(escalationRuleId)
+
+            .build();
+  }
+
+  /**
+   * Delete an escalation rule.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaEscalationrule(DeleteSocialmediaEscalationruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an escalation rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaEscalationrule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a social media message.
+   * 
+   * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param messageId messageId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaMessage(String messageId) throws IOException, ApiException {
+     deleteSocialmediaMessage(createDeleteSocialmediaMessageRequest(messageId));
+  }
+
+  /**
+   * Delete a social media message.
+   * 
+   * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param messageId messageId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaMessageWithHttpInfo(String messageId) throws IOException {
+    return deleteSocialmediaMessage(createDeleteSocialmediaMessageRequest(messageId).withHttpInfo());
+  }
+
+  private DeleteSocialmediaMessageRequest createDeleteSocialmediaMessageRequest(String messageId) {
+    return DeleteSocialmediaMessageRequest.builder()
+            .withMessageId(messageId)
+
+            .build();
+  }
+
+  /**
+   * Delete a social media message.
+   * 
+   * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaMessage(DeleteSocialmediaMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a social media message.
+   * 
+   * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete a social topic.
    * 
-   * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param hardDelete Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
    * @throws ApiException if the request fails on the server
@@ -90,7 +272,6 @@ public class SocialMediaApi {
   /**
    * Delete a social topic.
    * 
-   * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param hardDelete Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
    * @throws IOException if the request fails to be processed
@@ -111,7 +292,6 @@ public class SocialMediaApi {
   /**
    * Delete a social topic.
    * 
-   * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -130,7 +310,6 @@ public class SocialMediaApi {
   /**
    * Delete a social topic.
    * 
-   * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -160,7 +339,6 @@ public class SocialMediaApi {
   /**
    * Delete a Facebook data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param hardDelete Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -174,7 +352,6 @@ public class SocialMediaApi {
   /**
    * Delete a Facebook data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param hardDelete Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -198,7 +375,6 @@ public class SocialMediaApi {
   /**
    * Delete a Facebook data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -217,7 +393,6 @@ public class SocialMediaApi {
   /**
    * Delete a Facebook data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -334,7 +509,6 @@ public class SocialMediaApi {
   /**
    * Delete a X (formally Twitter) data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param hardDelete Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -348,7 +522,6 @@ public class SocialMediaApi {
   /**
    * Delete a X (formally Twitter) data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param hardDelete Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -372,7 +545,6 @@ public class SocialMediaApi {
   /**
    * Delete a X (formally Twitter) data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -391,7 +563,6 @@ public class SocialMediaApi {
   /**
    * Delete a X (formally Twitter) data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -419,9 +590,492 @@ public class SocialMediaApi {
   }
 
   /**
+   * Get status for async query for social media aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getSocialmediaAnalyticsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getSocialmediaAnalyticsAggregatesJob(createGetSocialmediaAnalyticsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for social media aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getSocialmediaAnalyticsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getSocialmediaAnalyticsAggregatesJob(createGetSocialmediaAnalyticsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSocialmediaAnalyticsAggregatesJobRequest createGetSocialmediaAnalyticsAggregatesJobRequest(String jobId) {
+    return GetSocialmediaAnalyticsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for social media aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getSocialmediaAnalyticsAggregatesJob(GetSocialmediaAnalyticsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for social media aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getSocialmediaAnalyticsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async social media query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SocialMediaAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialMediaAsyncAggregateQueryResponse getSocialmediaAnalyticsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getSocialmediaAnalyticsAggregatesJobResults(createGetSocialmediaAnalyticsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async social media query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SocialMediaAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialMediaAsyncAggregateQueryResponse> getSocialmediaAnalyticsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getSocialmediaAnalyticsAggregatesJobResults(createGetSocialmediaAnalyticsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetSocialmediaAnalyticsAggregatesJobResultsRequest createGetSocialmediaAnalyticsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetSocialmediaAnalyticsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async social media query
+   * 
+   * @param request The request object
+   * @return SocialMediaAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialMediaAsyncAggregateQueryResponse getSocialmediaAnalyticsAggregatesJobResults(GetSocialmediaAnalyticsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SocialMediaAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SocialMediaAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async social media query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialMediaAsyncAggregateQueryResponse> getSocialmediaAnalyticsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SocialMediaAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialMediaAsyncAggregateQueryResponse> response = (ApiResponse<SocialMediaAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialMediaAsyncAggregateQueryResponse> response = (ApiResponse<SocialMediaAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for social media messages job
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getSocialmediaAnalyticsMessagesJob(String jobId) throws IOException, ApiException {
+    return  getSocialmediaAnalyticsMessagesJob(createGetSocialmediaAnalyticsMessagesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for social media messages job
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getSocialmediaAnalyticsMessagesJobWithHttpInfo(String jobId) throws IOException {
+    return getSocialmediaAnalyticsMessagesJob(createGetSocialmediaAnalyticsMessagesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSocialmediaAnalyticsMessagesJobRequest createGetSocialmediaAnalyticsMessagesJobRequest(String jobId) {
+    return GetSocialmediaAnalyticsMessagesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for social media messages job
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getSocialmediaAnalyticsMessagesJob(GetSocialmediaAnalyticsMessagesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for social media messages job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getSocialmediaAnalyticsMessagesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async social media messages query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SocialMediaAsyncDetailQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialMediaAsyncDetailQueryResponse getSocialmediaAnalyticsMessagesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getSocialmediaAnalyticsMessagesJobResults(createGetSocialmediaAnalyticsMessagesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async social media messages query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SocialMediaAsyncDetailQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialMediaAsyncDetailQueryResponse> getSocialmediaAnalyticsMessagesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getSocialmediaAnalyticsMessagesJobResults(createGetSocialmediaAnalyticsMessagesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetSocialmediaAnalyticsMessagesJobResultsRequest createGetSocialmediaAnalyticsMessagesJobResultsRequest(String jobId, String cursor) {
+    return GetSocialmediaAnalyticsMessagesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async social media messages query
+   * 
+   * @param request The request object
+   * @return SocialMediaAsyncDetailQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialMediaAsyncDetailQueryResponse getSocialmediaAnalyticsMessagesJobResults(GetSocialmediaAnalyticsMessagesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SocialMediaAsyncDetailQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SocialMediaAsyncDetailQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async social media messages query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialMediaAsyncDetailQueryResponse> getSocialmediaAnalyticsMessagesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SocialMediaAsyncDetailQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialMediaAsyncDetailQueryResponse> response = (ApiResponse<SocialMediaAsyncDetailQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialMediaAsyncDetailQueryResponse> response = (ApiResponse<SocialMediaAsyncDetailQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a single escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse getSocialmediaEscalationrule(String escalationRuleId) throws IOException, ApiException {
+    return  getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId));
+  }
+
+  /**
+   * Get a single escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @return EscalationRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> getSocialmediaEscalationruleWithHttpInfo(String escalationRuleId) throws IOException {
+    return getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId).withHttpInfo());
+  }
+
+  private GetSocialmediaEscalationruleRequest createGetSocialmediaEscalationruleRequest(String escalationRuleId) {
+    return GetSocialmediaEscalationruleRequest.builder()
+            .withEscalationRuleId(escalationRuleId)
+
+            .build();
+  }
+
+  /**
+   * Get a single escalation rule.
+   * 
+   * @param request The request object
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse getSocialmediaEscalationrule(GetSocialmediaEscalationruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EscalationRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EscalationRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single escalation rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> getSocialmediaEscalationrule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EscalationRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve all escalation rules for a division.
+   * 
+   * @param divisionId One division ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return SocialEscalationResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialEscalationResponseEntityListing getSocialmediaEscalationrules(String divisionId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getSocialmediaEscalationrules(createGetSocialmediaEscalationrulesRequest(divisionId, pageNumber, pageSize));
+  }
+
+  /**
+   * Retrieve all escalation rules for a division.
+   * 
+   * @param divisionId One division ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return SocialEscalationResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialEscalationResponseEntityListing> getSocialmediaEscalationrulesWithHttpInfo(String divisionId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getSocialmediaEscalationrules(createGetSocialmediaEscalationrulesRequest(divisionId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetSocialmediaEscalationrulesRequest createGetSocialmediaEscalationrulesRequest(String divisionId, Integer pageNumber, Integer pageSize) {
+    return GetSocialmediaEscalationrulesRequest.builder()
+            .withDivisionId(divisionId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all escalation rules for a division.
+   * 
+   * @param request The request object
+   * @return SocialEscalationResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SocialEscalationResponseEntityListing getSocialmediaEscalationrules(GetSocialmediaEscalationrulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SocialEscalationResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SocialEscalationResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all escalation rules for a division.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SocialEscalationResponseEntityListing> getSocialmediaEscalationrules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SocialEscalationResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialEscalationResponseEntityListing> response = (ApiResponse<SocialEscalationResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SocialEscalationResponseEntityListing> response = (ApiResponse<SocialEscalationResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a single social topic.
    * 
-   * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
    * @return SocialTopicResponse
@@ -435,7 +1089,6 @@ public class SocialMediaApi {
   /**
    * Get a single social topic.
    * 
-   * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
    * @return SocialTopicResponse
@@ -457,7 +1110,6 @@ public class SocialMediaApi {
   /**
    * Get a single social topic.
    * 
-   * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SocialTopicResponse
    * @throws ApiException if the request fails on the server
@@ -477,7 +1129,6 @@ public class SocialMediaApi {
   /**
    * Get a single social topic.
    * 
-   * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -505,9 +1156,98 @@ public class SocialMediaApi {
   }
 
   /**
+   * Retrieve all social topic data ingestion rules with pagination.
+   * 
+   * @param topicId topicId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return DataIngestionRuleResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrules(createGetSocialmediaTopicDataingestionrulesRequest(topicId, pageNumber, pageSize, includeDeleted));
+  }
+
+  /**
+   * Retrieve all social topic data ingestion rules with pagination.
+   * 
+   * @param topicId topicId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return DataIngestionRuleResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrulesWithHttpInfo(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrules(createGetSocialmediaTopicDataingestionrulesRequest(topicId, pageNumber, pageSize, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesRequest createGetSocialmediaTopicDataingestionrulesRequest(String topicId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesRequest.builder()
+            .withTopicId(topicId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all social topic data ingestion rules with pagination.
+   * 
+   * @param request The request object
+   * @return DataIngestionRuleResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(GetSocialmediaTopicDataingestionrulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataIngestionRuleResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataIngestionRuleResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all social topic data ingestion rules with pagination.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataIngestionRuleResponseEntityListing> getSocialmediaTopicDataingestionrules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataIngestionRuleResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataIngestionRuleResponseEntityListing> response = (ApiResponse<DataIngestionRuleResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataIngestionRuleResponseEntityListing> response = (ApiResponse<DataIngestionRuleResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a single Facebook data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -522,7 +1262,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -547,7 +1286,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -567,7 +1305,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -597,7 +1334,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -613,7 +1349,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -641,7 +1376,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleVersionResponse
    * @throws ApiException if the request fails on the server
@@ -661,7 +1395,6 @@ public class SocialMediaApi {
   /**
    * Get a single Facebook data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -691,7 +1424,6 @@ public class SocialMediaApi {
   /**
    * Get the Facebook data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -708,7 +1440,6 @@ public class SocialMediaApi {
   /**
    * Get the Facebook data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -739,7 +1470,6 @@ public class SocialMediaApi {
   /**
    * Get the Facebook data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleVersionResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -759,7 +1489,6 @@ public class SocialMediaApi {
   /**
    * Get the Facebook data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1071,7 +1800,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -1086,7 +1814,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -1111,7 +1838,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -1131,7 +1857,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1161,7 +1886,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -1177,7 +1901,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -1205,7 +1928,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleVersionResponse
    * @throws ApiException if the request fails on the server
@@ -1225,7 +1947,6 @@ public class SocialMediaApi {
   /**
    * Get a single X (formally Twitter) data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1255,7 +1976,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -1272,7 +1992,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -1303,7 +2022,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleVersionResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -1323,7 +2041,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1353,7 +2070,6 @@ public class SocialMediaApi {
   /**
    * Retrieve all social topics.
    * 
-   * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
@@ -1369,7 +2085,6 @@ public class SocialMediaApi {
   /**
    * Retrieve all social topics.
    * 
-   * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
@@ -1397,7 +2112,6 @@ public class SocialMediaApi {
   /**
    * Retrieve all social topics.
    * 
-   * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SocialTopicResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -1417,7 +2131,6 @@ public class SocialMediaApi {
   /**
    * Retrieve all social topics.
    * 
-   * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1447,7 +2160,6 @@ public class SocialMediaApi {
   /**
    * Update a social topic.
    * 
-   * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return SocialTopicResponse
@@ -1461,7 +2173,6 @@ public class SocialMediaApi {
   /**
    * Update a social topic.
    * 
-   * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return SocialTopicResponse
@@ -1483,7 +2194,6 @@ public class SocialMediaApi {
   /**
    * Update a social topic.
    * 
-   * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SocialTopicResponse
    * @throws ApiException if the request fails on the server
@@ -1503,7 +2213,6 @@ public class SocialMediaApi {
   /**
    * Update a social topic.
    * 
-   * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1533,7 +2242,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a Facebook data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param body  (optional)
@@ -1548,7 +2256,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a Facebook data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param body  (optional)
@@ -1573,7 +2280,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a Facebook data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -1593,7 +2299,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a Facebook data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1713,7 +2418,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a X (formally Twitter) data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param body  (optional)
@@ -1728,7 +2432,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a X (formally Twitter) data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param body  (optional)
@@ -1753,7 +2456,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a X (formally Twitter) data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -1773,7 +2475,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a X (formally Twitter) data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1801,9 +2502,324 @@ public class SocialMediaApi {
   }
 
   /**
+   * Query for social media aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postSocialmediaAnalyticsAggregatesJobs(SocialMediaAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postSocialmediaAnalyticsAggregatesJobs(createPostSocialmediaAnalyticsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for social media aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postSocialmediaAnalyticsAggregatesJobsWithHttpInfo(SocialMediaAsyncAggregationQuery body) throws IOException {
+    return postSocialmediaAnalyticsAggregatesJobs(createPostSocialmediaAnalyticsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSocialmediaAnalyticsAggregatesJobsRequest createPostSocialmediaAnalyticsAggregatesJobsRequest(SocialMediaAsyncAggregationQuery body) {
+    return PostSocialmediaAnalyticsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for social media aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postSocialmediaAnalyticsAggregatesJobs(PostSocialmediaAnalyticsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for social media aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postSocialmediaAnalyticsAggregatesJobs(ApiRequest<SocialMediaAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for social media messages asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postSocialmediaAnalyticsMessagesJobs(SocialMediaAsyncDetailQuery body) throws IOException, ApiException {
+    return  postSocialmediaAnalyticsMessagesJobs(createPostSocialmediaAnalyticsMessagesJobsRequest(body));
+  }
+
+  /**
+   * Query for social media messages asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postSocialmediaAnalyticsMessagesJobsWithHttpInfo(SocialMediaAsyncDetailQuery body) throws IOException {
+    return postSocialmediaAnalyticsMessagesJobs(createPostSocialmediaAnalyticsMessagesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSocialmediaAnalyticsMessagesJobsRequest createPostSocialmediaAnalyticsMessagesJobsRequest(SocialMediaAsyncDetailQuery body) {
+    return PostSocialmediaAnalyticsMessagesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for social media messages asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postSocialmediaAnalyticsMessagesJobs(PostSocialmediaAnalyticsMessagesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for social media messages asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postSocialmediaAnalyticsMessagesJobs(ApiRequest<SocialMediaAsyncDetailQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an escalation rule.
+   * 
+   * @param body  (optional)
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse postSocialmediaEscalationrules(EscalationRuleRequest body) throws IOException, ApiException {
+    return  postSocialmediaEscalationrules(createPostSocialmediaEscalationrulesRequest(body));
+  }
+
+  /**
+   * Create an escalation rule.
+   * 
+   * @param body  (optional)
+   * @return EscalationRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> postSocialmediaEscalationrulesWithHttpInfo(EscalationRuleRequest body) throws IOException {
+    return postSocialmediaEscalationrules(createPostSocialmediaEscalationrulesRequest(body).withHttpInfo());
+  }
+
+  private PostSocialmediaEscalationrulesRequest createPostSocialmediaEscalationrulesRequest(EscalationRuleRequest body) {
+    return PostSocialmediaEscalationrulesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an escalation rule.
+   * 
+   * @param request The request object
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse postSocialmediaEscalationrules(PostSocialmediaEscalationrulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EscalationRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EscalationRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an escalation rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> postSocialmediaEscalationrules(ApiRequest<EscalationRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EscalationRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Escalate message to a conversation manually
+   * 
+   * @param divisionId One division ID (required)
+   * @param body  (optional)
+   * @return ManualEscalationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManualEscalationResponse postSocialmediaEscalationsMessages(String divisionId, ManualEscalationRequest body) throws IOException, ApiException {
+    return  postSocialmediaEscalationsMessages(createPostSocialmediaEscalationsMessagesRequest(divisionId, body));
+  }
+
+  /**
+   * Escalate message to a conversation manually
+   * 
+   * @param divisionId One division ID (required)
+   * @param body  (optional)
+   * @return ManualEscalationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManualEscalationResponse> postSocialmediaEscalationsMessagesWithHttpInfo(String divisionId, ManualEscalationRequest body) throws IOException {
+    return postSocialmediaEscalationsMessages(createPostSocialmediaEscalationsMessagesRequest(divisionId, body).withHttpInfo());
+  }
+
+  private PostSocialmediaEscalationsMessagesRequest createPostSocialmediaEscalationsMessagesRequest(String divisionId, ManualEscalationRequest body) {
+    return PostSocialmediaEscalationsMessagesRequest.builder()
+            .withDivisionId(divisionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Escalate message to a conversation manually
+   * 
+   * @param request The request object
+   * @return ManualEscalationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManualEscalationResponse postSocialmediaEscalationsMessages(PostSocialmediaEscalationsMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManualEscalationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManualEscalationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Escalate message to a conversation manually
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManualEscalationResponse> postSocialmediaEscalationsMessages(ApiRequest<ManualEscalationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManualEscalationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManualEscalationResponse> response = (ApiResponse<ManualEscalationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManualEscalationResponse> response = (ApiResponse<ManualEscalationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an Facebook data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return FacebookDataIngestionRuleResponse
@@ -1817,7 +2833,6 @@ public class SocialMediaApi {
   /**
    * Create an Facebook data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return FacebookDataIngestionRuleResponse
@@ -1839,7 +2854,6 @@ public class SocialMediaApi {
   /**
    * Create an Facebook data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -1859,7 +2873,6 @@ public class SocialMediaApi {
   /**
    * Create an Facebook data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1975,7 +2988,6 @@ public class SocialMediaApi {
   /**
    * Create an twitter data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return TwitterDataIngestionRuleResponse
@@ -1989,7 +3001,6 @@ public class SocialMediaApi {
   /**
    * Create an twitter data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return TwitterDataIngestionRuleResponse
@@ -2011,7 +3022,6 @@ public class SocialMediaApi {
   /**
    * Create an twitter data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -2031,7 +3041,6 @@ public class SocialMediaApi {
   /**
    * Create an twitter data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2061,7 +3070,6 @@ public class SocialMediaApi {
   /**
    * Create a social topic.
    * 
-   * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return SocialTopicResponse
    * @throws ApiException if the request fails on the server
@@ -2074,7 +3082,6 @@ public class SocialMediaApi {
   /**
    * Create a social topic.
    * 
-   * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return SocialTopicResponse
    * @throws IOException if the request fails to be processed
@@ -2093,7 +3100,6 @@ public class SocialMediaApi {
   /**
    * Create a social topic.
    * 
-   * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SocialTopicResponse
    * @throws ApiException if the request fails on the server
@@ -2113,7 +3119,6 @@ public class SocialMediaApi {
   /**
    * Create a social topic.
    * 
-   * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2141,9 +3146,168 @@ public class SocialMediaApi {
   }
 
   /**
+   * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+   * 
+   * @param body TwitterDataHistoricalTweetRequest (required)
+   * @return TwitterDataHistoricalTweetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterDataHistoricalTweetResponse postSocialmediaTwitterHistoricalTweets(TwitterDataHistoricalTweetRequest body) throws IOException, ApiException {
+    return  postSocialmediaTwitterHistoricalTweets(createPostSocialmediaTwitterHistoricalTweetsRequest(body));
+  }
+
+  /**
+   * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+   * 
+   * @param body TwitterDataHistoricalTweetRequest (required)
+   * @return TwitterDataHistoricalTweetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterDataHistoricalTweetResponse> postSocialmediaTwitterHistoricalTweetsWithHttpInfo(TwitterDataHistoricalTweetRequest body) throws IOException {
+    return postSocialmediaTwitterHistoricalTweets(createPostSocialmediaTwitterHistoricalTweetsRequest(body).withHttpInfo());
+  }
+
+  private PostSocialmediaTwitterHistoricalTweetsRequest createPostSocialmediaTwitterHistoricalTweetsRequest(TwitterDataHistoricalTweetRequest body) {
+    return PostSocialmediaTwitterHistoricalTweetsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+   * 
+   * @param request The request object
+   * @return TwitterDataHistoricalTweetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterDataHistoricalTweetResponse postSocialmediaTwitterHistoricalTweets(PostSocialmediaTwitterHistoricalTweetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterDataHistoricalTweetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterDataHistoricalTweetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterDataHistoricalTweetResponse> postSocialmediaTwitterHistoricalTweets(ApiRequest<TwitterDataHistoricalTweetRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterDataHistoricalTweetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterDataHistoricalTweetResponse> response = (ApiResponse<TwitterDataHistoricalTweetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterDataHistoricalTweetResponse> response = (ApiResponse<TwitterDataHistoricalTweetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @param body  (optional)
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse putSocialmediaEscalationrule(String escalationRuleId, EscalationRuleRequest body) throws IOException, ApiException {
+    return  putSocialmediaEscalationrule(createPutSocialmediaEscalationruleRequest(escalationRuleId, body));
+  }
+
+  /**
+   * Update the escalation rule.
+   * 
+   * @param escalationRuleId escalationRuleId (required)
+   * @param body  (optional)
+   * @return EscalationRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> putSocialmediaEscalationruleWithHttpInfo(String escalationRuleId, EscalationRuleRequest body) throws IOException {
+    return putSocialmediaEscalationrule(createPutSocialmediaEscalationruleRequest(escalationRuleId, body).withHttpInfo());
+  }
+
+  private PutSocialmediaEscalationruleRequest createPutSocialmediaEscalationruleRequest(String escalationRuleId, EscalationRuleRequest body) {
+    return PutSocialmediaEscalationruleRequest.builder()
+            .withEscalationRuleId(escalationRuleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the escalation rule.
+   * 
+   * @param request The request object
+   * @return EscalationRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EscalationRuleResponse putSocialmediaEscalationrule(PutSocialmediaEscalationruleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EscalationRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EscalationRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the escalation rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EscalationRuleResponse> putSocialmediaEscalationrule(ApiRequest<EscalationRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EscalationRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EscalationRuleResponse> response = (ApiResponse<EscalationRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the Facebook data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param body  (optional)
@@ -2158,7 +3322,6 @@ public class SocialMediaApi {
   /**
    * Update the Facebook data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param facebookIngestionRuleId facebookIngestionRuleId (required)
    * @param body  (optional)
@@ -2183,7 +3346,6 @@ public class SocialMediaApi {
   /**
    * Update the Facebook data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FacebookDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -2203,7 +3365,6 @@ public class SocialMediaApi {
   /**
    * Update the Facebook data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2323,7 +3484,6 @@ public class SocialMediaApi {
   /**
    * Update the X (formally Twitter) data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param body  (optional)
@@ -2338,7 +3498,6 @@ public class SocialMediaApi {
   /**
    * Update the X (formally Twitter) data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param twitterIngestionRuleId twitterIngestionRuleId (required)
    * @param body  (optional)
@@ -2363,7 +3522,6 @@ public class SocialMediaApi {
   /**
    * Update the X (formally Twitter) data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TwitterDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -2383,7 +3541,6 @@ public class SocialMediaApi {
   /**
    * Update the X (formally Twitter) data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

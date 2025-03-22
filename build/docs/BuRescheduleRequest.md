@@ -14,8 +14,20 @@
 | **doNotChangeDailyPaidTime** | **Boolean** | Instructs the scheduler whether it is allowed to change daily paid time |  |
 | **doNotChangeShiftStartTimes** | **Boolean** | Instructs the scheduler whether it is allowed to change shift start times |  |
 | **doNotChangeManuallyEditedShifts** | **Boolean** | Instructs the scheduler whether it is allowed to change manually edited shifts |  |
+| **activitySmoothingType** | [**ActivitySmoothingTypeEnum**](#Enum--ActivitySmoothingTypeEnum) | Overrides the default BU level activity smoothing type for this reschedule run |  [optional] |
+| **induceScheduleVariability** | **Boolean** | Overrides the default BU level induce schedule variability setting for this reschedule run |  [optional] |
+
+
+## Enum: ActivitySmoothingTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REDUCECONCURRENTACTIVITIESACROSSBU | &quot;ReduceConcurrentActivitiesAcrossBu&quot; | 
+| REDUCECONCURRENTACTIVITIESACROSSMU | &quot;ReduceConcurrentActivitiesAcrossMu&quot; | 
+| CONSISTENTSERVICELEVEL | &quot;ConsistentServiceLevel&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_

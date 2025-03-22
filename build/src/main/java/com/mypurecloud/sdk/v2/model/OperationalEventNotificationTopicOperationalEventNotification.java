@@ -32,6 +32,7 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String parentEntity = null;
   private String entityType = null;
   private String conversationId = null;
+  private String entityToken = null;
   private Integer timestamp = null;
 
   
@@ -207,6 +208,23 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
+  public OperationalEventNotificationTopicOperationalEventNotification entityToken(String entityToken) {
+    this.entityToken = entityToken;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("entityToken")
+  public String getEntityToken() {
+    return entityToken;
+  }
+  public void setEntityToken(String entityToken) {
+    this.entityToken = entityToken;
+  }
+
+
+  /**
+   **/
   public OperationalEventNotificationTopicOperationalEventNotification timestamp(Integer timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -242,12 +260,13 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
             Objects.equals(this.parentEntity, operationalEventNotificationTopicOperationalEventNotification.parentEntity) &&
             Objects.equals(this.entityType, operationalEventNotificationTopicOperationalEventNotification.entityType) &&
             Objects.equals(this.conversationId, operationalEventNotificationTopicOperationalEventNotification.conversationId) &&
+            Objects.equals(this.entityToken, operationalEventNotificationTopicOperationalEventNotification.entityToken) &&
             Objects.equals(this.timestamp, operationalEventNotificationTopicOperationalEventNotification.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, timestamp);
+    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, timestamp);
   }
 
   @Override
@@ -265,6 +284,7 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     sb.append("    parentEntity: ").append(toIndentedString(parentEntity)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    entityToken: ").append(toIndentedString(entityToken)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();

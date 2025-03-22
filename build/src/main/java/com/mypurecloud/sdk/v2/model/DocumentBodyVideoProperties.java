@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentElementLength;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -74,6 +75,8 @@ public class DocumentBodyVideoProperties  implements Serializable {
   }
   private AlignEnum align = null;
   private Float indentation = null;
+  private DocumentElementLength width = null;
+  private DocumentElementLength height = null;
 
   
   /**
@@ -130,6 +133,42 @@ public class DocumentBodyVideoProperties  implements Serializable {
   }
 
 
+  /**
+   * The width of the video in the specified unit.
+   **/
+  public DocumentBodyVideoProperties width(DocumentElementLength width) {
+    this.width = width;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The width of the video in the specified unit.")
+  @JsonProperty("width")
+  public DocumentElementLength getWidth() {
+    return width;
+  }
+  public void setWidth(DocumentElementLength width) {
+    this.width = width;
+  }
+
+
+  /**
+   * The height of the video in the specified unit.
+   **/
+  public DocumentBodyVideoProperties height(DocumentElementLength height) {
+    this.height = height;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The height of the video in the specified unit.")
+  @JsonProperty("height")
+  public DocumentElementLength getHeight() {
+    return height;
+  }
+  public void setHeight(DocumentElementLength height) {
+    this.height = height;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -142,12 +181,14 @@ public class DocumentBodyVideoProperties  implements Serializable {
 
     return Objects.equals(this.backgroundColor, documentBodyVideoProperties.backgroundColor) &&
             Objects.equals(this.align, documentBodyVideoProperties.align) &&
-            Objects.equals(this.indentation, documentBodyVideoProperties.indentation);
+            Objects.equals(this.indentation, documentBodyVideoProperties.indentation) &&
+            Objects.equals(this.width, documentBodyVideoProperties.width) &&
+            Objects.equals(this.height, documentBodyVideoProperties.height);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backgroundColor, align, indentation);
+    return Objects.hash(backgroundColor, align, indentation, width, height);
   }
 
   @Override
@@ -158,6 +199,8 @@ public class DocumentBodyVideoProperties  implements Serializable {
     sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("    align: ").append(toIndentedString(align)).append("\n");
     sb.append("    indentation: ").append(toIndentedString(indentation)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("}");
     return sb.toString();
   }

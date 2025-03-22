@@ -29,6 +29,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private Boolean truncatedDivisions = null;
   private String firstUri = null;
   private String lastUri = null;
   private String selfUri = null;
@@ -102,6 +103,23 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
   }
   public void setTotal(Long total) {
     this.total = total;
+  }
+
+
+  /**
+   **/
+  public ScriptEntityListing truncatedDivisions(Boolean truncatedDivisions) {
+    this.truncatedDivisions = truncatedDivisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("truncatedDivisions")
+  public Boolean getTruncatedDivisions() {
+    return truncatedDivisions;
+  }
+  public void setTruncatedDivisions(Boolean truncatedDivisions) {
+    this.truncatedDivisions = truncatedDivisions;
   }
 
 
@@ -221,6 +239,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
             Objects.equals(this.pageSize, scriptEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, scriptEntityListing.pageNumber) &&
             Objects.equals(this.total, scriptEntityListing.total) &&
+            Objects.equals(this.truncatedDivisions, scriptEntityListing.truncatedDivisions) &&
             Objects.equals(this.firstUri, scriptEntityListing.firstUri) &&
             Objects.equals(this.lastUri, scriptEntityListing.lastUri) &&
             Objects.equals(this.selfUri, scriptEntityListing.selfUri) &&
@@ -231,7 +250,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, truncatedDivisions, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,6 +262,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    truncatedDivisions: ").append(toIndentedString(truncatedDivisions)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

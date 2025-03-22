@@ -52,7 +52,8 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     WHATSAPP("Whatsapp"),
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
-    SMS("Sms");
+    SMS("Sms"),
+    APPLE("Apple");
 
     private String value;
 

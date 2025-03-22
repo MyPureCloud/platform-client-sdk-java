@@ -1110,12 +1110,13 @@ public class RecordingApi {
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
    * @param locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
+   * @param includePauseAnnotationsForScreenRecordings Include applicable Secure Pause annotations from all audio recordings to all screen recordings (optional, default to false)
    * @return List<Recording>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) throws IOException, ApiException {
-    return  getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale));
+  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale, Boolean includePauseAnnotationsForScreenRecordings) throws IOException, ApiException {
+    return  getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale, includePauseAnnotationsForScreenRecordings));
   }
 
   /**
@@ -1126,14 +1127,15 @@ public class RecordingApi {
    * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @param mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
    * @param locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
+   * @param includePauseAnnotationsForScreenRecordings Include applicable Secure Pause annotations from all audio recordings to all screen recordings (optional, default to false)
    * @return List<Recording>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) throws IOException {
-    return getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale).withHttpInfo());
+  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale, Boolean includePauseAnnotationsForScreenRecordings) throws IOException {
+    return getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId, mediaFormats, locale, includePauseAnnotationsForScreenRecordings).withHttpInfo());
   }
 
-  private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale) {
+  private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId, List<String> mediaFormats, String locale, Boolean includePauseAnnotationsForScreenRecordings) {
     return GetConversationRecordingsRequest.builder()
             .withConversationId(conversationId)
 
@@ -1144,6 +1146,8 @@ public class RecordingApi {
             .withMediaFormats(mediaFormats)
 
             .withLocale(locale)
+
+            .withIncludePauseAnnotationsForScreenRecordings(includePauseAnnotationsForScreenRecordings)
 
             .build();
   }

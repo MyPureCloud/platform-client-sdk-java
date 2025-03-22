@@ -81,6 +81,7 @@ public class WorkitemStatusCreate  implements Serializable {
   private String defaultDestinationStatusId = null;
   private Integer statusTransitionDelaySeconds = null;
   private String statusTransitionTime = null;
+  private Boolean autoTerminateWorkitem = null;
 
   
   /**
@@ -209,6 +210,24 @@ public class WorkitemStatusCreate  implements Serializable {
   }
 
 
+  /**
+   * Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+   **/
+  public WorkitemStatusCreate autoTerminateWorkitem(Boolean autoTerminateWorkitem) {
+    this.autoTerminateWorkitem = autoTerminateWorkitem;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Terminate workitem on selection of status. Applicable only for statuses in the Closed category.")
+  @JsonProperty("autoTerminateWorkitem")
+  public Boolean getAutoTerminateWorkitem() {
+    return autoTerminateWorkitem;
+  }
+  public void setAutoTerminateWorkitem(Boolean autoTerminateWorkitem) {
+    this.autoTerminateWorkitem = autoTerminateWorkitem;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -225,12 +244,13 @@ public class WorkitemStatusCreate  implements Serializable {
             Objects.equals(this.description, workitemStatusCreate.description) &&
             Objects.equals(this.defaultDestinationStatusId, workitemStatusCreate.defaultDestinationStatusId) &&
             Objects.equals(this.statusTransitionDelaySeconds, workitemStatusCreate.statusTransitionDelaySeconds) &&
-            Objects.equals(this.statusTransitionTime, workitemStatusCreate.statusTransitionTime);
+            Objects.equals(this.statusTransitionTime, workitemStatusCreate.statusTransitionTime) &&
+            Objects.equals(this.autoTerminateWorkitem, workitemStatusCreate.autoTerminateWorkitem);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, destinationStatusIds, description, defaultDestinationStatusId, statusTransitionDelaySeconds, statusTransitionTime);
+    return Objects.hash(name, category, destinationStatusIds, description, defaultDestinationStatusId, statusTransitionDelaySeconds, statusTransitionTime, autoTerminateWorkitem);
   }
 
   @Override
@@ -245,6 +265,7 @@ public class WorkitemStatusCreate  implements Serializable {
     sb.append("    defaultDestinationStatusId: ").append(toIndentedString(defaultDestinationStatusId)).append("\n");
     sb.append("    statusTransitionDelaySeconds: ").append(toIndentedString(statusTransitionDelaySeconds)).append("\n");
     sb.append("    statusTransitionTime: ").append(toIndentedString(statusTransitionTime)).append("\n");
+    sb.append("    autoTerminateWorkitem: ").append(toIndentedString(autoTerminateWorkitem)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -3585,7 +3585,6 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
-   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -3602,7 +3601,6 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
-   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -3631,7 +3629,6 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
-   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeDocumentContentUpload
    * @throws ApiException if the request fails on the server
@@ -3652,7 +3649,6 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
-   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7993,7 +7989,6 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8007,7 +8002,6 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8029,7 +8023,6 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
@@ -8049,7 +8042,6 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8079,7 +8071,6 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8093,7 +8084,6 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8115,7 +8105,6 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
@@ -8135,7 +8124,6 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
-   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8498,7 +8486,6 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
-   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8512,7 +8499,6 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
-   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
@@ -8534,7 +8520,6 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
-   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
@@ -8554,7 +8539,6 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
-   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8920,7 +8904,6 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
-   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -8937,7 +8920,6 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
-   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -8966,7 +8948,6 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
-   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeDocumentContentUpload
    * @throws ApiException if the request fails on the server
@@ -8987,7 +8968,6 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
-   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

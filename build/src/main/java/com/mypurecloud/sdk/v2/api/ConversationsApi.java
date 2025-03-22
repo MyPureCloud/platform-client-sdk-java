@@ -151,6 +151,12 @@ import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegration;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
+import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
@@ -174,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmedia
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingsDefaultRequest;
@@ -245,6 +252,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermi
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -252,6 +260,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsI
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
@@ -303,6 +314,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCo
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSettingRequest;
@@ -379,6 +391,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRe
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSettingsRequest;
@@ -386,6 +399,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcon
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsScreenshareParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantCommunicationWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoAgentconferenceCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
@@ -1101,6 +1115,81 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Delete Twitter messaging integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6932,6 +7021,84 @@ public class ConversationsApi {
   }
 
   /**
+   * Get twitter oauth settings to patch an integration
+   * 
+   * @param integrationId Integration Id of an existing integration that needs to be patched with new oauth settings (required)
+   * @return TwitterOAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationTwitterOauthSettings(createGetConversationsMessagingIntegrationTwitterOauthSettingsRequest(integrationId));
+  }
+
+  /**
+   * Get twitter oauth settings to patch an integration
+   * 
+   * @param integrationId Integration Id of an existing integration that needs to be patched with new oauth settings (required)
+   * @return TwitterOAuthSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterOAuthSettings> getConversationsMessagingIntegrationTwitterOauthSettingsWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIntegrationTwitterOauthSettings(createGetConversationsMessagingIntegrationTwitterOauthSettingsRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationTwitterOauthSettingsRequest createGetConversationsMessagingIntegrationTwitterOauthSettingsRequest(String integrationId) {
+    return GetConversationsMessagingIntegrationTwitterOauthSettingsRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get twitter oauth settings to patch an integration
+   * 
+   * @param request The request object
+   * @return TwitterOAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(GetConversationsMessagingIntegrationTwitterOauthSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterOAuthSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterOAuthSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get twitter oauth settings to patch an integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterOAuthSettings> getConversationsMessagingIntegrationTwitterOauthSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterOAuthSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterOAuthSettings> response = (ApiResponse<TwitterOAuthSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterOAuthSettings> response = (ApiResponse<TwitterOAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of Integrations
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -7549,6 +7716,256 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return TwitterIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return TwitterIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
+    return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) {
+    return GetConversationsMessagingIntegrationsTwitterRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withExpand(expand)
+
+            .withSupportedContentId(supportedContentId)
+
+            .withMessagingSettingId(messagingSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param request The request object
+   * @return TwitterIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(GetConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitter(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand));
+  }
+
+  /**
+   * Get Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return TwitterIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, String expand) {
+    return GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get twitter oauth settings
+   * 
+   * @return TwitterSignupOAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings() throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitterOauthSettings(createGetConversationsMessagingIntegrationsTwitterOauthSettingsRequest());
+  }
+
+  /**
+   * Get twitter oauth settings
+   * 
+   * @return TwitterSignupOAuthSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterSignupOAuthSettings> getConversationsMessagingIntegrationsTwitterOauthSettingsWithHttpInfo() throws IOException {
+    return getConversationsMessagingIntegrationsTwitterOauthSettings(createGetConversationsMessagingIntegrationsTwitterOauthSettingsRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest createGetConversationsMessagingIntegrationsTwitterOauthSettingsRequest() {
+    return GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get twitter oauth settings
+   * 
+   * @param request The request object
+   * @return TwitterSignupOAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings(GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterSignupOAuthSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterSignupOAuthSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get twitter oauth settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterSignupOAuthSettings> getConversationsMessagingIntegrationsTwitterOauthSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterSignupOAuthSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterSignupOAuthSettings> response = (ApiResponse<TwitterSignupOAuthSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterSignupOAuthSettings> response = (ApiResponse<TwitterSignupOAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11860,6 +12277,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body TwitterIntegrationUpdateRequest (required)
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, TwitterIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body TwitterIntegrationUpdateRequest (required)
+   * @return TwitterIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, TwitterIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, TwitterIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<TwitterIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18106,6 +18605,84 @@ public class ConversationsApi {
   }
 
   /**
+   * Create Twitter Integration
+   * 
+   * @param body TwitterIntegrationRequest (required)
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body));
+  }
+
+  /**
+   * Create Twitter Integration
+   * 
+   * @param body TwitterIntegrationRequest (required)
+   * @return TwitterIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsTwitterRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Twitter Integration
+   * 
+   * @param request The request object
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(PostConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Twitter Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitter(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
    * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param body WhatsAppIntegrationRequest (required)
@@ -18673,6 +19250,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an Agent-Type video conference and assign an agent to it
+   * 
+   * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return VideoConferenceDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(String conversationId, String communicationId) throws IOException, ApiException {
+    return  postConversationsVideoAgentconferenceCommunication(createPostConversationsVideoAgentconferenceCommunicationRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Create an Agent-Type video conference and assign an agent to it
+   * 
+   * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return VideoConferenceDetails
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VideoConferenceDetails> postConversationsVideoAgentconferenceCommunicationWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return postConversationsVideoAgentconferenceCommunication(createPostConversationsVideoAgentconferenceCommunicationRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private PostConversationsVideoAgentconferenceCommunicationRequest createPostConversationsVideoAgentconferenceCommunicationRequest(String conversationId, String communicationId) {
+    return PostConversationsVideoAgentconferenceCommunicationRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Create an Agent-Type video conference and assign an agent to it
+   * 
+   * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return VideoConferenceDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(PostConversationsVideoAgentconferenceCommunicationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VideoConferenceDetails> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VideoConferenceDetails>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Agent-Type video conference and assign an agent to it
+   * 
+   * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VideoConferenceDetails> postConversationsVideoAgentconferenceCommunication(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VideoConferenceDetails>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VideoConferenceDetails> response = (ApiResponse<VideoConferenceDetails>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VideoConferenceDetails> response = (ApiResponse<VideoConferenceDetails>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

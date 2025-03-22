@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class EvaluationQuestionGroup  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
   private String name = null;
   private String type = null;
   private Boolean defaultAnswersToHighest = null;
@@ -51,6 +52,13 @@ public class EvaluationQuestionGroup  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question group that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -218,6 +226,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     EvaluationQuestionGroup evaluationQuestionGroup = (EvaluationQuestionGroup) o;
 
     return Objects.equals(this.id, evaluationQuestionGroup.id) &&
+            Objects.equals(this.contextId, evaluationQuestionGroup.contextId) &&
             Objects.equals(this.name, evaluationQuestionGroup.name) &&
             Objects.equals(this.type, evaluationQuestionGroup.type) &&
             Objects.equals(this.defaultAnswersToHighest, evaluationQuestionGroup.defaultAnswersToHighest) &&
@@ -231,7 +240,7 @@ public class EvaluationQuestionGroup  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition);
+    return Objects.hash(id, contextId, name, type, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition);
   }
 
   @Override
@@ -240,6 +249,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     sb.append("class EvaluationQuestionGroup {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    defaultAnswersToHighest: ").append(toIndentedString(defaultAnswersToHighest)).append("\n");

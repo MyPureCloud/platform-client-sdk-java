@@ -52,7 +52,7 @@
 | **flowSubType** | [**FlowSubTypeEnum**](#Enum--FlowSubTypeEnum) | Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities. |  [optional] |
 | **flowType** | [**FlowTypeEnum**](#Enum--FlowTypeEnum) | The type of this flow |  [optional] |
 | **flowVersion** | **String** | The version of this flow |  [optional] |
-| **groupId** | **String** | Unique identifier for a PureCloud group |  [optional] |
+| **groupId** | **String** | Unique identifier for a Genesys Cloud group |  [optional] |
 | **interactionType** | **String** | The interaction type (enterprise or contactCenter) |  [optional] |
 | **journeyActionId** | **String** | Identifier of the journey action. |  [optional] |
 | **journeyActionMapId** | **String** | Identifier of the journey action map that triggered the action. |  [optional] |
@@ -253,11 +253,14 @@
 | INBOUNDCALL | &quot;inboundcall&quot; | 
 | INBOUNDCHAT | &quot;inboundchat&quot; | 
 | INBOUNDEMAIL | &quot;inboundemail&quot; | 
+| INBOUNDMESSAGE | &quot;inboundmessage&quot; | 
 | INBOUNDSHORTMESSAGE | &quot;inboundshortmessage&quot; | 
 | INQUEUECALL | &quot;inqueuecall&quot; | 
 | INQUEUEEMAIL | &quot;inqueueemail&quot; | 
 | INQUEUESHORTMESSAGE | &quot;inqueueshortmessage&quot; | 
 | OUTBOUNDCALL | &quot;outboundcall&quot; | 
+| OUTBOUNDEMAIL | &quot;outboundemail&quot; | 
+| OUTBOUNDMESSAGE | &quot;outboundmessage&quot; | 
 | SECURECALL | &quot;securecall&quot; | 
 | SPEECH | &quot;speech&quot; | 
 | SURVEYINVITE | &quot;surveyinvite&quot; | 
@@ -277,6 +280,7 @@
 | CHAT | &quot;chat&quot; | 
 | COBROWSE | &quot;cobrowse&quot; | 
 | EMAIL | &quot;email&quot; | 
+| INTERNALMESSAGE | &quot;internalmessage&quot; | 
 | MESSAGE | &quot;message&quot; | 
 | SCREENSHARE | &quot;screenshare&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
@@ -363,4 +367,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:221.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
