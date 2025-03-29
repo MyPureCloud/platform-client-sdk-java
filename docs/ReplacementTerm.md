@@ -21,8 +21,9 @@
 | EMAIL | &quot;EMAIL&quot; | 
 | TWITTER | &quot;TWITTER&quot; | 
 | FACEBOOK | &quot;FACEBOOK&quot; | 
+| INSTAGRAM | &quot;INSTAGRAM&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

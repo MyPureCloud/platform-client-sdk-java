@@ -107,11 +107,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postArchitectGrammars**](ArchitectApi#postArchitectGrammars) | Create a new grammar |
 | [**postArchitectIvrs**](ArchitectApi#postArchitectIvrs) | Create IVR config. |
 | [**postArchitectPromptHistory**](ArchitectApi#postArchitectPromptHistory) | Generate prompt history |
+| [**postArchitectPromptResourceUploads**](ArchitectApi#postArchitectPromptResourceUploads) | Creates a presigned URL for uploading a user prompt file |
 | [**postArchitectPromptResources**](ArchitectApi#postArchitectPromptResources) | Create a new user prompt resource |
 | [**postArchitectPrompts**](ArchitectApi#postArchitectPrompts) | Create a new user prompt |
 | [**postArchitectSchedulegroups**](ArchitectApi#postArchitectSchedulegroups) | Creates a new schedule group |
 | [**postArchitectSchedules**](ArchitectApi#postArchitectSchedules) | Create a new schedule. |
 | [**postArchitectSystempromptHistory**](ArchitectApi#postArchitectSystempromptHistory) | Generate system prompt history |
+| [**postArchitectSystempromptResourceUploads**](ArchitectApi#postArchitectSystempromptResourceUploads) | Creates a presigned URL for uploading a system prompt file |
 | [**postArchitectSystempromptResources**](ArchitectApi#postArchitectSystempromptResources) | Create system prompt resource override. |
 | [**postFlowHistory**](ArchitectApi#postFlowHistory) | Generate flow history |
 | [**postFlowInstancesSettingsLoglevels**](ArchitectApi#postFlowInstancesSettingsLoglevels) | Set the logLevel for a particular flow id |
@@ -6807,6 +6809,67 @@ try {
 [**Operation**](Operation)
 
 
+# **postArchitectPromptResourceUploads**
+
+
+> [PromptAssetUpload](PromptAssetUpload) postArchitectPromptResourceUploads(promptId, languageCode)
+
+Creates a presigned URL for uploading a user prompt file
+
+Wraps POST /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads  
+
+Requires ALL permissions: 
+
+* architect:userPrompt:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | Prompt ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    PromptAssetUpload result = apiInstance.postArchitectPromptResourceUploads(promptId, languageCode);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectPromptResourceUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| Prompt ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PromptAssetUpload**](PromptAssetUpload)
+
+
 # **postArchitectPromptResources**
 
 
@@ -7104,6 +7167,67 @@ try {
 ### Return type
 
 [**Operation**](Operation)
+
+
+# **postArchitectSystempromptResourceUploads**
+
+
+> [PromptAssetUpload](PromptAssetUpload) postArchitectSystempromptResourceUploads(promptId, languageCode)
+
+Creates a presigned URL for uploading a system prompt file
+
+Wraps POST /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads  
+
+Requires ALL permissions: 
+
+* architect:systemPrompt:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | Prompt ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    PromptAssetUpload result = apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectSystempromptResourceUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| Prompt ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PromptAssetUpload**](PromptAssetUpload)
 
 
 # **postArchitectSystempromptResources**
@@ -9392,4 +9516,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

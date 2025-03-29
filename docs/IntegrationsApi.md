@@ -82,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | Get a Nuance bot in the specified Integration asynchronously |
 | [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | Get a list of Nuance bots in the specified Integration asynchronously |
 | [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | Try out a single credential for a Nuance bot to know if the secret is correct |
+| [**postIntegrationsWebhookEvents**](IntegrationsApi#postIntegrationsWebhookEvents) | Invoke Webhook |
 | [**putIntegrationConfigCurrent**](IntegrationsApi#putIntegrationConfigCurrent) | Update integration configuration. |
 | [**putIntegrationsActionDraftFunction**](IntegrationsApi#putIntegrationsActionDraftFunction) | Update draft function settings. |
 | [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi#putIntegrationsBotconnectorIntegrationIdBots) | Set a list of botConnector bots plus versions for this integration |
@@ -4990,6 +4991,53 @@ try {
 null (empty response body)
 
 
+# **postIntegrationsWebhookEvents**
+
+
+> [WebhookInvocationResponse](WebhookInvocationResponse) postIntegrationsWebhookEvents(tokenId, body)
+
+Invoke Webhook
+
+Wraps POST /api/v2/integrations/webhooks/{tokenId}/events  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String tokenId = "tokenId_example"; // String | The token of the webhook to be invoked
+Object body = new HashMap(); // Object | Webhook Invocation Payload
+try {
+    WebhookInvocationResponse result = apiInstance.postIntegrationsWebhookEvents(tokenId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#postIntegrationsWebhookEvents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tokenId** | **String**| The token of the webhook to be invoked | 
+| **body** | [**Object**](Object)| Webhook Invocation Payload | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebhookInvocationResponse**](WebhookInvocationResponse)
+
+
 # **putIntegrationConfigCurrent**
 
 
@@ -5415,4 +5463,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

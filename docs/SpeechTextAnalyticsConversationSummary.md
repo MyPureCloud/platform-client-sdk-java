@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **summaryType** | [**SummaryTypeEnum**](#Enum--SummaryTypeEnum) | The type of summary |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the associated interaction |  [optional] |
 | **language** | **String** | Language of the summary |  [optional] |
 | **agentId** | **String** | The id of the agent associated with the summary |  [optional] |
 | **summary** | **String** | A summarization of the conversation transcription |  [optional] |
@@ -22,6 +23,17 @@
 | AGENT | &quot;Agent&quot; | 
 
 
+## Enum: MediaTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| MESSAGE | &quot;Message&quot; | 
+| CALL | &quot;Call&quot; | 
+| EMAIL | &quot;Email&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

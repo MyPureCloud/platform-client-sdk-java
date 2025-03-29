@@ -4,15 +4,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteEmailsSettingsThreading**](SettingsApi#deleteEmailsSettingsThreading) | Reset email threading settings to default |
 | [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | Delete agent auto answer settings |
 | [**getEmailsSettings**](SettingsApi#getEmailsSettings) | Get email Contact Center settings |
+| [**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | Get email threading settings |
 | [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | Get the execution history enabled setting. |
 | [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | Get agent auto answer settings |
 | [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | Patch email Contact Center settings |
+| [**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | Patch email threading settings |
 | [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | Edit the execution history on off setting. |
 | [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | Update agent auto answer settings |
 | [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | Set agent auto answer settings |
 {: class="table-striped"}
+
+
+# **deleteEmailsSettingsThreading**
+
+
+> Void deleteEmailsSettingsThreading()
+
+Reset email threading settings to default
+
+Wraps DELETE /api/v2/emails/settings/threading  
+
+Requires ANY permissions: 
+
+* conversation:emailThreadingSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+try {
+    apiInstance.deleteEmailsSettingsThreading();
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#deleteEmailsSettingsThreading");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**
@@ -126,6 +183,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmailSettings**](EmailSettings)
+
+
+# **getEmailsSettingsThreading**
+
+
+> [EmailThreadingSettings](EmailThreadingSettings) getEmailsSettingsThreading()
+
+Get email threading settings
+
+Wraps GET /api/v2/emails/settings/threading  
+
+Requires ANY permissions: 
+
+* conversation:emailThreadingSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+try {
+    EmailThreadingSettings result = apiInstance.getEmailsSettingsThreading();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#getEmailsSettingsThreading");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**EmailThreadingSettings**](EmailThreadingSettings)
 
 
 # **getSettingsExecutiondata**
@@ -301,6 +413,65 @@ try {
 ### Return type
 
 [**EmailSettings**](EmailSettings)
+
+
+# **patchEmailsSettingsThreading**
+
+
+> [EmailThreadingSettings](EmailThreadingSettings) patchEmailsSettingsThreading(body)
+
+Patch email threading settings
+
+Wraps PATCH /api/v2/emails/settings/threading  
+
+Requires ANY permissions: 
+
+* conversation:emailThreadingSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+EmailThreadingSettings body = new EmailThreadingSettings(); // EmailThreadingSettings | 
+try {
+    EmailThreadingSettings result = apiInstance.patchEmailsSettingsThreading(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#patchEmailsSettingsThreading");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EmailThreadingSettings**](EmailThreadingSettings)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailThreadingSettings**](EmailThreadingSettings)
 
 
 # **patchSettingsExecutiondata**
@@ -486,4 +657,4 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

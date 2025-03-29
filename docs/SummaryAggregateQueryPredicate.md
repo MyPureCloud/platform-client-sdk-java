@@ -28,16 +28,23 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
+| COPIED | &quot;copied&quot; | 
+| EDITEDFIELD | &quot;editedField&quot; | 
 | ERRORTYPE | &quot;errorType&quot; | 
 | LANGUAGE | &quot;language&quot; | 
 | MEDIATYPE | &quot;mediaType&quot; | 
 | MESSAGETYPE | &quot;messageType&quot; | 
+| PRESENTED | &quot;presented&quot; | 
 | QUEUEID | &quot;queueId&quot; | 
 | SUMMARYGENERATED | &quot;summaryGenerated&quot; | 
 | SUMMARYID | &quot;summaryId&quot; | 
+| SUMMARYRATING | &quot;summaryRating&quot; | 
 | TRIGGERSOURCEID | &quot;triggerSourceId&quot; | 
+| TRIGGERSOURCEOUTCOME | &quot;triggerSourceOutcome&quot; | 
 | TRIGGERSOURCETYPE | &quot;triggerSourceType&quot; | 
 | USERID | &quot;userId&quot; | 
+| WRAPUPCODERATING | &quot;wrapUpCodeRating&quot; | 
+| WRAPUPCODESUGGESTIONSELECTED | &quot;wrapUpCodeSuggestionSelected&quot; | 
 | WRAPUPCODESGENERATED | &quot;wrapupCodesGenerated&quot; | 
 
 
@@ -53,4 +60,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

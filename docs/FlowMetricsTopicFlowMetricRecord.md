@@ -253,14 +253,11 @@
 | INBOUNDCALL | &quot;inboundcall&quot; | 
 | INBOUNDCHAT | &quot;inboundchat&quot; | 
 | INBOUNDEMAIL | &quot;inboundemail&quot; | 
-| INBOUNDMESSAGE | &quot;inboundmessage&quot; | 
 | INBOUNDSHORTMESSAGE | &quot;inboundshortmessage&quot; | 
 | INQUEUECALL | &quot;inqueuecall&quot; | 
 | INQUEUEEMAIL | &quot;inqueueemail&quot; | 
 | INQUEUESHORTMESSAGE | &quot;inqueueshortmessage&quot; | 
 | OUTBOUNDCALL | &quot;outboundcall&quot; | 
-| OUTBOUNDEMAIL | &quot;outboundemail&quot; | 
-| OUTBOUNDMESSAGE | &quot;outboundmessage&quot; | 
 | SECURECALL | &quot;securecall&quot; | 
 | SPEECH | &quot;speech&quot; | 
 | SURVEYINVITE | &quot;surveyinvite&quot; | 
@@ -367,4 +364,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

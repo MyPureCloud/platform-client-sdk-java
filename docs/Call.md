@@ -11,6 +11,7 @@
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the call |  [optional] |
 | **recording** | **Boolean** | True if this call is being recorded. |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) | State of recording on this call. |  [optional] |
+| **recordersState** | [**RecordersState**](RecordersState) | Contains the states of different recorders. |  [optional] |
 | **muted** | **Boolean** | True if this call is muted so that remote participants can't hear any audio from this end. |  [optional] |
 | **confined** | **Boolean** | True if this call is held and the person on this side hears hold music. |  [optional] |
 | **held** | **Boolean** | True if this call is held and the person on this side hears silence. |  [optional] |
@@ -122,4 +123,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

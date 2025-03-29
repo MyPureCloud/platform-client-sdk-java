@@ -4,11 +4,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deletePresenceDefinition0**](PresenceApi#deletePresenceDefinition0) | Delete a Presence Definition |
+| [**deleteDivisionBasedPresenceDefinition**](PresenceApi#deleteDivisionBasedPresenceDefinition) | Delete a Presence Definition |
 | [**deletePresenceSource**](PresenceApi#deletePresenceSource) | Delete a Presence Source |
 | [**deletePresencedefinition**](PresenceApi#deletePresencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead |
-| [**getPresenceDefinition0**](PresenceApi#getPresenceDefinition0) | Get a Presence Definition |
-| [**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | Get a list of Presence Definitions |
+| [**getDivisionBasedPresenceDefinition**](PresenceApi#getDivisionBasedPresenceDefinition) | Get a Presence Definition |
+| [**getDivisionBasedPresenceDefinitions**](PresenceApi#getDivisionBasedPresenceDefinitions) | Get a list of Presence Definitions |
 | [**getPresenceSettings**](PresenceApi#getPresenceSettings) | Get the presence settings |
 | [**getPresenceSource**](PresenceApi#getPresenceSource) | Get a Presence Source |
 | [**getPresenceSources**](PresenceApi#getPresenceSources) | Get a list of Presence Sources |
@@ -22,10 +22,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersPresencesPurecloudBulk**](PresenceApi#getUsersPresencesPurecloudBulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source |
 | [**patchUserPresence**](PresenceApi#patchUserPresence) | Patch a user's Presence |
 | [**patchUserPresencesPurecloud**](PresenceApi#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
-| [**postPresenceDefinitions0**](PresenceApi#postPresenceDefinitions0) | Create a Presence Definition |
+| [**postDivisionBasedPresenceDefinitions**](PresenceApi#postDivisionBasedPresenceDefinitions) | Create a Presence Definition |
 | [**postPresenceSources**](PresenceApi#postPresenceSources) | Create a Presence Source |
 | [**postPresencedefinitions**](PresenceApi#postPresencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead |
-| [**putPresenceDefinition0**](PresenceApi#putPresenceDefinition0) | Update a Presence Definition |
+| [**putDivisionBasedPresenceDefinition**](PresenceApi#putDivisionBasedPresenceDefinition) | Update a Presence Definition |
 | [**putPresenceSettings**](PresenceApi#putPresenceSettings) | Update the presence settings |
 | [**putPresenceSource**](PresenceApi#putPresenceSource) | Update a Presence Source |
 | [**putPresenceUserPrimarysource**](PresenceApi#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
@@ -34,10 +34,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 {: class="table-striped"}
 
 
-# **deletePresenceDefinition0**
+# **deleteDivisionBasedPresenceDefinition**
 
 
-> Void deletePresenceDefinition0(definitionId)
+> Void deleteDivisionBasedPresenceDefinition(definitionId)
 
 Delete a Presence Definition
 
@@ -72,9 +72,9 @@ Configuration.setDefaultApiClient(apiClient);
 PresenceApi apiInstance = new PresenceApi();
 String definitionId = "definitionId_example"; // String | Presence Definition ID
 try {
-    apiInstance.deletePresenceDefinition0(definitionId);
+    apiInstance.deleteDivisionBasedPresenceDefinition(definitionId);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PresenceApi#deletePresenceDefinition0");
+    System.err.println("Exception when calling PresenceApi#deleteDivisionBasedPresenceDefinition");
     e.printStackTrace();
 }
 ```
@@ -213,10 +213,10 @@ try {
 null (empty response body)
 
 
-# **getPresenceDefinition0**
+# **getDivisionBasedPresenceDefinition**
 
 
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) getPresenceDefinition0(definitionId, localeCode)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) getDivisionBasedPresenceDefinition(definitionId, localeCode)
 
 Get a Presence Definition
 
@@ -251,10 +251,10 @@ PresenceApi apiInstance = new PresenceApi();
 String definitionId = "definitionId_example"; // String | Presence Definition ID
 String localeCode = "localeCode_example"; // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 try {
-    OrganizationPresenceDefinition result = apiInstance.getPresenceDefinition0(definitionId, localeCode);
+    OrganizationPresenceDefinition result = apiInstance.getDivisionBasedPresenceDefinition(definitionId, localeCode);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PresenceApi#getPresenceDefinition0");
+    System.err.println("Exception when calling PresenceApi#getDivisionBasedPresenceDefinition");
     e.printStackTrace();
 }
 ```
@@ -274,10 +274,10 @@ try {
 [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
 
-# **getPresenceDefinitions0**
+# **getDivisionBasedPresenceDefinitions**
 
 
-> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing) getPresenceDefinitions0(deactivated, divisionId, localeCode)
+> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing) getDivisionBasedPresenceDefinitions(deactivated, divisionId, localeCode)
 
 Get a list of Presence Definitions
 
@@ -313,10 +313,10 @@ String deactivated = "false"; // String | Deactivated query can be TRUE or FALSE
 List<String> divisionId = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
 String localeCode = "localeCode_example"; // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 try {
-    OrganizationPresenceDefinitionEntityListing result = apiInstance.getPresenceDefinitions0(deactivated, divisionId, localeCode);
+    OrganizationPresenceDefinitionEntityListing result = apiInstance.getDivisionBasedPresenceDefinitions(deactivated, divisionId, localeCode);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PresenceApi#getPresenceDefinitions0");
+    System.err.println("Exception when calling PresenceApi#getDivisionBasedPresenceDefinitions");
     e.printStackTrace();
 }
 ```
@@ -1120,10 +1120,10 @@ try {
 [**UserPresence**](UserPresence)
 
 
-# **postPresenceDefinitions0**
+# **postDivisionBasedPresenceDefinitions**
 
 
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) postPresenceDefinitions0(body)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) postDivisionBasedPresenceDefinitions(body)
 
 Create a Presence Definition
 
@@ -1157,10 +1157,10 @@ Configuration.setDefaultApiClient(apiClient);
 PresenceApi apiInstance = new PresenceApi();
 OrganizationPresenceDefinition body = new OrganizationPresenceDefinition(); // OrganizationPresenceDefinition | The Presence Definition to create
 try {
-    OrganizationPresenceDefinition result = apiInstance.postPresenceDefinitions0(body);
+    OrganizationPresenceDefinition result = apiInstance.postDivisionBasedPresenceDefinitions(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PresenceApi#postPresenceDefinitions0");
+    System.err.println("Exception when calling PresenceApi#postDivisionBasedPresenceDefinitions");
     e.printStackTrace();
 }
 ```
@@ -1300,10 +1300,10 @@ try {
 [**OrganizationPresence**](OrganizationPresence)
 
 
-# **putPresenceDefinition0**
+# **putDivisionBasedPresenceDefinition**
 
 
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) putPresenceDefinition0(definitionId, body)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) putDivisionBasedPresenceDefinition(definitionId, body)
 
 Update a Presence Definition
 
@@ -1338,10 +1338,10 @@ PresenceApi apiInstance = new PresenceApi();
 String definitionId = "definitionId_example"; // String | Presence Definition ID
 OrganizationPresenceDefinition body = new OrganizationPresenceDefinition(); // OrganizationPresenceDefinition | The updated Presence Definition
 try {
-    OrganizationPresenceDefinition result = apiInstance.putPresenceDefinition0(definitionId, body);
+    OrganizationPresenceDefinition result = apiInstance.putDivisionBasedPresenceDefinition(definitionId, body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PresenceApi#putPresenceDefinition0");
+    System.err.println("Exception when calling PresenceApi#putDivisionBasedPresenceDefinition");
     e.printStackTrace();
 }
 ```
@@ -1665,4 +1665,4 @@ try {
 [**List&lt;UserPresence&gt;**](UserPresence)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

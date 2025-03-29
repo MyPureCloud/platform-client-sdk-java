@@ -31,6 +31,7 @@
 | **alertingTimeoutMs** | **Integer** | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
 | **provider** | **String** | The source provider for the communication. |  [optional] |
 | **externalContact** | [**DomainEntityRef**](DomainEntityRef) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
+| **externalContactInitialDivisionId** | **String** | If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned. |  [optional] |
 | **externalOrganization** | [**DomainEntityRef**](DomainEntityRef) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup) | Wrapup for this participant, if it has been applied. |  [optional] |
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
@@ -113,4 +114,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

@@ -194,6 +194,7 @@
 | APPROVE | &quot;Approve&quot; | 
 | REJECT | &quot;Reject&quot; | 
 | REVERSE | &quot;Reverse&quot; | 
+| SEND | &quot;Send&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | SUBMIT | &quot;Submit&quot; | 
@@ -407,6 +408,7 @@
 | LOCATION | &quot;Location&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
 | ORGANIZATIONSUSPENSION | &quot;OrganizationSuspension&quot; | 
+| OPERATIONALEVENT | &quot;OperationalEvent&quot; | 
 | PARTICIPANT | &quot;Participant&quot; | 
 | CONTACTSCHEMA | &quot;ContactSchema&quot; | 
 | EXTERNALORGANIZATIONSCHEMA | &quot;ExternalOrganizationSchema&quot; | 
@@ -424,8 +426,6 @@
 | OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
-| USERSKILL | &quot;UserSkill&quot; | 
-| USERLANGUAGE | &quot;UserLanguage&quot; | 
 | COMPOSERPAGE | &quot;ComposerPage&quot; | 
 | COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
 | COMPOSERSCRIPT | &quot;ComposerScript&quot; | 
@@ -445,4 +445,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

@@ -27,8 +27,9 @@
 | SHARE | &quot;Share&quot; | 
 | COMMENT | &quot;Comment&quot; | 
 | VIEW | &quot;View&quot; | 
+| RATING | &quot;Rating&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
