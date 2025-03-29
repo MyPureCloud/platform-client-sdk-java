@@ -53,7 +53,8 @@ public class ContentReaction  implements Serializable {
     CARE("Care"),
     SHARE("Share"),
     COMMENT("Comment"),
-    VIEW("View");
+    VIEW("View"),
+    RATING("Rating");
 
     private String value;
 

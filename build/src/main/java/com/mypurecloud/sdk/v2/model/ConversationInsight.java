@@ -73,6 +73,7 @@ public class ConversationInsight  implements Serializable {
   private TypeEnum type = null;
   private String title = null;
   private String description = null;
+  private String outcome = null;
 
   
   /**
@@ -129,6 +130,24 @@ public class ConversationInsight  implements Serializable {
   }
 
 
+  /**
+   * The outcome of a given resolution insight
+   **/
+  public ConversationInsight outcome(String outcome) {
+    this.outcome = outcome;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The outcome of a given resolution insight")
+  @JsonProperty("outcome")
+  public String getOutcome() {
+    return outcome;
+  }
+  public void setOutcome(String outcome) {
+    this.outcome = outcome;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,12 +160,13 @@ public class ConversationInsight  implements Serializable {
 
     return Objects.equals(this.type, conversationInsight.type) &&
             Objects.equals(this.title, conversationInsight.title) &&
-            Objects.equals(this.description, conversationInsight.description);
+            Objects.equals(this.description, conversationInsight.description) &&
+            Objects.equals(this.outcome, conversationInsight.outcome);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, title, description);
+    return Objects.hash(type, title, description, outcome);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class ConversationInsight  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    outcome: ").append(toIndentedString(outcome)).append("\n");
     sb.append("}");
     return sb.toString();
   }

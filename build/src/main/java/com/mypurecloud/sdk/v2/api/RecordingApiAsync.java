@@ -879,7 +879,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -913,7 +913,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

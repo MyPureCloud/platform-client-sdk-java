@@ -43,6 +43,7 @@ public class SummaryAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCONVERSATIONSUMMARIES("nConversationSummaries"),
+    NCONVERSATIONSUMMARYENGAGEMENTS("nConversationSummaryEngagements"),
     TCONVERSATIONSUMMARY("tConversationSummary");
 
     private String value;

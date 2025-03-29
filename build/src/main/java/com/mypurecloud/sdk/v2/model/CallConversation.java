@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallMediaParticipant;
+import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.TransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class CallConversation  implements Serializable {
   private List<String> otherMediaUris = new ArrayList<String>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
   private String utilizationLabelId = null;
+  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {
@@ -183,6 +185,24 @@ public class CallConversation  implements Serializable {
 
 
   /**
+   * Identifiers of divisions associated with this conversation.
+   **/
+  public CallConversation divisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers of divisions associated with this conversation.")
+  @JsonProperty("divisions")
+  public List<ConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
+  /**
    **/
   public CallConversation recordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
@@ -258,6 +278,7 @@ public class CallConversation  implements Serializable {
             Objects.equals(this.otherMediaUris, callConversation.otherMediaUris) &&
             Objects.equals(this.recentTransfers, callConversation.recentTransfers) &&
             Objects.equals(this.utilizationLabelId, callConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, callConversation.divisions) &&
             Objects.equals(this.recordingState, callConversation.recordingState) &&
             Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
             Objects.equals(this.securePause, callConversation.securePause) &&
@@ -266,7 +287,7 @@ public class CallConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, recordingState, maxParticipants, securePause, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, divisions, recordingState, maxParticipants, securePause, selfUri);
   }
 
   @Override
@@ -280,6 +301,7 @@ public class CallConversation  implements Serializable {
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");

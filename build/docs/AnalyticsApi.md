@@ -362,8 +362,6 @@ try {
 
 Get an agent and their active sessions by user ID
 
-getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/agents/{userId}/status  
 
 Requires ANY permissions: 
@@ -3657,8 +3655,6 @@ try {
 
 Count agents by segment type
 
-postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/agents/status/counts  
 
 Requires ANY permissions: 
@@ -3717,8 +3713,6 @@ try {
 > [AnalyticsAgentStateQueryResponse](AnalyticsAgentStateQueryResponse) postAnalyticsAgentsStatusQuery(body)
 
 Retrieve the top 50 agents matching the query filters
-
-postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agents/status/query  
 
@@ -6539,4 +6533,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

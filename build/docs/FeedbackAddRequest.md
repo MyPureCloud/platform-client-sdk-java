@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **summary** | **String** | Agent's summary for the conversation |  |
 | **rating** | [**RatingEnum**](#Enum--RatingEnum) | Agent’s rating for the system-generated summary. |  [optional] |
+| **summary** | **String** | Agent's summary for the conversation |  |
 
 
 ## Enum: RatingEnum
@@ -21,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

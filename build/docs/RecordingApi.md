@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationRecording**](RecordingApi#getConversationRecording) | Gets a specific recording. |
 | [**getConversationRecordingAnnotation**](RecordingApi#getConversationRecordingAnnotation) | Get annotation |
 | [**getConversationRecordingAnnotations**](RecordingApi#getConversationRecordingAnnotations) | Get annotations for recording |
-| [**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing. |
+| [**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing. |
 | [**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | Get metadata for a specific recording. Does not return playable media. |
 | [**getConversationRecordings**](RecordingApi#getConversationRecordings) | Get all of a Conversation's Recordings. |
 | [**getOrphanrecording**](RecordingApi#getOrphanrecording) | Gets a single orphan recording |
@@ -686,7 +686,7 @@ try {
 
 > [List&lt;RecordingMetadata&gt;](RecordingMetadata) getConversationRecordingmetadata(conversationId)
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata  
 
@@ -3607,4 +3607,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

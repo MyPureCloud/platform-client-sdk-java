@@ -25,11 +25,11 @@ import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 
-import com.mypurecloud.sdk.v2.api.request.DeletePresenceDefinition0Request;
+import com.mypurecloud.sdk.v2.api.request.DeleteDivisionBasedPresenceDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
-import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinition0Request;
-import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinitions0Request;
+import com.mypurecloud.sdk.v2.api.request.GetDivisionBasedPresenceDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetDivisionBasedPresenceDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
@@ -43,10 +43,10 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersPresenceBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersPresencesPurecloudBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
-import com.mypurecloud.sdk.v2.api.request.PostPresenceDefinitions0Request;
+import com.mypurecloud.sdk.v2.api.request.PostDivisionBasedPresenceDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.PutPresenceDefinition0Request;
+import com.mypurecloud.sdk.v2.api.request.PutDivisionBasedPresenceDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
@@ -77,8 +77,8 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deletePresenceDefinition0(String definitionId) throws IOException, ApiException {
-     deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId));
+  public void deleteDivisionBasedPresenceDefinition(String definitionId) throws IOException, ApiException {
+     deleteDivisionBasedPresenceDefinition(createDeleteDivisionBasedPresenceDefinitionRequest(definitionId));
   }
 
   /**
@@ -87,12 +87,12 @@ public class PresenceApi {
    * @param definitionId Presence Definition ID (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deletePresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
-    return deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId).withHttpInfo());
+  public ApiResponse<Void> deleteDivisionBasedPresenceDefinitionWithHttpInfo(String definitionId) throws IOException {
+    return deleteDivisionBasedPresenceDefinition(createDeleteDivisionBasedPresenceDefinitionRequest(definitionId).withHttpInfo());
   }
 
-  private DeletePresenceDefinition0Request createDeletePresenceDefinition0Request(String definitionId) {
-    return DeletePresenceDefinition0Request.builder()
+  private DeleteDivisionBasedPresenceDefinitionRequest createDeleteDivisionBasedPresenceDefinitionRequest(String definitionId) {
+    return DeleteDivisionBasedPresenceDefinitionRequest.builder()
             .withDefinitionId(definitionId)
 
             .build();
@@ -105,7 +105,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deletePresenceDefinition0(DeletePresenceDefinition0Request request) throws IOException, ApiException {
+  public void deleteDivisionBasedPresenceDefinition(DeleteDivisionBasedPresenceDefinitionRequest request) throws IOException, ApiException {
     try {
       ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
       
@@ -123,7 +123,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deletePresenceDefinition0(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteDivisionBasedPresenceDefinition(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -308,8 +308,8 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition getPresenceDefinition0(String definitionId, String localeCode) throws IOException, ApiException {
-    return  getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId, localeCode));
+  public OrganizationPresenceDefinition getDivisionBasedPresenceDefinition(String definitionId, String localeCode) throws IOException, ApiException {
+    return  getDivisionBasedPresenceDefinition(createGetDivisionBasedPresenceDefinitionRequest(definitionId, localeCode));
   }
 
   /**
@@ -320,12 +320,12 @@ public class PresenceApi {
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0WithHttpInfo(String definitionId, String localeCode) throws IOException {
-    return getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId, localeCode).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinition> getDivisionBasedPresenceDefinitionWithHttpInfo(String definitionId, String localeCode) throws IOException {
+    return getDivisionBasedPresenceDefinition(createGetDivisionBasedPresenceDefinitionRequest(definitionId, localeCode).withHttpInfo());
   }
 
-  private GetPresenceDefinition0Request createGetPresenceDefinition0Request(String definitionId, String localeCode) {
-    return GetPresenceDefinition0Request.builder()
+  private GetDivisionBasedPresenceDefinitionRequest createGetDivisionBasedPresenceDefinitionRequest(String definitionId, String localeCode) {
+    return GetDivisionBasedPresenceDefinitionRequest.builder()
             .withDefinitionId(definitionId)
 
             .withLocaleCode(localeCode)
@@ -341,7 +341,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition getPresenceDefinition0(GetPresenceDefinition0Request request) throws IOException, ApiException {
+  public OrganizationPresenceDefinition getDivisionBasedPresenceDefinition(GetDivisionBasedPresenceDefinitionRequest request) throws IOException, ApiException {
     try {
       ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
       return response.getBody();
@@ -359,7 +359,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<OrganizationPresenceDefinition> getDivisionBasedPresenceDefinition(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
     }
@@ -391,8 +391,8 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(String deactivated, List<String> divisionId, String localeCode) throws IOException, ApiException {
-    return  getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId, localeCode));
+  public OrganizationPresenceDefinitionEntityListing getDivisionBasedPresenceDefinitions(String deactivated, List<String> divisionId, String localeCode) throws IOException, ApiException {
+    return  getDivisionBasedPresenceDefinitions(createGetDivisionBasedPresenceDefinitionsRequest(deactivated, divisionId, localeCode));
   }
 
   /**
@@ -404,12 +404,12 @@ public class PresenceApi {
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0WithHttpInfo(String deactivated, List<String> divisionId, String localeCode) throws IOException {
-    return getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId, localeCode).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getDivisionBasedPresenceDefinitionsWithHttpInfo(String deactivated, List<String> divisionId, String localeCode) throws IOException {
+    return getDivisionBasedPresenceDefinitions(createGetDivisionBasedPresenceDefinitionsRequest(deactivated, divisionId, localeCode).withHttpInfo());
   }
 
-  private GetPresenceDefinitions0Request createGetPresenceDefinitions0Request(String deactivated, List<String> divisionId, String localeCode) {
-    return GetPresenceDefinitions0Request.builder()
+  private GetDivisionBasedPresenceDefinitionsRequest createGetDivisionBasedPresenceDefinitionsRequest(String deactivated, List<String> divisionId, String localeCode) {
+    return GetDivisionBasedPresenceDefinitionsRequest.builder()
             .withDeactivated(deactivated)
 
             .withDivisionId(divisionId)
@@ -427,7 +427,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(GetPresenceDefinitions0Request request) throws IOException, ApiException {
+  public OrganizationPresenceDefinitionEntityListing getDivisionBasedPresenceDefinitions(GetDivisionBasedPresenceDefinitionsRequest request) throws IOException, ApiException {
     try {
       ApiResponse<OrganizationPresenceDefinitionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinitionEntityListing>() {});
       return response.getBody();
@@ -445,7 +445,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getDivisionBasedPresenceDefinitions(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinitionEntityListing>() {});
     }
@@ -1525,8 +1525,8 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition postPresenceDefinitions0(OrganizationPresenceDefinition body) throws IOException, ApiException {
-    return  postPresenceDefinitions0(createPostPresenceDefinitions0Request(body));
+  public OrganizationPresenceDefinition postDivisionBasedPresenceDefinitions(OrganizationPresenceDefinition body) throws IOException, ApiException {
+    return  postDivisionBasedPresenceDefinitions(createPostDivisionBasedPresenceDefinitionsRequest(body));
   }
 
   /**
@@ -1536,12 +1536,12 @@ public class PresenceApi {
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0WithHttpInfo(OrganizationPresenceDefinition body) throws IOException {
-    return postPresenceDefinitions0(createPostPresenceDefinitions0Request(body).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinition> postDivisionBasedPresenceDefinitionsWithHttpInfo(OrganizationPresenceDefinition body) throws IOException {
+    return postDivisionBasedPresenceDefinitions(createPostDivisionBasedPresenceDefinitionsRequest(body).withHttpInfo());
   }
 
-  private PostPresenceDefinitions0Request createPostPresenceDefinitions0Request(OrganizationPresenceDefinition body) {
-    return PostPresenceDefinitions0Request.builder()
+  private PostDivisionBasedPresenceDefinitionsRequest createPostDivisionBasedPresenceDefinitionsRequest(OrganizationPresenceDefinition body) {
+    return PostDivisionBasedPresenceDefinitionsRequest.builder()
             .withBody(body)
 
             .build();
@@ -1555,7 +1555,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition postPresenceDefinitions0(PostPresenceDefinitions0Request request) throws IOException, ApiException {
+  public OrganizationPresenceDefinition postDivisionBasedPresenceDefinitions(PostDivisionBasedPresenceDefinitionsRequest request) throws IOException, ApiException {
     try {
       ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
       return response.getBody();
@@ -1573,7 +1573,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
+  public ApiResponse<OrganizationPresenceDefinition> postDivisionBasedPresenceDefinitions(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
     }
@@ -1764,8 +1764,8 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition putPresenceDefinition0(String definitionId, OrganizationPresenceDefinition body) throws IOException, ApiException {
-    return  putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body));
+  public OrganizationPresenceDefinition putDivisionBasedPresenceDefinition(String definitionId, OrganizationPresenceDefinition body) throws IOException, ApiException {
+    return  putDivisionBasedPresenceDefinition(createPutDivisionBasedPresenceDefinitionRequest(definitionId, body));
   }
 
   /**
@@ -1776,12 +1776,12 @@ public class PresenceApi {
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0WithHttpInfo(String definitionId, OrganizationPresenceDefinition body) throws IOException {
-    return putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinition> putDivisionBasedPresenceDefinitionWithHttpInfo(String definitionId, OrganizationPresenceDefinition body) throws IOException {
+    return putDivisionBasedPresenceDefinition(createPutDivisionBasedPresenceDefinitionRequest(definitionId, body).withHttpInfo());
   }
 
-  private PutPresenceDefinition0Request createPutPresenceDefinition0Request(String definitionId, OrganizationPresenceDefinition body) {
-    return PutPresenceDefinition0Request.builder()
+  private PutDivisionBasedPresenceDefinitionRequest createPutDivisionBasedPresenceDefinitionRequest(String definitionId, OrganizationPresenceDefinition body) {
+    return PutDivisionBasedPresenceDefinitionRequest.builder()
             .withDefinitionId(definitionId)
 
             .withBody(body)
@@ -1797,7 +1797,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition putPresenceDefinition0(PutPresenceDefinition0Request request) throws IOException, ApiException {
+  public OrganizationPresenceDefinition putDivisionBasedPresenceDefinition(PutDivisionBasedPresenceDefinitionRequest request) throws IOException, ApiException {
     try {
       ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
       return response.getBody();
@@ -1815,7 +1815,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
+  public ApiResponse<OrganizationPresenceDefinition> putDivisionBasedPresenceDefinition(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
     }

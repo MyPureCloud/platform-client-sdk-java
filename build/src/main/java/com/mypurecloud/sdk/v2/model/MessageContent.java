@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ContentCarousel;
 import com.mypurecloud.sdk.v2.model.ContentDatePicker;
 import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ContentList;
+import com.mypurecloud.sdk.v2.model.ContentLocation;
 import com.mypurecloud.sdk.v2.model.ContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ContentPostback;
 import com.mypurecloud.sdk.v2.model.ContentQuickReply;
@@ -60,6 +61,7 @@ public class MessageContent  implements Serializable {
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),
+    LOCATION("Location"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     GENERICTEMPLATE("GenericTemplate"),
@@ -116,6 +118,7 @@ public class MessageContent  implements Serializable {
   private ContentText text = null;
   private ContentQuickReplyV2 quickReplyV2 = null;
   private ContentDatePicker datePicker = null;
+  private ContentLocation location = null;
 
   
   /**
@@ -406,6 +409,24 @@ public class MessageContent  implements Serializable {
   }
 
 
+  /**
+   * Location content.
+   **/
+  public MessageContent location(ContentLocation location) {
+    this.location = location;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Location content.")
+  @JsonProperty("location")
+  public ContentLocation getLocation() {
+    return location;
+  }
+  public void setLocation(ContentLocation location) {
+    this.location = location;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -431,12 +452,13 @@ public class MessageContent  implements Serializable {
             Objects.equals(this.carousel, messageContent.carousel) &&
             Objects.equals(this.text, messageContent.text) &&
             Objects.equals(this.quickReplyV2, messageContent.quickReplyV2) &&
-            Objects.equals(this.datePicker, messageContent.datePicker);
+            Objects.equals(this.datePicker, messageContent.datePicker) &&
+            Objects.equals(this.location, messageContent.location);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback, story, card, carousel, text, quickReplyV2, datePicker);
+    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback, story, card, carousel, text, quickReplyV2, datePicker, location);
   }
 
   @Override
@@ -460,6 +482,7 @@ public class MessageContent  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
     sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("}");
     return sb.toString();
   }

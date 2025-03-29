@@ -72,6 +72,7 @@ import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
+import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
@@ -192,11 +193,13 @@ import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourceUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourceUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowInstancesSettingsLoglevelsRequest;
@@ -9276,6 +9279,88 @@ public class ArchitectApi {
   }
 
   /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @return PromptAssetUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PromptAssetUpload postArchitectPromptResourceUploads(String promptId, String languageCode) throws IOException, ApiException {
+    return  postArchitectPromptResourceUploads(createPostArchitectPromptResourceUploadsRequest(promptId, languageCode));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @return PromptAssetUpload
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PromptAssetUpload> postArchitectPromptResourceUploadsWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return postArchitectPromptResourceUploads(createPostArchitectPromptResourceUploadsRequest(promptId, languageCode).withHttpInfo());
+  }
+
+  private PostArchitectPromptResourceUploadsRequest createPostArchitectPromptResourceUploadsRequest(String promptId, String languageCode) {
+    return PostArchitectPromptResourceUploadsRequest.builder()
+            .withPromptId(promptId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param request The request object
+   * @return PromptAssetUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PromptAssetUpload postArchitectPromptResourceUploads(PostArchitectPromptResourceUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PromptAssetUpload> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAssetUpload>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PromptAssetUpload> postArchitectPromptResourceUploads(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAssetUpload>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a new user prompt resource
    * 
    * @param promptId Prompt ID (required)
@@ -9665,6 +9750,88 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @return PromptAssetUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PromptAssetUpload postArchitectSystempromptResourceUploads(String promptId, String languageCode) throws IOException, ApiException {
+    return  postArchitectSystempromptResourceUploads(createPostArchitectSystempromptResourceUploadsRequest(promptId, languageCode));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @return PromptAssetUpload
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PromptAssetUpload> postArchitectSystempromptResourceUploadsWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return postArchitectSystempromptResourceUploads(createPostArchitectSystempromptResourceUploadsRequest(promptId, languageCode).withHttpInfo());
+  }
+
+  private PostArchitectSystempromptResourceUploadsRequest createPostArchitectSystempromptResourceUploadsRequest(String promptId, String languageCode) {
+    return PostArchitectSystempromptResourceUploadsRequest.builder()
+            .withPromptId(promptId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param request The request object
+   * @return PromptAssetUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PromptAssetUpload postArchitectSystempromptResourceUploads(PostArchitectSystempromptResourceUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PromptAssetUpload> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAssetUpload>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PromptAssetUpload> postArchitectSystempromptResourceUploads(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAssetUpload>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

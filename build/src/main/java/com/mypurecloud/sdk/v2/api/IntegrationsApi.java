@@ -72,6 +72,7 @@ import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
+import com.mypurecloud.sdk.v2.model.WebhookInvocationResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationRequest;
@@ -152,6 +153,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWebhookEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsActionDraftFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
@@ -6825,6 +6827,88 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Invoke Webhook
+   * 
+   * @param tokenId The token of the webhook to be invoked (required)
+   * @param body Webhook Invocation Payload (required)
+   * @return WebhookInvocationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebhookInvocationResponse postIntegrationsWebhookEvents(String tokenId, Object body) throws IOException, ApiException {
+    return  postIntegrationsWebhookEvents(createPostIntegrationsWebhookEventsRequest(tokenId, body));
+  }
+
+  /**
+   * Invoke Webhook
+   * 
+   * @param tokenId The token of the webhook to be invoked (required)
+   * @param body Webhook Invocation Payload (required)
+   * @return WebhookInvocationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebhookInvocationResponse> postIntegrationsWebhookEventsWithHttpInfo(String tokenId, Object body) throws IOException {
+    return postIntegrationsWebhookEvents(createPostIntegrationsWebhookEventsRequest(tokenId, body).withHttpInfo());
+  }
+
+  private PostIntegrationsWebhookEventsRequest createPostIntegrationsWebhookEventsRequest(String tokenId, Object body) {
+    return PostIntegrationsWebhookEventsRequest.builder()
+            .withTokenId(tokenId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Invoke Webhook
+   * 
+   * @param request The request object
+   * @return WebhookInvocationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebhookInvocationResponse postIntegrationsWebhookEvents(PostIntegrationsWebhookEventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebhookInvocationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebhookInvocationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Invoke Webhook
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebhookInvocationResponse> postIntegrationsWebhookEvents(ApiRequest<Object> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebhookInvocationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebhookInvocationResponse> response = (ApiResponse<WebhookInvocationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebhookInvocationResponse> response = (ApiResponse<WebhookInvocationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

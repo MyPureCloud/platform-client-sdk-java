@@ -559,7 +559,6 @@ public class AnalyticsApiAsync {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -594,7 +593,6 @@ public class AnalyticsApiAsync {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4598,7 +4596,6 @@ public class AnalyticsApiAsync {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4633,7 +4630,6 @@ public class AnalyticsApiAsync {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4675,7 +4671,6 @@ public class AnalyticsApiAsync {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4710,7 +4705,6 @@ public class AnalyticsApiAsync {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

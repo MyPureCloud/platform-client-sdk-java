@@ -114,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
+| [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | Update the feedback for the summary. |
 | [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied |
 | [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | Update after-call work for this conversation communication. |
 | [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
@@ -6947,6 +6948,70 @@ try {
 ### Return type
 
 **String**
+
+
+# **patchConversationSummaryFeedback**
+
+
+> Void patchConversationSummaryFeedback(conversationId, summaryId, body)
+
+Update the feedback for the summary.
+
+patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback  
+
+Requires ALL permissions: 
+
+* conversation:summaryFeedback:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String summaryId = "summaryId_example"; // String | Summary ID
+FeedbackUpdateRequest body = new FeedbackUpdateRequest(); // FeedbackUpdateRequest | 
+try {
+    apiInstance.patchConversationSummaryFeedback(conversationId, summaryId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationSummaryFeedback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **summaryId** | **String**| Summary ID | 
+| **body** | [**FeedbackUpdateRequest**](FeedbackUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **patchConversationUtilizationlabel**
@@ -15809,4 +15874,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

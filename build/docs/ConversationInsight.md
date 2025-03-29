@@ -8,6 +8,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of insight |  [optional] |
 | **title** | **String** | The reason for contact, resolution for the interaction, or follow-up action item |  [optional] |
 | **description** | **String** | Reasoning for the given insight |  [optional] |
+| **outcome** | **String** | The outcome of a given resolution insight |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

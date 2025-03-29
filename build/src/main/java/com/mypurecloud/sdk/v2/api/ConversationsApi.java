@@ -94,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
+import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
@@ -281,6 +282,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationUtilizationlabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
@@ -9444,6 +9446,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the feedback for the summary.
+   * 
+   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationSummaryFeedback(String conversationId, String summaryId, FeedbackUpdateRequest body) throws IOException, ApiException {
+     patchConversationSummaryFeedback(createPatchConversationSummaryFeedbackRequest(conversationId, summaryId, body));
+  }
+
+  /**
+   * Update the feedback for the summary.
+   * 
+   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationSummaryFeedbackWithHttpInfo(String conversationId, String summaryId, FeedbackUpdateRequest body) throws IOException {
+    return patchConversationSummaryFeedback(createPatchConversationSummaryFeedbackRequest(conversationId, summaryId, body).withHttpInfo());
+  }
+
+  private PatchConversationSummaryFeedbackRequest createPatchConversationSummaryFeedbackRequest(String conversationId, String summaryId, FeedbackUpdateRequest body) {
+    return PatchConversationSummaryFeedbackRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSummaryId(summaryId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the feedback for the summary.
+   * 
+   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationSummaryFeedback(PatchConversationSummaryFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update the feedback for the summary.
+   * 
+   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationSummaryFeedback(ApiRequest<FeedbackUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -943,7 +943,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @return List<RecordingMetadata>
@@ -955,7 +955,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @return List<RecordingMetadata>
@@ -973,7 +973,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request The request object
    * @return List<RecordingMetadata>
@@ -992,7 +992,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
    * 
    * @param request The request object
    * @return the response

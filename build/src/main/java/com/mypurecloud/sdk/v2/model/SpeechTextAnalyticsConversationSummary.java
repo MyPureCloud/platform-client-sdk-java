@@ -71,6 +71,56 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     }
   }
   private SummaryTypeEnum summaryType = null;
+
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The media type of the associated interaction
+   */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
+  public enum MediaTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    MESSAGE("Message"),
+    CALL("Call"),
+    EMAIL("Email");
+
+    private String value;
+
+    MediaTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaTypeEnum value : MediaTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaTypeEnum mediaType = null;
   private String language = null;
   private String agentId = null;
   private String summary = null;
@@ -93,6 +143,24 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
   public void setSummaryType(SummaryTypeEnum summaryType) {
     this.summaryType = summaryType;
+  }
+
+
+  /**
+   * The media type of the associated interaction
+   **/
+  public SpeechTextAnalyticsConversationSummary mediaType(MediaTypeEnum mediaType) {
+    this.mediaType = mediaType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The media type of the associated interaction")
+  @JsonProperty("mediaType")
+  public MediaTypeEnum getMediaType() {
+    return mediaType;
+  }
+  public void setMediaType(MediaTypeEnum mediaType) {
+    this.mediaType = mediaType;
   }
 
 
@@ -197,6 +265,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     SpeechTextAnalyticsConversationSummary speechTextAnalyticsConversationSummary = (SpeechTextAnalyticsConversationSummary) o;
 
     return Objects.equals(this.summaryType, speechTextAnalyticsConversationSummary.summaryType) &&
+            Objects.equals(this.mediaType, speechTextAnalyticsConversationSummary.mediaType) &&
             Objects.equals(this.language, speechTextAnalyticsConversationSummary.language) &&
             Objects.equals(this.agentId, speechTextAnalyticsConversationSummary.agentId) &&
             Objects.equals(this.summary, speechTextAnalyticsConversationSummary.summary) &&
@@ -206,7 +275,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(summaryType, language, agentId, summary, generated, dateCreated);
+    return Objects.hash(summaryType, mediaType, language, agentId, summary, generated, dateCreated);
   }
 
   @Override
@@ -215,6 +284,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     sb.append("class SpeechTextAnalyticsConversationSummary {\n");
     
     sb.append("    summaryType: ").append(toIndentedString(summaryType)).append("\n");
+    sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");

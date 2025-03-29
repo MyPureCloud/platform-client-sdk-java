@@ -75,6 +75,7 @@ import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
+import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
@@ -195,11 +196,13 @@ import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourceUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourceUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowInstancesSettingsLoglevelsRequest;
@@ -7984,6 +7987,81 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PromptAssetUpload> postArchitectPromptResourceUploadsAsync(PostArchitectPromptResourceUploadsRequest request, final AsyncApiCallback<PromptAssetUpload> callback) {
+    try {
+      final SettableFuture<PromptAssetUpload> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAssetUpload>() {}, new AsyncApiCallback<ApiResponse<PromptAssetUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<PromptAssetUpload> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a user prompt file
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PromptAssetUpload>> postArchitectPromptResourceUploadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PromptAssetUpload>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PromptAssetUpload>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PromptAssetUpload>() {}, new AsyncApiCallback<ApiResponse<PromptAssetUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<PromptAssetUpload> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a new user prompt resource
    * 
    * @param request the request object
@@ -8347,6 +8425,81 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PromptAssetUpload> postArchitectSystempromptResourceUploadsAsync(PostArchitectSystempromptResourceUploadsRequest request, final AsyncApiCallback<PromptAssetUpload> callback) {
+    try {
+      final SettableFuture<PromptAssetUpload> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAssetUpload>() {}, new AsyncApiCallback<ApiResponse<PromptAssetUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<PromptAssetUpload> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a system prompt file
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PromptAssetUpload>> postArchitectSystempromptResourceUploadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PromptAssetUpload>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PromptAssetUpload>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PromptAssetUpload>() {}, new AsyncApiCallback<ApiResponse<PromptAssetUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<PromptAssetUpload> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PromptAssetUpload> response = (ApiResponse<PromptAssetUpload>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

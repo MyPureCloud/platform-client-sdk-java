@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Reason;
 import com.mypurecloud.sdk.v2.model.WebMessagingChannel;
 import com.mypurecloud.sdk.v2.model.WebMessagingContent;
 import com.mypurecloud.sdk.v2.model.WebMessagingEvent;
@@ -84,6 +85,59 @@ public class WebMessagingMessage  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private List<WebMessagingContent> content = new ArrayList<WebMessagingContent>();
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Message receipt status, only used with type Receipt.
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SENT("Sent"),
+    DELIVERED("Delivered"),
+    READ("Read"),
+    FAILED("Failed"),
+    PUBLISHED("Published"),
+    REMOVED("Removed");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
+  private List<Reason> reasons = new ArrayList<Reason>();
   private List<WebMessagingEvent> events = new ArrayList<WebMessagingEvent>();
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
@@ -274,6 +328,20 @@ public class WebMessagingMessage  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Message receipt status, only used with type Receipt.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.")
+  @JsonProperty("reasons")
+  public List<Reason> getReasons() {
+    return reasons;
+  }
+
+
   /**
    * List of event elements.
    **/
@@ -361,6 +429,8 @@ public class WebMessagingMessage  implements Serializable {
             Objects.equals(this.type, webMessagingMessage.type) &&
             Objects.equals(this.text, webMessagingMessage.text) &&
             Objects.equals(this.content, webMessagingMessage.content) &&
+            Objects.equals(this.status, webMessagingMessage.status) &&
+            Objects.equals(this.reasons, webMessagingMessage.reasons) &&
             Objects.equals(this.events, webMessagingMessage.events) &&
             Objects.equals(this.direction, webMessagingMessage.direction) &&
             Objects.equals(this.originatingEntity, webMessagingMessage.originatingEntity) &&
@@ -369,7 +439,7 @@ public class WebMessagingMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, direction, originatingEntity, metadata);
+    return Objects.hash(id, channel, type, text, content, status, reasons, events, direction, originatingEntity, metadata);
   }
 
   @Override
@@ -382,6 +452,8 @@ public class WebMessagingMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    originatingEntity: ").append(toIndentedString(originatingEntity)).append("\n");

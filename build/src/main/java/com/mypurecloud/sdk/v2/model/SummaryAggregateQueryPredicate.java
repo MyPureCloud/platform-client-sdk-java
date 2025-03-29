@@ -92,16 +92,23 @@ public class SummaryAggregateQueryPredicate  implements Serializable {
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONID("conversationId"),
+    COPIED("copied"),
+    EDITEDFIELD("editedField"),
     ERRORTYPE("errorType"),
     LANGUAGE("language"),
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
+    PRESENTED("presented"),
     QUEUEID("queueId"),
     SUMMARYGENERATED("summaryGenerated"),
     SUMMARYID("summaryId"),
+    SUMMARYRATING("summaryRating"),
     TRIGGERSOURCEID("triggerSourceId"),
+    TRIGGERSOURCEOUTCOME("triggerSourceOutcome"),
     TRIGGERSOURCETYPE("triggerSourceType"),
     USERID("userId"),
+    WRAPUPCODERATING("wrapUpCodeRating"),
+    WRAPUPCODESUGGESTIONSELECTED("wrapUpCodeSuggestionSelected"),
     WRAPUPCODESGENERATED("wrapupCodesGenerated");
 
     private String value;

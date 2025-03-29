@@ -569,7 +569,6 @@ public class AnalyticsApi {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @return AnalyticsAgentStateAgentResponse
    * @throws ApiException if the request fails on the server
@@ -582,7 +581,6 @@ public class AnalyticsApi {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @return AnalyticsAgentStateAgentResponse
    * @throws IOException if the request fails to be processed
@@ -601,7 +599,6 @@ public class AnalyticsApi {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AnalyticsAgentStateAgentResponse
    * @throws ApiException if the request fails on the server
@@ -621,7 +618,6 @@ public class AnalyticsApi {
   /**
    * Get an agent and their active sessions by user ID
    * 
-   * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5035,7 +5031,6 @@ public class AnalyticsApi {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AnalyticsAgentStateCountsResponse
    * @throws ApiException if the request fails on the server
@@ -5048,7 +5043,6 @@ public class AnalyticsApi {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AnalyticsAgentStateCountsResponse
    * @throws IOException if the request fails to be processed
@@ -5067,7 +5061,6 @@ public class AnalyticsApi {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AnalyticsAgentStateCountsResponse
    * @throws ApiException if the request fails on the server
@@ -5087,7 +5080,6 @@ public class AnalyticsApi {
   /**
    * Count agents by segment type
    * 
-   * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5117,7 +5109,6 @@ public class AnalyticsApi {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AnalyticsAgentStateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5130,7 +5121,6 @@ public class AnalyticsApi {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AnalyticsAgentStateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -5149,7 +5139,6 @@ public class AnalyticsApi {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AnalyticsAgentStateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5169,7 +5158,6 @@ public class AnalyticsApi {
   /**
    * Retrieve the top 50 agents matching the query filters
    * 
-   * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -48,16 +48,23 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
     CONVERSATIONID("conversationId"),
+    COPIED("copied"),
+    EDITEDFIELD("editedField"),
     ERRORTYPE("errorType"),
     LANGUAGE("language"),
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
+    PRESENTED("presented"),
     QUEUEID("queueId"),
     SUMMARYGENERATED("summaryGenerated"),
     SUMMARYID("summaryId"),
+    SUMMARYRATING("summaryRating"),
     TRIGGERSOURCEID("triggerSourceId"),
+    TRIGGERSOURCEOUTCOME("triggerSourceOutcome"),
     TRIGGERSOURCETYPE("triggerSourceType"),
     USERID("userId"),
+    WRAPUPCODERATING("wrapUpCodeRating"),
+    WRAPUPCODESUGGESTIONSELECTED("wrapUpCodeSuggestionSelected"),
     WRAPUPCODESGENERATED("wrapupCodesGenerated");
 
     private String value;
@@ -106,6 +113,7 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NCONVERSATIONSUMMARIES("nConversationSummaries"),
+    NCONVERSATIONSUMMARYENGAGEMENTS("nConversationSummaryEngagements"),
     TCONVERSATIONSUMMARY("tConversationSummary");
 
     private String value;

@@ -225,6 +225,7 @@ public class CallMediaParticipant  implements Serializable {
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private DomainEntityRef externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private DomainEntityRef externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
@@ -817,6 +818,24 @@ public class CallMediaParticipant  implements Serializable {
 
 
   /**
+   * If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+   **/
+  public CallMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
   public CallMediaParticipant externalOrganization(DomainEntityRef externalOrganization) {
@@ -1338,6 +1357,7 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.alertingTimeoutMs, callMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, callMediaParticipant.provider) &&
             Objects.equals(this.externalContact, callMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, callMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, callMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, callMediaParticipant.wrapup) &&
             Objects.equals(this.peer, callMediaParticipant.peer) &&
@@ -1369,7 +1389,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
   }
 
   @Override
@@ -1403,6 +1423,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");

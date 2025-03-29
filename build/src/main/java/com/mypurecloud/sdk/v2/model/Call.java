@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.DisconnectReason;
 import com.mypurecloud.sdk.v2.model.Disposition;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
+import com.mypurecloud.sdk.v2.model.RecordersState;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -247,6 +248,7 @@ public class Call  implements Serializable {
     }
   }
   private RecordingStateEnum recordingState = null;
+  private RecordersState recordersState = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
@@ -444,6 +446,24 @@ public class Call  implements Serializable {
   }
   public void setRecordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
+  }
+
+
+  /**
+   * Contains the states of different recorders.
+   **/
+  public Call recordersState(RecordersState recordersState) {
+    this.recordersState = recordersState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Contains the states of different recorders.")
+  @JsonProperty("recordersState")
+  public RecordersState getRecordersState() {
+    return recordersState;
+  }
+  public void setRecordersState(RecordersState recordersState) {
+    this.recordersState = recordersState;
   }
 
 
@@ -948,6 +968,7 @@ public class Call  implements Serializable {
             Objects.equals(this.direction, call.direction) &&
             Objects.equals(this.recording, call.recording) &&
             Objects.equals(this.recordingState, call.recordingState) &&
+            Objects.equals(this.recordersState, call.recordersState) &&
             Objects.equals(this.muted, call.muted) &&
             Objects.equals(this.confined, call.confined) &&
             Objects.equals(this.held, call.held) &&
@@ -979,7 +1000,7 @@ public class Call  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, recording, recordingState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
+    return Objects.hash(state, initialState, id, direction, recording, recordingState, recordersState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
   }
 
   @Override
@@ -993,6 +1014,7 @@ public class Call  implements Serializable {
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");

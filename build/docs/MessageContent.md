@@ -21,6 +21,7 @@
 | **text** | [**ContentText**](ContentText) | Text content. |  [optional] |
 | **quickReplyV2** | [**ContentQuickReplyV2**](ContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
 | **datePicker** | [**ContentDatePicker**](ContentDatePicker) | DatePicker content. |  [optional] |
+| **location** | [**ContentLocation**](ContentLocation) | Location content. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -29,6 +30,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTACHMENT | &quot;Attachment&quot; | 
+| LOCATION | &quot;Location&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | NOTIFICATION | &quot;Notification&quot; | 
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
@@ -47,4 +49,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_

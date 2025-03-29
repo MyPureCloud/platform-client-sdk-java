@@ -22,7 +22,6 @@ import java.io.Serializable;
 
 public class FeedbackAddRequest  implements Serializable {
   
-  private String summary = null;
 
   private static class RatingEnumDeserializer extends StdDeserializer<RatingEnum> {
     public RatingEnumDeserializer() {
@@ -72,26 +71,9 @@ public class FeedbackAddRequest  implements Serializable {
     }
   }
   private RatingEnum rating = null;
+  private String summary = null;
 
   
-  /**
-   * Agent's summary for the conversation
-   **/
-  public FeedbackAddRequest summary(String summary) {
-    this.summary = summary;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "Customer wants to cancel the ticket and he is happy with the service.", required = true, value = "Agent's summary for the conversation")
-  @JsonProperty("summary")
-  public String getSummary() {
-    return summary;
-  }
-  public void setSummary(String summary) {
-    this.summary = summary;
-  }
-
-
   /**
    * Agent’s rating for the system-generated summary.
    **/
@@ -110,6 +92,24 @@ public class FeedbackAddRequest  implements Serializable {
   }
 
 
+  /**
+   * Agent's summary for the conversation
+   **/
+  public FeedbackAddRequest summary(String summary) {
+    this.summary = summary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "Customer wants to cancel the ticket and he is happy with the service.", required = true, value = "Agent's summary for the conversation")
+  @JsonProperty("summary")
+  public String getSummary() {
+    return summary;
+  }
+  public void setSummary(String summary) {
+    this.summary = summary;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,13 +120,13 @@ public class FeedbackAddRequest  implements Serializable {
     }
     FeedbackAddRequest feedbackAddRequest = (FeedbackAddRequest) o;
 
-    return Objects.equals(this.summary, feedbackAddRequest.summary) &&
-            Objects.equals(this.rating, feedbackAddRequest.rating);
+    return Objects.equals(this.rating, feedbackAddRequest.rating) &&
+            Objects.equals(this.summary, feedbackAddRequest.summary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(summary, rating);
+    return Objects.hash(rating, summary);
   }
 
   @Override
@@ -134,8 +134,8 @@ public class FeedbackAddRequest  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FeedbackAddRequest {\n");
     
-    sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    rating: ").append(toIndentedString(rating)).append("\n");
+    sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("}");
     return sb.toString();
   }

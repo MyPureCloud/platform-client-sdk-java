@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.MessageMediaParticipant;
 import com.mypurecloud.sdk.v2.model.TransferResponse;
 import io.swagger.annotations.ApiModel;
@@ -31,6 +32,7 @@ public class MessageConversation  implements Serializable {
   private List<String> otherMediaUris = new ArrayList<String>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
   private String utilizationLabelId = null;
+  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
   private String selfUri = null;
 
   
@@ -130,6 +132,24 @@ public class MessageConversation  implements Serializable {
   }
 
 
+  /**
+   * Identifiers of divisions associated with this conversation.
+   **/
+  public MessageConversation divisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers of divisions associated with this conversation.")
+  @JsonProperty("divisions")
+  public List<ConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -153,12 +173,13 @@ public class MessageConversation  implements Serializable {
             Objects.equals(this.otherMediaUris, messageConversation.otherMediaUris) &&
             Objects.equals(this.recentTransfers, messageConversation.recentTransfers) &&
             Objects.equals(this.utilizationLabelId, messageConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, messageConversation.divisions) &&
             Objects.equals(this.selfUri, messageConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, divisions, selfUri);
   }
 
   @Override
@@ -172,6 +193,7 @@ public class MessageConversation  implements Serializable {
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

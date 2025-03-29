@@ -82,6 +82,7 @@ import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
+import com.mypurecloud.sdk.v2.model.WebhookInvocationResponse;
 
 public class GetIntegrationsSpeechDialogflowcxAgentsRequest {
 
