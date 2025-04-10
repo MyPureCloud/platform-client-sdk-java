@@ -11,7 +11,7 @@
 | **importStatus** | [**DialerContactlistConfigChangeImportStatus**](DialerContactlistConfigChangeImportStatus) |  |  [optional] |
 | **previewModeColumnName** | **String** | the name of the column that holds the indicators for contacts that are to be dialed in preview mode only |  [optional] |
 | **previewModeAcceptedValues** | **List&lt;String&gt;** | list of user-defined values indicating the contact is to be dialed in preview mode only |  [optional] |
-| **size** | **Integer** | the number of contacts in the contact list |  [optional] |
+| **size** | **Long** | the number of contacts in the contact list |  [optional] |
 | **attemptLimits** | [**DialerContactlistConfigChangeUriReference**](DialerContactlistConfigChangeUriReference) |  |  [optional] |
 | **automaticTimeZoneMapping** | **Boolean** | whether or not automatic time zone mapping is enabled on the list |  [optional] |
 | **zipCodeColumnName** | **String** | zip code column from the contact list to be used optionally with automatic time zone mapping |  [optional] |
@@ -21,9 +21,9 @@
 | **name** | **String** | The UI-visible name of the object |  [optional] |
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
-| **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

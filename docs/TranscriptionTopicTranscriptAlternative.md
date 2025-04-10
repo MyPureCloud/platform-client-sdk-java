@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **confidence** | [**BigDecimal**](BigDecimal) |  |  [optional] |
-| **offsetMs** | **Integer** |  |  [optional] |
-| **durationMs** | **Integer** |  |  [optional] |
+| **offsetMs** | **Long** |  |  [optional] |
+| **durationMs** | **Long** |  |  [optional] |
 | **transcript** | **String** |  |  [optional] |
 | **words** | [**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord) |  |  [optional] |
 | **decoratedTranscript** | **String** |  |  [optional] |
@@ -16,4 +16,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

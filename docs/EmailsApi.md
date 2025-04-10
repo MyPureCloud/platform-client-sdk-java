@@ -294,4 +294,4 @@ try {
 [**EmailThreadingSettings**](EmailThreadingSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

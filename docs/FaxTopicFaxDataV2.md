@@ -12,9 +12,9 @@
 | **workspace** | [**FaxTopicWorkspaceData**](FaxTopicWorkspaceData) |  |  [optional] |
 | **createdBy** | [**FaxTopicUserData**](FaxTopicUserData) |  |  [optional] |
 | **contentType** | **String** |  |  [optional] |
-| **contentLength** | **Integer** |  |  [optional] |
+| **contentLength** | **Long** |  |  [optional] |
 | **filename** | **String** |  |  [optional] |
-| **changeNumber** | **Integer** |  |  [optional] |
+| **changeNumber** | **Long** |  |  [optional] |
 | **dateUploaded** | [**Date**](Date) |  |  [optional] |
 | **uploadedBy** | [**FaxTopicUserData**](FaxTopicUserData) |  |  [optional] |
 | **lockInfo** | [**FaxTopicLockData**](FaxTopicLockData) |  |  [optional] |
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -9,13 +9,13 @@
 | **conversationId** | **String** |  |  [optional] |
 | **conversationDate** | **String** |  |  [optional] |
 | **formName** | **String** |  |  [optional] |
-| **points** | **Integer** |  |  [optional] |
-| **maxPoints** | **Integer** |  |  [optional] |
-| **evaluationScore** | **Integer** |  |  [optional] |
+| **points** | **Long** |  |  [optional] |
+| **maxPoints** | **Long** |  |  [optional] |
+| **evaluationScore** | **Long** |  |  [optional] |
 | **evaluationScoreDouble** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **mediaTypes** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

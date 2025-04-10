@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
-| **interval** | **Integer** | the amount of time in between occurrences |  [optional] |
+| **interval** | **Long** | the amount of time in between occurrences |  [optional] |
 | **daysOfWeek** | **List&lt;String&gt;** | the day(s) of the week the occurrence happens |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
@@ -22,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **campaigns** | [**List&lt;DialerSequenceConfigChangeUriReference&gt;**](DialerSequenceConfigChangeUriReference) | the ordered list of campaign identifiers |  [optional] |
-| **currentCampaign** | **Integer** | the zero-based index of the current campaign in the campaigns list |  [optional] |
+| **currentCampaign** | **Long** | the zero-based index of the current campaign in the campaigns list |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **stopMessage** | **String** | if a sequence has unexpectedly stopped, this message provides the reason |  [optional] |
 | **repeat** | **Boolean** | indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false |  [optional] |
@@ -15,7 +15,7 @@
 | **name** | **String** | The UI-visible name of the object |  [optional] |
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
-| **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -30,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

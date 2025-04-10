@@ -9,9 +9,9 @@
 | **name** | **String** | The name of the attachment. |  [optional] |
 | **contentUri** | **String** | The content uri of the attachment. If set, this is commonly a public api download location. |  [optional] |
 | **contentType** | **String** | The type of file the attachment is. |  [optional] |
-| **contentLength** | **Integer** | The length of the attachment file. |  [optional] |
+| **contentLength** | **Long** | The length of the attachment file. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

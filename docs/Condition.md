@@ -36,6 +36,7 @@
 | CALLANALYSISCONDITION | &quot;callAnalysisCondition&quot; | 
 | CONTACTPROPERTYCONDITION | &quot;contactPropertyCondition&quot; | 
 | DATAACTIONCONDITION | &quot;dataActionCondition&quot; | 
+| TIMEANDDATECONDITION | &quot;timeAndDateCondition&quot; | 
 
 
 ## Enum: ValueTypeEnum
@@ -65,6 +66,7 @@
 | BEFORE | &quot;BEFORE&quot; | 
 | AFTER | &quot;AFTER&quot; | 
 | IN | &quot;IN&quot; | 
+| BETWEEN | &quot;BETWEEN&quot; | 
 
 
 ## Enum: PropertyTypeEnum
@@ -80,4 +82,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -12,9 +12,9 @@
 | **workspace** | [**ContentManagementSingleDocumentTopicWorkspaceData**](ContentManagementSingleDocumentTopicWorkspaceData) |  |  [optional] |
 | **createdBy** | [**ContentManagementSingleDocumentTopicUserData**](ContentManagementSingleDocumentTopicUserData) |  |  [optional] |
 | **contentType** | **String** |  |  [optional] |
-| **contentLength** | **Integer** |  |  [optional] |
+| **contentLength** | **Long** |  |  [optional] |
 | **filename** | **String** |  |  [optional] |
-| **changeNumber** | **Integer** |  |  [optional] |
+| **changeNumber** | **Long** |  |  [optional] |
 | **dateUploaded** | [**Date**](Date) |  |  [optional] |
 | **uploadedBy** | [**ContentManagementSingleDocumentTopicUserData**](ContentManagementSingleDocumentTopicUserData) |  |  [optional] |
 | **lockInfo** | [**ContentManagementSingleDocumentTopicLockData**](ContentManagementSingleDocumentTopicLockData) |  |  [optional] |
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

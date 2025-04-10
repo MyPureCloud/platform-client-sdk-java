@@ -26,9 +26,9 @@
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**ConversationScreenShareEventTopicErrorBody**](ConversationScreenShareEventTopicErrorBody) |  |  [optional] |
 | **script** | [**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupTimeoutMs** | **Long** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **alertingTimeoutMs** | **Long** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference) |  |  [optional] |
 | **externalContactInitialDivisionId** | **String** |  |  [optional] |
@@ -46,7 +46,7 @@
 | **mediaRoles** | **List&lt;String&gt;** |  |  [optional] |
 | **queueMediaSettings** | [**ConversationScreenShareEventTopicQueueMediaSettings**](ConversationScreenShareEventTopicQueueMediaSettings) |  |  [optional] |
 | **context** | **String** |  |  [optional] |
-| **peerCount** | **Integer** |  |  [optional] |
+| **peerCount** | **Long** |  |  [optional] |
 | **sharing** | **Boolean** |  |  [optional] |
 
 
@@ -134,4 +134,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

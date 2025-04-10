@@ -23,6 +23,7 @@
 | ACTIVITYSTARTTIMEINCREMENTINMINUTES | &quot;ActivityStartTimeIncrementInMinutes&quot; | 
 | PLANNINGPERIODMAXIMUMDAYSOFF | &quot;PlanningPeriodMaximumDaysOff&quot; | 
 | PLANNINGPERIODMAXIMUMPAIDTIMEMINUTES | &quot;PlanningPeriodMaximumPaidTimeMinutes&quot; | 
+| PLANNINGPERIODMAXIMUMWORKINGWEEKENDS | &quot;PlanningPeriodMaximumWorkingWeekends&quot; | 
 | PLANNINGPERIODMINIMUMDAYSOFF | &quot;PlanningPeriodMinimumDaysOff&quot; | 
 | PLANNINGPERIODMINIMUMPAIDTIMEMINUTES | &quot;PlanningPeriodMinimumPaidTimeMinutes&quot; | 
 | SHIFTDAYOFFRULE | &quot;ShiftDayOffRule&quot; | 
@@ -31,8 +32,10 @@
 | SHIFTLATESTSTARTTIMEMINUTESFROMMIDNIGHT | &quot;ShiftLatestStartTimeMinutesFromMidnight&quot; | 
 | SHIFTLATESTSTOPTIMEMINUTESFROMMIDNIGHT | &quot;ShiftLatestStopTimeMinutesFromMidnight&quot; | 
 | SHIFTMAXIMUMCONTIGUOUSTIMEMINUTES | &quot;ShiftMaximumContiguousTimeMinutes&quot; | 
+| SHIFTMAXIMUMCOUNTPERPLANNINGPERIOD | &quot;ShiftMaximumCountPerPlanningPeriod&quot; | 
 | SHIFTMAXIMUMPAIDTIMEMINUTES | &quot;ShiftMaximumPaidTimeMinutes&quot; | 
 | SHIFTMINIMUMCONTIGUOUSTIMEMINUTES | &quot;ShiftMinimumContiguousTimeMinutes&quot; | 
+| SHIFTMINIMUMCOUNTPERPLANNINGPERIOD | &quot;ShiftMinimumCountPerPlanningPeriod&quot; | 
 | SHIFTMINIMUMPAIDTIMEMINUTES | &quot;ShiftMinimumPaidTimeMinutes&quot; | 
 | SHIFTSTARTTIMEINCREMENTINMINUTES | &quot;ShiftStartTimeIncrementInMinutes&quot; | 
 | SHIFTSTARTVARIANCEMAXIMUMVARIANCEMINUTES | &quot;ShiftStartVarianceMaximumVarianceMinutes&quot; | 
@@ -52,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

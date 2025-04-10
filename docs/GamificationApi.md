@@ -5,8 +5,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi#deleteEmployeeperformanceExternalmetricsDefinition) | Delete an External Metric Definition |
+| [**deleteGamificationContest**](GamificationApi#deleteGamificationContest) | Delete a Contest by Id |
 | [**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi#getEmployeeperformanceExternalmetricsDefinition) | Get an External Metric Definition |
 | [**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#getEmployeeperformanceExternalmetricsDefinitions) | Get a list of External Metric Definitions of an organization, sorted by name in ascending order |
+| [**getGamificationContest**](GamificationApi#getGamificationContest) | Get a Contest by Id |
+| [**getGamificationContestAgentsScores**](GamificationApi#getGamificationContestAgentsScores) | Get Contest Scores (Admin) |
+| [**getGamificationContestAgentsScoresMe**](GamificationApi#getGamificationContestAgentsScoresMe) | Get Contest Scores for the requesting Agent/Supervisor |
+| [**getGamificationContestAgentsScoresTrends**](GamificationApi#getGamificationContestAgentsScoresTrends) | Get a Contest Score Trend (Average Trend) |
+| [**getGamificationContestAgentsScoresTrendsMe**](GamificationApi#getGamificationContestAgentsScoresTrendsMe) | Get a Contest Score Trend for the requesting Agent |
+| [**getGamificationContestPrizeimage**](GamificationApi#getGamificationContestPrizeimage) | Get a Contest Prize Image by Id |
+| [**getGamificationContests**](GamificationApi#getGamificationContests) | Get a List of Contests (Admin) |
+| [**getGamificationContestsMe**](GamificationApi#getGamificationContestsMe) | Get a List of Contests (Agent/Supervisor) |
 | [**getGamificationInsights**](GamificationApi#getGamificationInsights) | Get insights summary |
 | [**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | Get insights details for the current user |
 | [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | Get insights overall trend for the current user |
@@ -54,8 +63,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationTemplate**](GamificationApi#getGamificationTemplate) | Objective template by id |
 | [**getGamificationTemplates**](GamificationApi#getGamificationTemplates) | All objective templates |
 | [**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi#patchEmployeeperformanceExternalmetricsDefinition) | Update External Metric Definition |
+| [**patchGamificationContest**](GamificationApi#patchGamificationContest) | Finalize a Contest by Id |
 | [**postEmployeeperformanceExternalmetricsData**](GamificationApi#postEmployeeperformanceExternalmetricsData) | Write External Metric Data |
 | [**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#postEmployeeperformanceExternalmetricsDefinitions) | Create External Metric Definition |
+| [**postGamificationContests**](GamificationApi#postGamificationContests) | Creates a Contest |
+| [**postGamificationContestsUploadsPrizeimages**](GamificationApi#postGamificationContestsUploadsPrizeimages) | Generates pre-signed URL to upload a prize image for gamification contests |
 | [**postGamificationProfileActivate**](GamificationApi#postGamificationProfileActivate) | Activate a performance profile |
 | [**postGamificationProfileDeactivate**](GamificationApi#postGamificationProfileDeactivate) | Deactivate a performance profile |
 | [**postGamificationProfileMembers**](GamificationApi#postGamificationProfileMembers) | Assign members to a given performance profile |
@@ -65,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGamificationProfiles**](GamificationApi#postGamificationProfiles) | Create a new custom performance profile |
 | [**postGamificationProfilesUserQuery**](GamificationApi#postGamificationProfilesUserQuery) | Query performance profiles in date range for a user |
 | [**postGamificationProfilesUsersMeQuery**](GamificationApi#postGamificationProfilesUsersMeQuery) | Query performance profiles in date range for the current user |
+| [**putGamificationContest**](GamificationApi#putGamificationContest) | Update a Contest by Id |
 | [**putGamificationProfile**](GamificationApi#putGamificationProfile) | Updates a performance profile |
 | [**putGamificationProfileMetric**](GamificationApi#putGamificationProfileMetric) | Updates a metric in performance profile |
 | [**putGamificationStatus**](GamificationApi#putGamificationStatus) | Update gamification activation status |
@@ -121,6 +134,65 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **metricId** | **String**| Specifies the External Metric Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteGamificationContest**
+
+
+> Void deleteGamificationContest(contestId)
+
+Delete a Contest by Id
+
+Wraps DELETE /api/v2/gamification/contests/{contestId}  
+
+Requires ANY permissions: 
+
+* gamification:contest:delete
+* gamification:contest:deleteAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+try {
+    apiInstance.deleteGamificationContest(contestId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#deleteGamificationContest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
 {: class="table-striped"}
 
 
@@ -247,6 +319,523 @@ try {
 ### Return type
 
 [**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing)
+
+
+# **getGamificationContest**
+
+
+> [ContestsResponse](ContestsResponse) getGamificationContest(contestId)
+
+Get a Contest by Id
+
+Wraps GET /api/v2/gamification/contests/{contestId}  
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+try {
+    ContestsResponse result = apiInstance.getGamificationContest(contestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
+# **getGamificationContestAgentsScores**
+
+
+> [ContestScoresAgentsPagedList](ContestScoresAgentsPagedList) getGamificationContestAgentsScores(contestId, pageNumber, pageSize, workday, returnsView)
+
+Get Contest Scores (Admin)
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores  
+
+Requires ANY permissions: 
+
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String returnsView = "All"; // String | Desired response results
+try {
+    ContestScoresAgentsPagedList result = apiInstance.getGamificationContestAgentsScores(contestId, pageNumber, pageSize, workday, returnsView);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestAgentsScores");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **workday** | **LocalDate**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **returnsView** | **String**| Desired response results | [optional] [default to All]<br />**Values**: All, TopAndBottom 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList)
+
+
+# **getGamificationContestAgentsScoresMe**
+
+
+> [ContestScoresAgentsPagedList](ContestScoresAgentsPagedList) getGamificationContestAgentsScoresMe(contestId, pageNumber, pageSize, workday, returnsView)
+
+Get Contest Scores for the requesting Agent/Supervisor
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/me  
+
+Requires ALL permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String returnsView = "All"; // String | Desired response results (Supervisor Only)
+try {
+    ContestScoresAgentsPagedList result = apiInstance.getGamificationContestAgentsScoresMe(contestId, pageNumber, pageSize, workday, returnsView);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestAgentsScoresMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **workday** | **LocalDate**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **returnsView** | **String**| Desired response results (Supervisor Only) | [optional] [default to All]<br />**Values**: All, TopAndBottom 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList)
+
+
+# **getGamificationContestAgentsScoresTrends**
+
+
+> [ContestScoresGroupTrendList](ContestScoresGroupTrendList) getGamificationContestAgentsScoresTrends(contestId)
+
+Get a Contest Score Trend (Average Trend)
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/trends  
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+try {
+    ContestScoresGroupTrendList result = apiInstance.getGamificationContestAgentsScoresTrends(contestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestAgentsScoresTrends");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestScoresGroupTrendList**](ContestScoresGroupTrendList)
+
+
+# **getGamificationContestAgentsScoresTrendsMe**
+
+
+> [ContestScoresAgentTrendList](ContestScoresAgentTrendList) getGamificationContestAgentsScoresTrendsMe(contestId)
+
+Get a Contest Score Trend for the requesting Agent
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/trends/me  
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+try {
+    ContestScoresAgentTrendList result = apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestAgentsScoresTrendsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestScoresAgentTrendList**](ContestScoresAgentTrendList)
+
+
+# **getGamificationContestPrizeimage**
+
+
+> [PrizeImages](PrizeImages) getGamificationContestPrizeimage(contestId, prizeImageId)
+
+Get a Contest Prize Image by Id
+
+Wraps GET /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}  
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+String prizeImageId = "prizeImageId_example"; // String | The ID of the prize image
+try {
+    PrizeImages result = apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestPrizeimage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+| **prizeImageId** | **String**| The ID of the prize image | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PrizeImages**](PrizeImages)
+
+
+# **getGamificationContests**
+
+
+> [GetContestsEssentialsListing](GetContestsEssentialsListing) getGamificationContests(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder)
+
+Get a List of Contests (Admin)
+
+Wraps GET /api/v2/gamification/contests  
+
+Requires ANY permissions: 
+
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+LocalDate dateStart = new LocalDate(); // LocalDate | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate dateEnd = new LocalDate(); // LocalDate | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+List<String> status = Arrays.asList(null); // List<String> | 
+String sortBy = "dateStart"; // String | 
+String sortOrder = "desc"; // String | 
+try {
+    GetContestsEssentialsListing result = apiInstance.getGamificationContests(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContests");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **dateStart** | **LocalDate**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **dateEnd** | **LocalDate**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **status** | [**List&lt;String&gt;**](String)|  | [optional]<br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled 
+| **sortBy** | **String**|  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount 
+| **sortOrder** | **String**|  | [optional] [default to desc]<br />**Values**: asc, desc 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetContestsEssentialsListing**](GetContestsEssentialsListing)
+
+
+# **getGamificationContestsMe**
+
+
+> [GetContestsEssentialsListing](GetContestsEssentialsListing) getGamificationContestsMe(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view)
+
+Get a List of Contests (Agent/Supervisor)
+
+Wraps GET /api/v2/gamification/contests/me  
+
+Requires ALL permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+LocalDate dateStart = new LocalDate(); // LocalDate | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate dateEnd = new LocalDate(); // LocalDate | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+List<String> status = Arrays.asList(null); // List<String> | 
+String sortBy = "dateStart"; // String | 
+String sortOrder = "desc"; // String | 
+String view = "participant"; // String | 
+try {
+    GetContestsEssentialsListing result = apiInstance.getGamificationContestsMe(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationContestsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **dateStart** | **LocalDate**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **dateEnd** | **LocalDate**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **status** | [**List&lt;String&gt;**](String)|  | [optional]<br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled 
+| **sortBy** | **String**|  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount 
+| **sortOrder** | **String**|  | [optional] [default to desc]<br />**Values**: asc, desc 
+| **view** | **String**|  | [optional] [default to participant]<br />**Values**: participant, creator 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetContestsEssentialsListing**](GetContestsEssentialsListing)
 
 
 # **getGamificationInsights**
@@ -3249,6 +3838,68 @@ try {
 [**ExternalMetricDefinition**](ExternalMetricDefinition)
 
 
+# **patchGamificationContest**
+
+
+> [ContestsResponse](ContestsResponse) patchGamificationContest(contestId, body)
+
+Finalize a Contest by Id
+
+Wraps PATCH /api/v2/gamification/contests/{contestId}  
+
+Requires ANY permissions: 
+
+* gamification:contestStatus:edit
+* gamification:contestStatus:editAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+ContestsFinalizeRequest body = new ContestsFinalizeRequest(); // ContestsFinalizeRequest | Finalize Contest
+try {
+    ContestsResponse result = apiInstance.patchGamificationContest(contestId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#patchGamificationContest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+| **body** | [**ContestsFinalizeRequest**](ContestsFinalizeRequest)| Finalize Contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
 # **postEmployeeperformanceExternalmetricsData**
 
 
@@ -3365,6 +4016,124 @@ try {
 ### Return type
 
 [**ExternalMetricDefinition**](ExternalMetricDefinition)
+
+
+# **postGamificationContests**
+
+
+> [ContestsResponse](ContestsResponse) postGamificationContests(body)
+
+Creates a Contest
+
+Wraps POST /api/v2/gamification/contests  
+
+Requires ANY permissions: 
+
+* gamification:contest:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+ContestsCreateRequest body = new ContestsCreateRequest(); // ContestsCreateRequest | Create Contest
+try {
+    ContestsResponse result = apiInstance.postGamificationContests(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationContests");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContestsCreateRequest**](ContestsCreateRequest)| Create Contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
+# **postGamificationContestsUploadsPrizeimages**
+
+
+> [UploadUrlResponse](UploadUrlResponse) postGamificationContestsUploadsPrizeimages(body)
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Wraps POST /api/v2/gamification/contests/uploads/prizeimages  
+
+Requires ALL permissions: 
+
+* gamification:contestPrizeImage:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+GamificationContestPrizeImageUploadUrlRequest body = new GamificationContestPrizeImageUploadUrlRequest(); // GamificationContestPrizeImageUploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postGamificationContestsUploadsPrizeimages(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationContestsUploadsPrizeimages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GamificationContestPrizeImageUploadUrlRequest**](GamificationContestPrizeImageUploadUrlRequest)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 # **postGamificationProfileActivate**
@@ -3911,6 +4680,68 @@ try {
 [**UserProfilesInDateRange**](UserProfilesInDateRange)
 
 
+# **putGamificationContest**
+
+
+> [ContestsResponse](ContestsResponse) putGamificationContest(contestId, body)
+
+Update a Contest by Id
+
+Wraps PUT /api/v2/gamification/contests/{contestId}  
+
+Requires ANY permissions: 
+
+* gamification:contest:edit
+* gamification:contest:editAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String contestId = "contestId_example"; // String | The ID of the contest
+ContestsCreateRequest body = new ContestsCreateRequest(); // ContestsCreateRequest | Contest
+try {
+    ContestsResponse result = apiInstance.putGamificationContest(contestId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#putGamificationContest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contestId** | **String**| The ID of the contest | 
+| **body** | [**ContestsCreateRequest**](ContestsCreateRequest)| Contest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
 # **putGamificationProfile**
 
 
@@ -4094,4 +4925,4 @@ try {
 [**GamificationStatus**](GamificationStatus)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

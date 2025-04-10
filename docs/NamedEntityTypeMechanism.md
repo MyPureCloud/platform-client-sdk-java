@@ -10,6 +10,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the mechanism. |  |
 | **subType** | [**SubTypeEnum**](#Enum--SubTypeEnum) | Subtype of detection mechanism |  [optional] |
 | **maxLength** | **Integer** | The maximum length of the entity resolved value |  [optional] |
+| **minLength** | **Integer** | The minimum length of the entity resolved value |  [optional] |
 | **examples** | [**List&lt;NamedEntityTypeMechanismExample&gt;**](NamedEntityTypeMechanismExample) | Examples for entity detection |  [optional] |
 
 
@@ -38,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

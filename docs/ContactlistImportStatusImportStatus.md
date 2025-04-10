@@ -6,9 +6,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **importState** | [**ImportStateEnum**](#Enum--ImportStateEnum) | current status of the import |  [optional] |
-| **totalRecords** | **Integer** | total number of records to be imported |  [optional] |
-| **completedRecords** | **Integer** | number of records finished importing |  [optional] |
-| **percentageComplete** | **Integer** | percentage of records finished importing |  [optional] |
+| **totalRecords** | **Long** | total number of records to be imported |  [optional] |
+| **completedRecords** | **Long** | number of records finished importing |  [optional] |
+| **percentageComplete** | **Long** | percentage of records finished importing |  [optional] |
 | **failureReason** | **String** | if the import has failed, the reason for the failure |  [optional] |
 | **targetContactListIds** | **List&lt;String&gt;** | The ids for target contact lists |  [optional] |
 | **listNamePrefix** | **String** | The prefix used for target contact list names |  [optional] |
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

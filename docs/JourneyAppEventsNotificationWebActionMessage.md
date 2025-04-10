@@ -18,9 +18,9 @@
 | **geolocation** | [**JourneyAppEventsNotificationGeoLocation**](JourneyAppEventsNotificationGeoLocation) |  |  [optional] |
 | **mktCampaign** | [**JourneyAppEventsNotificationMktCampaign**](JourneyAppEventsNotificationMktCampaign) |  |  [optional] |
 | **visitReferrer** | [**JourneyAppEventsNotificationReferrer**](JourneyAppEventsNotificationReferrer) |  |  [optional] |
-| **timeToDisposition** | **Integer** |  |  [optional] |
+| **timeToDisposition** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

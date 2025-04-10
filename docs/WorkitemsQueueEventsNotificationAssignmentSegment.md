@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **startState** | [**StartStateEnum**](#Enum--StartStateEnum) |  |  [optional] |
 | **endState** | [**EndStateEnum**](#Enum--EndStateEnum) |  |  [optional] |
-| **durationMs** | **Integer** |  |  [optional] |
+| **durationMs** | **Long** |  |  [optional] |
 
 
 ## Enum: StartStateEnum
@@ -52,4 +52,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

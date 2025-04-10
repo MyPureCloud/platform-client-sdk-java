@@ -9,12 +9,12 @@
 | **organizationId** | **String** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **communicationId** | **String** |  |  [optional] |
-| **sessionStartTimeMs** | **Integer** |  |  [optional] |
-| **transcriptionStartTimeMs** | **Integer** |  |  [optional] |
+| **sessionStartTimeMs** | **Long** |  |  [optional] |
+| **transcriptionStartTimeMs** | **Long** |  |  [optional] |
 | **transcripts** | [**List&lt;TranscriptionTopicTranscriptResult&gt;**](TranscriptionTopicTranscriptResult) |  |  [optional] |
 | **status** | [**TranscriptionTopicTranscriptionRequestStatus**](TranscriptionTopicTranscriptionRequestStatus) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

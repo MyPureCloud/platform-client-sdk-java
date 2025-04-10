@@ -10,7 +10,7 @@
 | **managementUnit** | [**WfmUserNotificationTopicManagementUnit**](WfmUserNotificationTopicManagementUnit) |  |  [optional] |
 | **businessUnit** | [**WfmUserNotificationTopicBusinessUnit**](WfmUserNotificationTopicBusinessUnit) |  |  [optional] |
 | **startDate** | [**Date**](Date) |  |  [optional] |
-| **lengthMinutes** | **Integer** |  |  [optional] |
+| **lengthMinutes** | **Long** |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **notes** | **String** |  |  [optional] |
@@ -36,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

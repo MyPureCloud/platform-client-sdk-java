@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Disconnect reason protocol type. |  [optional] |
-| **code** | **Integer** | Protocol specific reason code. See the Q.850 and SIP specs. |  [optional] |
+| **code** | **Long** | Protocol specific reason code. See the Q.850 and SIP specs. |  [optional] |
 | **phrase** | **String** | Human readable English description of the disconnect reason. |  [optional] |
 
 
@@ -21,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

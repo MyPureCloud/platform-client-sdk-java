@@ -5,12 +5,12 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **tier** | **Integer** |  |  [optional] |
-| **winnersCount** | **Integer** |  |  [optional] |
+| **tier** | **Long** |  |  [optional] |
+| **winnersCount** | **Long** |  |  [optional] |
 | **contestScore** | [**V2WemEngagementCelebrationUpdatesTopicContestWinnersScore**](V2WemEngagementCelebrationUpdatesTopicContestWinnersScore) |  |  [optional] |
 | **users** | [**List&lt;V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers&gt;**](V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

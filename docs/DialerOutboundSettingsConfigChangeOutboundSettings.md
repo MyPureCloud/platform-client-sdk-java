@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **maxCallsPerAgent** | **Integer** | The maximum number of calls that can be placed per agent on any campaign |  [optional] |
+| **maxCallsPerAgent** | **Long** | The maximum number of calls that can be placed per agent on any campaign |  [optional] |
 | **maxLineUtilization** | [**BigDecimal**](BigDecimal) | The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0] |  [optional] |
 | **abandonSeconds** | [**BigDecimal**](BigDecimal) | The number of seconds used to determine if a call is abandoned |  [optional] |
 | **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#Enum--ComplianceAbandonRateDenominatorEnum) | The denominator to be used in determining the compliance abandon rate |  [optional] |
@@ -14,7 +14,7 @@
 | **name** | **String** | The UI-visible name of the object |  [optional] |
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
-| **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
 
 
 ## Enum: ComplianceAbandonRateDenominatorEnum
@@ -28,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

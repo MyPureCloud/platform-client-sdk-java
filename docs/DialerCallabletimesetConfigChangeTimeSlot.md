@@ -7,10 +7,10 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **startTime** | **String** | The start time of this time slot |  [optional] |
 | **stopTime** | **String** | The stop time of this time slot |  [optional] |
-| **day** | **Integer** | The day this time slot applies |  [optional] |
+| **day** | **Long** | The day this time slot applies |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -27,6 +27,7 @@
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
+| INTERACTIVEAPPLICATION | &quot;InteractiveApplication&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
@@ -50,4 +51,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

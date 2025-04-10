@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | **Integer** |  |  [optional] |
+| **eventTime** | **Long** |  |  [optional] |
 | **outboundCampaignType** | [**OutboundCampaignTypeEnum**](#Enum--OutboundCampaignTypeEnum) |  |  [optional] |
 | **smsAttributes** | [**OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes**](OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes) |  |  [optional] |
 | **wrapupCode** | [**WrapupCodeEnum**](#Enum--WrapupCodeEnum) |  |  [optional] |
@@ -56,4 +56,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

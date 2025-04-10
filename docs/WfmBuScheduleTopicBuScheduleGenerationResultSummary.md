@@ -7,10 +7,10 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **failed** | **Boolean** |  |  [optional] |
 | **runId** | **String** |  |  [optional] |
-| **messageCount** | **Integer** |  |  [optional] |
+| **messageCount** | **Long** |  |  [optional] |
 | **messageSeverityCounts** | [**List&lt;WfmBuScheduleTopicSchedulerMessageSeverityCount&gt;**](WfmBuScheduleTopicSchedulerMessageSeverityCount) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

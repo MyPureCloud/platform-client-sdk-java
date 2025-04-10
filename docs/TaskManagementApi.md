@@ -35,6 +35,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersion) | Get a specific version of a schema |
 | [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | Get all versions of a schema |
 | [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | Get a list of schemas. |
+| [**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getTaskmanagementWorkitemsSchemasCoretypes**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes) | Get the core types from which all schemas are built. |
+| [**getTaskmanagementWorkitemsSchemasLimits**](TaskManagementApi#getTaskmanagementWorkitemsSchemasLimits) | Get quantitative limits on schemas |
 | [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | Get a worktype |
 | [**getTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRule) | Get a date based rule |
 | [**getTaskmanagementWorktypeFlowsDatebasedRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRules) | Get all date based rules for a worktype |
@@ -1969,6 +1972,175 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**DataSchemaListing**](DataSchemaListing)
+
+
+# **getTaskmanagementWorkitemsSchemasCoretype**
+
+
+> [Coretype](Coretype) getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of the core type
+try {
+    Coretype result = apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of the core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getTaskmanagementWorkitemsSchemasCoretypes**
+
+
+> [Coretype](Coretype) getTaskmanagementWorkitemsSchemasCoretypes()
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+try {
+    Coretype result = apiInstance.getTaskmanagementWorkitemsSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getTaskmanagementWorkitemsSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getTaskmanagementWorkitemsSchemasLimits()
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/limits  
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getTaskmanagementWorkitemsSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 # **getTaskmanagementWorktype**
@@ -4544,4 +4716,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

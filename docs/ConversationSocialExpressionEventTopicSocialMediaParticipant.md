@@ -26,9 +26,9 @@
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**ConversationSocialExpressionEventTopicErrorBody**](ConversationSocialExpressionEventTopicErrorBody) |  |  [optional] |
 | **script** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupTimeoutMs** | **Long** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **alertingTimeoutMs** | **Long** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
 | **externalContactInitialDivisionId** | **String** |  |  [optional] |
@@ -135,4 +135,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

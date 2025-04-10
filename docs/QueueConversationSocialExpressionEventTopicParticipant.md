@@ -22,12 +22,12 @@
 | **wrapupRequired** | **Boolean** | True iff this participant is required to enter wrapup for this conversation. |  [optional] |
 | **wrapupExpected** | **Boolean** | True when a participant is expected to enter a wrapup code once the call connects. |  [optional] |
 | **wrapupPrompt** | **String** | This field controls how the UI prompts the agent for a wrapup. |  [optional] |
-| **wrapupTimeoutMs** | **Integer** | Specifies how long a timed ACW session will last. |  [optional] |
+| **wrapupTimeoutMs** | **Long** | Specifies how long a timed ACW session will last. |  [optional] |
 | **wrapup** | [**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup) |  |  [optional] |
 | **startAcwTime** | [**Date**](Date) | The timestamp when this participant started after-call work. |  [optional] |
 | **endAcwTime** | [**Date**](Date) | The timestamp when this participant ended after-call work. |  [optional] |
 | **conversationRoutingData** | [**QueueConversationSocialExpressionEventTopicConversationRoutingData**](QueueConversationSocialExpressionEventTopicConversationRoutingData) |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
+| **alertingTimeoutMs** | **Long** | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
 | **monitoredParticipantId** | **String** | If this participant is a monitor, then this will be the id of the participant that is being monitored. |  [optional] |
 | **coachedParticipantId** | **String** | If this participant is a coach, then this will be the id of the participant that is being coached. |  [optional] |
 | **bargedParticipantId** | **String** | If this participant created a barge in conference, then this will be the id of the participant that is barged in. |  [optional] |
@@ -63,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

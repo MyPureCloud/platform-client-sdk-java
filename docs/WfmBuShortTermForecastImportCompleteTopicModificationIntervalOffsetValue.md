@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intervalIndex** | **Integer** |  |  [optional] |
+| **intervalIndex** | **Long** |  |  [optional] |
 | **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

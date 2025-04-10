@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | **Integer** |  |  [optional] |
+| **eventTime** | **Long** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **participantId** | **String** |  |  [optional] |
 | **sessionId** | **String** |  |  [optional] |
@@ -18,7 +18,7 @@
 | **addressFrom** | **String** |  |  [optional] |
 | **callbackUserName** | **String** |  |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
-| **callbackScheduledTime** | **Integer** |  |  [optional] |
+| **callbackScheduledTime** | **Long** |  |  [optional] |
 | **subject** | **String** |  |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
 | **queueId** | **String** |  |  [optional] |
@@ -26,7 +26,7 @@
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 | **utilizationLabel** | **String** |  |  [optional] |
-| **routingPriority** | **Integer** |  |  [optional] |
+| **routingPriority** | **Long** |  |  [optional] |
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
 
 
@@ -76,4 +76,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

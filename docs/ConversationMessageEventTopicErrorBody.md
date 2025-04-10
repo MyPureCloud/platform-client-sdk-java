@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **message** | **String** |  |  [optional] |
 | **code** | **String** |  |  [optional] |
-| **status** | **Integer** |  |  [optional] |
+| **status** | **Long** |  |  [optional] |
 | **entityId** | **String** |  |  [optional] |
 | **entityName** | **String** |  |  [optional] |
 | **messageWithParams** | **String** |  |  [optional] |
@@ -20,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

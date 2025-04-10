@@ -9,9 +9,9 @@
 | **startDate** | [**Date**](Date) |  |  [optional] |
 | **endDate** | [**Date**](Date) |  |  [optional] |
 | **agents** | [**List&lt;WfmBuScheduleTopicUserReference&gt;**](WfmBuScheduleTopicUserReference) |  |  [optional] |
-| **agentCount** | **Integer** |  |  [optional] |
+| **agentCount** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

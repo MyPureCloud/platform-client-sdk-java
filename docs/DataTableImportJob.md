@@ -17,6 +17,7 @@
 | **countRecordsUpdated** | **Integer** | The current count of the number of records processed |  [optional] |
 | **countRecordsDeleted** | **Integer** | The current count of the number of records deleted |  [optional] |
 | **countRecordsFailed** | **Integer** | The current count of the number of records that failed to import |  [optional] |
+| **uploadHeaders** | **Map&lt;String, String&gt;** | Required headers when uploading a file through PUT request to the URL in the 'uploadURI' field |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -42,4 +43,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

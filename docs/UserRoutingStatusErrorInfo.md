@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **errorCode** | **String** | A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND |  [optional] |
-| **status** | **Integer** | The HTTP status code for this message. If left blank the status code from the HTTP response is used. |  [optional] |
+| **status** | **Long** | The HTTP status code for this message. If left blank the status code from the HTTP response is used. |  [optional] |
 | **correlationId** | **String** | The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead. |  [optional] |
 | **userMessage** | **String** | A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id |  [optional] |
 | **userParamsMessage** | **String** | This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found' |  [optional] |
@@ -15,4 +15,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_
