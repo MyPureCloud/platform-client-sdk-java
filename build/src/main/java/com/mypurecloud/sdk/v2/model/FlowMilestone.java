@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,11 @@ public class FlowMilestone  implements Serializable {
   private WritableDivision division = null;
   private String description = null;
   private String selfUri = null;
+
+  public FlowMilestone() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The flow milestone identifier")

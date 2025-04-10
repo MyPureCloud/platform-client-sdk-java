@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicScoredAgent;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicUriReference;
@@ -27,9 +28,16 @@ public class QueueConversationCobrowseEventTopicConversationRoutingData  impleme
   
   private QueueConversationCobrowseEventTopicUriReference queue = null;
   private QueueConversationCobrowseEventTopicUriReference language = null;
-  private Integer priority = null;
-  private List<QueueConversationCobrowseEventTopicUriReference> skills = new ArrayList<QueueConversationCobrowseEventTopicUriReference>();
-  private List<QueueConversationCobrowseEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationCobrowseEventTopicScoredAgent>();
+  private Long priority = null;
+  private List<QueueConversationCobrowseEventTopicUriReference> skills = null;
+  private List<QueueConversationCobrowseEventTopicScoredAgent> scoredAgents = null;
+
+  public QueueConversationCobrowseEventTopicConversationRoutingData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<QueueConversationCobrowseEventTopicUriReference>();
+      scoredAgents = new ArrayList<QueueConversationCobrowseEventTopicScoredAgent>();
+    }
+  }
 
   
   /**
@@ -71,17 +79,17 @@ public class QueueConversationCobrowseEventTopicConversationRoutingData  impleme
   /**
    * The priority of the conversation to use for routing decisions
    **/
-  public QueueConversationCobrowseEventTopicConversationRoutingData priority(Integer priority) {
+  public QueueConversationCobrowseEventTopicConversationRoutingData priority(Long priority) {
     this.priority = priority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The priority of the conversation to use for routing decisions")
   @JsonProperty("priority")
-  public Integer getPriority() {
+  public Long getPriority() {
     return priority;
   }
-  public void setPriority(Integer priority) {
+  public void setPriority(Long priority) {
     this.priority = priority;
   }
 

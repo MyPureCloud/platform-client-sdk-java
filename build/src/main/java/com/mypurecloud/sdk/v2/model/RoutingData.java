@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScoredAgent;
 import io.swagger.annotations.ApiModel;
@@ -28,10 +29,19 @@ public class RoutingData  implements Serializable {
   private String languageId = null;
   private String label = null;
   private Integer priority = null;
-  private List<String> skillIds = new ArrayList<String>();
-  private List<String> preferredAgentIds = new ArrayList<String>();
-  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
-  private List<String> routingFlags = new ArrayList<String>();
+  private List<String> skillIds = null;
+  private List<String> preferredAgentIds = null;
+  private List<ScoredAgent> scoredAgents = null;
+  private List<String> routingFlags = null;
+
+  public RoutingData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<ScoredAgent>();
+      routingFlags = new ArrayList<String>();
+    }
+  }
 
   
   /**

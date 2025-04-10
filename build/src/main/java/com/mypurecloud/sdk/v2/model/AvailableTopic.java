@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PermissionDetails;
@@ -29,8 +30,8 @@ public class AvailableTopic  implements Serializable {
   
   private String description = null;
   private String id = null;
-  private List<PermissionDetails> permissionDetails = new ArrayList<PermissionDetails>();
-  private List<String> requiresPermissions = new ArrayList<String>();
+  private List<PermissionDetails> permissionDetails = null;
+  private List<String> requiresPermissions = null;
   private Boolean requiresDivisionPermissions = null;
   private Boolean requiresAnyValidator = null;
   private Boolean enforced = null;
@@ -133,9 +134,19 @@ public class AvailableTopic  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TransportsEnum> transports = new ArrayList<TransportsEnum>();
-  private List<String> publicApiTemplateUriPaths = new ArrayList<String>();
-  private List<String> topicParameters = new ArrayList<String>();
+  private List<TransportsEnum> transports = null;
+  private List<String> publicApiTemplateUriPaths = null;
+  private List<String> topicParameters = null;
+
+  public AvailableTopic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      permissionDetails = new ArrayList<PermissionDetails>();
+      requiresPermissions = new ArrayList<String>();
+      transports = new ArrayList<TransportsEnum>();
+      publicApiTemplateUriPaths = new ArrayList<String>();
+      topicParameters = new ArrayList<String>();
+    }
+  }
 
   
   /**

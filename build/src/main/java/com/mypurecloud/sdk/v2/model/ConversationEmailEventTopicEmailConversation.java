@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicEmailMediaParticipant;
@@ -27,11 +28,19 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
   
   private String id = null;
   private String name = null;
-  private List<ConversationEmailEventTopicEmailMediaParticipant> participants = new ArrayList<ConversationEmailEventTopicEmailMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationEmailEventTopicEmailMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationEmailEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationEmailEventTopicConversationDivisionMembership>();
+  private List<ConversationEmailEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationEmailEventTopicEmailConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationEmailEventTopicEmailMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationEmailEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

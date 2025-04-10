@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.Trustor;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class TrustorEntityListing  implements Serializable, PagedResource<Trustor> {
   
-  private List<Trustor> entities = new ArrayList<Trustor>();
+  private List<Trustor> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public TrustorEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<Trustor>();
+    }
+  }
 
   
   /**

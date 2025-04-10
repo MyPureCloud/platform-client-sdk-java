@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,11 +29,17 @@ public class GamificationScorecardChangeTopicEvaluationDetail  implements Serial
   private String conversationId = null;
   private String conversationDate = null;
   private String formName = null;
-  private Integer points = null;
-  private Integer maxPoints = null;
-  private Integer evaluationScore = null;
+  private Long points = null;
+  private Long maxPoints = null;
+  private Long evaluationScore = null;
   private BigDecimal evaluationScoreDouble = null;
-  private List<String> mediaTypes = new ArrayList<String>();
+  private List<String> mediaTypes = null;
+
+  public GamificationScorecardChangeTopicEvaluationDetail() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaTypes = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -105,51 +112,51 @@ public class GamificationScorecardChangeTopicEvaluationDetail  implements Serial
 
   /**
    **/
-  public GamificationScorecardChangeTopicEvaluationDetail points(Integer points) {
+  public GamificationScorecardChangeTopicEvaluationDetail points(Long points) {
     this.points = points;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("points")
-  public Integer getPoints() {
+  public Long getPoints() {
     return points;
   }
-  public void setPoints(Integer points) {
+  public void setPoints(Long points) {
     this.points = points;
   }
 
 
   /**
    **/
-  public GamificationScorecardChangeTopicEvaluationDetail maxPoints(Integer maxPoints) {
+  public GamificationScorecardChangeTopicEvaluationDetail maxPoints(Long maxPoints) {
     this.maxPoints = maxPoints;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxPoints")
-  public Integer getMaxPoints() {
+  public Long getMaxPoints() {
     return maxPoints;
   }
-  public void setMaxPoints(Integer maxPoints) {
+  public void setMaxPoints(Long maxPoints) {
     this.maxPoints = maxPoints;
   }
 
 
   /**
    **/
-  public GamificationScorecardChangeTopicEvaluationDetail evaluationScore(Integer evaluationScore) {
+  public GamificationScorecardChangeTopicEvaluationDetail evaluationScore(Long evaluationScore) {
     this.evaluationScore = evaluationScore;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("evaluationScore")
-  public Integer getEvaluationScore() {
+  public Long getEvaluationScore() {
     return evaluationScore;
   }
-  public void setEvaluationScore(Integer evaluationScore) {
+  public void setEvaluationScore(Long evaluationScore) {
     this.evaluationScore = evaluationScore;
   }
 

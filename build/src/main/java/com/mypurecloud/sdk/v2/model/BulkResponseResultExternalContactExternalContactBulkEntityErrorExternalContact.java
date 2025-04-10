@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkEntityErrorExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
@@ -27,6 +28,11 @@ public class BulkResponseResultExternalContactExternalContactBulkEntityErrorExte
   private Boolean success = null;
   private ExternalContact entity = null;
   private BulkEntityErrorExternalContact error = null;
+
+  public BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

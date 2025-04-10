@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,12 +23,17 @@ import java.io.Serializable;
 public class ExternalContactsContactChangedTopicPhoneNumber  implements Serializable {
   
   private String display = null;
-  private Integer extension = null;
+  private Long extension = null;
   private Boolean acceptsSMS = null;
   private String userInput = null;
   private String e164 = null;
   private String countryCode = null;
   private String normalizationCountryCode = null;
+
+  public ExternalContactsContactChangedTopicPhoneNumber() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -49,17 +55,17 @@ public class ExternalContactsContactChangedTopicPhoneNumber  implements Serializ
 
   /**
    **/
-  public ExternalContactsContactChangedTopicPhoneNumber extension(Integer extension) {
+  public ExternalContactsContactChangedTopicPhoneNumber extension(Long extension) {
     this.extension = extension;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("extension")
-  public Integer getExtension() {
+  public Long getExtension() {
     return extension;
   }
-  public void setExtension(Integer extension) {
+  public void setExtension(Long extension) {
     this.extension = extension;
   }
 

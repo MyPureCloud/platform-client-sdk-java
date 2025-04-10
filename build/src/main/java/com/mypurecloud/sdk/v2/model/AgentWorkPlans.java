@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class AgentWorkPlans  implements Serializable {
   
   private UserReference user = null;
-  private List<Integer> workPlanLookupKeysPerWeek = new ArrayList<Integer>();
+  private List<Integer> workPlanLookupKeysPerWeek = null;
+
+  public AgentWorkPlans() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      workPlanLookupKeysPerWeek = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

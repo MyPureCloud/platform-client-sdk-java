@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.StatEventUserTopicMetricStats;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class StatEventUserTopicIntervalMetrics  implements Serializable {
   
   private String interval = null;
-  private List<StatEventUserTopicMetricStats> metrics = new ArrayList<StatEventUserTopicMetricStats>();
+  private List<StatEventUserTopicMetricStats> metrics = null;
+
+  public StatEventUserTopicIntervalMetrics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<StatEventUserTopicMetricStats>();
+    }
+  }
 
   
   /**

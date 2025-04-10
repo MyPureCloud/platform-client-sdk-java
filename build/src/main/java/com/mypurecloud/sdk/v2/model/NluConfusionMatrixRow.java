@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluConfusionMatrixColumn;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class NluConfusionMatrixRow  implements Serializable {
   
   private String name = null;
-  private List<NluConfusionMatrixColumn> columns = new ArrayList<NluConfusionMatrixColumn>();
+  private List<NluConfusionMatrixColumn> columns = null;
+
+  public NluConfusionMatrixRow() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      columns = new ArrayList<NluConfusionMatrixColumn>();
+    }
+  }
 
   
   /**

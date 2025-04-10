@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DetectedDialogAct;
 import com.mypurecloud.sdk.v2.model.DetectedIntent;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class NluDetectionOutput  implements Serializable {
   
-  private List<DetectedIntent> intents = new ArrayList<DetectedIntent>();
-  private List<DetectedDialogAct> dialogActs = new ArrayList<DetectedDialogAct>();
+  private List<DetectedIntent> intents = null;
+  private List<DetectedDialogAct> dialogActs = null;
+
+  public NluDetectionOutput() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<DetectedIntent>();
+      dialogActs = new ArrayList<DetectedDialogAct>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The detected intents.")

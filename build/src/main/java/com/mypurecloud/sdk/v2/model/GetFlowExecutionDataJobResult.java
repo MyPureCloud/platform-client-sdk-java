@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExecutionDataEntity;
@@ -28,7 +29,7 @@ public class GetFlowExecutionDataJobResult  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<ExecutionDataEntity> entities = new ArrayList<ExecutionDataEntity>();
+  private List<ExecutionDataEntity> entities = null;
 
   private static class JobStateEnumDeserializer extends StdDeserializer<JobStateEnum> {
     public JobStateEnumDeserializer() {
@@ -80,6 +81,12 @@ public class GetFlowExecutionDataJobResult  implements Serializable {
   }
   private JobStateEnum jobState = null;
   private String selfUri = null;
+
+  public GetFlowExecutionDataJobResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ExecutionDataEntity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

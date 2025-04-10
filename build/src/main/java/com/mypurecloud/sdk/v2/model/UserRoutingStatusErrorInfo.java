@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusUserParam;
 import io.swagger.annotations.ApiModel;
@@ -26,11 +27,17 @@ import java.io.Serializable;
 public class UserRoutingStatusErrorInfo  implements Serializable {
   
   private String errorCode = null;
-  private Integer status = null;
+  private Long status = null;
   private String correlationId = null;
   private String userMessage = null;
   private String userParamsMessage = null;
-  private List<UserRoutingStatusUserParam> userParams = new ArrayList<UserRoutingStatusUserParam>();
+  private List<UserRoutingStatusUserParam> userParams = null;
+
+  public UserRoutingStatusErrorInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userParams = new ArrayList<UserRoutingStatusUserParam>();
+    }
+  }
 
   
   /**
@@ -54,17 +61,17 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
   /**
    * The HTTP status code for this message. If left blank the status code from the HTTP response is used.
    **/
-  public UserRoutingStatusErrorInfo status(Integer status) {
+  public UserRoutingStatusErrorInfo status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The HTTP status code for this message. If left blank the status code from the HTTP response is used.")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResourceConditionNode;
 import io.swagger.annotations.ApiModel;
@@ -32,9 +33,16 @@ public class ResourcePermissionPolicy  implements Serializable {
   private String actionSetKey = null;
   private Boolean allowConditions = null;
   private ResourceConditionNode resourceConditionNode = null;
-  private List<String> namedResources = new ArrayList<String>();
+  private List<String> namedResources = null;
   private String resourceCondition = null;
-  private List<String> actionSet = new ArrayList<String>();
+  private List<String> actionSet = null;
+
+  public ResourcePermissionPolicy() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      namedResources = new ArrayList<String>();
+      actionSet = new ArrayList<String>();
+    }
+  }
 
   
   /**

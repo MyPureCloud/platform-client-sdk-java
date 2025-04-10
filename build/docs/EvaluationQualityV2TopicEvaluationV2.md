@@ -32,15 +32,15 @@
 | **previousAssigneeUserId** | **String** |  |  [optional] |
 | **assigneeApplicable** | **Boolean** |  |  [optional] |
 | **evaluationContextId** | **String** |  |  [optional] |
-| **disputeCount** | **Integer** |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
+| **disputeCount** | **Long** |  |  [optional] |
+| **version** | **Long** |  |  [optional] |
 | **previousStatus** | [**PreviousStatusEnum**](#Enum--PreviousStatusEnum) |  |  [optional] |
 | **declinedReview** | **Boolean** |  |  [optional] |
 | **retractedEvaluation** | [**EvaluationQualityV2TopicEvaluationReference**](EvaluationQualityV2TopicEvaluationReference) |  |  [optional] |
-| **rescoreCount** | **Integer** |  |  [optional] |
+| **rescoreCount** | **Long** |  |  [optional] |
 | **evaluatorCommentHasUpdated** | **Boolean** |  |  [optional] |
 | **agentCommentHasUpdated** | **Boolean** |  |  [optional] |
-| **previousRescoreCount** | **Integer** |  |  [optional] |
+| **previousRescoreCount** | **Long** |  |  [optional] |
 | **previousEvaluatorUserId** | **String** |  |  [optional] |
 
 
@@ -70,4 +70,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

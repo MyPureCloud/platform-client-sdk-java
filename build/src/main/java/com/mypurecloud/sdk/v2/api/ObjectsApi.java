@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionCursorListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
@@ -18,8 +19,10 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsDeletedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
@@ -314,6 +317,88 @@ public class ObjectsApi {
   }
 
   /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AuthzDivisionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionEntityListing getAuthorizationDivisionsDeleted(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionsDeleted(createGetAuthorizationDivisionsDeletedRequest(pageNumber, pageSize));
+  }
+
+  /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AuthzDivisionEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionEntityListing> getAuthorizationDivisionsDeletedWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionsDeleted(createGetAuthorizationDivisionsDeletedRequest(pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionsDeletedRequest createGetAuthorizationDivisionsDeletedRequest(Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionsDeletedRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param request The request object
+   * @return AuthzDivisionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionEntityListing getAuthorizationDivisionsDeleted(GetAuthorizationDivisionsDeletedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzDivisionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzDivisionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionEntityListing> getAuthorizationDivisionsDeleted(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzDivisionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionEntityListing> response = (ApiResponse<AuthzDivisionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionEntityListing> response = (ApiResponse<AuthzDivisionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
    * @return AuthzDivision
@@ -457,6 +542,100 @@ public class ObjectsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param id Optionally request specific divisions by their IDs (optional)
+   * @param name Optionally request specific divisions by division name (optional)
+   * @return AuthzDivisionCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionCursorListing getAuthorizationDivisionsQuery(String before, String after, String pageSize, List<String> id, String name) throws IOException, ApiException {
+    return  getAuthorizationDivisionsQuery(createGetAuthorizationDivisionsQueryRequest(before, after, pageSize, id, name));
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param id Optionally request specific divisions by their IDs (optional)
+   * @param name Optionally request specific divisions by division name (optional)
+   * @return AuthzDivisionCursorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionCursorListing> getAuthorizationDivisionsQueryWithHttpInfo(String before, String after, String pageSize, List<String> id, String name) throws IOException {
+    return getAuthorizationDivisionsQuery(createGetAuthorizationDivisionsQueryRequest(before, after, pageSize, id, name).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionsQueryRequest createGetAuthorizationDivisionsQueryRequest(String before, String after, String pageSize, List<String> id, String name) {
+    return GetAuthorizationDivisionsQueryRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withId(id)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param request The request object
+   * @return AuthzDivisionCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionCursorListing getAuthorizationDivisionsQuery(GetAuthorizationDivisionsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzDivisionCursorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzDivisionCursorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionCursorListing> getAuthorizationDivisionsQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzDivisionCursorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionCursorListing> response = (ApiResponse<AuthzDivisionCursorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionCursorListing> response = (ApiResponse<AuthzDivisionCursorListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

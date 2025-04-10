@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -87,8 +88,14 @@ public class DependencyStatus  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<FailedObject> failedObjects = new ArrayList<FailedObject>();
+  private List<FailedObject> failedObjects = null;
   private String selfUri = null;
+
+  public DependencyStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      failedObjects = new ArrayList<FailedObject>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HistoricalShrinkageActivityCategoryResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalShrinkageAggregateResponse;
@@ -31,8 +32,15 @@ public class HistoricalShrinkageResult  implements Serializable {
   private Integer totalScheduledDurationSeconds = null;
   private Integer totalLoggedInDurationSeconds = null;
   private HistoricalShrinkageAggregateResponse aggregatedShrinkage = null;
-  private List<HistoricalShrinkageActivityCategoryResponse> shrinkageForActivityCategories = new ArrayList<HistoricalShrinkageActivityCategoryResponse>();
-  private List<String> businessUnitIds = new ArrayList<String>();
+  private List<HistoricalShrinkageActivityCategoryResponse> shrinkageForActivityCategories = null;
+  private List<String> businessUnitIds = null;
+
+  public HistoricalShrinkageResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shrinkageForActivityCategories = new ArrayList<HistoricalShrinkageActivityCategoryResponse>();
+      businessUnitIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

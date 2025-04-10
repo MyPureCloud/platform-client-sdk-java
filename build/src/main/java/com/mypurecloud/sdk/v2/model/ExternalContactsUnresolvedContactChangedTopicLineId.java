@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicLineUserId;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class ExternalContactsUnresolvedContactChangedTopicLineId  implements Serializable {
   
-  private List<ExternalContactsUnresolvedContactChangedTopicLineUserId> ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicLineUserId>();
+  private List<ExternalContactsUnresolvedContactChangedTopicLineUserId> ids = null;
   private String displayName = null;
+
+  public ExternalContactsUnresolvedContactChangedTopicLineId() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicLineUserId>();
+    }
+  }
 
   
   /**

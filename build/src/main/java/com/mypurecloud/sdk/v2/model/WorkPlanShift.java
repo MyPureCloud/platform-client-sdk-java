@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
@@ -94,10 +95,16 @@ public class WorkPlanShift  implements Serializable {
     }
   }
   private DayOffRuleEnum dayOffRule = null;
-  private List<WorkPlanActivity> activities = new ArrayList<WorkPlanActivity>();
+  private List<WorkPlanActivity> activities = null;
   private String id = null;
   private Boolean delete = null;
   private String validationId = null;
+
+  public WorkPlanShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<WorkPlanActivity>();
+    }
+  }
 
   
   /**

@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **importStatus** | [**DialerDnclistConfigChangeImportStatus**](DialerDnclistConfigChangeImportStatus) |  |  [optional] |
-| **size** | **Integer** | the number of phone numbers in the do not call list |  [optional] |
+| **size** | **Long** | the number of phone numbers in the do not call list |  [optional] |
 | **dncSourceType** | [**DncSourceTypeEnum**](#Enum--DncSourceTypeEnum) | the type of dnc list being created, rds (csv file), gryphon, or dnc.com |  [optional] |
 | **loginId** | **String** | the loginId if the dncSourceType is dnc.com |  [optional] |
 | **dncCodes** | **List&lt;String&gt;** | the list of dnc.com codes to be treated as DNC |  [optional] |
@@ -18,7 +18,7 @@
 | **name** | **String** | The UI-visible name of the object |  [optional] |
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
-| **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
 
 
 ## Enum: DncSourceTypeEnum
@@ -42,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecurrenceEndSettings;
 import com.mypurecloud.sdk.v2.model.RecurrencePeriod;
@@ -26,6 +27,11 @@ public class RecurrenceSettings  implements Serializable {
   private RecurrencePeriod recurrencePeriod = null;
   private RecurrencePeriod minimumTimeBetweenOccurrences = null;
   private RecurrenceEndSettings endAfter = null;
+
+  public RecurrenceSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

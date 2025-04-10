@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicDivisionEntityRef;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicDomainEntityRef;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class QueueConversationScreenShareEventTopicConversationDivisionMembership  implements Serializable {
   
   private QueueConversationScreenShareEventTopicDomainEntityRef division = null;
-  private List<QueueConversationScreenShareEventTopicDivisionEntityRef> entities = new ArrayList<QueueConversationScreenShareEventTopicDivisionEntityRef>();
+  private List<QueueConversationScreenShareEventTopicDivisionEntityRef> entities = null;
+
+  public QueueConversationScreenShareEventTopicConversationDivisionMembership() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<QueueConversationScreenShareEventTopicDivisionEntityRef>();
+    }
+  }
 
   
   /**

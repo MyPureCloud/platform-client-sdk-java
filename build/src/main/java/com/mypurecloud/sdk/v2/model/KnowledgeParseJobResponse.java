@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseImportResult;
@@ -30,7 +31,7 @@ public class KnowledgeParseJobResponse  implements Serializable {
   
   private String id = null;
   private String downloadURL = null;
-  private List<String> hints = new ArrayList<String>();
+  private List<String> hints = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -85,12 +86,19 @@ public class KnowledgeParseJobResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<KnowledgeParseRecord> parseResults = new ArrayList<KnowledgeParseRecord>();
+  private List<KnowledgeParseRecord> parseResults = null;
   private KnowledgeParseImportResult importResult = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public KnowledgeParseJobResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      hints = new ArrayList<String>();
+      parseResults = new ArrayList<KnowledgeParseRecord>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Id of the parse job")

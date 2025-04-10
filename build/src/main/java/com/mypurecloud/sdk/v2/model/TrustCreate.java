@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +28,16 @@ public class TrustCreate  implements Serializable {
   
   private String pairingId = null;
   private Boolean enabled = null;
-  private List<TrustMemberCreate> users = new ArrayList<TrustMemberCreate>();
-  private List<TrustMemberCreate> groups = new ArrayList<TrustMemberCreate>();
+  private List<TrustMemberCreate> users = null;
+  private List<TrustMemberCreate> groups = null;
   private Date dateExpired = null;
+
+  public TrustCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<TrustMemberCreate>();
+      groups = new ArrayList<TrustMemberCreate>();
+    }
+  }
 
   
   /**

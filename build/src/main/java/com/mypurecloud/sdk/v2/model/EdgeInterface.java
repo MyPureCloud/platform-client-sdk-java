@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,7 @@ public class EdgeInterface  implements Serializable {
   private String name = null;
   private String macAddress = null;
   private String ifName = null;
-  private List<DomainEntityRef> endpoints = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> endpoints = null;
 
   private static class LineTypesEnumDeserializer extends StdDeserializer<LineTypesEnum> {
     public LineTypesEnumDeserializer() {
@@ -78,8 +79,15 @@ public class EdgeInterface  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<LineTypesEnum> lineTypes = new ArrayList<LineTypesEnum>();
+  private List<LineTypesEnum> lineTypes = null;
   private String addressFamilyId = null;
+
+  public EdgeInterface() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      endpoints = new ArrayList<DomainEntityRef>();
+      lineTypes = new ArrayList<LineTypesEnum>();
+    }
+  }
 
   
   /**

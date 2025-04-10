@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DisallowedEntityLearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignment;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class LearningAssignmentBulkAddResponse  implements Serializable {
   
-  private List<LearningAssignment> entities = new ArrayList<LearningAssignment>();
-  private List<DisallowedEntityLearningAssignmentItem> disallowedEntities = new ArrayList<DisallowedEntityLearningAssignmentItem>();
+  private List<LearningAssignment> entities = null;
+  private List<DisallowedEntityLearningAssignmentItem> disallowedEntities = null;
+
+  public LearningAssignmentBulkAddResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<LearningAssignment>();
+      disallowedEntities = new ArrayList<DisallowedEntityLearningAssignmentItem>();
+    }
+  }
 
   
   /**

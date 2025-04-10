@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConstraintConflictMessage;
 import com.mypurecloud.sdk.v2.model.WorkPlanConfigurationViolationMessage;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class ValidateWorkPlanMessages  implements Serializable {
   
-  private List<WorkPlanConfigurationViolationMessage> violationMessages = new ArrayList<WorkPlanConfigurationViolationMessage>();
+  private List<WorkPlanConfigurationViolationMessage> violationMessages = null;
   private ConstraintConflictMessage constraintConflictMessage = null;
+
+  public ValidateWorkPlanMessages() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      violationMessages = new ArrayList<WorkPlanConfigurationViolationMessage>();
+    }
+  }
 
   
   /**

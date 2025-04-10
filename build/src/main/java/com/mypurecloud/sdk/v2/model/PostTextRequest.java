@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AmazonLexRequest;
@@ -84,7 +85,7 @@ public class PostTextRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotChannelsEnum> botChannels = new ArrayList<BotChannelsEnum>();
+  private List<BotChannelsEnum> botChannels = null;
   private String botCorrelationId = null;
 
   private static class MessagingPlatformTypeEnumDeserializer extends StdDeserializer<MessagingPlatformTypeEnum> {
@@ -154,6 +155,12 @@ public class PostTextRequest  implements Serializable {
   private GoogleDialogflowCustomSettings googleDialogflow = null;
   private GenesysBotConnector genesysBotConnector = null;
   private NuanceMixDlgSettings nuanceMixDlg = null;
+
+  public PostTextRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      botChannels = new ArrayList<BotChannelsEnum>();
+    }
+  }
 
   
   /**

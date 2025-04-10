@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestion;
 import com.mypurecloud.sdk.v2.model.VisibilityCondition;
@@ -34,8 +35,14 @@ public class EvaluationQuestionGroup  implements Serializable {
   private Boolean naEnabled = null;
   private Float weight = null;
   private Boolean manualWeight = null;
-  private List<EvaluationQuestion> questions = new ArrayList<EvaluationQuestion>();
+  private List<EvaluationQuestion> questions = null;
   private VisibilityCondition visibilityCondition = null;
+
+  public EvaluationQuestionGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questions = new ArrayList<EvaluationQuestion>();
+    }
+  }
 
   
   /**

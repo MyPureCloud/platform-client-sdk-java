@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -27,7 +28,7 @@ public class SubjectDivisionGrants  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<Division> divisions = new ArrayList<Division>();
+  private List<Division> divisions = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -81,6 +82,12 @@ public class SubjectDivisionGrants  implements Serializable {
   }
   private TypeEnum type = null;
   private String selfUri = null;
+
+  public SubjectDivisionGrants() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      divisions = new ArrayList<Division>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

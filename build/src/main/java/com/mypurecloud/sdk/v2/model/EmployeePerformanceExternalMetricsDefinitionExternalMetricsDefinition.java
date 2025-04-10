@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -77,7 +78,7 @@ public class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefiniti
   }
   private UnitEnum unit = null;
   private String unitDefinition = null;
-  private Integer precision = null;
+  private Long precision = null;
 
   private static class DefaultObjectiveTypeEnumDeserializer extends StdDeserializer<DefaultObjectiveTypeEnum> {
     public DefaultObjectiveTypeEnumDeserializer() {
@@ -128,10 +129,15 @@ public class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefiniti
     }
   }
   private DefaultObjectiveTypeEnum defaultObjectiveType = null;
-  private Integer retentionMonths = null;
+  private Long retentionMonths = null;
   private Boolean enabled = null;
   private Boolean inUse = null;
   private Date dateLastRefreshed = null;
+
+  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -204,17 +210,17 @@ public class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefiniti
 
   /**
    **/
-  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition precision(Integer precision) {
+  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition precision(Long precision) {
     this.precision = precision;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("precision")
-  public Integer getPrecision() {
+  public Long getPrecision() {
     return precision;
   }
-  public void setPrecision(Integer precision) {
+  public void setPrecision(Long precision) {
     this.precision = precision;
   }
 
@@ -238,17 +244,17 @@ public class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefiniti
 
   /**
    **/
-  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition retentionMonths(Integer retentionMonths) {
+  public EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition retentionMonths(Long retentionMonths) {
     this.retentionMonths = retentionMonths;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("retentionMonths")
-  public Integer getRetentionMonths() {
+  public Long getRetentionMonths() {
     return retentionMonths;
   }
-  public void setRetentionMonths(Integer retentionMonths) {
+  public void setRetentionMonths(Long retentionMonths) {
     this.retentionMonths = retentionMonths;
   }
 

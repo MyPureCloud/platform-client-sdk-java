@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentQuestionGroupScore;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,7 @@ public class AssessmentScoringSet  implements Serializable {
   private Float totalScore = null;
   private Float totalCriticalScore = null;
   private Float totalNonCriticalScore = null;
-  private List<AssessmentQuestionGroupScore> questionGroupScores = new ArrayList<AssessmentQuestionGroupScore>();
+  private List<AssessmentQuestionGroupScore> questionGroupScores = null;
 
   private static class FailureReasonsEnumDeserializer extends StdDeserializer<FailureReasonsEnum> {
     public FailureReasonsEnumDeserializer() {
@@ -75,10 +76,17 @@ public class AssessmentScoringSet  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FailureReasonsEnum> failureReasons = new ArrayList<FailureReasonsEnum>();
+  private List<FailureReasonsEnum> failureReasons = null;
   private String comments = null;
   private String agentComments = null;
   private Boolean isPassed = null;
+
+  public AssessmentScoringSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroupScores = new ArrayList<AssessmentQuestionGroupScore>();
+      failureReasons = new ArrayList<FailureReasonsEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The total score of the answers")

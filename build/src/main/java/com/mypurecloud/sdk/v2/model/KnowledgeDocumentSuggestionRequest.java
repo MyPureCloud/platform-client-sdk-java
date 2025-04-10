@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentQuery;
 import com.mypurecloud.sdk.v2.model.DocumentQueryInterval;
@@ -28,6 +29,11 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
   private Boolean includeDraftDocuments = null;
   private DocumentQueryInterval interval = null;
   private DocumentQuery filter = null;
+
+  public KnowledgeDocumentSuggestionRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

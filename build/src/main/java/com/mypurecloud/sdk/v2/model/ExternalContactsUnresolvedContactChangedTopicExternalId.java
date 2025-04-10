@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicExternalSource;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class ExternalContactsUnresolvedContactChangedTopicExternalId  implements
   
   private ExternalContactsUnresolvedContactChangedTopicExternalSource externalSource = null;
   private String value = null;
+
+  public ExternalContactsUnresolvedContactChangedTopicExternalId() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

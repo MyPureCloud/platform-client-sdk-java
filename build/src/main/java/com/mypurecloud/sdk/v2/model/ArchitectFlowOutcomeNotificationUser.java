@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationHomeOrganization;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class ArchitectFlowOutcomeNotificationUser  implements Serializable {
   private String id = null;
   private String name = null;
   private ArchitectFlowOutcomeNotificationHomeOrganization homeOrg = null;
+
+  public ArchitectFlowOutcomeNotificationUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

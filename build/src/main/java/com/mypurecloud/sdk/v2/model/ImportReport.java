@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ImportError;
 import com.mypurecloud.sdk.v2.model.ResultCounters;
@@ -25,10 +26,16 @@ import java.io.Serializable;
 
 public class ImportReport  implements Serializable {
   
-  private List<ImportError> errors = new ArrayList<ImportError>();
+  private List<ImportError> errors = null;
   private ResultCounters validated = null;
   private ResultCounters imported = null;
   private Integer totalDocuments = null;
+
+  public ImportReport() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errors = new ArrayList<ImportError>();
+    }
+  }
 
   
   /**

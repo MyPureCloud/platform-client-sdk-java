@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.BaseTopicEntitiy;
@@ -30,14 +31,21 @@ public class Program  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean published = null;
-  private List<BaseTopicEntitiy> topics = new ArrayList<BaseTopicEntitiy>();
-  private List<String> tags = new ArrayList<String>();
+  private List<BaseTopicEntitiy> topics = null;
+  private List<String> tags = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private AddressableEntityRef publishedBy = null;
   private Date datePublished = null;
   private AddressableEntityRef topicLinksJob = null;
   private String selfUri = null;
+
+  public Program() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      topics = new ArrayList<BaseTopicEntitiy>();
+      tags = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

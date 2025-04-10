@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -93,6 +94,11 @@ public class FacebookIntegration  implements Serializable {
   private CreateStatusEnum createStatus = null;
   private ErrorBody createError = null;
   private String selfUri = null;
+
+  public FacebookIntegration() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", required = true, value = "A unique Integration Id.")

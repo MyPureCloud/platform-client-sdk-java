@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemDateBasedConditionUpdate;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class WorkitemDateBasedRuleUpdate  implements Serializable {
   
   private String name = null;
   private WorkitemDateBasedConditionUpdate condition = null;
+
+  public WorkitemDateBasedRuleUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

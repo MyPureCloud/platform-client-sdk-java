@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SummaryAggregateQueryPredicate;
@@ -73,7 +74,13 @@ public class SummaryAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SummaryAggregateQueryPredicate> predicates = new ArrayList<SummaryAggregateQueryPredicate>();
+  private List<SummaryAggregateQueryPredicate> predicates = null;
+
+  public SummaryAggregateQueryClause() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predicates = new ArrayList<SummaryAggregateQueryPredicate>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicErrorDetails;
@@ -32,7 +33,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
   
   private ConversationMessageEventTopicUriReference message = null;
   private Date messageTime = null;
-  private Integer messageSegmentCount = null;
+  private Long messageSegmentCount = null;
 
   private static class MessageStatusEnumDeserializer extends StdDeserializer<MessageStatusEnum> {
     public MessageStatusEnumDeserializer() {
@@ -88,8 +89,8 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private List<ConversationMessageEventTopicMessageMedia> media = new ArrayList<ConversationMessageEventTopicMessageMedia>();
-  private List<ConversationMessageEventTopicMessageSticker> stickers = new ArrayList<ConversationMessageEventTopicMessageSticker>();
+  private List<ConversationMessageEventTopicMessageMedia> media = null;
+  private List<ConversationMessageEventTopicMessageSticker> stickers = null;
   private ConversationMessageEventTopicErrorDetails errorInfo = null;
   private ConversationMessageEventTopicMessageMetadata messageMetadata = null;
 
@@ -141,6 +142,13 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
   }
   private SocialVisibilityEnum socialVisibility = null;
 
+  public ConversationMessageEventTopicMessageDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<ConversationMessageEventTopicMessageMedia>();
+      stickers = new ArrayList<ConversationMessageEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    **/
@@ -178,17 +186,17 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
 
   /**
    **/
-  public ConversationMessageEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
+  public ConversationMessageEventTopicMessageDetails messageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("messageSegmentCount")
-  public Integer getMessageSegmentCount() {
+  public Long getMessageSegmentCount() {
     return messageSegmentCount;
   }
-  public void setMessageSegmentCount(Integer messageSegmentCount) {
+  public void setMessageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
   }
 

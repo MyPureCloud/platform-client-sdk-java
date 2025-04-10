@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuIntradayDataGroup;
@@ -126,10 +127,17 @@ public class BuIntradayResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
+  private List<CategoriesEnum> categories = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private BuScheduleReference schedule = null;
-  private List<BuIntradayDataGroup> intradayDataGroupings = new ArrayList<BuIntradayDataGroup>();
+  private List<BuIntradayDataGroup> intradayDataGroupings = null;
+
+  public BuIntradayResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      categories = new ArrayList<CategoriesEnum>();
+      intradayDataGroupings = new ArrayList<BuIntradayDataGroup>();
+    }
+  }
 
   
   /**

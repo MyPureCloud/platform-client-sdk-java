@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Daily;
 import com.mypurecloud.sdk.v2.model.QuarterHourly;
@@ -25,6 +26,11 @@ public class HistoricalData  implements Serializable {
   
   private Daily daily = null;
   private QuarterHourly quarterHour = null;
+
+  public HistoricalData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

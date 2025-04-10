@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 
 public class SkillGroupMemberDivisions  implements Serializable {
   
-  private List<String> addDivisionIds = new ArrayList<String>();
-  private List<String> removeDivisionIds = new ArrayList<String>();
+  private List<String> addDivisionIds = null;
+  private List<String> removeDivisionIds = null;
+
+  public SkillGroupMemberDivisions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      addDivisionIds = new ArrayList<String>();
+      removeDivisionIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

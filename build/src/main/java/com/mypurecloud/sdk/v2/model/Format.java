@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -110,7 +111,13 @@ public class Format  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlagsEnum> flags = new ArrayList<FlagsEnum>();
+  private List<FlagsEnum> flags = null;
+
+  public Format() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flags = new ArrayList<FlagsEnum>();
+    }
+  }
 
   
   /**

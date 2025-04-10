@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneySurveyQuestion;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class ActionSurvey  implements Serializable {
   
-  private List<JourneySurveyQuestion> questions = new ArrayList<JourneySurveyQuestion>();
+  private List<JourneySurveyQuestion> questions = null;
+
+  public ActionSurvey() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questions = new ArrayList<JourneySurveyQuestion>();
+    }
+  }
 
   
   /**

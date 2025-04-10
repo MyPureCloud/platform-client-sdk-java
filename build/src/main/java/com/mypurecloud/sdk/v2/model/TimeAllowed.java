@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeSlot;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,15 @@ import java.io.Serializable;
 
 public class TimeAllowed  implements Serializable {
   
-  private List<TimeSlot> timeSlots = new ArrayList<TimeSlot>();
+  private List<TimeSlot> timeSlots = null;
   private String timeZoneId = null;
   private Boolean empty = null;
+
+  public TimeAllowed() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      timeSlots = new ArrayList<TimeSlot>();
+    }
+  }
 
   
   /**

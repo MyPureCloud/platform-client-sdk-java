@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LearningShareableContentObject;
@@ -129,7 +130,13 @@ public class LearningModulePreviewGetScoStructure  implements Serializable {
   private CompletionStatusEnum completionStatus = null;
   private Float percentageScore = null;
   private LearningShareableContentObject shareableContentObject = null;
-  private List<LearningModulePreviewGetScoStructure> children = new ArrayList<LearningModulePreviewGetScoStructure>();
+  private List<LearningModulePreviewGetScoStructure> children = null;
+
+  public LearningModulePreviewGetScoStructure() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      children = new ArrayList<LearningModulePreviewGetScoStructure>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The id of this SCO in the course manifest")

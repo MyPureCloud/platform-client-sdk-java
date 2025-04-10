@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TaskManagementErrorDetails;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
@@ -27,6 +28,11 @@ public class AutoStatusTransitionDetail  implements Serializable {
   private WorkitemStatusReference nextStatus = null;
   private Date dateOfTransition = null;
   private TaskManagementErrorDetails errorDetails = null;
+
+  public AutoStatusTransitionDetail() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

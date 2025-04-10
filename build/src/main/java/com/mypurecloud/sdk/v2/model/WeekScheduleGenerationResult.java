@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationWarning;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,14 @@ public class WeekScheduleGenerationResult  implements Serializable {
   
   private Boolean failed = null;
   private String runId = null;
-  private List<ScheduleGenerationWarning> agentWarnings = new ArrayList<ScheduleGenerationWarning>();
+  private List<ScheduleGenerationWarning> agentWarnings = null;
   private Integer agentWarningCount = null;
+
+  public WeekScheduleGenerationResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentWarnings = new ArrayList<ScheduleGenerationWarning>();
+    }
+  }
 
   
   /**

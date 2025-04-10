@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MuteSnoozeFields;
@@ -74,9 +75,15 @@ public class CommonAlertBulkUpdateRequest  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<String> alertIds = new ArrayList<String>();
+  private List<String> alertIds = null;
   private MuteSnoozeFields muteSnooze = null;
   private UnreadFields unread = null;
+
+  public CommonAlertBulkUpdateRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      alertIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

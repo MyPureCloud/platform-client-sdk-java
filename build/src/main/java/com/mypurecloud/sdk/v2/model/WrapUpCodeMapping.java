@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -80,9 +81,15 @@ public class WrapUpCodeMapping  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DefaultSetEnum> defaultSet = new ArrayList<DefaultSetEnum>();
+  private List<DefaultSetEnum> defaultSet = null;
   private Map<String, List<String>> mapping = null;
   private String selfUri = null;
+
+  public WrapUpCodeMapping() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      defaultSet = new ArrayList<DefaultSetEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

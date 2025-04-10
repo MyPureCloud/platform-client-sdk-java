@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluConfusionMatrixRow;
 import com.mypurecloud.sdk.v2.model.NluDomainVersion;
@@ -27,8 +28,14 @@ import java.io.Serializable;
 public class NluDomainVersionQualityReport  implements Serializable {
   
   private NluDomainVersion version = null;
-  private List<NluConfusionMatrixRow> confusionMatrix = new ArrayList<NluConfusionMatrixRow>();
+  private List<NluConfusionMatrixRow> confusionMatrix = null;
   private NluQualityReportSummary summary = null;
+
+  public NluDomainVersionQualityReport() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      confusionMatrix = new ArrayList<NluConfusionMatrixRow>();
+    }
+  }
 
   
   /**

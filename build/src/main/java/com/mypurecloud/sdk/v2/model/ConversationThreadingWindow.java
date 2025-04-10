@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindowSetting;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class ConversationThreadingWindow  implements Serializable {
   
   private String id = null;
-  private List<ConversationThreadingWindowSetting> settings = new ArrayList<ConversationThreadingWindowSetting>();
+  private List<ConversationThreadingWindowSetting> settings = null;
   private Long defaultTimeoutMinutes = null;
+
+  public ConversationThreadingWindow() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      settings = new ArrayList<ConversationThreadingWindowSetting>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

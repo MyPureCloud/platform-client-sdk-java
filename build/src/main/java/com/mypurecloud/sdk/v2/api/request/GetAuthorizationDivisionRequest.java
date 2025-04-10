@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionCursorListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 

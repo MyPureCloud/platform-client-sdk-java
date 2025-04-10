@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PersistentConnectionChangeTopicErrorInfoDetails;
 import io.swagger.annotations.ApiModel;
@@ -30,7 +31,13 @@ public class PersistentConnectionChangeTopicErrorInfo  implements Serializable {
   private String code = null;
   private String userMessage = null;
   private Map<String, String> userParams = null;
-  private List<PersistentConnectionChangeTopicErrorInfoDetails> nestedErrorDetails = new ArrayList<PersistentConnectionChangeTopicErrorInfoDetails>();
+  private List<PersistentConnectionChangeTopicErrorInfoDetails> nestedErrorDetails = null;
+
+  public PersistentConnectionChangeTopicErrorInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      nestedErrorDetails = new ArrayList<PersistentConnectionChangeTopicErrorInfoDetails>();
+    }
+  }
 
   
   /**

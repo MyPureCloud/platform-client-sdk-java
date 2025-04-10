@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleRunTopicBuScheduleReference;
@@ -83,12 +84,18 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private Integer weekCount = null;
+  private Long weekCount = null;
   private WfmBuScheduleRunTopicBuScheduleReference schedule = null;
   private WfmBuScheduleRunTopicUserReference schedulingCanceledBy = null;
   private String schedulingCompletedTime = null;
-  private Integer messageCount = null;
-  private List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<WfmBuScheduleRunTopicSchedulerMessageSeverityCount>();
+  private Long messageCount = null;
+  private List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> messageSeverityCounts = null;
+
+  public WfmBuScheduleRunTopicBuScheduleRun() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageSeverityCounts = new ArrayList<WfmBuScheduleRunTopicSchedulerMessageSeverityCount>();
+    }
+  }
 
   
   /**
@@ -161,17 +168,17 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
 
   /**
    **/
-  public WfmBuScheduleRunTopicBuScheduleRun weekCount(Integer weekCount) {
+  public WfmBuScheduleRunTopicBuScheduleRun weekCount(Long weekCount) {
     this.weekCount = weekCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weekCount")
-  public Integer getWeekCount() {
+  public Long getWeekCount() {
     return weekCount;
   }
-  public void setWeekCount(Integer weekCount) {
+  public void setWeekCount(Long weekCount) {
     this.weekCount = weekCount;
   }
 
@@ -229,17 +236,17 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
 
   /**
    **/
-  public WfmBuScheduleRunTopicBuScheduleRun messageCount(Integer messageCount) {
+  public WfmBuScheduleRunTopicBuScheduleRun messageCount(Long messageCount) {
     this.messageCount = messageCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("messageCount")
-  public Integer getMessageCount() {
+  public Long getMessageCount() {
     return messageCount;
   }
-  public void setMessageCount(Integer messageCount) {
+  public void setMessageCount(Long messageCount) {
     this.messageCount = messageCount;
   }
 

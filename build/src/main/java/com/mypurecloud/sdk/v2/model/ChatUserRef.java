@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ChatPresence;
 import com.mypurecloud.sdk.v2.model.Contact;
@@ -30,8 +31,14 @@ public class ChatUserRef  implements Serializable {
   private String selfUri = null;
   private String jid = null;
   private Boolean inactive = null;
-  private List<Contact> integrations = new ArrayList<Contact>();
+  private List<Contact> integrations = null;
   private ChatPresence presence = null;
+
+  public ChatUserRef() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      integrations = new ArrayList<Contact>();
+    }
+  }
 
   
   /**

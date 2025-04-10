@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
@@ -25,6 +26,11 @@ public class SurveyFormAndScoringSet  implements Serializable {
   
   private SurveyForm surveyForm = null;
   private SurveyScoringSet answers = null;
+
+  public SurveyFormAndScoringSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

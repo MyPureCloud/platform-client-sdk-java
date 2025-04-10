@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
@@ -95,10 +96,16 @@ public class BuScheduleRun  implements Serializable {
   private UserReference schedulingCanceledBy = null;
   private Date schedulingCompletedTime = null;
   private Integer messageCount = null;
-  private List<SchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+  private List<SchedulerMessageSeverityCount> messageSeverityCounts = null;
   private ReschedulingOptionsRunResponse reschedulingOptions = null;
   private Date reschedulingResultExpiration = null;
   private String selfUri = null;
+
+  public BuScheduleRun() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

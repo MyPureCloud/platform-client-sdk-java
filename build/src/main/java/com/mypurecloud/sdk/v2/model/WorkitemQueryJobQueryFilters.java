@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobQueryFiltersCriteria;
@@ -120,7 +121,13 @@ public class WorkitemQueryJobQueryFilters  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<WorkitemQueryJobQueryFiltersCriteria> criteria = new ArrayList<WorkitemQueryJobQueryFiltersCriteria>();
+  private List<WorkitemQueryJobQueryFiltersCriteria> criteria = null;
+
+  public WorkitemQueryJobQueryFilters() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      criteria = new ArrayList<WorkitemQueryJobQueryFiltersCriteria>();
+    }
+  }
 
   
   /**

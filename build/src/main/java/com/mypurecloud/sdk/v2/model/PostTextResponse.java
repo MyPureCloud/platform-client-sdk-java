@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PostTextMessage;
@@ -76,7 +77,7 @@ public class PostTextResponse  implements Serializable {
     }
   }
   private BotStateEnum botState = null;
-  private List<PostTextMessage> replyMessages = new ArrayList<PostTextMessage>();
+  private List<PostTextMessage> replyMessages = null;
   private String intentName = null;
   private Map<String, String> slots = null;
   private String botCorrelationId = null;
@@ -85,6 +86,12 @@ public class PostTextResponse  implements Serializable {
   private Map<String, Object> genesysDialogEngine = null;
   private Map<String, Object> genesysBotConnector = null;
   private Map<String, Object> nuanceMixDlg = null;
+
+  public PostTextResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      replyMessages = new ArrayList<PostTextMessage>();
+    }
+  }
 
   
   /**

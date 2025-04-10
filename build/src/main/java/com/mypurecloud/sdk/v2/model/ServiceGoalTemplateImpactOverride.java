@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class ServiceGoalTemplateImpactOverride  implements Serializable {
   
   private Boolean enabled = null;
   private WfmServiceGoalImpactSettings impact = null;
+
+  public ServiceGoalTemplateImpactOverride() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

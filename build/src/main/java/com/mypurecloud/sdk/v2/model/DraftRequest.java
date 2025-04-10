@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DraftIntents;
 import com.mypurecloud.sdk.v2.model.DraftTopicRequest;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class DraftRequest  implements Serializable {
   
-  private List<DraftIntents> intents = new ArrayList<DraftIntents>();
-  private List<DraftTopicRequest> topics = new ArrayList<DraftTopicRequest>();
+  private List<DraftIntents> intents = null;
+  private List<DraftTopicRequest> topics = null;
+
+  public DraftRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<DraftIntents>();
+      topics = new ArrayList<DraftTopicRequest>();
+    }
+  }
 
   
   /**

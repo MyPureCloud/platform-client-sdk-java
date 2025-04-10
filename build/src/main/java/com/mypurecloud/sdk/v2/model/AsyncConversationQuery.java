@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
@@ -29,11 +30,11 @@ import java.io.Serializable;
 
 public class AsyncConversationQuery  implements Serializable {
   
-  private List<ConversationDetailQueryFilter> conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
-  private List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
-  private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
-  private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
-  private List<ResolutionDetailQueryFilter> resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
+  private List<ConversationDetailQueryFilter> conversationFilters = null;
+  private List<SegmentDetailQueryFilter> segmentFilters = null;
+  private List<EvaluationDetailQueryFilter> evaluationFilters = null;
+  private List<SurveyDetailQueryFilter> surveyFilters = null;
+  private List<ResolutionDetailQueryFilter> resolutionFilters = null;
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
     public OrderEnumDeserializer() {
@@ -136,6 +137,16 @@ public class AsyncConversationQuery  implements Serializable {
   private String interval = null;
   private Integer limit = null;
   private Boolean startOfDayIntervalMatching = null;
+
+  public AsyncConversationQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
+      segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
+      evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
+      surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
+      resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregateMetricData;
 import com.mypurecloud.sdk.v2.model.AggregateViewData;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class StatisticalResponse  implements Serializable {
   
   private String interval = null;
-  private List<AggregateMetricData> metrics = new ArrayList<AggregateMetricData>();
-  private List<AggregateViewData> views = new ArrayList<AggregateViewData>();
+  private List<AggregateMetricData> metrics = null;
+  private List<AggregateViewData> views = null;
+
+  public StatisticalResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<AggregateMetricData>();
+      views = new ArrayList<AggregateViewData>();
+    }
+  }
 
   
   /**

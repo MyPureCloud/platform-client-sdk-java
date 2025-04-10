@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PolicyAttribute;
 import com.mypurecloud.sdk.v2.model.TypedAttribute;
@@ -28,9 +29,15 @@ public class PolicyAttributeSet  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<PolicyAttribute> policyAttributes = new ArrayList<PolicyAttribute>();
+  private List<PolicyAttribute> policyAttributes = null;
   private Map<String, TypedAttribute> presetAttributes = null;
   private String selfUri = null;
+
+  public PolicyAttributeSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      policyAttributes = new ArrayList<PolicyAttribute>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

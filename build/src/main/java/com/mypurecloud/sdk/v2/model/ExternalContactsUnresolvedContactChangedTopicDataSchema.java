@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,12 @@ import java.io.Serializable;
 public class ExternalContactsUnresolvedContactChangedTopicDataSchema  implements Serializable {
   
   private String id = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public ExternalContactsUnresolvedContactChangedTopicDataSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -44,17 +50,17 @@ public class ExternalContactsUnresolvedContactChangedTopicDataSchema  implements
 
   /**
    **/
-  public ExternalContactsUnresolvedContactChangedTopicDataSchema version(Integer version) {
+  public ExternalContactsUnresolvedContactChangedTopicDataSchema version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

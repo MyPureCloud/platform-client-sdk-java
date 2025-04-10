@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DigitalRule;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -32,8 +33,14 @@ public class DigitalRuleSet  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef contactList = null;
-  private List<DigitalRule> rules = new ArrayList<DigitalRule>();
+  private List<DigitalRule> rules = null;
   private String selfUri = null;
+
+  public DigitalRuleSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      rules = new ArrayList<DigitalRule>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

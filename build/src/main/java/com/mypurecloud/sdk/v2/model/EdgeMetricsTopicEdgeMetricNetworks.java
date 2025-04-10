@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,10 +24,15 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
   
   private String ifname = null;
-  private Integer sentBytesPerSec = null;
-  private Integer receivedBytesPerSec = null;
-  private Integer bandwidthBitsPerSec = null;
+  private Long sentBytesPerSec = null;
+  private Long receivedBytesPerSec = null;
+  private Long bandwidthBitsPerSec = null;
   private BigDecimal utilizationPct = null;
+
+  public EdgeMetricsTopicEdgeMetricNetworks() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -48,51 +54,51 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricNetworks sentBytesPerSec(Integer sentBytesPerSec) {
+  public EdgeMetricsTopicEdgeMetricNetworks sentBytesPerSec(Long sentBytesPerSec) {
     this.sentBytesPerSec = sentBytesPerSec;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sentBytesPerSec")
-  public Integer getSentBytesPerSec() {
+  public Long getSentBytesPerSec() {
     return sentBytesPerSec;
   }
-  public void setSentBytesPerSec(Integer sentBytesPerSec) {
+  public void setSentBytesPerSec(Long sentBytesPerSec) {
     this.sentBytesPerSec = sentBytesPerSec;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricNetworks receivedBytesPerSec(Integer receivedBytesPerSec) {
+  public EdgeMetricsTopicEdgeMetricNetworks receivedBytesPerSec(Long receivedBytesPerSec) {
     this.receivedBytesPerSec = receivedBytesPerSec;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("receivedBytesPerSec")
-  public Integer getReceivedBytesPerSec() {
+  public Long getReceivedBytesPerSec() {
     return receivedBytesPerSec;
   }
-  public void setReceivedBytesPerSec(Integer receivedBytesPerSec) {
+  public void setReceivedBytesPerSec(Long receivedBytesPerSec) {
     this.receivedBytesPerSec = receivedBytesPerSec;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricNetworks bandwidthBitsPerSec(Integer bandwidthBitsPerSec) {
+  public EdgeMetricsTopicEdgeMetricNetworks bandwidthBitsPerSec(Long bandwidthBitsPerSec) {
     this.bandwidthBitsPerSec = bandwidthBitsPerSec;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("bandwidthBitsPerSec")
-  public Integer getBandwidthBitsPerSec() {
+  public Long getBandwidthBitsPerSec() {
     return bandwidthBitsPerSec;
   }
-  public void setBandwidthBitsPerSec(Integer bandwidthBitsPerSec) {
+  public void setBandwidthBitsPerSec(Long bandwidthBitsPerSec) {
     this.bandwidthBitsPerSec = bandwidthBitsPerSec;
   }
 

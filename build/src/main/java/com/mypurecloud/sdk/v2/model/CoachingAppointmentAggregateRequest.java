@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueryRequestFilter;
 import io.swagger.annotations.ApiModel;
@@ -75,7 +76,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
 
   private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
     public GroupByEnumDeserializer() {
@@ -121,8 +122,15 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private QueryRequestFilter filter = null;
+
+  public CoachingAppointmentAggregateRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<MetricsEnum>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeResponseRef;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef;
@@ -28,6 +29,11 @@ public class OutboundMessagingEmailCampaignConfigChangeSmsConfig  implements Ser
   private String phoneColumn = null;
   private OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef senderSmsPhoneNumber = null;
   private OutboundMessagingEmailCampaignConfigChangeResponseRef contentTemplate = null;
+
+  public OutboundMessagingEmailCampaignConfigChangeSmsConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

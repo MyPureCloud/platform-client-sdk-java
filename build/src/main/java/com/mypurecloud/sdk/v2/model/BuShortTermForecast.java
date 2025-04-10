@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
@@ -89,13 +90,20 @@ public class BuShortTermForecast  implements Serializable {
   private WfmVersionedEntityMetadata metadata = null;
   private Boolean canUseForScheduling = null;
   private Date referenceStartDate = null;
-  private List<ForecastSourceDayPointer> sourceDays = new ArrayList<ForecastSourceDayPointer>();
-  private List<BuForecastModificationResponse> modifications = new ArrayList<BuForecastModificationResponse>();
+  private List<ForecastSourceDayPointer> sourceDays = null;
+  private List<BuForecastModificationResponse> modifications = null;
   private BuForecastGenerationResult generationResults = null;
   private String timeZone = null;
   private Integer planningGroupsVersion = null;
   private ForecastPlanningGroupsResponse planningGroups = null;
   private String selfUri = null;
+
+  public BuShortTermForecast() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sourceDays = new ArrayList<ForecastSourceDayPointer>();
+      modifications = new ArrayList<BuForecastModificationResponse>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

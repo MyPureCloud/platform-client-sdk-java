@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponseCurrentStep;
@@ -85,7 +86,13 @@ public class LearningModulePreviewUpdateResponseAssignment  implements Serializa
   private Float assessmentCompletionPercentage = null;
   private Boolean isPassed = null;
   private LearningModulePreviewUpdateResponseCurrentStep currentStep = null;
-  private List<LearningModulePreviewUpdateStep> steps = new ArrayList<LearningModulePreviewUpdateStep>();
+  private List<LearningModulePreviewUpdateStep> steps = null;
+
+  public LearningModulePreviewUpdateResponseAssignment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      steps = new ArrayList<LearningModulePreviewUpdateStep>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference;
@@ -73,7 +74,13 @@ public class WfmActivityPlanJobCompleteTopicActivityPlanJobException  implements
     }
   }
   private ExceptionTypeEnum exceptionType = null;
-  private List<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference> occurrences = new ArrayList<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>();
+  private List<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference> occurrences = null;
+
+  public WfmActivityPlanJobCompleteTopicActivityPlanJobException() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      occurrences = new ArrayList<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>();
+    }
+  }
 
   
   /**

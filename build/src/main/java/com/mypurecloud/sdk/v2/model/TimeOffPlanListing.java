@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class TimeOffPlanListing  implements Serializable {
   
-  private List<TimeOffPlan> entities = new ArrayList<TimeOffPlan>();
+  private List<TimeOffPlan> entities = null;
+
+  public TimeOffPlanListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<TimeOffPlan>();
+    }
+  }
 
   
   /**

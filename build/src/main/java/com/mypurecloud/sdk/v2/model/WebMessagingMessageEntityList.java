@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebMessagingMessage;
 import io.swagger.annotations.ApiModel;
@@ -24,11 +25,17 @@ import java.io.Serializable;
 
 public class WebMessagingMessageEntityList  implements Serializable {
   
-  private List<WebMessagingMessage> entities = new ArrayList<WebMessagingMessage>();
+  private List<WebMessagingMessage> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
   private Integer pageCount = null;
+
+  public WebMessagingMessageEntityList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<WebMessagingMessage>();
+    }
+  }
 
   
   /**

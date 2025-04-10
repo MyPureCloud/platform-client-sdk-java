@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -204,8 +205,8 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
-  private Integer callbackScheduledTime = null;
+  private List<String> callbackNumbers = null;
+  private Long callbackScheduledTime = null;
   private String subject = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -266,29 +267,37 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   private String userId = null;
   private String divisionId = null;
   private String queueId = null;
-  private Integer interactingDurationMs = null;
-  private Integer heldDurationMs = null;
-  private Integer alertingDurationMs = null;
-  private Integer contactingDurationMs = null;
-  private Integer dialingDurationMs = null;
-  private Integer callbackDurationMs = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private Long interactingDurationMs = null;
+  private Long heldDurationMs = null;
+  private Long alertingDurationMs = null;
+  private Long contactingDurationMs = null;
+  private Long dialingDurationMs = null;
+  private Long callbackDurationMs = null;
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
+
+  public UserEndDetailEventTopicUserEndEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent eventTime(Integer eventTime) {
+  public UserEndDetailEventTopicUserEndEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -516,17 +525,17 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
+  public UserEndDetailEventTopicUserEndEvent callbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackScheduledTime")
-  public Integer getCallbackScheduledTime() {
+  public Long getCallbackScheduledTime() {
     return callbackScheduledTime;
   }
-  public void setCallbackScheduledTime(Integer callbackScheduledTime) {
+  public void setCallbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
@@ -618,102 +627,102 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent interactingDurationMs(Integer interactingDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent interactingDurationMs(Long interactingDurationMs) {
     this.interactingDurationMs = interactingDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("interactingDurationMs")
-  public Integer getInteractingDurationMs() {
+  public Long getInteractingDurationMs() {
     return interactingDurationMs;
   }
-  public void setInteractingDurationMs(Integer interactingDurationMs) {
+  public void setInteractingDurationMs(Long interactingDurationMs) {
     this.interactingDurationMs = interactingDurationMs;
   }
 
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent heldDurationMs(Integer heldDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent heldDurationMs(Long heldDurationMs) {
     this.heldDurationMs = heldDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("heldDurationMs")
-  public Integer getHeldDurationMs() {
+  public Long getHeldDurationMs() {
     return heldDurationMs;
   }
-  public void setHeldDurationMs(Integer heldDurationMs) {
+  public void setHeldDurationMs(Long heldDurationMs) {
     this.heldDurationMs = heldDurationMs;
   }
 
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent alertingDurationMs(Integer alertingDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent alertingDurationMs(Long alertingDurationMs) {
     this.alertingDurationMs = alertingDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertingDurationMs")
-  public Integer getAlertingDurationMs() {
+  public Long getAlertingDurationMs() {
     return alertingDurationMs;
   }
-  public void setAlertingDurationMs(Integer alertingDurationMs) {
+  public void setAlertingDurationMs(Long alertingDurationMs) {
     this.alertingDurationMs = alertingDurationMs;
   }
 
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent contactingDurationMs(Integer contactingDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent contactingDurationMs(Long contactingDurationMs) {
     this.contactingDurationMs = contactingDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contactingDurationMs")
-  public Integer getContactingDurationMs() {
+  public Long getContactingDurationMs() {
     return contactingDurationMs;
   }
-  public void setContactingDurationMs(Integer contactingDurationMs) {
+  public void setContactingDurationMs(Long contactingDurationMs) {
     this.contactingDurationMs = contactingDurationMs;
   }
 
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent dialingDurationMs(Integer dialingDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent dialingDurationMs(Long dialingDurationMs) {
     this.dialingDurationMs = dialingDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("dialingDurationMs")
-  public Integer getDialingDurationMs() {
+  public Long getDialingDurationMs() {
     return dialingDurationMs;
   }
-  public void setDialingDurationMs(Integer dialingDurationMs) {
+  public void setDialingDurationMs(Long dialingDurationMs) {
     this.dialingDurationMs = dialingDurationMs;
   }
 
 
   /**
    **/
-  public UserEndDetailEventTopicUserEndEvent callbackDurationMs(Integer callbackDurationMs) {
+  public UserEndDetailEventTopicUserEndEvent callbackDurationMs(Long callbackDurationMs) {
     this.callbackDurationMs = callbackDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackDurationMs")
-  public Integer getCallbackDurationMs() {
+  public Long getCallbackDurationMs() {
     return callbackDurationMs;
   }
-  public void setCallbackDurationMs(Integer callbackDurationMs) {
+  public void setCallbackDurationMs(Long callbackDurationMs) {
     this.callbackDurationMs = callbackDurationMs;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuManagementUnitScheduleSummary;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
@@ -36,8 +37,14 @@ public class BuScheduleMetadata  implements Serializable {
   private BuShortTermForecastReference shortTermForecast = null;
   private ScheduleGenerationResultSummary generationResults = null;
   private WfmVersionedEntityMetadata metadata = null;
-  private List<BuManagementUnitScheduleSummary> managementUnits = new ArrayList<BuManagementUnitScheduleSummary>();
+  private List<BuManagementUnitScheduleSummary> managementUnits = null;
   private String selfUri = null;
+
+  public BuScheduleMetadata() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<BuManagementUnitScheduleSummary>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

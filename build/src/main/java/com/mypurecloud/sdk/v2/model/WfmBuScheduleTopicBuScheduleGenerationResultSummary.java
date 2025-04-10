@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicSchedulerMessageSeverityCount;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,14 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
   
   private Boolean failed = null;
   private String runId = null;
-  private Integer messageCount = null;
-  private List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<WfmBuScheduleTopicSchedulerMessageSeverityCount>();
+  private Long messageCount = null;
+  private List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts = null;
+
+  public WfmBuScheduleTopicBuScheduleGenerationResultSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageSeverityCounts = new ArrayList<WfmBuScheduleTopicSchedulerMessageSeverityCount>();
+    }
+  }
 
   
   /**
@@ -66,17 +73,17 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
 
   /**
    **/
-  public WfmBuScheduleTopicBuScheduleGenerationResultSummary messageCount(Integer messageCount) {
+  public WfmBuScheduleTopicBuScheduleGenerationResultSummary messageCount(Long messageCount) {
     this.messageCount = messageCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("messageCount")
-  public Integer getMessageCount() {
+  public Long getMessageCount() {
     return messageCount;
   }
-  public void setMessageCount(Integer messageCount) {
+  public void setMessageCount(Long messageCount) {
     this.messageCount = messageCount;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
 import io.swagger.annotations.ApiModel;
@@ -25,11 +26,18 @@ import java.io.Serializable;
 
 public class ScimV2SchemaListResponse  implements Serializable {
   
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private Long totalResults = null;
   private Long startIndex = null;
   private Long itemsPerPage = null;
-  private List<ScimV2SchemaDefinition> resources = new ArrayList<ScimV2SchemaDefinition>();
+  private List<ScimV2SchemaDefinition> resources = null;
+
+  public ScimV2SchemaListResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      schemas = new ArrayList<String>();
+      resources = new ArrayList<ScimV2SchemaDefinition>();
+    }
+  }
 
   
   /**

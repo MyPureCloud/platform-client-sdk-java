@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SetWrapperRoutePathRequest;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -27,6 +28,11 @@ public class UpdatePlanningGroupRequest  implements Serializable {
   private SetWrapperRoutePathRequest routePaths = null;
   private String serviceGoalTemplateId = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdatePlanningGroupRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

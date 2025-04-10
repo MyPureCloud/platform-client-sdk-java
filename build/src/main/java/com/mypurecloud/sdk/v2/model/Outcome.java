@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssociatedValueField;
 import com.mypurecloud.sdk.v2.model.Context;
@@ -37,6 +38,11 @@ public class Outcome  implements Serializable {
   private String selfUri = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
+
+  public Outcome() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

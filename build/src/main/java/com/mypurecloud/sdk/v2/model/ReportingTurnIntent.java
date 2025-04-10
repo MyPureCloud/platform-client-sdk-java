@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnIntentSlot;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class ReportingTurnIntent  implements Serializable {
   
   private String name = null;
   private Double confidence = null;
-  private List<ReportingTurnIntentSlot> slots = new ArrayList<ReportingTurnIntentSlot>();
+  private List<ReportingTurnIntentSlot> slots = null;
+
+  public ReportingTurnIntent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      slots = new ArrayList<ReportingTurnIntentSlot>();
+    }
+  }
 
   
   /**

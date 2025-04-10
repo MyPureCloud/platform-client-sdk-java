@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,8 @@ import java.io.Serializable;
 public class CreateAlternativeShiftTradeRequest  implements Serializable {
   
   private String jobId = null;
-  private List<String> dropShiftReferenceKeys = new ArrayList<String>();
-  private List<String> pickupShiftReferenceKeys = new ArrayList<String>();
+  private List<String> dropShiftReferenceKeys = null;
+  private List<String> pickupShiftReferenceKeys = null;
 
   private static class AlternativeShiftTradeGranularityEnumDeserializer extends StdDeserializer<AlternativeShiftTradeGranularityEnum> {
     public AlternativeShiftTradeGranularityEnumDeserializer() {
@@ -76,6 +77,13 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
   }
   private AlternativeShiftTradeGranularityEnum alternativeShiftTradeGranularity = null;
   private Date expirationDate = null;
+
+  public CreateAlternativeShiftTradeRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dropShiftReferenceKeys = new ArrayList<String>();
+      pickupShiftReferenceKeys = new ArrayList<String>();
+    }
+  }
 
   
   /**

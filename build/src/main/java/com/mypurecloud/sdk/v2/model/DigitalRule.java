@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DigitalAction;
@@ -77,8 +78,15 @@ public class DigitalRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<DigitalCondition> conditions = new ArrayList<DigitalCondition>();
-  private List<DigitalAction> actions = new ArrayList<DigitalAction>();
+  private List<DigitalCondition> conditions = null;
+  private List<DigitalAction> actions = null;
+
+  public DigitalRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conditions = new ArrayList<DigitalCondition>();
+      actions = new ArrayList<DigitalAction>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")

@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **message** | [**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference) |  |  [optional] |
 | **messageTime** | [**Date**](Date) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
+| **messageSegmentCount** | **Long** |  |  [optional] |
 | **messageStatus** | [**MessageStatusEnum**](#Enum--MessageStatusEnum) |  |  [optional] |
 | **media** | [**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia) |  |  [optional] |
 | **stickers** | [**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker) |  |  [optional] |
@@ -43,4 +43,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

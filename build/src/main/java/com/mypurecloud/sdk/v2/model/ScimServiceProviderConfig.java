@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigAuthenticationScheme;
@@ -29,7 +30,7 @@ import java.io.Serializable;
 
 public class ScimServiceProviderConfig  implements Serializable {
   
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private String documentationUri = null;
   private ScimServiceProviderConfigSimpleFeature patch = null;
   private ScimServiceProviderConfigFilterFeature filter = null;
@@ -37,8 +38,15 @@ public class ScimServiceProviderConfig  implements Serializable {
   private ScimServiceProviderConfigSimpleFeature sort = null;
   private ScimServiceProviderConfigBulkFeature bulk = null;
   private ScimServiceProviderConfigSimpleFeature changePassword = null;
-  private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
+  private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = null;
   private ScimMetadata meta = null;
+
+  public ScimServiceProviderConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      schemas = new ArrayList<String>();
+      authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")

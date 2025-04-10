@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SuggestSearchCriteria;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,17 @@ import java.io.Serializable;
 
 public class SuggestSearchRequest  implements Serializable {
   
-  private List<String> expand = new ArrayList<String>();
-  private List<String> types = new ArrayList<String>();
-  private List<SuggestSearchCriteria> query = new ArrayList<SuggestSearchCriteria>();
+  private List<String> expand = null;
+  private List<String> types = null;
+  private List<SuggestSearchCriteria> query = null;
+
+  public SuggestSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      expand = new ArrayList<String>();
+      types = new ArrayList<String>();
+      query = new ArrayList<SuggestSearchCriteria>();
+    }
+  }
 
   
   /**

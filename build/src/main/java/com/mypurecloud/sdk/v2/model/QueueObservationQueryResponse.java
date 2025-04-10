@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueObservationDataContainer;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ import java.io.Serializable;
 public class QueueObservationQueryResponse  implements Serializable {
   
   private Map<String, List<String>> systemToOrganizationMappings = null;
-  private List<QueueObservationDataContainer> results = new ArrayList<QueueObservationDataContainer>();
+  private List<QueueObservationDataContainer> results = null;
+
+  public QueueObservationQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<QueueObservationDataContainer>();
+    }
+  }
 
   
   /**

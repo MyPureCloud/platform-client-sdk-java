@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EmergencyCallFlow;
@@ -89,8 +90,14 @@ public class EmergencyGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private Boolean enabled = null;
-  private List<EmergencyCallFlow> emergencyCallFlows = new ArrayList<EmergencyCallFlow>();
+  private List<EmergencyCallFlow> emergencyCallFlows = null;
   private String selfUri = null;
+
+  public EmergencyGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      emergencyCallFlows = new ArrayList<EmergencyCallFlow>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

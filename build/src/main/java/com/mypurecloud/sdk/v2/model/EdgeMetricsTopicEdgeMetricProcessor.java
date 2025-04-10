@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,10 +23,15 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
   
   private String cpuId = null;
-  private Integer idleTimePct = null;
-  private Integer activeTimePct = null;
-  private Integer privilegedTimePct = null;
-  private Integer userTimePct = null;
+  private Long idleTimePct = null;
+  private Long activeTimePct = null;
+  private Long privilegedTimePct = null;
+  private Long userTimePct = null;
+
+  public EdgeMetricsTopicEdgeMetricProcessor() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -47,68 +53,68 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricProcessor idleTimePct(Integer idleTimePct) {
+  public EdgeMetricsTopicEdgeMetricProcessor idleTimePct(Long idleTimePct) {
     this.idleTimePct = idleTimePct;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("idleTimePct")
-  public Integer getIdleTimePct() {
+  public Long getIdleTimePct() {
     return idleTimePct;
   }
-  public void setIdleTimePct(Integer idleTimePct) {
+  public void setIdleTimePct(Long idleTimePct) {
     this.idleTimePct = idleTimePct;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricProcessor activeTimePct(Integer activeTimePct) {
+  public EdgeMetricsTopicEdgeMetricProcessor activeTimePct(Long activeTimePct) {
     this.activeTimePct = activeTimePct;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("activeTimePct")
-  public Integer getActiveTimePct() {
+  public Long getActiveTimePct() {
     return activeTimePct;
   }
-  public void setActiveTimePct(Integer activeTimePct) {
+  public void setActiveTimePct(Long activeTimePct) {
     this.activeTimePct = activeTimePct;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricProcessor privilegedTimePct(Integer privilegedTimePct) {
+  public EdgeMetricsTopicEdgeMetricProcessor privilegedTimePct(Long privilegedTimePct) {
     this.privilegedTimePct = privilegedTimePct;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("privilegedTimePct")
-  public Integer getPrivilegedTimePct() {
+  public Long getPrivilegedTimePct() {
     return privilegedTimePct;
   }
-  public void setPrivilegedTimePct(Integer privilegedTimePct) {
+  public void setPrivilegedTimePct(Long privilegedTimePct) {
     this.privilegedTimePct = privilegedTimePct;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricProcessor userTimePct(Integer userTimePct) {
+  public EdgeMetricsTopicEdgeMetricProcessor userTimePct(Long userTimePct) {
     this.userTimePct = userTimePct;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("userTimePct")
-  public Integer getUserTimePct() {
+  public Long getUserTimePct() {
     return userTimePct;
   }
-  public void setUserTimePct(Integer userTimePct) {
+  public void setUserTimePct(Long userTimePct) {
     this.userTimePct = userTimePct;
   }
 

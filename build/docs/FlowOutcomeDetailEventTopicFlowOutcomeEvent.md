@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | **Integer** |  |  [optional] |
+| **eventTime** | **Long** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **participantId** | **String** |  |  [optional] |
 | **sessionId** | **String** |  |  [optional] |
@@ -23,8 +23,8 @@
 | **divisionId** | **String** |  |  [optional] |
 | **flowVersion** | **String** |  |  [optional] |
 | **flowOutcomeId** | **String** |  |  [optional] |
-| **flowOutcomeStartTime** | **Integer** |  |  [optional] |
-| **flowOutcomeEndTime** | **Integer** |  |  [optional] |
+| **flowOutcomeStartTime** | **Long** |  |  [optional] |
+| **flowOutcomeEndTime** | **Long** |  |  [optional] |
 | **flowOutcomeValue** | [**FlowOutcomeValueEnum**](#Enum--FlowOutcomeValueEnum) |  |  [optional] |
 | **flowMilestones** | [**List&lt;FlowOutcomeDetailEventTopicFlowMilestone&gt;**](FlowOutcomeDetailEventTopicFlowMilestone) |  |  [optional] |
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
@@ -113,4 +113,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

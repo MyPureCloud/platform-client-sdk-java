@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
@@ -86,10 +87,10 @@ public class ConversationEventTopicMessageDetails  implements Serializable {
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private Integer messageSegmentCount = null;
-  private List<ConversationEventTopicMessageMedia> media = new ArrayList<ConversationEventTopicMessageMedia>();
+  private Long messageSegmentCount = null;
+  private List<ConversationEventTopicMessageMedia> media = null;
   private ConversationEventTopicErrorDetails errorInfo = null;
-  private List<ConversationEventTopicMessageSticker> stickers = new ArrayList<ConversationEventTopicMessageSticker>();
+  private List<ConversationEventTopicMessageSticker> stickers = null;
   private ConversationEventTopicMessageMetadata messageMetadata = null;
 
   private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
@@ -139,6 +140,13 @@ public class ConversationEventTopicMessageDetails  implements Serializable {
     }
   }
   private SocialVisibilityEnum socialVisibility = null;
+
+  public ConversationEventTopicMessageDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<ConversationEventTopicMessageMedia>();
+      stickers = new ArrayList<ConversationEventTopicMessageSticker>();
+    }
+  }
 
   
   /**
@@ -198,17 +206,17 @@ public class ConversationEventTopicMessageDetails  implements Serializable {
   /**
    * The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
    **/
-  public ConversationEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
+  public ConversationEventTopicMessageDetails messageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.")
   @JsonProperty("messageSegmentCount")
-  public Integer getMessageSegmentCount() {
+  public Long getMessageSegmentCount() {
     return messageSegmentCount;
   }
-  public void setMessageSegmentCount(Integer messageSegmentCount) {
+  public void setMessageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
   }
 

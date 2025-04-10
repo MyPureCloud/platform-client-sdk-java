@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQueryFilter;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class RoutingActivityQuery  implements Serializable {
   
-  private List<RoutingActivityQueryMetric> metrics = new ArrayList<RoutingActivityQueryMetric>();
+  private List<RoutingActivityQueryMetric> metrics = null;
 
   private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
     public GroupByEnumDeserializer() {
@@ -72,7 +73,7 @@ public class RoutingActivityQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private RoutingActivityQueryFilter filter = null;
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
@@ -123,6 +124,13 @@ public class RoutingActivityQuery  implements Serializable {
     }
   }
   private OrderEnum order = null;
+
+  public RoutingActivityQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<RoutingActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
 
   
   /**

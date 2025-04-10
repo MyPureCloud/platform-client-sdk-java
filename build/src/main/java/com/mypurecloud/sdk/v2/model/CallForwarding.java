@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallRoute;
@@ -32,7 +33,7 @@ public class CallForwarding  implements Serializable {
   private User user = null;
   private Boolean enabled = null;
   private String phoneNumber = null;
-  private List<CallRoute> calls = new ArrayList<CallRoute>();
+  private List<CallRoute> calls = null;
 
   private static class VoicemailEnumDeserializer extends StdDeserializer<VoicemailEnum> {
     public VoicemailEnumDeserializer() {
@@ -84,6 +85,12 @@ public class CallForwarding  implements Serializable {
   private VoicemailEnum voicemail = null;
   private Date modifiedDate = null;
   private String selfUri = null;
+
+  public CallForwarding() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      calls = new ArrayList<CallRoute>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

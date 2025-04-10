@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EdgeVersionInformation;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class EdgeVersionReport  implements Serializable {
   
   private EdgeVersionInformation oldestVersion = null;
   private EdgeVersionInformation newestVersion = null;
+
+  public EdgeVersionReport() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

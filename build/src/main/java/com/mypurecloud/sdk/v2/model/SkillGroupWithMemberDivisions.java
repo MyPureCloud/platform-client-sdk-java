@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SkillGroupCondition;
@@ -82,9 +83,16 @@ public class SkillGroupWithMemberDivisions  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<SkillGroupCondition> skillConditions = new ArrayList<SkillGroupCondition>();
-  private List<String> memberDivisions = new ArrayList<String>();
+  private List<SkillGroupCondition> skillConditions = null;
+  private List<String> memberDivisions = null;
   private String selfUri = null;
+
+  public SkillGroupWithMemberDivisions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillConditions = new ArrayList<SkillGroupCondition>();
+      memberDivisions = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

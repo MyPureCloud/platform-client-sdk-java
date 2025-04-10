@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCallabletimesetConfigChangeTimeSlot;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +27,15 @@ import java.io.Serializable;
 
 public class DialerCallabletimesetConfigChangeCallableTime  implements Serializable {
   
-  private List<DialerCallabletimesetConfigChangeTimeSlot> timeSlots = new ArrayList<DialerCallabletimesetConfigChangeTimeSlot>();
+  private List<DialerCallabletimesetConfigChangeTimeSlot> timeSlots = null;
   private String timeZoneId = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerCallabletimesetConfigChangeCallableTime() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      timeSlots = new ArrayList<DialerCallabletimesetConfigChangeTimeSlot>();
+    }
+  }
 
   
   /**

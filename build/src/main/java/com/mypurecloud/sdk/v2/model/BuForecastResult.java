@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupData;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +27,15 @@ import java.io.Serializable;
 public class BuForecastResult  implements Serializable {
   
   private Date referenceStartDate = null;
-  private List<ForecastPlanningGroupData> planningGroups = new ArrayList<ForecastPlanningGroupData>();
+  private List<ForecastPlanningGroupData> planningGroups = null;
   private Integer weekNumber = null;
   private Integer weekCount = null;
+
+  public BuForecastResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      planningGroups = new ArrayList<ForecastPlanningGroupData>();
+    }
+  }
 
   
   /**

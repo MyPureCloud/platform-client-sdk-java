@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.Phone;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
   
-  private List<Phone> entities = new ArrayList<Phone>();
+  private List<Phone> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -36,6 +37,12 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public PhoneEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<Phone>();
+    }
+  }
 
   
   /**

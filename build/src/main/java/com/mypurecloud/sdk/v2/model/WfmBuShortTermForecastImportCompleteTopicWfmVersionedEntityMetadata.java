@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastImportCompleteTopicUserReference;
 import io.swagger.annotations.ApiModel;
@@ -23,24 +24,29 @@ import java.io.Serializable;
 
 public class WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata  implements Serializable {
   
-  private Integer version = null;
+  private Long version = null;
   private WfmBuShortTermForecastImportCompleteTopicUserReference modifiedBy = null;
   private Date dateModified = null;
+
+  public WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata version(Integer version) {
+  public WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

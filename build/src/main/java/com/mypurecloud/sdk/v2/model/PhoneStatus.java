@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -130,7 +131,7 @@ public class PhoneStatus  implements Serializable {
   private EdgesStatusEnum edgesStatus = null;
   private String eventCreationTime = null;
   private ProvisionInfo provision = null;
-  private List<LineStatus> lineStatuses = new ArrayList<LineStatus>();
+  private List<LineStatus> lineStatuses = null;
 
   private static class PhoneAssignmentToEdgeTypeEnumDeserializer extends StdDeserializer<PhoneAssignmentToEdgeTypeEnum> {
     public PhoneAssignmentToEdgeTypeEnumDeserializer() {
@@ -181,6 +182,12 @@ public class PhoneStatus  implements Serializable {
   private PhoneAssignmentToEdgeTypeEnum phoneAssignmentToEdgeType = null;
   private DomainEntityRef edge = null;
   private String selfUri = null;
+
+  public PhoneStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      lineStatuses = new ArrayList<LineStatus>();
+    }
+  }
 
   
   /**

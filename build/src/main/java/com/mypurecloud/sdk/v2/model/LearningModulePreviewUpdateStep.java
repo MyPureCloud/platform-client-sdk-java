@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateScoStructure;
@@ -128,7 +129,13 @@ public class LearningModulePreviewUpdateStep  implements Serializable {
   private CompletionStatusEnum completionStatus = null;
   private Float completionPercentage = null;
   private Float percentageScore = null;
-  private List<LearningModulePreviewUpdateScoStructure> structure = new ArrayList<LearningModulePreviewUpdateScoStructure>();
+  private List<LearningModulePreviewUpdateScoStructure> structure = null;
+
+  public LearningModulePreviewUpdateStep() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      structure = new ArrayList<LearningModulePreviewUpdateScoStructure>();
+    }
+  }
 
   
   /**

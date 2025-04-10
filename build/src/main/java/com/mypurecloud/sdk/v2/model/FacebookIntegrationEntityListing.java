@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class FacebookIntegrationEntityListing  implements Serializable, PagedResource<FacebookIntegration> {
   
-  private List<FacebookIntegration> entities = new ArrayList<FacebookIntegration>();
+  private List<FacebookIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public FacebookIntegrationEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<FacebookIntegration>();
+    }
+  }
 
   
   /**

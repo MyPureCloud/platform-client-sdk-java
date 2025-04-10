@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class MergeOperation  implements Serializable {
   private AddressableEntityRef sourceContact = null;
   private AddressableEntityRef targetContact = null;
   private AddressableEntityRef resultingContact = null;
+
+  public MergeOperation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The source contact for the merge operation")

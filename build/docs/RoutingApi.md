@@ -2210,7 +2210,7 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean excludeStatus = false; // Boolean | Exclude MX record data
-String filter = "filter_example"; // String | Optional search filter
+String filter = "filter_example"; // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 try {
     InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter);
     System.out.println(result);
@@ -2228,7 +2228,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **excludeStatus** | **Boolean**| Exclude MX record data | [optional] [default to false] 
-| **filter** | **String**| Optional search filter | [optional] 
+| **filter** | **String**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional] 
 {: class="table-striped"}
 
 
@@ -2417,7 +2417,7 @@ try {
 # **getRoutingEmailOutboundDomains**
 
 
-> [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(filter)
+> [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(pageSize, pageNumber, filter)
 
 Get outbound domains
 
@@ -2449,9 +2449,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-String filter = "filter_example"; // String | Optional search filter
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String filter = "filter_example"; // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 try {
-    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(filter);
+    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(pageSize, pageNumber, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomains");
@@ -2464,7 +2466,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| Optional search filter | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **filter** | **String**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional] 
 {: class="table-striped"}
 
 
@@ -3581,7 +3585,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent 
 | **name** | **String**| Filter by queue member name (contains-style search) | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String)| Filter by profile skill (contains-style search) | [optional] 
 | **skills** | [**List&lt;String&gt;**](String)| Filter by skill (contains-style search) | [optional] 
@@ -3667,7 +3671,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String)| Filter by profile skill | [optional] 
@@ -9684,4 +9688,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

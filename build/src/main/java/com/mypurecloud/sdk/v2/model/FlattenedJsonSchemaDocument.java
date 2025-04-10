@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class FlattenedJsonSchemaDocument  implements Serializable {
   
   private JsonSchemaDocument schema = null;
-  private List<String> arrayProperties = new ArrayList<String>();
+  private List<String> arrayProperties = null;
+
+  public FlattenedJsonSchemaDocument() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      arrayProperties = new ArrayList<String>();
+    }
+  }
 
   
   /**

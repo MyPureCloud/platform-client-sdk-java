@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzGrant;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +27,15 @@ public class AuthzSubject  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<AuthzGrant> grants = new ArrayList<AuthzGrant>();
+  private List<AuthzGrant> grants = null;
   private Integer version = null;
   private String selfUri = null;
+
+  public AuthzSubject() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      grants = new ArrayList<AuthzGrant>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

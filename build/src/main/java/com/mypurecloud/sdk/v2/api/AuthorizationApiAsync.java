@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AuthorizationPolicy;
 import com.mypurecloud.sdk.v2.model.AuthorizationPolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthorizationSettings;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionCursorListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
@@ -49,8 +50,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRole
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionGrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsDeletedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
@@ -646,6 +649,81 @@ public class AuthorizationApiAsync {
   }
 
   /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzDivisionEntityListing> getAuthorizationDivisionsDeletedAsync(GetAuthorizationDivisionsDeletedRequest request, final AsyncApiCallback<AuthzDivisionEntityListing> callback) {
+    try {
+      final SettableFuture<AuthzDivisionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzDivisionEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of soft deleted divisions for the org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzDivisionEntityListing>> getAuthorizationDivisionsDeletedAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthzDivisionEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzDivisionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzDivisionEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionEntityListing> response = (ApiResponse<AuthzDivisionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionEntityListing> response = (ApiResponse<AuthzDivisionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
    * @param request the request object
@@ -784,6 +862,81 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzDivisionCursorListing> getAuthorizationDivisionsQueryAsync(GetAuthorizationDivisionsQueryRequest request, final AsyncApiCallback<AuthzDivisionCursorListing> callback) {
+    try {
+      final SettableFuture<AuthzDivisionCursorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzDivisionCursorListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionCursorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of all divisions defined for the organization with cursor
+   * Use \"after\" and \"before\" param to fetch next/previous page}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzDivisionCursorListing>> getAuthorizationDivisionsQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthzDivisionCursorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzDivisionCursorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzDivisionCursorListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionCursorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionCursorListing> response = (ApiResponse<AuthzDivisionCursorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionCursorListing> response = (ApiResponse<AuthzDivisionCursorListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -64,6 +65,7 @@ public class Limit  implements Serializable {
     DATAACTIONS("dataactions"),
     DATATABLES("datatables"),
     DIRECTORY("directory"),
+    DSAR("dsar"),
     EMAIL("email"),
     EMPLOYEE_ENGAGEMENT("employee.engagement"),
     EVENT_ORCHESTRATION("event.orchestration"),
@@ -144,6 +146,11 @@ public class Limit  implements Serializable {
   }
   private NamespaceEnum namespace = null;
   private Long value = null;
+
+  public Limit() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

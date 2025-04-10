@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AvailableTime;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class UserAvailableTimes  implements Serializable {
   
   private UserReference user = null;
-  private List<AvailableTime> availableTimes = new ArrayList<AvailableTime>();
+  private List<AvailableTime> availableTimes = null;
+
+  public UserAvailableTimes() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      availableTimes = new ArrayList<AvailableTime>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "User reference")

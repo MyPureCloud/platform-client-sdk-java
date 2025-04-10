@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConnectedEdge;
@@ -128,10 +129,18 @@ public class SiteConnection  implements Serializable {
     }
   }
   private MediaModelEnum mediaModel = null;
-  private List<ConnectedEdge> edgeList = new ArrayList<ConnectedEdge>();
+  private List<ConnectedEdge> edgeList = null;
   private Boolean coreSite = null;
-  private List<DomainEntityRef> primaryCoreSites = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> secondaryCoreSites = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> primaryCoreSites = null;
+  private List<DomainEntityRef> secondaryCoreSites = null;
+
+  public SiteConnection() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      edgeList = new ArrayList<ConnectedEdge>();
+      primaryCoreSites = new ArrayList<DomainEntityRef>();
+      secondaryCoreSites = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   /**

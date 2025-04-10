@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -137,11 +138,11 @@ public class TimeOffRequestResponse  implements Serializable {
     }
   }
   private SubstatusEnum substatus = null;
-  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
+  private List<Date> partialDayStartDateTimes = null;
+  private List<String> fullDayManagementUnitDates = null;
   private Integer dailyDurationMinutes = null;
-  private List<Integer> durationMinutes = new ArrayList<Integer>();
-  private List<Integer> payableMinutes = new ArrayList<Integer>();
+  private List<Integer> durationMinutes = null;
+  private List<Integer> payableMinutes = null;
   private String notes = null;
   private UserReference submittedBy = null;
   private Date submittedDate = null;
@@ -152,6 +153,15 @@ public class TimeOffRequestResponse  implements Serializable {
   private Integer syncVersion = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public TimeOffRequestResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      partialDayStartDateTimes = new ArrayList<Date>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

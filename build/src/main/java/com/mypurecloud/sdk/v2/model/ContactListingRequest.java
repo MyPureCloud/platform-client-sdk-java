@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactBulkSearchCriteria;
 import com.mypurecloud.sdk.v2.model.ContactSort;
@@ -29,7 +30,13 @@ public class ContactListingRequest  implements Serializable {
   private ContactBulkSearchCriteria criteria = null;
   private Integer pageNumber = null;
   private Integer pageSize = null;
-  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
+  private List<ContactSort> contactSorts = null;
+
+  public ContactListingRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contactSorts = new ArrayList<ContactSort>();
+    }
+  }
 
   
   /**

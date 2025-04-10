@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -84,7 +85,13 @@ public class WorkdayPointsTrend  implements Serializable {
   }
   private DayOfWeekEnum dayOfWeek = null;
   private Double averagePoints = null;
-  private List<WorkdayPointsTrendItem> trend = new ArrayList<WorkdayPointsTrendItem>();
+  private List<WorkdayPointsTrendItem> trend = null;
+
+  public WorkdayPointsTrend() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      trend = new ArrayList<WorkdayPointsTrendItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")

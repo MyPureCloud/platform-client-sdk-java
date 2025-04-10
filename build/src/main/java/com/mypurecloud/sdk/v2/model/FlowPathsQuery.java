@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowPathsFlowFilter;
@@ -79,7 +80,13 @@ public class FlowPathsQuery  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<FlowPathsFlowFilter> flows = new ArrayList<FlowPathsFlowFilter>();
+  private List<FlowPathsFlowFilter> flows = null;
+
+  public FlowPathsQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flows = new ArrayList<FlowPathsFlowFilter>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HomerRecord;
 import io.swagger.annotations.ApiModel;
@@ -29,9 +30,15 @@ public class SipSearchResult  implements Serializable {
   private String sid = null;
   private String auth = null;
   private String message = null;
-  private List<HomerRecord> data = new ArrayList<HomerRecord>();
+  private List<HomerRecord> data = null;
   private Integer count = null;
   private String selfUri = null;
+
+  public SipSearchResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      data = new ArrayList<HomerRecord>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
@@ -28,6 +29,11 @@ public class BulkJobAddWorkitemSummary  implements Serializable {
   private WorkbinReference workbin = null;
   private WorktypeReference type = null;
   private String selfUri = null;
+
+  public BulkJobAddWorkitemSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

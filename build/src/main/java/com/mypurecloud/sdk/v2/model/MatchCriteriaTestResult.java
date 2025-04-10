@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -87,10 +88,17 @@ public class MatchCriteriaTestResult  implements Serializable {
   }
   private OperatorEnum operator = null;
   private JsonNode value = null;
-  private List<JsonNode> values = new ArrayList<JsonNode>();
+  private List<JsonNode> values = null;
   private String generatedJsonPathCondition = null;
   private Boolean match = null;
-  private List<MatchTestResult> jsonPathExtraction = new ArrayList<MatchTestResult>();
+  private List<MatchTestResult> jsonPathExtraction = null;
+
+  public MatchCriteriaTestResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<JsonNode>();
+      jsonPathExtraction = new ArrayList<MatchTestResult>();
+    }
+  }
 
   
   /**

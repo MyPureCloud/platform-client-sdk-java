@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.RequestMapping;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class ArchitectFlowFields  implements Serializable {
   
   private AddressableEntityRef architectFlow = null;
-  private List<RequestMapping> flowRequestMappings = new ArrayList<RequestMapping>();
+  private List<RequestMapping> flowRequestMappings = null;
+
+  public ArchitectFlowFields() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flowRequestMappings = new ArrayList<RequestMapping>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallbackMediaSettings;
 import com.mypurecloud.sdk.v2.model.EmailMediaSettings;
@@ -30,6 +31,11 @@ public class QueueMediaSettings  implements Serializable {
   private MediaSettings chat = null;
   private EmailMediaSettings email = null;
   private MessageMediaSettings message = null;
+
+  public QueueMediaSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

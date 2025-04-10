@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingEventMediaResult;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +28,15 @@ public class RecordingEventRecording  implements Serializable {
   private String id = null;
   private String conversationId = null;
   private String fileState = null;
-  private List<RecordingEventMediaResult> mediaUris = new ArrayList<RecordingEventMediaResult>();
-  private Integer estimatedTranscodeTimeMs = null;
-  private Integer actualTranscodeTimeMs = null;
+  private List<RecordingEventMediaResult> mediaUris = null;
+  private Long estimatedTranscodeTimeMs = null;
+  private Long actualTranscodeTimeMs = null;
+
+  public RecordingEventRecording() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaUris = new ArrayList<RecordingEventMediaResult>();
+    }
+  }
 
   
   /**
@@ -102,34 +109,34 @@ public class RecordingEventRecording  implements Serializable {
 
   /**
    **/
-  public RecordingEventRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
+  public RecordingEventRecording estimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("estimatedTranscodeTimeMs")
-  public Integer getEstimatedTranscodeTimeMs() {
+  public Long getEstimatedTranscodeTimeMs() {
     return estimatedTranscodeTimeMs;
   }
-  public void setEstimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
+  public void setEstimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
 
   /**
    **/
-  public RecordingEventRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
+  public RecordingEventRecording actualTranscodeTimeMs(Long actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("actualTranscodeTimeMs")
-  public Integer getActualTranscodeTimeMs() {
+  public Long getActualTranscodeTimeMs() {
     return actualTranscodeTimeMs;
   }
-  public void setActualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
+  public void setActualTranscodeTimeMs(Long actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 

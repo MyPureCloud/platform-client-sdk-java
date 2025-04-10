@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicConversationRoutingData;
@@ -280,9 +281,9 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private Map<String, String> attributes = null;
   private ConversationSocialExpressionEventTopicErrorBody errorInfo = null;
   private ConversationSocialExpressionEventTopicUriReference script = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String provider = null;
   private ConversationSocialExpressionEventTopicUriReference externalContact = null;
   private String externalContactInitialDivisionId = null;
@@ -343,12 +344,18 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private Date endAcwTime = null;
   private Date resumeTime = null;
   private Date parkTime = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private ConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
   private String previewText = null;
+
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -710,17 +717,17 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   /**
    **/
-  public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -744,17 +751,17 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   /**
    **/
-  public ConversationSocialExpressionEventTopicSocialMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

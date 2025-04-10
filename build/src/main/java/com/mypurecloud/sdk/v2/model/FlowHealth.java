@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowHealthIntentInfo;
 import com.mypurecloud.sdk.v2.model.FlowHealthVersionInfo;
@@ -30,8 +31,14 @@ public class FlowHealth  implements Serializable {
   
   private FlowHealthVersionInfo flowVersionInfo = null;
   private Map<String, LocaleInfo> languageInfo = null;
-  private List<FlowHealthIntentInfo> intents = new ArrayList<FlowHealthIntentInfo>();
+  private List<FlowHealthIntentInfo> intents = null;
   private String selfUri = null;
+
+  public FlowHealth() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<FlowHealthIntentInfo>();
+    }
+  }
 
   
   /**

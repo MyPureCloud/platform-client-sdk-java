@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdherenceSettings;
 import com.mypurecloud.sdk.v2.model.SchedulingSettingsResponse;
@@ -33,6 +34,11 @@ public class ManagementUnitSettingsResponse  implements Serializable {
   private SchedulingSettingsResponse scheduling = null;
   private ShiftTradeSettings shiftTrading = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public ManagementUnitSettingsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

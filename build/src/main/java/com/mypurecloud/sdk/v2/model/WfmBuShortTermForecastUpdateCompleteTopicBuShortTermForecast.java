@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification;
@@ -83,13 +84,20 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
   private String description = null;
   private Boolean legacy = null;
   private Date referenceStartDate = null;
-  private List<WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer> sourceDays = new ArrayList<WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer>();
-  private List<WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification> modifications = new ArrayList<WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification>();
+  private List<WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer> sourceDays = null;
+  private List<WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification> modifications = null;
   private String timeZone = null;
-  private Integer planningGroupsVersion = null;
-  private Integer weekCount = null;
+  private Long planningGroupsVersion = null;
+  private Long weekCount = null;
   private WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata metadata = null;
   private Boolean canUseForScheduling = null;
+
+  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sourceDays = new ArrayList<WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer>();
+      modifications = new ArrayList<WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification>();
+    }
+  }
 
   
   /**
@@ -247,34 +255,34 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
 
   /**
    **/
-  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast planningGroupsVersion(Integer planningGroupsVersion) {
+  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast planningGroupsVersion(Long planningGroupsVersion) {
     this.planningGroupsVersion = planningGroupsVersion;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("planningGroupsVersion")
-  public Integer getPlanningGroupsVersion() {
+  public Long getPlanningGroupsVersion() {
     return planningGroupsVersion;
   }
-  public void setPlanningGroupsVersion(Integer planningGroupsVersion) {
+  public void setPlanningGroupsVersion(Long planningGroupsVersion) {
     this.planningGroupsVersion = planningGroupsVersion;
   }
 
 
   /**
    **/
-  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast weekCount(Integer weekCount) {
+  public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast weekCount(Long weekCount) {
     this.weekCount = weekCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weekCount")
-  public Integer getWeekCount() {
+  public Long getWeekCount() {
     return weekCount;
   }
-  public void setWeekCount(Integer weekCount) {
+  public void setWeekCount(Long weekCount) {
     this.weekCount = weekCount;
   }
 

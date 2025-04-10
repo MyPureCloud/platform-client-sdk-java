@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentCountRange;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class BidGroupWorkPlanRequest  implements Serializable {
   private Integer overrideAgentCount = null;
   private Integer suggestedAgentCount = null;
   private AgentCountRange agentCountRange = null;
+
+  public BidGroupWorkPlanRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

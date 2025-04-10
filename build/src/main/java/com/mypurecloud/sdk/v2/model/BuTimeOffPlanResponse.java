@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitReference;
@@ -30,8 +31,8 @@ public class BuTimeOffPlanResponse  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> activityCodeIds = new ArrayList<String>();
-  private List<BuTimeOffLimitReference> timeOffLimits = new ArrayList<BuTimeOffLimitReference>();
+  private List<String> activityCodeIds = null;
+  private List<BuTimeOffLimitReference> timeOffLimits = null;
 
   private static class AutoApprovalRuleEnumDeserializer extends StdDeserializer<AutoApprovalRuleEnum> {
     public AutoApprovalRuleEnumDeserializer() {
@@ -91,6 +92,13 @@ public class BuTimeOffPlanResponse  implements Serializable {
   private TimeOffPlanManagementUnitAssociation managementUnitAssociation = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public BuTimeOffPlanResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activityCodeIds = new ArrayList<String>();
+      timeOffLimits = new ArrayList<BuTimeOffLimitReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

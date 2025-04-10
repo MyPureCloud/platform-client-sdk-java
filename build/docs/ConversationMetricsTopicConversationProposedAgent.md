@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agentRank** | **Integer** | Proposed agent rank for this conversation from predictive routing (lower is better) |  [optional] |
+| **agentRank** | **Long** | Proposed agent rank for this conversation from predictive routing (lower is better) |  [optional] |
 | **proposedAgentId** | **String** | Unique identifier for the agent that was proposed by predictive routing |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

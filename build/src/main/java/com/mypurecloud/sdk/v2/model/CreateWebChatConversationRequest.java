@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GuestMemberInfo;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
@@ -30,6 +31,11 @@ public class CreateWebChatConversationRequest  implements Serializable {
   private GuestMemberInfo memberInfo = null;
   private String memberAuthToken = null;
   private JourneyContext journeyContext = null;
+
+  public CreateWebChatConversationRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

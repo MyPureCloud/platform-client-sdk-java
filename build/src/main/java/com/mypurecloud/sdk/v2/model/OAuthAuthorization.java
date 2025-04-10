@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -28,8 +29,8 @@ import java.io.Serializable;
 public class OAuthAuthorization  implements Serializable {
   
   private OAuthClient client = null;
-  private List<String> scope = new ArrayList<String>();
-  private List<String> roles = new ArrayList<String>();
+  private List<String> scope = null;
+  private List<String> roles = null;
   private DomainEntityRef resourceOwner = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -87,6 +88,13 @@ public class OAuthAuthorization  implements Serializable {
   }
   private StateEnum state = null;
   private String selfUri = null;
+
+  public OAuthAuthorization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      scope = new ArrayList<String>();
+      roles = new ArrayList<String>();
+    }
+  }
 
   
   /**

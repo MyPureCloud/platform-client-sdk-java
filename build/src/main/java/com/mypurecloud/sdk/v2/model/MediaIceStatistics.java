@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaIceSelectedPair;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class MediaIceStatistics  implements Serializable {
   
-  private List<MediaIceSelectedPair> selectedPairs = new ArrayList<MediaIceSelectedPair>();
+  private List<MediaIceSelectedPair> selectedPairs = null;
+
+  public MediaIceStatistics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      selectedPairs = new ArrayList<MediaIceSelectedPair>();
+    }
+  }
 
   
   /**

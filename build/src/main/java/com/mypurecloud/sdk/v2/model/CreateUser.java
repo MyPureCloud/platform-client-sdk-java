@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Contact;
@@ -28,7 +29,7 @@ public class CreateUser  implements Serializable {
   private String name = null;
   private String department = null;
   private String email = null;
-  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Contact> addresses = null;
   private String title = null;
   private String password = null;
   private String divisionId = null;
@@ -81,6 +82,12 @@ public class CreateUser  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  public CreateUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      addresses = new ArrayList<Contact>();
+    }
+  }
 
   
   /**

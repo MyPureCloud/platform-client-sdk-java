@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
@@ -35,15 +36,26 @@ public class PolicyActions  implements Serializable {
   private Boolean retainRecording = null;
   private Boolean deleteRecording = null;
   private Boolean alwaysDelete = null;
-  private List<EvaluationAssignment> assignEvaluations = new ArrayList<EvaluationAssignment>();
-  private List<MeteredEvaluationAssignment> assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
-  private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
-  private List<CalibrationAssignment> assignCalibrations = new ArrayList<CalibrationAssignment>();
-  private List<SurveyAssignment> assignSurveys = new ArrayList<SurveyAssignment>();
+  private List<EvaluationAssignment> assignEvaluations = null;
+  private List<MeteredEvaluationAssignment> assignMeteredEvaluations = null;
+  private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = null;
+  private List<CalibrationAssignment> assignCalibrations = null;
+  private List<SurveyAssignment> assignSurveys = null;
   private RetentionDuration retentionDuration = null;
   private InitiateScreenRecording initiateScreenRecording = null;
-  private List<MediaTranscription> mediaTranscriptions = new ArrayList<MediaTranscription>();
+  private List<MediaTranscription> mediaTranscriptions = null;
   private IntegrationExport integrationExport = null;
+
+  public PolicyActions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      assignEvaluations = new ArrayList<EvaluationAssignment>();
+      assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
+      assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
+      assignCalibrations = new ArrayList<CalibrationAssignment>();
+      assignSurveys = new ArrayList<SurveyAssignment>();
+      mediaTranscriptions = new ArrayList<MediaTranscription>();
+    }
+  }
 
   
   /**

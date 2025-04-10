@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.WorkPlanReference;
@@ -26,9 +27,16 @@ import java.io.Serializable;
 public class AdminAgentWorkPlanPreferenceResponse  implements Serializable {
   
   private String id = null;
-  private List<WorkPlanReference> workPlans = new ArrayList<WorkPlanReference>();
-  private List<AdminAgentWorkPlanBiddingPreference> agentWorkPlanBidPreferences = new ArrayList<AdminAgentWorkPlanBiddingPreference>();
+  private List<WorkPlanReference> workPlans = null;
+  private List<AdminAgentWorkPlanBiddingPreference> agentWorkPlanBidPreferences = null;
   private String selfUri = null;
+
+  public AdminAgentWorkPlanPreferenceResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      workPlans = new ArrayList<WorkPlanReference>();
+      agentWorkPlanBidPreferences = new ArrayList<AdminAgentWorkPlanBiddingPreference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

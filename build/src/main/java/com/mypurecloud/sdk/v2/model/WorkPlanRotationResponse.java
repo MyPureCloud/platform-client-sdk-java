@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -33,9 +34,15 @@ public class WorkPlanRotationResponse  implements Serializable {
   private DateRangeWithOptionalEnd dateRange = null;
   private WorkPlanPatternResponse pattern = null;
   private Integer agentCount = null;
-  private List<WorkPlanRotationAgentResponse> agents = new ArrayList<WorkPlanRotationAgentResponse>();
+  private List<WorkPlanRotationAgentResponse> agents = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public WorkPlanRotationResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agents = new ArrayList<WorkPlanRotationAgentResponse>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

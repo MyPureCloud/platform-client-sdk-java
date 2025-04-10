@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PolicyConditionResult;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class PolicyTestResult  implements Serializable {
   private String id = null;
   private String name = null;
   private String result = null;
-  private List<PolicyConditionResult> policyConditionResults = new ArrayList<PolicyConditionResult>();
+  private List<PolicyConditionResult> policyConditionResults = null;
+
+  public PolicyTestResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      policyConditionResults = new ArrayList<PolicyConditionResult>();
+    }
+  }
 
   
   /**

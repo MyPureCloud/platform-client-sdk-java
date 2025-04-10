@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -196,12 +197,21 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
   }
   private ViewTypeEnum viewType = null;
   private String dateLimitations = null;
-  private List<String> requiredFilters = new ArrayList<String>();
-  private List<String> supportedFilters = new ArrayList<String>();
-  private List<String> requiredColumnIds = new ArrayList<String>();
+  private List<String> requiredFilters = null;
+  private List<String> supportedFilters = null;
+  private List<String> requiredColumnIds = null;
   private Map<String, List<String>> dependentColumnIds = null;
-  private List<String> availableColumnIds = new ArrayList<String>();
+  private List<String> availableColumnIds = null;
   private String selfUri = null;
+
+  public ReportingExportMetadataJobResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      requiredFilters = new ArrayList<String>();
+      supportedFilters = new ArrayList<String>();
+      requiredColumnIds = new ArrayList<String>();
+      availableColumnIds = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

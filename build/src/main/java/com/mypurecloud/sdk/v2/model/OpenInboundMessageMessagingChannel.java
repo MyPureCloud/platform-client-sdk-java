@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OpenMessagingFromRecipient;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,11 @@ public class OpenInboundMessageMessagingChannel  implements Serializable {
   private Date time = null;
   private String messageId = null;
   private Object metadata = null;
+
+  public OpenInboundMessageMessagingChannel() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

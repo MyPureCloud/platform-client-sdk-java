@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuManagementUnitScheduleSummary;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuScheduleGenerationResultSummary;
@@ -30,13 +31,19 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
   
   private String id = null;
   private Date weekDate = null;
-  private Integer weekCount = null;
+  private Long weekCount = null;
   private String description = null;
   private Boolean published = null;
   private WfmBuScheduleTopicBuShortTermForecastReference shortTermForecast = null;
-  private List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> managementUnits = new ArrayList<WfmBuScheduleTopicBuManagementUnitScheduleSummary>();
+  private List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> managementUnits = null;
   private WfmBuScheduleTopicBuScheduleGenerationResultSummary generationResults = null;
   private WfmBuScheduleTopicWfmVersionedEntityMetadata metadata = null;
+
+  public WfmBuScheduleTopicBuScheduleMetadata() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<WfmBuScheduleTopicBuManagementUnitScheduleSummary>();
+    }
+  }
 
   
   /**
@@ -75,17 +82,17 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
 
   /**
    **/
-  public WfmBuScheduleTopicBuScheduleMetadata weekCount(Integer weekCount) {
+  public WfmBuScheduleTopicBuScheduleMetadata weekCount(Long weekCount) {
     this.weekCount = weekCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weekCount")
-  public Integer getWeekCount() {
+  public Long getWeekCount() {
     return weekCount;
   }
-  public void setWeekCount(Integer weekCount) {
+  public void setWeekCount(Long weekCount) {
     this.weekCount = weekCount;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.HistoricalAdherenceActuals;
@@ -80,9 +81,17 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
     }
   }
   private ImpactEnum impact = null;
-  private List<HistoricalAdherenceExceptionInfo> exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
-  private List<HistoricalAdherenceActuals> actuals = new ArrayList<HistoricalAdherenceActuals>();
-  private List<WfmHistoricalAdherenceBulkUserDayMetrics> dayMetrics = new ArrayList<WfmHistoricalAdherenceBulkUserDayMetrics>();
+  private List<HistoricalAdherenceExceptionInfo> exceptionInfo = null;
+  private List<HistoricalAdherenceActuals> actuals = null;
+  private List<WfmHistoricalAdherenceBulkUserDayMetrics> dayMetrics = null;
+
+  public WfmHistoricalAdherenceBulkUserResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+      actuals = new ArrayList<HistoricalAdherenceActuals>();
+      dayMetrics = new ArrayList<WfmHistoricalAdherenceBulkUserDayMetrics>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2WemEngagementCelebrationUpdatesTopicContestWinnersScore;
 import com.mypurecloud.sdk.v2.model.V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers;
@@ -25,42 +26,48 @@ import java.io.Serializable;
 
 public class V2WemEngagementCelebrationUpdatesTopicContestWinners  implements Serializable {
   
-  private Integer tier = null;
-  private Integer winnersCount = null;
+  private Long tier = null;
+  private Long winnersCount = null;
   private V2WemEngagementCelebrationUpdatesTopicContestWinnersScore contestScore = null;
-  private List<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers> users = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers>();
+  private List<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers> users = null;
+
+  public V2WemEngagementCelebrationUpdatesTopicContestWinners() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers>();
+    }
+  }
 
   
   /**
    **/
-  public V2WemEngagementCelebrationUpdatesTopicContestWinners tier(Integer tier) {
+  public V2WemEngagementCelebrationUpdatesTopicContestWinners tier(Long tier) {
     this.tier = tier;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("tier")
-  public Integer getTier() {
+  public Long getTier() {
     return tier;
   }
-  public void setTier(Integer tier) {
+  public void setTier(Long tier) {
     this.tier = tier;
   }
 
 
   /**
    **/
-  public V2WemEngagementCelebrationUpdatesTopicContestWinners winnersCount(Integer winnersCount) {
+  public V2WemEngagementCelebrationUpdatesTopicContestWinners winnersCount(Long winnersCount) {
     this.winnersCount = winnersCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("winnersCount")
-  public Integer getWinnersCount() {
+  public Long getWinnersCount() {
     return winnersCount;
   }
-  public void setWinnersCount(Integer winnersCount) {
+  public void setWinnersCount(Long winnersCount) {
     this.winnersCount = winnersCount;
   }
 

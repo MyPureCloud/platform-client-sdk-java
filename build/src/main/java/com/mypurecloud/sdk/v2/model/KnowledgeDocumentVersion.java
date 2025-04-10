@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
 import io.swagger.annotations.ApiModel;
@@ -30,6 +31,11 @@ public class KnowledgeDocumentVersion  implements Serializable {
   private Integer versionNumber = null;
   private Date dateExpires = null;
   private String selfUri = null;
+
+  public KnowledgeDocumentVersion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Globally unique identifier for the document version.")

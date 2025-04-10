@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusEvent;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class BatchUserRoutingStatusEventRequest  implements Serializable {
   
-  private List<UserRoutingStatusEvent> userRoutingStatusEvents = new ArrayList<UserRoutingStatusEvent>();
+  private List<UserRoutingStatusEvent> userRoutingStatusEvents = null;
+
+  public BatchUserRoutingStatusEventRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userRoutingStatusEvents = new ArrayList<UserRoutingStatusEvent>();
+    }
+  }
 
   
   /**

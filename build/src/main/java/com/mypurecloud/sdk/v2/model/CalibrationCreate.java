@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.Evaluation;
@@ -39,11 +40,18 @@ public class CalibrationCreate  implements Serializable {
   private Integer highScore = null;
   private Integer lowScore = null;
   private Date createdDate = null;
-  private List<Evaluation> evaluations = new ArrayList<Evaluation>();
-  private List<User> evaluators = new ArrayList<User>();
+  private List<Evaluation> evaluations = null;
+  private List<User> evaluators = null;
   private Evaluation scoringIndex = null;
   private User expertEvaluator = null;
   private String selfUri = null;
+
+  public CalibrationCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      evaluations = new ArrayList<Evaluation>();
+      evaluators = new ArrayList<User>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

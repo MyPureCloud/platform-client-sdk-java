@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchViolation;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class MatchShiftTradeResponse  implements Serializable {
   
   private ShiftTradeResponse trade = null;
-  private List<ShiftTradeMatchViolation> violations = new ArrayList<ShiftTradeMatchViolation>();
-  private List<ShiftTradeMatchViolation> adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+  private List<ShiftTradeMatchViolation> violations = null;
+  private List<ShiftTradeMatchViolation> adminReviewViolations = null;
+
+  public MatchShiftTradeResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      violations = new ArrayList<ShiftTradeMatchViolation>();
+      adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+    }
+  }
 
   
   /**

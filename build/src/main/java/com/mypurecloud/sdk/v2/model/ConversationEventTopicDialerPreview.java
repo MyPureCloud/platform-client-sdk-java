@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicPhoneNumberColumn;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,13 @@ public class ConversationEventTopicDialerPreview  implements Serializable {
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<ConversationEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<ConversationEventTopicPhoneNumberColumn>();
+  private List<ConversationEventTopicPhoneNumberColumn> phoneNumberColumns = null;
+
+  public ConversationEventTopicDialerPreview() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phoneNumberColumns = new ArrayList<ConversationEventTopicPhoneNumberColumn>();
+    }
+  }
 
   
   /**

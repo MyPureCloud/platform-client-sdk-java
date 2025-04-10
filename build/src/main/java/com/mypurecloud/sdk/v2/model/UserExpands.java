@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
@@ -36,6 +37,11 @@ public class UserExpands  implements Serializable {
   private Geolocation geolocation = null;
   private UserStations station = null;
   private UserAuthorization authorization = null;
+
+  public UserExpands() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "ACD routing status")

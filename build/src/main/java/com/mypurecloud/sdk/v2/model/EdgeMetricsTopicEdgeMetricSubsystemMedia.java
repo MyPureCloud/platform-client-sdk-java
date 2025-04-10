@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,12 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetricSubsystemMedia  implements Serializable {
   
   private String processName = null;
-  private Integer delayMs = null;
+  private Long delayMs = null;
+
+  public EdgeMetricsTopicEdgeMetricSubsystemMedia() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -44,17 +50,17 @@ public class EdgeMetricsTopicEdgeMetricSubsystemMedia  implements Serializable {
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricSubsystemMedia delayMs(Integer delayMs) {
+  public EdgeMetricsTopicEdgeMetricSubsystemMedia delayMs(Long delayMs) {
     this.delayMs = delayMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("delayMs")
-  public Integer getDelayMs() {
+  public Long getDelayMs() {
     return delayMs;
   }
-  public void setDelayMs(Integer delayMs) {
+  public void setDelayMs(Long delayMs) {
     this.delayMs = delayMs;
   }
 

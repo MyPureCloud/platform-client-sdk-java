@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CustomEventAttribute;
 import com.mypurecloud.sdk.v2.model.JourneyCampaign;
@@ -50,6 +51,11 @@ public class WebEventResponse  implements Serializable {
   private Map<String, CustomEventAttribute> traits = null;
   private Boolean authenticated = null;
   private Date createdDate = null;
+
+  public WebEventResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

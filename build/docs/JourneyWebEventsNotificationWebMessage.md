@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **eventName** | **String** |  |  [optional] |
-| **totalEventCount** | **Integer** |  |  [optional] |
-| **totalPageviewCount** | **Integer** |  |  [optional] |
+| **totalEventCount** | **Long** |  |  [optional] |
+| **totalPageviewCount** | **Long** |  |  [optional] |
 | **userAgentString** | **String** |  |  [optional] |
 | **ipAddress** | **String** |  |  [optional] |
 | **ipOrganization** | **String** |  |  [optional] |
@@ -25,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

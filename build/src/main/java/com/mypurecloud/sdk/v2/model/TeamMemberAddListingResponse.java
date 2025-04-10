@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TeamAddMemberFailure;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class TeamMemberAddListingResponse  implements Serializable {
   
-  private List<UserReference> entities = new ArrayList<UserReference>();
-  private List<TeamAddMemberFailure> failures = new ArrayList<TeamAddMemberFailure>();
+  private List<UserReference> entities = null;
+  private List<TeamAddMemberFailure> failures = null;
+
+  public TeamMemberAddListingResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<UserReference>();
+      failures = new ArrayList<TeamAddMemberFailure>();
+    }
+  }
 
   
   /**

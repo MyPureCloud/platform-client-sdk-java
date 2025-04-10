@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowLogLevel;
 import com.mypurecloud.sdk.v2.model.FlowLogLevelCharacteristicsDefinition;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 
 public class FlowLogLevelCharacteristicsDefinitions  implements Serializable {
   
-  private List<FlowLogLevel> logLevels = new ArrayList<FlowLogLevel>();
-  private List<FlowLogLevelCharacteristicsDefinition> characteristics = new ArrayList<FlowLogLevelCharacteristicsDefinition>();
+  private List<FlowLogLevel> logLevels = null;
+  private List<FlowLogLevelCharacteristicsDefinition> characteristics = null;
+
+  public FlowLogLevelCharacteristicsDefinitions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      logLevels = new ArrayList<FlowLogLevel>();
+      characteristics = new ArrayList<FlowLogLevelCharacteristicsDefinition>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "A list of flow log levels available to the organization.")

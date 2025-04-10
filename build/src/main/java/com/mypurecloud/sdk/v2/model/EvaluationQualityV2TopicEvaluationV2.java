@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicCalibration;
@@ -97,18 +98,18 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private String eventType = null;
   private String resourceId = null;
   private String resourceType = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
-  private List<String> mediaType = new ArrayList<String>();
+  private List<String> mediaType = null;
   private EvaluationQualityV2TopicCalibration calibration = null;
   private EvaluationQualityV2TopicEvaluationSource evaluationSource = null;
   private String assigneeUserId = null;
   private String previousAssigneeUserId = null;
   private Boolean assigneeApplicable = null;
   private String evaluationContextId = null;
-  private Integer disputeCount = null;
-  private Integer version = null;
+  private Long disputeCount = null;
+  private Long version = null;
 
   private static class PreviousStatusEnumDeserializer extends StdDeserializer<PreviousStatusEnum> {
     public PreviousStatusEnumDeserializer() {
@@ -162,11 +163,18 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private PreviousStatusEnum previousStatus = null;
   private Boolean declinedReview = null;
   private EvaluationQualityV2TopicEvaluationReference retractedEvaluation = null;
-  private Integer rescoreCount = null;
+  private Long rescoreCount = null;
   private Boolean evaluatorCommentHasUpdated = null;
   private Boolean agentCommentHasUpdated = null;
-  private Integer previousRescoreCount = null;
+  private Long previousRescoreCount = null;
   private String previousEvaluatorUserId = null;
+
+  public EvaluationQualityV2TopicEvaluationV2() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      divisionIds = new ArrayList<String>();
+      mediaType = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -630,34 +638,34 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
 
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationV2 disputeCount(Integer disputeCount) {
+  public EvaluationQualityV2TopicEvaluationV2 disputeCount(Long disputeCount) {
     this.disputeCount = disputeCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("disputeCount")
-  public Integer getDisputeCount() {
+  public Long getDisputeCount() {
     return disputeCount;
   }
-  public void setDisputeCount(Integer disputeCount) {
+  public void setDisputeCount(Long disputeCount) {
     this.disputeCount = disputeCount;
   }
 
 
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationV2 version(Integer version) {
+  public EvaluationQualityV2TopicEvaluationV2 version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 
@@ -715,17 +723,17 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
 
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationV2 rescoreCount(Integer rescoreCount) {
+  public EvaluationQualityV2TopicEvaluationV2 rescoreCount(Long rescoreCount) {
     this.rescoreCount = rescoreCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("rescoreCount")
-  public Integer getRescoreCount() {
+  public Long getRescoreCount() {
     return rescoreCount;
   }
-  public void setRescoreCount(Integer rescoreCount) {
+  public void setRescoreCount(Long rescoreCount) {
     this.rescoreCount = rescoreCount;
   }
 
@@ -766,17 +774,17 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
 
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationV2 previousRescoreCount(Integer previousRescoreCount) {
+  public EvaluationQualityV2TopicEvaluationV2 previousRescoreCount(Long previousRescoreCount) {
     this.previousRescoreCount = previousRescoreCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("previousRescoreCount")
-  public Integer getPreviousRescoreCount() {
+  public Long getPreviousRescoreCount() {
     return previousRescoreCount;
   }
-  public void setPreviousRescoreCount(Integer previousRescoreCount) {
+  public void setPreviousRescoreCount(Long previousRescoreCount) {
     this.previousRescoreCount = previousRescoreCount;
   }
 

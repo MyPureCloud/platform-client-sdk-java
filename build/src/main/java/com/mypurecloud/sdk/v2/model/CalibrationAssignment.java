@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.User;
@@ -26,9 +27,15 @@ import java.io.Serializable;
 public class CalibrationAssignment  implements Serializable {
   
   private User calibrator = null;
-  private List<User> evaluators = new ArrayList<User>();
+  private List<User> evaluators = null;
   private EvaluationForm evaluationForm = null;
   private User expertEvaluator = null;
+
+  public CalibrationAssignment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      evaluators = new ArrayList<User>();
+    }
+  }
 
   
   /**

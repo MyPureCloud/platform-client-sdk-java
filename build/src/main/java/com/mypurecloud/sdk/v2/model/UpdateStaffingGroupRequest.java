@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SetWrapperString;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -26,6 +27,11 @@ public class UpdateStaffingGroupRequest  implements Serializable {
   private String name = null;
   private SetWrapperString userIds = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdateStaffingGroupRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

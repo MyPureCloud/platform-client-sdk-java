@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingQueryResult;
 import com.mypurecloud.sdk.v2.model.QueryFacetInfo;
@@ -25,6 +26,11 @@ public class QueryResults  implements Serializable {
   
   private DomainEntityListingQueryResult results = null;
   private QueryFacetInfo facetInfo = null;
+
+  public QueryResults() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

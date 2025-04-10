@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CopilotAction;
 import com.mypurecloud.sdk.v2.model.CopilotCondition;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class CopilotRule  implements Serializable {
   
-  private List<CopilotCondition> conditions = new ArrayList<CopilotCondition>();
-  private List<CopilotAction> actions = new ArrayList<CopilotAction>();
+  private List<CopilotCondition> conditions = null;
+  private List<CopilotAction> actions = null;
+
+  public CopilotRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conditions = new ArrayList<CopilotCondition>();
+      actions = new ArrayList<CopilotAction>();
+    }
+  }
 
   
   /**

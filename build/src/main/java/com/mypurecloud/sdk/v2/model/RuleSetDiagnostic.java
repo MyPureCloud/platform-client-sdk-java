@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -73,7 +74,13 @@ public class RuleSetDiagnostic  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<WarningsEnum> warnings = new ArrayList<WarningsEnum>();
+  private List<WarningsEnum> warnings = null;
+
+  public RuleSetDiagnostic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      warnings = new ArrayList<WarningsEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "A campaign rule set")

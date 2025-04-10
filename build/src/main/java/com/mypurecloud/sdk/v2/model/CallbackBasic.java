@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
@@ -142,7 +143,7 @@ public class CallbackBasic  implements Serializable {
   }
   private InitialStateEnum initialState = null;
   private String id = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -257,7 +258,7 @@ public class CallbackBasic  implements Serializable {
   private Date startHoldTime = null;
   private DialerPreview dialerPreview = null;
   private Voicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private String scriptId = null;
   private Boolean externalCampaign = null;
@@ -276,6 +277,13 @@ public class CallbackBasic  implements Serializable {
   private String callerId = null;
   private String callerIdName = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
+
+  public CallbackBasic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
 
   
   /**

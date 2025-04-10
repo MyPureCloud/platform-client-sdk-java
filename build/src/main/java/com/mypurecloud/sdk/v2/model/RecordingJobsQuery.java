@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
@@ -83,6 +84,11 @@ public class RecordingJobsQuery  implements Serializable {
   private Boolean clearExport = null;
   private AsyncConversationQuery conversationQuery = null;
   private String agedConversationInterval = null;
+
+  public RecordingJobsQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

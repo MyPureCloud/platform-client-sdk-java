@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -94,8 +95,14 @@ public class Endpoint  implements Serializable {
   private DomainEntityRef schema = null;
   private Boolean enabled = null;
   private DomainEntityRef site = null;
-  private List<String> dids = new ArrayList<String>();
+  private List<String> dids = null;
   private String selfUri = null;
+
+  public Endpoint() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dids = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

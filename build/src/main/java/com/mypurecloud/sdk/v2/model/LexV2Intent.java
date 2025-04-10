@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LexV2Slot;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,11 @@ public class LexV2Intent  implements Serializable {
   private String description = null;
   private Map<String, LexV2Slot> slots = null;
   private String intentId = null;
+
+  public LexV2Intent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

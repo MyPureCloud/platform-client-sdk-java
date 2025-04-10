@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | **Integer** |  |  [optional] |
+| **eventTime** | **Long** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **participantId** | **String** |  |  [optional] |
 | **sessionId** | **String** |  |  [optional] |
@@ -19,18 +19,18 @@
 | **addressFrom** | **String** |  |  [optional] |
 | **callbackUserName** | **String** |  |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
-| **callbackScheduledTime** | **Integer** |  |  [optional] |
+| **callbackScheduledTime** | **Long** |  |  [optional] |
 | **subject** | **String** |  |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
 | **userId** | **String** |  |  [optional] |
 | **divisionId** | **String** |  |  [optional] |
 | **queueId** | **String** |  |  [optional] |
-| **interactingDurationMs** | **Integer** |  |  [optional] |
-| **heldDurationMs** | **Integer** |  |  [optional] |
-| **alertingDurationMs** | **Integer** |  |  [optional] |
-| **contactingDurationMs** | **Integer** |  |  [optional] |
-| **dialingDurationMs** | **Integer** |  |  [optional] |
-| **callbackDurationMs** | **Integer** |  |  [optional] |
+| **interactingDurationMs** | **Long** |  |  [optional] |
+| **heldDurationMs** | **Long** |  |  [optional] |
+| **alertingDurationMs** | **Long** |  |  [optional] |
+| **contactingDurationMs** | **Long** |  |  [optional] |
+| **dialingDurationMs** | **Long** |  |  [optional] |
+| **callbackDurationMs** | **Long** |  |  [optional] |
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 
@@ -107,4 +107,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

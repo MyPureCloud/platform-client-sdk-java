@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -32,8 +33,14 @@ public class SingleWorkdayAverageValues  implements Serializable {
   private Division division = null;
   private UserReference user = null;
   private String timezone = null;
-  private List<WorkdayValuesMetricItem> results = new ArrayList<WorkdayValuesMetricItem>();
+  private List<WorkdayValuesMetricItem> results = null;
   private AddressableEntityRef performanceProfile = null;
+
+  public SingleWorkdayAverageValues() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<WorkdayValuesMetricItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The targeted workday for average value query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.MetadataAttribute;
@@ -29,11 +30,18 @@ public class Article  implements Serializable {
   
   private String title = null;
   private String uri = null;
-  private List<String> snippets = new ArrayList<String>();
+  private List<String> snippets = null;
   private Float confidence = null;
   private Map<String, MetadataAttribute> metadata = null;
   private AddressableEntityRef version = null;
-  private List<AddressableEntityRef> variations = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> variations = null;
+
+  public Article() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      snippets = new ArrayList<String>();
+      variations = new ArrayList<AddressableEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The article title.")

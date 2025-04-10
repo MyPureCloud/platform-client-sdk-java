@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import io.swagger.annotations.ApiModel;
@@ -41,8 +42,14 @@ public class WorktypeCreate  implements Serializable {
   private Integer schemaVersion = null;
   private String defaultQueueId = null;
   private String defaultLanguageId = null;
-  private List<String> defaultSkillIds = new ArrayList<String>();
+  private List<String> defaultSkillIds = null;
   private String defaultScriptId = null;
+
+  public WorktypeCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      defaultSkillIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

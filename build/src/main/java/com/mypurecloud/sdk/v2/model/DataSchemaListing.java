@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class DataSchemaListing  implements Serializable {
   
   private Long total = null;
-  private List<DataSchema> entities = new ArrayList<DataSchema>();
+  private List<DataSchema> entities = null;
   private String selfUri = null;
+
+  public DataSchemaListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<DataSchema>();
+    }
+  }
 
   
   /**

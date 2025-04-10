@@ -2929,7 +2929,7 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
-   * @param filter Optional search filter (optional)
+   * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
    * @return InboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2944,7 +2944,7 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
-   * @param filter Optional search filter (optional)
+   * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
    * @return InboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -3250,28 +3250,36 @@ public class RoutingApi {
   /**
    * Get outbound domains
    * 
-   * @param filter Optional search filter (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
    * @return OutboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundDomainEntityListing getRoutingEmailOutboundDomains(String filter) throws IOException, ApiException {
-    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(filter));
+  public OutboundDomainEntityListing getRoutingEmailOutboundDomains(Integer pageSize, Integer pageNumber, String filter) throws IOException, ApiException {
+    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter));
   }
 
   /**
    * Get outbound domains
    * 
-   * @param filter Optional search filter (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
    * @return OutboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo(String filter) throws IOException {
-    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(filter).withHttpInfo());
+  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, String filter) throws IOException {
+    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter).withHttpInfo());
   }
 
-  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest(String filter) {
+  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest(Integer pageSize, Integer pageNumber, String filter) {
     return GetRoutingEmailOutboundDomainsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
             .withFilter(filter)
 
             .build();

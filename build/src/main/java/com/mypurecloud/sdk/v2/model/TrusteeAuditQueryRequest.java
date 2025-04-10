@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Facet;
 import com.mypurecloud.sdk.v2.model.Filter;
@@ -26,13 +27,22 @@ import java.io.Serializable;
 
 public class TrusteeAuditQueryRequest  implements Serializable {
   
-  private List<String> trusteeOrganizationIds = new ArrayList<String>();
-  private List<String> trusteeUserIds = new ArrayList<String>();
+  private List<String> trusteeOrganizationIds = null;
+  private List<String> trusteeUserIds = null;
   private Date startDate = null;
   private Date endDate = null;
   private String queryPhrase = null;
-  private List<Facet> facets = new ArrayList<Facet>();
-  private List<Filter> filters = new ArrayList<Filter>();
+  private List<Facet> facets = null;
+  private List<Filter> filters = null;
+
+  public TrusteeAuditQueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      trusteeOrganizationIds = new ArrayList<String>();
+      trusteeUserIds = new ArrayList<String>();
+      facets = new ArrayList<Facet>();
+      filters = new ArrayList<Filter>();
+    }
+  }
 
   
   /**

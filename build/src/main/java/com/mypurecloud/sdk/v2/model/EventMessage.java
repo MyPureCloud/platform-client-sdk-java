@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -175,7 +176,13 @@ public class EventMessage  implements Serializable {
   private String messageWithParams = null;
   private Map<String, Object> messageParams = null;
   private String documentationUri = null;
-  private List<String> resourceURIs = new ArrayList<String>();
+  private List<String> resourceURIs = null;
+
+  public EventMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      resourceURIs = new ArrayList<String>();
+    }
+  }
 
   
   /**

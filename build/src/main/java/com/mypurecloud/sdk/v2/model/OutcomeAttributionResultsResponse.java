@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TouchpointResponse;
@@ -82,8 +83,14 @@ public class OutcomeAttributionResultsResponse  implements Serializable {
   }
   private StateEnum state = null;
   private String message = null;
-  private List<TouchpointResponse> touchpoints = new ArrayList<TouchpointResponse>();
+  private List<TouchpointResponse> touchpoints = null;
   private Date createdDate = null;
+
+  public OutcomeAttributionResultsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      touchpoints = new ArrayList<TouchpointResponse>();
+    }
+  }
 
   
   /**

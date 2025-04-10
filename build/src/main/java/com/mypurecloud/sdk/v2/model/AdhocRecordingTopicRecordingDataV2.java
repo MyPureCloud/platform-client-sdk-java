@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdhocRecordingTopicConversationData;
 import com.mypurecloud.sdk.v2.model.AdhocRecordingTopicLockData;
@@ -33,16 +34,21 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
   private AdhocRecordingTopicWorkspaceData workspace = null;
   private AdhocRecordingTopicUserData createdBy = null;
   private String contentType = null;
-  private Integer contentLength = null;
+  private Long contentLength = null;
   private String filename = null;
-  private Integer changeNumber = null;
+  private Long changeNumber = null;
   private Date dateUploaded = null;
   private AdhocRecordingTopicUserData uploadedBy = null;
   private AdhocRecordingTopicLockData lockInfo = null;
   private String selfUri = null;
-  private Integer durationMillieconds = null;
+  private Long durationMillieconds = null;
   private AdhocRecordingTopicConversationData conversation = null;
   private Boolean read = null;
+
+  public AdhocRecordingTopicRecordingDataV2() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -166,17 +172,17 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
 
   /**
    **/
-  public AdhocRecordingTopicRecordingDataV2 contentLength(Integer contentLength) {
+  public AdhocRecordingTopicRecordingDataV2 contentLength(Long contentLength) {
     this.contentLength = contentLength;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contentLength")
-  public Integer getContentLength() {
+  public Long getContentLength() {
     return contentLength;
   }
-  public void setContentLength(Integer contentLength) {
+  public void setContentLength(Long contentLength) {
     this.contentLength = contentLength;
   }
 
@@ -200,17 +206,17 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
 
   /**
    **/
-  public AdhocRecordingTopicRecordingDataV2 changeNumber(Integer changeNumber) {
+  public AdhocRecordingTopicRecordingDataV2 changeNumber(Long changeNumber) {
     this.changeNumber = changeNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("changeNumber")
-  public Integer getChangeNumber() {
+  public Long getChangeNumber() {
     return changeNumber;
   }
-  public void setChangeNumber(Integer changeNumber) {
+  public void setChangeNumber(Long changeNumber) {
     this.changeNumber = changeNumber;
   }
 
@@ -285,17 +291,17 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
 
   /**
    **/
-  public AdhocRecordingTopicRecordingDataV2 durationMillieconds(Integer durationMillieconds) {
+  public AdhocRecordingTopicRecordingDataV2 durationMillieconds(Long durationMillieconds) {
     this.durationMillieconds = durationMillieconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMillieconds")
-  public Integer getDurationMillieconds() {
+  public Long getDurationMillieconds() {
     return durationMillieconds;
   }
-  public void setDurationMillieconds(Integer durationMillieconds) {
+  public void setDurationMillieconds(Long durationMillieconds) {
     this.durationMillieconds = durationMillieconds;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RoutingStatusDetailQueryClause;
@@ -74,8 +75,15 @@ public class RoutingStatusDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<RoutingStatusDetailQueryClause> clauses = new ArrayList<RoutingStatusDetailQueryClause>();
-  private List<RoutingStatusDetailQueryPredicate> predicates = new ArrayList<RoutingStatusDetailQueryPredicate>();
+  private List<RoutingStatusDetailQueryClause> clauses = null;
+  private List<RoutingStatusDetailQueryPredicate> predicates = null;
+
+  public RoutingStatusDetailQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<RoutingStatusDetailQueryClause>();
+      predicates = new ArrayList<RoutingStatusDetailQueryPredicate>();
+    }
+  }
 
   
   /**

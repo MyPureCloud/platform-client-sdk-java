@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueryCriteria;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class FlowsQueryCriteriaResponse  implements Serializable {
   
-  private List<QueryCriteria> criteria = new ArrayList<QueryCriteria>();
+  private List<QueryCriteria> criteria = null;
 
   private static class FlowTypesEnumDeserializer extends StdDeserializer<FlowTypesEnum> {
     public FlowTypesEnumDeserializer() {
@@ -88,7 +89,7 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowTypesEnum> flowTypes = new ArrayList<FlowTypesEnum>();
+  private List<FlowTypesEnum> flowTypes = null;
 
   private static class ActionTypesEnumDeserializer extends StdDeserializer<ActionTypesEnum> {
     public ActionTypesEnumDeserializer() {
@@ -268,9 +269,19 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ActionTypesEnum> actionTypes = new ArrayList<ActionTypesEnum>();
-  private List<String> errorCodes = new ArrayList<String>();
-  private List<String> warningCodes = new ArrayList<String>();
+  private List<ActionTypesEnum> actionTypes = null;
+  private List<String> errorCodes = null;
+  private List<String> warningCodes = null;
+
+  public FlowsQueryCriteriaResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      criteria = new ArrayList<QueryCriteria>();
+      flowTypes = new ArrayList<FlowTypesEnum>();
+      actionTypes = new ArrayList<ActionTypesEnum>();
+      errorCodes = new ArrayList<String>();
+      warningCodes = new ArrayList<String>();
+    }
+  }
 
   
   /**

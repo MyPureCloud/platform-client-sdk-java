@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchActionSurvey;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,11 @@ public class PatchActionProperties  implements Serializable {
   private String webchatAcceptText = null;
   private String webchatDeclineText = null;
   private PatchActionSurvey webchatSurvey = null;
+
+  public PatchActionProperties() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

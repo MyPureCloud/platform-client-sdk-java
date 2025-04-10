@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -85,8 +86,8 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
-  private List<String> scope = new ArrayList<String>();
-  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
+  private List<String> scope = null;
+  private List<RoleDivision> roleDivisions = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -138,6 +139,13 @@ public class OrgOAuthClient  implements Serializable {
   private StateEnum state = null;
   private Date dateToDelete = null;
   private NamedEntity organization = null;
+
+  public OrgOAuthClient() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      scope = new ArrayList<String>();
+      roleDivisions = new ArrayList<RoleDivision>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

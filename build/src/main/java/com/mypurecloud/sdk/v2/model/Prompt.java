@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
@@ -28,9 +29,15 @@ public class Prompt  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<PromptAsset> resources = new ArrayList<PromptAsset>();
+  private List<PromptAsset> resources = null;
   private Operation currentOperation = null;
   private String selfUri = null;
+
+  public Prompt() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      resources = new ArrayList<PromptAsset>();
+    }
+  }
 
   
   /**

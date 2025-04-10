@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.BaseProgramEntity;
@@ -27,10 +28,17 @@ import java.io.Serializable;
 public class ProgramMappings  implements Serializable {
   
   private BaseProgramEntity program = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
-  private List<AddressableEntityRef> flows = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> queues = null;
+  private List<AddressableEntityRef> flows = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
+
+  public ProgramMappings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      flows = new ArrayList<AddressableEntityRef>();
+    }
+  }
 
   
   /**

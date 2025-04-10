@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentAttachment;
@@ -109,7 +110,7 @@ public class MessageContent  implements Serializable {
   private ContentGeneric generic = null;
   private ContentList list = null;
   private ContentNotificationTemplate template = null;
-  private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
+  private List<ContentReaction> reactions = null;
   private MessagingRecipient mention = null;
   private ContentPostback postback = null;
   private ContentStory story = null;
@@ -119,6 +120,12 @@ public class MessageContent  implements Serializable {
   private ContentQuickReplyV2 quickReplyV2 = null;
   private ContentDatePicker datePicker = null;
   private ContentLocation location = null;
+
+  public MessageContent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      reactions = new ArrayList<ContentReaction>();
+    }
+  }
 
   
   /**

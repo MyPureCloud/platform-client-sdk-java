@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast;
@@ -75,6 +76,11 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotific
   private StatusEnum status = null;
   private WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast result = null;
   private String operationId = null;
+
+  public WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -80,9 +81,15 @@ public class MaskingRule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<String> integrations = new ArrayList<String>();
+  private List<String> integrations = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+
+  public MaskingRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      integrations = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

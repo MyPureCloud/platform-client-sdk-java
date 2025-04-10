@@ -73,6 +73,7 @@ import com.mypurecloud.sdk.v2.model.DncListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncPatchCustomExclusionColumnsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
+import com.mypurecloud.sdk.v2.model.DncPatchWhatsAppNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.EmailCampaignScheduleEntityListing;

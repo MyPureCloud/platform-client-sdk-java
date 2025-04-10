@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchContext;
 import com.mypurecloud.sdk.v2.model.PatchExternalSegment;
@@ -34,6 +35,11 @@ public class PatchSegment  implements Serializable {
   private PatchJourney journey = null;
   private PatchExternalSegment externalSegment = null;
   private Integer assignmentExpirationDays = null;
+
+  public PatchSegment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

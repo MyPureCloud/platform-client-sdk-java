@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastReference;
 import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
@@ -32,6 +33,11 @@ public class WeekScheduleListItemResponse  implements Serializable {
   private WeekScheduleGenerationResult generationResults = null;
   private ShortTermForecastReference shortTermForecast = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public WeekScheduleListItemResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

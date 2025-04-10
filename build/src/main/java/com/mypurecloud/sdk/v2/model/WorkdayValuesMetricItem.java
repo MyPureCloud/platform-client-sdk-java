@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -83,7 +84,13 @@ public class WorkdayValuesMetricItem  implements Serializable {
     }
   }
   private UnitTypeEnum unitType = null;
-  private List<WorkdayValuesTrendItem> trend = new ArrayList<WorkdayValuesTrendItem>();
+  private List<WorkdayValuesTrendItem> trend = null;
+
+  public WorkdayValuesMetricItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      trend = new ArrayList<WorkdayValuesTrendItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")

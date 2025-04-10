@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,14 @@ public class TimeOffRequestList  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<TimeOffRequestResponse> timeOffRequests = new ArrayList<TimeOffRequestResponse>();
+  private List<TimeOffRequestResponse> timeOffRequests = null;
   private String selfUri = null;
+
+  public TimeOffRequestList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      timeOffRequests = new ArrayList<TimeOffRequestResponse>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

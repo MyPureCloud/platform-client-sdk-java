@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallHistoryParticipant;
@@ -28,7 +29,7 @@ public class CallHistoryConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<CallHistoryParticipant> participants = new ArrayList<CallHistoryParticipant>();
+  private List<CallHistoryParticipant> participants = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -86,6 +87,12 @@ public class CallHistoryConversation  implements Serializable {
   private Boolean hadCobrowse = null;
   private Boolean wasOutboundCampaign = null;
   private String selfUri = null;
+
+  public CallHistoryConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<CallHistoryParticipant>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicExecution;
@@ -33,8 +34,8 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   private String divisionId = null;
   private Date endDateTime = null;
   private String endpoint = null;
-  private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> errors = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
-  private List<V2FlowExecutionDataFlowidTopicExecution> execution = new ArrayList<V2FlowExecutionDataFlowidTopicExecution>();
+  private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> errors = null;
+  private List<V2FlowExecutionDataFlowidTopicExecution> execution = null;
   private String flowExitReason = null;
   private String flowId = null;
   private Boolean flowIsDebug = null;
@@ -98,7 +99,15 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   private MessageTypeEnum messageType = null;
   private V2FlowExecutionDataFlowidTopicInvokingContext invokingContext = null;
   private Date startDateTime = null;
-  private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> warnings = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
+  private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> warnings = null;
+
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errors = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
+      execution = new ArrayList<V2FlowExecutionDataFlowidTopicExecution>();
+      warnings = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryClause;
@@ -74,8 +75,15 @@ public class TranscriptAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<TranscriptAggregateQueryClause> clauses = new ArrayList<TranscriptAggregateQueryClause>();
-  private List<TranscriptAggregateQueryPredicate> predicates = new ArrayList<TranscriptAggregateQueryPredicate>();
+  private List<TranscriptAggregateQueryClause> clauses = null;
+  private List<TranscriptAggregateQueryPredicate> predicates = null;
+
+  public TranscriptAggregateQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<TranscriptAggregateQueryClause>();
+      predicates = new ArrayList<TranscriptAggregateQueryPredicate>();
+    }
+  }
 
   
   /**

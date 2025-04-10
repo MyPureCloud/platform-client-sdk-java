@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -127,8 +128,14 @@ public class LearningModuleRuleParts  implements Serializable {
     }
   }
   private SelectorEnum selector = null;
-  private List<String> value = new ArrayList<String>();
+  private List<String> value = null;
   private Integer order = null;
+
+  public LearningModuleRuleParts() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      value = new ArrayList<String>();
+    }
+  }
 
   
   /**

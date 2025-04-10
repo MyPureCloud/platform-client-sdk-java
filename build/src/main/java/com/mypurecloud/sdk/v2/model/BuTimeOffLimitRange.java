@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class BuTimeOffLimitRange  implements Serializable {
   
   private LocalDate startDate = null;
-  private List<Integer> limitMinutesPerDay = new ArrayList<Integer>();
+  private List<Integer> limitMinutesPerDay = null;
+
+  public BuTimeOffLimitRange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      limitMinutesPerDay = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

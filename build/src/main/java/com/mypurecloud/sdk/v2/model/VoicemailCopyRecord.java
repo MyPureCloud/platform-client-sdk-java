@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.User;
@@ -27,6 +28,11 @@ public class VoicemailCopyRecord  implements Serializable {
   private User user = null;
   private Group group = null;
   private Date date = null;
+
+  public VoicemailCopyRecord() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The user that the voicemail message was copied to/from")

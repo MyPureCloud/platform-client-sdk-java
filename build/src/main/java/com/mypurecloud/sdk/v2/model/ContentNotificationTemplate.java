@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NotificationTemplateBody;
 import com.mypurecloud.sdk.v2.model.NotificationTemplateButton;
@@ -32,8 +33,14 @@ public class ContentNotificationTemplate  implements Serializable {
   private String language = null;
   private NotificationTemplateHeader header = null;
   private NotificationTemplateBody body = null;
-  private List<NotificationTemplateButton> buttons = new ArrayList<NotificationTemplateButton>();
+  private List<NotificationTemplateButton> buttons = null;
   private NotificationTemplateFooter footer = null;
+
+  public ContentNotificationTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      buttons = new ArrayList<NotificationTemplateButton>();
+    }
+  }
 
   
   /**

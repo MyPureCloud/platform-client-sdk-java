@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeAlteration;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeRecurrencePattern;
@@ -34,8 +35,14 @@ public class DialerSequenceScheduleConfigChangeScheduleRecurrence  implements Se
   private String timeZone = null;
   private DialerSequenceScheduleConfigChangeRecurrenceRange range = null;
   private DialerSequenceScheduleConfigChangeRecurrencePattern pattern = null;
-  private List<DialerSequenceScheduleConfigChangeAlteration> alterations = new ArrayList<DialerSequenceScheduleConfigChangeAlteration>();
+  private List<DialerSequenceScheduleConfigChangeAlteration> alterations = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerSequenceScheduleConfigChangeScheduleRecurrence() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      alterations = new ArrayList<DialerSequenceScheduleConfigChangeAlteration>();
+    }
+  }
 
   
   /**

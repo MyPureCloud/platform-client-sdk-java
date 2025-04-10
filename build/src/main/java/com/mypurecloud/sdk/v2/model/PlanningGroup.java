@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutePathResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateReference;
@@ -28,9 +29,15 @@ public class PlanningGroup  implements Serializable {
   private String id = null;
   private String name = null;
   private ServiceGoalTemplateReference serviceGoalTemplate = null;
-  private List<RoutePathResponse> routePaths = new ArrayList<RoutePathResponse>();
+  private List<RoutePathResponse> routePaths = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public PlanningGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routePaths = new ArrayList<RoutePathResponse>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

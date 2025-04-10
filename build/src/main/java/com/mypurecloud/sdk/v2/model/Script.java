@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.Page;
@@ -39,8 +40,14 @@ public class Script  implements Serializable {
   private Object features = null;
   private Object variables = null;
   private Object customActions = null;
-  private List<Page> pages = new ArrayList<Page>();
+  private List<Page> pages = null;
   private String selfUri = null;
+
+  public Script() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      pages = new ArrayList<Page>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

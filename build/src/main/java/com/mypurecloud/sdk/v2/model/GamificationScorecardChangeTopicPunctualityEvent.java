@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +25,12 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
   private String dateStart = null;
   private String dateScheduleStart = null;
   private String activityCode = null;
-  private Integer points = null;
+  private Long points = null;
+
+  public GamificationScorecardChangeTopicPunctualityEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -80,17 +86,17 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
 
   /**
    **/
-  public GamificationScorecardChangeTopicPunctualityEvent points(Integer points) {
+  public GamificationScorecardChangeTopicPunctualityEvent points(Long points) {
     this.points = points;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("points")
-  public Integer getPoints() {
+  public Long getPoints() {
     return points;
   }
-  public void setPoints(Integer points) {
+  public void setPoints(Long points) {
     this.points = points;
   }
 

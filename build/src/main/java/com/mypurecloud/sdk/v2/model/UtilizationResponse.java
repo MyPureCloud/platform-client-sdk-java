@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LabelUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.MediaUtilization;
@@ -28,6 +29,11 @@ public class UtilizationResponse  implements Serializable {
   
   private Map<String, MediaUtilization> utilization = null;
   private Map<String, LabelUtilizationResponse> labelUtilizations = null;
+
+  public UtilizationResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

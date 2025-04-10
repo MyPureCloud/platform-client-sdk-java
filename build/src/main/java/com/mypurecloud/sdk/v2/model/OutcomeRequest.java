@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssociatedValueField;
 import com.mypurecloud.sdk.v2.model.RequestContext;
@@ -32,6 +33,11 @@ public class OutcomeRequest  implements Serializable {
   private RequestContext context = null;
   private RequestJourney journey = null;
   private AssociatedValueField associatedValueField = null;
+
+  public OutcomeRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

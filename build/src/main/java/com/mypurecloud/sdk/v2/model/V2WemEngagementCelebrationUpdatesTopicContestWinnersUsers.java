@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,12 @@ import java.io.Serializable;
 public class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers  implements Serializable {
   
   private String id = null;
-  private Integer rank = null;
+  private Long rank = null;
+
+  public V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -44,17 +50,17 @@ public class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers  implemen
 
   /**
    **/
-  public V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers rank(Integer rank) {
+  public V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers rank(Long rank) {
     this.rank = rank;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("rank")
-  public Integer getRank() {
+  public Long getRank() {
     return rank;
   }
-  public void setRank(Integer rank) {
+  public void setRank(Long rank) {
     this.rank = rank;
   }
 

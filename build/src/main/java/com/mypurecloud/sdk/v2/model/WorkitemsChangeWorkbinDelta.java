@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkbinDelta;
@@ -26,6 +27,11 @@ public class WorkitemsChangeWorkbinDelta  implements Serializable {
   private Integer version = null;
   private UserReference modifiedBy = null;
   private WorkbinDelta delta = null;
+
+  public WorkitemsChangeWorkbinDelta() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

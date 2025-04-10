@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Attachment;
@@ -29,13 +30,13 @@ public class EmailMessage  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<EmailAddress> to = new ArrayList<EmailAddress>();
-  private List<EmailAddress> cc = new ArrayList<EmailAddress>();
-  private List<EmailAddress> bcc = new ArrayList<EmailAddress>();
+  private List<EmailAddress> to = null;
+  private List<EmailAddress> cc = null;
+  private List<EmailAddress> bcc = null;
   private EmailAddress from = null;
   private EmailAddress replyTo = null;
   private String subject = null;
-  private List<Attachment> attachments = new ArrayList<Attachment>();
+  private List<Attachment> attachments = null;
   private String textBody = null;
   private String htmlBody = null;
   private Date time = null;
@@ -141,6 +142,15 @@ public class EmailMessage  implements Serializable {
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
   private String selfUri = null;
+
+  public EmailMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      to = new ArrayList<EmailAddress>();
+      cc = new ArrayList<EmailAddress>();
+      bcc = new ArrayList<EmailAddress>();
+      attachments = new ArrayList<Attachment>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

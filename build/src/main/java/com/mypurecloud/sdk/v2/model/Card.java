@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CardAction;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class Card  implements Serializable {
   private String description = null;
   private String url = null;
   private CardAction defaultAction = null;
-  private List<CardAction> actions = new ArrayList<CardAction>();
+  private List<CardAction> actions = null;
+
+  public Card() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actions = new ArrayList<CardAction>();
+    }
+  }
 
   
   /**

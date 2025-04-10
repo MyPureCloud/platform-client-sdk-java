@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,22 +22,27 @@ import java.io.Serializable;
 
 public class WfmBuIntradayDataUpdateTopicBuIntradayScheduleData  implements Serializable {
   
-  private Integer onQueueTimeSeconds = null;
+  private Long onQueueTimeSeconds = null;
+
+  public WfmBuIntradayDataUpdateTopicBuIntradayScheduleData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public WfmBuIntradayDataUpdateTopicBuIntradayScheduleData onQueueTimeSeconds(Integer onQueueTimeSeconds) {
+  public WfmBuIntradayDataUpdateTopicBuIntradayScheduleData onQueueTimeSeconds(Long onQueueTimeSeconds) {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("onQueueTimeSeconds")
-  public Integer getOnQueueTimeSeconds() {
+  public Long getOnQueueTimeSeconds() {
     return onQueueTimeSeconds;
   }
-  public void setOnQueueTimeSeconds(Integer onQueueTimeSeconds) {
+  public void setOnQueueTimeSeconds(Long onQueueTimeSeconds) {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 

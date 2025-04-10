@@ -7,9 +7,9 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | **String** |  |  [optional] |
 | **isMobile** | **Boolean** |  |  [optional] |
-| **screenHeight** | **Integer** |  |  [optional] |
-| **screenWidth** | **Integer** |  |  [optional] |
-| **screenDensity** | **Integer** |  |  [optional] |
+| **screenHeight** | **Long** |  |  [optional] |
+| **screenWidth** | **Long** |  |  [optional] |
+| **screenDensity** | **Long** |  |  [optional] |
 | **fingerprint** | **String** |  |  [optional] |
 | **osFamily** | **String** |  |  [optional] |
 | **osVersion** | **String** |  |  [optional] |
@@ -30,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

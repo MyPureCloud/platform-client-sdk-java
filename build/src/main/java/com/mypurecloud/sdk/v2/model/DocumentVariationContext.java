@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeContextReference;
 import com.mypurecloud.sdk.v2.model.KnowledgeContextValueReference;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class DocumentVariationContext  implements Serializable {
   
   private KnowledgeContextReference context = null;
-  private List<KnowledgeContextValueReference> values = new ArrayList<KnowledgeContextValueReference>();
+  private List<KnowledgeContextValueReference> values = null;
+
+  public DocumentVariationContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<KnowledgeContextValueReference>();
+    }
+  }
 
   
   /**

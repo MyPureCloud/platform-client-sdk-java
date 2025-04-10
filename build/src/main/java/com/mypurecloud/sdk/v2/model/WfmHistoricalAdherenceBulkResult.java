@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkUserResult;
 import io.swagger.annotations.ApiModel;
@@ -30,8 +31,14 @@ public class WfmHistoricalAdherenceBulkResult  implements Serializable {
   private Date startDate = null;
   private Date endDate = null;
   private String managementUnitId = null;
-  private List<WfmHistoricalAdherenceBulkUserResult> userResults = new ArrayList<WfmHistoricalAdherenceBulkUserResult>();
+  private List<WfmHistoricalAdherenceBulkUserResult> userResults = null;
   private Map<String, String> lookupIdToSecondaryPresenceId = null;
+
+  public WfmHistoricalAdherenceBulkResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userResults = new ArrayList<WfmHistoricalAdherenceBulkUserResult>();
+    }
+  }
 
   
   /**

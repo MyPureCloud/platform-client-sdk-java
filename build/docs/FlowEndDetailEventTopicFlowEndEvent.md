@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | **Integer** |  |  [optional] |
+| **eventTime** | **Long** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
 | **participantId** | **String** |  |  [optional] |
 | **sessionId** | **String** |  |  [optional] |
@@ -23,7 +23,7 @@
 | **flowId** | **String** |  |  [optional] |
 | **divisionId** | **String** |  |  [optional] |
 | **flowVersion** | **String** |  |  [optional] |
-| **connectedDurationMs** | **Integer** |  |  [optional] |
+| **connectedDurationMs** | **Long** |  |  [optional] |
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 | **exitReason** | [**ExitReasonEnum**](#Enum--ExitReasonEnum) |  |  [optional] |
@@ -164,4 +164,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

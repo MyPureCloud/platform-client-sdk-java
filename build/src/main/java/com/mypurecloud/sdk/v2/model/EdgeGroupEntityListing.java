@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class EdgeGroupEntityListing  implements Serializable, PagedResource<EdgeGroup> {
   
-  private List<EdgeGroup> entities = new ArrayList<EdgeGroup>();
+  private List<EdgeGroup> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -36,6 +37,12 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public EdgeGroupEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<EdgeGroup>();
+    }
+  }
 
   
   /**

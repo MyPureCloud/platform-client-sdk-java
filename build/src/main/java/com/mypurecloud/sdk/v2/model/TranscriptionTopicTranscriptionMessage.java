@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TranscriptionTopicTranscriptResult;
 import com.mypurecloud.sdk.v2.model.TranscriptionTopicTranscriptionRequestStatus;
@@ -30,10 +31,16 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
   private String organizationId = null;
   private String conversationId = null;
   private String communicationId = null;
-  private Integer sessionStartTimeMs = null;
-  private Integer transcriptionStartTimeMs = null;
-  private List<TranscriptionTopicTranscriptResult> transcripts = new ArrayList<TranscriptionTopicTranscriptResult>();
+  private Long sessionStartTimeMs = null;
+  private Long transcriptionStartTimeMs = null;
+  private List<TranscriptionTopicTranscriptResult> transcripts = null;
   private TranscriptionTopicTranscriptionRequestStatus status = null;
+
+  public TranscriptionTopicTranscriptionMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      transcripts = new ArrayList<TranscriptionTopicTranscriptResult>();
+    }
+  }
 
   
   /**
@@ -106,34 +113,34 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
 
   /**
    **/
-  public TranscriptionTopicTranscriptionMessage sessionStartTimeMs(Integer sessionStartTimeMs) {
+  public TranscriptionTopicTranscriptionMessage sessionStartTimeMs(Long sessionStartTimeMs) {
     this.sessionStartTimeMs = sessionStartTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sessionStartTimeMs")
-  public Integer getSessionStartTimeMs() {
+  public Long getSessionStartTimeMs() {
     return sessionStartTimeMs;
   }
-  public void setSessionStartTimeMs(Integer sessionStartTimeMs) {
+  public void setSessionStartTimeMs(Long sessionStartTimeMs) {
     this.sessionStartTimeMs = sessionStartTimeMs;
   }
 
 
   /**
    **/
-  public TranscriptionTopicTranscriptionMessage transcriptionStartTimeMs(Integer transcriptionStartTimeMs) {
+  public TranscriptionTopicTranscriptionMessage transcriptionStartTimeMs(Long transcriptionStartTimeMs) {
     this.transcriptionStartTimeMs = transcriptionStartTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("transcriptionStartTimeMs")
-  public Integer getTranscriptionStartTimeMs() {
+  public Long getTranscriptionStartTimeMs() {
     return transcriptionStartTimeMs;
   }
-  public void setTranscriptionStartTimeMs(Integer transcriptionStartTimeMs) {
+  public void setTranscriptionStartTimeMs(Long transcriptionStartTimeMs) {
     this.transcriptionStartTimeMs = transcriptionStartTimeMs;
   }
 

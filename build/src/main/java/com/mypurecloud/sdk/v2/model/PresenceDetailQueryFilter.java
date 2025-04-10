@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PresenceDetailQueryClause;
@@ -74,8 +75,15 @@ public class PresenceDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<PresenceDetailQueryClause> clauses = new ArrayList<PresenceDetailQueryClause>();
-  private List<PresenceDetailQueryPredicate> predicates = new ArrayList<PresenceDetailQueryPredicate>();
+  private List<PresenceDetailQueryClause> clauses = null;
+  private List<PresenceDetailQueryPredicate> predicates = null;
+
+  public PresenceDetailQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<PresenceDetailQueryClause>();
+      predicates = new ArrayList<PresenceDetailQueryPredicate>();
+    }
+  }
 
   
   /**

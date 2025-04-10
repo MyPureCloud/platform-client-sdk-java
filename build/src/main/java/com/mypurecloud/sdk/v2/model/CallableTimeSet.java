@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableTime;
 import io.swagger.annotations.ApiModel;
@@ -30,8 +31,14 @@ public class CallableTimeSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<CallableTime> callableTimes = new ArrayList<CallableTime>();
+  private List<CallableTime> callableTimes = null;
   private String selfUri = null;
+
+  public CallableTimeSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callableTimes = new ArrayList<CallableTime>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

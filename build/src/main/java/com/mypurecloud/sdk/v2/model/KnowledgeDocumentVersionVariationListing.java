@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariation;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class KnowledgeDocumentVersionVariationListing  implements Serializable {
   
-  private List<KnowledgeDocumentVersionVariation> entities = new ArrayList<KnowledgeDocumentVersionVariation>();
+  private List<KnowledgeDocumentVersionVariation> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
+
+  public KnowledgeDocumentVersionVariationListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<KnowledgeDocumentVersionVariation>();
+    }
+  }
 
   
   /**

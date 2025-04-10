@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ModifiableRuleProperties;
 import io.swagger.annotations.ApiModel;
@@ -23,7 +24,7 @@ import java.io.Serializable;
 
 public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
   
-  private List<String> ruleIds = new ArrayList<String>();
+  private List<String> ruleIds = null;
   private ModifiableRuleProperties properties = null;
 
   private static class TypesToAddEnumDeserializer extends StdDeserializer<TypesToAddEnum> {
@@ -73,7 +74,7 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TypesToAddEnum> typesToAdd = new ArrayList<TypesToAddEnum>();
+  private List<TypesToAddEnum> typesToAdd = null;
 
   private static class TypesToRemoveEnumDeserializer extends StdDeserializer<TypesToRemoveEnum> {
     public TypesToRemoveEnumDeserializer() {
@@ -122,7 +123,15 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TypesToRemoveEnum> typesToRemove = new ArrayList<TypesToRemoveEnum>();
+  private List<TypesToRemoveEnum> typesToRemove = null;
+
+  public CommonRuleBulkUpdateNotificationsRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ruleIds = new ArrayList<String>();
+      typesToAdd = new ArrayList<TypesToAddEnum>();
+      typesToRemove = new ArrayList<TypesToRemoveEnum>();
+    }
+  }
 
   
   /**

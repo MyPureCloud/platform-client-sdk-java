@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -28,7 +29,7 @@ import java.io.Serializable;
 
 public class InsightsSummary  implements Serializable {
   
-  private List<InsightsSummaryUserItem> entities = new ArrayList<InsightsSummaryUserItem>();
+  private List<InsightsSummaryUserItem> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -86,6 +87,12 @@ public class InsightsSummary  implements Serializable {
   private WorkdayPeriod comparativePeriod = null;
   private WorkdayPeriod primaryPeriod = null;
   private Integer pageCount = null;
+
+  public InsightsSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<InsightsSummaryUserItem>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsProperty;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class PropertyIndexRequest  implements Serializable {
   
   private String sessionId = null;
   private Date targetDate = null;
-  private List<AnalyticsProperty> properties = new ArrayList<AnalyticsProperty>();
+  private List<AnalyticsProperty> properties = null;
+
+  public PropertyIndexRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      properties = new ArrayList<AnalyticsProperty>();
+    }
+  }
 
   
   /**

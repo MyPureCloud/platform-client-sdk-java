@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
@@ -253,7 +254,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private Date disconnectedTime = null;
   private QueueConversationSocialExpressionEventTopicAddress toAddress = null;
   private QueueConversationSocialExpressionEventTopicAddress fromAddress = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageDetails> messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessageDetails>();
+  private List<QueueConversationSocialExpressionEventTopicMessageDetails> messages = null;
   private String messagesTranscriptUri = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -324,6 +325,12 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private String agentAssistantId = null;
   private String byoSmsIntegrationId = null;
   private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
+
+  public QueueConversationSocialExpressionEventTopicMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessageDetails>();
+    }
+  }
 
   
   /**

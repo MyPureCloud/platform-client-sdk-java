@@ -6978,11 +6978,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<HistoricalImportDeleteJobResponse> getWorkforcemanagementHistoricaldataDeletejobAsync(GetWorkforcemanagementHistoricaldataDeletejobRequest request, final AsyncApiCallback<HistoricalImportDeleteJobResponse> callback) {
     try {
@@ -7012,11 +7013,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<HistoricalImportDeleteJobResponse>> getWorkforcemanagementHistoricaldataDeletejobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>> callback) {
     try {
@@ -15836,11 +15838,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<HistoricalImportDeleteJobResponse> postWorkforcemanagementHistoricaldataDeletejobAsync(PostWorkforcemanagementHistoricaldataDeletejobRequest request, final AsyncApiCallback<HistoricalImportDeleteJobResponse> callback) {
     try {
@@ -15870,11 +15873,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<HistoricalImportDeleteJobResponse>> postWorkforcemanagementHistoricaldataDeletejobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>> callback) {
     try {

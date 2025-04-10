@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -89,10 +90,18 @@ public class ScheduleGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private String timeZone = null;
-  private List<DomainEntityRef> openSchedules = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> closedSchedules = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> holidaySchedules = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> openSchedules = null;
+  private List<DomainEntityRef> closedSchedules = null;
+  private List<DomainEntityRef> holidaySchedules = null;
   private String selfUri = null;
+
+  public ScheduleGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      openSchedules = new ArrayList<DomainEntityRef>();
+      closedSchedules = new ArrayList<DomainEntityRef>();
+      holidaySchedules = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

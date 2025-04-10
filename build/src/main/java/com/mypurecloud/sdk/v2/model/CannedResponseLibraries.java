@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -23,7 +24,7 @@ import java.io.Serializable;
 
 public class CannedResponseLibraries  implements Serializable {
   
-  private List<String> libraryIds = new ArrayList<String>();
+  private List<String> libraryIds = null;
 
   private static class ModeEnumDeserializer extends StdDeserializer<ModeEnum> {
     public ModeEnumDeserializer() {
@@ -73,6 +74,12 @@ public class CannedResponseLibraries  implements Serializable {
     }
   }
   private ModeEnum mode = null;
+
+  public CannedResponseLibraries() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      libraryIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

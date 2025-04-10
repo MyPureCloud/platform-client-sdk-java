@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class ConversationEncryptionConfigurationListing  implements Serializable {
   
   private Long total = null;
-  private List<ConversationEncryptionConfiguration> entities = new ArrayList<ConversationEncryptionConfiguration>();
+  private List<ConversationEncryptionConfiguration> entities = null;
   private String selfUri = null;
+
+  public ConversationEncryptionConfigurationListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ConversationEncryptionConfiguration>();
+    }
+  }
 
   
   /**

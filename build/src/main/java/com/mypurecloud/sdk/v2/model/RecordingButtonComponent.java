@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingContentActions;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class RecordingButtonComponent  implements Serializable {
   private String title = null;
   private RecordingContentActions actions = null;
   private Boolean isSelected = null;
+
+  public RecordingButtonComponent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

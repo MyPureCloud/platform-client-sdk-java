@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -77,8 +78,8 @@ public class ApiUsageSimpleSearch  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
-  private List<String> oauthClientNames = new ArrayList<String>();
+  private List<MetricsEnum> metrics = null;
+  private List<String> oauthClientNames = null;
 
   private static class HttpMethodsEnumDeserializer extends StdDeserializer<HttpMethodsEnum> {
     public HttpMethodsEnumDeserializer() {
@@ -132,8 +133,17 @@ public class ApiUsageSimpleSearch  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<HttpMethodsEnum> httpMethods = new ArrayList<HttpMethodsEnum>();
-  private List<String> templateUris = new ArrayList<String>();
+  private List<HttpMethodsEnum> httpMethods = null;
+  private List<String> templateUris = null;
+
+  public ApiUsageSimpleSearch() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<MetricsEnum>();
+      oauthClientNames = new ArrayList<String>();
+      httpMethods = new ArrayList<HttpMethodsEnum>();
+      templateUris = new ArrayList<String>();
+    }
+  }
 
   
   /**

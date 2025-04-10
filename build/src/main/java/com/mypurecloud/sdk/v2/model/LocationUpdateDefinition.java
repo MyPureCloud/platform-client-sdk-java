@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LocationAddress;
@@ -76,11 +77,17 @@ public class LocationUpdateDefinition  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<String> path = new ArrayList<String>();
+  private List<String> path = null;
   private String notes = null;
   private String contactUser = null;
   private LocationEmergencyNumber emergencyNumber = null;
   private LocationAddress address = null;
+
+  public LocationUpdateDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      path = new ArrayList<String>();
+    }
+  }
 
   
   /**

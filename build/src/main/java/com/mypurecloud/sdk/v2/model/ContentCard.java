@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentCardAction;
 import io.swagger.annotations.ApiModel;
@@ -30,7 +31,13 @@ public class ContentCard  implements Serializable {
   private String image = null;
   private String video = null;
   private ContentCardAction defaultAction = null;
-  private List<ContentCardAction> actions = new ArrayList<ContentCardAction>();
+  private List<ContentCardAction> actions = null;
+
+  public ContentCard() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actions = new ArrayList<ContentCardAction>();
+    }
+  }
 
   
   /**

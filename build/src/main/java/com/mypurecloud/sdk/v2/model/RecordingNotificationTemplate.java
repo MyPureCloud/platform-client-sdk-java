@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateBody;
 import com.mypurecloud.sdk.v2.model.RecordingTemplateButton;
@@ -31,8 +32,14 @@ public class RecordingNotificationTemplate  implements Serializable {
   private String language = null;
   private RecordingTemplateHeader header = null;
   private RecordingTemplateBody body = null;
-  private List<RecordingTemplateButton> buttons = new ArrayList<RecordingTemplateButton>();
+  private List<RecordingTemplateButton> buttons = null;
   private RecordingTemplateFooter footer = null;
+
+  public RecordingNotificationTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      buttons = new ArrayList<RecordingTemplateButton>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

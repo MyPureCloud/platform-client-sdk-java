@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicJourneyAction;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicJourneyCustomer;
@@ -27,6 +28,11 @@ public class QueueConversationCallbackEventTopicJourneyContext  implements Seria
   private QueueConversationCallbackEventTopicJourneyCustomer customer = null;
   private QueueConversationCallbackEventTopicJourneyCustomerSession customerSession = null;
   private QueueConversationCallbackEventTopicJourneyAction triggeringAction = null;
+
+  public QueueConversationCallbackEventTopicJourneyContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

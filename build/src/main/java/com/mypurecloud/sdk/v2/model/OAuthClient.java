@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -31,9 +32,9 @@ public class OAuthClient  implements Serializable {
   private String name = null;
   private Long accessTokenValiditySeconds = null;
   private String description = null;
-  private List<String> registeredRedirectUri = new ArrayList<String>();
+  private List<String> registeredRedirectUri = null;
   private String secret = null;
-  private List<String> roleIds = new ArrayList<String>();
+  private List<String> roleIds = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private DomainEntityRef createdBy = null;
@@ -89,8 +90,8 @@ public class OAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
-  private List<String> scope = new ArrayList<String>();
-  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
+  private List<String> scope = null;
+  private List<RoleDivision> roleDivisions = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -142,6 +143,15 @@ public class OAuthClient  implements Serializable {
   private StateEnum state = null;
   private Date dateToDelete = null;
   private String selfUri = null;
+
+  public OAuthClient() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      registeredRedirectUri = new ArrayList<String>();
+      roleIds = new ArrayList<String>();
+      scope = new ArrayList<String>();
+      roleDivisions = new ArrayList<RoleDivision>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

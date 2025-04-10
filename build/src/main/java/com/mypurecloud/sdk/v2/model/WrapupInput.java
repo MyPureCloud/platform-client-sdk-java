@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,11 +28,17 @@ public class WrapupInput  implements Serializable {
   private String code = null;
   private String name = null;
   private String notes = null;
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = null;
   private Integer durationSeconds = null;
   private Date endTime = null;
   private Boolean provisional = null;
   private Boolean disableEndTimeUpdates = null;
+
+  public WrapupInput() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
 
   
   /**

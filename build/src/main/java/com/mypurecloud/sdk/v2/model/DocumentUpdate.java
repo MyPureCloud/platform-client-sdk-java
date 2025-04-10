@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentAttribute;
 import io.swagger.annotations.ApiModel;
@@ -27,12 +28,23 @@ public class DocumentUpdate  implements Serializable {
   private Integer changeNumber = null;
   private String name = null;
   private Boolean read = null;
-  private List<String> addTags = new ArrayList<String>();
-  private List<String> removeTags = new ArrayList<String>();
-  private List<String> addTagIds = new ArrayList<String>();
-  private List<String> removeTagIds = new ArrayList<String>();
-  private List<DocumentAttribute> updateAttributes = new ArrayList<DocumentAttribute>();
-  private List<String> removeAttributes = new ArrayList<String>();
+  private List<String> addTags = null;
+  private List<String> removeTags = null;
+  private List<String> addTagIds = null;
+  private List<String> removeTagIds = null;
+  private List<DocumentAttribute> updateAttributes = null;
+  private List<String> removeAttributes = null;
+
+  public DocumentUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      addTags = new ArrayList<String>();
+      removeTags = new ArrayList<String>();
+      addTagIds = new ArrayList<String>();
+      removeTagIds = new ArrayList<String>();
+      updateAttributes = new ArrayList<DocumentAttribute>();
+      removeAttributes = new ArrayList<String>();
+    }
+  }
 
   
   /**

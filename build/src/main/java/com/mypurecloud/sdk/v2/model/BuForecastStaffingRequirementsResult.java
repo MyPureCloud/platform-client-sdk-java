@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.StaffingRequirementsPlanningGroupData;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class BuForecastStaffingRequirementsResult  implements Serializable {
   private Integer weekNumber = null;
   private String downloadUrl = null;
   private Date downloadUrlExpirationDate = null;
-  private List<StaffingRequirementsPlanningGroupData> planningGroupStaffingRequirements = new ArrayList<StaffingRequirementsPlanningGroupData>();
+  private List<StaffingRequirementsPlanningGroupData> planningGroupStaffingRequirements = null;
+
+  public BuForecastStaffingRequirementsResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      planningGroupStaffingRequirements = new ArrayList<StaffingRequirementsPlanningGroupData>();
+    }
+  }
 
   
   /**

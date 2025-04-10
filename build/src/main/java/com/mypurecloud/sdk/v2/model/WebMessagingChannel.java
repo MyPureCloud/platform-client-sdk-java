@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebMessagingRecipient;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,11 @@ public class WebMessagingChannel  implements Serializable {
   private WebMessagingRecipient to = null;
   private Date time = null;
   private String messageId = null;
+
+  public WebMessagingChannel() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is received from.")

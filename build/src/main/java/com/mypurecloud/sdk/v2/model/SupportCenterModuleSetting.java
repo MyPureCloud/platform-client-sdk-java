@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SupportCenterCompactCategoryModuleTemplate;
@@ -80,6 +81,11 @@ public class SupportCenterModuleSetting  implements Serializable {
   private Boolean enabled = null;
   private SupportCenterCompactCategoryModuleTemplate compactCategoryModuleTemplate = null;
   private SupportCenterDetailedCategoryModuleTemplate detailedCategoryModuleTemplate = null;
+
+  public SupportCenterModuleSetting() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

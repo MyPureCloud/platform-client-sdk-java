@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ApprovalNamespace;
@@ -70,6 +71,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     DATAACTIONS("dataactions"),
     DATATABLES("datatables"),
     DIRECTORY("directory"),
+    DSAR("dsar"),
     EMAIL("email"),
     EMPLOYEE_ENGAGEMENT("employee.engagement"),
     EVENT_ORCHESTRATION("event.orchestration"),
@@ -213,7 +215,7 @@ public class LimitChangeRequestDetails  implements Serializable {
   private StatusEnum status = null;
   private Double currentValue = null;
   private Date dateCreated = null;
-  private List<StatusChange> statusHistory = new ArrayList<StatusChange>();
+  private List<StatusChange> statusHistory = null;
   private Date dateCompleted = null;
 
   private static class RejectReasonEnumDeserializer extends StdDeserializer<RejectReasonEnum> {
@@ -266,8 +268,15 @@ public class LimitChangeRequestDetails  implements Serializable {
     }
   }
   private RejectReasonEnum rejectReason = null;
-  private List<ApprovalNamespace> approvalNamespaces = new ArrayList<ApprovalNamespace>();
+  private List<ApprovalNamespace> approvalNamespaces = null;
   private String selfUri = null;
+
+  public LimitChangeRequestDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      statusHistory = new ArrayList<StatusChange>();
+      approvalNamespaces = new ArrayList<ApprovalNamespace>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

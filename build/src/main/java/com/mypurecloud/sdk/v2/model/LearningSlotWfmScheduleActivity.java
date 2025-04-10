@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningSlotFullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.LearningSlotScheduleActivity;
@@ -27,8 +28,15 @@ import java.io.Serializable;
 public class LearningSlotWfmScheduleActivity  implements Serializable {
   
   private UserReference user = null;
-  private List<LearningSlotScheduleActivity> activities = new ArrayList<LearningSlotScheduleActivity>();
-  private List<LearningSlotFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<LearningSlotFullDayTimeOffMarker>();
+  private List<LearningSlotScheduleActivity> activities = null;
+  private List<LearningSlotFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+
+  public LearningSlotWfmScheduleActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<LearningSlotScheduleActivity>();
+      fullDayTimeOffMarkers = new ArrayList<LearningSlotFullDayTimeOffMarker>();
+    }
+  }
 
   
   /**

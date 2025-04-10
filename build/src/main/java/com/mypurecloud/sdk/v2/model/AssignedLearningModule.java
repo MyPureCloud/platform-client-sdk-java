@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
@@ -95,7 +96,7 @@ public class AssignedLearningModule  implements Serializable {
   private LearningModuleRule rule = null;
   private Boolean enforceContentOrder = null;
   private ReviewAssessmentResults reviewAssessmentResults = null;
-  private List<LearningAssignment> currentAssignments = new ArrayList<LearningAssignment>();
+  private List<LearningAssignment> currentAssignments = null;
   private String selfUri = null;
   private Boolean isArchived = null;
   private Boolean isPublished = null;
@@ -152,7 +153,7 @@ public class AssignedLearningModule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
+  private List<LearningModuleInformStep> informSteps = null;
   private AssessmentForm assessmentForm = null;
   private LearningModuleSummary summaryData = null;
   private LearningModuleReassignSummary reassignSummaryData = null;
@@ -206,6 +207,13 @@ public class AssignedLearningModule  implements Serializable {
     }
   }
   private ArchivalModeEnum archivalMode = null;
+
+  public AssignedLearningModule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      currentAssignments = new ArrayList<LearningAssignment>();
+      informSteps = new ArrayList<LearningModuleInformStep>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

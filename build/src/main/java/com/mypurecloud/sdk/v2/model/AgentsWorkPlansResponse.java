@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MuAgentsWorkPlansResult;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class AgentsWorkPlansResponse  implements Serializable {
   
   private String downloadUrl = null;
   private MuAgentsWorkPlansResult result = null;
+
+  public AgentsWorkPlansResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

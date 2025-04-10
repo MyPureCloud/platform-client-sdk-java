@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -77,6 +78,11 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
   private StateEnum state = null;
   private Date startTime = null;
   private Date endTime = null;
+
+  public QueueConversationVideoEventTopicAfterCallWork() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

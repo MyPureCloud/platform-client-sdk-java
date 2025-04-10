@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
@@ -76,11 +77,17 @@ public class AgentlessEmailSendRequestDto  implements Serializable {
   private SenderTypeEnum senderType = null;
   private String conversationId = null;
   private EmailAddress fromAddress = null;
-  private List<EmailAddress> toAddresses = new ArrayList<EmailAddress>();
+  private List<EmailAddress> toAddresses = null;
   private EmailAddress replyToAddress = null;
   private String subject = null;
   private String textBody = null;
   private String htmlBody = null;
+
+  public AgentlessEmailSendRequestDto() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      toAddresses = new ArrayList<EmailAddress>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AiScoring;
@@ -154,7 +155,7 @@ public class EvaluationResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypeEnum> mediaType = new ArrayList<MediaTypeEnum>();
+  private List<MediaTypeEnum> mediaType = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
   private Date conversationEndDate = null;
@@ -211,11 +212,18 @@ public class EvaluationResponse  implements Serializable {
   private ResourceTypeEnum resourceType = null;
   private Boolean redacted = null;
   private Boolean isScoringIndex = null;
-  private List<String> authorizedActions = new ArrayList<String>();
+  private List<String> authorizedActions = null;
   private Boolean hasAssistanceFailed = null;
   private EvaluationSource evaluationSource = null;
   private AiScoring aiScoring = null;
   private String selfUri = null;
+
+  public EvaluationResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaType = new ArrayList<MediaTypeEnum>();
+      authorizedActions = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

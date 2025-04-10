@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MetaData;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class VmPairingInfo  implements Serializable {
   private String edgeId = null;
   private String authToken = null;
   private String orgId = null;
+
+  public VmPairingInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

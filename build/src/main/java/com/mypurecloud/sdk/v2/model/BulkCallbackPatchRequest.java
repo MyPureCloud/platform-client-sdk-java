@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class BulkCallbackPatchRequest  implements Serializable {
   
-  private List<PatchCallbackRequest> patchCallbackRequests = new ArrayList<PatchCallbackRequest>();
+  private List<PatchCallbackRequest> patchCallbackRequests = null;
+
+  public BulkCallbackPatchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      patchCallbackRequests = new ArrayList<PatchCallbackRequest>();
+    }
+  }
 
   
   /**

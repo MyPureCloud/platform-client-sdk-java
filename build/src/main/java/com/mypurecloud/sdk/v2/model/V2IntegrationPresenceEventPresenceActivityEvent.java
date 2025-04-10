@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2IntegrationPresenceEventOrganizationPresence;
@@ -79,6 +80,11 @@ public class V2IntegrationPresenceEventPresenceActivityEvent  implements Seriali
   private String message = null;
   private String currentDisplaySourceId = null;
   private String previousDisplaySourceId = null;
+
+  public V2IntegrationPresenceEventPresenceActivityEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

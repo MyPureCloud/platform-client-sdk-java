@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicScreenShareMediaParticipant;
@@ -27,11 +28,19 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   
   private String id = null;
   private String name = null;
-  private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationScreenShareEventTopicConversationDivisionMembership>();
+  private List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationScreenShareEventTopicScreenShareConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationScreenShareEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ApiUsageRow;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class ApiUsageQueryResult  implements Serializable {
   
-  private List<ApiUsageRow> results = new ArrayList<ApiUsageRow>();
+  private List<ApiUsageRow> results = null;
 
   private static class QueryStatusEnumDeserializer extends StdDeserializer<QueryStatusEnum> {
     public QueryStatusEnumDeserializer() {
@@ -77,6 +78,12 @@ public class ApiUsageQueryResult  implements Serializable {
   }
   private QueryStatusEnum queryStatus = null;
   private Cursors cursors = null;
+
+  public ApiUsageQueryResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<ApiUsageRow>();
+    }
+  }
 
   
   /**

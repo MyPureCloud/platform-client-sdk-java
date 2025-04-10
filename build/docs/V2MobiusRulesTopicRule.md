@@ -16,7 +16,7 @@
 | **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
 | **dateCreated** | [**Date**](Date) |  |  [optional] |
 | **sendExitingAlarmNotification** | **Boolean** |  |  [optional] |
-| **waitBetweenNotificationMs** | **Integer** |  |  [optional] |
+| **waitBetweenNotificationMs** | **Long** |  |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -44,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

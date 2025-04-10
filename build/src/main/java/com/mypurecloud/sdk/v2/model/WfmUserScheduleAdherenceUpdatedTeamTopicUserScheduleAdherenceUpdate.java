@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference;
@@ -149,11 +150,18 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
   private WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation adherenceExplanation = null;
   private Date adherenceChangeTime = null;
   private Date presenceUpdateTime = null;
-  private List<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference>();
+  private List<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference> activeQueues = null;
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
   private Boolean suppressOnTimeReminder = null;
-  private List<WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder> nextActivityReminders = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder>();
+  private List<WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder> nextActivityReminders = null;
+
+  public WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference>();
+      nextActivityReminders = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder>();
+    }
+  }
 
   
   /**

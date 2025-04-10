@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowExecutionAggregateQueryFilter;
@@ -77,7 +78,7 @@ public class FlowExecutionAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private FlowExecutionAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -124,9 +125,9 @@ public class FlowExecutionAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
   private Boolean flattenMultivaluedDimensions = null;
-  private List<FlowExecutionAggregationView> views = new ArrayList<FlowExecutionAggregationView>();
+  private List<FlowExecutionAggregationView> views = null;
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {
@@ -174,6 +175,14 @@ public class FlowExecutionAggregationQuery  implements Serializable {
     }
   }
   private AlternateTimeDimensionEnum alternateTimeDimension = null;
+
+  public FlowExecutionAggregationQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groupBy = new ArrayList<GroupByEnum>();
+      metrics = new ArrayList<MetricsEnum>();
+      views = new ArrayList<FlowExecutionAggregationView>();
+    }
+  }
 
   
   /**

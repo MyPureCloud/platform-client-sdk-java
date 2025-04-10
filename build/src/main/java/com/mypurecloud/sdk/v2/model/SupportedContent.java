@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaTypes;
@@ -34,6 +35,11 @@ public class SupportedContent  implements Serializable {
   private Integer version = null;
   private MediaTypes mediaTypes = null;
   private String selfUri = null;
+
+  public SupportedContent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", required = true, value = "A unique supported content Id.")

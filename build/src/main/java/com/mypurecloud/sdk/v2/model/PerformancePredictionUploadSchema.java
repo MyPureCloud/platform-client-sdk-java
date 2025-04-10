@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MuAgentQueueTimeRequest;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class PerformancePredictionUploadSchema  implements Serializable {
   
   private Date calculationStartDate = null;
-  private List<MuAgentQueueTimeRequest> onQueueTimes = new ArrayList<MuAgentQueueTimeRequest>();
+  private List<MuAgentQueueTimeRequest> onQueueTimes = null;
+
+  public PerformancePredictionUploadSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      onQueueTimes = new ArrayList<MuAgentQueueTimeRequest>();
+    }
+  }
 
   
   /**

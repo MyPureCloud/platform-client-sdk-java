@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SchedulingProcessingError;
@@ -77,9 +78,15 @@ public class SchedulingStatusResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<SchedulingProcessingError> errorDetails = new ArrayList<SchedulingProcessingError>();
+  private List<SchedulingProcessingError> errorDetails = null;
   private String schedulingResultUri = null;
   private Integer percentComplete = null;
+
+  public SchedulingStatusResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errorDetails = new ArrayList<SchedulingProcessingError>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The ID generated for the scheduling job.  Use to GET result when job is completed.")

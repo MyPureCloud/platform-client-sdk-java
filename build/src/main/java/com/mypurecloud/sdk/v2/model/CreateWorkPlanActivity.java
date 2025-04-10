@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,11 @@ public class CreateWorkPlanActivity  implements Serializable {
   private Boolean countsAsContiguousWorkTime = null;
   private Integer minimumLengthFromShiftStartMinutes = null;
   private Integer minimumLengthFromShiftEndMinutes = null;
+
+  public CreateWorkPlanActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

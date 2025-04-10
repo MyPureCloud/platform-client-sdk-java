@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -33,7 +34,7 @@ public class GenericSAML  implements Serializable {
   private String sloBinding = null;
   private String relyingPartyIdentifier = null;
   private String certificate = null;
-  private List<String> certificates = new ArrayList<String>();
+  private List<String> certificates = null;
   private String logoImageData = null;
 
   private static class NameIdentifierFormatEnumDeserializer extends StdDeserializer<NameIdentifierFormatEnum> {
@@ -142,6 +143,12 @@ public class GenericSAML  implements Serializable {
   private Boolean displayOnLogin = null;
   private Boolean endpointCompression = null;
   private String selfUri = null;
+
+  public GenericSAML() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      certificates = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

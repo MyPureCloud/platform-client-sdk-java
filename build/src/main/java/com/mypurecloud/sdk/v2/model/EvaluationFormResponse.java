@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AiScoringSettings;
@@ -34,7 +35,7 @@ public class EvaluationFormResponse  implements Serializable {
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
-  private List<EvaluationQuestionGroup> questionGroups = new ArrayList<EvaluationQuestionGroup>();
+  private List<EvaluationQuestionGroup> questionGroups = null;
 
   private static class WeightModeEnumDeserializer extends StdDeserializer<WeightModeEnum> {
     public WeightModeEnumDeserializer() {
@@ -87,6 +88,12 @@ public class EvaluationFormResponse  implements Serializable {
   private DomainEntityListingEvaluationForm publishedVersions = null;
   private AiScoringSettings aiScoring = null;
   private String selfUri = null;
+
+  public EvaluationFormResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroups = new ArrayList<EvaluationQuestionGroup>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

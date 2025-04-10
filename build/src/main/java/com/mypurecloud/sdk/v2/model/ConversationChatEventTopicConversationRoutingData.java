@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicScoredAgent;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicUriReference;
@@ -27,9 +28,16 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
   
   private ConversationChatEventTopicUriReference queue = null;
   private ConversationChatEventTopicUriReference language = null;
-  private Integer priority = null;
-  private List<ConversationChatEventTopicUriReference> skills = new ArrayList<ConversationChatEventTopicUriReference>();
-  private List<ConversationChatEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationChatEventTopicScoredAgent>();
+  private Long priority = null;
+  private List<ConversationChatEventTopicUriReference> skills = null;
+  private List<ConversationChatEventTopicScoredAgent> scoredAgents = null;
+
+  public ConversationChatEventTopicConversationRoutingData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<ConversationChatEventTopicUriReference>();
+      scoredAgents = new ArrayList<ConversationChatEventTopicScoredAgent>();
+    }
+  }
 
   
   /**
@@ -71,17 +79,17 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
   /**
    * The priority of the conversation to use for routing decisions
    **/
-  public ConversationChatEventTopicConversationRoutingData priority(Integer priority) {
+  public ConversationChatEventTopicConversationRoutingData priority(Long priority) {
     this.priority = priority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The priority of the conversation to use for routing decisions")
   @JsonProperty("priority")
-  public Integer getPriority() {
+  public Long getPriority() {
     return priority;
   }
-  public void setPriority(Integer priority) {
+  public void setPriority(Long priority) {
     this.priority = priority;
   }
 

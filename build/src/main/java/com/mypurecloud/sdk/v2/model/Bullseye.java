@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Ring;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class Bullseye  implements Serializable {
   
-  private List<Ring> rings = new ArrayList<Ring>();
+  private List<Ring> rings = null;
+
+  public Bullseye() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      rings = new ArrayList<Ring>();
+    }
+  }
 
   
   /**

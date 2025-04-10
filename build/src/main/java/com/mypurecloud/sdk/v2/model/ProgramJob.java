@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -77,11 +78,17 @@ public class ProgramJob  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<BaseProgramEntity> programs = new ArrayList<BaseProgramEntity>();
+  private List<BaseProgramEntity> programs = null;
   private AddressableEntityRef createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public ProgramJob() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      programs = new ArrayList<BaseProgramEntity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

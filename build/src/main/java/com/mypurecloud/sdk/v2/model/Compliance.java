@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HelpSettings;
 import com.mypurecloud.sdk.v2.model.OptInSettings;
@@ -26,9 +27,17 @@ import java.io.Serializable;
 
 public class Compliance  implements Serializable {
   
-  private List<StopSettings> stopSettings = new ArrayList<StopSettings>();
-  private List<OptInSettings> optInSettings = new ArrayList<OptInSettings>();
-  private List<HelpSettings> helpSettings = new ArrayList<HelpSettings>();
+  private List<StopSettings> stopSettings = null;
+  private List<OptInSettings> optInSettings = null;
+  private List<HelpSettings> helpSettings = null;
+
+  public Compliance() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      stopSettings = new ArrayList<StopSettings>();
+      optInSettings = new ArrayList<OptInSettings>();
+      helpSettings = new ArrayList<HelpSettings>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdditionalLanguagesIntent;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeBinding;
@@ -31,10 +32,18 @@ public class IntentDefinition  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
-  private List<String> entityNameReferences = new ArrayList<String>();
-  private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
+  private List<NamedEntityTypeBinding> entityTypeBindings = null;
+  private List<String> entityNameReferences = null;
+  private List<NluUtterance> utterances = null;
   private Map<String, AdditionalLanguagesIntent> additionalLanguages = null;
+
+  public IntentDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
+      entityNameReferences = new ArrayList<String>();
+      utterances = new ArrayList<NluUtterance>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "ID of the intent.")

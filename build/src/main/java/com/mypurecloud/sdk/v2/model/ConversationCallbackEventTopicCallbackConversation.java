@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicCallbackMediaParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicConversationDivisionMembership;
@@ -27,11 +28,19 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
   
   private String id = null;
   private String name = null;
-  private List<ConversationCallbackEventTopicCallbackMediaParticipant> participants = new ArrayList<ConversationCallbackEventTopicCallbackMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationCallbackEventTopicCallbackMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationCallbackEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationCallbackEventTopicConversationDivisionMembership>();
+  private List<ConversationCallbackEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationCallbackEventTopicCallbackConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationCallbackEventTopicCallbackMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationCallbackEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

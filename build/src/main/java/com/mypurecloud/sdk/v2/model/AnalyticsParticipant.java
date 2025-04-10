@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsSession;
@@ -146,8 +147,14 @@ public class AnalyticsParticipant  implements Serializable {
   private Boolean screenRecording = null;
   private String teamId = null;
   private String userId = null;
-  private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
+  private List<AnalyticsSession> sessions = null;
   private Map<String, String> attributes = null;
+
+  public AnalyticsParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sessions = new ArrayList<AnalyticsSession>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeEmailColumn;
@@ -30,13 +31,13 @@ import java.io.Serializable;
 
 public class DialerContactlistConfigChangeContactList  implements Serializable {
   
-  private List<String> columnNames = new ArrayList<String>();
-  private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
-  private List<DialerContactlistConfigChangeEmailColumn> emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
+  private List<String> columnNames = null;
+  private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = null;
+  private List<DialerContactlistConfigChangeEmailColumn> emailColumns = null;
   private DialerContactlistConfigChangeImportStatus importStatus = null;
   private String previewModeColumnName = null;
-  private List<String> previewModeAcceptedValues = new ArrayList<String>();
-  private Integer size = null;
+  private List<String> previewModeAcceptedValues = null;
+  private Long size = null;
   private DialerContactlistConfigChangeUriReference attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
@@ -46,7 +47,16 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerContactlistConfigChangeContactList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      columnNames = new ArrayList<String>();
+      phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
+      emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
+      previewModeAcceptedValues = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -159,17 +169,17 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   /**
    * the number of contacts in the contact list
    **/
-  public DialerContactlistConfigChangeContactList size(Integer size) {
+  public DialerContactlistConfigChangeContactList size(Long size) {
     this.size = size;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "the number of contacts in the contact list")
   @JsonProperty("size")
-  public Integer getSize() {
+  public Long getSize() {
     return size;
   }
-  public void setSize(Integer size) {
+  public void setSize(Long size) {
     this.size = size;
   }
 
@@ -337,17 +347,17 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerContactlistConfigChangeContactList version(Integer version) {
+  public DialerContactlistConfigChangeContactList version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

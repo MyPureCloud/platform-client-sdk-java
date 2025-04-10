@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -190,8 +191,14 @@ public class DevelopmentActivity  implements Serializable {
   private StatusEnum status = null;
   private Date dateDue = null;
   private UserReference facilitator = null;
-  private List<UserReference> attendees = new ArrayList<UserReference>();
+  private List<UserReference> attendees = null;
   private Boolean isOverdue = null;
+
+  public DevelopmentActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      attendees = new ArrayList<UserReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

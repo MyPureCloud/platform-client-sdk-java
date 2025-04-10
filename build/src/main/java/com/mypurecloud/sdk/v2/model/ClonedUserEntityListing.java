@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class ClonedUserEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<ClonedUser> entities = new ArrayList<ClonedUser>();
+  private List<ClonedUser> entities = null;
   private String selfUri = null;
+
+  public ClonedUserEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ClonedUser>();
+    }
+  }
 
   
   /**

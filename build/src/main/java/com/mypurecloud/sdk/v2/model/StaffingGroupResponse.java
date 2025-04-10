@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -27,10 +28,16 @@ public class StaffingGroupResponse  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<UserReference> users = new ArrayList<UserReference>();
+  private List<UserReference> users = null;
   private ManagementUnitReference managementUnit = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public StaffingGroupResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

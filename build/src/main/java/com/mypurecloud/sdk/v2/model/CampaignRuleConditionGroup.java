@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignRuleCondition;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class CampaignRuleConditionGroup  implements Serializable {
   
   private Boolean matchAnyConditions = null;
-  private List<CampaignRuleCondition> conditions = new ArrayList<CampaignRuleCondition>();
+  private List<CampaignRuleCondition> conditions = null;
+
+  public CampaignRuleConditionGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conditions = new ArrayList<CampaignRuleCondition>();
+    }
+  }
 
   
   /**

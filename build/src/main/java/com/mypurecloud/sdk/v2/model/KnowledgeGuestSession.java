@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSessionApp;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSessionContext;
@@ -29,8 +30,14 @@ public class KnowledgeGuestSession  implements Serializable {
   private KnowledgeGuestSessionApp app = null;
   private String customerId = null;
   private String pageUrl = null;
-  private List<KnowledgeGuestSessionContext> contexts = new ArrayList<KnowledgeGuestSessionContext>();
+  private List<KnowledgeGuestSessionContext> contexts = null;
   private String journeySessionId = null;
+
+  public KnowledgeGuestSession() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contexts = new ArrayList<KnowledgeGuestSessionContext>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Session ID.")

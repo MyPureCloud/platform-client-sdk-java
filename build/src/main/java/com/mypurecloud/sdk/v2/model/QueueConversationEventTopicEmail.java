@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
@@ -141,7 +142,7 @@ public class QueueConversationEventTopicEmail  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
-  private Integer messagesSent = null;
+  private Long messagesSent = null;
   private QueueConversationEventTopicErrorDetails errorInfo = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -257,7 +258,7 @@ public class QueueConversationEventTopicEmail  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
-  private List<QueueConversationEventTopicAttachment> draftAttachments = new ArrayList<QueueConversationEventTopicAttachment>();
+  private List<QueueConversationEventTopicAttachment> draftAttachments = null;
   private Boolean spam = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
@@ -265,6 +266,12 @@ public class QueueConversationEventTopicEmail  implements Serializable {
   private QueueConversationEventTopicQueueMediaSettings queueMediaSettings = null;
   private Date resumeTime = null;
   private Date parkTime = null;
+
+  public QueueConversationEventTopicEmail() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      draftAttachments = new ArrayList<QueueConversationEventTopicAttachment>();
+    }
+  }
 
   
   /**
@@ -430,17 +437,17 @@ public class QueueConversationEventTopicEmail  implements Serializable {
   /**
    * The number of email messages sent by this participant.
    **/
-  public QueueConversationEventTopicEmail messagesSent(Integer messagesSent) {
+  public QueueConversationEventTopicEmail messagesSent(Long messagesSent) {
     this.messagesSent = messagesSent;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of email messages sent by this participant.")
   @JsonProperty("messagesSent")
-  public Integer getMessagesSent() {
+  public Long getMessagesSent() {
     return messagesSent;
   }
-  public void setMessagesSent(Integer messagesSent) {
+  public void setMessagesSent(Long messagesSent) {
     this.messagesSent = messagesSent;
   }
 

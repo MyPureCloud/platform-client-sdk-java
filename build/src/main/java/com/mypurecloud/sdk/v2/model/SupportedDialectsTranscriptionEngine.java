@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EngineIntegration;
@@ -74,8 +75,14 @@ public class SupportedDialectsTranscriptionEngine  implements Serializable {
     }
   }
   private EngineEnum engine = null;
-  private List<String> dialects = new ArrayList<String>();
+  private List<String> dialects = null;
   private EngineIntegration engineIntegration = null;
+
+  public SupportedDialectsTranscriptionEngine() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dialects = new ArrayList<String>();
+    }
+  }
 
   
   /**

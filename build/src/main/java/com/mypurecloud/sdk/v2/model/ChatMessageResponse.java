@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ChatReaction;
@@ -43,7 +44,13 @@ public class ChatMessageResponse  implements Serializable {
   private Entity parentThread = null;
   private AddressableEntityRef user = null;
   private AddressableEntityRef toUser = null;
-  private List<ChatReaction> reactions = new ArrayList<ChatReaction>();
+  private List<ChatReaction> reactions = null;
+
+  public ChatMessageResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      reactions = new ArrayList<ChatReaction>();
+    }
+  }
 
   
   /**

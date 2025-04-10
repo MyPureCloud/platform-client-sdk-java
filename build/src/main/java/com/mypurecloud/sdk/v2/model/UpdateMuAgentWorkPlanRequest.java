@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ValueWrapperString;
 import com.mypurecloud.sdk.v2.model.WorkPlanOverrideListWrapperWorkPlanOverrideRequest;
@@ -26,6 +27,11 @@ public class UpdateMuAgentWorkPlanRequest  implements Serializable {
   private String userId = null;
   private ValueWrapperString workPlanId = null;
   private WorkPlanOverrideListWrapperWorkPlanOverrideRequest workPlanOverrides = null;
+
+  public UpdateMuAgentWorkPlanRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

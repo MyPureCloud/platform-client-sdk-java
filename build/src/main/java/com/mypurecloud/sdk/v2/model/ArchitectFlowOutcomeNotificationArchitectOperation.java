@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationClient;
@@ -148,7 +149,13 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   private String errorMessage = null;
   private String errorCode = null;
   private ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams = null;
-  private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowOutcomeNotificationErrorDetail>();
+  private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = null;
+
+  public ArchitectFlowOutcomeNotificationArchitectOperation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errorDetails = new ArrayList<ArchitectFlowOutcomeNotificationErrorDetail>();
+    }
+  }
 
   
   /**

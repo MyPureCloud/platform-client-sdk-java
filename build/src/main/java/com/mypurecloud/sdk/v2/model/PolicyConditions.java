@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
@@ -30,7 +31,7 @@ import java.io.Serializable;
 
 public class PolicyConditions  implements Serializable {
   
-  private List<User> forUsers = new ArrayList<User>();
+  private List<User> forUsers = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -77,8 +78,8 @@ public class PolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
-  private List<String> dateRanges = new ArrayList<String>();
+  private List<DirectionsEnum> directions = null;
+  private List<String> dateRanges = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
     public MediaTypesEnumDeserializer() {
@@ -125,12 +126,12 @@ public class PolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<Queue> forQueues = new ArrayList<Queue>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<Queue> forQueues = null;
   private DurationCondition duration = null;
-  private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
+  private List<WrapupCode> wrapupCodes = null;
   private TimeAllowed timeAllowed = null;
-  private List<Team> teams = new ArrayList<Team>();
+  private List<Team> teams = null;
 
   private static class CustomerParticipationEnumDeserializer extends StdDeserializer<CustomerParticipationEnum> {
     public CustomerParticipationEnumDeserializer() {
@@ -179,6 +180,18 @@ public class PolicyConditions  implements Serializable {
     }
   }
   private CustomerParticipationEnum customerParticipation = null;
+
+  public PolicyConditions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      forUsers = new ArrayList<User>();
+      directions = new ArrayList<DirectionsEnum>();
+      dateRanges = new ArrayList<String>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      forQueues = new ArrayList<Queue>();
+      wrapupCodes = new ArrayList<WrapupCode>();
+      teams = new ArrayList<Team>();
+    }
+  }
 
   
   /**

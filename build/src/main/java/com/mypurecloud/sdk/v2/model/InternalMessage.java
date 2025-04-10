@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -127,7 +128,7 @@ public class InternalMessage  implements Serializable {
   }
   private InitialStateEnum initialState = null;
   private String id = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
     public DisconnectTypeEnumDeserializer() {
@@ -186,7 +187,14 @@ public class InternalMessage  implements Serializable {
   private String sourceUserId = null;
   private Address toAddress = null;
   private Address fromAddress = null;
-  private List<InternalMessageDetails> messages = new ArrayList<InternalMessageDetails>();
+  private List<InternalMessageDetails> messages = null;
+
+  public InternalMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+      messages = new ArrayList<InternalMessageDetails>();
+    }
+  }
 
   
   /**

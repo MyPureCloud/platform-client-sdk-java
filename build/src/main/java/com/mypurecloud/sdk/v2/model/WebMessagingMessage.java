@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Reason;
@@ -84,7 +85,7 @@ public class WebMessagingMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<WebMessagingContent> content = new ArrayList<WebMessagingContent>();
+  private List<WebMessagingContent> content = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -137,8 +138,8 @@ public class WebMessagingMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Reason> reasons = new ArrayList<Reason>();
-  private List<WebMessagingEvent> events = new ArrayList<WebMessagingEvent>();
+  private List<Reason> reasons = null;
+  private List<WebMessagingEvent> events = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -236,6 +237,14 @@ public class WebMessagingMessage  implements Serializable {
   }
   private OriginatingEntityEnum originatingEntity = null;
   private Map<String, String> metadata = null;
+
+  public WebMessagingMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      content = new ArrayList<WebMessagingContent>();
+      reasons = new ArrayList<Reason>();
+      events = new ArrayList<WebMessagingEvent>();
+    }
+  }
 
   
   /**

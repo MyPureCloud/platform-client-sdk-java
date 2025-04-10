@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,7 @@ public class CreateEmailRequest  implements Serializable {
   private String queueId = null;
   private String flowId = null;
   private String provider = null;
-  private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillIds = null;
   private String languageId = null;
   private Long priority = null;
   private Map<String, String> attributes = null;
@@ -90,6 +91,12 @@ public class CreateEmailRequest  implements Serializable {
   private String textBody = null;
   private String externalContactId = null;
   private String utilizationLabel = null;
+
+  public CreateEmailRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -381,14 +388,14 @@ public class CreateEmailRequest  implements Serializable {
 
 
   /**
-   * Optional. Controls the number of agent interactions for INBOUND communications
+   * Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
    **/
   public CreateEmailRequest utilizationLabel(String utilizationLabel) {
     this.utilizationLabel = utilizationLabel;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Optional. Controls the number of agent interactions for INBOUND communications")
+  @ApiModelProperty(example = "null", value = "Optional. The ID of the label to controls the number of agent interactions for INBOUND communications")
   @JsonProperty("utilizationLabel")
   public String getUtilizationLabel() {
     return utilizationLabel;

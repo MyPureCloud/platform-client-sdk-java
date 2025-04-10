@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BotAggregateQueryClause;
@@ -74,8 +75,15 @@ public class BotAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<BotAggregateQueryClause> clauses = new ArrayList<BotAggregateQueryClause>();
-  private List<BotAggregateQueryPredicate> predicates = new ArrayList<BotAggregateQueryPredicate>();
+  private List<BotAggregateQueryClause> clauses = null;
+  private List<BotAggregateQueryPredicate> predicates = null;
+
+  public BotAggregateQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<BotAggregateQueryClause>();
+      predicates = new ArrayList<BotAggregateQueryPredicate>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
@@ -184,7 +185,13 @@ public class ConversationEventTopicInternalMessage  implements Serializable {
   private String sourceUserId = null;
   private ConversationEventTopicAddress toAddress = null;
   private ConversationEventTopicAddress fromAddress = null;
-  private List<ConversationEventTopicInternalMessageDetails> messages = new ArrayList<ConversationEventTopicInternalMessageDetails>();
+  private List<ConversationEventTopicInternalMessageDetails> messages = null;
+
+  public ConversationEventTopicInternalMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messages = new ArrayList<ConversationEventTopicInternalMessageDetails>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregateHistoricalAvailability;
 import com.mypurecloud.sdk.v2.model.SessionInfo;
@@ -28,11 +29,17 @@ import java.io.Serializable;
 public class SessionMetaDataResult  implements Serializable {
   
   private SessionInfo sessionInfo = null;
-  private List<Snapshots> snapshots = new ArrayList<Snapshots>();
+  private List<Snapshots> snapshots = null;
   private Date dateForecastStart = null;
   private Date dateHistoricalStart = null;
   private AggregateHistoricalAvailability aggregateOfferedHistoricalAvailability = null;
   private AggregateHistoricalAvailability aggregateAverageHandleTimeHistoricalAvailability = null;
+
+  public SessionMetaDataResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      snapshots = new ArrayList<Snapshots>();
+    }
+  }
 
   
   /**

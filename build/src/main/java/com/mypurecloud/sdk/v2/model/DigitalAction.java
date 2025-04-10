@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AppendToDncActionSettings;
 import com.mypurecloud.sdk.v2.model.MarkContactUncontactableActionSettings;
@@ -33,6 +34,11 @@ public class DigitalAction  implements Serializable {
   private Object markContactAddressUncontactableActionSettings = null;
   private SetContentTemplateActionSettings setContentTemplateActionSettings = null;
   private SetSmsPhoneNumberActionSettings setSmsPhoneNumberActionSettings = null;
+
+  public DigitalAction() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Worktype;
 import io.swagger.annotations.ApiModel;
@@ -24,12 +25,18 @@ import java.io.Serializable;
 
 public class WorktypeQueryEntityListing  implements Serializable {
   
-  private List<Worktype> entities = new ArrayList<Worktype>();
+  private List<Worktype> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
   private String after = null;
   private Integer count = null;
+
+  public WorktypeQueryEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<Worktype>();
+    }
+  }
 
   
   /**

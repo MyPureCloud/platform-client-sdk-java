@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -74,7 +75,7 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
   private StatusEnum status = null;
   private String operationId = null;
   private String downloadUrl = null;
-  private Integer percentComplete = null;
+  private Long percentComplete = null;
 
   private static class EventTypeEnumDeserializer extends StdDeserializer<EventTypeEnum> {
     public EventTypeEnumDeserializer() {
@@ -126,6 +127,11 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     }
   }
   private EventTypeEnum eventType = null;
+
+  public WfmScheduleTopicWfmScheduleNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -181,17 +187,17 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
 
   /**
    **/
-  public WfmScheduleTopicWfmScheduleNotification percentComplete(Integer percentComplete) {
+  public WfmScheduleTopicWfmScheduleNotification percentComplete(Long percentComplete) {
     this.percentComplete = percentComplete;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("percentComplete")
-  public Integer getPercentComplete() {
+  public Long getPercentComplete() {
     return percentComplete;
   }
-  public void setPercentComplete(Integer percentComplete) {
+  public void setPercentComplete(Long percentComplete) {
     this.percentComplete = percentComplete;
   }
 

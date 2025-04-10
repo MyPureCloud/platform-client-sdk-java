@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -33,13 +34,13 @@ public class InboundRoute  implements Serializable {
   private String pattern = null;
   private DomainEntityRef queue = null;
   private Integer priority = null;
-  private List<DomainEntityRef> skills = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> skills = null;
   private DomainEntityRef language = null;
   private String fromName = null;
   private String fromEmail = null;
   private DomainEntityRef flow = null;
   private QueueEmailAddress replyEmailAddress = null;
-  private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
+  private List<EmailAddress> autoBcc = null;
   private DomainEntityRef spamFlow = null;
   private Signature signature = null;
 
@@ -93,6 +94,13 @@ public class InboundRoute  implements Serializable {
   private HistoryInclusionEnum historyInclusion = null;
   private Boolean allowMultipleActions = null;
   private String selfUri = null;
+
+  public InboundRoute() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<DomainEntityRef>();
+      autoBcc = new ArrayList<EmailAddress>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentSchedulePublishedScheduleReference;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleSearchResponse;
@@ -27,12 +28,20 @@ import java.io.Serializable;
 
 public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
   
-  private List<BuAgentScheduleSearchResponse> agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+  private List<BuAgentScheduleSearchResponse> agentSchedules = null;
   private String businessUnitTimeZone = null;
-  private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+  private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<BuAgentScheduleUpdate> updates = new ArrayList<BuAgentScheduleUpdate>();
+  private List<BuAgentScheduleUpdate> updates = null;
+
+  public BuCurrentAgentScheduleSearchResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+      updates = new ArrayList<BuAgentScheduleUpdate>();
+    }
+  }
 
   
   /**

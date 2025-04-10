@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -203,7 +204,7 @@ public class Cobrowsesession  implements Serializable {
   private Address self = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
-  private List<String> controlling = new ArrayList<String>();
+  private List<String> controlling = null;
   private String viewerUrl = null;
   private Date providerEventTime = null;
   private Date startAlertingTime = null;
@@ -211,10 +212,17 @@ public class Cobrowsesession  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+
+  public Cobrowsesession() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      controlling = new ArrayList<String>();
+      segments = new ArrayList<Segment>();
+    }
+  }
 
   
   /**

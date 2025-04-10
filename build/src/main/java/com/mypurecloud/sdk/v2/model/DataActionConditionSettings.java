@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DataActionContactColumnFieldMapping;
 import com.mypurecloud.sdk.v2.model.DigitalDataActionConditionPredicate;
@@ -28,8 +29,15 @@ public class DataActionConditionSettings  implements Serializable {
   private String dataActionId = null;
   private String contactIdField = null;
   private Boolean dataNotFoundResolution = null;
-  private List<DigitalDataActionConditionPredicate> predicates = new ArrayList<DigitalDataActionConditionPredicate>();
-  private List<DataActionContactColumnFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<DataActionContactColumnFieldMapping>();
+  private List<DigitalDataActionConditionPredicate> predicates = null;
+  private List<DataActionContactColumnFieldMapping> contactColumnToDataActionFieldMappings = null;
+
+  public DataActionConditionSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predicates = new ArrayList<DigitalDataActionConditionPredicate>();
+      contactColumnToDataActionFieldMappings = new ArrayList<DataActionContactColumnFieldMapping>();
+    }
+  }
 
   
   /**

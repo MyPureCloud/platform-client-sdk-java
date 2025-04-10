@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentTopicLearningModuleReference;
@@ -29,7 +30,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   private String id = null;
   private LearningAssignmentTopicUserReference user = null;
   private LearningAssignmentTopicLearningModuleReference module = null;
-  private Integer version = null;
+  private Long version = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -88,7 +89,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   private LearningAssignmentTopicUserReference modifiedBy = null;
   private Date dateModified = null;
   private Boolean isOverdue = null;
-  private Integer lengthInMinutes = null;
+  private Long lengthInMinutes = null;
   private BigDecimal percentageScore = null;
   private Boolean isPassed = null;
 
@@ -140,6 +141,11 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     }
   }
   private TypeEnum type = null;
+
+  public LearningAssignmentTopicLearningAssignmentNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -195,17 +201,17 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
 
   /**
    **/
-  public LearningAssignmentTopicLearningAssignmentNotification version(Integer version) {
+  public LearningAssignmentTopicLearningAssignmentNotification version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 
@@ -331,17 +337,17 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
 
   /**
    **/
-  public LearningAssignmentTopicLearningAssignmentNotification lengthInMinutes(Integer lengthInMinutes) {
+  public LearningAssignmentTopicLearningAssignmentNotification lengthInMinutes(Long lengthInMinutes) {
     this.lengthInMinutes = lengthInMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lengthInMinutes")
-  public Integer getLengthInMinutes() {
+  public Long getLengthInMinutes() {
     return lengthInMinutes;
   }
-  public void setLengthInMinutes(Integer lengthInMinutes) {
+  public void setLengthInMinutes(Long lengthInMinutes) {
     this.lengthInMinutes = lengthInMinutes;
   }
 

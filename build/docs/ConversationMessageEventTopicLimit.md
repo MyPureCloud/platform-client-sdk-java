@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **key** | **String** |  |  [optional] |
 | **namespace** | [**NamespaceEnum**](#Enum--NamespaceEnum) |  |  [optional] |
-| **value** | **Integer** |  |  [optional] |
+| **value** | **Long** |  |  [optional] |
 | **documented** | **Boolean** |  |  [optional] |
 
 
@@ -84,4 +84,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

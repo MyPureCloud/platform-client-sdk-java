@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.User;
@@ -31,6 +32,11 @@ public class QueueMember  implements Serializable {
   private String memberBy = null;
   private RoutingStatus routingStatus = null;
   private String selfUri = null;
+
+  public QueueMember() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

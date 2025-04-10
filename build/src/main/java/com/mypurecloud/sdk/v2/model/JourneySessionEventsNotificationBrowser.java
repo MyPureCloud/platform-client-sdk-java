@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,12 +26,17 @@ public class JourneySessionEventsNotificationBrowser  implements Serializable {
   private String version = null;
   private String lang = null;
   private String fingerprint = null;
-  private Integer viewHeight = null;
-  private Integer viewWidth = null;
+  private Long viewHeight = null;
+  private Long viewWidth = null;
   private Boolean featuresFlash = null;
   private Boolean featuresJava = null;
   private Boolean featuresPdf = null;
   private Boolean featuresWebrtc = null;
+
+  public JourneySessionEventsNotificationBrowser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -103,34 +109,34 @@ public class JourneySessionEventsNotificationBrowser  implements Serializable {
 
   /**
    **/
-  public JourneySessionEventsNotificationBrowser viewHeight(Integer viewHeight) {
+  public JourneySessionEventsNotificationBrowser viewHeight(Long viewHeight) {
     this.viewHeight = viewHeight;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("viewHeight")
-  public Integer getViewHeight() {
+  public Long getViewHeight() {
     return viewHeight;
   }
-  public void setViewHeight(Integer viewHeight) {
+  public void setViewHeight(Long viewHeight) {
     this.viewHeight = viewHeight;
   }
 
 
   /**
    **/
-  public JourneySessionEventsNotificationBrowser viewWidth(Integer viewWidth) {
+  public JourneySessionEventsNotificationBrowser viewWidth(Long viewWidth) {
     this.viewWidth = viewWidth;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("viewWidth")
-  public Integer getViewWidth() {
+  public Long getViewWidth() {
     return viewWidth;
   }
-  public void setViewWidth(Integer viewWidth) {
+  public void setViewWidth(Long viewWidth) {
     this.viewWidth = viewWidth;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import io.swagger.annotations.ApiModel;
@@ -24,11 +25,17 @@ import java.io.Serializable;
 
 public class ProgramsMappingsEntityListing  implements Serializable {
   
-  private List<ProgramMappings> entities = new ArrayList<ProgramMappings>();
+  private List<ProgramMappings> entities = null;
   private Integer pageSize = null;
   private String selfUri = null;
   private Integer pageCount = null;
   private String nextUri = null;
+
+  public ProgramsMappingsEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ProgramMappings>();
+    }
+  }
 
   
   /**

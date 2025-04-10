@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyAction;
 import com.mypurecloud.sdk.v2.model.JourneyCustomer;
@@ -27,6 +28,11 @@ public class JourneyContext  implements Serializable {
   private JourneyCustomer customer = null;
   private JourneyCustomerSession customerSession = null;
   private JourneyAction triggeringAction = null;
+
+  public JourneyContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

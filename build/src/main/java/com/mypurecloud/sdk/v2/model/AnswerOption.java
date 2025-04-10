@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssistanceCondition;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class AnswerOption  implements Serializable {
   private String id = null;
   private String text = null;
   private Integer value = null;
-  private List<AssistanceCondition> assistanceConditions = new ArrayList<AssistanceCondition>();
+  private List<AssistanceCondition> assistanceConditions = null;
+
+  public AnswerOption() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      assistanceConditions = new ArrayList<AssistanceCondition>();
+    }
+  }
 
   
   /**

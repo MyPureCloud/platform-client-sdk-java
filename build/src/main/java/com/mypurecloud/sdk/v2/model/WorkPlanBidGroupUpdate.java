@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListWrapperBidGroupWorkPlanRequest;
 import com.mypurecloud.sdk.v2.model.ListWrapperString;
@@ -28,6 +29,11 @@ public class WorkPlanBidGroupUpdate  implements Serializable {
   private ListWrapperString agentIds = null;
   private ListWrapperBidGroupWorkPlanRequest workPlans = null;
   private ListWrapperString planningGroupIds = null;
+
+  public WorkPlanBidGroupUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
@@ -259,14 +260,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private Date startHoldTime = null;
   private QueueConversationEventTopicDialerPreview dialerPreview = null;
   private QueueConversationEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private String scriptId = null;
   private String peerId = null;
   private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;
   private String provider = null;
-  private Integer timeoutSeconds = null;
+  private Long timeoutSeconds = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private Date callbackScheduledTime = null;
@@ -277,6 +278,12 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private String callerId = null;
   private String callerIdName = null;
   private QueueConversationEventTopicQueueMediaSettings queueMediaSettings = null;
+
+  public QueueConversationEventTopicCallback() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -566,17 +573,17 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   /**
    * The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
    **/
-  public QueueConversationEventTopicCallback timeoutSeconds(Integer timeoutSeconds) {
+  public QueueConversationEventTopicCallback timeoutSeconds(Long timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.")
   @JsonProperty("timeoutSeconds")
-  public Integer getTimeoutSeconds() {
+  public Long getTimeoutSeconds() {
     return timeoutSeconds;
   }
-  public void setTimeoutSeconds(Integer timeoutSeconds) {
+  public void setTimeoutSeconds(Long timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
   }
 

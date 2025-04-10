@@ -13,6 +13,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichResponse;
 import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
 import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
 import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
@@ -23,10 +25,13 @@ import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
 import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
 import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichResponse;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.ContactEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ContactImportJobEntityListing;
@@ -39,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
 import com.mypurecloud.sdk.v2.model.CsvJobResponse;
 import com.mypurecloud.sdk.v2.model.CsvSettings;
@@ -54,20 +60,27 @@ import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationEnrichRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
 import com.mypurecloud.sdk.v2.model.Listing;
+import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
@@ -94,6 +107,9 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaReque
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
@@ -106,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingReques
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRelationshipsRequest;
@@ -114,6 +131,9 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
@@ -125,9 +145,11 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDi
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
@@ -138,6 +160,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesUpdateReq
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRequest;
@@ -147,10 +170,14 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsU
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsMergeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
@@ -159,6 +186,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportSettingsRequ
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactRequest;
@@ -1919,6 +1947,231 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getExternalcontactsContactsSchemasCoretypeAsync(GetExternalcontactsContactsSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getExternalcontactsContactsSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getExternalcontactsContactsSchemasCoretypesAsync(GetExternalcontactsContactsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getExternalcontactsContactsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getExternalcontactsContactsSchemasLimitsAsync(GetExternalcontactsContactsSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getExternalcontactsContactsSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Fetch an External Source
    * 
    * @param request the request object
@@ -2819,6 +3072,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalOrganizationIdentifierListing> getExternalcontactsOrganizationIdentifiersAsync(GetExternalcontactsOrganizationIdentifiersRequest request, final AsyncApiCallback<ExternalOrganizationIdentifierListing> callback) {
+    try {
+      final SettableFuture<ExternalOrganizationIdentifierListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationIdentifierListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifierListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationIdentifierListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalOrganizationIdentifierListing>> getExternalcontactsOrganizationIdentifiersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifierListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalOrganizationIdentifierListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganizationIdentifierListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifierListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationIdentifierListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationIdentifierListing> response = (ApiResponse<ExternalOrganizationIdentifierListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationIdentifierListing> response = (ApiResponse<ExternalOrganizationIdentifierListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Fetch a note for an external organization
    * 
    * @param request the request object
@@ -3407,6 +3737,231 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getExternalcontactsOrganizationsSchemasCoretypeAsync(GetExternalcontactsOrganizationsSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getExternalcontactsOrganizationsSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getExternalcontactsOrganizationsSchemasCoretypesAsync(GetExternalcontactsOrganizationsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getExternalcontactsOrganizationsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getExternalcontactsOrganizationsSchemasLimitsAsync(GetExternalcontactsOrganizationsSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getExternalcontactsOrganizationsSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4252,6 +4807,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalOrganizationIdentifier> patchExternalcontactsOrganizationIdentifiersAsync(PatchExternalcontactsOrganizationIdentifiersRequest request, final AsyncApiCallback<ExternalOrganizationIdentifier> callback) {
+    try {
+      final SettableFuture<ExternalOrganizationIdentifier> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationIdentifier>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationIdentifier> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalOrganizationIdentifier>> patchExternalcontactsOrganizationIdentifiersAsync(ApiRequest<ExternalOrganizationIdentifierClaimRequest> request, final AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifier>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalOrganizationIdentifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganizationIdentifier>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationIdentifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationIdentifier> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationIdentifier> response = (ApiResponse<ExternalOrganizationIdentifier>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationIdentifier> response = (ApiResponse<ExternalOrganizationIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Bulk fetch contacts
    * 
    * @param request the request object
@@ -4467,6 +5099,83 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkContactsEnrichResponse> postExternalcontactsBulkContactsEnrichAsync(PostExternalcontactsBulkContactsEnrichRequest request, final AsyncApiCallback<BulkContactsEnrichResponse> callback) {
+    try {
+      final SettableFuture<BulkContactsEnrichResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkContactsEnrichResponse>() {}, new AsyncApiCallback<ApiResponse<BulkContactsEnrichResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkContactsEnrichResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkContactsEnrichResponse>> postExternalcontactsBulkContactsEnrichAsync(ApiRequest<BulkContactsEnrichRequest> request, final AsyncApiCallback<ApiResponse<BulkContactsEnrichResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkContactsEnrichResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkContactsEnrichResponse>() {}, new AsyncApiCallback<ApiResponse<BulkContactsEnrichResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkContactsEnrichResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkContactsEnrichResponse> response = (ApiResponse<BulkContactsEnrichResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkContactsEnrichResponse> response = (ApiResponse<BulkContactsEnrichResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5231,6 +5940,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkOrganizationsEnrichResponse> postExternalcontactsBulkOrganizationsEnrichAsync(PostExternalcontactsBulkOrganizationsEnrichRequest request, final AsyncApiCallback<BulkOrganizationsEnrichResponse> callback) {
+    try {
+      final SettableFuture<BulkOrganizationsEnrichResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkOrganizationsEnrichResponse>() {}, new AsyncApiCallback<ApiResponse<BulkOrganizationsEnrichResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkOrganizationsEnrichResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkOrganizationsEnrichResponse>> postExternalcontactsBulkOrganizationsEnrichAsync(ApiRequest<BulkOrganizationsEnrichRequest> request, final AsyncApiCallback<ApiResponse<BulkOrganizationsEnrichResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkOrganizationsEnrichResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkOrganizationsEnrichResponse>() {}, new AsyncApiCallback<ApiResponse<BulkOrganizationsEnrichResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkOrganizationsEnrichResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkOrganizationsEnrichResponse> response = (ApiResponse<BulkOrganizationsEnrichResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkOrganizationsEnrichResponse> response = (ApiResponse<BulkOrganizationsEnrichResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Bulk remove organizations
    * 
    * @param request the request object
@@ -5906,6 +6692,83 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalContact> postExternalcontactsContactsEnrichAsync(PostExternalcontactsContactsEnrichRequest request, final AsyncApiCallback<ExternalContact> callback) {
+    try {
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsEnrichAsync(ApiRequest<ContactEnrichRequest> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create bulk export
    * 
    * @param request the request object
@@ -5969,6 +6832,83 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactsExport> response = (ApiResponse<ContactsExport>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalContact> postExternalcontactsContactsMergeAsync(PostExternalcontactsContactsMergeRequest request, final AsyncApiCallback<ExternalContact> callback) {
+    try {
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsMergeAsync(ApiRequest<MergeContactsRequest> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6196,6 +7136,160 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalContact> postExternalcontactsIdentifierlookupContactsAsync(PostExternalcontactsIdentifierlookupContactsRequest request, final AsyncApiCallback<ExternalContact> callback) {
+    try {
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalContact>> postExternalcontactsIdentifierlookupContactsAsync(ApiRequest<ContactIdentifier> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalOrganization> postExternalcontactsIdentifierlookupOrganizationsAsync(PostExternalcontactsIdentifierlookupOrganizationsRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
+    try {
+      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsIdentifierlookupOrganizationsAsync(ApiRequest<ExternalOrganizationIdentifier> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6584,10 +7678,11 @@ public class ExternalContactsApiAsync {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ExternalContact> postExternalcontactsMergeContactsAsync(PostExternalcontactsMergeContactsRequest request, final AsyncApiCallback<ExternalContact> callback) {
     try {
@@ -6618,10 +7713,11 @@ public class ExternalContactsApiAsync {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ExternalContact>> postExternalcontactsMergeContactsAsync(ApiRequest<MergeRequest> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     try {
@@ -6774,6 +7870,83 @@ public class ExternalContactsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalOrganization> postExternalcontactsOrganizationsEnrichAsync(PostExternalcontactsOrganizationsEnrichRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
+    try {
+      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsEnrichAsync(ApiRequest<ExternalOrganizationEnrichRequest> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     try {
       final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

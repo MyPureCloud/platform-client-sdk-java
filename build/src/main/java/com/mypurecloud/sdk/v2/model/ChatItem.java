@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ChatFavorite;
@@ -33,7 +34,7 @@ public class ChatItem  implements Serializable {
   private String name = null;
   private Boolean open = null;
   private ChatFavorite favorite = null;
-  private List<Image> images = new ArrayList<Image>();
+  private List<Image> images = null;
   private Date dateLastMessage = null;
   private Date dateClosed = null;
   private ChatUserRef user = null;
@@ -90,6 +91,12 @@ public class ChatItem  implements Serializable {
   }
   private ChatTypeEnum chatType = null;
   private String selfUri = null;
+
+  public ChatItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      images = new ArrayList<Image>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

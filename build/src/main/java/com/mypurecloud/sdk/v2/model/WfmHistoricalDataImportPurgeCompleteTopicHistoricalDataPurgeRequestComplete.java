@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity;
@@ -77,8 +78,15 @@ public class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequest
     }
   }
   private StateEnum state = null;
-  private List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity> entities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity>();
-  private List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity> disallowedEntities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity>();
+  private List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity> entities = null;
+  private List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity> disallowedEntities = null;
+
+  public WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity>();
+      disallowedEntities = new ArrayList<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity>();
+    }
+  }
 
   
   /**

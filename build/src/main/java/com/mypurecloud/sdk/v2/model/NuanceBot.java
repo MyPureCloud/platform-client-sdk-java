@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NuanceApplication;
 import com.mypurecloud.sdk.v2.model.NuanceBotCredentials;
@@ -39,12 +40,22 @@ public class NuanceBot  implements Serializable {
   private NuanceApplication application = null;
   private NuanceEnvironment nuanceEnvironment = null;
   private NuanceGeography geography = null;
-  private List<NuanceBotCredentials> credentials = new ArrayList<NuanceBotCredentials>();
-  private List<NuanceBotVariable> variables = new ArrayList<NuanceBotVariable>();
-  private List<NuanceBotTransferNode> transferNodes = new ArrayList<NuanceBotTransferNode>();
-  private List<String> locales = new ArrayList<String>();
-  private List<NuanceChannel> channels = new ArrayList<NuanceChannel>();
+  private List<NuanceBotCredentials> credentials = null;
+  private List<NuanceBotVariable> variables = null;
+  private List<NuanceBotTransferNode> transferNodes = null;
+  private List<String> locales = null;
+  private List<NuanceChannel> channels = null;
   private String selfUri = null;
+
+  public NuanceBot() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      credentials = new ArrayList<NuanceBotCredentials>();
+      variables = new ArrayList<NuanceBotVariable>();
+      transferNodes = new ArrayList<NuanceBotTransferNode>();
+      locales = new ArrayList<String>();
+      channels = new ArrayList<NuanceChannel>();
+    }
+  }
 
   
   /**

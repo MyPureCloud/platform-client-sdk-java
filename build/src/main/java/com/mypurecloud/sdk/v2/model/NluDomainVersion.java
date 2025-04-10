@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.IntentDefinition;
@@ -139,10 +140,18 @@ public class NluDomainVersion  implements Serializable {
     }
   }
   private EvaluationStatusEnum evaluationStatus = null;
-  private List<IntentDefinition> intents = new ArrayList<IntentDefinition>();
-  private List<NamedEntityTypeDefinition> entityTypes = new ArrayList<NamedEntityTypeDefinition>();
-  private List<NamedEntityDefinition> entities = new ArrayList<NamedEntityDefinition>();
+  private List<IntentDefinition> intents = null;
+  private List<NamedEntityTypeDefinition> entityTypes = null;
+  private List<NamedEntityDefinition> entities = null;
   private String selfUri = null;
+
+  public NluDomainVersion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<IntentDefinition>();
+      entityTypes = new ArrayList<NamedEntityTypeDefinition>();
+      entities = new ArrayList<NamedEntityDefinition>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

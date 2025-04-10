@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LanguageReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
@@ -36,13 +37,22 @@ public class WfmAgent  implements Serializable {
   private WorkPlanReference workPlan = null;
   private WorkPlanRotationReference workPlanRotation = null;
   private Boolean acceptDirectShiftTrades = null;
-  private List<WorkPlanOverride> workPlanOverrides = new ArrayList<WorkPlanOverride>();
-  private List<QueueReference> queues = new ArrayList<QueueReference>();
-  private List<LanguageReference> languages = new ArrayList<LanguageReference>();
-  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
+  private List<WorkPlanOverride> workPlanOverrides = null;
+  private List<QueueReference> queues = null;
+  private List<LanguageReference> languages = null;
+  private List<RoutingSkillReference> skills = null;
   private Boolean schedulable = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public WfmAgent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      workPlanOverrides = new ArrayList<WorkPlanOverride>();
+      queues = new ArrayList<QueueReference>();
+      languages = new ArrayList<LanguageReference>();
+      skills = new ArrayList<RoutingSkillReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsDisk;
@@ -33,11 +34,21 @@ public class EdgeMetrics  implements Serializable {
   private DomainEntityRef edge = null;
   private Date eventTime = null;
   private Long upTimeMsec = null;
-  private List<EdgeMetricsProcessor> processors = new ArrayList<EdgeMetricsProcessor>();
-  private List<EdgeMetricsMemory> memory = new ArrayList<EdgeMetricsMemory>();
-  private List<EdgeMetricsDisk> disks = new ArrayList<EdgeMetricsDisk>();
-  private List<EdgeMetricsSubsystem> subsystems = new ArrayList<EdgeMetricsSubsystem>();
-  private List<EdgeMetricsNetwork> networks = new ArrayList<EdgeMetricsNetwork>();
+  private List<EdgeMetricsProcessor> processors = null;
+  private List<EdgeMetricsMemory> memory = null;
+  private List<EdgeMetricsDisk> disks = null;
+  private List<EdgeMetricsSubsystem> subsystems = null;
+  private List<EdgeMetricsNetwork> networks = null;
+
+  public EdgeMetrics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      processors = new ArrayList<EdgeMetricsProcessor>();
+      memory = new ArrayList<EdgeMetricsMemory>();
+      disks = new ArrayList<EdgeMetricsDisk>();
+      subsystems = new ArrayList<EdgeMetricsSubsystem>();
+      networks = new ArrayList<EdgeMetricsNetwork>();
+    }
+  }
 
   
   /**

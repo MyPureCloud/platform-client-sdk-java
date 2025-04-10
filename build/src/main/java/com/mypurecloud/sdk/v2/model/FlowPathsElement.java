@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -93,7 +94,7 @@ public class FlowPathsElement  implements Serializable {
   }
   private TypeEnum type = null;
   private Integer count = null;
-  private List<FlowPathsFlowDetails> flows = new ArrayList<FlowPathsFlowDetails>();
+  private List<FlowPathsFlowDetails> flows = null;
 
   private static class FlowOutcomeValueEnumDeserializer extends StdDeserializer<FlowOutcomeValueEnum> {
     public FlowOutcomeValueEnumDeserializer() {
@@ -145,6 +146,12 @@ public class FlowPathsElement  implements Serializable {
   private FlowOutcomeValueEnum flowOutcomeValue = null;
   private AddressableEntityRef flowMilestone = null;
   private AddressableEntityRef flowOutcome = null;
+
+  public FlowPathsElement() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flows = new ArrayList<FlowPathsFlowDetails>();
+    }
+  }
 
   
   /**

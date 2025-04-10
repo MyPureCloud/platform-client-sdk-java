@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicParticipant;
@@ -27,15 +28,23 @@ import java.io.Serializable;
 public class ConversationEventTopicConversation  implements Serializable {
   
   private String id = null;
-  private Integer maxParticipants = null;
-  private List<ConversationEventTopicParticipant> participants = new ArrayList<ConversationEventTopicParticipant>();
-  private List<ConversationEventTopicTransferResponse> recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
+  private Long maxParticipants = null;
+  private List<ConversationEventTopicParticipant> participants = null;
+  private List<ConversationEventTopicTransferResponse> recentTransfers = null;
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
-  private List<ConversationEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
+  private List<ConversationEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationEventTopicConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationEventTopicParticipant>();
+      recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
+      divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**
@@ -57,17 +66,17 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
-  public ConversationEventTopicConversation maxParticipants(Integer maxParticipants) {
+  public ConversationEventTopicConversation maxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxParticipants")
-  public Integer getMaxParticipants() {
+  public Long getMaxParticipants() {
     return maxParticipants;
   }
-  public void setMaxParticipants(Integer maxParticipants) {
+  public void setMaxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentArticle;
@@ -77,8 +78,14 @@ public class KnowledgeDocumentRequest  implements Serializable {
   private TypeEnum type = null;
   private String externalUrl = null;
   private DocumentFaq faq = null;
-  private List<DocumentCategoryInput> categories = new ArrayList<DocumentCategoryInput>();
+  private List<DocumentCategoryInput> categories = null;
   private DocumentArticle article = null;
+
+  public KnowledgeDocumentRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      categories = new ArrayList<DocumentCategoryInput>();
+    }
+  }
 
   
   /**

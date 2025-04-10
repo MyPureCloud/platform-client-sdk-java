@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FacetEntry;
 import com.mypurecloud.sdk.v2.model.FacetKeyAttribute;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class QueryFacetInfo  implements Serializable {
   
-  private List<FacetKeyAttribute> attributes = new ArrayList<FacetKeyAttribute>();
-  private List<FacetEntry> facets = new ArrayList<FacetEntry>();
+  private List<FacetKeyAttribute> attributes = null;
+  private List<FacetEntry> facets = null;
+
+  public QueryFacetInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      attributes = new ArrayList<FacetKeyAttribute>();
+      facets = new ArrayList<FacetEntry>();
+    }
+  }
 
   
   /**

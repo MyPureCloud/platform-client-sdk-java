@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhraseAssociations;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class UnansweredPhraseGroupUpdateResponse  implements Serializable {
   
-  private List<PhraseAssociations> phraseAssociations = new ArrayList<PhraseAssociations>();
+  private List<PhraseAssociations> phraseAssociations = null;
   private UnansweredGroup group = null;
+
+  public UnansweredPhraseGroupUpdateResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phraseAssociations = new ArrayList<PhraseAssociations>();
+    }
+  }
 
   
   /**

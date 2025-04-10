@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PublishProgramTestTopicPhraseResults;
@@ -75,7 +76,13 @@ public class PublishProgramTopicsDefinitionsJob  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<PublishProgramTestTopicPhraseResults> testTopicPhraseResults = new ArrayList<PublishProgramTestTopicPhraseResults>();
+  private List<PublishProgramTestTopicPhraseResults> testTopicPhraseResults = null;
+
+  public PublishProgramTopicsDefinitionsJob() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      testTopicPhraseResults = new ArrayList<PublishProgramTestTopicPhraseResults>();
+    }
+  }
 
   
   /**

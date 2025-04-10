@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DivisionReference;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,11 @@ public class BusinessUnitListItem  implements Serializable {
   private Boolean authorized = null;
   private DivisionReference division = null;
   private String selfUri = null;
+
+  public BusinessUnitListItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

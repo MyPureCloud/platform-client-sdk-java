@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluUtterance;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class AdditionalLanguagesIntent  implements Serializable {
   
   private String id = null;
-  private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
+  private List<NluUtterance> utterances = null;
+
+  public AdditionalLanguagesIntent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      utterances = new ArrayList<NluUtterance>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "ID of the intent for respective additional language")

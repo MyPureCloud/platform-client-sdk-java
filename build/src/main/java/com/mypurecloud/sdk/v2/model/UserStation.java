@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -34,6 +35,11 @@ public class UserStation  implements Serializable {
   private User defaultUser = null;
   private Map<String, String> providerInfo = null;
   private Integer webRtcCallAppearances = null;
+
+  public UserStation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "A globally unique identifier for this station")

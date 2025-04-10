@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class UserGreetingEventGreetingAudioFile  implements Serializable {
   
-  private Integer durationMilliseconds = null;
-  private Integer sizeBytes = null;
+  private Long durationMilliseconds = null;
+  private Long sizeBytes = null;
+
+  public UserGreetingEventGreetingAudioFile() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public UserGreetingEventGreetingAudioFile durationMilliseconds(Integer durationMilliseconds) {
+  public UserGreetingEventGreetingAudioFile durationMilliseconds(Long durationMilliseconds) {
     this.durationMilliseconds = durationMilliseconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMilliseconds")
-  public Integer getDurationMilliseconds() {
+  public Long getDurationMilliseconds() {
     return durationMilliseconds;
   }
-  public void setDurationMilliseconds(Integer durationMilliseconds) {
+  public void setDurationMilliseconds(Long durationMilliseconds) {
     this.durationMilliseconds = durationMilliseconds;
   }
 
 
   /**
    **/
-  public UserGreetingEventGreetingAudioFile sizeBytes(Integer sizeBytes) {
+  public UserGreetingEventGreetingAudioFile sizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sizeBytes")
-  public Integer getSizeBytes() {
+  public Long getSizeBytes() {
     return sizeBytes;
   }
-  public void setSizeBytes(Integer sizeBytes) {
+  public void setSizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
   }
 

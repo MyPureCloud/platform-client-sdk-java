@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmTimeOffRequestUpdateTopicUserReference;
@@ -135,11 +136,11 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     }
   }
   private SubstatusEnum substatus = null;
-  private List<String> partialDayStartDateTimes = new ArrayList<String>();
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
-  private Integer dailyDurationMinutes = null;
-  private List<Integer> durationMinutes = new ArrayList<Integer>();
-  private List<Integer> payableMinutes = new ArrayList<Integer>();
+  private List<String> partialDayStartDateTimes = null;
+  private List<String> fullDayManagementUnitDates = null;
+  private Long dailyDurationMinutes = null;
+  private List<Long> durationMinutes = null;
+  private List<Long> payableMinutes = null;
   private String notes = null;
   private String reviewedDate = null;
   private String reviewedBy = null;
@@ -147,6 +148,15 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   private String submittedBy = null;
   private String modifiedDate = null;
   private String modifiedBy = null;
+
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      partialDayStartDateTimes = new ArrayList<String>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+      durationMinutes = new ArrayList<Long>();
+      payableMinutes = new ArrayList<Long>();
+    }
+  }
 
   
   /**
@@ -321,51 +331,51 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   /**
    **/
-  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate dailyDurationMinutes(Integer dailyDurationMinutes) {
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate dailyDurationMinutes(Long dailyDurationMinutes) {
     this.dailyDurationMinutes = dailyDurationMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("dailyDurationMinutes")
-  public Integer getDailyDurationMinutes() {
+  public Long getDailyDurationMinutes() {
     return dailyDurationMinutes;
   }
-  public void setDailyDurationMinutes(Integer dailyDurationMinutes) {
+  public void setDailyDurationMinutes(Long dailyDurationMinutes) {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
 
   /**
    **/
-  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate durationMinutes(List<Integer> durationMinutes) {
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate durationMinutes(List<Long> durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMinutes")
-  public List<Integer> getDurationMinutes() {
+  public List<Long> getDurationMinutes() {
     return durationMinutes;
   }
-  public void setDurationMinutes(List<Integer> durationMinutes) {
+  public void setDurationMinutes(List<Long> durationMinutes) {
     this.durationMinutes = durationMinutes;
   }
 
 
   /**
    **/
-  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate payableMinutes(List<Integer> payableMinutes) {
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate payableMinutes(List<Long> payableMinutes) {
     this.payableMinutes = payableMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("payableMinutes")
-  public List<Integer> getPayableMinutes() {
+  public List<Long> getPayableMinutes() {
     return payableMinutes;
   }
-  public void setPayableMinutes(List<Integer> payableMinutes) {
+  public void setPayableMinutes(List<Long> payableMinutes) {
     this.payableMinutes = payableMinutes;
   }
 

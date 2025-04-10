@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AutoStatusTransitionDetail;
@@ -178,16 +179,24 @@ public class WorkitemVersion  implements Serializable {
   private AssignmentStateEnum assignmentState = null;
   private Date dateAssignmentStateChanged = null;
   private Integer alertTimeoutSeconds = null;
-  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
-  private List<UserReference> preferredAgents = new ArrayList<UserReference>();
+  private List<RoutingSkillReference> skills = null;
+  private List<UserReference> preferredAgents = null;
   private Boolean autoStatusTransition = null;
   private WorkitemSchema schema = null;
   private Map<String, Object> customFields = null;
   private AutoStatusTransitionDetail autoStatusTransitionDetail = null;
-  private List<WorkitemScoredAgent> scoredAgents = new ArrayList<WorkitemScoredAgent>();
+  private List<WorkitemScoredAgent> scoredAgents = null;
   private WorkitemScriptReference script = null;
   private Integer version = null;
   private String selfUri = null;
+
+  public WorkitemVersion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<RoutingSkillReference>();
+      preferredAgents = new ArrayList<UserReference>();
+      scoredAgents = new ArrayList<WorkitemScoredAgent>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

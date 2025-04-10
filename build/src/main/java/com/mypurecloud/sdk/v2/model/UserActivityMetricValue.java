@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -72,8 +73,14 @@ public class UserActivityMetricValue  implements Serializable {
   }
   private MetricEnum metric = null;
   private String qualifier = null;
-  private List<String> entityIds = new ArrayList<String>();
+  private List<String> entityIds = null;
   private Integer count = null;
+
+  public UserActivityMetricValue() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entityIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

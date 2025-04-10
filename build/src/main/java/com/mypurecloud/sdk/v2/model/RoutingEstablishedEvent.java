@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.InitialConfiguration;
 import com.mypurecloud.sdk.v2.model.SourceConfiguration;
@@ -34,10 +35,16 @@ public class RoutingEstablishedEvent  implements Serializable {
   private String queueId = null;
   private String ani = null;
   private String dnis = null;
-  private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillIds = null;
   private String languageId = null;
   private InitialConfiguration initialConfiguration = null;
   private SourceConfiguration sourceConfiguration = null;
+
+  public RoutingEstablishedEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkJobAddResult;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,16 @@ import java.io.Serializable;
 
 public class BulkJobAddResponse  implements Serializable {
   
-  private List<BulkJobAddResult> results = new ArrayList<BulkJobAddResult>();
+  private List<BulkJobAddResult> results = null;
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = new ArrayList<Integer>();
+  private List<Integer> errorIndexes = null;
+
+  public BulkJobAddResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<BulkJobAddResult>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

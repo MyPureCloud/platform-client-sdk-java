@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkJobReference;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResult;
@@ -26,8 +27,14 @@ import java.io.Serializable;
 public class WfmHistoricalAdherenceBulkResponse  implements Serializable {
   
   private WfmHistoricalAdherenceBulkJobReference job = null;
-  private List<String> downloadUrls = new ArrayList<String>();
+  private List<String> downloadUrls = null;
   private WfmHistoricalAdherenceBulkResult downloadResult = null;
+
+  public WfmHistoricalAdherenceBulkResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
 
   
   /**

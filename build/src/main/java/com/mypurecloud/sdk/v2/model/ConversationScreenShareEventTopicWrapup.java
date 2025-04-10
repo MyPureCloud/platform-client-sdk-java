@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,9 +27,15 @@ public class ConversationScreenShareEventTopicWrapup  implements Serializable {
   
   private String code = null;
   private String notes = null;
-  private List<String> tags = new ArrayList<String>();
-  private Integer durationSeconds = null;
+  private List<String> tags = null;
+  private Long durationSeconds = null;
   private Date endTime = null;
+
+  public ConversationScreenShareEventTopicWrapup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -88,17 +95,17 @@ public class ConversationScreenShareEventTopicWrapup  implements Serializable {
   /**
    * The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
    **/
-  public ConversationScreenShareEventTopicWrapup durationSeconds(Integer durationSeconds) {
+  public ConversationScreenShareEventTopicWrapup durationSeconds(Long durationSeconds) {
     this.durationSeconds = durationSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally")
   @JsonProperty("durationSeconds")
-  public Integer getDurationSeconds() {
+  public Long getDurationSeconds() {
     return durationSeconds;
   }
-  public void setDurationSeconds(Integer durationSeconds) {
+  public void setDurationSeconds(Long durationSeconds) {
     this.durationSeconds = durationSeconds;
   }
 

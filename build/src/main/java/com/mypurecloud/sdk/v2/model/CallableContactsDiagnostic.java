@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -25,9 +26,16 @@ import java.io.Serializable;
 public class CallableContactsDiagnostic  implements Serializable {
   
   private DomainEntityRef attemptLimits = null;
-  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> dncLists = null;
   private DomainEntityRef callableTimeSet = null;
-  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> ruleSets = null;
+
+  public CallableContactsDiagnostic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncLists = new ArrayList<DomainEntityRef>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Attempt limits for the campaign's contact list")

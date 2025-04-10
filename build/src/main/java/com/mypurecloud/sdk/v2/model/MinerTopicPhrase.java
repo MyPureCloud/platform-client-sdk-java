@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MinerTopic;
 import com.mypurecloud.sdk.v2.model.Utterance;
@@ -28,9 +29,15 @@ public class MinerTopicPhrase  implements Serializable {
   private String id = null;
   private String name = null;
   private MinerTopic topic = null;
-  private List<Utterance> utterances = new ArrayList<Utterance>();
+  private List<Utterance> utterances = null;
   private Integer utteranceCount = null;
   private String selfUri = null;
+
+  public MinerTopicPhrase() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      utterances = new ArrayList<Utterance>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RecipientAdditionalIdentifier;
@@ -83,7 +84,13 @@ public class MessagingRecipient  implements Serializable {
   private String lastName = null;
   private String email = null;
   private String externalContactId = null;
-  private List<RecipientAdditionalIdentifier> additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
+  private List<RecipientAdditionalIdentifier> additionalIds = null;
+
+  public MessagingRecipient() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")

@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.DncListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncPatchCustomExclusionColumnsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
+import com.mypurecloud.sdk.v2.model.DncPatchWhatsAppNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.EmailCampaignScheduleEntityListing;
@@ -112,6 +113,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistWhatsappnumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplatesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplateRequest;
@@ -198,6 +200,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchOutboundCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistWhatsappnumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
@@ -1630,6 +1633,85 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundDnclistPhonenumbers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes all or expired whatsApp numbers from a DNC list.
+   * This operation is only for Internal DNC lists of whatsApp numbers
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC whatsApp numbers that are expired (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistWhatsappnumbers(String dncListId, Boolean expiredOnly) throws IOException, ApiException {
+     deleteOutboundDnclistWhatsappnumbers(createDeleteOutboundDnclistWhatsappnumbersRequest(dncListId, expiredOnly));
+  }
+
+  /**
+   * Deletes all or expired whatsApp numbers from a DNC list.
+   * This operation is only for Internal DNC lists of whatsApp numbers
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC whatsApp numbers that are expired (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistWhatsappnumbersWithHttpInfo(String dncListId, Boolean expiredOnly) throws IOException {
+    return deleteOutboundDnclistWhatsappnumbers(createDeleteOutboundDnclistWhatsappnumbersRequest(dncListId, expiredOnly).withHttpInfo());
+  }
+
+  private DeleteOutboundDnclistWhatsappnumbersRequest createDeleteOutboundDnclistWhatsappnumbersRequest(String dncListId, Boolean expiredOnly) {
+    return DeleteOutboundDnclistWhatsappnumbersRequest.builder()
+            .withDncListId(dncListId)
+
+            .withExpiredOnly(expiredOnly)
+
+            .build();
+  }
+
+  /**
+   * Deletes all or expired whatsApp numbers from a DNC list.
+   * This operation is only for Internal DNC lists of whatsApp numbers
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistWhatsappnumbers(DeleteOutboundDnclistWhatsappnumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all or expired whatsApp numbers from a DNC list.
+   * This operation is only for Internal DNC lists of whatsApp numbers
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistWhatsappnumbers(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -9013,6 +9095,85 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> patchOutboundDnclistPhonenumbers(ApiRequest<DncPatchPhoneNumbersRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC whatsApp numbers (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistWhatsappnumbers(String dncListId, DncPatchWhatsAppNumbersRequest body) throws IOException, ApiException {
+     patchOutboundDnclistWhatsappnumbers(createPatchOutboundDnclistWhatsappnumbersRequest(dncListId, body));
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC whatsApp numbers (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistWhatsappnumbersWithHttpInfo(String dncListId, DncPatchWhatsAppNumbersRequest body) throws IOException {
+    return patchOutboundDnclistWhatsappnumbers(createPatchOutboundDnclistWhatsappnumbersRequest(dncListId, body).withHttpInfo());
+  }
+
+  private PatchOutboundDnclistWhatsappnumbersRequest createPatchOutboundDnclistWhatsappnumbersRequest(String dncListId, DncPatchWhatsAppNumbersRequest body) {
+    return PatchOutboundDnclistWhatsappnumbersRequest.builder()
+            .withDncListId(dncListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistWhatsappnumbers(PatchOutboundDnclistWhatsappnumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistWhatsappnumbers(ApiRequest<DncPatchWhatsAppNumbersRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

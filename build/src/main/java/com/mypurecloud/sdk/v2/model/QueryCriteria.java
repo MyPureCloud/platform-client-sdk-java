@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CriteriaCategoryInfo;
@@ -140,9 +141,9 @@ public class QueryCriteria  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CriteriaGroupsEnum> criteriaGroups = new ArrayList<CriteriaGroupsEnum>();
+  private List<CriteriaGroupsEnum> criteriaGroups = null;
   private String description = null;
-  private List<String> operators = new ArrayList<String>();
+  private List<String> operators = null;
 
   private static class DataTypeEnumDeserializer extends StdDeserializer<DataTypeEnum> {
     public DataTypeEnumDeserializer() {
@@ -193,6 +194,13 @@ public class QueryCriteria  implements Serializable {
   }
   private DataTypeEnum dataType = null;
   private CriteriaCategoryInfo categoryInfo = null;
+
+  public QueryCriteria() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      criteriaGroups = new ArrayList<CriteriaGroupsEnum>();
+      operators = new ArrayList<String>();
+    }
+  }
 
   
   /**

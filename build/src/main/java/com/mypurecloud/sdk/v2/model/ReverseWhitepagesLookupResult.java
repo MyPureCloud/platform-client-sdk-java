@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class ReverseWhitepagesLookupResult  implements Serializable {
   
-  private List<ExternalContact> contacts = new ArrayList<ExternalContact>();
-  private List<ExternalOrganization> externalOrganizations = new ArrayList<ExternalOrganization>();
+  private List<ExternalContact> contacts = null;
+  private List<ExternalOrganization> externalOrganizations = null;
+
+  public ReverseWhitepagesLookupResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contacts = new ArrayList<ExternalContact>();
+      externalOrganizations = new ArrayList<ExternalOrganization>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -48,9 +49,15 @@ public class VoicemailMessage  implements Serializable {
   private Group group = null;
   private Queue queue = null;
   private VoicemailCopyRecord copiedFrom = null;
-  private List<VoicemailCopyRecord> copiedTo = new ArrayList<VoicemailCopyRecord>();
+  private List<VoicemailCopyRecord> copiedTo = null;
   private VoicemailRetentionPolicy deleteRetentionPolicy = null;
   private String selfUri = null;
+
+  public VoicemailMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      copiedTo = new ArrayList<VoicemailCopyRecord>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

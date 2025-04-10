@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -128,9 +129,16 @@ public class CreateShareResponse  implements Serializable {
   private DomainEntityRef member = null;
   private DomainEntityRef sharedBy = null;
   private DomainEntityRef workspace = null;
-  private List<Share> succeeded = new ArrayList<Share>();
-  private List<Share> failed = new ArrayList<Share>();
+  private List<Share> succeeded = null;
+  private List<Share> failed = null;
   private String selfUri = null;
+
+  public CreateShareResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      succeeded = new ArrayList<Share>();
+      failed = new ArrayList<Share>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

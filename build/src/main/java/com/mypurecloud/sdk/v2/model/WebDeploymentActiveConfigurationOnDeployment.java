@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
@@ -26,6 +27,11 @@ public class WebDeploymentActiveConfigurationOnDeployment  implements Serializab
   
   private WebDeploymentConfigurationVersion configurationVersion = null;
   private WebDeployment deployment = null;
+
+  public WebDeploymentActiveConfigurationOnDeployment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

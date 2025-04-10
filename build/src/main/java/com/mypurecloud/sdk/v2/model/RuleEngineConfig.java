@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Fallback;
 import com.mypurecloud.sdk.v2.model.RuleConfig;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class RuleEngineConfig  implements Serializable {
   
-  private List<RuleConfig> rules = new ArrayList<RuleConfig>();
+  private List<RuleConfig> rules = null;
   private Fallback fallback = null;
+
+  public RuleEngineConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      rules = new ArrayList<RuleConfig>();
+    }
+  }
 
   
   /**

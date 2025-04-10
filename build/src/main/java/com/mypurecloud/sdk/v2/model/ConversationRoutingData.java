@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ScoredAgent;
@@ -28,9 +29,16 @@ public class ConversationRoutingData  implements Serializable {
   private AddressableEntityRef queue = null;
   private AddressableEntityRef language = null;
   private Integer priority = null;
-  private List<AddressableEntityRef> skills = new ArrayList<AddressableEntityRef>();
-  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
+  private List<AddressableEntityRef> skills = null;
+  private List<ScoredAgent> scoredAgents = null;
   private String label = null;
+
+  public ConversationRoutingData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<AddressableEntityRef>();
+      scoredAgents = new ArrayList<ScoredAgent>();
+    }
+  }
 
   
   /**

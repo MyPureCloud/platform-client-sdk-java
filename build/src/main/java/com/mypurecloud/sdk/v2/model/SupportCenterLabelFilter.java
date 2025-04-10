@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class SupportCenterLabelFilter  implements Serializable {
   
-  private List<AddressableEntityRef> labels = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> labels = null;
+
+  public SupportCenterLabelFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      labels = new ArrayList<AddressableEntityRef>();
+    }
+  }
 
   
   /**

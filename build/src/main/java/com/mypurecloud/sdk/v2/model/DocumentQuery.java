@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentQueryClause;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class DocumentQuery  implements Serializable {
   
-  private List<DocumentQueryClause> clauses = new ArrayList<DocumentQueryClause>();
+  private List<DocumentQueryClause> clauses = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
     public OperatorEnumDeserializer() {
@@ -74,6 +75,12 @@ public class DocumentQuery  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
+
+  public DocumentQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<DocumentQueryClause>();
+    }
+  }
 
   
   /**

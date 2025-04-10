@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -140,7 +141,12 @@ public class WorkitemsEventsNotificationAssignmentSegment  implements Serializab
     }
   }
   private EndStateEnum endState = null;
-  private Integer durationMs = null;
+  private Long durationMs = null;
+
+  public WorkitemsEventsNotificationAssignmentSegment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -179,17 +185,17 @@ public class WorkitemsEventsNotificationAssignmentSegment  implements Serializab
 
   /**
    **/
-  public WorkitemsEventsNotificationAssignmentSegment durationMs(Integer durationMs) {
+  public WorkitemsEventsNotificationAssignmentSegment durationMs(Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMs")
-  public Integer getDurationMs() {
+  public Long getDurationMs() {
     return durationMs;
   }
-  public void setDurationMs(Integer durationMs) {
+  public void setDurationMs(Long durationMs) {
     this.durationMs = durationMs;
   }
 

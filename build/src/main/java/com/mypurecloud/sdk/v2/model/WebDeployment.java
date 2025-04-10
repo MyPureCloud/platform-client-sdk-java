@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -34,7 +35,7 @@ public class WebDeployment  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean allowAllDomains = null;
-  private List<String> allowedDomains = new ArrayList<String>();
+  private List<String> allowedDomains = null;
   private SupportedContentReference supportedContent = null;
   private String snippet = null;
   private Date dateCreated = null;
@@ -94,6 +95,12 @@ public class WebDeployment  implements Serializable {
   private StatusEnum status = null;
   private WebDeploymentConfigurationVersionEntityRef _configuration = null;
   private String selfUri = null;
+
+  public WebDeployment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      allowedDomains = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The deployment ID")

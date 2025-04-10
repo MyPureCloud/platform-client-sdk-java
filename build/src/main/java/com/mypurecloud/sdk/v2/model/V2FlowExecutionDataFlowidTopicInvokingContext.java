@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicFlow;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicJourneyActionMap;
@@ -32,6 +33,11 @@ public class V2FlowExecutionDataFlowidTopicInvokingContext  implements Serializa
   private V2FlowExecutionDataFlowidTopicProcessAutomation processAutomation = null;
   private V2FlowExecutionDataFlowidTopicQuality quality = null;
   private V2FlowExecutionDataFlowidTopicWorkitem workitem = null;
+
+  public V2FlowExecutionDataFlowidTopicInvokingContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

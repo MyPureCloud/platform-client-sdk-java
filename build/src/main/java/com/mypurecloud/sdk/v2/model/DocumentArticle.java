@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArticleContent;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class DocumentArticle  implements Serializable {
   
   private String title = null;
   private ArticleContent content = null;
-  private List<String> alternatives = new ArrayList<String>();
+  private List<String> alternatives = null;
+
+  public DocumentArticle() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      alternatives = new ArrayList<String>();
+    }
+  }
 
   
   /**

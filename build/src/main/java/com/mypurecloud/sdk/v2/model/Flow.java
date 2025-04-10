@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -114,7 +115,7 @@ public class Flow  implements Serializable {
   private User publishedBy = null;
   private Operation currentOperation = null;
   private NluInfo nluInfo = null;
-  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
+  private List<SupportedLanguage> supportedLanguages = null;
 
   private static class CompatibleFlowTypesEnumDeserializer extends StdDeserializer<CompatibleFlowTypesEnum> {
     public CompatibleFlowTypesEnumDeserializer() {
@@ -178,10 +179,17 @@ public class Flow  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CompatibleFlowTypesEnum> compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+  private List<CompatibleFlowTypesEnum> compatibleFlowTypes = null;
   private String worktypeId = null;
   private Boolean virtualAgentEnabled = null;
   private String selfUri = null;
+
+  public Flow() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      supportedLanguages = new ArrayList<SupportedLanguage>();
+      compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+    }
+  }
 
   
   /**

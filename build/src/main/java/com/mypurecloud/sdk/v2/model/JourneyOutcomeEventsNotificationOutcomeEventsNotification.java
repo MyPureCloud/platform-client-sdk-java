@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationExternalContact;
@@ -84,6 +85,11 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
   private EventTypeEnum eventType = null;
   private JourneyOutcomeEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
   private JourneyOutcomeEventsNotificationOutcomeAttributionMessage outcomeAttributionEventMessage = null;
+
+  public JourneyOutcomeEventsNotificationOutcomeEventsNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

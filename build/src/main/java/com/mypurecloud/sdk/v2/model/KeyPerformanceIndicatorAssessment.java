@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Check;
@@ -77,7 +78,13 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
     }
   }
   private AssessmentResultEnum assessmentResult = null;
-  private List<Check> checks = new ArrayList<Check>();
+  private List<Check> checks = null;
+
+  public KeyPerformanceIndicatorAssessment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      checks = new ArrayList<Check>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Name of the key performance indicator assessed.")

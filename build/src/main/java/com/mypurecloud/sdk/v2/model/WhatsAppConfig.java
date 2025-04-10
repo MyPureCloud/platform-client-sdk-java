@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -25,9 +26,15 @@ import java.io.Serializable;
 
 public class WhatsAppConfig  implements Serializable {
   
-  private List<String> whatsAppColumns = new ArrayList<String>();
+  private List<String> whatsAppColumns = null;
   private AddressableEntityRef whatsAppIntegration = null;
   private DomainEntityRef contentTemplate = null;
+
+  public WhatsAppConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      whatsAppColumns = new ArrayList<String>();
+    }
+  }
 
   
   /**

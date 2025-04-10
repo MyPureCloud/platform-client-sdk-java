@@ -9,10 +9,10 @@
 | **conversationId** | **String** |  |  [optional] |
 | **fileState** | **String** |  |  [optional] |
 | **mediaUris** | [**List&lt;RecordingEventMediaResult&gt;**](RecordingEventMediaResult) |  |  [optional] |
-| **estimatedTranscodeTimeMs** | **Integer** |  |  [optional] |
-| **actualTranscodeTimeMs** | **Integer** |  |  [optional] |
+| **estimatedTranscodeTimeMs** | **Long** |  |  [optional] |
+| **actualTranscodeTimeMs** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

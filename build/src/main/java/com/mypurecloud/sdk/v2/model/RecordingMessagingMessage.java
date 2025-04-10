@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -47,12 +48,12 @@ public class RecordingMessagingMessage  implements Serializable {
   private AddressableEntityRef queue = null;
   private AddressableEntityRef workflow = null;
   private String messageText = null;
-  private List<MessageMediaAttachment> messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
-  private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
-  private List<QuickReply> quickReplies = new ArrayList<QuickReply>();
+  private List<MessageMediaAttachment> messageMediaAttachments = null;
+  private List<MessageStickerAttachment> messageStickerAttachments = null;
+  private List<QuickReply> quickReplies = null;
   private ButtonResponse buttonResponse = null;
   private RecordingContentStory story = null;
-  private List<Card> cards = new ArrayList<Card>();
+  private List<Card> cards = null;
   private RecordingNotificationTemplate notificationTemplate = null;
 
   private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
@@ -114,7 +115,17 @@ public class RecordingMessagingMessage  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
-  private List<ConversationMessageEvent> events = new ArrayList<ConversationMessageEvent>();
+  private List<ConversationMessageEvent> events = null;
+
+  public RecordingMessagingMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
+      messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
+      quickReplies = new ArrayList<QuickReply>();
+      cards = new ArrayList<Card>();
+      events = new ArrayList<ConversationMessageEvent>();
+    }
+  }
 
   
   /**

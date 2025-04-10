@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -32,7 +33,7 @@ import java.io.Serializable;
 public class ReportingTurn  implements Serializable {
   
   private String userInput = null;
-  private List<String> botPrompts = new ArrayList<String>();
+  private List<String> botPrompts = null;
   private String sessionId = null;
   private ReportingTurnAction askAction = null;
   private ReportingTurnIntent intent = null;
@@ -106,6 +107,12 @@ public class ReportingTurn  implements Serializable {
   private AskActionResultEnum askActionResult = null;
   private SessionEndDetails sessionEndDetails = null;
   private AddressableEntityRef conversation = null;
+
+  public ReportingTurn() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      botPrompts = new ArrayList<String>();
+    }
+  }
 
   
   /**

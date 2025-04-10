@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.VideoConferenceUpdateTopicParticipantInfo;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class VideoConferenceUpdateTopicVideoConference  implements Serializable 
   private String conversationId = null;
   private String conferenceId = null;
   private VideoConferenceUpdateTopicParticipantInfo participantInfo = null;
+
+  public VideoConferenceUpdateTopicVideoConference() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

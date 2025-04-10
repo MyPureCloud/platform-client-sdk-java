@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AttributeFilterItem;
 import com.mypurecloud.sdk.v2.model.ContentFilterItem;
@@ -29,11 +30,20 @@ public class QueryRequest  implements Serializable {
   private String queryPhrase = null;
   private Integer pageNumber = null;
   private Integer pageSize = null;
-  private List<String> facetNameRequests = new ArrayList<String>();
-  private List<SortItem> sort = new ArrayList<SortItem>();
-  private List<ContentFilterItem> filters = new ArrayList<ContentFilterItem>();
-  private List<AttributeFilterItem> attributeFilters = new ArrayList<AttributeFilterItem>();
+  private List<String> facetNameRequests = null;
+  private List<SortItem> sort = null;
+  private List<ContentFilterItem> filters = null;
+  private List<AttributeFilterItem> attributeFilters = null;
   private Boolean includeShares = null;
+
+  public QueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      facetNameRequests = new ArrayList<String>();
+      sort = new ArrayList<SortItem>();
+      filters = new ArrayList<ContentFilterItem>();
+      attributeFilters = new ArrayList<AttributeFilterItem>();
+    }
+  }
 
   
   /**

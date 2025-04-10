@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class GetMetricDefinitionsResponse  implements Serializable {
   
   private Long total = null;
-  private List<MetricDefinition> entities = new ArrayList<MetricDefinition>();
+  private List<MetricDefinition> entities = null;
   private String selfUri = null;
+
+  public GetMetricDefinitionsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<MetricDefinition>();
+    }
+  }
 
   
   /**

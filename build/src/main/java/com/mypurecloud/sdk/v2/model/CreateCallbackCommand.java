@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutingData;
 import io.swagger.annotations.ApiModel;
@@ -31,13 +32,19 @@ public class CreateCallbackCommand  implements Serializable {
   private String queueId = null;
   private RoutingData routingData = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private Date callbackScheduledTime = null;
   private String countryCode = null;
   private Boolean validateCallbackNumbers = null;
   private Map<String, String> data = null;
   private String callerId = null;
   private String callerIdName = null;
+
+  public CreateCallbackCommand() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FreeTrialLimit;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class FreeTrialNamespace  implements Serializable {
   
   private String name = null;
   private String friendlyName = null;
-  private List<FreeTrialLimit> limits = new ArrayList<FreeTrialLimit>();
+  private List<FreeTrialLimit> limits = null;
+
+  public FreeTrialNamespace() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      limits = new ArrayList<FreeTrialLimit>();
+    }
+  }
 
   
   /**

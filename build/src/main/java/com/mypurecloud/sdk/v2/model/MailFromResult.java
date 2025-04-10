@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Record;
@@ -75,8 +76,14 @@ public class MailFromResult  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Record> records = new ArrayList<Record>();
+  private List<Record> records = null;
   private String mailFromDomain = null;
+
+  public MailFromResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      records = new ArrayList<Record>();
+    }
+  }
 
   
   /**

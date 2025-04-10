@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
   
   private String id = null;
   private String downloadUrl = null;
-  private List<String> downloadUrls = new ArrayList<String>();
+  private List<String> downloadUrls = null;
 
   private static class QueryStateEnumDeserializer extends StdDeserializer<QueryStateEnum> {
     public QueryStateEnumDeserializer() {
@@ -77,6 +78,12 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     }
   }
   private QueryStateEnum queryState = null;
+
+  public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      downloadUrls = new ArrayList<String>();
+    }
+  }
 
   
   /**

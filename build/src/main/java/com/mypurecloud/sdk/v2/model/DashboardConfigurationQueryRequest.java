@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class DashboardConfigurationQueryRequest  implements Serializable {
   
-  private List<String> dashboardConfigurationIds = new ArrayList<String>();
+  private List<String> dashboardConfigurationIds = null;
   private Integer pageNumber = null;
   private Integer pageSize = null;
 
@@ -75,6 +76,12 @@ public class DashboardConfigurationQueryRequest  implements Serializable {
     }
   }
   private SortByEnum sortBy = null;
+
+  public DashboardConfigurationQueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dashboardConfigurationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

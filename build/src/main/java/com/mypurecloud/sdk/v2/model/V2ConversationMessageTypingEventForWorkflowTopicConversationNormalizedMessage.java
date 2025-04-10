@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent;
@@ -74,7 +75,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     }
   }
   private TypeEnum type = null;
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> events = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>();
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> events = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -123,6 +124,12 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     }
   }
   private DirectionEnum direction = null;
+
+  public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      events = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>();
+    }
+  }
 
   
   /**

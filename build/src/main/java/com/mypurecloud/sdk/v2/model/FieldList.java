@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,13 +29,19 @@ public class FieldList  implements Serializable {
   private Boolean customLabels = null;
   private String instructionText = null;
   private String key = null;
-  private List<String> labelKeys = new ArrayList<String>();
+  private List<String> labelKeys = null;
   private Map<String, Object> params = null;
   private Boolean repeatable = null;
   private String state = null;
   private String type = null;
   private Boolean required = null;
   private Boolean gdpr = null;
+
+  public FieldList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      labelKeys = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemsEventsNotificationCustomAttribute;
@@ -35,14 +36,14 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   private String typeId = null;
   private String description = null;
   private String languageId = null;
-  private Integer priority = null;
+  private Long priority = null;
   private String dateCreated = null;
   private String dateModified = null;
   private String dateDue = null;
   private String dateExpires = null;
   private String dateAssignmentStateChanged = null;
-  private Integer durationSeconds = null;
-  private Integer ttl = null;
+  private Long durationSeconds = null;
+  private Long ttl = null;
   private String statusId = null;
 
   private static class StatusCategoryEnumDeserializer extends StdDeserializer<StatusCategoryEnum> {
@@ -169,7 +170,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     }
   }
   private OperationEnum operation = null;
-  private List<WorkitemsEventsNotificationDelta> changes = new ArrayList<WorkitemsEventsNotificationDelta>();
+  private List<WorkitemsEventsNotificationDelta> changes = null;
 
   private static class AssignmentStateEnumDeserializer extends StdDeserializer<AssignmentStateEnum> {
     public AssignmentStateEnumDeserializer() {
@@ -230,13 +231,21 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   }
   private AssignmentStateEnum assignmentState = null;
   private String assignmentId = null;
-  private Integer alertTimeoutSeconds = null;
+  private Long alertTimeoutSeconds = null;
   private String queueId = null;
   private Map<String, WorkitemsEventsNotificationCustomAttribute> customFields = null;
   private WorkitemsEventsNotificationWrapup wrapup = null;
-  private List<WorkitemsEventsNotificationSession> sessions = new ArrayList<WorkitemsEventsNotificationSession>();
-  private List<String> skillIds = new ArrayList<String>();
+  private List<WorkitemsEventsNotificationSession> sessions = null;
+  private List<String> skillIds = null;
   private String scriptId = null;
+
+  public WorkitemsEventsNotificationWorkitem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      changes = new ArrayList<WorkitemsEventsNotificationDelta>();
+      sessions = new ArrayList<WorkitemsEventsNotificationSession>();
+      skillIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -326,17 +335,17 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
-  public WorkitemsEventsNotificationWorkitem priority(Integer priority) {
+  public WorkitemsEventsNotificationWorkitem priority(Long priority) {
     this.priority = priority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("priority")
-  public Integer getPriority() {
+  public Long getPriority() {
     return priority;
   }
-  public void setPriority(Integer priority) {
+  public void setPriority(Long priority) {
     this.priority = priority;
   }
 
@@ -428,34 +437,34 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
-  public WorkitemsEventsNotificationWorkitem durationSeconds(Integer durationSeconds) {
+  public WorkitemsEventsNotificationWorkitem durationSeconds(Long durationSeconds) {
     this.durationSeconds = durationSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationSeconds")
-  public Integer getDurationSeconds() {
+  public Long getDurationSeconds() {
     return durationSeconds;
   }
-  public void setDurationSeconds(Integer durationSeconds) {
+  public void setDurationSeconds(Long durationSeconds) {
     this.durationSeconds = durationSeconds;
   }
 
 
   /**
    **/
-  public WorkitemsEventsNotificationWorkitem ttl(Integer ttl) {
+  public WorkitemsEventsNotificationWorkitem ttl(Long ttl) {
     this.ttl = ttl;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("ttl")
-  public Integer getTtl() {
+  public Long getTtl() {
     return ttl;
   }
-  public void setTtl(Integer ttl) {
+  public void setTtl(Long ttl) {
     this.ttl = ttl;
   }
 
@@ -700,17 +709,17 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
-  public WorkitemsEventsNotificationWorkitem alertTimeoutSeconds(Integer alertTimeoutSeconds) {
+  public WorkitemsEventsNotificationWorkitem alertTimeoutSeconds(Long alertTimeoutSeconds) {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertTimeoutSeconds")
-  public Integer getAlertTimeoutSeconds() {
+  public Long getAlertTimeoutSeconds() {
     return alertTimeoutSeconds;
   }
-  public void setAlertTimeoutSeconds(Integer alertTimeoutSeconds) {
+  public void setAlertTimeoutSeconds(Long alertTimeoutSeconds) {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
   }
 

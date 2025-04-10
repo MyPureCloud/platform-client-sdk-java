@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryChangeMetadata;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryDeletedChange;
@@ -26,9 +27,16 @@ import java.io.Serializable;
 public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
   
   private BuAgentScheduleHistoryChangeMetadata metadata = null;
-  private List<String> shiftIds = new ArrayList<String>();
-  private List<LocalDate> fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+  private List<String> shiftIds = null;
+  private List<LocalDate> fullDayTimeOffMarkerDates = null;
   private BuAgentScheduleHistoryDeletedChange deletes = null;
+
+  public BuAgentScheduleHistoryDroppedChange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shiftIds = new ArrayList<String>();
+      fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+    }
+  }
 
   
   /**

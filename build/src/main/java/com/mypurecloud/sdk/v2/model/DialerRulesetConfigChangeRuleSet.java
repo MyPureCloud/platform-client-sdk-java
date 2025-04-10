@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeRule;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeUriReference;
@@ -30,13 +31,19 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   
   private DialerRulesetConfigChangeUriReference contactList = null;
   private DialerRulesetConfigChangeUriReference queue = null;
-  private List<DialerRulesetConfigChangeRule> rules = new ArrayList<DialerRulesetConfigChangeRule>();
+  private List<DialerRulesetConfigChangeRule> rules = null;
   private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerRulesetConfigChangeRuleSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      rules = new ArrayList<DialerRulesetConfigChangeRule>();
+    }
+  }
 
   
   /**
@@ -183,17 +190,17 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerRulesetConfigChangeRuleSet version(Integer version) {
+  public DialerRulesetConfigChangeRuleSet version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

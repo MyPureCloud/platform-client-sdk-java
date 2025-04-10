@@ -10,8 +10,9 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleShiftRequest;
 import com.mypurecloud.sdk.v2.model.BuFullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.ListWrapperString;
 import com.mypurecloud.sdk.v2.model.ValueWrapperString;
@@ -30,8 +31,15 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
   private String userId = null;
   private ValueWrapperString workPlanId = null;
   private ListWrapperString workPlanIdsPerWeek = null;
-  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+  private List<BuAgentScheduleShiftRequest> shifts = null;
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+
+  public BuImportAgentScheduleUploadSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shifts = new ArrayList<BuAgentScheduleShiftRequest>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+    }
+  }
 
   
   /**
@@ -91,17 +99,17 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
   /**
    * The shift definitions for this agent schedule
    **/
-  public BuImportAgentScheduleUploadSchema shifts(List<BuAgentScheduleShift> shifts) {
+  public BuImportAgentScheduleUploadSchema shifts(List<BuAgentScheduleShiftRequest> shifts) {
     this.shifts = shifts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The shift definitions for this agent schedule")
   @JsonProperty("shifts")
-  public List<BuAgentScheduleShift> getShifts() {
+  public List<BuAgentScheduleShiftRequest> getShifts() {
     return shifts;
   }
-  public void setShifts(List<BuAgentScheduleShift> shifts) {
+  public void setShifts(List<BuAgentScheduleShiftRequest> shifts) {
     this.shifts = shifts;
   }
 

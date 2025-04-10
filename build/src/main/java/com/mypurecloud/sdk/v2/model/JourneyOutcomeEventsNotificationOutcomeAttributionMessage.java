@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationAssociatedValue;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcome;
@@ -28,9 +29,16 @@ import java.io.Serializable;
 public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implements Serializable {
   
   private JourneyOutcomeEventsNotificationOutcome outcome = null;
-  private List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpoint>();
-  private List<JourneyOutcomeEventsNotificationSegment> segmentAssignments = new ArrayList<JourneyOutcomeEventsNotificationSegment>();
+  private List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints = null;
+  private List<JourneyOutcomeEventsNotificationSegment> segmentAssignments = null;
   private JourneyOutcomeEventsNotificationAssociatedValue associatedValue = null;
+
+  public JourneyOutcomeEventsNotificationOutcomeAttributionMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      outcomeTouchpoints = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpoint>();
+      segmentAssignments = new ArrayList<JourneyOutcomeEventsNotificationSegment>();
+    }
+  }
 
   
   /**

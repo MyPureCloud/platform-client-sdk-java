@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SnapshotMetaData;
 import com.mypurecloud.sdk.v2.model.SnapshotMetricData;
@@ -26,6 +27,11 @@ public class SnapshotFiles  implements Serializable {
   private SnapshotMetaData metaData = null;
   private SnapshotMetricData offered = null;
   private SnapshotMetricData averageHandleTime = null;
+
+  public SnapshotFiles() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

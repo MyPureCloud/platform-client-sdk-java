@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkResponseResultRelationshipEntityBulkEntityErrorEntity;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,16 @@ import java.io.Serializable;
 
 public class BulkFetchRelationshipsResponse  implements Serializable {
   
-  private List<BulkResponseResultRelationshipEntityBulkEntityErrorEntity> results = new ArrayList<BulkResponseResultRelationshipEntityBulkEntityErrorEntity>();
+  private List<BulkResponseResultRelationshipEntityBulkEntityErrorEntity> results = null;
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = new ArrayList<Integer>();
+  private List<Integer> errorIndexes = null;
+
+  public BulkFetchRelationshipsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<BulkResponseResultRelationshipEntityBulkEntityErrorEntity>();
+      errorIndexes = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

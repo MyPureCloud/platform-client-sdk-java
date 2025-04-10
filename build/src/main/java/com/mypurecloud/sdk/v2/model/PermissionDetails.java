@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -75,9 +76,15 @@ public class PermissionDetails  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<String> permissions = new ArrayList<String>();
+  private List<String> permissions = null;
   private Boolean allowsCurrentUser = null;
   private Boolean enforced = null;
+
+  public PermissionDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      permissions = new ArrayList<String>();
+    }
+  }
 
   
   /**

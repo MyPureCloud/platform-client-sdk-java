@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicPerformanceMetric;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,13 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
   private String teamId = null;
   private String performanceProfileId = null;
   private String userId = null;
-  private List<GamificationScorecardChangeTopicPerformanceMetric> performanceMetrics = new ArrayList<GamificationScorecardChangeTopicPerformanceMetric>();
+  private List<GamificationScorecardChangeTopicPerformanceMetric> performanceMetrics = null;
+
+  public GamificationScorecardChangeTopicScorecardChange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      performanceMetrics = new ArrayList<GamificationScorecardChangeTopicPerformanceMetric>();
+    }
+  }
 
   
   /**

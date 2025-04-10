@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SocialMediaQueryFilter;
 import io.swagger.annotations.ApiModel;
@@ -80,7 +81,7 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private SocialMediaQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -130,8 +131,15 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
   private Integer pageSize = null;
+
+  public SocialMediaAsyncAggregationQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groupBy = new ArrayList<GroupByEnum>();
+      metrics = new ArrayList<MetricsEnum>();
+    }
+  }
 
   
   /**

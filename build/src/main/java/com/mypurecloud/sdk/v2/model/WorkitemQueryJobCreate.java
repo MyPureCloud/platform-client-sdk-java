@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobFilter;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobQueryFilters;
@@ -29,8 +30,8 @@ public class WorkitemQueryJobCreate  implements Serializable {
   
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<WorkitemQueryJobFilter> filters = new ArrayList<WorkitemQueryJobFilter>();
-  private List<WorkitemQueryJobQueryFilters> queryFilters = new ArrayList<WorkitemQueryJobQueryFilters>();
+  private List<WorkitemQueryJobFilter> filters = null;
+  private List<WorkitemQueryJobQueryFilters> queryFilters = null;
 
   private static class ExpandsEnumDeserializer extends StdDeserializer<ExpandsEnum> {
     public ExpandsEnumDeserializer() {
@@ -81,11 +82,20 @@ public class WorkitemQueryJobCreate  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ExpandsEnum> expands = new ArrayList<ExpandsEnum>();
-  private List<String> attributes = new ArrayList<String>();
+  private List<ExpandsEnum> expands = null;
+  private List<String> attributes = null;
   private WorkitemQueryJobSort sort = null;
   private Date dateIntervalStart = null;
   private Date dateIntervalEnd = null;
+
+  public WorkitemQueryJobCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      filters = new ArrayList<WorkitemQueryJobFilter>();
+      queryFilters = new ArrayList<WorkitemQueryJobQueryFilters>();
+      expands = new ArrayList<ExpandsEnum>();
+      attributes = new ArrayList<String>();
+    }
+  }
 
   
   /**

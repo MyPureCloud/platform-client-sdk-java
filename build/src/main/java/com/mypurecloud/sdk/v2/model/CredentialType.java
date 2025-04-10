@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,8 +27,15 @@ public class CredentialType  implements Serializable {
   private String id = null;
   private String name = null;
   private Object properties = null;
-  private List<String> displayOrder = new ArrayList<String>();
-  private List<String> required = new ArrayList<String>();
+  private List<String> displayOrder = null;
+  private List<String> required = null;
+
+  public CredentialType() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      displayOrder = new ArrayList<String>();
+      required = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

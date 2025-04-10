@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CriteriaItem;
 import io.swagger.annotations.ApiModel;
@@ -25,10 +26,18 @@ import java.io.Serializable;
 
 public class CriteriaGroup  implements Serializable {
   
-  private List<CriteriaItem> and = new ArrayList<CriteriaItem>();
-  private List<CriteriaItem> or = new ArrayList<CriteriaItem>();
-  private List<CriteriaItem> not = new ArrayList<CriteriaItem>();
+  private List<CriteriaItem> and = null;
+  private List<CriteriaItem> or = null;
+  private List<CriteriaItem> not = null;
   private CriteriaItem criteria = null;
+
+  public CriteriaGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      and = new ArrayList<CriteriaItem>();
+      or = new ArrayList<CriteriaItem>();
+      not = new ArrayList<CriteriaItem>();
+    }
+  }
 
   
   /**

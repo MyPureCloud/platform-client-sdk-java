@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.WebChatConfig;
@@ -32,9 +33,15 @@ public class WebChatDeployment  implements Serializable {
   private String authenticationUrl = null;
   private Boolean disabled = null;
   private WebChatConfig webChatConfig = null;
-  private List<String> allowedDomains = new ArrayList<String>();
+  private List<String> allowedDomains = null;
   private DomainEntityRef flow = null;
   private String selfUri = null;
+
+  public WebChatDeployment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      allowedDomains = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -41,9 +42,9 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private String version = null;
   private WebDeploymentHeadlessMode headlessMode = null;
   private String description = null;
-  private List<String> languages = new ArrayList<String>();
+  private List<String> languages = null;
   private String defaultLanguage = null;
-  private List<CustomI18nLabels> customI18nLabels = new ArrayList<CustomI18nLabels>();
+  private List<CustomI18nLabels> customI18nLabels = null;
   private MessengerSettings messenger = null;
   private PositionSettings position = null;
   private SupportCenterSettings supportCenter = null;
@@ -109,6 +110,13 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   }
   private StatusEnum status = null;
   private String selfUri = null;
+
+  public WebDeploymentConfigurationVersion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      languages = new ArrayList<String>();
+      customI18nLabels = new ArrayList<CustomI18nLabels>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The configuration version ID")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutcomeScore;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class OutcomeScoresResult  implements Serializable {
   
-  private List<OutcomeScore> outcomeScores = new ArrayList<OutcomeScore>();
+  private List<OutcomeScore> outcomeScores = null;
   private Date modifiedDate = null;
+
+  public OutcomeScoresResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      outcomeScores = new ArrayList<OutcomeScore>();
+    }
+  }
 
   
   /**

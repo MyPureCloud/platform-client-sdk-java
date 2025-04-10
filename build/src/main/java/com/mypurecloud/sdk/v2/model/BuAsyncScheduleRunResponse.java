@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuScheduleRun;
@@ -75,6 +76,11 @@ public class BuAsyncScheduleRunResponse  implements Serializable {
   private StatusEnum status = null;
   private String operationId = null;
   private BuScheduleRun result = null;
+
+  public BuAsyncScheduleRunResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

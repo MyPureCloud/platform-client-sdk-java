@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AgentStateSessionQueryClause;
@@ -74,8 +75,15 @@ public class AgentStateSessionFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<AgentStateSessionQueryClause> clauses = new ArrayList<AgentStateSessionQueryClause>();
-  private List<AgentStateSessionQueryPredicate> predicates = new ArrayList<AgentStateSessionQueryPredicate>();
+  private List<AgentStateSessionQueryClause> clauses = null;
+  private List<AgentStateSessionQueryPredicate> predicates = null;
+
+  public AgentStateSessionFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<AgentStateSessionQueryClause>();
+      predicates = new ArrayList<AgentStateSessionQueryPredicate>();
+    }
+  }
 
   
   /**

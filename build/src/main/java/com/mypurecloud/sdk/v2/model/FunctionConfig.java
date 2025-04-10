@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Function;
 import com.mypurecloud.sdk.v2.model.FunctionZipConfig;
@@ -29,8 +30,14 @@ public class FunctionConfig  implements Serializable {
   private String id = null;
   private Function function = null;
   private FunctionZipConfig zip = null;
-  private List<FunctionZipConfig> uploadExceptionHistory = new ArrayList<FunctionZipConfig>();
+  private List<FunctionZipConfig> uploadExceptionHistory = null;
   private String selfUri = null;
+
+  public FunctionConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      uploadExceptionHistory = new ArrayList<FunctionZipConfig>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Action identifier.")

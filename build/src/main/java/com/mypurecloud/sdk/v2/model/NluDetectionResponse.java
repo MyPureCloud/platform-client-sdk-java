@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluDetectionInput;
 import com.mypurecloud.sdk.v2.model.NluDetectionOutput;
@@ -27,6 +28,11 @@ public class NluDetectionResponse  implements Serializable {
   private NluDomainVersion version = null;
   private NluDetectionOutput output = null;
   private NluDetectionInput input = null;
+
+  public NluDetectionResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The NLU domain version which performed the detection.")

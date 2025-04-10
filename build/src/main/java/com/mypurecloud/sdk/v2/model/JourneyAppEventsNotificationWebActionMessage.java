@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationActionMap;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationActionTarget;
@@ -42,7 +43,12 @@ public class JourneyAppEventsNotificationWebActionMessage  implements Serializab
   private JourneyAppEventsNotificationGeoLocation geolocation = null;
   private JourneyAppEventsNotificationMktCampaign mktCampaign = null;
   private JourneyAppEventsNotificationReferrer visitReferrer = null;
-  private Integer timeToDisposition = null;
+  private Long timeToDisposition = null;
+
+  public JourneyAppEventsNotificationWebActionMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -268,17 +274,17 @@ public class JourneyAppEventsNotificationWebActionMessage  implements Serializab
 
   /**
    **/
-  public JourneyAppEventsNotificationWebActionMessage timeToDisposition(Integer timeToDisposition) {
+  public JourneyAppEventsNotificationWebActionMessage timeToDisposition(Long timeToDisposition) {
     this.timeToDisposition = timeToDisposition;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timeToDisposition")
-  public Integer getTimeToDisposition() {
+  public Long getTimeToDisposition() {
     return timeToDisposition;
   }
-  public void setTimeToDisposition(Integer timeToDisposition) {
+  public void setTimeToDisposition(Long timeToDisposition) {
     this.timeToDisposition = timeToDisposition;
   }
 

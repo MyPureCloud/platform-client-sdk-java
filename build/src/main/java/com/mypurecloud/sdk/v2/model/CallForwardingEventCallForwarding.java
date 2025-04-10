@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallForwardingEventCall;
 import com.mypurecloud.sdk.v2.model.CallForwardingEventUser;
@@ -28,9 +29,15 @@ public class CallForwardingEventCallForwarding  implements Serializable {
   
   private CallForwardingEventUser user = null;
   private Boolean enabled = null;
-  private List<CallForwardingEventCall> calls = new ArrayList<CallForwardingEventCall>();
+  private List<CallForwardingEventCall> calls = null;
   private String voicemail = null;
   private Date modifiedDate = null;
+
+  public CallForwardingEventCallForwarding() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      calls = new ArrayList<CallForwardingEventCall>();
+    }
+  }
 
   
   /**

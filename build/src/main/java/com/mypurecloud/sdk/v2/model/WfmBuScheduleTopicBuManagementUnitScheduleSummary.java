@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicManagementUnit;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicUserReference;
@@ -29,8 +30,14 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
   private WfmBuScheduleTopicManagementUnit managementUnit = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<WfmBuScheduleTopicUserReference> agents = new ArrayList<WfmBuScheduleTopicUserReference>();
-  private Integer agentCount = null;
+  private List<WfmBuScheduleTopicUserReference> agents = null;
+  private Long agentCount = null;
+
+  public WfmBuScheduleTopicBuManagementUnitScheduleSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agents = new ArrayList<WfmBuScheduleTopicUserReference>();
+    }
+  }
 
   
   /**
@@ -103,17 +110,17 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
 
   /**
    **/
-  public WfmBuScheduleTopicBuManagementUnitScheduleSummary agentCount(Integer agentCount) {
+  public WfmBuScheduleTopicBuManagementUnitScheduleSummary agentCount(Long agentCount) {
     this.agentCount = agentCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("agentCount")
-  public Integer getAgentCount() {
+  public Long getAgentCount() {
     return agentCount;
   }
-  public void setAgentCount(Integer agentCount) {
+  public void setAgentCount(Long agentCount) {
     this.agentCount = agentCount;
   }
 

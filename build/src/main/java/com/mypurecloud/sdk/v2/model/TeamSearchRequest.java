@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SearchSort;
@@ -78,8 +79,15 @@ public class TeamSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<TeamSearchCriteria> query = new ArrayList<TeamSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<TeamSearchCriteria> query = null;
+
+  public TeamSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<SearchSort>();
+      query = new ArrayList<TeamSearchCriteria>();
+    }
+  }
 
   
   /**

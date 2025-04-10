@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 
 public class AggregateHistoricalAvailability  implements Serializable {
   
-  private List<Integer> weekly = new ArrayList<Integer>();
-  private List<Integer> yearly = new ArrayList<Integer>();
+  private List<Integer> weekly = null;
+  private List<Integer> yearly = null;
+
+  public AggregateHistoricalAvailability() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      weekly = new ArrayList<Integer>();
+      yearly = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

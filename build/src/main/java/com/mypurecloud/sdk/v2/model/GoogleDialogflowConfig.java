@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationProfile;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class GoogleDialogflowConfig  implements Serializable {
   
   private String integrationId = null;
-  private List<ConversationProfile> conversationProfiles = new ArrayList<ConversationProfile>();
+  private List<ConversationProfile> conversationProfiles = null;
+
+  public GoogleDialogflowConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationProfiles = new ArrayList<ConversationProfile>();
+    }
+  }
 
   
   /**

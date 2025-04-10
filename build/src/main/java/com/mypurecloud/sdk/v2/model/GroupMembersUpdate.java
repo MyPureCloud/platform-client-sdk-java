@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,14 @@ import java.io.Serializable;
 
 public class GroupMembersUpdate  implements Serializable {
   
-  private List<String> memberIds = new ArrayList<String>();
+  private List<String> memberIds = null;
   private Integer version = null;
+
+  public GroupMembersUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      memberIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

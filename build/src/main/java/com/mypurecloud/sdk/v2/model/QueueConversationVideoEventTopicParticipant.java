@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicCall;
@@ -57,16 +58,16 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private Boolean wrapupRequired = null;
   private Boolean wrapupExpected = null;
   private String wrapupPrompt = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private QueueConversationVideoEventTopicConversationRoutingData conversationRoutingData = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private String bargedParticipantId = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -121,17 +122,33 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationVideoEventTopicCall> calls = new ArrayList<QueueConversationVideoEventTopicCall>();
-  private List<QueueConversationVideoEventTopicCallback> callbacks = new ArrayList<QueueConversationVideoEventTopicCallback>();
-  private List<QueueConversationVideoEventTopicChat> chats = new ArrayList<QueueConversationVideoEventTopicChat>();
-  private List<QueueConversationVideoEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationVideoEventTopicCobrowse>();
-  private List<QueueConversationVideoEventTopicEmail> emails = new ArrayList<QueueConversationVideoEventTopicEmail>();
-  private List<QueueConversationVideoEventTopicMessage> messages = new ArrayList<QueueConversationVideoEventTopicMessage>();
-  private List<QueueConversationVideoEventTopicInternalMessage> internalMessages = new ArrayList<QueueConversationVideoEventTopicInternalMessage>();
-  private List<QueueConversationVideoEventTopicScreenshare> screenshares = new ArrayList<QueueConversationVideoEventTopicScreenshare>();
-  private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
-  private List<QueueConversationVideoEventTopicVideo> videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
+  private List<QueueConversationVideoEventTopicCall> calls = null;
+  private List<QueueConversationVideoEventTopicCallback> callbacks = null;
+  private List<QueueConversationVideoEventTopicChat> chats = null;
+  private List<QueueConversationVideoEventTopicCobrowse> cobrowsesessions = null;
+  private List<QueueConversationVideoEventTopicEmail> emails = null;
+  private List<QueueConversationVideoEventTopicMessage> messages = null;
+  private List<QueueConversationVideoEventTopicInternalMessage> internalMessages = null;
+  private List<QueueConversationVideoEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = null;
+  private List<QueueConversationVideoEventTopicVideo> videos = null;
   private QueueConversationVideoEventTopicWorkflow workflow = null;
+
+  public QueueConversationVideoEventTopicParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<QueueConversationVideoEventTopicCall>();
+      callbacks = new ArrayList<QueueConversationVideoEventTopicCallback>();
+      chats = new ArrayList<QueueConversationVideoEventTopicChat>();
+      cobrowsesessions = new ArrayList<QueueConversationVideoEventTopicCobrowse>();
+      emails = new ArrayList<QueueConversationVideoEventTopicEmail>();
+      messages = new ArrayList<QueueConversationVideoEventTopicMessage>();
+      internalMessages = new ArrayList<QueueConversationVideoEventTopicInternalMessage>();
+      screenshares = new ArrayList<QueueConversationVideoEventTopicScreenshare>();
+      socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
+      videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
+    }
+  }
 
   
   /**
@@ -443,17 +460,17 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   /**
    * Specifies how long a timed ACW session will last.
    **/
-  public QueueConversationVideoEventTopicParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationVideoEventTopicParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long a timed ACW session will last.")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -531,17 +548,17 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
-  public QueueConversationVideoEventTopicParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationVideoEventTopicParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

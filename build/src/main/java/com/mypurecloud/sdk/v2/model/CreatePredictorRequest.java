@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PredictorSchedule;
 import com.mypurecloud.sdk.v2.model.PredictorWorkloadBalancing;
@@ -25,11 +26,17 @@ import java.io.Serializable;
 
 public class CreatePredictorRequest  implements Serializable {
   
-  private List<String> queueIds = new ArrayList<String>();
+  private List<String> queueIds = null;
   private String kpi = null;
   private Integer routingTimeoutSeconds = null;
   private PredictorSchedule schedule = null;
   private PredictorWorkloadBalancing workloadBalancingConfig = null;
+
+  public CreatePredictorRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -20,9 +20,11 @@ import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
 import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
 import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
 import com.mypurecloud.sdk.v2.model.BulkJobsListing;
+import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.Workbin;
 import com.mypurecloud.sdk.v2.model.WorkbinChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkbinCreate;
@@ -104,6 +106,9 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaReques
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRulesRequest;
@@ -2491,6 +2496,231 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getTaskmanagementWorkitemsSchemasCoretypeAsync(GetTaskmanagementWorkitemsSchemasCoretypeRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getTaskmanagementWorkitemsSchemasCoretypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Coretype> getTaskmanagementWorkitemsSchemasCoretypesAsync(GetTaskmanagementWorkitemsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+    try {
+      final SettableFuture<Coretype> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Coretype>> getTaskmanagementWorkitemsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+        @Override
+        public void onCompleted(ApiResponse<Coretype> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchemaQuantityLimits> getTaskmanagementWorkitemsSchemasLimitsAsync(GetTaskmanagementWorkitemsSchemasLimitsRequest request, final AsyncApiCallback<SchemaQuantityLimits> callback) {
+    try {
+      final SettableFuture<SchemaQuantityLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchemaQuantityLimits>> getTaskmanagementWorkitemsSchemasLimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchemaQuantityLimits>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchemaQuantityLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaQuantityLimits>() {}, new AsyncApiCallback<ApiResponse<SchemaQuantityLimits>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaQuantityLimits> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

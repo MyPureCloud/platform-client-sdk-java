@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CategoriesFilter;
 import com.mypurecloud.sdk.v2.model.LabelsFilter;
@@ -25,6 +26,11 @@ public class ArticlesFilter  implements Serializable {
   
   private LabelsFilter labels = null;
   private CategoriesFilter categories = null;
+
+  public ArticlesFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

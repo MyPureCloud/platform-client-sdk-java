@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AlertNotification;
@@ -31,7 +32,7 @@ public class CommonRule  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean enabled = null;
-  private List<AlertNotification> notifications = new ArrayList<AlertNotification>();
+  private List<AlertNotification> notifications = null;
   private Boolean sendExitingAlarmNotifications = null;
   private Long waitBetweenNotificationMs = null;
   private CommonRuleConditions conditions = null;
@@ -92,6 +93,12 @@ public class CommonRule  implements Serializable {
   private Date dateCreated = null;
   private Date dateLastModified = null;
   private String selfUri = null;
+
+  public CommonRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notifications = new ArrayList<AlertNotification>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

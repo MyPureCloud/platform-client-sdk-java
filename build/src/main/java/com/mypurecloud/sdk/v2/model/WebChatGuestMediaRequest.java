@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -73,7 +74,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TypesEnum> types = new ArrayList<TypesEnum>();
+  private List<TypesEnum> types = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -129,6 +130,12 @@ public class WebChatGuestMediaRequest  implements Serializable {
   private String communicationId = null;
   private String securityKey = null;
   private String selfUri = null;
+
+  public WebChatGuestMediaRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      types = new ArrayList<TypesEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

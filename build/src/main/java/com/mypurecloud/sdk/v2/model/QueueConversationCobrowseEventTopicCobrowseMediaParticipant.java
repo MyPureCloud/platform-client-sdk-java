@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicConversationRoutingData;
@@ -280,9 +281,9 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private Map<String, String> attributes = null;
   private QueueConversationCobrowseEventTopicErrorBody errorInfo = null;
   private QueueConversationCobrowseEventTopicUriReference script = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationCobrowseEventTopicUriReference externalContact = null;
   private String externalContactInitialDivisionId = null;
@@ -343,13 +344,20 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private Date endAcwTime = null;
   private Date resumeTime = null;
   private Date parkTime = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private QueueConversationCobrowseEventTopicQueueMediaSettings queueMediaSettings = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
   private Date providerEventTime = null;
-  private List<String> controlling = new ArrayList<String>();
+  private List<String> controlling = null;
+
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      controlling = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -711,17 +719,17 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   /**
    **/
-  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -745,17 +753,17 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   /**
    **/
-  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

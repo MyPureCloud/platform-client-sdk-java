@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.MuRescheduleResultWrapper;
@@ -26,6 +27,11 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
   private ManagementUnitReference managementUnit = null;
   private MuRescheduleResultWrapper downloadResult = null;
   private String downloadUrl = null;
+
+  public BuRescheduleAgentScheduleResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Annotation;
@@ -84,7 +85,7 @@ public class RecordingMetadata  implements Serializable {
   }
   private MediaSubtypeEnum mediaSubtype = null;
   private String mediaSubject = null;
-  private List<Annotation> annotations = new ArrayList<Annotation>();
+  private List<Annotation> annotations = null;
 
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
     public FileStateEnumDeserializer() {
@@ -194,6 +195,12 @@ public class RecordingMetadata  implements Serializable {
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
   private String selfUri = null;
+
+  public RecordingMetadata() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      annotations = new ArrayList<Annotation>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

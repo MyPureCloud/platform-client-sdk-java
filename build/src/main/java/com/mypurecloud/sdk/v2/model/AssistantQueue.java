@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Assistant;
 import io.swagger.annotations.ApiModel;
@@ -73,11 +74,17 @@ public class AssistantQueue  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
+  private List<MediaTypesEnum> mediaTypes = null;
   private Assistant assistant = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public AssistantQueue() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+    }
+  }
 
   
   /**

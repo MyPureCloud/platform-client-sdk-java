@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditLogMessage;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
   private String id = null;
   private Integer pageSize = null;
   private String cursor = null;
-  private List<AuditLogMessage> entities = new ArrayList<AuditLogMessage>();
+  private List<AuditLogMessage> entities = null;
+
+  public AuditQueryExecutionResultsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AuditLogMessage>();
+    }
+  }
 
   
   /**

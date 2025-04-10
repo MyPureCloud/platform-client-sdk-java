@@ -8,7 +8,7 @@
 | **id** | **String** |  |  [optional] |
 | **user** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
 | **module** | [**LearningAssignmentTopicLearningModuleReference**](LearningAssignmentTopicLearningModuleReference) |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
+| **version** | **Long** |  |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
 | **dateRecommendedForCompletion** | [**Date**](Date) |  |  [optional] |
 | **createdBy** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
@@ -16,7 +16,7 @@
 | **modifiedBy** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
 | **dateModified** | [**Date**](Date) |  |  [optional] |
 | **isOverdue** | **Boolean** |  |  [optional] |
-| **lengthInMinutes** | **Integer** |  |  [optional] |
+| **lengthInMinutes** | **Long** |  |  [optional] |
 | **percentageScore** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **isPassed** | **Boolean** |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
@@ -47,4 +47,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

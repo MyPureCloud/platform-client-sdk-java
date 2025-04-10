@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Alteration;
 import com.mypurecloud.sdk.v2.model.NextOccurrenceDetails;
@@ -33,8 +34,14 @@ public class Reoccurrence  implements Serializable {
   private String timeZone = null;
   private Pattern pattern = null;
   private Range range = null;
-  private List<Alteration> alterations = new ArrayList<Alteration>();
+  private List<Alteration> alterations = null;
   private NextOccurrenceDetails nextOccurrenceDetails = null;
+
+  public Reoccurrence() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      alterations = new ArrayList<Alteration>();
+    }
+  }
 
   
   /**

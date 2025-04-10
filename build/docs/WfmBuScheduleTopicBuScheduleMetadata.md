@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
 | **weekDate** | [**Date**](Date) |  |  [optional] |
-| **weekCount** | **Integer** |  |  [optional] |
+| **weekCount** | **Long** |  |  [optional] |
 | **description** | **String** |  |  [optional] |
 | **published** | **Boolean** |  |  [optional] |
 | **shortTermForecast** | [**WfmBuScheduleTopicBuShortTermForecastReference**](WfmBuScheduleTopicBuShortTermForecastReference) |  |  [optional] |
@@ -18,4 +18,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -14,8 +14,8 @@
 | **sourceDays** | [**List&lt;WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer&gt;**](WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer) |  |  [optional] |
 | **modifications** | [**List&lt;WfmBuShortTermForecastGenerateProgressTopicBuForecastModification&gt;**](WfmBuShortTermForecastGenerateProgressTopicBuForecastModification) |  |  [optional] |
 | **timeZone** | **String** |  |  [optional] |
-| **planningGroupsVersion** | **Integer** |  |  [optional] |
-| **weekCount** | **Integer** |  |  [optional] |
+| **planningGroupsVersion** | **Long** |  |  [optional] |
+| **weekCount** | **Long** |  |  [optional] |
 | **metadata** | [**WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata**](WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata) |  |  [optional] |
 | **canUseForScheduling** | **Boolean** |  |  [optional] |
 
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

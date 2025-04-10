@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
 import com.mypurecloud.sdk.v2.model.BuRescheduleAgentScheduleResult;
@@ -30,7 +31,13 @@ public class BuRescheduleResult  implements Serializable {
   private String generationResultsDownloadUrl = null;
   private BuHeadcountForecast headcountForecast = null;
   private String headcountForecastDownloadUrl = null;
-  private List<BuRescheduleAgentScheduleResult> agentSchedules = new ArrayList<BuRescheduleAgentScheduleResult>();
+  private List<BuRescheduleAgentScheduleResult> agentSchedules = null;
+
+  public BuRescheduleResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuRescheduleAgentScheduleResult>();
+    }
+  }
 
   
   /**

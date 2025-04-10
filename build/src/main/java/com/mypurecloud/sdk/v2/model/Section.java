@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FieldList;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class Section  implements Serializable {
   
-  private List<FieldList> fieldList = new ArrayList<FieldList>();
+  private List<FieldList> fieldList = null;
   private String instructionText = null;
   private String key = null;
   private String state = null;
+
+  public Section() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      fieldList = new ArrayList<FieldList>();
+    }
+  }
 
   
   /**

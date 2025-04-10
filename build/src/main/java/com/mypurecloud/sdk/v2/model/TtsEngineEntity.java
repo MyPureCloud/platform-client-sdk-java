@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import io.swagger.annotations.ApiModel;
@@ -26,12 +27,20 @@ public class TtsEngineEntity  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> languages = new ArrayList<String>();
-  private List<String> outputFormats = new ArrayList<String>();
-  private List<TtsVoiceEntity> voices = new ArrayList<TtsVoiceEntity>();
+  private List<String> languages = null;
+  private List<String> outputFormats = null;
+  private List<TtsVoiceEntity> voices = null;
   private Boolean isDefault = null;
   private Boolean isSecure = null;
   private String selfUri = null;
+
+  public TtsEngineEntity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      languages = new ArrayList<String>();
+      outputFormats = new ArrayList<String>();
+      voices = new ArrayList<TtsVoiceEntity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

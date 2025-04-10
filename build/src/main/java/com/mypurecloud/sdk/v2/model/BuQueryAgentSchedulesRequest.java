@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 public class BuQueryAgentSchedulesRequest  implements Serializable {
   
   private String managementUnitId = null;
-  private List<String> userIds = new ArrayList<String>();
-  private List<String> teamIds = new ArrayList<String>();
+  private List<String> userIds = null;
+  private List<String> teamIds = null;
+
+  public BuQueryAgentSchedulesRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userIds = new ArrayList<String>();
+      teamIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

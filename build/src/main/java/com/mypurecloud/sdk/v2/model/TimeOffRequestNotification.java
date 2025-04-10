@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -79,8 +80,15 @@ public class TimeOffRequestNotification  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
+  private List<Date> partialDayStartDateTimes = null;
+  private List<String> fullDayManagementUnitDates = null;
+
+  public TimeOffRequestNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      partialDayStartDateTimes = new ArrayList<Date>();
+      fullDayManagementUnitDates = new ArrayList<String>();
+    }
+  }
 
   
   /**

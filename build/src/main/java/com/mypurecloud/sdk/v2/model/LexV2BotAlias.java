@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LexV2Bot;
@@ -83,8 +84,14 @@ public class LexV2BotAlias  implements Serializable {
   }
   private StatusEnum status = null;
   private String language = null;
-  private List<LexV2Intent> intents = new ArrayList<LexV2Intent>();
+  private List<LexV2Intent> intents = null;
   private String selfUri = null;
+
+  public LexV2BotAlias() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<LexV2Intent>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

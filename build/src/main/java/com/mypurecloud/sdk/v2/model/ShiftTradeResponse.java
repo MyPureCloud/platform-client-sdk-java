@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuScheduleReferenceForMuRoute;
@@ -94,10 +95,16 @@ public class ShiftTradeResponse  implements Serializable {
   private Date receivingShiftEnd = null;
   private Date expiration = null;
   private Boolean oneSided = null;
-  private List<String> acceptableIntervals = new ArrayList<String>();
+  private List<String> acceptableIntervals = null;
   private UserReference reviewedBy = null;
   private Date reviewedDate = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public ShiftTradeResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
 
   
   /**

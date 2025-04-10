@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DynamicGroupSkillCondition;
@@ -79,7 +80,13 @@ public class DynamicGroupLanguageSkillCondition  implements Serializable {
   }
   private ComparatorEnum comparator = null;
   private Integer proficiency = null;
-  private List<DynamicGroupSkillCondition> childConditions = new ArrayList<DynamicGroupSkillCondition>();
+  private List<DynamicGroupSkillCondition> childConditions = null;
+
+  public DynamicGroupLanguageSkillCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      childConditions = new ArrayList<DynamicGroupSkillCondition>();
+    }
+  }
 
   
   /**

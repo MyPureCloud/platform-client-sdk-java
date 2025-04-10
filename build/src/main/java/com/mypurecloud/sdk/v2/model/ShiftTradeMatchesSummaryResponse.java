@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeMatchesSummaryResponse;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class ShiftTradeMatchesSummaryResponse  implements Serializable {
   
-  private List<WeekShiftTradeMatchesSummaryResponse> entities = new ArrayList<WeekShiftTradeMatchesSummaryResponse>();
+  private List<WeekShiftTradeMatchesSummaryResponse> entities = null;
+
+  public ShiftTradeMatchesSummaryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<WeekShiftTradeMatchesSummaryResponse>();
+    }
+  }
 
   
   /**

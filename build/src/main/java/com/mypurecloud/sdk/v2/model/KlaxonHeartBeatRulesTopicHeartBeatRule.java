@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KlaxonHeartBeatRulesTopicNotificationUser;
@@ -32,7 +33,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
   private BigDecimal heartBeatTimeoutInMinutes = null;
   private Boolean enabled = null;
   private Boolean inAlarm = null;
-  private List<KlaxonHeartBeatRulesTopicNotificationUser> notificationUsers = new ArrayList<KlaxonHeartBeatRulesTopicNotificationUser>();
+  private List<KlaxonHeartBeatRulesTopicNotificationUser> notificationUsers = null;
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -80,7 +81,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
+  private List<AlertTypesEnum> alertTypes = null;
 
   private static class RuleTypeEnumDeserializer extends StdDeserializer<RuleTypeEnum> {
     public RuleTypeEnumDeserializer() {
@@ -128,6 +129,13 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     }
   }
   private RuleTypeEnum ruleType = null;
+
+  public KlaxonHeartBeatRulesTopicHeartBeatRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notificationUsers = new ArrayList<KlaxonHeartBeatRulesTopicNotificationUser>();
+      alertTypes = new ArrayList<AlertTypesEnum>();
+    }
+  }
 
   
   /**

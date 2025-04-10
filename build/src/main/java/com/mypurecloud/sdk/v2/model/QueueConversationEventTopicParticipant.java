@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicCall;
@@ -57,16 +58,16 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private Boolean wrapupRequired = null;
   private Boolean wrapupExpected = null;
   private String wrapupPrompt = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private QueueConversationEventTopicConversationRoutingData conversationRoutingData = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private String bargedParticipantId = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -121,17 +122,33 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationEventTopicCall> calls = new ArrayList<QueueConversationEventTopicCall>();
-  private List<QueueConversationEventTopicCallback> callbacks = new ArrayList<QueueConversationEventTopicCallback>();
-  private List<QueueConversationEventTopicChat> chats = new ArrayList<QueueConversationEventTopicChat>();
-  private List<QueueConversationEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationEventTopicCobrowse>();
-  private List<QueueConversationEventTopicEmail> emails = new ArrayList<QueueConversationEventTopicEmail>();
-  private List<QueueConversationEventTopicMessage> messages = new ArrayList<QueueConversationEventTopicMessage>();
-  private List<QueueConversationEventTopicInternalMessage> internalMessages = new ArrayList<QueueConversationEventTopicInternalMessage>();
-  private List<QueueConversationEventTopicScreenshare> screenshares = new ArrayList<QueueConversationEventTopicScreenshare>();
-  private List<QueueConversationEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
-  private List<QueueConversationEventTopicVideo> videos = new ArrayList<QueueConversationEventTopicVideo>();
+  private List<QueueConversationEventTopicCall> calls = null;
+  private List<QueueConversationEventTopicCallback> callbacks = null;
+  private List<QueueConversationEventTopicChat> chats = null;
+  private List<QueueConversationEventTopicCobrowse> cobrowsesessions = null;
+  private List<QueueConversationEventTopicEmail> emails = null;
+  private List<QueueConversationEventTopicMessage> messages = null;
+  private List<QueueConversationEventTopicInternalMessage> internalMessages = null;
+  private List<QueueConversationEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationEventTopicSocialExpression> socialExpressions = null;
+  private List<QueueConversationEventTopicVideo> videos = null;
   private QueueConversationEventTopicWorkflow workflow = null;
+
+  public QueueConversationEventTopicParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<QueueConversationEventTopicCall>();
+      callbacks = new ArrayList<QueueConversationEventTopicCallback>();
+      chats = new ArrayList<QueueConversationEventTopicChat>();
+      cobrowsesessions = new ArrayList<QueueConversationEventTopicCobrowse>();
+      emails = new ArrayList<QueueConversationEventTopicEmail>();
+      messages = new ArrayList<QueueConversationEventTopicMessage>();
+      internalMessages = new ArrayList<QueueConversationEventTopicInternalMessage>();
+      screenshares = new ArrayList<QueueConversationEventTopicScreenshare>();
+      socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
+      videos = new ArrayList<QueueConversationEventTopicVideo>();
+    }
+  }
 
   
   /**
@@ -443,17 +460,17 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   /**
    * Specifies how long a timed ACW session will last.
    **/
-  public QueueConversationEventTopicParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationEventTopicParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long a timed ACW session will last.")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -531,17 +548,17 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
-  public QueueConversationEventTopicParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationEventTopicParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

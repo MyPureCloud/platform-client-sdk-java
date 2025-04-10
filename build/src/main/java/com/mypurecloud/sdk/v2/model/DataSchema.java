@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -79,12 +80,18 @@ public class DataSchema  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<AppliesToEnum> appliesTo = new ArrayList<AppliesToEnum>();
+  private List<AppliesToEnum> appliesTo = null;
   private Boolean enabled = null;
   private DomainEntityRef createdBy = null;
   private Date dateCreated = null;
   private JsonSchemaDocument jsonSchema = null;
   private String selfUri = null;
+
+  public DataSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      appliesTo = new ArrayList<AppliesToEnum>();
+    }
+  }
 
   
   /**

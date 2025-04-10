@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlans;
 import com.mypurecloud.sdk.v2.model.WorkPlanReference;
@@ -28,9 +29,15 @@ import java.io.Serializable;
 
 public class MuAgentsWorkPlansResult  implements Serializable {
   
-  private List<AgentWorkPlans> entities = new ArrayList<AgentWorkPlans>();
+  private List<AgentWorkPlans> entities = null;
   private LocalDate referenceStartWeekDate = null;
   private Map<String, WorkPlanReference> workPlanLookup = null;
+
+  public MuAgentsWorkPlansResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AgentWorkPlans>();
+    }
+  }
 
   
   /**

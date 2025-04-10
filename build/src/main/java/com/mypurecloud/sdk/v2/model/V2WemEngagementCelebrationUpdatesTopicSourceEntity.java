@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2WemEngagementCelebrationUpdatesTopicContestCompleteData;
@@ -80,6 +81,11 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
   }
   private TypeEnum type = null;
   private V2WemEngagementCelebrationUpdatesTopicContestCompleteData contestCompleteData = null;
+
+  public V2WemEngagementCelebrationUpdatesTopicSourceEntity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

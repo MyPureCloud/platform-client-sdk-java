@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CollaborateChatAdhocMessageEventTopicCollaborateChatEntity;
@@ -81,9 +82,15 @@ public class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage  implem
   private String body = null;
   private CollaborateChatAdhocMessageEventTopicCollaborateChatEntity from = null;
   private CollaborateChatAdhocMessageEventTopicCollaborateChatEntity to = null;
-  private List<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity> mentions = new ArrayList<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity>();
+  private List<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity> mentions = null;
   private Boolean notifyAll = null;
   private Map<String, List<String>> reactions = null;
+
+  public CollaborateChatAdhocMessageEventTopicCollaborateChatMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mentions = new ArrayList<CollaborateChatAdhocMessageEventTopicCollaborateChatEntity>();
+    }
+  }
 
   
   /**

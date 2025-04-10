@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 public class LongTermForecastPlanningGroupData  implements Serializable {
   
   private String planningGroupId = null;
-  private List<Double> offeredPerDay = new ArrayList<Double>();
-  private List<Double> averageHandleTimeSecondsPerDay = new ArrayList<Double>();
+  private List<Double> offeredPerDay = null;
+  private List<Double> averageHandleTimeSecondsPerDay = null;
+
+  public LongTermForecastPlanningGroupData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      offeredPerDay = new ArrayList<Double>();
+      averageHandleTimeSecondsPerDay = new ArrayList<Double>();
+    }
+  }
 
   
   /**

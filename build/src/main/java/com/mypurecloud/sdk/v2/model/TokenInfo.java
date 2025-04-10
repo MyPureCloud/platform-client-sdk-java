@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.OrgOAuthClient;
@@ -28,9 +29,15 @@ public class TokenInfo  implements Serializable {
   
   private NamedEntity organization = null;
   private NamedEntity homeOrganization = null;
-  private List<String> authorizedScope = new ArrayList<String>();
+  private List<String> authorizedScope = null;
   private TokenInfoClonedUser clonedUser = null;
   private OrgOAuthClient oAuthClient = null;
+
+  public TokenInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      authorizedScope = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The current organization")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicEdgeReference;
@@ -80,8 +81,14 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
   private OperationalStatusEnum operationalStatus = null;
   private PhoneChangeTopicEdgeReference edge = null;
   private PhoneChangeTopicProvisionInfo provision = null;
-  private List<PhoneChangeTopicLineStatus> lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
+  private List<PhoneChangeTopicLineStatus> lineStatuses = null;
   private Date eventCreationTime = null;
+
+  public PhoneChangeTopicPhoneStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
+    }
+  }
 
   
   /**

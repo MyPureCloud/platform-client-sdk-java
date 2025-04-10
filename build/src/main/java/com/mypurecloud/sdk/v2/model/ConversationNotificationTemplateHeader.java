@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
@@ -77,7 +78,13 @@ public class ConversationNotificationTemplateHeader  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private ConversationContentAttachment media = null;
-  private List<ConversationNotificationTemplateParameter> parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+  private List<ConversationNotificationTemplateParameter> parameters = null;
+
+  public ConversationNotificationTemplateHeader() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+    }
+  }
 
   
   /**

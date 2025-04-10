@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentQueueTimeRequest;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class MuAgentQueueTimeRequest  implements Serializable {
   
   private String managementUnitId = null;
-  private List<AgentQueueTimeRequest> agentOnQueueTimes = new ArrayList<AgentQueueTimeRequest>();
+  private List<AgentQueueTimeRequest> agentOnQueueTimes = null;
+
+  public MuAgentQueueTimeRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentOnQueueTimes = new ArrayList<AgentQueueTimeRequest>();
+    }
+  }
 
   
   /**

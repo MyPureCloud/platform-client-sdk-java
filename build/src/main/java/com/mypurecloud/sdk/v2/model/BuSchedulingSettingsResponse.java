@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageTypeSeverity;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class BuSchedulingSettingsResponse  implements Serializable {
   
-  private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+  private List<SchedulerMessageTypeSeverity> messageSeverities = null;
 
   private static class SyncTimeOffPropertiesEnumDeserializer extends StdDeserializer<SyncTimeOffPropertiesEnum> {
     public SyncTimeOffPropertiesEnumDeserializer() {
@@ -72,7 +73,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
+  private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = null;
   private WfmServiceGoalImpactSettings serviceGoalImpact = null;
   private Boolean allowWorkPlanPerMinuteGranularity = null;
 
@@ -125,6 +126,13 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   }
   private ActivitySmoothingTypeEnum activitySmoothingType = null;
   private Boolean induceScheduleVariability = null;
+
+  public BuSchedulingSettingsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+      syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
+    }
+  }
 
   
   /**

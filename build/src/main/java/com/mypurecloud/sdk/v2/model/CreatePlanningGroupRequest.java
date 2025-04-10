@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutePathRequest;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 public class CreatePlanningGroupRequest  implements Serializable {
   
   private String name = null;
-  private List<RoutePathRequest> routePaths = new ArrayList<RoutePathRequest>();
+  private List<RoutePathRequest> routePaths = null;
   private String serviceGoalTemplateId = null;
+
+  public CreatePlanningGroupRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routePaths = new ArrayList<RoutePathRequest>();
+    }
+  }
 
   
   /**

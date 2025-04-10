@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddressConditionSettings;
 import com.mypurecloud.sdk.v2.model.ContactAddressTypeConditionSettings;
@@ -38,6 +39,11 @@ public class DigitalCondition  implements Serializable {
   private LastResultByColumnConditionSettings lastResultByColumnConditionSettings = null;
   private LastResultOverallConditionSettings lastResultOverallConditionSettings = null;
   private DataActionConditionSettings dataActionConditionSettings = null;
+
+  public DigitalCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

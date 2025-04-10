@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
 import com.mypurecloud.sdk.v2.model.Note;
@@ -29,8 +30,14 @@ public class BulkEntityErrorNote  implements Serializable {
   private String message = null;
   private Integer status = null;
   private Boolean retryable = null;
-  private List<BulkErrorDetail> details = new ArrayList<BulkErrorDetail>();
+  private List<BulkErrorDetail> details = null;
   private Note entity = null;
+
+  public BulkEntityErrorNote() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<BulkErrorDetail>();
+    }
+  }
 
   
   /**

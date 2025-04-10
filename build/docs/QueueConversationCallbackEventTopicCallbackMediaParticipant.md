@@ -26,9 +26,9 @@
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody) |  |  [optional] |
 | **script** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupTimeoutMs** | **Long** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **alertingTimeoutMs** | **Long** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
 | **externalContactInitialDivisionId** | **String** |  |  [optional] |
@@ -51,7 +51,7 @@
 | **callbackUserName** | **String** |  |  [optional] |
 | **skipEnabled** | **Boolean** |  |  [optional] |
 | **externalCampaign** | **Boolean** |  |  [optional] |
-| **timeoutSeconds** | **Integer** |  |  [optional] |
+| **timeoutSeconds** | **Long** |  |  [optional] |
 | **callbackScheduledTime** | [**Date**](Date) |  |  [optional] |
 | **automatedCallbackConfigId** | **String** |  |  [optional] |
 
@@ -140,4 +140,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

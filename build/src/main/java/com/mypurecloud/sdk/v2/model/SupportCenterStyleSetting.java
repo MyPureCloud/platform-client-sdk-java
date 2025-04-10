@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SupportCenterGlobalStyle;
 import com.mypurecloud.sdk.v2.model.SupportCenterHeroStyle;
@@ -25,6 +26,11 @@ public class SupportCenterStyleSetting  implements Serializable {
   
   private SupportCenterHeroStyle heroStyle = null;
   private SupportCenterGlobalStyle globalStyle = null;
+
+  public SupportCenterStyleSetting() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -70,8 +71,13 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private Integer code = null;
+  private Long code = null;
   private String phrase = null;
+
+  public ConversationEventTopicDisconnectReason() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -95,17 +101,17 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
   /**
    * Protocol specific reason code. See the Q.850 and SIP specs.
    **/
-  public ConversationEventTopicDisconnectReason code(Integer code) {
+  public ConversationEventTopicDisconnectReason code(Long code) {
     this.code = code;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Protocol specific reason code. See the Q.850 and SIP specs.")
   @JsonProperty("code")
-  public Integer getCode() {
+  public Long getCode() {
     return code;
   }
-  public void setCode(Integer code) {
+  public void setCode(Long code) {
     this.code = code;
   }
 

@@ -161,7 +161,8 @@ public class GetGroupMembersRequest {
 		LANGUAGEPREFERENCE("languagePreference"),
 		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography"),
-		DATELASTLOGIN("dateLastLogin");
+		DATELASTLOGIN("dateLastLogin"),
+		DATEWELCOMESENT("dateWelcomeSent");
 
 		private String value;
 

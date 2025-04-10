@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AggregationRange;
@@ -76,7 +77,13 @@ public class AnalyticsQueryAggregation  implements Serializable {
   private String dimension = null;
   private String metric = null;
   private Integer size = null;
-  private List<AggregationRange> ranges = new ArrayList<AggregationRange>();
+  private List<AggregationRange> ranges = null;
+
+  public AnalyticsQueryAggregation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ranges = new ArrayList<AggregationRange>();
+    }
+  }
 
   
   /**

@@ -14,7 +14,7 @@
 | **divisions** | [**List&lt;ConversationCallEventTopicConversationDivisionMembership&gt;**](ConversationCallEventTopicConversationDivisionMembership) |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) |  |  [optional] |
 | **securePause** | **Boolean** |  |  [optional] |
-| **maxParticipants** | **Integer** |  |  [optional] |
+| **maxParticipants** | **Long** |  |  [optional] |
 
 
 ## Enum: RecordingStateEnum
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

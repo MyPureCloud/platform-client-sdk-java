@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -75,9 +76,15 @@ public class DialerCampaignScheduleConfigChangeRecurrencePattern  implements Ser
     }
   }
   private TypeEnum type = null;
-  private Integer interval = null;
-  private List<String> daysOfWeek = new ArrayList<String>();
+  private Long interval = null;
+  private List<String> daysOfWeek = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerCampaignScheduleConfigChangeRecurrencePattern() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      daysOfWeek = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -100,17 +107,17 @@ public class DialerCampaignScheduleConfigChangeRecurrencePattern  implements Ser
   /**
    * the amount of time in between occurrences
    **/
-  public DialerCampaignScheduleConfigChangeRecurrencePattern interval(Integer interval) {
+  public DialerCampaignScheduleConfigChangeRecurrencePattern interval(Long interval) {
     this.interval = interval;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "the amount of time in between occurrences")
   @JsonProperty("interval")
-  public Integer getInterval() {
+  public Long getInterval() {
     return interval;
   }
-  public void setInterval(Integer interval) {
+  public void setInterval(Long interval) {
     this.interval = interval;
   }
 

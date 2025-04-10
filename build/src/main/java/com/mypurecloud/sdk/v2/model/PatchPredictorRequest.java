@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PredictorSchedule;
 import com.mypurecloud.sdk.v2.model.PredictorWorkloadBalancing;
@@ -26,6 +27,11 @@ public class PatchPredictorRequest  implements Serializable {
   private Integer routingTimeoutSeconds = null;
   private PredictorSchedule schedule = null;
   private PredictorWorkloadBalancing workloadBalancingConfig = null;
+
+  public PatchPredictorRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

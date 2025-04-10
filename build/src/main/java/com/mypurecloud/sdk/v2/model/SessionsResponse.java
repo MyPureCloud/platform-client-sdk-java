@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotFlowSession;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class SessionsResponse  implements Serializable {
   
-  private List<BotFlowSession> entities = new ArrayList<BotFlowSession>();
+  private List<BotFlowSession> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
+
+  public SessionsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<BotFlowSession>();
+    }
+  }
 
   
   /**

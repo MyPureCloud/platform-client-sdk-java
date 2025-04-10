@@ -10,6 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsEnrichResponse;
 import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
 import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
 import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
@@ -20,10 +22,13 @@ import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
 import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
 import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsEnrichResponse;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.ContactEnrichRequest;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ContactImportJobEntityListing;
@@ -36,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.ContactImportSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
 import com.mypurecloud.sdk.v2.model.CsvJobResponse;
 import com.mypurecloud.sdk.v2.model.CsvSettings;
@@ -51,20 +57,27 @@ import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.ExportListing;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationEnrichRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifierListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
 import com.mypurecloud.sdk.v2.model.Listing;
+import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
@@ -91,6 +104,9 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaReque
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
@@ -103,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingReques
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRelationshipsRequest;
@@ -111,6 +128,9 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
@@ -122,9 +142,11 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsDi
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsOrganizationIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
@@ -135,6 +157,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesUpdateReq
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRequest;
@@ -144,10 +167,14 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsU
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsMergeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
@@ -156,6 +183,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportSettingsRequ
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsEnrichRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactRequest;
@@ -2052,6 +2080,232 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsContactsSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemasCoretype(createGetExternalcontactsContactsSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getExternalcontactsContactsSchemasCoretype(createGetExternalcontactsContactsSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemasCoretypeRequest createGetExternalcontactsContactsSchemasCoretypeRequest(String coreTypeName) {
+    return GetExternalcontactsContactsSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsContactsSchemasCoretype(GetExternalcontactsContactsSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsContactsSchemasCoretypes() throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemasCoretypes(createGetExternalcontactsContactsSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretypesWithHttpInfo() throws IOException {
+    return getExternalcontactsContactsSchemasCoretypes(createGetExternalcontactsContactsSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemasCoretypesRequest createGetExternalcontactsContactsSchemasCoretypesRequest() {
+    return GetExternalcontactsContactsSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsContactsSchemasCoretypes(GetExternalcontactsContactsSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getExternalcontactsContactsSchemasLimits() throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemasLimits(createGetExternalcontactsContactsSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getExternalcontactsContactsSchemasLimitsWithHttpInfo() throws IOException {
+    return getExternalcontactsContactsSchemasLimits(createGetExternalcontactsContactsSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemasLimitsRequest createGetExternalcontactsContactsSchemasLimitsRequest() {
+    return GetExternalcontactsContactsSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getExternalcontactsContactsSchemasLimits(GetExternalcontactsContactsSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getExternalcontactsContactsSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch an External Source
    * 
    * @param externalSourceId External Source ID (required)
@@ -3068,6 +3322,88 @@ public class ExternalContactsApi {
   }
 
   /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalOrganizationId External Organization ID (required)
+   * @return ExternalOrganizationIdentifierListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganizationIdentifierListing getExternalcontactsOrganizationIdentifiers(String externalOrganizationId) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationIdentifiers(createGetExternalcontactsOrganizationIdentifiersRequest(externalOrganizationId));
+  }
+
+  /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalOrganizationId External Organization ID (required)
+   * @return ExternalOrganizationIdentifierListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganizationIdentifierListing> getExternalcontactsOrganizationIdentifiersWithHttpInfo(String externalOrganizationId) throws IOException {
+    return getExternalcontactsOrganizationIdentifiers(createGetExternalcontactsOrganizationIdentifiersRequest(externalOrganizationId).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationIdentifiersRequest createGetExternalcontactsOrganizationIdentifiersRequest(String externalOrganizationId) {
+    return GetExternalcontactsOrganizationIdentifiersRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+
+            .build();
+  }
+
+  /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalOrganizationIdentifierListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganizationIdentifierListing getExternalcontactsOrganizationIdentifiers(GetExternalcontactsOrganizationIdentifiersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganizationIdentifierListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganizationIdentifierListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List the identifiers for an external organization
+   * 
+   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganizationIdentifierListing> getExternalcontactsOrganizationIdentifiers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganizationIdentifierListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationIdentifierListing> response = (ApiResponse<ExternalOrganizationIdentifierListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationIdentifierListing> response = (ApiResponse<ExternalOrganizationIdentifierListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch a note for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
@@ -3755,6 +4091,232 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsOrganizationsSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemasCoretype(createGetExternalcontactsOrganizationsSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getExternalcontactsOrganizationsSchemasCoretype(createGetExternalcontactsOrganizationsSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemasCoretypeRequest createGetExternalcontactsOrganizationsSchemasCoretypeRequest(String coreTypeName) {
+    return GetExternalcontactsOrganizationsSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsOrganizationsSchemasCoretype(GetExternalcontactsOrganizationsSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsOrganizationsSchemasCoretypes() throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemasCoretypes(createGetExternalcontactsOrganizationsSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo() throws IOException {
+    return getExternalcontactsOrganizationsSchemasCoretypes(createGetExternalcontactsOrganizationsSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemasCoretypesRequest createGetExternalcontactsOrganizationsSchemasCoretypesRequest() {
+    return GetExternalcontactsOrganizationsSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getExternalcontactsOrganizationsSchemasCoretypes(GetExternalcontactsOrganizationsSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getExternalcontactsOrganizationsSchemasLimits() throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemasLimits(createGetExternalcontactsOrganizationsSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getExternalcontactsOrganizationsSchemasLimitsWithHttpInfo() throws IOException {
+    return getExternalcontactsOrganizationsSchemasLimits(createGetExternalcontactsOrganizationsSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemasLimitsRequest createGetExternalcontactsOrganizationsSchemasLimitsRequest() {
+    return GetExternalcontactsOrganizationsSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getExternalcontactsOrganizationsSchemasLimits(GetExternalcontactsOrganizationsSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getExternalcontactsOrganizationsSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4698,6 +5260,92 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalOrganizationId External Organization ID (required)
+   * @param body ClaimRequest (required)
+   * @return ExternalOrganizationIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(String externalOrganizationId, ExternalOrganizationIdentifierClaimRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsOrganizationIdentifiers(createPatchExternalcontactsOrganizationIdentifiersRequest(externalOrganizationId, body));
+  }
+
+  /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalOrganizationId External Organization ID (required)
+   * @param body ClaimRequest (required)
+   * @return ExternalOrganizationIdentifier
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganizationIdentifier> patchExternalcontactsOrganizationIdentifiersWithHttpInfo(String externalOrganizationId, ExternalOrganizationIdentifierClaimRequest body) throws IOException {
+    return patchExternalcontactsOrganizationIdentifiers(createPatchExternalcontactsOrganizationIdentifiersRequest(externalOrganizationId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsOrganizationIdentifiersRequest createPatchExternalcontactsOrganizationIdentifiersRequest(String externalOrganizationId, ExternalOrganizationIdentifierClaimRequest body) {
+    return PatchExternalcontactsOrganizationIdentifiersRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalOrganizationIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(PatchExternalcontactsOrganizationIdentifiersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganizationIdentifier> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganizationIdentifier>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Claim or release identifiers for an external organization
+   * 
+   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganizationIdentifier> patchExternalcontactsOrganizationIdentifiers(ApiRequest<ExternalOrganizationIdentifierClaimRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganizationIdentifier>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationIdentifier> response = (ApiResponse<ExternalOrganizationIdentifier>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationIdentifier> response = (ApiResponse<ExternalOrganizationIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk fetch contacts
    * 
    * @param body Contact ids (required)
@@ -4931,6 +5579,92 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Contact Enrich Requests (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return BulkContactsEnrichResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsEnrichResponse postExternalcontactsBulkContactsEnrich(BulkContactsEnrichRequest body, Boolean dryRun) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsEnrich(createPostExternalcontactsBulkContactsEnrichRequest(body, dryRun));
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Contact Enrich Requests (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return BulkContactsEnrichResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsEnrichResponse> postExternalcontactsBulkContactsEnrichWithHttpInfo(BulkContactsEnrichRequest body, Boolean dryRun) throws IOException {
+    return postExternalcontactsBulkContactsEnrich(createPostExternalcontactsBulkContactsEnrichRequest(body, dryRun).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsEnrichRequest createPostExternalcontactsBulkContactsEnrichRequest(BulkContactsEnrichRequest body, Boolean dryRun) {
+    return PostExternalcontactsBulkContactsEnrichRequest.builder()
+            .withBody(body)
+
+            .withDryRun(dryRun)
+
+            .build();
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BulkContactsEnrichResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsEnrichResponse postExternalcontactsBulkContactsEnrich(PostExternalcontactsBulkContactsEnrichRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkContactsEnrichResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkContactsEnrichResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsEnrichResponse> postExternalcontactsBulkContactsEnrich(ApiRequest<BulkContactsEnrichRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkContactsEnrichResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsEnrichResponse> response = (ApiResponse<BulkContactsEnrichResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsEnrichResponse> response = (ApiResponse<BulkContactsEnrichResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5720,6 +6454,92 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body External Organization Enrich Requests (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return BulkOrganizationsEnrichResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsEnrichResponse postExternalcontactsBulkOrganizationsEnrich(BulkOrganizationsEnrichRequest body, Boolean dryRun) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizationsEnrich(createPostExternalcontactsBulkOrganizationsEnrichRequest(body, dryRun));
+  }
+
+  /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body External Organization Enrich Requests (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return BulkOrganizationsEnrichResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsEnrichResponse> postExternalcontactsBulkOrganizationsEnrichWithHttpInfo(BulkOrganizationsEnrichRequest body, Boolean dryRun) throws IOException {
+    return postExternalcontactsBulkOrganizationsEnrich(createPostExternalcontactsBulkOrganizationsEnrichRequest(body, dryRun).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsEnrichRequest createPostExternalcontactsBulkOrganizationsEnrichRequest(BulkOrganizationsEnrichRequest body, Boolean dryRun) {
+    return PostExternalcontactsBulkOrganizationsEnrichRequest.builder()
+            .withBody(body)
+
+            .withDryRun(dryRun)
+
+            .build();
+  }
+
+  /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BulkOrganizationsEnrichResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsEnrichResponse postExternalcontactsBulkOrganizationsEnrich(PostExternalcontactsBulkOrganizationsEnrichRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkOrganizationsEnrichResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkOrganizationsEnrichResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+   * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsEnrichResponse> postExternalcontactsBulkOrganizationsEnrich(ApiRequest<BulkOrganizationsEnrichRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkOrganizationsEnrichResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsEnrichResponse> response = (ApiResponse<BulkOrganizationsEnrichResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsEnrichResponse> response = (ApiResponse<BulkOrganizationsEnrichResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk remove organizations
    * 
    * @param body Organization ids (required)
@@ -6426,6 +7246,92 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body ContactEnrichRequest (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactsEnrich(ContactEnrichRequest body, Boolean dryRun) throws IOException, ApiException {
+    return  postExternalcontactsContactsEnrich(createPostExternalcontactsContactsEnrichRequest(body, dryRun));
+  }
+
+  /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body ContactEnrichRequest (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactsEnrichWithHttpInfo(ContactEnrichRequest body, Boolean dryRun) throws IOException {
+    return postExternalcontactsContactsEnrich(createPostExternalcontactsContactsEnrichRequest(body, dryRun).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactsEnrichRequest createPostExternalcontactsContactsEnrichRequest(ContactEnrichRequest body, Boolean dryRun) {
+    return PostExternalcontactsContactsEnrichRequest.builder()
+            .withBody(body)
+
+            .withDryRun(dryRun)
+
+            .build();
+  }
+
+  /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactsEnrich(PostExternalcontactsContactsEnrichRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactsEnrich(ApiRequest<ContactEnrichRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create bulk export
    * 
    * @param body Export (required)
@@ -6499,6 +7405,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactsExport> response = (ApiResponse<ContactsExport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body MergeRequest (required)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactsMerge(MergeContactsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsContactsMerge(createPostExternalcontactsContactsMergeRequest(body));
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body MergeRequest (required)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactsMergeWithHttpInfo(MergeContactsRequest body) throws IOException {
+    return postExternalcontactsContactsMerge(createPostExternalcontactsContactsMergeRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactsMergeRequest createPostExternalcontactsContactsMergeRequest(MergeContactsRequest body) {
+    return PostExternalcontactsContactsMergeRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactsMerge(PostExternalcontactsContactsMergeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Merge up to 25 contacts into a new contact record
+   * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactsMerge(ApiRequest<MergeContactsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6741,6 +7729,178 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsIdentifierlookupContacts(ContactIdentifier identifier, List<String> expand) throws IOException, ApiException {
+    return  postExternalcontactsIdentifierlookupContacts(createPostExternalcontactsIdentifierlookupContactsRequest(identifier, expand));
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupContactsWithHttpInfo(ContactIdentifier identifier, List<String> expand) throws IOException {
+    return postExternalcontactsIdentifierlookupContacts(createPostExternalcontactsIdentifierlookupContactsRequest(identifier, expand).withHttpInfo());
+  }
+
+  private PostExternalcontactsIdentifierlookupContactsRequest createPostExternalcontactsIdentifierlookupContactsRequest(ContactIdentifier identifier, List<String> expand) {
+    return PostExternalcontactsIdentifierlookupContactsRequest.builder()
+            .withIdentifier(identifier)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsIdentifierlookupContacts(PostExternalcontactsIdentifierlookupContactsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupContacts(ApiRequest<ContactIdentifier> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization postExternalcontactsIdentifierlookupOrganizations(ExternalOrganizationIdentifier identifier, List<String> expand) throws IOException, ApiException {
+    return  postExternalcontactsIdentifierlookupOrganizations(createPostExternalcontactsIdentifierlookupOrganizationsRequest(identifier, expand));
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
+   * @return ExternalOrganization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> postExternalcontactsIdentifierlookupOrganizationsWithHttpInfo(ExternalOrganizationIdentifier identifier, List<String> expand) throws IOException {
+    return postExternalcontactsIdentifierlookupOrganizations(createPostExternalcontactsIdentifierlookupOrganizationsRequest(identifier, expand).withHttpInfo());
+  }
+
+  private PostExternalcontactsIdentifierlookupOrganizationsRequest createPostExternalcontactsIdentifierlookupOrganizationsRequest(ExternalOrganizationIdentifier identifier, List<String> expand) {
+    return PostExternalcontactsIdentifierlookupOrganizationsRequest.builder()
+            .withIdentifier(identifier)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization postExternalcontactsIdentifierlookupOrganizations(PostExternalcontactsIdentifierlookupOrganizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch an external organization using an identifier type and value.
+   * This endpoint will only accept ExternalId type identifiers.
+   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> postExternalcontactsIdentifierlookupOrganizations(ApiRequest<ExternalOrganizationIdentifier> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7137,11 +8297,12 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ExternalContact postExternalcontactsMergeContacts(MergeRequest body) throws IOException, ApiException {
     return  postExternalcontactsMergeContacts(createPostExternalcontactsMergeContactsRequest(body));
@@ -7149,10 +8310,11 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ExternalContact> postExternalcontactsMergeContactsWithHttpInfo(MergeRequest body) throws IOException {
     return postExternalcontactsMergeContacts(createPostExternalcontactsMergeContactsRequest(body).withHttpInfo());
@@ -7167,11 +8329,12 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ExternalContact postExternalcontactsMergeContacts(PostExternalcontactsMergeContactsRequest request) throws IOException, ApiException {
     try {
@@ -7186,10 +8349,11 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ExternalContact> postExternalcontactsMergeContacts(ApiRequest<MergeRequest> request) throws IOException {
     try {
@@ -7352,6 +8516,92 @@ public class ExternalContactsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ExternalOrganization> postExternalcontactsOrganizations(ApiRequest<ExternalOrganization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body ExternalOrgEnrichRequest (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization postExternalcontactsOrganizationsEnrich(ExternalOrganizationEnrichRequest body, Boolean dryRun) throws IOException, ApiException {
+    return  postExternalcontactsOrganizationsEnrich(createPostExternalcontactsOrganizationsEnrichRequest(body, dryRun));
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body ExternalOrgEnrichRequest (required)
+   * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+   * @return ExternalOrganization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsEnrichWithHttpInfo(ExternalOrganizationEnrichRequest body, Boolean dryRun) throws IOException {
+    return postExternalcontactsOrganizationsEnrich(createPostExternalcontactsOrganizationsEnrichRequest(body, dryRun).withHttpInfo());
+  }
+
+  private PostExternalcontactsOrganizationsEnrichRequest createPostExternalcontactsOrganizationsEnrichRequest(ExternalOrganizationEnrichRequest body, Boolean dryRun) {
+    return PostExternalcontactsOrganizationsEnrichRequest.builder()
+            .withBody(body)
+
+            .withDryRun(dryRun)
+
+            .build();
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization postExternalcontactsOrganizationsEnrich(PostExternalcontactsOrganizationsEnrichRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+   * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsEnrich(ApiRequest<ExternalOrganizationEnrichRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
     }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AudioUpdatedEvent;
 import com.mypurecloud.sdk.v2.model.CommunicationAnsweredEvent;
@@ -56,38 +57,75 @@ import java.io.Serializable;
 
 public class BatchConversationEventRequest  implements Serializable {
   
-  private List<EndTransferEvent> endTransferEvents = new ArrayList<EndTransferEvent>();
-  private List<PhoneTransferEvent> phoneTransferEvents = new ArrayList<PhoneTransferEvent>();
-  private List<ProgressTransferEvent> progressTransferEvents = new ArrayList<ProgressTransferEvent>();
-  private List<RoutingTransferEvent> routingTransferEvents = new ArrayList<RoutingTransferEvent>();
-  private List<UserTransferEvent> userTransferEvents = new ArrayList<UserTransferEvent>();
-  private List<CommunicationAnsweredEvent> communicationAnsweredEvents = new ArrayList<CommunicationAnsweredEvent>();
-  private List<CommunicationDispositionAppliedEvent> communicationDispositionAppliedEvents = new ArrayList<CommunicationDispositionAppliedEvent>();
-  private List<HoldUpdatedEvent> holdUpdatedEvents = new ArrayList<HoldUpdatedEvent>();
-  private List<ExternalEstablishedEvent> externalEstablishedEvents = new ArrayList<ExternalEstablishedEvent>();
-  private List<IvrEstablishedEvent> ivrEstablishedEvents = new ArrayList<IvrEstablishedEvent>();
-  private List<PhoneEstablishedEvent> phoneEstablishedEvents = new ArrayList<PhoneEstablishedEvent>();
-  private List<RoutingEstablishedEvent> routingEstablishedEvents = new ArrayList<RoutingEstablishedEvent>();
-  private List<UserEstablishedEvent> userEstablishedEvents = new ArrayList<UserEstablishedEvent>();
-  private List<AudioUpdatedEvent> audioUpdatedEvents = new ArrayList<AudioUpdatedEvent>();
-  private List<CommunicationEndedEvent> communicationEndedEvents = new ArrayList<CommunicationEndedEvent>();
-  private List<ConsultTransferEvent> consultTransferEvents = new ArrayList<ConsultTransferEvent>();
-  private List<ProgressConsultTransferEvent> progressConsultTransferEvents = new ArrayList<ProgressConsultTransferEvent>();
-  private List<EndConsultTransferEvent> endConsultTransferEvents = new ArrayList<EndConsultTransferEvent>();
-  private List<EmailBeginTransmittingEvent> emailBeginTransmittingEvents = new ArrayList<EmailBeginTransmittingEvent>();
-  private List<EmailCommunicationEndedEvent> emailCommunicationEndedEvents = new ArrayList<EmailCommunicationEndedEvent>();
-  private List<EmailExternalEstablishedEvent> emailExternalEstablishedEvents = new ArrayList<EmailExternalEstablishedEvent>();
-  private List<EmailFlowEstablishedEvent> emailFlowEstablishedEvents = new ArrayList<EmailFlowEstablishedEvent>();
-  private List<EmailRoutingEstablishedEvent> emailRoutingEstablishedEvents = new ArrayList<EmailRoutingEstablishedEvent>();
-  private List<EmailUserEstablishedEvent> emailUserEstablishedEvents = new ArrayList<EmailUserEstablishedEvent>();
-  private List<EmailCommunicationAnsweredEvent> emailCommunicationAnsweredEvents = new ArrayList<EmailCommunicationAnsweredEvent>();
-  private List<EmailCommunicationDispositionAppliedEvent> emailCommunicationDispositionAppliedEvents = new ArrayList<EmailCommunicationDispositionAppliedEvent>();
-  private List<EmailCommunicationSentMessageEvent> emailCommunicationSentMessageEvents = new ArrayList<EmailCommunicationSentMessageEvent>();
-  private List<EmailHoldUpdatedEvent> emailHoldUpdatedEvents = new ArrayList<EmailHoldUpdatedEvent>();
-  private List<EmailEndTransferEvent> emailEndTransferEvents = new ArrayList<EmailEndTransferEvent>();
-  private List<EmailProgressTransferEvent> emailProgressTransferEvents = new ArrayList<EmailProgressTransferEvent>();
-  private List<EmailRoutingTransferEvent> emailRoutingTransferEvents = new ArrayList<EmailRoutingTransferEvent>();
-  private List<EmailUserTransferEvent> emailUserTransferEvents = new ArrayList<EmailUserTransferEvent>();
+  private List<EndTransferEvent> endTransferEvents = null;
+  private List<PhoneTransferEvent> phoneTransferEvents = null;
+  private List<ProgressTransferEvent> progressTransferEvents = null;
+  private List<RoutingTransferEvent> routingTransferEvents = null;
+  private List<UserTransferEvent> userTransferEvents = null;
+  private List<CommunicationAnsweredEvent> communicationAnsweredEvents = null;
+  private List<CommunicationDispositionAppliedEvent> communicationDispositionAppliedEvents = null;
+  private List<HoldUpdatedEvent> holdUpdatedEvents = null;
+  private List<ExternalEstablishedEvent> externalEstablishedEvents = null;
+  private List<IvrEstablishedEvent> ivrEstablishedEvents = null;
+  private List<PhoneEstablishedEvent> phoneEstablishedEvents = null;
+  private List<RoutingEstablishedEvent> routingEstablishedEvents = null;
+  private List<UserEstablishedEvent> userEstablishedEvents = null;
+  private List<AudioUpdatedEvent> audioUpdatedEvents = null;
+  private List<CommunicationEndedEvent> communicationEndedEvents = null;
+  private List<ConsultTransferEvent> consultTransferEvents = null;
+  private List<ProgressConsultTransferEvent> progressConsultTransferEvents = null;
+  private List<EndConsultTransferEvent> endConsultTransferEvents = null;
+  private List<EmailBeginTransmittingEvent> emailBeginTransmittingEvents = null;
+  private List<EmailCommunicationEndedEvent> emailCommunicationEndedEvents = null;
+  private List<EmailExternalEstablishedEvent> emailExternalEstablishedEvents = null;
+  private List<EmailFlowEstablishedEvent> emailFlowEstablishedEvents = null;
+  private List<EmailRoutingEstablishedEvent> emailRoutingEstablishedEvents = null;
+  private List<EmailUserEstablishedEvent> emailUserEstablishedEvents = null;
+  private List<EmailCommunicationAnsweredEvent> emailCommunicationAnsweredEvents = null;
+  private List<EmailCommunicationDispositionAppliedEvent> emailCommunicationDispositionAppliedEvents = null;
+  private List<EmailCommunicationSentMessageEvent> emailCommunicationSentMessageEvents = null;
+  private List<EmailHoldUpdatedEvent> emailHoldUpdatedEvents = null;
+  private List<EmailEndTransferEvent> emailEndTransferEvents = null;
+  private List<EmailProgressTransferEvent> emailProgressTransferEvents = null;
+  private List<EmailRoutingTransferEvent> emailRoutingTransferEvents = null;
+  private List<EmailUserTransferEvent> emailUserTransferEvents = null;
+
+  public BatchConversationEventRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      endTransferEvents = new ArrayList<EndTransferEvent>();
+      phoneTransferEvents = new ArrayList<PhoneTransferEvent>();
+      progressTransferEvents = new ArrayList<ProgressTransferEvent>();
+      routingTransferEvents = new ArrayList<RoutingTransferEvent>();
+      userTransferEvents = new ArrayList<UserTransferEvent>();
+      communicationAnsweredEvents = new ArrayList<CommunicationAnsweredEvent>();
+      communicationDispositionAppliedEvents = new ArrayList<CommunicationDispositionAppliedEvent>();
+      holdUpdatedEvents = new ArrayList<HoldUpdatedEvent>();
+      externalEstablishedEvents = new ArrayList<ExternalEstablishedEvent>();
+      ivrEstablishedEvents = new ArrayList<IvrEstablishedEvent>();
+      phoneEstablishedEvents = new ArrayList<PhoneEstablishedEvent>();
+      routingEstablishedEvents = new ArrayList<RoutingEstablishedEvent>();
+      userEstablishedEvents = new ArrayList<UserEstablishedEvent>();
+      audioUpdatedEvents = new ArrayList<AudioUpdatedEvent>();
+      communicationEndedEvents = new ArrayList<CommunicationEndedEvent>();
+      consultTransferEvents = new ArrayList<ConsultTransferEvent>();
+      progressConsultTransferEvents = new ArrayList<ProgressConsultTransferEvent>();
+      endConsultTransferEvents = new ArrayList<EndConsultTransferEvent>();
+      emailBeginTransmittingEvents = new ArrayList<EmailBeginTransmittingEvent>();
+      emailCommunicationEndedEvents = new ArrayList<EmailCommunicationEndedEvent>();
+      emailExternalEstablishedEvents = new ArrayList<EmailExternalEstablishedEvent>();
+      emailFlowEstablishedEvents = new ArrayList<EmailFlowEstablishedEvent>();
+      emailRoutingEstablishedEvents = new ArrayList<EmailRoutingEstablishedEvent>();
+      emailUserEstablishedEvents = new ArrayList<EmailUserEstablishedEvent>();
+      emailCommunicationAnsweredEvents = new ArrayList<EmailCommunicationAnsweredEvent>();
+      emailCommunicationDispositionAppliedEvents = new ArrayList<EmailCommunicationDispositionAppliedEvent>();
+      emailCommunicationSentMessageEvents = new ArrayList<EmailCommunicationSentMessageEvent>();
+      emailHoldUpdatedEvents = new ArrayList<EmailHoldUpdatedEvent>();
+      emailEndTransferEvents = new ArrayList<EmailEndTransferEvent>();
+      emailProgressTransferEvents = new ArrayList<EmailProgressTransferEvent>();
+      emailRoutingTransferEvents = new ArrayList<EmailRoutingTransferEvent>();
+      emailUserTransferEvents = new ArrayList<EmailUserTransferEvent>();
+    }
+  }
 
   
   /**

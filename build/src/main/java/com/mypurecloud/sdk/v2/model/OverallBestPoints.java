@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -27,8 +28,14 @@ import java.io.Serializable;
 public class OverallBestPoints  implements Serializable {
   
   private Division division = null;
-  private List<OverallBestPointsItem> bestPoints = new ArrayList<OverallBestPointsItem>();
+  private List<OverallBestPointsItem> bestPoints = null;
   private AddressableEntityRef performanceProfile = null;
+
+  public OverallBestPoints() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      bestPoints = new ArrayList<OverallBestPointsItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The requested division")

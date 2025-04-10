@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -97,7 +98,7 @@ public class AnalyticsAgentStateAgentSessionResult  implements Serializable {
   }
   private SegmentTypeEnum segmentType = null;
   private String routedQueueId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
   private String requestedLanguageId = null;
 
   private static class OriginatingDirectionEnumDeserializer extends StdDeserializer<OriginatingDirectionEnum> {
@@ -203,6 +204,12 @@ public class AnalyticsAgentStateAgentSessionResult  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+
+  public AnalyticsAgentStateAgentSessionResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CrossPlatformCallMediaPolicy;
 import com.mypurecloud.sdk.v2.model.CrossPlatformChatMediaPolicy;
@@ -29,6 +30,11 @@ public class CrossPlatformMediaPolicies  implements Serializable {
   private CrossPlatformChatMediaPolicy chatPolicy = null;
   private CrossPlatformEmailMediaPolicy emailPolicy = null;
   private CrossPlatformMessageMediaPolicy messagePolicy = null;
+
+  public CrossPlatformMediaPolicies() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +28,9 @@ public class BuRescheduleRequest  implements Serializable {
   
   private Date startDate = null;
   private Date endDate = null;
-  private List<String> agentIds = new ArrayList<String>();
-  private List<String> activityCodeIds = new ArrayList<String>();
-  private List<String> managementUnitIds = new ArrayList<String>();
+  private List<String> agentIds = null;
+  private List<String> activityCodeIds = null;
+  private List<String> managementUnitIds = null;
   private Boolean doNotChangeWeeklyPaidTime = null;
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;
@@ -84,6 +85,14 @@ public class BuRescheduleRequest  implements Serializable {
   }
   private ActivitySmoothingTypeEnum activitySmoothingType = null;
   private Boolean induceScheduleVariability = null;
+
+  public BuRescheduleRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentIds = new ArrayList<String>();
+      activityCodeIds = new ArrayList<String>();
+      managementUnitIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

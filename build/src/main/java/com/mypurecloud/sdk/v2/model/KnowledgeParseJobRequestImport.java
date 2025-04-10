@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseRecord;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class KnowledgeParseJobRequestImport  implements Serializable {
   
-  private List<KnowledgeParseRecord> edits = new ArrayList<KnowledgeParseRecord>();
-  private List<String> excludes = new ArrayList<String>();
+  private List<KnowledgeParseRecord> edits = null;
+  private List<String> excludes = null;
+
+  public KnowledgeParseJobRequestImport() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      edits = new ArrayList<KnowledgeParseRecord>();
+      excludes = new ArrayList<String>();
+    }
+  }
 
   
   /**

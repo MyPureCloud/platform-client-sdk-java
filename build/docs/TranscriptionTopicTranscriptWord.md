@@ -6,12 +6,12 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **confidence** | [**BigDecimal**](BigDecimal) |  |  [optional] |
-| **startTimeMs** | **Integer** |  |  [optional] |
-| **offsetMs** | **Integer** |  |  [optional] |
-| **durationMs** | **Integer** |  |  [optional] |
+| **startTimeMs** | **Long** |  |  [optional] |
+| **offsetMs** | **Long** |  |  [optional] |
+| **durationMs** | **Long** |  |  [optional] |
 | **word** | **String** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

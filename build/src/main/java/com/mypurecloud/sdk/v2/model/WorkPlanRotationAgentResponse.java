@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -26,6 +27,11 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
   private UserReference user = null;
   private DateRangeWithOptionalEnd dateRange = null;
   private Integer position = null;
+
+  public WorkPlanRotationAgentResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

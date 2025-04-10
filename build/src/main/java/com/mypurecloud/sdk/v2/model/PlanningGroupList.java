@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class PlanningGroupList  implements Serializable {
   
-  private List<PlanningGroup> entities = new ArrayList<PlanningGroup>();
+  private List<PlanningGroup> entities = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public PlanningGroupList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<PlanningGroup>();
+    }
+  }
 
   
   /**

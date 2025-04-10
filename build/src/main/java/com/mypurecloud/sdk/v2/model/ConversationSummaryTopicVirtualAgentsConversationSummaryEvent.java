@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsConversationHeadline;
@@ -34,8 +35,8 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   
   private String conversationId = null;
   private String queueId = null;
-  private List<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant> participants = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant>();
-  private List<String> communicationIds = new ArrayList<String>();
+  private List<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant> participants = null;
+  private List<String> communicationIds = null;
   private Date createdDate = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -149,7 +150,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   private ConversationSummaryTopicVirtualAgentsConversationHeadline headline = null;
   private ConversationSummaryTopicVirtualAgentsConversationReason reason = null;
   private ConversationSummaryTopicVirtualAgentsConversationResolution resolution = null;
-  private List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> wrapUpCodes = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode>();
+  private List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicVirtualAgentsTriggerSource triggerSource = null;
   private ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant lastEditedBy = null;
 
@@ -202,7 +203,15 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     }
   }
   private ErrorTypeEnum errorType = null;
-  private Integer durationMs = null;
+  private Long durationMs = null;
+
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant>();
+      communicationIds = new ArrayList<String>();
+      wrapUpCodes = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode>();
+    }
+  }
 
   
   /**
@@ -496,17 +505,17 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   /**
    **/
-  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent durationMs(Integer durationMs) {
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent durationMs(Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMs")
-  public Integer getDurationMs() {
+  public Long getDurationMs() {
     return durationMs;
   }
-  public void setDurationMs(Integer durationMs) {
+  public void setDurationMs(Long durationMs) {
     this.durationMs = durationMs;
   }
 

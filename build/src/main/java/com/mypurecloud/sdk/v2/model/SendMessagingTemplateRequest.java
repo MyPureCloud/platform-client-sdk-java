@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TemplateParameter;
 import io.swagger.annotations.ApiModel;
@@ -25,10 +26,19 @@ import java.io.Serializable;
 public class SendMessagingTemplateRequest  implements Serializable {
   
   private String responseId = null;
-  private List<TemplateParameter> parameters = new ArrayList<TemplateParameter>();
-  private List<TemplateParameter> headerParameters = new ArrayList<TemplateParameter>();
-  private List<TemplateParameter> bodyParameters = new ArrayList<TemplateParameter>();
-  private List<TemplateParameter> buttonUrlParameters = new ArrayList<TemplateParameter>();
+  private List<TemplateParameter> parameters = null;
+  private List<TemplateParameter> headerParameters = null;
+  private List<TemplateParameter> bodyParameters = null;
+  private List<TemplateParameter> buttonUrlParameters = null;
+
+  public SendMessagingTemplateRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      parameters = new ArrayList<TemplateParameter>();
+      headerParameters = new ArrayList<TemplateParameter>();
+      bodyParameters = new ArrayList<TemplateParameter>();
+      buttonUrlParameters = new ArrayList<TemplateParameter>();
+    }
+  }
 
   
   /**

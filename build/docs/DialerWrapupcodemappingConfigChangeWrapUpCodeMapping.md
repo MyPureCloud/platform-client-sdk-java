@@ -9,7 +9,7 @@
 | **name** | **String** | The UI-visible name of the object |  [optional] |
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
-| **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
 | **defaultSet** | [**List<DefaultSetEnum>**](#Enum--DefaultSetEnum) |  |  [optional] |
 | **mapping** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) |  |  [optional] |
 
@@ -25,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

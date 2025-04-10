@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsProperty;
@@ -97,11 +98,11 @@ public class AnalyticsConversationSegment  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private String errorCode = null;
   private String groupId = null;
-  private List<Long> q850ResponseCodes = new ArrayList<Long>();
+  private List<Long> q850ResponseCodes = null;
   private String queueId = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
-  private List<String> requestedRoutingUserIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
+  private List<String> requestedRoutingUserIds = null;
   private Date segmentEnd = null;
   private Date segmentStart = null;
 
@@ -171,16 +172,28 @@ public class AnalyticsConversationSegment  implements Serializable {
     }
   }
   private SegmentTypeEnum segmentType = null;
-  private List<Long> sipResponseCodes = new ArrayList<Long>();
+  private List<Long> sipResponseCodes = null;
   private String sourceConversationId = null;
   private String sourceSessionId = null;
   private String subject = null;
   private Boolean videoMuted = null;
   private String wrapUpCode = null;
   private String wrapUpNote = null;
-  private List<String> wrapUpTags = new ArrayList<String>();
-  private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
-  private List<AnalyticsProperty> properties = new ArrayList<AnalyticsProperty>();
+  private List<String> wrapUpTags = null;
+  private List<AnalyticsScoredAgent> scoredAgents = null;
+  private List<AnalyticsProperty> properties = null;
+
+  public AnalyticsConversationSegment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      q850ResponseCodes = new ArrayList<Long>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutingUserIds = new ArrayList<String>();
+      sipResponseCodes = new ArrayList<Long>();
+      wrapUpTags = new ArrayList<String>();
+      scoredAgents = new ArrayList<AnalyticsScoredAgent>();
+      properties = new ArrayList<AnalyticsProperty>();
+    }
+  }
 
   
   /**

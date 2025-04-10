@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeDetailEventTopicFlowMilestone;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -265,8 +266,8 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
   private String divisionId = null;
   private String flowVersion = null;
   private String flowOutcomeId = null;
-  private Integer flowOutcomeStartTime = null;
-  private Integer flowOutcomeEndTime = null;
+  private Long flowOutcomeStartTime = null;
+  private Long flowOutcomeEndTime = null;
 
   private static class FlowOutcomeValueEnumDeserializer extends StdDeserializer<FlowOutcomeValueEnum> {
     public FlowOutcomeValueEnumDeserializer() {
@@ -316,24 +317,32 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
     }
   }
   private FlowOutcomeValueEnum flowOutcomeValue = null;
-  private List<FlowOutcomeDetailEventTopicFlowMilestone> flowMilestones = new ArrayList<FlowOutcomeDetailEventTopicFlowMilestone>();
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private List<FlowOutcomeDetailEventTopicFlowMilestone> flowMilestones = null;
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
+
+  public FlowOutcomeDetailEventTopicFlowOutcomeEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flowMilestones = new ArrayList<FlowOutcomeDetailEventTopicFlowMilestone>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public FlowOutcomeDetailEventTopicFlowOutcomeEvent eventTime(Integer eventTime) {
+  public FlowOutcomeDetailEventTopicFlowOutcomeEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -629,34 +638,34 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
 
   /**
    **/
-  public FlowOutcomeDetailEventTopicFlowOutcomeEvent flowOutcomeStartTime(Integer flowOutcomeStartTime) {
+  public FlowOutcomeDetailEventTopicFlowOutcomeEvent flowOutcomeStartTime(Long flowOutcomeStartTime) {
     this.flowOutcomeStartTime = flowOutcomeStartTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("flowOutcomeStartTime")
-  public Integer getFlowOutcomeStartTime() {
+  public Long getFlowOutcomeStartTime() {
     return flowOutcomeStartTime;
   }
-  public void setFlowOutcomeStartTime(Integer flowOutcomeStartTime) {
+  public void setFlowOutcomeStartTime(Long flowOutcomeStartTime) {
     this.flowOutcomeStartTime = flowOutcomeStartTime;
   }
 
 
   /**
    **/
-  public FlowOutcomeDetailEventTopicFlowOutcomeEvent flowOutcomeEndTime(Integer flowOutcomeEndTime) {
+  public FlowOutcomeDetailEventTopicFlowOutcomeEvent flowOutcomeEndTime(Long flowOutcomeEndTime) {
     this.flowOutcomeEndTime = flowOutcomeEndTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("flowOutcomeEndTime")
-  public Integer getFlowOutcomeEndTime() {
+  public Long getFlowOutcomeEndTime() {
     return flowOutcomeEndTime;
   }
-  public void setFlowOutcomeEndTime(Integer flowOutcomeEndTime) {
+  public void setFlowOutcomeEndTime(Long flowOutcomeEndTime) {
     this.flowOutcomeEndTime = flowOutcomeEndTime;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanActivity;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
@@ -37,7 +38,13 @@ public class AgentWorkPlanShift  implements Serializable {
   private Integer exactPaidTimeMinutes = null;
   private Integer minimumPaidTimeMinutes = null;
   private Integer maximumPaidTimeMinutes = null;
-  private List<AgentWorkPlanActivity> activities = new ArrayList<AgentWorkPlanActivity>();
+  private List<AgentWorkPlanActivity> activities = null;
+
+  public AgentWorkPlanShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<AgentWorkPlanActivity>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
@@ -301,9 +302,9 @@ public class ReportingExportJobRequest  implements Serializable {
     }
   }
   private CsvDelimiterEnum csvDelimiter = null;
-  private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
+  private List<SelectedColumns> selectedColumns = null;
   private Boolean hasCustomParticipantAttributes = null;
-  private List<String> recipientEmails = new ArrayList<String>();
+  private List<String> recipientEmails = null;
   private Boolean includeDurationFormatInHeader = null;
 
   private static class DurationFormatEnumDeserializer extends StdDeserializer<DurationFormatEnum> {
@@ -355,6 +356,13 @@ public class ReportingExportJobRequest  implements Serializable {
     }
   }
   private DurationFormatEnum durationFormat = null;
+
+  public ReportingExportJobRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      selectedColumns = new ArrayList<SelectedColumns>();
+      recipientEmails = new ArrayList<String>();
+    }
+  }
 
   
   /**

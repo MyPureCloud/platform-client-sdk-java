@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadSchema;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,11 @@ public class UpdateScheduleUploadResponse  implements Serializable {
   private String url = null;
   private Map<String, String> headers = null;
   private UpdateScheduleUploadSchema uploadBodySchema = null;
+
+  public UpdateScheduleUploadResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

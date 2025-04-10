@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class TtsEngineEntityListing  implements Serializable, PagedResource<TtsEngineEntity> {
   
-  private List<TtsEngineEntity> entities = new ArrayList<TtsEngineEntity>();
+  private List<TtsEngineEntity> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class TtsEngineEntityListing  implements Serializable, PagedResource<TtsE
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public TtsEngineEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<TtsEngineEntity>();
+    }
+  }
 
   
   /**

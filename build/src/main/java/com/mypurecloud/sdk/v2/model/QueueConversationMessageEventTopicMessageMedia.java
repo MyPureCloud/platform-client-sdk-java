@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,9 +24,14 @@ public class QueueConversationMessageEventTopicMessageMedia  implements Serializ
   
   private String url = null;
   private String mediaType = null;
-  private Integer contentLengthBytes = null;
+  private Long contentLengthBytes = null;
   private String name = null;
   private String id = null;
+
+  public QueueConversationMessageEventTopicMessageMedia() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -67,17 +73,17 @@ public class QueueConversationMessageEventTopicMessageMedia  implements Serializ
   /**
    * The optional content length of the the media object, in bytes.
    **/
-  public QueueConversationMessageEventTopicMessageMedia contentLengthBytes(Integer contentLengthBytes) {
+  public QueueConversationMessageEventTopicMessageMedia contentLengthBytes(Long contentLengthBytes) {
     this.contentLengthBytes = contentLengthBytes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The optional content length of the the media object, in bytes.")
   @JsonProperty("contentLengthBytes")
-  public Integer getContentLengthBytes() {
+  public Long getContentLengthBytes() {
     return contentLengthBytes;
   }
-  public void setContentLengthBytes(Integer contentLengthBytes) {
+  public void setContentLengthBytes(Long contentLengthBytes) {
     this.contentLengthBytes = contentLengthBytes;
   }
 

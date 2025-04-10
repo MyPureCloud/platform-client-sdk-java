@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DraftIntents;
 import com.mypurecloud.sdk.v2.model.DraftTopics;
@@ -30,11 +31,18 @@ public class Draft  implements Serializable {
   private String id = null;
   private String name = null;
   private Miner miner = null;
-  private List<DraftIntents> intents = new ArrayList<DraftIntents>();
-  private List<DraftTopics> topics = new ArrayList<DraftTopics>();
+  private List<DraftIntents> intents = null;
+  private List<DraftTopics> topics = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public Draft() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<DraftIntents>();
+      topics = new ArrayList<DraftTopics>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

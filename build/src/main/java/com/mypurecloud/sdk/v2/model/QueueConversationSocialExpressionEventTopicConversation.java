@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicParticipant;
@@ -27,15 +28,23 @@ import java.io.Serializable;
 public class QueueConversationSocialExpressionEventTopicConversation  implements Serializable {
   
   private String id = null;
-  private Integer maxParticipants = null;
-  private List<QueueConversationSocialExpressionEventTopicParticipant> participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
-  private List<QueueConversationSocialExpressionEventTopicTransferResponse> recentTransfers = new ArrayList<QueueConversationSocialExpressionEventTopicTransferResponse>();
+  private Long maxParticipants = null;
+  private List<QueueConversationSocialExpressionEventTopicParticipant> participants = null;
+  private List<QueueConversationSocialExpressionEventTopicTransferResponse> recentTransfers = null;
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
-  private List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationSocialExpressionEventTopicConversationDivisionMembership>();
+  private List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationSocialExpressionEventTopicConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
+      recentTransfers = new ArrayList<QueueConversationSocialExpressionEventTopicTransferResponse>();
+      divisions = new ArrayList<QueueConversationSocialExpressionEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**
@@ -57,17 +66,17 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
 
   /**
    **/
-  public QueueConversationSocialExpressionEventTopicConversation maxParticipants(Integer maxParticipants) {
+  public QueueConversationSocialExpressionEventTopicConversation maxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxParticipants")
-  public Integer getMaxParticipants() {
+  public Long getMaxParticipants() {
     return maxParticipants;
   }
-  public void setMaxParticipants(Integer maxParticipants) {
+  public void setMaxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
   }
 

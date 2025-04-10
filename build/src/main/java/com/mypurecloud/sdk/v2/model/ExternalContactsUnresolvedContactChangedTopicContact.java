@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicContactAddress;
@@ -111,16 +112,24 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   private ExternalContactsUnresolvedContactChangedTopicWhatsAppId whatsAppId = null;
   private ExternalContactsUnresolvedContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId = null;
-  private List<ExternalContactsUnresolvedContactChangedTopicExternalId> externalIds = new ArrayList<ExternalContactsUnresolvedContactChangedTopicExternalId>();
+  private List<ExternalContactsUnresolvedContactChangedTopicExternalId> externalIds = null;
   private String canonicalContactId = null;
   private ExternalContactsUnresolvedContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<String> mergeSet = new ArrayList<String>();
-  private List<String> mergedFrom = new ArrayList<String>();
+  private List<String> mergeSet = null;
+  private List<String> mergedFrom = null;
   private String mergedTo = null;
   private ExternalContactsUnresolvedContactChangedTopicMergeOperation mergeOperation = null;
   private Date createDate = null;
   private Date modifyDate = null;
+
+  public ExternalContactsUnresolvedContactChangedTopicContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      externalIds = new ArrayList<ExternalContactsUnresolvedContactChangedTopicExternalId>();
+      mergeSet = new ArrayList<String>();
+      mergedFrom = new ArrayList<String>();
+    }
+  }
 
   
   /**

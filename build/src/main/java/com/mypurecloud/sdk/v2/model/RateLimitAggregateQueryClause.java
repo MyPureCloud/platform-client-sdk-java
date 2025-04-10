@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryPredicate;
@@ -73,7 +74,13 @@ public class RateLimitAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<RateLimitAggregateQueryPredicate> predicates = new ArrayList<RateLimitAggregateQueryPredicate>();
+  private List<RateLimitAggregateQueryPredicate> predicates = null;
+
+  public RateLimitAggregateQueryClause() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predicates = new ArrayList<RateLimitAggregateQueryPredicate>();
+    }
+  }
 
   
   /**

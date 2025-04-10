@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmForecastModificationIntervalOffsetValue;
@@ -181,13 +182,21 @@ public class BuForecastModificationResponse  implements Serializable {
   }
   private LegacyMetricEnum legacyMetric = null;
   private Double value = null;
-  private List<WfmForecastModificationIntervalOffsetValue> values = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
-  private List<WfmForecastModificationIntervalOffsetValue> secondaryValues = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
+  private List<WfmForecastModificationIntervalOffsetValue> values = null;
+  private List<WfmForecastModificationIntervalOffsetValue> secondaryValues = null;
   private String displayGranularity = null;
   private String granularity = null;
   private String secondaryGranularity = null;
   private Boolean enabled = null;
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<String> planningGroupIds = null;
+
+  public BuForecastModificationResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
+      secondaryValues = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

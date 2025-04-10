@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteTopicManagementUnit;
 import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteTopicUserReference;
@@ -28,7 +29,13 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
   
   private WfmMoveAgentsCompleteTopicUserReference requestingUser = null;
   private WfmMoveAgentsCompleteTopicManagementUnit destinationManagementUnit = null;
-  private List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> results = new ArrayList<WfmMoveAgentsCompleteTopicWfmMoveAgentData>();
+  private List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> results = null;
+
+  public WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<WfmMoveAgentsCompleteTopicWfmMoveAgentData>();
+    }
+  }
 
   
   /**

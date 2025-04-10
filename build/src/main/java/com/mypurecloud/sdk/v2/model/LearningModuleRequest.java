@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
@@ -32,7 +33,7 @@ public class LearningModuleRequest  implements Serializable {
   private String name = null;
   private String description = null;
   private Integer completionTimeInDays = null;
-  private List<LearningModuleInformStepRequest> informSteps = new ArrayList<LearningModuleInformStepRequest>();
+  private List<LearningModuleInformStepRequest> informSteps = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -91,6 +92,12 @@ public class LearningModuleRequest  implements Serializable {
   private String externalId = null;
   private Boolean enforceContentOrder = null;
   private ReviewAssessmentResults reviewAssessmentResults = null;
+
+  public LearningModuleRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      informSteps = new ArrayList<LearningModuleInformStepRequest>();
+    }
+  }
 
   
   /**

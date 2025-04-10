@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionConfig;
 import com.mypurecloud.sdk.v2.model.ActionContractInput;
@@ -30,6 +31,11 @@ public class UpdateDraftInput  implements Serializable {
   private ActionContractInput contract = null;
   private Boolean secure = null;
   private Integer version = null;
+
+  public UpdateDraftInput() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

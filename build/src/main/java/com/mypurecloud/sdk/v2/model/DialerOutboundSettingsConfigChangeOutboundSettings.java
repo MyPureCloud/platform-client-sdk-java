@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Serializable {
   
-  private Integer maxCallsPerAgent = null;
+  private Long maxCallsPerAgent = null;
   private BigDecimal maxLineUtilization = null;
   private BigDecimal abandonSeconds = null;
 
@@ -81,23 +82,28 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerOutboundSettingsConfigChangeOutboundSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    * The maximum number of calls that can be placed per agent on any campaign
    **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings maxCallsPerAgent(Integer maxCallsPerAgent) {
+  public DialerOutboundSettingsConfigChangeOutboundSettings maxCallsPerAgent(Long maxCallsPerAgent) {
     this.maxCallsPerAgent = maxCallsPerAgent;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The maximum number of calls that can be placed per agent on any campaign")
   @JsonProperty("maxCallsPerAgent")
-  public Integer getMaxCallsPerAgent() {
+  public Long getMaxCallsPerAgent() {
     return maxCallsPerAgent;
   }
-  public void setMaxCallsPerAgent(Integer maxCallsPerAgent) {
+  public void setMaxCallsPerAgent(Long maxCallsPerAgent) {
     this.maxCallsPerAgent = maxCallsPerAgent;
   }
 
@@ -248,17 +254,17 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings version(Integer version) {
+  public DialerOutboundSettingsConfigChangeOutboundSettings version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

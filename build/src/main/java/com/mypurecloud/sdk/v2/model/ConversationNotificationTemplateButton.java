@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateParameter;
@@ -79,7 +80,13 @@ public class ConversationNotificationTemplateButton  implements Serializable {
   private Long index = null;
   private String phoneNumber = null;
   private String url = null;
-  private List<ConversationNotificationTemplateParameter> parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+  private List<ConversationNotificationTemplateParameter> parameters = null;
+
+  public ConversationNotificationTemplateButton() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      parameters = new ArrayList<ConversationNotificationTemplateParameter>();
+    }
+  }
 
   
   /**

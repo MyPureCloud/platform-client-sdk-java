@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ProfileWithDateRange;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -29,7 +30,13 @@ public class UserProfilesInDateRange  implements Serializable {
   private UserReference user = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
-  private List<ProfileWithDateRange> profiles = new ArrayList<ProfileWithDateRange>();
+  private List<ProfileWithDateRange> profiles = null;
+
+  public UserProfilesInDateRange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      profiles = new ArrayList<ProfileWithDateRange>();
+    }
+  }
 
   
   /**

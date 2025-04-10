@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -148,8 +149,8 @@ public class Trunk  implements Serializable {
   private Boolean enabled = null;
   private DomainEntityRef logicalInterface = null;
   private TrunkConnectedStatus connectedStatus = null;
-  private List<TrunkMetricsOptions> optionsStatus = new ArrayList<TrunkMetricsOptions>();
-  private List<TrunkMetricsRegisters> registersStatus = new ArrayList<TrunkMetricsRegisters>();
+  private List<TrunkMetricsOptions> optionsStatus = null;
+  private List<TrunkMetricsRegisters> registersStatus = null;
   private TrunkMetricsNetworkTypeIp ipStatus = null;
 
   private static class OptionsEnabledStatusEnumDeserializer extends StdDeserializer<OptionsEnabledStatusEnum> {
@@ -250,8 +251,16 @@ public class Trunk  implements Serializable {
   }
   private RegistersEnabledStatusEnum registersEnabledStatus = null;
   private Integer family = null;
-  private List<String> proxyAddressList = new ArrayList<String>();
+  private List<String> proxyAddressList = null;
   private String selfUri = null;
+
+  public Trunk() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      optionsStatus = new ArrayList<TrunkMetricsOptions>();
+      registersStatus = new ArrayList<TrunkMetricsRegisters>();
+      proxyAddressList = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QuarterHourly;
 import com.mypurecloud.sdk.v2.model.Weekly;
@@ -25,6 +26,11 @@ public class ComputedData  implements Serializable {
   
   private Weekly weekly = null;
   private QuarterHourly quarterHour = null;
+
+  public ComputedData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

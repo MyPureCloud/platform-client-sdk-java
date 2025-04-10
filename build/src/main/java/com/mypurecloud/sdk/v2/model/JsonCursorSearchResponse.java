@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class JsonCursorSearchResponse  implements Serializable {
   
-  private List<String> types = new ArrayList<String>();
+  private List<String> types = null;
   private ArrayNode results = null;
   private ArrayNode aggregations = null;
   private String cursor = null;
+
+  public JsonCursorSearchResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      types = new ArrayList<String>();
+    }
+  }
 
   
   /**

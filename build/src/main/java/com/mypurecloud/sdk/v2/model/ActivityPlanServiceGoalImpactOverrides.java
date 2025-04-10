@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActivityPlanAbandonRateImpactOverride;
 import com.mypurecloud.sdk.v2.model.ActivityPlanAsaImpactOverride;
@@ -27,6 +28,11 @@ public class ActivityPlanServiceGoalImpactOverrides  implements Serializable {
   private ActivityPlanAbandonRateImpactOverride abandonRate = null;
   private ActivityPlanServiceLevelImpactOverride serviceLevel = null;
   private ActivityPlanAsaImpactOverride averageSpeedOfAnswer = null;
+
+  public ActivityPlanServiceGoalImpactOverrides() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

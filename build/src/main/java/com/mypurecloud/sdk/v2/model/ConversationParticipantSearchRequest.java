@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchCriteria;
@@ -76,10 +77,18 @@ public class ConversationParticipantSearchRequest  implements Serializable {
   }
   private SortOrderEnum sortOrder = null;
   private String sortBy = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> returnFields = new ArrayList<String>();
-  private List<ConversationParticipantSearchCriteria> query = new ArrayList<ConversationParticipantSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> returnFields = null;
+  private List<ConversationParticipantSearchCriteria> query = null;
   private String cursor = null;
+
+  public ConversationParticipantSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<SearchSort>();
+      returnFields = new ArrayList<String>();
+      query = new ArrayList<ConversationParticipantSearchCriteria>();
+    }
+  }
 
   
   /**

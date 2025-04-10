@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationAssignmentSegment;
@@ -128,7 +129,13 @@ public class WorkitemsUserEventsNotificationSession  implements Serializable {
   private StatusEnum status = null;
   private String dateSessionStart = null;
   private String dateSessionEnd = null;
-  private List<WorkitemsUserEventsNotificationAssignmentSegment> assignmentSegments = new ArrayList<WorkitemsUserEventsNotificationAssignmentSegment>();
+  private List<WorkitemsUserEventsNotificationAssignmentSegment> assignmentSegments = null;
+
+  public WorkitemsUserEventsNotificationSession() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      assignmentSegments = new ArrayList<WorkitemsUserEventsNotificationAssignmentSegment>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingSurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyQuestionGroup;
@@ -35,9 +36,15 @@ public class SurveyForm  implements Serializable {
   private String language = null;
   private String header = null;
   private String footer = null;
-  private List<SurveyQuestionGroup> questionGroups = new ArrayList<SurveyQuestionGroup>();
+  private List<SurveyQuestionGroup> questionGroups = null;
   private DomainEntityListingSurveyForm publishedVersions = null;
   private String selfUri = null;
+
+  public SurveyForm() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroups = new ArrayList<SurveyQuestionGroup>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

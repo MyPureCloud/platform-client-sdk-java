@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementAttributes;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementDisplayAttributes;
@@ -33,7 +34,13 @@ public class JourneyViewElement  implements Serializable {
   private JourneyViewElementAttributes attributes = null;
   private JourneyViewElementDisplayAttributes displayAttributes = null;
   private JourneyViewElementFilter filter = null;
-  private List<JourneyViewLink> followedBy = new ArrayList<JourneyViewLink>();
+  private List<JourneyViewLink> followedBy = null;
+
+  public JourneyViewElement() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      followedBy = new ArrayList<JourneyViewLink>();
+    }
+  }
 
   
   /**

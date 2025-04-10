@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
 import com.mypurecloud.sdk.v2.model.SchedulingOptionsRequest;
@@ -27,6 +28,11 @@ public class BuGenerateScheduleRequest  implements Serializable {
   private BuShortTermForecastReference shortTermForecast = null;
   private Integer weekCount = null;
   private SchedulingOptionsRequest options = null;
+
+  public BuGenerateScheduleRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

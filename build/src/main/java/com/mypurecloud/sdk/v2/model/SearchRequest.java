@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SearchAggregation;
@@ -79,12 +80,23 @@ public class SearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> returnFields = new ArrayList<String>();
-  private List<String> expand = new ArrayList<String>();
-  private List<String> types = new ArrayList<String>();
-  private List<SearchCriteria> query = new ArrayList<SearchCriteria>();
-  private List<SearchAggregation> aggregations = new ArrayList<SearchAggregation>();
+  private List<SearchSort> sort = null;
+  private List<String> returnFields = null;
+  private List<String> expand = null;
+  private List<String> types = null;
+  private List<SearchCriteria> query = null;
+  private List<SearchAggregation> aggregations = null;
+
+  public SearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<SearchSort>();
+      returnFields = new ArrayList<String>();
+      expand = new ArrayList<String>();
+      types = new ArrayList<String>();
+      query = new ArrayList<SearchCriteria>();
+      aggregations = new ArrayList<SearchAggregation>();
+    }
+  }
 
   
   /**

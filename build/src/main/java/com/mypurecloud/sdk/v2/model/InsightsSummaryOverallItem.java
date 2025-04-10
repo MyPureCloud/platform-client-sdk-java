@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.InsightsSummaryOverallPeriodPoints;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class InsightsSummaryOverallItem  implements Serializable {
   private InsightsSummaryOverallPeriodPoints comparativePeriod = null;
   private InsightsSummaryOverallPeriodPoints primaryPeriod = null;
   private Double percentOfGoalChange = null;
+
+  public InsightsSummaryOverallItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

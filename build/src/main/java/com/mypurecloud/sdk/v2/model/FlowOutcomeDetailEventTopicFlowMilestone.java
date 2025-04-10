@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,12 @@ import java.io.Serializable;
 public class FlowOutcomeDetailEventTopicFlowMilestone  implements Serializable {
   
   private String milestoneId = null;
-  private Integer milestoneTime = null;
+  private Long milestoneTime = null;
+
+  public FlowOutcomeDetailEventTopicFlowMilestone() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -44,17 +50,17 @@ public class FlowOutcomeDetailEventTopicFlowMilestone  implements Serializable {
 
   /**
    **/
-  public FlowOutcomeDetailEventTopicFlowMilestone milestoneTime(Integer milestoneTime) {
+  public FlowOutcomeDetailEventTopicFlowMilestone milestoneTime(Long milestoneTime) {
     this.milestoneTime = milestoneTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("milestoneTime")
-  public Integer getMilestoneTime() {
+  public Long getMilestoneTime() {
     return milestoneTime;
   }
-  public void setMilestoneTime(Integer milestoneTime) {
+  public void setMilestoneTime(Long milestoneTime) {
     this.milestoneTime = milestoneTime;
   }
 

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timestamp** | **Integer** |  |  [optional] |
+| **timestamp** | **Long** |  |  [optional] |
 | **transcriptId** | **String** |  |  [optional] |
 | **communicationId** | **String** |  |  [optional] |
 | **conversationId** | **String** |  |  [optional] |
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

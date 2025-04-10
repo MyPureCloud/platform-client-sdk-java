@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
@@ -28,7 +29,7 @@ public class DownloadResponse  implements Serializable {
   private String id = null;
   private String contentLocationUri = null;
   private String imageUri = null;
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<DocumentThumbnail> thumbnails = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -79,6 +80,12 @@ public class DownloadResponse  implements Serializable {
   private StateEnum state = null;
   private String resultUri = null;
   private String selfUri = null;
+
+  public DownloadResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
 
   
   /**

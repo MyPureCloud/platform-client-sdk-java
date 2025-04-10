@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Button;
 import com.mypurecloud.sdk.v2.model.MessageFooter;
@@ -30,9 +31,15 @@ public class WhatsAppDefinition  implements Serializable {
   private String name = null;
   private String namespace = null;
   private String language = null;
-  private List<Button> buttons = new ArrayList<Button>();
+  private List<Button> buttons = null;
   private MessageFooter messageFooter = null;
   private MessageHeader header = null;
+
+  public WhatsAppDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      buttons = new ArrayList<Button>();
+    }
+  }
 
   
   /**

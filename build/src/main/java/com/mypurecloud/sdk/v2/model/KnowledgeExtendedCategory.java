@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
@@ -126,8 +127,14 @@ public class KnowledgeExtendedCategory  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private KnowledgeCategory parent = null;
-  private List<KnowledgeCategory> children = new ArrayList<KnowledgeCategory>();
+  private List<KnowledgeCategory> children = null;
   private String selfUri = null;
+
+  public KnowledgeExtendedCategory() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      children = new ArrayList<KnowledgeCategory>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,7 +31,13 @@ public class MetadataProperty  implements Serializable {
   private String sensitive = null;
   private String help = null;
   private String _default = null;
-  private List<String> _enum = new ArrayList<String>();
+  private List<String> _enum = null;
+
+  public MetadataProperty() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      _enum = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "the data type of the input property")

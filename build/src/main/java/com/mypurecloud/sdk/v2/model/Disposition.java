@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DispositionParameters;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,11 @@ public class Disposition  implements Serializable {
   private DispositionParameters dispositionParameters = null;
   private Date detectedSpeechStart = null;
   private Date detectedSpeechEnd = null;
+
+  public Disposition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

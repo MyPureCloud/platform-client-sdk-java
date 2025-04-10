@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocalDateRange;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class TimeOffBalanceRequest  implements Serializable {
   
-  private List<String> activityCodeIds = new ArrayList<String>();
-  private List<LocalDateRange> dateRanges = new ArrayList<LocalDateRange>();
+  private List<String> activityCodeIds = null;
+  private List<LocalDateRange> dateRanges = null;
+
+  public TimeOffBalanceRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activityCodeIds = new ArrayList<String>();
+      dateRanges = new ArrayList<LocalDateRange>();
+    }
+  }
 
   
   /**

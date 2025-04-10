@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentArticle;
@@ -174,12 +175,18 @@ public class KnowledgeSearchDocumentV1  implements Serializable {
   private DocumentFaq faq = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private List<KnowledgeCategory> categories = new ArrayList<KnowledgeCategory>();
+  private List<KnowledgeCategory> categories = null;
   private KnowledgeBase knowledgeBase = null;
   private String externalUrl = null;
   private DocumentArticle article = null;
   private Double confidence = null;
   private String selfUri = null;
+
+  public KnowledgeSearchDocumentV1() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      categories = new ArrayList<KnowledgeCategory>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class ActionInput  implements Serializable {
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument inputSchemaFlattened = null;
   private String inputSchemaUri = null;
+
+  public ActionInput() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

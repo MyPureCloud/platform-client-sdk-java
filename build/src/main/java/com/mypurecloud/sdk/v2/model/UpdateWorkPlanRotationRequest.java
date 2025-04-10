@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationAgentRequest;
@@ -30,9 +31,15 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
   private String name = null;
   private Boolean enabled = null;
   private DateRangeWithOptionalEnd dateRange = null;
-  private List<UpdateWorkPlanRotationAgentRequest> agents = new ArrayList<UpdateWorkPlanRotationAgentRequest>();
+  private List<UpdateWorkPlanRotationAgentRequest> agents = null;
   private WorkPlanPatternRequest pattern = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdateWorkPlanRotationRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agents = new ArrayList<UpdateWorkPlanRotationAgentRequest>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.VoicemailMessagesTopicVoicemailCopyRecord;
 import io.swagger.annotations.ApiModel;
@@ -27,8 +28,8 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   
   private String id = null;
   private Boolean read = null;
-  private Integer audioRecordingDurationSeconds = null;
-  private Integer audioRecordingSizeBytes = null;
+  private Long audioRecordingDurationSeconds = null;
+  private Long audioRecordingSizeBytes = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
   private String createdDateString = null;
@@ -38,9 +39,15 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   private String note = null;
   private Boolean deleted = null;
   private String modifiedByUserId = null;
-  private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
+  private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = null;
   private VoicemailMessagesTopicVoicemailCopyRecord copiedFrom = null;
   private String modifiedDateString = null;
+
+  public VoicemailMessagesTopicVoicemailMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
+    }
+  }
 
   
   /**
@@ -79,34 +86,34 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
 
   /**
    **/
-  public VoicemailMessagesTopicVoicemailMessage audioRecordingDurationSeconds(Integer audioRecordingDurationSeconds) {
+  public VoicemailMessagesTopicVoicemailMessage audioRecordingDurationSeconds(Long audioRecordingDurationSeconds) {
     this.audioRecordingDurationSeconds = audioRecordingDurationSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("audioRecordingDurationSeconds")
-  public Integer getAudioRecordingDurationSeconds() {
+  public Long getAudioRecordingDurationSeconds() {
     return audioRecordingDurationSeconds;
   }
-  public void setAudioRecordingDurationSeconds(Integer audioRecordingDurationSeconds) {
+  public void setAudioRecordingDurationSeconds(Long audioRecordingDurationSeconds) {
     this.audioRecordingDurationSeconds = audioRecordingDurationSeconds;
   }
 
 
   /**
    **/
-  public VoicemailMessagesTopicVoicemailMessage audioRecordingSizeBytes(Integer audioRecordingSizeBytes) {
+  public VoicemailMessagesTopicVoicemailMessage audioRecordingSizeBytes(Long audioRecordingSizeBytes) {
     this.audioRecordingSizeBytes = audioRecordingSizeBytes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("audioRecordingSizeBytes")
-  public Integer getAudioRecordingSizeBytes() {
+  public Long getAudioRecordingSizeBytes() {
     return audioRecordingSizeBytes;
   }
-  public void setAudioRecordingSizeBytes(Integer audioRecordingSizeBytes) {
+  public void setAudioRecordingSizeBytes(Long audioRecordingSizeBytes) {
     this.audioRecordingSizeBytes = audioRecordingSizeBytes;
   }
 

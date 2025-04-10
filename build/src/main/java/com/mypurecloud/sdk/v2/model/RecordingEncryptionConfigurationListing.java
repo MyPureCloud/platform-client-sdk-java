@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class RecordingEncryptionConfigurationListing  implements Serializable {
   
   private Long total = null;
-  private List<RecordingEncryptionConfiguration> entities = new ArrayList<RecordingEncryptionConfiguration>();
+  private List<RecordingEncryptionConfiguration> entities = null;
   private String selfUri = null;
+
+  public RecordingEncryptionConfigurationListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<RecordingEncryptionConfiguration>();
+    }
+  }
 
   
   /**

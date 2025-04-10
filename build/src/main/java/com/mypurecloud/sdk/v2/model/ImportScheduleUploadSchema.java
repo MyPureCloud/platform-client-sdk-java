@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
 import com.mypurecloud.sdk.v2.model.BuImportAgentScheduleUploadSchema;
@@ -31,7 +32,13 @@ public class ImportScheduleUploadSchema  implements Serializable {
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private BuHeadcountForecast headcountForecast = null;
-  private List<BuImportAgentScheduleUploadSchema> agentSchedules = new ArrayList<BuImportAgentScheduleUploadSchema>();
+  private List<BuImportAgentScheduleUploadSchema> agentSchedules = null;
+
+  public ImportScheduleUploadSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuImportAgentScheduleUploadSchema>();
+    }
+  }
 
   
   /**

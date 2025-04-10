@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
@@ -86,9 +87,15 @@ public class Annotation  implements Serializable {
     }
   }
   private ReasonEnum reason = null;
-  private List<Annotation> annotations = new ArrayList<Annotation>();
+  private List<Annotation> annotations = null;
   private Long realtimeLocation = null;
   private String selfUri = null;
+
+  public Annotation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      annotations = new ArrayList<Annotation>();
+    }
+  }
 
   
   /**

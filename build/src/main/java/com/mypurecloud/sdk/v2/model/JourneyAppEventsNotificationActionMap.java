@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +25,12 @@ public class JourneyAppEventsNotificationActionMap  implements Serializable {
   private String id = null;
   private String selfUri = null;
   private String displayName = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public JourneyAppEventsNotificationActionMap() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -80,17 +86,17 @@ public class JourneyAppEventsNotificationActionMap  implements Serializable {
 
   /**
    **/
-  public JourneyAppEventsNotificationActionMap version(Integer version) {
+  public JourneyAppEventsNotificationActionMap version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

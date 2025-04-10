@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -29,7 +30,13 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
   private Integer agentCount = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<UserReference> agents = new ArrayList<UserReference>();
+  private List<UserReference> agents = null;
+
+  public BuManagementUnitScheduleSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agents = new ArrayList<UserReference>();
+    }
+  }
 
   
   /**

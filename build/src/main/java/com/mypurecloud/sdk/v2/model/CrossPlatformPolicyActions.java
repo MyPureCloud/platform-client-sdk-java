@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
@@ -33,13 +34,23 @@ public class CrossPlatformPolicyActions  implements Serializable {
   private Boolean retainRecording = null;
   private Boolean deleteRecording = null;
   private Boolean alwaysDelete = null;
-  private List<EvaluationAssignment> assignEvaluations = new ArrayList<EvaluationAssignment>();
-  private List<MeteredEvaluationAssignment> assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
-  private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
-  private List<CalibrationAssignment> assignCalibrations = new ArrayList<CalibrationAssignment>();
+  private List<EvaluationAssignment> assignEvaluations = null;
+  private List<MeteredEvaluationAssignment> assignMeteredEvaluations = null;
+  private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = null;
+  private List<CalibrationAssignment> assignCalibrations = null;
   private RetentionDuration retentionDuration = null;
-  private List<MediaTranscription> mediaTranscriptions = new ArrayList<MediaTranscription>();
+  private List<MediaTranscription> mediaTranscriptions = null;
   private IntegrationExport integrationExport = null;
+
+  public CrossPlatformPolicyActions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      assignEvaluations = new ArrayList<EvaluationAssignment>();
+      assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
+      assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
+      assignCalibrations = new ArrayList<CalibrationAssignment>();
+      mediaTranscriptions = new ArrayList<MediaTranscription>();
+    }
+  }
 
   
   /**

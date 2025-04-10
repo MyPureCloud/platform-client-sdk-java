@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -69,7 +70,7 @@ public class AlternativeShiftBuSettingsResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<EnabledGranularitiesEnum> enabledGranularities = new ArrayList<EnabledGranularitiesEnum>();
+  private List<EnabledGranularitiesEnum> enabledGranularities = null;
   private Integer minMinutesBeforeStartTime = null;
 
   private static class RetainedActivityCategoriesEnumDeserializer extends StdDeserializer<RetainedActivityCategoriesEnum> {
@@ -122,8 +123,15 @@ public class AlternativeShiftBuSettingsResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RetainedActivityCategoriesEnum> retainedActivityCategories = new ArrayList<RetainedActivityCategoriesEnum>();
+  private List<RetainedActivityCategoriesEnum> retainedActivityCategories = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public AlternativeShiftBuSettingsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      enabledGranularities = new ArrayList<EnabledGranularitiesEnum>();
+      retainedActivityCategories = new ArrayList<RetainedActivityCategoriesEnum>();
+    }
+  }
 
   
   /**

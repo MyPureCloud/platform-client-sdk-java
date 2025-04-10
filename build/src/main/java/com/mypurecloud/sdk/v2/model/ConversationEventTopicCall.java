@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
@@ -323,7 +324,7 @@ public class ConversationEventTopicCall  implements Serializable {
   private String peerId = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<ConversationEventTopicDisconnectReason> disconnectReasons = new ArrayList<ConversationEventTopicDisconnectReason>();
+  private List<ConversationEventTopicDisconnectReason> disconnectReasons = null;
   private ConversationEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
   private Date bargedTime = null;
@@ -332,6 +333,12 @@ public class ConversationEventTopicCall  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
   private ConversationEventTopicQueueMediaSettings queueMediaSettings = null;
+
+  public ConversationEventTopicCall() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      disconnectReasons = new ArrayList<ConversationEventTopicDisconnectReason>();
+    }
+  }
 
   
   /**

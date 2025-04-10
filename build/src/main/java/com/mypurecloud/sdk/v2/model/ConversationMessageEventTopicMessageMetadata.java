@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageMetadataContent;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageMetadataEvent;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class ConversationMessageEventTopicMessageMetadata  implements Serializable {
   
   private String type = null;
-  private List<ConversationMessageEventTopicMessageMetadataEvent> events = new ArrayList<ConversationMessageEventTopicMessageMetadataEvent>();
-  private List<ConversationMessageEventTopicMessageMetadataContent> content = new ArrayList<ConversationMessageEventTopicMessageMetadataContent>();
+  private List<ConversationMessageEventTopicMessageMetadataEvent> events = null;
+  private List<ConversationMessageEventTopicMessageMetadataContent> content = null;
+
+  public ConversationMessageEventTopicMessageMetadata() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      events = new ArrayList<ConversationMessageEventTopicMessageMetadataEvent>();
+      content = new ArrayList<ConversationMessageEventTopicMessageMetadataContent>();
+    }
+  }
 
   
   /**

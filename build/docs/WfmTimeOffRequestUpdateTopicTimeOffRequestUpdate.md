@@ -15,9 +15,9 @@
 | **substatus** | [**SubstatusEnum**](#Enum--SubstatusEnum) |  |  [optional] |
 | **partialDayStartDateTimes** | **List&lt;String&gt;** |  |  [optional] |
 | **fullDayManagementUnitDates** | **List&lt;String&gt;** |  |  [optional] |
-| **dailyDurationMinutes** | **Integer** |  |  [optional] |
-| **durationMinutes** | **List&lt;Integer&gt;** |  |  [optional] |
-| **payableMinutes** | **List&lt;Integer&gt;** |  |  [optional] |
+| **dailyDurationMinutes** | **Long** |  |  [optional] |
+| **durationMinutes** | **List&lt;Long&gt;** |  |  [optional] |
+| **payableMinutes** | **List&lt;Long&gt;** |  |  [optional] |
 | **notes** | **String** |  |  [optional] |
 | **reviewedDate** | **String** |  |  [optional] |
 | **reviewedBy** | **String** |  |  [optional] |
@@ -55,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

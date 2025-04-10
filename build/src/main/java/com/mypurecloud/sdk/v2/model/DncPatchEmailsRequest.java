@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -72,8 +73,14 @@ public class DncPatchEmailsRequest  implements Serializable {
     }
   }
   private ActionEnum action = null;
-  private List<String> emailAddresses = new ArrayList<String>();
+  private List<String> emailAddresses = null;
   private String expirationDateTime = null;
+
+  public DncPatchEmailsRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      emailAddresses = new ArrayList<String>();
+    }
+  }
 
   
   /**

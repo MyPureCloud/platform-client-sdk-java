@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import io.swagger.annotations.ApiModel;
@@ -33,8 +34,14 @@ public class Geolocation  implements Serializable {
   private String country = null;
   private String region = null;
   private String city = null;
-  private List<LocationDefinition> locations = new ArrayList<LocationDefinition>();
+  private List<LocationDefinition> locations = null;
   private String selfUri = null;
+
+  public Geolocation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      locations = new ArrayList<LocationDefinition>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

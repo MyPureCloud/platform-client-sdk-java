@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaType;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class MediaTypeAccess  implements Serializable {
   
-  private List<MediaType> inbound = new ArrayList<MediaType>();
-  private List<MediaType> outbound = new ArrayList<MediaType>();
+  private List<MediaType> inbound = null;
+  private List<MediaType> outbound = null;
+
+  public MediaTypeAccess() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      inbound = new ArrayList<MediaType>();
+      outbound = new ArrayList<MediaType>();
+    }
+  }
 
   
   /**

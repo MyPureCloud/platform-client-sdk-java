@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
 import com.mypurecloud.sdk.v2.model.Organization;
@@ -31,9 +32,16 @@ public class TrustRequest  implements Serializable {
   private OrgUser createdBy = null;
   private Date dateCreated = null;
   private Organization trustee = null;
-  private List<OrgUser> users = new ArrayList<OrgUser>();
-  private List<TrustGroup> groups = new ArrayList<TrustGroup>();
+  private List<OrgUser> users = null;
+  private List<TrustGroup> groups = null;
   private String selfUri = null;
+
+  public TrustRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<OrgUser>();
+      groups = new ArrayList<TrustGroup>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

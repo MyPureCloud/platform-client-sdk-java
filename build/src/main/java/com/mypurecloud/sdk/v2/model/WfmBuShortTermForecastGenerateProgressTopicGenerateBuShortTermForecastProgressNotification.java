@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast;
@@ -75,7 +76,12 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
   private StatusEnum status = null;
   private WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast result = null;
   private String operationId = null;
-  private Integer progress = null;
+  private Long progress = null;
+
+  public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -131,17 +137,17 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
 
   /**
    **/
-  public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification progress(Integer progress) {
+  public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification progress(Long progress) {
     this.progress = progress;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("progress")
-  public Integer getProgress() {
+  public Long getProgress() {
     return progress;
   }
-  public void setProgress(Integer progress) {
+  public void setProgress(Long progress) {
     this.progress = progress;
   }
 

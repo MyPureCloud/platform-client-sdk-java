@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class FlowHealthVersionInfo  implements Serializable {
   
   private AddressableEntityRef flowVersion = null;
   private AddressableEntityRef nluDomain = null;
+
+  public FlowHealthVersionInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Given flow's Version Info.")

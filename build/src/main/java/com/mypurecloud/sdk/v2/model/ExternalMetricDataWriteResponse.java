@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDataProcessedItem;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDataUnprocessedItem;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 
 public class ExternalMetricDataWriteResponse  implements Serializable {
   
-  private List<ExternalMetricDataProcessedItem> processedEntities = new ArrayList<ExternalMetricDataProcessedItem>();
-  private List<ExternalMetricDataUnprocessedItem> unprocessedEntities = new ArrayList<ExternalMetricDataUnprocessedItem>();
+  private List<ExternalMetricDataProcessedItem> processedEntities = null;
+  private List<ExternalMetricDataUnprocessedItem> unprocessedEntities = null;
+
+  public ExternalMetricDataWriteResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      processedEntities = new ArrayList<ExternalMetricDataProcessedItem>();
+      unprocessedEntities = new ArrayList<ExternalMetricDataUnprocessedItem>();
+    }
+  }
 
   
   /**

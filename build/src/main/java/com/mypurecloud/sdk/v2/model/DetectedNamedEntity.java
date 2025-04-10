@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DetectedNamedEntityValue;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class DetectedNamedEntity  implements Serializable {
   private String entityType = null;
   private Double probability = null;
   private DetectedNamedEntityValue value = null;
+
+  public DetectedNamedEntity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The name of the detected named entity.")

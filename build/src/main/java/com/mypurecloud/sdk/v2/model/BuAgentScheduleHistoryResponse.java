@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryChange;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryDroppedChange;
@@ -26,10 +27,18 @@ import java.io.Serializable;
 
 public class BuAgentScheduleHistoryResponse  implements Serializable {
   
-  private List<BuScheduleReference> priorPublishedSchedules = new ArrayList<BuScheduleReference>();
+  private List<BuScheduleReference> priorPublishedSchedules = null;
   private BuAgentScheduleHistoryChange basePublishedSchedule = null;
-  private List<BuAgentScheduleHistoryDroppedChange> droppedChanges = new ArrayList<BuAgentScheduleHistoryDroppedChange>();
-  private List<BuAgentScheduleHistoryChange> changes = new ArrayList<BuAgentScheduleHistoryChange>();
+  private List<BuAgentScheduleHistoryDroppedChange> droppedChanges = null;
+  private List<BuAgentScheduleHistoryChange> changes = null;
+
+  public BuAgentScheduleHistoryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      priorPublishedSchedules = new ArrayList<BuScheduleReference>();
+      droppedChanges = new ArrayList<BuAgentScheduleHistoryDroppedChange>();
+      changes = new ArrayList<BuAgentScheduleHistoryChange>();
+    }
+  }
 
   
   /**

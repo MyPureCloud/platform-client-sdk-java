@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -87,7 +88,7 @@ public class OutboundRouteBase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<String> classificationTypes = new ArrayList<String>();
+  private List<String> classificationTypes = null;
   private Boolean enabled = null;
 
   private static class DistributionEnumDeserializer extends StdDeserializer<DistributionEnum> {
@@ -137,8 +138,15 @@ public class OutboundRouteBase  implements Serializable {
     }
   }
   private DistributionEnum distribution = null;
-  private List<DomainEntityRef> externalTrunkBases = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> externalTrunkBases = null;
   private String selfUri = null;
+
+  public OutboundRouteBase() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      classificationTypes = new ArrayList<String>();
+      externalTrunkBases = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

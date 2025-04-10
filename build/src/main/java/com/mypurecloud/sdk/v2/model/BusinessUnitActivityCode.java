@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SecondaryPresence;
@@ -92,9 +93,15 @@ public class BusinessUnitActivityCode  implements Serializable {
   private Boolean countsTowardShrinkage = null;
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
-  private List<SecondaryPresence> secondaryPresences = new ArrayList<SecondaryPresence>();
+  private List<SecondaryPresence> secondaryPresences = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public BusinessUnitActivityCode() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      secondaryPresences = new ArrayList<SecondaryPresence>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

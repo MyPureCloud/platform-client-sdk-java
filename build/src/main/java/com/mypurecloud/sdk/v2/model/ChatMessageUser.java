@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Image;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class ChatMessageUser  implements Serializable {
   private String name = null;
   private String displayName = null;
   private String username = null;
-  private List<Image> images = new ArrayList<Image>();
+  private List<Image> images = null;
+
+  public ChatMessageUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      images = new ArrayList<Image>();
+    }
+  }
 
   
   /**

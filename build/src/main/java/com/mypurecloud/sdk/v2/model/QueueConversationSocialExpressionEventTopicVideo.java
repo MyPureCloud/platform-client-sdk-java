@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
@@ -213,11 +214,17 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
   private DisconnectTypeEnum disconnectType = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<String> msids = new ArrayList<String>();
+  private List<String> msids = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
+
+  public QueueConversationSocialExpressionEventTopicVideo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      msids = new ArrayList<String>();
+    }
+  }
 
   
   /**

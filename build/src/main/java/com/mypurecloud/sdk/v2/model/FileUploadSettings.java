@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FileUploadMode;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class FileUploadSettings  implements Serializable {
   
   private Boolean enableAttachments = null;
-  private List<FileUploadMode> modes = new ArrayList<FileUploadMode>();
+  private List<FileUploadMode> modes = null;
+
+  public FileUploadSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      modes = new ArrayList<FileUploadMode>();
+    }
+  }
 
   
   /**

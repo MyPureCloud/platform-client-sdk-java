@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicDetail;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicLimit;
@@ -29,15 +30,22 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
   
   private String message = null;
   private String code = null;
-  private Integer status = null;
+  private Long status = null;
   private String entityId = null;
   private String entityName = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationCobrowseEventTopicDetail> details = new ArrayList<ConversationCobrowseEventTopicDetail>();
-  private List<ConversationCobrowseEventTopicErrorBody> errors = new ArrayList<ConversationCobrowseEventTopicErrorBody>();
+  private List<ConversationCobrowseEventTopicDetail> details = null;
+  private List<ConversationCobrowseEventTopicErrorBody> errors = null;
   private ConversationCobrowseEventTopicLimit limit = null;
+
+  public ConversationCobrowseEventTopicErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<ConversationCobrowseEventTopicDetail>();
+      errors = new ArrayList<ConversationCobrowseEventTopicErrorBody>();
+    }
+  }
 
   
   /**
@@ -76,17 +84,17 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
 
   /**
    **/
-  public ConversationCobrowseEventTopicErrorBody status(Integer status) {
+  public ConversationCobrowseEventTopicErrorBody status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -31,7 +32,7 @@ public class CampaignSequence  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> campaigns = null;
   private Integer currentCampaign = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
@@ -85,6 +86,12 @@ public class CampaignSequence  implements Serializable {
   private String stopMessage = null;
   private Boolean repeat = null;
   private String selfUri = null;
+
+  public CampaignSequence() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaigns = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

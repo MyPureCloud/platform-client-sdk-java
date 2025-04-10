@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -204,8 +205,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
-  private Integer callbackScheduledTime = null;
+  private List<String> callbackNumbers = null;
+  private Long callbackScheduledTime = null;
   private String subject = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -370,7 +371,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
 
   private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
     public UsedRoutingEnumDeserializer() {
@@ -427,30 +428,41 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     }
   }
   private UsedRoutingEnum usedRouting = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingUserIds = new ArrayList<String>();
-  private Integer routingPriority = null;
-  private Integer connectedDurationMs = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private List<String> requestedRoutingUserIds = null;
+  private Long routingPriority = null;
+  private Long connectedDurationMs = null;
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
   private String utilizationLabel = null;
   private String flowType = null;
+
+  public AcdEndDetailEventTopicAcdEndEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutingUserIds = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public AcdEndDetailEventTopicAcdEndEvent eventTime(Integer eventTime) {
+  public AcdEndDetailEventTopicAcdEndEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -678,17 +690,17 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
 
   /**
    **/
-  public AcdEndDetailEventTopicAcdEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
+  public AcdEndDetailEventTopicAcdEndEvent callbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackScheduledTime")
-  public Integer getCallbackScheduledTime() {
+  public Long getCallbackScheduledTime() {
     return callbackScheduledTime;
   }
-  public void setCallbackScheduledTime(Integer callbackScheduledTime) {
+  public void setCallbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
@@ -882,34 +894,34 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
 
   /**
    **/
-  public AcdEndDetailEventTopicAcdEndEvent routingPriority(Integer routingPriority) {
+  public AcdEndDetailEventTopicAcdEndEvent routingPriority(Long routingPriority) {
     this.routingPriority = routingPriority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("routingPriority")
-  public Integer getRoutingPriority() {
+  public Long getRoutingPriority() {
     return routingPriority;
   }
-  public void setRoutingPriority(Integer routingPriority) {
+  public void setRoutingPriority(Long routingPriority) {
     this.routingPriority = routingPriority;
   }
 
 
   /**
    **/
-  public AcdEndDetailEventTopicAcdEndEvent connectedDurationMs(Integer connectedDurationMs) {
+  public AcdEndDetailEventTopicAcdEndEvent connectedDurationMs(Long connectedDurationMs) {
     this.connectedDurationMs = connectedDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("connectedDurationMs")
-  public Integer getConnectedDurationMs() {
+  public Long getConnectedDurationMs() {
     return connectedDurationMs;
   }
-  public void setConnectedDurationMs(Integer connectedDurationMs) {
+  public void setConnectedDurationMs(Long connectedDurationMs) {
     this.connectedDurationMs = connectedDurationMs;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeFromEmailAddress;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress;
@@ -27,10 +28,16 @@ import java.io.Serializable;
 
 public class OutboundMessagingEmailCampaignConfigChangeEmailConfig  implements Serializable {
   
-  private List<String> emailColumns = new ArrayList<String>();
+  private List<String> emailColumns = null;
   private OutboundMessagingEmailCampaignConfigChangeResponseRef contentTemplate = null;
   private OutboundMessagingEmailCampaignConfigChangeFromEmailAddress fromAddress = null;
   private OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress replyToAddress = null;
+
+  public OutboundMessagingEmailCampaignConfigChangeEmailConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      emailColumns = new ArrayList<String>();
+    }
+  }
 
   
   /**

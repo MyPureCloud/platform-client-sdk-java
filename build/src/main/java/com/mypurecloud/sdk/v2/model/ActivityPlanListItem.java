@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActivityCodeReference;
@@ -31,7 +32,7 @@ public class ActivityPlanListItem  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<ManagementUnitReference> managementUnits = new ArrayList<ManagementUnitReference>();
+  private List<ManagementUnitReference> managementUnits = null;
   private String description = null;
   private ActivityCodeReference activityCode = null;
 
@@ -186,6 +187,12 @@ public class ActivityPlanListItem  implements Serializable {
   private Date modifiedDate = null;
   private UserReference modifiedBy = null;
   private String selfUri = null;
+
+  public ActivityPlanListItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<ManagementUnitReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

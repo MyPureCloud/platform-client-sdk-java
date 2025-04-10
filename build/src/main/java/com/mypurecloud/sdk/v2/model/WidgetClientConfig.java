@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WidgetClientConfigV1;
 import com.mypurecloud.sdk.v2.model.WidgetClientConfigV1Http;
@@ -27,6 +28,11 @@ public class WidgetClientConfig  implements Serializable {
   private Object v2 = null;
   private WidgetClientConfigV1Http v1Http = null;
   private Object thirdParty = null;
+
+  public WidgetClientConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

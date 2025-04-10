@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -76,12 +77,18 @@ public class WorkitemStatusCreate  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<String> destinationStatusIds = new ArrayList<String>();
+  private List<String> destinationStatusIds = null;
   private String description = null;
   private String defaultDestinationStatusId = null;
   private Integer statusTransitionDelaySeconds = null;
   private String statusTransitionTime = null;
   private Boolean autoTerminateWorkitem = null;
+
+  public WorkitemStatusCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      destinationStatusIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

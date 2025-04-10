@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier;
@@ -80,7 +81,13 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingFr
   private String firstName = null;
   private String lastName = null;
   private String email = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> additionalIds = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>();
+  private List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> additionalIds = null;
+
+  public V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      additionalIds = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>();
+    }
+  }
 
   
   /**

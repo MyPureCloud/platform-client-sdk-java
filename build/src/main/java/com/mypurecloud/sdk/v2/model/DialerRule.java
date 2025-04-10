@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Condition;
@@ -77,8 +78,15 @@ public class DialerRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<Condition> conditions = new ArrayList<Condition>();
-  private List<DialerAction> actions = new ArrayList<DialerAction>();
+  private List<Condition> conditions = null;
+  private List<DialerAction> actions = null;
+
+  public DialerRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conditions = new ArrayList<Condition>();
+      actions = new ArrayList<DialerAction>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")

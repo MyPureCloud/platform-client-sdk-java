@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Reoccurrence;
@@ -32,11 +33,18 @@ public class SequenceSchedule  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
-  private List<Reoccurrence> recurrences = new ArrayList<Reoccurrence>();
+  private List<ScheduleInterval> intervals = null;
+  private List<Reoccurrence> recurrences = null;
   private String timeZone = null;
   private DomainEntityRef sequence = null;
   private String selfUri = null;
+
+  public SequenceSchedule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intervals = new ArrayList<ScheduleInterval>();
+      recurrences = new ArrayList<Reoccurrence>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

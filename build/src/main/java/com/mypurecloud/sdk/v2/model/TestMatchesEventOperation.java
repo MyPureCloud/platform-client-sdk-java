@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TestModeTrigger;
 import io.swagger.annotations.ApiModel;
@@ -27,8 +28,15 @@ public class TestMatchesEventOperation  implements Serializable {
   
   private String name = null;
   private Integer step = null;
-  private List<TestModeTrigger> matchedTriggers = new ArrayList<TestModeTrigger>();
-  private List<TestModeTrigger> unmatchedTriggers = new ArrayList<TestModeTrigger>();
+  private List<TestModeTrigger> matchedTriggers = null;
+  private List<TestModeTrigger> unmatchedTriggers = null;
+
+  public TestMatchesEventOperation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      matchedTriggers = new ArrayList<TestModeTrigger>();
+      unmatchedTriggers = new ArrayList<TestModeTrigger>();
+    }
+  }
 
   
   /**

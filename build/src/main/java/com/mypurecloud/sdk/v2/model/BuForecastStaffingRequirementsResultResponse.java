@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResult;
@@ -81,7 +82,13 @@ public class BuForecastStaffingRequirementsResultResponse  implements Serializab
     }
   }
   private StateEnum state = null;
-  private List<BuForecastStaffingRequirementsResult> results = new ArrayList<BuForecastStaffingRequirementsResult>();
+  private List<BuForecastStaffingRequirementsResult> results = null;
+
+  public BuForecastStaffingRequirementsResultResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<BuForecastStaffingRequirementsResult>();
+    }
+  }
 
   
   /**

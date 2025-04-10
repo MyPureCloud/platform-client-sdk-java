@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,9 @@ public class JourneyWebEventsNotificationDevice  implements Serializable {
   
   private String type = null;
   private Boolean isMobile = null;
-  private Integer screenHeight = null;
-  private Integer screenWidth = null;
-  private Integer screenDensity = null;
+  private Long screenHeight = null;
+  private Long screenWidth = null;
+  private Long screenDensity = null;
   private String fingerprint = null;
   private String osFamily = null;
   private String osVersion = null;
@@ -82,6 +83,11 @@ public class JourneyWebEventsNotificationDevice  implements Serializable {
   private CategoryEnum category = null;
   private String manufacturer = null;
 
+  public JourneyWebEventsNotificationDevice() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    **/
@@ -119,51 +125,51 @@ public class JourneyWebEventsNotificationDevice  implements Serializable {
 
   /**
    **/
-  public JourneyWebEventsNotificationDevice screenHeight(Integer screenHeight) {
+  public JourneyWebEventsNotificationDevice screenHeight(Long screenHeight) {
     this.screenHeight = screenHeight;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenHeight")
-  public Integer getScreenHeight() {
+  public Long getScreenHeight() {
     return screenHeight;
   }
-  public void setScreenHeight(Integer screenHeight) {
+  public void setScreenHeight(Long screenHeight) {
     this.screenHeight = screenHeight;
   }
 
 
   /**
    **/
-  public JourneyWebEventsNotificationDevice screenWidth(Integer screenWidth) {
+  public JourneyWebEventsNotificationDevice screenWidth(Long screenWidth) {
     this.screenWidth = screenWidth;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenWidth")
-  public Integer getScreenWidth() {
+  public Long getScreenWidth() {
     return screenWidth;
   }
-  public void setScreenWidth(Integer screenWidth) {
+  public void setScreenWidth(Long screenWidth) {
     this.screenWidth = screenWidth;
   }
 
 
   /**
    **/
-  public JourneyWebEventsNotificationDevice screenDensity(Integer screenDensity) {
+  public JourneyWebEventsNotificationDevice screenDensity(Long screenDensity) {
     this.screenDensity = screenDensity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenDensity")
-  public Integer getScreenDensity() {
+  public Long getScreenDensity() {
     return screenDensity;
   }
-  public void setScreenDensity(Integer screenDensity) {
+  public void setScreenDensity(Long screenDensity) {
     this.screenDensity = screenDensity;
   }
 

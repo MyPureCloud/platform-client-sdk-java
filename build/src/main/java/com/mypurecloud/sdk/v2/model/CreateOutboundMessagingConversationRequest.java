@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -76,6 +77,11 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
   private Boolean useExistingConversation = null;
   private String externalContactId = null;
   private Boolean useUserFromAddress = null;
+
+  public CreateOutboundMessagingConversationRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

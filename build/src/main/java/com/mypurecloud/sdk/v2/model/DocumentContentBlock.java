@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyImage;
@@ -77,6 +78,11 @@ public class DocumentContentBlock  implements Serializable {
   private DocumentText text = null;
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
+
+  public DocumentContentBlock() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdjustableLiveSpeakerDetection;
 import io.swagger.annotations.ApiModel;
@@ -23,6 +24,11 @@ import java.io.Serializable;
 public class DispositionParameters  implements Serializable {
   
   private AdjustableLiveSpeakerDetection adjustableLiveSpeakerDetection = null;
+
+  public DispositionParameters() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

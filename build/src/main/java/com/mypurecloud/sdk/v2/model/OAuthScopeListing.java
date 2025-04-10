@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class OAuthScopeListing  implements Serializable {
   
   private Long total = null;
-  private List<OAuthScope> entities = new ArrayList<OAuthScope>();
+  private List<OAuthScope> entities = null;
   private String selfUri = null;
+
+  public OAuthScopeListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<OAuthScope>();
+    }
+  }
 
   
   /**

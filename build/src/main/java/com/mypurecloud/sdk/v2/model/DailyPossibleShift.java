@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -81,7 +82,13 @@ public class DailyPossibleShift  implements Serializable {
   private Boolean required = null;
   private Integer minimumPaidTimeMinutes = null;
   private Integer maximumPaidTimeMinutes = null;
-  private List<Integer> intervalScheduleProbabilities = new ArrayList<Integer>();
+  private List<Integer> intervalScheduleProbabilities = null;
+
+  public DailyPossibleShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intervalScheduleProbabilities = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkitemReference;
@@ -30,6 +31,11 @@ public class WorkitemWrapup  implements Serializable {
   private UserReference modifiedBy = null;
   private UserReference user = null;
   private Date dateModified = null;
+
+  public WorkitemWrapup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

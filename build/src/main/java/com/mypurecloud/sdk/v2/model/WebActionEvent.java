@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionEventActionMap;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -43,6 +44,11 @@ public class WebActionEvent  implements Serializable {
   private String ipOrganization = null;
   private JourneyCampaign mktCampaign = null;
   private Referrer visitReferrer = null;
+
+  public WebActionEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DatePickerAvailableDateTime;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class DatePicker  implements Serializable {
   
   private String title = null;
   private String subtitle = null;
-  private List<DatePickerAvailableDateTime> datePickerAvailableDateTimes = new ArrayList<DatePickerAvailableDateTime>();
+  private List<DatePickerAvailableDateTime> datePickerAvailableDateTimes = null;
+
+  public DatePicker() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      datePickerAvailableDateTimes = new ArrayList<DatePickerAvailableDateTime>();
+    }
+  }
 
   
   /**

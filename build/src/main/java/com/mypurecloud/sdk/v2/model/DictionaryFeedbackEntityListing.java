@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListedDictionaryFeedback;
 import io.swagger.annotations.ApiModel;
@@ -24,12 +25,18 @@ import java.io.Serializable;
 
 public class DictionaryFeedbackEntityListing  implements Serializable {
   
-  private List<ListedDictionaryFeedback> entities = new ArrayList<ListedDictionaryFeedback>();
+  private List<ListedDictionaryFeedback> entities = null;
   private Integer pageSize = null;
   private Integer pageCount = null;
   private Integer total = null;
   private String selfUri = null;
   private String nextUri = null;
+
+  public DictionaryFeedbackEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ListedDictionaryFeedback>();
+    }
+  }
 
   
   /**

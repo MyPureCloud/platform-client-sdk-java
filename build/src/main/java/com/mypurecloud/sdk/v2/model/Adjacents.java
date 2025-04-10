@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,17 @@ import java.io.Serializable;
 
 public class Adjacents  implements Serializable {
   
-  private List<User> superiors = new ArrayList<User>();
-  private List<User> siblings = new ArrayList<User>();
-  private List<User> directReports = new ArrayList<User>();
+  private List<User> superiors = null;
+  private List<User> siblings = null;
+  private List<User> directReports = null;
+
+  public Adjacents() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      superiors = new ArrayList<User>();
+      siblings = new ArrayList<User>();
+      directReports = new ArrayList<User>();
+    }
+  }
 
   
   /**

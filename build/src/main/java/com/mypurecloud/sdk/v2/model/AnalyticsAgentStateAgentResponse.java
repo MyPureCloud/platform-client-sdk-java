@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsAgentStateAgentSessionResult;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,13 @@ public class AnalyticsAgentStateAgentResponse  implements Serializable {
   private String userName = null;
   private String managerId = null;
   private Integer sessionCount = null;
-  private List<AnalyticsAgentStateAgentSessionResult> sessions = new ArrayList<AnalyticsAgentStateAgentSessionResult>();
+  private List<AnalyticsAgentStateAgentSessionResult> sessions = null;
+
+  public AnalyticsAgentStateAgentResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sessions = new ArrayList<AnalyticsAgentStateAgentSessionResult>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainResourceConditionNode;
 import io.swagger.annotations.ApiModel;
@@ -27,10 +28,17 @@ public class DomainPermissionPolicy  implements Serializable {
   private String entityName = null;
   private String policyName = null;
   private String policyDescription = null;
-  private List<String> actionSet = new ArrayList<String>();
-  private List<String> namedResources = new ArrayList<String>();
+  private List<String> actionSet = null;
+  private List<String> namedResources = null;
   private Boolean allowConditions = null;
   private DomainResourceConditionNode resourceConditionNode = null;
+
+  public DomainPermissionPolicy() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actionSet = new ArrayList<String>();
+      namedResources = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SearchSort;
@@ -78,9 +79,17 @@ public class SiteSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> expand = new ArrayList<String>();
-  private List<SiteSearchCriteria> query = new ArrayList<SiteSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> expand = null;
+  private List<SiteSearchCriteria> query = null;
+
+  public SiteSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<SearchSort>();
+      expand = new ArrayList<String>();
+      query = new ArrayList<SiteSearchCriteria>();
+    }
+  }
 
   
   /**

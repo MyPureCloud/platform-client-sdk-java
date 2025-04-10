@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
 import com.mypurecloud.sdk.v2.model.ConfigurationOverrides;
@@ -38,6 +39,7 @@ public class DialerContact  implements Serializable {
   private Map<String, CallRecord> callRecords = null;
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Map<String, MessageEvaluation> latestEmailEvaluations = null;
+  private Map<String, MessageEvaluation> latestWhatsAppEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
@@ -45,6 +47,11 @@ public class DialerContact  implements Serializable {
   private ConfigurationOverrides configurationOverrides = null;
   private Date dateCreated = null;
   private String selfUri = null;
+
+  public DialerContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -125,6 +132,24 @@ public class DialerContact  implements Serializable {
   @JsonProperty("latestEmailEvaluations")
   public Map<String, MessageEvaluation> getLatestEmailEvaluations() {
     return latestEmailEvaluations;
+  }
+
+
+  /**
+   * A map of whatsapp records for the contact whatsapp columns.
+   **/
+  public DialerContact latestWhatsAppEvaluations(Map<String, MessageEvaluation> latestWhatsAppEvaluations) {
+    this.latestWhatsAppEvaluations = latestWhatsAppEvaluations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of whatsapp records for the contact whatsapp columns.")
+  @JsonProperty("latestWhatsAppEvaluations")
+  public Map<String, MessageEvaluation> getLatestWhatsAppEvaluations() {
+    return latestWhatsAppEvaluations;
+  }
+  public void setLatestWhatsAppEvaluations(Map<String, MessageEvaluation> latestWhatsAppEvaluations) {
+    this.latestWhatsAppEvaluations = latestWhatsAppEvaluations;
   }
 
 
@@ -227,6 +252,7 @@ public class DialerContact  implements Serializable {
             Objects.equals(this.callRecords, dialerContact.callRecords) &&
             Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
             Objects.equals(this.latestEmailEvaluations, dialerContact.latestEmailEvaluations) &&
+            Objects.equals(this.latestWhatsAppEvaluations, dialerContact.latestWhatsAppEvaluations) &&
             Objects.equals(this.callable, dialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
             Objects.equals(this.contactableStatus, dialerContact.contactableStatus) &&
@@ -238,7 +264,7 @@ public class DialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, dateCreated, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, latestEmailEvaluations, latestWhatsAppEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, dateCreated, selfUri);
   }
 
   @Override
@@ -253,6 +279,7 @@ public class DialerContact  implements Serializable {
     sb.append("    callRecords: ").append(toIndentedString(callRecords)).append("\n");
     sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
     sb.append("    latestEmailEvaluations: ").append(toIndentedString(latestEmailEvaluations)).append("\n");
+    sb.append("    latestWhatsAppEvaluations: ").append(toIndentedString(latestWhatsAppEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");

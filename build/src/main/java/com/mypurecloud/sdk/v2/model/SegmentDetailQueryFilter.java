@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SegmentDetailQueryClause;
@@ -74,8 +75,15 @@ public class SegmentDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SegmentDetailQueryClause> clauses = new ArrayList<SegmentDetailQueryClause>();
-  private List<SegmentDetailQueryPredicate> predicates = new ArrayList<SegmentDetailQueryPredicate>();
+  private List<SegmentDetailQueryClause> clauses = null;
+  private List<SegmentDetailQueryPredicate> predicates = null;
+
+  public SegmentDetailQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<SegmentDetailQueryClause>();
+      predicates = new ArrayList<SegmentDetailQueryPredicate>();
+    }
+  }
 
   
   /**

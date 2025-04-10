@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicCallMediaParticipant;
@@ -28,11 +29,11 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
   
   private String id = null;
   private String name = null;
-  private List<ConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<ConversationCallEventTopicCallMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationCallEventTopicCallMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationCallEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationCallEventTopicConversationDivisionMembership>();
+  private List<ConversationCallEventTopicConversationDivisionMembership> divisions = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {
@@ -83,7 +84,15 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
   }
   private RecordingStateEnum recordingState = null;
   private Boolean securePause = null;
-  private Integer maxParticipants = null;
+  private Long maxParticipants = null;
+
+  public ConversationCallEventTopicCallConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationCallEventTopicCallMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationCallEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**
@@ -241,17 +250,17 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
 
   /**
    **/
-  public ConversationCallEventTopicCallConversation maxParticipants(Integer maxParticipants) {
+  public ConversationCallEventTopicCallConversation maxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxParticipants")
-  public Integer getMaxParticipants() {
+  public Long getMaxParticipants() {
     return maxParticipants;
   }
-  public void setMaxParticipants(Integer maxParticipants) {
+  public void setMaxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
   }
 

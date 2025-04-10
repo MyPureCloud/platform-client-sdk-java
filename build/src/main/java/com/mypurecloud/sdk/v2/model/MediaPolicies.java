@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallMediaPolicy;
 import com.mypurecloud.sdk.v2.model.ChatMediaPolicy;
@@ -29,6 +30,11 @@ public class MediaPolicies  implements Serializable {
   private ChatMediaPolicy chatPolicy = null;
   private EmailMediaPolicy emailPolicy = null;
   private MessageMediaPolicy messagePolicy = null;
+
+  public MediaPolicies() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

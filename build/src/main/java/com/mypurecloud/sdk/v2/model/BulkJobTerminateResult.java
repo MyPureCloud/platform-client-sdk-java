@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkJobError;
 import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultEntity;
@@ -25,6 +26,11 @@ public class BulkJobTerminateResult  implements Serializable {
   
   private BulkJobError error = null;
   private BulkJobTerminateResultEntity entity = null;
+
+  public BulkJobTerminateResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

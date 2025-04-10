@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyQuestion;
 import com.mypurecloud.sdk.v2.model.VisibilityCondition;
@@ -29,8 +30,14 @@ public class SurveyQuestionGroup  implements Serializable {
   private String name = null;
   private String type = null;
   private Boolean naEnabled = null;
-  private List<SurveyQuestion> questions = new ArrayList<SurveyQuestion>();
+  private List<SurveyQuestion> questions = null;
   private VisibilityCondition visibilityCondition = null;
+
+  public SurveyQuestionGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questions = new ArrayList<SurveyQuestion>();
+    }
+  }
 
   
   /**

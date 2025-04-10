@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SkillGroupLanguageCondition;
@@ -26,8 +27,8 @@ import java.io.Serializable;
 
 public class SkillGroupCondition  implements Serializable {
   
-  private List<SkillGroupRoutingCondition> routingSkillConditions = new ArrayList<SkillGroupRoutingCondition>();
-  private List<SkillGroupLanguageCondition> languageSkillConditions = new ArrayList<SkillGroupLanguageCondition>();
+  private List<SkillGroupRoutingCondition> routingSkillConditions = null;
+  private List<SkillGroupLanguageCondition> languageSkillConditions = null;
 
   private static class OperationEnumDeserializer extends StdDeserializer<OperationEnum> {
     public OperationEnumDeserializer() {
@@ -77,6 +78,13 @@ public class SkillGroupCondition  implements Serializable {
     }
   }
   private OperationEnum operation = null;
+
+  public SkillGroupCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routingSkillConditions = new ArrayList<SkillGroupRoutingCondition>();
+      languageSkillConditions = new ArrayList<SkillGroupLanguageCondition>();
+    }
+  }
 
   
   /**

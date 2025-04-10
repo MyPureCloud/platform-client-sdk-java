@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,8 +27,13 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
   
   private String startTime = null;
   private String stopTime = null;
-  private Integer day = null;
+  private Long day = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerCallabletimesetConfigChangeTimeSlot() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -69,17 +75,17 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
   /**
    * The day this time slot applies
    **/
-  public DialerCallabletimesetConfigChangeTimeSlot day(Integer day) {
+  public DialerCallabletimesetConfigChangeTimeSlot day(Long day) {
     this.day = day;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The day this time slot applies")
   @JsonProperty("day")
-  public Integer getDay() {
+  public Long getDay() {
     return day;
   }
-  public void setDay(Integer day) {
+  public void setDay(Long day) {
     this.day = day;
   }
 

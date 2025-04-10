@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SummaryAggregateQueryFilter;
@@ -92,7 +93,7 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private SummaryAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -141,9 +142,9 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
   private Boolean flattenMultivaluedDimensions = null;
-  private List<SummaryAggregationView> views = new ArrayList<SummaryAggregationView>();
+  private List<SummaryAggregationView> views = null;
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {
@@ -241,6 +242,14 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
   private QueryTypeEnum queryType = null;
   private Integer limit = null;
   private Integer pageSize = null;
+
+  public SummaryAsyncAggregationQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groupBy = new ArrayList<GroupByEnum>();
+      metrics = new ArrayList<MetricsEnum>();
+      views = new ArrayList<SummaryAggregationView>();
+    }
+  }
 
   
   /**

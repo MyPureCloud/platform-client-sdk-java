@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
@@ -86,10 +87,10 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private Integer messageSegmentCount = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageMedia> media = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMedia>();
+  private Long messageSegmentCount = null;
+  private List<QueueConversationSocialExpressionEventTopicMessageMedia> media = null;
   private QueueConversationSocialExpressionEventTopicErrorDetails errorInfo = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageSticker> stickers = new ArrayList<QueueConversationSocialExpressionEventTopicMessageSticker>();
+  private List<QueueConversationSocialExpressionEventTopicMessageSticker> stickers = null;
   private QueueConversationSocialExpressionEventTopicMessageMetadata messageMetadata = null;
 
   private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
@@ -139,6 +140,13 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
     }
   }
   private SocialVisibilityEnum socialVisibility = null;
+
+  public QueueConversationSocialExpressionEventTopicMessageDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationSocialExpressionEventTopicMessageSticker>();
+    }
+  }
 
   
   /**
@@ -198,17 +206,17 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
   /**
    * The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
    **/
-  public QueueConversationSocialExpressionEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
+  public QueueConversationSocialExpressionEventTopicMessageDetails messageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.")
   @JsonProperty("messageSegmentCount")
-  public Integer getMessageSegmentCount() {
+  public Long getMessageSegmentCount() {
     return messageSegmentCount;
   }
-  public void setMessageSegmentCount(Integer messageSegmentCount) {
+  public void setMessageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
   }
 

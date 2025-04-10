@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
@@ -31,7 +32,7 @@ public class TrusteeBillingOverview  implements Serializable {
   private String name = null;
   private NamedEntity organization = null;
   private String currency = null;
-  private List<String> enabledProducts = new ArrayList<String>();
+  private List<String> enabledProducts = null;
 
   private static class SubscriptionTypeEnumDeserializer extends StdDeserializer<SubscriptionTypeEnum> {
     public SubscriptionTypeEnumDeserializer() {
@@ -90,13 +91,20 @@ public class TrusteeBillingOverview  implements Serializable {
   private Date rampPeriodEndDate = null;
   private Date billingPeriodStartDate = null;
   private Date billingPeriodEndDate = null;
-  private List<SubscriptionOverviewUsage> usages = new ArrayList<SubscriptionOverviewUsage>();
+  private List<SubscriptionOverviewUsage> usages = null;
   private Date contractAmendmentDate = null;
   private Date contractEffectiveDate = null;
   private Date contractEndDate = null;
   private String minimumMonthlyAmount = null;
   private Boolean inRampPeriod = null;
   private String selfUri = null;
+
+  public TrusteeBillingOverview() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      enabledProducts = new ArrayList<String>();
+      usages = new ArrayList<SubscriptionOverviewUsage>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

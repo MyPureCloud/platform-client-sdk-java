@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJobReference;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationListingBuQueryResponse;
@@ -26,6 +27,11 @@ public class BuQueryAdherenceExplanationsResponse  implements Serializable {
   private AdherenceExplanationJobReference job = null;
   private AdherenceExplanationListingBuQueryResponse result = null;
   private String downloadUrl = null;
+
+  public BuQueryAdherenceExplanationsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

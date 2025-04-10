@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -41,9 +42,15 @@ public class FaxDocument  implements Serializable {
   private Long pageCount = null;
   private String callerAddress = null;
   private String receiverAddress = null;
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<DocumentThumbnail> thumbnails = null;
   private String downloadSharingUri = null;
   private String selfUri = null;
+
+  public FaxDocument() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

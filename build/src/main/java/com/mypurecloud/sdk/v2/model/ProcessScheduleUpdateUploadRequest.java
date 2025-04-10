@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 public class ProcessScheduleUpdateUploadRequest  implements Serializable {
   
   private String uploadKey = null;
-  private List<String> teamIds = new ArrayList<String>();
-  private List<String> managementUnitIdsForAddedTeamUsers = new ArrayList<String>();
+  private List<String> teamIds = null;
+  private List<String> managementUnitIdsForAddedTeamUsers = null;
+
+  public ProcessScheduleUpdateUploadRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      teamIds = new ArrayList<String>();
+      managementUnitIdsForAddedTeamUsers = new ArrayList<String>();
+    }
+  }
 
   
   /**

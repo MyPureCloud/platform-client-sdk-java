@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobResult;
@@ -78,8 +79,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<BatchDownloadJobResult> results = new ArrayList<BatchDownloadJobResult>();
+  private List<BatchDownloadJobResult> results = null;
   private String selfUri = null;
+
+  public BatchDownloadJobStatusResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<BatchDownloadJobResult>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

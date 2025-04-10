@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CobrowseMediaParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
@@ -28,12 +29,21 @@ public class CobrowseConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<CobrowseMediaParticipant> participants = new ArrayList<CobrowseMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
-  private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
+  private List<CobrowseMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
+  private List<TransferResponse> recentTransfers = null;
   private String utilizationLabelId = null;
-  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private List<ConversationDivisionMembership> divisions = null;
   private String selfUri = null;
+
+  public CobrowseConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<CobrowseMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      recentTransfers = new ArrayList<TransferResponse>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

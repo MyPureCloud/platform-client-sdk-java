@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
@@ -207,10 +208,16 @@ public class Screenshare  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+
+  public Screenshare() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+    }
+  }
 
   
   /**

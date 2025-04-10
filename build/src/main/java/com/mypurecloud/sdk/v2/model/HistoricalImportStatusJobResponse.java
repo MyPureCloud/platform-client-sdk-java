@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatus;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class HistoricalImportStatusJobResponse  implements Serializable {
   private String id = null;
   private HistoricalImportStatus importStatusResult = null;
   private String selfUri = null;
+
+  public HistoricalImportStatusJobResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The job id for the import request")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResolutionAggregateDataContainer;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class ResolutionAggregateQueryResponse  implements Serializable {
   
-  private List<ResolutionAggregateDataContainer> results = new ArrayList<ResolutionAggregateDataContainer>();
+  private List<ResolutionAggregateDataContainer> results = null;
+
+  public ResolutionAggregateQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<ResolutionAggregateDataContainer>();
+    }
+  }
 
   
   /**

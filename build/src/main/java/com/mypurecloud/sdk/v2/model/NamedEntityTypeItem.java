@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdditionalLanguagesSynonyms;
 import io.swagger.annotations.ApiModel;
@@ -27,8 +28,14 @@ import java.io.Serializable;
 public class NamedEntityTypeItem  implements Serializable {
   
   private String value = null;
-  private List<String> synonyms = new ArrayList<String>();
+  private List<String> synonyms = null;
   private Map<String, AdditionalLanguagesSynonyms> additionalLanguages = null;
+
+  public NamedEntityTypeItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      synonyms = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FaxTopicLockData;
 import com.mypurecloud.sdk.v2.model.FaxTopicUserData;
@@ -32,9 +33,9 @@ public class FaxTopicFaxDataV2  implements Serializable {
   private FaxTopicWorkspaceData workspace = null;
   private FaxTopicUserData createdBy = null;
   private String contentType = null;
-  private Integer contentLength = null;
+  private Long contentLength = null;
   private String filename = null;
-  private Integer changeNumber = null;
+  private Long changeNumber = null;
   private Date dateUploaded = null;
   private FaxTopicUserData uploadedBy = null;
   private FaxTopicLockData lockInfo = null;
@@ -42,6 +43,11 @@ public class FaxTopicFaxDataV2  implements Serializable {
   private String callerAddress = null;
   private String receiverAddress = null;
   private Boolean read = null;
+
+  public FaxTopicFaxDataV2() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -165,17 +171,17 @@ public class FaxTopicFaxDataV2  implements Serializable {
 
   /**
    **/
-  public FaxTopicFaxDataV2 contentLength(Integer contentLength) {
+  public FaxTopicFaxDataV2 contentLength(Long contentLength) {
     this.contentLength = contentLength;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contentLength")
-  public Integer getContentLength() {
+  public Long getContentLength() {
     return contentLength;
   }
-  public void setContentLength(Integer contentLength) {
+  public void setContentLength(Long contentLength) {
     this.contentLength = contentLength;
   }
 
@@ -199,17 +205,17 @@ public class FaxTopicFaxDataV2  implements Serializable {
 
   /**
    **/
-  public FaxTopicFaxDataV2 changeNumber(Integer changeNumber) {
+  public FaxTopicFaxDataV2 changeNumber(Long changeNumber) {
     this.changeNumber = changeNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("changeNumber")
-  public Integer getChangeNumber() {
+  public Long getChangeNumber() {
     return changeNumber;
   }
-  public void setChangeNumber(Integer changeNumber) {
+  public void setChangeNumber(Long changeNumber) {
     this.changeNumber = changeNumber;
   }
 

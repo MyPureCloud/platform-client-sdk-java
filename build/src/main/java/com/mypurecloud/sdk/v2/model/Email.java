@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
@@ -139,7 +140,7 @@ public class Email  implements Serializable {
   private Boolean held = null;
   private String subject = null;
   private Integer messagesSent = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -261,13 +262,20 @@ public class Email  implements Serializable {
   private String scriptId = null;
   private String peerId = null;
   private String messageId = null;
-  private List<Attachment> draftAttachments = new ArrayList<Attachment>();
+  private List<Attachment> draftAttachments = null;
   private Boolean spam = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
   private Date parkTime = null;
+
+  public Email() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+      draftAttachments = new ArrayList<Attachment>();
+    }
+  }
 
   
   /**

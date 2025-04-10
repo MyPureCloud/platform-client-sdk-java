@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyViewResultElement;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class JourneyViewResult  implements Serializable {
   
-  private List<JourneyViewResultElement> elements = new ArrayList<JourneyViewResultElement>();
+  private List<JourneyViewResultElement> elements = null;
+
+  public JourneyViewResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      elements = new ArrayList<JourneyViewResultElement>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The elements within the journey view result")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftScheduleLookup;
 import com.mypurecloud.sdk.v2.model.InitiatingAlternativeShift;
@@ -29,7 +30,13 @@ public class AlternativeShiftSearchOffersRequest  implements Serializable {
   private AlternativeShiftScheduleLookup schedule = null;
   private LocalDate queryWeekDate = null;
   private InitiatingAlternativeShift initiatingShift = null;
-  private List<String> acceptableIntervals = new ArrayList<String>();
+  private List<String> acceptableIntervals = null;
+
+  public AlternativeShiftSearchOffersRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
 
   
   /**

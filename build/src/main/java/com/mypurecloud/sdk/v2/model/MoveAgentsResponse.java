@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.MoveAgentResponse;
@@ -28,7 +29,13 @@ public class MoveAgentsResponse  implements Serializable {
   
   private UserReference requestingUser = null;
   private ManagementUnitReference destinationManagementUnit = null;
-  private List<MoveAgentResponse> results = new ArrayList<MoveAgentResponse>();
+  private List<MoveAgentResponse> results = null;
+
+  public MoveAgentsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<MoveAgentResponse>();
+    }
+  }
 
   
   /**

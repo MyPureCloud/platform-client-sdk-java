@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationMessageArgument;
@@ -53,6 +54,7 @@ public class WorkPlanConstraintMessage  implements Serializable {
     ACTIVITYSTARTTIMEINCREMENTINMINUTES("ActivityStartTimeIncrementInMinutes"),
     PLANNINGPERIODMAXIMUMDAYSOFF("PlanningPeriodMaximumDaysOff"),
     PLANNINGPERIODMAXIMUMPAIDTIMEMINUTES("PlanningPeriodMaximumPaidTimeMinutes"),
+    PLANNINGPERIODMAXIMUMWORKINGWEEKENDS("PlanningPeriodMaximumWorkingWeekends"),
     PLANNINGPERIODMINIMUMDAYSOFF("PlanningPeriodMinimumDaysOff"),
     PLANNINGPERIODMINIMUMPAIDTIMEMINUTES("PlanningPeriodMinimumPaidTimeMinutes"),
     SHIFTDAYOFFRULE("ShiftDayOffRule"),
@@ -61,8 +63,10 @@ public class WorkPlanConstraintMessage  implements Serializable {
     SHIFTLATESTSTARTTIMEMINUTESFROMMIDNIGHT("ShiftLatestStartTimeMinutesFromMidnight"),
     SHIFTLATESTSTOPTIMEMINUTESFROMMIDNIGHT("ShiftLatestStopTimeMinutesFromMidnight"),
     SHIFTMAXIMUMCONTIGUOUSTIMEMINUTES("ShiftMaximumContiguousTimeMinutes"),
+    SHIFTMAXIMUMCOUNTPERPLANNINGPERIOD("ShiftMaximumCountPerPlanningPeriod"),
     SHIFTMAXIMUMPAIDTIMEMINUTES("ShiftMaximumPaidTimeMinutes"),
     SHIFTMINIMUMCONTIGUOUSTIMEMINUTES("ShiftMinimumContiguousTimeMinutes"),
+    SHIFTMINIMUMCOUNTPERPLANNINGPERIOD("ShiftMinimumCountPerPlanningPeriod"),
     SHIFTMINIMUMPAIDTIMEMINUTES("ShiftMinimumPaidTimeMinutes"),
     SHIFTSTARTTIMEINCREMENTINMINUTES("ShiftStartTimeIncrementInMinutes"),
     SHIFTSTARTVARIANCEMAXIMUMVARIANCEMINUTES("ShiftStartVarianceMaximumVarianceMinutes"),
@@ -105,7 +109,13 @@ public class WorkPlanConstraintMessage  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+  private List<WorkPlanValidationMessageArgument> arguments = null;
+
+  public WorkPlanConstraintMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CampaignRuleAction;
@@ -37,8 +38,8 @@ public class CampaignRule  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private CampaignRuleEntities campaignRuleEntities = null;
-  private List<CampaignRuleCondition> campaignRuleConditions = new ArrayList<CampaignRuleCondition>();
-  private List<CampaignRuleAction> campaignRuleActions = new ArrayList<CampaignRuleAction>();
+  private List<CampaignRuleCondition> campaignRuleConditions = null;
+  private List<CampaignRuleAction> campaignRuleActions = null;
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
 
@@ -88,10 +89,19 @@ public class CampaignRule  implements Serializable {
     }
   }
   private CampaignRuleProcessingEnum campaignRuleProcessing = null;
-  private List<CampaignRuleConditionGroup> conditionGroups = new ArrayList<CampaignRuleConditionGroup>();
+  private List<CampaignRuleConditionGroup> conditionGroups = null;
   private CampaignRuleExecutionSettings executionSettings = null;
-  private List<CampaignRuleWarning> warnings = new ArrayList<CampaignRuleWarning>();
+  private List<CampaignRuleWarning> warnings = null;
   private String selfUri = null;
+
+  public CampaignRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaignRuleConditions = new ArrayList<CampaignRuleCondition>();
+      campaignRuleActions = new ArrayList<CampaignRuleAction>();
+      conditionGroups = new ArrayList<CampaignRuleConditionGroup>();
+      warnings = new ArrayList<CampaignRuleWarning>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

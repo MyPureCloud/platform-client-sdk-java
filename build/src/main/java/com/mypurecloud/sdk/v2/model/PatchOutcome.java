@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchAssociatedValueField;
 import com.mypurecloud.sdk.v2.model.PatchContext;
@@ -32,6 +33,11 @@ public class PatchOutcome  implements Serializable {
   private PatchContext context = null;
   private PatchJourney journey = null;
   private PatchAssociatedValueField associatedValueField = null;
+
+  public PatchOutcome() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

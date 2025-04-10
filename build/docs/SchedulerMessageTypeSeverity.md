@@ -38,9 +38,12 @@
 | UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMINDAYSOFFFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMINCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMinCountFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEWORKDAYFROMTIMEOFF | &quot;UnableToScheduleWorkDayFromTimeOff&quot; | 
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS | &quot;UnableToScheduleMaxConsecutiveWorkingDays&quot; | 
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS | &quot;UnableToScheduleMaxConsecutiveWorkingWeekends&quot; | 
@@ -74,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentQuickReply;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class ContentQuickReplyV2  implements Serializable {
   
   private String title = null;
-  private List<ContentQuickReply> actions = new ArrayList<ContentQuickReply>();
+  private List<ContentQuickReply> actions = null;
+
+  public ContentQuickReplyV2() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actions = new ArrayList<ContentQuickReply>();
+    }
+  }
 
   
   /**

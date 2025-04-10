@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitRange;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class SetTimeOffLimitValuesRequest  implements Serializable {
   
-  private List<TimeOffLimitRange> values = new ArrayList<TimeOffLimitRange>();
+  private List<TimeOffLimitRange> values = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public SetTimeOffLimitValuesRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<TimeOffLimitRange>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.Library;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class LibraryEntityListing  implements Serializable, PagedResource<Library> {
   
-  private List<Library> entities = new ArrayList<Library>();
+  private List<Library> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public LibraryEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<Library>();
+    }
+  }
 
   
   /**

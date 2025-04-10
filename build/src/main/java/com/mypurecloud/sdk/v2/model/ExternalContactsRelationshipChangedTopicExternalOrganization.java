@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsRelationshipChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsRelationshipChangedTopicDivision;
@@ -40,16 +41,24 @@ public class ExternalContactsRelationshipChangedTopicExternalOrganization  imple
   private ExternalContactsRelationshipChangedTopicContactAddress address = null;
   private ExternalContactsRelationshipChangedTopicPhoneNumber phoneNumber = null;
   private ExternalContactsRelationshipChangedTopicPhoneNumber faxNumber = null;
-  private Integer employeeCount = null;
-  private Integer revenue = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<String> websites = new ArrayList<String>();
-  private List<ExternalContactsRelationshipChangedTopicTicker> tickers = new ArrayList<ExternalContactsRelationshipChangedTopicTicker>();
+  private Long employeeCount = null;
+  private Long revenue = null;
+  private List<String> tags = null;
+  private List<String> websites = null;
+  private List<ExternalContactsRelationshipChangedTopicTicker> tickers = null;
   private ExternalContactsRelationshipChangedTopicTwitterId twitterId = null;
   private String externalSystemUrl = null;
   private Map<String, Object> customFields = null;
   private Date createDate = null;
   private Date modifyDate = null;
+
+  public ExternalContactsRelationshipChangedTopicExternalOrganization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+      websites = new ArrayList<String>();
+      tickers = new ArrayList<ExternalContactsRelationshipChangedTopicTicker>();
+    }
+  }
 
   
   /**
@@ -207,34 +216,34 @@ public class ExternalContactsRelationshipChangedTopicExternalOrganization  imple
 
   /**
    **/
-  public ExternalContactsRelationshipChangedTopicExternalOrganization employeeCount(Integer employeeCount) {
+  public ExternalContactsRelationshipChangedTopicExternalOrganization employeeCount(Long employeeCount) {
     this.employeeCount = employeeCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("employeeCount")
-  public Integer getEmployeeCount() {
+  public Long getEmployeeCount() {
     return employeeCount;
   }
-  public void setEmployeeCount(Integer employeeCount) {
+  public void setEmployeeCount(Long employeeCount) {
     this.employeeCount = employeeCount;
   }
 
 
   /**
    **/
-  public ExternalContactsRelationshipChangedTopicExternalOrganization revenue(Integer revenue) {
+  public ExternalContactsRelationshipChangedTopicExternalOrganization revenue(Long revenue) {
     this.revenue = revenue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("revenue")
-  public Integer getRevenue() {
+  public Long getRevenue() {
     return revenue;
   }
-  public void setRevenue(Integer revenue) {
+  public void setRevenue(Long revenue) {
     this.revenue = revenue;
   }
 

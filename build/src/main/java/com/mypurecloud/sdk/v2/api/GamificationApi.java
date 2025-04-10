@@ -15,6 +15,12 @@ import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
 import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.ContestScoresAgentTrendList;
+import com.mypurecloud.sdk.v2.model.ContestScoresAgentsPagedList;
+import com.mypurecloud.sdk.v2.model.ContestScoresGroupTrendList;
+import com.mypurecloud.sdk.v2.model.ContestsCreateRequest;
+import com.mypurecloud.sdk.v2.model.ContestsFinalizeRequest;
+import com.mypurecloud.sdk.v2.model.ContestsResponse;
 import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -24,7 +30,9 @@ import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionCreateRequest;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionUpdateRequest;
+import com.mypurecloud.sdk.v2.model.GamificationContestPrizeImageUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetContestsEssentialsListing;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
@@ -44,9 +52,11 @@ import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.PrizeImages;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.UserBestPoints;
 import com.mypurecloud.sdk.v2.model.UserInsightsTrend;
 import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;
@@ -58,8 +68,17 @@ import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresTrendsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestPrizeimageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
@@ -107,8 +126,11 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsUploadsPrizeimagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
@@ -118,6 +140,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUserQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUsersMeQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -193,6 +216,81 @@ public class GamificationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteEmployeeperformanceExternalmetricsDefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteGamificationContest(String contestId) throws IOException, ApiException {
+     deleteGamificationContest(createDeleteGamificationContestRequest(contestId));
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteGamificationContestWithHttpInfo(String contestId) throws IOException {
+    return deleteGamificationContest(createDeleteGamificationContestRequest(contestId).withHttpInfo());
+  }
+
+  private DeleteGamificationContestRequest createDeleteGamificationContestRequest(String contestId) {
+    return DeleteGamificationContestRequest.builder()
+            .withContestId(contestId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteGamificationContest(DeleteGamificationContestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteGamificationContest(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -370,6 +468,718 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse getGamificationContest(String contestId) throws IOException, ApiException {
+    return  getGamificationContest(createGetGamificationContestRequest(contestId));
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> getGamificationContestWithHttpInfo(String contestId) throws IOException {
+    return getGamificationContest(createGetGamificationContestRequest(contestId).withHttpInfo());
+  }
+
+  private GetGamificationContestRequest createGetGamificationContestRequest(String contestId) {
+    return GetGamificationContestRequest.builder()
+            .withContestId(contestId)
+
+            .build();
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param request The request object
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse getGamificationContest(GetGamificationContestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> getGamificationContest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param returnsView Desired response results (optional, default to All)
+   * @return ContestScoresAgentsPagedList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentsPagedList getGamificationContestAgentsScores(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) throws IOException, ApiException {
+    return  getGamificationContestAgentsScores(createGetGamificationContestAgentsScoresRequest(contestId, pageNumber, pageSize, workday, returnsView));
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param returnsView Desired response results (optional, default to All)
+   * @return ContestScoresAgentsPagedList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentsPagedList> getGamificationContestAgentsScoresWithHttpInfo(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) throws IOException {
+    return getGamificationContestAgentsScores(createGetGamificationContestAgentsScoresRequest(contestId, pageNumber, pageSize, workday, returnsView).withHttpInfo());
+  }
+
+  private GetGamificationContestAgentsScoresRequest createGetGamificationContestAgentsScoresRequest(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) {
+    return GetGamificationContestAgentsScoresRequest.builder()
+            .withContestId(contestId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withWorkday(workday)
+
+            .withReturnsView(returnsView)
+
+            .build();
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param request The request object
+   * @return ContestScoresAgentsPagedList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentsPagedList getGamificationContestAgentsScores(GetGamificationContestAgentsScoresRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestScoresAgentsPagedList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestScoresAgentsPagedList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentsPagedList> getGamificationContestAgentsScores(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestScoresAgentsPagedList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param returnsView Desired response results (Supervisor Only) (optional, default to All)
+   * @return ContestScoresAgentsPagedList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentsPagedList getGamificationContestAgentsScoresMe(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) throws IOException, ApiException {
+    return  getGamificationContestAgentsScoresMe(createGetGamificationContestAgentsScoresMeRequest(contestId, pageNumber, pageSize, workday, returnsView));
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param returnsView Desired response results (Supervisor Only) (optional, default to All)
+   * @return ContestScoresAgentsPagedList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentsPagedList> getGamificationContestAgentsScoresMeWithHttpInfo(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) throws IOException {
+    return getGamificationContestAgentsScoresMe(createGetGamificationContestAgentsScoresMeRequest(contestId, pageNumber, pageSize, workday, returnsView).withHttpInfo());
+  }
+
+  private GetGamificationContestAgentsScoresMeRequest createGetGamificationContestAgentsScoresMeRequest(String contestId, Integer pageNumber, Integer pageSize, LocalDate workday, String returnsView) {
+    return GetGamificationContestAgentsScoresMeRequest.builder()
+            .withContestId(contestId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withWorkday(workday)
+
+            .withReturnsView(returnsView)
+
+            .build();
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param request The request object
+   * @return ContestScoresAgentsPagedList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentsPagedList getGamificationContestAgentsScoresMe(GetGamificationContestAgentsScoresMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestScoresAgentsPagedList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestScoresAgentsPagedList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentsPagedList> getGamificationContestAgentsScoresMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestScoresAgentsPagedList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestScoresGroupTrendList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(String contestId) throws IOException, ApiException {
+    return  getGamificationContestAgentsScoresTrends(createGetGamificationContestAgentsScoresTrendsRequest(contestId));
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestScoresGroupTrendList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresGroupTrendList> getGamificationContestAgentsScoresTrendsWithHttpInfo(String contestId) throws IOException {
+    return getGamificationContestAgentsScoresTrends(createGetGamificationContestAgentsScoresTrendsRequest(contestId).withHttpInfo());
+  }
+
+  private GetGamificationContestAgentsScoresTrendsRequest createGetGamificationContestAgentsScoresTrendsRequest(String contestId) {
+    return GetGamificationContestAgentsScoresTrendsRequest.builder()
+            .withContestId(contestId)
+
+            .build();
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param request The request object
+   * @return ContestScoresGroupTrendList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(GetGamificationContestAgentsScoresTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestScoresGroupTrendList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestScoresGroupTrendList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresGroupTrendList> getGamificationContestAgentsScoresTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestScoresGroupTrendList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresGroupTrendList> response = (ApiResponse<ContestScoresGroupTrendList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresGroupTrendList> response = (ApiResponse<ContestScoresGroupTrendList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestScoresAgentTrendList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(String contestId) throws IOException, ApiException {
+    return  getGamificationContestAgentsScoresTrendsMe(createGetGamificationContestAgentsScoresTrendsMeRequest(contestId));
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param contestId The ID of the contest (required)
+   * @return ContestScoresAgentTrendList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentTrendList> getGamificationContestAgentsScoresTrendsMeWithHttpInfo(String contestId) throws IOException {
+    return getGamificationContestAgentsScoresTrendsMe(createGetGamificationContestAgentsScoresTrendsMeRequest(contestId).withHttpInfo());
+  }
+
+  private GetGamificationContestAgentsScoresTrendsMeRequest createGetGamificationContestAgentsScoresTrendsMeRequest(String contestId) {
+    return GetGamificationContestAgentsScoresTrendsMeRequest.builder()
+            .withContestId(contestId)
+
+            .build();
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param request The request object
+   * @return ContestScoresAgentTrendList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(GetGamificationContestAgentsScoresTrendsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestScoresAgentTrendList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestScoresAgentTrendList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestScoresAgentTrendList> getGamificationContestAgentsScoresTrendsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestScoresAgentTrendList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentTrendList> response = (ApiResponse<ContestScoresAgentTrendList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestScoresAgentTrendList> response = (ApiResponse<ContestScoresAgentTrendList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param prizeImageId The ID of the prize image (required)
+   * @return PrizeImages
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PrizeImages getGamificationContestPrizeimage(String contestId, String prizeImageId) throws IOException, ApiException {
+    return  getGamificationContestPrizeimage(createGetGamificationContestPrizeimageRequest(contestId, prizeImageId));
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param prizeImageId The ID of the prize image (required)
+   * @return PrizeImages
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PrizeImages> getGamificationContestPrizeimageWithHttpInfo(String contestId, String prizeImageId) throws IOException {
+    return getGamificationContestPrizeimage(createGetGamificationContestPrizeimageRequest(contestId, prizeImageId).withHttpInfo());
+  }
+
+  private GetGamificationContestPrizeimageRequest createGetGamificationContestPrizeimageRequest(String contestId, String prizeImageId) {
+    return GetGamificationContestPrizeimageRequest.builder()
+            .withContestId(contestId)
+
+            .withPrizeImageId(prizeImageId)
+
+            .build();
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param request The request object
+   * @return PrizeImages
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PrizeImages getGamificationContestPrizeimage(GetGamificationContestPrizeimageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PrizeImages> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PrizeImages>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PrizeImages> getGamificationContestPrizeimage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PrizeImages>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PrizeImages> response = (ApiResponse<PrizeImages>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PrizeImages> response = (ApiResponse<PrizeImages>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param status  (optional)
+   * @param sortBy  (optional, default to dateStart)
+   * @param sortOrder  (optional, default to desc)
+   * @return GetContestsEssentialsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetContestsEssentialsListing getGamificationContests(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getGamificationContests(createGetGamificationContestsRequest(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder));
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param status  (optional)
+   * @param sortBy  (optional, default to dateStart)
+   * @param sortOrder  (optional, default to desc)
+   * @return GetContestsEssentialsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetContestsEssentialsListing> getGamificationContestsWithHttpInfo(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder) throws IOException {
+    return getGamificationContests(createGetGamificationContestsRequest(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetGamificationContestsRequest createGetGamificationContestsRequest(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder) {
+    return GetGamificationContestsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
+
+            .withStatus(status)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param request The request object
+   * @return GetContestsEssentialsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetContestsEssentialsListing getGamificationContests(GetGamificationContestsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetContestsEssentialsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetContestsEssentialsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetContestsEssentialsListing> getGamificationContests(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetContestsEssentialsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param status  (optional)
+   * @param sortBy  (optional, default to dateStart)
+   * @param sortOrder  (optional, default to desc)
+   * @param view  (optional, default to participant)
+   * @return GetContestsEssentialsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetContestsEssentialsListing getGamificationContestsMe(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder, String view) throws IOException, ApiException {
+    return  getGamificationContestsMe(createGetGamificationContestsMeRequest(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view));
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param status  (optional)
+   * @param sortBy  (optional, default to dateStart)
+   * @param sortOrder  (optional, default to desc)
+   * @param view  (optional, default to participant)
+   * @return GetContestsEssentialsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetContestsEssentialsListing> getGamificationContestsMeWithHttpInfo(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder, String view) throws IOException {
+    return getGamificationContestsMe(createGetGamificationContestsMeRequest(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view).withHttpInfo());
+  }
+
+  private GetGamificationContestsMeRequest createGetGamificationContestsMeRequest(Integer pageNumber, Integer pageSize, LocalDate dateStart, LocalDate dateEnd, List<String> status, String sortBy, String sortOrder, String view) {
+    return GetGamificationContestsMeRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
+
+            .withStatus(status)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withView(view)
+
+            .build();
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param request The request object
+   * @return GetContestsEssentialsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetContestsEssentialsListing getGamificationContestsMe(GetGamificationContestsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetContestsEssentialsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetContestsEssentialsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetContestsEssentialsListing> getGamificationContestsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetContestsEssentialsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4489,6 +5299,88 @@ public class GamificationApi {
   }
 
   /**
+   * Finalize a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param body Finalize Contest (required)
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse patchGamificationContest(String contestId, ContestsFinalizeRequest body) throws IOException, ApiException {
+    return  patchGamificationContest(createPatchGamificationContestRequest(contestId, body));
+  }
+
+  /**
+   * Finalize a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param body Finalize Contest (required)
+   * @return ContestsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> patchGamificationContestWithHttpInfo(String contestId, ContestsFinalizeRequest body) throws IOException {
+    return patchGamificationContest(createPatchGamificationContestRequest(contestId, body).withHttpInfo());
+  }
+
+  private PatchGamificationContestRequest createPatchGamificationContestRequest(String contestId, ContestsFinalizeRequest body) {
+    return PatchGamificationContestRequest.builder()
+            .withContestId(contestId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Finalize a Contest by Id
+   * 
+   * @param request The request object
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse patchGamificationContest(PatchGamificationContestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Finalize a Contest by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> patchGamificationContest(ApiRequest<ContestsFinalizeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Write External Metric Data
    * 
    * @param body The External Metric Data to be added (optional)
@@ -4640,6 +5532,162 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param body Create Contest (required)
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse postGamificationContests(ContestsCreateRequest body) throws IOException, ApiException {
+    return  postGamificationContests(createPostGamificationContestsRequest(body));
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param body Create Contest (required)
+   * @return ContestsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> postGamificationContestsWithHttpInfo(ContestsCreateRequest body) throws IOException {
+    return postGamificationContests(createPostGamificationContestsRequest(body).withHttpInfo());
+  }
+
+  private PostGamificationContestsRequest createPostGamificationContestsRequest(ContestsCreateRequest body) {
+    return PostGamificationContestsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param request The request object
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse postGamificationContests(PostGamificationContestsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> postGamificationContests(ApiRequest<ContestsCreateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGamificationContestsUploadsPrizeimages(GamificationContestPrizeImageUploadUrlRequest body) throws IOException, ApiException {
+    return  postGamificationContestsUploadsPrizeimages(createPostGamificationContestsUploadsPrizeimagesRequest(body));
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGamificationContestsUploadsPrizeimagesWithHttpInfo(GamificationContestPrizeImageUploadUrlRequest body) throws IOException {
+    return postGamificationContestsUploadsPrizeimages(createPostGamificationContestsUploadsPrizeimagesRequest(body).withHttpInfo());
+  }
+
+  private PostGamificationContestsUploadsPrizeimagesRequest createPostGamificationContestsUploadsPrizeimagesRequest(GamificationContestPrizeImageUploadUrlRequest body) {
+    return PostGamificationContestsUploadsPrizeimagesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGamificationContestsUploadsPrizeimages(PostGamificationContestsUploadsPrizeimagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGamificationContestsUploadsPrizeimages(ApiRequest<GamificationContestPrizeImageUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5370,6 +6418,88 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param body Contest (required)
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse putGamificationContest(String contestId, ContestsCreateRequest body) throws IOException, ApiException {
+    return  putGamificationContest(createPutGamificationContestRequest(contestId, body));
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param contestId The ID of the contest (required)
+   * @param body Contest (required)
+   * @return ContestsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> putGamificationContestWithHttpInfo(String contestId, ContestsCreateRequest body) throws IOException {
+    return putGamificationContest(createPutGamificationContestRequest(contestId, body).withHttpInfo());
+  }
+
+  private PutGamificationContestRequest createPutGamificationContestRequest(String contestId, ContestsCreateRequest body) {
+    return PutGamificationContestRequest.builder()
+            .withContestId(contestId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param request The request object
+   * @return ContestsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContestsResponse putGamificationContest(PutGamificationContestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContestsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContestsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContestsResponse> putGamificationContest(ApiRequest<ContestsCreateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContestsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

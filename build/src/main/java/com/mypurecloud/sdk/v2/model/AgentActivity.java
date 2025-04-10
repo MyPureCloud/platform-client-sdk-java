@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentEvaluatorActivity;
 import com.mypurecloud.sdk.v2.model.User;
@@ -36,9 +37,15 @@ public class AgentActivity  implements Serializable {
   private Float lowestEvaluationScore = null;
   private Float highestCriticalScore = null;
   private Float lowestCriticalScore = null;
-  private List<AgentEvaluatorActivity> agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
+  private List<AgentEvaluatorActivity> agentEvaluatorActivityList = null;
   private Integer numEvaluationsWithoutViewPermission = null;
   private String selfUri = null;
+
+  public AgentActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

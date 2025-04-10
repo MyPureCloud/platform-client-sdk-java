@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MetadataProperty;
 import io.swagger.annotations.ApiModel;
@@ -29,8 +30,15 @@ public class MetadataSchema  implements Serializable {
   private String title = null;
   private String description = null;
   private String type = null;
-  private List<Map<String, MetadataProperty>> properties = new ArrayList<Map<String, MetadataProperty>>();
-  private List<String> required = new ArrayList<String>();
+  private List<Map<String, MetadataProperty>> properties = null;
+  private List<String> required = null;
+
+  public MetadataSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      properties = new ArrayList<Map<String, MetadataProperty>>();
+      required = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "title for the data gathering page")

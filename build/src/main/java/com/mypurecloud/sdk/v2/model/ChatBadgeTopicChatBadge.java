@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ChatBadgeTopicBadgeEntity;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,13 @@ import java.io.Serializable;
 public class ChatBadgeTopicChatBadge  implements Serializable {
   
   private ChatBadgeTopicBadgeEntity entity = null;
-  private Integer unreadCount = null;
+  private Long unreadCount = null;
   private Date lastUnreadNotificationDate = null;
+
+  public ChatBadgeTopicChatBadge() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -47,17 +53,17 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
 
   /**
    **/
-  public ChatBadgeTopicChatBadge unreadCount(Integer unreadCount) {
+  public ChatBadgeTopicChatBadge unreadCount(Long unreadCount) {
     this.unreadCount = unreadCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("unreadCount")
-  public Integer getUnreadCount() {
+  public Long getUnreadCount() {
     return unreadCount;
   }
-  public void setUnreadCount(Integer unreadCount) {
+  public void setUnreadCount(Long unreadCount) {
     this.unreadCount = unreadCount;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 public class MediaRegions  implements Serializable {
   
   private String awsHomeRegion = null;
-  private List<String> awsCoreRegions = new ArrayList<String>();
-  private List<String> awsSatelliteRegions = new ArrayList<String>();
+  private List<String> awsCoreRegions = null;
+  private List<String> awsSatelliteRegions = null;
+
+  public MediaRegions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      awsCoreRegions = new ArrayList<String>();
+      awsSatelliteRegions = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The AWS region your organization is in.")

@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **end** | **String** | the range end date |  [optional] |
-| **numberOfOccurrences** | **Integer** | the number of occurrences to happen before ending |  [optional] |
+| **numberOfOccurrences** | **Long** | the number of occurrences to happen before ending |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
@@ -23,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

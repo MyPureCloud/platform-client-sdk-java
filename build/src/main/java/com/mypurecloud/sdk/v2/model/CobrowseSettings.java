@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PauseCriteria;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,7 @@ public class CobrowseSettings  implements Serializable {
   private Boolean allowAgentControl = null;
   private Boolean allowAgentNavigation = null;
   private Boolean allowDraw = null;
-  private List<String> maskSelectors = new ArrayList<String>();
+  private List<String> maskSelectors = null;
 
   private static class ChannelsEnumDeserializer extends StdDeserializer<ChannelsEnum> {
     public ChannelsEnumDeserializer() {
@@ -76,9 +77,18 @@ public class CobrowseSettings  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ChannelsEnum> channels = new ArrayList<ChannelsEnum>();
-  private List<String> readonlySelectors = new ArrayList<String>();
-  private List<PauseCriteria> pauseCriteria = new ArrayList<PauseCriteria>();
+  private List<ChannelsEnum> channels = null;
+  private List<String> readonlySelectors = null;
+  private List<PauseCriteria> pauseCriteria = null;
+
+  public CobrowseSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      maskSelectors = new ArrayList<String>();
+      channels = new ArrayList<ChannelsEnum>();
+      readonlySelectors = new ArrayList<String>();
+      pauseCriteria = new ArrayList<PauseCriteria>();
+    }
+  }
 
   
   /**

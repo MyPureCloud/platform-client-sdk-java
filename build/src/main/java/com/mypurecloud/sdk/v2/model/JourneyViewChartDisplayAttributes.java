@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -75,6 +76,11 @@ public class JourneyViewChartDisplayAttributes  implements Serializable {
   private String groupByTitle = null;
   private String metricsTitle = null;
   private Boolean showLegend = null;
+
+  public JourneyViewChartDisplayAttributes() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

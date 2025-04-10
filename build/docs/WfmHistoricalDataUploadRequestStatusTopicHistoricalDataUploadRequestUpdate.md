@@ -15,7 +15,7 @@
 | **active** | **Boolean** |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **fileName** | **String** |  |  [optional] |
-| **fileSize** | **Integer** |  |  [optional] |
+| **fileSize** | **Long** |  |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -44,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

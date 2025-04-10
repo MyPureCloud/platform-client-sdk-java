@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicConversationRoutingData;
@@ -282,9 +283,9 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private Map<String, String> attributes = null;
   private QueueConversationCallbackEventTopicErrorBody errorInfo = null;
   private QueueConversationCallbackEventTopicUriReference script = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationCallbackEventTopicUriReference externalContact = null;
   private String externalContactInitialDivisionId = null;
@@ -345,17 +346,24 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private Date endAcwTime = null;
   private Date resumeTime = null;
   private Date parkTime = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private QueueConversationCallbackEventTopicQueueMediaSettings queueMediaSettings = null;
   private QueueConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private QueueConversationCallbackEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
   private Boolean externalCampaign = null;
-  private Integer timeoutSeconds = null;
+  private Long timeoutSeconds = null;
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
+
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -717,17 +725,17 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   /**
    **/
-  public QueueConversationCallbackEventTopicCallbackMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -751,17 +759,17 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   /**
    **/
-  public QueueConversationCallbackEventTopicCallbackMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
@@ -1142,17 +1150,17 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   /**
    **/
-  public QueueConversationCallbackEventTopicCallbackMediaParticipant timeoutSeconds(Integer timeoutSeconds) {
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant timeoutSeconds(Long timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timeoutSeconds")
-  public Integer getTimeoutSeconds() {
+  public Long getTimeoutSeconds() {
     return timeoutSeconds;
   }
-  public void setTimeoutSeconds(Integer timeoutSeconds) {
+  public void setTimeoutSeconds(Long timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
   }
 

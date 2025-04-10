@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MinerTopic;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class MinerTopicsListing  implements Serializable {
   
-  private List<MinerTopic> entities = new ArrayList<MinerTopic>();
+  private List<MinerTopic> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
+
+  public MinerTopicsListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<MinerTopic>();
+    }
+  }
 
   
   /**

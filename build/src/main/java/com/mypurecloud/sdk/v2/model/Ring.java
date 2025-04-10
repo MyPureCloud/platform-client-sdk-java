@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Actions;
 import com.mypurecloud.sdk.v2.model.ExpansionCriterium;
@@ -26,9 +27,16 @@ import java.io.Serializable;
 
 public class Ring  implements Serializable {
   
-  private List<ExpansionCriterium> expansionCriteria = new ArrayList<ExpansionCriterium>();
+  private List<ExpansionCriterium> expansionCriteria = null;
   private Actions actions = null;
-  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
+  private List<MemberGroup> memberGroups = null;
+
+  public Ring() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      expansionCriteria = new ArrayList<ExpansionCriterium>();
+      memberGroups = new ArrayList<MemberGroup>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -117,7 +118,13 @@ public class FooterTemplate  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ApplicableResourcesEnum> applicableResources = new ArrayList<ApplicableResourcesEnum>();
+  private List<ApplicableResourcesEnum> applicableResources = null;
+
+  public FooterTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      applicableResources = new ArrayList<ApplicableResourcesEnum>();
+    }
+  }
 
   
   /**

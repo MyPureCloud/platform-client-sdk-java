@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignScheduleConfigChangeScheduleInterval;
 import com.mypurecloud.sdk.v2.model.DialerCampaignScheduleConfigChangeScheduleRecurrence;
@@ -29,8 +30,8 @@ import java.io.Serializable;
 
 public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Serializable {
   
-  private List<DialerCampaignScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerCampaignScheduleConfigChangeScheduleInterval>();
-  private List<DialerCampaignScheduleConfigChangeScheduleRecurrence> recurrences = new ArrayList<DialerCampaignScheduleConfigChangeScheduleRecurrence>();
+  private List<DialerCampaignScheduleConfigChangeScheduleInterval> intervals = null;
+  private List<DialerCampaignScheduleConfigChangeScheduleRecurrence> recurrences = null;
   private String timeZone = null;
   private DialerCampaignScheduleConfigChangeUriReference campaign = null;
   private Map<String, Object> additionalProperties = null;
@@ -38,7 +39,14 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerCampaignScheduleConfigChangeCampaignSchedule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intervals = new ArrayList<DialerCampaignScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<DialerCampaignScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
 
   
   /**
@@ -204,17 +212,17 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerCampaignScheduleConfigChangeCampaignSchedule version(Integer version) {
+  public DialerCampaignScheduleConfigChangeCampaignSchedule version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

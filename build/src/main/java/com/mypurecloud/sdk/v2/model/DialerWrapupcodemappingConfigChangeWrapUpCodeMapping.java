@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,7 +31,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
 
   private static class DefaultSetEnumDeserializer extends StdDeserializer<DefaultSetEnum> {
     public DefaultSetEnumDeserializer() {
@@ -78,8 +79,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
       return String.valueOf(value);
     }
   }
-  private List<DefaultSetEnum> defaultSet = new ArrayList<DefaultSetEnum>();
+  private List<DefaultSetEnum> defaultSet = null;
   private Map<String, List<String>> mapping = null;
+
+  public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      defaultSet = new ArrayList<DefaultSetEnum>();
+    }
+  }
 
   
   /**
@@ -157,17 +164,17 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping version(Integer version) {
+  public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

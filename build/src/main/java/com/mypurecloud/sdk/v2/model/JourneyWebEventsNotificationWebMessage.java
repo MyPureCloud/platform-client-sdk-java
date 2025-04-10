@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationBrowser;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationCustomEventAttribute;
@@ -32,8 +33,8 @@ import java.io.Serializable;
 public class JourneyWebEventsNotificationWebMessage  implements Serializable {
   
   private String eventName = null;
-  private Integer totalEventCount = null;
-  private Integer totalPageviewCount = null;
+  private Long totalEventCount = null;
+  private Long totalPageviewCount = null;
   private String userAgentString = null;
   private String ipAddress = null;
   private String ipOrganization = null;
@@ -47,6 +48,11 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
   private JourneyWebEventsNotificationReferrer referrer = null;
   private Map<String, JourneyWebEventsNotificationCustomEventAttribute> attributes = null;
   private Map<String, JourneyWebEventsNotificationCustomEventAttribute> traits = null;
+
+  public JourneyWebEventsNotificationWebMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -68,34 +74,34 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
 
   /**
    **/
-  public JourneyWebEventsNotificationWebMessage totalEventCount(Integer totalEventCount) {
+  public JourneyWebEventsNotificationWebMessage totalEventCount(Long totalEventCount) {
     this.totalEventCount = totalEventCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("totalEventCount")
-  public Integer getTotalEventCount() {
+  public Long getTotalEventCount() {
     return totalEventCount;
   }
-  public void setTotalEventCount(Integer totalEventCount) {
+  public void setTotalEventCount(Long totalEventCount) {
     this.totalEventCount = totalEventCount;
   }
 
 
   /**
    **/
-  public JourneyWebEventsNotificationWebMessage totalPageviewCount(Integer totalPageviewCount) {
+  public JourneyWebEventsNotificationWebMessage totalPageviewCount(Long totalPageviewCount) {
     this.totalPageviewCount = totalPageviewCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("totalPageviewCount")
-  public Integer getTotalPageviewCount() {
+  public Long getTotalPageviewCount() {
     return totalPageviewCount;
   }
-  public void setTotalPageviewCount(Integer totalPageviewCount) {
+  public void setTotalPageviewCount(Long totalPageviewCount) {
     this.totalPageviewCount = totalPageviewCount;
   }
 

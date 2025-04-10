@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActivityCodeSummary;
@@ -364,12 +365,19 @@ public class UserScheduleAdherence  implements Serializable {
   private RealTimeAdherenceExplanation adherenceExplanation = null;
   private Date timeOfAdherenceChange = null;
   private Date presenceUpdateTime = null;
-  private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
+  private List<QueueReference> activeQueues = null;
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
-  private List<UserNextActivityReminder> nextActivityReminders = new ArrayList<UserNextActivityReminder>();
+  private List<UserNextActivityReminder> nextActivityReminders = null;
   private Boolean suppressOnTimeReminder = null;
   private String selfUri = null;
+
+  public UserScheduleAdherence() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activeQueues = new ArrayList<QueueReference>();
+      nextActivityReminders = new ArrayList<UserNextActivityReminder>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

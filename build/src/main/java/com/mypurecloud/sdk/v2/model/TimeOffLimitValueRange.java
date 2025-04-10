@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitReference;
@@ -76,11 +77,20 @@ public class TimeOffLimitValueRange  implements Serializable {
     }
   }
   private GranularityEnum granularity = null;
-  private List<Integer> limitMinutesPerInterval = new ArrayList<Integer>();
-  private List<Integer> allocatedMinutesPerInterval = new ArrayList<Integer>();
-  private List<Integer> waitlistedMinutesPerInterval = new ArrayList<Integer>();
-  private List<Integer> waitlistedRequestsPerInterval = new ArrayList<Integer>();
+  private List<Integer> limitMinutesPerInterval = null;
+  private List<Integer> allocatedMinutesPerInterval = null;
+  private List<Integer> waitlistedMinutesPerInterval = null;
+  private List<Integer> waitlistedRequestsPerInterval = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public TimeOffLimitValueRange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      limitMinutesPerInterval = new ArrayList<Integer>();
+      allocatedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedMinutesPerInterval = new ArrayList<Integer>();
+      waitlistedRequestsPerInterval = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

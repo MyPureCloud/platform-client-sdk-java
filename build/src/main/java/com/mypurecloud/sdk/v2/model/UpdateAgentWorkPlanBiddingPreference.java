@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceRequest;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class UpdateAgentWorkPlanBiddingPreference  implements Serializable {
   
   private Boolean submitted = null;
-  private List<AgentWorkPlanBiddingPreferenceRequest> agentWorkPlanBidPreferences = new ArrayList<AgentWorkPlanBiddingPreferenceRequest>();
+  private List<AgentWorkPlanBiddingPreferenceRequest> agentWorkPlanBidPreferences = null;
+
+  public UpdateAgentWorkPlanBiddingPreference() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentWorkPlanBidPreferences = new ArrayList<AgentWorkPlanBiddingPreferenceRequest>();
+    }
+  }
 
   
   /**

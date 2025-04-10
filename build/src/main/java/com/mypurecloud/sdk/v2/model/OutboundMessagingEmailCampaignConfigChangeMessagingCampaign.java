@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeContactSort;
@@ -84,22 +85,32 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
   private CampaignStatusEnum campaignStatus = null;
   private OutboundMessagingEmailCampaignConfigChangeUriReference callableTimeSet = null;
   private OutboundMessagingEmailCampaignConfigChangeUriReference contactList = null;
-  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> dncLists = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
-  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> contactListFilters = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> dncLists = null;
+  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> contactListFilters = null;
   private Boolean alwaysRunning = null;
-  private List<OutboundMessagingEmailCampaignConfigChangeContactSort> contactSorts = new ArrayList<OutboundMessagingEmailCampaignConfigChangeContactSort>();
-  private Integer messagesPerMinute = null;
-  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> ruleSets = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+  private List<OutboundMessagingEmailCampaignConfigChangeContactSort> contactSorts = null;
+  private Long messagesPerMinute = null;
+  private List<OutboundMessagingEmailCampaignConfigChangeUriReference> ruleSets = null;
   private OutboundMessagingEmailCampaignConfigChangeSmsConfig smsConfig = null;
   private OutboundMessagingEmailCampaignConfigChangeEmailConfig emailConfig = null;
   private OutboundMessagingEmailCampaignConfigChangeWhatsAppConfig whatsAppConfig = null;
-  private List<OutboundMessagingEmailCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingEmailCampaignConfigChangeErrorDetail>();
+  private List<OutboundMessagingEmailCampaignConfigChangeErrorDetail> errors = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
   private OutboundMessagingEmailCampaignConfigChangeUriReference division = null;
+
+  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncLists = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      contactListFilters = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<OutboundMessagingEmailCampaignConfigChangeContactSort>();
+      ruleSets = new ArrayList<OutboundMessagingEmailCampaignConfigChangeUriReference>();
+      errors = new ArrayList<OutboundMessagingEmailCampaignConfigChangeErrorDetail>();
+    }
+  }
 
   
   /**
@@ -229,17 +240,17 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
   /**
    * How many messages this messaging campaign will send per minute.
    **/
-  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign messagesPerMinute(Integer messagesPerMinute) {
+  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign messagesPerMinute(Long messagesPerMinute) {
     this.messagesPerMinute = messagesPerMinute;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "How many messages this messaging campaign will send per minute.")
   @JsonProperty("messagesPerMinute")
-  public Integer getMessagesPerMinute() {
+  public Long getMessagesPerMinute() {
     return messagesPerMinute;
   }
-  public void setMessagesPerMinute(Integer messagesPerMinute) {
+  public void setMessagesPerMinute(Long messagesPerMinute) {
     this.messagesPerMinute = messagesPerMinute;
   }
 
@@ -405,17 +416,17 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign version(Integer version) {
+  public OutboundMessagingEmailCampaignConfigChangeMessagingCampaign version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

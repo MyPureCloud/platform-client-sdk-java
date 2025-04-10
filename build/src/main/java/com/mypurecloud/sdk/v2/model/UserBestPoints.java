@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserBestPointsItem;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class UserBestPoints  implements Serializable {
   
   private UserReference user = null;
-  private List<UserBestPointsItem> bestPoints = new ArrayList<UserBestPointsItem>();
+  private List<UserBestPointsItem> bestPoints = null;
+
+  public UserBestPoints() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      bestPoints = new ArrayList<UserBestPointsItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The requested user for the best points")

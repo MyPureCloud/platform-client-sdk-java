@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerOutboundSettingsConfigChangeCallableWindow;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings  implements Serializable {
   
-  private List<DialerOutboundSettingsConfigChangeCallableWindow> callableWindows = new ArrayList<DialerOutboundSettingsConfigChangeCallableWindow>();
+  private List<DialerOutboundSettingsConfigChangeCallableWindow> callableWindows = null;
+
+  public DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callableWindows = new ArrayList<DialerOutboundSettingsConfigChangeCallableWindow>();
+    }
+  }
 
   
   /**

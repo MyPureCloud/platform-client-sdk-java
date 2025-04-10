@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentActivityChangedTopicOutOfOffice;
 import com.mypurecloud.sdk.v2.model.AgentActivityChangedTopicPresence;
@@ -31,8 +32,14 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
   private AgentActivityChangedTopicRoutingStatus routingStatus = null;
   private AgentActivityChangedTopicPresence presence = null;
   private AgentActivityChangedTopicOutOfOffice outOfOffice = null;
-  private List<String> activeQueueIds = new ArrayList<String>();
+  private List<String> activeQueueIds = null;
   private Date dateActiveQueuesChanged = null;
+
+  public AgentActivityChangedTopicAgentActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activeQueueIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

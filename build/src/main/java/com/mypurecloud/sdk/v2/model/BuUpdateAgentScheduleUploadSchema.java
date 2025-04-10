@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuFullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.BuUpdateAgentScheduleShift;
@@ -31,10 +32,17 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
   private String userId = null;
   private ValueWrapperString workPlanId = null;
   private ListWrapperString workPlanIdsPerWeek = null;
-  private List<BuUpdateAgentScheduleShift> shifts = new ArrayList<BuUpdateAgentScheduleShift>();
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+  private List<BuUpdateAgentScheduleShift> shifts = null;
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
   private WfmVersionedEntityMetadata metadata = null;
   private Boolean delete = null;
+
+  public BuUpdateAgentScheduleUploadSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shifts = new ArrayList<BuUpdateAgentScheduleShift>();
+      fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+    }
+  }
 
   
   /**

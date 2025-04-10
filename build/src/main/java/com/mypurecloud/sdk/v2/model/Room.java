@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -84,10 +85,17 @@ public class Room  implements Serializable {
   private String description = null;
   private String subject = null;
   private Integer participantLimit = null;
-  private List<UserReference> owners = new ArrayList<UserReference>();
-  private List<AddressableEntityRef> pinnedMessages = new ArrayList<AddressableEntityRef>();
+  private List<UserReference> owners = null;
+  private List<AddressableEntityRef> pinnedMessages = null;
   private String jid = null;
   private String selfUri = null;
+
+  public Room() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      owners = new ArrayList<UserReference>();
+      pinnedMessages = new ArrayList<AddressableEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The jid of the room if adhoc, the id of the group for group rooms")

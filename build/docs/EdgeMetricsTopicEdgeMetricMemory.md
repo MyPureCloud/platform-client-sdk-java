@@ -6,10 +6,10 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | **String** |  |  [optional] |
-| **availableBytes** | **Integer** |  |  [optional] |
-| **totalBytes** | **Integer** |  |  [optional] |
+| **availableBytes** | **Long** |  |  [optional] |
+| **totalBytes** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class ContactsBulkOperationJobListing  implements Serializable {
   
   private Long total = null;
-  private List<ContactsBulkOperationJob> entities = new ArrayList<ContactsBulkOperationJob>();
+  private List<ContactsBulkOperationJob> entities = null;
   private String selfUri = null;
+
+  public ContactsBulkOperationJobListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ContactsBulkOperationJob>();
+    }
+  }
 
   
   /**

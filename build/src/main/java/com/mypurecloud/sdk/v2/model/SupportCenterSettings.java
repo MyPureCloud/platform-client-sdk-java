@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -34,7 +35,7 @@ public class SupportCenterSettings  implements Serializable {
   
   private Boolean enabled = null;
   private AddressableEntityRef knowledgeBase = null;
-  private List<SupportCenterCustomMessage> customMessages = new ArrayList<SupportCenterCustomMessage>();
+  private List<SupportCenterCustomMessage> customMessages = null;
 
   private static class RouterTypeEnumDeserializer extends StdDeserializer<RouterTypeEnum> {
     public RouterTypeEnumDeserializer() {
@@ -83,11 +84,19 @@ public class SupportCenterSettings  implements Serializable {
     }
   }
   private RouterTypeEnum routerType = null;
-  private List<SupportCenterScreen> screens = new ArrayList<SupportCenterScreen>();
-  private List<SupportCenterCategory> enabledCategories = new ArrayList<SupportCenterCategory>();
+  private List<SupportCenterScreen> screens = null;
+  private List<SupportCenterCategory> enabledCategories = null;
   private SupportCenterLabelFilter labelFilter = null;
   private SupportCenterStyleSetting styleSetting = null;
   private SupportCenterFeedbackSettings feedback = null;
+
+  public SupportCenterSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      customMessages = new ArrayList<SupportCenterCustomMessage>();
+      screens = new ArrayList<SupportCenterScreen>();
+      enabledCategories = new ArrayList<SupportCenterCategory>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactColumnToDataActionFieldMapping;
@@ -186,10 +187,16 @@ public class DialerAction  implements Serializable {
   private UpdateOptionEnum updateOption = null;
   private Map<String, String> properties = null;
   private DomainEntityRef dataAction = null;
-  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;
+
+  public DialerAction() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+    }
+  }
 
   
   /**

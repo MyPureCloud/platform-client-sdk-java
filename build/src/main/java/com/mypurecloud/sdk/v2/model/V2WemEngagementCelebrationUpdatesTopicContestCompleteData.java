@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2WemEngagementCelebrationUpdatesTopicContestMetrics;
@@ -78,9 +79,17 @@ public class V2WemEngagementCelebrationUpdatesTopicContestCompleteData  implemen
     }
   }
   private AnonymizationEnum anonymization = null;
-  private List<V2WemEngagementCelebrationUpdatesTopicContestMetrics> metrics = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestMetrics>();
-  private List<V2WemEngagementCelebrationUpdatesTopicContestPrizes> prizes = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestPrizes>();
-  private List<V2WemEngagementCelebrationUpdatesTopicContestWinners> winners = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinners>();
+  private List<V2WemEngagementCelebrationUpdatesTopicContestMetrics> metrics = null;
+  private List<V2WemEngagementCelebrationUpdatesTopicContestPrizes> prizes = null;
+  private List<V2WemEngagementCelebrationUpdatesTopicContestWinners> winners = null;
+
+  public V2WemEngagementCelebrationUpdatesTopicContestCompleteData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestMetrics>();
+      prizes = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestPrizes>();
+      winners = new ArrayList<V2WemEngagementCelebrationUpdatesTopicContestWinners>();
+    }
+  }
 
   
   /**

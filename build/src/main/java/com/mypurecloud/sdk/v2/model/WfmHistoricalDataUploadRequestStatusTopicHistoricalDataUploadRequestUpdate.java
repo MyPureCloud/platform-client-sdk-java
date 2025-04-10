@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -133,7 +134,12 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
   }
   private TypeEnum type = null;
   private String fileName = null;
-  private Integer fileSize = null;
+  private Long fileSize = null;
+
+  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -308,17 +314,17 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
 
   /**
    **/
-  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate fileSize(Integer fileSize) {
+  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate fileSize(Long fileSize) {
     this.fileSize = fileSize;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("fileSize")
-  public Integer getFileSize() {
+  public Long getFileSize() {
     return fileSize;
   }
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(Long fileSize) {
     this.fileSize = fileSize;
   }
 

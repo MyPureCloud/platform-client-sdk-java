@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicAdherenceExplanationNotification;
@@ -87,8 +88,14 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   private WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation = null;
   private WfmUserNotificationTopicAlternativeShiftNotification alternativeShift = null;
   private Boolean agentNotification = null;
-  private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
+  private List<String> otherNotificationIdsInGroup = null;
   private Boolean markedAsRead = null;
+
+  public WfmUserNotificationTopicWfmUserNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      otherNotificationIdsInGroup = new ArrayList<String>();
+    }
+  }
 
   
   /**

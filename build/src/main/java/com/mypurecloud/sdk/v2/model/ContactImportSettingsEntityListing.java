@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactImportSettings;
 import com.mypurecloud.sdk.v2.model.Cursors;
@@ -25,11 +26,17 @@ import java.io.Serializable;
 
 public class ContactImportSettingsEntityListing  implements Serializable {
   
-  private List<ContactImportSettings> entities = new ArrayList<ContactImportSettings>();
+  private List<ContactImportSettings> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
   private Cursors cursors = null;
+
+  public ContactImportSettingsEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ContactImportSettings>();
+    }
+  }
 
   
   /**

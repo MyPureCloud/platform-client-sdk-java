@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RequestConfig;
 import com.mypurecloud.sdk.v2.model.ResponseConfig;
@@ -27,6 +28,11 @@ public class ActionConfig  implements Serializable {
   private Integer timeoutSeconds = null;
   private RequestConfig _request = null;
   private ResponseConfig response = null;
+
+  public ActionConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

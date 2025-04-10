@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults;
@@ -79,10 +80,16 @@ public class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuFo
   }
   private StateEnum state = null;
   private WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference forecast = null;
-  private Integer weekCount = null;
-  private Integer intervalLengthMinutes = null;
+  private Long weekCount = null;
+  private Long intervalLengthMinutes = null;
   private Date referenceStartDate = null;
-  private List<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults> results = new ArrayList<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults>();
+  private List<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults> results = null;
+
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults>();
+    }
+  }
 
   
   /**
@@ -138,34 +145,34 @@ public class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuFo
 
   /**
    **/
-  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification weekCount(Integer weekCount) {
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification weekCount(Long weekCount) {
     this.weekCount = weekCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weekCount")
-  public Integer getWeekCount() {
+  public Long getWeekCount() {
     return weekCount;
   }
-  public void setWeekCount(Integer weekCount) {
+  public void setWeekCount(Long weekCount) {
     this.weekCount = weekCount;
   }
 
 
   /**
    **/
-  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification intervalLengthMinutes(Integer intervalLengthMinutes) {
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification intervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("intervalLengthMinutes")
-  public Integer getIntervalLengthMinutes() {
+  public Long getIntervalLengthMinutes() {
     return intervalLengthMinutes;
   }
-  public void setIntervalLengthMinutes(Integer intervalLengthMinutes) {
+  public void setIntervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 

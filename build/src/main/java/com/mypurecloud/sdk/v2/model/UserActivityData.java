@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserActivityEntityData;
 import com.mypurecloud.sdk.v2.model.UserActivityMetricValue;
@@ -28,9 +29,16 @@ import java.io.Serializable;
 public class UserActivityData  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<UserActivityMetricValue> data = new ArrayList<UserActivityMetricValue>();
+  private List<UserActivityMetricValue> data = null;
   private Boolean truncated = null;
-  private List<UserActivityEntityData> entities = new ArrayList<UserActivityEntityData>();
+  private List<UserActivityEntityData> entities = null;
+
+  public UserActivityData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      data = new ArrayList<UserActivityMetricValue>();
+      entities = new ArrayList<UserActivityEntityData>();
+    }
+  }
 
   
   /**

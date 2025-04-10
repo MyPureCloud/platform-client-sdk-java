@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchBuReschedulingOptionsManagementUnitRequest;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class PatchBuReschedulingOptionsRequest  implements Serializable {
   
-  private List<PatchBuReschedulingOptionsManagementUnitRequest> managementUnits = new ArrayList<PatchBuReschedulingOptionsManagementUnitRequest>();
+  private List<PatchBuReschedulingOptionsManagementUnitRequest> managementUnits = null;
+
+  public PatchBuReschedulingOptionsRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<PatchBuReschedulingOptionsManagementUnitRequest>();
+    }
+  }
 
   
   /**

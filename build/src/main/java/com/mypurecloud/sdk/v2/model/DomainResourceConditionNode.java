@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainResourceConditionValue;
@@ -78,7 +79,7 @@ public class DomainResourceConditionNode  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<DomainResourceConditionValue> operands = new ArrayList<DomainResourceConditionValue>();
+  private List<DomainResourceConditionValue> operands = null;
 
   private static class ConjunctionEnumDeserializer extends StdDeserializer<ConjunctionEnum> {
     public ConjunctionEnumDeserializer() {
@@ -127,7 +128,14 @@ public class DomainResourceConditionNode  implements Serializable {
     }
   }
   private ConjunctionEnum conjunction = null;
-  private List<DomainResourceConditionNode> terms = new ArrayList<DomainResourceConditionNode>();
+  private List<DomainResourceConditionNode> terms = null;
+
+  public DomainResourceConditionNode() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      operands = new ArrayList<DomainResourceConditionValue>();
+      terms = new ArrayList<DomainResourceConditionNode>();
+    }
+  }
 
   
   /**

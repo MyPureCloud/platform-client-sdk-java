@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserDetailQueryClause;
@@ -74,8 +75,15 @@ public class UserDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserDetailQueryClause> clauses = new ArrayList<UserDetailQueryClause>();
-  private List<UserDetailQueryPredicate> predicates = new ArrayList<UserDetailQueryPredicate>();
+  private List<UserDetailQueryClause> clauses = null;
+  private List<UserDetailQueryPredicate> predicates = null;
+
+  public UserDetailQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<UserDetailQueryClause>();
+      predicates = new ArrayList<UserDetailQueryPredicate>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateQueryRequestClause;
@@ -73,7 +74,13 @@ public class DevelopmentActivityAggregateQueryRequestFilter  implements Serializ
     }
   }
   private TypeEnum type = null;
-  private List<DevelopmentActivityAggregateQueryRequestClause> clauses = new ArrayList<DevelopmentActivityAggregateQueryRequestClause>();
+  private List<DevelopmentActivityAggregateQueryRequestClause> clauses = null;
+
+  public DevelopmentActivityAggregateQueryRequestFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<DevelopmentActivityAggregateQueryRequestClause>();
+    }
+  }
 
   
   /**

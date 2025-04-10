@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SiteConnection;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,14 @@ public class SiteConnections  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<SiteConnection> siteConnections = new ArrayList<SiteConnection>();
+  private List<SiteConnection> siteConnections = null;
   private String selfUri = null;
+
+  public SiteConnections() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      siteConnections = new ArrayList<SiteConnection>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

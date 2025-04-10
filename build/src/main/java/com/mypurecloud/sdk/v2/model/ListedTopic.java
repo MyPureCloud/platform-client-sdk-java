@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -83,7 +84,7 @@ public class ListedTopic  implements Serializable {
   }
   private StrictnessEnum strictness = null;
   private Integer programsCount = null;
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {
@@ -138,6 +139,12 @@ public class ListedTopic  implements Serializable {
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public ListedTopic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

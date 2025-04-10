@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DocumentBodyResponse;
@@ -31,10 +32,16 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef documentVersion = null;
-  private List<KnowledgeGuestDocumentVariationContext> contexts = new ArrayList<KnowledgeGuestDocumentVariationContext>();
+  private List<KnowledgeGuestDocumentVariationContext> contexts = null;
   private AddressableEntityRef document = null;
   private DocumentBodyResponse body = null;
   private String selfUri = null;
+
+  public KnowledgeGuestDocumentVariation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contexts = new ArrayList<KnowledgeGuestDocumentVariationContext>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the variation.")

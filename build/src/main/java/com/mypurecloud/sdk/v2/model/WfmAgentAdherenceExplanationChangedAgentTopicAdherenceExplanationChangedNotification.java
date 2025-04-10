@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit;
@@ -127,10 +128,15 @@ public class WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationCh
   }
   private StatusEnum status = null;
   private Date startDate = null;
-  private Integer lengthMinutes = null;
+  private Long lengthMinutes = null;
   private String notes = null;
   private WfmAgentAdherenceExplanationChangedAgentTopicUserReference reviewedBy = null;
   private Date reviewedDate = null;
+
+  public WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -254,17 +260,17 @@ public class WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationCh
 
   /**
    **/
-  public WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification lengthMinutes(Integer lengthMinutes) {
+  public WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification lengthMinutes(Long lengthMinutes) {
     this.lengthMinutes = lengthMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lengthMinutes")
-  public Integer getLengthMinutes() {
+  public Long getLengthMinutes() {
     return lengthMinutes;
   }
-  public void setLengthMinutes(Integer lengthMinutes) {
+  public void setLengthMinutes(Long lengthMinutes) {
     this.lengthMinutes = lengthMinutes;
   }
 

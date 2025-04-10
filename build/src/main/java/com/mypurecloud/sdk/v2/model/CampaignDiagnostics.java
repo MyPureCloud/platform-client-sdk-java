@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableContactsDiagnostic;
 import com.mypurecloud.sdk.v2.model.CampaignSkillStatistics;
@@ -29,12 +30,18 @@ public class CampaignDiagnostics  implements Serializable {
   
   private CallableContactsDiagnostic callableContacts = null;
   private QueueUtilizationDiagnostic queueUtilizationDiagnostic = null;
-  private List<RuleSetDiagnostic> ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
+  private List<RuleSetDiagnostic> ruleSetDiagnostics = null;
   private Integer outstandingInteractionsCount = null;
   private Integer scheduledInteractionsCount = null;
   private Integer timeZoneRescheduledCallsCount = null;
   private Integer filteredOutContactsCount = null;
   private CampaignSkillStatistics campaignSkillStatistics = null;
+
+  public CampaignDiagnostics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Campaign properties that can impact which contacts are callable")

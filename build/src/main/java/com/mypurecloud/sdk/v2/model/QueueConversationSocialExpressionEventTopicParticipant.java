@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicCall;
@@ -57,16 +58,16 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private Boolean wrapupRequired = null;
   private Boolean wrapupExpected = null;
   private String wrapupPrompt = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private QueueConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private String bargedParticipantId = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -121,17 +122,33 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationSocialExpressionEventTopicCall> calls = new ArrayList<QueueConversationSocialExpressionEventTopicCall>();
-  private List<QueueConversationSocialExpressionEventTopicCallback> callbacks = new ArrayList<QueueConversationSocialExpressionEventTopicCallback>();
-  private List<QueueConversationSocialExpressionEventTopicChat> chats = new ArrayList<QueueConversationSocialExpressionEventTopicChat>();
-  private List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationSocialExpressionEventTopicCobrowse>();
-  private List<QueueConversationSocialExpressionEventTopicEmail> emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
-  private List<QueueConversationSocialExpressionEventTopicMessage> messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
-  private List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
-  private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
-  private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
-  private List<QueueConversationSocialExpressionEventTopicVideo> videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
+  private List<QueueConversationSocialExpressionEventTopicCall> calls = null;
+  private List<QueueConversationSocialExpressionEventTopicCallback> callbacks = null;
+  private List<QueueConversationSocialExpressionEventTopicChat> chats = null;
+  private List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions = null;
+  private List<QueueConversationSocialExpressionEventTopicEmail> emails = null;
+  private List<QueueConversationSocialExpressionEventTopicMessage> messages = null;
+  private List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages = null;
+  private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = null;
+  private List<QueueConversationSocialExpressionEventTopicVideo> videos = null;
   private QueueConversationSocialExpressionEventTopicWorkflow workflow = null;
+
+  public QueueConversationSocialExpressionEventTopicParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<QueueConversationSocialExpressionEventTopicCall>();
+      callbacks = new ArrayList<QueueConversationSocialExpressionEventTopicCallback>();
+      chats = new ArrayList<QueueConversationSocialExpressionEventTopicChat>();
+      cobrowsesessions = new ArrayList<QueueConversationSocialExpressionEventTopicCobrowse>();
+      emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
+      messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
+      internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
+      screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
+      socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
+      videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
+    }
+  }
 
   
   /**
@@ -443,17 +460,17 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   /**
    * Specifies how long a timed ACW session will last.
    **/
-  public QueueConversationSocialExpressionEventTopicParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationSocialExpressionEventTopicParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long a timed ACW session will last.")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -531,17 +548,17 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
-  public QueueConversationSocialExpressionEventTopicParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationSocialExpressionEventTopicParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

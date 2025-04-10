@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingInterval;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
@@ -30,13 +31,20 @@ public class CreatePerformanceProfile  implements Serializable {
   private String name = null;
   private WritableDivision division = null;
   private String description = null;
-  private List<String> metricOrders = new ArrayList<String>();
+  private List<String> metricOrders = null;
   private Date dateCreated = null;
-  private List<ReportingInterval> reportingIntervals = new ArrayList<ReportingInterval>();
+  private List<ReportingInterval> reportingIntervals = null;
   private Boolean active = null;
   private Integer memberCount = null;
   private Integer maxLeaderboardRankSize = null;
   private String selfUri = null;
+
+  public CreatePerformanceProfile() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metricOrders = new ArrayList<String>();
+      reportingIntervals = new ArrayList<ReportingInterval>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseReference;
@@ -76,7 +77,13 @@ public class KnowledgeSuggestionConfig  implements Serializable {
   }
   private VendorNameEnum vendorName = null;
   private KnowledgeBaseReference knowledgeBase = null;
-  private List<KnowledgeBaseWithDialectReference> knowledgeBases = new ArrayList<KnowledgeBaseWithDialectReference>();
+  private List<KnowledgeBaseWithDialectReference> knowledgeBases = null;
+
+  public KnowledgeSuggestionConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      knowledgeBases = new ArrayList<KnowledgeBaseWithDialectReference>();
+    }
+  }
 
   
   /**

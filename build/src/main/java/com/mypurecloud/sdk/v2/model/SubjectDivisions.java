@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 
 public class SubjectDivisions  implements Serializable {
   
-  private List<String> subjectIds = new ArrayList<String>();
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> subjectIds = null;
+  private List<String> divisionIds = null;
+
+  public SubjectDivisions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      subjectIds = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

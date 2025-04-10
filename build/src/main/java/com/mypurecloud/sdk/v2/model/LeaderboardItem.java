@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class LeaderboardItem  implements Serializable {
   private UserReference user = null;
   private Integer rank = null;
   private Long points = null;
+
+  public LeaderboardItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The user object for this leaderboard rank")

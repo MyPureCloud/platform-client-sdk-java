@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AuthorizationPolicy;
 import com.mypurecloud.sdk.v2.model.AuthorizationPolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthorizationSettings;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionCursorListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;

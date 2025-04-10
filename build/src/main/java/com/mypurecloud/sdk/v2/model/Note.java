@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
@@ -83,8 +84,14 @@ public class Note  implements Serializable {
   private Date modifyDate = null;
   private Date createDate = null;
   private User createdBy = null;
-  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+  private List<ExternalDataSource> externalDataSources = null;
   private String selfUri = null;
+
+  public Note() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      externalDataSources = new ArrayList<ExternalDataSource>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

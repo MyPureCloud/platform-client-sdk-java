@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactsExportFieldFilter;
 import com.mypurecloud.sdk.v2.model.ContactsExportFieldListFilter;
@@ -27,9 +28,16 @@ public class ContactsExportFilter  implements Serializable {
   
   private ContactsExportFieldFilter eq = null;
   private ContactsExportFieldListFilter in = null;
-  private List<ContactsExportFilter> and = new ArrayList<ContactsExportFilter>();
-  private List<ContactsExportFilter> or = new ArrayList<ContactsExportFilter>();
+  private List<ContactsExportFilter> and = null;
+  private List<ContactsExportFilter> or = null;
   private ContactsExportFilter not = null;
+
+  public ContactsExportFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      and = new ArrayList<ContactsExportFilter>();
+      or = new ArrayList<ContactsExportFilter>();
+    }
+  }
 
   
   /**

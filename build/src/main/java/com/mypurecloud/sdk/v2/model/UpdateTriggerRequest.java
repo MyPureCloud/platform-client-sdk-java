@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MatchCriteria;
 import com.mypurecloud.sdk.v2.model.TriggerTarget;
@@ -28,12 +29,18 @@ public class UpdateTriggerRequest  implements Serializable {
   private Long version = null;
   private Boolean enabled = null;
   private TriggerTarget target = null;
-  private List<MatchCriteria> matchCriteria = new ArrayList<MatchCriteria>();
+  private List<MatchCriteria> matchCriteria = null;
   private String name = null;
   private String topicName = null;
   private Integer eventTTLSeconds = null;
   private Integer delayBySeconds = null;
   private String description = null;
+
+  public UpdateTriggerRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      matchCriteria = new ArrayList<MatchCriteria>();
+    }
+  }
 
   
   /**

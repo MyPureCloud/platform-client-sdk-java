@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CoachingSlot;
 import com.mypurecloud.sdk.v2.model.UserAvailableTimes;
@@ -26,10 +27,19 @@ import java.io.Serializable;
 
 public class CoachingSlotsResponse  implements Serializable {
   
-  private List<CoachingSlot> suggestedSlots = new ArrayList<CoachingSlot>();
-  private List<UserAvailableTimes> attendeeSchedules = new ArrayList<UserAvailableTimes>();
-  private List<UserAvailableTimes> facilitatorSchedules = new ArrayList<UserAvailableTimes>();
-  private List<WfmScheduleActivity> wfmScheduleActivities = new ArrayList<WfmScheduleActivity>();
+  private List<CoachingSlot> suggestedSlots = null;
+  private List<UserAvailableTimes> attendeeSchedules = null;
+  private List<UserAvailableTimes> facilitatorSchedules = null;
+  private List<WfmScheduleActivity> wfmScheduleActivities = null;
+
+  public CoachingSlotsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      suggestedSlots = new ArrayList<CoachingSlot>();
+      attendeeSchedules = new ArrayList<UserAvailableTimes>();
+      facilitatorSchedules = new ArrayList<UserAvailableTimes>();
+      wfmScheduleActivities = new ArrayList<WfmScheduleActivity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "List of slots where coaching appointment can be scheduled")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,8 +23,13 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
   
   private String partitionName = null;
-  private Integer availableBytes = null;
-  private Integer totalBytes = null;
+  private Long availableBytes = null;
+  private Long totalBytes = null;
+
+  public EdgeMetricsTopicEdgeMetricDisk() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -45,34 +51,34 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricDisk availableBytes(Integer availableBytes) {
+  public EdgeMetricsTopicEdgeMetricDisk availableBytes(Long availableBytes) {
     this.availableBytes = availableBytes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("availableBytes")
-  public Integer getAvailableBytes() {
+  public Long getAvailableBytes() {
     return availableBytes;
   }
-  public void setAvailableBytes(Integer availableBytes) {
+  public void setAvailableBytes(Long availableBytes) {
     this.availableBytes = availableBytes;
   }
 
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetricDisk totalBytes(Integer totalBytes) {
+  public EdgeMetricsTopicEdgeMetricDisk totalBytes(Long totalBytes) {
     this.totalBytes = totalBytes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("totalBytes")
-  public Integer getTotalBytes() {
+  public Long getTotalBytes() {
     return totalBytes;
   }
-  public void setTotalBytes(Integer totalBytes) {
+  public void setTotalBytes(Long totalBytes) {
     this.totalBytes = totalBytes;
   }
 

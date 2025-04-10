@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleQueryResponse;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class BuAgentSchedulesQueryResponse  implements Serializable {
   
-  private List<BuAgentScheduleQueryResponse> agentSchedules = new ArrayList<BuAgentScheduleQueryResponse>();
+  private List<BuAgentScheduleQueryResponse> agentSchedules = null;
   private String businessUnitTimeZone = null;
+
+  public BuAgentSchedulesQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleQueryResponse>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,8 +28,14 @@ public class LineStatus  implements Serializable {
   private String id = null;
   private Boolean reachable = null;
   private String addressOfRecord = null;
-  private List<String> contactAddresses = new ArrayList<String>();
+  private List<String> contactAddresses = null;
   private Date reachableStateTime = null;
+
+  public LineStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contactAddresses = new ArrayList<String>();
+    }
+  }
 
   
   /**

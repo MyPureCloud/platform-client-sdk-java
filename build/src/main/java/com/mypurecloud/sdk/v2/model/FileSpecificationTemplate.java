@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Column;
@@ -137,9 +138,16 @@ public class FileSpecificationTemplate  implements Serializable {
   }
   private DelimiterEnum delimiter = null;
   private String delimiterValue = null;
-  private List<Column> columnInformation = new ArrayList<Column>();
-  private List<PreprocessingRule> preprocessingRules = new ArrayList<PreprocessingRule>();
+  private List<Column> columnInformation = null;
+  private List<PreprocessingRule> preprocessingRules = null;
   private String selfUri = null;
+
+  public FileSpecificationTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      columnInformation = new ArrayList<Column>();
+      preprocessingRules = new ArrayList<PreprocessingRule>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

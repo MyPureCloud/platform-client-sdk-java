@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PINConfiguration;
 import io.swagger.annotations.ApiModel;
@@ -34,6 +35,11 @@ public class VoicemailOrganizationPolicy  implements Serializable {
   private Boolean disableEmailPii = null;
   private Integer maximumRecordingTimeSeconds = null;
   private Date modifiedDate = null;
+
+  public VoicemailOrganizationPolicy() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Whether voicemail is enabled for this organization")

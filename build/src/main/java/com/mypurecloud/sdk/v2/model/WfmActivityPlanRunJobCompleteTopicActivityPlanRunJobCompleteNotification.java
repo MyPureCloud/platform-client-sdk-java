@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmActivityPlanRunJobCompleteTopicActivityPlanJobException;
@@ -126,8 +127,14 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotific
     }
   }
   private StatusEnum status = null;
-  private List<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException> exceptions = new ArrayList<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>();
+  private List<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException> exceptions = null;
   private WfmActivityPlanRunJobCompleteTopicErrorBody error = null;
+
+  public WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      exceptions = new ArrayList<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>();
+    }
+  }
 
   
   /**

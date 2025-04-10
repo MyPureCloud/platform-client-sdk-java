@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftTradeListing;
@@ -25,6 +26,11 @@ public class ListAlternativeShiftTradesResponse  implements Serializable {
   
   private AlternativeShiftJobResponse job = null;
   private AlternativeShiftTradeListing result = null;
+
+  public ListAlternativeShiftTradesResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

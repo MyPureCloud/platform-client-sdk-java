@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,11 @@ public class AgentOwnedRouting  implements Serializable {
   private Boolean enableAgentOwnedCallbacks = null;
   private Integer maxOwnedCallbackHours = null;
   private Integer maxOwnedCallbackDelayHours = null;
+
+  public AgentOwnedRouting() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

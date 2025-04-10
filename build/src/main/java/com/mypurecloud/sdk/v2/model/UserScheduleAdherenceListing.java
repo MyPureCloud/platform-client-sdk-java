@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class UserScheduleAdherenceListing  implements Serializable {
   
-  private List<UserScheduleAdherence> entities = new ArrayList<UserScheduleAdherence>();
+  private List<UserScheduleAdherence> entities = null;
   private String downloadUrl = null;
+
+  public UserScheduleAdherenceListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<UserScheduleAdherence>();
+    }
+  }
 
   
   /**

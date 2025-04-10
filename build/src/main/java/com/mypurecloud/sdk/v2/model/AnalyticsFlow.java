@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsFlowOutcome;
@@ -153,7 +154,13 @@ public class AnalyticsFlow  implements Serializable {
   private String transferTargetAddress = null;
   private String transferTargetName = null;
   private String transferType = null;
-  private List<AnalyticsFlowOutcome> outcomes = new ArrayList<AnalyticsFlowOutcome>();
+  private List<AnalyticsFlowOutcome> outcomes = null;
+
+  public AnalyticsFlow() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      outcomes = new ArrayList<AnalyticsFlowOutcome>();
+    }
+  }
 
   
   /**

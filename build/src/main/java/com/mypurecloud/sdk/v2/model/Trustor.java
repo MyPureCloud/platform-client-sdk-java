@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
 import com.mypurecloud.sdk.v2.model.Organization;
@@ -32,6 +33,11 @@ public class Trustor  implements Serializable {
   private Organization organization = null;
   private TrusteeAuthorization authorization = null;
   private String selfUri = null;
+
+  public Trustor() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Organization Id for this trust.")

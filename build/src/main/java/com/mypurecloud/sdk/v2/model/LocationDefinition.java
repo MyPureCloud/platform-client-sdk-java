@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -84,14 +85,22 @@ public class LocationDefinition  implements Serializable {
   private StateEnum state = null;
   private String notes = null;
   private Integer version = null;
-  private List<String> path = new ArrayList<String>();
-  private List<LocationImage> profileImage = new ArrayList<LocationImage>();
-  private List<LocationImage> floorplanImage = new ArrayList<LocationImage>();
+  private List<String> path = null;
+  private List<LocationImage> profileImage = null;
+  private List<LocationImage> floorplanImage = null;
   private LocationAddressVerificationDetails addressVerificationDetails = null;
   private Boolean addressVerified = null;
   private Boolean addressStored = null;
   private String images = null;
   private String selfUri = null;
+
+  public LocationDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      path = new ArrayList<String>();
+      profileImage = new ArrayList<LocationImage>();
+      floorplanImage = new ArrayList<LocationImage>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

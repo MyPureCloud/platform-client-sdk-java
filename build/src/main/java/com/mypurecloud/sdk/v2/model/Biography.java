@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Education;
 import io.swagger.annotations.ApiModel;
@@ -25,10 +26,18 @@ import java.io.Serializable;
 public class Biography  implements Serializable {
   
   private String biography = null;
-  private List<String> interests = new ArrayList<String>();
-  private List<String> hobbies = new ArrayList<String>();
+  private List<String> interests = null;
+  private List<String> hobbies = null;
   private String spouse = null;
-  private List<Education> education = new ArrayList<Education>();
+  private List<Education> education = null;
+
+  public Biography() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      interests = new ArrayList<String>();
+      hobbies = new ArrayList<String>();
+      education = new ArrayList<Education>();
+    }
+  }
 
   
   /**

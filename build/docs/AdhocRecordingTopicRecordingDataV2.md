@@ -12,18 +12,18 @@
 | **workspace** | [**AdhocRecordingTopicWorkspaceData**](AdhocRecordingTopicWorkspaceData) |  |  [optional] |
 | **createdBy** | [**AdhocRecordingTopicUserData**](AdhocRecordingTopicUserData) |  |  [optional] |
 | **contentType** | **String** |  |  [optional] |
-| **contentLength** | **Integer** |  |  [optional] |
+| **contentLength** | **Long** |  |  [optional] |
 | **filename** | **String** |  |  [optional] |
-| **changeNumber** | **Integer** |  |  [optional] |
+| **changeNumber** | **Long** |  |  [optional] |
 | **dateUploaded** | [**Date**](Date) |  |  [optional] |
 | **uploadedBy** | [**AdhocRecordingTopicUserData**](AdhocRecordingTopicUserData) |  |  [optional] |
 | **lockInfo** | [**AdhocRecordingTopicLockData**](AdhocRecordingTopicLockData) |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
-| **durationMillieconds** | **Integer** |  |  [optional] |
+| **durationMillieconds** | **Long** |  |  [optional] |
 | **conversation** | [**AdhocRecordingTopicConversationData**](AdhocRecordingTopicConversationData) |  |  [optional] |
 | **read** | **Boolean** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableFullDayTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.EstimateAvailablePartialDayTimeOffResponse;
@@ -26,11 +27,18 @@ import java.io.Serializable;
 
 public class EstimateAvailableTimeOffResponse  implements Serializable {
   
-  private List<EstimateAvailableFullDayTimeOffResponse> fullDayDates = new ArrayList<EstimateAvailableFullDayTimeOffResponse>();
-  private List<EstimateAvailablePartialDayTimeOffResponse> partialDayDates = new ArrayList<EstimateAvailablePartialDayTimeOffResponse>();
+  private List<EstimateAvailableFullDayTimeOffResponse> fullDayDates = null;
+  private List<EstimateAvailablePartialDayTimeOffResponse> partialDayDates = null;
   private UserReference user = null;
   private String activityCodeId = null;
   private Boolean paid = null;
+
+  public EstimateAvailableTimeOffResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      fullDayDates = new ArrayList<EstimateAvailableFullDayTimeOffResponse>();
+      partialDayDates = new ArrayList<EstimateAvailablePartialDayTimeOffResponse>();
+    }
+  }
 
   
   /**

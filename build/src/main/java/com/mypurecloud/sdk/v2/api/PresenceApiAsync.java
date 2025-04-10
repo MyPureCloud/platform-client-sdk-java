@@ -28,11 +28,11 @@ import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 
-import com.mypurecloud.sdk.v2.api.request.DeleteDivisionBasedPresenceDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeletePresenceDefinition0Request;
 import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
-import com.mypurecloud.sdk.v2.api.request.GetDivisionBasedPresenceDefinitionRequest;
-import com.mypurecloud.sdk.v2.api.request.GetDivisionBasedPresenceDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinition0Request;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinitions0Request;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
@@ -46,10 +46,10 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersPresenceBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersPresencesPurecloudBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
-import com.mypurecloud.sdk.v2.api.request.PostDivisionBasedPresenceDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostPresenceDefinitions0Request;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.PutDivisionBasedPresenceDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceDefinition0Request;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
@@ -81,7 +81,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteDivisionBasedPresenceDefinitionAsync(DeleteDivisionBasedPresenceDefinitionRequest request, final AsyncApiCallback<Void> callback) {
+  public Future<Void> deletePresenceDefinition0Async(DeletePresenceDefinition0Request request, final AsyncApiCallback<Void> callback) {
     try {
       final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -115,7 +115,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteDivisionBasedPresenceDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deletePresenceDefinition0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -308,7 +308,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresenceDefinition> getDivisionBasedPresenceDefinitionAsync(GetDivisionBasedPresenceDefinitionRequest request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
+  public Future<OrganizationPresenceDefinition> getPresenceDefinition0Async(GetPresenceDefinition0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
       final SettableFuture<OrganizationPresenceDefinition> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -342,7 +342,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresenceDefinition>> getDivisionBasedPresenceDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
+  public Future<ApiResponse<OrganizationPresenceDefinition>> getPresenceDefinition0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {
       final SettableFuture<ApiResponse<OrganizationPresenceDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -383,7 +383,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresenceDefinitionEntityListing> getDivisionBasedPresenceDefinitionsAsync(GetDivisionBasedPresenceDefinitionsRequest request, final AsyncApiCallback<OrganizationPresenceDefinitionEntityListing> callback) {
+  public Future<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0Async(GetPresenceDefinitions0Request request, final AsyncApiCallback<OrganizationPresenceDefinitionEntityListing> callback) {
     try {
       final SettableFuture<OrganizationPresenceDefinitionEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -417,7 +417,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresenceDefinitionEntityListing>> getDivisionBasedPresenceDefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinitionEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationPresenceDefinitionEntityListing>> getPresenceDefinitions0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinitionEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<OrganizationPresenceDefinitionEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1437,7 +1437,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresenceDefinition> postDivisionBasedPresenceDefinitionsAsync(PostDivisionBasedPresenceDefinitionsRequest request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
+  public Future<OrganizationPresenceDefinition> postPresenceDefinitions0Async(PostPresenceDefinitions0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
       final SettableFuture<OrganizationPresenceDefinition> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1471,7 +1471,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresenceDefinition>> postDivisionBasedPresenceDefinitionsAsync(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
+  public Future<ApiResponse<OrganizationPresenceDefinition>> postPresenceDefinitions0Async(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {
       final SettableFuture<ApiResponse<OrganizationPresenceDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1664,7 +1664,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresenceDefinition> putDivisionBasedPresenceDefinitionAsync(PutDivisionBasedPresenceDefinitionRequest request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
+  public Future<OrganizationPresenceDefinition> putPresenceDefinition0Async(PutPresenceDefinition0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
       final SettableFuture<OrganizationPresenceDefinition> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1698,7 +1698,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresenceDefinition>> putDivisionBasedPresenceDefinitionAsync(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
+  public Future<ApiResponse<OrganizationPresenceDefinition>> putPresenceDefinition0Async(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {
       final SettableFuture<ApiResponse<OrganizationPresenceDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

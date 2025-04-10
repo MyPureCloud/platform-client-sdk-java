@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PresenceDetailQueryFilter;
@@ -28,9 +29,9 @@ import java.io.Serializable;
 public class AsyncUserDetailsQuery  implements Serializable {
   
   private String interval = null;
-  private List<UserDetailQueryFilter> userFilters = new ArrayList<UserDetailQueryFilter>();
-  private List<PresenceDetailQueryFilter> presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
-  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
+  private List<UserDetailQueryFilter> userFilters = null;
+  private List<PresenceDetailQueryFilter> presenceFilters = null;
+  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = null;
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
     public OrderEnumDeserializer() {
@@ -81,6 +82,14 @@ public class AsyncUserDetailsQuery  implements Serializable {
   }
   private OrderEnum order = null;
   private Integer limit = null;
+
+  public AsyncUserDetailsQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userFilters = new ArrayList<UserDetailQueryFilter>();
+      presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
+      routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
+    }
+  }
 
   
   /**

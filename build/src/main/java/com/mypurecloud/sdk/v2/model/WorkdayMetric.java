@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.Objective;
@@ -32,8 +33,15 @@ public class WorkdayMetric  implements Serializable {
   private Integer points = null;
   private Integer maxPoints = null;
   private Double value = null;
-  private List<PunctualityEvent> punctualityEvents = new ArrayList<PunctualityEvent>();
-  private List<QualityEvaluationScoreItem> evaluationDetails = new ArrayList<QualityEvaluationScoreItem>();
+  private List<PunctualityEvent> punctualityEvents = null;
+  private List<QualityEvaluationScoreItem> evaluationDetails = null;
+
+  public WorkdayMetric() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      punctualityEvents = new ArrayList<PunctualityEvent>();
+      evaluationDetails = new ArrayList<QualityEvaluationScoreItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -139,8 +140,8 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
-  private Integer callbackScheduledTime = null;
+  private List<String> callbackNumbers = null;
+  private Long callbackScheduledTime = null;
   private String subject = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -201,23 +202,31 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
   private String userId = null;
   private String divisionId = null;
   private String queueId = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
+
+  public UserStartDetailEventTopicUserStartEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public UserStartDetailEventTopicUserStartEvent eventTime(Integer eventTime) {
+  public UserStartDetailEventTopicUserStartEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -428,17 +437,17 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
 
   /**
    **/
-  public UserStartDetailEventTopicUserStartEvent callbackScheduledTime(Integer callbackScheduledTime) {
+  public UserStartDetailEventTopicUserStartEvent callbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackScheduledTime")
-  public Integer getCallbackScheduledTime() {
+  public Long getCallbackScheduledTime() {
     return callbackScheduledTime;
   }
-  public void setCallbackScheduledTime(Integer callbackScheduledTime) {
+  public void setCallbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 

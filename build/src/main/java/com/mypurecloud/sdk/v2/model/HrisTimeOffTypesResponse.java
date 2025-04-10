@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypeResponse;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobReference;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class HrisTimeOffTypesResponse  implements Serializable {
   
   private HrisTimeOffTypesJobReference job = null;
-  private List<HrisTimeOffTypeResponse> entities = new ArrayList<HrisTimeOffTypeResponse>();
+  private List<HrisTimeOffTypeResponse> entities = null;
+
+  public HrisTimeOffTypesResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<HrisTimeOffTypeResponse>();
+    }
+  }
 
   
   /**

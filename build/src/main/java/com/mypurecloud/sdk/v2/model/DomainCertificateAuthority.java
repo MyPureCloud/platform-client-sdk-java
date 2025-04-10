@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CertificateDetails;
@@ -184,9 +185,16 @@ public class DomainCertificateAuthority  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ServicesEnum> services = new ArrayList<ServicesEnum>();
-  private List<CertificateDetails> certificateDetails = new ArrayList<CertificateDetails>();
+  private List<ServicesEnum> services = null;
+  private List<CertificateDetails> certificateDetails = null;
   private String selfUri = null;
+
+  public DomainCertificateAuthority() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      services = new ArrayList<ServicesEnum>();
+      certificateDetails = new ArrayList<CertificateDetails>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

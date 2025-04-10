@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMetricsTopicConversationProposedAgent;
@@ -127,7 +128,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   }
   private MetricEnum metric = null;
   private Date metricDate = null;
-  private Integer value = null;
+  private Long value = null;
   private String recordId = null;
 
   private static class ActiveRoutingEnumDeserializer extends StdDeserializer<ActiveRoutingEnum> {
@@ -184,11 +185,11 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private ActiveRoutingEnum activeRouting = null;
-  private List<String> activeSkillIds = new ArrayList<String>();
+  private List<String> activeSkillIds = null;
   private String addressFrom = null;
   private String addressTo = null;
   private String agentAssistantId = null;
-  private Integer agentBullseyeRing = null;
+  private Long agentBullseyeRing = null;
   private Boolean agentOwned = null;
   private String ani = null;
   private String assignerId = null;
@@ -317,7 +318,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private DeliveryStatusEnum deliveryStatus = null;
-  private List<String> destinationAddresses = new ArrayList<String>();
+  private List<String> destinationAddresses = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -430,14 +431,14 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private DisconnectTypeEnum disconnectType = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String dnis = null;
   private String edgeId = null;
-  private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
+  private List<Long> eligibleAgentCounts = null;
   private String errorCode = null;
   private String extendedDeliveryStatus = null;
   private String externalContactId = null;
-  private Integer externalMediaCount = null;
+  private Long externalMediaCount = null;
   private String externalOrganizationId = null;
   private String externalTag = null;
   private Boolean firstQueue = null;
@@ -494,13 +495,13 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String interactionType = null;
   private String journeyActionId = null;
   private String journeyActionMapId = null;
-  private Integer journeyActionMapVersion = null;
+  private Long journeyActionMapVersion = null;
   private String journeyCustomerId = null;
   private String journeyCustomerIdType = null;
   private String journeyCustomerSessionId = null;
   private String journeyCustomerSessionIdType = null;
-  private List<String> knowledgeBaseIds = new ArrayList<String>();
-  private Integer mediaCount = null;
+  private List<String> knowledgeBaseIds = null;
+  private Long mediaCount = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
     public MediaTypeEnumDeserializer() {
@@ -680,9 +681,9 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private PurposeEnum purpose = null;
   private String queueId = null;
   private String remote = null;
-  private List<String> removedSkillIds = new ArrayList<String>();
+  private List<String> removedSkillIds = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
 
   private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
     public RequestedRoutingsEnumDeserializer() {
@@ -736,10 +737,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
   private String roomId = null;
-  private Integer routingPriority = null;
-  private Integer routingRing = null;
+  private Long routingPriority = null;
+  private Long routingRing = null;
   private String routingRule = null;
 
   private static class RoutingRuleTypeEnumDeserializer extends StdDeserializer<RoutingRuleTypeEnum> {
@@ -792,7 +793,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   }
   private RoutingRuleTypeEnum routingRuleType = null;
   private String selectedAgentId = null;
-  private Integer selectedAgentRank = null;
+  private Long selectedAgentRank = null;
   private Boolean selfServed = null;
   private String sessionDnis = null;
   private String sessionId = null;
@@ -855,10 +856,26 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
   private Boolean videoPresent = null;
-  private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
+  private List<Long> waitingInteractionCounts = null;
   private String wrapUpCode = null;
-  private List<ConversationMetricsTopicConversationProposedAgent> proposedAgents = new ArrayList<ConversationMetricsTopicConversationProposedAgent>();
-  private List<ConversationMetricsTopicConversationScoredAgent> scoredAgents = new ArrayList<ConversationMetricsTopicConversationScoredAgent>();
+  private List<ConversationMetricsTopicConversationProposedAgent> proposedAgents = null;
+  private List<ConversationMetricsTopicConversationScoredAgent> scoredAgents = null;
+
+  public ConversationMetricsTopicConversationMetricRecord() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activeSkillIds = new ArrayList<String>();
+      destinationAddresses = new ArrayList<String>();
+      divisionIds = new ArrayList<String>();
+      eligibleAgentCounts = new ArrayList<Long>();
+      knowledgeBaseIds = new ArrayList<String>();
+      removedSkillIds = new ArrayList<String>();
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      waitingInteractionCounts = new ArrayList<Long>();
+      proposedAgents = new ArrayList<ConversationMetricsTopicConversationProposedAgent>();
+      scoredAgents = new ArrayList<ConversationMetricsTopicConversationScoredAgent>();
+    }
+  }
 
   
   /**
@@ -900,17 +917,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Metric value
    **/
-  public ConversationMetricsTopicConversationMetricRecord value(Integer value) {
+  public ConversationMetricsTopicConversationMetricRecord value(Long value) {
     this.value = value;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Metric value")
   @JsonProperty("value")
-  public Integer getValue() {
+  public Long getValue() {
     return value;
   }
-  public void setValue(Integer value) {
+  public void setValue(Long value) {
     this.value = value;
   }
 
@@ -1026,17 +1043,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Bullseye ring of the targeted agent
    **/
-  public ConversationMetricsTopicConversationMetricRecord agentBullseyeRing(Integer agentBullseyeRing) {
+  public ConversationMetricsTopicConversationMetricRecord agentBullseyeRing(Long agentBullseyeRing) {
     this.agentBullseyeRing = agentBullseyeRing;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Bullseye ring of the targeted agent")
   @JsonProperty("agentBullseyeRing")
-  public Integer getAgentBullseyeRing() {
+  public Long getAgentBullseyeRing() {
     return agentBullseyeRing;
   }
-  public void setAgentBullseyeRing(Integer agentBullseyeRing) {
+  public void setAgentBullseyeRing(Long agentBullseyeRing) {
     this.agentBullseyeRing = agentBullseyeRing;
   }
 
@@ -1332,17 +1349,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Number of eligible agents for each predictive routing attempt
    **/
-  public ConversationMetricsTopicConversationMetricRecord eligibleAgentCounts(List<Integer> eligibleAgentCounts) {
+  public ConversationMetricsTopicConversationMetricRecord eligibleAgentCounts(List<Long> eligibleAgentCounts) {
     this.eligibleAgentCounts = eligibleAgentCounts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of eligible agents for each predictive routing attempt")
   @JsonProperty("eligibleAgentCounts")
-  public List<Integer> getEligibleAgentCounts() {
+  public List<Long> getEligibleAgentCounts() {
     return eligibleAgentCounts;
   }
-  public void setEligibleAgentCounts(List<Integer> eligibleAgentCounts) {
+  public void setEligibleAgentCounts(List<Long> eligibleAgentCounts) {
     this.eligibleAgentCounts = eligibleAgentCounts;
   }
 
@@ -1404,17 +1421,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Count of any media (images, files, etc) included on the external session
    **/
-  public ConversationMetricsTopicConversationMetricRecord externalMediaCount(Integer externalMediaCount) {
+  public ConversationMetricsTopicConversationMetricRecord externalMediaCount(Long externalMediaCount) {
     this.externalMediaCount = externalMediaCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Count of any media (images, files, etc) included on the external session")
   @JsonProperty("externalMediaCount")
-  public Integer getExternalMediaCount() {
+  public Long getExternalMediaCount() {
     return externalMediaCount;
   }
-  public void setExternalMediaCount(Integer externalMediaCount) {
+  public void setExternalMediaCount(Long externalMediaCount) {
     this.externalMediaCount = externalMediaCount;
   }
 
@@ -1602,17 +1619,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Version of the journey action map that triggered the action.
    **/
-  public ConversationMetricsTopicConversationMetricRecord journeyActionMapVersion(Integer journeyActionMapVersion) {
+  public ConversationMetricsTopicConversationMetricRecord journeyActionMapVersion(Long journeyActionMapVersion) {
     this.journeyActionMapVersion = journeyActionMapVersion;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Version of the journey action map that triggered the action.")
   @JsonProperty("journeyActionMapVersion")
-  public Integer getJourneyActionMapVersion() {
+  public Long getJourneyActionMapVersion() {
     return journeyActionMapVersion;
   }
-  public void setJourneyActionMapVersion(Integer journeyActionMapVersion) {
+  public void setJourneyActionMapVersion(Long journeyActionMapVersion) {
     this.journeyActionMapVersion = journeyActionMapVersion;
   }
 
@@ -1710,17 +1727,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Count of any media (images, files, etc) included in this session
    **/
-  public ConversationMetricsTopicConversationMetricRecord mediaCount(Integer mediaCount) {
+  public ConversationMetricsTopicConversationMetricRecord mediaCount(Long mediaCount) {
     this.mediaCount = mediaCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Count of any media (images, files, etc) included in this session")
   @JsonProperty("mediaCount")
-  public Integer getMediaCount() {
+  public Long getMediaCount() {
     return mediaCount;
   }
-  public void setMediaCount(Integer mediaCount) {
+  public void setMediaCount(Long mediaCount) {
     this.mediaCount = mediaCount;
   }
 
@@ -2052,17 +2069,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Routing priority for the current interaction
    **/
-  public ConversationMetricsTopicConversationMetricRecord routingPriority(Integer routingPriority) {
+  public ConversationMetricsTopicConversationMetricRecord routingPriority(Long routingPriority) {
     this.routingPriority = routingPriority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Routing priority for the current interaction")
   @JsonProperty("routingPriority")
-  public Integer getRoutingPriority() {
+  public Long getRoutingPriority() {
     return routingPriority;
   }
-  public void setRoutingPriority(Integer routingPriority) {
+  public void setRoutingPriority(Long routingPriority) {
     this.routingPriority = routingPriority;
   }
 
@@ -2070,17 +2087,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Routing ring for bullseye or preferred agent routing
    **/
-  public ConversationMetricsTopicConversationMetricRecord routingRing(Integer routingRing) {
+  public ConversationMetricsTopicConversationMetricRecord routingRing(Long routingRing) {
     this.routingRing = routingRing;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Routing ring for bullseye or preferred agent routing")
   @JsonProperty("routingRing")
-  public Integer getRoutingRing() {
+  public Long getRoutingRing() {
     return routingRing;
   }
-  public void setRoutingRing(Integer routingRing) {
+  public void setRoutingRing(Long routingRing) {
     this.routingRing = routingRing;
   }
 
@@ -2142,17 +2159,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Selected agent GPR rank
    **/
-  public ConversationMetricsTopicConversationMetricRecord selectedAgentRank(Integer selectedAgentRank) {
+  public ConversationMetricsTopicConversationMetricRecord selectedAgentRank(Long selectedAgentRank) {
     this.selectedAgentRank = selectedAgentRank;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Selected agent GPR rank")
   @JsonProperty("selectedAgentRank")
-  public Integer getSelectedAgentRank() {
+  public Long getSelectedAgentRank() {
     return selectedAgentRank;
   }
-  public void setSelectedAgentRank(Integer selectedAgentRank) {
+  public void setSelectedAgentRank(Long selectedAgentRank) {
     this.selectedAgentRank = selectedAgentRank;
   }
 
@@ -2304,17 +2321,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Number of waiting interactions for each predictive routing attempt
    **/
-  public ConversationMetricsTopicConversationMetricRecord waitingInteractionCounts(List<Integer> waitingInteractionCounts) {
+  public ConversationMetricsTopicConversationMetricRecord waitingInteractionCounts(List<Long> waitingInteractionCounts) {
     this.waitingInteractionCounts = waitingInteractionCounts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of waiting interactions for each predictive routing attempt")
   @JsonProperty("waitingInteractionCounts")
-  public List<Integer> getWaitingInteractionCounts() {
+  public List<Long> getWaitingInteractionCounts() {
     return waitingInteractionCounts;
   }
-  public void setWaitingInteractionCounts(List<Integer> waitingInteractionCounts) {
+  public void setWaitingInteractionCounts(List<Long> waitingInteractionCounts) {
     this.waitingInteractionCounts = waitingInteractionCounts;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzGrant;
 import io.swagger.annotations.ApiModel;
@@ -24,11 +25,17 @@ import java.io.Serializable;
 
 public class AuthzDivisionGrantEntityListing  implements Serializable {
   
-  private List<AuthzGrant> entities = new ArrayList<AuthzGrant>();
+  private List<AuthzGrant> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
   private Integer pageCount = null;
+
+  public AuthzDivisionGrantEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AuthzGrant>();
+    }
+  }
 
   
   /**

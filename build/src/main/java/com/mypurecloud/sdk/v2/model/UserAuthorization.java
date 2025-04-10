@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainRole;
 import com.mypurecloud.sdk.v2.model.ResourcePermissionPolicy;
@@ -25,10 +26,19 @@ import java.io.Serializable;
 
 public class UserAuthorization  implements Serializable {
   
-  private List<DomainRole> roles = new ArrayList<DomainRole>();
-  private List<DomainRole> unusedRoles = new ArrayList<DomainRole>();
-  private List<String> permissions = new ArrayList<String>();
-  private List<ResourcePermissionPolicy> permissionPolicies = new ArrayList<ResourcePermissionPolicy>();
+  private List<DomainRole> roles = null;
+  private List<DomainRole> unusedRoles = null;
+  private List<String> permissions = null;
+  private List<ResourcePermissionPolicy> permissionPolicies = null;
+
+  public UserAuthorization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      roles = new ArrayList<DomainRole>();
+      unusedRoles = new ArrayList<DomainRole>();
+      permissions = new ArrayList<String>();
+      permissionPolicies = new ArrayList<ResourcePermissionPolicy>();
+    }
+  }
 
   
   /**

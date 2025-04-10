@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -32,7 +33,7 @@ public class DashboardConfiguration  implements Serializable {
   private String name = null;
   private Integer rows = null;
   private Integer columns = null;
-  private List<Widget> widgets = new ArrayList<Widget>();
+  private List<Widget> widgets = null;
   private Boolean favorite = null;
   private Boolean publicDashboard = null;
   private Boolean restricted = null;
@@ -91,6 +92,12 @@ public class DashboardConfiguration  implements Serializable {
   private Boolean shared = null;
   private DashboardsSharedWith dashboardsSharedWith = null;
   private String selfUri = null;
+
+  public DashboardConfiguration() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      widgets = new ArrayList<Widget>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

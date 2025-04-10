@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Detail;
 import com.mypurecloud.sdk.v2.model.Limit;
@@ -35,9 +36,16 @@ public class ErrorBody  implements Serializable {
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<Detail> details = new ArrayList<Detail>();
-  private List<ErrorBody> errors = new ArrayList<ErrorBody>();
+  private List<Detail> details = null;
+  private List<ErrorBody> errors = null;
   private Limit limit = null;
+
+  public ErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<Detail>();
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
 
   
   /**

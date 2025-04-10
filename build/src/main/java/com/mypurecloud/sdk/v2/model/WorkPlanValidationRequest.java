@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DeletableUserReference;
@@ -103,10 +104,17 @@ public class WorkPlanValidationRequest  implements Serializable {
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
-  private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
-  private List<DeletableUserReference> agents = new ArrayList<DeletableUserReference>();
+  private List<WorkPlanShift> shifts = null;
+  private List<DeletableUserReference> agents = null;
   private Integer agentCount = null;
   private String selfUri = null;
+
+  public WorkPlanValidationRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shifts = new ArrayList<WorkPlanShift>();
+      agents = new ArrayList<DeletableUserReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

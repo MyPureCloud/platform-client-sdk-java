@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
@@ -213,7 +214,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
   private DomainEntityRef team = null;
@@ -284,13 +285,20 @@ public class CallbackMediaParticipant  implements Serializable {
   private Date resumeTime = null;
   private DialerPreview outboundPreview = null;
   private Voicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
   private String automatedCallbackConfigId = null;
   private Date callbackScheduledTime = null;
+
+  public CallbackMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      callbackNumbers = new ArrayList<String>();
+    }
+  }
 
   
   /**

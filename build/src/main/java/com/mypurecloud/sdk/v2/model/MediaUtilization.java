@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 public class MediaUtilization  implements Serializable {
   
   private Integer maximumCapacity = null;
-  private List<String> interruptableMediaTypes = new ArrayList<String>();
+  private List<String> interruptableMediaTypes = null;
   private Boolean includeNonAcd = null;
+
+  public MediaUtilization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      interruptableMediaTypes = new ArrayList<String>();
+    }
+  }
 
   
   /**

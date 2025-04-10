@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class SentimentFeedbackEntityListing  implements Serializable {
   
-  private List<SentimentFeedback> entities = new ArrayList<SentimentFeedback>();
+  private List<SentimentFeedback> entities = null;
+
+  public SentimentFeedbackEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<SentimentFeedback>();
+    }
+  }
 
   
   /**

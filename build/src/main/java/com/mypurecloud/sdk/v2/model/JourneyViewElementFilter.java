@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementFilterNumberPredicate;
@@ -74,8 +75,15 @@ public class JourneyViewElementFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<JourneyViewElementFilterPredicate> predicates = new ArrayList<JourneyViewElementFilterPredicate>();
-  private List<JourneyViewElementFilterNumberPredicate> numberPredicates = new ArrayList<JourneyViewElementFilterNumberPredicate>();
+  private List<JourneyViewElementFilterPredicate> predicates = null;
+  private List<JourneyViewElementFilterNumberPredicate> numberPredicates = null;
+
+  public JourneyViewElementFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predicates = new ArrayList<JourneyViewElementFilterPredicate>();
+      numberPredicates = new ArrayList<JourneyViewElementFilterNumberPredicate>();
+    }
+  }
 
   
   /**

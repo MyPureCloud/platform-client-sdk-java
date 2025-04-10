@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanBusinessUnitAssociation;
@@ -27,7 +28,7 @@ import java.io.Serializable;
 public class BuCreateTimeOffPlanRequest  implements Serializable {
   
   private String name = null;
-  private List<String> activityCodeIds = new ArrayList<String>();
+  private List<String> activityCodeIds = null;
 
   private static class AutoApprovalRuleEnumDeserializer extends StdDeserializer<AutoApprovalRuleEnum> {
     public AutoApprovalRuleEnumDeserializer() {
@@ -85,6 +86,12 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
   private Boolean countAgainstTimeOffLimits = null;
   private CreateTimeOffPlanBusinessUnitAssociation businessUnitAssociation = null;
   private CreateTimeOffPlanManagementUnitAssociation managementUnitAssociation = null;
+
+  public BuCreateTimeOffPlanRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activityCodeIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

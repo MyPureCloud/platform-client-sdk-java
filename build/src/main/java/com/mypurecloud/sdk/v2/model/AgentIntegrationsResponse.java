@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationAssociationResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -29,7 +30,13 @@ public class AgentIntegrationsResponse  implements Serializable {
   private UserReference agent = null;
   private WfmIntegrationReference selectedIntegration = null;
   private Boolean userSelected = null;
-  private List<AgentIntegrationAssociationResponse> associatedIntegrations = new ArrayList<AgentIntegrationAssociationResponse>();
+  private List<AgentIntegrationAssociationResponse> associatedIntegrations = null;
+
+  public AgentIntegrationsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      associatedIntegrations = new ArrayList<AgentIntegrationAssociationResponse>();
+    }
+  }
 
   
   /**

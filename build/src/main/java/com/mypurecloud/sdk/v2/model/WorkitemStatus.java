@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
@@ -79,7 +80,7 @@ public class WorkitemStatus  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<WorkitemStatusReference> destinationStatuses = new ArrayList<WorkitemStatusReference>();
+  private List<WorkitemStatusReference> destinationStatuses = null;
   private String description = null;
   private WorkitemStatusReference defaultDestinationStatus = null;
   private Integer statusTransitionDelaySeconds = null;
@@ -87,6 +88,12 @@ public class WorkitemStatus  implements Serializable {
   private WorktypeReference worktype = null;
   private Boolean autoTerminateWorkitem = null;
   private String selfUri = null;
+
+  public WorkitemStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      destinationStatuses = new ArrayList<WorkitemStatusReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

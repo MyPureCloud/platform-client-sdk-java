@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GroupByAttribute;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class JourneyViewChartMetricResultValue  implements Serializable {
   
   private Integer value = null;
-  private List<GroupByAttribute> groupByAttributes = new ArrayList<GroupByAttribute>();
+  private List<GroupByAttribute> groupByAttributes = null;
+
+  public JourneyViewChartMetricResultValue() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groupByAttributes = new ArrayList<GroupByAttribute>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Value for this metric")

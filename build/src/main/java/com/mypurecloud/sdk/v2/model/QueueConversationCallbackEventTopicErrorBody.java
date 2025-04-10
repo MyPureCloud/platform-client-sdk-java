@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicDetail;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicLimit;
@@ -29,15 +30,22 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
   
   private String message = null;
   private String code = null;
-  private Integer status = null;
+  private Long status = null;
   private String entityId = null;
   private String entityName = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationCallbackEventTopicDetail> details = new ArrayList<QueueConversationCallbackEventTopicDetail>();
-  private List<QueueConversationCallbackEventTopicErrorBody> errors = new ArrayList<QueueConversationCallbackEventTopicErrorBody>();
+  private List<QueueConversationCallbackEventTopicDetail> details = null;
+  private List<QueueConversationCallbackEventTopicErrorBody> errors = null;
   private QueueConversationCallbackEventTopicLimit limit = null;
+
+  public QueueConversationCallbackEventTopicErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<QueueConversationCallbackEventTopicDetail>();
+      errors = new ArrayList<QueueConversationCallbackEventTopicErrorBody>();
+    }
+  }
 
   
   /**
@@ -76,17 +84,17 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
 
   /**
    **/
-  public QueueConversationCallbackEventTopicErrorBody status(Integer status) {
+  public QueueConversationCallbackEventTopicErrorBody status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtThumbnail;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class LearningModuleCoverArtResponse  implements Serializable {
   private String id = null;
   private String selfUri = null;
   private String url = null;
-  private List<LearningCoverArtThumbnail> thumbnails = new ArrayList<LearningCoverArtThumbnail>();
+  private List<LearningCoverArtThumbnail> thumbnails = null;
+
+  public LearningModuleCoverArtResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      thumbnails = new ArrayList<LearningCoverArtThumbnail>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

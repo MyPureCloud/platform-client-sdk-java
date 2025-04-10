@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationActivityScoredAgent;
@@ -245,7 +246,7 @@ public class ConversationActivityEntityData  implements Serializable {
   private String participantName = null;
   private String queueId = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
 
   private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
     public RequestedRoutingsEnumDeserializer() {
@@ -299,7 +300,7 @@ public class ConversationActivityEntityData  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
   private Long routingPriority = null;
   private String sessionId = null;
   private String teamId = null;
@@ -359,7 +360,15 @@ public class ConversationActivityEntityData  implements Serializable {
   }
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
-  private List<ConversationActivityScoredAgent> scoredAgents = new ArrayList<ConversationActivityScoredAgent>();
+  private List<ConversationActivityScoredAgent> scoredAgents = null;
+
+  public ConversationActivityEntityData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      requestedRoutingSkillIds = new ArrayList<String>();
+      requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+      scoredAgents = new ArrayList<ConversationActivityScoredAgent>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicConditionRulePredicate;
@@ -26,8 +27,8 @@ import java.io.Serializable;
 public class V2MobiusAlertsTopicCondition  implements Serializable {
   
   private String id = null;
-  private List<V2MobiusAlertsTopicCondition> clauses = new ArrayList<V2MobiusAlertsTopicCondition>();
-  private List<V2MobiusAlertsTopicConditionRulePredicate> predicates = new ArrayList<V2MobiusAlertsTopicConditionRulePredicate>();
+  private List<V2MobiusAlertsTopicCondition> clauses = null;
+  private List<V2MobiusAlertsTopicConditionRulePredicate> predicates = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -78,6 +79,13 @@ public class V2MobiusAlertsTopicCondition  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  public V2MobiusAlertsTopicCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<V2MobiusAlertsTopicCondition>();
+      predicates = new ArrayList<V2MobiusAlertsTopicConditionRulePredicate>();
+    }
+  }
 
   
   /**

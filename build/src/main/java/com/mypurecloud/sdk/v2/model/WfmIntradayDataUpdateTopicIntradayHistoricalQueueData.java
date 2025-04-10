@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,80 +23,85 @@ import java.io.Serializable;
 
 public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements Serializable {
   
-  private Integer offered = null;
-  private Integer completed = null;
-  private Integer answered = null;
-  private Integer abandoned = null;
+  private Long offered = null;
+  private Long completed = null;
+  private Long answered = null;
+  private Long abandoned = null;
   private BigDecimal averageTalkTimeSeconds = null;
   private BigDecimal averageAfterCallWorkSeconds = null;
   private BigDecimal serviceLevelPercent = null;
   private BigDecimal averageSpeedOfAnswerSeconds = null;
 
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData offered(Integer offered) {
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData offered(Long offered) {
     this.offered = offered;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("offered")
-  public Integer getOffered() {
+  public Long getOffered() {
     return offered;
   }
-  public void setOffered(Integer offered) {
+  public void setOffered(Long offered) {
     this.offered = offered;
   }
 
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData completed(Integer completed) {
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData completed(Long completed) {
     this.completed = completed;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("completed")
-  public Integer getCompleted() {
+  public Long getCompleted() {
     return completed;
   }
-  public void setCompleted(Integer completed) {
+  public void setCompleted(Long completed) {
     this.completed = completed;
   }
 
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData answered(Integer answered) {
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData answered(Long answered) {
     this.answered = answered;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("answered")
-  public Integer getAnswered() {
+  public Long getAnswered() {
     return answered;
   }
-  public void setAnswered(Integer answered) {
+  public void setAnswered(Long answered) {
     this.answered = answered;
   }
 
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData abandoned(Integer abandoned) {
+  public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData abandoned(Long abandoned) {
     this.abandoned = abandoned;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("abandoned")
-  public Integer getAbandoned() {
+  public Long getAbandoned() {
     return abandoned;
   }
-  public void setAbandoned(Integer abandoned) {
+  public void setAbandoned(Long abandoned) {
     this.abandoned = abandoned;
   }
 

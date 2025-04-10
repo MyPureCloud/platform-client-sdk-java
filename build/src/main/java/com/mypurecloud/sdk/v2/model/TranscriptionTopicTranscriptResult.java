@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TranscriptionTopicTranscriptAlternative;
@@ -77,7 +78,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     }
   }
   private ChannelEnum channel = null;
-  private List<TranscriptionTopicTranscriptAlternative> alternatives = new ArrayList<TranscriptionTopicTranscriptAlternative>();
+  private List<TranscriptionTopicTranscriptAlternative> alternatives = null;
   private String agentAssistantId = null;
   private String engineProvider = null;
   private String engineId = null;
@@ -86,6 +87,12 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
   private String speechTextAnalyticsProgramId = null;
   private Boolean agentAssistEnabled = null;
   private Boolean voiceTranscriptionEnabled = null;
+
+  public TranscriptionTopicTranscriptResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      alternatives = new ArrayList<TranscriptionTopicTranscriptAlternative>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffRange;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class AvailableTimeOffResponse  implements Serializable {
   
-  private List<AvailableTimeOffRange> values = new ArrayList<AvailableTimeOffRange>();
+  private List<AvailableTimeOffRange> values = null;
+
+  public AvailableTimeOffResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<AvailableTimeOffRange>();
+    }
+  }
 
   
   /**

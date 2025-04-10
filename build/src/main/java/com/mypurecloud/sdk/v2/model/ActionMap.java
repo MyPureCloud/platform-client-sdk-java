@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionMapAction;
 import com.mypurecloud.sdk.v2.model.ActionMapScheduleGroups;
@@ -36,12 +37,12 @@ public class ActionMap  implements Serializable {
   private Integer version = null;
   private Boolean isActive = null;
   private String displayName = null;
-  private List<String> triggerWithSegments = new ArrayList<String>();
-  private List<EventCondition> triggerWithEventConditions = new ArrayList<EventCondition>();
-  private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
-  private List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions = new ArrayList<OutcomePercentileCondition>();
-  private List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions = new ArrayList<OutcomeQuantileCondition>();
-  private List<UrlCondition> pageUrlConditions = new ArrayList<UrlCondition>();
+  private List<String> triggerWithSegments = null;
+  private List<EventCondition> triggerWithEventConditions = null;
+  private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = null;
+  private List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions = null;
+  private List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions = null;
+  private List<UrlCondition> pageUrlConditions = null;
   private Activation activation = null;
   private Integer weight = null;
   private ActionMapAction action = null;
@@ -52,6 +53,17 @@ public class ActionMap  implements Serializable {
   private Date modifiedDate = null;
   private Date startDate = null;
   private Date endDate = null;
+
+  public ActionMap() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      triggerWithSegments = new ArrayList<String>();
+      triggerWithEventConditions = new ArrayList<EventCondition>();
+      triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
+      triggerWithOutcomePercentileConditions = new ArrayList<OutcomePercentileCondition>();
+      triggerWithOutcomeQuantileConditions = new ArrayList<OutcomeQuantileCondition>();
+      pageUrlConditions = new ArrayList<UrlCondition>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

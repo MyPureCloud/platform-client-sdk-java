@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Miner;
 import io.swagger.annotations.ApiModel;
@@ -31,8 +32,14 @@ public class DraftTopics  implements Serializable {
   private Float conversationPercent = null;
   private Integer utteranceCount = null;
   private Integer phraseCount = null;
-  private List<String> phrases = new ArrayList<String>();
+  private List<String> phrases = null;
   private String selfUri = null;
+
+  public DraftTopics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phrases = new ArrayList<String>();
+    }
+  }
 
   
   /**

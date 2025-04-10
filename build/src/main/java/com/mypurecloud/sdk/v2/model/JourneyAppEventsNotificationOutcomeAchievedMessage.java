@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationAssociatedValue;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationBrowser;
@@ -40,6 +41,11 @@ public class JourneyAppEventsNotificationOutcomeAchievedMessage  implements Seri
   private JourneyAppEventsNotificationMktCampaign mktCampaign = null;
   private JourneyAppEventsNotificationReferrer visitReferrer = null;
   private JourneyAppEventsNotificationAssociatedValue associatedValue = null;
+
+  public JourneyAppEventsNotificationOutcomeAchievedMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

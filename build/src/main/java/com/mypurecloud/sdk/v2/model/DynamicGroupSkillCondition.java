@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DynamicGroupLanguageSkillCondition;
@@ -26,8 +27,8 @@ import java.io.Serializable;
 
 public class DynamicGroupSkillCondition  implements Serializable {
   
-  private List<DynamicGroupRoutingSkillCondition> routingSkillConditions = new ArrayList<DynamicGroupRoutingSkillCondition>();
-  private List<DynamicGroupLanguageSkillCondition> languageSkillConditions = new ArrayList<DynamicGroupLanguageSkillCondition>();
+  private List<DynamicGroupRoutingSkillCondition> routingSkillConditions = null;
+  private List<DynamicGroupLanguageSkillCondition> languageSkillConditions = null;
 
   private static class OperationEnumDeserializer extends StdDeserializer<OperationEnum> {
     public OperationEnumDeserializer() {
@@ -77,6 +78,13 @@ public class DynamicGroupSkillCondition  implements Serializable {
     }
   }
   private OperationEnum operation = null;
+
+  public DynamicGroupSkillCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routingSkillConditions = new ArrayList<DynamicGroupRoutingSkillCondition>();
+      languageSkillConditions = new ArrayList<DynamicGroupLanguageSkillCondition>();
+    }
+  }
 
   
   /**

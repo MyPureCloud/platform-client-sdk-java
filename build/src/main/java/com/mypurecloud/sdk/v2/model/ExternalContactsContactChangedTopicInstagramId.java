@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicInstagramScopedId;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +25,15 @@ import java.io.Serializable;
 
 public class ExternalContactsContactChangedTopicInstagramId  implements Serializable {
   
-  private List<ExternalContactsContactChangedTopicInstagramScopedId> ids = new ArrayList<ExternalContactsContactChangedTopicInstagramScopedId>();
+  private List<ExternalContactsContactChangedTopicInstagramScopedId> ids = null;
   private String displayName = null;
   private String handle = null;
+
+  public ExternalContactsContactChangedTopicInstagramId() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ids = new ArrayList<ExternalContactsContactChangedTopicInstagramScopedId>();
+    }
+  }
 
   
   /**

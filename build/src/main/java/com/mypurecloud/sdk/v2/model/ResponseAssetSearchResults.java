@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class ResponseAssetSearchResults  implements Serializable {
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<ResponseAsset> results = new ArrayList<ResponseAsset>();
+  private List<ResponseAsset> results = null;
+
+  public ResponseAssetSearchResults() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<ResponseAsset>();
+    }
+  }
 
   
   /**

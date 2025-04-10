@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgentRequest;
 import io.swagger.annotations.ApiModel;
@@ -44,12 +45,20 @@ public class WorkitemCreate  implements Serializable {
   private String languageId = null;
   private String externalContactId = null;
   private String externalTag = null;
-  private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillIds = null;
   private String scriptId = null;
   private String wrapupCode = null;
   private String utilizationLabelId = null;
-  private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
-  private List<String> preferredAgentIds = new ArrayList<String>();
+  private List<WorkitemScoredAgentRequest> scoredAgents = null;
+  private List<String> preferredAgentIds = null;
+
+  public WorkitemCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+      preferredAgentIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

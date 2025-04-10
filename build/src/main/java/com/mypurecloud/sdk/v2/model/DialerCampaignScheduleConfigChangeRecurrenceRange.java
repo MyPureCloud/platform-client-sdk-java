@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -76,8 +77,13 @@ public class DialerCampaignScheduleConfigChangeRecurrenceRange  implements Seria
   }
   private TypeEnum type = null;
   private String end = null;
-  private Integer numberOfOccurrences = null;
+  private Long numberOfOccurrences = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerCampaignScheduleConfigChangeRecurrenceRange() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -118,17 +124,17 @@ public class DialerCampaignScheduleConfigChangeRecurrenceRange  implements Seria
   /**
    * the number of occurrences to happen before ending
    **/
-  public DialerCampaignScheduleConfigChangeRecurrenceRange numberOfOccurrences(Integer numberOfOccurrences) {
+  public DialerCampaignScheduleConfigChangeRecurrenceRange numberOfOccurrences(Long numberOfOccurrences) {
     this.numberOfOccurrences = numberOfOccurrences;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "the number of occurrences to happen before ending")
   @JsonProperty("numberOfOccurrences")
-  public Integer getNumberOfOccurrences() {
+  public Long getNumberOfOccurrences() {
     return numberOfOccurrences;
   }
-  public void setNumberOfOccurrences(Integer numberOfOccurrences) {
+  public void setNumberOfOccurrences(Long numberOfOccurrences) {
     this.numberOfOccurrences = numberOfOccurrences;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
@@ -18,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.DynamicContactQueueingSettings;
 import com.mypurecloud.sdk.v2.model.EmailConfig;
 import com.mypurecloud.sdk.v2.model.RestErrorDetail;
 import com.mypurecloud.sdk.v2.model.SmsConfig;
+import com.mypurecloud.sdk.v2.model.WhatsAppConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -92,17 +94,28 @@ public class MessagingCampaign  implements Serializable {
   private CampaignStatusEnum campaignStatus = null;
   private DomainEntityRef callableTimeSet = null;
   private DomainEntityRef contactList = null;
-  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> dncLists = null;
   private Boolean alwaysRunning = null;
-  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
+  private List<ContactSort> contactSorts = null;
   private Integer messagesPerMinute = null;
-  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
-  private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
+  private List<DomainEntityRef> ruleSets = null;
+  private List<DomainEntityRef> contactListFilters = null;
+  private List<RestErrorDetail> errors = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private EmailConfig emailConfig = null;
   private SmsConfig smsConfig = null;
+  private WhatsAppConfig whatsAppConfig = null;
   private String selfUri = null;
+
+  public MessagingCampaign() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncLists = new ArrayList<DomainEntityRef>();
+      contactSorts = new ArrayList<ContactSort>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+      contactListFilters = new ArrayList<DomainEntityRef>();
+      errors = new ArrayList<RestErrorDetail>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -413,6 +426,24 @@ public class MessagingCampaign  implements Serializable {
   }
 
 
+  /**
+   * Configuration for this messaging campaign to send WhatsApp messages.
+   **/
+  public MessagingCampaign whatsAppConfig(WhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration for this messaging campaign to send WhatsApp messages.")
+  @JsonProperty("whatsAppConfig")
+  public WhatsAppConfig getWhatsAppConfig() {
+    return whatsAppConfig;
+  }
+  public void setWhatsAppConfig(WhatsAppConfig whatsAppConfig) {
+    this.whatsAppConfig = whatsAppConfig;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -449,12 +480,13 @@ public class MessagingCampaign  implements Serializable {
             Objects.equals(this.dynamicContactQueueingSettings, messagingCampaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.emailConfig, messagingCampaign.emailConfig) &&
             Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
+            Objects.equals(this.whatsAppConfig, messagingCampaign.whatsAppConfig) &&
             Objects.equals(this.selfUri, messagingCampaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, contactListFilters, errors, dynamicContactQueueingSettings, emailConfig, smsConfig, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, contactListFilters, errors, dynamicContactQueueingSettings, emailConfig, smsConfig, whatsAppConfig, selfUri);
   }
 
   @Override
@@ -481,6 +513,7 @@ public class MessagingCampaign  implements Serializable {
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
+    sb.append("    whatsAppConfig: ").append(toIndentedString(whatsAppConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

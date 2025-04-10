@@ -17,9 +17,11 @@ import com.mypurecloud.sdk.v2.model.BulkJobTerminateRequest;
 import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
 import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
 import com.mypurecloud.sdk.v2.model.BulkJobsListing;
+import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 import com.mypurecloud.sdk.v2.model.Workbin;
 import com.mypurecloud.sdk.v2.model.WorkbinChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkbinCreate;
@@ -101,6 +103,9 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaReques
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasCoretypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasCoretypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasLimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsDatebasedRulesRequest;
@@ -2693,6 +2698,232 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getTaskmanagementWorkitemsSchemasCoretype(String coreTypeName) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsSchemasCoretype(createGetTaskmanagementWorkitemsSchemasCoretypeRequest(coreTypeName));
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param coreTypeName Name of the core type (required)
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretypeWithHttpInfo(String coreTypeName) throws IOException {
+    return getTaskmanagementWorkitemsSchemasCoretype(createGetTaskmanagementWorkitemsSchemasCoretypeRequest(coreTypeName).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsSchemasCoretypeRequest createGetTaskmanagementWorkitemsSchemasCoretypeRequest(String coreTypeName) {
+    return GetTaskmanagementWorkitemsSchemasCoretypeRequest.builder()
+            .withCoreTypeName(coreTypeName)
+
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getTaskmanagementWorkitemsSchemasCoretype(GetTaskmanagementWorkitemsSchemasCoretypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getTaskmanagementWorkitemsSchemasCoretypes() throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsSchemasCoretypes(createGetTaskmanagementWorkitemsSchemasCoretypesRequest());
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @return Coretype
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretypesWithHttpInfo() throws IOException {
+    return getTaskmanagementWorkitemsSchemasCoretypes(createGetTaskmanagementWorkitemsSchemasCoretypesRequest().withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsSchemasCoretypesRequest createGetTaskmanagementWorkitemsSchemasCoretypesRequest() {
+    return GetTaskmanagementWorkitemsSchemasCoretypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return Coretype
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Coretype getTaskmanagementWorkitemsSchemasCoretypes(GetTaskmanagementWorkitemsSchemasCoretypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the core types from which all schemas are built.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getTaskmanagementWorkitemsSchemasLimits() throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsSchemasLimits(createGetTaskmanagementWorkitemsSchemasLimitsRequest());
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @return SchemaQuantityLimits
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getTaskmanagementWorkitemsSchemasLimitsWithHttpInfo() throws IOException {
+    return getTaskmanagementWorkitemsSchemasLimits(createGetTaskmanagementWorkitemsSchemasLimitsRequest().withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsSchemasLimitsRequest createGetTaskmanagementWorkitemsSchemasLimitsRequest() {
+    return GetTaskmanagementWorkitemsSchemasLimitsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return SchemaQuantityLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchemaQuantityLimits getTaskmanagementWorkitemsSchemasLimits(GetTaskmanagementWorkitemsSchemasLimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchemaQuantityLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaQuantityLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get quantitative limits on schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchemaQuantityLimits> getTaskmanagementWorkitemsSchemasLimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaQuantityLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaQuantityLimits> response = (ApiResponse<SchemaQuantityLimits>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

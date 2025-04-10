@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -65,9 +66,12 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMTIMEOFF("UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff"),
     UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMAGENTHISTORY("UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory"),
     UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMTIMEOFF("UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff"),
+    UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY("UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory"),
     UNABLETOSCHEDULEPLANNINGPERIODMINDAYSOFFFROMAGENTHISTORY("UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory"),
     UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMAGENTHISTORY("UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory"),
     UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMTIMEOFF("UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff"),
+    UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY("UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory"),
+    UNABLETOSCHEDULEPLANNINGPERIODSHIFTMINCOUNTFROMAGENTHISTORY("UnableToSchedulePlanningPeriodShiftMinCountFromAgentHistory"),
     UNABLETOSCHEDULEWORKDAYFROMTIMEOFF("UnableToScheduleWorkDayFromTimeOff"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS("UnableToScheduleMaxConsecutiveWorkingDays"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS("UnableToScheduleMaxConsecutiveWorkingWeekends"),
@@ -163,6 +167,11 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     }
   }
   private SeverityEnum severity = null;
+
+  public SchedulerMessageTypeSeverity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

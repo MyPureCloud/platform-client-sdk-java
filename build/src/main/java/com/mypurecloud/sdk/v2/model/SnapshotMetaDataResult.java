@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SnapshotInfo;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class SnapshotMetaDataResult  implements Serializable {
   
   private SnapshotInfo snapshotInfo = null;
   private Date dateForecastStart = null;
+
+  public SnapshotMetaDataResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

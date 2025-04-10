@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -69,7 +70,12 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventTyping
     }
   }
   private TypeEnum type = null;
-  private Integer duration = null;
+  private Long duration = null;
+
+  public V2ConversationMessageTypingEventForUserTopicConversationEventTyping() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -91,17 +97,17 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventTyping
 
   /**
    **/
-  public V2ConversationMessageTypingEventForUserTopicConversationEventTyping duration(Integer duration) {
+  public V2ConversationMessageTypingEventForUserTopicConversationEventTyping duration(Long duration) {
     this.duration = duration;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("duration")
-  public Integer getDuration() {
+  public Long getDuration() {
     return duration;
   }
-  public void setDuration(Integer duration) {
+  public void setDuration(Long duration) {
     this.duration = duration;
   }
 

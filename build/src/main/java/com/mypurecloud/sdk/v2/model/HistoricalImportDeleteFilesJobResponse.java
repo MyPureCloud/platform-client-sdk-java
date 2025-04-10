@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.HistoricalDataDeleteEntity;
@@ -76,9 +77,16 @@ public class HistoricalImportDeleteFilesJobResponse  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<HistoricalDataDeleteEntity> entities = new ArrayList<HistoricalDataDeleteEntity>();
-  private List<HistoricalDataDisallowedDeleteEntity> disallowedEntities = new ArrayList<HistoricalDataDisallowedDeleteEntity>();
+  private List<HistoricalDataDeleteEntity> entities = null;
+  private List<HistoricalDataDisallowedDeleteEntity> disallowedEntities = null;
   private String selfUri = null;
+
+  public HistoricalImportDeleteFilesJobResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<HistoricalDataDeleteEntity>();
+      disallowedEntities = new ArrayList<HistoricalDataDisallowedDeleteEntity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The Job Id Request")

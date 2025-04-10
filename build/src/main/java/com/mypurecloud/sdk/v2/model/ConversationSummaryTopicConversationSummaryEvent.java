@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationHeadline;
@@ -34,8 +35,8 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   
   private String conversationId = null;
   private String queueId = null;
-  private List<ConversationSummaryTopicConversationSummaryParticipant> participants = new ArrayList<ConversationSummaryTopicConversationSummaryParticipant>();
-  private List<String> communicationIds = new ArrayList<String>();
+  private List<ConversationSummaryTopicConversationSummaryParticipant> participants = null;
+  private List<String> communicationIds = null;
   private Date createdDate = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -149,7 +150,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   private ConversationSummaryTopicConversationHeadline headline = null;
   private ConversationSummaryTopicConversationReason reason = null;
   private ConversationSummaryTopicConversationResolution resolution = null;
-  private List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
+  private List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicTriggerSource triggerSource = null;
   private ConversationSummaryTopicConversationSummaryParticipant lastEditedBy = null;
 
@@ -202,7 +203,15 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     }
   }
   private ErrorTypeEnum errorType = null;
-  private Integer durationMs = null;
+  private Long durationMs = null;
+
+  public ConversationSummaryTopicConversationSummaryEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationSummaryTopicConversationSummaryParticipant>();
+      communicationIds = new ArrayList<String>();
+      wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
+    }
+  }
 
   
   /**
@@ -496,17 +505,17 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   /**
    **/
-  public ConversationSummaryTopicConversationSummaryEvent durationMs(Integer durationMs) {
+  public ConversationSummaryTopicConversationSummaryEvent durationMs(Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMs")
-  public Integer getDurationMs() {
+  public Long getDurationMs() {
     return durationMs;
   }
-  public void setDurationMs(Integer durationMs) {
+  public void setDurationMs(Long durationMs) {
     this.durationMs = durationMs;
   }
 

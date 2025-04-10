@@ -10,9 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +28,7 @@ public class DomainResourceConditionValue  implements Serializable {
   
   private User user = null;
   private Queue queue = null;
+  private Team team = null;
   private String value = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -49,6 +52,7 @@ public class DomainResourceConditionValue  implements Serializable {
     SCALAR("SCALAR"),
     VARIABLE("VARIABLE"),
     USER("USER"),
+    TEAM("TEAM"),
     QUEUE("QUEUE");
 
     private String value;
@@ -77,6 +81,11 @@ public class DomainResourceConditionValue  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  public DomainResourceConditionValue() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -110,6 +119,23 @@ public class DomainResourceConditionValue  implements Serializable {
   }
   public void setQueue(Queue queue) {
     this.queue = queue;
+  }
+
+
+  /**
+   **/
+  public DomainResourceConditionValue team(Team team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public Team getTeam() {
+    return team;
+  }
+  public void setTeam(Team team) {
+    this.team = team;
   }
 
 
@@ -159,13 +185,14 @@ public class DomainResourceConditionValue  implements Serializable {
 
     return Objects.equals(this.user, domainResourceConditionValue.user) &&
             Objects.equals(this.queue, domainResourceConditionValue.queue) &&
+            Objects.equals(this.team, domainResourceConditionValue.team) &&
             Objects.equals(this.value, domainResourceConditionValue.value) &&
             Objects.equals(this.type, domainResourceConditionValue.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, queue, value, type);
+    return Objects.hash(user, queue, team, value, type);
   }
 
   @Override
@@ -175,6 +202,7 @@ public class DomainResourceConditionValue  implements Serializable {
     
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

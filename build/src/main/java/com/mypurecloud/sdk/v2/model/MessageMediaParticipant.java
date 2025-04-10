@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -214,7 +215,7 @@ public class MessageMediaParticipant  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
   private DomainEntityRef team = null;
@@ -285,7 +286,7 @@ public class MessageMediaParticipant  implements Serializable {
   private Date resumeTime = null;
   private Address toAddress = null;
   private Address fromAddress = null;
-  private List<MessageDetails> messages = new ArrayList<MessageDetails>();
+  private List<MessageDetails> messages = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -349,6 +350,13 @@ public class MessageMediaParticipant  implements Serializable {
   private Boolean authenticated = null;
   private String monitoredParticipantId = null;
   private AddressableEntityRef monitoredParticipant = null;
+
+  public MessageMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      messages = new ArrayList<MessageDetails>();
+    }
+  }
 
   
   /**

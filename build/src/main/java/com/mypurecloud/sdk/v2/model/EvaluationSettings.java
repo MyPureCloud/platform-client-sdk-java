@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationSettingsAssignee;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class EvaluationSettings  implements Serializable {
   private Boolean revisionsEnabled = null;
   private Boolean disputesEnabled = null;
   private Integer disputesAllowedPerEvaluation = null;
-  private List<EvaluationSettingsAssignee> disputesAssignees = new ArrayList<EvaluationSettingsAssignee>();
+  private List<EvaluationSettingsAssignee> disputesAssignees = null;
+
+  public EvaluationSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      disputesAssignees = new ArrayList<EvaluationSettingsAssignee>();
+    }
+  }
 
   
   /**

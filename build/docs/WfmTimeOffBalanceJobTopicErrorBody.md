@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | **Integer** |  |  [optional] |
+| **status** | **Long** |  |  [optional] |
 | **code** | **String** |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 | **messageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
@@ -13,4 +13,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

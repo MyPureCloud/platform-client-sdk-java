@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.DataSchema;
@@ -44,9 +45,9 @@ public class ExternalOrganization  implements Serializable {
   private PhoneNumber faxNumber = null;
   private Long employeeCount = null;
   private Long revenue = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<String> websites = new ArrayList<String>();
-  private List<Ticker> tickers = new ArrayList<Ticker>();
+  private List<String> tags = null;
+  private List<String> websites = null;
+  private List<Ticker> tickers = null;
   private TwitterId twitterId = null;
   private String externalSystemUrl = null;
   private Date modifyDate = null;
@@ -54,8 +55,17 @@ public class ExternalOrganization  implements Serializable {
   private Trustor trustor = null;
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+  private List<ExternalDataSource> externalDataSources = null;
   private String selfUri = null;
+
+  public ExternalOrganization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+      websites = new ArrayList<String>();
+      tickers = new ArrayList<Ticker>();
+      externalDataSources = new ArrayList<ExternalDataSource>();
+    }
+  }
 
   
   /**

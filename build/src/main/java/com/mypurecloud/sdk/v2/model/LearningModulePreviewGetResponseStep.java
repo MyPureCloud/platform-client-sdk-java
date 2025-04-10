@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentStepSignedCookie;
@@ -30,7 +31,7 @@ public class LearningModulePreviewGetResponseStep  implements Serializable {
   
   private String id = null;
   private LearningModuleInformStep moduleStep = null;
-  private List<LearningModulePreviewGetScoStructure> structure = new ArrayList<LearningModulePreviewGetScoStructure>();
+  private List<LearningModulePreviewGetScoStructure> structure = null;
 
   private static class SuccessStatusEnumDeserializer extends StdDeserializer<SuccessStatusEnum> {
     public SuccessStatusEnumDeserializer() {
@@ -133,6 +134,12 @@ public class LearningModulePreviewGetResponseStep  implements Serializable {
   private Float completionPercentage = null;
   private Float percentageScore = null;
   private LearningAssignmentStepSignedCookie signedCookie = null;
+
+  public LearningModulePreviewGetResponseStep() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      structure = new ArrayList<LearningModulePreviewGetScoStructure>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The id of the step")

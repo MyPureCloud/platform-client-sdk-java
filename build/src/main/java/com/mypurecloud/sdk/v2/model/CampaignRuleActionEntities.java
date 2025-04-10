@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -24,11 +25,20 @@ import java.io.Serializable;
 
 public class CampaignRuleActionEntities  implements Serializable {
   
-  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> sequences = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> emailCampaigns = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> smsCampaigns = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> campaigns = null;
+  private List<DomainEntityRef> sequences = null;
+  private List<DomainEntityRef> emailCampaigns = null;
+  private List<DomainEntityRef> smsCampaigns = null;
   private Boolean useTriggeringEntity = null;
+
+  public CampaignRuleActionEntities() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaigns = new ArrayList<DomainEntityRef>();
+      sequences = new ArrayList<DomainEntityRef>();
+      emailCampaigns = new ArrayList<DomainEntityRef>();
+      smsCampaigns = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   /**

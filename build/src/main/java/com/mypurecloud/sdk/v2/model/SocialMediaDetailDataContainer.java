@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SocialMediaDetailMessageContainer;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class SocialMediaDetailDataContainer  implements Serializable {
   
   private String interval = null;
-  private List<SocialMediaDetailMessageContainer> messages = new ArrayList<SocialMediaDetailMessageContainer>();
+  private List<SocialMediaDetailMessageContainer> messages = null;
+
+  public SocialMediaDetailDataContainer() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messages = new ArrayList<SocialMediaDetailMessageContainer>();
+    }
+  }
 
   
   /**

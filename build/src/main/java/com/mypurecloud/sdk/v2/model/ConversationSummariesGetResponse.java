@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ConversationSessionSummary;
@@ -29,7 +30,13 @@ public class ConversationSummariesGetResponse  implements Serializable {
   
   private AddressableEntityRef conversation = null;
   private ConversationSummary summary = null;
-  private List<ConversationSessionSummary> sessionSummaries = new ArrayList<ConversationSessionSummary>();
+  private List<ConversationSessionSummary> sessionSummaries = null;
+
+  public ConversationSummariesGetResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sessionSummaries = new ArrayList<ConversationSessionSummary>();
+    }
+  }
 
   
   /**

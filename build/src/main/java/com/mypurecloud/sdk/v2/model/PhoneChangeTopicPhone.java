@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicPhoneStatus;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicUserAgentInfo;
@@ -27,6 +28,11 @@ public class PhoneChangeTopicPhone  implements Serializable {
   private String id = null;
   private PhoneChangeTopicPhoneStatus status = null;
   private PhoneChangeTopicPhoneStatus secondaryStatus = null;
+
+  public PhoneChangeTopicPhone() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

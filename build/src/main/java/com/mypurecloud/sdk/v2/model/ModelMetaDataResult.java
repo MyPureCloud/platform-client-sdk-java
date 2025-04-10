@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PlanningGroupModel;
 import com.mypurecloud.sdk.v2.model.SessionInfo;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class ModelMetaDataResult  implements Serializable {
   
   private SessionInfo sessionInfo = null;
-  private List<PlanningGroupModel> planningGroups = new ArrayList<PlanningGroupModel>();
+  private List<PlanningGroupModel> planningGroups = null;
+
+  public ModelMetaDataResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      planningGroups = new ArrayList<PlanningGroupModel>();
+    }
+  }
 
   
   /**

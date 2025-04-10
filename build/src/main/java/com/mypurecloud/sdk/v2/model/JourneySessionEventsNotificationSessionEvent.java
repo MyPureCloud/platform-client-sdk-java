@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationApp;
@@ -51,8 +52,8 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private String customerId = null;
   private String customerIdType = null;
   private String type = null;
-  private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
-  private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
+  private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = null;
+  private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = null;
   private Date awayDate = null;
   private JourneySessionEventsNotificationBrowser browser = null;
   private JourneySessionEventsNotificationDevice device = null;
@@ -63,12 +64,12 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationPage lastPage = null;
   private JourneySessionEventsNotificationMktCampaign mktCampaign = null;
   private JourneySessionEventsNotificationReferrer referrer = null;
-  private List<String> searchTerms = new ArrayList<String>();
+  private List<String> searchTerms = null;
   private String userAgentString = null;
-  private Integer durationInSeconds = null;
-  private Integer eventCount = null;
-  private Integer pageviewCount = null;
-  private Integer screenviewCount = null;
+  private Long durationInSeconds = null;
+  private Long eventCount = null;
+  private Long pageviewCount = null;
+  private Long screenviewCount = null;
   private JourneySessionEventsNotificationSessionLastEvent lastEvent = null;
   private JourneySessionEventsNotificationConversation conversation = null;
 
@@ -124,7 +125,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationConversationUserDisposition lastUserDisposition = null;
   private JourneySessionEventsNotificationUser lastConnectedUser = null;
   private JourneySessionEventsNotificationConnectedQueue lastConnectedQueue = null;
-  private List<JourneySessionEventsNotificationConversationChannel> conversationChannels = new ArrayList<JourneySessionEventsNotificationConversationChannel>();
+  private List<JourneySessionEventsNotificationConversationChannel> conversationChannels = null;
 
   private static class LastUserDisconnectTypeEnumDeserializer extends StdDeserializer<LastUserDisconnectTypeEnum> {
     public LastUserDisconnectTypeEnumDeserializer() {
@@ -244,8 +245,18 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationApp app = null;
   private JourneySessionEventsNotificationSdkLibrary sdkLibrary = null;
   private JourneySessionEventsNotificationNetworkConnectivity networkConnectivity = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String lastScreen = null;
+
+  public JourneySessionEventsNotificationSessionEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
+      segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
+      searchTerms = new ArrayList<String>();
+      conversationChannels = new ArrayList<JourneySessionEventsNotificationConversationChannel>();
+      divisionIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -624,68 +635,68 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
 
   /**
    **/
-  public JourneySessionEventsNotificationSessionEvent durationInSeconds(Integer durationInSeconds) {
+  public JourneySessionEventsNotificationSessionEvent durationInSeconds(Long durationInSeconds) {
     this.durationInSeconds = durationInSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationInSeconds")
-  public Integer getDurationInSeconds() {
+  public Long getDurationInSeconds() {
     return durationInSeconds;
   }
-  public void setDurationInSeconds(Integer durationInSeconds) {
+  public void setDurationInSeconds(Long durationInSeconds) {
     this.durationInSeconds = durationInSeconds;
   }
 
 
   /**
    **/
-  public JourneySessionEventsNotificationSessionEvent eventCount(Integer eventCount) {
+  public JourneySessionEventsNotificationSessionEvent eventCount(Long eventCount) {
     this.eventCount = eventCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventCount")
-  public Integer getEventCount() {
+  public Long getEventCount() {
     return eventCount;
   }
-  public void setEventCount(Integer eventCount) {
+  public void setEventCount(Long eventCount) {
     this.eventCount = eventCount;
   }
 
 
   /**
    **/
-  public JourneySessionEventsNotificationSessionEvent pageviewCount(Integer pageviewCount) {
+  public JourneySessionEventsNotificationSessionEvent pageviewCount(Long pageviewCount) {
     this.pageviewCount = pageviewCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("pageviewCount")
-  public Integer getPageviewCount() {
+  public Long getPageviewCount() {
     return pageviewCount;
   }
-  public void setPageviewCount(Integer pageviewCount) {
+  public void setPageviewCount(Long pageviewCount) {
     this.pageviewCount = pageviewCount;
   }
 
 
   /**
    **/
-  public JourneySessionEventsNotificationSessionEvent screenviewCount(Integer screenviewCount) {
+  public JourneySessionEventsNotificationSessionEvent screenviewCount(Long screenviewCount) {
     this.screenviewCount = screenviewCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenviewCount")
-  public Integer getScreenviewCount() {
+  public Long getScreenviewCount() {
     return screenviewCount;
   }
-  public void setScreenviewCount(Integer screenviewCount) {
+  public void setScreenviewCount(Long screenviewCount) {
     this.screenviewCount = screenviewCount;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicBusinessUnit;
@@ -31,7 +32,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
   private WfmUserNotificationTopicManagementUnit managementUnit = null;
   private WfmUserNotificationTopicBusinessUnit businessUnit = null;
   private Date startDate = null;
-  private Integer lengthMinutes = null;
+  private Long lengthMinutes = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -130,6 +131,11 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
   private TypeEnum type = null;
   private String notes = null;
 
+  public WfmUserNotificationTopicAdherenceExplanationNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    **/
@@ -218,17 +224,17 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
 
   /**
    **/
-  public WfmUserNotificationTopicAdherenceExplanationNotification lengthMinutes(Integer lengthMinutes) {
+  public WfmUserNotificationTopicAdherenceExplanationNotification lengthMinutes(Long lengthMinutes) {
     this.lengthMinutes = lengthMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lengthMinutes")
-  public Integer getLengthMinutes() {
+  public Long getLengthMinutes() {
     return lengthMinutes;
   }
-  public void setLengthMinutes(Integer lengthMinutes) {
+  public void setLengthMinutes(Long lengthMinutes) {
     this.lengthMinutes = lengthMinutes;
   }
 

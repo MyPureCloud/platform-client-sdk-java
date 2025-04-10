@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress;
@@ -27,10 +28,16 @@ import java.io.Serializable;
 
 public class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig  implements Serializable {
   
-  private List<String> emailColumns = new ArrayList<String>();
+  private List<String> emailColumns = null;
   private OutboundMessagingWhatsappCampaignConfigChangeResponseRef contentTemplate = null;
   private OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress fromAddress = null;
   private OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress replyToAddress = null;
+
+  public OutboundMessagingWhatsappCampaignConfigChangeEmailConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      emailColumns = new ArrayList<String>();
+    }
+  }
 
   
   /**

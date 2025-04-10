@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryClause;
@@ -74,8 +75,15 @@ public class SurveyAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SurveyAggregateQueryClause> clauses = new ArrayList<SurveyAggregateQueryClause>();
-  private List<SurveyAggregateQueryPredicate> predicates = new ArrayList<SurveyAggregateQueryPredicate>();
+  private List<SurveyAggregateQueryClause> clauses = null;
+  private List<SurveyAggregateQueryPredicate> predicates = null;
+
+  public SurveyAggregateQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<SurveyAggregateQueryClause>();
+      predicates = new ArrayList<SurveyAggregateQueryPredicate>();
+    }
+  }
 
   
   /**

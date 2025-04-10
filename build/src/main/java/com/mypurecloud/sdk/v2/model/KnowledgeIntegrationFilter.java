@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeIntegrationFilterValue;
@@ -170,7 +171,13 @@ public class KnowledgeIntegrationFilter  implements Serializable {
     }
   }
   private ActionEnum action = null;
-  private List<KnowledgeIntegrationFilterValue> values = new ArrayList<KnowledgeIntegrationFilterValue>();
+  private List<KnowledgeIntegrationFilterValue> values = null;
+
+  public KnowledgeIntegrationFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<KnowledgeIntegrationFilterValue>();
+    }
+  }
 
   
   /**

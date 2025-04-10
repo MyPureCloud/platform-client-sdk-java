@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,7 +33,13 @@ public class JourneySessionEventsNotificationPage  implements Serializable {
   private String lang = null;
   private String pathname = null;
   private String queryString = null;
-  private List<String> breadcrumb = new ArrayList<String>();
+  private List<String> breadcrumb = null;
+
+  public JourneySessionEventsNotificationPage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      breadcrumb = new ArrayList<String>();
+    }
+  }
 
   
   /**

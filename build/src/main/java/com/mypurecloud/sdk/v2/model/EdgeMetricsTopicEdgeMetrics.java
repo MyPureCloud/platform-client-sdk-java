@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricDisk;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricMemory;
@@ -32,12 +33,22 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
   
   private EdgeMetricsTopicUriReference edge = null;
   private Date eventTime = null;
-  private Integer upTimeMsec = null;
-  private List<EdgeMetricsTopicEdgeMetricProcessor> processors = new ArrayList<EdgeMetricsTopicEdgeMetricProcessor>();
-  private List<EdgeMetricsTopicEdgeMetricMemory> memory = new ArrayList<EdgeMetricsTopicEdgeMetricMemory>();
-  private List<EdgeMetricsTopicEdgeMetricDisk> disks = new ArrayList<EdgeMetricsTopicEdgeMetricDisk>();
-  private List<EdgeMetricsTopicEdgeMetricSubsystem> subsystems = new ArrayList<EdgeMetricsTopicEdgeMetricSubsystem>();
-  private List<EdgeMetricsTopicEdgeMetricNetworks> networks = new ArrayList<EdgeMetricsTopicEdgeMetricNetworks>();
+  private Long upTimeMsec = null;
+  private List<EdgeMetricsTopicEdgeMetricProcessor> processors = null;
+  private List<EdgeMetricsTopicEdgeMetricMemory> memory = null;
+  private List<EdgeMetricsTopicEdgeMetricDisk> disks = null;
+  private List<EdgeMetricsTopicEdgeMetricSubsystem> subsystems = null;
+  private List<EdgeMetricsTopicEdgeMetricNetworks> networks = null;
+
+  public EdgeMetricsTopicEdgeMetrics() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      processors = new ArrayList<EdgeMetricsTopicEdgeMetricProcessor>();
+      memory = new ArrayList<EdgeMetricsTopicEdgeMetricMemory>();
+      disks = new ArrayList<EdgeMetricsTopicEdgeMetricDisk>();
+      subsystems = new ArrayList<EdgeMetricsTopicEdgeMetricSubsystem>();
+      networks = new ArrayList<EdgeMetricsTopicEdgeMetricNetworks>();
+    }
+  }
 
   
   /**
@@ -76,17 +87,17 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
 
   /**
    **/
-  public EdgeMetricsTopicEdgeMetrics upTimeMsec(Integer upTimeMsec) {
+  public EdgeMetricsTopicEdgeMetrics upTimeMsec(Long upTimeMsec) {
     this.upTimeMsec = upTimeMsec;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("upTimeMsec")
-  public Integer getUpTimeMsec() {
+  public Long getUpTimeMsec() {
     return upTimeMsec;
   }
-  public void setUpTimeMsec(Integer upTimeMsec) {
+  public void setUpTimeMsec(Long upTimeMsec) {
     this.upTimeMsec = upTimeMsec;
   }
 

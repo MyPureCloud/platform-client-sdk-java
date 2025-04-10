@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleActivity;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
@@ -29,9 +30,15 @@ public class BuAgentScheduleShift  implements Serializable {
   private String id = null;
   private Date startDate = null;
   private Integer lengthMinutes = null;
-  private List<BuAgentScheduleActivity> activities = new ArrayList<BuAgentScheduleActivity>();
+  private List<BuAgentScheduleActivity> activities = null;
   private Boolean manuallyEdited = null;
   private BuScheduleReference schedule = null;
+
+  public BuAgentScheduleShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<BuAgentScheduleActivity>();
+    }
+  }
 
   
   /**

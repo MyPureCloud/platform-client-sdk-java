@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRange;
 import io.swagger.annotations.ApiModel;
@@ -23,8 +24,8 @@ import java.io.Serializable;
 
 public class TimeOffRequestQueryBody  implements Serializable {
   
-  private List<String> ids = new ArrayList<String>();
-  private List<String> userIds = new ArrayList<String>();
+  private List<String> ids = null;
+  private List<String> userIds = null;
 
   private static class StatusesEnumDeserializer extends StdDeserializer<StatusesEnum> {
     public StatusesEnumDeserializer() {
@@ -70,7 +71,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<StatusesEnum> statuses = new ArrayList<StatusesEnum>();
+  private List<StatusesEnum> statuses = null;
 
   private static class SubstatusesEnumDeserializer extends StdDeserializer<SubstatusesEnum> {
     public SubstatusesEnumDeserializer() {
@@ -123,8 +124,17 @@ public class TimeOffRequestQueryBody  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SubstatusesEnum> substatuses = new ArrayList<SubstatusesEnum>();
+  private List<SubstatusesEnum> substatuses = null;
   private DateRange dateRange = null;
+
+  public TimeOffRequestQueryBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ids = new ArrayList<String>();
+      userIds = new ArrayList<String>();
+      statuses = new ArrayList<StatusesEnum>();
+      substatuses = new ArrayList<SubstatusesEnum>();
+    }
+  }
 
   
   /**

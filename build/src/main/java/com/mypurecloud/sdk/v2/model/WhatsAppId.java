@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class WhatsAppId  implements Serializable {
   
   private PhoneNumber phoneNumber = null;
   private String displayName = null;
+
+  public WhatsAppId() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

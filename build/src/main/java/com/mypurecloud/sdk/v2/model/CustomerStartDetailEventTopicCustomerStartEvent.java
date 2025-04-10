@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CustomerStartDetailEventTopicJourneyContext;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class CustomerStartDetailEventTopicCustomerStartEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -142,8 +143,8 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
-  private Integer callbackScheduledTime = null;
+  private List<String> callbackNumbers = null;
+  private Long callbackScheduledTime = null;
   private String subject = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -201,25 +202,33 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     }
   }
   private MessageTypeEnum messageType = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
   private CustomerStartDetailEventTopicJourneyContext journeyContext = null;
   private String divisionId = null;
+
+  public CustomerStartDetailEventTopicCustomerStartEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public CustomerStartDetailEventTopicCustomerStartEvent eventTime(Integer eventTime) {
+  public CustomerStartDetailEventTopicCustomerStartEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -464,17 +473,17 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
 
   /**
    **/
-  public CustomerStartDetailEventTopicCustomerStartEvent callbackScheduledTime(Integer callbackScheduledTime) {
+  public CustomerStartDetailEventTopicCustomerStartEvent callbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackScheduledTime")
-  public Integer getCallbackScheduledTime() {
+  public Long getCallbackScheduledTime() {
     return callbackScheduledTime;
   }
-  public void setCallbackScheduledTime(Integer callbackScheduledTime) {
+  public void setCallbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -28,8 +29,8 @@ import java.io.Serializable;
 public class BenefitAssessment  implements Serializable {
   
   private String id = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
-  private List<KeyPerformanceIndicatorAssessment> kpiAssessments = new ArrayList<KeyPerformanceIndicatorAssessment>();
+  private List<AddressableEntityRef> queues = null;
+  private List<KeyPerformanceIndicatorAssessment> kpiAssessments = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -83,6 +84,13 @@ public class BenefitAssessment  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public BenefitAssessment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      kpiAssessments = new ArrayList<KeyPerformanceIndicatorAssessment>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

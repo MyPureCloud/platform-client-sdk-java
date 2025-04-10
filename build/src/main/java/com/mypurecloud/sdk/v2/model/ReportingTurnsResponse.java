@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurn;
 import io.swagger.annotations.ApiModel;
@@ -24,10 +25,16 @@ import java.io.Serializable;
 
 public class ReportingTurnsResponse  implements Serializable {
   
-  private List<ReportingTurn> entities = new ArrayList<ReportingTurn>();
+  private List<ReportingTurn> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
+
+  public ReportingTurnsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ReportingTurn>();
+    }
+  }
 
   
   /**

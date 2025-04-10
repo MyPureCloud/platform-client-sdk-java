@@ -10,12 +10,14 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ColumnDataTypeSpecification;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailColumn;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.WhatsAppColumn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -35,19 +37,31 @@ public class ContactList  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef division = null;
-  private List<String> columnNames = new ArrayList<String>();
-  private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
-  private List<EmailColumn> emailColumns = new ArrayList<EmailColumn>();
+  private List<String> columnNames = null;
+  private List<ContactPhoneNumberColumn> phoneColumns = null;
+  private List<EmailColumn> emailColumns = null;
+  private List<WhatsAppColumn> whatsAppColumns = null;
   private ImportStatus importStatus = null;
   private String previewModeColumnName = null;
-  private List<String> previewModeAcceptedValues = new ArrayList<String>();
+  private List<String> previewModeAcceptedValues = null;
   private Long size = null;
   private DomainEntityRef attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
-  private List<ColumnDataTypeSpecification> columnDataTypeSpecifications = new ArrayList<ColumnDataTypeSpecification>();
+  private List<ColumnDataTypeSpecification> columnDataTypeSpecifications = null;
   private Boolean trimWhitespace = null;
   private String selfUri = null;
+
+  public ContactList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      columnNames = new ArrayList<String>();
+      phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+      emailColumns = new ArrayList<EmailColumn>();
+      whatsAppColumns = new ArrayList<WhatsAppColumn>();
+      previewModeAcceptedValues = new ArrayList<String>();
+      columnDataTypeSpecifications = new ArrayList<ColumnDataTypeSpecification>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -175,6 +189,24 @@ public class ContactList  implements Serializable {
   }
   public void setEmailColumns(List<EmailColumn> emailColumns) {
     this.emailColumns = emailColumns;
+  }
+
+
+  /**
+   * Indicates which columns are whatsApp contacts
+   **/
+  public ContactList whatsAppColumns(List<WhatsAppColumn> whatsAppColumns) {
+    this.whatsAppColumns = whatsAppColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates which columns are whatsApp contacts")
+  @JsonProperty("whatsAppColumns")
+  public List<WhatsAppColumn> getWhatsAppColumns() {
+    return whatsAppColumns;
+  }
+  public void setWhatsAppColumns(List<WhatsAppColumn> whatsAppColumns) {
+    this.whatsAppColumns = whatsAppColumns;
   }
 
 
@@ -344,6 +376,7 @@ public class ContactList  implements Serializable {
             Objects.equals(this.columnNames, contactList.columnNames) &&
             Objects.equals(this.phoneColumns, contactList.phoneColumns) &&
             Objects.equals(this.emailColumns, contactList.emailColumns) &&
+            Objects.equals(this.whatsAppColumns, contactList.whatsAppColumns) &&
             Objects.equals(this.importStatus, contactList.importStatus) &&
             Objects.equals(this.previewModeColumnName, contactList.previewModeColumnName) &&
             Objects.equals(this.previewModeAcceptedValues, contactList.previewModeAcceptedValues) &&
@@ -358,7 +391,7 @@ public class ContactList  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, trimWhitespace, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, whatsAppColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, trimWhitespace, selfUri);
   }
 
   @Override
@@ -375,6 +408,7 @@ public class ContactList  implements Serializable {
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
     sb.append("    emailColumns: ").append(toIndentedString(emailColumns)).append("\n");
+    sb.append("    whatsAppColumns: ").append(toIndentedString(whatsAppColumns)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    previewModeColumnName: ").append(toIndentedString(previewModeColumnName)).append("\n");
     sb.append("    previewModeAcceptedValues: ").append(toIndentedString(previewModeAcceptedValues)).append("\n");

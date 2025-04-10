@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertNotification;
@@ -34,7 +35,7 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
   private V2MobiusAlertsTopicAlertRuleProperties rule = null;
   private String id = null;
   private String userId = null;
-  private List<V2MobiusAlertsTopicAlertNotification> notifications = new ArrayList<V2MobiusAlertsTopicAlertNotification>();
+  private List<V2MobiusAlertsTopicAlertNotification> notifications = null;
   private Date dateStart = null;
   private Date dateEnd = null;
   private V2MobiusAlertsTopicCondition conditions = null;
@@ -102,6 +103,12 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
   private ActionEnum action = null;
   private V2MobiusAlertsTopicAlertSummary alertSummary = null;
   private Boolean sendExitingAlarmNotification = null;
+
+  public V2MobiusAlertsTopicAlert() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notifications = new ArrayList<V2MobiusAlertsTopicAlertNotification>();
+    }
+  }
 
   
   /**

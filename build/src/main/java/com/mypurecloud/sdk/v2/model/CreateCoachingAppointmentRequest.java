@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmScheduleReference;
 import io.swagger.annotations.ApiModel;
@@ -31,13 +32,22 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
   private Date dateStart = null;
   private Integer lengthInMinutes = null;
   private String facilitatorId = null;
-  private List<String> attendeeIds = new ArrayList<String>();
-  private List<String> conversationIds = new ArrayList<String>();
-  private List<String> documentIds = new ArrayList<String>();
+  private List<String> attendeeIds = null;
+  private List<String> conversationIds = null;
+  private List<String> documentIds = null;
   private WfmScheduleReference wfmSchedule = null;
-  private List<String> externalLinks = new ArrayList<String>();
+  private List<String> externalLinks = null;
   private String location = null;
   private Boolean shareInsightsData = null;
+
+  public CreateCoachingAppointmentRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      attendeeIds = new ArrayList<String>();
+      conversationIds = new ArrayList<String>();
+      documentIds = new ArrayList<String>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicEvaluationDetail;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicMetric;
@@ -28,10 +29,17 @@ import java.io.Serializable;
 public class GamificationScorecardChangeTopicPerformanceMetric  implements Serializable {
   
   private GamificationScorecardChangeTopicMetric metric = null;
-  private Integer points = null;
+  private Long points = null;
   private BigDecimal value = null;
-  private List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents = new ArrayList<GamificationScorecardChangeTopicPunctualityEvent>();
-  private List<GamificationScorecardChangeTopicEvaluationDetail> evaluationDetails = new ArrayList<GamificationScorecardChangeTopicEvaluationDetail>();
+  private List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents = null;
+  private List<GamificationScorecardChangeTopicEvaluationDetail> evaluationDetails = null;
+
+  public GamificationScorecardChangeTopicPerformanceMetric() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      punctualityEvents = new ArrayList<GamificationScorecardChangeTopicPunctualityEvent>();
+      evaluationDetails = new ArrayList<GamificationScorecardChangeTopicEvaluationDetail>();
+    }
+  }
 
   
   /**
@@ -53,17 +61,17 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
 
   /**
    **/
-  public GamificationScorecardChangeTopicPerformanceMetric points(Integer points) {
+  public GamificationScorecardChangeTopicPerformanceMetric points(Long points) {
     this.points = points;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("points")
-  public Integer getPoints() {
+  public Long getPoints() {
     return points;
   }
-  public void setPoints(Integer points) {
+  public void setPoints(Long points) {
     this.points = points;
   }
 

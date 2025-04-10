@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeAnswerDocumentResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeAnswerGenerationResponse;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class KnowledgeAnswerDocumentsResponse  implements Serializable {
   
-  private List<KnowledgeAnswerDocumentResponse> results = new ArrayList<KnowledgeAnswerDocumentResponse>();
+  private List<KnowledgeAnswerDocumentResponse> results = null;
   private KnowledgeAnswerGenerationResponse answerGeneration = null;
+
+  public KnowledgeAnswerDocumentsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<KnowledgeAnswerDocumentResponse>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.Share;
@@ -28,6 +29,11 @@ public class SharedResponse  implements Serializable {
   private String viewUri = null;
   private Document document = null;
   private Share share = null;
+
+  public SharedResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

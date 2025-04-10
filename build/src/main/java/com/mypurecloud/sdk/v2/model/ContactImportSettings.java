@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactImportField;
 import io.swagger.annotations.ApiModel;
@@ -73,12 +74,19 @@ public class ContactImportSettings  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MatchingCriteriaEnum> matchingCriteria = new ArrayList<MatchingCriteriaEnum>();
+  private List<MatchingCriteriaEnum> matchingCriteria = null;
   private Boolean mergeContacts = null;
   private String externalSourceId = null;
-  private List<ContactImportField> importFields = new ArrayList<ContactImportField>();
+  private List<ContactImportField> importFields = null;
   private Date dateCreated = null;
   private String selfUri = null;
+
+  public ContactImportSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      matchingCriteria = new ArrayList<MatchingCriteriaEnum>();
+      importFields = new ArrayList<ContactImportField>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 public class CsvUploadPreviewResponse  implements Serializable {
   
   private String uploadId = null;
-  private List<String> headers = new ArrayList<String>();
-  private List<List<String>> entries = new ArrayList<List<String>>();
+  private List<String> headers = null;
+  private List<List<String>> entries = null;
+
+  public CsvUploadPreviewResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      headers = new ArrayList<String>();
+      entries = new ArrayList<List<String>>();
+    }
+  }
 
   
   /**

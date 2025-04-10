@@ -27,6 +27,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact's schema |
 | [**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | Get a list of schemas. |
+| [**getExternalcontactsContactsSchemasCoretype**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsContactsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretypes) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsContactsSchemasLimits**](ExternalContactsApi#getExternalcontactsContactsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | Fetch an External Source |
 | [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | Fetch a list of External Sources |
 | [**getExternalcontactsImportCsvSetting**](ExternalContactsApi#getExternalcontactsImportCsvSetting) | Get settings for CSV import |
@@ -39,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | List settings for organization |
 | [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
+| [**getExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#getExternalcontactsOrganizationIdentifiers) | List the identifiers for an external organization |
 | [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | Fetch a note for an external organization |
 | [**getExternalcontactsOrganizationNotes**](ExternalContactsApi#getExternalcontactsOrganizationNotes) | List notes for an external organization |
 | [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi#getExternalcontactsOrganizationRelationships) | Fetch a relationship for an external organization |
@@ -47,6 +51,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization's schema |
 | [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi#getExternalcontactsOrganizationsSchemas) | Get a list of schemas. |
+| [**getExternalcontactsOrganizationsSchemasCoretype**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
 | [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | Scan for external contacts using paging |
@@ -58,9 +65,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | Scan for relationships |
 | [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | Scan for relationships |
 | [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | Claim or release identifiers for a contact |
+| [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | Claim or release identifiers for an external organization |
 | [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | Bulk fetch contacts |
 | [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | Bulk add contacts |
 | [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | Bulk fetch contacts across divisions |
+| [**postExternalcontactsBulkContactsEnrich**](ExternalContactsApi#postExternalcontactsBulkContactsEnrich) | Bulk Enrich Contacts - Run up to 10 Enrich operations per request |
 | [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi#postExternalcontactsBulkContactsRemove) | Bulk remove contacts |
 | [**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi#postExternalcontactsBulkContactsUnresolved) | Bulk fetch unresolved ancestor contacts |
 | [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi#postExternalcontactsBulkContactsUpdate) | Bulk update contacts |
@@ -71,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsBulkOrganizations**](ExternalContactsApi#postExternalcontactsBulkOrganizations) | Bulk fetch organizations |
 | [**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd) | Bulk add organizations |
 | [**postExternalcontactsBulkOrganizationsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkOrganizationsDivisionviews) | Bulk fetch organizations across divisions |
+| [**postExternalcontactsBulkOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsBulkOrganizationsEnrich) | Bulk enrich external organizations - Run up to 10 Enrich operations per request |
 | [**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove) | Bulk remove organizations |
 | [**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate) | Bulk update organizations |
 | [**postExternalcontactsBulkRelationships**](ExternalContactsApi#postExternalcontactsBulkRelationships) | Bulk fetch relationships |
@@ -80,10 +90,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsContactNotes**](ExternalContactsApi#postExternalcontactsContactNotes) | Create a note for an external contact |
 | [**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | Promote an observed contact (ephemeral or identified) to a curated contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | Create an external contact |
+| [**postExternalcontactsContactsEnrich**](ExternalContactsApi#postExternalcontactsContactsEnrich) | Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts. |
 | [**postExternalcontactsContactsExports**](ExternalContactsApi#postExternalcontactsContactsExports) | Create bulk export |
+| [**postExternalcontactsContactsMerge**](ExternalContactsApi#postExternalcontactsContactsMerge) | Merge up to 25 contacts into a new contact record |
 | [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | Create a schema |
 | [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | Create an External Source |
 | [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | Fetch a contact using an identifier type and value. |
+| [**postExternalcontactsIdentifierlookupContacts**](ExternalContactsApi#postExternalcontactsIdentifierlookupContacts) | Fetch a contact using an identifier type and value. |
+| [**postExternalcontactsIdentifierlookupOrganizations**](ExternalContactsApi#postExternalcontactsIdentifierlookupOrganizations) | Fetch an external organization using an identifier type and value. |
 | [**postExternalcontactsImportCsvJobs**](ExternalContactsApi#postExternalcontactsImportCsvJobs) | Create CSV import job |
 | [**postExternalcontactsImportCsvSettings**](ExternalContactsApi#postExternalcontactsImportCsvSettings) | Create settings for CSV import |
 | [**postExternalcontactsImportCsvUploads**](ExternalContactsApi#postExternalcontactsImportCsvUploads) | Get url for CSV upload |
@@ -92,6 +106,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | Merge two contacts into a new contact record |
 | [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | Create a note for an external organization |
 | [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | Create an external organization |
+| [**postExternalcontactsOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsOrganizationsEnrich) | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. |
 | [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi#postExternalcontactsOrganizationsSchemas) | Create a schema |
 | [**postExternalcontactsRelationships**](ExternalContactsApi#postExternalcontactsRelationships) | Create a relationship |
 | [**putExternalcontactsContact**](ExternalContactsApi#putExternalcontactsContact) | Update an external contact |
@@ -1512,6 +1527,175 @@ This endpoint does not require any parameters.
 [**DataSchemaListing**](DataSchemaListing)
 
 
+# **getExternalcontactsContactsSchemasCoretype**
+
+
+> [Coretype](Coretype) getExternalcontactsContactsSchemasCoretype(coreTypeName)
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of the core type
+try {
+    Coretype result = apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of the core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getExternalcontactsContactsSchemasCoretypes**
+
+
+> [Coretype](Coretype) getExternalcontactsContactsSchemasCoretypes()
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    Coretype result = apiInstance.getExternalcontactsContactsSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getExternalcontactsContactsSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getExternalcontactsContactsSchemasLimits()
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/limits  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getExternalcontactsContactsSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 # **getExternalcontactsExternalsource**
 
 
@@ -2266,6 +2450,67 @@ try {
 [**ContactListing**](ContactListing)
 
 
+# **getExternalcontactsOrganizationIdentifiers**
+
+
+> [ExternalOrganizationIdentifierListing](ExternalOrganizationIdentifierListing) getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
+
+List the identifiers for an external organization
+
+getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+try {
+    ExternalOrganizationIdentifierListing result = apiInstance.getExternalcontactsOrganizationIdentifiers(externalOrganizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationIdentifiers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalOrganizationIdentifierListing**](ExternalOrganizationIdentifierListing)
+
+
 # **getExternalcontactsOrganizationNote**
 
 
@@ -2772,6 +3017,175 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**DataSchemaListing**](DataSchemaListing)
+
+
+# **getExternalcontactsOrganizationsSchemasCoretype**
+
+
+> [Coretype](Coretype) getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String coreTypeName = "coreTypeName_example"; // String | Name of the core type
+try {
+    Coretype result = apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coreTypeName** | **String**| Name of the core type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getExternalcontactsOrganizationsSchemasCoretypes**
+
+
+> [Coretype](Coretype) getExternalcontactsOrganizationsSchemasCoretypes()
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    Coretype result = apiInstance.getExternalcontactsOrganizationsSchemasCoretypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+# **getExternalcontactsOrganizationsSchemasLimits**
+
+
+> [SchemaQuantityLimits](SchemaQuantityLimits) getExternalcontactsOrganizationsSchemasLimits()
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/limits  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    SchemaQuantityLimits result = apiInstance.getExternalcontactsOrganizationsSchemasLimits();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 # **getExternalcontactsRelationship**
@@ -3468,6 +3882,69 @@ try {
 [**ContactIdentifier**](ContactIdentifier)
 
 
+# **patchExternalcontactsOrganizationIdentifiers**
+
+
+> [ExternalOrganizationIdentifier](ExternalOrganizationIdentifier) patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body)
+
+Claim or release identifiers for an external organization
+
+patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+ExternalOrganizationIdentifierClaimRequest body = new ExternalOrganizationIdentifierClaimRequest(); // ExternalOrganizationIdentifierClaimRequest | ClaimRequest
+try {
+    ExternalOrganizationIdentifier result = apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **body** | [**ExternalOrganizationIdentifierClaimRequest**](ExternalOrganizationIdentifierClaimRequest)| ClaimRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)
+
+
 # **postExternalcontactsBulkContacts**
 
 
@@ -3645,6 +4122,71 @@ try {
 ### Return type
 
 [**BulkFetchContactsResponse**](BulkFetchContactsResponse)
+
+
+# **postExternalcontactsBulkContactsEnrich**
+
+
+> [BulkContactsEnrichResponse](BulkContactsEnrichResponse) postExternalcontactsBulkContactsEnrich(body, dryRun)
+
+Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+
+postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/enrich  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:enrich
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkContactsEnrichRequest body = new BulkContactsEnrichRequest(); // BulkContactsEnrichRequest | Contact Enrich Requests
+Boolean dryRun = true; // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+try {
+    BulkContactsEnrichResponse result = apiInstance.postExternalcontactsBulkContactsEnrich(body, dryRun);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContactsEnrich");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkContactsEnrichRequest**](BulkContactsEnrichRequest)| Contact Enrich Requests | 
+| **dryRun** | **Boolean**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkContactsEnrichResponse**](BulkContactsEnrichResponse)
 
 
 # **postExternalcontactsBulkContactsRemove**
@@ -4243,6 +4785,71 @@ try {
 [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse)
 
 
+# **postExternalcontactsBulkOrganizationsEnrich**
+
+
+> [BulkOrganizationsEnrichResponse](BulkOrganizationsEnrichResponse) postExternalcontactsBulkOrganizationsEnrich(body, dryRun)
+
+Bulk enrich external organizations - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+
+postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/enrich  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:enrich
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkOrganizationsEnrichRequest body = new BulkOrganizationsEnrichRequest(); // BulkOrganizationsEnrichRequest | External Organization Enrich Requests
+Boolean dryRun = true; // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+try {
+    BulkOrganizationsEnrichResponse result = apiInstance.postExternalcontactsBulkOrganizationsEnrich(body, dryRun);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizationsEnrich");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkOrganizationsEnrichRequest**](BulkOrganizationsEnrichRequest)| External Organization Enrich Requests | 
+| **dryRun** | **Boolean**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkOrganizationsEnrichResponse**](BulkOrganizationsEnrichResponse)
+
+
 # **postExternalcontactsBulkOrganizationsRemove**
 
 
@@ -4782,6 +5389,71 @@ try {
 [**ExternalContact**](ExternalContact)
 
 
+# **postExternalcontactsContactsEnrich**
+
+
+> [ExternalContact](ExternalContact) postExternalcontactsContactsEnrich(body, dryRun)
+
+Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+
+postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/contacts/enrich  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:enrich
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ContactEnrichRequest body = new ContactEnrichRequest(); // ContactEnrichRequest | ContactEnrichRequest
+Boolean dryRun = true; // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+try {
+    ExternalContact result = apiInstance.postExternalcontactsContactsEnrich(body, dryRun);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsContactsEnrich");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactEnrichRequest**](ContactEnrichRequest)| ContactEnrichRequest | 
+| **dryRun** | **Boolean**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
 # **postExternalcontactsContactsExports**
 
 
@@ -4840,6 +5512,69 @@ try {
 ### Return type
 
 [**ContactsExport**](ContactsExport)
+
+
+# **postExternalcontactsContactsMerge**
+
+
+> [ExternalContact](ExternalContact) postExternalcontactsContactsMerge(body)
+
+Merge up to 25 contacts into a new contact record
+
+Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+
+postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/contacts/merge  
+
+Requires ANY permissions: 
+
+* externalContacts:identity:merge
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+MergeContactsRequest body = new MergeContactsRequest(); // MergeContactsRequest | MergeRequest
+try {
+    ExternalContact result = apiInstance.postExternalcontactsContactsMerge(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsContactsMerge");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**MergeContactsRequest**](MergeContactsRequest)| MergeRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
 
 
 # **postExternalcontactsContactsSchemas**
@@ -5025,6 +5760,136 @@ try {
 ### Return type
 
 [**ExternalContact**](ExternalContact)
+
+
+# **postExternalcontactsIdentifierlookupContacts**
+
+
+> [ExternalContact](ExternalContact) postExternalcontactsIdentifierlookupContacts(identifier, expand)
+
+Fetch a contact using an identifier type and value.
+
+Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+
+postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/identifierlookup/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ContactIdentifier identifier = new ContactIdentifier(); // ContactIdentifier | 
+List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
+try {
+    ExternalContact result = apiInstance.postExternalcontactsIdentifierlookupContacts(identifier, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsIdentifierlookupContacts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **identifier** | [**ContactIdentifier**](ContactIdentifier)|  | 
+| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers, externalSources, division 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
+# **postExternalcontactsIdentifierlookupOrganizations**
+
+
+> [ExternalOrganization](ExternalOrganization) postExternalcontactsIdentifierlookupOrganizations(identifier, expand)
+
+Fetch an external organization using an identifier type and value.
+
+This endpoint will only accept ExternalId type identifiers.
+
+postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/identifierlookup/organizations  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ExternalOrganizationIdentifier identifier = new ExternalOrganizationIdentifier(); // ExternalOrganizationIdentifier | 
+List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
+try {
+    ExternalOrganization result = apiInstance.postExternalcontactsIdentifierlookupOrganizations(identifier, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsIdentifierlookupOrganizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **identifier** | [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)|  | 
+| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: identifiers, externalSources, division 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
 
 
 # **postExternalcontactsImportCsvJobs**
@@ -5324,12 +6189,15 @@ try {
 
 # **postExternalcontactsMergeContacts**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ExternalContact](ExternalContact) postExternalcontactsMergeContacts(body)
 
 Merge two contacts into a new contact record
 
-Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
 
 Wraps POST /api/v2/externalcontacts/merge/contacts  
 
@@ -5497,6 +6365,71 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**ExternalOrganization**](ExternalOrganization)| ExternalOrganization | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
+
+
+# **postExternalcontactsOrganizationsEnrich**
+
+
+> [ExternalOrganization](ExternalOrganization) postExternalcontactsOrganizationsEnrich(body, dryRun)
+
+Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+
+postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/organizations/enrich  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:enrich
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ExternalOrganizationEnrichRequest body = new ExternalOrganizationEnrichRequest(); // ExternalOrganizationEnrichRequest | ExternalOrgEnrichRequest
+Boolean dryRun = true; // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+try {
+    ExternalOrganization result = apiInstance.postExternalcontactsOrganizationsEnrich(body, dryRun);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsOrganizationsEnrich");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExternalOrganizationEnrichRequest**](ExternalOrganizationEnrichRequest)| ExternalOrgEnrichRequest | 
+| **dryRun** | **Boolean**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional] 
 {: class="table-striped"}
 
 
@@ -6428,4 +7361,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

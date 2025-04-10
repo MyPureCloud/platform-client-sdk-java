@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanShift;
@@ -101,8 +102,15 @@ public class CreateWorkPlan  implements Serializable {
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
-  private List<CreateWorkPlanShift> shifts = new ArrayList<CreateWorkPlanShift>();
-  private List<UserReference> agents = new ArrayList<UserReference>();
+  private List<CreateWorkPlanShift> shifts = null;
+  private List<UserReference> agents = null;
+
+  public CreateWorkPlan() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shifts = new ArrayList<CreateWorkPlanShift>();
+      agents = new ArrayList<UserReference>();
+    }
+  }
 
   
   /**

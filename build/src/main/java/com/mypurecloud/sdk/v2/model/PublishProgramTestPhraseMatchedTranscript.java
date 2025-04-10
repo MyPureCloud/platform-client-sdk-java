@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PublishProgramTestPhraseDetectedPhrase;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class PublishProgramTestPhraseMatchedTranscript  implements Serializable {
   
-  private Integer timestamp = null;
+  private Long timestamp = null;
   private String transcriptId = null;
   private String communicationId = null;
   private String conversationId = null;
@@ -82,22 +83,28 @@ public class PublishProgramTestPhraseMatchedTranscript  implements Serializable 
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<PublishProgramTestPhraseDetectedPhrase> detectedPhrases = new ArrayList<PublishProgramTestPhraseDetectedPhrase>();
+  private List<PublishProgramTestPhraseDetectedPhrase> detectedPhrases = null;
+
+  public PublishProgramTestPhraseMatchedTranscript() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      detectedPhrases = new ArrayList<PublishProgramTestPhraseDetectedPhrase>();
+    }
+  }
 
   
   /**
    **/
-  public PublishProgramTestPhraseMatchedTranscript timestamp(Integer timestamp) {
+  public PublishProgramTestPhraseMatchedTranscript timestamp(Long timestamp) {
     this.timestamp = timestamp;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timestamp")
-  public Integer getTimestamp() {
+  public Long getTimestamp() {
     return timestamp;
   }
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(Long timestamp) {
     this.timestamp = timestamp;
   }
 

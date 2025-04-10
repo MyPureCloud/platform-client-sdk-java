@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitRange;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class BuSetTimeOffLimitValuesRequest  implements Serializable {
   
-  private List<BuTimeOffLimitRange> values = new ArrayList<BuTimeOffLimitRange>();
+  private List<BuTimeOffLimitRange> values = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public BuSetTimeOffLimitValuesRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<BuTimeOffLimitRange>();
+    }
+  }
 
   
   /**

@@ -9,7 +9,7 @@
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **id** | **String** | The identifier of the rule |  [optional] |
 | **name** | **String** | The name of the rule |  [optional] |
-| **order** | **Integer** | The ranked order of the rule; rules are processed from lowest number to highest |  [optional] |
+| **order** | **Long** | The ranked order of the rule; rules are processed from lowest number to highest |  [optional] |
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) | The category of the rule |  [optional] |
 | **actions** | [**List&lt;DialerRulesetConfigChangeAction&gt;**](DialerRulesetConfigChangeAction) | The list of rule actions to be taken if the conditions are true |  [optional] |
 
@@ -25,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

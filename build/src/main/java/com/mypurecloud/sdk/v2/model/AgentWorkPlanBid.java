@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -131,8 +132,14 @@ public class AgentWorkPlanBid  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<WorkPlanFieldsVisibleToAgentsEnum> workPlanFieldsVisibleToAgents = new ArrayList<WorkPlanFieldsVisibleToAgentsEnum>();
+  private List<WorkPlanFieldsVisibleToAgentsEnum> workPlanFieldsVisibleToAgents = null;
   private String selfUri = null;
+
+  public AgentWorkPlanBid() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      workPlanFieldsVisibleToAgents = new ArrayList<WorkPlanFieldsVisibleToAgentsEnum>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicConversationRoutingData;
@@ -281,9 +282,9 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private Map<String, String> attributes = null;
   private QueueConversationCallEventTopicErrorBody errorInfo = null;
   private QueueConversationCallEventTopicUriReference script = null;
-  private Integer wrapupTimeoutMs = null;
+  private Long wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
-  private Integer alertingTimeoutMs = null;
+  private Long alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationCallEventTopicUriReference externalContact = null;
   private String externalContactInitialDivisionId = null;
@@ -344,7 +345,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private Date endAcwTime = null;
   private Date resumeTime = null;
   private Date parkTime = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private QueueConversationCallEventTopicQueueMediaSettings queueMediaSettings = null;
   private Boolean muted = null;
   private Boolean confined = null;
@@ -409,6 +410,12 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private Date bargedTime = null;
   private String consultParticipantId = null;
   private QueueConversationCallEventTopicFaxStatus faxStatus = null;
+
+  public QueueConversationCallEventTopicCallMediaParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -770,17 +777,17 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   /**
    **/
-  public QueueConversationCallEventTopicCallMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public QueueConversationCallEventTopicCallMediaParticipant wrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("wrapupTimeoutMs")
-  public Integer getWrapupTimeoutMs() {
+  public Long getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
   }
-  public void setWrapupTimeoutMs(Integer wrapupTimeoutMs) {
+  public void setWrapupTimeoutMs(Long wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
@@ -804,17 +811,17 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   /**
    **/
-  public QueueConversationCallEventTopicCallMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+  public QueueConversationCallEventTopicCallMediaParticipant alertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("alertingTimeoutMs")
-  public Integer getAlertingTimeoutMs() {
+  public Long getAlertingTimeoutMs() {
     return alertingTimeoutMs;
   }
-  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+  public void setAlertingTimeoutMs(Long alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 

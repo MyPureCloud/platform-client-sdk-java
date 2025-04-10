@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignInteraction;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -26,11 +27,21 @@ import java.io.Serializable;
 public class CampaignInteractions  implements Serializable {
   
   private DomainEntityRef campaign = null;
-  private List<CampaignInteraction> pendingInteractions = new ArrayList<CampaignInteraction>();
-  private List<CampaignInteraction> proceedingInteractions = new ArrayList<CampaignInteraction>();
-  private List<CampaignInteraction> previewingInteractions = new ArrayList<CampaignInteraction>();
-  private List<CampaignInteraction> interactingInteractions = new ArrayList<CampaignInteraction>();
-  private List<CampaignInteraction> scheduledInteractions = new ArrayList<CampaignInteraction>();
+  private List<CampaignInteraction> pendingInteractions = null;
+  private List<CampaignInteraction> proceedingInteractions = null;
+  private List<CampaignInteraction> previewingInteractions = null;
+  private List<CampaignInteraction> interactingInteractions = null;
+  private List<CampaignInteraction> scheduledInteractions = null;
+
+  public CampaignInteractions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      pendingInteractions = new ArrayList<CampaignInteraction>();
+      proceedingInteractions = new ArrayList<CampaignInteraction>();
+      previewingInteractions = new ArrayList<CampaignInteraction>();
+      interactingInteractions = new ArrayList<CampaignInteraction>();
+      scheduledInteractions = new ArrayList<CampaignInteraction>();
+    }
+  }
 
   
   /**

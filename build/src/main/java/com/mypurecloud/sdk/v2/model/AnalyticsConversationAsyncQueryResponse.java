@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import io.swagger.annotations.ApiModel;
@@ -25,9 +26,15 @@ import java.io.Serializable;
 
 public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   
-  private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
+  private List<AnalyticsConversation> conversations = null;
   private String cursor = null;
   private Date dataAvailabilityDate = null;
+
+  public AnalyticsConversationAsyncQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversations = new ArrayList<AnalyticsConversation>();
+    }
+  }
 
   
   /**

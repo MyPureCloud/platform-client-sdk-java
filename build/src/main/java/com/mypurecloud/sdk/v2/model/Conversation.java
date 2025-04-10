@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
@@ -34,8 +35,8 @@ public class Conversation  implements Serializable {
   private Date startTime = null;
   private Date endTime = null;
   private String address = null;
-  private List<Participant> participants = new ArrayList<Participant>();
-  private List<String> conversationIds = new ArrayList<String>();
+  private List<Participant> participants = null;
+  private List<String> conversationIds = null;
   private Integer maxParticipants = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
@@ -144,11 +145,20 @@ public class Conversation  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
-  private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
+  private List<ConversationDivisionMembership> divisions = null;
+  private List<TransferResponse> recentTransfers = null;
   private Boolean securePause = null;
   private String utilizationLabelId = null;
   private String selfUri = null;
+
+  public Conversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<Participant>();
+      conversationIds = new ArrayList<String>();
+      divisions = new ArrayList<ConversationDivisionMembership>();
+      recentTransfers = new ArrayList<TransferResponse>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

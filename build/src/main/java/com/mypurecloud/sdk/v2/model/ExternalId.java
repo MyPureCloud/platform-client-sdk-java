@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class ExternalId  implements Serializable {
   
   private ExternalSource externalSource = null;
   private String value = null;
+
+  public ExternalId() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

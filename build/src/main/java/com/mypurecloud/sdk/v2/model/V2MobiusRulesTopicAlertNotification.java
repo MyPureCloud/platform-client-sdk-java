@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicAlertNotificationRecipient;
 import io.swagger.annotations.ApiModel;
@@ -74,8 +75,14 @@ public class V2MobiusRulesTopicAlertNotification  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<NotificationTypesEnum> notificationTypes = new ArrayList<NotificationTypesEnum>();
+  private List<NotificationTypesEnum> notificationTypes = null;
   private String locale = null;
+
+  public V2MobiusRulesTopicAlertNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notificationTypes = new ArrayList<NotificationTypesEnum>();
+    }
+  }
 
   
   /**

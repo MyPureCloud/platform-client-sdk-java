@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TranscriptionTopicTranscriptWord;
 import io.swagger.annotations.ApiModel;
@@ -26,12 +27,19 @@ import java.io.Serializable;
 public class TranscriptionTopicTranscriptAlternative  implements Serializable {
   
   private BigDecimal confidence = null;
-  private Integer offsetMs = null;
-  private Integer durationMs = null;
+  private Long offsetMs = null;
+  private Long durationMs = null;
   private String transcript = null;
-  private List<TranscriptionTopicTranscriptWord> words = new ArrayList<TranscriptionTopicTranscriptWord>();
+  private List<TranscriptionTopicTranscriptWord> words = null;
   private String decoratedTranscript = null;
-  private List<TranscriptionTopicTranscriptWord> decoratedWords = new ArrayList<TranscriptionTopicTranscriptWord>();
+  private List<TranscriptionTopicTranscriptWord> decoratedWords = null;
+
+  public TranscriptionTopicTranscriptAlternative() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      words = new ArrayList<TranscriptionTopicTranscriptWord>();
+      decoratedWords = new ArrayList<TranscriptionTopicTranscriptWord>();
+    }
+  }
 
   
   /**
@@ -53,34 +61,34 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
 
   /**
    **/
-  public TranscriptionTopicTranscriptAlternative offsetMs(Integer offsetMs) {
+  public TranscriptionTopicTranscriptAlternative offsetMs(Long offsetMs) {
     this.offsetMs = offsetMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("offsetMs")
-  public Integer getOffsetMs() {
+  public Long getOffsetMs() {
     return offsetMs;
   }
-  public void setOffsetMs(Integer offsetMs) {
+  public void setOffsetMs(Long offsetMs) {
     this.offsetMs = offsetMs;
   }
 
 
   /**
    **/
-  public TranscriptionTopicTranscriptAlternative durationMs(Integer durationMs) {
+  public TranscriptionTopicTranscriptAlternative durationMs(Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("durationMs")
-  public Integer getDurationMs() {
+  public Long getDurationMs() {
     return durationMs;
   }
-  public void setDurationMs(Integer durationMs) {
+  public void setDurationMs(Long durationMs) {
     this.durationMs = durationMs;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OpenEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundMessagingChannel;
@@ -27,7 +28,13 @@ import java.io.Serializable;
 public class OpenInboundNormalizedEvent  implements Serializable {
   
   private OpenInboundMessagingChannel channel = null;
-  private List<OpenEvent> events = new ArrayList<OpenEvent>();
+  private List<OpenEvent> events = null;
+
+  public OpenInboundNormalizedEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      events = new ArrayList<OpenEvent>();
+    }
+  }
 
   
   /**

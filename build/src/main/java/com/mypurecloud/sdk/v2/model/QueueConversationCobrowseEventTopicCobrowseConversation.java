@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicCobrowseMediaParticipant;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicConversationDivisionMembership;
@@ -27,11 +28,19 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationCobrowseEventTopicCobrowseMediaParticipant> participants = new ArrayList<QueueConversationCobrowseEventTopicCobrowseMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<QueueConversationCobrowseEventTopicCobrowseMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<QueueConversationCobrowseEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationCobrowseEventTopicConversationDivisionMembership>();
+  private List<QueueConversationCobrowseEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationCobrowseEventTopicCobrowseConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationCobrowseEventTopicCobrowseMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationCobrowseEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

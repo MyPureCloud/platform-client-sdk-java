@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationApp;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationCustomEventAttribute;
@@ -44,6 +45,11 @@ public class JourneyAppEventsNotificationAppMessage  implements Serializable {
   private String searchQuery = null;
   private Map<String, JourneyAppEventsNotificationCustomEventAttribute> attributes = null;
   private Map<String, JourneyAppEventsNotificationCustomEventAttribute> traits = null;
+
+  public JourneyAppEventsNotificationAppMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

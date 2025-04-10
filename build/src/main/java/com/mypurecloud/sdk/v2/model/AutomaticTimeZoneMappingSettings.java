@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableWindow;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class AutomaticTimeZoneMappingSettings  implements Serializable {
   
-  private List<CallableWindow> callableWindows = new ArrayList<CallableWindow>();
-  private List<String> supportedCountries = new ArrayList<String>();
+  private List<CallableWindow> callableWindows = null;
+  private List<String> supportedCountries = null;
+
+  public AutomaticTimeZoneMappingSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callableWindows = new ArrayList<CallableWindow>();
+      supportedCountries = new ArrayList<String>();
+    }
+  }
 
   
   /**

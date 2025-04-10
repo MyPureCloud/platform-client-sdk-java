@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Timeseries;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class Daily  implements Serializable {
   
   private String downloadUrl = null;
-  private List<Timeseries> downloadResult = new ArrayList<Timeseries>();
+  private List<Timeseries> downloadResult = null;
+
+  public Daily() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      downloadResult = new ArrayList<Timeseries>();
+    }
+  }
 
   
   /**

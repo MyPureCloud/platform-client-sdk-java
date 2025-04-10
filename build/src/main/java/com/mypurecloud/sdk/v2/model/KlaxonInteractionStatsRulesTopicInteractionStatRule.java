@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KlaxonInteractionStatsRulesTopicNotificationUser;
@@ -290,7 +291,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   private BigDecimal value = null;
   private Boolean inAlarm = null;
   private Boolean enabled = null;
-  private List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers = new ArrayList<KlaxonInteractionStatsRulesTopicNotificationUser>();
+  private List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers = null;
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -338,7 +339,14 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
+  private List<AlertTypesEnum> alertTypes = null;
+
+  public KlaxonInteractionStatsRulesTopicInteractionStatRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notificationUsers = new ArrayList<KlaxonInteractionStatsRulesTopicNotificationUser>();
+      alertTypes = new ArrayList<AlertTypesEnum>();
+    }
+  }
 
   
   /**

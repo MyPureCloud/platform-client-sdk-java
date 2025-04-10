@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RequestCriteria;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class RequestJourneyPattern  implements Serializable {
   
-  private List<RequestCriteria> criteria = new ArrayList<RequestCriteria>();
+  private List<RequestCriteria> criteria = null;
   private Integer count = null;
 
   private static class StreamTypeEnumDeserializer extends StdDeserializer<StreamTypeEnum> {
@@ -79,6 +80,12 @@ public class RequestJourneyPattern  implements Serializable {
   private StreamTypeEnum streamType = null;
   private String sessionType = null;
   private String eventName = null;
+
+  public RequestJourneyPattern() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      criteria = new ArrayList<RequestCriteria>();
+    }
+  }
 
   
   /**

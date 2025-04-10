@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -83,9 +84,15 @@ public class Workspace  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private WorkspaceSummary summary = null;
-  private List<String> acl = new ArrayList<String>();
+  private List<String> acl = null;
   private String description = null;
   private String selfUri = null;
+
+  public Workspace() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      acl = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

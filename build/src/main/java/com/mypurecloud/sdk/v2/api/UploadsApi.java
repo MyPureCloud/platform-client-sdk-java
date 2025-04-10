@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.GamificationContestPrizeImageUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
@@ -22,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsUploadsPrizeimagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
@@ -126,6 +128,84 @@ public class UploadsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGamificationContestsUploadsPrizeimages(GamificationContestPrizeImageUploadUrlRequest body) throws IOException, ApiException {
+    return  postGamificationContestsUploadsPrizeimages(createPostGamificationContestsUploadsPrizeimagesRequest(body));
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGamificationContestsUploadsPrizeimagesWithHttpInfo(GamificationContestPrizeImageUploadUrlRequest body) throws IOException {
+    return postGamificationContestsUploadsPrizeimages(createPostGamificationContestsUploadsPrizeimagesRequest(body).withHttpInfo());
+  }
+
+  private PostGamificationContestsUploadsPrizeimagesRequest createPostGamificationContestsUploadsPrizeimagesRequest(GamificationContestPrizeImageUploadUrlRequest body) {
+    return PostGamificationContestsUploadsPrizeimagesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postGamificationContestsUploadsPrizeimages(PostGamificationContestsUploadsPrizeimagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postGamificationContestsUploadsPrizeimages(ApiRequest<GamificationContestPrizeImageUploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

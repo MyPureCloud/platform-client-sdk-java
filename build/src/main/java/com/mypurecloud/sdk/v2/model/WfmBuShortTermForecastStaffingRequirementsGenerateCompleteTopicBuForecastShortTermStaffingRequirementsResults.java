@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,24 +23,29 @@ import java.io.Serializable;
 
 public class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults  implements Serializable {
   
-  private Integer weekNumber = null;
+  private Long weekNumber = null;
   private String downloadUrl = null;
   private Date downloadUrlExpirationDate = null;
+
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults weekNumber(Integer weekNumber) {
+  public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults weekNumber(Long weekNumber) {
     this.weekNumber = weekNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weekNumber")
-  public Integer getWeekNumber() {
+  public Long getWeekNumber() {
     return weekNumber;
   }
-  public void setWeekNumber(Integer weekNumber) {
+  public void setWeekNumber(Long weekNumber) {
     this.weekNumber = weekNumber;
   }
 

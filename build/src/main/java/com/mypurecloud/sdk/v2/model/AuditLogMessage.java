@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -37,7 +38,7 @@ public class AuditLogMessage  implements Serializable {
   private String userHomeOrgId = null;
   private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
-  private List<String> remoteIp = new ArrayList<String>();
+  private List<String> remoteIp = null;
   private String serviceName = null;
 
   private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
@@ -145,9 +146,17 @@ public class AuditLogMessage  implements Serializable {
   private String application = null;
   private InitiatingAction initiatingAction = null;
   private Boolean transactionInitiator = null;
-  private List<PropertyChange> propertyChanges = new ArrayList<PropertyChange>();
+  private List<PropertyChange> propertyChanges = null;
   private Map<String, String> context = null;
-  private List<EntityChange> entityChanges = new ArrayList<EntityChange>();
+  private List<EntityChange> entityChanges = null;
+
+  public AuditLogMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      remoteIp = new ArrayList<String>();
+      propertyChanges = new ArrayList<PropertyChange>();
+      entityChanges = new ArrayList<EntityChange>();
+    }
+  }
 
   
   /**

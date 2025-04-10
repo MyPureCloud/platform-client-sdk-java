@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
 import com.mypurecloud.sdk.v2.model.ReschedulingManagementUnitResponse;
@@ -29,13 +30,20 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
   private BuScheduleReference existingSchedule = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<ReschedulingManagementUnitResponse> managementUnits = new ArrayList<ReschedulingManagementUnitResponse>();
+  private List<ReschedulingManagementUnitResponse> managementUnits = null;
   private Integer agentCount = null;
-  private List<String> activityCodeIds = new ArrayList<String>();
+  private List<String> activityCodeIds = null;
   private Boolean doNotChangeWeeklyPaidTime = null;
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;
   private Boolean doNotChangeManuallyEditedShifts = null;
+
+  public ReschedulingOptionsRunResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<ReschedulingManagementUnitResponse>();
+      activityCodeIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

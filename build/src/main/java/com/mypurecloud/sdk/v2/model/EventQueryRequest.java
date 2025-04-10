@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 public class EventQueryRequest  implements Serializable {
   
   private String interval = null;
-  private List<String> eventDefinitionIds = new ArrayList<String>();
+  private List<String> eventDefinitionIds = null;
   private String searchTerm = null;
 
   private static class SortOrderEnumDeserializer extends StdDeserializer<SortOrderEnum> {
@@ -75,6 +76,12 @@ public class EventQueryRequest  implements Serializable {
     }
   }
   private SortOrderEnum sortOrder = null;
+
+  public EventQueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      eventDefinitionIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

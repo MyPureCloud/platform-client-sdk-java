@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningSlot;
 import com.mypurecloud.sdk.v2.model.LearningSlotWfmScheduleActivity;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 
 public class LearningScheduleSlotsQueryResponse  implements Serializable {
   
-  private List<LearningSlot> suggestedSlots = new ArrayList<LearningSlot>();
-  private List<LearningSlotWfmScheduleActivity> wfmScheduleActivities = new ArrayList<LearningSlotWfmScheduleActivity>();
+  private List<LearningSlot> suggestedSlots = null;
+  private List<LearningSlotWfmScheduleActivity> wfmScheduleActivities = null;
+
+  public LearningScheduleSlotsQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      suggestedSlots = new ArrayList<LearningSlot>();
+      wfmScheduleActivities = new ArrayList<LearningSlotWfmScheduleActivity>();
+    }
+  }
 
   
   /**

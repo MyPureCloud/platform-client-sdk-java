@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -81,7 +82,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     }
   }
   private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
-  private List<String> scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+  private List<String> scheduledSecondaryPresenceLookupIds = null;
   private String actualActivityCodeId = null;
 
   private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
@@ -296,6 +297,12 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
   }
   private ImpactEnum impact = null;
   private String secondaryPresenceLookupId = null;
+
+  public HistoricalAdherenceExceptionInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -79,6 +79,7 @@ public class GetSearchRequest {
 		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography"),
 		DATELASTLOGIN("dateLastLogin"),
+		DATEWELCOMESENT("dateWelcomeSent"),
 		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"),
 		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"),
 		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"),

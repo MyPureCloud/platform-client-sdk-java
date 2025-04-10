@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Serializable {
   
-  private List<DialerCampaignRuleConfigChangeUriReference> campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
-  private List<DialerCampaignRuleConfigChangeUriReference> sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+  private List<DialerCampaignRuleConfigChangeUriReference> campaigns = null;
+  private List<DialerCampaignRuleConfigChangeUriReference> sequences = null;
+
+  public DialerCampaignRuleConfigChangeCampaignRuleEntities() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+      sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+    }
+  }
 
   
   /**

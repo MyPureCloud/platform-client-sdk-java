@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerRule;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -33,8 +34,14 @@ public class RuleSet  implements Serializable {
   private Integer version = null;
   private DomainEntityRef contactList = null;
   private DomainEntityRef queue = null;
-  private List<DialerRule> rules = new ArrayList<DialerRule>();
+  private List<DialerRule> rules = null;
   private String selfUri = null;
+
+  public RuleSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      rules = new ArrayList<DialerRule>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

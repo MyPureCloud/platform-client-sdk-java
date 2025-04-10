@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListWrapperAlternativeShiftBuSettingsActivityCategory;
 import com.mypurecloud.sdk.v2.model.ListWrapperAlternativeShiftBuSettingsGranularity;
@@ -28,6 +29,11 @@ public class UpdateAlternativeShiftBuSettingsRequest  implements Serializable {
   private Integer minMinutesBeforeStartTime = null;
   private ListWrapperAlternativeShiftBuSettingsActivityCategory retainedActivityCategories = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdateAlternativeShiftBuSettingsRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

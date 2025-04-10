@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -22,7 +23,7 @@ import java.io.Serializable;
 
 public class TranscriptionTopicTranscriptionRequestStatus  implements Serializable {
   
-  private Integer offsetMs = null;
+  private Long offsetMs = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -73,20 +74,25 @@ public class TranscriptionTopicTranscriptionRequestStatus  implements Serializab
   }
   private StatusEnum status = null;
 
+  public TranscriptionTopicTranscriptionRequestStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    **/
-  public TranscriptionTopicTranscriptionRequestStatus offsetMs(Integer offsetMs) {
+  public TranscriptionTopicTranscriptionRequestStatus offsetMs(Long offsetMs) {
     this.offsetMs = offsetMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("offsetMs")
-  public Integer getOffsetMs() {
+  public Long getOffsetMs() {
     return offsetMs;
   }
-  public void setOffsetMs(Integer offsetMs) {
+  public void setOffsetMs(Long offsetMs) {
     this.offsetMs = offsetMs;
   }
 

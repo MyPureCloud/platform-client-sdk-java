@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.TrustGroup;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class TrustGroupEntityListing  implements Serializable, PagedResource<TrustGroup> {
   
-  private List<TrustGroup> entities = new ArrayList<TrustGroup>();
+  private List<TrustGroup> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class TrustGroupEntityListing  implements Serializable, PagedResource<Tru
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public TrustGroupEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<TrustGroup>();
+    }
+  }
 
   
   /**

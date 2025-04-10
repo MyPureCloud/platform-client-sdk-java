@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -81,7 +82,13 @@ public class InsightsAgents  implements Serializable {
   private GranularityEnum granularity = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
-  private List<InsightsAgentItem> entities = new ArrayList<InsightsAgentItem>();
+  private List<InsightsAgentItem> entities = null;
+
+  public InsightsAgents() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<InsightsAgentItem>();
+    }
+  }
 
   
   /**

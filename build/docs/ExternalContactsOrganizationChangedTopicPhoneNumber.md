@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **display** | **String** |  |  [optional] |
-| **extension** | **Integer** |  |  [optional] |
+| **extension** | **Long** |  |  [optional] |
 | **acceptsSMS** | **Boolean** |  |  [optional] |
 | **userInput** | **String** |  |  [optional] |
 | **e164** | **String** |  |  [optional] |
@@ -16,4 +16,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

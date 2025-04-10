@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TestMatchesOperation;
 import com.mypurecloud.sdk.v2.model.TestSchemaOperation;
@@ -29,6 +30,11 @@ public class TestModeResults  implements Serializable {
   private TestTargetOperation targetValidation = null;
   private TestMatchesOperation jsonPathValidation = null;
   private Boolean triggerMatches = null;
+
+  public TestModeResults() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

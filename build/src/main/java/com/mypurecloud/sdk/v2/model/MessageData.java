@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNormalizedMessage;
@@ -193,13 +194,21 @@ public class MessageData  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<MessageMedia> media = new ArrayList<MessageMedia>();
-  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
+  private List<MessageMedia> media = null;
+  private List<MessageSticker> stickers = null;
   private ConversationNormalizedMessage normalizedMessage = null;
-  private List<ConversationNormalizedMessage> normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
+  private List<ConversationNormalizedMessage> normalizedReceipts = null;
   private User createdBy = null;
   private String conversationId = null;
   private String selfUri = null;
+
+  public MessageData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<MessageMedia>();
+      stickers = new ArrayList<MessageSticker>();
+      normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

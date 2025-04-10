@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceTopicTrunkErrorInfo;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,11 @@ public class TrunkInstanceTopicTrunkMetricsNetworkTypeIp  implements Serializabl
   
   private String address = null;
   private TrunkInstanceTopicTrunkErrorInfo errorInfo = null;
+
+  public TrunkInstanceTopicTrunkMetricsNetworkTypeIp() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

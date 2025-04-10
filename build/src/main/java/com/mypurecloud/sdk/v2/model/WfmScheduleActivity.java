@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.ScheduleActivity;
@@ -27,8 +28,15 @@ import java.io.Serializable;
 public class WfmScheduleActivity  implements Serializable {
   
   private UserReference userReference = null;
-  private List<ScheduleActivity> activities = new ArrayList<ScheduleActivity>();
-  private List<FullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<FullDayTimeOffMarker>();
+  private List<ScheduleActivity> activities = null;
+  private List<FullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+
+  public WfmScheduleActivity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<ScheduleActivity>();
+      fullDayTimeOffMarkers = new ArrayList<FullDayTimeOffMarker>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "ID of user that the schedule is for")

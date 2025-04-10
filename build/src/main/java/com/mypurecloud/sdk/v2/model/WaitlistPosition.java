@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitReference;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestReference;
@@ -28,6 +29,11 @@ public class WaitlistPosition  implements Serializable {
   private TimeOffLimitReference timeOffLimit = null;
   private LocalDate date = null;
   private Integer waitlistPosition = null;
+
+  public WaitlistPosition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

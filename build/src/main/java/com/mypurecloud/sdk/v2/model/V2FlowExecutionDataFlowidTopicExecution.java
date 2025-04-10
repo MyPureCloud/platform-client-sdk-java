@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo;
 import io.swagger.annotations.ApiModel;
@@ -31,6 +32,11 @@ public class V2FlowExecutionDataFlowidTopicExecution  implements Serializable {
   private V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo error = null;
   private V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo warning = null;
   private String languageTag = null;
+
+  public V2FlowExecutionDataFlowidTopicExecution() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

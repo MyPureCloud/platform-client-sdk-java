@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ObservationValue;
 import com.mypurecloud.sdk.v2.model.StatisticalSummary;
@@ -29,7 +30,13 @@ public class ObservationMetricData  implements Serializable {
   private String qualifier = null;
   private StatisticalSummary stats = null;
   private Boolean truncated = null;
-  private List<ObservationValue> observations = new ArrayList<ObservationValue>();
+  private List<ObservationValue> observations = null;
+
+  public ObservationMetricData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      observations = new ArrayList<ObservationValue>();
+    }
+  }
 
   
   /**

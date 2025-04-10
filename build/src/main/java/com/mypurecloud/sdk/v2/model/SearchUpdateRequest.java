@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SelectedAnswer;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,11 @@ public class SearchUpdateRequest  implements Serializable {
   private String sessionId = null;
   private Boolean answered = null;
   private SelectedAnswer selectedAnswer = null;
+
+  public SearchUpdateRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The unique identifier of this session")

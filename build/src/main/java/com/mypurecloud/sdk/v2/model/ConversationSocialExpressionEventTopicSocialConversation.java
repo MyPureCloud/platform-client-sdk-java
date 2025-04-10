@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicSocialMediaParticipant;
@@ -27,11 +28,19 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   
   private String id = null;
   private String name = null;
-  private List<ConversationSocialExpressionEventTopicSocialMediaParticipant> participants = new ArrayList<ConversationSocialExpressionEventTopicSocialMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationSocialExpressionEventTopicSocialMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationSocialExpressionEventTopicConversationDivisionMembership>();
+  private List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationSocialExpressionEventTopicSocialConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationSocialExpressionEventTopicSocialMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationSocialExpressionEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

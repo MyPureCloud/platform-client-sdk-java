@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentBodyTableCellBlockProperties;
 import com.mypurecloud.sdk.v2.model.DocumentTableContentBlock;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class DocumentBodyTableCellBlock  implements Serializable {
   
   private DocumentBodyTableCellBlockProperties properties = null;
-  private List<DocumentTableContentBlock> blocks = new ArrayList<DocumentTableContentBlock>();
+  private List<DocumentTableContentBlock> blocks = null;
+
+  public DocumentBodyTableCellBlock() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      blocks = new ArrayList<DocumentTableContentBlock>();
+    }
+  }
 
   
   /**

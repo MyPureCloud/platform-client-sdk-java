@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerCampaignConfigChangeContactSort;
@@ -140,25 +141,25 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     }
   }
   private CampaignStatusEnum campaignStatus = null;
-  private List<DialerCampaignConfigChangePhoneColumn> phoneColumns = new ArrayList<DialerCampaignConfigChangePhoneColumn>();
+  private List<DialerCampaignConfigChangePhoneColumn> phoneColumns = null;
   private BigDecimal abandonRate = null;
-  private List<DialerCampaignConfigChangeUriReference> dncLists = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private List<DialerCampaignConfigChangeUriReference> dncLists = null;
   private DialerCampaignConfigChangeUriReference callableTimeSet = null;
   private DialerCampaignConfigChangeUriReference callAnalysisResponseSet = null;
   private String callerName = null;
   private String callerAddress = null;
-  private Integer outboundLineCount = null;
-  private List<DialerCampaignConfigChangeRestErrorDetail> errors = new ArrayList<DialerCampaignConfigChangeRestErrorDetail>();
-  private List<DialerCampaignConfigChangeUriReference> ruleSets = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private Long outboundLineCount = null;
+  private List<DialerCampaignConfigChangeRestErrorDetail> errors = null;
+  private List<DialerCampaignConfigChangeUriReference> ruleSets = null;
   private Boolean skipPreviewDisabled = null;
-  private Integer previewTimeOutSeconds = null;
+  private Long previewTimeOutSeconds = null;
   private Boolean singleNumberPreview = null;
   private DialerCampaignConfigChangeContactSort contactSort = null;
-  private List<DialerCampaignConfigChangeContactSort> contactSorts = new ArrayList<DialerCampaignConfigChangeContactSort>();
-  private Integer noAnswerTimeout = null;
+  private List<DialerCampaignConfigChangeContactSort> contactSorts = null;
+  private Long noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
-  private Integer priority = null;
-  private List<DialerCampaignConfigChangeUriReference> contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private Long priority = null;
+  private List<DialerCampaignConfigChangeUriReference> contactListFilters = null;
   private DialerCampaignConfigChangeUriReference division = null;
   private String agentOwnedColumn = null;
   private Map<String, Object> additionalProperties = null;
@@ -166,7 +167,18 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerCampaignConfigChangeCampaign() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phoneColumns = new ArrayList<DialerCampaignConfigChangePhoneColumn>();
+      dncLists = new ArrayList<DialerCampaignConfigChangeUriReference>();
+      errors = new ArrayList<DialerCampaignConfigChangeRestErrorDetail>();
+      ruleSets = new ArrayList<DialerCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<DialerCampaignConfigChangeContactSort>();
+      contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
+    }
+  }
 
   
   /**
@@ -422,17 +434,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   /**
    * for agentless campaigns, the number of outbound lines to be concurrently dialed
    **/
-  public DialerCampaignConfigChangeCampaign outboundLineCount(Integer outboundLineCount) {
+  public DialerCampaignConfigChangeCampaign outboundLineCount(Long outboundLineCount) {
     this.outboundLineCount = outboundLineCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "for agentless campaigns, the number of outbound lines to be concurrently dialed")
   @JsonProperty("outboundLineCount")
-  public Integer getOutboundLineCount() {
+  public Long getOutboundLineCount() {
     return outboundLineCount;
   }
-  public void setOutboundLineCount(Integer outboundLineCount) {
+  public void setOutboundLineCount(Long outboundLineCount) {
     this.outboundLineCount = outboundLineCount;
   }
 
@@ -494,17 +506,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   /**
    * for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
    **/
-  public DialerCampaignConfigChangeCampaign previewTimeOutSeconds(Integer previewTimeOutSeconds) {
+  public DialerCampaignConfigChangeCampaign previewTimeOutSeconds(Long previewTimeOutSeconds) {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls")
   @JsonProperty("previewTimeOutSeconds")
-  public Integer getPreviewTimeOutSeconds() {
+  public Long getPreviewTimeOutSeconds() {
     return previewTimeOutSeconds;
   }
-  public void setPreviewTimeOutSeconds(Integer previewTimeOutSeconds) {
+  public void setPreviewTimeOutSeconds(Long previewTimeOutSeconds) {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
   }
 
@@ -565,17 +577,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   /**
    * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
    **/
-  public DialerCampaignConfigChangeCampaign noAnswerTimeout(Integer noAnswerTimeout) {
+  public DialerCampaignConfigChangeCampaign noAnswerTimeout(Long noAnswerTimeout) {
     this.noAnswerTimeout = noAnswerTimeout;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds")
   @JsonProperty("noAnswerTimeout")
-  public Integer getNoAnswerTimeout() {
+  public Long getNoAnswerTimeout() {
     return noAnswerTimeout;
   }
-  public void setNoAnswerTimeout(Integer noAnswerTimeout) {
+  public void setNoAnswerTimeout(Long noAnswerTimeout) {
     this.noAnswerTimeout = noAnswerTimeout;
   }
 
@@ -601,17 +613,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   /**
    * The priority of this campaign relative to other campaigns
    **/
-  public DialerCampaignConfigChangeCampaign priority(Integer priority) {
+  public DialerCampaignConfigChangeCampaign priority(Long priority) {
     this.priority = priority;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The priority of this campaign relative to other campaigns")
   @JsonProperty("priority")
-  public Integer getPriority() {
+  public Long getPriority() {
     return priority;
   }
-  public void setPriority(Integer priority) {
+  public void setPriority(Long priority) {
     this.priority = priority;
   }
 
@@ -762,17 +774,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerCampaignConfigChangeCampaign version(Integer version) {
+  public DialerCampaignConfigChangeCampaign version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

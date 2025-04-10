@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMessageMetadata;
@@ -88,8 +89,8 @@ public class MessageDetails  implements Serializable {
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private Date messageTime = null;
-  private List<MessageMedia> media = new ArrayList<MessageMedia>();
-  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
+  private List<MessageMedia> media = null;
+  private List<MessageSticker> stickers = null;
   private ConversationMessageMetadata messageMetadata = null;
 
   private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
@@ -140,6 +141,13 @@ public class MessageDetails  implements Serializable {
   }
   private SocialVisibilityEnum socialVisibility = null;
   private ErrorBody errorInfo = null;
+
+  public MessageDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<MessageMedia>();
+      stickers = new ArrayList<MessageSticker>();
+    }
+  }
 
   
   /**

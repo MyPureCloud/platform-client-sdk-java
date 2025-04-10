@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 public class UserSearchCriteria  implements Serializable {
   
   private String endValue = null;
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
   private String startValue = null;
   private String value = null;
 
@@ -77,9 +78,9 @@ public class UserSearchCriteria  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<UserSearchCriteria> group = new ArrayList<UserSearchCriteria>();
+  private List<UserSearchCriteria> group = null;
   private String dateFormat = null;
-  private List<String> fields = new ArrayList<String>();
+  private List<String> fields = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -135,6 +136,14 @@ public class UserSearchCriteria  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  public UserSearchCriteria() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<String>();
+      group = new ArrayList<UserSearchCriteria>();
+      fields = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PossibleWorkShiftsForWeek;
 import io.swagger.annotations.ApiModel;
@@ -26,10 +27,17 @@ import java.io.Serializable;
 public class AgentPossibleWorkShiftsResponse  implements Serializable {
   
   private LocalDate weekStartDate = null;
-  private List<Integer> pattern = new ArrayList<Integer>();
-  private List<PossibleWorkShiftsForWeek> weeklyPossibleWorkShifts = new ArrayList<PossibleWorkShiftsForWeek>();
+  private List<Integer> pattern = null;
+  private List<PossibleWorkShiftsForWeek> weeklyPossibleWorkShifts = null;
   private Integer schedulerIntervalLengthMinutes = null;
   private String timeZone = null;
+
+  public AgentPossibleWorkShiftsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      pattern = new ArrayList<Integer>();
+      weeklyPossibleWorkShifts = new ArrayList<PossibleWorkShiftsForWeek>();
+    }
+  }
 
   
   /**

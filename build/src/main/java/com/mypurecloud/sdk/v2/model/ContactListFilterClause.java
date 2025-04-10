@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactListFilterPredicate;
@@ -73,7 +74,13 @@ public class ContactListFilterClause  implements Serializable {
     }
   }
   private FilterTypeEnum filterType = null;
-  private List<ContactListFilterPredicate> predicates = new ArrayList<ContactListFilterPredicate>();
+  private List<ContactListFilterPredicate> predicates = null;
+
+  public ContactListFilterClause() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predicates = new ArrayList<ContactListFilterPredicate>();
+    }
+  }
 
   
   /**

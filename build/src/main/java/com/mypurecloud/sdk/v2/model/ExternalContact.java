@@ -10,10 +10,12 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.ContactAddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalId;
@@ -59,7 +61,8 @@ public class ExternalContact  implements Serializable {
   private LineId lineId = null;
   private WhatsAppId whatsAppId = null;
   private FacebookId facebookId = null;
-  private List<ExternalId> externalIds = new ArrayList<ExternalId>();
+  private List<ExternalId> externalIds = null;
+  private List<ContactIdentifier> identifiers = null;
   private Date modifyDate = null;
   private Date createDate = null;
   private ExternalOrganization externalOrganization = null;
@@ -67,7 +70,7 @@ public class ExternalContact  implements Serializable {
   private String externalSystemUrl = null;
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+  private List<ExternalDataSource> externalDataSources = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -118,9 +121,18 @@ public class ExternalContact  implements Serializable {
   }
   private TypeEnum type = null;
   private ContactAddressableEntityRef canonicalContact = null;
-  private List<ContactAddressableEntityRef> mergeSet = new ArrayList<ContactAddressableEntityRef>();
+  private List<ContactAddressableEntityRef> mergeSet = null;
   private MergeOperation mergeOperation = null;
   private String selfUri = null;
+
+  public ExternalContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      externalIds = new ArrayList<ExternalId>();
+      identifiers = new ArrayList<ContactIdentifier>();
+      externalDataSources = new ArrayList<ExternalDataSource>();
+      mergeSet = new ArrayList<ContactAddressableEntityRef>();
+    }
+  }
 
   
   /**
@@ -469,6 +481,24 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * Identifiers claimed by this contact
+   **/
+  public ExternalContact identifiers(List<ContactIdentifier> identifiers) {
+    this.identifiers = identifiers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers claimed by this contact")
+  @JsonProperty("identifiers")
+  public List<ContactIdentifier> getIdentifiers() {
+    return identifiers;
+  }
+  public void setIdentifiers(List<ContactIdentifier> identifiers) {
+    this.identifiers = identifiers;
+  }
+
+
+  /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ExternalContact modifyDate(Date modifyDate) {
@@ -664,6 +694,7 @@ public class ExternalContact  implements Serializable {
             Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
             Objects.equals(this.facebookId, externalContact.facebookId) &&
             Objects.equals(this.externalIds, externalContact.externalIds) &&
+            Objects.equals(this.identifiers, externalContact.identifiers) &&
             Objects.equals(this.modifyDate, externalContact.modifyDate) &&
             Objects.equals(this.createDate, externalContact.createDate) &&
             Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
@@ -681,7 +712,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
+    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, identifiers, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
   }
 
   @Override
@@ -709,6 +740,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
+    sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

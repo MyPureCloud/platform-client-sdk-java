@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledgeDocument;
 import io.swagger.annotations.ApiModel;
@@ -26,10 +27,16 @@ public class ReportingTurnKnowledgeFeedbackEvent  implements Serializable {
   
   private String searchId = null;
   private String knowledgeBaseId = null;
-  private List<ReportingTurnKnowledgeDocument> documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+  private List<ReportingTurnKnowledgeDocument> documents = null;
   private Integer feedbackRating = null;
   private String documentVariationId = null;
   private String documentVersionId = null;
+
+  public ReportingTurnKnowledgeFeedbackEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+    }
+  }
 
   
   /**

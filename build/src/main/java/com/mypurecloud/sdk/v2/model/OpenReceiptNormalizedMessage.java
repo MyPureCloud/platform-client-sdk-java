@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationReason;
@@ -127,7 +128,7 @@ public class OpenReceiptNormalizedMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<ConversationReason> reasons = new ArrayList<ConversationReason>();
+  private List<ConversationReason> reasons = null;
   private Boolean isFinalReceipt = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
@@ -177,6 +178,12 @@ public class OpenReceiptNormalizedMessage  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+
+  public OpenReceiptNormalizedMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      reasons = new ArrayList<ConversationReason>();
+    }
+  }
 
   
   /**

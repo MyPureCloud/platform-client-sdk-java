@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class DataTableRowEntityListing  implements Serializable, PagedResource<Map<String, Object>> {
   
-  private List<Map<String, Object>> entities = new ArrayList<Map<String, Object>>();
+  private List<Map<String, Object>> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public DataTableRowEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<Map<String, Object>>();
+    }
+  }
 
   
   /**

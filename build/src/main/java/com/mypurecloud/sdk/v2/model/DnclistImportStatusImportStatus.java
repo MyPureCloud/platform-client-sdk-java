@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -74,13 +75,19 @@ public class DnclistImportStatusImportStatus  implements Serializable {
     }
   }
   private ImportStateEnum importState = null;
-  private Integer totalRecords = null;
-  private Integer completedRecords = null;
-  private Integer percentageComplete = null;
+  private Long totalRecords = null;
+  private Long completedRecords = null;
+  private Long percentageComplete = null;
   private String failureReason = null;
-  private List<String> targetContactListIds = new ArrayList<String>();
+  private List<String> targetContactListIds = null;
   private String listNamePrefix = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DnclistImportStatusImportStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -104,17 +111,17 @@ public class DnclistImportStatusImportStatus  implements Serializable {
   /**
    * total number of records to be imported
    **/
-  public DnclistImportStatusImportStatus totalRecords(Integer totalRecords) {
+  public DnclistImportStatusImportStatus totalRecords(Long totalRecords) {
     this.totalRecords = totalRecords;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "total number of records to be imported")
   @JsonProperty("totalRecords")
-  public Integer getTotalRecords() {
+  public Long getTotalRecords() {
     return totalRecords;
   }
-  public void setTotalRecords(Integer totalRecords) {
+  public void setTotalRecords(Long totalRecords) {
     this.totalRecords = totalRecords;
   }
 
@@ -122,17 +129,17 @@ public class DnclistImportStatusImportStatus  implements Serializable {
   /**
    * number of records finished importing
    **/
-  public DnclistImportStatusImportStatus completedRecords(Integer completedRecords) {
+  public DnclistImportStatusImportStatus completedRecords(Long completedRecords) {
     this.completedRecords = completedRecords;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "number of records finished importing")
   @JsonProperty("completedRecords")
-  public Integer getCompletedRecords() {
+  public Long getCompletedRecords() {
     return completedRecords;
   }
-  public void setCompletedRecords(Integer completedRecords) {
+  public void setCompletedRecords(Long completedRecords) {
     this.completedRecords = completedRecords;
   }
 
@@ -140,17 +147,17 @@ public class DnclistImportStatusImportStatus  implements Serializable {
   /**
    * percentage of records finished importing
    **/
-  public DnclistImportStatusImportStatus percentageComplete(Integer percentageComplete) {
+  public DnclistImportStatusImportStatus percentageComplete(Long percentageComplete) {
     this.percentageComplete = percentageComplete;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "percentage of records finished importing")
   @JsonProperty("percentageComplete")
-  public Integer getPercentageComplete() {
+  public Long getPercentageComplete() {
     return percentageComplete;
   }
-  public void setPercentageComplete(Integer percentageComplete) {
+  public void setPercentageComplete(Long percentageComplete) {
     this.percentageComplete = percentageComplete;
   }
 

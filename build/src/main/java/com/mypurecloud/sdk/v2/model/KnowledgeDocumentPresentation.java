@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeConversationContext;
@@ -27,7 +28,7 @@ import java.io.Serializable;
 
 public class KnowledgeDocumentPresentation  implements Serializable {
   
-  private List<PresentedKnowledgeDocument> documents = new ArrayList<PresentedKnowledgeDocument>();
+  private List<PresentedKnowledgeDocument> documents = null;
   private String searchId = null;
 
   private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
@@ -135,6 +136,12 @@ public class KnowledgeDocumentPresentation  implements Serializable {
   private String sessionId = null;
   private KnowledgeConversationContext conversationContext = null;
   private KnowledgeSearchClientApplication application = null;
+
+  public KnowledgeDocumentPresentation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      documents = new ArrayList<PresentedKnowledgeDocument>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContestCompleteDataScore;
 import com.mypurecloud.sdk.v2.model.ContestDataWinnersUsers;
@@ -28,7 +29,13 @@ public class ContestDataWinners  implements Serializable {
   private Integer tier = null;
   private Integer winnersCount = null;
   private ContestCompleteDataScore contestScore = null;
-  private List<ContestDataWinnersUsers> users = new ArrayList<ContestDataWinnersUsers>();
+  private List<ContestDataWinnersUsers> users = null;
+
+  public ContestDataWinners() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<ContestDataWinnersUsers>();
+    }
+  }
 
   
   /**

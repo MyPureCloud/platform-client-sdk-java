@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class InboundDomainEntityListing  implements Serializable, PagedResource<InboundDomain> {
   
-  private List<InboundDomain> entities = new ArrayList<InboundDomain>();
+  private List<InboundDomain> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public InboundDomainEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<InboundDomain>();
+    }
+  }
 
   
   /**

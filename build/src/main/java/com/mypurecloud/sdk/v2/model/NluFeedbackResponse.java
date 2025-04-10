@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntentFeedback;
 import com.mypurecloud.sdk.v2.model.NluDomainVersion;
@@ -28,11 +29,17 @@ public class NluFeedbackResponse  implements Serializable {
   
   private String id = null;
   private String text = null;
-  private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
+  private List<IntentFeedback> intents = null;
   private NluDomainVersion version = null;
   private Date dateCreated = null;
   private String language = null;
   private String selfUri = null;
+
+  public NluFeedbackResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<IntentFeedback>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

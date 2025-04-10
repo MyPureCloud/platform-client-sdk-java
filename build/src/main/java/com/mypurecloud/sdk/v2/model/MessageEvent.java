@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentReaction;
@@ -85,7 +86,13 @@ public class MessageEvent  implements Serializable {
   private EventTyping typing = null;
   private EventPresence presence = null;
   private EventVideo video = null;
-  private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
+  private List<ContentReaction> reactions = null;
+
+  public MessageEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      reactions = new ArrayList<ContentReaction>();
+    }
+  }
 
   
   /**

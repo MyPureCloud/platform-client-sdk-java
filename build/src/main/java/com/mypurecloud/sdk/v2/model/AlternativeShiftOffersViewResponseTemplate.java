@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAgentScheduledShift;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftScheduleLookup;
@@ -32,8 +33,15 @@ public class AlternativeShiftOffersViewResponseTemplate  implements Serializable
   private String managementUnitId = null;
   private AlternativeShiftScheduleLookup schedule = null;
   private LocalDate offerWeekDate = null;
-  private List<AlternativeShiftAgentScheduledShift> shifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
-  private List<AlternativeShiftAgentScheduledShift> alternativeDays = new ArrayList<AlternativeShiftAgentScheduledShift>();
+  private List<AlternativeShiftAgentScheduledShift> shifts = null;
+  private List<AlternativeShiftAgentScheduledShift> alternativeDays = null;
+
+  public AlternativeShiftOffersViewResponseTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      shifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      alternativeDays = new ArrayList<AlternativeShiftAgentScheduledShift>();
+    }
+  }
 
   
   /**

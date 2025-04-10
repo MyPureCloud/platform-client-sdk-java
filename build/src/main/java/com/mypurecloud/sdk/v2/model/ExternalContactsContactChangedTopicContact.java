@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicContactAddress;
@@ -111,16 +112,24 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   private ExternalContactsContactChangedTopicWhatsAppId whatsAppId = null;
   private ExternalContactsContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsContactChangedTopicInstagramId instagramId = null;
-  private List<ExternalContactsContactChangedTopicExternalId> externalIds = new ArrayList<ExternalContactsContactChangedTopicExternalId>();
+  private List<ExternalContactsContactChangedTopicExternalId> externalIds = null;
   private String canonicalContactId = null;
   private ExternalContactsContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<String> mergeSet = new ArrayList<String>();
-  private List<String> mergedFrom = new ArrayList<String>();
+  private List<String> mergeSet = null;
+  private List<String> mergedFrom = null;
   private String mergedTo = null;
   private ExternalContactsContactChangedTopicMergeOperation mergeOperation = null;
   private Date createDate = null;
   private Date modifyDate = null;
+
+  public ExternalContactsContactChangedTopicContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      externalIds = new ArrayList<ExternalContactsContactChangedTopicExternalId>();
+      mergeSet = new ArrayList<String>();
+      mergedFrom = new ArrayList<String>();
+    }
+  }
 
   
   /**

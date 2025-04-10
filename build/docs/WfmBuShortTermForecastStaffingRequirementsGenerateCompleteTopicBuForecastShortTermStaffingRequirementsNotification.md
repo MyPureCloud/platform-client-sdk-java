@@ -8,8 +8,8 @@
 | **businessUnitId** | **String** |  |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
 | **forecast** | [**WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference) |  |  [optional] |
-| **weekCount** | **Integer** |  |  [optional] |
-| **intervalLengthMinutes** | **Integer** |  |  [optional] |
+| **weekCount** | **Long** |  |  [optional] |
+| **intervalLengthMinutes** | **Long** |  |  [optional] |
 | **referenceStartDate** | [**Date**](Date) |  |  [optional] |
 | **results** | [**List&lt;WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults&gt;**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults) |  |  [optional] |
 
@@ -27,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

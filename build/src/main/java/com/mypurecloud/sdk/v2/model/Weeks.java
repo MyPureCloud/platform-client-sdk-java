@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 public class Weeks  implements Serializable {
   
   private Integer weekOffset = null;
-  private List<Double> values = new ArrayList<Double>();
+  private List<Double> values = null;
+
+  public Weeks() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<Double>();
+    }
+  }
 
   
   /**

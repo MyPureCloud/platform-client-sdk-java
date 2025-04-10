@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SkillsToRemove;
 import io.swagger.annotations.ApiModel;
@@ -23,7 +24,13 @@ import java.io.Serializable;
 
 public class Actions  implements Serializable {
   
-  private List<SkillsToRemove> skillsToRemove = new ArrayList<SkillsToRemove>();
+  private List<SkillsToRemove> skillsToRemove = null;
+
+  public Actions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skillsToRemove = new ArrayList<SkillsToRemove>();
+    }
+  }
 
   
   /**

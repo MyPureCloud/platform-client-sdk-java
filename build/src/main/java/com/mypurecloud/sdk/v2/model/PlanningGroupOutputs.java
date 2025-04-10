@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,10 +25,19 @@ import java.io.Serializable;
 public class PlanningGroupOutputs  implements Serializable {
   
   private String planningGroupId = null;
-  private List<Double> serviceLevelPerInterval = new ArrayList<Double>();
-  private List<Double> occupancyPerInterval = new ArrayList<Double>();
-  private List<Double> averageSpeedOfAnswerSecondsPerInterval = new ArrayList<Double>();
-  private List<Double> abandonRatePerInterval = new ArrayList<Double>();
+  private List<Double> serviceLevelPerInterval = null;
+  private List<Double> occupancyPerInterval = null;
+  private List<Double> averageSpeedOfAnswerSecondsPerInterval = null;
+  private List<Double> abandonRatePerInterval = null;
+
+  public PlanningGroupOutputs() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      serviceLevelPerInterval = new ArrayList<Double>();
+      occupancyPerInterval = new ArrayList<Double>();
+      averageSpeedOfAnswerSecondsPerInterval = new ArrayList<Double>();
+      abandonRatePerInterval = new ArrayList<Double>();
+    }
+  }
 
   
   /**

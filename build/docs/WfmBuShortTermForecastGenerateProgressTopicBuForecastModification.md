@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
-| **startIntervalIndex** | **Integer** |  |  [optional] |
-| **endIntervalIndex** | **Integer** |  |  [optional] |
+| **startIntervalIndex** | **Long** |  |  [optional] |
+| **endIntervalIndex** | **Long** |  |  [optional] |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) |  |  [optional] |
 | **legacyMetric** | [**LegacyMetricEnum**](#Enum--LegacyMetricEnum) |  |  [optional] |
 | **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
@@ -58,4 +58,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

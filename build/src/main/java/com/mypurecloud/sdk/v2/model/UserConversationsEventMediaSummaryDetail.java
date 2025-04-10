@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class UserConversationsEventMediaSummaryDetail  implements Serializable {
   
-  private Integer active = null;
-  private Integer acw = null;
+  private Long active = null;
+  private Long acw = null;
+
+  public UserConversationsEventMediaSummaryDetail() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public UserConversationsEventMediaSummaryDetail active(Integer active) {
+  public UserConversationsEventMediaSummaryDetail active(Long active) {
     this.active = active;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("active")
-  public Integer getActive() {
+  public Long getActive() {
     return active;
   }
-  public void setActive(Integer active) {
+  public void setActive(Long active) {
     this.active = active;
   }
 
 
   /**
    **/
-  public UserConversationsEventMediaSummaryDetail acw(Integer acw) {
+  public UserConversationsEventMediaSummaryDetail acw(Long acw) {
     this.acw = acw;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("acw")
-  public Integer getAcw() {
+  public Long getAcw() {
     return acw;
   }
-  public void setAcw(Integer acw) {
+  public void setAcw(Long acw) {
     this.acw = acw;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CommonRulePredicate;
@@ -25,8 +26,8 @@ import java.io.Serializable;
 
 public class CommonRuleConditions  implements Serializable {
   
-  private List<CommonRuleConditions> clauses = new ArrayList<CommonRuleConditions>();
-  private List<CommonRulePredicate> predicates = new ArrayList<CommonRulePredicate>();
+  private List<CommonRuleConditions> clauses = null;
+  private List<CommonRulePredicate> predicates = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -77,6 +78,13 @@ public class CommonRuleConditions  implements Serializable {
   }
   private TypeEnum type = null;
   private String id = null;
+
+  public CommonRuleConditions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<CommonRuleConditions>();
+      predicates = new ArrayList<CommonRulePredicate>();
+    }
+  }
 
   
   /**

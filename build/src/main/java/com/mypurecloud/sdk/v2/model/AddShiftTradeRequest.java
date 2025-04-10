@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +29,13 @@ public class AddShiftTradeRequest  implements Serializable {
   private String initiatingShiftId = null;
   private String receivingUserId = null;
   private Date expiration = null;
-  private List<String> acceptableIntervals = new ArrayList<String>();
+  private List<String> acceptableIntervals = null;
+
+  public AddShiftTradeRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      acceptableIntervals = new ArrayList<String>();
+    }
+  }
 
   
   /**

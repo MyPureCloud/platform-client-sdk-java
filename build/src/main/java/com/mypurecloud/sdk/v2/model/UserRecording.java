@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
@@ -37,9 +38,15 @@ public class UserRecording  implements Serializable {
   private Conversation conversation = null;
   private Long contentLength = null;
   private Long durationMilliseconds = null;
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<DocumentThumbnail> thumbnails = null;
   private Boolean read = null;
   private String selfUri = null;
+
+  public UserRecording() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      thumbnails = new ArrayList<DocumentThumbnail>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

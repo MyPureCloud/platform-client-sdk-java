@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AttributeDetailEventTopicCommunication;
 import io.swagger.annotations.ApiModel;
@@ -26,28 +27,36 @@ import java.io.Serializable;
 
 public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private Map<String, String> attributes = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
-  private List<AttributeDetailEventTopicCommunication> communications = new ArrayList<AttributeDetailEventTopicCommunication>();
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
+  private List<AttributeDetailEventTopicCommunication> communications = null;
+
+  public AttributeDetailEventTopicAttributeUpdateEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+      communications = new ArrayList<AttributeDetailEventTopicCommunication>();
+    }
+  }
 
   
   /**
    **/
-  public AttributeDetailEventTopicAttributeUpdateEvent eventTime(Integer eventTime) {
+  public AttributeDetailEventTopicAttributeUpdateEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 

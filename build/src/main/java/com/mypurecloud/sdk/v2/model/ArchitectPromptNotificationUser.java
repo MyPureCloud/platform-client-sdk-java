@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationHomeOrganization;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class ArchitectPromptNotificationUser  implements Serializable {
   private String id = null;
   private String name = null;
   private ArchitectPromptNotificationHomeOrganization homeOrg = null;
+
+  public ArchitectPromptNotificationUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

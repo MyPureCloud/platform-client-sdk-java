@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialSpecification;
 import com.mypurecloud.sdk.v2.model.HelpLink;
@@ -34,7 +35,7 @@ public class IntegrationType  implements Serializable {
   private String description = null;
   private String provider = null;
   private String category = null;
-  private List<Image> images = new ArrayList<Image>();
+  private List<Image> images = null;
   private String configPropertiesSchemaUri = null;
   private String configAdvancedSchemaUri = null;
   private String helpUri = null;
@@ -46,13 +47,22 @@ public class IntegrationType  implements Serializable {
   private String privacyPolicyUri = null;
   private String supportContactUri = null;
   private String salesContactUri = null;
-  private List<HelpLink> helpLinks = new ArrayList<HelpLink>();
+  private List<HelpLink> helpLinks = null;
   private Map<String, CredentialSpecification> credentials = null;
   private Boolean nonInstallable = null;
   private Integer maxInstances = null;
-  private List<String> userPermissions = new ArrayList<String>();
-  private List<String> vendorOAuthClientIds = new ArrayList<String>();
+  private List<String> userPermissions = null;
+  private List<String> vendorOAuthClientIds = null;
   private String selfUri = null;
+
+  public IntegrationType() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      images = new ArrayList<Image>();
+      helpLinks = new ArrayList<HelpLink>();
+      userPermissions = new ArrayList<String>();
+      vendorOAuthClientIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

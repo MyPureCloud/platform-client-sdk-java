@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberRef;
@@ -27,6 +28,11 @@ public class SmsConfig  implements Serializable {
   private String phoneColumn = null;
   private SmsPhoneNumberRef senderSmsPhoneNumber = null;
   private DomainEntityRef contentTemplate = null;
+
+  public SmsConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PublishTopicTestPhraseMatchedTranscript;
 import io.swagger.annotations.ApiModel;
@@ -24,41 +25,47 @@ import java.io.Serializable;
 
 public class PublishTopicTestTopicPhraseResults  implements Serializable {
   
-  private Integer processedTranscriptsCount = null;
-  private Integer matchedTranscriptsCount = null;
-  private List<PublishTopicTestPhraseMatchedTranscript> matchedTranscripts = new ArrayList<PublishTopicTestPhraseMatchedTranscript>();
+  private Long processedTranscriptsCount = null;
+  private Long matchedTranscriptsCount = null;
+  private List<PublishTopicTestPhraseMatchedTranscript> matchedTranscripts = null;
+
+  public PublishTopicTestTopicPhraseResults() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      matchedTranscripts = new ArrayList<PublishTopicTestPhraseMatchedTranscript>();
+    }
+  }
 
   
   /**
    **/
-  public PublishTopicTestTopicPhraseResults processedTranscriptsCount(Integer processedTranscriptsCount) {
+  public PublishTopicTestTopicPhraseResults processedTranscriptsCount(Long processedTranscriptsCount) {
     this.processedTranscriptsCount = processedTranscriptsCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("processedTranscriptsCount")
-  public Integer getProcessedTranscriptsCount() {
+  public Long getProcessedTranscriptsCount() {
     return processedTranscriptsCount;
   }
-  public void setProcessedTranscriptsCount(Integer processedTranscriptsCount) {
+  public void setProcessedTranscriptsCount(Long processedTranscriptsCount) {
     this.processedTranscriptsCount = processedTranscriptsCount;
   }
 
 
   /**
    **/
-  public PublishTopicTestTopicPhraseResults matchedTranscriptsCount(Integer matchedTranscriptsCount) {
+  public PublishTopicTestTopicPhraseResults matchedTranscriptsCount(Long matchedTranscriptsCount) {
     this.matchedTranscriptsCount = matchedTranscriptsCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("matchedTranscriptsCount")
-  public Integer getMatchedTranscriptsCount() {
+  public Long getMatchedTranscriptsCount() {
     return matchedTranscriptsCount;
   }
-  public void setMatchedTranscriptsCount(Integer matchedTranscriptsCount) {
+  public void setMatchedTranscriptsCount(Long matchedTranscriptsCount) {
     this.matchedTranscriptsCount = matchedTranscriptsCount;
   }
 

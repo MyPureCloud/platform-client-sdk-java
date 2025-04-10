@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotIntent;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class BotConnectorBotVersion  implements Serializable {
   
   private String version = null;
-  private List<String> supportedLanguages = new ArrayList<String>();
-  private List<BotIntent> intents = new ArrayList<BotIntent>();
+  private List<String> supportedLanguages = null;
+  private List<BotIntent> intents = null;
+
+  public BotConnectorBotVersion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      supportedLanguages = new ArrayList<String>();
+      intents = new ArrayList<BotIntent>();
+    }
+  }
 
   
   /**

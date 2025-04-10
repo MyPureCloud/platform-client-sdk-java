@@ -9,11 +9,11 @@
 | **percentComplete** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **intradayRescheduling** | **Boolean** |  |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
-| **weekCount** | **Integer** |  |  [optional] |
+| **weekCount** | **Long** |  |  [optional] |
 | **schedule** | [**WfmBuScheduleRunTopicBuScheduleReference**](WfmBuScheduleRunTopicBuScheduleReference) |  |  [optional] |
 | **schedulingCanceledBy** | [**WfmBuScheduleRunTopicUserReference**](WfmBuScheduleRunTopicUserReference) |  |  [optional] |
 | **schedulingCompletedTime** | **String** |  |  [optional] |
-| **messageCount** | **Integer** |  |  [optional] |
+| **messageCount** | **Long** |  |  [optional] |
 | **messageSeverityCounts** | [**List&lt;WfmBuScheduleRunTopicSchedulerMessageSeverityCount&gt;**](WfmBuScheduleRunTopicSchedulerMessageSeverityCount) |  |  [optional] |
 
 
@@ -32,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

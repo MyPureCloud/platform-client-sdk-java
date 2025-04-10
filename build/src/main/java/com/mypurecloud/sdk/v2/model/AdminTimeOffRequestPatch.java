@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -78,12 +79,21 @@ public class AdminTimeOffRequestPatch  implements Serializable {
   private String activityCodeId = null;
   private Boolean paid = null;
   private String notes = null;
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
-  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
+  private List<String> fullDayManagementUnitDates = null;
+  private List<Date> partialDayStartDateTimes = null;
   private Integer dailyDurationMinutes = null;
-  private List<Integer> durationMinutes = new ArrayList<Integer>();
-  private List<Integer> payableMinutes = new ArrayList<Integer>();
+  private List<Integer> durationMinutes = null;
+  private List<Integer> payableMinutes = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public AdminTimeOffRequestPatch() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      fullDayManagementUnitDates = new ArrayList<String>();
+      partialDayStartDateTimes = new ArrayList<Date>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

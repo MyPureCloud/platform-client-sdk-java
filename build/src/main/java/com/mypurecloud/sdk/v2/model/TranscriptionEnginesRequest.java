@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngine;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class TranscriptionEnginesRequest  implements Serializable {
   
-  private List<ProgramTranscriptionEngine> transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+  private List<ProgramTranscriptionEngine> transcriptionEngines = null;
+
+  public TranscriptionEnginesRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Detail;
@@ -35,7 +36,7 @@ public class Operation  implements Serializable {
   private DomainEntityRef client = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private List<Detail> errorDetails = new ArrayList<Detail>();
+  private List<Detail> errorDetails = null;
   private Map<String, String> errorMessageParams = null;
 
   private static class ActionNameEnumDeserializer extends StdDeserializer<ActionNameEnum> {
@@ -148,6 +149,12 @@ public class Operation  implements Serializable {
     }
   }
   private ActionStatusEnum actionStatus = null;
+
+  public Operation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errorDetails = new ArrayList<Detail>();
+    }
+  }
 
   
   /**

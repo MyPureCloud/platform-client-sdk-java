@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **offered** | **Integer** |  |  [optional] |
-| **completed** | **Integer** |  |  [optional] |
-| **answered** | **Integer** |  |  [optional] |
-| **abandoned** | **Integer** |  |  [optional] |
+| **offered** | **Long** |  |  [optional] |
+| **completed** | **Long** |  |  [optional] |
+| **answered** | **Long** |  |  [optional] |
+| **abandoned** | **Long** |  |  [optional] |
 | **averageTalkTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **averageAfterCallWorkSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **serviceLevelPercent** | [**BigDecimal**](BigDecimal) |  |  [optional] |
@@ -17,4 +17,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

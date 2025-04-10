@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsEntity;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class BulkIdsRequest  implements Serializable {
   
-  private List<ExternalContactsEntity> entities = new ArrayList<ExternalContactsEntity>();
+  private List<ExternalContactsEntity> entities = null;
+
+  public BulkIdsRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ExternalContactsEntity>();
+    }
+  }
 
   
   /**

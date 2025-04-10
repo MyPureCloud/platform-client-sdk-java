@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicParticipant;
@@ -27,15 +28,23 @@ import java.io.Serializable;
 public class QueueConversationVideoEventTopicConversation  implements Serializable {
   
   private String id = null;
-  private Integer maxParticipants = null;
-  private List<QueueConversationVideoEventTopicParticipant> participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
-  private List<QueueConversationVideoEventTopicTransferResponse> recentTransfers = new ArrayList<QueueConversationVideoEventTopicTransferResponse>();
+  private Long maxParticipants = null;
+  private List<QueueConversationVideoEventTopicParticipant> participants = null;
+  private List<QueueConversationVideoEventTopicTransferResponse> recentTransfers = null;
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
-  private List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationVideoEventTopicConversationDivisionMembership>();
+  private List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationVideoEventTopicConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
+      recentTransfers = new ArrayList<QueueConversationVideoEventTopicTransferResponse>();
+      divisions = new ArrayList<QueueConversationVideoEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**
@@ -57,17 +66,17 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
 
   /**
    **/
-  public QueueConversationVideoEventTopicConversation maxParticipants(Integer maxParticipants) {
+  public QueueConversationVideoEventTopicConversation maxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxParticipants")
-  public Integer getMaxParticipants() {
+  public Long getMaxParticipants() {
     return maxParticipants;
   }
-  public void setMaxParticipants(Integer maxParticipants) {
+  public void setMaxParticipants(Long maxParticipants) {
     this.maxParticipants = maxParticipants;
   }
 

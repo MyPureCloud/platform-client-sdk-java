@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnswerOption;
@@ -81,9 +82,15 @@ public class SurveyQuestion  implements Serializable {
   private TypeEnum type = null;
   private Boolean naEnabled = null;
   private VisibilityCondition visibilityCondition = null;
-  private List<AnswerOption> answerOptions = new ArrayList<AnswerOption>();
+  private List<AnswerOption> answerOptions = null;
   private Integer maxResponseCharacters = null;
   private String explanationPrompt = null;
+
+  public SurveyQuestion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      answerOptions = new ArrayList<AnswerOption>();
+    }
+  }
 
   
   /**

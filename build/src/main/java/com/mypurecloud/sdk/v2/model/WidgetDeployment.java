@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -32,7 +33,7 @@ public class WidgetDeployment  implements Serializable {
   private Boolean authenticationRequired = null;
   private Boolean disabled = null;
   private DomainEntityRef flow = null;
-  private List<String> allowedDomains = new ArrayList<String>();
+  private List<String> allowedDomains = null;
 
   private static class ClientTypeEnumDeserializer extends StdDeserializer<ClientTypeEnum> {
     public ClientTypeEnumDeserializer() {
@@ -85,6 +86,12 @@ public class WidgetDeployment  implements Serializable {
   private ClientTypeEnum clientType = null;
   private WidgetClientConfig clientConfig = null;
   private String selfUri = null;
+
+  public WidgetDeployment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      allowedDomains = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

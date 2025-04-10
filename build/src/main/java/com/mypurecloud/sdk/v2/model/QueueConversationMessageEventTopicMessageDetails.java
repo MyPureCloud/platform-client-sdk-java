@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicErrorDetails;
@@ -32,7 +33,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
   
   private QueueConversationMessageEventTopicUriReference message = null;
   private Date messageTime = null;
-  private Integer messageSegmentCount = null;
+  private Long messageSegmentCount = null;
 
   private static class MessageStatusEnumDeserializer extends StdDeserializer<MessageStatusEnum> {
     public MessageStatusEnumDeserializer() {
@@ -88,8 +89,8 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private List<QueueConversationMessageEventTopicMessageMedia> media = new ArrayList<QueueConversationMessageEventTopicMessageMedia>();
-  private List<QueueConversationMessageEventTopicMessageSticker> stickers = new ArrayList<QueueConversationMessageEventTopicMessageSticker>();
+  private List<QueueConversationMessageEventTopicMessageMedia> media = null;
+  private List<QueueConversationMessageEventTopicMessageSticker> stickers = null;
   private QueueConversationMessageEventTopicErrorDetails errorInfo = null;
   private QueueConversationMessageEventTopicMessageMetadata messageMetadata = null;
 
@@ -141,6 +142,13 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
   }
   private SocialVisibilityEnum socialVisibility = null;
 
+  public QueueConversationMessageEventTopicMessageDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      media = new ArrayList<QueueConversationMessageEventTopicMessageMedia>();
+      stickers = new ArrayList<QueueConversationMessageEventTopicMessageSticker>();
+    }
+  }
+
   
   /**
    **/
@@ -178,17 +186,17 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
 
   /**
    **/
-  public QueueConversationMessageEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
+  public QueueConversationMessageEventTopicMessageDetails messageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("messageSegmentCount")
-  public Integer getMessageSegmentCount() {
+  public Long getMessageSegmentCount() {
     return messageSegmentCount;
   }
-  public void setMessageSegmentCount(Integer messageSegmentCount) {
+  public void setMessageSegmentCount(Long messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
   }
 

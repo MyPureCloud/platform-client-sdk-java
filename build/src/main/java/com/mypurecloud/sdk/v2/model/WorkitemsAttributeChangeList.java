@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 
 public class WorkitemsAttributeChangeList  implements Serializable {
   
-  private List<Object> newValue = new ArrayList<Object>();
-  private List<Object> oldValue = new ArrayList<Object>();
+  private List<Object> newValue = null;
+  private List<Object> oldValue = null;
+
+  public WorkitemsAttributeChangeList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      newValue = new ArrayList<Object>();
+      oldValue = new ArrayList<Object>();
+    }
+  }
 
   
   /**

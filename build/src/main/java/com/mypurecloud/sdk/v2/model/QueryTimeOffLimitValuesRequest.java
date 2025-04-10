@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocalDateRange;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
   
   private String timeOffLimitId = null;
   private String activityCodeId = null;
-  private List<LocalDateRange> dateRanges = new ArrayList<LocalDateRange>();
+  private List<LocalDateRange> dateRanges = null;
+
+  public QueryTimeOffLimitValuesRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dateRanges = new ArrayList<LocalDateRange>();
+    }
+  }
 
   
   /**

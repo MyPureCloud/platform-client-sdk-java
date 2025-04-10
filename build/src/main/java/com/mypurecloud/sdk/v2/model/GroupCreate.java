@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GroupContact;
@@ -130,8 +131,8 @@ public class GroupCreate  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<Image> images = new ArrayList<Image>();
-  private List<GroupContact> addresses = new ArrayList<GroupContact>();
+  private List<Image> images = null;
+  private List<GroupContact> addresses = null;
   private Boolean rulesVisible = null;
 
   private static class VisibilityEnumDeserializer extends StdDeserializer<VisibilityEnum> {
@@ -185,8 +186,16 @@ public class GroupCreate  implements Serializable {
   private Boolean rolesEnabled = null;
   private Boolean includeOwners = null;
   private Boolean callsEnabled = null;
-  private List<String> ownerIds = new ArrayList<String>();
+  private List<String> ownerIds = null;
   private String selfUri = null;
+
+  public GroupCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      images = new ArrayList<Image>();
+      addresses = new ArrayList<GroupContact>();
+      ownerIds = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

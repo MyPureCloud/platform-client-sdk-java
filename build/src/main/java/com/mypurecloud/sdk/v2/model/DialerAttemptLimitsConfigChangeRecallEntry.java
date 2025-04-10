@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,25 +25,30 @@ import java.io.Serializable;
 
 public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable {
   
-  private Integer nbrAttempts = null;
-  private Integer minutesBetweenAttempts = null;
+  private Long nbrAttempts = null;
+  private Long minutesBetweenAttempts = null;
   private Map<String, Object> additionalProperties = null;
+
+  public DialerAttemptLimitsConfigChangeRecallEntry() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    * The number of recall attempts to make
    **/
-  public DialerAttemptLimitsConfigChangeRecallEntry nbrAttempts(Integer nbrAttempts) {
+  public DialerAttemptLimitsConfigChangeRecallEntry nbrAttempts(Long nbrAttempts) {
     this.nbrAttempts = nbrAttempts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of recall attempts to make")
   @JsonProperty("nbrAttempts")
-  public Integer getNbrAttempts() {
+  public Long getNbrAttempts() {
     return nbrAttempts;
   }
-  public void setNbrAttempts(Integer nbrAttempts) {
+  public void setNbrAttempts(Long nbrAttempts) {
     this.nbrAttempts = nbrAttempts;
   }
 
@@ -50,17 +56,17 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
   /**
    * How long to wait between recall attempts
    **/
-  public DialerAttemptLimitsConfigChangeRecallEntry minutesBetweenAttempts(Integer minutesBetweenAttempts) {
+  public DialerAttemptLimitsConfigChangeRecallEntry minutesBetweenAttempts(Long minutesBetweenAttempts) {
     this.minutesBetweenAttempts = minutesBetweenAttempts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "How long to wait between recall attempts")
   @JsonProperty("minutesBetweenAttempts")
-  public Integer getMinutesBetweenAttempts() {
+  public Long getMinutesBetweenAttempts() {
     return minutesBetweenAttempts;
   }
-  public void setMinutesBetweenAttempts(Integer minutesBetweenAttempts) {
+  public void setMinutesBetweenAttempts(Long minutesBetweenAttempts) {
     this.minutesBetweenAttempts = minutesBetweenAttempts;
   }
 

@@ -124,6 +124,7 @@ public class GetUsersMeRequest {
 		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography"),
 		DATELASTLOGIN("dateLastLogin"),
+		DATEWELCOMESENT("dateWelcomeSent"),
 		DATE("date"),
 		GEOLOCATIONSETTINGS("geolocationsettings"),
 		ORGANIZATION("organization"),

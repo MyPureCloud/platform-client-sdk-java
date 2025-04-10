@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -81,8 +82,15 @@ public class InsightsRankings  implements Serializable {
   private GranularityEnum granularity = null;
   private WorkdayPeriod comparativePeriod = null;
   private WorkdayPeriod primaryPeriod = null;
-  private List<InsightsSummaryUserItem> leaders = new ArrayList<InsightsSummaryUserItem>();
-  private List<InsightsSummaryUserItem> trailers = new ArrayList<InsightsSummaryUserItem>();
+  private List<InsightsSummaryUserItem> leaders = null;
+  private List<InsightsSummaryUserItem> trailers = null;
+
+  public InsightsRankings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      leaders = new ArrayList<InsightsSummaryUserItem>();
+      trailers = new ArrayList<InsightsSummaryUserItem>();
+    }
+  }
 
   
   /**

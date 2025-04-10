@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyViewLinkTimeConstraint;
@@ -78,7 +79,13 @@ public class JourneyViewLink  implements Serializable {
     }
   }
   private EventCountTypeEnum eventCountType = null;
-  private List<String> joinAttributes = new ArrayList<String>();
+  private List<String> joinAttributes = null;
+
+  public JourneyViewLink() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      joinAttributes = new ArrayList<String>();
+    }
+  }
 
   
   /**

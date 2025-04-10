@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.TimeInterval;
@@ -27,11 +28,17 @@ import java.io.Serializable;
 public class MeteredEvaluationAssignment  implements Serializable {
   
   private String evaluationContextId = null;
-  private List<User> evaluators = new ArrayList<User>();
+  private List<User> evaluators = null;
   private Integer maxNumberEvaluations = null;
   private EvaluationForm evaluationForm = null;
   private Boolean assignToActiveUser = null;
   private TimeInterval timeInterval = null;
+
+  public MeteredEvaluationAssignment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      evaluators = new ArrayList<User>();
+    }
+  }
 
   
   /**

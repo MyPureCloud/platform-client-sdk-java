@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SupportedLanguagesInfoDefinition;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ import java.io.Serializable;
 public class NluOrganization  implements Serializable {
   
   private Map<String, Integer> limits = null;
-  private List<SupportedLanguagesInfoDefinition> supportedLanguagesInfo = new ArrayList<SupportedLanguagesInfoDefinition>();
+  private List<SupportedLanguagesInfoDefinition> supportedLanguagesInfo = null;
+
+  public NluOrganization() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      supportedLanguagesInfo = new ArrayList<SupportedLanguagesInfoDefinition>();
+    }
+  }
 
   
   /**

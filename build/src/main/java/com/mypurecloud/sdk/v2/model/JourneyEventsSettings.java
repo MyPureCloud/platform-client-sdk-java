@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FormsTrackTrigger;
@@ -30,9 +31,9 @@ import java.io.Serializable;
 public class JourneyEventsSettings  implements Serializable {
   
   private Boolean enabled = null;
-  private List<String> excludedQueryParameters = new ArrayList<String>();
+  private List<String> excludedQueryParameters = null;
   private Boolean shouldKeepUrlFragment = null;
-  private List<String> searchQueryParameters = new ArrayList<String>();
+  private List<String> searchQueryParameters = null;
 
   private static class PageviewConfigEnumDeserializer extends StdDeserializer<PageviewConfigEnum> {
     public PageviewConfigEnumDeserializer() {
@@ -82,11 +83,23 @@ public class JourneyEventsSettings  implements Serializable {
     }
   }
   private PageviewConfigEnum pageviewConfig = null;
-  private List<SelectorEventTrigger> clickEvents = new ArrayList<SelectorEventTrigger>();
-  private List<FormsTrackTrigger> formsTrackEvents = new ArrayList<FormsTrackTrigger>();
-  private List<IdleEventTrigger> idleEvents = new ArrayList<IdleEventTrigger>();
-  private List<SelectorEventTrigger> inViewportEvents = new ArrayList<SelectorEventTrigger>();
-  private List<ScrollPercentageEventTrigger> scrollDepthEvents = new ArrayList<ScrollPercentageEventTrigger>();
+  private List<SelectorEventTrigger> clickEvents = null;
+  private List<FormsTrackTrigger> formsTrackEvents = null;
+  private List<IdleEventTrigger> idleEvents = null;
+  private List<SelectorEventTrigger> inViewportEvents = null;
+  private List<ScrollPercentageEventTrigger> scrollDepthEvents = null;
+
+  public JourneyEventsSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      excludedQueryParameters = new ArrayList<String>();
+      searchQueryParameters = new ArrayList<String>();
+      clickEvents = new ArrayList<SelectorEventTrigger>();
+      formsTrackEvents = new ArrayList<FormsTrackTrigger>();
+      idleEvents = new ArrayList<IdleEventTrigger>();
+      inViewportEvents = new ArrayList<SelectorEventTrigger>();
+      scrollDepthEvents = new ArrayList<ScrollPercentageEventTrigger>();
+    }
+  }
 
   
   /**

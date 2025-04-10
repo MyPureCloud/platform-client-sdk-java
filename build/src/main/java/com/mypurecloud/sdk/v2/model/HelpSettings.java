@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ComplianceResponse;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class HelpSettings  implements Serializable {
   
-  private List<String> keyword = new ArrayList<String>();
+  private List<String> keyword = null;
   private ComplianceResponse response = null;
+
+  public HelpSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      keyword = new ArrayList<String>();
+    }
+  }
 
   
   /**

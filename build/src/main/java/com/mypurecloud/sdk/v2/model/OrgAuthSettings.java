@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PasswordRequirements;
 import io.swagger.annotations.ApiModel;
@@ -26,10 +27,18 @@ public class OrgAuthSettings  implements Serializable {
   
   private Boolean multifactorAuthenticationRequired = null;
   private Boolean domainAllowlistEnabled = null;
-  private List<String> domainAllowlist = new ArrayList<String>();
-  private List<String> ipAddressAllowlist = new ArrayList<String>();
+  private List<String> domainAllowlist = null;
+  private List<String> ipAddressAllowlist = null;
   private PasswordRequirements passwordRequirements = null;
-  private List<String> inactivityTimeoutExclusions = new ArrayList<String>();
+  private List<String> inactivityTimeoutExclusions = null;
+
+  public OrgAuthSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      domainAllowlist = new ArrayList<String>();
+      ipAddressAllowlist = new ArrayList<String>();
+      inactivityTimeoutExclusions = new ArrayList<String>();
+    }
+  }
 
   
   /**

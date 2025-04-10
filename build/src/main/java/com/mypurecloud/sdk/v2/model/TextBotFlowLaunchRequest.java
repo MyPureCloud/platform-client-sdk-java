@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TextBotChannel;
 import com.mypurecloud.sdk.v2.model.TextBotFlow;
@@ -31,6 +32,11 @@ public class TextBotFlowLaunchRequest  implements Serializable {
   private TextBotInputOutputData inputData = null;
   private TextBotChannel channel = null;
   private String language = null;
+
+  public TextBotFlowLaunchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

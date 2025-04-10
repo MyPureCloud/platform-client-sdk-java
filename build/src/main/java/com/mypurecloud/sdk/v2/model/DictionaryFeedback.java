@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackExamplePhrase;
@@ -82,9 +83,16 @@ public class DictionaryFeedback  implements Serializable {
   private UserReference createdBy = null;
   private Date dateModified = null;
   private UserReference modifiedBy = null;
-  private List<DictionaryFeedbackExamplePhrase> examplePhrases = new ArrayList<DictionaryFeedbackExamplePhrase>();
-  private List<String> soundsLike = new ArrayList<String>();
+  private List<DictionaryFeedbackExamplePhrase> examplePhrases = null;
+  private List<String> soundsLike = null;
   private String selfUri = null;
+
+  public DictionaryFeedback() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      examplePhrases = new ArrayList<DictionaryFeedbackExamplePhrase>();
+      soundsLike = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

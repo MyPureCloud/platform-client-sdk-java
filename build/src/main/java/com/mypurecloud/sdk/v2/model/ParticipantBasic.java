@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallBasic;
@@ -117,22 +118,22 @@ public class ParticipantBasic  implements Serializable {
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
   private Wrapup wrapup = null;
-  private List<String> mediaRoles = new ArrayList<String>();
+  private List<String> mediaRoles = null;
   private ConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private Map<String, String> attributes = null;
-  private List<CallBasic> calls = new ArrayList<CallBasic>();
-  private List<CallbackBasic> callbacks = new ArrayList<CallbackBasic>();
-  private List<ConversationChat> chats = new ArrayList<ConversationChat>();
-  private List<Cobrowsesession> cobrowsesessions = new ArrayList<Cobrowsesession>();
-  private List<Email> emails = new ArrayList<Email>();
-  private List<Message> messages = new ArrayList<Message>();
-  private List<Screenshare> screenshares = new ArrayList<Screenshare>();
-  private List<SocialExpression> socialExpressions = new ArrayList<SocialExpression>();
-  private List<Video> videos = new ArrayList<Video>();
-  private List<Evaluation> evaluations = new ArrayList<Evaluation>();
+  private List<CallBasic> calls = null;
+  private List<CallbackBasic> callbacks = null;
+  private List<ConversationChat> chats = null;
+  private List<Cobrowsesession> cobrowsesessions = null;
+  private List<Email> emails = null;
+  private List<Message> messages = null;
+  private List<Screenshare> screenshares = null;
+  private List<SocialExpression> socialExpressions = null;
+  private List<Video> videos = null;
+  private List<Evaluation> evaluations = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -234,8 +235,25 @@ public class ParticipantBasic  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
-  private List<InternalMessage> internalMessages = new ArrayList<InternalMessage>();
+  private List<InternalMessage> internalMessages = null;
   private String bargedParticipantId = null;
+
+  public ParticipantBasic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaRoles = new ArrayList<String>();
+      calls = new ArrayList<CallBasic>();
+      callbacks = new ArrayList<CallbackBasic>();
+      chats = new ArrayList<ConversationChat>();
+      cobrowsesessions = new ArrayList<Cobrowsesession>();
+      emails = new ArrayList<Email>();
+      messages = new ArrayList<Message>();
+      screenshares = new ArrayList<Screenshare>();
+      socialExpressions = new ArrayList<SocialExpression>();
+      videos = new ArrayList<Video>();
+      evaluations = new ArrayList<Evaluation>();
+      internalMessages = new ArrayList<InternalMessage>();
+    }
+  }
 
   
   /**

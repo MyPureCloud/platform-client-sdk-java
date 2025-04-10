@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditQuerySort;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class AuditRealtimeRelatedRequest  implements Serializable {
   
   private String auditId = null;
   private String trustorOrgId = null;
-  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
+  private List<AuditQuerySort> sort = null;
+
+  public AuditRealtimeRelatedRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<AuditQuerySort>();
+    }
+  }
 
   
   /**

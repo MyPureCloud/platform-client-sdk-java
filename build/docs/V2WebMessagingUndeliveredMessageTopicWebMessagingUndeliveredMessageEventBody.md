@@ -10,11 +10,11 @@
 | **participantId** | **String** |  |  [optional] |
 | **externalContactId** | **String** |  |  [optional] |
 | **communicationId** | **String** |  |  [optional] |
-| **sessionExpiry** | **Integer** |  |  [optional] |
+| **sessionExpiry** | **Long** |  |  [optional] |
 | **messages** | [**List&lt;V2WebMessagingUndeliveredMessageTopicMessage&gt;**](V2WebMessagingUndeliveredMessageTopicMessage) |  |  [optional] |
-| **eventTimeMs** | **Integer** |  |  [optional] |
+| **eventTimeMs** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

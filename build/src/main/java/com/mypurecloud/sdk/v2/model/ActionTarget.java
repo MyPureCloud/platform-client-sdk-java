@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KeyValue;
@@ -29,7 +30,7 @@ public class ActionTarget  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<KeyValue> userData = new ArrayList<KeyValue>();
+  private List<KeyValue> userData = null;
 
   private static class SupportedMediaTypesEnumDeserializer extends StdDeserializer<SupportedMediaTypesEnum> {
     public SupportedMediaTypesEnumDeserializer() {
@@ -81,7 +82,7 @@ public class ActionTarget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SupportedMediaTypesEnum> supportedMediaTypes = new ArrayList<SupportedMediaTypesEnum>();
+  private List<SupportedMediaTypesEnum> supportedMediaTypes = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -137,6 +138,13 @@ public class ActionTarget  implements Serializable {
   private String selfUri = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
+
+  public ActionTarget() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userData = new ArrayList<KeyValue>();
+      supportedMediaTypes = new ArrayList<SupportedMediaTypesEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

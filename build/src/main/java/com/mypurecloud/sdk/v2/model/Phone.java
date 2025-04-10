@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -99,7 +100,7 @@ public class Phone  implements Serializable {
   private PhoneBaseSettings phoneBaseSettings = null;
   private DomainEntityRef lineBaseSettings = null;
   private DomainEntityRef phoneMetaBase = null;
-  private List<Line> lines = new ArrayList<Line>();
+  private List<Line> lines = null;
   private PhoneStatus status = null;
   private PhoneStatus secondaryStatus = null;
   private UserAgentInfo userAgentInfo = null;
@@ -109,6 +110,12 @@ public class Phone  implements Serializable {
   private Edge primaryEdge = null;
   private Edge secondaryEdge = null;
   private String selfUri = null;
+
+  public Phone() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      lines = new ArrayList<Line>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

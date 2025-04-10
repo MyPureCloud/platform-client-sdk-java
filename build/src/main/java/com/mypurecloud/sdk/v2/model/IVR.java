@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -88,12 +89,18 @@ public class IVR  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<String> dnis = new ArrayList<String>();
+  private List<String> dnis = null;
   private DomainEntityRef openHoursFlow = null;
   private DomainEntityRef closedHoursFlow = null;
   private DomainEntityRef holidayHoursFlow = null;
   private DomainEntityRef scheduleGroup = null;
   private String selfUri = null;
+
+  public IVR() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dnis = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

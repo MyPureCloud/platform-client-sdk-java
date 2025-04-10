@@ -47,8 +47,11 @@
 | PAIDTIMEGREATERTHANMAXWORKTIME | &quot;PaidTimeGreaterThanMaxWorkTime&quot; | 
 | PAIDTIMELESSTHANMINWORKTIME | &quot;PaidTimeLessThanMinWorkTime&quot; | 
 | PAIDTIMENOTMETBYSHIFTSTARTSTOP | &quot;PaidTimeNotMetByShiftStartStop&quot; | 
+| PLANNINGPERIODMAXWORKINGWEEKENDSCANNOTBEMET | &quot;PlanningPeriodMaxWorkingWeekendsCannotBeMet&quot; | 
 | SHIFTDAYSSELECTMORETHANMINWORKINGDAYS | &quot;ShiftDaysSelectMoreThanMinWorkingDays&quot; | 
 | SHIFTSTOPEARLIERTHANSTART | &quot;ShiftStopEarlierThanStart&quot; | 
+| SHIFTMAXCOUNTPERPLANNINGPERIODCANNOTBEMET | &quot;ShiftMaxCountPerPlanningPeriodCannotBeMet&quot; | 
+| SHIFTMINCOUNTPERPLANNINGPERIODCANNOTBEMET | &quot;ShiftMinCountPerPlanningPeriodCannotBeMet&quot; | 
 | SHIFTVARIANCECANNOTBEMET | &quot;ShiftVarianceCannotBeMet&quot; | 
 | WEEKLYEXACTPAIDMINUTES | &quot;WeeklyExactPaidMinutes&quot; | 
 
@@ -65,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

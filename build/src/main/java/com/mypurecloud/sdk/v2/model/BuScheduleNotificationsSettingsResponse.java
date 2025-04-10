@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuScheduleNotificationsCategorySettings;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class BuScheduleNotificationsSettingsResponse  implements Serializable {
   
   private Integer earlyReminderMinutes = null;
-  private List<BuScheduleNotificationsCategorySettings> activityCategorySettings = new ArrayList<BuScheduleNotificationsCategorySettings>();
+  private List<BuScheduleNotificationsCategorySettings> activityCategorySettings = null;
+
+  public BuScheduleNotificationsSettingsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activityCategorySettings = new ArrayList<BuScheduleNotificationsCategorySettings>();
+    }
+  }
 
   
   /**

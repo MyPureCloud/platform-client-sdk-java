@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgentRequest;
@@ -149,14 +150,22 @@ public class WorkitemUpdate  implements Serializable {
   private Map<String, Object> customFields = null;
   private String queueId = null;
   private String assigneeId = null;
-  private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+  private List<WorkitemScoredAgentRequest> scoredAgents = null;
   private String externalContactId = null;
   private String externalTag = null;
-  private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillIds = null;
   private String languageId = null;
   private String utilizationLabelId = null;
-  private List<String> preferredAgentIds = new ArrayList<String>();
+  private List<String> preferredAgentIds = null;
   private String scriptId = null;
+
+  public WorkitemUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
+      skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

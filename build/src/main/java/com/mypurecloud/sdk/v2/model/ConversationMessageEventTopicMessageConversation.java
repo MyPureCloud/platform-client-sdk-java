@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageMediaParticipant;
@@ -27,11 +28,19 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
   
   private String id = null;
   private String name = null;
-  private List<ConversationMessageEventTopicMessageMediaParticipant> participants = new ArrayList<ConversationMessageEventTopicMessageMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationMessageEventTopicMessageMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationMessageEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationMessageEventTopicConversationDivisionMembership>();
+  private List<ConversationMessageEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationMessageEventTopicMessageConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationMessageEventTopicMessageMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationMessageEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

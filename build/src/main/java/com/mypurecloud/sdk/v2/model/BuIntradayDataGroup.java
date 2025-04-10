@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuIntradayForecastData;
@@ -80,11 +81,19 @@ public class BuIntradayDataGroup  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private BuIntradayForecastData forecastDataSummary = null;
-  private List<BuIntradayForecastData> forecastDataPerInterval = new ArrayList<BuIntradayForecastData>();
+  private List<BuIntradayForecastData> forecastDataPerInterval = null;
   private BuIntradayScheduleData scheduleDataSummary = null;
-  private List<BuIntradayScheduleData> scheduleDataPerInterval = new ArrayList<BuIntradayScheduleData>();
+  private List<BuIntradayScheduleData> scheduleDataPerInterval = null;
   private IntradayPerformancePredictionData performancePredictionDataSummary = null;
-  private List<IntradayPerformancePredictionData> performancePredictionDataPerInterval = new ArrayList<IntradayPerformancePredictionData>();
+  private List<IntradayPerformancePredictionData> performancePredictionDataPerInterval = null;
+
+  public BuIntradayDataGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      forecastDataPerInterval = new ArrayList<BuIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<BuIntradayScheduleData>();
+      performancePredictionDataPerInterval = new ArrayList<IntradayPerformancePredictionData>();
+    }
+  }
 
   
   /**

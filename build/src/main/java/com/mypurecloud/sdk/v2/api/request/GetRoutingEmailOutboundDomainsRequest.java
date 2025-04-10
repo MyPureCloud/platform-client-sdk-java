@@ -117,6 +117,34 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingEmailOutboundDomainsRequest {
 
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetRoutingEmailOutboundDomainsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetRoutingEmailOutboundDomainsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+
 	private String filter;
 	public String getFilter() {
 		return this.filter;
@@ -155,6 +183,12 @@ public class GetRoutingEmailOutboundDomainsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/email/outbound/domains")
 
+                .withQueryParameters("pageSize", "", pageSize)
+        
+
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
+
                 .withQueryParameters("filter", "", filter)
         
 		.withCustomHeaders(customHeaders)
@@ -177,6 +211,16 @@ public class GetRoutingEmailOutboundDomainsRequest {
 			request = new GetRoutingEmailOutboundDomainsRequest();
 		}
 
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
+			return this;
+		}
 
 		public Builder withFilter(String filter) {
 			request.setFilter(filter);

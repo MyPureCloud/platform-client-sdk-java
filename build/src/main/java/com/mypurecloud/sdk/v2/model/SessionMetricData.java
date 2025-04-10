@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ComputedData;
 import com.mypurecloud.sdk.v2.model.HistoricalData;
@@ -29,6 +30,11 @@ public class SessionMetricData  implements Serializable {
   private ComputedData computed = null;
   private HistoricalData historical = null;
   private ModelMetaData modelMetaData = null;
+
+  public SessionMetricData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

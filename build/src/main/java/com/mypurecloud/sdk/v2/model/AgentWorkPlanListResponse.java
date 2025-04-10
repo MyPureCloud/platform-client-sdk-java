@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlan;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class AgentWorkPlanListResponse  implements Serializable {
   
-  private List<AgentWorkPlan> entities = new ArrayList<AgentWorkPlan>();
+  private List<AgentWorkPlan> entities = null;
   private ManagementUnitReference managementUnit = null;
+
+  public AgentWorkPlanListResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AgentWorkPlan>();
+    }
+  }
 
   
   /**

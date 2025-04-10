@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluDomainVersion;
 import io.swagger.annotations.ApiModel;
@@ -32,6 +33,11 @@ public class NluDomain  implements Serializable {
   private Date dateModified = null;
   private String engineVersion = null;
   private String selfUri = null;
+
+  public NluDomain() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

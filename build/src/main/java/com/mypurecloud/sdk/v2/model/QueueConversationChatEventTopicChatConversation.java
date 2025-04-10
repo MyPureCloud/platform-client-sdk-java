@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicChatMediaParticipant;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicConversationDivisionMembership;
@@ -27,11 +28,19 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<QueueConversationChatEventTopicChatMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<QueueConversationChatEventTopicChatMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<QueueConversationChatEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationChatEventTopicConversationDivisionMembership>();
+  private List<QueueConversationChatEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationChatEventTopicChatConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationChatEventTopicChatMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationChatEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

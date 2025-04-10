@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MessageInfo;
@@ -79,6 +80,11 @@ public class IntegrationStatusInfo  implements Serializable {
   private String effective = null;
   private MessageInfo detail = null;
   private Date lastUpdated = null;
+
+  public IntegrationStatusInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Machine-readable status as reported by the integration.")

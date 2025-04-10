@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignProgressEventUriReference;
 import io.swagger.annotations.ApiModel;
@@ -30,9 +31,14 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   private BigDecimal numberOfContactsCalled = null;
   private BigDecimal numberOfContactsMessaged = null;
   private BigDecimal totalNumberOfContacts = null;
-  private Integer percentage = null;
-  private Map<String, Integer> numberOfContactsSkipped = null;
+  private Long percentage = null;
+  private Map<String, Long> numberOfContactsSkipped = null;
   private Map<String, Object> additionalProperties = null;
+
+  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -109,17 +115,17 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   /**
    * numberOfContactsContacted/totalNumberOfContacts*100
    **/
-  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress percentage(Integer percentage) {
+  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress percentage(Long percentage) {
     this.percentage = percentage;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "numberOfContactsContacted/totalNumberOfContacts*100")
   @JsonProperty("percentage")
-  public Integer getPercentage() {
+  public Long getPercentage() {
     return percentage;
   }
-  public void setPercentage(Integer percentage) {
+  public void setPercentage(Long percentage) {
     this.percentage = percentage;
   }
 
@@ -127,17 +133,17 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   /**
    * A map of skipped reasons and the number of contacts associated with each.
    **/
-  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress numberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress numberOfContactsSkipped(Map<String, Long> numberOfContactsSkipped) {
     this.numberOfContactsSkipped = numberOfContactsSkipped;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A map of skipped reasons and the number of contacts associated with each.")
   @JsonProperty("numberOfContactsSkipped")
-  public Map<String, Integer> getNumberOfContactsSkipped() {
+  public Map<String, Long> getNumberOfContactsSkipped() {
     return numberOfContactsSkipped;
   }
-  public void setNumberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+  public void setNumberOfContactsSkipped(Map<String, Long> numberOfContactsSkipped) {
     this.numberOfContactsSkipped = numberOfContactsSkipped;
   }
 

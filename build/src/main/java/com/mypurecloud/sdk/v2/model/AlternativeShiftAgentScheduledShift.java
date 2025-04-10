@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleActivity;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,13 @@ public class AlternativeShiftAgentScheduledShift  implements Serializable {
   private String referenceKey = null;
   private Date startDate = null;
   private Integer lengthMinutes = null;
-  private List<BuAgentScheduleActivity> activities = new ArrayList<BuAgentScheduleActivity>();
+  private List<BuAgentScheduleActivity> activities = null;
+
+  public AlternativeShiftAgentScheduledShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<BuAgentScheduleActivity>();
+    }
+  }
 
   
   /**

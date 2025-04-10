@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -90,7 +91,7 @@ public class Edge  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<EdgeInterface> interfaces = new ArrayList<EdgeInterface>();
+  private List<EdgeInterface> interfaces = null;
   private String make = null;
   private String model = null;
   private String apiVersion = null;
@@ -374,6 +375,12 @@ public class Edge  implements Serializable {
   private Boolean offlineConfigCalled = null;
   private String osName = null;
   private String selfUri = null;
+
+  public Edge() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      interfaces = new ArrayList<EdgeInterface>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

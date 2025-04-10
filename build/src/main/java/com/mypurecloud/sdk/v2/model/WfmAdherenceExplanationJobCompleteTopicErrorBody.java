@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,25 +25,30 @@ import java.io.Serializable;
 
 public class WfmAdherenceExplanationJobCompleteTopicErrorBody  implements Serializable {
   
-  private Integer status = null;
+  private Long status = null;
   private String code = null;
   private String message = null;
   private Map<String, String> messageParams = null;
 
+  public WfmAdherenceExplanationJobCompleteTopicErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    **/
-  public WfmAdherenceExplanationJobCompleteTopicErrorBody status(Integer status) {
+  public WfmAdherenceExplanationJobCompleteTopicErrorBody status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

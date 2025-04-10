@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentActions;
@@ -80,7 +81,13 @@ public class ContentList  implements Serializable {
   private String description = null;
   private String submitLabel = null;
   private ContentActions actions = null;
-  private List<ListItemComponent> components = new ArrayList<ListItemComponent>();
+  private List<ListItemComponent> components = null;
+
+  public ContentList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      components = new ArrayList<ListItemComponent>();
+    }
+  }
 
   
   /**

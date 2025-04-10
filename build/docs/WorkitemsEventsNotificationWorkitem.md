@@ -10,14 +10,14 @@
 | **typeId** | **String** |  |  [optional] |
 | **description** | **String** |  |  [optional] |
 | **languageId** | **String** |  |  [optional] |
-| **priority** | **Integer** |  |  [optional] |
+| **priority** | **Long** |  |  [optional] |
 | **dateCreated** | **String** |  |  [optional] |
 | **dateModified** | **String** |  |  [optional] |
 | **dateDue** | **String** |  |  [optional] |
 | **dateExpires** | **String** |  |  [optional] |
 | **dateAssignmentStateChanged** | **String** |  |  [optional] |
-| **durationSeconds** | **Integer** |  |  [optional] |
-| **ttl** | **Integer** |  |  [optional] |
+| **durationSeconds** | **Long** |  |  [optional] |
+| **ttl** | **Long** |  |  [optional] |
 | **statusId** | **String** |  |  [optional] |
 | **statusCategory** | [**StatusCategoryEnum**](#Enum--StatusCategoryEnum) |  |  [optional] |
 | **dateClosed** | **String** |  |  [optional] |
@@ -32,7 +32,7 @@
 | **changes** | [**List&lt;WorkitemsEventsNotificationDelta&gt;**](WorkitemsEventsNotificationDelta) |  |  [optional] |
 | **assignmentState** | [**AssignmentStateEnum**](#Enum--AssignmentStateEnum) |  |  [optional] |
 | **assignmentId** | **String** |  |  [optional] |
-| **alertTimeoutSeconds** | **Integer** |  |  [optional] |
+| **alertTimeoutSeconds** | **Long** |  |  [optional] |
 | **queueId** | **String** |  |  [optional] |
 | **customFields** | [**Map&lt;String, WorkitemsEventsNotificationCustomAttribute&gt;**](WorkitemsEventsNotificationCustomAttribute) |  |  [optional] |
 | **wrapup** | [**WorkitemsEventsNotificationWrapup**](WorkitemsEventsNotificationWrapup) |  |  [optional] |
@@ -102,4 +102,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

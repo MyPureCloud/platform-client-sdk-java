@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TopicDuration;
 import com.mypurecloud.sdk.v2.model.TopicOffset;
@@ -32,6 +33,11 @@ public class TranscriptTopic  implements Serializable {
   private TopicDuration duration = null;
   private TopicOffset offset = null;
   private Long recordingLocation = null;
+
+  public TranscriptTopic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

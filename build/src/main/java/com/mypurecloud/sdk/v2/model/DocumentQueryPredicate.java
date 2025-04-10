@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -82,8 +83,8 @@ public class DocumentQueryPredicate  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FieldsEnum> fields = new ArrayList<FieldsEnum>();
-  private List<String> values = new ArrayList<String>();
+  private List<FieldsEnum> fields = null;
+  private List<String> values = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -135,6 +136,13 @@ public class DocumentQueryPredicate  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  public DocumentQueryPredicate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      fields = new ArrayList<FieldsEnum>();
+      values = new ArrayList<String>();
+    }
+  }
 
   
   /**

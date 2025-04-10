@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentRuleRunTopicLearningAssignmentsCreated;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification  implements Serializable {
   
-  private List<LearningAssignmentRuleRunTopicLearningAssignmentsCreated> entities = new ArrayList<LearningAssignmentRuleRunTopicLearningAssignmentsCreated>();
-  private Integer total = null;
+  private List<LearningAssignmentRuleRunTopicLearningAssignmentsCreated> entities = null;
+  private Long total = null;
+
+  public LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<LearningAssignmentRuleRunTopicLearningAssignmentsCreated>();
+    }
+  }
 
   
   /**
@@ -47,17 +54,17 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
 
   /**
    **/
-  public LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification total(Integer total) {
+  public LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification total(Long total) {
     this.total = total;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("total")
-  public Integer getTotal() {
+  public Long getTotal() {
     return total;
   }
-  public void setTotal(Integer total) {
+  public void setTotal(Long total) {
     this.total = total;
   }
 

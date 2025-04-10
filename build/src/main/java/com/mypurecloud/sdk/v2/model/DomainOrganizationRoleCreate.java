@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainPermissionPolicy;
 import io.swagger.annotations.ApiModel;
@@ -27,14 +28,22 @@ public class DomainOrganizationRoleCreate  implements Serializable {
   private String name = null;
   private String description = null;
   private String defaultRoleId = null;
-  private List<String> permissions = new ArrayList<String>();
-  private List<String> unusedPermissions = new ArrayList<String>();
-  private List<DomainPermissionPolicy> permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+  private List<String> permissions = null;
+  private List<String> unusedPermissions = null;
+  private List<DomainPermissionPolicy> permissionPolicies = null;
   private Integer userCount = null;
   private Boolean roleNeedsUpdate = null;
   private Boolean base = null;
   private Boolean _default = null;
   private String selfUri = null;
+
+  public DomainOrganizationRoleCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      permissions = new ArrayList<String>();
+      unusedPermissions = new ArrayList<String>();
+      permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+    }
+  }
 
   
   /**

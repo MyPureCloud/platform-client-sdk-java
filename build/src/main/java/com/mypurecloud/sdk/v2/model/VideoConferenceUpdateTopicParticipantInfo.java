@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class VideoConferenceUpdateTopicParticipantInfo  implements Serializable {
   
-  private Integer activeParticipantCount = null;
-  private Integer version = null;
+  private Long activeParticipantCount = null;
+  private Long version = null;
+
+  public VideoConferenceUpdateTopicParticipantInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public VideoConferenceUpdateTopicParticipantInfo activeParticipantCount(Integer activeParticipantCount) {
+  public VideoConferenceUpdateTopicParticipantInfo activeParticipantCount(Long activeParticipantCount) {
     this.activeParticipantCount = activeParticipantCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("activeParticipantCount")
-  public Integer getActiveParticipantCount() {
+  public Long getActiveParticipantCount() {
     return activeParticipantCount;
   }
-  public void setActiveParticipantCount(Integer activeParticipantCount) {
+  public void setActiveParticipantCount(Long activeParticipantCount) {
     this.activeParticipantCount = activeParticipantCount;
   }
 
 
   /**
    **/
-  public VideoConferenceUpdateTopicParticipantInfo version(Integer version) {
+  public VideoConferenceUpdateTopicParticipantInfo version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

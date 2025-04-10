@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
@@ -84,14 +85,14 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<String> queueIds = new ArrayList<String>();
-  private List<String> skillIds = new ArrayList<String>();
-  private List<String> assignedSkillIds = new ArrayList<String>();
-  private List<String> skillGroups = new ArrayList<String>();
-  private List<String> languageIds = new ArrayList<String>();
-  private List<String> assignedLanguageIds = new ArrayList<String>();
-  private List<String> languageGroups = new ArrayList<String>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<String> queueIds = null;
+  private List<String> skillIds = null;
+  private List<String> assignedSkillIds = null;
+  private List<String> skillGroups = null;
+  private List<String> languageIds = null;
+  private List<String> assignedLanguageIds = null;
+  private List<String> languageGroups = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -138,7 +139,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
+  private List<DirectionsEnum> directions = null;
 
   private static class OriginatingDirectionsEnumDeserializer extends StdDeserializer<OriginatingDirectionsEnum> {
     public OriginatingDirectionsEnumDeserializer() {
@@ -185,34 +186,34 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<OriginatingDirectionsEnum> originatingDirections = new ArrayList<OriginatingDirectionsEnum>();
-  private List<String> wrapUpCodes = new ArrayList<String>();
-  private List<String> dnisList = new ArrayList<String>();
-  private List<String> sessionDnisList = new ArrayList<String>();
-  private List<String> filterQueuesByUserIds = new ArrayList<String>();
-  private List<String> filterUsersByQueueIds = new ArrayList<String>();
-  private List<String> userIds = new ArrayList<String>();
-  private List<String> managementUnitIds = new ArrayList<String>();
-  private List<String> addressTos = new ArrayList<String>();
-  private List<String> addressFroms = new ArrayList<String>();
-  private List<String> outboundCampaignIds = new ArrayList<String>();
-  private List<String> outboundContactListIds = new ArrayList<String>();
-  private List<String> contactIds = new ArrayList<String>();
-  private List<String> externalContactIds = new ArrayList<String>();
-  private List<String> externalOrgIds = new ArrayList<String>();
-  private List<String> aniList = new ArrayList<String>();
-  private List<NumericRange> durationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> acdDurationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> talkDurationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> acwDurationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> handleDurationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> holdDurationsMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> abandonDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<OriginatingDirectionsEnum> originatingDirections = null;
+  private List<String> wrapUpCodes = null;
+  private List<String> dnisList = null;
+  private List<String> sessionDnisList = null;
+  private List<String> filterQueuesByUserIds = null;
+  private List<String> filterUsersByQueueIds = null;
+  private List<String> userIds = null;
+  private List<String> managementUnitIds = null;
+  private List<String> addressTos = null;
+  private List<String> addressFroms = null;
+  private List<String> outboundCampaignIds = null;
+  private List<String> outboundContactListIds = null;
+  private List<String> contactIds = null;
+  private List<String> externalContactIds = null;
+  private List<String> externalOrgIds = null;
+  private List<String> aniList = null;
+  private List<NumericRange> durationsMilliseconds = null;
+  private List<NumericRange> acdDurationsMilliseconds = null;
+  private List<NumericRange> talkDurationsMilliseconds = null;
+  private List<NumericRange> acwDurationsMilliseconds = null;
+  private List<NumericRange> handleDurationsMilliseconds = null;
+  private List<NumericRange> holdDurationsMilliseconds = null;
+  private List<NumericRange> abandonDurationsMilliseconds = null;
   private NumericRange evaluationScore = null;
   private NumericRange evaluationCriticalScore = null;
-  private List<String> evaluationFormIds = new ArrayList<String>();
-  private List<String> evaluatedAgentIds = new ArrayList<String>();
-  private List<String> evaluatorIds = new ArrayList<String>();
+  private List<String> evaluationFormIds = null;
+  private List<String> evaluatedAgentIds = null;
+  private List<String> evaluatorIds = null;
   private Boolean transferred = null;
   private Boolean abandoned = null;
   private Boolean answered = null;
@@ -269,30 +270,30 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MessageTypesEnum> messageTypes = new ArrayList<MessageTypesEnum>();
-  private List<String> divisionIds = new ArrayList<String>();
-  private List<String> surveyFormIds = new ArrayList<String>();
+  private List<MessageTypesEnum> messageTypes = null;
+  private List<String> divisionIds = null;
+  private List<String> surveyFormIds = null;
   private NumericRange surveyTotalScore = null;
   private NumericRange surveyNpsScore = null;
   private NumericRange mos = null;
   private NumericRange surveyQuestionGroupScore = null;
   private NumericRange surveyPromoterScore = null;
-  private List<String> surveyFormContextIds = new ArrayList<String>();
-  private List<String> conversationIds = new ArrayList<String>();
-  private List<String> sipCallIds = new ArrayList<String>();
+  private List<String> surveyFormContextIds = null;
+  private List<String> conversationIds = null;
+  private List<String> sipCallIds = null;
   private Boolean isEnded = null;
   private Boolean isSurveyed = null;
-  private List<NumericRange> surveyScores = new ArrayList<NumericRange>();
-  private List<NumericRange> promoterScores = new ArrayList<NumericRange>();
+  private List<NumericRange> surveyScores = null;
+  private List<NumericRange> promoterScores = null;
   private Boolean isCampaign = null;
-  private List<String> surveyStatuses = new ArrayList<String>();
+  private List<String> surveyStatuses = null;
   private ConversationProperties conversationProperties = null;
   private Boolean isBlindTransferred = null;
   private Boolean isConsulted = null;
   private Boolean isConsultTransferred = null;
-  private List<String> remoteParticipants = new ArrayList<String>();
-  private List<String> flowIds = new ArrayList<String>();
-  private List<String> flowOutcomeIds = new ArrayList<String>();
+  private List<String> remoteParticipants = null;
+  private List<String> flowIds = null;
+  private List<String> flowOutcomeIds = null;
 
   private static class FlowOutcomeValuesEnumDeserializer extends StdDeserializer<FlowOutcomeValuesEnum> {
     public FlowOutcomeValuesEnumDeserializer() {
@@ -339,7 +340,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowOutcomeValuesEnum> flowOutcomeValues = new ArrayList<FlowOutcomeValuesEnum>();
+  private List<FlowOutcomeValuesEnum> flowOutcomeValues = null;
 
   private static class FlowDestinationTypesEnumDeserializer extends StdDeserializer<FlowDestinationTypesEnum> {
     public FlowDestinationTypesEnumDeserializer() {
@@ -394,7 +395,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowDestinationTypesEnum> flowDestinationTypes = new ArrayList<FlowDestinationTypesEnum>();
+  private List<FlowDestinationTypesEnum> flowDestinationTypes = null;
 
   private static class FlowDisconnectReasonsEnumDeserializer extends StdDeserializer<FlowDisconnectReasonsEnum> {
     public FlowDisconnectReasonsEnumDeserializer() {
@@ -442,7 +443,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowDisconnectReasonsEnum> flowDisconnectReasons = new ArrayList<FlowDisconnectReasonsEnum>();
+  private List<FlowDisconnectReasonsEnum> flowDisconnectReasons = null;
 
   private static class FlowTypesEnumDeserializer extends StdDeserializer<FlowTypesEnum> {
     public FlowTypesEnumDeserializer() {
@@ -505,7 +506,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowTypesEnum> flowTypes = new ArrayList<FlowTypesEnum>();
+  private List<FlowTypesEnum> flowTypes = null;
 
   private static class FlowEntryTypesEnumDeserializer extends StdDeserializer<FlowEntryTypesEnum> {
     public FlowEntryTypesEnumDeserializer() {
@@ -555,20 +556,20 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlowEntryTypesEnum> flowEntryTypes = new ArrayList<FlowEntryTypesEnum>();
-  private List<String> flowEntryReasons = new ArrayList<String>();
-  private List<String> flowVersions = new ArrayList<String>();
-  private List<String> groupIds = new ArrayList<String>();
+  private List<FlowEntryTypesEnum> flowEntryTypes = null;
+  private List<String> flowEntryReasons = null;
+  private List<String> flowVersions = null;
+  private List<String> groupIds = null;
   private Boolean hasJourneyCustomerId = null;
   private Boolean hasJourneyActionMapId = null;
   private Boolean hasJourneyVisitId = null;
   private Boolean hasMedia = null;
-  private List<String> roleIds = new ArrayList<String>();
-  private List<String> reportsTos = new ArrayList<String>();
-  private List<String> locationIds = new ArrayList<String>();
-  private List<String> flowOutTypes = new ArrayList<String>();
-  private List<String> providerList = new ArrayList<String>();
-  private List<String> callbackNumberList = new ArrayList<String>();
+  private List<String> roleIds = null;
+  private List<String> reportsTos = null;
+  private List<String> locationIds = null;
+  private List<String> flowOutTypes = null;
+  private List<String> providerList = null;
+  private List<String> callbackNumberList = null;
   private String callbackInterval = null;
 
   private static class UsedRoutingTypesEnumDeserializer extends StdDeserializer<UsedRoutingTypesEnum> {
@@ -623,7 +624,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<UsedRoutingTypesEnum> usedRoutingTypes = new ArrayList<UsedRoutingTypesEnum>();
+  private List<UsedRoutingTypesEnum> usedRoutingTypes = null;
 
   private static class RequestedRoutingTypesEnumDeserializer extends StdDeserializer<RequestedRoutingTypesEnum> {
     public RequestedRoutingTypesEnumDeserializer() {
@@ -677,10 +678,10 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingTypesEnum> requestedRoutingTypes = new ArrayList<RequestedRoutingTypesEnum>();
+  private List<RequestedRoutingTypesEnum> requestedRoutingTypes = null;
   private Boolean hasAgentAssistId = null;
-  private List<Transcripts> transcripts = new ArrayList<Transcripts>();
-  private List<String> transcriptLanguages = new ArrayList<String>();
+  private List<Transcripts> transcripts = null;
+  private List<String> transcriptLanguages = null;
 
   private static class ParticipantPurposesEnumDeserializer extends StdDeserializer<ParticipantPurposesEnum> {
     public ParticipantPurposesEnumDeserializer() {
@@ -727,13 +728,13 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ParticipantPurposesEnum> participantPurposes = new ArrayList<ParticipantPurposesEnum>();
+  private List<ParticipantPurposesEnum> participantPurposes = null;
   private Boolean showFirstQueue = null;
-  private List<String> teamIds = new ArrayList<String>();
-  private List<String> filterUsersByTeamIds = new ArrayList<String>();
-  private List<String> journeyActionMapIds = new ArrayList<String>();
-  private List<String> journeyOutcomeIds = new ArrayList<String>();
-  private List<String> journeySegmentIds = new ArrayList<String>();
+  private List<String> teamIds = null;
+  private List<String> filterUsersByTeamIds = null;
+  private List<String> journeyActionMapIds = null;
+  private List<String> journeyOutcomeIds = null;
+  private List<String> journeySegmentIds = null;
 
   private static class JourneyActionMapTypesEnumDeserializer extends StdDeserializer<JourneyActionMapTypesEnum> {
     public JourneyActionMapTypesEnumDeserializer() {
@@ -784,7 +785,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<JourneyActionMapTypesEnum> journeyActionMapTypes = new ArrayList<JourneyActionMapTypesEnum>();
+  private List<JourneyActionMapTypesEnum> journeyActionMapTypes = null;
 
   private static class DevelopmentRoleListEnumDeserializer extends StdDeserializer<DevelopmentRoleListEnum> {
     public DevelopmentRoleListEnumDeserializer() {
@@ -832,7 +833,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DevelopmentRoleListEnum> developmentRoleList = new ArrayList<DevelopmentRoleListEnum>();
+  private List<DevelopmentRoleListEnum> developmentRoleList = null;
 
   private static class DevelopmentTypeListEnumDeserializer extends StdDeserializer<DevelopmentTypeListEnum> {
     public DevelopmentTypeListEnumDeserializer() {
@@ -883,7 +884,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DevelopmentTypeListEnum> developmentTypeList = new ArrayList<DevelopmentTypeListEnum>();
+  private List<DevelopmentTypeListEnum> developmentTypeList = null;
 
   private static class DevelopmentStatusListEnumDeserializer extends StdDeserializer<DevelopmentStatusListEnum> {
     public DevelopmentStatusListEnumDeserializer() {
@@ -934,19 +935,19 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DevelopmentStatusListEnum> developmentStatusList = new ArrayList<DevelopmentStatusListEnum>();
-  private List<String> developmentModuleIds = new ArrayList<String>();
+  private List<DevelopmentStatusListEnum> developmentStatusList = null;
+  private List<String> developmentModuleIds = null;
   private Boolean developmentActivityOverdue = null;
   private NumericRange customerSentimentScore = null;
   private NumericRange customerSentimentTrend = null;
-  private List<String> flowTransferTargets = new ArrayList<String>();
+  private List<String> flowTransferTargets = null;
   private String developmentName = null;
-  private List<String> topicIds = new ArrayList<String>();
-  private List<String> externalTags = new ArrayList<String>();
+  private List<String> topicIds = null;
+  private List<String> externalTags = null;
   private Boolean isNotResponding = null;
   private Boolean isAuthenticated = null;
-  private List<String> botIds = new ArrayList<String>();
-  private List<String> botVersions = new ArrayList<String>();
+  private List<String> botIds = null;
+  private List<String> botVersions = null;
 
   private static class BotMessageTypesEnumDeserializer extends StdDeserializer<BotMessageTypesEnum> {
     public BotMessageTypesEnumDeserializer() {
@@ -1009,7 +1010,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotMessageTypesEnum> botMessageTypes = new ArrayList<BotMessageTypesEnum>();
+  private List<BotMessageTypesEnum> botMessageTypes = null;
 
   private static class BotProviderListEnumDeserializer extends StdDeserializer<BotProviderListEnum> {
     public BotProviderListEnumDeserializer() {
@@ -1059,7 +1060,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotProviderListEnum> botProviderList = new ArrayList<BotProviderListEnum>();
+  private List<BotProviderListEnum> botProviderList = null;
 
   private static class BotProductListEnumDeserializer extends StdDeserializer<BotProductListEnum> {
     public BotProductListEnumDeserializer() {
@@ -1119,7 +1120,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotProductListEnum> botProductList = new ArrayList<BotProductListEnum>();
+  private List<BotProductListEnum> botProductList = null;
 
   private static class BotRecognitionFailureReasonListEnumDeserializer extends StdDeserializer<BotRecognitionFailureReasonListEnum> {
     public BotRecognitionFailureReasonListEnumDeserializer() {
@@ -1173,10 +1174,10 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotRecognitionFailureReasonListEnum> botRecognitionFailureReasonList = new ArrayList<BotRecognitionFailureReasonListEnum>();
-  private List<String> botIntentList = new ArrayList<String>();
-  private List<String> botFinalIntentList = new ArrayList<String>();
-  private List<String> botSlotList = new ArrayList<String>();
+  private List<BotRecognitionFailureReasonListEnum> botRecognitionFailureReasonList = null;
+  private List<String> botIntentList = null;
+  private List<String> botFinalIntentList = null;
+  private List<String> botSlotList = null;
 
   private static class BotResultListEnumDeserializer extends StdDeserializer<BotResultListEnum> {
     public BotResultListEnumDeserializer() {
@@ -1232,7 +1233,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotResultListEnum> botResultList = new ArrayList<BotResultListEnum>();
+  private List<BotResultListEnum> botResultList = null;
 
   private static class BlockedReasonsEnumDeserializer extends StdDeserializer<BlockedReasonsEnum> {
     public BlockedReasonsEnumDeserializer() {
@@ -1285,7 +1286,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BlockedReasonsEnum> blockedReasons = new ArrayList<BlockedReasonsEnum>();
+  private List<BlockedReasonsEnum> blockedReasons = null;
   private Boolean isRecorded = null;
   private Boolean hasEvaluation = null;
   private Boolean hasScoredEvaluation = null;
@@ -1342,33 +1343,33 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<EmailDeliveryStatusListEnum> emailDeliveryStatusList = new ArrayList<EmailDeliveryStatusListEnum>();
+  private List<EmailDeliveryStatusListEnum> emailDeliveryStatusList = null;
   private Boolean isAgentOwnedCallback = null;
-  private List<String> agentCallbackOwnerIds = new ArrayList<String>();
-  private List<TranscriptTopics> transcriptTopics = new ArrayList<TranscriptTopics>();
-  private List<String> journeyFrequencyCapReasons = new ArrayList<String>();
-  private List<String> journeyBlockingActionMapIds = new ArrayList<String>();
-  private List<String> journeyActionTargetIds = new ArrayList<String>();
-  private List<String> journeyBlockingScheduleGroupIds = new ArrayList<String>();
-  private List<String> journeyBlockingEmergencyScheduleGroupIds = new ArrayList<String>();
-  private List<String> journeyUrlEqualConditions = new ArrayList<String>();
-  private List<String> journeyUrlNotEqualConditions = new ArrayList<String>();
-  private List<String> journeyUrlStartsWithConditions = new ArrayList<String>();
-  private List<String> journeyUrlEndsWithConditions = new ArrayList<String>();
-  private List<String> journeyUrlContainsAnyConditions = new ArrayList<String>();
-  private List<String> journeyUrlNotContainsAnyConditions = new ArrayList<String>();
-  private List<String> journeyUrlContainsAllConditions = new ArrayList<String>();
-  private List<String> journeyUrlNotContainsAllConditions = new ArrayList<String>();
-  private List<String> flowMilestoneIds = new ArrayList<String>();
+  private List<String> agentCallbackOwnerIds = null;
+  private List<TranscriptTopics> transcriptTopics = null;
+  private List<String> journeyFrequencyCapReasons = null;
+  private List<String> journeyBlockingActionMapIds = null;
+  private List<String> journeyActionTargetIds = null;
+  private List<String> journeyBlockingScheduleGroupIds = null;
+  private List<String> journeyBlockingEmergencyScheduleGroupIds = null;
+  private List<String> journeyUrlEqualConditions = null;
+  private List<String> journeyUrlNotEqualConditions = null;
+  private List<String> journeyUrlStartsWithConditions = null;
+  private List<String> journeyUrlEndsWithConditions = null;
+  private List<String> journeyUrlContainsAnyConditions = null;
+  private List<String> journeyUrlNotContainsAnyConditions = null;
+  private List<String> journeyUrlContainsAllConditions = null;
+  private List<String> journeyUrlNotContainsAllConditions = null;
+  private List<String> flowMilestoneIds = null;
   private Boolean isAssessmentPassed = null;
-  private List<String> conversationInitiators = new ArrayList<String>();
+  private List<String> conversationInitiators = null;
   private Boolean hasCustomerParticipated = null;
   private Boolean isAcdInteraction = null;
   private Boolean hasFax = null;
-  private List<String> dataActionIds = new ArrayList<String>();
+  private List<String> dataActionIds = null;
   private String actionCategoryName = null;
-  private List<String> integrationIds = new ArrayList<String>();
-  private List<String> responseStatuses = new ArrayList<String>();
+  private List<String> integrationIds = null;
+  private List<String> responseStatuses = null;
 
   private static class AvailableDashboardEnumDeserializer extends StdDeserializer<AvailableDashboardEnum> {
     public AvailableDashboardEnumDeserializer() {
@@ -1419,10 +1420,10 @@ public class ViewFilter  implements Serializable {
   private AvailableDashboardEnum availableDashboard = null;
   private Boolean favouriteDashboard = null;
   private Boolean myDashboard = null;
-  private List<String> stationErrors = new ArrayList<String>();
-  private List<String> canonicalContactIds = new ArrayList<String>();
-  private List<String> alertRuleIds = new ArrayList<String>();
-  private List<String> evaluationFormContextIds = new ArrayList<String>();
+  private List<String> stationErrors = null;
+  private List<String> canonicalContactIds = null;
+  private List<String> alertRuleIds = null;
+  private List<String> evaluationFormContextIds = null;
 
   private static class EvaluationStatusesEnumDeserializer extends StdDeserializer<EvaluationStatusesEnum> {
     public EvaluationStatusesEnumDeserializer() {
@@ -1472,12 +1473,12 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<EvaluationStatusesEnum> evaluationStatuses = new ArrayList<EvaluationStatusesEnum>();
-  private List<String> workbinIds = new ArrayList<String>();
-  private List<String> worktypeIds = new ArrayList<String>();
-  private List<String> workitemIds = new ArrayList<String>();
-  private List<String> workitemAssigneeIds = new ArrayList<String>();
-  private List<String> workitemStatuses = new ArrayList<String>();
+  private List<EvaluationStatusesEnum> evaluationStatuses = null;
+  private List<String> workbinIds = null;
+  private List<String> worktypeIds = null;
+  private List<String> workitemIds = null;
+  private List<String> workitemAssigneeIds = null;
+  private List<String> workitemStatuses = null;
   private Boolean isAnalyzedForSensitiveData = null;
   private Boolean hasSensitiveData = null;
   private Boolean hasPciData = null;
@@ -1534,10 +1535,10 @@ public class ViewFilter  implements Serializable {
   }
   private UserStateEnum userState = null;
   private Boolean isClearedByCustomer = null;
-  private List<String> evaluationAssigneeIds = new ArrayList<String>();
+  private List<String> evaluationAssigneeIds = null;
   private Boolean evaluationAssigned = null;
-  private List<String> assistantIds = new ArrayList<String>();
-  private List<String> knowledgeBaseIds = new ArrayList<String>();
+  private List<String> assistantIds = null;
+  private List<String> knowledgeBaseIds = null;
   private Boolean isParked = null;
   private NumericRange agentEmpathyScore = null;
 
@@ -1586,7 +1587,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SurveyTypesEnum> surveyTypes = new ArrayList<SurveyTypesEnum>();
+  private List<SurveyTypesEnum> surveyTypes = null;
 
   private static class SurveyResponseStatusesEnumDeserializer extends StdDeserializer<SurveyResponseStatusesEnum> {
     public SurveyResponseStatusesEnumDeserializer() {
@@ -1634,7 +1635,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SurveyResponseStatusesEnum> surveyResponseStatuses = new ArrayList<SurveyResponseStatusesEnum>();
+  private List<SurveyResponseStatusesEnum> surveyResponseStatuses = null;
 
   private static class BotFlowTypesEnumDeserializer extends StdDeserializer<BotFlowTypesEnum> {
     public BotFlowTypesEnumDeserializer() {
@@ -1683,14 +1684,14 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotFlowTypesEnum> botFlowTypes = new ArrayList<BotFlowTypesEnum>();
-  private List<NumericRange> agentTalkDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> customerTalkDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> overtalkDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> silenceDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> acdDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> ivrDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<NumericRange> otherDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<BotFlowTypesEnum> botFlowTypes = null;
+  private List<NumericRange> agentTalkDurationMilliseconds = null;
+  private List<NumericRange> customerTalkDurationMilliseconds = null;
+  private List<NumericRange> overtalkDurationMilliseconds = null;
+  private List<NumericRange> silenceDurationMilliseconds = null;
+  private List<NumericRange> acdDurationMilliseconds = null;
+  private List<NumericRange> ivrDurationMilliseconds = null;
+  private List<NumericRange> otherDurationMilliseconds = null;
   private NumericRange agentTalkPercentage = null;
   private NumericRange customerTalkPercentage = null;
   private NumericRange overtalkPercentage = null;
@@ -1700,7 +1701,7 @@ public class ViewFilter  implements Serializable {
   private NumericRange otherPercentage = null;
   private NumericRange overtalkInstances = null;
   private Boolean isScreenRecorded = null;
-  private List<String> screenMonitorUserIds = new ArrayList<String>();
+  private List<String> screenMonitorUserIds = null;
 
   private static class DashboardStateEnumDeserializer extends StdDeserializer<DashboardStateEnum> {
     public DashboardStateEnumDeserializer() {
@@ -1849,10 +1850,10 @@ public class ViewFilter  implements Serializable {
     }
   }
   private DashboardAccessFilterEnum dashboardAccessFilter = null;
-  private List<NumericRange> transcriptDurationMilliseconds = new ArrayList<NumericRange>();
-  private List<WorkitemStatusFilter> workitemsStatuses = new ArrayList<WorkitemStatusFilter>();
-  private List<String> socialCountries = new ArrayList<String>();
-  private List<String> socialLanguages = new ArrayList<String>();
+  private List<NumericRange> transcriptDurationMilliseconds = null;
+  private List<WorkitemStatusFilter> workitemsStatuses = null;
+  private List<String> socialCountries = null;
+  private List<String> socialLanguages = null;
 
   private static class SocialChannelsEnumDeserializer extends StdDeserializer<SocialChannelsEnum> {
     public SocialChannelsEnumDeserializer() {
@@ -1901,7 +1902,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SocialChannelsEnum> socialChannels = new ArrayList<SocialChannelsEnum>();
+  private List<SocialChannelsEnum> socialChannels = null;
 
   private static class SocialSentimentCategoryEnumDeserializer extends StdDeserializer<SocialSentimentCategoryEnum> {
     public SocialSentimentCategoryEnumDeserializer() {
@@ -1950,9 +1951,9 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SocialSentimentCategoryEnum> socialSentimentCategory = new ArrayList<SocialSentimentCategoryEnum>();
-  private List<String> socialTopicIds = new ArrayList<String>();
-  private List<String> socialIngestionRuleIds = new ArrayList<String>();
+  private List<SocialSentimentCategoryEnum> socialSentimentCategory = null;
+  private List<String> socialTopicIds = null;
+  private List<String> socialIngestionRuleIds = null;
   private Boolean socialConversationCreated = null;
 
   private static class SocialContentTypeEnumDeserializer extends StdDeserializer<SocialContentTypeEnum> {
@@ -2001,8 +2002,8 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SocialContentTypeEnum> socialContentType = new ArrayList<SocialContentTypeEnum>();
-  private List<SocialKeyword> socialKeywords = new ArrayList<SocialKeyword>();
+  private List<SocialContentTypeEnum> socialContentType = null;
+  private List<SocialKeyword> socialKeywords = null;
   private Boolean socialPostEscalated = null;
 
   private static class SocialClassificationsEnumDeserializer extends StdDeserializer<SocialClassificationsEnum> {
@@ -2050,9 +2051,9 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SocialClassificationsEnum> socialClassifications = new ArrayList<SocialClassificationsEnum>();
-  private List<String> filterUsersByManagerIds = new ArrayList<String>();
-  private List<String> slideshowIds = new ArrayList<String>();
+  private List<SocialClassificationsEnum> socialClassifications = null;
+  private List<String> filterUsersByManagerIds = null;
+  private List<String> slideshowIds = null;
   private Boolean conferenced = null;
   private Boolean video = null;
   private Boolean linkedInteraction = null;
@@ -2103,7 +2104,7 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RecommendationSourcesEnum> recommendationSources = new ArrayList<RecommendationSourcesEnum>();
+  private List<RecommendationSourcesEnum> recommendationSources = null;
 
   private static class EvaluationRoleEnumDeserializer extends StdDeserializer<EvaluationRoleEnum> {
     public EvaluationRoleEnumDeserializer() {
@@ -2152,7 +2153,7 @@ public class ViewFilter  implements Serializable {
     }
   }
   private EvaluationRoleEnum evaluationRole = null;
-  private List<String> comparisonQueueIds = new ArrayList<String>();
+  private List<String> comparisonQueueIds = null;
 
   private static class ViewMetricsEnumDeserializer extends StdDeserializer<ViewMetricsEnum> {
     public ViewMetricsEnumDeserializer() {
@@ -2417,8 +2418,8 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ViewMetricsEnum> viewMetrics = new ArrayList<ViewMetricsEnum>();
-  private List<String> timelineCategories = new ArrayList<String>();
+  private List<ViewMetricsEnum> viewMetrics = null;
+  private List<String> timelineCategories = null;
   private Boolean acw = null;
 
   private static class SegmentTypesEnumDeserializer extends StdDeserializer<SegmentTypesEnum> {
@@ -2485,9 +2486,169 @@ public class ViewFilter  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SegmentTypesEnum> segmentTypes = new ArrayList<SegmentTypesEnum>();
-  private List<String> programIds = new ArrayList<String>();
-  private List<String> categoryIds = new ArrayList<String>();
+  private List<SegmentTypesEnum> segmentTypes = null;
+  private List<String> programIds = null;
+  private List<String> categoryIds = null;
+
+  public ViewFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      queueIds = new ArrayList<String>();
+      skillIds = new ArrayList<String>();
+      assignedSkillIds = new ArrayList<String>();
+      skillGroups = new ArrayList<String>();
+      languageIds = new ArrayList<String>();
+      assignedLanguageIds = new ArrayList<String>();
+      languageGroups = new ArrayList<String>();
+      directions = new ArrayList<DirectionsEnum>();
+      originatingDirections = new ArrayList<OriginatingDirectionsEnum>();
+      wrapUpCodes = new ArrayList<String>();
+      dnisList = new ArrayList<String>();
+      sessionDnisList = new ArrayList<String>();
+      filterQueuesByUserIds = new ArrayList<String>();
+      filterUsersByQueueIds = new ArrayList<String>();
+      userIds = new ArrayList<String>();
+      managementUnitIds = new ArrayList<String>();
+      addressTos = new ArrayList<String>();
+      addressFroms = new ArrayList<String>();
+      outboundCampaignIds = new ArrayList<String>();
+      outboundContactListIds = new ArrayList<String>();
+      contactIds = new ArrayList<String>();
+      externalContactIds = new ArrayList<String>();
+      externalOrgIds = new ArrayList<String>();
+      aniList = new ArrayList<String>();
+      durationsMilliseconds = new ArrayList<NumericRange>();
+      acdDurationsMilliseconds = new ArrayList<NumericRange>();
+      talkDurationsMilliseconds = new ArrayList<NumericRange>();
+      acwDurationsMilliseconds = new ArrayList<NumericRange>();
+      handleDurationsMilliseconds = new ArrayList<NumericRange>();
+      holdDurationsMilliseconds = new ArrayList<NumericRange>();
+      abandonDurationsMilliseconds = new ArrayList<NumericRange>();
+      evaluationFormIds = new ArrayList<String>();
+      evaluatedAgentIds = new ArrayList<String>();
+      evaluatorIds = new ArrayList<String>();
+      messageTypes = new ArrayList<MessageTypesEnum>();
+      divisionIds = new ArrayList<String>();
+      surveyFormIds = new ArrayList<String>();
+      surveyFormContextIds = new ArrayList<String>();
+      conversationIds = new ArrayList<String>();
+      sipCallIds = new ArrayList<String>();
+      surveyScores = new ArrayList<NumericRange>();
+      promoterScores = new ArrayList<NumericRange>();
+      surveyStatuses = new ArrayList<String>();
+      remoteParticipants = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
+      flowOutcomeIds = new ArrayList<String>();
+      flowOutcomeValues = new ArrayList<FlowOutcomeValuesEnum>();
+      flowDestinationTypes = new ArrayList<FlowDestinationTypesEnum>();
+      flowDisconnectReasons = new ArrayList<FlowDisconnectReasonsEnum>();
+      flowTypes = new ArrayList<FlowTypesEnum>();
+      flowEntryTypes = new ArrayList<FlowEntryTypesEnum>();
+      flowEntryReasons = new ArrayList<String>();
+      flowVersions = new ArrayList<String>();
+      groupIds = new ArrayList<String>();
+      roleIds = new ArrayList<String>();
+      reportsTos = new ArrayList<String>();
+      locationIds = new ArrayList<String>();
+      flowOutTypes = new ArrayList<String>();
+      providerList = new ArrayList<String>();
+      callbackNumberList = new ArrayList<String>();
+      usedRoutingTypes = new ArrayList<UsedRoutingTypesEnum>();
+      requestedRoutingTypes = new ArrayList<RequestedRoutingTypesEnum>();
+      transcripts = new ArrayList<Transcripts>();
+      transcriptLanguages = new ArrayList<String>();
+      participantPurposes = new ArrayList<ParticipantPurposesEnum>();
+      teamIds = new ArrayList<String>();
+      filterUsersByTeamIds = new ArrayList<String>();
+      journeyActionMapIds = new ArrayList<String>();
+      journeyOutcomeIds = new ArrayList<String>();
+      journeySegmentIds = new ArrayList<String>();
+      journeyActionMapTypes = new ArrayList<JourneyActionMapTypesEnum>();
+      developmentRoleList = new ArrayList<DevelopmentRoleListEnum>();
+      developmentTypeList = new ArrayList<DevelopmentTypeListEnum>();
+      developmentStatusList = new ArrayList<DevelopmentStatusListEnum>();
+      developmentModuleIds = new ArrayList<String>();
+      flowTransferTargets = new ArrayList<String>();
+      topicIds = new ArrayList<String>();
+      externalTags = new ArrayList<String>();
+      botIds = new ArrayList<String>();
+      botVersions = new ArrayList<String>();
+      botMessageTypes = new ArrayList<BotMessageTypesEnum>();
+      botProviderList = new ArrayList<BotProviderListEnum>();
+      botProductList = new ArrayList<BotProductListEnum>();
+      botRecognitionFailureReasonList = new ArrayList<BotRecognitionFailureReasonListEnum>();
+      botIntentList = new ArrayList<String>();
+      botFinalIntentList = new ArrayList<String>();
+      botSlotList = new ArrayList<String>();
+      botResultList = new ArrayList<BotResultListEnum>();
+      blockedReasons = new ArrayList<BlockedReasonsEnum>();
+      emailDeliveryStatusList = new ArrayList<EmailDeliveryStatusListEnum>();
+      agentCallbackOwnerIds = new ArrayList<String>();
+      transcriptTopics = new ArrayList<TranscriptTopics>();
+      journeyFrequencyCapReasons = new ArrayList<String>();
+      journeyBlockingActionMapIds = new ArrayList<String>();
+      journeyActionTargetIds = new ArrayList<String>();
+      journeyBlockingScheduleGroupIds = new ArrayList<String>();
+      journeyBlockingEmergencyScheduleGroupIds = new ArrayList<String>();
+      journeyUrlEqualConditions = new ArrayList<String>();
+      journeyUrlNotEqualConditions = new ArrayList<String>();
+      journeyUrlStartsWithConditions = new ArrayList<String>();
+      journeyUrlEndsWithConditions = new ArrayList<String>();
+      journeyUrlContainsAnyConditions = new ArrayList<String>();
+      journeyUrlNotContainsAnyConditions = new ArrayList<String>();
+      journeyUrlContainsAllConditions = new ArrayList<String>();
+      journeyUrlNotContainsAllConditions = new ArrayList<String>();
+      flowMilestoneIds = new ArrayList<String>();
+      conversationInitiators = new ArrayList<String>();
+      dataActionIds = new ArrayList<String>();
+      integrationIds = new ArrayList<String>();
+      responseStatuses = new ArrayList<String>();
+      stationErrors = new ArrayList<String>();
+      canonicalContactIds = new ArrayList<String>();
+      alertRuleIds = new ArrayList<String>();
+      evaluationFormContextIds = new ArrayList<String>();
+      evaluationStatuses = new ArrayList<EvaluationStatusesEnum>();
+      workbinIds = new ArrayList<String>();
+      worktypeIds = new ArrayList<String>();
+      workitemIds = new ArrayList<String>();
+      workitemAssigneeIds = new ArrayList<String>();
+      workitemStatuses = new ArrayList<String>();
+      evaluationAssigneeIds = new ArrayList<String>();
+      assistantIds = new ArrayList<String>();
+      knowledgeBaseIds = new ArrayList<String>();
+      surveyTypes = new ArrayList<SurveyTypesEnum>();
+      surveyResponseStatuses = new ArrayList<SurveyResponseStatusesEnum>();
+      botFlowTypes = new ArrayList<BotFlowTypesEnum>();
+      agentTalkDurationMilliseconds = new ArrayList<NumericRange>();
+      customerTalkDurationMilliseconds = new ArrayList<NumericRange>();
+      overtalkDurationMilliseconds = new ArrayList<NumericRange>();
+      silenceDurationMilliseconds = new ArrayList<NumericRange>();
+      acdDurationMilliseconds = new ArrayList<NumericRange>();
+      ivrDurationMilliseconds = new ArrayList<NumericRange>();
+      otherDurationMilliseconds = new ArrayList<NumericRange>();
+      screenMonitorUserIds = new ArrayList<String>();
+      transcriptDurationMilliseconds = new ArrayList<NumericRange>();
+      workitemsStatuses = new ArrayList<WorkitemStatusFilter>();
+      socialCountries = new ArrayList<String>();
+      socialLanguages = new ArrayList<String>();
+      socialChannels = new ArrayList<SocialChannelsEnum>();
+      socialSentimentCategory = new ArrayList<SocialSentimentCategoryEnum>();
+      socialTopicIds = new ArrayList<String>();
+      socialIngestionRuleIds = new ArrayList<String>();
+      socialContentType = new ArrayList<SocialContentTypeEnum>();
+      socialKeywords = new ArrayList<SocialKeyword>();
+      socialClassifications = new ArrayList<SocialClassificationsEnum>();
+      filterUsersByManagerIds = new ArrayList<String>();
+      slideshowIds = new ArrayList<String>();
+      recommendationSources = new ArrayList<RecommendationSourcesEnum>();
+      comparisonQueueIds = new ArrayList<String>();
+      viewMetrics = new ArrayList<ViewMetricsEnum>();
+      timelineCategories = new ArrayList<String>();
+      segmentTypes = new ArrayList<SegmentTypesEnum>();
+      programIds = new ArrayList<String>();
+      categoryIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class KnowledgeDocumentQueryResponse  implements Serializable {
   private Integer pageNumber = null;
   private Long total = null;
   private Integer pageCount = null;
-  private List<KnowledgeDocumentResponse> results = new ArrayList<KnowledgeDocumentResponse>();
+  private List<KnowledgeDocumentResponse> results = null;
+
+  public KnowledgeDocumentQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<KnowledgeDocumentResponse>();
+    }
+  }
 
   
   /**

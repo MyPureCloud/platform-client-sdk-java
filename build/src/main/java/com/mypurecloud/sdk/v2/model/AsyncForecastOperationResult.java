@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
@@ -76,6 +77,11 @@ public class AsyncForecastOperationResult  implements Serializable {
   private String operationId = null;
   private BuShortTermForecast result = null;
   private Integer progress = null;
+
+  public AsyncForecastOperationResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -53,8 +54,8 @@ public class Session  implements Serializable {
   private String externalId = null;
   private String externalUrl = null;
   private String shortId = null;
-  private List<OutcomeAchievement> outcomeAchievements = new ArrayList<OutcomeAchievement>();
-  private List<SessionSegmentAssignment> segmentAssignments = new ArrayList<SessionSegmentAssignment>();
+  private List<OutcomeAchievement> outcomeAchievements = null;
+  private List<SessionSegmentAssignment> segmentAssignments = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttributeList> attributeLists = null;
   private Browser browser = null;
@@ -68,7 +69,7 @@ public class Session  implements Serializable {
   private JourneyApp app = null;
   private SdkLibrary sdkLibrary = null;
   private NetworkConnectivity networkConnectivity = null;
-  private List<String> searchTerms = new ArrayList<String>();
+  private List<String> searchTerms = null;
   private String userAgentString = null;
   private Integer durationInSeconds = null;
   private Integer eventCount = null;
@@ -78,7 +79,7 @@ public class Session  implements Serializable {
   private ConnectedQueue lastConnectedQueue = null;
   private ConnectedUser lastConnectedUser = null;
   private ConversationUserDisposition lastUserDisposition = null;
-  private List<ConversationChannel> conversationChannels = new ArrayList<ConversationChannel>();
+  private List<ConversationChannel> conversationChannels = null;
 
   private static class OriginatingDirectionEnumDeserializer extends StdDeserializer<OriginatingDirectionEnum> {
     public OriginatingDirectionEnumDeserializer() {
@@ -245,7 +246,7 @@ public class Session  implements Serializable {
   }
   private LastAcdOutcomeEnum lastAcdOutcome = null;
   private Boolean authenticated = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String lastScreen = null;
   private String selfUri = null;
   private Date createdDate = null;
@@ -254,6 +255,16 @@ public class Session  implements Serializable {
   private Date awayDate = null;
   private Date idleDate = null;
   private AddressableEntityRef conversation = null;
+
+  public Session() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      outcomeAchievements = new ArrayList<OutcomeAchievement>();
+      segmentAssignments = new ArrayList<SessionSegmentAssignment>();
+      searchTerms = new ArrayList<String>();
+      conversationChannels = new ArrayList<ConversationChannel>();
+      divisionIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

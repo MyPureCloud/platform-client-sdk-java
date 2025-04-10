@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditQuerySort;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryFilter;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class QMAuditQueryRequest  implements Serializable {
   
   private String interval = null;
-  private List<QualityAuditQueryFilter> filters = new ArrayList<QualityAuditQueryFilter>();
-  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
+  private List<QualityAuditQueryFilter> filters = null;
+  private List<AuditQuerySort> sort = null;
+
+  public QMAuditQueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      filters = new ArrayList<QualityAuditQueryFilter>();
+      sort = new ArrayList<AuditQuerySort>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -32,8 +33,14 @@ public class Relationship  implements Serializable {
   private User user = null;
   private ExternalOrganization externalOrganization = null;
   private String relationship = null;
-  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+  private List<ExternalDataSource> externalDataSources = null;
   private String selfUri = null;
+
+  public Relationship() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      externalDataSources = new ArrayList<ExternalDataSource>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

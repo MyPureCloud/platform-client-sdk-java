@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimV2MemberReference;
@@ -27,11 +28,18 @@ import java.io.Serializable;
 public class ScimV2Group  implements Serializable {
   
   private String id = null;
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private String displayName = null;
   private String externalId = null;
-  private List<ScimV2MemberReference> members = new ArrayList<ScimV2MemberReference>();
+  private List<ScimV2MemberReference> members = null;
   private ScimMetadata meta = null;
+
+  public ScimV2Group() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      schemas = new ArrayList<String>();
+      members = new ArrayList<ScimV2MemberReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")

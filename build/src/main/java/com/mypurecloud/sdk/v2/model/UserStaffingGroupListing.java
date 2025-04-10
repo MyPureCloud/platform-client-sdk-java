@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserStaffingGroupResponse;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class UserStaffingGroupListing  implements Serializable {
   
-  private List<UserStaffingGroupResponse> entities = new ArrayList<UserStaffingGroupResponse>();
+  private List<UserStaffingGroupResponse> entities = null;
+
+  public UserStaffingGroupListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<UserStaffingGroupResponse>();
+    }
+  }
 
   
   /**

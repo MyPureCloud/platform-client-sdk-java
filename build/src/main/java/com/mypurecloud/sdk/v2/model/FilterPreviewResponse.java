@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class FilterPreviewResponse  implements Serializable {
   
   private Long filteredContacts = null;
   private Long totalContacts = null;
-  private List<DialerContact> preview = new ArrayList<DialerContact>();
+  private List<DialerContact> preview = null;
+
+  public FilterPreviewResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      preview = new ArrayList<DialerContact>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,15 @@ public class DocumentUpload  implements Serializable {
   
   private String name = null;
   private DomainEntityRef workspace = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<String> tagIds = new ArrayList<String>();
+  private List<String> tags = null;
+  private List<String> tagIds = null;
+
+  public DocumentUpload() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+      tagIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

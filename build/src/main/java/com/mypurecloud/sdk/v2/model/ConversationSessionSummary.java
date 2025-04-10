@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -138,7 +139,7 @@ public class ConversationSessionSummary  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private String language = null;
-  private List<ConversationSummaryWrapupCode> predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
+  private List<ConversationSummaryWrapupCode> predictedWrapupCodes = null;
   private ConversationEditedInput editedSummary = null;
   private ConversationSummaryReason reason = null;
   private ConversationSummaryFollowup followup = null;
@@ -146,8 +147,15 @@ public class ConversationSessionSummary  implements Serializable {
   private Date dateCreated = null;
   private String id = null;
   private Float confidence = null;
-  private List<AddressableEntityRef> participants = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> participants = null;
   private Entity communication = null;
+
+  public ConversationSessionSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
+      participants = new ArrayList<AddressableEntityRef>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerAttemptLimitsConfigChangeRecallEntry;
@@ -27,8 +28,8 @@ import java.io.Serializable;
 
 public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializable {
   
-  private Integer maxAttemptsPerContact = null;
-  private Integer maxAttemptsPerNumber = null;
+  private Long maxAttemptsPerContact = null;
+  private Long maxAttemptsPerNumber = null;
   private String timeZoneId = null;
 
   private static class ResetPeriodEnumDeserializer extends StdDeserializer<ResetPeriodEnum> {
@@ -85,39 +86,44 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerAttemptLimitsConfigChangeAttemptLimits() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits maxAttemptsPerContact(Integer maxAttemptsPerContact) {
+  public DialerAttemptLimitsConfigChangeAttemptLimits maxAttemptsPerContact(Long maxAttemptsPerContact) {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxAttemptsPerContact")
-  public Integer getMaxAttemptsPerContact() {
+  public Long getMaxAttemptsPerContact() {
     return maxAttemptsPerContact;
   }
-  public void setMaxAttemptsPerContact(Integer maxAttemptsPerContact) {
+  public void setMaxAttemptsPerContact(Long maxAttemptsPerContact) {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
   }
 
 
   /**
    **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits maxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
+  public DialerAttemptLimitsConfigChangeAttemptLimits maxAttemptsPerNumber(Long maxAttemptsPerNumber) {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("maxAttemptsPerNumber")
-  public Integer getMaxAttemptsPerNumber() {
+  public Long getMaxAttemptsPerNumber() {
     return maxAttemptsPerNumber;
   }
-  public void setMaxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
+  public void setMaxAttemptsPerNumber(Long maxAttemptsPerNumber) {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
   }
 
@@ -286,17 +292,17 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits version(Integer version) {
+  public DialerAttemptLimitsConfigChangeAttemptLimits version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

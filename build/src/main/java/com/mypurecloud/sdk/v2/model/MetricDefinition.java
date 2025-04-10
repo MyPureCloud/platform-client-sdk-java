@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DefaultObjective;
@@ -81,14 +82,21 @@ public class MetricDefinition  implements Serializable {
   }
   private UnitTypeEnum unitType = null;
   private String shortName = null;
-  private List<String> dividendMetrics = new ArrayList<String>();
-  private List<String> divisorMetrics = new ArrayList<String>();
+  private List<String> dividendMetrics = null;
+  private List<String> divisorMetrics = null;
   private DefaultObjective defaultObjective = null;
   private String lockTemplateId = null;
   private Boolean mediaTypeFilteringAllowed = null;
   private Boolean initialDirectionFilteringAllowed = null;
   private Boolean queueFilteringAllowed = null;
   private String selfUri = null;
+
+  public MetricDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dividendMetrics = new ArrayList<String>();
+      divisorMetrics = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

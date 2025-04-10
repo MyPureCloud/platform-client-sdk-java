@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.InvalidAssignment;
 import com.mypurecloud.sdk.v2.model.OtherProfileAssignment;
@@ -26,10 +27,19 @@ import java.io.Serializable;
 
 public class AssignmentValidation  implements Serializable {
   
-  private List<UserReference> membersNotAssigned = new ArrayList<UserReference>();
-  private List<UserReference> membersAlreadyAssigned = new ArrayList<UserReference>();
-  private List<OtherProfileAssignment> membersAlreadyAssignedToOther = new ArrayList<OtherProfileAssignment>();
-  private List<InvalidAssignment> invalidMemberAssignments = new ArrayList<InvalidAssignment>();
+  private List<UserReference> membersNotAssigned = null;
+  private List<UserReference> membersAlreadyAssigned = null;
+  private List<OtherProfileAssignment> membersAlreadyAssignedToOther = null;
+  private List<InvalidAssignment> invalidMemberAssignments = null;
+
+  public AssignmentValidation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      membersNotAssigned = new ArrayList<UserReference>();
+      membersAlreadyAssigned = new ArrayList<UserReference>();
+      membersAlreadyAssignedToOther = new ArrayList<OtherProfileAssignment>();
+      invalidMemberAssignments = new ArrayList<InvalidAssignment>();
+    }
+  }
 
   
   /**

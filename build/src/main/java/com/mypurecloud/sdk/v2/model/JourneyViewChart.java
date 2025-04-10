@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyViewChartDisplayAttributes;
@@ -81,11 +82,18 @@ public class JourneyViewChart  implements Serializable {
     }
   }
   private GroupByTimeEnum groupByTime = null;
-  private List<JourneyViewChartGroupByAttribute> groupByAttributes = new ArrayList<JourneyViewChartGroupByAttribute>();
-  private List<JourneyViewChartMetric> metrics = new ArrayList<JourneyViewChartMetric>();
+  private List<JourneyViewChartGroupByAttribute> groupByAttributes = null;
+  private List<JourneyViewChartMetric> metrics = null;
   private JourneyViewChartDisplayAttributes displayAttributes = null;
   private Integer groupByMax = null;
   private String selfUri = null;
+
+  public JourneyViewChart() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groupByAttributes = new ArrayList<JourneyViewChartGroupByAttribute>();
+      metrics = new ArrayList<JourneyViewChartMetric>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

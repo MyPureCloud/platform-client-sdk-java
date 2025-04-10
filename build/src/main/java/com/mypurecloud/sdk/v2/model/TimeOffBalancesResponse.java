@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceJobReference;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceResponse;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class TimeOffBalancesResponse  implements Serializable {
   
   private TimeOffBalanceJobReference job = null;
-  private List<TimeOffBalanceResponse> entities = new ArrayList<TimeOffBalanceResponse>();
+  private List<TimeOffBalanceResponse> entities = null;
+
+  public TimeOffBalancesResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<TimeOffBalanceResponse>();
+    }
+  }
 
   
   /**

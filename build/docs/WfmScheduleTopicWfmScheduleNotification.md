@@ -8,7 +8,7 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **operationId** | **String** |  |  [optional] |
 | **downloadUrl** | **String** |  |  [optional] |
-| **percentComplete** | **Integer** |  |  [optional] |
+| **percentComplete** | **Long** |  |  [optional] |
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
 
 
@@ -37,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

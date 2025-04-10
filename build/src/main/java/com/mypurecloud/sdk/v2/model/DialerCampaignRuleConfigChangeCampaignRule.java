@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeCampaignRuleAction;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeCampaignRuleCondition;
@@ -30,8 +31,8 @@ import java.io.Serializable;
 public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable {
   
   private DialerCampaignRuleConfigChangeCampaignRuleEntities campaignRuleEntities = null;
-  private List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleCondition>();
-  private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
+  private List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions = null;
+  private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = null;
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
   private Map<String, Object> additionalProperties = null;
@@ -39,7 +40,14 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerCampaignRuleConfigChangeCampaignRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaignRuleConditions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleCondition>();
+      campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
+    }
+  }
 
   
   /**
@@ -223,17 +231,17 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerCampaignRuleConfigChangeCampaignRule version(Integer version) {
+  public DialerCampaignRuleConfigChangeCampaignRule version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

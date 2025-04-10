@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EscalationTarget;
@@ -80,6 +81,11 @@ public class EscalationRuleRequest  implements Serializable {
   private EscalationTarget facebookEscalation = null;
   private EscalationTarget instagramEscalation = null;
   private EscalationTarget twitterEscalation = null;
+
+  public EscalationRuleRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

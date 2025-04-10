@@ -5,11 +5,11 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **processedTranscriptsCount** | **Integer** |  |  [optional] |
-| **matchedTranscriptsCount** | **Integer** |  |  [optional] |
+| **processedTranscriptsCount** | **Long** |  |  [optional] |
+| **matchedTranscriptsCount** | **Long** |  |  [optional] |
 | **matchedTranscripts** | [**List&lt;PublishTopicTestPhraseMatchedTranscript&gt;**](PublishTopicTestPhraseMatchedTranscript) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

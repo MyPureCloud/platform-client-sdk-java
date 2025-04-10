@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerDnclistConfigChangeImportStatus;
@@ -30,7 +31,7 @@ import java.io.Serializable;
 public class DialerDnclistConfigChangeDncList  implements Serializable {
   
   private DialerDnclistConfigChangeImportStatus importStatus = null;
-  private Integer size = null;
+  private Long size = null;
 
   private static class DncSourceTypeEnumDeserializer extends StdDeserializer<DncSourceTypeEnum> {
     public DncSourceTypeEnumDeserializer() {
@@ -81,7 +82,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   }
   private DncSourceTypeEnum dncSourceType = null;
   private String loginId = null;
-  private List<String> dncCodes = new ArrayList<String>();
+  private List<String> dncCodes = null;
   private String licenseId = null;
 
   private static class ContactMethodEnumDeserializer extends StdDeserializer<ContactMethodEnum> {
@@ -137,7 +138,13 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerDnclistConfigChangeDncList() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncCodes = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -160,17 +167,17 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   /**
    * the number of phone numbers in the do not call list
    **/
-  public DialerDnclistConfigChangeDncList size(Integer size) {
+  public DialerDnclistConfigChangeDncList size(Long size) {
     this.size = size;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "the number of phone numbers in the do not call list")
   @JsonProperty("size")
-  public Integer getSize() {
+  public Long getSize() {
     return size;
   }
-  public void setSize(Integer size) {
+  public void setSize(Long size) {
     this.size = size;
   }
 
@@ -373,17 +380,17 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerDnclistConfigChangeDncList version(Integer version) {
+  public DialerDnclistConfigChangeDncList version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

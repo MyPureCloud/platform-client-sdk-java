@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyAction;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyCustomer;
@@ -27,6 +28,11 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
   private ConversationSocialExpressionEventTopicJourneyCustomer customer = null;
   private ConversationSocialExpressionEventTopicJourneyCustomerSession customerSession = null;
   private ConversationSocialExpressionEventTopicJourneyAction triggeringAction = null;
+
+  public ConversationSocialExpressionEventTopicJourneyContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

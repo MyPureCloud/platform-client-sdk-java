@@ -7,14 +7,14 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | Metric name |  [optional] |
 | **metricDate** | [**Date**](Date) | The date and time of metric creation |  [optional] |
-| **value** | **Integer** | Metric value |  [optional] |
+| **value** | **Long** | Metric value |  [optional] |
 | **recordId** | **String** | Record identifier |  [optional] |
 | **activeRouting** | [**ActiveRoutingEnum**](#Enum--ActiveRoutingEnum) | Active routing method |  [optional] |
 | **activeSkillIds** | **List&lt;String&gt;** | ID(s) of Skill(s) that are active on the conversation |  [optional] |
 | **addressFrom** | **String** | The address that initiated an action |  [optional] |
 | **addressTo** | **String** | The address receiving an action |  [optional] |
 | **agentAssistantId** | **String** | Unique identifier of the active virtual agent assistant |  [optional] |
-| **agentBullseyeRing** | **Integer** | Bullseye ring of the targeted agent |  [optional] |
+| **agentBullseyeRing** | **Long** | Bullseye ring of the targeted agent |  [optional] |
 | **agentOwned** | **Boolean** | Flag indicating an agent-owned callback |  [optional] |
 | **ani** | **String** | Automatic Number Identification (caller's number) |  [optional] |
 | **assignerId** | **String** | ID of the user that manually assigned a conversation |  [optional] |
@@ -31,11 +31,11 @@
 | **divisionIds** | **List&lt;String&gt;** | Identifier(s) of division(s) associated with a conversation |  [optional] |
 | **dnis** | **String** | Dialed number identification service (number dialed by the calling party) |  [optional] |
 | **edgeId** | **String** | Unique identifier of the edge device |  [optional] |
-| **eligibleAgentCounts** | **List&lt;Integer&gt;** | Number of eligible agents for each predictive routing attempt |  [optional] |
+| **eligibleAgentCounts** | **List&lt;Long&gt;** | Number of eligible agents for each predictive routing attempt |  [optional] |
 | **errorCode** | **String** | A code corresponding to the error that occurred |  [optional] |
 | **extendedDeliveryStatus** | **String** | Extended delivery status |  [optional] |
 | **externalContactId** | **String** | External contact identifier |  [optional] |
-| **externalMediaCount** | **Integer** | Count of any media (images, files, etc) included on the external session |  [optional] |
+| **externalMediaCount** | **Long** | Count of any media (images, files, etc) included on the external session |  [optional] |
 | **externalOrganizationId** | **String** | External organization identifier |  [optional] |
 | **externalTag** | **String** | External tag for the conversation |  [optional] |
 | **firstQueue** | **Boolean** | Marker that is set if the current queue is the first queue in a conversation |  [optional] |
@@ -46,13 +46,13 @@
 | **interactionType** | **String** | The interaction type (enterprise or contactCenter) |  [optional] |
 | **journeyActionId** | **String** | Identifier of the journey action. |  [optional] |
 | **journeyActionMapId** | **String** | Identifier of the journey action map that triggered the action. |  [optional] |
-| **journeyActionMapVersion** | **Integer** | Version of the journey action map that triggered the action. |  [optional] |
+| **journeyActionMapVersion** | **Long** | Version of the journey action map that triggered the action. |  [optional] |
 | **journeyCustomerId** | **String** | Primary identifier of the journey customer in the source where the activities originate from. |  [optional] |
 | **journeyCustomerIdType** | **String** | Type of primary identifier of the journey customer (e.g. cookie). |  [optional] |
 | **journeyCustomerSessionId** | **String** | Unique identifier of the journey session. |  [optional] |
 | **journeyCustomerSessionIdType** | **String** | Type or category of journey sessions (e.g. web, ticket, delivery, atm). |  [optional] |
 | **knowledgeBaseIds** | **List&lt;String&gt;** | The unique identifier(s) of the knowledge base(s) used |  [optional] |
-| **mediaCount** | **Integer** | Count of any media (images, files, etc) included in this session |  [optional] |
+| **mediaCount** | **Long** | Count of any media (images, files, etc) included in this session |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The session media type |  [optional] |
 | **messageType** | **String** | Message type for messaging services. E.g.: sms, facebook, twitter, line |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#Enum--OriginatingDirectionEnum) | The original direction of the conversation |  [optional] |
@@ -71,12 +71,12 @@
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** | Unique identifier(s) for skill(s) requested for an interaction |  [optional] |
 | **requestedRoutings** | [**List<RequestedRoutingsEnum>**](#Enum--RequestedRoutingsEnum) | Routing type(s) for requested/attempted routing methods. |  [optional] |
 | **roomId** | **String** | Unique identifier for the room |  [optional] |
-| **routingPriority** | **Integer** | Routing priority for the current interaction |  [optional] |
-| **routingRing** | **Integer** | Routing ring for bullseye or preferred agent routing |  [optional] |
+| **routingPriority** | **Long** | Routing priority for the current interaction |  [optional] |
+| **routingRing** | **Long** | Routing ring for bullseye or preferred agent routing |  [optional] |
 | **routingRule** | **String** | Routing rule for preferred, conditional and predictive routing type |  [optional] |
 | **routingRuleType** | [**RoutingRuleTypeEnum**](#Enum--RoutingRuleTypeEnum) | Routing rule type |  [optional] |
 | **selectedAgentId** | **String** | Selected agent ID |  [optional] |
-| **selectedAgentRank** | **Integer** | Selected agent GPR rank |  [optional] |
+| **selectedAgentRank** | **Long** | Selected agent GPR rank |  [optional] |
 | **selfServed** | **Boolean** | Indicates whether all flow sessions were self serviced |  [optional] |
 | **sessionDnis** | **String** | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred |  [optional] |
 | **sessionId** | **String** | The unique identifier of this session |  [optional] |
@@ -85,7 +85,7 @@
 | **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
 | **userId** | **String** | Unique identifier for the user |  [optional] |
 | **videoPresent** | **Boolean** | Flag indicating if video is present |  [optional] |
-| **waitingInteractionCounts** | **List&lt;Integer&gt;** | Number of waiting interactions for each predictive routing attempt |  [optional] |
+| **waitingInteractionCounts** | **List&lt;Long&gt;** | Number of waiting interactions for each predictive routing attempt |  [optional] |
 | **wrapUpCode** | **String** | Wrap up code |  [optional] |
 | **proposedAgents** | [**List&lt;ConversationMetricsTopicConversationProposedAgent&gt;**](ConversationMetricsTopicConversationProposedAgent) | Proposed agents |  [optional] |
 | **scoredAgents** | [**List&lt;ConversationMetricsTopicConversationScoredAgent&gt;**](ConversationMetricsTopicConversationScoredAgent) | Scored agents |  [optional] |
@@ -347,4 +347,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

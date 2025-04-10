@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 
 import java.io.Serializable;
 /**
@@ -18,6 +19,11 @@ import java.io.Serializable;
 
 public class ConversationChannelLocation  implements Serializable {
   
+
+  public ConversationChannelLocation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @Override

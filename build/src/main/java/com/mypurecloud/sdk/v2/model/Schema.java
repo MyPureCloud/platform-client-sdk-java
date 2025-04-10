@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Items;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +27,15 @@ public class Schema  implements Serializable {
   
   private String title = null;
   private String description = null;
-  private List<String> type = new ArrayList<String>();
+  private List<String> type = null;
   private Items items = null;
   private String pattern = null;
+
+  public Schema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      type = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "A core type's title")

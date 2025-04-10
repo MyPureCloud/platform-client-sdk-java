@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PredictorModelRetrainingError;
@@ -76,7 +77,7 @@ public class PredictorModelBrief  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private Date dateModified = null;
-  private List<PredictorModelRetrainingError> retrainingErrors = new ArrayList<PredictorModelRetrainingError>();
+  private List<PredictorModelRetrainingError> retrainingErrors = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -127,6 +128,12 @@ public class PredictorModelBrief  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  public PredictorModelBrief() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      retrainingErrors = new ArrayList<PredictorModelRetrainingError>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The media type of the model.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Phrase;
@@ -79,8 +80,8 @@ public class TopicRequest  implements Serializable {
     }
   }
   private StrictnessEnum strictness = null;
-  private List<String> programIds = new ArrayList<String>();
-  private List<String> tags = new ArrayList<String>();
+  private List<String> programIds = null;
+  private List<String> tags = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {
@@ -131,7 +132,15 @@ public class TopicRequest  implements Serializable {
     }
   }
   private ParticipantsEnum participants = null;
-  private List<Phrase> phrases = new ArrayList<Phrase>();
+  private List<Phrase> phrases = null;
+
+  public TopicRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      programIds = new ArrayList<String>();
+      tags = new ArrayList<String>();
+      phrases = new ArrayList<Phrase>();
+    }
+  }
 
   
   /**

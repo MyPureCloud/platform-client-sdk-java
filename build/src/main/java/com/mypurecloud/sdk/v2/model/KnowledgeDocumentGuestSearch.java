@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchResult;
@@ -81,7 +82,13 @@ public class KnowledgeDocumentGuestSearch  implements Serializable {
   }
   private QueryTypeEnum queryType = null;
   private String sessionId = null;
-  private List<KnowledgeDocumentGuestSearchResult> results = new ArrayList<KnowledgeDocumentGuestSearchResult>();
+  private List<KnowledgeDocumentGuestSearchResult> results = null;
+
+  public KnowledgeDocumentGuestSearch() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<KnowledgeDocumentGuestSearchResult>();
+    }
+  }
 
   
   /**

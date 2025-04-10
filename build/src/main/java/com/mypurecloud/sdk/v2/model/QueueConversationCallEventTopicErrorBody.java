@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicDetail;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicLimit;
@@ -29,15 +30,22 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
   
   private String message = null;
   private String code = null;
-  private Integer status = null;
+  private Long status = null;
   private String entityId = null;
   private String entityName = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationCallEventTopicDetail> details = new ArrayList<QueueConversationCallEventTopicDetail>();
-  private List<QueueConversationCallEventTopicErrorBody> errors = new ArrayList<QueueConversationCallEventTopicErrorBody>();
+  private List<QueueConversationCallEventTopicDetail> details = null;
+  private List<QueueConversationCallEventTopicErrorBody> errors = null;
   private QueueConversationCallEventTopicLimit limit = null;
+
+  public QueueConversationCallEventTopicErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<QueueConversationCallEventTopicDetail>();
+      errors = new ArrayList<QueueConversationCallEventTopicErrorBody>();
+    }
+  }
 
   
   /**
@@ -76,17 +84,17 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
 
   /**
    **/
-  public QueueConversationCallEventTopicErrorBody status(Integer status) {
+  public QueueConversationCallEventTopicErrorBody status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

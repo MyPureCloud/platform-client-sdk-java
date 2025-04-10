@@ -7539,21 +7539,23 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @return HistoricalImportDeleteJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob() throws IOException, ApiException {
     return  getWorkforcemanagementHistoricaldataDeletejob(createGetWorkforcemanagementHistoricaldataDeletejobRequest());
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @return HistoricalImportDeleteJobResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<HistoricalImportDeleteJobResponse> getWorkforcemanagementHistoricaldataDeletejobWithHttpInfo() throws IOException {
     return getWorkforcemanagementHistoricaldataDeletejob(createGetWorkforcemanagementHistoricaldataDeletejobRequest().withHttpInfo());
@@ -7565,12 +7567,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request The request object
    * @return HistoricalImportDeleteJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob(GetWorkforcemanagementHistoricaldataDeletejobRequest request) throws IOException, ApiException {
     try {
@@ -7584,11 +7587,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Retrieves delete job status for historical data imports of the organization
-   * 
+   * Retrieves delete job status for historical data imports of the organization.
+   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<HistoricalImportDeleteJobResponse> getWorkforcemanagementHistoricaldataDeletejob(ApiRequest<Void> request) throws IOException {
     try {
@@ -17357,21 +17361,23 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @return HistoricalImportDeleteJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public HistoricalImportDeleteJobResponse postWorkforcemanagementHistoricaldataDeletejob() throws IOException, ApiException {
     return  postWorkforcemanagementHistoricaldataDeletejob(createPostWorkforcemanagementHistoricaldataDeletejobRequest());
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @return HistoricalImportDeleteJobResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<HistoricalImportDeleteJobResponse> postWorkforcemanagementHistoricaldataDeletejobWithHttpInfo() throws IOException {
     return postWorkforcemanagementHistoricaldataDeletejob(createPostWorkforcemanagementHistoricaldataDeletejobRequest().withHttpInfo());
@@ -17383,12 +17389,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request The request object
    * @return HistoricalImportDeleteJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public HistoricalImportDeleteJobResponse postWorkforcemanagementHistoricaldataDeletejob(PostWorkforcemanagementHistoricaldataDeletejobRequest request) throws IOException, ApiException {
     try {
@@ -17402,11 +17409,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Delete the entries of the historical data imports in the organization
-   * 
+   * Delete the entries of the historical data imports in the organization.
+   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<HistoricalImportDeleteJobResponse> postWorkforcemanagementHistoricaldataDeletejob(ApiRequest<Void> request) throws IOException {
     try {

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BidGroupWorkPlanRequest;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +27,17 @@ public class WorkPlanBidGroupCreate  implements Serializable {
   
   private String name = null;
   private String managementUnitId = null;
-  private List<String> agentIds = new ArrayList<String>();
-  private List<BidGroupWorkPlanRequest> workPlans = new ArrayList<BidGroupWorkPlanRequest>();
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<String> agentIds = null;
+  private List<BidGroupWorkPlanRequest> workPlans = null;
+  private List<String> planningGroupIds = null;
+
+  public WorkPlanBidGroupCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentIds = new ArrayList<String>();
+      workPlans = new ArrayList<BidGroupWorkPlanRequest>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate;
 import com.mypurecloud.sdk.v2.model.WfmAgentScheduleUpdateTopicUserReference;
@@ -29,7 +30,13 @@ public class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification  impleme
   private WfmAgentScheduleUpdateTopicUserReference user = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate> updates = new ArrayList<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate>();
+  private List<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate> updates = null;
+
+  public WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      updates = new ArrayList<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroupScore;
 import com.mypurecloud.sdk.v2.model.TranscriptTopic;
@@ -28,12 +29,19 @@ public class EvaluationScoringSet  implements Serializable {
   private Float totalScore = null;
   private Float totalCriticalScore = null;
   private Float totalNonCriticalScore = null;
-  private List<EvaluationQuestionGroupScore> questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
+  private List<EvaluationQuestionGroupScore> questionGroupScores = null;
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
   private String privateComments = null;
   private String agentComments = null;
-  private List<TranscriptTopic> transcriptTopics = new ArrayList<TranscriptTopic>();
+  private List<TranscriptTopic> transcriptTopics = null;
+
+  public EvaluationScoringSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
+      transcriptTopics = new ArrayList<TranscriptTopic>();
+    }
+  }
 
   
   /**

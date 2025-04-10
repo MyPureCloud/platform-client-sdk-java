@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SupportCenterModuleSetting;
@@ -75,7 +76,13 @@ public class SupportCenterScreen  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SupportCenterModuleSetting> moduleSettings = new ArrayList<SupportCenterModuleSetting>();
+  private List<SupportCenterModuleSetting> moduleSettings = null;
+
+  public SupportCenterScreen() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      moduleSettings = new ArrayList<SupportCenterModuleSetting>();
+    }
+  }
 
   
   /**

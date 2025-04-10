@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -17,6 +18,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -134,7 +138,13 @@ public class DataTableImportJob  implements Serializable {
   private Integer countRecordsUpdated = null;
   private Integer countRecordsDeleted = null;
   private Integer countRecordsFailed = null;
+  private Map<String, String> uploadHeaders = null;
   private String selfUri = null;
+
+  public DataTableImportJob() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -341,6 +351,13 @@ public class DataTableImportJob  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Required headers when uploading a file through PUT request to the URL in the 'uploadURI' field")
+  @JsonProperty("uploadHeaders")
+  public Map<String, String> getUploadHeaders() {
+    return uploadHeaders;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -370,12 +387,13 @@ public class DataTableImportJob  implements Serializable {
             Objects.equals(this.countRecordsUpdated, dataTableImportJob.countRecordsUpdated) &&
             Objects.equals(this.countRecordsDeleted, dataTableImportJob.countRecordsDeleted) &&
             Objects.equals(this.countRecordsFailed, dataTableImportJob.countRecordsFailed) &&
+            Objects.equals(this.uploadHeaders, dataTableImportJob.uploadHeaders) &&
             Objects.equals(this.selfUri, dataTableImportJob.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, owner, status, dateCreated, dateCompleted, uploadURI, importMode, errorInformation, countRecordsUpdated, countRecordsDeleted, countRecordsFailed, selfUri);
+    return Objects.hash(id, name, owner, status, dateCreated, dateCompleted, uploadURI, importMode, errorInformation, countRecordsUpdated, countRecordsDeleted, countRecordsFailed, uploadHeaders, selfUri);
   }
 
   @Override
@@ -395,6 +413,7 @@ public class DataTableImportJob  implements Serializable {
     sb.append("    countRecordsUpdated: ").append(toIndentedString(countRecordsUpdated)).append("\n");
     sb.append("    countRecordsDeleted: ").append(toIndentedString(countRecordsDeleted)).append("\n");
     sb.append("    countRecordsFailed: ").append(toIndentedString(countRecordsFailed)).append("\n");
+    sb.append("    uploadHeaders: ").append(toIndentedString(uploadHeaders)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

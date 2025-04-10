@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -133,7 +134,7 @@ public class Message  implements Serializable {
   private InitialStateEnum initialState = null;
   private String id = null;
   private Boolean held = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -316,7 +317,7 @@ public class Message  implements Serializable {
   private String peerId = null;
   private Address toAddress = null;
   private Address fromAddress = null;
-  private List<MessageDetails> messages = new ArrayList<MessageDetails>();
+  private List<MessageDetails> messages = null;
   private JourneyContext journeyContext = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
@@ -324,6 +325,13 @@ public class Message  implements Serializable {
   private String agentAssistantId = null;
   private String byoSmsIntegrationId = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
+
+  public Message() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+      messages = new ArrayList<MessageDetails>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicChatMediaParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicConversationDivisionMembership;
@@ -27,11 +28,19 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   
   private String id = null;
   private String name = null;
-  private List<ConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationChatEventTopicChatMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<ConversationChatEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationChatEventTopicConversationDivisionMembership>();
+  private List<ConversationChatEventTopicConversationDivisionMembership> divisions = null;
+
+  public ConversationChatEventTopicChatConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<ConversationChatEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

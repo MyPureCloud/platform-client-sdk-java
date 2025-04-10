@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotExecutionConfiguration;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class NuanceBotLaunchSettings  implements Serializable {
   
-  private List<BotExecutionConfiguration> botExecutionConfigurations = new ArrayList<BotExecutionConfiguration>();
+  private List<BotExecutionConfiguration> botExecutionConfigurations = null;
+
+  public NuanceBotLaunchSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      botExecutionConfigurations = new ArrayList<BotExecutionConfiguration>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserParam;
 import io.swagger.annotations.ApiModel;
@@ -30,8 +31,14 @@ public class PolicyErrorMessage  implements Serializable {
   private String userParamsMessage = null;
   private String errorCode = null;
   private String correlationId = null;
-  private List<UserParam> userParams = new ArrayList<UserParam>();
+  private List<UserParam> userParams = null;
   private Date insertDate = null;
+
+  public PolicyErrorMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userParams = new ArrayList<UserParam>();
+    }
+  }
 
   
   /**

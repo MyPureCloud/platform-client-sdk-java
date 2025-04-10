@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateQueryResponseData;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ import java.io.Serializable;
 public class LearningAssignmentAggregateQueryResponseGroupedData  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<LearningAssignmentAggregateQueryResponseData> data = new ArrayList<LearningAssignmentAggregateQueryResponseData>();
+  private List<LearningAssignmentAggregateQueryResponseData> data = null;
+
+  public LearningAssignmentAggregateQueryResponseGroupedData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      data = new ArrayList<LearningAssignmentAggregateQueryResponseData>();
+    }
+  }
 
   
   /**

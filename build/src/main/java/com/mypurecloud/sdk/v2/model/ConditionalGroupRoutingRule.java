@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -125,8 +126,14 @@ public class ConditionalGroupRoutingRule  implements Serializable {
   }
   private OperatorEnum operator = null;
   private Double conditionValue = null;
-  private List<MemberGroup> groups = new ArrayList<MemberGroup>();
+  private List<MemberGroup> groups = null;
   private Integer waitSeconds = null;
+
+  public ConditionalGroupRoutingRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      groups = new ArrayList<MemberGroup>();
+    }
+  }
 
   
   /**

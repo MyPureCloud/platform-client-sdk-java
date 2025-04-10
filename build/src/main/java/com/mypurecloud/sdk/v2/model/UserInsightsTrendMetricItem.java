@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.UserInsightsTrends;
@@ -25,6 +26,11 @@ public class UserInsightsTrendMetricItem  implements Serializable {
   
   private AddressableEntityRef metric = null;
   private UserInsightsTrends trends = null;
+
+  public UserInsightsTrendMetricItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

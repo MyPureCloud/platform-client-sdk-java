@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerContactlistfilterConfigChangeFilterClause;
@@ -30,8 +31,8 @@ import java.io.Serializable;
 public class DialerContactlistfilterConfigChangeContactListFilter  implements Serializable {
   
   private DialerContactlistfilterConfigChangeUriReference contactList = null;
-  private List<String> contactListColumns = new ArrayList<String>();
-  private List<DialerContactlistfilterConfigChangeFilterClause> clauses = new ArrayList<DialerContactlistfilterConfigChangeFilterClause>();
+  private List<String> contactListColumns = null;
+  private List<DialerContactlistfilterConfigChangeFilterClause> clauses = null;
 
   private static class FilterTypeEnumDeserializer extends StdDeserializer<FilterTypeEnum> {
     public FilterTypeEnumDeserializer() {
@@ -85,7 +86,14 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerContactlistfilterConfigChangeContactListFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contactListColumns = new ArrayList<String>();
+      clauses = new ArrayList<DialerContactlistfilterConfigChangeFilterClause>();
+    }
+  }
 
   
   /**
@@ -250,17 +258,17 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerContactlistfilterConfigChangeContactListFilter version(Integer version) {
+  public DialerContactlistfilterConfigChangeContactListFilter version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

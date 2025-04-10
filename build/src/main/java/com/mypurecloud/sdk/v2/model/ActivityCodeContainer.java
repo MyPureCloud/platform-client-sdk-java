@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -28,6 +29,11 @@ public class ActivityCodeContainer  implements Serializable {
   
   private Map<String, ActivityCode> activityCodes = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public ActivityCodeContainer() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

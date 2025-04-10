@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PlanningGroupOutputs;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class PerformancePredictionOutputs  implements Serializable {
   
   private Date calculationStartDate = null;
   private Integer calculationIntervalLengthMinutes = null;
-  private List<PlanningGroupOutputs> planningGroupResults = new ArrayList<PlanningGroupOutputs>();
+  private List<PlanningGroupOutputs> planningGroupResults = null;
+
+  public PerformancePredictionOutputs() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      planningGroupResults = new ArrayList<PlanningGroupOutputs>();
+    }
+  }
 
   
   /**

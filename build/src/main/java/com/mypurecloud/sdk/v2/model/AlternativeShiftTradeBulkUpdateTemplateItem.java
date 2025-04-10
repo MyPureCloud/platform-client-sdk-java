@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -128,6 +129,11 @@ public class AlternativeShiftTradeBulkUpdateTemplateItem  implements Serializabl
   private Date adminDateReviewed = null;
   private UserReference adminReviewedBy = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public AlternativeShiftTradeBulkUpdateTemplateItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

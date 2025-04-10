@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CertificateDetails;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class ParsedCertificate  implements Serializable {
   
-  private List<CertificateDetails> certificateDetails = new ArrayList<CertificateDetails>();
+  private List<CertificateDetails> certificateDetails = null;
+
+  public ParsedCertificate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      certificateDetails = new ArrayList<CertificateDetails>();
+    }
+  }
 
   
   /**

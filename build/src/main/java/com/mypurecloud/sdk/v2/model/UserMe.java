@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Adjacents;
@@ -66,8 +67,8 @@ public class UserMe  implements Serializable {
   private Chat chat = null;
   private String department = null;
   private String email = null;
-  private List<Contact> primaryContactInfo = new ArrayList<Contact>();
-  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Contact> primaryContactInfo = null;
+  private List<Contact> addresses = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -120,9 +121,9 @@ public class UserMe  implements Serializable {
   private String title = null;
   private String username = null;
   private User manager = null;
-  private List<Image> images = new ArrayList<Image>();
+  private List<Image> images = null;
   private Integer version = null;
-  private List<String> certifications = new ArrayList<String>();
+  private List<String> certifications = null;
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
   private String preferredName = null;
@@ -134,35 +135,60 @@ public class UserMe  implements Serializable {
   private Geolocation geolocation = null;
   private UserStations station = null;
   private UserAuthorization authorization = null;
-  private List<String> profileSkills = new ArrayList<String>();
-  private List<Location> locations = new ArrayList<Location>();
-  private List<Group> groups = new ArrayList<Group>();
+  private List<String> profileSkills = null;
+  private List<Location> locations = null;
+  private List<Group> groups = null;
   private Team team = null;
   private WorkPlanBidRanks workPlanBidRanks = null;
-  private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
-  private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
+  private List<UserRoutingSkill> skills = null;
+  private List<UserRoutingLanguage> languages = null;
   private AutoAnswerSettings autoAnswerSettings = null;
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;
   private Date dateLastLogin = null;
+  private Date dateWelcomeSent = null;
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
-  private List<OrganizationPresence> presenceDefinitions = new ArrayList<OrganizationPresence>();
-  private List<OrganizationPresenceDefinition> divisionedPresenceDefinitions = new ArrayList<OrganizationPresenceDefinition>();
-  private List<LocationDefinition> locationDefinitions = new ArrayList<LocationDefinition>();
-  private List<DomainOrganizationRole> orgAuthorization = new ArrayList<DomainOrganizationRole>();
-  private List<User> favorites = new ArrayList<User>();
-  private List<User> superiors = new ArrayList<User>();
-  private List<User> directReports = new ArrayList<User>();
+  private List<OrganizationPresence> presenceDefinitions = null;
+  private List<OrganizationPresenceDefinition> divisionedPresenceDefinitions = null;
+  private List<LocationDefinition> locationDefinitions = null;
+  private List<DomainOrganizationRole> orgAuthorization = null;
+  private List<User> favorites = null;
+  private List<User> superiors = null;
+  private List<User> directReports = null;
   private Adjacents adjacents = null;
-  private List<RoutingSkill> routingSkills = new ArrayList<RoutingSkill>();
+  private List<RoutingSkill> routingSkills = null;
   private FieldConfigs fieldConfigs = null;
   private TokenInfo token = null;
-  private List<Trustor> trustors = new ArrayList<Trustor>();
-  private List<DomainOrganizationProduct> orgProducts = new ArrayList<DomainOrganizationProduct>();
+  private List<Trustor> trustors = null;
+  private List<DomainOrganizationProduct> orgProducts = null;
   private String selfUri = null;
+
+  public UserMe() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      primaryContactInfo = new ArrayList<Contact>();
+      addresses = new ArrayList<Contact>();
+      images = new ArrayList<Image>();
+      certifications = new ArrayList<String>();
+      profileSkills = new ArrayList<String>();
+      locations = new ArrayList<Location>();
+      groups = new ArrayList<Group>();
+      skills = new ArrayList<UserRoutingSkill>();
+      languages = new ArrayList<UserRoutingLanguage>();
+      presenceDefinitions = new ArrayList<OrganizationPresence>();
+      divisionedPresenceDefinitions = new ArrayList<OrganizationPresenceDefinition>();
+      locationDefinitions = new ArrayList<LocationDefinition>();
+      orgAuthorization = new ArrayList<DomainOrganizationRole>();
+      favorites = new ArrayList<User>();
+      superiors = new ArrayList<User>();
+      directReports = new ArrayList<User>();
+      routingSkills = new ArrayList<RoutingSkill>();
+      trustors = new ArrayList<Trustor>();
+      orgProducts = new ArrayList<DomainOrganizationProduct>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -606,6 +632,13 @@ public class UserMe  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The date & time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateWelcomeSent")
+  public Date getDateWelcomeSent() {
+    return dateWelcomeSent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The PureCloud system date time.")
   @JsonProperty("date")
   public ServerDate getDate() {
@@ -773,6 +806,7 @@ public class UserMe  implements Serializable {
             Objects.equals(this.languagePreference, userMe.languagePreference) &&
             Objects.equals(this.lastTokenIssued, userMe.lastTokenIssued) &&
             Objects.equals(this.dateLastLogin, userMe.dateLastLogin) &&
+            Objects.equals(this.dateWelcomeSent, userMe.dateWelcomeSent) &&
             Objects.equals(this.date, userMe.date) &&
             Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
             Objects.equals(this.organization, userMe.organization) &&
@@ -794,7 +828,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, workPlanBidRanks, skills, languages, autoAnswerSettings, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, workPlanBidRanks, skills, languages, autoAnswerSettings, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, dateWelcomeSent, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -840,6 +874,7 @@ public class UserMe  implements Serializable {
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
     sb.append("    dateLastLogin: ").append(toIndentedString(dateLastLogin)).append("\n");
+    sb.append("    dateWelcomeSent: ").append(toIndentedString(dateWelcomeSent)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");

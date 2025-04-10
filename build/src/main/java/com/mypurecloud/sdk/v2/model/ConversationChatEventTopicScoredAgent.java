@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicUriReference;
 import io.swagger.annotations.ApiModel;
@@ -23,7 +24,12 @@ import java.io.Serializable;
 public class ConversationChatEventTopicScoredAgent  implements Serializable {
   
   private ConversationChatEventTopicUriReference agent = null;
-  private Integer score = null;
+  private Long score = null;
+
+  public ConversationChatEventTopicScoredAgent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -47,17 +53,17 @@ public class ConversationChatEventTopicScoredAgent  implements Serializable {
   /**
    * Agent's score for the current conversation, from 0 - 100, higher being better
    **/
-  public ConversationChatEventTopicScoredAgent score(Integer score) {
+  public ConversationChatEventTopicScoredAgent score(Long score) {
     this.score = score;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Agent's score for the current conversation, from 0 - 100, higher being better")
   @JsonProperty("score")
-  public Integer getScore() {
+  public Long getScore() {
     return score;
   }
-  public void setScore(Integer score) {
+  public void setScore(Long score) {
     this.score = score;
   }
 

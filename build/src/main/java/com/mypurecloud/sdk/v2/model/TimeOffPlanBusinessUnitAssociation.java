@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.StaffingGroupReference;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class TimeOffPlanBusinessUnitAssociation  implements Serializable {
   
-  private List<ManagementUnitReference> managementUnits = new ArrayList<ManagementUnitReference>();
-  private List<StaffingGroupReference> staffingGroups = new ArrayList<StaffingGroupReference>();
+  private List<ManagementUnitReference> managementUnits = null;
+  private List<StaffingGroupReference> staffingGroups = null;
+
+  public TimeOffPlanBusinessUnitAssociation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      managementUnits = new ArrayList<ManagementUnitReference>();
+      staffingGroups = new ArrayList<StaffingGroupReference>();
+    }
+  }
 
   
   /**

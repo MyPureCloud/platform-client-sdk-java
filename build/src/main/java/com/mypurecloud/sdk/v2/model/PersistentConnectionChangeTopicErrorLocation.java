@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +24,12 @@ public class PersistentConnectionChangeTopicErrorLocation  implements Serializab
   
   private String function = null;
   private String fileID = null;
-  private Integer line = null;
+  private Long line = null;
+
+  public PersistentConnectionChangeTopicErrorLocation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -62,17 +68,17 @@ public class PersistentConnectionChangeTopicErrorLocation  implements Serializab
 
   /**
    **/
-  public PersistentConnectionChangeTopicErrorLocation line(Integer line) {
+  public PersistentConnectionChangeTopicErrorLocation line(Long line) {
     this.line = line;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("line")
-  public Integer getLine() {
+  public Long getLine() {
     return line;
   }
-  public void setLine(Integer line) {
+  public void setLine(Long line) {
     this.line = line;
   }
 

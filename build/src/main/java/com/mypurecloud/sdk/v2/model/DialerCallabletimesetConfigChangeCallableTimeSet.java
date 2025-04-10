@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCallabletimesetConfigChangeCallableTime;
 import io.swagger.annotations.ApiModel;
@@ -27,13 +28,19 @@ import java.io.Serializable;
 
 public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serializable {
   
-  private List<DialerCallabletimesetConfigChangeCallableTime> callableTimes = new ArrayList<DialerCallabletimesetConfigChangeCallableTime>();
+  private List<DialerCallabletimesetConfigChangeCallableTime> callableTimes = null;
   private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerCallabletimesetConfigChangeCallableTimeSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callableTimes = new ArrayList<DialerCallabletimesetConfigChangeCallableTime>();
+    }
+  }
 
   
   /**
@@ -146,17 +153,17 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerCallabletimesetConfigChangeCallableTimeSet version(Integer version) {
+  public DialerCallabletimesetConfigChangeCallableTimeSet version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ObjectiveZone;
@@ -28,9 +29,9 @@ public class CreateObjective  implements Serializable {
   
   private String id = null;
   private String templateId = null;
-  private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
+  private List<ObjectiveZone> zones = null;
   private Boolean enabled = null;
-  private List<String> topicIds = new ArrayList<String>();
+  private List<String> topicIds = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
     public MediaTypesEnumDeserializer() {
@@ -85,8 +86,8 @@ public class CreateObjective  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<String> queueIds = new ArrayList<String>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<String> queueIds = null;
 
   private static class TopicIdsFilterTypeEnumDeserializer extends StdDeserializer<TopicIdsFilterTypeEnum> {
     public TopicIdsFilterTypeEnumDeserializer() {
@@ -135,7 +136,7 @@ public class CreateObjective  implements Serializable {
     }
   }
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
-  private List<String> evaluationFormContextIds = new ArrayList<String>();
+  private List<String> evaluationFormContextIds = null;
 
   private static class InitialDirectionEnumDeserializer extends StdDeserializer<InitialDirectionEnum> {
     public InitialDirectionEnumDeserializer() {
@@ -185,6 +186,16 @@ public class CreateObjective  implements Serializable {
   }
   private InitialDirectionEnum initialDirection = null;
   private LocalDate dateStart = null;
+
+  public CreateObjective() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      zones = new ArrayList<ObjectiveZone>();
+      topicIds = new ArrayList<String>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      queueIds = new ArrayList<String>();
+      evaluationFormContextIds = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

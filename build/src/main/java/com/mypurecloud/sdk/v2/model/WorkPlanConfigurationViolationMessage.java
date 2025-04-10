@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationMessageArgument;
@@ -76,8 +77,11 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     PAIDTIMEGREATERTHANMAXWORKTIME("PaidTimeGreaterThanMaxWorkTime"),
     PAIDTIMELESSTHANMINWORKTIME("PaidTimeLessThanMinWorkTime"),
     PAIDTIMENOTMETBYSHIFTSTARTSTOP("PaidTimeNotMetByShiftStartStop"),
+    PLANNINGPERIODMAXWORKINGWEEKENDSCANNOTBEMET("PlanningPeriodMaxWorkingWeekendsCannotBeMet"),
     SHIFTDAYSSELECTMORETHANMINWORKINGDAYS("ShiftDaysSelectMoreThanMinWorkingDays"),
     SHIFTSTOPEARLIERTHANSTART("ShiftStopEarlierThanStart"),
+    SHIFTMAXCOUNTPERPLANNINGPERIODCANNOTBEMET("ShiftMaxCountPerPlanningPeriodCannotBeMet"),
+    SHIFTMINCOUNTPERPLANNINGPERIODCANNOTBEMET("ShiftMinCountPerPlanningPeriodCannotBeMet"),
     SHIFTVARIANCECANNOTBEMET("ShiftVarianceCannotBeMet"),
     WEEKLYEXACTPAIDMINUTES("WeeklyExactPaidMinutes");
 
@@ -107,7 +111,7 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+  private List<WorkPlanValidationMessageArgument> arguments = null;
 
   private static class SeverityEnumDeserializer extends StdDeserializer<SeverityEnum> {
     public SeverityEnumDeserializer() {
@@ -157,6 +161,12 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     }
   }
   private SeverityEnum severity = null;
+
+  public WorkPlanConfigurationViolationMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+    }
+  }
 
   
   /**

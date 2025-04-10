@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerSequenceConfigChangeUriReference;
@@ -28,8 +29,8 @@ import java.io.Serializable;
 
 public class DialerSequenceConfigChangeCampaignSequence  implements Serializable {
   
-  private List<DialerSequenceConfigChangeUriReference> campaigns = new ArrayList<DialerSequenceConfigChangeUriReference>();
-  private Integer currentCampaign = null;
+  private List<DialerSequenceConfigChangeUriReference> campaigns = null;
+  private Long currentCampaign = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -86,7 +87,13 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerSequenceConfigChangeCampaignSequence() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaigns = new ArrayList<DialerSequenceConfigChangeUriReference>();
+    }
+  }
 
   
   /**
@@ -110,17 +117,17 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
   /**
    * the zero-based index of the current campaign in the campaigns list
    **/
-  public DialerSequenceConfigChangeCampaignSequence currentCampaign(Integer currentCampaign) {
+  public DialerSequenceConfigChangeCampaignSequence currentCampaign(Long currentCampaign) {
     this.currentCampaign = currentCampaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "the zero-based index of the current campaign in the campaigns list")
   @JsonProperty("currentCampaign")
-  public Integer getCurrentCampaign() {
+  public Long getCurrentCampaign() {
     return currentCampaign;
   }
-  public void setCurrentCampaign(Integer currentCampaign) {
+  public void setCurrentCampaign(Long currentCampaign) {
     this.currentCampaign = currentCampaign;
   }
 
@@ -270,17 +277,17 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerSequenceConfigChangeCampaignSequence version(Integer version) {
+  public DialerSequenceConfigChangeCampaignSequence version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

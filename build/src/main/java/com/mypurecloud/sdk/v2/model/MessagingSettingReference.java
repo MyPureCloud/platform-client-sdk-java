@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentSetting;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -36,6 +37,11 @@ public class MessagingSettingReference  implements Serializable {
   private DomainEntityRef updatedBy = null;
   private ContentSetting content = null;
   private EventSetting event = null;
+
+  public MessagingSettingReference() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

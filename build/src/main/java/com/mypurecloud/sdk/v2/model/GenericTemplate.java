@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingButtonComponent;
 import com.mypurecloud.sdk.v2.model.RecordingContentActions;
@@ -28,8 +29,14 @@ public class GenericTemplate  implements Serializable {
   private String title = null;
   private String description = null;
   private String url = null;
-  private List<RecordingButtonComponent> components = new ArrayList<RecordingButtonComponent>();
+  private List<RecordingButtonComponent> components = null;
   private RecordingContentActions actions = null;
+
+  public GenericTemplate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      components = new ArrayList<RecordingButtonComponent>();
+    }
+  }
 
   
   /**

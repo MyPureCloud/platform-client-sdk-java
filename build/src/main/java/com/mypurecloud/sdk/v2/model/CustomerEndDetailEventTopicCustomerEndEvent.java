@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -206,8 +207,8 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
-  private Integer callbackScheduledTime = null;
+  private List<String> callbackNumbers = null;
+  private Long callbackScheduledTime = null;
   private String subject = null;
 
   private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
@@ -265,25 +266,33 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     }
   }
   private MessageTypeEnum messageType = null;
-  private Integer interactingDurationMs = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private Long interactingDurationMs = null;
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
   private String divisionId = null;
+
+  public CustomerEndDetailEventTopicCustomerEndEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
    **/
-  public CustomerEndDetailEventTopicCustomerEndEvent eventTime(Integer eventTime) {
+  public CustomerEndDetailEventTopicCustomerEndEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -545,17 +554,17 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
 
   /**
    **/
-  public CustomerEndDetailEventTopicCustomerEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
+  public CustomerEndDetailEventTopicCustomerEndEvent callbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("callbackScheduledTime")
-  public Integer getCallbackScheduledTime() {
+  public Long getCallbackScheduledTime() {
     return callbackScheduledTime;
   }
-  public void setCallbackScheduledTime(Integer callbackScheduledTime) {
+  public void setCallbackScheduledTime(Long callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
@@ -596,17 +605,17 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
 
   /**
    **/
-  public CustomerEndDetailEventTopicCustomerEndEvent interactingDurationMs(Integer interactingDurationMs) {
+  public CustomerEndDetailEventTopicCustomerEndEvent interactingDurationMs(Long interactingDurationMs) {
     this.interactingDurationMs = interactingDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("interactingDurationMs")
-  public Integer getInteractingDurationMs() {
+  public Long getInteractingDurationMs() {
     return interactingDurationMs;
   }
-  public void setInteractingDurationMs(Integer interactingDurationMs) {
+  public void setInteractingDurationMs(Long interactingDurationMs) {
     this.interactingDurationMs = interactingDurationMs;
   }
 

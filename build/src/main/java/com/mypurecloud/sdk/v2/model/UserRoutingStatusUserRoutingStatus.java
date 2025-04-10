@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusErrorInfo;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusRoutingStatus;
@@ -26,6 +27,11 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
   private String id = null;
   private UserRoutingStatusRoutingStatus routingStatus = null;
   private UserRoutingStatusErrorInfo errorInfo = null;
+
+  public UserRoutingStatusUserRoutingStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

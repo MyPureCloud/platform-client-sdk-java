@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.LanguageReference;
@@ -44,7 +45,7 @@ public class Worktype  implements Serializable {
   private Date dateModified = null;
   private WorkbinReference defaultWorkbin = null;
   private WorkitemStatusReference defaultStatus = null;
-  private List<WorkitemStatus> statuses = new ArrayList<WorkitemStatus>();
+  private List<WorkitemStatus> statuses = null;
   private Integer defaultDurationSeconds = null;
   private Integer defaultExpirationSeconds = null;
   private Integer defaultDueDurationSeconds = null;
@@ -53,7 +54,7 @@ public class Worktype  implements Serializable {
   private Integer defaultTtlSeconds = null;
   private UserReference modifiedBy = null;
   private WorkitemQueueReference defaultQueue = null;
-  private List<RoutingSkillReference> defaultSkills = new ArrayList<RoutingSkillReference>();
+  private List<RoutingSkillReference> defaultSkills = null;
   private Boolean assignmentEnabled = null;
   private WorkitemSchema schema = null;
   private Integer serviceLevelTarget = null;
@@ -61,6 +62,13 @@ public class Worktype  implements Serializable {
   private WorkitemFlowReference flow = null;
   private WorkitemScriptReference defaultScript = null;
   private String selfUri = null;
+
+  public Worktype() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      statuses = new ArrayList<WorkitemStatus>();
+      defaultSkills = new ArrayList<RoutingSkillReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

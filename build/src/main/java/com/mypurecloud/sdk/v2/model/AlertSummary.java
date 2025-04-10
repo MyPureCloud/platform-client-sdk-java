@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class AlertSummary  implements Serializable {
   
-  private List<AlertSummaryEntity> entities = new ArrayList<AlertSummaryEntity>();
+  private List<AlertSummaryEntity> entities = null;
   private AddressableEntityRef conversation = null;
 
   private static class MetricTypeEnumDeserializer extends StdDeserializer<MetricTypeEnum> {
@@ -77,6 +78,12 @@ public class AlertSummary  implements Serializable {
   }
   private MetricTypeEnum metricType = null;
   private Boolean entitiesAreTeamMembers = null;
+
+  public AlertSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AlertSummaryEntity>();
+    }
+  }
 
   
   /**

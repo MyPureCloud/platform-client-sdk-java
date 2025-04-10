@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ValidationError;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class ValidationResult  implements Serializable {
   
   private Boolean separatorValid = null;
   private Boolean fileEncodingValid = null;
-  private List<ValidationError> errors = new ArrayList<ValidationError>();
+  private List<ValidationError> errors = null;
+
+  public ValidationResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errors = new ArrayList<ValidationError>();
+    }
+  }
 
   
   /**

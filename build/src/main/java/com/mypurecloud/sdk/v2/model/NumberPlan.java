@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DigitLength;
@@ -91,11 +92,17 @@ public class NumberPlan  implements Serializable {
   private String match = null;
   private String normalizedFormat = null;
   private Integer priority = null;
-  private List<Number> numbers = new ArrayList<Number>();
+  private List<Number> numbers = null;
   private DigitLength digitLength = null;
   private String classification = null;
   private String matchType = null;
   private String selfUri = null;
+
+  public NumberPlan() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      numbers = new ArrayList<Number>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

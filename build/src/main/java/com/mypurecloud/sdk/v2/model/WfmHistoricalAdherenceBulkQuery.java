@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkItem;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class WfmHistoricalAdherenceBulkQuery  implements Serializable {
   
-  private List<WfmHistoricalAdherenceBulkItem> items = new ArrayList<WfmHistoricalAdherenceBulkItem>();
+  private List<WfmHistoricalAdherenceBulkItem> items = null;
   private String timeZone = null;
+
+  public WfmHistoricalAdherenceBulkQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      items = new ArrayList<WfmHistoricalAdherenceBulkItem>();
+    }
+  }
 
   
   /**

@@ -6,15 +6,15 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **direction** | **String** |  |  [optional] |
-| **expectedPages** | **Integer** |  |  [optional] |
-| **activePage** | **Integer** |  |  [optional] |
-| **linesTransmitted** | **Integer** |  |  [optional] |
-| **bytesTransmitted** | **Integer** |  |  [optional] |
-| **dataRate** | **Integer** |  |  [optional] |
-| **pageErrors** | **Integer** |  |  [optional] |
-| **lineErrors** | **Integer** |  |  [optional] |
+| **expectedPages** | **Long** |  |  [optional] |
+| **activePage** | **Long** |  |  [optional] |
+| **linesTransmitted** | **Long** |  |  [optional] |
+| **bytesTransmitted** | **Long** |  |  [optional] |
+| **dataRate** | **Long** |  |  [optional] |
+| **pageErrors** | **Long** |  |  [optional] |
+| **lineErrors** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

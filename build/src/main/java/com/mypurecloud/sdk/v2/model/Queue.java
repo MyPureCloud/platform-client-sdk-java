@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
@@ -53,7 +54,7 @@ public class Queue  implements Serializable {
   private Integer userMemberCount = null;
   private Integer joinedMemberCount = null;
   private QueueMediaSettings mediaSettings = null;
-  private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
+  private List<RoutingRule> routingRules = null;
   private ConditionalGroupRouting conditionalGroupRouting = null;
   private Bullseye bullseye = null;
 
@@ -203,7 +204,7 @@ public class Queue  implements Serializable {
     }
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
-  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
+  private List<MemberGroup> memberGroups = null;
   private DomainEntityRef queueFlow = null;
   private DomainEntityRef emailInQueueFlow = null;
   private DomainEntityRef messageInQueueFlow = null;
@@ -224,6 +225,13 @@ public class Queue  implements Serializable {
   private String peerId = null;
   private Boolean suppressInQueueCallRecording = null;
   private String selfUri = null;
+
+  public Queue() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routingRules = new ArrayList<RoutingRule>();
+      memberGroups = new ArrayList<MemberGroup>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UnansweredPhrase;
 import io.swagger.annotations.ApiModel;
@@ -26,10 +27,16 @@ public class UnansweredPhraseGroup  implements Serializable {
   
   private String id = null;
   private String label = null;
-  private List<UnansweredPhrase> phrases = new ArrayList<UnansweredPhrase>();
+  private List<UnansweredPhrase> phrases = null;
   private Integer unlinkedPhraseHitCount = null;
   private Integer unlinkedPhraseCount = null;
   private String selfUri = null;
+
+  public UnansweredPhraseGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phrases = new ArrayList<UnansweredPhrase>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

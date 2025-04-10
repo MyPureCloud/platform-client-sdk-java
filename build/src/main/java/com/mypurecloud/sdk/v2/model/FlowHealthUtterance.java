@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConfusionDetails;
@@ -139,10 +140,16 @@ public class FlowHealthUtterance  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<StaticValidationResultsEnum> staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+  private List<StaticValidationResultsEnum> staticValidationResults = null;
   private OutlierInfo outlierInfo = null;
   private ConfusionDetails confusionInfo = null;
   private String selfUri = null;
+
+  public FlowHealthUtterance() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

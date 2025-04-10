@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +29,13 @@ public class WfmTimeOffBalanceJobTopicTimeOffBalance  implements Serializable {
   private String hrisTimeOffTypeId = null;
   private String hrisTimeOffTypeSecondaryId = null;
   private Date startDate = null;
-  private List<Integer> balanceMinutesPerDay = new ArrayList<Integer>();
+  private List<Long> balanceMinutesPerDay = null;
+
+  public WfmTimeOffBalanceJobTopicTimeOffBalance() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      balanceMinutesPerDay = new ArrayList<Long>();
+    }
+  }
 
   
   /**
@@ -101,17 +108,17 @@ public class WfmTimeOffBalanceJobTopicTimeOffBalance  implements Serializable {
 
   /**
    **/
-  public WfmTimeOffBalanceJobTopicTimeOffBalance balanceMinutesPerDay(List<Integer> balanceMinutesPerDay) {
+  public WfmTimeOffBalanceJobTopicTimeOffBalance balanceMinutesPerDay(List<Long> balanceMinutesPerDay) {
     this.balanceMinutesPerDay = balanceMinutesPerDay;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("balanceMinutesPerDay")
-  public List<Integer> getBalanceMinutesPerDay() {
+  public List<Long> getBalanceMinutesPerDay() {
     return balanceMinutesPerDay;
   }
-  public void setBalanceMinutesPerDay(List<Integer> balanceMinutesPerDay) {
+  public void setBalanceMinutesPerDay(List<Long> balanceMinutesPerDay) {
     this.balanceMinutesPerDay = balanceMinutesPerDay;
   }
 

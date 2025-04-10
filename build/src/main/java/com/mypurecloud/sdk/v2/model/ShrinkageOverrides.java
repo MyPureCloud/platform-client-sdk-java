@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShrinkageOverride;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class ShrinkageOverrides  implements Serializable {
   
   private Boolean clear = null;
-  private List<ShrinkageOverride> values = new ArrayList<ShrinkageOverride>();
+  private List<ShrinkageOverride> values = null;
+
+  public ShrinkageOverrides() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<ShrinkageOverride>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -30,7 +31,7 @@ import java.io.Serializable;
 public class Predictor  implements Serializable {
   
   private String id = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> queues = null;
   private String kpi = null;
   private Integer routingTimeoutSeconds = null;
   private PredictorSchedule schedule = null;
@@ -87,8 +88,15 @@ public class Predictor  implements Serializable {
   private Date dateModified = null;
   private PredictorWorkloadBalancing workloadBalancingConfig = null;
   private String errorCode = null;
-  private List<PredictorModelBrief> models = new ArrayList<PredictorModelBrief>();
+  private List<PredictorModelBrief> models = null;
   private String selfUri = null;
+
+  public Predictor() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      queues = new ArrayList<AddressableEntityRef>();
+      models = new ArrayList<PredictorModelBrief>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

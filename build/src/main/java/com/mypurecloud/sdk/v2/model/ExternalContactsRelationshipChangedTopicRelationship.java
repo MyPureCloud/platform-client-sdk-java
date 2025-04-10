@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContactsRelationshipChangedTopicDivision;
 import com.mypurecloud.sdk.v2.model.ExternalContactsRelationshipChangedTopicExternalOrganization;
@@ -32,6 +33,11 @@ public class ExternalContactsRelationshipChangedTopicRelationship  implements Se
   private String relationship = null;
   private Date createDate = null;
   private Date modifyDate = null;
+
+  public ExternalContactsRelationshipChangedTopicRelationship() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

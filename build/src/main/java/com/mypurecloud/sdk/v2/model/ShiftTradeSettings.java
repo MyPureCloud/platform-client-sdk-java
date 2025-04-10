@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ShiftTradeActivityRule;
@@ -229,7 +230,13 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean requiresMatchingLanguages = null;
   private Boolean requiresMatchingSkills = null;
   private Boolean requiresMatchingPlanningGroups = null;
-  private List<ShiftTradeActivityRule> activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
+  private List<ShiftTradeActivityRule> activityCategoryRules = null;
+
+  public ShiftTradeSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
+    }
+  }
 
   
   /**

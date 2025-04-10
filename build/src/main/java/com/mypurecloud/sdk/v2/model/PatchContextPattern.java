@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchEntityTypeCriteria;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class PatchContextPattern  implements Serializable {
   
-  private List<PatchEntityTypeCriteria> criteria = new ArrayList<PatchEntityTypeCriteria>();
+  private List<PatchEntityTypeCriteria> criteria = null;
+
+  public PatchContextPattern() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      criteria = new ArrayList<PatchEntityTypeCriteria>();
+    }
+  }
 
   
   /**

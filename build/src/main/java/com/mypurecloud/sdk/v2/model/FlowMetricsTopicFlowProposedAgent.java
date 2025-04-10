@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,24 +22,29 @@ import java.io.Serializable;
 
 public class FlowMetricsTopicFlowProposedAgent  implements Serializable {
   
-  private Integer agentRank = null;
+  private Long agentRank = null;
   private String proposedAgentId = null;
+
+  public FlowMetricsTopicFlowProposedAgent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    * Proposed agent rank for this conversation from predictive routing (lower is better)
    **/
-  public FlowMetricsTopicFlowProposedAgent agentRank(Integer agentRank) {
+  public FlowMetricsTopicFlowProposedAgent agentRank(Long agentRank) {
     this.agentRank = agentRank;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Proposed agent rank for this conversation from predictive routing (lower is better)")
   @JsonProperty("agentRank")
-  public Integer getAgentRank() {
+  public Long getAgentRank() {
     return agentRank;
   }
-  public void setAgentRank(Integer agentRank) {
+  public void setAgentRank(Long agentRank) {
     this.agentRank = agentRank;
   }
 

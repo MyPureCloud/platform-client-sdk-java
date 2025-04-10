@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicDetail;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicLimit;
@@ -29,15 +30,22 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
   
   private String message = null;
   private String code = null;
-  private Integer status = null;
+  private Long status = null;
   private String entityId = null;
   private String entityName = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationScreenShareEventTopicDetail> details = new ArrayList<ConversationScreenShareEventTopicDetail>();
-  private List<ConversationScreenShareEventTopicErrorBody> errors = new ArrayList<ConversationScreenShareEventTopicErrorBody>();
+  private List<ConversationScreenShareEventTopicDetail> details = null;
+  private List<ConversationScreenShareEventTopicErrorBody> errors = null;
   private ConversationScreenShareEventTopicLimit limit = null;
+
+  public ConversationScreenShareEventTopicErrorBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<ConversationScreenShareEventTopicDetail>();
+      errors = new ArrayList<ConversationScreenShareEventTopicErrorBody>();
+    }
+  }
 
   
   /**
@@ -76,17 +84,17 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
 
   /**
    **/
-  public ConversationScreenShareEventTopicErrorBody status(Integer status) {
+  public ConversationScreenShareEventTopicErrorBody status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 

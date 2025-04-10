@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowHealthErrorInfo;
@@ -126,8 +127,15 @@ public class HealthInfo  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<StaticValidationResultsEnum> staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
-  private List<FlowHealthIntentUtterance> utterances = new ArrayList<FlowHealthIntentUtterance>();
+  private List<StaticValidationResultsEnum> staticValidationResults = null;
+  private List<FlowHealthIntentUtterance> utterances = null;
+
+  public HealthInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      staticValidationResults = new ArrayList<StaticValidationResultsEnum>();
+      utterances = new ArrayList<FlowHealthIntentUtterance>();
+    }
+  }
 
   
   /**

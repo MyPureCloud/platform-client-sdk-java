@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.InsightsSummaryMetricItem;
 import com.mypurecloud.sdk.v2.model.InsightsSummaryOverallItem;
@@ -27,9 +28,15 @@ import java.io.Serializable;
 public class InsightsSummaryUserItem  implements Serializable {
   
   private UserReference user = null;
-  private List<InsightsSummaryMetricItem> metricData = new ArrayList<InsightsSummaryMetricItem>();
+  private List<InsightsSummaryMetricItem> metricData = null;
   private InsightsSummaryOverallItem overallData = null;
   private Integer ranking = null;
+
+  public InsightsSummaryUserItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metricData = new ArrayList<InsightsSummaryMetricItem>();
+    }
+  }
 
   
   /**

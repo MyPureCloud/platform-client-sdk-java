@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserPresenceEvent;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 
 public class BatchUserPresenceEventRequest  implements Serializable {
   
-  private List<UserPresenceEvent> userPresenceEvents = new ArrayList<UserPresenceEvent>();
+  private List<UserPresenceEvent> userPresenceEvents = null;
+
+  public BatchUserPresenceEventRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userPresenceEvents = new ArrayList<UserPresenceEvent>();
+    }
+  }
 
   
   /**

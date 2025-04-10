@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuIntradayForecastData;
@@ -80,11 +81,19 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
   }
   private MediaTypeEnum mediaType = null;
   private WfmBuIntradayDataUpdateTopicBuIntradayForecastData forecastDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayForecastData> forecastDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayForecastData>();
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayForecastData> forecastDataPerInterval = null;
   private WfmBuIntradayDataUpdateTopicBuIntradayScheduleData scheduleDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData> scheduleDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData>();
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData> scheduleDataPerInterval = null;
   private WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData performancePredictionDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData> performancePredictionDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>();
+  private List<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData> performancePredictionDataPerInterval = null;
+
+  public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      forecastDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData>();
+      performancePredictionDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>();
+    }
+  }
 
   
   /**

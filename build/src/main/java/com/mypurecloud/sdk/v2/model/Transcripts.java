@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,9 +24,17 @@ import java.io.Serializable;
 
 public class Transcripts  implements Serializable {
   
-  private List<String> exactMatch = new ArrayList<String>();
-  private List<String> contains = new ArrayList<String>();
-  private List<String> doesNotContain = new ArrayList<String>();
+  private List<String> exactMatch = null;
+  private List<String> contains = null;
+  private List<String> doesNotContain = null;
+
+  public Transcripts() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      exactMatch = new ArrayList<String>();
+      contains = new ArrayList<String>();
+      doesNotContain = new ArrayList<String>();
+    }
+  }
 
   
   /**

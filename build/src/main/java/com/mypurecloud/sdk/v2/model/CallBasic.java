@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -254,7 +255,7 @@ public class CallBasic  implements Serializable {
   private Boolean held = null;
   private Boolean securePause = null;
   private String recordingId = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
   private ErrorInfo errorInfo = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -325,7 +326,7 @@ public class CallBasic  implements Serializable {
   private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<DisconnectReason> disconnectReasons = new ArrayList<DisconnectReason>();
+  private List<DisconnectReason> disconnectReasons = null;
   private FaxStatus faxStatus = null;
   private String provider = null;
   private String scriptId = null;
@@ -339,6 +340,13 @@ public class CallBasic  implements Serializable {
   private String agentAssistantId = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
   private Disposition disposition = null;
+
+  public CallBasic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      segments = new ArrayList<Segment>();
+      disconnectReasons = new ArrayList<DisconnectReason>();
+    }
+  }
 
   
   /**

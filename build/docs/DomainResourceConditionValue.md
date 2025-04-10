@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **user** | [**User**](User) |  |  [optional] |
 | **queue** | [**Queue**](Queue) |  |  [optional] |
+| **team** | [**Team**](Team) |  |  [optional] |
 | **value** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
@@ -19,9 +20,10 @@
 | SCALAR | &quot;SCALAR&quot; | 
 | VARIABLE | &quot;VARIABLE&quot; | 
 | USER | &quot;USER&quot; | 
+| TEAM | &quot;TEAM&quot; | 
 | QUEUE | &quot;QUEUE&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

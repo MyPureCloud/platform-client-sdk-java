@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowActivityQueryFilter;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class FlowActivityQuery  implements Serializable {
   
-  private List<FlowActivityQueryMetric> metrics = new ArrayList<FlowActivityQueryMetric>();
+  private List<FlowActivityQueryMetric> metrics = null;
 
   private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
     public GroupByEnumDeserializer() {
@@ -95,7 +96,7 @@ public class FlowActivityQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private FlowActivityQueryFilter filter = null;
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
@@ -146,6 +147,13 @@ public class FlowActivityQuery  implements Serializable {
     }
   }
   private OrderEnum order = null;
+
+  public FlowActivityQuery() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<FlowActivityQueryMetric>();
+      groupBy = new ArrayList<GroupByEnum>();
+    }
+  }
 
   
   /**

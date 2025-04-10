@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ResponseAssetFilter;
@@ -76,7 +77,13 @@ public class ResponseAssetSearchRequest  implements Serializable {
   }
   private SortOrderEnum sortOrder = null;
   private String sortBy = null;
-  private List<ResponseAssetFilter> query = new ArrayList<ResponseAssetFilter>();
+  private List<ResponseAssetFilter> query = null;
+
+  public ResponseAssetSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      query = new ArrayList<ResponseAssetFilter>();
+    }
+  }
 
   
   /**

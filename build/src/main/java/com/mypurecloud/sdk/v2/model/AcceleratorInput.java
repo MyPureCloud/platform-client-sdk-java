@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AcceleratorParameter;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class AcceleratorInput  implements Serializable {
   
   private Boolean dryRun = null;
   private String acceleratorId = null;
-  private List<AcceleratorParameter> parameters = new ArrayList<AcceleratorParameter>();
+  private List<AcceleratorParameter> parameters = null;
+
+  public AcceleratorInput() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      parameters = new ArrayList<AcceleratorParameter>();
+    }
+  }
 
   
   /**

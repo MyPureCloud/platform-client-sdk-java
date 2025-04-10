@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
@@ -27,6 +28,11 @@ public class AgentManagementUnitReference  implements Serializable {
   private UserReference user = null;
   private ManagementUnitReference managementUnit = null;
   private BusinessUnitReference businessUnit = null;
+
+  public AgentManagementUnitReference() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

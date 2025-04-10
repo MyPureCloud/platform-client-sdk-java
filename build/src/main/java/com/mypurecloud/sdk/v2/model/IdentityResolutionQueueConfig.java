@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import io.swagger.annotations.ApiModel;
@@ -23,6 +24,11 @@ import java.io.Serializable;
 public class IdentityResolutionQueueConfig  implements Serializable {
   
   private IdentityResolutionConfig callOnBehalfOfQueue = null;
+
+  public IdentityResolutionQueueConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

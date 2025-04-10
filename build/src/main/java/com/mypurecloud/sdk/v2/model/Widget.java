@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
@@ -348,7 +349,7 @@ public class Widget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
   private String displayText = null;
   private String displayTextColor = null;
   private String webContentUrl = null;
@@ -516,7 +517,7 @@ public class Widget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<PeriodsEnum> periods = new ArrayList<PeriodsEnum>();
+  private List<PeriodsEnum> periods = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
     public MediaTypesEnumDeserializer() {
@@ -571,8 +572,8 @@ public class Widget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<Warning> warnings = new ArrayList<Warning>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<Warning> warnings = null;
   private Boolean showTimeInStatus = null;
   private Boolean showOfflineAgents = null;
 
@@ -635,7 +636,7 @@ public class Widget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SelectedStatusesEnum> selectedStatuses = new ArrayList<SelectedStatusesEnum>();
+  private List<SelectedStatusesEnum> selectedStatuses = null;
 
   private static class SelectedSegmentTypesEnumDeserializer extends StdDeserializer<SelectedSegmentTypesEnum> {
     public SelectedSegmentTypesEnumDeserializer() {
@@ -701,7 +702,7 @@ public class Widget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SelectedSegmentTypesEnum> selectedSegmentTypes = new ArrayList<SelectedSegmentTypesEnum>();
+  private List<SelectedSegmentTypesEnum> selectedSegmentTypes = null;
 
   private static class AgentInteractionSortOrderEnumDeserializer extends StdDeserializer<AgentInteractionSortOrderEnum> {
     public AgentInteractionSortOrderEnumDeserializer() {
@@ -750,6 +751,17 @@ public class Widget  implements Serializable {
     }
   }
   private AgentInteractionSortOrderEnum agentInteractionSortOrder = null;
+
+  public Widget() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<MetricsEnum>();
+      periods = new ArrayList<PeriodsEnum>();
+      mediaTypes = new ArrayList<MediaTypesEnum>();
+      warnings = new ArrayList<Warning>();
+      selectedStatuses = new ArrayList<SelectedStatusesEnum>();
+      selectedSegmentTypes = new ArrayList<SelectedSegmentTypesEnum>();
+    }
+  }
 
   
   /**

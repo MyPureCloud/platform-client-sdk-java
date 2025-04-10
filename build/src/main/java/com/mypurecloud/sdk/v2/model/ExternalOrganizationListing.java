@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class ExternalOrganizationListing  implements Serializable, PagedResource<ExternalOrganization> {
   
-  private List<ExternalOrganization> entities = new ArrayList<ExternalOrganization>();
+  private List<ExternalOrganization> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -36,6 +37,12 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public ExternalOrganizationListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ExternalOrganization>();
+    }
+  }
 
   
   /**

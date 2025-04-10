@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMessageContent;
@@ -86,8 +87,8 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<ConversationMessageContent> content = new ArrayList<ConversationMessageContent>();
-  private List<ConversationMessageEvent> events = new ArrayList<ConversationMessageEvent>();
+  private List<ConversationMessageContent> content = null;
+  private List<ConversationMessageEvent> events = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -140,7 +141,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<ConversationReason> reasons = new ArrayList<ConversationReason>();
+  private List<ConversationReason> reasons = null;
 
   private static class OriginatingEntityEnumDeserializer extends StdDeserializer<OriginatingEntityEnum> {
     public OriginatingEntityEnumDeserializer() {
@@ -240,6 +241,14 @@ public class ConversationNormalizedMessage  implements Serializable {
   private DirectionEnum direction = null;
   private Map<String, String> metadata = null;
   private String byoSmsIntegrationId = null;
+
+  public ConversationNormalizedMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      content = new ArrayList<ConversationMessageContent>();
+      events = new ArrayList<ConversationMessageEvent>();
+      reasons = new ArrayList<ConversationReason>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Unique ID of the message. Message receipts will have the same ID as the message they reference.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Annotation;
@@ -91,10 +92,10 @@ public class Recording  implements Serializable {
   }
   private MediaSubtypeEnum mediaSubtype = null;
   private String mediaSubject = null;
-  private List<Annotation> annotations = new ArrayList<Annotation>();
-  private List<ChatMessage> transcript = new ArrayList<ChatMessage>();
-  private List<RecordingEmailMessage> emailTranscript = new ArrayList<RecordingEmailMessage>();
-  private List<RecordingMessagingMessage> messagingTranscript = new ArrayList<RecordingMessagingMessage>();
+  private List<Annotation> annotations = null;
+  private List<ChatMessage> transcript = null;
+  private List<RecordingEmailMessage> emailTranscript = null;
+  private List<RecordingMessagingMessage> messagingTranscript = null;
 
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
     public FileStateEnumDeserializer() {
@@ -208,7 +209,7 @@ public class Recording  implements Serializable {
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
-  private List<User> users = new ArrayList<User>();
+  private List<User> users = null;
 
   private static class RecordingFileRoleEnumDeserializer extends StdDeserializer<RecordingFileRoleEnum> {
     public RecordingFileRoleEnumDeserializer() {
@@ -307,6 +308,16 @@ public class Recording  implements Serializable {
   private Date originalRecordingStartTime = null;
   private Date creationTime = null;
   private String selfUri = null;
+
+  public Recording() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      annotations = new ArrayList<Annotation>();
+      transcript = new ArrayList<ChatMessage>();
+      emailTranscript = new ArrayList<RecordingEmailMessage>();
+      messagingTranscript = new ArrayList<RecordingMessagingMessage>();
+      users = new ArrayList<User>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

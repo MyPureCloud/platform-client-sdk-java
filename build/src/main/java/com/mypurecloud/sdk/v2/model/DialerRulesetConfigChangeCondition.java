@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeContactColumnToDataActionFieldMapping;
@@ -141,7 +142,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> codes = new ArrayList<String>();
+  private List<String> codes = null;
 
   private static class PropertyTypeEnumDeserializer extends StdDeserializer<PropertyTypeEnum> {
     public PropertyTypeEnumDeserializer() {
@@ -197,8 +198,16 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;
-  private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
-  private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
+  private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
+  private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = null;
+
+  public DialerRulesetConfigChangeCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      codes = new ArrayList<String>();
+      contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
+      predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Dependency;
@@ -150,9 +151,16 @@ public class DependencyObject  implements Serializable {
   private Boolean deleted = null;
   private Boolean updated = null;
   private Boolean stateUnknown = null;
-  private List<Dependency> consumedResources = new ArrayList<Dependency>();
-  private List<Dependency> consumingResources = new ArrayList<Dependency>();
+  private List<Dependency> consumedResources = null;
+  private List<Dependency> consumingResources = null;
   private String selfUri = null;
+
+  public DependencyObject() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      consumedResources = new ArrayList<Dependency>();
+      consumingResources = new ArrayList<Dependency>();
+    }
+  }
 
   
   /**

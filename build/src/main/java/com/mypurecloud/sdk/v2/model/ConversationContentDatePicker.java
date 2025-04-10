@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationContentDatePickerAvailableTime;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,13 @@ public class ConversationContentDatePicker  implements Serializable {
   private String imageUrl = null;
   private Date dateMinimum = null;
   private Date dateMaximum = null;
-  private List<ConversationContentDatePickerAvailableTime> availableTimes = new ArrayList<ConversationContentDatePickerAvailableTime>();
+  private List<ConversationContentDatePickerAvailableTime> availableTimes = null;
+
+  public ConversationContentDatePicker() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      availableTimes = new ArrayList<ConversationContentDatePickerAvailableTime>();
+    }
+  }
 
   
   /**

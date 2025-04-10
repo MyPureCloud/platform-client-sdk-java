@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class EvaluationQualityV2TopicEvaluationScoringSet  implements Serializable {
   
-  private Integer totalScore = null;
-  private Integer totalCriticalScore = null;
+  private Long totalScore = null;
+  private Long totalCriticalScore = null;
+
+  public EvaluationQualityV2TopicEvaluationScoringSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationScoringSet totalScore(Integer totalScore) {
+  public EvaluationQualityV2TopicEvaluationScoringSet totalScore(Long totalScore) {
     this.totalScore = totalScore;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("totalScore")
-  public Integer getTotalScore() {
+  public Long getTotalScore() {
     return totalScore;
   }
-  public void setTotalScore(Integer totalScore) {
+  public void setTotalScore(Long totalScore) {
     this.totalScore = totalScore;
   }
 
 
   /**
    **/
-  public EvaluationQualityV2TopicEvaluationScoringSet totalCriticalScore(Integer totalCriticalScore) {
+  public EvaluationQualityV2TopicEvaluationScoringSet totalCriticalScore(Long totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("totalCriticalScore")
-  public Integer getTotalCriticalScore() {
+  public Long getTotalCriticalScore() {
     return totalCriticalScore;
   }
-  public void setTotalCriticalScore(Integer totalCriticalScore) {
+  public void setTotalCriticalScore(Long totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
   }
 

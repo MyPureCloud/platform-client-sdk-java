@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GeneralTopic;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class GeneralTopicsEntityListing  implements Serializable {
   
-  private List<GeneralTopic> entities = new ArrayList<GeneralTopic>();
+  private List<GeneralTopic> entities = null;
+
+  public GeneralTopicsEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<GeneralTopic>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupResponse;
 import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class ForecastPlanningGroupsResponse  implements Serializable {
   
-  private List<ForecastPlanningGroupResponse> entities = new ArrayList<ForecastPlanningGroupResponse>();
+  private List<ForecastPlanningGroupResponse> entities = null;
   private WfmServiceGoalImpactSettings businessUnitServiceGoalImpact = null;
+
+  public ForecastPlanningGroupsResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ForecastPlanningGroupResponse>();
+    }
+  }
 
   
   /**

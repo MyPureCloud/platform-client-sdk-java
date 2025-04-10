@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregateDataContainer;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class RateLimitAggregateQueryResponse  implements Serializable {
   
-  private List<RateLimitAggregateDataContainer> results = new ArrayList<RateLimitAggregateDataContainer>();
+  private List<RateLimitAggregateDataContainer> results = null;
+
+  public RateLimitAggregateQueryResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<RateLimitAggregateDataContainer>();
+    }
+  }
 
   
   /**

@@ -7,8 +7,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAuthorizationDivision**](ObjectsApi#deleteAuthorizationDivision) | Delete a division. |
 | [**getAuthorizationDivision**](ObjectsApi#getAuthorizationDivision) | Returns an authorization division. |
 | [**getAuthorizationDivisions**](ObjectsApi#getAuthorizationDivisions) | Retrieve a list of all divisions defined for the organization |
+| [**getAuthorizationDivisionsDeleted**](ObjectsApi#getAuthorizationDivisionsDeleted) | Get a list of soft deleted divisions for the org |
 | [**getAuthorizationDivisionsHome**](ObjectsApi#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
 | [**getAuthorizationDivisionsLimit**](ObjectsApi#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
+| [**getAuthorizationDivisionsQuery**](ObjectsApi#getAuthorizationDivisionsQuery) | Retrieve a list of all divisions defined for the organization with cursor |
 | [**postAuthorizationDivisionObject**](ObjectsApi#postAuthorizationDivisionObject) | Assign a list of objects to a division |
 | [**postAuthorizationDivisionRestore**](ObjectsApi#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
 | [**postAuthorizationDivisions**](ObjectsApi#postAuthorizationDivisions) | Create a division. |
@@ -212,6 +214,67 @@ try {
 [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
 
 
+# **getAuthorizationDivisionsDeleted**
+
+
+> [AuthzDivisionEntityListing](AuthzDivisionEntityListing) getAuthorizationDivisionsDeleted(pageNumber, pageSize)
+
+Get a list of soft deleted divisions for the org
+
+Wraps GET /api/v2/authorization/divisions/deleted  
+
+Requires ANY permissions: 
+
+* authorization:divisionDeleted:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ObjectsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ObjectsApi apiInstance = new ObjectsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisionsDeleted(pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ObjectsApi#getAuthorizationDivisionsDeleted");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
+
+
 # **getAuthorizationDivisionsHome**
 
 
@@ -320,6 +383,74 @@ This endpoint does not require any parameters.
 ### Return type
 
 **Integer**
+
+
+# **getAuthorizationDivisionsQuery**
+
+
+> [AuthzDivisionCursorListing](AuthzDivisionCursorListing) getAuthorizationDivisionsQuery(before, after, pageSize, id, name)
+
+Retrieve a list of all divisions defined for the organization with cursor
+
+Use \"after\" and \"before\" param to fetch next/previous page}
+
+Wraps GET /api/v2/authorization/divisions/query  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ObjectsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ObjectsApi apiInstance = new ObjectsApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+List<String> id = Arrays.asList(null); // List<String> | Optionally request specific divisions by their IDs
+String name = "name_example"; // String | Optionally request specific divisions by division name
+try {
+    AuthzDivisionCursorListing result = apiInstance.getAuthorizationDivisionsQuery(before, after, pageSize, id, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ObjectsApi#getAuthorizationDivisionsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Optionally request specific divisions by their IDs | [optional] 
+| **name** | **String**| Optionally request specific divisions by division name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthzDivisionCursorListing**](AuthzDivisionCursorListing)
 
 
 # **postAuthorizationDivisionObject**
@@ -567,4 +698,4 @@ try {
 [**AuthzDivision**](AuthzDivision)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

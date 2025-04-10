@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateShareRequestMember;
@@ -124,7 +125,13 @@ public class CreateShareRequest  implements Serializable {
   }
   private MemberTypeEnum memberType = null;
   private SharedEntity member = null;
-  private List<CreateShareRequestMember> members = new ArrayList<CreateShareRequestMember>();
+  private List<CreateShareRequestMember> members = null;
+
+  public CreateShareRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      members = new ArrayList<CreateShareRequestMember>();
+    }
+  }
 
   
   /**

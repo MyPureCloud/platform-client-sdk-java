@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentTextProperties;
 import io.swagger.annotations.ApiModel;
@@ -74,9 +75,15 @@ public class DocumentText  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MarksEnum> marks = new ArrayList<MarksEnum>();
+  private List<MarksEnum> marks = null;
   private String hyperlink = null;
   private DocumentTextProperties properties = null;
+
+  public DocumentText() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      marks = new ArrayList<MarksEnum>();
+    }
+  }
 
   
   /**

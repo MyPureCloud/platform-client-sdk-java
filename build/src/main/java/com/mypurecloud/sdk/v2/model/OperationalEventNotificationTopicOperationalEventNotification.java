@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OperationalEventNotificationTopicEventEntity;
 import io.swagger.annotations.ApiModel;
@@ -33,7 +34,12 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String entityType = null;
   private String conversationId = null;
   private String entityToken = null;
-  private Integer timestamp = null;
+  private Long timestamp = null;
+
+  public OperationalEventNotificationTopicOperationalEventNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -225,17 +231,17 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
-  public OperationalEventNotificationTopicOperationalEventNotification timestamp(Integer timestamp) {
+  public OperationalEventNotificationTopicOperationalEventNotification timestamp(Long timestamp) {
     this.timestamp = timestamp;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timestamp")
-  public Integer getTimestamp() {
+  public Long getTimestamp() {
     return timestamp;
   }
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(Long timestamp) {
     this.timestamp = timestamp;
   }
 

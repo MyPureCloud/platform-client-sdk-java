@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmScheduleReference;
@@ -31,8 +32,8 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   private String description = null;
   private Date dateStart = null;
   private Integer lengthInMinutes = null;
-  private List<String> conversationIds = new ArrayList<String>();
-  private List<String> documentIds = new ArrayList<String>();
+  private List<String> conversationIds = null;
+  private List<String> documentIds = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -83,9 +84,17 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   }
   private StatusEnum status = null;
   private WfmScheduleReference wfmSchedule = null;
-  private List<String> externalLinks = new ArrayList<String>();
+  private List<String> externalLinks = null;
   private String location = null;
   private Boolean shareInsightsData = null;
+
+  public UpdateCoachingAppointmentRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationIds = new ArrayList<String>();
+      documentIds = new ArrayList<String>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
 
   
   /**

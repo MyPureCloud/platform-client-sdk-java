@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmIntradayDataUpdateTopicIntradayDataGroup;
 import com.mypurecloud.sdk.v2.model.WfmIntradayDataUpdateTopicIntradayMetric;
@@ -28,11 +29,19 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
   
   private Date startDate = null;
   private Date endDate = null;
-  private Integer intervalLengthMinutes = null;
-  private Integer numberOfIntervals = null;
-  private List<WfmIntradayDataUpdateTopicIntradayMetric> metrics = new ArrayList<WfmIntradayDataUpdateTopicIntradayMetric>();
-  private List<String> queueIds = new ArrayList<String>();
-  private List<WfmIntradayDataUpdateTopicIntradayDataGroup> intradayDataGroupings = new ArrayList<WfmIntradayDataUpdateTopicIntradayDataGroup>();
+  private Long intervalLengthMinutes = null;
+  private Long numberOfIntervals = null;
+  private List<WfmIntradayDataUpdateTopicIntradayMetric> metrics = null;
+  private List<String> queueIds = null;
+  private List<WfmIntradayDataUpdateTopicIntradayDataGroup> intradayDataGroupings = null;
+
+  public WfmIntradayDataUpdateTopicIntradayDataUpdate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metrics = new ArrayList<WfmIntradayDataUpdateTopicIntradayMetric>();
+      queueIds = new ArrayList<String>();
+      intradayDataGroupings = new ArrayList<WfmIntradayDataUpdateTopicIntradayDataGroup>();
+    }
+  }
 
   
   /**
@@ -71,34 +80,34 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayDataUpdate intervalLengthMinutes(Integer intervalLengthMinutes) {
+  public WfmIntradayDataUpdateTopicIntradayDataUpdate intervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("intervalLengthMinutes")
-  public Integer getIntervalLengthMinutes() {
+  public Long getIntervalLengthMinutes() {
     return intervalLengthMinutes;
   }
-  public void setIntervalLengthMinutes(Integer intervalLengthMinutes) {
+  public void setIntervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayDataUpdate numberOfIntervals(Integer numberOfIntervals) {
+  public WfmIntradayDataUpdateTopicIntradayDataUpdate numberOfIntervals(Long numberOfIntervals) {
     this.numberOfIntervals = numberOfIntervals;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("numberOfIntervals")
-  public Integer getNumberOfIntervals() {
+  public Long getNumberOfIntervals() {
     return numberOfIntervals;
   }
-  public void setNumberOfIntervals(Integer numberOfIntervals) {
+  public void setNumberOfIntervals(Long numberOfIntervals) {
     this.numberOfIntervals = numberOfIntervals;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
@@ -32,20 +33,30 @@ import java.io.Serializable;
 public class ScimV2User  implements Serializable {
   
   private String id = null;
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private Boolean active = null;
   private String userName = null;
   private String displayName = null;
   private String password = null;
   private String title = null;
-  private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
-  private List<ScimEmail> emails = new ArrayList<ScimEmail>();
+  private List<ScimPhoneNumber> phoneNumbers = null;
+  private List<ScimEmail> emails = null;
   private String externalId = null;
-  private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
-  private List<ScimUserRole> roles = new ArrayList<ScimUserRole>();
+  private List<ScimV2GroupReference> groups = null;
+  private List<ScimUserRole> roles = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
   private ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User = null;
   private ScimMetadata meta = null;
+
+  public ScimV2User() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      schemas = new ArrayList<String>();
+      phoneNumbers = new ArrayList<ScimPhoneNumber>();
+      emails = new ArrayList<ScimEmail>();
+      groups = new ArrayList<ScimV2GroupReference>();
+      roles = new ArrayList<ScimUserRole>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")

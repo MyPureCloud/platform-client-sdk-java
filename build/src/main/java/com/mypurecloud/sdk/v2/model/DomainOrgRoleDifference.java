@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainPermissionPolicy;
@@ -25,11 +26,19 @@ import java.io.Serializable;
 
 public class DomainOrgRoleDifference  implements Serializable {
   
-  private List<DomainPermissionPolicy> removedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
-  private List<DomainPermissionPolicy> addedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
-  private List<DomainPermissionPolicy> samePermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+  private List<DomainPermissionPolicy> removedPermissionPolicies = null;
+  private List<DomainPermissionPolicy> addedPermissionPolicies = null;
+  private List<DomainPermissionPolicy> samePermissionPolicies = null;
   private DomainOrganizationRole userOrgRole = null;
   private DomainOrganizationRole roleFromDefault = null;
+
+  public DomainOrgRoleDifference() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      removedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      addedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      samePermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+    }
+  }
 
   
   /**

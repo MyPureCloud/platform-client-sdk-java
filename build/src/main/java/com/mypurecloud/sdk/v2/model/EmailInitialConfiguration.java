@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,8 +28,8 @@ public class EmailInitialConfiguration  implements Serializable {
   
   private String to = null;
   private String from = null;
-  private List<String> cc = new ArrayList<String>();
-  private List<String> bcc = new ArrayList<String>();
+  private List<String> cc = null;
+  private List<String> bcc = null;
   private String subject = null;
   private String previousEmailId = null;
   private Boolean held = null;
@@ -36,6 +37,13 @@ public class EmailInitialConfiguration  implements Serializable {
   private Boolean inbound = null;
   private String invitedBy = null;
   private Map<String, String> additionalInfo = null;
+
+  public EmailInitialConfiguration() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      cc = new ArrayList<String>();
+      bcc = new ArrayList<String>();
+    }
+  }
 
   
   /**

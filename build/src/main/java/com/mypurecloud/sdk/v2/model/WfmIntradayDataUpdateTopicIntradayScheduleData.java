@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class WfmIntradayDataUpdateTopicIntradayScheduleData  implements Serializable {
   
-  private Integer onQueueTimeSeconds = null;
-  private Integer scheduledTimeSeconds = null;
+  private Long onQueueTimeSeconds = null;
+  private Long scheduledTimeSeconds = null;
+
+  public WfmIntradayDataUpdateTopicIntradayScheduleData() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayScheduleData onQueueTimeSeconds(Integer onQueueTimeSeconds) {
+  public WfmIntradayDataUpdateTopicIntradayScheduleData onQueueTimeSeconds(Long onQueueTimeSeconds) {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("onQueueTimeSeconds")
-  public Integer getOnQueueTimeSeconds() {
+  public Long getOnQueueTimeSeconds() {
     return onQueueTimeSeconds;
   }
-  public void setOnQueueTimeSeconds(Integer onQueueTimeSeconds) {
+  public void setOnQueueTimeSeconds(Long onQueueTimeSeconds) {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
 
   /**
    **/
-  public WfmIntradayDataUpdateTopicIntradayScheduleData scheduledTimeSeconds(Integer scheduledTimeSeconds) {
+  public WfmIntradayDataUpdateTopicIntradayScheduleData scheduledTimeSeconds(Long scheduledTimeSeconds) {
     this.scheduledTimeSeconds = scheduledTimeSeconds;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("scheduledTimeSeconds")
-  public Integer getScheduledTimeSeconds() {
+  public Long getScheduledTimeSeconds() {
     return scheduledTimeSeconds;
   }
-  public void setScheduledTimeSeconds(Integer scheduledTimeSeconds) {
+  public void setScheduledTimeSeconds(Long scheduledTimeSeconds) {
     this.scheduledTimeSeconds = scheduledTimeSeconds;
   }
 

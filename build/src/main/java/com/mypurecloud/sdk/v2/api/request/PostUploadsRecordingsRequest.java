@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.GamificationContestPrizeImageUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;

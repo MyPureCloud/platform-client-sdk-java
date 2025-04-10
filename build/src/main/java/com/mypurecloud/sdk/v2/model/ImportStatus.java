@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -76,8 +77,14 @@ public class ImportStatus  implements Serializable {
   private Long completedRecords = null;
   private Integer percentComplete = null;
   private String failureReason = null;
-  private List<String> targetContactListIds = new ArrayList<String>();
+  private List<String> targetContactListIds = null;
   private String listNamePrefix = null;
+
+  public ImportStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      targetContactListIds = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", required = true, value = "current status of the import")

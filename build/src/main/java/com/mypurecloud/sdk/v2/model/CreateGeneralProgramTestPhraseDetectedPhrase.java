@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +24,12 @@ public class CreateGeneralProgramTestPhraseDetectedPhrase  implements Serializab
   
   private String foundPhrase = null;
   private String snippet = null;
-  private Integer confidence = null;
+  private Long confidence = null;
+
+  public CreateGeneralProgramTestPhraseDetectedPhrase() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -62,17 +68,17 @@ public class CreateGeneralProgramTestPhraseDetectedPhrase  implements Serializab
 
   /**
    **/
-  public CreateGeneralProgramTestPhraseDetectedPhrase confidence(Integer confidence) {
+  public CreateGeneralProgramTestPhraseDetectedPhrase confidence(Long confidence) {
     this.confidence = confidence;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("confidence")
-  public Integer getConfidence() {
+  public Long getConfidence() {
     return confidence;
   }
-  public void setConfidence(Integer confidence) {
+  public void setConfidence(Long confidence) {
     this.confidence = confidence;
   }
 

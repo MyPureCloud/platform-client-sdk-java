@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UsageItem;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class Usage  implements Serializable {
   
-  private List<UsageItem> types = new ArrayList<UsageItem>();
+  private List<UsageItem> types = null;
+
+  public Usage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      types = new ArrayList<UsageItem>();
+    }
+  }
 
   
   /**

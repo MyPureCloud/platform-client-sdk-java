@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeAction;
@@ -28,11 +29,11 @@ import java.io.Serializable;
 
 public class DialerRulesetConfigChangeRule  implements Serializable {
   
-  private List<DialerRulesetConfigChangeCondition> conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
+  private List<DialerRulesetConfigChangeCondition> conditions = null;
   private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
-  private Integer order = null;
+  private Long order = null;
 
   private static class CategoryEnumDeserializer extends StdDeserializer<CategoryEnum> {
     public CategoryEnumDeserializer() {
@@ -81,7 +82,14 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<DialerRulesetConfigChangeAction> actions = new ArrayList<DialerRulesetConfigChangeAction>();
+  private List<DialerRulesetConfigChangeAction> actions = null;
+
+  public DialerRulesetConfigChangeRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
+      actions = new ArrayList<DialerRulesetConfigChangeAction>();
+    }
+  }
 
   
   /**
@@ -158,17 +166,17 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   /**
    * The ranked order of the rule; rules are processed from lowest number to highest
    **/
-  public DialerRulesetConfigChangeRule order(Integer order) {
+  public DialerRulesetConfigChangeRule order(Long order) {
     this.order = order;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The ranked order of the rule; rules are processed from lowest number to highest")
   @JsonProperty("order")
-  public Integer getOrder() {
+  public Long getOrder() {
     return order;
   }
-  public void setOrder(Integer order) {
+  public void setOrder(Long order) {
     this.order = order;
   }
 

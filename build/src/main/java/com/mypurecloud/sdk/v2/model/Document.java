@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentAttribute;
@@ -97,10 +98,10 @@ public class Document  implements Serializable {
   private Boolean read = null;
   private String callerAddress = null;
   private String receiverAddress = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<TagValue> tagValues = new ArrayList<TagValue>();
-  private List<DocumentAttribute> attributes = new ArrayList<DocumentAttribute>();
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<String> tags = null;
+  private List<TagValue> tagValues = null;
+  private List<DocumentAttribute> attributes = null;
+  private List<DocumentThumbnail> thumbnails = null;
   private DomainEntityRef uploadStatus = null;
   private String uploadDestinationUri = null;
 
@@ -152,7 +153,7 @@ public class Document  implements Serializable {
   }
   private UploadMethodEnum uploadMethod = null;
   private LockInfo lockInfo = null;
-  private List<String> acl = new ArrayList<String>();
+  private List<String> acl = null;
 
   private static class SharingStatusEnumDeserializer extends StdDeserializer<SharingStatusEnum> {
     public SharingStatusEnumDeserializer() {
@@ -204,6 +205,16 @@ public class Document  implements Serializable {
   private SharingStatusEnum sharingStatus = null;
   private String downloadSharingUri = null;
   private String selfUri = null;
+
+  public Document() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+      tagValues = new ArrayList<TagValue>();
+      attributes = new ArrayList<DocumentAttribute>();
+      thumbnails = new ArrayList<DocumentThumbnail>();
+      acl = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

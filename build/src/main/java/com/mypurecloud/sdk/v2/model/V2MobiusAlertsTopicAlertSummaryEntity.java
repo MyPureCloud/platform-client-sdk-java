@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertingAddressableEntityRef;
@@ -81,6 +82,11 @@ public class V2MobiusAlertsTopicAlertSummaryEntity  implements Serializable {
   private V2MobiusAlertsTopicAlertingAddressableEntityRef queue = null;
   private V2MobiusAlertsTopicAlertingAddressableEntityRef team = null;
   private Boolean alerting = null;
+
+  public V2MobiusAlertsTopicAlertSummaryEntity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

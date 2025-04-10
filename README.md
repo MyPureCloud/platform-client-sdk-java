@@ -8,7 +8,7 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:222.1.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:223.0.0
 
 ## Install Using maven
 
@@ -468,6 +468,22 @@ JSON:
     }
 }
 ```
+
+#### Controlling the default value of array type attributes in models
+
+By default, when a model contains a property of type `array`, the Java SDK initializes the class property with an empty `ArrayList`.  
+E.g. **ConversationQuery class** - `List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();`
+
+The Java Platform API Client SDK can now be configured so that such properties are initialized with an empty `ArrayList` or with `null`.  
+This is controlled through a global static property: `ApiClient.LEGACY_EMPTY_LIST` (default: `true`).
+
+With `ApiClient.LEGACY_EMPTY_LIST = true;` (default value)
+* The class property will be initialized with an empty `ArrayList`;
+* E.g. **ConversationQuery class** - `List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();`
+
+With `ApiClient.LEGACY_EMPTY_LIST = false;`
+* The class property will be initialized with `null`;
+* E.g. **ConversationQuery class** - `List<SegmentDetailQueryFilter> segmentFilters = null;`
 
 #### Other ApiClient.Builder methods
 

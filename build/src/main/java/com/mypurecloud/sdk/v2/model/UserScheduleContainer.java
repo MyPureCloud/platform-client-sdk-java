@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
 import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
@@ -28,8 +29,14 @@ import java.io.Serializable;
 public class UserScheduleContainer  implements Serializable {
   
   private String managementUnitTimeZone = null;
-  private List<WeekScheduleReference> publishedSchedules = new ArrayList<WeekScheduleReference>();
+  private List<WeekScheduleReference> publishedSchedules = null;
   private Map<String, UserSchedule> userSchedules = null;
+
+  public UserScheduleContainer() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      publishedSchedules = new ArrayList<WeekScheduleReference>();
+    }
+  }
 
   
   /**

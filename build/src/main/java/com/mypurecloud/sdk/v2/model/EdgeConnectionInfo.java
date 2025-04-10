@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -28,9 +29,15 @@ public class EdgeConnectionInfo  implements Serializable {
   private String name = null;
   private String interfaceName = null;
   private String interfaceIpAddress = null;
-  private List<String> connectionErrors = new ArrayList<String>();
+  private List<String> connectionErrors = null;
   private AddressableEntityRef site = null;
   private String selfUri = null;
+
+  public EdgeConnectionInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      connectionErrors = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

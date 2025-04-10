@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -127,7 +128,13 @@ public class MinerExecuteRequest  implements Serializable {
     }
   }
   private ParticipantTypeEnum participantType = null;
-  private List<String> queueIds = new ArrayList<String>();
+  private List<String> queueIds = null;
+
+  public MinerExecuteRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      queueIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

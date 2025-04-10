@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicAlertNotification;
@@ -81,7 +82,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<V2MobiusRulesTopicAlertNotification> notifications = new ArrayList<V2MobiusRulesTopicAlertNotification>();
+  private List<V2MobiusRulesTopicAlertNotification> notifications = null;
   private V2MobiusRulesTopicCondition conditions = null;
   private Boolean enabled = null;
   private Boolean inAlarm = null;
@@ -137,7 +138,13 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   private ActionEnum action = null;
   private Date dateCreated = null;
   private Boolean sendExitingAlarmNotification = null;
-  private Integer waitBetweenNotificationMs = null;
+  private Long waitBetweenNotificationMs = null;
+
+  public V2MobiusRulesTopicRule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      notifications = new ArrayList<V2MobiusRulesTopicAlertNotification>();
+    }
+  }
 
   
   /**
@@ -329,17 +336,17 @@ public class V2MobiusRulesTopicRule  implements Serializable {
 
   /**
    **/
-  public V2MobiusRulesTopicRule waitBetweenNotificationMs(Integer waitBetweenNotificationMs) {
+  public V2MobiusRulesTopicRule waitBetweenNotificationMs(Long waitBetweenNotificationMs) {
     this.waitBetweenNotificationMs = waitBetweenNotificationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("waitBetweenNotificationMs")
-  public Integer getWaitBetweenNotificationMs() {
+  public Long getWaitBetweenNotificationMs() {
     return waitBetweenNotificationMs;
   }
-  public void setWaitBetweenNotificationMs(Integer waitBetweenNotificationMs) {
+  public void setWaitBetweenNotificationMs(Long waitBetweenNotificationMs) {
     this.waitBetweenNotificationMs = waitBetweenNotificationMs;
   }
 

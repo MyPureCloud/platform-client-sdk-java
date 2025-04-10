@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanMessages;
 import com.mypurecloud.sdk.v2.model.WorkPlanReference;
@@ -26,6 +27,11 @@ public class ValidateWorkPlanResponse  implements Serializable {
   private WorkPlanReference workPlan = null;
   private Boolean valid = null;
   private ValidateWorkPlanMessages messages = null;
+
+  public ValidateWorkPlanResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

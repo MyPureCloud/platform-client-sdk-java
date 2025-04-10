@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactId;
 import com.mypurecloud.sdk.v2.model.GDPRJourneyCustomer;
@@ -33,9 +34,17 @@ public class GDPRSubject  implements Serializable {
   private GDPRJourneyCustomer journeyCustomer = null;
   private SocialHandle socialHandle = null;
   private String externalId = null;
-  private List<String> addresses = new ArrayList<String>();
-  private List<String> phoneNumbers = new ArrayList<String>();
-  private List<String> emailAddresses = new ArrayList<String>();
+  private List<String> addresses = null;
+  private List<String> phoneNumbers = null;
+  private List<String> emailAddresses = null;
+
+  public GDPRSubject() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      addresses = new ArrayList<String>();
+      phoneNumbers = new ArrayList<String>();
+      emailAddresses = new ArrayList<String>();
+    }
+  }
 
   
   /**

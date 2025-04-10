@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowIntent;
 import com.mypurecloud.sdk.v2.model.DialogflowProject;
@@ -29,11 +30,19 @@ public class DialogflowAgent  implements Serializable {
   private String id = null;
   private String name = null;
   private DialogflowProject project = null;
-  private List<String> languages = new ArrayList<String>();
-  private List<DialogflowIntent> intents = new ArrayList<DialogflowIntent>();
-  private List<String> environments = new ArrayList<String>();
+  private List<String> languages = null;
+  private List<DialogflowIntent> intents = null;
+  private List<String> environments = null;
   private DomainEntityRef integration = null;
   private String selfUri = null;
+
+  public DialogflowAgent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      languages = new ArrayList<String>();
+      intents = new ArrayList<DialogflowIntent>();
+      environments = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

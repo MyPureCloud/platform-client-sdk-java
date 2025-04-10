@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Biography;
@@ -36,17 +37,17 @@ public class UpdateUser  implements Serializable {
   private Chat chat = null;
   private String department = null;
   private String email = null;
-  private List<Contact> primaryContactInfo = new ArrayList<Contact>();
-  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Contact> primaryContactInfo = null;
+  private List<Contact> addresses = null;
   private String title = null;
   private String username = null;
   private String preferredName = null;
   private String manager = null;
-  private List<Image> images = new ArrayList<Image>();
+  private List<Image> images = null;
   private Integer version = null;
-  private List<String> profileSkills = new ArrayList<String>();
-  private List<Location> locations = new ArrayList<Location>();
-  private List<Group> groups = new ArrayList<Group>();
+  private List<String> profileSkills = null;
+  private List<Location> locations = null;
+  private List<Group> groups = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -97,10 +98,22 @@ public class UpdateUser  implements Serializable {
   }
   private StateEnum state = null;
   private Boolean acdAutoAnswer = null;
-  private List<String> certifications = new ArrayList<String>();
+  private List<String> certifications = null;
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
   private String selfUri = null;
+
+  public UpdateUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      primaryContactInfo = new ArrayList<Contact>();
+      addresses = new ArrayList<Contact>();
+      images = new ArrayList<Image>();
+      profileSkills = new ArrayList<String>();
+      locations = new ArrayList<Location>();
+      groups = new ArrayList<Group>();
+      certifications = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

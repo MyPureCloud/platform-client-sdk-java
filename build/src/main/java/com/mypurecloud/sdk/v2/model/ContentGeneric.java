@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ButtonComponent;
 import com.mypurecloud.sdk.v2.model.ContentActions;
@@ -31,7 +32,13 @@ public class ContentGeneric  implements Serializable {
   private String image = null;
   private String video = null;
   private ContentActions actions = null;
-  private List<ButtonComponent> components = new ArrayList<ButtonComponent>();
+  private List<ButtonComponent> components = null;
+
+  public ContentGeneric() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      components = new ArrayList<ButtonComponent>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -72,9 +73,16 @@ public class IntradayPlanningGroupRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<CategoriesEnum> categories = null;
+  private List<String> planningGroupIds = null;
   private Integer intervalLengthMinutes = null;
+
+  public IntradayPlanningGroupRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      categories = new ArrayList<CategoriesEnum>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

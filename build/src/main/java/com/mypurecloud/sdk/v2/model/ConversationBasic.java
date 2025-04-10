@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ParticipantBasic;
@@ -31,11 +32,18 @@ public class ConversationBasic  implements Serializable {
   private String externalTag = null;
   private Date startTime = null;
   private Date endTime = null;
-  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private List<ConversationDivisionMembership> divisions = null;
   private Boolean securePause = null;
   private String utilizationLabelId = null;
   private String selfUri = null;
-  private List<ParticipantBasic> participants = new ArrayList<ParticipantBasic>();
+  private List<ParticipantBasic> participants = null;
+
+  public ConversationBasic() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      divisions = new ArrayList<ConversationDivisionMembership>();
+      participants = new ArrayList<ParticipantBasic>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

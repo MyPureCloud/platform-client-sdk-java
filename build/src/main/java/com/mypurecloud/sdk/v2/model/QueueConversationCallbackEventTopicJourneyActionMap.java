@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +24,12 @@ import java.io.Serializable;
 public class QueueConversationCallbackEventTopicJourneyActionMap  implements Serializable {
   
   private String id = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public QueueConversationCallbackEventTopicJourneyActionMap() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -47,17 +53,17 @@ public class QueueConversationCallbackEventTopicJourneyActionMap  implements Ser
   /**
    * The version number of the actionMap in the Journey System at the time this action was triggered
    **/
-  public QueueConversationCallbackEventTopicJourneyActionMap version(Integer version) {
+  public QueueConversationCallbackEventTopicJourneyActionMap version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The version number of the actionMap in the Journey System at the time this action was triggered")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

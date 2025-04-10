@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -31,9 +32,15 @@ public class Leaderboard  implements Serializable {
   private AddressableEntityRef metric = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
-  private List<LeaderboardItem> leaders = new ArrayList<LeaderboardItem>();
+  private List<LeaderboardItem> leaders = null;
   private LeaderboardItem userRank = null;
   private AddressableEntityRef performanceProfile = null;
+
+  public Leaderboard() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      leaders = new ArrayList<LeaderboardItem>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The targeted division for this leaderboard")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeGroupStatistics;
 import com.mypurecloud.sdk.v2.model.UnansweredGroupSuggestedDocument;
@@ -28,10 +29,17 @@ public class UnansweredGroup  implements Serializable {
   
   private String id = null;
   private String label = null;
-  private List<UnansweredPhraseGroup> phraseGroups = new ArrayList<UnansweredPhraseGroup>();
-  private List<UnansweredGroupSuggestedDocument> suggestedDocuments = new ArrayList<UnansweredGroupSuggestedDocument>();
+  private List<UnansweredPhraseGroup> phraseGroups = null;
+  private List<UnansweredGroupSuggestedDocument> suggestedDocuments = null;
   private KnowledgeGroupStatistics statistics = null;
   private String selfUri = null;
+
+  public UnansweredGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phraseGroups = new ArrayList<UnansweredPhraseGroup>();
+      suggestedDocuments = new ArrayList<UnansweredGroupSuggestedDocument>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

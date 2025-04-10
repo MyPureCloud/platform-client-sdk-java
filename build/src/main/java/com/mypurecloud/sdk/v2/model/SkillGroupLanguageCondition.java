@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SkillGroupCondition;
@@ -79,7 +80,13 @@ public class SkillGroupLanguageCondition  implements Serializable {
   }
   private ComparatorEnum comparator = null;
   private Integer proficiency = null;
-  private List<SkillGroupCondition> childConditions = new ArrayList<SkillGroupCondition>();
+  private List<SkillGroupCondition> childConditions = null;
+
+  public SkillGroupLanguageCondition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      childConditions = new ArrayList<SkillGroupCondition>();
+    }
+  }
 
   
   /**

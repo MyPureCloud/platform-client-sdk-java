@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EvaluationDetailQueryClause;
@@ -74,8 +75,15 @@ public class EvaluationDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<EvaluationDetailQueryClause> clauses = new ArrayList<EvaluationDetailQueryClause>();
-  private List<EvaluationDetailQueryPredicate> predicates = new ArrayList<EvaluationDetailQueryPredicate>();
+  private List<EvaluationDetailQueryClause> clauses = null;
+  private List<EvaluationDetailQueryPredicate> predicates = null;
+
+  public EvaluationDetailQueryFilter() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      clauses = new ArrayList<EvaluationDetailQueryClause>();
+      predicates = new ArrayList<EvaluationDetailQueryPredicate>();
+    }
+  }
 
   
   /**

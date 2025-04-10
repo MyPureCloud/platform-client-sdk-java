@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DivisionEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -26,7 +27,13 @@ import java.io.Serializable;
 public class ConversationDivisionMembership  implements Serializable {
   
   private DomainEntityRef division = null;
-  private List<DivisionEntityRef> entities = new ArrayList<DivisionEntityRef>();
+  private List<DivisionEntityRef> entities = null;
+
+  public ConversationDivisionMembership() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<DivisionEntityRef>();
+    }
+  }
 
   
   /**

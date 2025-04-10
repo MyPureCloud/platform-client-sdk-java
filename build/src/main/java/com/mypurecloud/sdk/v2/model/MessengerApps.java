@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationAppSettings;
 import com.mypurecloud.sdk.v2.model.Knowledge;
@@ -26,6 +27,11 @@ public class MessengerApps  implements Serializable {
   
   private ConversationAppSettings conversations = null;
   private Knowledge knowledge = null;
+
+  public MessengerApps() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

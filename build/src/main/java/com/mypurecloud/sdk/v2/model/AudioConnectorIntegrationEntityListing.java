@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 
 public class AudioConnectorIntegrationEntityListing  implements Serializable, PagedResource<AudioConnectorIntegration> {
   
-  private List<AudioConnectorIntegration> entities = new ArrayList<AudioConnectorIntegration>();
+  private List<AudioConnectorIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -35,6 +36,12 @@ public class AudioConnectorIntegrationEntityListing  implements Serializable, Pa
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
+
+  public AudioConnectorIntegrationEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<AudioConnectorIntegration>();
+    }
+  }
 
   
   /**

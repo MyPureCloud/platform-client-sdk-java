@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingArchiveRestoreTopicMediaResult;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +28,15 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
   private String id = null;
   private String conversationId = null;
   private String fileState = null;
-  private List<RecordingArchiveRestoreTopicMediaResult> mediaUris = new ArrayList<RecordingArchiveRestoreTopicMediaResult>();
-  private Integer estimatedTranscodeTimeMs = null;
-  private Integer actualTranscodeTimeMs = null;
+  private List<RecordingArchiveRestoreTopicMediaResult> mediaUris = null;
+  private Long estimatedTranscodeTimeMs = null;
+  private Long actualTranscodeTimeMs = null;
+
+  public RecordingArchiveRestoreTopicRecording() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaUris = new ArrayList<RecordingArchiveRestoreTopicMediaResult>();
+    }
+  }
 
   
   /**
@@ -102,34 +109,34 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
 
   /**
    **/
-  public RecordingArchiveRestoreTopicRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
+  public RecordingArchiveRestoreTopicRecording estimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("estimatedTranscodeTimeMs")
-  public Integer getEstimatedTranscodeTimeMs() {
+  public Long getEstimatedTranscodeTimeMs() {
     return estimatedTranscodeTimeMs;
   }
-  public void setEstimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
+  public void setEstimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
 
   /**
    **/
-  public RecordingArchiveRestoreTopicRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
+  public RecordingArchiveRestoreTopicRecording actualTranscodeTimeMs(Long actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("actualTranscodeTimeMs")
-  public Integer getActualTranscodeTimeMs() {
+  public Long getActualTranscodeTimeMs() {
     return actualTranscodeTimeMs;
   }
-  public void setActualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
+  public void setActualTranscodeTimeMs(Long actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 

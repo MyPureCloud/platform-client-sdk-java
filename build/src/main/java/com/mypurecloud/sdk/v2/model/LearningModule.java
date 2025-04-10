@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
@@ -150,7 +151,7 @@ public class LearningModule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
+  private List<LearningModuleInformStep> informSteps = null;
   private AssessmentForm assessmentForm = null;
   private LearningModuleSummary summaryData = null;
   private LearningModuleReassignSummary reassignSummaryData = null;
@@ -204,6 +205,12 @@ public class LearningModule  implements Serializable {
     }
   }
   private ArchivalModeEnum archivalMode = null;
+
+  public LearningModule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      informSteps = new ArrayList<LearningModuleInformStep>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

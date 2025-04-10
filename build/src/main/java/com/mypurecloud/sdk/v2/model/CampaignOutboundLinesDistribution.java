@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesAllocation;
@@ -33,8 +34,15 @@ public class CampaignOutboundLinesDistribution  implements Serializable {
   private BigDecimal maxLineUtilization = null;
   private Integer availableOutboundLines = null;
   private Integer reservedLines = null;
-  private List<CampaignOutboundLinesReservation> campaignsWithReservedLines = new ArrayList<CampaignOutboundLinesReservation>();
-  private List<CampaignOutboundLinesAllocation> campaignsWithDynamicallyAllocatedLines = new ArrayList<CampaignOutboundLinesAllocation>();
+  private List<CampaignOutboundLinesReservation> campaignsWithReservedLines = null;
+  private List<CampaignOutboundLinesAllocation> campaignsWithDynamicallyAllocatedLines = null;
+
+  public CampaignOutboundLinesDistribution() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      campaignsWithReservedLines = new ArrayList<CampaignOutboundLinesReservation>();
+      campaignsWithDynamicallyAllocatedLines = new ArrayList<CampaignOutboundLinesAllocation>();
+    }
+  }
 
   
   /**

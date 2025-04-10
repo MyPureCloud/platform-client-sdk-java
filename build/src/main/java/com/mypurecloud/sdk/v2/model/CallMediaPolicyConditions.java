@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -30,13 +31,13 @@ import java.io.Serializable;
 
 public class CallMediaPolicyConditions  implements Serializable {
   
-  private List<User> forUsers = new ArrayList<User>();
-  private List<String> dateRanges = new ArrayList<String>();
-  private List<Queue> forQueues = new ArrayList<Queue>();
-  private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
-  private List<Language> languages = new ArrayList<Language>();
+  private List<User> forUsers = null;
+  private List<String> dateRanges = null;
+  private List<Queue> forQueues = null;
+  private List<WrapupCode> wrapupCodes = null;
+  private List<Language> languages = null;
   private TimeAllowed timeAllowed = null;
-  private List<Team> teams = new ArrayList<Team>();
+  private List<Team> teams = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -83,8 +84,20 @@ public class CallMediaPolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
+  private List<DirectionsEnum> directions = null;
   private DurationCondition duration = null;
+
+  public CallMediaPolicyConditions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      forUsers = new ArrayList<User>();
+      dateRanges = new ArrayList<String>();
+      forQueues = new ArrayList<Queue>();
+      wrapupCodes = new ArrayList<WrapupCode>();
+      languages = new ArrayList<Language>();
+      teams = new ArrayList<Team>();
+      directions = new ArrayList<DirectionsEnum>();
+    }
+  }
 
   
   /**

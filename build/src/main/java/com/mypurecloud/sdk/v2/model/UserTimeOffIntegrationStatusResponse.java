@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestReference;
@@ -76,6 +77,11 @@ public class UserTimeOffIntegrationStatusResponse  implements Serializable {
   }
   private IntegrationStatusEnum integrationStatus = null;
   private UserReference user = null;
+
+  public UserTimeOffIntegrationStatusResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

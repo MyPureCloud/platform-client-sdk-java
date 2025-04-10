@@ -9,9 +9,9 @@
 | **name** | **String** |  |  [optional] |
 | **unit** | [**UnitEnum**](#Enum--UnitEnum) |  |  [optional] |
 | **unitDefinition** | **String** |  |  [optional] |
-| **precision** | **Integer** |  |  [optional] |
+| **precision** | **Long** |  |  [optional] |
 | **defaultObjectiveType** | [**DefaultObjectiveTypeEnum**](#Enum--DefaultObjectiveTypeEnum) |  |  [optional] |
-| **retentionMonths** | **Integer** |  |  [optional] |
+| **retentionMonths** | **Long** |  |  [optional] |
 | **enabled** | **Boolean** |  |  [optional] |
 | **inUse** | **Boolean** |  |  [optional] |
 | **dateLastRefreshed** | [**Date**](Date) |  |  [optional] |
@@ -42,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicJourneyAction;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicJourneyCustomer;
@@ -27,6 +28,11 @@ public class ConversationEmailEventTopicJourneyContext  implements Serializable 
   private ConversationEmailEventTopicJourneyCustomer customer = null;
   private ConversationEmailEventTopicJourneyCustomerSession customerSession = null;
   private ConversationEmailEventTopicJourneyAction triggeringAction = null;
+
+  public ConversationEmailEventTopicJourneyContext() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -79,11 +80,11 @@ public class ScimV2SchemaAttribute  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ScimV2SchemaAttribute> subAttributes = new ArrayList<ScimV2SchemaAttribute>();
+  private List<ScimV2SchemaAttribute> subAttributes = null;
   private Boolean multiValued = null;
   private String description = null;
   private Boolean required = null;
-  private List<String> canonicalValues = new ArrayList<String>();
+  private List<String> canonicalValues = null;
   private Boolean caseExact = null;
 
   private static class MutabilityEnumDeserializer extends StdDeserializer<MutabilityEnum> {
@@ -282,7 +283,15 @@ public class ScimV2SchemaAttribute  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ReferenceTypesEnum> referenceTypes = new ArrayList<ReferenceTypesEnum>();
+  private List<ReferenceTypesEnum> referenceTypes = null;
+
+  public ScimV2SchemaAttribute() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      subAttributes = new ArrayList<ScimV2SchemaAttribute>();
+      canonicalValues = new ArrayList<String>();
+      referenceTypes = new ArrayList<ReferenceTypesEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The name of the attribute.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -31,6 +32,11 @@ public class OutOfOffice  implements Serializable {
   private Boolean active = null;
   private Boolean indefinite = null;
   private String selfUri = null;
+
+  public OutOfOffice() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

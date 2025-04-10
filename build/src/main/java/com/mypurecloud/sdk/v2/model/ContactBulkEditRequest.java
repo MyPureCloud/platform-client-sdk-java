@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactBulkSearchCriteria;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -27,8 +28,14 @@ public class ContactBulkEditRequest  implements Serializable {
   
   private String contactListFilterId = null;
   private ContactBulkSearchCriteria criteria = null;
-  private List<String> contactIds = new ArrayList<String>();
+  private List<String> contactIds = null;
   private DialerContact contact = null;
+
+  public ContactBulkEditRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      contactIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

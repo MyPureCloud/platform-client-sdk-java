@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,40 +22,45 @@ import java.io.Serializable;
 
 public class TrunkMetricsTopicTrunkMetricsCalls  implements Serializable {
   
-  private Integer inboundCallCount = null;
-  private Integer outboundCallCount = null;
+  private Long inboundCallCount = null;
+  private Long outboundCallCount = null;
+
+  public TrunkMetricsTopicTrunkMetricsCalls() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
    **/
-  public TrunkMetricsTopicTrunkMetricsCalls inboundCallCount(Integer inboundCallCount) {
+  public TrunkMetricsTopicTrunkMetricsCalls inboundCallCount(Long inboundCallCount) {
     this.inboundCallCount = inboundCallCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("inboundCallCount")
-  public Integer getInboundCallCount() {
+  public Long getInboundCallCount() {
     return inboundCallCount;
   }
-  public void setInboundCallCount(Integer inboundCallCount) {
+  public void setInboundCallCount(Long inboundCallCount) {
     this.inboundCallCount = inboundCallCount;
   }
 
 
   /**
    **/
-  public TrunkMetricsTopicTrunkMetricsCalls outboundCallCount(Integer outboundCallCount) {
+  public TrunkMetricsTopicTrunkMetricsCalls outboundCallCount(Long outboundCallCount) {
     this.outboundCallCount = outboundCallCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("outboundCallCount")
-  public Integer getOutboundCallCount() {
+  public Long getOutboundCallCount() {
     return outboundCallCount;
   }
-  public void setOutboundCallCount(Integer outboundCallCount) {
+  public void setOutboundCallCount(Long outboundCallCount) {
     this.outboundCallCount = outboundCallCount;
   }
 

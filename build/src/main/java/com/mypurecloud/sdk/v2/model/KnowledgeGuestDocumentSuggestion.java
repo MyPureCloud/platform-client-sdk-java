@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionResult;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class KnowledgeGuestDocumentSuggestion  implements Serializable {
   private String query = null;
   private Integer pageSize = null;
   private String sessionId = null;
-  private List<KnowledgeGuestDocumentSuggestionResult> results = new ArrayList<KnowledgeGuestDocumentSuggestionResult>();
+  private List<KnowledgeGuestDocumentSuggestionResult> results = null;
+
+  public KnowledgeGuestDocumentSuggestion() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      results = new ArrayList<KnowledgeGuestDocumentSuggestionResult>();
+    }
+  }
 
   
   /**

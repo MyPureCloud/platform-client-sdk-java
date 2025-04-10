@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DynamicGroupQuery;
@@ -28,6 +29,11 @@ public class DynamicGroupDefinition  implements Serializable {
   private Date dateModified = null;
   private DynamicGroupQuery query = null;
   private String selfUri = null;
+
+  public DynamicGroupDefinition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

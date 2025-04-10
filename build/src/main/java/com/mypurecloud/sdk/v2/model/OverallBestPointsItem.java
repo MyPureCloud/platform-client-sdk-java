@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -75,11 +76,17 @@ public class OverallBestPointsItem  implements Serializable {
     }
   }
   private GranularityTypeEnum granularityType = null;
-  private List<UserReference> users = new ArrayList<UserReference>();
+  private List<UserReference> users = null;
   private Integer count = null;
   private Integer points = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
+
+  public OverallBestPointsItem() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      users = new ArrayList<UserReference>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "Best points aggregation interval granularity")

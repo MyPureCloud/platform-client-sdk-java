@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CopilotFallbackAction;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class Fallback  implements Serializable {
   
   private Boolean enabled = null;
-  private List<CopilotFallbackAction> actions = new ArrayList<CopilotFallbackAction>();
+  private List<CopilotFallbackAction> actions = null;
+
+  public Fallback() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actions = new ArrayList<CopilotFallbackAction>();
+    }
+  }
 
   
   /**

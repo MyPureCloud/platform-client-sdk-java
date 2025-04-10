@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -133,8 +134,13 @@ public class QueueConversationScreenShareEventTopicLimit  implements Serializabl
     }
   }
   private NamespaceEnum namespace = null;
-  private Integer value = null;
+  private Long value = null;
   private Boolean documented = null;
+
+  public QueueConversationScreenShareEventTopicLimit() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -173,17 +179,17 @@ public class QueueConversationScreenShareEventTopicLimit  implements Serializabl
 
   /**
    **/
-  public QueueConversationScreenShareEventTopicLimit value(Integer value) {
+  public QueueConversationScreenShareEventTopicLimit value(Long value) {
     this.value = value;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("value")
-  public Integer getValue() {
+  public Long getValue() {
     return value;
   }
-  public void setValue(Integer value) {
+  public void setValue(Long value) {
     this.value = value;
   }
 

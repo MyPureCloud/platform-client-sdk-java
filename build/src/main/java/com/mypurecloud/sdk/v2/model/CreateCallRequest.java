@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Destination;
 import io.swagger.annotations.ApiModel;
@@ -35,12 +36,20 @@ public class CreateCallRequest  implements Serializable {
   private Integer priority = null;
   private Map<String, String> attributes = null;
   private String languageId = null;
-  private List<String> routingSkillsIds = new ArrayList<String>();
-  private List<String> conversationIds = new ArrayList<String>();
-  private List<Destination> participants = new ArrayList<Destination>();
+  private List<String> routingSkillsIds = null;
+  private List<String> conversationIds = null;
+  private List<Destination> participants = null;
   private String uuiData = null;
   private String externalContactId = null;
   private String label = null;
+
+  public CreateCallRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routingSkillsIds = new ArrayList<String>();
+      conversationIds = new ArrayList<String>();
+      participants = new ArrayList<Destination>();
+    }
+  }
 
   
   /**

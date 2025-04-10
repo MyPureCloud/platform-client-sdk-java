@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkbinQuerySort;
@@ -74,10 +75,17 @@ public class WorkbinQueryRequest  implements Serializable {
     }
   }
   private SelectEnum select = null;
-  private List<WorkitemFilter> filters = new ArrayList<WorkitemFilter>();
-  private List<String> attributes = new ArrayList<String>();
+  private List<WorkitemFilter> filters = null;
+  private List<String> attributes = null;
   private String after = null;
   private WorkbinQuerySort sort = null;
+
+  public WorkbinQueryRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      filters = new ArrayList<WorkitemFilter>();
+      attributes = new ArrayList<String>();
+    }
+  }
 
   
   /**

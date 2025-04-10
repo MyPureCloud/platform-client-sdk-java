@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobStatistics;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 
 public class KnowledgeSyncJobReport  implements Serializable {
   
-  private List<ErrorBody> errors = new ArrayList<ErrorBody>();
+  private List<ErrorBody> errors = null;
   private KnowledgeSyncJobStatistics statistics = null;
+
+  public KnowledgeSyncJobReport() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleActivity;
 import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
@@ -30,9 +31,15 @@ public class UserScheduleShift  implements Serializable {
   private String id = null;
   private Date startDate = null;
   private Integer lengthInMinutes = null;
-  private List<UserScheduleActivity> activities = new ArrayList<UserScheduleActivity>();
+  private List<UserScheduleActivity> activities = null;
   private Boolean delete = null;
   private Boolean manuallyEdited = null;
+
+  public UserScheduleShift() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      activities = new ArrayList<UserScheduleActivity>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")

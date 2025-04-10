@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UCI10n;
@@ -86,8 +87,14 @@ public class UCIntegration  implements Serializable {
   private Map<String, UCIcon> badgeIcons = null;
   private Map<String, UCI10n> i10n = null;
   private Boolean polledPresence = null;
-  private List<String> userPermissions = new ArrayList<String>();
+  private List<String> userPermissions = null;
   private String selfUri = null;
+
+  public UCIntegration() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userPermissions = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyQuestionGroupScore;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class SurveyScoringSet  implements Serializable {
   
   private Float totalScore = null;
   private Integer npsScore = null;
-  private List<SurveyQuestionGroupScore> questionGroupScores = new ArrayList<SurveyQuestionGroupScore>();
+  private List<SurveyQuestionGroupScore> questionGroupScores = null;
+
+  public SurveyScoringSet() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroupScores = new ArrayList<SurveyQuestionGroupScore>();
+    }
+  }
 
   
   /**

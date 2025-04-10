@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MatchCriteriaTestResult;
 import io.swagger.annotations.ApiModel;
@@ -28,7 +29,13 @@ public class TestMatchesOperation  implements Serializable {
   private String name = null;
   private Integer step = null;
   private Boolean matches = null;
-  private List<MatchCriteriaTestResult> details = new ArrayList<MatchCriteriaTestResult>();
+  private List<MatchCriteriaTestResult> details = null;
+
+  public TestMatchesOperation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      details = new ArrayList<MatchCriteriaTestResult>();
+    }
+  }
 
   
   /**

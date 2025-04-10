@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaData;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
   
   private String participantJid = null;
   private String roomId = null;
-  private List<ScreenRecordingMetaData> metaData = new ArrayList<ScreenRecordingMetaData>();
+  private List<ScreenRecordingMetaData> metaData = null;
+
+  public ScreenRecordingMetaDataRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      metaData = new ArrayList<ScreenRecordingMetaData>();
+    }
+  }
 
   
   /**

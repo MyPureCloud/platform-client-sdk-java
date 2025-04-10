@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
-| **maxParticipants** | **Integer** |  |  [optional] |
+| **maxParticipants** | **Long** |  |  [optional] |
 | **participants** | [**List&lt;QueueConversationSocialExpressionEventTopicParticipant&gt;**](QueueConversationSocialExpressionEventTopicParticipant) |  |  [optional] |
 | **recentTransfers** | [**List&lt;QueueConversationSocialExpressionEventTopicTransferResponse&gt;**](QueueConversationSocialExpressionEventTopicTransferResponse) |  |  [optional] |
 | **recordingState** | **String** |  |  [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

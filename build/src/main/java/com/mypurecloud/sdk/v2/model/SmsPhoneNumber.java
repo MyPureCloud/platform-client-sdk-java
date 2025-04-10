@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Compliance;
@@ -184,7 +185,7 @@ public class SmsPhoneNumber  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CapabilitiesEnum> capabilities = new ArrayList<CapabilitiesEnum>();
+  private List<CapabilitiesEnum> capabilities = null;
   private String countryCode = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -298,6 +299,12 @@ public class SmsPhoneNumber  implements Serializable {
   private DomainEntityRef integration = null;
   private Compliance compliance = null;
   private String selfUri = null;
+
+  public SmsPhoneNumber() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      capabilities = new ArrayList<CapabilitiesEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

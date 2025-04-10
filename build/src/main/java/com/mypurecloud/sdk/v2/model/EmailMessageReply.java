@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Attachment;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
@@ -26,19 +27,28 @@ import java.io.Serializable;
 
 public class EmailMessageReply  implements Serializable {
   
-  private List<EmailAddress> to = new ArrayList<EmailAddress>();
-  private List<EmailAddress> cc = new ArrayList<EmailAddress>();
-  private List<EmailAddress> bcc = new ArrayList<EmailAddress>();
+  private List<EmailAddress> to = null;
+  private List<EmailAddress> cc = null;
+  private List<EmailAddress> bcc = null;
   private EmailAddress from = null;
   private EmailAddress replyTo = null;
   private String subject = null;
-  private List<Attachment> attachments = new ArrayList<Attachment>();
+  private List<Attachment> attachments = null;
   private String textBody = null;
   private String htmlBody = null;
   private Date time = null;
   private Boolean historyIncluded = null;
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
+
+  public EmailMessageReply() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      to = new ArrayList<EmailAddress>();
+      cc = new ArrayList<EmailAddress>();
+      bcc = new ArrayList<EmailAddress>();
+      attachments = new ArrayList<Attachment>();
+    }
+  }
 
   
   /**

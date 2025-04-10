@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -76,7 +77,7 @@ public class ScheduleGenerationWarning  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<UnableToScheduleRequiredDaysEnum> unableToScheduleRequiredDays = new ArrayList<UnableToScheduleRequiredDaysEnum>();
+  private List<UnableToScheduleRequiredDaysEnum> unableToScheduleRequiredDays = null;
   private Boolean unableToMeetMinPaidForTheWeek = null;
   private Boolean unableToMeetMaxPaidForTheWeek = null;
 
@@ -130,8 +131,15 @@ public class ScheduleGenerationWarning  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<NoNeedDaysEnum> noNeedDays = new ArrayList<NoNeedDaysEnum>();
+  private List<NoNeedDaysEnum> noNeedDays = null;
   private Boolean shiftsTooCloseTogether = null;
+
+  public ScheduleGenerationWarning() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      unableToScheduleRequiredDays = new ArrayList<UnableToScheduleRequiredDaysEnum>();
+      noNeedDays = new ArrayList<NoNeedDaysEnum>();
+    }
+  }
 
   
   /**

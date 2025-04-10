@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmAlternativeShiftJobCompleteEventV3ErrorBody;
@@ -126,6 +127,11 @@ public class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNot
   private StatusEnum status = null;
   private String downloadUrl = null;
   private WfmAlternativeShiftJobCompleteEventV3ErrorBody error = null;
+
+  public WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

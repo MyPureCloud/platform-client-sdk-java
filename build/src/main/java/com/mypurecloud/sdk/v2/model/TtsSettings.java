@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LanguageOverride;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +26,13 @@ import java.io.Serializable;
 public class TtsSettings  implements Serializable {
   
   private String defaultEngine = null;
-  private List<LanguageOverride> languageOverrides = new ArrayList<LanguageOverride>();
+  private List<LanguageOverride> languageOverrides = null;
+
+  public TtsSettings() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      languageOverrides = new ArrayList<LanguageOverride>();
+    }
+  }
 
   
   /**

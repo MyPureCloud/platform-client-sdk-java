@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -125,7 +126,13 @@ public class LearningAssignmentStepScoStructure  implements Serializable {
     }
   }
   private CompletionStatusEnum completionStatus = null;
-  private List<LearningAssignmentStepScoStructure> children = new ArrayList<LearningAssignmentStepScoStructure>();
+  private List<LearningAssignmentStepScoStructure> children = null;
+
+  public LearningAssignmentStepScoStructure() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      children = new ArrayList<LearningAssignmentStepScoStructure>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The id of this SCO in the course manifest")

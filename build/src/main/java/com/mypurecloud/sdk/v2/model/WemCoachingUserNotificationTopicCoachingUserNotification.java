@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WemCoachingUserNotificationTopicCoachingAppointmentReference;
@@ -128,7 +129,7 @@ public class WemCoachingUserNotificationTopicCoachingUserNotification  implement
   private RelationshipEnum relationship = null;
   private WemCoachingUserNotificationTopicCoachingAppointmentReference appointment = null;
   private Date dateStart = null;
-  private Integer lengthInMinutes = null;
+  private Long lengthInMinutes = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -179,6 +180,11 @@ public class WemCoachingUserNotificationTopicCoachingUserNotification  implement
     }
   }
   private StatusEnum status = null;
+
+  public WemCoachingUserNotificationTopicCoachingUserNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -302,17 +308,17 @@ public class WemCoachingUserNotificationTopicCoachingUserNotification  implement
 
   /**
    **/
-  public WemCoachingUserNotificationTopicCoachingUserNotification lengthInMinutes(Integer lengthInMinutes) {
+  public WemCoachingUserNotificationTopicCoachingUserNotification lengthInMinutes(Long lengthInMinutes) {
     this.lengthInMinutes = lengthInMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lengthInMinutes")
-  public Integer getLengthInMinutes() {
+  public Long getLengthInMinutes() {
     return lengthInMinutes;
   }
-  public void setLengthInMinutes(Integer lengthInMinutes) {
+  public void setLengthInMinutes(Long lengthInMinutes) {
     this.lengthInMinutes = lengthInMinutes;
   }
 

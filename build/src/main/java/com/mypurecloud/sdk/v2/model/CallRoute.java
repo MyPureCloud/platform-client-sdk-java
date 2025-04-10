@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallTarget;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class CallRoute  implements Serializable {
   
-  private List<CallTarget> targets = new ArrayList<CallTarget>();
+  private List<CallTarget> targets = null;
+
+  public CallRoute() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      targets = new ArrayList<CallTarget>();
+    }
+  }
 
   
   /**

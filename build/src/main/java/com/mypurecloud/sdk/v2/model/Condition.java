@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactColumnToDataActionFieldMapping;
@@ -53,7 +54,8 @@ public class Condition  implements Serializable {
     PHONENUMBERTYPECONDITION("phoneNumberTypeCondition"),
     CALLANALYSISCONDITION("callAnalysisCondition"),
     CONTACTPROPERTYCONDITION("contactPropertyCondition"),
-    DATAACTIONCONDITION("dataActionCondition");
+    DATAACTIONCONDITION("dataActionCondition"),
+    TIMEANDDATECONDITION("timeAndDateCondition");
 
     private String value;
 
@@ -163,7 +165,8 @@ public class Condition  implements Serializable {
     ENDS_WITH("ENDS_WITH"),
     BEFORE("BEFORE"),
     AFTER("AFTER"),
-    IN("IN");
+    IN("IN"),
+    BETWEEN("BETWEEN");
 
     private String value;
 
@@ -191,7 +194,7 @@ public class Condition  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> codes = new ArrayList<String>();
+  private List<String> codes = null;
   private String property = null;
 
   private static class PropertyTypeEnumDeserializer extends StdDeserializer<PropertyTypeEnum> {
@@ -248,8 +251,16 @@ public class Condition  implements Serializable {
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;
-  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
-  private List<DataActionConditionPredicate> predicates = new ArrayList<DataActionConditionPredicate>();
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
+  private List<DataActionConditionPredicate> predicates = null;
+
+  public Condition() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      codes = new ArrayList<String>();
+      contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+      predicates = new ArrayList<DataActionConditionPredicate>();
+    }
+  }
 
   
   /**

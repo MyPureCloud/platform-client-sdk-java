@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrendData;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class InsightsTrends  implements Serializable {
   
-  private List<TrendData> comparativePeriod = new ArrayList<TrendData>();
-  private List<TrendData> primaryPeriod = new ArrayList<TrendData>();
+  private List<TrendData> comparativePeriod = null;
+  private List<TrendData> primaryPeriod = null;
+
+  public InsightsTrends() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      comparativePeriod = new ArrayList<TrendData>();
+      primaryPeriod = new ArrayList<TrendData>();
+    }
+  }
 
   
   /**

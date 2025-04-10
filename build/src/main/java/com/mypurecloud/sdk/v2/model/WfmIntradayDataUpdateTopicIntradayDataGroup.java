@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmIntradayDataUpdateTopicIntradayForecastData;
@@ -82,12 +83,23 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<WfmIntradayDataUpdateTopicIntradayForecastData> forecastDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayForecastData>();
-  private List<WfmIntradayDataUpdateTopicIntradayScheduleData> scheduleDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayScheduleData>();
-  private List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> historicalAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData>();
-  private List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> historicalQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData>();
-  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> performancePredictionAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData>();
-  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> performancePredictionQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData>();
+  private List<WfmIntradayDataUpdateTopicIntradayForecastData> forecastDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayScheduleData> scheduleDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> historicalAgentDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> historicalQueueDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> performancePredictionAgentDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> performancePredictionQueueDataPerInterval = null;
+
+  public WfmIntradayDataUpdateTopicIntradayDataGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      forecastDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayForecastData>();
+      scheduleDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayScheduleData>();
+      historicalAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData>();
+      historicalQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData>();
+      performancePredictionAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData>();
+      performancePredictionQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData>();
+    }
+  }
 
   
   /**

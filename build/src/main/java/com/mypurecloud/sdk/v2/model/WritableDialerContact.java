@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactableStatus;
 import com.mypurecloud.sdk.v2.model.MessageEvaluation;
@@ -33,10 +34,16 @@ public class WritableDialerContact  implements Serializable {
   private Map<String, String> data = null;
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Map<String, MessageEvaluation> latestEmailEvaluations = null;
+  private Map<String, MessageEvaluation> latestWhatsAppEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
   private Date dateCreated = null;
+
+  public WritableDialerContact() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -104,6 +111,24 @@ public class WritableDialerContact  implements Serializable {
   @JsonProperty("latestEmailEvaluations")
   public Map<String, MessageEvaluation> getLatestEmailEvaluations() {
     return latestEmailEvaluations;
+  }
+
+
+  /**
+   * A map of whatsapp records for the contact whatsapp columns.
+   **/
+  public WritableDialerContact latestWhatsAppEvaluations(Map<String, MessageEvaluation> latestWhatsAppEvaluations) {
+    this.latestWhatsAppEvaluations = latestWhatsAppEvaluations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of whatsapp records for the contact whatsapp columns.")
+  @JsonProperty("latestWhatsAppEvaluations")
+  public Map<String, MessageEvaluation> getLatestWhatsAppEvaluations() {
+    return latestWhatsAppEvaluations;
+  }
+  public void setLatestWhatsAppEvaluations(Map<String, MessageEvaluation> latestWhatsAppEvaluations) {
+    this.latestWhatsAppEvaluations = latestWhatsAppEvaluations;
   }
 
 
@@ -183,6 +208,7 @@ public class WritableDialerContact  implements Serializable {
             Objects.equals(this.data, writableDialerContact.data) &&
             Objects.equals(this.latestSmsEvaluations, writableDialerContact.latestSmsEvaluations) &&
             Objects.equals(this.latestEmailEvaluations, writableDialerContact.latestEmailEvaluations) &&
+            Objects.equals(this.latestWhatsAppEvaluations, writableDialerContact.latestWhatsAppEvaluations) &&
             Objects.equals(this.callable, writableDialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus) &&
             Objects.equals(this.contactableStatus, writableDialerContact.contactableStatus) &&
@@ -191,7 +217,7 @@ public class WritableDialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, dateCreated);
+    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, latestWhatsAppEvaluations, callable, phoneNumberStatus, contactableStatus, dateCreated);
   }
 
   @Override
@@ -204,6 +230,7 @@ public class WritableDialerContact  implements Serializable {
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
     sb.append("    latestEmailEvaluations: ").append(toIndentedString(latestEmailEvaluations)).append("\n");
+    sb.append("    latestWhatsAppEvaluations: ").append(toIndentedString(latestWhatsAppEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");

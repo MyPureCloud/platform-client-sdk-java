@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi#deleteOutboundDnclistCustomexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list. |
 | [**deleteOutboundDnclistEmailaddresses**](OutboundApi#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
 | [**deleteOutboundDnclistPhonenumbers**](OutboundApi#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
+| [**deleteOutboundDnclistWhatsappnumbers**](OutboundApi#deleteOutboundDnclistWhatsappnumbers) | Deletes all or expired whatsApp numbers from a DNC list. |
 | [**deleteOutboundFilespecificationtemplate**](OutboundApi#deleteOutboundFilespecificationtemplate) | Delete File Specification Template |
 | [**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi#deleteOutboundFilespecificationtemplatesBulk) | Delete multiple file specification templates. |
 | [**deleteOutboundImporttemplate**](OutboundApi#deleteOutboundImporttemplate) | Delete Import Template |
@@ -108,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi#patchOutboundDnclistCustomexclusioncolumns) | Add entries to or delete entries from a DNC list. |
 | [**patchOutboundDnclistEmailaddresses**](OutboundApi#patchOutboundDnclistEmailaddresses) | Add emails to or Delete emails from a DNC list. |
 | [**patchOutboundDnclistPhonenumbers**](OutboundApi#patchOutboundDnclistPhonenumbers) | Add numbers to or delete numbers from a DNC list. |
+| [**patchOutboundDnclistWhatsappnumbers**](OutboundApi#patchOutboundDnclistWhatsappnumbers) | Add entries to or delete entries from a DNC list. |
 | [**patchOutboundSettings**](OutboundApi#patchOutboundSettings) | Update the outbound settings for this organization |
 | [**postOutboundAttemptlimits**](OutboundApi#postOutboundAttemptlimits) | Create attempt limits |
 | [**postOutboundCallabletimesets**](OutboundApi#postOutboundCallabletimesets) | Create callable time set |
@@ -1227,6 +1229,68 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
 | **expiredOnly** | **Boolean**| Set to true to only remove DNC entries that are expired | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteOutboundDnclistWhatsappnumbers**
+
+
+> Void deleteOutboundDnclistWhatsappnumbers(dncListId, expiredOnly)
+
+Deletes all or expired whatsApp numbers from a DNC list.
+
+This operation is only for Internal DNC lists of whatsApp numbers
+
+Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers  
+
+Requires ANY permissions: 
+
+* outbound:dnc:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+Boolean expiredOnly = false; // Boolean | Set to true to only remove DNC whatsApp numbers that are expired
+try {
+    apiInstance.deleteOutboundDnclistWhatsappnumbers(dncListId, expiredOnly);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundDnclistWhatsappnumbers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **expiredOnly** | **Boolean**| Set to true to only remove DNC whatsApp numbers that are expired | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -6695,6 +6759,68 @@ try {
 null (empty response body)
 
 
+# **patchOutboundDnclistWhatsappnumbers**
+
+
+> Void patchOutboundDnclistWhatsappnumbers(dncListId, body)
+
+Add entries to or delete entries from a DNC list.
+
+Only Internal DNC lists may be deleted from
+
+Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers  
+
+Requires ANY permissions: 
+
+* outbound:dnc:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+DncPatchWhatsAppNumbersRequest body = new DncPatchWhatsAppNumbersRequest(); // DncPatchWhatsAppNumbersRequest | DNC whatsApp numbers
+try {
+    apiInstance.patchOutboundDnclistWhatsappnumbers(dncListId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#patchOutboundDnclistWhatsappnumbers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **body** | [**DncPatchWhatsAppNumbersRequest**](DncPatchWhatsAppNumbersRequest)| DNC whatsApp numbers | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **patchOutboundSettings**
 
 
@@ -10453,4 +10579,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

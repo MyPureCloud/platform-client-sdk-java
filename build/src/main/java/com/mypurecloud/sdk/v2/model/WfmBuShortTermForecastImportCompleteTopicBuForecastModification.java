@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue;
@@ -81,8 +82,8 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     }
   }
   private TypeEnum type = null;
-  private Integer startIntervalIndex = null;
-  private Integer endIntervalIndex = null;
+  private Long startIntervalIndex = null;
+  private Long endIntervalIndex = null;
 
   private static class MetricEnumDeserializer extends StdDeserializer<MetricEnum> {
     public MetricEnumDeserializer() {
@@ -182,13 +183,21 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
   }
   private LegacyMetricEnum legacyMetric = null;
   private BigDecimal value = null;
-  private List<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue> values = new ArrayList<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>();
-  private List<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue> secondaryValues = new ArrayList<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>();
+  private List<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue> values = null;
+  private List<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue> secondaryValues = null;
   private Boolean enabled = null;
   private String granularity = null;
   private String secondaryGranularity = null;
   private String displayGranularity = null;
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<String> planningGroupIds = null;
+
+  public WfmBuShortTermForecastImportCompleteTopicBuForecastModification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>();
+      secondaryValues = new ArrayList<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>();
+      planningGroupIds = new ArrayList<String>();
+    }
+  }
 
   
   /**
@@ -210,34 +219,34 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
 
   /**
    **/
-  public WfmBuShortTermForecastImportCompleteTopicBuForecastModification startIntervalIndex(Integer startIntervalIndex) {
+  public WfmBuShortTermForecastImportCompleteTopicBuForecastModification startIntervalIndex(Long startIntervalIndex) {
     this.startIntervalIndex = startIntervalIndex;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("startIntervalIndex")
-  public Integer getStartIntervalIndex() {
+  public Long getStartIntervalIndex() {
     return startIntervalIndex;
   }
-  public void setStartIntervalIndex(Integer startIntervalIndex) {
+  public void setStartIntervalIndex(Long startIntervalIndex) {
     this.startIntervalIndex = startIntervalIndex;
   }
 
 
   /**
    **/
-  public WfmBuShortTermForecastImportCompleteTopicBuForecastModification endIntervalIndex(Integer endIntervalIndex) {
+  public WfmBuShortTermForecastImportCompleteTopicBuForecastModification endIntervalIndex(Long endIntervalIndex) {
     this.endIntervalIndex = endIntervalIndex;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("endIntervalIndex")
-  public Integer getEndIntervalIndex() {
+  public Long getEndIntervalIndex() {
     return endIntervalIndex;
   }
-  public void setEndIntervalIndex(Integer endIntervalIndex) {
+  public void setEndIntervalIndex(Long endIntervalIndex) {
     this.endIntervalIndex = endIntervalIndex;
   }
 

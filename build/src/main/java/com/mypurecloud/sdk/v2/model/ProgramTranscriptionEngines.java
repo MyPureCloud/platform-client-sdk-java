@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.BaseProgramEntity;
@@ -29,10 +30,16 @@ public class ProgramTranscriptionEngines  implements Serializable {
   
   private String id = null;
   private BaseProgramEntity program = null;
-  private List<ProgramTranscriptionEngine> transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+  private List<ProgramTranscriptionEngine> transcriptionEngines = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private String selfUri = null;
+
+  public ProgramTranscriptionEngines() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

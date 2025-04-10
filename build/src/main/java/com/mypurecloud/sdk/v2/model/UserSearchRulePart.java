@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -123,7 +124,13 @@ public class UserSearchRulePart  implements Serializable {
     }
   }
   private SelectorEnum selector = null;
-  private List<String> ids = new ArrayList<String>();
+  private List<String> ids = null;
+
+  public UserSearchRulePart() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      ids = new ArrayList<String>();
+    }
+  }
 
   
   /**

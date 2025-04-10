@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -135,11 +136,17 @@ public class DncListCreate  implements Serializable {
   private ContactMethodEnum contactMethod = null;
   private String loginId = null;
   private String campaignId = null;
-  private List<String> dncCodes = new ArrayList<String>();
+  private List<String> dncCodes = null;
   private String licenseId = null;
   private DomainEntityRef division = null;
   private String customExclusionColumn = null;
   private String selfUri = null;
+
+  public DncListCreate() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncCodes = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

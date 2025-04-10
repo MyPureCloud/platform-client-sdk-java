@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssignmentError;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -25,9 +26,17 @@ import java.io.Serializable;
 
 public class Assignment  implements Serializable {
   
-  private List<UserReference> assignedMembers = new ArrayList<UserReference>();
-  private List<UserReference> removedMembers = new ArrayList<UserReference>();
-  private List<AssignmentError> assignmentErrors = new ArrayList<AssignmentError>();
+  private List<UserReference> assignedMembers = null;
+  private List<UserReference> removedMembers = null;
+  private List<AssignmentError> assignmentErrors = null;
+
+  public Assignment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      assignedMembers = new ArrayList<UserReference>();
+      removedMembers = new ArrayList<UserReference>();
+      assignmentErrors = new ArrayList<AssignmentError>();
+    }
+  }
 
   
   /**

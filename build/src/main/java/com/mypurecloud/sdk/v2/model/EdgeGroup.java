@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -91,8 +92,14 @@ public class EdgeGroup  implements Serializable {
   private Boolean managed = null;
   private Boolean hybrid = null;
   private TrunkBaseAssignment edgeTrunkBaseAssignment = null;
-  private List<TrunkBase> phoneTrunkBases = new ArrayList<TrunkBase>();
+  private List<TrunkBase> phoneTrunkBases = null;
   private String selfUri = null;
+
+  public EdgeGroup() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phoneTrunkBases = new ArrayList<TrunkBase>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

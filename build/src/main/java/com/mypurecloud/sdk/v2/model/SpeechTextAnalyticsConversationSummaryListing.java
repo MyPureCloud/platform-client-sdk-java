@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsConversationSummary;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class SpeechTextAnalyticsConversationSummaryListing  implements Serializable {
   
-  private List<SpeechTextAnalyticsConversationSummary> entities = new ArrayList<SpeechTextAnalyticsConversationSummary>();
+  private List<SpeechTextAnalyticsConversationSummary> entities = null;
+
+  public SpeechTextAnalyticsConversationSummaryListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<SpeechTextAnalyticsConversationSummary>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -76,10 +77,15 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     }
   }
   private DayOfWeekEnum dayOfWeek = null;
-  private Integer weight = null;
+  private Long weight = null;
   private String date = null;
   private String fileName = null;
   private String dataKey = null;
+
+  public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -101,17 +107,17 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
 
   /**
    **/
-  public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer weight(Integer weight) {
+  public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer weight(Long weight) {
     this.weight = weight;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("weight")
-  public Integer getWeight() {
+  public Long getWeight() {
     return weight;
   }
-  public void setWeight(Integer weight) {
+  public void setWeight(Long weight) {
     this.weight = weight;
   }
 

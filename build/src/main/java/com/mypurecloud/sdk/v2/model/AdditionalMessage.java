@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SendMessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
@@ -25,9 +26,16 @@ import java.io.Serializable;
 public class AdditionalMessage  implements Serializable {
   
   private String textBody = null;
-  private List<String> mediaIds = new ArrayList<String>();
-  private List<String> stickerIds = new ArrayList<String>();
+  private List<String> mediaIds = null;
+  private List<String> stickerIds = null;
   private SendMessagingTemplateRequest messagingTemplate = null;
+
+  public AdditionalMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      mediaIds = new ArrayList<String>();
+      stickerIds = new ArrayList<String>();
+    }
+  }
 
   
   /**

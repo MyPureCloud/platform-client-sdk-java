@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   
-  private Integer eventTime = null;
+  private Long eventTime = null;
   private String conversationId = null;
   private String participantId = null;
   private String sessionId = null;
@@ -328,9 +329,9 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   private String flowId = null;
   private String divisionId = null;
   private String flowVersion = null;
-  private Integer connectedDurationMs = null;
-  private List<String> conversationExternalContactIds = new ArrayList<String>();
-  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private Long connectedDurationMs = null;
+  private List<String> conversationExternalContactIds = null;
+  private List<String> conversationExternalOrganizationIds = null;
 
   private static class ExitReasonEnumDeserializer extends StdDeserializer<ExitReasonEnum> {
     public ExitReasonEnumDeserializer() {
@@ -446,20 +447,27 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   }
   private TransferTypeEnum transferType = null;
 
+  public FlowEndDetailEventTopicFlowEndEvent() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationExternalContactIds = new ArrayList<String>();
+      conversationExternalOrganizationIds = new ArrayList<String>();
+    }
+  }
+
   
   /**
    **/
-  public FlowEndDetailEventTopicFlowEndEvent eventTime(Integer eventTime) {
+  public FlowEndDetailEventTopicFlowEndEvent eventTime(Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Integer getEventTime() {
+  public Long getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Integer eventTime) {
+  public void setEventTime(Long eventTime) {
     this.eventTime = eventTime;
   }
 
@@ -755,17 +763,17 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
 
   /**
    **/
-  public FlowEndDetailEventTopicFlowEndEvent connectedDurationMs(Integer connectedDurationMs) {
+  public FlowEndDetailEventTopicFlowEndEvent connectedDurationMs(Long connectedDurationMs) {
     this.connectedDurationMs = connectedDurationMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("connectedDurationMs")
-  public Integer getConnectedDurationMs() {
+  public Long getConnectedDurationMs() {
     return connectedDurationMs;
   }
-  public void setConnectedDurationMs(Integer connectedDurationMs) {
+  public void setConnectedDurationMs(Long connectedDurationMs) {
     this.connectedDurationMs = connectedDurationMs;
   }
 

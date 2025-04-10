@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 public class LicenseUser  implements Serializable {
   
   private String id = null;
-  private List<LicenseDefinition> licenses = new ArrayList<LicenseDefinition>();
+  private List<LicenseDefinition> licenses = null;
   private String selfUri = null;
+
+  public LicenseUser() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      licenses = new ArrayList<LicenseDefinition>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

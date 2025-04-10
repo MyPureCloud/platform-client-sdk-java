@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentFormQuestionGroup;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,13 @@ public class AssessmentForm  implements Serializable {
   private String selfUri = null;
   private Boolean published = null;
   private Integer passPercent = null;
-  private List<AssessmentFormQuestionGroup> questionGroups = new ArrayList<AssessmentFormQuestionGroup>();
+  private List<AssessmentFormQuestionGroup> questionGroups = null;
+
+  public AssessmentForm() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      questionGroups = new ArrayList<AssessmentFormQuestionGroup>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

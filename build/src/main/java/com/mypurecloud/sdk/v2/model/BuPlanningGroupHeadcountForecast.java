@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PlanningGroupReference;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,15 @@ import java.io.Serializable;
 public class BuPlanningGroupHeadcountForecast  implements Serializable {
   
   private PlanningGroupReference planningGroup = null;
-  private List<Double> requiredPerInterval = new ArrayList<Double>();
-  private List<Double> requiredWithoutShrinkagePerInterval = new ArrayList<Double>();
+  private List<Double> requiredPerInterval = null;
+  private List<Double> requiredWithoutShrinkagePerInterval = null;
+
+  public BuPlanningGroupHeadcountForecast() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      requiredPerInterval = new ArrayList<Double>();
+      requiredWithoutShrinkagePerInterval = new ArrayList<Double>();
+    }
+  }
 
   
   /**

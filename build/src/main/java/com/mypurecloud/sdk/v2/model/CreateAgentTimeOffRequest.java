@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,11 +27,20 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   
   private String activityCodeId = null;
   private String notes = null;
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
-  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
+  private List<String> fullDayManagementUnitDates = null;
+  private List<Date> partialDayStartDateTimes = null;
   private Integer dailyDurationMinutes = null;
-  private List<Integer> durationMinutes = new ArrayList<Integer>();
-  private List<Integer> payableMinutes = new ArrayList<Integer>();
+  private List<Integer> durationMinutes = null;
+  private List<Integer> payableMinutes = null;
+
+  public CreateAgentTimeOffRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      fullDayManagementUnitDates = new ArrayList<String>();
+      partialDayStartDateTimes = new ArrayList<Date>();
+      durationMinutes = new ArrayList<Integer>();
+      payableMinutes = new ArrayList<Integer>();
+    }
+  }
 
   
   /**

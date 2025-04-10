@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageSeverityCount;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +28,13 @@ public class ScheduleGenerationResultSummary  implements Serializable {
   private Boolean failed = null;
   private String runId = null;
   private Integer messageCount = null;
-  private List<SchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+  private List<SchedulerMessageSeverityCount> messageSeverityCounts = null;
+
+  public ScheduleGenerationResultSummary() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+    }
+  }
 
   
   /**

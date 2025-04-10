@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
 import io.swagger.annotations.ApiModel;
@@ -26,12 +27,18 @@ import java.io.Serializable;
 public class TestMessage  implements Serializable {
   
   private String id = null;
-  private List<EmailAddress> to = new ArrayList<EmailAddress>();
+  private List<EmailAddress> to = null;
   private EmailAddress from = null;
   private String subject = null;
   private String textBody = null;
   private String htmlBody = null;
   private Date time = null;
+
+  public TestMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      to = new ArrayList<EmailAddress>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "After the message has been sent, this is the value of the Message-ID email header.")

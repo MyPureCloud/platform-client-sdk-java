@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationEmailEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.QueueConversationEmailEventTopicEmailMediaParticipant;
@@ -27,11 +28,19 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationEmailEventTopicEmailMediaParticipant> participants = new ArrayList<QueueConversationEmailEventTopicEmailMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<QueueConversationEmailEventTopicEmailMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<QueueConversationEmailEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationEmailEventTopicConversationDivisionMembership>();
+  private List<QueueConversationEmailEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationEmailEventTopicEmailConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationEmailEventTopicEmailMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationEmailEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

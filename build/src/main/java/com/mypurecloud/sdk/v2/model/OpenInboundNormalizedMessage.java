@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OpenInboundMessageContent;
 import com.mypurecloud.sdk.v2.model.OpenInboundMessageMessagingChannel;
@@ -30,8 +31,14 @@ public class OpenInboundNormalizedMessage  implements Serializable {
   
   private OpenInboundMessageMessagingChannel channel = null;
   private String text = null;
-  private List<OpenInboundMessageContent> content = new ArrayList<OpenInboundMessageContent>();
+  private List<OpenInboundMessageContent> content = null;
   private Map<String, String> metadata = null;
+
+  public OpenInboundNormalizedMessage() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      content = new ArrayList<OpenInboundMessageContent>();
+    }
+  }
 
   
   /**

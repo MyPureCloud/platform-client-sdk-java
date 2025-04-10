@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,13 +24,18 @@ import java.io.Serializable;
 public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Serializable {
   
   private String direction = null;
-  private Integer expectedPages = null;
-  private Integer activePage = null;
-  private Integer linesTransmitted = null;
-  private Integer bytesTransmitted = null;
-  private Integer baudRate = null;
-  private Integer pageErrors = null;
-  private Integer lineErrors = null;
+  private Long expectedPages = null;
+  private Long activePage = null;
+  private Long linesTransmitted = null;
+  private Long bytesTransmitted = null;
+  private Long baudRate = null;
+  private Long pageErrors = null;
+  private Long lineErrors = null;
+
+  public QueueConversationSocialExpressionEventTopicFaxStatus() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -53,17 +59,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Total number of expected pages, if known.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus expectedPages(Integer expectedPages) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus expectedPages(Long expectedPages) {
     this.expectedPages = expectedPages;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Total number of expected pages, if known.")
   @JsonProperty("expectedPages")
-  public Integer getExpectedPages() {
+  public Long getExpectedPages() {
     return expectedPages;
   }
-  public void setExpectedPages(Integer expectedPages) {
+  public void setExpectedPages(Long expectedPages) {
     this.expectedPages = expectedPages;
   }
 
@@ -71,17 +77,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Active page of the transmission.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus activePage(Integer activePage) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus activePage(Long activePage) {
     this.activePage = activePage;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Active page of the transmission.")
   @JsonProperty("activePage")
-  public Integer getActivePage() {
+  public Long getActivePage() {
     return activePage;
   }
-  public void setActivePage(Integer activePage) {
+  public void setActivePage(Long activePage) {
     this.activePage = activePage;
   }
 
@@ -89,17 +95,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Number of lines that have completed transmission.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus linesTransmitted(Integer linesTransmitted) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus linesTransmitted(Long linesTransmitted) {
     this.linesTransmitted = linesTransmitted;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of lines that have completed transmission.")
   @JsonProperty("linesTransmitted")
-  public Integer getLinesTransmitted() {
+  public Long getLinesTransmitted() {
     return linesTransmitted;
   }
-  public void setLinesTransmitted(Integer linesTransmitted) {
+  public void setLinesTransmitted(Long linesTransmitted) {
     this.linesTransmitted = linesTransmitted;
   }
 
@@ -107,17 +113,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Number of bytes that have competed transmission.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus bytesTransmitted(Integer bytesTransmitted) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus bytesTransmitted(Long bytesTransmitted) {
     this.bytesTransmitted = bytesTransmitted;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of bytes that have competed transmission.")
   @JsonProperty("bytesTransmitted")
-  public Integer getBytesTransmitted() {
+  public Long getBytesTransmitted() {
     return bytesTransmitted;
   }
-  public void setBytesTransmitted(Integer bytesTransmitted) {
+  public void setBytesTransmitted(Long bytesTransmitted) {
     this.bytesTransmitted = bytesTransmitted;
   }
 
@@ -125,17 +131,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Current signaling rate of transmission, baud rate.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus baudRate(Integer baudRate) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus baudRate(Long baudRate) {
     this.baudRate = baudRate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Current signaling rate of transmission, baud rate.")
   @JsonProperty("baudRate")
-  public Integer getBaudRate() {
+  public Long getBaudRate() {
     return baudRate;
   }
-  public void setBaudRate(Integer baudRate) {
+  public void setBaudRate(Long baudRate) {
     this.baudRate = baudRate;
   }
 
@@ -143,17 +149,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Number of page errors.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus pageErrors(Integer pageErrors) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus pageErrors(Long pageErrors) {
     this.pageErrors = pageErrors;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of page errors.")
   @JsonProperty("pageErrors")
-  public Integer getPageErrors() {
+  public Long getPageErrors() {
     return pageErrors;
   }
-  public void setPageErrors(Integer pageErrors) {
+  public void setPageErrors(Long pageErrors) {
     this.pageErrors = pageErrors;
   }
 
@@ -161,17 +167,17 @@ public class QueueConversationSocialExpressionEventTopicFaxStatus  implements Se
   /**
    * Number of line errors.
    **/
-  public QueueConversationSocialExpressionEventTopicFaxStatus lineErrors(Integer lineErrors) {
+  public QueueConversationSocialExpressionEventTopicFaxStatus lineErrors(Long lineErrors) {
     this.lineErrors = lineErrors;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Number of line errors.")
   @JsonProperty("lineErrors")
-  public Integer getLineErrors() {
+  public Long getLineErrors() {
     return lineErrors;
   }
-  public void setLineErrors(Integer lineErrors) {
+  public void setLineErrors(Long lineErrors) {
     this.lineErrors = lineErrors;
   }
 

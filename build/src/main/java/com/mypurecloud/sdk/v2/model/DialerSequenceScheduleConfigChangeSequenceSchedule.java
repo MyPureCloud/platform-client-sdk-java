@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeScheduleInterval;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeScheduleRecurrence;
@@ -29,8 +30,8 @@ import java.io.Serializable;
 
 public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Serializable {
   
-  private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
-  private List<DialerSequenceScheduleConfigChangeScheduleRecurrence> recurrences = new ArrayList<DialerSequenceScheduleConfigChangeScheduleRecurrence>();
+  private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = null;
+  private List<DialerSequenceScheduleConfigChangeScheduleRecurrence> recurrences = null;
   private String timeZone = null;
   private DialerSequenceScheduleConfigChangeUriReference sequence = null;
   private Map<String, Object> additionalProperties = null;
@@ -38,7 +39,14 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
+
+  public DialerSequenceScheduleConfigChangeSequenceSchedule() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
+      recurrences = new ArrayList<DialerSequenceScheduleConfigChangeScheduleRecurrence>();
+    }
+  }
 
   
   /**
@@ -204,17 +212,17 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public DialerSequenceScheduleConfigChangeSequenceSchedule version(Integer version) {
+  public DialerSequenceScheduleConfigChangeSequenceSchedule version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

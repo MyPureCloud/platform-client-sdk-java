@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicScreenShareMediaParticipant;
@@ -27,11 +28,19 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<QueueConversationScreenShareEventTopicScreenShareMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<QueueConversationScreenShareEventTopicScreenShareMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
-  private List<QueueConversationScreenShareEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationScreenShareEventTopicConversationDivisionMembership>();
+  private List<QueueConversationScreenShareEventTopicConversationDivisionMembership> divisions = null;
+
+  public QueueConversationScreenShareEventTopicScreenShareConversation() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      participants = new ArrayList<QueueConversationScreenShareEventTopicScreenShareMediaParticipant>();
+      otherMediaUris = new ArrayList<String>();
+      divisions = new ArrayList<QueueConversationScreenShareEventTopicConversationDivisionMembership>();
+    }
+  }
 
   
   /**

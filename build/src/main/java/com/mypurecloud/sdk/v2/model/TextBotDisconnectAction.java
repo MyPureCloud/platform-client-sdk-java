@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLocation;
@@ -80,7 +81,13 @@ public class TextBotDisconnectAction  implements Serializable {
   private ReasonEnum reason = null;
   private String reasonExtendedInfo = null;
   private TextBotFlowLocation flowLocation = null;
-  private List<TextBotFlowOutcome> flowOutcomes = new ArrayList<TextBotFlowOutcome>();
+  private List<TextBotFlowOutcome> flowOutcomes = null;
+
+  public TextBotDisconnectAction() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      flowOutcomes = new ArrayList<TextBotFlowOutcome>();
+    }
+  }
 
   
   /**

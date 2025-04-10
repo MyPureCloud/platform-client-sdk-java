@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import io.swagger.annotations.ApiModel;
@@ -25,8 +26,14 @@ import java.io.Serializable;
 public class OrganizationPresenceDefinitionEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<OrganizationPresenceDefinition> entities = new ArrayList<OrganizationPresenceDefinition>();
+  private List<OrganizationPresenceDefinition> entities = null;
   private String selfUri = null;
+
+  public OrganizationPresenceDefinitionEntityListing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<OrganizationPresenceDefinition>();
+    }
+  }
 
   
   /**

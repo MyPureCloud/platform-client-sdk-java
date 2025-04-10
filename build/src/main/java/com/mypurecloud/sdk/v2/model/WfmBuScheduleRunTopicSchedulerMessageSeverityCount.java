@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -72,7 +73,12 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
     }
   }
   private SeverityEnum severity = null;
-  private Integer count = null;
+  private Long count = null;
+
+  public WfmBuScheduleRunTopicSchedulerMessageSeverityCount() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -94,17 +100,17 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
 
   /**
    **/
-  public WfmBuScheduleRunTopicSchedulerMessageSeverityCount count(Integer count) {
+  public WfmBuScheduleRunTopicSchedulerMessageSeverityCount count(Long count) {
     this.count = count;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("count")
-  public Integer getCount() {
+  public Long getCount() {
     return count;
   }
-  public void setCount(Integer count) {
+  public void setCount(Long count) {
     this.count = count;
   }
 

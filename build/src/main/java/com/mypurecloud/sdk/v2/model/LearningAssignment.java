@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
@@ -46,7 +47,7 @@ public class LearningAssignment  implements Serializable {
   private Boolean isLatest = null;
   private Float assessmentCompletionPercentage = null;
   private Float completionPercentage = null;
-  private List<LearningAssignmentStep> steps = new ArrayList<LearningAssignmentStep>();
+  private List<LearningAssignmentStep> steps = null;
   private LearningAssignmentStep nextStep = null;
   private String selfUri = null;
 
@@ -107,6 +108,12 @@ public class LearningAssignment  implements Serializable {
   private UserReference user = null;
   private AssessmentForm assessmentForm = null;
   private Integer lengthInMinutes = null;
+
+  public LearningAssignment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      steps = new ArrayList<LearningAssignmentStep>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

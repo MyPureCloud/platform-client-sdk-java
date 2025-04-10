@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -36,8 +37,14 @@ public class ResponseAsset  implements Serializable {
   private DomainEntityRef createdBy = null;
   private Date dateModified = null;
   private DomainEntityRef modifiedBy = null;
-  private List<DomainEntityRef> responses = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> responses = null;
   private String selfUri = null;
+
+  public ResponseAsset() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      responses = new ArrayList<DomainEntityRef>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

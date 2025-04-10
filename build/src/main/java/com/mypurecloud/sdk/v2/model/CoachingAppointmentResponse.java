@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
@@ -86,20 +87,29 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private UserReference facilitator = null;
-  private List<UserReference> attendees = new ArrayList<UserReference>();
+  private List<UserReference> attendees = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
-  private List<ConversationReference> conversations = new ArrayList<ConversationReference>();
-  private List<DocumentReference> documents = new ArrayList<DocumentReference>();
+  private List<ConversationReference> conversations = null;
+  private List<DocumentReference> documents = null;
   private Boolean isOverdue = null;
   private WfmScheduleReference wfmSchedule = null;
   private Date dateCompleted = null;
-  private List<String> externalLinks = new ArrayList<String>();
+  private List<String> externalLinks = null;
   private String location = null;
   private Boolean shareInsightsData = null;
   private String selfUri = null;
+
+  public CoachingAppointmentResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      attendees = new ArrayList<UserReference>();
+      conversations = new ArrayList<ConversationReference>();
+      documents = new ArrayList<DocumentReference>();
+      externalLinks = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

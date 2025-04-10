@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,13 @@ import java.io.Serializable;
 
 public class ShiftTradeListResponse  implements Serializable {
   
-  private List<ShiftTradeResponse> entities = new ArrayList<ShiftTradeResponse>();
+  private List<ShiftTradeResponse> entities = null;
+
+  public ShiftTradeListResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<ShiftTradeResponse>();
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatConversation;
 import com.mypurecloud.sdk.v2.model.WebChatMemberInfo;
@@ -28,6 +29,11 @@ public class WebChatTyping  implements Serializable {
   private WebChatConversation conversation = null;
   private WebChatMemberInfo sender = null;
   private Date timestamp = null;
+
+  public WebChatTyping() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsRoutingStatusRecord;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserPresenceRecord;
@@ -26,8 +27,15 @@ import java.io.Serializable;
 public class AnalyticsUserDetail  implements Serializable {
   
   private String userId = null;
-  private List<AnalyticsUserPresenceRecord> primaryPresence = new ArrayList<AnalyticsUserPresenceRecord>();
-  private List<AnalyticsRoutingStatusRecord> routingStatus = new ArrayList<AnalyticsRoutingStatusRecord>();
+  private List<AnalyticsUserPresenceRecord> primaryPresence = null;
+  private List<AnalyticsRoutingStatusRecord> routingStatus = null;
+
+  public AnalyticsUserDetail() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      primaryPresence = new ArrayList<AnalyticsUserPresenceRecord>();
+      routingStatus = new ArrayList<AnalyticsRoutingStatusRecord>();
+    }
+  }
 
   
   /**

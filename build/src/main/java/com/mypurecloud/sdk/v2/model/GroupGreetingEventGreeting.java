@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GroupGreetingEventGreetingAudioFile;
 import com.mypurecloud.sdk.v2.model.GroupGreetingEventGreetingOwner;
@@ -30,6 +31,11 @@ public class GroupGreetingEventGreeting  implements Serializable {
   private GroupGreetingEventGreetingOwner owner = null;
   private GroupGreetingEventGreetingAudioFile greetingAudioFile = null;
   private String audioTTS = null;
+
+  public GroupGreetingEventGreeting() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

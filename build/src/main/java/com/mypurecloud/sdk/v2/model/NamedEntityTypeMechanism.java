@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeItem;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 
 public class NamedEntityTypeMechanism  implements Serializable {
   
-  private List<NamedEntityTypeItem> items = new ArrayList<NamedEntityTypeItem>();
+  private List<NamedEntityTypeItem> items = null;
   private Boolean restricted = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -130,7 +131,15 @@ public class NamedEntityTypeMechanism  implements Serializable {
   }
   private SubTypeEnum subType = null;
   private Integer maxLength = null;
-  private List<NamedEntityTypeMechanismExample> examples = new ArrayList<NamedEntityTypeMechanismExample>();
+  private Integer minLength = null;
+  private List<NamedEntityTypeMechanismExample> examples = null;
+
+  public NamedEntityTypeMechanism() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      items = new ArrayList<NamedEntityTypeItem>();
+      examples = new ArrayList<NamedEntityTypeMechanismExample>();
+    }
+  }
 
   
   /**
@@ -224,6 +233,24 @@ public class NamedEntityTypeMechanism  implements Serializable {
 
 
   /**
+   * The minimum length of the entity resolved value
+   **/
+  public NamedEntityTypeMechanism minLength(Integer minLength) {
+    this.minLength = minLength;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The minimum length of the entity resolved value")
+  @JsonProperty("minLength")
+  public Integer getMinLength() {
+    return minLength;
+  }
+  public void setMinLength(Integer minLength) {
+    this.minLength = minLength;
+  }
+
+
+  /**
    * Examples for entity detection
    **/
   public NamedEntityTypeMechanism examples(List<NamedEntityTypeMechanismExample> examples) {
@@ -256,12 +283,13 @@ public class NamedEntityTypeMechanism  implements Serializable {
             Objects.equals(this.type, namedEntityTypeMechanism.type) &&
             Objects.equals(this.subType, namedEntityTypeMechanism.subType) &&
             Objects.equals(this.maxLength, namedEntityTypeMechanism.maxLength) &&
+            Objects.equals(this.minLength, namedEntityTypeMechanism.minLength) &&
             Objects.equals(this.examples, namedEntityTypeMechanism.examples);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items, restricted, type, subType, maxLength, examples);
+    return Objects.hash(items, restricted, type, subType, maxLength, minLength, examples);
   }
 
   @Override
@@ -274,6 +302,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
     sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
+    sb.append("    minLength: ").append(toIndentedString(minLength)).append("\n");
     sb.append("    examples: ").append(toIndentedString(examples)).append("\n");
     sb.append("}");
     return sb.toString();

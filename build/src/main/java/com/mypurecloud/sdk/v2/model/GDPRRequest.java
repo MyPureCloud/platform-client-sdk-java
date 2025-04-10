@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -31,7 +32,7 @@ public class GDPRRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private DomainEntityRef createdBy = null;
-  private List<ReplacementTerm> replacementTerms = new ArrayList<ReplacementTerm>();
+  private List<ReplacementTerm> replacementTerms = null;
 
   private static class RequestTypeEnumDeserializer extends StdDeserializer<RequestTypeEnum> {
     public RequestTypeEnumDeserializer() {
@@ -138,6 +139,12 @@ public class GDPRRequest  implements Serializable {
   private GDPRSubject subject = null;
   private String resultsUrl = null;
   private String selfUri = null;
+
+  public GDPRRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      replacementTerms = new ArrayList<ReplacementTerm>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

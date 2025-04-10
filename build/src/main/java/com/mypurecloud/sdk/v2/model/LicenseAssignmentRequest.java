@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,8 +24,15 @@ import java.io.Serializable;
 public class LicenseAssignmentRequest  implements Serializable {
   
   private String licenseId = null;
-  private List<String> userIdsAdd = new ArrayList<String>();
-  private List<String> userIdsRemove = new ArrayList<String>();
+  private List<String> userIdsAdd = null;
+  private List<String> userIdsRemove = null;
+
+  public LicenseAssignmentRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      userIdsAdd = new ArrayList<String>();
+      userIdsRemove = new ArrayList<String>();
+    }
+  }
 
   
   /**

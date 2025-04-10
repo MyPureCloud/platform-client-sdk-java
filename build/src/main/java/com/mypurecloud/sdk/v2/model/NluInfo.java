@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Intent;
@@ -28,9 +29,15 @@ public class NluInfo  implements Serializable {
   
   private AddressableEntityRef domain = null;
   private NluDomainVersion version = null;
-  private List<Intent> intents = new ArrayList<Intent>();
+  private List<Intent> intents = null;
   private String engineVersion = null;
   private NluDomainVersion nluData = null;
+
+  public NluInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<Intent>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "")

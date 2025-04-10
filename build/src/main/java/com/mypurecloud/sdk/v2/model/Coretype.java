@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ItemValidationLimits;
 import com.mypurecloud.sdk.v2.model.Schema;
@@ -33,11 +34,18 @@ public class Coretype  implements Serializable {
   private Date dateCreated = null;
   private Schema schema = null;
   private Boolean current = null;
-  private List<String> validationFields = new ArrayList<String>();
+  private List<String> validationFields = null;
   private ValidationLimits validationLimits = null;
-  private List<String> itemValidationFields = new ArrayList<String>();
+  private List<String> itemValidationFields = null;
   private ItemValidationLimits itemValidationLimits = null;
   private String selfUri = null;
+
+  public Coretype() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      validationFields = new ArrayList<String>();
+      itemValidationFields = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

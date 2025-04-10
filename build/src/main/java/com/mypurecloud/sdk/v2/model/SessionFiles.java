@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SessionMetaData;
 import com.mypurecloud.sdk.v2.model.SessionMetricData;
@@ -26,6 +27,11 @@ public class SessionFiles  implements Serializable {
   private SessionMetaData metaData = null;
   private SessionMetricData offered = null;
   private SessionMetricData averageHandleTime = null;
+
+  public SessionFiles() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

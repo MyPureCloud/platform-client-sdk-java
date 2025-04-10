@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmTimeOffBalanceJobTopicErrorBody;
@@ -27,7 +28,7 @@ import java.io.Serializable;
 public class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification  implements Serializable {
   
   private String id = null;
-  private List<WfmTimeOffBalanceJobTopicTimeOffBalance> entities = new ArrayList<WfmTimeOffBalanceJobTopicTimeOffBalance>();
+  private List<WfmTimeOffBalanceJobTopicTimeOffBalance> entities = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -78,6 +79,12 @@ public class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification  implements 
   }
   private StatusEnum status = null;
   private WfmTimeOffBalanceJobTopicErrorBody error = null;
+
+  public WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      entities = new ArrayList<WfmTimeOffBalanceJobTopicTimeOffBalance>();
+    }
+  }
 
   
   /**

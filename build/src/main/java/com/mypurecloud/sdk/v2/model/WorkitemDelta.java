@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeBoolean;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeInstant;
@@ -57,6 +58,11 @@ public class WorkitemDelta  implements Serializable {
   private WorkitemsAttributeChangeString modifiedBy = null;
   private WorkitemsAttributeChangeWorkitemStatusCategory statusCategory = null;
   private WorkitemsAttributeChangeString scriptId = null;
+
+  public WorkitemDelta() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

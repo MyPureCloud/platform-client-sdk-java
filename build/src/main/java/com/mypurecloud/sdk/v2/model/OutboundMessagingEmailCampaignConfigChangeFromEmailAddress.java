@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingEmailCampaignConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,11 @@ public class OutboundMessagingEmailCampaignConfigChangeFromEmailAddress  impleme
   private String friendlyName = null;
   private String localPart = null;
   private OutboundMessagingEmailCampaignConfigChangeUriReference domain = null;
+
+  public OutboundMessagingEmailCampaignConfigChangeFromEmailAddress() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

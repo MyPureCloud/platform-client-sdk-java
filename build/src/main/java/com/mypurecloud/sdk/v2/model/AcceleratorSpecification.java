@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MetadataDocumentation;
@@ -130,13 +131,23 @@ public class AcceleratorSpecification  implements Serializable {
   }
   private TypeEnum type = null;
   private String classification = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<String> permissions = new ArrayList<String>();
-  private List<String> products = new ArrayList<String>();
-  private List<MetadataDocumentation> documentation = new ArrayList<MetadataDocumentation>();
-  private List<MetadataPresentation> presentation = new ArrayList<MetadataPresentation>();
+  private List<String> tags = null;
+  private List<String> permissions = null;
+  private List<String> products = null;
+  private List<MetadataDocumentation> documentation = null;
+  private List<MetadataPresentation> presentation = null;
   private MetadataResults results = null;
   private String selfUri = null;
+
+  public AcceleratorSpecification() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      tags = new ArrayList<String>();
+      permissions = new ArrayList<String>();
+      products = new ArrayList<String>();
+      documentation = new ArrayList<MetadataDocumentation>();
+      presentation = new ArrayList<MetadataPresentation>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

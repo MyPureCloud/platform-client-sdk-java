@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuIntradayDataGroup;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuScheduleReference;
@@ -29,8 +30,8 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
   
   private Date startDate = null;
   private Date endDate = null;
-  private Integer intervalLengthMinutes = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>();
+  private Long intervalLengthMinutes = null;
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings = null;
 
   private static class CategoriesEnumDeserializer extends StdDeserializer<CategoriesEnum> {
     public CategoriesEnumDeserializer() {
@@ -78,10 +79,17 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
+  private List<CategoriesEnum> categories = null;
   private String noDataReason = null;
   private WfmBuIntradayDataUpdateTopicBuScheduleReference schedule = null;
   private WfmBuIntradayDataUpdateTopicBuShortTermForecastReference shortTermForecast = null;
+
+  public WfmBuIntradayDataUpdateTopicBuIntradayResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intradayDataGroupings = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>();
+      categories = new ArrayList<CategoriesEnum>();
+    }
+  }
 
   
   /**
@@ -120,17 +128,17 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
 
   /**
    **/
-  public WfmBuIntradayDataUpdateTopicBuIntradayResult intervalLengthMinutes(Integer intervalLengthMinutes) {
+  public WfmBuIntradayDataUpdateTopicBuIntradayResult intervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("intervalLengthMinutes")
-  public Integer getIntervalLengthMinutes() {
+  public Long getIntervalLengthMinutes() {
     return intervalLengthMinutes;
   }
-  public void setIntervalLengthMinutes(Integer intervalLengthMinutes) {
+  public void setIntervalLengthMinutes(Long intervalLengthMinutes) {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
@@ -31,8 +32,14 @@ public class UpdateScheduleUploadSchema  implements Serializable {
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private BuHeadcountForecast headcountForecast = null;
-  private List<BuUpdateAgentScheduleUploadSchema> agentSchedules = new ArrayList<BuUpdateAgentScheduleUploadSchema>();
+  private List<BuUpdateAgentScheduleUploadSchema> agentSchedules = null;
   private WfmVersionedEntityMetadata metadata = null;
+
+  public UpdateScheduleUploadSchema() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuUpdateAgentScheduleUploadSchema>();
+    }
+  }
 
   
   /**

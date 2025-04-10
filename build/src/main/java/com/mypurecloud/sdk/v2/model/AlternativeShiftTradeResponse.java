@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAgentScheduledShift;
@@ -33,8 +34,8 @@ public class AlternativeShiftTradeResponse  implements Serializable {
   
   private String id = null;
   private String shiftOfferJobId = null;
-  private List<AlternativeShiftAgentScheduledShift> existingShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
-  private List<AlternativeShiftAgentScheduledShift> offeredShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+  private List<AlternativeShiftAgentScheduledShift> existingShifts = null;
+  private List<AlternativeShiftAgentScheduledShift> offeredShifts = null;
   private AlternativeShiftScheduleLookup schedule = null;
   private ManagementUnitReference managementUnit = null;
   private UserReference user = null;
@@ -191,9 +192,17 @@ public class AlternativeShiftTradeResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ViolationsEnum> violations = new ArrayList<ViolationsEnum>();
+  private List<ViolationsEnum> violations = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
+
+  public AlternativeShiftTradeResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      existingShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      offeredShifts = new ArrayList<AlternativeShiftAgentScheduledShift>();
+      violations = new ArrayList<ViolationsEnum>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

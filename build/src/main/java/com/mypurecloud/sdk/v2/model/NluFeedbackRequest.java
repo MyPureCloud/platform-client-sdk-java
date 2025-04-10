@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntentFeedback;
 import io.swagger.annotations.ApiModel;
@@ -25,9 +26,15 @@ import java.io.Serializable;
 public class NluFeedbackRequest  implements Serializable {
   
   private String text = null;
-  private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
+  private List<IntentFeedback> intents = null;
   private String versionId = null;
   private String language = null;
+
+  public NluFeedbackRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      intents = new ArrayList<IntentFeedback>();
+    }
+  }
 
   
   /**

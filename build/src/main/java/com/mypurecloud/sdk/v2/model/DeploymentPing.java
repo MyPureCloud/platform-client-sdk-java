@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DeploymentWebAction;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,14 @@ import java.io.Serializable;
 
 public class DeploymentPing  implements Serializable {
   
-  private List<DeploymentWebAction> actions = new ArrayList<DeploymentWebAction>();
+  private List<DeploymentWebAction> actions = null;
   private Integer pollIntervalMilliseconds = null;
+
+  public DeploymentPing() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      actions = new ArrayList<DeploymentWebAction>();
+    }
+  }
 
   
   /**

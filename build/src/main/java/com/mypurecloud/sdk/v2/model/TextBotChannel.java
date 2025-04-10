@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotUserAgent;
@@ -119,7 +120,7 @@ public class TextBotChannel  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<InputModesEnum> inputModes = new ArrayList<InputModesEnum>();
+  private List<InputModesEnum> inputModes = null;
 
   private static class OutputModesEnumDeserializer extends StdDeserializer<OutputModesEnum> {
     public OutputModesEnumDeserializer() {
@@ -165,8 +166,15 @@ public class TextBotChannel  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<OutputModesEnum> outputModes = new ArrayList<OutputModesEnum>();
+  private List<OutputModesEnum> outputModes = null;
   private TextBotUserAgent userAgent = null;
+
+  public TextBotChannel() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      inputModes = new ArrayList<InputModesEnum>();
+      outputModes = new ArrayList<OutputModesEnum>();
+    }
+  }
 
   
   /**

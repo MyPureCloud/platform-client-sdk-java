@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LimitDocs;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class NamespaceDocs  implements Serializable {
   
   private String name = null;
   private String friendlyName = null;
-  private List<LimitDocs> limits = new ArrayList<LimitDocs>();
+  private List<LimitDocs> limits = null;
+
+  public NamespaceDocs() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      limits = new ArrayList<LimitDocs>();
+    }
+  }
 
   
   /**

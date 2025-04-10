@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,7 +26,12 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
   private String name = null;
   private String contentUri = null;
   private String contentType = null;
-  private Integer contentLength = null;
+  private Long contentLength = null;
+
+  public QueueConversationVideoEventTopicAttachment() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**
@@ -103,17 +109,17 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
   /**
    * The length of the attachment file.
    **/
-  public QueueConversationVideoEventTopicAttachment contentLength(Integer contentLength) {
+  public QueueConversationVideoEventTopicAttachment contentLength(Long contentLength) {
     this.contentLength = contentLength;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The length of the attachment file.")
   @JsonProperty("contentLength")
-  public Integer getContentLength() {
+  public Long getContentLength() {
     return contentLength;
   }
-  public void setContentLength(Integer contentLength) {
+  public void setContentLength(Long contentLength) {
     this.contentLength = contentLength;
   }
 

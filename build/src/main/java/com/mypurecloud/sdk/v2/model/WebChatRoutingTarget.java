@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -72,9 +73,15 @@ public class WebChatRoutingTarget  implements Serializable {
   }
   private TargetTypeEnum targetType = null;
   private String targetAddress = null;
-  private List<String> skills = new ArrayList<String>();
+  private List<String> skills = null;
   private String language = null;
   private Long priority = null;
+
+  public WebChatRoutingTarget() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      skills = new ArrayList<String>();
+    }
+  }
 
   
   /**

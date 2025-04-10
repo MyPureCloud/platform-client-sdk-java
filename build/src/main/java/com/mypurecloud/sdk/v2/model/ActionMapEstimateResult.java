@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SegmentEstimateCount;
 import io.swagger.annotations.ApiModel;
@@ -26,8 +27,14 @@ public class ActionMapEstimateResult  implements Serializable {
   
   private Integer qualifiedSessionCount = null;
   private Integer totalSessionCount = null;
-  private List<SegmentEstimateCount> perSegmentCounts = new ArrayList<SegmentEstimateCount>();
+  private List<SegmentEstimateCount> perSegmentCounts = null;
   private Integer outcomesScoresCount = null;
+
+  public ActionMapEstimateResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      perSegmentCounts = new ArrayList<SegmentEstimateCount>();
+    }
+  }
 
   
   /**

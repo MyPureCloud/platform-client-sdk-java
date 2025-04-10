@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FromEmailAddress;
@@ -26,10 +27,16 @@ import java.io.Serializable;
 
 public class EmailConfig  implements Serializable {
   
-  private List<String> emailColumns = new ArrayList<String>();
+  private List<String> emailColumns = null;
   private DomainEntityRef contentTemplate = null;
   private FromEmailAddress fromAddress = null;
   private ReplyToEmailAddress replyToAddress = null;
+
+  public EmailConfig() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      emailColumns = new ArrayList<String>();
+    }
+  }
 
   
   /**

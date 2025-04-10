@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,13 @@ public class KnowledgeParseImportResult  implements Serializable {
   
   private Integer success = null;
   private Integer failure = null;
-  private List<ErrorBody> errors = new ArrayList<ErrorBody>();
+  private List<ErrorBody> errors = null;
+
+  public KnowledgeParseImportResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      errors = new ArrayList<ErrorBody>();
+    }
+  }
 
   
   /**

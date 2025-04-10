@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimGenesysUserExternalId;
 import com.mypurecloud.sdk.v2.model.ScimUserRoutingLanguage;
@@ -27,9 +28,17 @@ import java.io.Serializable;
 
 public class ScimUserExtensions  implements Serializable {
   
-  private List<ScimUserRoutingSkill> routingSkills = new ArrayList<ScimUserRoutingSkill>();
-  private List<ScimUserRoutingLanguage> routingLanguages = new ArrayList<ScimUserRoutingLanguage>();
-  private List<ScimGenesysUserExternalId> externalIds = new ArrayList<ScimGenesysUserExternalId>();
+  private List<ScimUserRoutingSkill> routingSkills = null;
+  private List<ScimUserRoutingLanguage> routingLanguages = null;
+  private List<ScimGenesysUserExternalId> externalIds = null;
+
+  public ScimUserExtensions() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      routingSkills = new ArrayList<ScimUserRoutingSkill>();
+      routingLanguages = new ArrayList<ScimUserRoutingLanguage>();
+      externalIds = new ArrayList<ScimGenesysUserExternalId>();
+    }
+  }
 
   
   /**

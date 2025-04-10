@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SearchSort;
@@ -78,9 +79,17 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> types = new ArrayList<String>();
-  private List<TranscriptConversationDetailSearchCriteria> query = new ArrayList<TranscriptConversationDetailSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> types = null;
+  private List<TranscriptConversationDetailSearchCriteria> query = null;
+
+  public TranscriptConversationDetailSearchRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sort = new ArrayList<SearchSort>();
+      types = new ArrayList<String>();
+      query = new ArrayList<TranscriptConversationDetailSearchCriteria>();
+    }
+  }
 
   
   /**

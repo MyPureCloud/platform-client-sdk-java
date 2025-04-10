@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingWhatsappCampaignConfigChangeContactSort;
@@ -84,22 +85,32 @@ public class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign  imp
   private CampaignStatusEnum campaignStatus = null;
   private OutboundMessagingWhatsappCampaignConfigChangeUriReference callableTimeSet = null;
   private OutboundMessagingWhatsappCampaignConfigChangeUriReference contactList = null;
-  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> dncLists = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
-  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> contactListFilters = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> dncLists = null;
+  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> contactListFilters = null;
   private Boolean alwaysRunning = null;
-  private List<OutboundMessagingWhatsappCampaignConfigChangeContactSort> contactSorts = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeContactSort>();
-  private Integer messagesPerMinute = null;
-  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> ruleSets = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+  private List<OutboundMessagingWhatsappCampaignConfigChangeContactSort> contactSorts = null;
+  private Long messagesPerMinute = null;
+  private List<OutboundMessagingWhatsappCampaignConfigChangeUriReference> ruleSets = null;
   private OutboundMessagingWhatsappCampaignConfigChangeSmsConfig smsConfig = null;
   private OutboundMessagingWhatsappCampaignConfigChangeEmailConfig emailConfig = null;
   private OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig whatsAppConfig = null;
-  private List<OutboundMessagingWhatsappCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeErrorDetail>();
+  private List<OutboundMessagingWhatsappCampaignConfigChangeErrorDetail> errors = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private Integer version = null;
+  private Long version = null;
   private OutboundMessagingWhatsappCampaignConfigChangeUriReference division = null;
+
+  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      dncLists = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      contactListFilters = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      contactSorts = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeContactSort>();
+      ruleSets = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeUriReference>();
+      errors = new ArrayList<OutboundMessagingWhatsappCampaignConfigChangeErrorDetail>();
+    }
+  }
 
   
   /**
@@ -229,17 +240,17 @@ public class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign  imp
   /**
    * How many messages this messaging campaign will send per minute.
    **/
-  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign messagesPerMinute(Integer messagesPerMinute) {
+  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign messagesPerMinute(Long messagesPerMinute) {
     this.messagesPerMinute = messagesPerMinute;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "How many messages this messaging campaign will send per minute.")
   @JsonProperty("messagesPerMinute")
-  public Integer getMessagesPerMinute() {
+  public Long getMessagesPerMinute() {
     return messagesPerMinute;
   }
-  public void setMessagesPerMinute(Integer messagesPerMinute) {
+  public void setMessagesPerMinute(Long messagesPerMinute) {
     this.messagesPerMinute = messagesPerMinute;
   }
 
@@ -405,17 +416,17 @@ public class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign  imp
   /**
    * Required for updates, must match the version number of the most recent update
    **/
-  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign version(Integer version) {
+  public OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign version(Long version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
-  public Integer getVersion() {
+  public Long getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
+  public void setVersion(Long version) {
     this.version = version;
   }
 

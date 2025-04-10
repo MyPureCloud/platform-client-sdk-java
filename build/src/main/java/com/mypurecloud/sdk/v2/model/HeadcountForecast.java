@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HeadcountInterval;
 import io.swagger.annotations.ApiModel;
@@ -24,8 +25,15 @@ import java.io.Serializable;
 
 public class HeadcountForecast  implements Serializable {
   
-  private List<HeadcountInterval> required = new ArrayList<HeadcountInterval>();
-  private List<HeadcountInterval> requiredWithoutShrinkage = new ArrayList<HeadcountInterval>();
+  private List<HeadcountInterval> required = null;
+  private List<HeadcountInterval> requiredWithoutShrinkage = null;
+
+  public HeadcountForecast() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      required = new ArrayList<HeadcountInterval>();
+      requiredWithoutShrinkage = new ArrayList<HeadcountInterval>();
+    }
+  }
 
   
   /**

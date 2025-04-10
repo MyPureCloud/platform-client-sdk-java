@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
@@ -146,34 +147,46 @@ public class Campaign  implements Serializable {
     }
   }
   private CampaignStatusEnum campaignStatus = null;
-  private List<PhoneColumn> phoneColumns = new ArrayList<PhoneColumn>();
+  private List<PhoneColumn> phoneColumns = null;
   private Double abandonRate = null;
-  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> dncLists = null;
   private DomainEntityRef callableTimeSet = null;
   private DomainEntityRef callAnalysisResponseSet = null;
-  private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
+  private List<RestErrorDetail> errors = null;
   private String callerName = null;
   private String callerAddress = null;
   private Integer outboundLineCount = null;
-  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> ruleSets = null;
   private Boolean skipPreviewDisabled = null;
   private Long previewTimeOutSeconds = null;
   private Boolean alwaysRunning = null;
   private ContactSort contactSort = null;
-  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
+  private List<ContactSort> contactSorts = null;
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
-  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> contactListFilters = null;
   private DomainEntityRef division = null;
   private String agentOwnedColumn = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
-  private List<String> skillColumns = new ArrayList<String>();
+  private List<String> skillColumns = null;
   private Integer maxCallsPerAgent = null;
   private Double maxCallsPerAgentDecimal = null;
   private Boolean callbackAutoAnswer = null;
   private DynamicLineBalancingSettings dynamicLineBalancingSettings = null;
   private String selfUri = null;
+
+  public Campaign() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      phoneColumns = new ArrayList<PhoneColumn>();
+      dncLists = new ArrayList<DomainEntityRef>();
+      errors = new ArrayList<RestErrorDetail>();
+      ruleSets = new ArrayList<DomainEntityRef>();
+      contactSorts = new ArrayList<ContactSort>();
+      contactListFilters = new ArrayList<DomainEntityRef>();
+      skillColumns = new ArrayList<String>();
+    }
+  }
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

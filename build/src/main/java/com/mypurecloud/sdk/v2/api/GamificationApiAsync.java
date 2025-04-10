@@ -18,6 +18,12 @@ import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
 import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.ContestScoresAgentTrendList;
+import com.mypurecloud.sdk.v2.model.ContestScoresAgentsPagedList;
+import com.mypurecloud.sdk.v2.model.ContestScoresGroupTrendList;
+import com.mypurecloud.sdk.v2.model.ContestsCreateRequest;
+import com.mypurecloud.sdk.v2.model.ContestsFinalizeRequest;
+import com.mypurecloud.sdk.v2.model.ContestsResponse;
 import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -27,7 +33,9 @@ import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionCreateRequest;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionUpdateRequest;
+import com.mypurecloud.sdk.v2.model.GamificationContestPrizeImageUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetContestsEssentialsListing;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
@@ -47,9 +55,11 @@ import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.PrizeImages;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.UserBestPoints;
 import com.mypurecloud.sdk.v2.model.UserInsightsTrend;
 import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;
@@ -61,8 +71,17 @@ import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestAgentsScoresTrendsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestPrizeimageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationContestsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
@@ -110,8 +129,11 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationContestsUploadsPrizeimagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
@@ -121,6 +143,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUserQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUsersMeQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutGamificationContestRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -185,6 +208,81 @@ public class GamificationApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteEmployeeperformanceExternalmetricsDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteGamificationContestAsync(DeleteGamificationContestRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteGamificationContestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -357,6 +455,606 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestsResponse> getGamificationContestAsync(GetGamificationContestRequest request, final AsyncApiCallback<ContestsResponse> callback) {
+    try {
+      final SettableFuture<ContestsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestsResponse>> getGamificationContestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContestsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestScoresAgentsPagedList> getGamificationContestAgentsScoresAsync(GetGamificationContestAgentsScoresRequest request, final AsyncApiCallback<ContestScoresAgentsPagedList> callback) {
+    try {
+      final SettableFuture<ContestScoresAgentsPagedList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestScoresAgentsPagedList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentsPagedList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contest Scores (Admin)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestScoresAgentsPagedList>> getGamificationContestAgentsScoresAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestScoresAgentsPagedList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestScoresAgentsPagedList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentsPagedList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestScoresAgentsPagedList> getGamificationContestAgentsScoresMeAsync(GetGamificationContestAgentsScoresMeRequest request, final AsyncApiCallback<ContestScoresAgentsPagedList> callback) {
+    try {
+      final SettableFuture<ContestScoresAgentsPagedList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestScoresAgentsPagedList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentsPagedList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contest Scores for the requesting Agent/Supervisor
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestScoresAgentsPagedList>> getGamificationContestAgentsScoresMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestScoresAgentsPagedList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestScoresAgentsPagedList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentsPagedList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentsPagedList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentsPagedList> response = (ApiResponse<ContestScoresAgentsPagedList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestScoresGroupTrendList> getGamificationContestAgentsScoresTrendsAsync(GetGamificationContestAgentsScoresTrendsRequest request, final AsyncApiCallback<ContestScoresGroupTrendList> callback) {
+    try {
+      final SettableFuture<ContestScoresGroupTrendList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestScoresGroupTrendList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresGroupTrendList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresGroupTrendList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend (Average Trend)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestScoresGroupTrendList>> getGamificationContestAgentsScoresTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContestScoresGroupTrendList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestScoresGroupTrendList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestScoresGroupTrendList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresGroupTrendList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresGroupTrendList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresGroupTrendList> response = (ApiResponse<ContestScoresGroupTrendList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresGroupTrendList> response = (ApiResponse<ContestScoresGroupTrendList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestScoresAgentTrendList> getGamificationContestAgentsScoresTrendsMeAsync(GetGamificationContestAgentsScoresTrendsMeRequest request, final AsyncApiCallback<ContestScoresAgentTrendList> callback) {
+    try {
+      final SettableFuture<ContestScoresAgentTrendList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestScoresAgentTrendList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentTrendList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentTrendList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Score Trend for the requesting Agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestScoresAgentTrendList>> getGamificationContestAgentsScoresTrendsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContestScoresAgentTrendList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestScoresAgentTrendList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestScoresAgentTrendList>() {}, new AsyncApiCallback<ApiResponse<ContestScoresAgentTrendList>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestScoresAgentTrendList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentTrendList> response = (ApiResponse<ContestScoresAgentTrendList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestScoresAgentTrendList> response = (ApiResponse<ContestScoresAgentTrendList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PrizeImages> getGamificationContestPrizeimageAsync(GetGamificationContestPrizeimageRequest request, final AsyncApiCallback<PrizeImages> callback) {
+    try {
+      final SettableFuture<PrizeImages> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PrizeImages>() {}, new AsyncApiCallback<ApiResponse<PrizeImages>>() {
+        @Override
+        public void onCompleted(ApiResponse<PrizeImages> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Contest Prize Image by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PrizeImages>> getGamificationContestPrizeimageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PrizeImages>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PrizeImages>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PrizeImages>() {}, new AsyncApiCallback<ApiResponse<PrizeImages>>() {
+        @Override
+        public void onCompleted(ApiResponse<PrizeImages> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PrizeImages> response = (ApiResponse<PrizeImages>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PrizeImages> response = (ApiResponse<PrizeImages>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GetContestsEssentialsListing> getGamificationContestsAsync(GetGamificationContestsRequest request, final AsyncApiCallback<GetContestsEssentialsListing> callback) {
+    try {
+      final SettableFuture<GetContestsEssentialsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetContestsEssentialsListing>() {}, new AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetContestsEssentialsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a List of Contests (Admin)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GetContestsEssentialsListing>> getGamificationContestsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetContestsEssentialsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetContestsEssentialsListing>() {}, new AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetContestsEssentialsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GetContestsEssentialsListing> getGamificationContestsMeAsync(GetGamificationContestsMeRequest request, final AsyncApiCallback<GetContestsEssentialsListing> callback) {
+    try {
+      final SettableFuture<GetContestsEssentialsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetContestsEssentialsListing>() {}, new AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetContestsEssentialsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a List of Contests (Agent/Supervisor)
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GetContestsEssentialsListing>> getGamificationContestsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetContestsEssentialsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetContestsEssentialsListing>() {}, new AsyncApiCallback<ApiResponse<GetContestsEssentialsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetContestsEssentialsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetContestsEssentialsListing> response = (ApiResponse<GetContestsEssentialsListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3894,6 +4592,81 @@ public class GamificationApiAsync {
   }
 
   /**
+   * Finalize a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestsResponse> patchGamificationContestAsync(PatchGamificationContestRequest request, final AsyncApiCallback<ContestsResponse> callback) {
+    try {
+      final SettableFuture<ContestsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Finalize a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestsResponse>> patchGamificationContestAsync(ApiRequest<ContestsFinalizeRequest> request, final AsyncApiCallback<ApiResponse<ContestsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Write External Metric Data
    * 
    * @param request the request object
@@ -4032,6 +4805,156 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestsResponse> postGamificationContestsAsync(PostGamificationContestsRequest request, final AsyncApiCallback<ContestsResponse> callback) {
+    try {
+      final SettableFuture<ContestsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a Contest
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestsResponse>> postGamificationContestsAsync(ApiRequest<ContestsCreateRequest> request, final AsyncApiCallback<ApiResponse<ContestsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UploadUrlResponse> postGamificationContestsUploadsPrizeimagesAsync(PostGamificationContestsUploadsPrizeimagesRequest request, final AsyncApiCallback<UploadUrlResponse> callback) {
+    try {
+      final SettableFuture<UploadUrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload a prize image for gamification contests
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UploadUrlResponse>> postGamificationContestsUploadsPrizeimagesAsync(ApiRequest<GamificationContestPrizeImageUploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4707,6 +5630,81 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContestsResponse> putGamificationContestAsync(PutGamificationContestRequest request, final AsyncApiCallback<ContestsResponse> callback) {
+    try {
+      final SettableFuture<ContestsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Contest by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContestsResponse>> putGamificationContestAsync(ApiRequest<ContestsCreateRequest> request, final AsyncApiCallback<ApiResponse<ContestsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContestsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContestsResponse>() {}, new AsyncApiCallback<ApiResponse<ContestsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContestsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContestsResponse> response = (ApiResponse<ContestsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

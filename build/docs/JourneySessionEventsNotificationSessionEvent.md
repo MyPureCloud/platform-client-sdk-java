@@ -27,10 +27,10 @@
 | **referrer** | [**JourneySessionEventsNotificationReferrer**](JourneySessionEventsNotificationReferrer) |  |  [optional] |
 | **searchTerms** | **List&lt;String&gt;** |  |  [optional] |
 | **userAgentString** | **String** |  |  [optional] |
-| **durationInSeconds** | **Integer** |  |  [optional] |
-| **eventCount** | **Integer** |  |  [optional] |
-| **pageviewCount** | **Integer** |  |  [optional] |
-| **screenviewCount** | **Integer** |  |  [optional] |
+| **durationInSeconds** | **Long** |  |  [optional] |
+| **eventCount** | **Long** |  |  [optional] |
+| **pageviewCount** | **Long** |  |  [optional] |
+| **screenviewCount** | **Long** |  |  [optional] |
 | **lastEvent** | [**JourneySessionEventsNotificationSessionLastEvent**](JourneySessionEventsNotificationSessionLastEvent) |  |  [optional] |
 | **conversation** | [**JourneySessionEventsNotificationConversation**](JourneySessionEventsNotificationConversation) |  |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#Enum--OriginatingDirectionEnum) |  |  [optional] |
@@ -98,4 +98,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:222.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_

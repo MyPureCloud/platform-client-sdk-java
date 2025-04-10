@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Touchpoint;
 import io.swagger.annotations.ApiModel;
@@ -29,8 +30,14 @@ public class OutcomeAttributionRequest  implements Serializable {
   private String outcomeId = null;
   private String externalContactId = null;
   private BigDecimal associatedValue = null;
-  private List<Touchpoint> touchpoints = new ArrayList<Touchpoint>();
+  private List<Touchpoint> touchpoints = null;
   private Date createdDate = null;
+
+  public OutcomeAttributionRequest() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      touchpoints = new ArrayList<Touchpoint>();
+    }
+  }
 
   
   /**

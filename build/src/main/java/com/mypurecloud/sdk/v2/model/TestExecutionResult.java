@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TestExecutionOperationResult;
@@ -25,10 +26,16 @@ import java.io.Serializable;
 
 public class TestExecutionResult  implements Serializable {
   
-  private List<TestExecutionOperationResult> operations = new ArrayList<TestExecutionOperationResult>();
+  private List<TestExecutionOperationResult> operations = null;
   private ErrorBody error = null;
   private Object finalResult = null;
   private Boolean success = null;
+
+  public TestExecutionResult() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      operations = new ArrayList<TestExecutionOperationResult>();
+    }
+  }
 
   
   /**

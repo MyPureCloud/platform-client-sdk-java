@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2WebMessagingUndeliveredMessageTopicMessage;
 import io.swagger.annotations.ApiModel;
@@ -29,9 +30,15 @@ public class V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessage
   private String participantId = null;
   private String externalContactId = null;
   private String communicationId = null;
-  private Integer sessionExpiry = null;
-  private List<V2WebMessagingUndeliveredMessageTopicMessage> messages = new ArrayList<V2WebMessagingUndeliveredMessageTopicMessage>();
-  private Integer eventTimeMs = null;
+  private Long sessionExpiry = null;
+  private List<V2WebMessagingUndeliveredMessageTopicMessage> messages = null;
+  private Long eventTimeMs = null;
+
+  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      messages = new ArrayList<V2WebMessagingUndeliveredMessageTopicMessage>();
+    }
+  }
 
   
   /**
@@ -121,17 +128,17 @@ public class V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessage
 
   /**
    **/
-  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody sessionExpiry(Integer sessionExpiry) {
+  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody sessionExpiry(Long sessionExpiry) {
     this.sessionExpiry = sessionExpiry;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sessionExpiry")
-  public Integer getSessionExpiry() {
+  public Long getSessionExpiry() {
     return sessionExpiry;
   }
-  public void setSessionExpiry(Integer sessionExpiry) {
+  public void setSessionExpiry(Long sessionExpiry) {
     this.sessionExpiry = sessionExpiry;
   }
 
@@ -155,17 +162,17 @@ public class V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessage
 
   /**
    **/
-  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody eventTimeMs(Integer eventTimeMs) {
+  public V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody eventTimeMs(Long eventTimeMs) {
     this.eventTimeMs = eventTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTimeMs")
-  public Integer getEventTimeMs() {
+  public Long getEventTimeMs() {
     return eventTimeMs;
   }
-  public void setEventTimeMs(Integer eventTimeMs) {
+  public void setEventTimeMs(Long eventTimeMs) {
     this.eventTimeMs = eventTimeMs;
   }
 

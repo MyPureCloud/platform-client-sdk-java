@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkEntityErrorEntity;
 import com.mypurecloud.sdk.v2.model.Relationship;
@@ -27,6 +28,11 @@ public class BulkResponseResultRelationshipEntityBulkEntityErrorEntity  implemen
   private Boolean success = null;
   private Relationship entity = null;
   private BulkEntityErrorEntity error = null;
+
+  public BulkResponseResultRelationshipEntityBulkEntityErrorEntity() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
 
   
   /**

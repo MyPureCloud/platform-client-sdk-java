@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Campaign;
@@ -155,7 +156,7 @@ public class CallHistoryParticipant  implements Serializable {
   private ExternalContact externalContact = null;
   private ExternalOrganization externalOrganization = null;
   private Boolean didInteract = null;
-  private List<Long> sipResponseCodes = new ArrayList<Long>();
+  private List<Long> sipResponseCodes = null;
 
   private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
     public FlaggedReasonEnumDeserializer() {
@@ -204,6 +205,12 @@ public class CallHistoryParticipant  implements Serializable {
   }
   private FlaggedReasonEnum flaggedReason = null;
   private Campaign outboundCampaign = null;
+
+  public CallHistoryParticipant() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      sipResponseCodes = new ArrayList<Long>();
+    }
+  }
 
   
   /**

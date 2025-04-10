@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class ConversationMessageEventTopicErrorDetails  implements Serializable {
   
-  private Integer status = null;
+  private Long status = null;
   private String code = null;
   private String message = null;
   private String messageWithParams = null;
@@ -32,21 +33,26 @@ public class ConversationMessageEventTopicErrorDetails  implements Serializable 
   private String contextId = null;
   private String uri = null;
 
+  public ConversationMessageEventTopicErrorDetails() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+    }
+  }
+
   
   /**
    * The HTTP status code for this message (400, 401, 403, 404, 500, etc.
    **/
-  public ConversationMessageEventTopicErrorDetails status(Integer status) {
+  public ConversationMessageEventTopicErrorDetails status(Long status) {
     this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The HTTP status code for this message (400, 401, 403, 404, 500, etc.")
   @JsonProperty("status")
-  public Integer getStatus() {
+  public Long getStatus() {
     return status;
   }
-  public void setStatus(Integer status) {
+  public void setStatus(Long status) {
     this.status = status;
   }
 
