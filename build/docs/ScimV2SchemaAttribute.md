@@ -77,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_

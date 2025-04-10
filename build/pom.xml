@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>223.0.0</version>
+  <version>223.1.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
 
@@ -369,7 +369,7 @@
     <io-netty-version>4.1.113.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>223.0.0</version>
+    <version>223.1.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
   </properties>
