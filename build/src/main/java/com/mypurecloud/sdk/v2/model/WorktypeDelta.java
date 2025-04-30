@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeInstant;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeInteger;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeList;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeString;
+import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeWorkitemRuleSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -47,6 +48,9 @@ public class WorktypeDelta  implements Serializable {
   private WorkitemsAttributeChangeInstant dateModified = null;
   private WorkitemsAttributeChangeString modifiedBy = null;
   private WorkitemsAttributeChangeString defaultScriptId = null;
+  private WorkitemsAttributeChangeString flowId = null;
+  private WorkitemsAttributeChangeWorkitemRuleSettings ruleSettings = null;
+  private WorkitemsAttributeChangeBoolean unassignedDivisionContactsEnabled = null;
 
   public WorktypeDelta() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -394,6 +398,57 @@ public class WorktypeDelta  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorktypeDelta flowId(WorkitemsAttributeChangeString flowId) {
+    this.flowId = flowId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flowId")
+  public WorkitemsAttributeChangeString getFlowId() {
+    return flowId;
+  }
+  public void setFlowId(WorkitemsAttributeChangeString flowId) {
+    this.flowId = flowId;
+  }
+
+
+  /**
+   **/
+  public WorktypeDelta ruleSettings(WorkitemsAttributeChangeWorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("ruleSettings")
+  public WorkitemsAttributeChangeWorkitemRuleSettings getRuleSettings() {
+    return ruleSettings;
+  }
+  public void setRuleSettings(WorkitemsAttributeChangeWorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+  }
+
+
+  /**
+   **/
+  public WorktypeDelta unassignedDivisionContactsEnabled(WorkitemsAttributeChangeBoolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("unassignedDivisionContactsEnabled")
+  public WorkitemsAttributeChangeBoolean getUnassignedDivisionContactsEnabled() {
+    return unassignedDivisionContactsEnabled;
+  }
+  public void setUnassignedDivisionContactsEnabled(WorkitemsAttributeChangeBoolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -423,12 +478,15 @@ public class WorktypeDelta  implements Serializable {
             Objects.equals(this.serviceLevelTarget, worktypeDelta.serviceLevelTarget) &&
             Objects.equals(this.dateModified, worktypeDelta.dateModified) &&
             Objects.equals(this.modifiedBy, worktypeDelta.modifiedBy) &&
-            Objects.equals(this.defaultScriptId, worktypeDelta.defaultScriptId);
+            Objects.equals(this.defaultScriptId, worktypeDelta.defaultScriptId) &&
+            Objects.equals(this.flowId, worktypeDelta.flowId) &&
+            Objects.equals(this.ruleSettings, worktypeDelta.ruleSettings) &&
+            Objects.equals(this.unassignedDivisionContactsEnabled, worktypeDelta.unassignedDivisionContactsEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, statuses, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultSkillIds, defaultStatusId, defaultLanguageId, defaultTtlSeconds, assignmentEnabled, defaultQueueId, schemaId, schemaVersion, serviceLevelTarget, dateModified, modifiedBy, defaultScriptId);
+    return Objects.hash(name, description, statuses, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultSkillIds, defaultStatusId, defaultLanguageId, defaultTtlSeconds, assignmentEnabled, defaultQueueId, schemaId, schemaVersion, serviceLevelTarget, dateModified, modifiedBy, defaultScriptId, flowId, ruleSettings, unassignedDivisionContactsEnabled);
   }
 
   @Override
@@ -456,6 +514,9 @@ public class WorktypeDelta  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    defaultScriptId: ").append(toIndentedString(defaultScriptId)).append("\n");
+    sb.append("    flowId: ").append(toIndentedString(flowId)).append("\n");
+    sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
+    sb.append("    unassignedDivisionContactsEnabled: ").append(toIndentedString(unassignedDivisionContactsEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -141,6 +141,7 @@ public class Salesforce  implements Serializable {
   private Boolean signAuthnRequests = null;
   private String providerName = null;
   private Boolean displayOnLogin = null;
+  private String metadataURL = null;
   private String selfUri = null;
 
   public Salesforce() {
@@ -412,6 +413,23 @@ public class Salesforce  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Salesforce metadataURL(String metadataURL) {
+    this.metadataURL = metadataURL;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("metadataURL")
+  public String getMetadataURL() {
+    return metadataURL;
+  }
+  public void setMetadataURL(String metadataURL) {
+    this.metadataURL = metadataURL;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -445,12 +463,13 @@ public class Salesforce  implements Serializable {
             Objects.equals(this.signAuthnRequests, salesforce.signAuthnRequests) &&
             Objects.equals(this.providerName, salesforce.providerName) &&
             Objects.equals(this.displayOnLogin, salesforce.displayOnLogin) &&
+            Objects.equals(this.metadataURL, salesforce.metadataURL) &&
             Objects.equals(this.selfUri, salesforce.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, nameIdentifierFormat, ssoBinding, signAuthnRequests, providerName, displayOnLogin, metadataURL, selfUri);
   }
 
   @Override
@@ -474,6 +493,7 @@ public class Salesforce  implements Serializable {
     sb.append("    signAuthnRequests: ").append(toIndentedString(signAuthnRequests)).append("\n");
     sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
     sb.append("    displayOnLogin: ").append(toIndentedString(displayOnLogin)).append("\n");
+    sb.append("    metadataURL: ").append(toIndentedString(metadataURL)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -14,11 +14,17 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
+import java.io.FileInputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketAddress;
+import java.security.KeyStore;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 
 public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProvider {
     @Override
@@ -63,6 +69,15 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
                 .addInterceptorFirst(requestInterceptor)
                 .addInterceptorLast(responseInterceptor)
                 .setDefaultRequestConfig(requestBuilder.build());
+
+
+    
+        SSLContext sslContext = createSSLContext(properties);
+        if (sslContext != null) {
+            builder.setSSLContext(sslContext);
+        }
+
+
         if (credentialsProvider != null) {
             builder.setDefaultCredentialsProvider(credentialsProvider);
         }
@@ -74,5 +89,47 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
         }
 
         return new ApacheHttpClientConnector(client, executorService);
+    }
+
+    private static SSLContext createSSLContext(ApiClientConnectorProperties properties){
+        
+        String defaultTrustStore = "";
+        String keyStorePath = properties.getProperty(ApiClientConnectorProperty.KEYSTORE_PATH, String.class, null);
+        char[] keyStorePassword = properties.getProperty(ApiClientConnectorProperty.KEYSTORE_PASSWORD, String.class, defaultTrustStore).toCharArray();
+        String trustStorePath = properties.getProperty(ApiClientConnectorProperty.TRUSTSTORE_PATH, String.class, null); 
+        char[] trustStorePassword = properties.getProperty(ApiClientConnectorProperty.TRUSTSTORE_PASSWORD, String.class, defaultTrustStore).toCharArray();
+        
+        if (keyStorePath != null && trustStorePath != null){
+    
+            KeyManagerFactory kmf;
+            try {
+                kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+     
+            KeyStore keyStore = KeyStore.getInstance("PKCS12");
+            try (FileInputStream keyStoreFileInputStream = new FileInputStream(keyStorePath)) {
+                keyStore.load(keyStoreFileInputStream, keyStorePassword);
+                kmf.init(keyStore,keyStorePassword);
+            }
+    
+            // Load truststore (contains CA chain to validate client certificates)
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            KeyStore truststore = KeyStore.getInstance("JKS");
+            try (FileInputStream trustStoreFileInputStream = new FileInputStream(trustStorePath)) {
+                truststore.load(trustStoreFileInputStream, trustStorePassword);
+                tmf.init(truststore);
+            }
+    
+            // Create SSLContext
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
+            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+
+
+            return sslContext;
+            } 
+            catch(Exception e){
+                throw new RuntimeException(e.getMessage());
+            }
+        }
+        return null;
     }
 }

@@ -21,10 +21,13 @@ import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReplyV2;
+import com.mypurecloud.sdk.v2.model.ConversationContentReaction;
 import com.mypurecloud.sdk.v2.model.ConversationContentStory;
 import com.mypurecloud.sdk.v2.model.ConversationContentText;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -67,6 +70,7 @@ public class ConversationMessageContent  implements Serializable {
     QUICKREPLYV2("QuickReplyV2"),
     DATEPICKER("DatePicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication"),
+    LISTPICKER("ListPicker"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -105,9 +109,11 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentCarousel carousel = null;
   private ConversationContentText text = null;
   private ConversationContentQuickReplyV2 quickReplyV2 = null;
+  private List<ConversationContentReaction> reactions = null;
 
   public ConversationMessageContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      reactions = new ArrayList<ConversationContentReaction>();
     }
   }
 
@@ -310,6 +316,24 @@ public class ConversationMessageContent  implements Serializable {
   }
 
 
+  /**
+   * A set of reactions to a message.
+   **/
+  public ConversationMessageContent reactions(List<ConversationContentReaction> reactions) {
+    this.reactions = reactions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A set of reactions to a message.")
+  @JsonProperty("reactions")
+  public List<ConversationContentReaction> getReactions() {
+    return reactions;
+  }
+  public void setReactions(List<ConversationContentReaction> reactions) {
+    this.reactions = reactions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -330,12 +354,13 @@ public class ConversationMessageContent  implements Serializable {
             Objects.equals(this.card, conversationMessageContent.card) &&
             Objects.equals(this.carousel, conversationMessageContent.carousel) &&
             Objects.equals(this.text, conversationMessageContent.text) &&
-            Objects.equals(this.quickReplyV2, conversationMessageContent.quickReplyV2);
+            Objects.equals(this.quickReplyV2, conversationMessageContent.quickReplyV2) &&
+            Objects.equals(this.reactions, conversationMessageContent.reactions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions);
   }
 
   @Override
@@ -354,6 +379,7 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
+    sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

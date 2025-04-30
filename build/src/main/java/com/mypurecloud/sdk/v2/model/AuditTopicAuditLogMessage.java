@@ -108,7 +108,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ONBOARDING("Onboarding"),
     SOCIALLISTENING("SocialListening"),
     BUSINESSRULES("BusinessRules"),
-    SOCIALESCALATIONRULES("SocialEscalationRules");
+    SOCIALESCALATIONRULES("SocialEscalationRules"),
+    ALERTING("Alerting");
 
     private String value;
 
@@ -421,6 +422,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     WORKPLANROTATION("WorkPlanRotation"),
     HISTORICALDATA("HistoricalData"),
     STAFFINGGROUP("StaffingGroup"),
+    CAPACITYPLAN("CapacityPlan"),
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     RESPONSELIBRARY("ResponseLibrary"),
@@ -551,7 +553,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DECISIONTABLE("DecisionTable"),
     DECISIONTABLEVERSION("DecisionTableVersion"),
     DECISIONTABLEROW("DecisionTableRow"),
-    ESCALATIONRULE("EscalationRule");
+    ESCALATIONRULE("EscalationRule"),
+    RULES("Rules");
 
     private String value;
 

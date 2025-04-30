@@ -45,7 +45,7 @@ import com.mypurecloud.sdk.v2.auth.OAuth;
 import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.Logger;
-import com.mypurecloud.sdk.v2.LocalDateSerializer;
+import com.mypurecloud.sdk.v2.extensions.LocalDateSerializer;
 
 public class ApiClient implements AutoCloseable {
     private static final String DEFAULT_BASE_PATH = "https://api.mypurecloud.com";
@@ -194,6 +194,9 @@ public class ApiClient implements AutoCloseable {
     }
 
     private ApiClientConnector buildHttpConnector(Builder builder) {
+        if (builder.connectorProvider != null) {
+            return builder.connectorProvider.create(properties);
+        }
         return ApiClientConnectorLoader.load(properties);
     }
 
@@ -1091,12 +1094,30 @@ public class ApiClient implements AutoCloseable {
         private Logger logger = null;
         private String configFilePath = null;
         private Boolean autoReloadConfig = true;
+        private ApiClientConnectorProvider connectorProvider;
+
+        public Builder withMTLSKeyStore(String keyStorePath, String keyStorePassword){
+            properties.setProperty(ApiClientConnectorProperty.KEYSTORE_PATH, keyStorePath);
+            properties.setProperty(ApiClientConnectorProperty.KEYSTORE_PASSWORD, keyStorePassword);
+            return this;
+        }
+        
+        public Builder withMTLSTrustStore(String trustStorePath, String trustStorePassword){
+            properties.setProperty(ApiClientConnectorProperty.TRUSTSTORE_PATH, trustStorePath);
+            properties.setProperty(ApiClientConnectorProperty.TRUSTSTORE_PASSWORD, trustStorePassword);
+            return this;
+        }
+
+        public Builder withClientProvider(ApiClientConnectorProvider provider) {
+            this.connectorProvider = provider;
+            return this;
+        }
 
         private Builder(ConnectorProperties properties) {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "223.1.0");
+            withDefaultHeader("purecloud-sdk", "224.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

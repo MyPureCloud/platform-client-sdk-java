@@ -4404,11 +4404,11 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+   * Look up contacts based on an attribute. Maximum of 25 values returned.
    * 
-   * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
+   * @param lookupVal User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
-   * @param divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional, default to *)
+   * @param divisionId Specifies which division to lookup contacts in, for the given lookup value (optional, default to *)
    * @return ReverseWhitepagesLookupResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4418,11 +4418,11 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+   * Look up contacts based on an attribute. Maximum of 25 values returned.
    * 
-   * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
+   * @param lookupVal User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
-   * @param divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional, default to *)
+   * @param divisionId Specifies which division to lookup contacts in, for the given lookup value (optional, default to *)
    * @return ReverseWhitepagesLookupResult
    * @throws IOException if the request fails to be processed
    */
@@ -4442,7 +4442,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+   * Look up contacts based on an attribute. Maximum of 25 values returned.
    * 
    * @param request The request object
    * @return ReverseWhitepagesLookupResult
@@ -4461,7 +4461,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+   * Look up contacts based on an attribute. Maximum of 25 values returned.
    * 
    * @param request The request object
    * @return the response

@@ -46,6 +46,7 @@
 | KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
 | LANGUAGECODE | &quot;languageCode&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
+| MESSAGETYPE | &quot;messageType&quot; |
 | PRESENTEDDOCUMENTSCOUNT | &quot;presentedDocumentsCount&quot; |
 | QUERYTYPE | &quot;queryType&quot; |
 | QUEUEID | &quot;queueId&quot; |
@@ -96,4 +97,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.RoomParticipant;
 import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
+import com.mypurecloud.sdk.v2.model.UserSettingsForChat;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessageRequest;
@@ -1456,21 +1457,21 @@ public class ChatApi {
   /**
    * Get a user's chat settings
    * 
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatUserSettings getChatsUsersMeSettings() throws IOException, ApiException {
+  public UserSettingsForChat getChatsUsersMeSettings() throws IOException, ApiException {
     return  getChatsUsersMeSettings(createGetChatsUsersMeSettingsRequest());
   }
 
   /**
    * Get a user's chat settings
    * 
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatUserSettings> getChatsUsersMeSettingsWithHttpInfo() throws IOException {
+  public ApiResponse<UserSettingsForChat> getChatsUsersMeSettingsWithHttpInfo() throws IOException {
     return getChatsUsersMeSettings(createGetChatsUsersMeSettingsRequest().withHttpInfo());
   }
 
@@ -1483,13 +1484,13 @@ public class ChatApi {
    * Get a user's chat settings
    * 
    * @param request The request object
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatUserSettings getChatsUsersMeSettings(GetChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+  public UserSettingsForChat getChatsUsersMeSettings(GetChatsUsersMeSettingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      ApiResponse<UserSettingsForChat> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSettingsForChat>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1505,13 +1506,13 @@ public class ChatApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatUserSettings> getChatsUsersMeSettings(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<UserSettingsForChat> getChatsUsersMeSettings(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+      return pcapiClient.invoke(request, new TypeReference<UserSettingsForChat>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      ApiResponse<UserSettingsForChat> response = (ApiResponse<UserSettingsForChat>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1522,7 +1523,7 @@ public class ChatApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<UserSettingsForChat> response = (ApiResponse<UserSettingsForChat>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1942,11 +1943,11 @@ public class ChatApi {
    * Update a user's chat settings
    * 
    * @param body  (required)
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatUserSettings patchChatsUsersMeSettings(ChatUserSettings body) throws IOException, ApiException {
+  public UserSettingsForChat patchChatsUsersMeSettings(UserSettingsForChat body) throws IOException, ApiException {
     return  patchChatsUsersMeSettings(createPatchChatsUsersMeSettingsRequest(body));
   }
 
@@ -1954,14 +1955,14 @@ public class ChatApi {
    * Update a user's chat settings
    * 
    * @param body  (required)
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatUserSettings> patchChatsUsersMeSettingsWithHttpInfo(ChatUserSettings body) throws IOException {
+  public ApiResponse<UserSettingsForChat> patchChatsUsersMeSettingsWithHttpInfo(UserSettingsForChat body) throws IOException {
     return patchChatsUsersMeSettings(createPatchChatsUsersMeSettingsRequest(body).withHttpInfo());
   }
 
-  private PatchChatsUsersMeSettingsRequest createPatchChatsUsersMeSettingsRequest(ChatUserSettings body) {
+  private PatchChatsUsersMeSettingsRequest createPatchChatsUsersMeSettingsRequest(UserSettingsForChat body) {
     return PatchChatsUsersMeSettingsRequest.builder()
             .withBody(body)
 
@@ -1972,13 +1973,13 @@ public class ChatApi {
    * Update a user's chat settings
    * 
    * @param request The request object
-   * @return ChatUserSettings
+   * @return UserSettingsForChat
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatUserSettings patchChatsUsersMeSettings(PatchChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+  public UserSettingsForChat patchChatsUsersMeSettings(PatchChatsUsersMeSettingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      ApiResponse<UserSettingsForChat> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSettingsForChat>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1994,13 +1995,13 @@ public class ChatApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatUserSettings> patchChatsUsersMeSettings(ApiRequest<ChatUserSettings> request) throws IOException {
+  public ApiResponse<UserSettingsForChat> patchChatsUsersMeSettings(ApiRequest<UserSettingsForChat> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+      return pcapiClient.invoke(request, new TypeReference<UserSettingsForChat>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      ApiResponse<UserSettingsForChat> response = (ApiResponse<UserSettingsForChat>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2011,7 +2012,7 @@ public class ChatApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<UserSettingsForChat> response = (ApiResponse<UserSettingsForChat>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

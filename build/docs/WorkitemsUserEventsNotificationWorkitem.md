@@ -39,6 +39,12 @@
 | **sessions** | [**List&lt;WorkitemsUserEventsNotificationSession&gt;**](WorkitemsUserEventsNotificationSession) |  |  [optional] |
 | **skillIds** | **List&lt;String&gt;** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
+| **workbinName** | **String** |  |  [optional] |
+| **typeName** | **String** |  |  [optional] |
+| **preferredAgentIds** | **List&lt;String&gt;** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **scoredAgents** | [**List&lt;WorkitemsUserEventsNotificationScoredAgent&gt;**](WorkitemsUserEventsNotificationScoredAgent) |  |  [optional] |
+| **utilizationLabelId** | **String** |  |  [optional] |
 
 
 ## Enum: StatusCategoryEnum
@@ -102,4 +108,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

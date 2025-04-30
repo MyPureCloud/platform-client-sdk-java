@@ -144,7 +144,7 @@ public class ConversationEventTopicVideo  implements Serializable {
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
-  private Object peerCount = null;
+  private Long peerCount = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -372,17 +372,17 @@ public class ConversationEventTopicVideo  implements Serializable {
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
-  public ConversationEventTopicVideo peerCount(Object peerCount) {
+  public ConversationEventTopicVideo peerCount(Long peerCount) {
     this.peerCount = peerCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
   @JsonProperty("peerCount")
-  public Object getPeerCount() {
+  public Long getPeerCount() {
     return peerCount;
   }
-  public void setPeerCount(Object peerCount) {
+  public void setPeerCount(Long peerCount) {
     this.peerCount = peerCount;
   }
 

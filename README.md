@@ -8,7 +8,7 @@
 * **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:223.1.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:224.0.0
 
 ## Install Using maven
 
@@ -485,6 +485,15 @@ With `ApiClient.LEGACY_EMPTY_LIST = false;`
 * The class property will be initialized with `null`;
 * E.g. **ConversationQuery class** - `List<SegmentDetailQueryFilter> segmentFilters = null;`
 
+#### Managing updates in Platform API Enumerations
+
+The Platform API Client SDKs (Java, Javascript/NodeJs, Python, Go, .Net, iOS/Swift) are automatically generated using the Platform API OpenAPI v2 definition.
+The Platform API definition file is downloaded at the time of the SDK build and is used to generate operations (i.e. API methods) and definitions (i.e. classes for the different models, enumerations, ...) in the different SDK languages.
+
+The Java Platform API Client SDK implements the following strategy to manage the introduction of new enumeration values in the Platform API (i.e. in a version of the SDK which doesn't include these changes):
+* Each enumeration, generated from the Platform API OpenAPI v2 definition, always contains the following enumeration value: `OUTDATEDSDKVERSION("OutdatedSdkVersion")`
+* If an unknown enumeration value is received (i.e. a new enumeration value, introduced in Platform API, after the SDK version you are using was built), the SDK will map it to the `OUTDATEDSDKVERSION("OutdatedSdkVersion")` enumeration value. This is to prevent errors during deserialization when an unknown enumeration value is received from Genesys Cloud.
+
 #### Other ApiClient.Builder methods
 
 * `withDefaultHeader(String header, String value)` Specifies additional headers to be sent with every request
@@ -666,4 +675,4 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.genesys.cloud/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Community](https://community.genesys.com/communities/community-home1/digestviewer?CommunityKey=a39cc4d6-857e-43cb-be7b-019581ab9f38).

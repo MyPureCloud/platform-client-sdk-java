@@ -194,7 +194,8 @@ public class KnowledgeDocumentsAnswerFilter  implements Serializable {
     CATEGORY("Category"),
     MANUALSEARCH("ManualSearch"),
     RECOMMENDATION("Recommendation"),
-    SUGGESTION("Suggestion");
+    SUGGESTION("Suggestion"),
+    EXPANDEDARTICLE("ExpandedArticle");
 
     private String value;
 

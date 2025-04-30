@@ -4397,7 +4397,7 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
-   * @param sortOrder Sort order (optional, default to ASC)
+   * @param sortOrder Sort order (optional, default to asc)
    * @param name Name of the Schedule to filter by. (optional)
    * @param divisionId List of divisionIds on which to filter. (optional)
    * @return ScheduleEntityListing
@@ -4414,7 +4414,7 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
-   * @param sortOrder Sort order (optional, default to ASC)
+   * @param sortOrder Sort order (optional, default to asc)
    * @param name Name of the Schedule to filter by. (optional)
    * @param divisionId List of divisionIds on which to filter. (optional)
    * @return ScheduleEntityListing

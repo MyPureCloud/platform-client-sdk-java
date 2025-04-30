@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SocialMediaQueryFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -27,6 +29,7 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
   private String interval = null;
   private String timeZone = null;
   private SocialMediaQueryFilter filter = null;
+  private List<String> topicIds = null;
   private Integer pageSize = null;
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
@@ -79,6 +82,7 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
 
   public SocialMediaAsyncDetailQuery() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      topicIds = new ArrayList<String>();
     }
   }
 
@@ -138,6 +142,24 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
 
 
   /**
+   * List of topicIds to query in
+   **/
+  public SocialMediaAsyncDetailQuery topicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of topicIds to query in")
+  @JsonProperty("topicIds")
+  public List<String> getTopicIds() {
+    return topicIds;
+  }
+  public void setTopicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
+  }
+
+
+  /**
    * The number of results per page
    **/
   public SocialMediaAsyncDetailQuery pageSize(Integer pageSize) {
@@ -186,13 +208,14 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
     return Objects.equals(this.interval, socialMediaAsyncDetailQuery.interval) &&
             Objects.equals(this.timeZone, socialMediaAsyncDetailQuery.timeZone) &&
             Objects.equals(this.filter, socialMediaAsyncDetailQuery.filter) &&
+            Objects.equals(this.topicIds, socialMediaAsyncDetailQuery.topicIds) &&
             Objects.equals(this.pageSize, socialMediaAsyncDetailQuery.pageSize) &&
             Objects.equals(this.order, socialMediaAsyncDetailQuery.order);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, timeZone, filter, pageSize, order);
+    return Objects.hash(interval, timeZone, filter, topicIds, pageSize, order);
   }
 
   @Override
@@ -203,6 +226,7 @@ public class SocialMediaAsyncDetailQuery  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+    sb.append("    topicIds: ").append(toIndentedString(topicIds)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("}");

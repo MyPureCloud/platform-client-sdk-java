@@ -7,11 +7,11 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;ProgramMappings&gt;**](ProgramMappings) |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
-| **nextUri** | **String** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

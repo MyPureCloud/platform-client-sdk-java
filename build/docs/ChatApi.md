@@ -1086,7 +1086,7 @@ try {
 # **getChatsUsersMeSettings**
 
 
-> [ChatUserSettings](ChatUserSettings) getChatsUsersMeSettings()
+> [UserSettingsForChat](UserSettingsForChat) getChatsUsersMeSettings()
 
 Get a user's chat settings
 
@@ -1118,7 +1118,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
 try {
-    ChatUserSettings result = apiInstance.getChatsUsersMeSettings();
+    UserSettingsForChat result = apiInstance.getChatsUsersMeSettings();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsUsersMeSettings");
@@ -1134,7 +1134,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings)
+[**UserSettingsForChat**](UserSettingsForChat)
 
 
 # **patchChatsRoom**
@@ -1450,7 +1450,7 @@ try {
 # **patchChatsUsersMeSettings**
 
 
-> [ChatUserSettings](ChatUserSettings) patchChatsUsersMeSettings(body)
+> [UserSettingsForChat](UserSettingsForChat) patchChatsUsersMeSettings(body)
 
 Update a user's chat settings
 
@@ -1481,9 +1481,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
-ChatUserSettings body = new ChatUserSettings(); // ChatUserSettings | 
+UserSettingsForChat body = new UserSettingsForChat(); // UserSettingsForChat | 
 try {
-    ChatUserSettings result = apiInstance.patchChatsUsersMeSettings(body);
+    UserSettingsForChat result = apiInstance.patchChatsUsersMeSettings(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#patchChatsUsersMeSettings");
@@ -1496,13 +1496,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatUserSettings**](ChatUserSettings)|  | 
+| **body** | [**UserSettingsForChat**](UserSettingsForChat)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings)
+[**UserSettingsForChat**](UserSettingsForChat)
 
 
 # **postChatsRoomMessages**
@@ -1992,4 +1992,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

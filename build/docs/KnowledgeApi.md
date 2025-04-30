@@ -1476,7 +1476,7 @@ try {
 | **documentVersionId** | **String**| Document version ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
 | **documentVariationId** | **String**| Document variation ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
 | **appType** | **String**| Application type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]<br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter 
-| **queryType** | **String**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]<br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion 
+| **queryType** | **String**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]<br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle 
 | **userId** | **String**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
 | **queueId** | **String**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] 
 | **state** | **String**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional]<br />**Values**: All, Draft, Final 
@@ -7342,4 +7342,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

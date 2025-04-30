@@ -38,6 +38,7 @@ public class ConversationAppSettings  implements Serializable {
   private ConversationClearSettings conversationClear = null;
   private Humanize humanize = null;
   private NotificationsSettings notifications = null;
+  private Integer sessionDurationSeconds = null;
 
   public ConversationAppSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -207,6 +208,24 @@ public class ConversationAppSettings  implements Serializable {
   }
 
 
+  /**
+   * The guest session duration settings for messenger conversations
+   **/
+  public ConversationAppSettings sessionDurationSeconds(Integer sessionDurationSeconds) {
+    this.sessionDurationSeconds = sessionDurationSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The guest session duration settings for messenger conversations")
+  @JsonProperty("sessionDurationSeconds")
+  public Integer getSessionDurationSeconds() {
+    return sessionDurationSeconds;
+  }
+  public void setSessionDurationSeconds(Integer sessionDurationSeconds) {
+    this.sessionDurationSeconds = sessionDurationSeconds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -225,12 +244,13 @@ public class ConversationAppSettings  implements Serializable {
             Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect) &&
             Objects.equals(this.conversationClear, conversationAppSettings.conversationClear) &&
             Objects.equals(this.humanize, conversationAppSettings.humanize) &&
-            Objects.equals(this.notifications, conversationAppSettings.notifications);
+            Objects.equals(this.notifications, conversationAppSettings.notifications) &&
+            Objects.equals(this.sessionDurationSeconds, conversationAppSettings.sessionDurationSeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStart, markdown, conversationDisconnect, conversationClear, humanize, notifications);
+    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStart, markdown, conversationDisconnect, conversationClear, humanize, notifications, sessionDurationSeconds);
   }
 
   @Override
@@ -247,6 +267,7 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    conversationClear: ").append(toIndentedString(conversationClear)).append("\n");
     sb.append("    humanize: ").append(toIndentedString(humanize)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    sessionDurationSeconds: ").append(toIndentedString(sessionDurationSeconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

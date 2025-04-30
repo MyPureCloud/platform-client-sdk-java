@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
@@ -495,6 +496,81 @@ public class ScriptsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Object> getScriptsPublishedDivisionviewVariablesAsync(GetScriptsPublishedDivisionviewVariablesRequest request, final AsyncApiCallback<Object> callback) {
+    try {
+      final SettableFuture<Object> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
+        @Override
+        public void onCompleted(ApiResponse<Object> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Object>> getScriptsPublishedDivisionviewVariablesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
+        @Override
+        public void onCompleted(ApiResponse<Object> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

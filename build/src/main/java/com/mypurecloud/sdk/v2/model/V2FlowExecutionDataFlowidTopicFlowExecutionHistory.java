@@ -13,9 +13,9 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicExecution;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo;
-import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicInvokingContext;
+import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicFlowExecutionItem;
+import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicInvokingContextInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   private Date endDateTime = null;
   private String endpoint = null;
   private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> errors = null;
-  private List<V2FlowExecutionDataFlowidTopicExecution> execution = null;
+  private List<V2FlowExecutionDataFlowidTopicFlowExecutionItem> execution = null;
   private String flowExitReason = null;
   private String flowId = null;
   private Boolean flowIsDebug = null;
@@ -97,14 +97,14 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
     }
   }
   private MessageTypeEnum messageType = null;
-  private V2FlowExecutionDataFlowidTopicInvokingContext invokingContext = null;
+  private V2FlowExecutionDataFlowidTopicInvokingContextInfo invokingContext = null;
   private Date startDateTime = null;
   private List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> warnings = null;
 
   public V2FlowExecutionDataFlowidTopicFlowExecutionHistory() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       errors = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
-      execution = new ArrayList<V2FlowExecutionDataFlowidTopicExecution>();
+      execution = new ArrayList<V2FlowExecutionDataFlowidTopicFlowExecutionItem>();
       warnings = new ArrayList<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>();
     }
   }
@@ -221,17 +221,17 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
   /**
    * An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.
    **/
-  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory execution(List<V2FlowExecutionDataFlowidTopicExecution> execution) {
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory execution(List<V2FlowExecutionDataFlowidTopicFlowExecutionItem> execution) {
     this.execution = execution;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.")
   @JsonProperty("execution")
-  public List<V2FlowExecutionDataFlowidTopicExecution> getExecution() {
+  public List<V2FlowExecutionDataFlowidTopicFlowExecutionItem> getExecution() {
     return execution;
   }
-  public void setExecution(List<V2FlowExecutionDataFlowidTopicExecution> execution) {
+  public void setExecution(List<V2FlowExecutionDataFlowidTopicFlowExecutionItem> execution) {
     this.execution = execution;
   }
 
@@ -364,17 +364,17 @@ public class V2FlowExecutionDataFlowidTopicFlowExecutionHistory  implements Seri
 
   /**
    **/
-  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory invokingContext(V2FlowExecutionDataFlowidTopicInvokingContext invokingContext) {
+  public V2FlowExecutionDataFlowidTopicFlowExecutionHistory invokingContext(V2FlowExecutionDataFlowidTopicInvokingContextInfo invokingContext) {
     this.invokingContext = invokingContext;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("invokingContext")
-  public V2FlowExecutionDataFlowidTopicInvokingContext getInvokingContext() {
+  public V2FlowExecutionDataFlowidTopicInvokingContextInfo getInvokingContext() {
     return invokingContext;
   }
-  public void setInvokingContext(V2FlowExecutionDataFlowidTopicInvokingContext invokingContext) {
+  public void setInvokingContext(V2FlowExecutionDataFlowidTopicInvokingContextInfo invokingContext) {
     this.invokingContext = invokingContext;
   }
 

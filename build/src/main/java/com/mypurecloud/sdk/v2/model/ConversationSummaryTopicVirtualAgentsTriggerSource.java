@@ -76,6 +76,55 @@ public class ConversationSummaryTopicVirtualAgentsTriggerSource  implements Seri
   private SourceTypeEnum sourceType = null;
   private String sourceId = null;
 
+  private static class SourceOutcomeEnumDeserializer extends StdDeserializer<SourceOutcomeEnum> {
+    public SourceOutcomeEnumDeserializer() {
+      super(SourceOutcomeEnumDeserializer.class);
+    }
+
+    @Override
+    public SourceOutcomeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SourceOutcomeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets sourceOutcome
+   */
+ @JsonDeserialize(using = SourceOutcomeEnumDeserializer.class)
+  public enum SourceOutcomeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    CONTAINED("CONTAINED"),
+    TRANSFER("TRANSFER");
+
+    private String value;
+
+    SourceOutcomeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SourceOutcomeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SourceOutcomeEnum value : SourceOutcomeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SourceOutcomeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SourceOutcomeEnum sourceOutcome = null;
+
   public ConversationSummaryTopicVirtualAgentsTriggerSource() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
     }
@@ -116,6 +165,23 @@ public class ConversationSummaryTopicVirtualAgentsTriggerSource  implements Seri
   }
 
 
+  /**
+   **/
+  public ConversationSummaryTopicVirtualAgentsTriggerSource sourceOutcome(SourceOutcomeEnum sourceOutcome) {
+    this.sourceOutcome = sourceOutcome;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sourceOutcome")
+  public SourceOutcomeEnum getSourceOutcome() {
+    return sourceOutcome;
+  }
+  public void setSourceOutcome(SourceOutcomeEnum sourceOutcome) {
+    this.sourceOutcome = sourceOutcome;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -127,12 +193,13 @@ public class ConversationSummaryTopicVirtualAgentsTriggerSource  implements Seri
     ConversationSummaryTopicVirtualAgentsTriggerSource conversationSummaryTopicVirtualAgentsTriggerSource = (ConversationSummaryTopicVirtualAgentsTriggerSource) o;
 
     return Objects.equals(this.sourceType, conversationSummaryTopicVirtualAgentsTriggerSource.sourceType) &&
-            Objects.equals(this.sourceId, conversationSummaryTopicVirtualAgentsTriggerSource.sourceId);
+            Objects.equals(this.sourceId, conversationSummaryTopicVirtualAgentsTriggerSource.sourceId) &&
+            Objects.equals(this.sourceOutcome, conversationSummaryTopicVirtualAgentsTriggerSource.sourceOutcome);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceType, sourceId);
+    return Objects.hash(sourceType, sourceId, sourceOutcome);
   }
 
   @Override
@@ -142,6 +209,7 @@ public class ConversationSummaryTopicVirtualAgentsTriggerSource  implements Seri
     
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
+    sb.append("    sourceOutcome: ").append(toIndentedString(sourceOutcome)).append("\n");
     sb.append("}");
     return sb.toString();
   }

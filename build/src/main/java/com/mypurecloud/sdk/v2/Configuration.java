@@ -22,8 +22,9 @@ public class Configuration {
    * instances without providing an API client.
    */
   public static ApiClient getDefaultApiClient() {
-    if (defaultApiClient == null)
+    if (defaultApiClient == null){
       defaultApiClient = new ApiClient();
+    }
     return defaultApiClient;
    }
 

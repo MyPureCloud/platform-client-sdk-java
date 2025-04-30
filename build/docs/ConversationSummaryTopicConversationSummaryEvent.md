@@ -18,6 +18,7 @@
 | **headline** | [**ConversationSummaryTopicConversationHeadline**](ConversationSummaryTopicConversationHeadline) |  |  [optional] |
 | **reason** | [**ConversationSummaryTopicConversationReason**](ConversationSummaryTopicConversationReason) |  |  [optional] |
 | **resolution** | [**ConversationSummaryTopicConversationResolution**](ConversationSummaryTopicConversationResolution) |  |  [optional] |
+| **followupActions** | [**List&lt;ConversationSummaryTopicConversationFollowupAction&gt;**](ConversationSummaryTopicConversationFollowupAction) |  |  [optional] |
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicConversationWrapUpCode&gt;**](ConversationSummaryTopicConversationWrapUpCode) |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicTriggerSource**](ConversationSummaryTopicTriggerSource) |  |  [optional] |
 | **lastEditedBy** | [**ConversationSummaryTopicConversationSummaryParticipant**](ConversationSummaryTopicConversationSummaryParticipant) |  |  [optional] |
@@ -66,4 +67,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DialerContactlistfilterConfigChangeRange;
+import com.mypurecloud.sdk.v2.model.DialerContactlistfilterConfigChangeFilterRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -135,7 +135,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
   }
   private OperatorEnum operator = null;
   private String value = null;
-  private DialerContactlistfilterConfigChangeRange range = null;
+  private DialerContactlistfilterConfigChangeFilterRange range = null;
   private Boolean inverted = null;
   private Map<String, Object> additionalProperties = null;
 
@@ -219,17 +219,17 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
 
   /**
    **/
-  public DialerContactlistfilterConfigChangeFilterPredicate range(DialerContactlistfilterConfigChangeRange range) {
+  public DialerContactlistfilterConfigChangeFilterPredicate range(DialerContactlistfilterConfigChangeFilterRange range) {
     this.range = range;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("range")
-  public DialerContactlistfilterConfigChangeRange getRange() {
+  public DialerContactlistfilterConfigChangeFilterRange getRange() {
     return range;
   }
-  public void setRange(DialerContactlistfilterConfigChangeRange range) {
+  public void setRange(DialerContactlistfilterConfigChangeFilterRange range) {
     this.range = range;
   }
 

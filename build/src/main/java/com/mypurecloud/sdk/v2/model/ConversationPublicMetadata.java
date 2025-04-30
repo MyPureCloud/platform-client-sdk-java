@@ -25,6 +25,7 @@ public class ConversationPublicMetadata  implements Serializable {
   
   private String rootId = null;
   private String replyToId = null;
+  private String url = null;
 
   public ConversationPublicMetadata() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class ConversationPublicMetadata  implements Serializable {
   }
 
 
+  /**
+   * The URL of the social post on the native platform.
+   **/
+  public ConversationPublicMetadata url(String url) {
+    this.url = url;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL of the social post on the native platform.")
+  @JsonProperty("url")
+  public String getUrl() {
+    return url;
+  }
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class ConversationPublicMetadata  implements Serializable {
     ConversationPublicMetadata conversationPublicMetadata = (ConversationPublicMetadata) o;
 
     return Objects.equals(this.rootId, conversationPublicMetadata.rootId) &&
-            Objects.equals(this.replyToId, conversationPublicMetadata.replyToId);
+            Objects.equals(this.replyToId, conversationPublicMetadata.replyToId) &&
+            Objects.equals(this.url, conversationPublicMetadata.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rootId, replyToId);
+    return Objects.hash(rootId, replyToId, url);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class ConversationPublicMetadata  implements Serializable {
     
     sb.append("    rootId: ").append(toIndentedString(rootId)).append("\n");
     sb.append("    replyToId: ").append(toIndentedString(replyToId)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

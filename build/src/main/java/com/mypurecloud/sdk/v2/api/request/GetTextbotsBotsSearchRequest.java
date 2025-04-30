@@ -54,7 +54,8 @@ public class GetTextbotsBotsSearchRequest {
 		NUANCEDLG("NuanceDlg"),
 		GENESYSBOTFLOW("GenesysBotFlow"),
 		GENESYSDIGITALBOTFLOW("GenesysDigitalBotFlow"),
-		GENESYSVOICESURVEYFLOW("GenesysVoiceSurveyFlow");
+		GENESYSVOICESURVEYFLOW("GenesysVoiceSurveyFlow"),
+		GENESYSDIGITALBOTCONNECTOR("GenesysDigitalBotConnector");
 
 		private String value;
 

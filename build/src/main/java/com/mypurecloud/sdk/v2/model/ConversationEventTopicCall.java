@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ConversationEventTopicDisconnectReason;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicQueueMediaSettings;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicRecordersState;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -198,6 +199,7 @@ public class ConversationEventTopicCall  implements Serializable {
     }
   }
   private RecordingStateEnum recordingState = null;
+  private ConversationEventTopicRecordersState recordersState = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
@@ -426,6 +428,23 @@ public class ConversationEventTopicCall  implements Serializable {
   }
   public void setRecordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
+  }
+
+
+  /**
+   **/
+  public ConversationEventTopicCall recordersState(ConversationEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recordersState")
+  public ConversationEventTopicRecordersState getRecordersState() {
+    return recordersState;
+  }
+  public void setRecordersState(ConversationEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
   }
 
 
@@ -889,6 +908,7 @@ public class ConversationEventTopicCall  implements Serializable {
             Objects.equals(this.initialState, conversationEventTopicCall.initialState) &&
             Objects.equals(this.recording, conversationEventTopicCall.recording) &&
             Objects.equals(this.recordingState, conversationEventTopicCall.recordingState) &&
+            Objects.equals(this.recordersState, conversationEventTopicCall.recordersState) &&
             Objects.equals(this.muted, conversationEventTopicCall.muted) &&
             Objects.equals(this.confined, conversationEventTopicCall.confined) &&
             Objects.equals(this.held, conversationEventTopicCall.held) &&
@@ -918,7 +938,7 @@ public class ConversationEventTopicCall  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
   }
 
   @Override
@@ -931,6 +951,7 @@ public class ConversationEventTopicCall  implements Serializable {
     sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");

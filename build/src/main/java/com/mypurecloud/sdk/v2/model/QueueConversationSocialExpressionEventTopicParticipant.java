@@ -21,7 +21,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicC
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessage;
-import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenshare;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenShare;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicVideo;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWorkflow;
@@ -129,7 +129,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private List<QueueConversationSocialExpressionEventTopicEmail> emails = null;
   private List<QueueConversationSocialExpressionEventTopicMessage> messages = null;
   private List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages = null;
-  private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationSocialExpressionEventTopicScreenShare> screenshares = null;
   private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = null;
   private List<QueueConversationSocialExpressionEventTopicVideo> videos = null;
   private QueueConversationSocialExpressionEventTopicWorkflow workflow = null;
@@ -144,7 +144,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
       emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
       messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
       internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
-      screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
+      screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenShare>();
       socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
       videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
     }
@@ -810,17 +810,17 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   /**
    **/
-  public QueueConversationSocialExpressionEventTopicParticipant screenshares(List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares) {
+  public QueueConversationSocialExpressionEventTopicParticipant screenshares(List<QueueConversationSocialExpressionEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenshares")
-  public List<QueueConversationSocialExpressionEventTopicScreenshare> getScreenshares() {
+  public List<QueueConversationSocialExpressionEventTopicScreenShare> getScreenshares() {
     return screenshares;
   }
-  public void setScreenshares(List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares) {
+  public void setScreenshares(List<QueueConversationSocialExpressionEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
   }
 

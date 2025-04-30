@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,54 @@ import java.io.Serializable;
 public class NotificationsSettings  implements Serializable {
   
   private Boolean enabled = null;
+
+  private static class NotificationContentTypeEnumDeserializer extends StdDeserializer<NotificationContentTypeEnum> {
+    public NotificationContentTypeEnumDeserializer() {
+      super(NotificationContentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public NotificationContentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NotificationContentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The notification content type settings for messenger
+   */
+ @JsonDeserialize(using = NotificationContentTypeEnumDeserializer.class)
+  public enum NotificationContentTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INCLUDEMESSAGESCONTENT("IncludeMessagesContent"),
+    EXCLUDEMESSAGESCONTENT("ExcludeMessagesContent");
+
+    private String value;
+
+    NotificationContentTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static NotificationContentTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (NotificationContentTypeEnum value : NotificationContentTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return NotificationContentTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private NotificationContentTypeEnum notificationContentType = null;
 
   public NotificationsSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -49,6 +98,24 @@ public class NotificationsSettings  implements Serializable {
   }
 
 
+  /**
+   * The notification content type settings for messenger
+   **/
+  public NotificationsSettings notificationContentType(NotificationContentTypeEnum notificationContentType) {
+    this.notificationContentType = notificationContentType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The notification content type settings for messenger")
+  @JsonProperty("notificationContentType")
+  public NotificationContentTypeEnum getNotificationContentType() {
+    return notificationContentType;
+  }
+  public void setNotificationContentType(NotificationContentTypeEnum notificationContentType) {
+    this.notificationContentType = notificationContentType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -59,12 +126,13 @@ public class NotificationsSettings  implements Serializable {
     }
     NotificationsSettings notificationsSettings = (NotificationsSettings) o;
 
-    return Objects.equals(this.enabled, notificationsSettings.enabled);
+    return Objects.equals(this.enabled, notificationsSettings.enabled) &&
+            Objects.equals(this.notificationContentType, notificationsSettings.notificationContentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled);
+    return Objects.hash(enabled, notificationContentType);
   }
 
   @Override
@@ -73,6 +141,7 @@ public class NotificationsSettings  implements Serializable {
     sb.append("class NotificationsSettings {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    notificationContentType: ").append(toIndentedString(notificationContentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

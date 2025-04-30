@@ -55,7 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | Fetch a relationship |
-| [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
+| [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | Look up contacts based on an attribute. Maximum of 25 values returned. |
 | [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | Scan for external contacts using paging |
 | [**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | Scan for external contacts using paging |
 | [**getExternalcontactsScanNotes**](ExternalContactsApi#getExternalcontactsScanNotes) | Scan for notes using paging |
@@ -3255,7 +3255,7 @@ try {
 
 > [ReverseWhitepagesLookupResult](ReverseWhitepagesLookupResult) getExternalcontactsReversewhitepageslookup(lookupVal, expand, divisionId)
 
-Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+Look up contacts based on an attribute. Maximum of 25 values returned.
 
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup  
 
@@ -3285,9 +3285,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
-String lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+String lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
-String divisionId = "*"; // String | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
+String divisionId = "*"; // String | Specifies which division to lookup contacts in, for the given lookup value
 try {
     ReverseWhitepagesLookupResult result = apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, expand, divisionId);
     System.out.println(result);
@@ -3302,9 +3302,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | 
+| **lookupVal** | **String**| User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) | 
 | **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources, division 
-| **divisionId** | **String**| Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to *] 
+| **divisionId** | **String**| Specifies which division to lookup contacts in, for the given lookup value | [optional] [default to *] 
 {: class="table-striped"}
 
 
@@ -7361,4 +7361,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

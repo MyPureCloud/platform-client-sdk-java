@@ -21,7 +21,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicConversationRouti
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessage;
-import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenshare;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenShare;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicVideo;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWorkflow;
@@ -129,7 +129,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private List<QueueConversationEventTopicEmail> emails = null;
   private List<QueueConversationEventTopicMessage> messages = null;
   private List<QueueConversationEventTopicInternalMessage> internalMessages = null;
-  private List<QueueConversationEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationEventTopicScreenShare> screenshares = null;
   private List<QueueConversationEventTopicSocialExpression> socialExpressions = null;
   private List<QueueConversationEventTopicVideo> videos = null;
   private QueueConversationEventTopicWorkflow workflow = null;
@@ -144,7 +144,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
       emails = new ArrayList<QueueConversationEventTopicEmail>();
       messages = new ArrayList<QueueConversationEventTopicMessage>();
       internalMessages = new ArrayList<QueueConversationEventTopicInternalMessage>();
-      screenshares = new ArrayList<QueueConversationEventTopicScreenshare>();
+      screenshares = new ArrayList<QueueConversationEventTopicScreenShare>();
       socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
       videos = new ArrayList<QueueConversationEventTopicVideo>();
     }
@@ -810,17 +810,17 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   /**
    **/
-  public QueueConversationEventTopicParticipant screenshares(List<QueueConversationEventTopicScreenshare> screenshares) {
+  public QueueConversationEventTopicParticipant screenshares(List<QueueConversationEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenshares")
-  public List<QueueConversationEventTopicScreenshare> getScreenshares() {
+  public List<QueueConversationEventTopicScreenShare> getScreenshares() {
     return screenshares;
   }
-  public void setScreenshares(List<QueueConversationEventTopicScreenshare> screenshares) {
+  public void setScreenshares(List<QueueConversationEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
   }
 

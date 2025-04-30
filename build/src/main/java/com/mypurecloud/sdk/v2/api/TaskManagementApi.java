@@ -1013,7 +1013,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1029,7 +1028,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1057,7 +1055,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinChangeListing
    * @throws ApiException if the request fails on the server
@@ -1077,7 +1074,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1107,7 +1103,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param entityVersion Workbin version (required)
    * @return WorkbinVersion
@@ -1121,7 +1116,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param entityVersion Workbin version (required)
    * @return WorkbinVersion
@@ -1143,7 +1137,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinVersion
    * @throws ApiException if the request fails on the server
@@ -1163,7 +1156,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1193,7 +1185,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1209,7 +1200,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1237,7 +1227,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinVersionListing
    * @throws ApiException if the request fails on the server
@@ -1257,7 +1246,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1369,7 +1357,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1385,7 +1372,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1413,7 +1399,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemChangeListing
    * @throws ApiException if the request fails on the server
@@ -1433,7 +1418,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1561,7 +1545,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param entityVersion Workitem version (required)
    * @return WorkitemVersion
@@ -1575,7 +1558,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param entityVersion Workitem version (required)
    * @return WorkitemVersion
@@ -1597,7 +1579,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemVersion
    * @throws ApiException if the request fails on the server
@@ -1617,7 +1598,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1647,7 +1627,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1663,7 +1642,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1691,7 +1669,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemVersionListing
    * @throws ApiException if the request fails on the server
@@ -1711,7 +1688,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3517,7 +3493,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -3534,7 +3509,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -3565,7 +3539,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeChangeListing
    * @throws ApiException if the request fails on the server
@@ -3585,7 +3558,6 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3775,7 +3747,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param entityVersion Worktype version (required)
    * @return WorktypeVersion
@@ -3789,7 +3760,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param entityVersion Worktype version (required)
    * @return WorktypeVersion
@@ -3811,7 +3781,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeVersion
    * @throws ApiException if the request fails on the server
@@ -3831,7 +3800,6 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3861,7 +3829,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -3877,7 +3844,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -3905,7 +3871,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeVersionListing
    * @throws ApiException if the request fails on the server
@@ -3925,7 +3890,6 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

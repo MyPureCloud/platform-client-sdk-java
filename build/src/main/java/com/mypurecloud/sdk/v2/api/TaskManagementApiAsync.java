@@ -998,7 +998,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1033,7 +1032,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workbin's attribute change history
    * 
-   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1075,7 +1073,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1110,7 +1107,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workbin
    * 
-   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1152,7 +1148,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1187,7 +1182,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workbin
    * 
-   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1304,7 +1298,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1339,7 +1332,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workitem's attribute change history
    * 
-   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1456,7 +1448,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1491,7 +1482,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workitem
    * 
-   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1533,7 +1523,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1568,7 +1557,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workitem
    * 
-   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3260,7 +3248,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3295,7 +3282,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a worktype's attribute change history
    * 
-   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3487,7 +3473,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3522,7 +3507,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a worktype
    * 
-   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3564,7 +3548,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3599,7 +3582,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a worktype
    * 
-   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

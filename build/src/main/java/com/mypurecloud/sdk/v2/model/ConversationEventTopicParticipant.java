@@ -21,7 +21,7 @@ import com.mypurecloud.sdk.v2.model.ConversationEventTopicConversationRoutingDat
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessage;
-import com.mypurecloud.sdk.v2.model.ConversationEventTopicScreenshare;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicScreenShare;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicVideo;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWorkflow;
@@ -129,7 +129,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
   private List<ConversationEventTopicEmail> emails = null;
   private List<ConversationEventTopicMessage> messages = null;
   private List<ConversationEventTopicInternalMessage> internalMessages = null;
-  private List<ConversationEventTopicScreenshare> screenshares = null;
+  private List<ConversationEventTopicScreenShare> screenshares = null;
   private List<ConversationEventTopicSocialExpression> socialExpressions = null;
   private List<ConversationEventTopicVideo> videos = null;
   private ConversationEventTopicWorkflow workflow = null;
@@ -144,7 +144,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
       emails = new ArrayList<ConversationEventTopicEmail>();
       messages = new ArrayList<ConversationEventTopicMessage>();
       internalMessages = new ArrayList<ConversationEventTopicInternalMessage>();
-      screenshares = new ArrayList<ConversationEventTopicScreenshare>();
+      screenshares = new ArrayList<ConversationEventTopicScreenShare>();
       socialExpressions = new ArrayList<ConversationEventTopicSocialExpression>();
       videos = new ArrayList<ConversationEventTopicVideo>();
     }
@@ -810,17 +810,17 @@ public class ConversationEventTopicParticipant  implements Serializable {
 
   /**
    **/
-  public ConversationEventTopicParticipant screenshares(List<ConversationEventTopicScreenshare> screenshares) {
+  public ConversationEventTopicParticipant screenshares(List<ConversationEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("screenshares")
-  public List<ConversationEventTopicScreenshare> getScreenshares() {
+  public List<ConversationEventTopicScreenShare> getScreenshares() {
     return screenshares;
   }
-  public void setScreenshares(List<ConversationEventTopicScreenshare> screenshares) {
+  public void setScreenshares(List<ConversationEventTopicScreenShare> screenshares) {
     this.screenshares = screenshares;
   }
 

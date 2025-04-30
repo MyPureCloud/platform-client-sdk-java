@@ -90,6 +90,8 @@ public class WorktypeCreate  implements Serializable {
 
   /**
    * The default duration in seconds for Workitems created from the Worktype. Maximum of 365 days.
+   * minimum: 0
+   * maximum: 31536000
    **/
   public WorktypeCreate defaultDurationSeconds(Integer defaultDurationSeconds) {
     this.defaultDurationSeconds = defaultDurationSeconds;
@@ -108,6 +110,8 @@ public class WorktypeCreate  implements Serializable {
 
   /**
    * The default expiration time in seconds for Workitems created from the Worktype. Maximum of 365 days.
+   * minimum: 0
+   * maximum: 31536000
    **/
   public WorktypeCreate defaultExpirationSeconds(Integer defaultExpirationSeconds) {
     this.defaultExpirationSeconds = defaultExpirationSeconds;
@@ -126,6 +130,8 @@ public class WorktypeCreate  implements Serializable {
 
   /**
    * The default due duration in seconds for Workitems created from the Worktype. Maximum of 365 days.
+   * minimum: 0
+   * maximum: 31536000
    **/
   public WorktypeCreate defaultDueDurationSeconds(Integer defaultDueDurationSeconds) {
     this.defaultDueDurationSeconds = defaultDueDurationSeconds;
@@ -144,6 +150,8 @@ public class WorktypeCreate  implements Serializable {
 
   /**
    * The default priority for Workitems created from the Worktype. The valid range is between -25,000,000 and 25,000,000.
+   * minimum: -25000000
+   * maximum: 25000000
    **/
   public WorktypeCreate defaultPriority(Integer defaultPriority) {
     this.defaultPriority = defaultPriority;
@@ -162,6 +170,8 @@ public class WorktypeCreate  implements Serializable {
 
   /**
    * The default time to time to live in seconds for Workitems created from the Worktype. The valid range is between 1 and 365 days.
+   * minimum: 86400
+   * maximum: 31536000
    **/
   public WorktypeCreate defaultTtlSeconds(Integer defaultTtlSeconds) {
     this.defaultTtlSeconds = defaultTtlSeconds;

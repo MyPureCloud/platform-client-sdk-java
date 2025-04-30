@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **sourceType** | [**SourceTypeEnum**](#Enum--SourceTypeEnum) |  |  [optional] |
 | **sourceId** | **String** |  |  [optional] |
+| **sourceOutcome** | [**SourceOutcomeEnum**](#Enum--SourceOutcomeEnum) |  |  [optional] |
 
 
 ## Enum: SourceTypeEnum
@@ -21,6 +22,16 @@
 | COPILOT | &quot;COPILOT&quot; | 
 
 
+## Enum: SourceOutcomeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| CONTAINED | &quot;CONTAINED&quot; | 
+| TRANSFER | &quot;TRANSFER&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

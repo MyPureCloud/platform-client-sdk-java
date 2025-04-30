@@ -16,6 +16,7 @@
 | **carousel** | [**ConversationContentCarousel**](ConversationContentCarousel) | Carousel content |  [optional] |
 | **text** | [**ConversationContentText**](ConversationContentText) | Text content. |  [optional] |
 | **quickReplyV2** | [**ConversationContentQuickReplyV2**](ConversationContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
+| **reactions** | [**List&lt;ConversationContentReaction&gt;**](ConversationContentReaction) | A set of reactions to a message. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -37,9 +38,10 @@
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
 | INTERACTIVEAPPLICATION | &quot;InteractiveApplication&quot; | 
+| LISTPICKER | &quot;ListPicker&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

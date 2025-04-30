@@ -110,6 +110,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
@@ -158,6 +159,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
+import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
@@ -379,6 +381,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
@@ -17475,6 +17478,7 @@ public class ConversationsApi {
    * @return MessageMediaData
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MessageMediaData postConversationsMessageCommunicationMessagesMedia(String conversationId, String communicationId) throws IOException, ApiException {
     return  postConversationsMessageCommunicationMessagesMedia(createPostConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId));
@@ -17487,6 +17491,7 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @return MessageMediaData
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MessageMediaData> postConversationsMessageCommunicationMessagesMediaWithHttpInfo(String conversationId, String communicationId) throws IOException {
     return postConversationsMessageCommunicationMessagesMedia(createPostConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId).withHttpInfo());
@@ -17508,6 +17513,7 @@ public class ConversationsApi {
    * @return MessageMediaData
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MessageMediaData postConversationsMessageCommunicationMessagesMedia(PostConversationsMessageCommunicationMessagesMediaRequest request) throws IOException, ApiException {
     try {
@@ -17526,6 +17532,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MessageMediaData> postConversationsMessageCommunicationMessagesMedia(ApiRequest<Void> request) throws IOException {
     try {
@@ -17545,6 +17552,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body request (required)
+   * @return MessageMediaUploadData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(String conversationId, String communicationId, UploadMediaRequest body) throws IOException, ApiException {
+    return  postConversationsMessageCommunicationMessagesMediaUploads(createPostConversationsMessageCommunicationMessagesMediaUploadsRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body request (required)
+   * @return MessageMediaUploadData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaUploadData> postConversationsMessageCommunicationMessagesMediaUploadsWithHttpInfo(String conversationId, String communicationId, UploadMediaRequest body) throws IOException {
+    return postConversationsMessageCommunicationMessagesMediaUploads(createPostConversationsMessageCommunicationMessagesMediaUploadsRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageCommunicationMessagesMediaUploadsRequest createPostConversationsMessageCommunicationMessagesMediaUploadsRequest(String conversationId, String communicationId, UploadMediaRequest body) {
+    return PostConversationsMessageCommunicationMessagesMediaUploadsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param request The request object
+   * @return MessageMediaUploadData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(PostConversationsMessageCommunicationMessagesMediaUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageMediaUploadData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageMediaUploadData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaUploadData> postConversationsMessageCommunicationMessagesMediaUploads(ApiRequest<UploadMediaRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageMediaUploadData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaUploadData> response = (ApiResponse<MessageMediaUploadData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaUploadData> response = (ApiResponse<MessageMediaUploadData>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

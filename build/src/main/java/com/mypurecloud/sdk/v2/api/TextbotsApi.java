@@ -47,8 +47,8 @@ public class TextbotsApi {
    * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
    * @param botType Bot types (optional)
    * @param botName Bot name (optional)
-   * @param botId Bot IDs (optional)
-   * @param pageSize The maximum results to return (optional, default to 25)
+   * @param botId Bot IDs. Maximum of 50 (optional)
+   * @param pageSize The maximum results to return. Maximum of 100 (optional, default to 25)
    * @return BotSearchResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -62,8 +62,8 @@ public class TextbotsApi {
    * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
    * @param botType Bot types (optional)
    * @param botName Bot name (optional)
-   * @param botId Bot IDs (optional)
-   * @param pageSize The maximum results to return (optional, default to 25)
+   * @param botId Bot IDs. Maximum of 50 (optional)
+   * @param pageSize The maximum results to return. Maximum of 100 (optional, default to 25)
    * @return BotSearchResponseEntityListing
    * @throws IOException if the request fails to be processed
    */

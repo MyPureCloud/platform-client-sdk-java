@@ -50,6 +50,7 @@ public class SurveyQuestion  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MULTIPLECHOICEQUESTION("multipleChoiceQuestion"),
+    MULTIPLESELECTQUESTION("multipleSelectQuestion"),
     FREETEXTQUESTION("freeTextQuestion"),
     NPSQUESTION("npsQuestion"),
     READONLYTEXTBLOCKQUESTION("readOnlyTextBlockQuestion");

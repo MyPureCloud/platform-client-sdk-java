@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationContentDatePickerAvailableTime;
+import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class ConversationContentDatePicker  implements Serializable {
   private String imageUrl = null;
   private Date dateMinimum = null;
   private Date dateMaximum = null;
+  private ConversationContentLocation location = null;
   private List<ConversationContentDatePickerAvailableTime> availableTimes = null;
 
   public ConversationContentDatePicker() {
@@ -132,6 +134,24 @@ public class ConversationContentDatePicker  implements Serializable {
 
 
   /**
+   * Location of the event.
+   **/
+  public ConversationContentDatePicker location(ConversationContentLocation location) {
+    this.location = location;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Location of the event.")
+  @JsonProperty("location")
+  public ConversationContentLocation getLocation() {
+    return location;
+  }
+  public void setLocation(ConversationContentLocation location) {
+    this.location = location;
+  }
+
+
+  /**
    * An array of available times objects.
    **/
   public ConversationContentDatePicker availableTimes(List<ConversationContentDatePickerAvailableTime> availableTimes) {
@@ -164,12 +184,13 @@ public class ConversationContentDatePicker  implements Serializable {
             Objects.equals(this.imageUrl, conversationContentDatePicker.imageUrl) &&
             Objects.equals(this.dateMinimum, conversationContentDatePicker.dateMinimum) &&
             Objects.equals(this.dateMaximum, conversationContentDatePicker.dateMaximum) &&
+            Objects.equals(this.location, conversationContentDatePicker.location) &&
             Objects.equals(this.availableTimes, conversationContentDatePicker.availableTimes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, subtitle, imageUrl, dateMinimum, dateMaximum, availableTimes);
+    return Objects.hash(title, subtitle, imageUrl, dateMinimum, dateMaximum, location, availableTimes);
   }
 
   @Override
@@ -182,6 +203,7 @@ public class ConversationContentDatePicker  implements Serializable {
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    dateMinimum: ").append(toIndentedString(dateMinimum)).append("\n");
     sb.append("    dateMaximum: ").append(toIndentedString(dateMaximum)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    availableTimes: ").append(toIndentedString(availableTimes)).append("\n");
     sb.append("}");
     return sb.toString();

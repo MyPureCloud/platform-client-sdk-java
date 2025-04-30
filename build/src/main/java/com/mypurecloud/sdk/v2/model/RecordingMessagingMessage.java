@@ -87,7 +87,8 @@ public class RecordingMessagingMessage  implements Serializable {
     REACTIONS("Reactions"),
     MENTION("Mention"),
     BUTTONRESPONSE("ButtonResponse"),
-    DATEPICKER("DatePicker");
+    DATEPICKER("DatePicker"),
+    INTERACTIVEAPPLICATION("InteractiveApplication");
 
     private String value;
 
@@ -115,6 +116,54 @@ public class RecordingMessagingMessage  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
+
+  private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
+    public SocialVisibilityEnumDeserializer() {
+      super(SocialVisibilityEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialVisibilityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialVisibilityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * For social media messages, the visibility of the message in the originating social platform
+   */
+ @JsonDeserialize(using = SocialVisibilityEnumDeserializer.class)
+  public enum SocialVisibilityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PUBLIC("Public"),
+    PRIVATE("Private");
+
+    private String value;
+
+    SocialVisibilityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialVisibilityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialVisibilityEnum value : SocialVisibilityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialVisibilityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SocialVisibilityEnum socialVisibility = null;
   private List<ConversationMessageEvent> events = null;
 
   public RecordingMessagingMessage() {
@@ -471,6 +520,24 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * For social media messages, the visibility of the message in the originating social platform
+   **/
+  public RecordingMessagingMessage socialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "For social media messages, the visibility of the message in the originating social platform")
+  @JsonProperty("socialVisibility")
+  public SocialVisibilityEnum getSocialVisibility() {
+    return socialVisibility;
+  }
+  public void setSocialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+  }
+
+
+  /**
    * List of event elements
    **/
   public RecordingMessagingMessage events(List<ConversationMessageEvent> events) {
@@ -517,12 +584,13 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.cards, recordingMessagingMessage.cards) &&
             Objects.equals(this.notificationTemplate, recordingMessagingMessage.notificationTemplate) &&
             Objects.equals(this.contentType, recordingMessagingMessage.contentType) &&
+            Objects.equals(this.socialVisibility, recordingMessagingMessage.socialVisibility) &&
             Objects.equals(this.events, recordingMessagingMessage.events);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, contentType, events);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, contentType, socialVisibility, events);
   }
 
   @Override
@@ -549,6 +617,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    cards: ").append(toIndentedString(cards)).append("\n");
     sb.append("    notificationTemplate: ").append(toIndentedString(notificationTemplate)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("}");
     return sb.toString();

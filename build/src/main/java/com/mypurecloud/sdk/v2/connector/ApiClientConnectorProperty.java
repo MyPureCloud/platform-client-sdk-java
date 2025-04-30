@@ -11,6 +11,9 @@ public class ApiClientConnectorProperty {
     public static final String CONNECTOR_PROVIDER = PREFIX + "CONNECTOR_PROVIDER";
     public static final String HTTP_REQUEST_INTERCEPTOR = PREFIX + "HTTP_REQUEST_INTERCEPTOR";
     public static final String HTTP_RESPONSE_INTERCEPTOR = PREFIX + "HTTP_RESPONSE_INTERCEPTOR";
-
+    public static final String KEYSTORE_PATH = PREFIX + "KEYSTORE_PATH";
+    public static final String KEYSTORE_PASSWORD = PREFIX + "KEYSTORE_PASSWORD";
+    public static final String TRUSTSTORE_PATH = PREFIX + "TRUSTSTORE_PATH";
+    public static final String TRUSTSTORE_PASSWORD =  PREFIX + "TRUSTSTORE_PASSWORD";
     private ApiClientConnectorProperty() { }
 }

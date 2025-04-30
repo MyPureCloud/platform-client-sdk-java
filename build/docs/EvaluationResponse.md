@@ -11,7 +11,6 @@
 | **evaluationForm** | [**EvaluationFormResponse**](EvaluationFormResponse) | Evaluation form used for evaluation. |  [optional] |
 | **evaluator** | [**User**](User) |  |  [optional] |
 | **agent** | [**User**](User) |  |  [optional] |
-| **calibration** | [**Calibration**](Calibration) |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **answers** | [**EvaluationScoringSet**](EvaluationScoringSet) |  |  [optional] |
 | **agentHasRead** | **Boolean** |  |  [optional] |
@@ -38,6 +37,7 @@
 | **evaluationSource** | [**EvaluationSource**](EvaluationSource) | The source that created the evaluation. |  [optional] |
 | **aiScoring** | [**AiScoring**](AiScoring) | AI scoring details for the evaluation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
+| **calibration** | [**AddressableEntityRef**](AddressableEntityRef) |  |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -78,4 +78,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

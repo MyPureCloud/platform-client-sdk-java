@@ -30,11 +30,11 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
+  private String lastUri = null;
+  private String firstUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public ClientAppEntityListing() {
@@ -114,57 +114,6 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
 
   /**
    **/
-  public ClientAppEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public ClientAppEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public ClientAppEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public ClientAppEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -199,6 +148,57 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
 
   /**
    **/
+  public ClientAppEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public ClientAppEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public ClientAppEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public ClientAppEntityListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -228,17 +228,17 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
             Objects.equals(this.pageSize, clientAppEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, clientAppEntityListing.pageNumber) &&
             Objects.equals(this.total, clientAppEntityListing.total) &&
-            Objects.equals(this.firstUri, clientAppEntityListing.firstUri) &&
-            Objects.equals(this.lastUri, clientAppEntityListing.lastUri) &&
-            Objects.equals(this.selfUri, clientAppEntityListing.selfUri) &&
             Objects.equals(this.nextUri, clientAppEntityListing.nextUri) &&
             Objects.equals(this.previousUri, clientAppEntityListing.previousUri) &&
+            Objects.equals(this.lastUri, clientAppEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, clientAppEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, clientAppEntityListing.selfUri) &&
             Objects.equals(this.pageCount, clientAppEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, nextUri, previousUri, lastUri, firstUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

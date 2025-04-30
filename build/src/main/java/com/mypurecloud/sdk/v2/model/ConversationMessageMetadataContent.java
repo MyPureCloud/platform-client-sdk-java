@@ -57,6 +57,7 @@ public class ConversationMessageMetadataContent  implements Serializable {
     QUICKREPLYV2("QuickReplyV2"),
     DATEPICKER("DatePicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication"),
+    LISTPICKER("ListPicker"),
     UNKNOWN("Unknown");
 
     private String value;

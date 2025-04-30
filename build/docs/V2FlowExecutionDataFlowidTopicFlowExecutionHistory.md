@@ -11,7 +11,7 @@
 | **endDateTime** | [**Date**](Date) | The end date time for this flow instance execution data. |  [optional] |
 | **endpoint** | **String** | The public endpoint a user can use to retrieve the full historical log from the service. |  [optional] |
 | **errors** | [**List&lt;V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo&gt;**](V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo) | If the flow invoked error handling, an array of errors. |  [optional] |
-| **execution** | [**List&lt;V2FlowExecutionDataFlowidTopicExecution&gt;**](V2FlowExecutionDataFlowidTopicExecution) | An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot. |  [optional] |
+| **execution** | [**List&lt;V2FlowExecutionDataFlowidTopicFlowExecutionItem&gt;**](V2FlowExecutionDataFlowidTopicFlowExecutionItem) | An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot. |  [optional] |
 | **flowExitReason** | **String** | Provides information about why a flow ended. |  [optional] |
 | **flowId** | **String** | The flow identifier for this flow instance execution data.  This is the identifier of the flow configuration that users load up in Architect. |  [optional] |
 | **flowIsDebug** | **Boolean** | Whether the flow that ran for this flow instance execution data was in debug mode. |  [optional] |
@@ -19,7 +19,7 @@
 | **flowType** | **String** | The flow type of the Architect flow that was run. |  [optional] |
 | **flowVersion** | **String** | The version of the flow for this flow instance execution data. Typically this is a numeric value like 1.0 represented as a string but can also be 'debug' |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) | If applicable, the type of message platform from which the message originated. |  [optional] |
-| **invokingContext** | [**V2FlowExecutionDataFlowidTopicInvokingContext**](V2FlowExecutionDataFlowidTopicInvokingContext) |  |  [optional] |
+| **invokingContext** | [**V2FlowExecutionDataFlowidTopicInvokingContextInfo**](V2FlowExecutionDataFlowidTopicInvokingContextInfo) |  |  [optional] |
 | **startDateTime** | [**Date**](Date) | The start date time for this flow instance execution data. |  [optional] |
 | **warnings** | [**List&lt;V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo&gt;**](V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo) | If the flow encountered a warning during execution, this is an array of the warnings. |  [optional] |
 
@@ -42,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

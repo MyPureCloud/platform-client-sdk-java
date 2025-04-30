@@ -9,7 +9,7 @@
 | **columnType** | [**ColumnTypeEnum**](#Enum--ColumnTypeEnum) | Whether a contact column is numeric or alphabetic |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator |  [optional] |
 | **value** | **String** | The value the predicate applies to |  [optional] |
-| **range** | [**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange) |  |  [optional] |
+| **range** | [**DialerContactlistfilterConfigChangeFilterRange**](DialerContactlistfilterConfigChangeFilterRange) |  |  [optional] |
 | **inverted** | **Boolean** | Whether or not to invert to result of evaluating the predicate |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
@@ -44,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

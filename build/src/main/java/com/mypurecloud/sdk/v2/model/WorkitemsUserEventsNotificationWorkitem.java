@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationCustomAttribute;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationDelta;
+import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationScoredAgent;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationSession;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationWrapup;
 import io.swagger.annotations.ApiModel;
@@ -238,12 +239,20 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private List<WorkitemsUserEventsNotificationSession> sessions = null;
   private List<String> skillIds = null;
   private String scriptId = null;
+  private String workbinName = null;
+  private String typeName = null;
+  private List<String> preferredAgentIds = null;
+  private String divisionId = null;
+  private List<WorkitemsUserEventsNotificationScoredAgent> scoredAgents = null;
+  private String utilizationLabelId = null;
 
   public WorkitemsUserEventsNotificationWorkitem() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       changes = new ArrayList<WorkitemsUserEventsNotificationDelta>();
       sessions = new ArrayList<WorkitemsUserEventsNotificationSession>();
       skillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
+      scoredAgents = new ArrayList<WorkitemsUserEventsNotificationScoredAgent>();
     }
   }
 
@@ -826,6 +835,108 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem workbinName(String workbinName) {
+    this.workbinName = workbinName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workbinName")
+  public String getWorkbinName() {
+    return workbinName;
+  }
+  public void setWorkbinName(String workbinName) {
+    this.workbinName = workbinName;
+  }
+
+
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem typeName(String typeName) {
+    this.typeName = typeName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("typeName")
+  public String getTypeName() {
+    return typeName;
+  }
+  public void setTypeName(String typeName) {
+    this.typeName = typeName;
+  }
+
+
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem preferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("preferredAgentIds")
+  public List<String> getPreferredAgentIds() {
+    return preferredAgentIds;
+  }
+  public void setPreferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+  }
+
+
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem divisionId(String divisionId) {
+    this.divisionId = divisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisionId")
+  public String getDivisionId() {
+    return divisionId;
+  }
+  public void setDivisionId(String divisionId) {
+    this.divisionId = divisionId;
+  }
+
+
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem scoredAgents(List<WorkitemsUserEventsNotificationScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scoredAgents")
+  public List<WorkitemsUserEventsNotificationScoredAgent> getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(List<WorkitemsUserEventsNotificationScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+  }
+
+
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -869,12 +980,18 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.wrapup, workitemsUserEventsNotificationWorkitem.wrapup) &&
             Objects.equals(this.sessions, workitemsUserEventsNotificationWorkitem.sessions) &&
             Objects.equals(this.skillIds, workitemsUserEventsNotificationWorkitem.skillIds) &&
-            Objects.equals(this.scriptId, workitemsUserEventsNotificationWorkitem.scriptId);
+            Objects.equals(this.scriptId, workitemsUserEventsNotificationWorkitem.scriptId) &&
+            Objects.equals(this.workbinName, workitemsUserEventsNotificationWorkitem.workbinName) &&
+            Objects.equals(this.typeName, workitemsUserEventsNotificationWorkitem.typeName) &&
+            Objects.equals(this.preferredAgentIds, workitemsUserEventsNotificationWorkitem.preferredAgentIds) &&
+            Objects.equals(this.divisionId, workitemsUserEventsNotificationWorkitem.divisionId) &&
+            Objects.equals(this.scoredAgents, workitemsUserEventsNotificationWorkitem.scoredAgents) &&
+            Objects.equals(this.utilizationLabelId, workitemsUserEventsNotificationWorkitem.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId, workbinName, typeName, preferredAgentIds, divisionId, scoredAgents, utilizationLabelId);
   }
 
   @Override
@@ -916,6 +1033,12 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    workbinName: ").append(toIndentedString(workbinName)).append("\n");
+    sb.append("    typeName: ").append(toIndentedString(typeName)).append("\n");
+    sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
+    sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

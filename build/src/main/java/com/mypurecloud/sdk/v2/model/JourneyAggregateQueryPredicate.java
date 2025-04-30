@@ -111,6 +111,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     JOURNEYFREQUENCYCAPREASON("journeyFrequencyCapReason"),
     JOURNEYIPGEOLOCATIONCOUNTRY("journeyIpGeolocationCountry"),
     JOURNEYOUTCOMEID("journeyOutcomeId"),
+    JOURNEYSEGMENTASSIGNMENTSTATE("journeySegmentAssignmentState"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
     JOURNEYSESSIONID("journeySessionId"),

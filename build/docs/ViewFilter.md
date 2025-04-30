@@ -231,6 +231,7 @@
 | **segmentTypes** | [**List<SegmentTypesEnum>**](#Enum--SegmentTypesEnum) | A list of filtered segment types |  [optional] |
 | **programIds** | **List&lt;String&gt;** | A list of program ids for filtering |  [optional] |
 | **categoryIds** | **List&lt;String&gt;** | A list of category ids for filtering |  [optional] |
+| **deliveryPushed** | **Boolean** | Filter to indicate if push notification is sent |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -645,6 +646,7 @@
 | FACEBOOK | &quot;Facebook&quot; |
 | INSTAGRAM | &quot;Instagram&quot; |
 | OPEN | &quot;Open&quot; |
+| GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; |
 
 
 ## Enum: SocialSentimentCategoryEnum
@@ -947,4 +949,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

@@ -49,6 +49,7 @@
 | **confined** | **Boolean** |  |  [optional] |
 | **recording** | **Boolean** |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) |  |  [optional] |
+| **recordersState** | [**ConversationCallEventTopicRecordersState**](ConversationCallEventTopicRecordersState) |  |  [optional] |
 | **securePause** | **Boolean** |  |  [optional] |
 | **group** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
 | **ani** | **String** |  |  [optional] |
@@ -156,4 +157,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

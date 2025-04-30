@@ -36,19 +36,20 @@ import com.mypurecloud.sdk.v2.model.RoomParticipant;
 import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
+import com.mypurecloud.sdk.v2.model.UserSettingsForChat;
 
 public class PatchChatsUsersMeSettingsRequest {
 
-	private ChatUserSettings body;
-	public ChatUserSettings getBody() {
+	private UserSettingsForChat body;
+	public UserSettingsForChat getBody() {
 		return this.body;
 	}
 
-	public void setBody(ChatUserSettings body) {
+	public void setBody(UserSettingsForChat body) {
 		this.body = body;
 	}
 
-	public PatchChatsUsersMeSettingsRequest withBody(ChatUserSettings body) {
+	public PatchChatsUsersMeSettingsRequest withBody(UserSettingsForChat body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -72,7 +73,7 @@ public class PatchChatsUsersMeSettingsRequest {
         return this;
     }
 
-    public ApiRequest<ChatUserSettings> withHttpInfo() {
+    public ApiRequest<UserSettingsForChat> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -95,7 +96,7 @@ public class PatchChatsUsersMeSettingsRequest {
 	}
 
 
-	public static Builder builder(ChatUserSettings body) {
+	public static Builder builder(UserSettingsForChat body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -109,14 +110,14 @@ public class PatchChatsUsersMeSettingsRequest {
 		}
 
 
-		public Builder withBody(ChatUserSettings body) {
+		public Builder withBody(UserSettingsForChat body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(ChatUserSettings body) {
+		public Builder withRequiredParams(UserSettingsForChat body) {
 			request.setBody(body);
 
 			return this;

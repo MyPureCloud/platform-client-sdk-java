@@ -17,7 +17,7 @@
 | **serviceLevelTarget** | **Integer** | The target service level for Workitems created from the Worktype. The default value is 100. |  [optional] |
 | **ruleSettings** | [**WorkitemRuleSettings**](WorkitemRuleSettings) | Settings for the worktypes rules. |  [optional] |
 | **description** | **String** | The description of the Worktype. Maximum length of 512 characters. |  [optional] |
-| **defaultStatusId** | **String** | The ID of the default status for Workitems created from the Worktype. |  [optional] |
+| **defaultStatusId** | **String** | The ID of the default status for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **schemaVersion** | **Integer** | The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set. |  [optional] |
 | **defaultLanguageId** | **String** | The ID of the default language for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **defaultSkillIds** | **List&lt;String&gt;** | The IDs of the default skills for Workitems created from the Worktype. Must be valid UUIDs. Maximum of 20 IDs |  [optional] |
@@ -27,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

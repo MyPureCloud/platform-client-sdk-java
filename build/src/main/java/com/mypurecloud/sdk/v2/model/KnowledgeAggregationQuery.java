@@ -71,6 +71,7 @@ public class KnowledgeAggregationQuery  implements Serializable {
     KNOWLEDGEBASEID("knowledgeBaseId"),
     LANGUAGECODE("languageCode"),
     MEDIATYPE("mediaType"),
+    MESSAGETYPE("messageType"),
     PRESENTEDDOCUMENTSCOUNT("presentedDocumentsCount"),
     QUERYTYPE("queryType"),
     QUEUEID("queueId"),

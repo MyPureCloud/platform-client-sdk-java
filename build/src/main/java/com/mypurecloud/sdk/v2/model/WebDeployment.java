@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.PushIntegration;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityRef;
 import com.mypurecloud.sdk.v2.model.WebDeploymentFlowEntityRef;
@@ -93,12 +94,14 @@ public class WebDeployment  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private List<PushIntegration> pushIntegrations = null;
   private WebDeploymentConfigurationVersionEntityRef _configuration = null;
   private String selfUri = null;
 
   public WebDeployment() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       allowedDomains = new ArrayList<String>();
+      pushIntegrations = new ArrayList<PushIntegration>();
     }
   }
 
@@ -265,6 +268,24 @@ public class WebDeployment  implements Serializable {
 
 
   /**
+   * The push integration objects associated with the deployment
+   **/
+  public WebDeployment pushIntegrations(List<PushIntegration> pushIntegrations) {
+    this.pushIntegrations = pushIntegrations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The push integration objects associated with the deployment")
+  @JsonProperty("pushIntegrations")
+  public List<PushIntegration> getPushIntegrations() {
+    return pushIntegrations;
+  }
+  public void setPushIntegrations(List<PushIntegration> pushIntegrations) {
+    this.pushIntegrations = pushIntegrations;
+  }
+
+
+  /**
    * The config version this deployment uses
    **/
   public WebDeployment _configuration(WebDeploymentConfigurationVersionEntityRef _configuration) {
@@ -311,13 +332,14 @@ public class WebDeployment  implements Serializable {
             Objects.equals(this.lastModifiedUser, webDeployment.lastModifiedUser) &&
             Objects.equals(this.flow, webDeployment.flow) &&
             Objects.equals(this.status, webDeployment.status) &&
+            Objects.equals(this.pushIntegrations, webDeployment.pushIntegrations) &&
             Objects.equals(this._configuration, webDeployment._configuration) &&
             Objects.equals(this.selfUri, webDeployment.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, allowAllDomains, allowedDomains, supportedContent, snippet, dateCreated, dateModified, lastModifiedUser, flow, status, _configuration, selfUri);
+    return Objects.hash(id, name, description, allowAllDomains, allowedDomains, supportedContent, snippet, dateCreated, dateModified, lastModifiedUser, flow, status, pushIntegrations, _configuration, selfUri);
   }
 
   @Override
@@ -337,6 +359,7 @@ public class WebDeployment  implements Serializable {
     sb.append("    lastModifiedUser: ").append(toIndentedString(lastModifiedUser)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    pushIntegrations: ").append(toIndentedString(pushIntegrations)).append("\n");
     sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

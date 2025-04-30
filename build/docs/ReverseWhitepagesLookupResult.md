@@ -6,9 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **contacts** | [**List&lt;ExternalContact&gt;**](ExternalContact) |  |  [optional] |
-| **externalOrganizations** | [**List&lt;ExternalOrganization&gt;**](ExternalOrganization) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

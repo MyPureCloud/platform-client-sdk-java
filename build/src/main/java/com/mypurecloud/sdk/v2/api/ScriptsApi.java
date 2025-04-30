@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
@@ -628,6 +629,100 @@ public class ScriptsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param scriptId Script ID (required)
+   * @param input input (optional)
+   * @param output output (optional)
+   * @param type type (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @return Object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Object getScriptsPublishedDivisionviewVariables(String scriptId, String input, String output, String type, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedDivisionviewVariables(createGetScriptsPublishedDivisionviewVariablesRequest(scriptId, input, output, type, scriptDataVersion));
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param scriptId Script ID (required)
+   * @param input input (optional)
+   * @param output output (optional)
+   * @param type type (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @return Object
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Object> getScriptsPublishedDivisionviewVariablesWithHttpInfo(String scriptId, String input, String output, String type, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedDivisionviewVariables(createGetScriptsPublishedDivisionviewVariablesRequest(scriptId, input, output, type, scriptDataVersion).withHttpInfo());
+  }
+
+  private GetScriptsPublishedDivisionviewVariablesRequest createGetScriptsPublishedDivisionviewVariablesRequest(String scriptId, String input, String output, String type, String scriptDataVersion) {
+    return GetScriptsPublishedDivisionviewVariablesRequest.builder()
+            .withScriptId(scriptId)
+
+            .withInput(input)
+
+            .withOutput(output)
+
+            .withType(type)
+
+            .withScriptDataVersion(scriptDataVersion)
+
+            .build();
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param request The request object
+   * @return Object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Object getScriptsPublishedDivisionviewVariables(GetScriptsPublishedDivisionviewVariablesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the published variables
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Object> getScriptsPublishedDivisionviewVariables(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

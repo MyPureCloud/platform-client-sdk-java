@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeBoolean;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeInstant;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeInteger;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeList;
+import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeListWorkitemScoredAgentDelta;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeMap;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeString;
 import com.mypurecloud.sdk.v2.model.WorkitemsAttributeChangeWorkitemStatusCategory;
@@ -58,6 +59,9 @@ public class WorkitemDelta  implements Serializable {
   private WorkitemsAttributeChangeString modifiedBy = null;
   private WorkitemsAttributeChangeWorkitemStatusCategory statusCategory = null;
   private WorkitemsAttributeChangeString scriptId = null;
+  private WorkitemsAttributeChangeInstant dateAssignmentStateChanged = null;
+  private WorkitemsAttributeChangeInteger alertTimeoutSeconds = null;
+  private WorkitemsAttributeChangeListWorkitemScoredAgentDelta scoredAgents = null;
 
   public WorkitemDelta() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -541,6 +545,57 @@ public class WorkitemDelta  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemDelta dateAssignmentStateChanged(WorkitemsAttributeChangeInstant dateAssignmentStateChanged) {
+    this.dateAssignmentStateChanged = dateAssignmentStateChanged;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateAssignmentStateChanged")
+  public WorkitemsAttributeChangeInstant getDateAssignmentStateChanged() {
+    return dateAssignmentStateChanged;
+  }
+  public void setDateAssignmentStateChanged(WorkitemsAttributeChangeInstant dateAssignmentStateChanged) {
+    this.dateAssignmentStateChanged = dateAssignmentStateChanged;
+  }
+
+
+  /**
+   **/
+  public WorkitemDelta alertTimeoutSeconds(WorkitemsAttributeChangeInteger alertTimeoutSeconds) {
+    this.alertTimeoutSeconds = alertTimeoutSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertTimeoutSeconds")
+  public WorkitemsAttributeChangeInteger getAlertTimeoutSeconds() {
+    return alertTimeoutSeconds;
+  }
+  public void setAlertTimeoutSeconds(WorkitemsAttributeChangeInteger alertTimeoutSeconds) {
+    this.alertTimeoutSeconds = alertTimeoutSeconds;
+  }
+
+
+  /**
+   **/
+  public WorkitemDelta scoredAgents(WorkitemsAttributeChangeListWorkitemScoredAgentDelta scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scoredAgents")
+  public WorkitemsAttributeChangeListWorkitemScoredAgentDelta getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(WorkitemsAttributeChangeListWorkitemScoredAgentDelta scoredAgents) {
+    this.scoredAgents = scoredAgents;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -578,12 +633,15 @@ public class WorkitemDelta  implements Serializable {
             Objects.equals(this.dateModified, workitemDelta.dateModified) &&
             Objects.equals(this.modifiedBy, workitemDelta.modifiedBy) &&
             Objects.equals(this.statusCategory, workitemDelta.statusCategory) &&
-            Objects.equals(this.scriptId, workitemDelta.scriptId);
+            Objects.equals(this.scriptId, workitemDelta.scriptId) &&
+            Objects.equals(this.dateAssignmentStateChanged, workitemDelta.dateAssignmentStateChanged) &&
+            Objects.equals(this.alertTimeoutSeconds, workitemDelta.alertTimeoutSeconds) &&
+            Objects.equals(this.scoredAgents, workitemDelta.scoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, wrapup, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory, scriptId);
+    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, wrapup, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory, scriptId, dateAssignmentStateChanged, alertTimeoutSeconds, scoredAgents);
   }
 
   @Override
@@ -619,6 +677,9 @@ public class WorkitemDelta  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    statusCategory: ").append(toIndentedString(statusCategory)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    dateAssignmentStateChanged: ").append(toIndentedString(dateAssignmentStateChanged)).append("\n");
+    sb.append("    alertTimeoutSeconds: ").append(toIndentedString(alertTimeoutSeconds)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationEnrichment;
 import com.mypurecloud.sdk.v2.model.ConversationMessageContent;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.ConversationMessagingChannel;
@@ -239,7 +240,9 @@ public class ConversationNormalizedMessage  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+  private List<ConversationNormalizedMessage> relatedMessages = null;
   private Map<String, String> metadata = null;
+  private ConversationEnrichment enrichment = null;
   private String byoSmsIntegrationId = null;
 
   public ConversationNormalizedMessage() {
@@ -247,6 +250,7 @@ public class ConversationNormalizedMessage  implements Serializable {
       content = new ArrayList<ConversationMessageContent>();
       events = new ArrayList<ConversationMessageEvent>();
       reasons = new ArrayList<ConversationReason>();
+      relatedMessages = new ArrayList<ConversationNormalizedMessage>();
     }
   }
 
@@ -384,6 +388,24 @@ public class ConversationNormalizedMessage  implements Serializable {
 
 
   /**
+   * A list of messages related to this one.
+   **/
+  public ConversationNormalizedMessage relatedMessages(List<ConversationNormalizedMessage> relatedMessages) {
+    this.relatedMessages = relatedMessages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of messages related to this one.")
+  @JsonProperty("relatedMessages")
+  public List<ConversationNormalizedMessage> getRelatedMessages() {
+    return relatedMessages;
+  }
+  public void setRelatedMessages(List<ConversationNormalizedMessage> relatedMessages) {
+    this.relatedMessages = relatedMessages;
+  }
+
+
+  /**
    * Additional metadata about this message.
    **/
   public ConversationNormalizedMessage metadata(Map<String, String> metadata) {
@@ -398,6 +420,24 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
   public void setMetadata(Map<String, String> metadata) {
     this.metadata = metadata;
+  }
+
+
+  /**
+   * Metadata enrichments provided by the platform.
+   **/
+  public ConversationNormalizedMessage enrichment(ConversationEnrichment enrichment) {
+    this.enrichment = enrichment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metadata enrichments provided by the platform.")
+  @JsonProperty("enrichment")
+  public ConversationEnrichment getEnrichment() {
+    return enrichment;
+  }
+  public void setEnrichment(ConversationEnrichment enrichment) {
+    this.enrichment = enrichment;
   }
 
 
@@ -440,13 +480,15 @@ public class ConversationNormalizedMessage  implements Serializable {
             Objects.equals(this.originatingEntity, conversationNormalizedMessage.originatingEntity) &&
             Objects.equals(this.isFinalReceipt, conversationNormalizedMessage.isFinalReceipt) &&
             Objects.equals(this.direction, conversationNormalizedMessage.direction) &&
+            Objects.equals(this.relatedMessages, conversationNormalizedMessage.relatedMessages) &&
             Objects.equals(this.metadata, conversationNormalizedMessage.metadata) &&
+            Objects.equals(this.enrichment, conversationNormalizedMessage.enrichment) &&
             Objects.equals(this.byoSmsIntegrationId, conversationNormalizedMessage.byoSmsIntegrationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, metadata, byoSmsIntegrationId);
+    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, relatedMessages, metadata, enrichment, byoSmsIntegrationId);
   }
 
   @Override
@@ -465,7 +507,9 @@ public class ConversationNormalizedMessage  implements Serializable {
     sb.append("    originatingEntity: ").append(toIndentedString(originatingEntity)).append("\n");
     sb.append("    isFinalReceipt: ").append(toIndentedString(isFinalReceipt)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    relatedMessages: ").append(toIndentedString(relatedMessages)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    enrichment: ").append(toIndentedString(enrichment)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("}");
     return sb.toString();

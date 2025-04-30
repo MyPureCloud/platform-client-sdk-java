@@ -10,7 +10,6 @@
 | **version** | **Integer** | The version of the segment. |  [optional] |
 | **description** | **String** | A description of the segment. |  [optional] |
 | **color** | **String** | The hexadecimal color value of the segment. |  |
-| **scope** | [**ScopeEnum**](#Enum--ScopeEnum) | The target entity that a segment applies to. |  [optional] |
 | **shouldDisplayToAgent** | **Boolean** | Whether or not the segment should be displayed to agent/supervisor users. |  [optional] |
 | **context** | [**RequestContext**](RequestContext) | The context of the segment. |  |
 | **journey** | [**RequestJourney**](RequestJourney) | The pattern of rules defining the segment. |  |
@@ -18,15 +17,6 @@
 | **assignmentExpirationDays** | **Integer** | Time, in days, from when the segment is assigned until it is automatically unassigned. |  [optional] |
 
 
-## Enum: ScopeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| SESSION | &quot;Session&quot; | 
-| CUSTOMER | &quot;Customer&quot; | 
 
 
-
-
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

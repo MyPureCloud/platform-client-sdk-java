@@ -79,6 +79,70 @@ public class KnowledgeConversationContext  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+
+  private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
+    public MessageTypeEnumDeserializer() {
+      super(MessageTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The message type of the conversation.
+   */
+ @JsonDeserialize(using = MessageTypeEnumDeserializer.class)
+  public enum MessageTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    PHONE("Phone"),
+    SMS("SMS"),
+    GENESYSCHATWIDGET("GenesysChatWidget"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    WECHAT("WeChat"),
+    WHATSAPP("Whatsapp"),
+    APPLEBUSINESSCHAT("AppleBusinessChat"),
+    TELEGRAM("Telegram"),
+    SLACK("Slack"),
+    SIGNAL("Signal"),
+    LINE("Line"),
+    DISCORD("Discord"),
+    TWITTERDIRECTMESSAGE("TwitterDirectMessage"),
+    OTHER("Other"),
+    OPEN("Open"),
+    INSTAGRAM("Instagram"),
+    APPLE("Apple");
+
+    private String value;
+
+    MessageTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessageTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessageTypeEnum value : MessageTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessageTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessageTypeEnum messageType = null;
   private String queueId = null;
   private String externalContactId = null;
 
@@ -121,6 +185,24 @@ public class KnowledgeConversationContext  implements Serializable {
   }
   public void setMediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
+  }
+
+
+  /**
+   * The message type of the conversation.
+   **/
+  public KnowledgeConversationContext messageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The message type of the conversation.")
+  @JsonProperty("messageType")
+  public MessageTypeEnum getMessageType() {
+    return messageType;
+  }
+  public void setMessageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
   }
 
 
@@ -172,13 +254,14 @@ public class KnowledgeConversationContext  implements Serializable {
 
     return Objects.equals(this.conversationId, knowledgeConversationContext.conversationId) &&
             Objects.equals(this.mediaType, knowledgeConversationContext.mediaType) &&
+            Objects.equals(this.messageType, knowledgeConversationContext.messageType) &&
             Objects.equals(this.queueId, knowledgeConversationContext.queueId) &&
             Objects.equals(this.externalContactId, knowledgeConversationContext.externalContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, mediaType, queueId, externalContactId);
+    return Objects.hash(conversationId, mediaType, messageType, queueId, externalContactId);
   }
 
   @Override
@@ -188,6 +271,7 @@ public class KnowledgeConversationContext  implements Serializable {
     
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("}");

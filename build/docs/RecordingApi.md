@@ -1377,7 +1377,7 @@ RecordingApi apiInstance = new RecordingApi();
 String jobId = "jobId_example"; // String | jobId
 Integer pageSize = 25; // Integer | Page size. Maximum is 100.
 Integer pageNumber = 1; // Integer | Page number
-Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 try {
     FailedRecordingEntityListing result = apiInstance.getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor);
@@ -1396,7 +1396,7 @@ try {
 | **jobId** | **String**| jobId | 
 | **pageSize** | **Integer**| Page size. Maximum is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. | [optional] 
+| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional] 
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 {: class="table-striped"}
 
@@ -1447,7 +1447,7 @@ String sortBy = "userId"; // String | Sort by
 String state = "state_example"; // String | Filter by state
 Boolean showOnlyMyJobs = true; // Boolean | Show only my jobs
 String jobType = "jobType_example"; // String | Job Type (Can be left empty for both)
-Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 try {
     RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor);
@@ -1469,7 +1469,7 @@ try {
 | **state** | **String**| Filter by state | [optional]<br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED 
 | **showOnlyMyJobs** | **Boolean**| Show only my jobs | [optional] 
 | **jobType** | **String**| Job Type (Can be left empty for both) | [optional]<br />**Values**: ARCHIVE, DELETE, EXPORT 
-| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. | [optional] 
+| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional] 
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 {: class="table-striped"}
 
@@ -3607,4 +3607,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

@@ -113,6 +113,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
@@ -161,6 +162,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
+import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
@@ -382,6 +384,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
@@ -15975,6 +15978,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<MessageMediaData> postConversationsMessageCommunicationMessagesMediaAsync(PostConversationsMessageCommunicationMessagesMediaRequest request, final AsyncApiCallback<MessageMediaData> callback) {
     try {
@@ -16009,6 +16013,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<MessageMediaData>> postConversationsMessageCommunicationMessagesMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessageMediaData>> callback) {
     try {
@@ -16033,6 +16038,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessageMediaUploadData> postConversationsMessageCommunicationMessagesMediaUploadsAsync(PostConversationsMessageCommunicationMessagesMediaUploadsRequest request, final AsyncApiCallback<MessageMediaUploadData> callback) {
+    try {
+      final SettableFuture<MessageMediaUploadData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessageMediaUploadData>() {}, new AsyncApiCallback<ApiResponse<MessageMediaUploadData>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageMediaUploadData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a URL to upload a message media file
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessageMediaUploadData>> postConversationsMessageCommunicationMessagesMediaUploadsAsync(ApiRequest<UploadMediaRequest> request, final AsyncApiCallback<ApiResponse<MessageMediaUploadData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessageMediaUploadData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessageMediaUploadData>() {}, new AsyncApiCallback<ApiResponse<MessageMediaUploadData>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageMediaUploadData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageMediaUploadData> response = (ApiResponse<MessageMediaUploadData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageMediaUploadData> response = (ApiResponse<MessageMediaUploadData>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

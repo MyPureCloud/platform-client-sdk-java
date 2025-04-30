@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DivisionReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -25,6 +26,7 @@ public class DivisionedDomainEntityRef  implements Serializable {
   private String id = null;
   private String name = null;
   private String selfUri = null;
+  private DivisionReference division = null;
 
   public DivisionedDomainEntityRef() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -83,6 +85,13 @@ public class DivisionedDomainEntityRef  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The division this entity belongs to.")
+  @JsonProperty("division")
+  public DivisionReference getDivision() {
+    return division;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +104,13 @@ public class DivisionedDomainEntityRef  implements Serializable {
 
     return Objects.equals(this.id, divisionedDomainEntityRef.id) &&
             Objects.equals(this.name, divisionedDomainEntityRef.name) &&
-            Objects.equals(this.selfUri, divisionedDomainEntityRef.selfUri);
+            Objects.equals(this.selfUri, divisionedDomainEntityRef.selfUri) &&
+            Objects.equals(this.division, divisionedDomainEntityRef.division);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, selfUri);
+    return Objects.hash(id, name, selfUri, division);
   }
 
   @Override
@@ -111,6 +121,7 @@ public class DivisionedDomainEntityRef  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("}");
     return sb.toString();
   }

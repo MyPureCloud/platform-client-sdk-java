@@ -1852,7 +1852,7 @@ public class RecordingApi {
    * @param jobId jobId (required)
    * @param pageSize Page size. Maximum is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return FailedRecordingEntityListing
    * @throws ApiException if the request fails on the server
@@ -1868,7 +1868,7 @@ public class RecordingApi {
    * @param jobId jobId (required)
    * @param pageSize Page size. Maximum is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return FailedRecordingEntityListing
    * @throws IOException if the request fails to be processed
@@ -1949,7 +1949,7 @@ public class RecordingApi {
    * @param state Filter by state (optional)
    * @param showOnlyMyJobs Show only my jobs (optional)
    * @param jobType Job Type (Can be left empty for both) (optional)
-   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return RecordingJobEntityListing
    * @throws ApiException if the request fails on the server
@@ -1968,7 +1968,7 @@ public class RecordingApi {
    * @param state Filter by state (optional)
    * @param showOnlyMyJobs Show only my jobs (optional)
    * @param jobType Job Type (Can be left empty for both) (optional)
-   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return RecordingJobEntityListing
    * @throws IOException if the request fails to be processed

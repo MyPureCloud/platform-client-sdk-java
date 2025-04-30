@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMessagingFromRecipient;
 import com.mypurecloud.sdk.v2.model.ConversationMessagingToRecipient;
+import com.mypurecloud.sdk.v2.model.ConversationPublicMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -83,12 +84,61 @@ public class ConversationMessagingChannel  implements Serializable {
     }
   }
   private PlatformEnum platform = null;
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Specifies if this message is part of a private or public conversation.
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PUBLIC("Public"),
+    PRIVATE("Private");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
   private String messageId = null;
   private ConversationMessagingToRecipient to = null;
   private ConversationMessagingFromRecipient from = null;
   private Date time = null;
   private Date dateModified = null;
   private Date dateDeleted = null;
+  private ConversationPublicMetadata publicMetadata = null;
 
   public ConversationMessagingChannel() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -107,6 +157,24 @@ public class ConversationMessagingChannel  implements Serializable {
   @JsonProperty("platform")
   public PlatformEnum getPlatform() {
     return platform;
+  }
+
+
+  /**
+   * Specifies if this message is part of a private or public conversation.
+   **/
+  public ConversationMessagingChannel type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies if this message is part of a private or public conversation.")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
   }
 
 
@@ -152,6 +220,24 @@ public class ConversationMessagingChannel  implements Serializable {
   }
 
 
+  /**
+   * Information about a public message.
+   **/
+  public ConversationMessagingChannel publicMetadata(ConversationPublicMetadata publicMetadata) {
+    this.publicMetadata = publicMetadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information about a public message.")
+  @JsonProperty("publicMetadata")
+  public ConversationPublicMetadata getPublicMetadata() {
+    return publicMetadata;
+  }
+  public void setPublicMetadata(ConversationPublicMetadata publicMetadata) {
+    this.publicMetadata = publicMetadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -164,17 +250,19 @@ public class ConversationMessagingChannel  implements Serializable {
 
     return Objects.equals(this.id, conversationMessagingChannel.id) &&
             Objects.equals(this.platform, conversationMessagingChannel.platform) &&
+            Objects.equals(this.type, conversationMessagingChannel.type) &&
             Objects.equals(this.messageId, conversationMessagingChannel.messageId) &&
             Objects.equals(this.to, conversationMessagingChannel.to) &&
             Objects.equals(this.from, conversationMessagingChannel.from) &&
             Objects.equals(this.time, conversationMessagingChannel.time) &&
             Objects.equals(this.dateModified, conversationMessagingChannel.dateModified) &&
-            Objects.equals(this.dateDeleted, conversationMessagingChannel.dateDeleted);
+            Objects.equals(this.dateDeleted, conversationMessagingChannel.dateDeleted) &&
+            Objects.equals(this.publicMetadata, conversationMessagingChannel.publicMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, platform, messageId, to, from, time, dateModified, dateDeleted);
+    return Objects.hash(id, platform, type, messageId, to, from, time, dateModified, dateDeleted, publicMetadata);
   }
 
   @Override
@@ -184,12 +272,14 @@ public class ConversationMessagingChannel  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
+    sb.append("    publicMetadata: ").append(toIndentedString(publicMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

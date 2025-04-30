@@ -17,6 +17,7 @@
 | **lastModifiedUser** | [**AddressableEntityRef**](AddressableEntityRef) | A reference to the user who most recently modified the deployment |  [optional] |
 | **flow** | [**WebDeploymentFlowEntityRef**](WebDeploymentFlowEntityRef) | A reference to the inboundshortmessage flow used by this deployment |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The current status of the deployment |  [optional] |
+| **pushIntegrations** | [**List&lt;PushIntegration&gt;**](PushIntegration) | The push integration objects associated with the deployment |  [optional] |
 | **_configuration** | [**WebDeploymentConfigurationVersionResponse**](WebDeploymentConfigurationVersionResponse) | The config version this deployment uses |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -35,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

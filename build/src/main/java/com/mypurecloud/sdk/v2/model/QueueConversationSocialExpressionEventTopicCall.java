@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicD
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicRecordersState;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -198,6 +199,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     }
   }
   private RecordingStateEnum recordingState = null;
+  private QueueConversationSocialExpressionEventTopicRecordersState recordersState = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
@@ -426,6 +428,23 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   }
   public void setRecordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicCall recordersState(QueueConversationSocialExpressionEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recordersState")
+  public QueueConversationSocialExpressionEventTopicRecordersState getRecordersState() {
+    return recordersState;
+  }
+  public void setRecordersState(QueueConversationSocialExpressionEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
   }
 
 
@@ -889,6 +908,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
             Objects.equals(this.initialState, queueConversationSocialExpressionEventTopicCall.initialState) &&
             Objects.equals(this.recording, queueConversationSocialExpressionEventTopicCall.recording) &&
             Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicCall.recordingState) &&
+            Objects.equals(this.recordersState, queueConversationSocialExpressionEventTopicCall.recordersState) &&
             Objects.equals(this.muted, queueConversationSocialExpressionEventTopicCall.muted) &&
             Objects.equals(this.confined, queueConversationSocialExpressionEventTopicCall.confined) &&
             Objects.equals(this.held, queueConversationSocialExpressionEventTopicCall.held) &&
@@ -918,7 +938,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
   }
 
   @Override
@@ -931,6 +951,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");

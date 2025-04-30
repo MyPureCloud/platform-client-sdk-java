@@ -40,6 +40,7 @@
 | JOURNEYFREQUENCYCAPREASON | &quot;journeyFrequencyCapReason&quot; |
 | JOURNEYIPGEOLOCATIONCOUNTRY | &quot;journeyIpGeolocationCountry&quot; |
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
+| JOURNEYSEGMENTASSIGNMENTSTATE | &quot;journeySegmentAssignmentState&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
 | JOURNEYSESSIONID | &quot;journeySessionId&quot; |
@@ -101,4 +102,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

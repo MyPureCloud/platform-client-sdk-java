@@ -154,7 +154,8 @@ public class KnowledgeGuestDocumentFeedback  implements Serializable {
     CATEGORY("Category"),
     MANUALSEARCH("ManualSearch"),
     RECOMMENDATION("Recommendation"),
-    SUGGESTION("Suggestion");
+    SUGGESTION("Suggestion"),
+    EXPANDEDARTICLE("ExpandedArticle");
 
     private String value;
 
@@ -196,7 +197,7 @@ public class KnowledgeGuestDocumentFeedback  implements Serializable {
     }
   }
   /**
-   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown.
    */
  @JsonDeserialize(using = SurfacingMethodEnumDeserializer.class)
   public enum SurfacingMethodEnum {
@@ -204,7 +205,8 @@ public class KnowledgeGuestDocumentFeedback  implements Serializable {
     UNKNOWN("Unknown"),
     ARTICLE("Article"),
     SNIPPET("Snippet"),
-    HIGHLIGHT("Highlight");
+    HIGHLIGHT("Highlight"),
+    GENERATIVE("Generative");
 
     private String value;
 
@@ -419,14 +421,14 @@ public class KnowledgeGuestDocumentFeedback  implements Serializable {
 
 
   /**
-   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown.
    **/
   public KnowledgeGuestDocumentFeedback surfacingMethod(SurfacingMethodEnum surfacingMethod) {
     this.surfacingMethod = surfacingMethod;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.")
+  @ApiModelProperty(example = "null", value = "The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown.")
   @JsonProperty("surfacingMethod")
   public SurfacingMethodEnum getSurfacingMethod() {
     return surfacingMethod;

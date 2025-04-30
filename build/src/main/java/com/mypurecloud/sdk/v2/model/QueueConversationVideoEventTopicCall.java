@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicDisconnectRe
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicQueueMediaSettings;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicRecordersState;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -198,6 +199,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     }
   }
   private RecordingStateEnum recordingState = null;
+  private QueueConversationVideoEventTopicRecordersState recordersState = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
@@ -426,6 +428,23 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
   }
   public void setRecordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
+  }
+
+
+  /**
+   **/
+  public QueueConversationVideoEventTopicCall recordersState(QueueConversationVideoEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recordersState")
+  public QueueConversationVideoEventTopicRecordersState getRecordersState() {
+    return recordersState;
+  }
+  public void setRecordersState(QueueConversationVideoEventTopicRecordersState recordersState) {
+    this.recordersState = recordersState;
   }
 
 
@@ -889,6 +908,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
             Objects.equals(this.initialState, queueConversationVideoEventTopicCall.initialState) &&
             Objects.equals(this.recording, queueConversationVideoEventTopicCall.recording) &&
             Objects.equals(this.recordingState, queueConversationVideoEventTopicCall.recordingState) &&
+            Objects.equals(this.recordersState, queueConversationVideoEventTopicCall.recordersState) &&
             Objects.equals(this.muted, queueConversationVideoEventTopicCall.muted) &&
             Objects.equals(this.confined, queueConversationVideoEventTopicCall.confined) &&
             Objects.equals(this.held, queueConversationVideoEventTopicCall.held) &&
@@ -918,7 +938,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
   }
 
   @Override
@@ -931,6 +951,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");

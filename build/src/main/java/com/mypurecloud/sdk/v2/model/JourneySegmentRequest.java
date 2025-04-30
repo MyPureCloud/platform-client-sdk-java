@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.RequestContext;
 import com.mypurecloud.sdk.v2.model.RequestExternalSegment;
 import com.mypurecloud.sdk.v2.model.RequestJourney;
@@ -31,54 +30,6 @@ public class JourneySegmentRequest  implements Serializable {
   private Integer version = null;
   private String description = null;
   private String color = null;
-
-  private static class ScopeEnumDeserializer extends StdDeserializer<ScopeEnum> {
-    public ScopeEnumDeserializer() {
-      super(ScopeEnumDeserializer.class);
-    }
-
-    @Override
-    public ScopeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ScopeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The target entity that a segment applies to.
-   */
- @JsonDeserialize(using = ScopeEnumDeserializer.class)
-  public enum ScopeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SESSION("Session"),
-    CUSTOMER("Customer");
-
-    private String value;
-
-    ScopeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ScopeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ScopeEnum value : ScopeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ScopeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ScopeEnum scope = null;
   private Boolean shouldDisplayToAgent = null;
   private RequestContext context = null;
   private RequestJourney journey = null;
@@ -178,24 +129,6 @@ public class JourneySegmentRequest  implements Serializable {
   }
   public void setColor(String color) {
     this.color = color;
-  }
-
-
-  /**
-   * The target entity that a segment applies to.
-   **/
-  public JourneySegmentRequest scope(ScopeEnum scope) {
-    this.scope = scope;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The target entity that a segment applies to.")
-  @JsonProperty("scope")
-  public ScopeEnum getScope() {
-    return scope;
-  }
-  public void setScope(ScopeEnum scope) {
-    this.scope = scope;
   }
 
 
@@ -304,7 +237,6 @@ public class JourneySegmentRequest  implements Serializable {
             Objects.equals(this.version, journeySegmentRequest.version) &&
             Objects.equals(this.description, journeySegmentRequest.description) &&
             Objects.equals(this.color, journeySegmentRequest.color) &&
-            Objects.equals(this.scope, journeySegmentRequest.scope) &&
             Objects.equals(this.shouldDisplayToAgent, journeySegmentRequest.shouldDisplayToAgent) &&
             Objects.equals(this.context, journeySegmentRequest.context) &&
             Objects.equals(this.journey, journeySegmentRequest.journey) &&
@@ -314,7 +246,7 @@ public class JourneySegmentRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isActive, displayName, version, description, color, scope, shouldDisplayToAgent, context, journey, externalSegment, assignmentExpirationDays);
+    return Objects.hash(isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, externalSegment, assignmentExpirationDays);
   }
 
   @Override
@@ -327,7 +259,6 @@ public class JourneySegmentRequest  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    shouldDisplayToAgent: ").append(toIndentedString(shouldDisplayToAgent)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");

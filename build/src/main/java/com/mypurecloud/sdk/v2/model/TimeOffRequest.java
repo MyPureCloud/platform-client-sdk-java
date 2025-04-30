@@ -105,12 +105,15 @@ public class TimeOffRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ADVANCETIMEELAPSED("AdvanceTimeElapsed"),
     AUTOAPPROVED("AutoApproved"),
+    BLOCKEDDATE("BlockedDate"),
     INSUFFICIENTBALANCE("InsufficientBalance"),
     INVALIDDAILYDURATION("InvalidDailyDuration"),
+    MANUALAPPROVAL("ManualApproval"),
     OUTSIDESHIFT("OutsideShift"),
+    OVERLAPSRESTRICTEDACTIVITYCODE("OverlapsRestrictedActivityCode"),
     REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
-    WAITLISTED("Waitlisted"),
-    OVERLAPSRESTRICTEDACTIVITYCODE("OverlapsRestrictedActivityCode");
+    REVIEWDATE("ReviewDate"),
+    WAITLISTED("Waitlisted");
 
     private String value;
 

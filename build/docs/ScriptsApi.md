@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScripts**](ScriptsApi#getScripts) | Get the list of scripts |
 | [**getScriptsDivisionviews**](ScriptsApi#getScriptsDivisionviews) | Get the metadata for a list of scripts |
 | [**getScriptsPublished**](ScriptsApi#getScriptsPublished) | Get the published scripts. |
+| [**getScriptsPublishedDivisionviewVariables**](ScriptsApi#getScriptsPublishedDivisionviewVariables) | Get the published variables |
 | [**getScriptsPublishedDivisionviews**](ScriptsApi#getScriptsPublishedDivisionviews) | Get the published scripts metadata. |
 | [**getScriptsPublishedScriptId**](ScriptsApi#getScriptsPublishedScriptId) | Get the published script. |
 | [**getScriptsPublishedScriptIdPage**](ScriptsApi#getScriptsPublishedScriptIdPage) | Get the published page. |
@@ -429,6 +430,73 @@ try {
 ### Return type
 
 [**ScriptEntityListing**](ScriptEntityListing)
+
+
+# **getScriptsPublishedDivisionviewVariables**
+
+
+> Object getScriptsPublishedDivisionviewVariables(scriptId, input, output, type, scriptDataVersion)
+
+Get the published variables
+
+Wraps GET /api/v2/scripts/published/divisionviews/{scriptId}/variables  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ScriptsApi apiInstance = new ScriptsApi();
+String scriptId = "scriptId_example"; // String | Script ID
+String input = "input_example"; // String | input
+String output = "output_example"; // String | output
+String type = "type_example"; // String | type
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+try {
+    Object result = apiInstance.getScriptsPublishedDivisionviewVariables(scriptId, input, output, type, scriptDataVersion);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#getScriptsPublishedDivisionviewVariables");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scriptId** | **String**| Script ID | 
+| **input** | **String**| input | [optional]<br />**Values**: true, false 
+| **output** | **String**| output | [optional]<br />**Values**: true, false 
+| **type** | **String**| type | [optional]<br />**Values**: string, number, boolean 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+**Object**
 
 
 # **getScriptsPublishedDivisionviews**
@@ -939,4 +1007,4 @@ try {
 [**Script**](Script)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

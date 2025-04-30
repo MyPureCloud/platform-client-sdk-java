@@ -13,7 +13,6 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
-import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,12 +26,10 @@ import java.io.Serializable;
 public class ReverseWhitepagesLookupResult  implements Serializable {
   
   private List<ExternalContact> contacts = null;
-  private List<ExternalOrganization> externalOrganizations = null;
 
   public ReverseWhitepagesLookupResult() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       contacts = new ArrayList<ExternalContact>();
-      externalOrganizations = new ArrayList<ExternalOrganization>();
     }
   }
 
@@ -54,23 +51,6 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ReverseWhitepagesLookupResult externalOrganizations(List<ExternalOrganization> externalOrganizations) {
-    this.externalOrganizations = externalOrganizations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("externalOrganizations")
-  public List<ExternalOrganization> getExternalOrganizations() {
-    return externalOrganizations;
-  }
-  public void setExternalOrganizations(List<ExternalOrganization> externalOrganizations) {
-    this.externalOrganizations = externalOrganizations;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -81,13 +61,12 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     }
     ReverseWhitepagesLookupResult reverseWhitepagesLookupResult = (ReverseWhitepagesLookupResult) o;
 
-    return Objects.equals(this.contacts, reverseWhitepagesLookupResult.contacts) &&
-            Objects.equals(this.externalOrganizations, reverseWhitepagesLookupResult.externalOrganizations);
+    return Objects.equals(this.contacts, reverseWhitepagesLookupResult.contacts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contacts, externalOrganizations);
+    return Objects.hash(contacts);
   }
 
   @Override
@@ -96,7 +75,6 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     sb.append("class ReverseWhitepagesLookupResult {\n");
     
     sb.append("    contacts: ").append(toIndentedString(contacts)).append("\n");
-    sb.append("    externalOrganizations: ").append(toIndentedString(externalOrganizations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

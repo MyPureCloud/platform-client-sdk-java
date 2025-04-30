@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationFollowupAction;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationHeadline;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationReason;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationResolution;
@@ -150,6 +151,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   private ConversationSummaryTopicConversationHeadline headline = null;
   private ConversationSummaryTopicConversationReason reason = null;
   private ConversationSummaryTopicConversationResolution resolution = null;
+  private List<ConversationSummaryTopicConversationFollowupAction> followupActions = null;
   private List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicTriggerSource triggerSource = null;
   private ConversationSummaryTopicConversationSummaryParticipant lastEditedBy = null;
@@ -209,6 +211,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationSummaryTopicConversationSummaryParticipant>();
       communicationIds = new ArrayList<String>();
+      followupActions = new ArrayList<ConversationSummaryTopicConversationFollowupAction>();
       wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
     }
   }
@@ -437,6 +440,23 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   /**
    **/
+  public ConversationSummaryTopicConversationSummaryEvent followupActions(List<ConversationSummaryTopicConversationFollowupAction> followupActions) {
+    this.followupActions = followupActions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("followupActions")
+  public List<ConversationSummaryTopicConversationFollowupAction> getFollowupActions() {
+    return followupActions;
+  }
+  public void setFollowupActions(List<ConversationSummaryTopicConversationFollowupAction> followupActions) {
+    this.followupActions = followupActions;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicConversationSummaryEvent wrapUpCodes(List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes) {
     this.wrapUpCodes = wrapUpCodes;
     return this;
@@ -543,6 +563,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
             Objects.equals(this.headline, conversationSummaryTopicConversationSummaryEvent.headline) &&
             Objects.equals(this.reason, conversationSummaryTopicConversationSummaryEvent.reason) &&
             Objects.equals(this.resolution, conversationSummaryTopicConversationSummaryEvent.resolution) &&
+            Objects.equals(this.followupActions, conversationSummaryTopicConversationSummaryEvent.followupActions) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicConversationSummaryEvent.triggerSource) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicConversationSummaryEvent.lastEditedBy) &&
@@ -552,7 +573,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -573,6 +594,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     sb.append("    headline: ").append(toIndentedString(headline)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
+    sb.append("    followupActions: ").append(toIndentedString(followupActions)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");

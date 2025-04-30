@@ -81,6 +81,8 @@ public class JourneyViewJob  implements Serializable {
   private StatusEnum status = null;
   private JourneyView journeyView = null;
   private Date dateCompletionEstimated = null;
+  private Long estimatedCompletionMargin = null;
+  private String userId = null;
   private String selfUri = null;
 
   public JourneyViewJob() {
@@ -153,6 +155,20 @@ public class JourneyViewJob  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", required = true, value = "Margin of error of the estimated time of completion")
+  @JsonProperty("estimatedCompletionMargin")
+  public Long getEstimatedCompletionMargin() {
+    return estimatedCompletionMargin;
+  }
+
+
+  @ApiModelProperty(example = "null", required = true, value = "Id of the user who submitted the request")
+  @JsonProperty("userId")
+  public String getUserId() {
+    return userId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -176,12 +192,14 @@ public class JourneyViewJob  implements Serializable {
             Objects.equals(this.status, journeyViewJob.status) &&
             Objects.equals(this.journeyView, journeyViewJob.journeyView) &&
             Objects.equals(this.dateCompletionEstimated, journeyViewJob.dateCompletionEstimated) &&
+            Objects.equals(this.estimatedCompletionMargin, journeyViewJob.estimatedCompletionMargin) &&
+            Objects.equals(this.userId, journeyViewJob.userId) &&
             Objects.equals(this.selfUri, journeyViewJob.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCreated, dateCompleted, status, journeyView, dateCompletionEstimated, selfUri);
+    return Objects.hash(id, dateCreated, dateCompleted, status, journeyView, dateCompletionEstimated, estimatedCompletionMargin, userId, selfUri);
   }
 
   @Override
@@ -195,6 +213,8 @@ public class JourneyViewJob  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    journeyView: ").append(toIndentedString(journeyView)).append("\n");
     sb.append("    dateCompletionEstimated: ").append(toIndentedString(dateCompletionEstimated)).append("\n");
+    sb.append("    estimatedCompletionMargin: ").append(toIndentedString(estimatedCompletionMargin)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
