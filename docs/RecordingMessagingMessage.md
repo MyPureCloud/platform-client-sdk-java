@@ -24,6 +24,7 @@
 | **cards** | [**List&lt;Card&gt;**](Card) | List of cards offered for this message |  [optional] |
 | **notificationTemplate** | [**RecordingNotificationTemplate**](RecordingNotificationTemplate) | Template notification content. |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
+| **socialVisibility** | [**SocialVisibilityEnum**](#Enum--SocialVisibilityEnum) | For social media messages, the visibility of the message in the originating social platform |  [optional] |
 | **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements |  [optional] |
 
 
@@ -46,8 +47,18 @@
 | MENTION | &quot;Mention&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
+| INTERACTIVEAPPLICATION | &quot;InteractiveApplication&quot; | 
+
+
+## Enum: SocialVisibilityEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| PRIVATE | &quot;Private&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

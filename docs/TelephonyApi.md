@@ -381,4 +381,4 @@ try {
 [**SipDownloadResponse**](SipDownloadResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

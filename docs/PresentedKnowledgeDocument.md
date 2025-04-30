@@ -8,7 +8,7 @@
 | **documentId** | **String** | The ID of the document. |  |
 | **documentVariationId** | **String** | The variation of the document. |  |
 | **documentVersionId** | **String** | The version of the document. |  |
-| **surfacingMethod** | [**SurfacingMethodEnum**](#Enum--SurfacingMethodEnum) | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown. |  [optional] |
+| **surfacingMethod** | [**SurfacingMethodEnum**](#Enum--SurfacingMethodEnum) | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown. |  [optional] |
 
 
 ## Enum: SurfacingMethodEnum
@@ -20,8 +20,9 @@
 | ARTICLE | &quot;Article&quot; | 
 | SNIPPET | &quot;Snippet&quot; | 
 | HIGHLIGHT | &quot;Highlight&quot; | 
+| GENERATIVE | &quot;Generative&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

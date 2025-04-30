@@ -50,8 +50,8 @@ Configuration.setDefaultApiClient(apiClient);
 TextbotsApi apiInstance = new TextbotsApi();
 List<String> botType = Arrays.asList(null); // List<String> | Bot types
 String botName = "botName_example"; // String | Bot name
-List<String> botId = Arrays.asList(null); // List<String> | Bot IDs
-Integer pageSize = 25; // Integer | The maximum results to return
+List<String> botId = Arrays.asList(null); // List<String> | Bot IDs. Maximum of 50
+Integer pageSize = 25; // Integer | The maximum results to return. Maximum of 100
 try {
     BotSearchResponseEntityListing result = apiInstance.getTextbotsBotsSearch(botType, botName, botId, pageSize);
     System.out.println(result);
@@ -66,10 +66,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **botType** | [**List&lt;String&gt;**](String)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow 
+| **botType** | [**List&lt;String&gt;**](String)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector 
 | **botName** | **String**| Bot name | [optional] 
-| **botId** | [**List&lt;String&gt;**](String)| Bot IDs | [optional] 
-| **pageSize** | **Integer**| The maximum results to return | [optional] [default to 25] 
+| **botId** | [**List&lt;String&gt;**](String)| Bot IDs. Maximum of 50 | [optional] 
+| **pageSize** | **Integer**| The maximum results to return. Maximum of 100 | [optional] [default to 25] 
 {: class="table-striped"}
 
 
@@ -263,4 +263,4 @@ try {
 [**PostTextResponse**](PostTextResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

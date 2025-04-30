@@ -18,8 +18,9 @@
 | BUTTON | &quot;Button&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
+| LISTPICKER | &quot;ListPicker&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

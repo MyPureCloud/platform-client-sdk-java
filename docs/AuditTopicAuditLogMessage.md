@@ -79,6 +79,7 @@
 | SOCIALLISTENING | &quot;SocialListening&quot; | 
 | BUSINESSRULES | &quot;BusinessRules&quot; | 
 | SOCIALESCALATIONRULES | &quot;SocialEscalationRules&quot; | 
+| ALERTING | &quot;Alerting&quot; | 
 
 
 ## Enum: ActionEnum
@@ -310,6 +311,7 @@
 | WORKPLANROTATION | &quot;WorkPlanRotation&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | STAFFINGGROUP | &quot;StaffingGroup&quot; | 
+| CAPACITYPLAN | &quot;CapacityPlan&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
@@ -441,8 +443,9 @@
 | DECISIONTABLEVERSION | &quot;DecisionTableVersion&quot; | 
 | DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
 | ESCALATIONRULE | &quot;EscalationRule&quot; | 
+| RULES | &quot;Rules&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

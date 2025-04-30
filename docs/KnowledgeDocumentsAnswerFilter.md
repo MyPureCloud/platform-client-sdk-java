@@ -92,6 +92,7 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
+| EXPANDEDARTICLE | &quot;ExpandedArticle&quot; | 
 
 
 ## Enum: AnswerModeEnum
@@ -104,4 +105,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

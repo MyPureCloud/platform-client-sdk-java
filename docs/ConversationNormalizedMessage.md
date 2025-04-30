@@ -16,7 +16,9 @@
 | **originatingEntity** | [**OriginatingEntityEnum**](#Enum--OriginatingEntityEnum) | Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies. |  [optional] |
 | **isFinalReceipt** | **Boolean** | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
+| **relatedMessages** | [**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage) | A list of messages related to this one. |  [optional] |
 | **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
+| **enrichment** | [**ConversationEnrichment**](ConversationEnrichment) | Metadata enrichments provided by the platform. |  [optional] |
 | **byoSmsIntegrationId** | **String** | The internal id representing the customer supplied sms integration message. |  [optional] |
 
 
@@ -66,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

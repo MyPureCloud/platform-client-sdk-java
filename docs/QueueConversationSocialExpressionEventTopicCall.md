@@ -10,6 +10,7 @@
 | **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) |  |  [optional] |
 | **recording** | **Boolean** | True if this call is being recorded. |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) | State of recording on this call. |  [optional] |
+| **recordersState** | [**QueueConversationSocialExpressionEventTopicRecordersState**](QueueConversationSocialExpressionEventTopicRecordersState) |  |  [optional] |
 | **muted** | **Boolean** | True if this call is muted so that remote participants can't hear any audio from this end. |  [optional] |
 | **confined** | **Boolean** | True if this call is held and the person on this side hears hold music. |  [optional] |
 | **held** | **Boolean** | True if this call is held and the person on this side hears silence. |  [optional] |
@@ -119,4 +120,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

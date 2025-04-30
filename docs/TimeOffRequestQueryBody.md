@@ -25,14 +25,17 @@
 | ---- | ----- |
 | ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; |
 | AUTOAPPROVED | &quot;AutoApproved&quot; |
+| BLOCKEDDATE | &quot;BlockedDate&quot; |
 | INSUFFICIENTBALANCE | &quot;InsufficientBalance&quot; |
 | INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; |
+| MANUALAPPROVAL | &quot;ManualApproval&quot; |
 | OUTSIDESHIFT | &quot;OutsideShift&quot; |
-| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
-| WAITLISTED | &quot;Waitlisted&quot; |
 | OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; |
+| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
+| REVIEWDATE | &quot;ReviewDate&quot; |
+| WAITLISTED | &quot;Waitlisted&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

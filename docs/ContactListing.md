@@ -10,14 +10,14 @@
 | **pageNumber** | **Integer** |  |  [optional] |
 | **total** | **Long** |  |  [optional] |
 | **partialResults** | **Boolean** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
 | **firstUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
-| **nextUri** | **String** |  |  [optional] |
-| **lastUri** | **String** |  |  [optional] |
 | **previousUri** | **String** |  |  [optional] |
+| **lastUri** | **String** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

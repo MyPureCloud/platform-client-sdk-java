@@ -737,8 +737,6 @@ try {
 
 Get a listing of a workbin's attribute change history
 
-getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/history  
 
 Requires ANY permissions: 
@@ -804,8 +802,6 @@ try {
 
 Get a version of a workbin
 
-getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -866,8 +862,6 @@ try {
 > [WorkbinVersionListing](WorkbinVersionListing) getTaskmanagementWorkbinVersions(workbinId, after, pageSize, sortOrder)
 
 Get all versions of a workbin
-
-getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions  
 
@@ -994,8 +988,6 @@ try {
 > [WorkitemChangeListing](WorkitemChangeListing) getTaskmanagementWorkitemHistory(workitemId, after, pageSize, sortOrder)
 
 Get a listing of a workitem's attribute change history
-
-getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/history  
 
@@ -1131,8 +1123,6 @@ try {
 
 Get a version of a workitem
 
-getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -1193,8 +1183,6 @@ try {
 > [WorkitemVersionListing](WorkitemVersionListing) getTaskmanagementWorkitemVersions(workitemId, after, pageSize, sortOrder)
 
 Get all versions of a workitem
-
-getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions  
 
@@ -2583,8 +2571,6 @@ try {
 
 Get a listing of a worktype's attribute change history
 
-getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/history  
 
 Requires ANY permissions: 
@@ -2772,8 +2758,6 @@ try {
 
 Get a version of a worktype
 
-getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -2834,8 +2818,6 @@ try {
 > [WorktypeVersionListing](WorktypeVersionListing) getTaskmanagementWorktypeVersions(worktypeId, after, pageSize, sortOrder)
 
 Get all versions of a worktype
-
-getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions  
 
@@ -4716,4 +4698,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_

@@ -21,6 +21,7 @@
 | **signAuthnRequests** | **Boolean** |  |  [optional] |
 | **providerName** | **String** |  |  [optional] |
 | **displayOnLogin** | **Boolean** |  |  [optional] |
+| **metadataURL** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -50,4 +51,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:223.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
