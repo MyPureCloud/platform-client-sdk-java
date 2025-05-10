@@ -5,8 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **reportLowMaxCallsPerAgentAlert** | **Boolean** | Whether to report on low max calls per agent alerts. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

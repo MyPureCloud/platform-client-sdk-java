@@ -33,6 +33,12 @@
 | DISCONNECTERROR | &quot;DisconnectError&quot; | 
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; | 
 | TRANSFERTOACD | &quot;TransferToACD&quot; | 
+| TRANSFERTOUSER | &quot;TransferToUser&quot; | 
+| TRANSFERTOGROUP | &quot;TransferToGroup&quot; | 
+| TRANSFERTONUMBER | &quot;TransferToNumber&quot; | 
+| TRANSFERTOUSERVOICEMAIL | &quot;TransferToUserVoicemail&quot; | 
+| TRANSFERTOGROUPVOICEMAIL | &quot;TransferToGroupVoicemail&quot; | 
+| TRANSFERTOACDVOICEMAIL | &quot;TransferToACDVoicemail&quot; | 
 
 
 ## Enum: BotResultCategoryEnum
@@ -53,4 +59,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

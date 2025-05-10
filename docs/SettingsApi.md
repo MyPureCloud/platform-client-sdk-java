@@ -5,15 +5,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteEmailsSettingsThreading**](SettingsApi#deleteEmailsSettingsThreading) | Reset email threading settings to default |
+| [**deleteExternalcontactsSettings**](SettingsApi#deleteExternalcontactsSettings) | Delete settings |
 | [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | Delete agent auto answer settings |
 | [**getEmailsSettings**](SettingsApi#getEmailsSettings) | Get email Contact Center settings |
 | [**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | Get email threading settings |
+| [**getExternalcontactsSettings**](SettingsApi#getExternalcontactsSettings) | Get settings |
 | [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | Get the execution history enabled setting. |
 | [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | Get agent auto answer settings |
 | [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | Patch email Contact Center settings |
 | [**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | Patch email threading settings |
 | [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | Edit the execution history on off setting. |
 | [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | Update agent auto answer settings |
+| [**putExternalcontactsSettings**](SettingsApi#putExternalcontactsSettings) | Set settings |
 | [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | Set agent auto answer settings |
 {: class="table-striped"}
 
@@ -70,6 +73,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 null (empty response body)
+
+
+# **deleteExternalcontactsSettings**
+
+
+> [UpdatedSettingsResponse](UpdatedSettingsResponse) deleteExternalcontactsSettings()
+
+Delete settings
+
+Wraps DELETE /api/v2/externalcontacts/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:settings:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+try {
+    UpdatedSettingsResponse result = apiInstance.deleteExternalcontactsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#deleteExternalcontactsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**UpdatedSettingsResponse**](UpdatedSettingsResponse)
 
 
 # **deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**
@@ -238,6 +296,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmailThreadingSettings**](EmailThreadingSettings)
+
+
+# **getExternalcontactsSettings**
+
+
+> [ExternalContactsSettings](ExternalContactsSettings) getExternalcontactsSettings()
+
+Get settings
+
+Wraps GET /api/v2/externalcontacts/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+try {
+    ExternalContactsSettings result = apiInstance.getExternalcontactsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#getExternalcontactsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ExternalContactsSettings**](ExternalContactsSettings)
 
 
 # **getSettingsExecutiondata**
@@ -596,6 +709,65 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
+# **putExternalcontactsSettings**
+
+
+> [UpdatedSettingsResponse](UpdatedSettingsResponse) putExternalcontactsSettings(body)
+
+Set settings
+
+Wraps PUT /api/v2/externalcontacts/settings  
+
+Requires ANY permissions: 
+
+* externalContacts:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+ExternalContactsSettings body = new ExternalContactsSettings(); // ExternalContactsSettings | 
+try {
+    UpdatedSettingsResponse result = apiInstance.putExternalcontactsSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#putExternalcontactsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExternalContactsSettings**](ExternalContactsSettings)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UpdatedSettingsResponse**](UpdatedSettingsResponse)
+
+
 # **putUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
@@ -657,4 +829,4 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

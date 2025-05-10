@@ -1985,7 +1985,7 @@ try {
 # **getRoutingEmailDomainRoute**
 
 
-> [InboundRoute](InboundRoute) getRoutingEmailDomainRoute(domainName, routeId)
+> [InboundRoute](InboundRoute) getRoutingEmailDomainRoute(domainName, routeId, expand)
 
 Get a route
 
@@ -2019,8 +2019,9 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
 String routeId = "routeId_example"; // String | route ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
-    InboundRoute result = apiInstance.getRoutingEmailDomainRoute(domainName, routeId);
+    InboundRoute result = apiInstance.getRoutingEmailDomainRoute(domainName, routeId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainRoute");
@@ -2035,6 +2036,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
 | **routeId** | **String**| route ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution 
 {: class="table-striped"}
 
 
@@ -2049,8 +2051,6 @@ try {
 > [IdentityResolutionConfig](IdentityResolutionConfig) getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
 
 Get a route identity resolution setting.
-
-getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution  
 
@@ -2110,7 +2110,7 @@ try {
 # **getRoutingEmailDomainRoutes**
 
 
-> [InboundRouteEntityListing](InboundRouteEntityListing) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern)
+> [InboundRouteEntityListing](InboundRouteEntityListing) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern, expand)
 
 Get routes
 
@@ -2146,8 +2146,9 @@ String domainName = "domainName_example"; // String | email domain
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String pattern = "pattern_example"; // String | Filter routes by the route's pattern property
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
-    InboundRouteEntityListing result = apiInstance.getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern);
+    InboundRouteEntityListing result = apiInstance.getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainRoutes");
@@ -2164,6 +2165,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pattern** | **String**| Filter routes by the route&#39;s pattern property | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution 
 {: class="table-striped"}
 
 
@@ -3091,7 +3093,7 @@ try {
 # **getRoutingQueue**
 
 
-> [Queue](Queue) getRoutingQueue(queueId)
+> [Queue](Queue) getRoutingQueue(queueId, expand)
 
 Get details about this queue.
 
@@ -3124,8 +3126,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
-    Queue result = apiInstance.getRoutingQueue(queueId);
+    Queue result = apiInstance.getRoutingQueue(queueId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueue");
@@ -3139,6 +3142,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution 
 {: class="table-striped"}
 
 
@@ -3397,8 +3401,6 @@ try {
 > [IdentityResolutionQueueConfig](IdentityResolutionQueueConfig) getRoutingQueueIdentityresolution(queueId)
 
 Get Queue IdentityResolution Settings.
-
-getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/queues/{queueId}/identityresolution  
 
@@ -3753,7 +3755,7 @@ try {
 # **getRoutingQueues**
 
 
-> [QueueEntityListing](QueueEntityListing) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer)
+> [QueueEntityListing](QueueEntityListing) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand)
 
 Get list of queues.
 
@@ -3794,8 +3796,9 @@ List<String> divisionId = Arrays.asList(null); // List<String> | Include only qu
 List<String> peerId = Arrays.asList(null); // List<String> | Include only queues with the specified peer ID(s)
 String cannedResponseLibraryId = "cannedResponseLibraryId_example"; // String | Include only queues explicitly associated with the specified canned response library ID
 Boolean hasPeer = true; // Boolean | Include only queues with a peer ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -3817,6 +3820,7 @@ try {
 | **peerId** | [**List&lt;String&gt;**](String)| Include only queues with the specified peer ID(s) | [optional] 
 | **cannedResponseLibraryId** | **String**| Include only queues explicitly associated with the specified canned response library ID | [optional] 
 | **hasPeer** | **Boolean**| Include only queues with a peer ID | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution 
 {: class="table-striped"}
 
 
@@ -4760,8 +4764,6 @@ try {
 
 Get a SMS identity resolution settings.
 
-getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}  
 
 Requires ALL permissions: 
@@ -4879,7 +4881,7 @@ try {
 # **getRoutingSmsPhonenumbers**
 
 
-> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId)
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand)
 
 Get a list of provisioned phone numbers.
 
@@ -4922,8 +4924,9 @@ String sortOrder = "sortOrder_example"; // String | Sort order
 String language = en-US; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
 String integrationId = "integrationId_example"; // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
 String supportedContentId = "supportedContentId_example"; // String | Filter based on the supported content ID
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
-    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId);
+    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumbers");
@@ -4947,6 +4950,7 @@ try {
 | **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &quot;en-US&quot;] 
 | **integrationId** | **String**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional] 
 | **supportedContentId** | **String**| Filter based on the supported content ID | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution, supportedContent 
 {: class="table-striped"}
 
 
@@ -8775,8 +8779,6 @@ try {
 
 Update identity resolution settings for a route.
 
-putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution  
 
 Requires ALL permissions: 
@@ -9022,8 +9024,6 @@ try {
 
 Update Queue IdentityResolution Settings.
 
-putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution  
 
 Requires ALL permissions: 
@@ -9203,8 +9203,6 @@ try {
 > [IdentityResolutionConfig](IdentityResolutionConfig) putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 
 Update an SMS identity resolution settings.
-
-putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}  
 
@@ -9688,4 +9686,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

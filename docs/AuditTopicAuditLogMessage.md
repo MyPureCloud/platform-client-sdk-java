@@ -68,6 +68,7 @@
 | MARKETPLACE | &quot;Marketplace&quot; | 
 | LOGCAPTURE | &quot;LogCapture&quot; | 
 | GDPR | &quot;GDPR&quot; | 
+| DSAR | &quot;DSAR&quot; | 
 | EXTERNALCONTACTSEXPORT | &quot;ExternalContactsExport&quot; | 
 | AGENTCONFIG | &quot;AgentConfig&quot; | 
 | EMAILS | &quot;Emails&quot; | 
@@ -106,11 +107,14 @@
 | MEMBERADD | &quot;MemberAdd&quot; | 
 | MEMBERUPDATE | &quot;MemberUpdate&quot; | 
 | MEMBERREMOVE | &quot;MemberRemove&quot; | 
+| AUTHENTICATE | &quot;Authenticate&quot; | 
+| AUTHENTICATIONFAILED | &quot;AuthenticationFailed&quot; | 
+| SINGLELOGOUT | &quot;SingleLogout&quot; | 
+| SINGLELOGOUTFAILED | &quot;SingleLogoutFailed&quot; | 
 | AUTHORIZE | &quot;Authorize&quot; | 
 | DEAUTHORIZE | &quot;Deauthorize&quot; | 
-| AUTHENTICATE | &quot;Authenticate&quot; | 
+| AUTHORIZATIONCHANGED | &quot;AuthorizationChanged&quot; | 
 | CHANGEPASSWORD | &quot;ChangePassword&quot; | 
-| AUTHENTICATIONFAILED | &quot;AuthenticationFailed&quot; | 
 | REVOKE | &quot;Revoke&quot; | 
 | CHECKIN | &quot;Checkin&quot; | 
 | CHECKOUT | &quot;Checkout&quot; | 
@@ -219,6 +223,7 @@
 | DOCUMENT | &quot;Document&quot; | 
 | WORKSPACE | &quot;Workspace&quot; | 
 | TAG | &quot;Tag&quot; | 
+| USERSAMLAUTHENTICATION | &quot;UserSamlAuthentication&quot; | 
 | ACCESSTOKEN | &quot;AccessToken&quot; | 
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; | 
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; | 
@@ -422,6 +427,7 @@
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | VENDORLISTING | &quot;VendorListing&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
+| DSARREQUEST | &quot;DsarRequest&quot; | 
 | EXPORTREQUEST | &quot;ExportRequest&quot; | 
 | DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
@@ -448,4 +454,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

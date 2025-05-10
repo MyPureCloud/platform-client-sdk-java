@@ -42,6 +42,7 @@
 | DIALOGFLOWCXAGENT | &quot;DIALOGFLOWCXAGENT&quot; | 
 | DIGITALBOTCONNECTOR | &quot;DIGITALBOTCONNECTOR&quot; | 
 | DIGITALBOTFLOW | &quot;DIGITALBOTFLOW&quot; | 
+| DIVISION | &quot;DIVISION&quot; | 
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; | 
 | FLOWACTION | &quot;FLOWACTION&quot; | 
@@ -99,4 +100,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

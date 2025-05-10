@@ -1,0 +1,15 @@
+# Customer
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **number** | **String** | The unique number of the customer. |  [optional] |
+| **name** | **String** | The name of the customer. |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

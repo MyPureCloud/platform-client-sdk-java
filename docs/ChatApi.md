@@ -656,7 +656,7 @@ try {
 # **getChatsRoomParticipants**
 
 
-> [RoomParticipantsResponse](RoomParticipantsResponse) getChatsRoomParticipants(roomJid)
+> [RoomParticipantsResponse](RoomParticipantsResponse) getChatsRoomParticipants(roomJid, notify)
 
 Get room participants in a room
 
@@ -690,8 +690,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
 String roomJid = "roomJid_example"; // String | roomJid
+Boolean notify = true; // Boolean | Whether to get users to notify
 try {
-    RoomParticipantsResponse result = apiInstance.getChatsRoomParticipants(roomJid);
+    RoomParticipantsResponse result = apiInstance.getChatsRoomParticipants(roomJid, notify);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsRoomParticipants");
@@ -705,6 +706,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomJid | 
+| **notify** | **Boolean**| Whether to get users to notify | [optional] 
 {: class="table-striped"}
 
 
@@ -1992,4 +1994,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

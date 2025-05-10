@@ -25,6 +25,7 @@
 | **maxAllowedRestorationsForOrg** | **Integer** | How many archive restorations the organization is allowed to have. |  [optional] |
 | **remainingRestorationsAllowedForOrg** | **Integer** | The remaining archive restorations the organization has. |  [optional] |
 | **sessionId** | **String** | The session id represents an external resource id, such as email, call, chat, etc |  [optional] |
+| **region** | [**RegionEnum**](#Enum--RegionEnum) | The region the source recording is stored in |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -61,6 +62,32 @@
 | CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; | 
 
 
+## Enum: RegionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AF_SOUTH_1 | &quot;af-south-1&quot; | 
+| AP_EAST_1 | &quot;ap-east-1&quot; | 
+| AP_NORTHEAST_1 | &quot;ap-northeast-1&quot; | 
+| AP_NORTHEAST_2 | &quot;ap-northeast-2&quot; | 
+| AP_NORTHEAST_3 | &quot;ap-northeast-3&quot; | 
+| AP_SOUTH_1 | &quot;ap-south-1&quot; | 
+| AP_SOUTHEAST_1 | &quot;ap-southeast-1&quot; | 
+| AP_SOUTHEAST_2 | &quot;ap-southeast-2&quot; | 
+| AP_SOUTHEAST_3 | &quot;ap-southeast-3&quot; | 
+| CA_CENTRAL_1 | &quot;ca-central-1&quot; | 
+| EU_CENTRAL_1 | &quot;eu-central-1&quot; | 
+| EU_CENTRAL_2 | &quot;eu-central-2&quot; | 
+| EU_WEST_1 | &quot;eu-west-1&quot; | 
+| EU_WEST_2 | &quot;eu-west-2&quot; | 
+| EU_WEST_3 | &quot;eu-west-3&quot; | 
+| ME_CENTRAL_1 | &quot;me-central-1&quot; | 
+| SA_EAST_1 | &quot;sa-east-1&quot; | 
+| US_EAST_1 | &quot;us-east-1&quot; | 
+| US_WEST_2 | &quot;us-west-2&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

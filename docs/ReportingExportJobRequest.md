@@ -25,6 +25,7 @@
 | **recipientEmails** | **List&lt;String&gt;** | The list of email recipients for the exports |  [optional] |
 | **includeDurationFormatInHeader** | **Boolean** | Indicates whether to include selected duration format to the column headers |  [optional] |
 | **durationFormat** | [**DurationFormatEnum**](#Enum--DurationFormatEnum) | Indicates the duration format for the exports |  [optional] |
+| **chartColumns** | [**List&lt;ChartColumn&gt;**](ChartColumn) | The list of columns for which chart is going to be displayed in export |  [optional] |
 
 
 ## Enum: ExportFormatEnum
@@ -187,4 +188,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

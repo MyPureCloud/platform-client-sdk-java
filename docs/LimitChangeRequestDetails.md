@@ -58,6 +58,7 @@
 | GCV | &quot;gcv&quot; | 
 | GDPR | &quot;gdpr&quot; | 
 | GROUPS | &quot;groups&quot; | 
+| GUIDES | &quot;guides&quot; | 
 | HISTORICAL_ADHERENCE | &quot;historical.adherence&quot; | 
 | INFRASTRUCTUREASCODE | &quot;infrastructureascode&quot; | 
 | INTEGRATIONS | &quot;integrations&quot; | 
@@ -137,4 +138,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

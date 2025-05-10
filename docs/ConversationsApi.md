@@ -114,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
+| [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | Update agent's engagement for the summary. |
 | [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | Update the feedback for the summary. |
 | [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied |
 | [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | Update after-call work for this conversation communication. |
@@ -4976,8 +4977,6 @@ This endpoint does not require any parameters.
 
 Get Facebook messaging integration identity resolution settings
 
-getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}  
 
 Requires ALL permissions: 
@@ -5038,8 +5037,6 @@ try {
 
 Get an open messaging integration Identity Resolution settings
 
-getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}  
 
 Requires ALL permissions: 
@@ -5099,8 +5096,6 @@ try {
 > [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
 
 Get a whatsApp integration Identity Resolution settings
-
-getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}  
 
@@ -5270,7 +5265,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5337,7 +5332,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5400,7 +5395,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 {: class="table-striped"}
 
 
@@ -5465,7 +5460,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5528,7 +5523,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 {: class="table-striped"}
 
 
@@ -5595,7 +5590,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5660,7 +5655,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 {: class="table-striped"}
 
 
@@ -5725,7 +5720,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5788,7 +5783,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 {: class="table-striped"}
 
 
@@ -5908,7 +5903,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
 | **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
@@ -5971,7 +5966,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting, identityresolution 
 {: class="table-striped"}
 
 
@@ -6779,6 +6774,7 @@ Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -6951,14 +6947,74 @@ try {
 **String**
 
 
+# **patchConversationSummaryEngagements**
+
+
+> Void patchConversationSummaryEngagements(conversationId, summaryId, body)
+
+Update agent's engagement for the summary.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements  
+
+Requires ALL permissions: 
+
+* conversation:summaryEngagement:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String summaryId = "summaryId_example"; // String | Summary ID
+EngagementRequest body = new EngagementRequest(); // EngagementRequest | 
+try {
+    apiInstance.patchConversationSummaryEngagements(conversationId, summaryId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationSummaryEngagements");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **summaryId** | **String**| Summary ID | 
+| **body** | [**EngagementRequest**](EngagementRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **patchConversationSummaryFeedback**
 
 
 > Void patchConversationSummaryFeedback(conversationId, summaryId, body)
 
 Update the feedback for the summary.
-
-patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback  
 
@@ -15389,8 +15445,6 @@ try {
 
 Create an identity resolution settings for a Facebook messaging integration
 
-putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}  
 
 Requires ALL permissions: 
@@ -15453,8 +15507,6 @@ try {
 
 Update an open messaging integration Identity Resolution settings
 
-putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}  
 
 Requires ALL permissions: 
@@ -15516,8 +15568,6 @@ try {
 > [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
 
 Update a whatsApp integration Identity Resolution settings
-
-putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}  
 
@@ -15945,4 +15995,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
