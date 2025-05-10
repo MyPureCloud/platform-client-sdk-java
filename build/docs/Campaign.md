@@ -44,6 +44,7 @@
 | **maxCallsPerAgentDecimal** | **Double** | The maximum number of calls that can be placed per agent on this campaign with decimal precision |  [optional] |
 | **callbackAutoAnswer** | **Boolean** | The option manages the auto-answer callback calls |  [optional] |
 | **dynamicLineBalancingSettings** | [**DynamicLineBalancingSettings**](DynamicLineBalancingSettings) | Dynamic line balancing settings |  [optional] |
+| **diagnosticsSettings** | [**DiagnosticsSettings**](DiagnosticsSettings) | Campaign diagnostics settings |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -76,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

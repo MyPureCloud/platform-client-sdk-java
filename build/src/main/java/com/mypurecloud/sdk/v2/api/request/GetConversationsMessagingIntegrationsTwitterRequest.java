@@ -93,6 +93,7 @@ import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
+import com.mypurecloud.sdk.v2.model.EngagementRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
@@ -229,7 +230,8 @@ public class GetConversationsMessagingIntegrationsTwitterRequest {
 
 	public enum expandValues { 
 		SUPPORTEDCONTENT("supportedContent"),
-		MESSAGINGSETTING("messagingSetting");
+		MESSAGINGSETTING("messagingSetting"),
+		IDENTITYRESOLUTION("identityresolution");
 
 		private String value;
 

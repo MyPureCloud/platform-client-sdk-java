@@ -31,6 +31,7 @@ public class SocialMediaStatisticalSummary  implements Serializable {
   private Long countNeutral = null;
   private Long countUnknown = null;
   private BigDecimal sum = null;
+  private BigDecimal average = null;
   private BigDecimal current = null;
   private BigDecimal ratio = null;
   private BigDecimal numerator = null;
@@ -183,6 +184,23 @@ public class SocialMediaStatisticalSummary  implements Serializable {
 
   /**
    **/
+  public SocialMediaStatisticalSummary average(BigDecimal average) {
+    this.average = average;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("average")
+  public BigDecimal getAverage() {
+    return average;
+  }
+  public void setAverage(BigDecimal average) {
+    this.average = average;
+  }
+
+
+  /**
+   **/
   public SocialMediaStatisticalSummary current(BigDecimal current) {
     this.current = current;
     return this;
@@ -318,6 +336,7 @@ public class SocialMediaStatisticalSummary  implements Serializable {
             Objects.equals(this.countNeutral, socialMediaStatisticalSummary.countNeutral) &&
             Objects.equals(this.countUnknown, socialMediaStatisticalSummary.countUnknown) &&
             Objects.equals(this.sum, socialMediaStatisticalSummary.sum) &&
+            Objects.equals(this.average, socialMediaStatisticalSummary.average) &&
             Objects.equals(this.current, socialMediaStatisticalSummary.current) &&
             Objects.equals(this.ratio, socialMediaStatisticalSummary.ratio) &&
             Objects.equals(this.numerator, socialMediaStatisticalSummary.numerator) &&
@@ -329,7 +348,7 @@ public class SocialMediaStatisticalSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(max, min, count, countNegative, countPositive, countNeutral, countUnknown, sum, current, ratio, numerator, denominator, target, p95, p99);
+    return Objects.hash(max, min, count, countNegative, countPositive, countNeutral, countUnknown, sum, average, current, ratio, numerator, denominator, target, p95, p99);
   }
 
   @Override
@@ -345,6 +364,7 @@ public class SocialMediaStatisticalSummary  implements Serializable {
     sb.append("    countNeutral: ").append(toIndentedString(countNeutral)).append("\n");
     sb.append("    countUnknown: ").append(toIndentedString(countUnknown)).append("\n");
     sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
+    sb.append("    average: ").append(toIndentedString(average)).append("\n");
     sb.append("    current: ").append(toIndentedString(current)).append("\n");
     sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");
     sb.append("    numerator: ").append(toIndentedString(numerator)).append("\n");

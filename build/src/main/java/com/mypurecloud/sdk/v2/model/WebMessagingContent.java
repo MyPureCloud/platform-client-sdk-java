@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentCard;
 import com.mypurecloud.sdk.v2.model.ContentCarousel;
+import com.mypurecloud.sdk.v2.model.ContentDatePicker;
 import com.mypurecloud.sdk.v2.model.WebMessagingAttachment;
 import com.mypurecloud.sdk.v2.model.WebMessagingButtonResponse;
 import com.mypurecloud.sdk.v2.model.WebMessagingGeneric;
@@ -54,7 +55,8 @@ public class WebMessagingContent  implements Serializable {
     BUTTONRESPONSE("ButtonResponse"),
     GENERICTEMPLATE("GenericTemplate"),
     CARD("Card"),
-    CAROUSEL("Carousel");
+    CAROUSEL("Carousel"),
+    DATEPICKER("DatePicker");
 
     private String value;
 
@@ -88,6 +90,7 @@ public class WebMessagingContent  implements Serializable {
   private WebMessagingGeneric generic = null;
   private ContentCard card = null;
   private ContentCarousel carousel = null;
+  private ContentDatePicker datePicker = null;
 
   public WebMessagingContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -199,6 +202,24 @@ public class WebMessagingContent  implements Serializable {
   }
 
 
+  /**
+   * DatePicker content
+   **/
+  public WebMessagingContent datePicker(ContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "DatePicker content")
+  @JsonProperty("datePicker")
+  public ContentDatePicker getDatePicker() {
+    return datePicker;
+  }
+  public void setDatePicker(ContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,12 +236,13 @@ public class WebMessagingContent  implements Serializable {
             Objects.equals(this.buttonResponse, webMessagingContent.buttonResponse) &&
             Objects.equals(this.generic, webMessagingContent.generic) &&
             Objects.equals(this.card, webMessagingContent.card) &&
-            Objects.equals(this.carousel, webMessagingContent.carousel);
+            Objects.equals(this.carousel, webMessagingContent.carousel) &&
+            Objects.equals(this.datePicker, webMessagingContent.datePicker);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, card, carousel);
+    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, card, carousel, datePicker);
   }
 
   @Override
@@ -235,6 +257,7 @@ public class WebMessagingContent  implements Serializable {
     sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
+    sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
     sb.append("}");
     return sb.toString();
   }

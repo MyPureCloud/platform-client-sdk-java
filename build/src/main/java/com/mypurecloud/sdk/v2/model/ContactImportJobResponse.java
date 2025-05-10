@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ContactImportJobMetadata;
+import com.mypurecloud.sdk.v2.model.StarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -130,6 +131,7 @@ public class ContactImportJobResponse  implements Serializable {
   private ExecutionStepEnum executionStep = null;
   private ContactImportJobMetadata metadata = null;
   private Date dateCreated = null;
+  private StarrableDivision division = null;
   private String selfUri = null;
   private AddressableEntityRef settings = null;
 
@@ -235,6 +237,24 @@ public class ContactImportJobResponse  implements Serializable {
   }
 
 
+  /**
+   * Division for the job
+   **/
+  public ContactImportJobResponse division(StarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Division for the job")
+  @JsonProperty("division")
+  public StarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(StarrableDivision division) {
+    this.division = division;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -276,13 +296,14 @@ public class ContactImportJobResponse  implements Serializable {
             Objects.equals(this.executionStep, contactImportJobResponse.executionStep) &&
             Objects.equals(this.metadata, contactImportJobResponse.metadata) &&
             Objects.equals(this.dateCreated, contactImportJobResponse.dateCreated) &&
+            Objects.equals(this.division, contactImportJobResponse.division) &&
             Objects.equals(this.selfUri, contactImportJobResponse.selfUri) &&
             Objects.equals(this.settings, contactImportJobResponse.settings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, statusDetails, executionStep, metadata, dateCreated, selfUri, settings);
+    return Objects.hash(id, status, statusDetails, executionStep, metadata, dateCreated, division, selfUri, settings);
   }
 
   @Override
@@ -296,6 +317,7 @@ public class ContactImportJobResponse  implements Serializable {
     sb.append("    executionStep: ").append(toIndentedString(executionStep)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("}");

@@ -74,6 +74,7 @@ public class ApprovalNamespace  implements Serializable {
     GCV("gcv"),
     GDPR("gdpr"),
     GROUPS("groups"),
+    GUIDES("guides"),
     HISTORICAL_ADHERENCE("historical.adherence"),
     INFRASTRUCTUREASCODE("infrastructureascode"),
     INTEGRATIONS("integrations"),

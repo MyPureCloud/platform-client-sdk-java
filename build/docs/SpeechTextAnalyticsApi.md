@@ -2166,8 +2166,6 @@ try {
 
 Translate a single interaction recording (or an email conversation)
 
-getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}  
 
 Requires ALL permissions: 
@@ -2232,8 +2230,6 @@ try {
 > [TranslateSupportedLanguageList](TranslateSupportedLanguageList) getSpeechandtextanalyticsTranslationsLanguages()
 
 Get supported translation languages
-
-getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/speechandtextanalytics/translations/languages  
 
@@ -3364,4 +3360,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the type of Presence event. |  |
-| **receivedMessage** | [**ConversationContentReceivedReplyMessage**](ConversationContentReceivedReplyMessage) | The message displayed in the received message bubble. |  [optional] |
-| **replyMessage** | [**ConversationContentReceivedReplyMessage**](ConversationContentReceivedReplyMessage) | The message displayed in the reply message bubble. |  [optional] |
+| **receivedMessage** | [**ConversationContentReceivedReplyMessage**](ConversationContentReceivedReplyMessage) | A sign in prompt message for when the authenticate event is received. |  [optional] |
+| **replyMessage** | [**ConversationContentReceivedReplyMessage**](ConversationContentReceivedReplyMessage) | A reply message on authentication success. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -21,8 +21,10 @@
 | SIGNIN | &quot;SignIn&quot; | 
 | SESSIONEXPIRED | &quot;SessionExpired&quot; | 
 | AUTHENTICATE | &quot;Authenticate&quot; | 
+| AUTHENTICATEFAILURE | &quot;AuthenticateFailure&quot; | 
+| AUTHENTICATECANCEL | &quot;AuthenticateCancel&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

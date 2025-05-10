@@ -2928,7 +2928,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Translate a single interaction recording (or an email conversation)
    * 
-   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param languageId Target translation language (required)
    * @param conversationId Conversation id (required)
    * @param communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. (optional)
@@ -2944,7 +2943,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Translate a single interaction recording (or an email conversation)
    * 
-   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param languageId Target translation language (required)
    * @param conversationId Conversation id (required)
    * @param communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. (optional)
@@ -2972,7 +2970,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Translate a single interaction recording (or an email conversation)
    * 
-   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CommunicationTranslationList
    * @throws ApiException if the request fails on the server
@@ -2992,7 +2989,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Translate a single interaction recording (or an email conversation)
    * 
-   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3022,7 +3018,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get supported translation languages
    * 
-   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return TranslateSupportedLanguageList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3034,7 +3029,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get supported translation languages
    * 
-   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return TranslateSupportedLanguageList
    * @throws IOException if the request fails to be processed
    */
@@ -3050,7 +3044,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get supported translation languages
    * 
-   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TranslateSupportedLanguageList
    * @throws ApiException if the request fails on the server
@@ -3070,7 +3063,6 @@ public class SpeechTextAnalyticsApi {
   /**
    * Get supported translation languages
    * 
-   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

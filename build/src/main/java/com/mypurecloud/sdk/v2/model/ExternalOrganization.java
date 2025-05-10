@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
+import com.mypurecloud.sdk.v2.model.ExternalId;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationIdentifier;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.Ticker;
 import com.mypurecloud.sdk.v2.model.Trustor;
@@ -55,6 +57,8 @@ public class ExternalOrganization  implements Serializable {
   private Trustor trustor = null;
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
+  private List<ExternalOrganizationIdentifier> identifiers = null;
+  private List<ExternalId> externalIds = null;
   private List<ExternalDataSource> externalDataSources = null;
   private String selfUri = null;
 
@@ -63,6 +67,8 @@ public class ExternalOrganization  implements Serializable {
       tags = new ArrayList<String>();
       websites = new ArrayList<String>();
       tickers = new ArrayList<Ticker>();
+      identifiers = new ArrayList<ExternalOrganizationIdentifier>();
+      externalIds = new ArrayList<ExternalId>();
       externalDataSources = new ArrayList<ExternalDataSource>();
     }
   }
@@ -416,6 +422,42 @@ public class ExternalOrganization  implements Serializable {
   }
 
 
+  /**
+   * Identifiers claimed by this external org
+   **/
+  public ExternalOrganization identifiers(List<ExternalOrganizationIdentifier> identifiers) {
+    this.identifiers = identifiers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers claimed by this external org")
+  @JsonProperty("identifiers")
+  public List<ExternalOrganizationIdentifier> getIdentifiers() {
+    return identifiers;
+  }
+  public void setIdentifiers(List<ExternalOrganizationIdentifier> identifiers) {
+    this.identifiers = identifiers;
+  }
+
+
+  /**
+   * A list of external identifiers that identify this External Organization in an external system
+   **/
+  public ExternalOrganization externalIds(List<ExternalId> externalIds) {
+    this.externalIds = externalIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this External Organization in an external system")
+  @JsonProperty("externalIds")
+  public List<ExternalId> getExternalIds() {
+    return externalIds;
+  }
+  public void setExternalIds(List<ExternalId> externalIds) {
+    this.externalIds = externalIds;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
@@ -460,13 +502,15 @@ public class ExternalOrganization  implements Serializable {
             Objects.equals(this.trustor, externalOrganization.trustor) &&
             Objects.equals(this.schema, externalOrganization.schema) &&
             Objects.equals(this.customFields, externalOrganization.customFields) &&
+            Objects.equals(this.identifiers, externalOrganization.identifiers) &&
+            Objects.equals(this.externalIds, externalOrganization.externalIds) &&
             Objects.equals(this.externalDataSources, externalOrganization.externalDataSources) &&
             Objects.equals(this.selfUri, externalOrganization.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, companyType, industry, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, schema, customFields, externalDataSources, selfUri);
+    return Objects.hash(id, name, division, companyType, industry, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, schema, customFields, identifiers, externalIds, externalDataSources, selfUri);
   }
 
   @Override
@@ -494,6 +538,8 @@ public class ExternalOrganization  implements Serializable {
     sb.append("    trustor: ").append(toIndentedString(trustor)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
+    sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

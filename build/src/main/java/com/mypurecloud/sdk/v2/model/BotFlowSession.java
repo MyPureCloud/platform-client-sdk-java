@@ -61,7 +61,13 @@ public class BotFlowSession  implements Serializable {
     DISCONNECTSESSIONEXPIRED("DisconnectSessionExpired"),
     DISCONNECTERROR("DisconnectError"),
     DISCONNECTRECOGNITIONFAILURE("DisconnectRecognitionFailure"),
-    TRANSFERTOACD("TransferToACD");
+    TRANSFERTOACD("TransferToACD"),
+    TRANSFERTOUSER("TransferToUser"),
+    TRANSFERTOGROUP("TransferToGroup"),
+    TRANSFERTONUMBER("TransferToNumber"),
+    TRANSFERTOUSERVOICEMAIL("TransferToUserVoicemail"),
+    TRANSFERTOGROUPVOICEMAIL("TransferToGroupVoicemail"),
+    TRANSFERTOACDVOICEMAIL("TransferToACDVoicemail");
 
     private String value;
 

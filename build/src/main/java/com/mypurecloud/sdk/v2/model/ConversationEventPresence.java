@@ -49,7 +49,9 @@ public class ConversationEventPresence  implements Serializable {
     CLEAR("Clear"),
     SIGNIN("SignIn"),
     SESSIONEXPIRED("SessionExpired"),
-    AUTHENTICATE("Authenticate");
+    AUTHENTICATE("Authenticate"),
+    AUTHENTICATEFAILURE("AuthenticateFailure"),
+    AUTHENTICATECANCEL("AuthenticateCancel");
 
     private String value;
 
@@ -105,14 +107,14 @@ public class ConversationEventPresence  implements Serializable {
 
 
   /**
-   * The message displayed in the received message bubble.
+   * A sign in prompt message for when the authenticate event is received.
    **/
   public ConversationEventPresence receivedMessage(ConversationContentReceivedReplyMessage receivedMessage) {
     this.receivedMessage = receivedMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The message displayed in the received message bubble.")
+  @ApiModelProperty(example = "null", value = "A sign in prompt message for when the authenticate event is received.")
   @JsonProperty("receivedMessage")
   public ConversationContentReceivedReplyMessage getReceivedMessage() {
     return receivedMessage;
@@ -123,14 +125,14 @@ public class ConversationEventPresence  implements Serializable {
 
 
   /**
-   * The message displayed in the reply message bubble.
+   * A reply message on authentication success.
    **/
   public ConversationEventPresence replyMessage(ConversationContentReceivedReplyMessage replyMessage) {
     this.replyMessage = replyMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The message displayed in the reply message bubble.")
+  @ApiModelProperty(example = "null", value = "A reply message on authentication success.")
   @JsonProperty("replyMessage")
   public ConversationContentReceivedReplyMessage getReplyMessage() {
     return replyMessage;

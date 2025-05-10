@@ -3324,7 +3324,6 @@ public class ExternalContactsApi {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalOrganizationId External Organization ID (required)
    * @return ExternalOrganizationIdentifierListing
    * @throws ApiException if the request fails on the server
@@ -3337,7 +3336,6 @@ public class ExternalContactsApi {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalOrganizationId External Organization ID (required)
    * @return ExternalOrganizationIdentifierListing
    * @throws IOException if the request fails to be processed
@@ -3356,7 +3354,6 @@ public class ExternalContactsApi {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalOrganizationIdentifierListing
    * @throws ApiException if the request fails on the server
@@ -3376,7 +3373,6 @@ public class ExternalContactsApi {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4578,7 +4574,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorContactListing
@@ -4592,7 +4587,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorContactListing
@@ -4614,7 +4608,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CursorContactListing
    * @throws ApiException if the request fails on the server
@@ -4634,7 +4627,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4750,7 +4742,6 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorNoteListing
@@ -4764,7 +4755,6 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorNoteListing
@@ -4786,7 +4776,6 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CursorNoteListing
    * @throws ApiException if the request fails on the server
@@ -4806,7 +4795,6 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4922,7 +4910,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorOrganizationListing
@@ -4936,7 +4923,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorOrganizationListing
@@ -4958,7 +4944,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CursorOrganizationListing
    * @throws ApiException if the request fails on the server
@@ -4978,7 +4963,6 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5094,7 +5078,6 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorRelationshipListing
@@ -5108,7 +5091,6 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorRelationshipListing
@@ -5130,7 +5112,6 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CursorRelationshipListing
    * @throws ApiException if the request fails on the server
@@ -5150,7 +5131,6 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5262,7 +5242,6 @@ public class ExternalContactsApi {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalOrganizationId External Organization ID (required)
    * @param body ClaimRequest (required)
    * @return ExternalOrganizationIdentifier
@@ -5276,7 +5255,6 @@ public class ExternalContactsApi {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalOrganizationId External Organization ID (required)
    * @param body ClaimRequest (required)
    * @return ExternalOrganizationIdentifier
@@ -5298,7 +5276,6 @@ public class ExternalContactsApi {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalOrganizationIdentifier
    * @throws ApiException if the request fails on the server
@@ -5318,7 +5295,6 @@ public class ExternalContactsApi {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5504,7 +5480,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Contact ids (required)
    * @return BulkFetchContactsResponse
    * @throws ApiException if the request fails on the server
@@ -5517,7 +5492,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Contact ids (required)
    * @return BulkFetchContactsResponse
    * @throws IOException if the request fails to be processed
@@ -5536,7 +5510,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkFetchContactsResponse
    * @throws ApiException if the request fails on the server
@@ -5556,7 +5529,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5586,7 +5558,6 @@ public class ExternalContactsApi {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Contact Enrich Requests (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return BulkContactsEnrichResponse
@@ -5600,7 +5571,6 @@ public class ExternalContactsApi {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Contact Enrich Requests (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return BulkContactsEnrichResponse
@@ -5622,7 +5592,6 @@ public class ExternalContactsApi {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkContactsEnrichResponse
    * @throws ApiException if the request fails on the server
@@ -5642,7 +5611,6 @@ public class ExternalContactsApi {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6374,7 +6342,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Organizations ids (required)
    * @return BulkFetchOrganizationsResponse
    * @throws ApiException if the request fails on the server
@@ -6387,7 +6354,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Organizations ids (required)
    * @return BulkFetchOrganizationsResponse
    * @throws IOException if the request fails to be processed
@@ -6406,7 +6372,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkFetchOrganizationsResponse
    * @throws ApiException if the request fails on the server
@@ -6426,7 +6391,6 @@ public class ExternalContactsApi {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6456,7 +6420,6 @@ public class ExternalContactsApi {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body External Organization Enrich Requests (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return BulkOrganizationsEnrichResponse
@@ -6470,7 +6433,6 @@ public class ExternalContactsApi {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body External Organization Enrich Requests (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return BulkOrganizationsEnrichResponse
@@ -6492,7 +6454,6 @@ public class ExternalContactsApi {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkOrganizationsEnrichResponse
    * @throws ApiException if the request fails on the server
@@ -6512,7 +6473,6 @@ public class ExternalContactsApi {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7248,7 +7208,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body ContactEnrichRequest (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return ExternalContact
@@ -7262,7 +7221,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body ContactEnrichRequest (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return ExternalContact
@@ -7284,7 +7242,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -7304,7 +7261,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7412,7 +7368,6 @@ public class ExternalContactsApi {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -7425,7 +7380,6 @@ public class ExternalContactsApi {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
@@ -7444,7 +7398,6 @@ public class ExternalContactsApi {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -7464,7 +7417,6 @@ public class ExternalContactsApi {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7736,7 +7688,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
@@ -7750,7 +7701,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
@@ -7772,7 +7722,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -7792,7 +7741,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7822,7 +7770,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalOrganization
@@ -7836,7 +7783,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param identifier  (required)
    * @param expand which field, if any, to expand (optional)
    * @return ExternalOrganization
@@ -7858,7 +7804,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
@@ -7878,7 +7823,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8540,7 +8484,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body ExternalOrgEnrichRequest (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return ExternalOrganization
@@ -8554,7 +8497,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body ExternalOrgEnrichRequest (required)
    * @param dryRun If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
    * @return ExternalOrganization
@@ -8576,7 +8518,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
@@ -8596,7 +8537,6 @@ public class ExternalContactsApi {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

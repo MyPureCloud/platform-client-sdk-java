@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ChartColumn;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
@@ -357,11 +358,13 @@ public class ReportingExportJobRequest  implements Serializable {
     }
   }
   private DurationFormatEnum durationFormat = null;
+  private List<ChartColumn> chartColumns = null;
 
   public ReportingExportJobRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       selectedColumns = new ArrayList<SelectedColumns>();
       recipientEmails = new ArrayList<String>();
+      chartColumns = new ArrayList<ChartColumn>();
     }
   }
 
@@ -726,6 +729,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * The list of columns for which chart is going to be displayed in export
+   **/
+  public ReportingExportJobRequest chartColumns(List<ChartColumn> chartColumns) {
+    this.chartColumns = chartColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of columns for which chart is going to be displayed in export")
+  @JsonProperty("chartColumns")
+  public List<ChartColumn> getChartColumns() {
+    return chartColumns;
+  }
+  public void setChartColumns(List<ChartColumn> chartColumns) {
+    this.chartColumns = chartColumns;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -755,12 +776,13 @@ public class ReportingExportJobRequest  implements Serializable {
             Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
             Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails) &&
             Objects.equals(this.includeDurationFormatInHeader, reportingExportJobRequest.includeDurationFormatInHeader) &&
-            Objects.equals(this.durationFormat, reportingExportJobRequest.durationFormat);
+            Objects.equals(this.durationFormat, reportingExportJobRequest.durationFormat) &&
+            Objects.equals(this.chartColumns, reportingExportJobRequest.chartColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, includeDurationFormatInHeader, durationFormat);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, includeDurationFormatInHeader, durationFormat, chartColumns);
   }
 
   @Override
@@ -788,6 +810,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
     sb.append("    durationFormat: ").append(toIndentedString(durationFormat)).append("\n");
+    sb.append("    chartColumns: ").append(toIndentedString(chartColumns)).append("\n");
     sb.append("}");
     return sb.toString();
   }

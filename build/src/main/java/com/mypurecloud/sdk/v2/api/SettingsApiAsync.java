@@ -19,18 +19,23 @@ import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
+import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsThreadingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 
 import java.io.IOException;
@@ -115,6 +120,81 @@ public class SettingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdatedSettingsResponse> deleteExternalcontactsSettingsAsync(DeleteExternalcontactsSettingsRequest request, final AsyncApiCallback<UpdatedSettingsResponse> callback) {
+    try {
+      final SettableFuture<UpdatedSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdatedSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdatedSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdatedSettingsResponse>> deleteExternalcontactsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdatedSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdatedSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdatedSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -340,6 +420,81 @@ public class SettingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailThreadingSettings> response = (ApiResponse<EmailThreadingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalContactsSettings> getExternalcontactsSettingsAsync(GetExternalcontactsSettingsRequest request, final AsyncApiCallback<ExternalContactsSettings> callback) {
+    try {
+      final SettableFuture<ExternalContactsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContactsSettings>() {}, new AsyncApiCallback<ApiResponse<ExternalContactsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContactsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalContactsSettings>> getExternalcontactsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalContactsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalContactsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContactsSettings>() {}, new AsyncApiCallback<ApiResponse<ExternalContactsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContactsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContactsSettings> response = (ApiResponse<ExternalContactsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContactsSettings> response = (ApiResponse<ExternalContactsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -790,6 +945,81 @@ public class SettingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AutoAnswerSettings> response = (ApiResponse<AutoAnswerSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdatedSettingsResponse> putExternalcontactsSettingsAsync(PutExternalcontactsSettingsRequest request, final AsyncApiCallback<UpdatedSettingsResponse> callback) {
+    try {
+      final SettableFuture<UpdatedSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdatedSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdatedSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdatedSettingsResponse>> putExternalcontactsSettingsAsync(ApiRequest<ExternalContactsSettings> request, final AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdatedSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdatedSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<UpdatedSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdatedSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

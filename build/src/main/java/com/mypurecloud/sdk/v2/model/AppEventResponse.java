@@ -329,14 +329,14 @@ public class AppEventResponse  implements Serializable {
 
 
   /**
-   * Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
+   * Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, givenName, cellPhone).
    **/
   public AppEventResponse traits(Map<String, CustomEventAttribute> traits) {
     this.traits = traits;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).")
+  @ApiModelProperty(example = "null", required = true, value = "Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, givenName, cellPhone).")
   @JsonProperty("traits")
   public Map<String, CustomEventAttribute> getTraits() {
     return traits;

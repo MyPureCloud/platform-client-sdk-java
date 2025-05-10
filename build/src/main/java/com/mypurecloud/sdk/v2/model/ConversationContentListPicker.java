@@ -57,14 +57,14 @@ public class ConversationContentListPicker  implements Serializable {
 
 
   /**
-   * The message displayed in the received message bubble.
+   * The reply message after the user has selected the options from the List Picker.
    **/
   public ConversationContentListPicker replyMessage(ConversationContentReceivedReplyMessage replyMessage) {
     this.replyMessage = replyMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The message displayed in the received message bubble.")
+  @ApiModelProperty(example = "null", value = "The reply message after the user has selected the options from the List Picker.")
   @JsonProperty("replyMessage")
   public ConversationContentReceivedReplyMessage getReplyMessage() {
     return replyMessage;
@@ -75,14 +75,14 @@ public class ConversationContentListPicker  implements Serializable {
 
 
   /**
-   * The message displayed in the reply message bubble.
+   * The message prompt to select options in the List Picker sections.
    **/
   public ConversationContentListPicker receivedMessage(ConversationContentReceivedReplyMessage receivedMessage) {
     this.receivedMessage = receivedMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The message displayed in the reply message bubble.")
+  @ApiModelProperty(example = "null", value = "The message prompt to select options in the List Picker sections.")
   @JsonProperty("receivedMessage")
   public ConversationContentReceivedReplyMessage getReceivedMessage() {
     return receivedMessage;

@@ -83,6 +83,7 @@ import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
+import com.mypurecloud.sdk.v2.model.EngagementRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
@@ -284,6 +285,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryEngagementsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationUtilizationlabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest;
@@ -6782,7 +6784,6 @@ public class ConversationsApi {
   /**
    * Get Facebook messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6795,7 +6796,6 @@ public class ConversationsApi {
   /**
    * Get Facebook messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -6814,7 +6814,6 @@ public class ConversationsApi {
   /**
    * Get Facebook messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6834,7 +6833,6 @@ public class ConversationsApi {
   /**
    * Get Facebook messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6864,7 +6862,6 @@ public class ConversationsApi {
   /**
    * Get an open messaging integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return OpenMessagingIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6877,7 +6874,6 @@ public class ConversationsApi {
   /**
    * Get an open messaging integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return OpenMessagingIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -6896,7 +6892,6 @@ public class ConversationsApi {
   /**
    * Get an open messaging integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenMessagingIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6916,7 +6911,6 @@ public class ConversationsApi {
   /**
    * Get an open messaging integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6946,7 +6940,6 @@ public class ConversationsApi {
   /**
    * Get a whatsApp integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6959,7 +6952,6 @@ public class ConversationsApi {
   /**
    * Get a whatsApp integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -6978,7 +6970,6 @@ public class ConversationsApi {
   /**
    * Get a whatsApp integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6998,7 +6989,6 @@ public class ConversationsApi {
   /**
    * Get a whatsApp integration Identity Resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9454,9 +9444,91 @@ public class ConversationsApi {
   }
 
   /**
+   * Update agent's engagement for the summary.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationSummaryEngagements(String conversationId, String summaryId, EngagementRequest body) throws IOException, ApiException {
+     patchConversationSummaryEngagements(createPatchConversationSummaryEngagementsRequest(conversationId, summaryId, body));
+  }
+
+  /**
+   * Update agent's engagement for the summary.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationSummaryEngagementsWithHttpInfo(String conversationId, String summaryId, EngagementRequest body) throws IOException {
+    return patchConversationSummaryEngagements(createPatchConversationSummaryEngagementsRequest(conversationId, summaryId, body).withHttpInfo());
+  }
+
+  private PatchConversationSummaryEngagementsRequest createPatchConversationSummaryEngagementsRequest(String conversationId, String summaryId, EngagementRequest body) {
+    return PatchConversationSummaryEngagementsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSummaryId(summaryId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update agent's engagement for the summary.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationSummaryEngagements(PatchConversationSummaryEngagementsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update agent's engagement for the summary.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationSummaryEngagements(ApiRequest<EngagementRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the feedback for the summary.
    * 
-   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation ID (required)
    * @param summaryId Summary ID (required)
    * @param body  (optional)
@@ -9470,7 +9542,6 @@ public class ConversationsApi {
   /**
    * Update the feedback for the summary.
    * 
-   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation ID (required)
    * @param summaryId Summary ID (required)
    * @param body  (optional)
@@ -9494,7 +9565,6 @@ public class ConversationsApi {
   /**
    * Update the feedback for the summary.
    * 
-   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -9513,7 +9583,6 @@ public class ConversationsApi {
   /**
    * Update the feedback for the summary.
    * 
-   * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -20691,7 +20760,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Facebook messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
    * @return IdentityResolutionConfig
@@ -20705,7 +20773,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Facebook messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
    * @return IdentityResolutionConfig
@@ -20727,7 +20794,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Facebook messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -20747,7 +20813,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Facebook messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -20777,7 +20842,6 @@ public class ConversationsApi {
   /**
    * Update an open messaging integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body  (required)
    * @return OpenMessagingIdentityResolutionConfig
@@ -20791,7 +20855,6 @@ public class ConversationsApi {
   /**
    * Update an open messaging integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body  (required)
    * @return OpenMessagingIdentityResolutionConfig
@@ -20813,7 +20876,6 @@ public class ConversationsApi {
   /**
    * Update an open messaging integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenMessagingIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -20833,7 +20895,6 @@ public class ConversationsApi {
   /**
    * Update an open messaging integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -20863,7 +20924,6 @@ public class ConversationsApi {
   /**
    * Update a whatsApp integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -20877,7 +20937,6 @@ public class ConversationsApi {
   /**
    * Update a whatsApp integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -20899,7 +20958,6 @@ public class ConversationsApi {
   /**
    * Update a whatsApp integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -20919,7 +20977,6 @@ public class ConversationsApi {
   /**
    * Update a whatsApp integration Identity Resolution settings
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

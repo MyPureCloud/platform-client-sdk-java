@@ -24,6 +24,7 @@
 | ASKFORNLUNEXTINTENTACTION | &quot;AskForNLUNextIntentAction&quot; | 
 | BOTSTATE | &quot;BotState&quot; | 
 | CALLTASKACTION | &quot;CallTaskAction&quot; | 
+| CALLGUIDEACTION | &quot;CallGuideAction&quot; | 
 | CLEARSLOTACTION | &quot;ClearSlotAction&quot; | 
 | CLEARUTILIZATIONLABELACTION | &quot;ClearUtilizationLabelAction&quot; | 
 | DISCONNECTACTION | &quot;DisconnectAction&quot; | 
@@ -70,6 +71,7 @@
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
 | EVALUATESCHEDULEACTION | &quot;EvaluateScheduleAction&quot; | 
 | EVALUATESCHEDULEGROUPACTION | &quot;EvaluateScheduleGroupAction&quot; | 
+| PROMOTEEXTERNALCONTACTACTION | &quot;PromoteExternalContactAction&quot; | 
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
 | SENDKNOWLEDGEFEEDBACKACTION | &quot;SendKnowledgeFeedbackAction&quot; | 
 | SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
@@ -77,6 +79,9 @@
 | SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
 | SETWRAPUPCODEACTION | &quot;SetWrapupCodeAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
+| TRANSFERUSERACTION | &quot;TransferUserAction&quot; | 
+| TRANSFERGROUPACTION | &quot;TransferGroupAction&quot; | 
+| TRANSFEREXTERNALACTION | &quot;TransferExternalAction&quot; | 
 | GETATTRIBUTESACTION | &quot;GetAttributesAction&quot; | 
 | SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
@@ -84,4 +89,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

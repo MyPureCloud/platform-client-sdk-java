@@ -153,6 +153,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     }
   }
   private OriginatingDirectionEnum originatingDirection = null;
+  private Boolean originatingSocialMediaPublic = null;
   private Boolean selfServed = null;
   private List<AnalyticsEvaluation> evaluations = null;
   private List<AnalyticsSurvey> surveys = null;
@@ -388,6 +389,24 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
 
   /**
+   * Indicates that the conversation originated from a public message on social media
+   **/
+  public AnalyticsConversationWithoutAttributes originatingSocialMediaPublic(Boolean originatingSocialMediaPublic) {
+    this.originatingSocialMediaPublic = originatingSocialMediaPublic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates that the conversation originated from a public message on social media")
+  @JsonProperty("originatingSocialMediaPublic")
+  public Boolean getOriginatingSocialMediaPublic() {
+    return originatingSocialMediaPublic;
+  }
+  public void setOriginatingSocialMediaPublic(Boolean originatingSocialMediaPublic) {
+    this.originatingSocialMediaPublic = originatingSocialMediaPublic;
+  }
+
+
+  /**
    * Indicates whether all flow sessions were self serviced
    **/
   public AnalyticsConversationWithoutAttributes selfServed(Boolean selfServed) {
@@ -499,6 +518,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
             Objects.equals(this.mediaStatsMinConversationMos, analyticsConversationWithoutAttributes.mediaStatsMinConversationMos) &&
             Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversationWithoutAttributes.mediaStatsMinConversationRFactor) &&
             Objects.equals(this.originatingDirection, analyticsConversationWithoutAttributes.originatingDirection) &&
+            Objects.equals(this.originatingSocialMediaPublic, analyticsConversationWithoutAttributes.originatingSocialMediaPublic) &&
             Objects.equals(this.selfServed, analyticsConversationWithoutAttributes.selfServed) &&
             Objects.equals(this.evaluations, analyticsConversationWithoutAttributes.evaluations) &&
             Objects.equals(this.surveys, analyticsConversationWithoutAttributes.surveys) &&
@@ -508,7 +528,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, originatingSocialMediaPublic, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -528,6 +548,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
+    sb.append("    originatingSocialMediaPublic: ").append(toIndentedString(originatingSocialMediaPublic)).append("\n");
     sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");

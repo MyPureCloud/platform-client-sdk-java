@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
+import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 public class PutUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest {
 

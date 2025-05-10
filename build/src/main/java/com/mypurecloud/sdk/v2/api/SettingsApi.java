@@ -16,18 +16,23 @@ import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
+import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsThreadingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 
 import java.io.IOException;
@@ -114,6 +119,80 @@ public class SettingsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @return UpdatedSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdatedSettingsResponse deleteExternalcontactsSettings() throws IOException, ApiException {
+    return  deleteExternalcontactsSettings(createDeleteExternalcontactsSettingsRequest());
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @return UpdatedSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdatedSettingsResponse> deleteExternalcontactsSettingsWithHttpInfo() throws IOException {
+    return deleteExternalcontactsSettings(createDeleteExternalcontactsSettingsRequest().withHttpInfo());
+  }
+
+  private DeleteExternalcontactsSettingsRequest createDeleteExternalcontactsSettingsRequest() {
+    return DeleteExternalcontactsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @param request The request object
+   * @return UpdatedSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdatedSettingsResponse deleteExternalcontactsSettings(DeleteExternalcontactsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdatedSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdatedSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdatedSettingsResponse> deleteExternalcontactsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdatedSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -337,6 +416,80 @@ public class SettingsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailThreadingSettings> response = (ApiResponse<EmailThreadingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get settings
+   * 
+   * @return ExternalContactsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContactsSettings getExternalcontactsSettings() throws IOException, ApiException {
+    return  getExternalcontactsSettings(createGetExternalcontactsSettingsRequest());
+  }
+
+  /**
+   * Get settings
+   * 
+   * @return ExternalContactsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContactsSettings> getExternalcontactsSettingsWithHttpInfo() throws IOException {
+    return getExternalcontactsSettings(createGetExternalcontactsSettingsRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsSettingsRequest createGetExternalcontactsSettingsRequest() {
+    return GetExternalcontactsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get settings
+   * 
+   * @param request The request object
+   * @return ExternalContactsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContactsSettings getExternalcontactsSettings(GetExternalcontactsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContactsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContactsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContactsSettings> getExternalcontactsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContactsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContactsSettings> response = (ApiResponse<ExternalContactsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContactsSettings> response = (ApiResponse<ExternalContactsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -805,6 +958,84 @@ public class SettingsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AutoAnswerSettings> response = (ApiResponse<AutoAnswerSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param body  (optional)
+   * @return UpdatedSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdatedSettingsResponse putExternalcontactsSettings(ExternalContactsSettings body) throws IOException, ApiException {
+    return  putExternalcontactsSettings(createPutExternalcontactsSettingsRequest(body));
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param body  (optional)
+   * @return UpdatedSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdatedSettingsResponse> putExternalcontactsSettingsWithHttpInfo(ExternalContactsSettings body) throws IOException {
+    return putExternalcontactsSettings(createPutExternalcontactsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutExternalcontactsSettingsRequest createPutExternalcontactsSettingsRequest(ExternalContactsSettings body) {
+    return PutExternalcontactsSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param request The request object
+   * @return UpdatedSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdatedSettingsResponse putExternalcontactsSettings(PutExternalcontactsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdatedSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdatedSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdatedSettingsResponse> putExternalcontactsSettings(ApiRequest<ExternalContactsSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdatedSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdatedSettingsResponse> response = (ApiResponse<UpdatedSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

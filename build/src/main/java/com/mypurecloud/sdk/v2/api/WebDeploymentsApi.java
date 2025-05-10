@@ -943,7 +943,6 @@ public class WebDeploymentsApi {
   /**
    * Get a deployment identity resolution setting.
    * 
-   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The deployment ID (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -956,7 +955,6 @@ public class WebDeploymentsApi {
   /**
    * Get a deployment identity resolution setting.
    * 
-   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The deployment ID (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -975,7 +973,6 @@ public class WebDeploymentsApi {
   /**
    * Get a deployment identity resolution setting.
    * 
-   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -995,7 +992,6 @@ public class WebDeploymentsApi {
   /**
    * Get a deployment identity resolution setting.
    * 
-   * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1657,7 +1653,6 @@ public class WebDeploymentsApi {
   /**
    * Update identity resolution settings for a deployment.
    * 
-   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The deployment ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -1671,7 +1666,6 @@ public class WebDeploymentsApi {
   /**
    * Update identity resolution settings for a deployment.
    * 
-   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The deployment ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -1693,7 +1687,6 @@ public class WebDeploymentsApi {
   /**
    * Update identity resolution settings for a deployment.
    * 
-   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -1713,7 +1706,6 @@ public class WebDeploymentsApi {
   /**
    * Update identity resolution settings for a deployment.
    * 
-   * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

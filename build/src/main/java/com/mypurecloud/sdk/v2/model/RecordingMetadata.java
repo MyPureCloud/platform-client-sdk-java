@@ -194,6 +194,71 @@ public class RecordingMetadata  implements Serializable {
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
+
+  private static class RegionEnumDeserializer extends StdDeserializer<RegionEnum> {
+    public RegionEnumDeserializer() {
+      super(RegionEnumDeserializer.class);
+    }
+
+    @Override
+    public RegionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RegionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The region the source recording is stored in
+   */
+ @JsonDeserialize(using = RegionEnumDeserializer.class)
+  public enum RegionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AF_SOUTH_1("af-south-1"),
+    AP_EAST_1("ap-east-1"),
+    AP_NORTHEAST_1("ap-northeast-1"),
+    AP_NORTHEAST_2("ap-northeast-2"),
+    AP_NORTHEAST_3("ap-northeast-3"),
+    AP_SOUTH_1("ap-south-1"),
+    AP_SOUTHEAST_1("ap-southeast-1"),
+    AP_SOUTHEAST_2("ap-southeast-2"),
+    AP_SOUTHEAST_3("ap-southeast-3"),
+    CA_CENTRAL_1("ca-central-1"),
+    EU_CENTRAL_1("eu-central-1"),
+    EU_CENTRAL_2("eu-central-2"),
+    EU_WEST_1("eu-west-1"),
+    EU_WEST_2("eu-west-2"),
+    EU_WEST_3("eu-west-3"),
+    ME_CENTRAL_1("me-central-1"),
+    SA_EAST_1("sa-east-1"),
+    US_EAST_1("us-east-1"),
+    US_WEST_2("us-west-2");
+
+    private String value;
+
+    RegionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RegionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RegionEnum value : RegionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RegionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RegionEnum region = null;
   private String selfUri = null;
 
   public RecordingMetadata() {
@@ -548,6 +613,24 @@ public class RecordingMetadata  implements Serializable {
   }
 
 
+  /**
+   * The region the source recording is stored in
+   **/
+  public RecordingMetadata region(RegionEnum region) {
+    this.region = region;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The region the source recording is stored in")
+  @JsonProperty("region")
+  public RegionEnum getRegion() {
+    return region;
+  }
+  public void setRegion(RegionEnum region) {
+    this.region = region;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -585,12 +668,13 @@ public class RecordingMetadata  implements Serializable {
             Objects.equals(this.maxAllowedRestorationsForOrg, recordingMetadata.maxAllowedRestorationsForOrg) &&
             Objects.equals(this.remainingRestorationsAllowedForOrg, recordingMetadata.remainingRestorationsAllowedForOrg) &&
             Objects.equals(this.sessionId, recordingMetadata.sessionId) &&
+            Objects.equals(this.region, recordingMetadata.region) &&
             Objects.equals(this.selfUri, recordingMetadata.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, region, selfUri);
   }
 
   @Override
@@ -618,6 +702,7 @@ public class RecordingMetadata  implements Serializable {
     sb.append("    maxAllowedRestorationsForOrg: ").append(toIndentedString(maxAllowedRestorationsForOrg)).append("\n");
     sb.append("    remainingRestorationsAllowedForOrg: ").append(toIndentedString(remainingRestorationsAllowedForOrg)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

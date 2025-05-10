@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,7 @@ public class CsvJobRequest  implements Serializable {
   
   private String uploadId = null;
   private String settingsId = null;
+  private WritableStarrableDivision division = null;
 
   public CsvJobRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -67,6 +69,24 @@ public class CsvJobRequest  implements Serializable {
   }
 
 
+  /**
+   * Division for the csv job
+   **/
+  public CsvJobRequest division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Division for the csv job")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,12 +98,13 @@ public class CsvJobRequest  implements Serializable {
     CsvJobRequest csvJobRequest = (CsvJobRequest) o;
 
     return Objects.equals(this.uploadId, csvJobRequest.uploadId) &&
-            Objects.equals(this.settingsId, csvJobRequest.settingsId);
+            Objects.equals(this.settingsId, csvJobRequest.settingsId) &&
+            Objects.equals(this.division, csvJobRequest.division);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uploadId, settingsId);
+    return Objects.hash(uploadId, settingsId, division);
   }
 
   @Override
@@ -93,6 +114,7 @@ public class CsvJobRequest  implements Serializable {
     
     sb.append("    uploadId: ").append(toIndentedString(uploadId)).append("\n");
     sb.append("    settingsId: ").append(toIndentedString(settingsId)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("}");
     return sb.toString();
   }

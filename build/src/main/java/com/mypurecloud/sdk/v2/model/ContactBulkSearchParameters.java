@@ -25,6 +25,7 @@ public class ContactBulkSearchParameters  implements Serializable {
   
   private String contactListFilterId = null;
   private ContactBulkSearchCriteria criteria = null;
+  private Boolean generateDownloadURI = null;
 
   public ContactBulkSearchParameters() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class ContactBulkSearchParameters  implements Serializable {
   }
 
 
+  /**
+   * Whether to do backup export as part of Bulk Operation or not. Default: true.
+   **/
+  public ContactBulkSearchParameters generateDownloadURI(Boolean generateDownloadURI) {
+    this.generateDownloadURI = generateDownloadURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to do backup export as part of Bulk Operation or not. Default: true.")
+  @JsonProperty("generateDownloadURI")
+  public Boolean getGenerateDownloadURI() {
+    return generateDownloadURI;
+  }
+  public void setGenerateDownloadURI(Boolean generateDownloadURI) {
+    this.generateDownloadURI = generateDownloadURI;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class ContactBulkSearchParameters  implements Serializable {
     ContactBulkSearchParameters contactBulkSearchParameters = (ContactBulkSearchParameters) o;
 
     return Objects.equals(this.contactListFilterId, contactBulkSearchParameters.contactListFilterId) &&
-            Objects.equals(this.criteria, contactBulkSearchParameters.criteria);
+            Objects.equals(this.criteria, contactBulkSearchParameters.criteria) &&
+            Objects.equals(this.generateDownloadURI, contactBulkSearchParameters.generateDownloadURI);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactListFilterId, criteria);
+    return Objects.hash(contactListFilterId, criteria, generateDownloadURI);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class ContactBulkSearchParameters  implements Serializable {
     
     sb.append("    contactListFilterId: ").append(toIndentedString(contactListFilterId)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
+    sb.append("    generateDownloadURI: ").append(toIndentedString(generateDownloadURI)).append("\n");
     sb.append("}");
     return sb.toString();
   }

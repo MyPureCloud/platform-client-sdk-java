@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ import java.io.Serializable;
 public class ContactImportJobRequest  implements Serializable {
   
   private String settingsId = null;
+  private WritableStarrableDivision division = null;
 
   public ContactImportJobRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -48,6 +50,24 @@ public class ContactImportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * The division to import into
+   **/
+  public ContactImportJobRequest division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to import into")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -58,12 +78,13 @@ public class ContactImportJobRequest  implements Serializable {
     }
     ContactImportJobRequest contactImportJobRequest = (ContactImportJobRequest) o;
 
-    return Objects.equals(this.settingsId, contactImportJobRequest.settingsId);
+    return Objects.equals(this.settingsId, contactImportJobRequest.settingsId) &&
+            Objects.equals(this.division, contactImportJobRequest.division);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(settingsId);
+    return Objects.hash(settingsId, division);
   }
 
   @Override
@@ -72,6 +93,7 @@ public class ContactImportJobRequest  implements Serializable {
     sb.append("class ContactImportJobRequest {\n");
     
     sb.append("    settingsId: ").append(toIndentedString(settingsId)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("}");
     return sb.toString();
   }

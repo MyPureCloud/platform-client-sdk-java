@@ -888,28 +888,32 @@ public class ChatApi {
    * Get room participants in a room
    * 
    * @param roomJid roomJid (required)
+   * @param notify Whether to get users to notify (optional)
    * @return RoomParticipantsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RoomParticipantsResponse getChatsRoomParticipants(String roomJid) throws IOException, ApiException {
-    return  getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid));
+  public RoomParticipantsResponse getChatsRoomParticipants(String roomJid, Boolean notify) throws IOException, ApiException {
+    return  getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid, notify));
   }
 
   /**
    * Get room participants in a room
    * 
    * @param roomJid roomJid (required)
+   * @param notify Whether to get users to notify (optional)
    * @return RoomParticipantsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoomParticipantsResponse> getChatsRoomParticipantsWithHttpInfo(String roomJid) throws IOException {
-    return getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid).withHttpInfo());
+  public ApiResponse<RoomParticipantsResponse> getChatsRoomParticipantsWithHttpInfo(String roomJid, Boolean notify) throws IOException {
+    return getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid, notify).withHttpInfo());
   }
 
-  private GetChatsRoomParticipantsRequest createGetChatsRoomParticipantsRequest(String roomJid) {
+  private GetChatsRoomParticipantsRequest createGetChatsRoomParticipantsRequest(String roomJid, Boolean notify) {
     return GetChatsRoomParticipantsRequest.builder()
             .withRoomJid(roomJid)
+
+            .withNotify(notify)
 
             .build();
   }

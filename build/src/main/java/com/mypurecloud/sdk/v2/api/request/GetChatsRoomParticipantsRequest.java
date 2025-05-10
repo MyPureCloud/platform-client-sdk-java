@@ -54,6 +54,20 @@ public class GetChatsRoomParticipantsRequest {
 	    return this;
 	} 
 
+	private Boolean notify;
+	public Boolean getNotify() {
+		return this.notify;
+	}
+
+	public void setNotify(Boolean notify) {
+		this.notify = notify;
+	}
+
+	public GetChatsRoomParticipantsRequest withNotify(Boolean notify) {
+	    this.setNotify(notify);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -84,6 +98,9 @@ public class GetChatsRoomParticipantsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/chats/rooms/{roomJid}/participants")
                 .withPathParameter("roomJid", roomJid)
         
+
+                .withQueryParameters("notify", "", notify)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -112,6 +129,11 @@ public class GetChatsRoomParticipantsRequest {
 
 		public Builder withRoomJid(String roomJid) {
 			request.setRoomJid(roomJid);
+			return this;
+		}
+
+		public Builder withNotify(Boolean notify) {
+			request.setNotify(notify);
 			return this;
 		}
 

@@ -104,7 +104,8 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
     NSOCIALPOSTS("nSocialPosts"),
     OSOCIALAUTHORS("oSocialAuthors"),
     OSOCIALSENTIMENT("oSocialSentiment"),
-    OSOCIALENGAGEMENT("oSocialEngagement");
+    OSOCIALENGAGEMENT("oSocialEngagement"),
+    NSOCIALREVIEWRATING("nSocialReviewRating");
 
     private String value;
 

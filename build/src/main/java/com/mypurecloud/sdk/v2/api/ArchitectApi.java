@@ -3274,7 +3274,6 @@ public class ArchitectApi {
   /**
    * Get an IVR IdentityResolutionConfig.
    * 
-   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ivrId IVR id (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -3287,7 +3286,6 @@ public class ArchitectApi {
   /**
    * Get an IVR IdentityResolutionConfig.
    * 
-   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ivrId IVR id (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -3306,7 +3304,6 @@ public class ArchitectApi {
   /**
    * Get an IVR IdentityResolutionConfig.
    * 
-   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -3326,7 +3323,6 @@ public class ArchitectApi {
   /**
    * Get an IVR IdentityResolutionConfig.
    * 
-   * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3363,12 +3359,13 @@ public class ArchitectApi {
    * @param name Name of the IVR to filter by. (optional)
    * @param dnis The phone number of the IVR to filter by. (optional)
    * @param scheduleGroup The Schedule Group of the IVR to filter by. (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return IVREntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup) throws IOException, ApiException {
-    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup));
+  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup, List<String> expand) throws IOException, ApiException {
+    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup, expand));
   }
 
   /**
@@ -3381,14 +3378,15 @@ public class ArchitectApi {
    * @param name Name of the IVR to filter by. (optional)
    * @param dnis The phone number of the IVR to filter by. (optional)
    * @param scheduleGroup The Schedule Group of the IVR to filter by. (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return IVREntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup) throws IOException {
-    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup).withHttpInfo());
+  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup, List<String> expand) throws IOException {
+    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup, expand).withHttpInfo());
   }
 
-  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup) {
+  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis, String scheduleGroup, List<String> expand) {
     return GetArchitectIvrsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -3403,6 +3401,8 @@ public class ArchitectApi {
             .withDnis(dnis)
 
             .withScheduleGroup(scheduleGroup)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -11759,7 +11759,6 @@ public class ArchitectApi {
   /**
    * Update an IVR IdentityResolutionConfig.
    * 
-   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ivrId IVR id (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -11773,7 +11772,6 @@ public class ArchitectApi {
   /**
    * Update an IVR IdentityResolutionConfig.
    * 
-   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param ivrId IVR id (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -11795,7 +11793,6 @@ public class ArchitectApi {
   /**
    * Update an IVR IdentityResolutionConfig.
    * 
-   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -11815,7 +11812,6 @@ public class ArchitectApi {
   /**
    * Update an IVR IdentityResolutionConfig.
    * 
-   * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

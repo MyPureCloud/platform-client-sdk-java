@@ -20,10 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BillingContract;
+import com.mypurecloud.sdk.v2.model.BillingContractListing;
+import com.mypurecloud.sdk.v2.model.BillingContractPeriodDetail;
+import com.mypurecloud.sdk.v2.model.BillingInvoiceItemListing;
+import com.mypurecloud.sdk.v2.model.BillingInvoiceListing;
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
 

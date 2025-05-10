@@ -654,8 +654,6 @@ try {
 
 Get a deployment identity resolution setting.
 
-getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution  
 
 Requires ALL permissions: 
@@ -759,7 +757,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected.  | [optional]<br />**Values**: Configuration, SupportedContent 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected.  | [optional]<br />**Values**: Configuration, SupportedContent, identityresolution 
 {: class="table-striped"}
 
 
@@ -1165,8 +1163,6 @@ try {
 
 Update identity resolution settings for a deployment.
 
-putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution  
 
 Requires ALL permissions: 
@@ -1222,4 +1218,4 @@ try {
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:224.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ChartColumn;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
@@ -535,6 +536,7 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   private DurationFormatEnum durationFormat = null;
   private Boolean exportAllowedToRerun = null;
+  private List<ChartColumn> chartColumns = null;
   private Boolean enabled = null;
   private String selfUri = null;
 
@@ -542,6 +544,7 @@ public class ReportingExportJobResponse  implements Serializable {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       selectedColumns = new ArrayList<SelectedColumns>();
       recipientEmails = new ArrayList<String>();
+      chartColumns = new ArrayList<ChartColumn>();
     }
   }
 
@@ -1093,6 +1096,24 @@ public class ReportingExportJobResponse  implements Serializable {
 
 
   /**
+   * The list of columns for which chart is going to be displayed in export
+   **/
+  public ReportingExportJobResponse chartColumns(List<ChartColumn> chartColumns) {
+    this.chartColumns = chartColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of columns for which chart is going to be displayed in export")
+  @JsonProperty("chartColumns")
+  public List<ChartColumn> getChartColumns() {
+    return chartColumns;
+  }
+  public void setChartColumns(List<ChartColumn> chartColumns) {
+    this.chartColumns = chartColumns;
+  }
+
+
+  /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -1157,13 +1178,14 @@ public class ReportingExportJobResponse  implements Serializable {
             Objects.equals(this.includeDurationFormatInHeader, reportingExportJobResponse.includeDurationFormatInHeader) &&
             Objects.equals(this.durationFormat, reportingExportJobResponse.durationFormat) &&
             Objects.equals(this.exportAllowedToRerun, reportingExportJobResponse.exportAllowedToRerun) &&
+            Objects.equals(this.chartColumns, reportingExportJobResponse.chartColumns) &&
             Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
             Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, durationFormat, exportAllowedToRerun, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, durationFormat, exportAllowedToRerun, chartColumns, enabled, selfUri);
   }
 
   @Override
@@ -1202,6 +1224,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
     sb.append("    durationFormat: ").append(toIndentedString(durationFormat)).append("\n");
     sb.append("    exportAllowedToRerun: ").append(toIndentedString(exportAllowedToRerun)).append("\n");
+    sb.append("    chartColumns: ").append(toIndentedString(chartColumns)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

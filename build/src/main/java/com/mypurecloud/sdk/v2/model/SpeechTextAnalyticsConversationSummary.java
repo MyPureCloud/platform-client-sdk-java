@@ -44,7 +44,8 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   public enum SummaryTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATION("Conversation"),
-    AGENT("Agent");
+    AGENT("Agent"),
+    VIRTUALAGENT("VirtualAgent");
 
     private String value;
 
@@ -123,7 +124,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private String language = null;
-  private String agentId = null;
+  private String sourceId = null;
   private String summary = null;
   private Boolean generated = null;
   private Date dateCreated = null;
@@ -189,20 +190,20 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
 
 
   /**
-   * The id of the agent associated with the summary
+   * The id of the source (program, agent assistant, or flow) from which summarization is triggered
    **/
-  public SpeechTextAnalyticsConversationSummary agentId(String agentId) {
-    this.agentId = agentId;
+  public SpeechTextAnalyticsConversationSummary sourceId(String sourceId) {
+    this.sourceId = sourceId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the agent associated with the summary")
-  @JsonProperty("agentId")
-  public String getAgentId() {
-    return agentId;
+  @ApiModelProperty(example = "null", value = "The id of the source (program, agent assistant, or flow) from which summarization is triggered")
+  @JsonProperty("sourceId")
+  public String getSourceId() {
+    return sourceId;
   }
-  public void setAgentId(String agentId) {
-    this.agentId = agentId;
+  public void setSourceId(String sourceId) {
+    this.sourceId = sourceId;
   }
 
 
@@ -273,7 +274,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     return Objects.equals(this.summaryType, speechTextAnalyticsConversationSummary.summaryType) &&
             Objects.equals(this.mediaType, speechTextAnalyticsConversationSummary.mediaType) &&
             Objects.equals(this.language, speechTextAnalyticsConversationSummary.language) &&
-            Objects.equals(this.agentId, speechTextAnalyticsConversationSummary.agentId) &&
+            Objects.equals(this.sourceId, speechTextAnalyticsConversationSummary.sourceId) &&
             Objects.equals(this.summary, speechTextAnalyticsConversationSummary.summary) &&
             Objects.equals(this.generated, speechTextAnalyticsConversationSummary.generated) &&
             Objects.equals(this.dateCreated, speechTextAnalyticsConversationSummary.dateCreated);
@@ -281,7 +282,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(summaryType, mediaType, language, agentId, summary, generated, dateCreated);
+    return Objects.hash(summaryType, mediaType, language, sourceId, summary, generated, dateCreated);
   }
 
   @Override
@@ -292,7 +293,7 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     sb.append("    summaryType: ").append(toIndentedString(summaryType)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+    sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    generated: ").append(toIndentedString(generated)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

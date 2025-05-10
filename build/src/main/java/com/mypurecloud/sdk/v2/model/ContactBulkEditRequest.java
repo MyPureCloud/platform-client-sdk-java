@@ -30,6 +30,7 @@ public class ContactBulkEditRequest  implements Serializable {
   private ContactBulkSearchCriteria criteria = null;
   private List<String> contactIds = null;
   private DialerContact contact = null;
+  private Boolean generateDownloadURI = null;
 
   public ContactBulkEditRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -110,6 +111,24 @@ public class ContactBulkEditRequest  implements Serializable {
   }
 
 
+  /**
+   * Whether to do backup export as part of Bulk Operation or not. Default: true.
+   **/
+  public ContactBulkEditRequest generateDownloadURI(Boolean generateDownloadURI) {
+    this.generateDownloadURI = generateDownloadURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to do backup export as part of Bulk Operation or not. Default: true.")
+  @JsonProperty("generateDownloadURI")
+  public Boolean getGenerateDownloadURI() {
+    return generateDownloadURI;
+  }
+  public void setGenerateDownloadURI(Boolean generateDownloadURI) {
+    this.generateDownloadURI = generateDownloadURI;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,12 +142,13 @@ public class ContactBulkEditRequest  implements Serializable {
     return Objects.equals(this.contactListFilterId, contactBulkEditRequest.contactListFilterId) &&
             Objects.equals(this.criteria, contactBulkEditRequest.criteria) &&
             Objects.equals(this.contactIds, contactBulkEditRequest.contactIds) &&
-            Objects.equals(this.contact, contactBulkEditRequest.contact);
+            Objects.equals(this.contact, contactBulkEditRequest.contact) &&
+            Objects.equals(this.generateDownloadURI, contactBulkEditRequest.generateDownloadURI);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactListFilterId, criteria, contactIds, contact);
+    return Objects.hash(contactListFilterId, criteria, contactIds, contact, generateDownloadURI);
   }
 
   @Override
@@ -140,6 +160,7 @@ public class ContactBulkEditRequest  implements Serializable {
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    contactIds: ").append(toIndentedString(contactIds)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    sb.append("    generateDownloadURI: ").append(toIndentedString(generateDownloadURI)).append("\n");
     sb.append("}");
     return sb.toString();
   }

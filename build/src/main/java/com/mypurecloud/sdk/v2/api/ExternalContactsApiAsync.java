@@ -3074,7 +3074,6 @@ public class ExternalContactsApiAsync {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3109,7 +3108,6 @@ public class ExternalContactsApiAsync {
   /**
    * List the identifiers for an external organization
    * 
-   * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4201,7 +4199,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4236,7 +4233,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for external contacts using paging
    * 
-   * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4353,7 +4349,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4388,7 +4383,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for notes using paging
    * 
-   * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4505,7 +4499,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4540,7 +4533,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for external organizations using paging
    * 
-   * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4657,7 +4649,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4692,7 +4683,6 @@ public class ExternalContactsApiAsync {
   /**
    * Scan for relationships
    * 
-   * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4809,7 +4799,6 @@ public class ExternalContactsApiAsync {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4844,7 +4833,6 @@ public class ExternalContactsApiAsync {
   /**
    * Claim or release identifiers for an external organization
    * 
-   * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5036,7 +5024,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5071,7 +5058,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk fetch contacts across divisions
    * 
-   * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5113,7 +5099,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5148,7 +5133,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5865,7 +5849,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5900,7 +5883,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk fetch organizations across divisions
    * 
-   * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5942,7 +5924,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5977,7 +5958,6 @@ public class ExternalContactsApiAsync {
   /**
    * Bulk enrich external organizations - Run up to 10 Enrich operations per request
    * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-   * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6694,7 +6674,6 @@ public class ExternalContactsApiAsync {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6729,7 +6708,6 @@ public class ExternalContactsApiAsync {
   /**
    * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-   * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6846,7 +6824,6 @@ public class ExternalContactsApiAsync {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6881,7 +6858,6 @@ public class ExternalContactsApiAsync {
   /**
    * Merge up to 25 contacts into a new contact record
    * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-   * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7150,7 +7126,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7185,7 +7160,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-   * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7227,7 +7201,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7262,7 +7235,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch an external organization using an identifier type and value.
    * This endpoint will only accept ExternalId type identifiers.
-   * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7906,7 +7878,6 @@ public class ExternalContactsApiAsync {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7941,7 +7912,6 @@ public class ExternalContactsApiAsync {
   /**
    * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
    * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-   * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

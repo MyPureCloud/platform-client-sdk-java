@@ -2670,12 +2670,13 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return InboundRoute
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundRoute getRoutingEmailDomainRoute(String domainName, String routeId) throws IOException, ApiException {
-    return  getRoutingEmailDomainRoute(createGetRoutingEmailDomainRouteRequest(domainName, routeId));
+  public InboundRoute getRoutingEmailDomainRoute(String domainName, String routeId, List<String> expand) throws IOException, ApiException {
+    return  getRoutingEmailDomainRoute(createGetRoutingEmailDomainRouteRequest(domainName, routeId, expand));
   }
 
   /**
@@ -2683,18 +2684,21 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return InboundRoute
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundRoute> getRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws IOException {
-    return getRoutingEmailDomainRoute(createGetRoutingEmailDomainRouteRequest(domainName, routeId).withHttpInfo());
+  public ApiResponse<InboundRoute> getRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId, List<String> expand) throws IOException {
+    return getRoutingEmailDomainRoute(createGetRoutingEmailDomainRouteRequest(domainName, routeId, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainRouteRequest createGetRoutingEmailDomainRouteRequest(String domainName, String routeId) {
+  private GetRoutingEmailDomainRouteRequest createGetRoutingEmailDomainRouteRequest(String domainName, String routeId, List<String> expand) {
     return GetRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
 
             .withRouteId(routeId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -2750,7 +2754,6 @@ public class RoutingApi {
   /**
    * Get a route identity resolution setting.
    * 
-   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @return IdentityResolutionConfig
@@ -2764,7 +2767,6 @@ public class RoutingApi {
   /**
    * Get a route identity resolution setting.
    * 
-   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @return IdentityResolutionConfig
@@ -2786,7 +2788,6 @@ public class RoutingApi {
   /**
    * Get a route identity resolution setting.
    * 
-   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -2806,7 +2807,6 @@ public class RoutingApi {
   /**
    * Get a route identity resolution setting.
    * 
-   * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2840,12 +2840,13 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param pattern Filter routes by the route's pattern property (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return InboundRouteEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundRouteEntityListing getRoutingEmailDomainRoutes(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws IOException, ApiException {
-    return  getRoutingEmailDomainRoutes(createGetRoutingEmailDomainRoutesRequest(domainName, pageSize, pageNumber, pattern));
+  public InboundRouteEntityListing getRoutingEmailDomainRoutes(String domainName, Integer pageSize, Integer pageNumber, String pattern, List<String> expand) throws IOException, ApiException {
+    return  getRoutingEmailDomainRoutes(createGetRoutingEmailDomainRoutesRequest(domainName, pageSize, pageNumber, pattern, expand));
   }
 
   /**
@@ -2855,14 +2856,15 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param pattern Filter routes by the route's pattern property (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return InboundRouteEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutesWithHttpInfo(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws IOException {
-    return getRoutingEmailDomainRoutes(createGetRoutingEmailDomainRoutesRequest(domainName, pageSize, pageNumber, pattern).withHttpInfo());
+  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutesWithHttpInfo(String domainName, Integer pageSize, Integer pageNumber, String pattern, List<String> expand) throws IOException {
+    return getRoutingEmailDomainRoutes(createGetRoutingEmailDomainRoutesRequest(domainName, pageSize, pageNumber, pattern, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainRoutesRequest createGetRoutingEmailDomainRoutesRequest(String domainName, Integer pageSize, Integer pageNumber, String pattern) {
+  private GetRoutingEmailDomainRoutesRequest createGetRoutingEmailDomainRoutesRequest(String domainName, Integer pageSize, Integer pageNumber, String pattern, List<String> expand) {
     return GetRoutingEmailDomainRoutesRequest.builder()
             .withDomainName(domainName)
 
@@ -2871,6 +2873,8 @@ public class RoutingApi {
             .withPageNumber(pageNumber)
 
             .withPattern(pattern)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -4165,28 +4169,32 @@ public class RoutingApi {
    * Get details about this queue.
    * 
    * @param queueId Queue ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return Queue
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Queue getRoutingQueue(String queueId) throws IOException, ApiException {
-    return  getRoutingQueue(createGetRoutingQueueRequest(queueId));
+  public Queue getRoutingQueue(String queueId, List<String> expand) throws IOException, ApiException {
+    return  getRoutingQueue(createGetRoutingQueueRequest(queueId, expand));
   }
 
   /**
    * Get details about this queue.
    * 
    * @param queueId Queue ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return Queue
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId) throws IOException {
-    return getRoutingQueue(createGetRoutingQueueRequest(queueId).withHttpInfo());
+  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId, List<String> expand) throws IOException {
+    return getRoutingQueue(createGetRoutingQueueRequest(queueId, expand).withHttpInfo());
   }
 
-  private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId) {
+  private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId, List<String> expand) {
     return GetRoutingQueueRequest.builder()
             .withQueueId(queueId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -4566,7 +4574,6 @@ public class RoutingApi {
   /**
    * Get Queue IdentityResolution Settings.
    * 
-   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param queueId Queue ID (required)
    * @return IdentityResolutionQueueConfig
    * @throws ApiException if the request fails on the server
@@ -4579,7 +4586,6 @@ public class RoutingApi {
   /**
    * Get Queue IdentityResolution Settings.
    * 
-   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param queueId Queue ID (required)
    * @return IdentityResolutionQueueConfig
    * @throws IOException if the request fails to be processed
@@ -4598,7 +4604,6 @@ public class RoutingApi {
   /**
    * Get Queue IdentityResolution Settings.
    * 
-   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionQueueConfig
    * @throws ApiException if the request fails on the server
@@ -4618,7 +4623,6 @@ public class RoutingApi {
   /**
    * Get Queue IdentityResolution Settings.
    * 
-   * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5081,12 +5085,13 @@ public class RoutingApi {
    * @param peerId Include only queues with the specified peer ID(s) (optional)
    * @param cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID (optional)
    * @param hasPeer Include only queues with a peer ID (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) throws IOException, ApiException {
-    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer));
+  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer, List<String> expand) throws IOException, ApiException {
+    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand));
   }
 
   /**
@@ -5101,14 +5106,15 @@ public class RoutingApi {
    * @param peerId Include only queues with the specified peer ID(s) (optional)
    * @param cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID (optional)
    * @param hasPeer Include only queues with a peer ID (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) throws IOException {
-    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer, List<String> expand) throws IOException {
+    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand).withHttpInfo());
   }
 
-  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) {
+  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer, List<String> expand) {
     return GetRoutingQueuesRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -5127,6 +5133,8 @@ public class RoutingApi {
             .withCannedResponseLibraryId(cannedResponseLibraryId)
 
             .withHasPeer(hasPeer)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -6456,7 +6464,6 @@ public class RoutingApi {
   /**
    * Get a SMS identity resolution settings.
    * 
-   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param addressId Address ID (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6469,7 +6476,6 @@ public class RoutingApi {
   /**
    * Get a SMS identity resolution settings.
    * 
-   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param addressId Address ID (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -6488,7 +6494,6 @@ public class RoutingApi {
   /**
    * Get a SMS identity resolution settings.
    * 
-   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -6508,7 +6513,6 @@ public class RoutingApi {
   /**
    * Get a SMS identity resolution settings.
    * 
-   * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6631,12 +6635,13 @@ public class RoutingApi {
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
    * @param supportedContentId Filter based on the supported content ID (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId));
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId, List<String> expand) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand));
   }
 
   /**
@@ -6653,14 +6658,15 @@ public class RoutingApi {
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
    * @param supportedContentId Filter based on the supported content ID (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) throws IOException {
-    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId).withHttpInfo());
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId, List<String> expand) throws IOException {
+    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) {
+  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId, List<String> expand) {
     return GetRoutingSmsPhonenumbersRequest.builder()
             .withPhoneNumber(phoneNumber)
 
@@ -6683,6 +6689,8 @@ public class RoutingApi {
             .withIntegrationId(integrationId)
 
             .withSupportedContentId(supportedContentId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -11836,7 +11844,6 @@ public class RoutingApi {
   /**
    * Update identity resolution settings for a route.
    * 
-   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @param body  (required)
@@ -11851,7 +11858,6 @@ public class RoutingApi {
   /**
    * Update identity resolution settings for a route.
    * 
-   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @param body  (required)
@@ -11876,7 +11882,6 @@ public class RoutingApi {
   /**
    * Update identity resolution settings for a route.
    * 
-   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -11896,7 +11901,6 @@ public class RoutingApi {
   /**
    * Update identity resolution settings for a route.
    * 
-   * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12168,7 +12172,6 @@ public class RoutingApi {
   /**
    * Update Queue IdentityResolution Settings.
    * 
-   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param queueId Queue ID (required)
    * @param body  (required)
    * @return IdentityResolutionQueueConfig
@@ -12182,7 +12185,6 @@ public class RoutingApi {
   /**
    * Update Queue IdentityResolution Settings.
    * 
-   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param queueId Queue ID (required)
    * @param body  (required)
    * @return IdentityResolutionQueueConfig
@@ -12204,7 +12206,6 @@ public class RoutingApi {
   /**
    * Update Queue IdentityResolution Settings.
    * 
-   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionQueueConfig
    * @throws ApiException if the request fails on the server
@@ -12224,7 +12225,6 @@ public class RoutingApi {
   /**
    * Update Queue IdentityResolution Settings.
    * 
-   * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12410,7 +12410,6 @@ public class RoutingApi {
   /**
    * Update an SMS identity resolution settings.
    * 
-   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param addressId Address ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -12424,7 +12423,6 @@ public class RoutingApi {
   /**
    * Update an SMS identity resolution settings.
    * 
-   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param addressId Address ID (required)
    * @param body  (required)
    * @return IdentityResolutionConfig
@@ -12446,7 +12444,6 @@ public class RoutingApi {
   /**
    * Update an SMS identity resolution settings.
    * 
-   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -12466,7 +12463,6 @@ public class RoutingApi {
   /**
    * Update an SMS identity resolution settings.
    * 
-   * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
+import com.mypurecloud.sdk.v2.model.DiagnosticsSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.DynamicContactQueueingSettings;
 import com.mypurecloud.sdk.v2.model.DynamicLineBalancingSettings;
@@ -174,6 +175,7 @@ public class Campaign  implements Serializable {
   private Double maxCallsPerAgentDecimal = null;
   private Boolean callbackAutoAnswer = null;
   private DynamicLineBalancingSettings dynamicLineBalancingSettings = null;
+  private DiagnosticsSettings diagnosticsSettings = null;
   private String selfUri = null;
 
   public Campaign() {
@@ -847,6 +849,24 @@ public class Campaign  implements Serializable {
   }
 
 
+  /**
+   * Campaign diagnostics settings
+   **/
+  public Campaign diagnosticsSettings(DiagnosticsSettings diagnosticsSettings) {
+    this.diagnosticsSettings = diagnosticsSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Campaign diagnostics settings")
+  @JsonProperty("diagnosticsSettings")
+  public DiagnosticsSettings getDiagnosticsSettings() {
+    return diagnosticsSettings;
+  }
+  public void setDiagnosticsSettings(DiagnosticsSettings diagnosticsSettings) {
+    this.diagnosticsSettings = diagnosticsSettings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -903,12 +923,13 @@ public class Campaign  implements Serializable {
             Objects.equals(this.maxCallsPerAgentDecimal, campaign.maxCallsPerAgentDecimal) &&
             Objects.equals(this.callbackAutoAnswer, campaign.callbackAutoAnswer) &&
             Objects.equals(this.dynamicLineBalancingSettings, campaign.dynamicLineBalancingSettings) &&
+            Objects.equals(this.diagnosticsSettings, campaign.diagnosticsSettings) &&
             Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, maxCallsPerAgentDecimal, callbackAutoAnswer, dynamicLineBalancingSettings, diagnosticsSettings, selfUri);
   }
 
   @Override
@@ -955,6 +976,7 @@ public class Campaign  implements Serializable {
     sb.append("    maxCallsPerAgentDecimal: ").append(toIndentedString(maxCallsPerAgentDecimal)).append("\n");
     sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");
     sb.append("    dynamicLineBalancingSettings: ").append(toIndentedString(dynamicLineBalancingSettings)).append("\n");
+    sb.append("    diagnosticsSettings: ").append(toIndentedString(diagnosticsSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
