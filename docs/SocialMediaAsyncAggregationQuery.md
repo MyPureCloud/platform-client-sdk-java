@@ -18,6 +18,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | COUNTRY | &quot;country&quot; |
 | LANGUAGE | &quot;language&quot; |
 | PLATFORM | &quot;platform&quot; |
@@ -33,6 +34,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NSOCIALPOSTS | &quot;nSocialPosts&quot; |
 | OSOCIALAUTHORS | &quot;oSocialAuthors&quot; |
 | OSOCIALSENTIMENT | &quot;oSocialSentiment&quot; |
@@ -42,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

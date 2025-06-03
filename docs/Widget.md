@@ -56,6 +56,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AVG_TALK_TIME | &quot;AVG_TALK_TIME&quot; |
 | AVG_HOLD_TIME | &quot;AVG_HOLD_TIME&quot; |
 | AVG_ACW_TIME | &quot;AVG_ACW_TIME&quot; |
@@ -300,6 +301,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NONE | &quot;NONE&quot; |
 | CURRENT_HALF_HOUR | &quot;CURRENT_HALF_HOUR&quot; |
 | TODAY | &quot;TODAY&quot; |
@@ -319,6 +321,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CALLBACK | &quot;callback&quot; |
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
@@ -335,6 +338,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AVAILABLE | &quot;Available&quot; |
 | AWAY | &quot;Away&quot; |
 | BUSY | &quot;Busy&quot; |
@@ -357,6 +361,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ALERT | &quot;alert&quot; |
 | BARGING | &quot;barging&quot; |
 | CALLBACK | &quot;callback&quot; |
@@ -391,4 +396,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

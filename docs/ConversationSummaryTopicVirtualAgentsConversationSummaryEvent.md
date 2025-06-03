@@ -19,6 +19,7 @@
 | **reason** | [**ConversationSummaryTopicVirtualAgentsConversationReason**](ConversationSummaryTopicVirtualAgentsConversationReason) |  |  [optional] |
 | **resolution** | [**ConversationSummaryTopicVirtualAgentsConversationResolution**](ConversationSummaryTopicVirtualAgentsConversationResolution) |  |  [optional] |
 | **followupActions** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationFollowupAction&gt;**](ConversationSummaryTopicVirtualAgentsConversationFollowupAction) |  |  [optional] |
+| **extractedEntities** | [**List&lt;ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity&gt;**](ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity) |  |  [optional] |
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationWrapUpCode&gt;**](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicVirtualAgentsTriggerSource**](ConversationSummaryTopicVirtualAgentsTriggerSource) |  |  [optional] |
 | **lastEditedBy** | [**ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
@@ -67,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

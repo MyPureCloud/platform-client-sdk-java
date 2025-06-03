@@ -11,6 +11,7 @@
 | **subType** | [**SubTypeEnum**](#Enum--SubTypeEnum) | Subtype of detection mechanism |  [optional] |
 | **maxLength** | **Integer** | The maximum length of the entity resolved value |  [optional] |
 | **minLength** | **Integer** | The minimum length of the entity resolved value |  [optional] |
+| **allowSpecialChars** | **Boolean** | Flag whether to allow for special characters during AI slot capture |  [optional] |
 | **examples** | [**List&lt;NamedEntityTypeMechanismExample&gt;**](NamedEntityTypeMechanismExample) | Examples for entity detection |  [optional] |
 
 
@@ -39,4 +40,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

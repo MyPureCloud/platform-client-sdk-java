@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersion) | Get a specific version of a schema |
 | [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | Get all versions of a schema |
 | [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | Get a list of schemas. |
-| [**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | Get a specific named core type. |
 | [**getTaskmanagementWorkitemsSchemasCoretypes**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**getTaskmanagementWorkitemsSchemasLimits**](TaskManagementApi#getTaskmanagementWorkitemsSchemasLimits) | Get quantitative limits on schemas |
 | [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | Get a worktype |
@@ -1967,7 +1967,7 @@ This endpoint does not require any parameters.
 
 > [Coretype](Coretype) getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}  
 
@@ -2024,7 +2024,7 @@ try {
 # **getTaskmanagementWorkitemsSchemasCoretypes**
 
 
-> [Coretype](Coretype) getTaskmanagementWorkitemsSchemasCoretypes()
+> [CoretypeListing](CoretypeListing) getTaskmanagementWorkitemsSchemasCoretypes()
 
 Get the core types from which all schemas are built.
 
@@ -2057,7 +2057,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
 try {
-    Coretype result = apiInstance.getTaskmanagementWorkitemsSchemasCoretypes();
+    CoretypeListing result = apiInstance.getTaskmanagementWorkitemsSchemasCoretypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes");
@@ -2073,7 +2073,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 # **getTaskmanagementWorkitemsSchemasLimits**
@@ -4698,4 +4698,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getTextbotsBotsSearch**
 
 
-> [BotSearchResponseEntityListing](BotSearchResponseEntityListing) getTextbotsBotsSearch(botType, botName, botId, pageSize)
+> [BotSearchResponseEntityListing](BotSearchResponseEntityListing) getTextbotsBotsSearch(botType, botName, botId, virtualAgentEnabled, pageSize)
 
 Find bots using the currently configured friendly name or ID.
 
@@ -51,9 +51,10 @@ TextbotsApi apiInstance = new TextbotsApi();
 List<String> botType = Arrays.asList(null); // List<String> | Bot types
 String botName = "botName_example"; // String | Bot name
 List<String> botId = Arrays.asList(null); // List<String> | Bot IDs. Maximum of 50
+Boolean virtualAgentEnabled = true; // Boolean | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
 Integer pageSize = 25; // Integer | The maximum results to return. Maximum of 100
 try {
-    BotSearchResponseEntityListing result = apiInstance.getTextbotsBotsSearch(botType, botName, botId, pageSize);
+    BotSearchResponseEntityListing result = apiInstance.getTextbotsBotsSearch(botType, botName, botId, virtualAgentEnabled, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextbotsApi#getTextbotsBotsSearch");
@@ -69,6 +70,7 @@ try {
 | **botType** | [**List&lt;String&gt;**](String)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector 
 | **botName** | **String**| Bot name | [optional] 
 | **botId** | [**List&lt;String&gt;**](String)| Bot IDs. Maximum of 50 | [optional] 
+| **virtualAgentEnabled** | **Boolean**| Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows | [optional] 
 | **pageSize** | **Integer**| The maximum results to return. Maximum of 100 | [optional] [default to 25] 
 {: class="table-striped"}
 
@@ -263,4 +265,4 @@ try {
 [**PostTextResponse**](PostTextResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

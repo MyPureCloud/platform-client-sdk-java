@@ -16,6 +16,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DATE | &quot;Date&quot; |
 | CLIENTNAME | &quot;ClientName&quot; |
 | HTTPMETHOD | &quot;HttpMethod&quot; |
@@ -31,6 +32,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GET | &quot;GET&quot; |
 | POST | &quot;POST&quot; |
 | DELETE | &quot;DELETE&quot; |
@@ -44,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

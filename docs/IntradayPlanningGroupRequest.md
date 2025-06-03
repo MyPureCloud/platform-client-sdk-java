@@ -15,6 +15,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | FORECASTDATA | &quot;ForecastData&quot; |
 | SCHEDULEDATA | &quot;ScheduleData&quot; |
 | PERFORMANCEPREDICTIONDATA | &quot;PerformancePredictionData&quot; |
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

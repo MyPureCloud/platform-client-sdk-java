@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | FLOWID | &quot;flowId&quot; |
 | FLOWOBJECTID | &quot;flowObjectId&quot; |
@@ -30,6 +31,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NFLOWEXECUTIONS | &quot;nFlowExecutions&quot; |
 
 
@@ -43,4 +45,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

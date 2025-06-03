@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | USERID | &quot;userId&quot; |
 
 
@@ -27,6 +28,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TAGENTROUTINGSTATUS | &quot;tAgentRoutingStatus&quot; |
 | TORGANIZATIONPRESENCE | &quot;tOrganizationPresence&quot; |
 | TSYSTEMPRESENCE | &quot;tSystemPresence&quot; |
@@ -42,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

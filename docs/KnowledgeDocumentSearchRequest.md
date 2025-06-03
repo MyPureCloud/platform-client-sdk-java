@@ -22,6 +22,7 @@
 | **confidenceThreshold** | **Float** | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1. |  [optional] |
 | **answerHighlightTopResults** | **Integer** | The number of articles to be sent for answer-highlighting. Can range from 1-5. |  [optional] |
 | **answerMode** | [**List<AnswerModeEnum>**](#Enum--AnswerModeEnum) | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults. |  [optional] |
+| **preprocessQuery** | **Boolean** | Indicates whether the search query should be preprocessed. |  [optional] |
 
 
 ## Enum: QueryTypeEnum
@@ -59,10 +60,11 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ANSWERHIGHLIGHT | &quot;AnswerHighlight&quot; |
 | ANSWERGENERATION | &quot;AnswerGeneration&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

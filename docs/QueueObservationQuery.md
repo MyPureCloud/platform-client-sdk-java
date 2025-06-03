@@ -14,9 +14,12 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | OACTIVEUSERS | &quot;oActiveUsers&quot; |
 | OALERTING | &quot;oAlerting&quot; |
 | OINTERACTING | &quot;oInteracting&quot; |
+| OLONGESTINTERACTING | &quot;oLongestInteracting&quot; |
+| OLONGESTWAITING | &quot;oLongestWaiting&quot; |
 | OMEMBERUSERS | &quot;oMemberUsers&quot; |
 | OOFFQUEUEUSERS | &quot;oOffQueueUsers&quot; |
 | OONQUEUEUSERS | &quot;oOnQueueUsers&quot; |
@@ -29,6 +32,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | OACTIVEUSERS | &quot;oActiveUsers&quot; |
 | OALERTING | &quot;oAlerting&quot; |
 | OINTERACTING | &quot;oInteracting&quot; |
@@ -42,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

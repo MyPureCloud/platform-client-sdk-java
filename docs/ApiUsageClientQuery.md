@@ -25,6 +25,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | STATUS200 | &quot;Status200&quot; |
 | STATUS300 | &quot;Status300&quot; |
 | STATUS400 | &quot;Status400&quot; |
@@ -37,6 +38,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | OAUTHCLIENTID | &quot;OAuthClientId&quot; |
 | ORGANIZATIONID | &quot;OrganizationId&quot; |
 | TEMPLATEURI | &quot;TemplateUri&quot; |
@@ -45,4 +47,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

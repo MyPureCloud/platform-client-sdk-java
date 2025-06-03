@@ -14,11 +14,11 @@
 | **permissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
 | **userCount** | **Integer** |  |  [optional] |
 | **roleNeedsUpdate** | **Boolean** | Optional unless patch operation. |  [optional] |
-| **_default** | **Boolean** |  |  [optional] |
 | **base** | **Boolean** |  |  [optional] |
+| **_default** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

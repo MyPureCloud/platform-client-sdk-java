@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ASKACTIONID | &quot;askActionId&quot; |
 | ASKACTIONRESULT | &quot;askActionResult&quot; |
 | ASKACTIONTYPE | &quot;askActionType&quot; |
@@ -54,6 +55,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NBOTSESSIONTURNS | &quot;nBotSessionTurns&quot; |
 | NBOTSESSIONS | &quot;nBotSessions&quot; |
 | OBOTINTENT | &quot;oBotIntent&quot; |
@@ -79,4 +81,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

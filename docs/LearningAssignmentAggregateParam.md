@@ -15,6 +15,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NACTIVITIES | &quot;nActivities&quot; |
 | NPLANNEDACTIVITIES | &quot;nPlannedActivities&quot; |
 | NINPROGRESSACTIVITIES | &quot;nInProgressActivities&quot; |
@@ -31,9 +32,10 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ATTENDEEID | &quot;attendeeId&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

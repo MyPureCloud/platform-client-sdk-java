@@ -391,7 +391,7 @@ try {
 # **getAssistants**
 
 
-> [AssistantListing](AssistantListing) getAssistants(before, after, limit, pageSize, name)
+> [AssistantListing](AssistantListing) getAssistants(before, after, limit, pageSize, name, expand)
 
 Get all assistants.
 
@@ -428,8 +428,9 @@ String after = "after_example"; // String | The cursor that points to the end of
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String name = "name_example"; // String | Return the assistant by the given name.
+String expand = "expand_example"; // String | Which fields, if any, to expand
 try {
-    AssistantListing result = apiInstance.getAssistants(before, after, limit, pageSize, name);
+    AssistantListing result = apiInstance.getAssistants(before, after, limit, pageSize, name, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentAssistantsApi#getAssistants");
@@ -447,6 +448,7 @@ try {
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **name** | **String**| Return the assistant by the given name. | [optional] 
+| **expand** | **String**| Which fields, if any, to expand | [optional]<br />**Values**: copilot 
 {: class="table-striped"}
 
 
@@ -766,4 +768,4 @@ try {
 [**AssistantQueue**](AssistantQueue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

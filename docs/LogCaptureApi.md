@@ -134,7 +134,7 @@ try {
 # **getDiagnosticsLogcaptureBrowserUser**
 
 
-> [LogCaptureUserConfiguration](LogCaptureUserConfiguration) getDiagnosticsLogcaptureBrowserUser(userId)
+> [LogCaptureUserConfigurationResponse](LogCaptureUserConfigurationResponse) getDiagnosticsLogcaptureBrowserUser(userId)
 
 Get log capture configuration for the user
 
@@ -168,7 +168,7 @@ Configuration.setDefaultApiClient(apiClient);
 LogCaptureApi apiInstance = new LogCaptureApi();
 String userId = "userId_example"; // String | The id of the user to get browser log capture configuration
 try {
-    LogCaptureUserConfiguration result = apiInstance.getDiagnosticsLogcaptureBrowserUser(userId);
+    LogCaptureUserConfigurationResponse result = apiInstance.getDiagnosticsLogcaptureBrowserUser(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LogCaptureApi#getDiagnosticsLogcaptureBrowserUser");
@@ -187,13 +187,13 @@ try {
 
 ### Return type
 
-[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
+[**LogCaptureUserConfigurationResponse**](LogCaptureUserConfigurationResponse)
 
 
 # **getDiagnosticsLogcaptureBrowserUsers**
 
 
-> [PagelessEntityListing](PagelessEntityListing) getDiagnosticsLogcaptureBrowserUsers(includeExpired)
+> [LogCaptureUserConfigurationListing](LogCaptureUserConfigurationListing) getDiagnosticsLogcaptureBrowserUsers(includeExpired)
 
 Get all log capture enabled users for an org
 
@@ -227,7 +227,7 @@ Configuration.setDefaultApiClient(apiClient);
 LogCaptureApi apiInstance = new LogCaptureApi();
 Boolean includeExpired = false; // Boolean | Include expired users with log captures still available for search or download
 try {
-    PagelessEntityListing result = apiInstance.getDiagnosticsLogcaptureBrowserUsers(includeExpired);
+    LogCaptureUserConfigurationListing result = apiInstance.getDiagnosticsLogcaptureBrowserUsers(includeExpired);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LogCaptureApi#getDiagnosticsLogcaptureBrowserUsers");
@@ -246,7 +246,7 @@ try {
 
 ### Return type
 
-[**PagelessEntityListing**](PagelessEntityListing)
+[**LogCaptureUserConfigurationListing**](LogCaptureUserConfigurationListing)
 
 
 # **postDiagnosticsLogcaptureBrowserEntriesDownloadJobs**
@@ -311,7 +311,7 @@ try {
 # **postDiagnosticsLogcaptureBrowserEntriesQuery**
 
 
-> [LogCaptureQueryResponse](LogCaptureQueryResponse) postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body)
+> [LogCaptureQueryResponse](LogCaptureQueryResponse) postDiagnosticsLogcaptureBrowserEntriesQuery(after, pageSize, body)
 
 Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
 
@@ -343,12 +343,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LogCaptureApi apiInstance = new LogCaptureApi();
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 LogCaptureQueryRequest body = new LogCaptureQueryRequest(); // LogCaptureQueryRequest | 
 try {
-    LogCaptureQueryResponse result = apiInstance.postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body);
+    LogCaptureQueryResponse result = apiInstance.postDiagnosticsLogcaptureBrowserEntriesQuery(after, pageSize, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LogCaptureApi#postDiagnosticsLogcaptureBrowserEntriesQuery");
@@ -361,7 +360,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest)|  | [optional] 
@@ -434,4 +432,4 @@ try {
 [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

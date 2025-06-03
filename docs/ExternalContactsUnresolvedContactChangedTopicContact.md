@@ -30,6 +30,7 @@
 | **facebookId** | [**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId) |  |  [optional] |
 | **instagramId** | [**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId) |  |  [optional] |
 | **externalIds** | [**List&lt;ExternalContactsUnresolvedContactChangedTopicExternalId&gt;**](ExternalContactsUnresolvedContactChangedTopicExternalId) |  |  [optional] |
+| **appleOpaqueIds** | [**List&lt;ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId&gt;**](ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId) |  |  [optional] |
 | **canonicalContactId** | **String** |  |  [optional] |
 | **schema** | [**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema) |  |  [optional] |
 | **customFields** | **Map&lt;String, Object&gt;** |  |  [optional] |
@@ -53,4 +54,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

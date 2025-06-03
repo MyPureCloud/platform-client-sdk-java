@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AUDIO_OPUS | &quot;audio/opus&quot; |
 | AUDIO_PCMU | &quot;audio/pcmu&quot; |
 | AUDIO_PCMA | &quot;audio/pcma&quot; |
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

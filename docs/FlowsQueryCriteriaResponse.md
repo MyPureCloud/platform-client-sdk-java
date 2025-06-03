@@ -16,6 +16,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BOT | &quot;bot&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
 | DIGITALBOT | &quot;digitalbot&quot; |
@@ -40,6 +41,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACTIONABORTSURVEYINVITE | &quot;actionAbortSurveyInvite&quot; |
 | ACTIONADDFLOWMILESTONE | &quot;actionAddFlowMilestone&quot; |
 | ACTIONASKFORBOOLEAN | &quot;actionAskForBoolean&quot; |
@@ -179,4 +181,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

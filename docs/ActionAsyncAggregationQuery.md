@@ -21,6 +21,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACTIONCATEGORY | &quot;actionCategory&quot; |
 | ACTIONID | &quot;actionId&quot; |
 | ACTIONNAME | &quot;actionName&quot; |
@@ -35,6 +36,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TTOTALEXECUTION | &quot;tTotalExecution&quot; |
 
 
@@ -48,4 +50,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

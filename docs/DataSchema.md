@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONTACT | &quot;CONTACT&quot; |
 | CONVERSATION | &quot;CONVERSATION&quot; |
 | EXTERNAL_ORGANIZATION | &quot;EXTERNAL_ORGANIZATION&quot; |
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

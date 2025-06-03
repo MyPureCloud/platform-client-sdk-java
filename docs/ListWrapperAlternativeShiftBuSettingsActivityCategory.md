@@ -12,6 +12,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BREAK | &quot;Break&quot; |
 | MEAL | &quot;Meal&quot; |
 | MEETING | &quot;Meeting&quot; |
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

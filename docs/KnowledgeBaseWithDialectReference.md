@@ -42,9 +42,10 @@
 | ES_CO | &quot;es-CO&quot; | 
 | KO_KR | &quot;ko-KR&quot; | 
 | HI_IN | &quot;hi-IN&quot; | 
+| TR_TR | &quot;tr-TR&quot; | 
 | ES_AR | &quot;es-AR&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

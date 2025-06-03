@@ -47,6 +47,7 @@
 | MENTION | &quot;Mention&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
+| LISTPICKER | &quot;ListPicker&quot; | 
 | INTERACTIVEAPPLICATION | &quot;InteractiveApplication&quot; | 
 
 
@@ -61,4 +62,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

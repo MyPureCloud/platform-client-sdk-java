@@ -12,6 +12,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ONQUEUEWORK | &quot;OnQueueWork&quot; |
 | BREAK | &quot;Break&quot; |
 | MEAL | &quot;Meal&quot; |
@@ -25,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

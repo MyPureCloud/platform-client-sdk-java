@@ -39,6 +39,7 @@
 | DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; | 
 | DIALOGFLOWCXAGENT | &quot;DIALOGFLOWCXAGENT&quot; | 
 | DIGITALBOTCONNECTOR | &quot;DIGITALBOTCONNECTOR&quot; | 
+| DIGITALBOTCONNECTORINTEGRATION | &quot;DIGITALBOTCONNECTORINTEGRATION&quot; | 
 | DIGITALBOTFLOW | &quot;DIGITALBOTFLOW&quot; | 
 | DIVISION | &quot;DIVISION&quot; | 
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
@@ -49,6 +50,8 @@
 | FLOWOUTCOME | &quot;FLOWOUTCOME&quot; | 
 | GRAMMAR | &quot;GRAMMAR&quot; | 
 | GROUP | &quot;GROUP&quot; | 
+| GUIDE | &quot;GUIDE&quot; | 
+| GUIDEVERSION | &quot;GUIDEVERSION&quot; | 
 | IMAGE | &quot;IMAGE&quot; | 
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; | 
 | INBOUNDCHATFLOW | &quot;INBOUNDCHATFLOW&quot; | 
@@ -98,4 +101,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

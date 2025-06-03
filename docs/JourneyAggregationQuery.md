@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONTAINSALLCONDITION | &quot;containsAllCondition&quot; |
 | CONTAINSANYCONDITION | &quot;containsAnyCondition&quot; |
 | ENDSWITHCONDITION | &quot;endsWithCondition&quot; |
@@ -67,6 +68,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NDISTINCTJOURNEYACTIONS | &quot;nDistinctJourneyActions&quot; |
 | NDISTINCTJOURNEYSESSIONS | &quot;nDistinctJourneySessions&quot; |
 | NJOURNEYACTIONSBLOCKED | &quot;nJourneyActionsBlocked&quot; |
@@ -101,4 +103,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
