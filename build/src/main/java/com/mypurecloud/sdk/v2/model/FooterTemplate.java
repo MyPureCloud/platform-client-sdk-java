@@ -91,6 +91,7 @@ public class FooterTemplate  implements Serializable {
    */
  @JsonDeserialize(using = ApplicableResourcesEnumDeserializer.class)
   public enum ApplicableResourcesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CAMPAIGN("Campaign");
 
     private String value;

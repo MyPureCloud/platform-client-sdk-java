@@ -44,6 +44,8 @@ public class ConversationActivityQueryMetric  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),
+    OLONGESTINTERACTING("oLongestInteracting"),
+    OLONGESTWAITING("oLongestWaiting"),
     OWAITING("oWaiting");
 
     private String value;

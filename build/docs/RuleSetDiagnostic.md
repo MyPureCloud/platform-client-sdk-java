@@ -13,6 +13,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | WRAPUP_CODE_NOT_IN_QUEUE | &quot;WRAPUP_CODE_NOT_IN_QUEUE&quot; |
 | CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST | &quot;CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST&quot; |
 | NO_DNC_LIST_FOR_APPEND | &quot;NO_DNC_LIST_FOR_APPEND&quot; |
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

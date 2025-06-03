@@ -43,6 +43,7 @@ public class LastAttemptOverallConditionSettings  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("Voice"),
     EMAIL("Email"),
     SMS("Sms"),

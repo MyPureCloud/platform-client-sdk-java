@@ -319,6 +319,11 @@ public class PatchWorkforcemanagementAlternativeshiftsTradeRequest {
             throw new IllegalStateException("Missing the required parameter 'tradeId' when building request for PatchWorkforcemanagementAlternativeshiftsTradeRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementAlternativeshiftsTradeRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}")
                 .withPathParameter("tradeId", tradeId)
@@ -337,9 +342,9 @@ public class PatchWorkforcemanagementAlternativeshiftsTradeRequest {
 	}
 
 
-	public static Builder builder(String tradeId) {
+	public static Builder builder(String tradeId, AgentUpdateAlternativeShiftTradeRequest body) {
 	    return new Builder()
-	            .withRequiredParams(tradeId);
+	            .withRequiredParams(tradeId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PatchWorkforcemanagementAlternativeshiftsTradeRequest {
 
 
 
-		public Builder withRequiredParams(String tradeId) {
+		public Builder withRequiredParams(String tradeId, AgentUpdateAlternativeShiftTradeRequest body) {
 			request.setTradeId(tradeId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PatchWorkforcemanagementAlternativeshiftsTradeRequest {
             // verify the required parameter 'tradeId' is set
             if (request.tradeId == null) {
                 throw new IllegalStateException("Missing the required parameter 'tradeId' when building request for PatchWorkforcemanagementAlternativeshiftsTradeRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementAlternativeshiftsTradeRequest.");
             }
             
 			return request;

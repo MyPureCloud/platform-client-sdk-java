@@ -45,6 +45,7 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
    */
  @JsonDeserialize(using = FlowTypesEnumDeserializer.class)
   public enum FlowTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
@@ -108,6 +109,7 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
    */
  @JsonDeserialize(using = ActionTypesEnumDeserializer.class)
   public enum ActionTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIONABORTSURVEYINVITE("actionAbortSurveyInvite"),
     ACTIONADDFLOWMILESTONE("actionAddFlowMilestone"),
     ACTIONASKFORBOOLEAN("actionAskForBoolean"),

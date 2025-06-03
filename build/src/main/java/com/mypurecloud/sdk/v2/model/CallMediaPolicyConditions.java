@@ -56,6 +56,7 @@ public class CallMediaPolicyConditions  implements Serializable {
    */
  @JsonDeserialize(using = DirectionsEnumDeserializer.class)
   public enum DirectionsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("INBOUND"),
     OUTBOUND("OUTBOUND");
 

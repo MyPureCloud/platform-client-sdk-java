@@ -49,6 +49,7 @@ public class ActionTarget  implements Serializable {
    */
  @JsonDeserialize(using = SupportedMediaTypesEnumDeserializer.class)
   public enum SupportedMediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALLBACK("callback"),
     CALL("call"),
     EMAIL("email"),

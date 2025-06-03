@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="SDK tests" verbose="1" parallel="tests" thread-count="3">
+<suite name="SDK tests" verbose="1" parallel="tests" thread-count="1">
     <listeners>
         <listener class-name="com.mypurecloud.sdk.v2.InvokedMethodListener" />
     </listeners>

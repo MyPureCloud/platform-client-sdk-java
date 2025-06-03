@@ -16,7 +16,6 @@
 | **textBody** | **String** | The body of the text message. (Deprecated - Instead use normalizedMessage.text) |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the message. |  |
 | **media** | [**List&lt;MessageMedia&gt;**](MessageMedia) | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) |  [optional] |
-| **stickers** | [**List&lt;MessageSticker&gt;**](MessageSticker) | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment |  [optional] |
 | **normalizedMessage** | [**ConversationNormalizedMessage**](ConversationNormalizedMessage) | The message into normalized format |  [optional] |
 | **normalizedReceipts** | [**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage) | The delivery event associated with this message in normalized format, if the message direction was outbound |  [optional] |
 | **createdBy** | [**User**](User) | User who sent this message. |  [optional] |
@@ -66,4 +65,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

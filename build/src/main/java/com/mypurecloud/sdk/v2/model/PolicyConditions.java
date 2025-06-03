@@ -50,6 +50,7 @@ public class PolicyConditions  implements Serializable {
    */
  @JsonDeserialize(using = DirectionsEnumDeserializer.class)
   public enum DirectionsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("INBOUND"),
     OUTBOUND("OUTBOUND");
 
@@ -98,6 +99,7 @@ public class PolicyConditions  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("CALL"),
     CHAT("CHAT");
 

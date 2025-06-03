@@ -403,6 +403,20 @@ public class GetFlowsRequest {
 	    return this;
 	} 
 
+	private Boolean virtualAgentEnabled;
+	public Boolean getVirtualAgentEnabled() {
+		return this.virtualAgentEnabled;
+	}
+
+	public void setVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+		this.virtualAgentEnabled = virtualAgentEnabled;
+	}
+
+	public GetFlowsRequest withVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+	    this.setVirtualAgentEnabled(virtualAgentEnabled);
+	    return this;
+	} 
+
 	private String publishedAfter;
 	public String getPublishedAfter() {
 		return this.publishedAfter;
@@ -515,6 +529,9 @@ public class GetFlowsRequest {
         
 
                 .withQueryParameters("includeSchemas", "", includeSchemas)
+        
+
+                .withQueryParameters("virtualAgentEnabled", "", virtualAgentEnabled)
         
 
                 .withQueryParameters("publishedAfter", "", publishedAfter)
@@ -643,6 +660,11 @@ public class GetFlowsRequest {
 
 		public Builder withIncludeSchemas(Boolean includeSchemas) {
 			request.setIncludeSchemas(includeSchemas);
+			return this;
+		}
+
+		public Builder withVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+			request.setVirtualAgentEnabled(virtualAgentEnabled);
 			return this;
 		}
 

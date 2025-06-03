@@ -367,6 +367,7 @@
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; | 
 | MESSAGINGCAMPAIGNSCHEDULE | &quot;MessagingCampaignSchedule&quot; | 
 | EMAILCAMPAIGNSCHEDULE | &quot;EmailCampaignSchedule&quot; | 
+| WHATSAPPCAMPAIGNSCHEDULE | &quot;WhatsAppCampaignSchedule&quot; | 
 | PREDICTOR | &quot;Predictor&quot; | 
 | KPISPECIFICATION | &quot;KpiSpecification&quot; | 
 | METRIC | &quot;Metric&quot; | 
@@ -454,4 +455,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -42,6 +42,7 @@ public class ListWrapperAlternativeShiftBuSettingsGranularity  implements Serial
    */
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DAILY("Daily");
 
     private String value;

@@ -18,6 +18,12 @@
 | **requiresMatchingSkills** | **Boolean** | Whether to constrain shift trades to agents with matching skills |  [optional] |
 | **requiresMatchingPlanningGroups** | **Boolean** | Whether to constrain shift trades to agents with matching planning groups |  [optional] |
 | **activityCategoryRules** | [**List&lt;ShiftTradeActivityRule&gt;**](ShiftTradeActivityRule) | Rules that specify what to do with activity categories that are part of a shift defined in a trade |  [optional] |
+| **maxTradeSpanWeeks** | **Integer** | The maximum number of weeks a shift trade can span |  [optional] |
+| **maxTradesPerAgentPerWeek** | **Integer** | The maximum number of shift trades an agent can submit per week |  [optional] |
+| **minMinutesBetweenShifts** | **Integer** | The minimum number of minutes between shifts |  [optional] |
+| **planningPeriodMinPaidViolations** | [**PlanningPeriodMinPaidViolationsEnum**](#Enum--PlanningPeriodMinPaidViolationsEnum) | How to handle shift trades which result in violations of planning period minimum paid time constraint |  [optional] |
+| **planningPeriodMaxPaidViolations** | [**PlanningPeriodMaxPaidViolationsEnum**](#Enum--PlanningPeriodMaxPaidViolationsEnum) | How to handle shift trades which result in violations of planning period maximum paid time constraint |  [optional] |
+| **minMinutesBetweenShiftsViolations** | [**MinMinutesBetweenShiftsViolationsEnum**](#Enum--MinMinutesBetweenShiftsViolationsEnum) | How to handle shift trades which result in violations of minimum number of minutes between shifts constraint |  [optional] |
 
 
 ## Enum: UnequalPaidEnum
@@ -60,6 +66,36 @@
 | ADMINREVIEW | &quot;AdminReview&quot; | 
 
 
+## Enum: PlanningPeriodMinPaidViolationsEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+## Enum: PlanningPeriodMaxPaidViolationsEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
+
+
+## Enum: MinMinutesBetweenShiftsViolationsEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

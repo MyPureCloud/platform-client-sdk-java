@@ -702,6 +702,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
    */
  @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
     DIRECT("Direct"),

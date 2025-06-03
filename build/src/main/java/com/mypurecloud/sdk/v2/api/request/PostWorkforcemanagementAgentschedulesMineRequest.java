@@ -300,6 +300,11 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
 
     public ApiRequest<BuGetCurrentAgentScheduleRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentschedulesMineRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/agentschedules/mine")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(BuGetCurrentAgentScheduleRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
 
 
 
+		public Builder withRequiredParams(BuGetCurrentAgentScheduleRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementAgentschedulesMineRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentschedulesMineRequest.");
+            }
             
 			return request;
 		}

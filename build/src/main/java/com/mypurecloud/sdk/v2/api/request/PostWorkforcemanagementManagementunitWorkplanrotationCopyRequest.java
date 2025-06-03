@@ -338,6 +338,11 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest {
             throw new IllegalStateException("Missing the required parameter 'workPlanRotationId' when building request for PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -358,9 +363,9 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String workPlanRotationId) {
+	public static Builder builder(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, workPlanRotationId);
+	            .withRequiredParams(managementUnitId, workPlanRotationId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String workPlanRotationId) {
+		public Builder withRequiredParams(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setWorkPlanRotationId(workPlanRotationId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest {
             // verify the required parameter 'workPlanRotationId' is set
             if (request.workPlanRotationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'workPlanRotationId' when building request for PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.");
             }
             
 			return request;

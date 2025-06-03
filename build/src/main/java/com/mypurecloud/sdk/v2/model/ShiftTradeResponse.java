@@ -89,6 +89,7 @@ public class ShiftTradeResponse  implements Serializable {
   private String initiatingShiftId = null;
   private Date initiatingShiftStart = null;
   private Date initiatingShiftEnd = null;
+  private LocalDate receivingWeekDate = null;
   private UserReference receivingUser = null;
   private String receivingShiftId = null;
   private Date receivingShiftStart = null;
@@ -248,6 +249,24 @@ public class ShiftTradeResponse  implements Serializable {
   }
   public void setInitiatingShiftEnd(Date initiatingShiftEnd) {
     this.initiatingShiftEnd = initiatingShiftEnd;
+  }
+
+
+  /**
+   * The start week date of the receiving shift in yyyy-MM-dd format for a cross-week shift trade or null otherwise. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   **/
+  public ShiftTradeResponse receivingWeekDate(LocalDate receivingWeekDate) {
+    this.receivingWeekDate = receivingWeekDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The start week date of the receiving shift in yyyy-MM-dd format for a cross-week shift trade or null otherwise. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("receivingWeekDate")
+  public LocalDate getReceivingWeekDate() {
+    return receivingWeekDate;
+  }
+  public void setReceivingWeekDate(LocalDate receivingWeekDate) {
+    this.receivingWeekDate = receivingWeekDate;
   }
 
 
@@ -449,6 +468,7 @@ public class ShiftTradeResponse  implements Serializable {
             Objects.equals(this.initiatingShiftId, shiftTradeResponse.initiatingShiftId) &&
             Objects.equals(this.initiatingShiftStart, shiftTradeResponse.initiatingShiftStart) &&
             Objects.equals(this.initiatingShiftEnd, shiftTradeResponse.initiatingShiftEnd) &&
+            Objects.equals(this.receivingWeekDate, shiftTradeResponse.receivingWeekDate) &&
             Objects.equals(this.receivingUser, shiftTradeResponse.receivingUser) &&
             Objects.equals(this.receivingShiftId, shiftTradeResponse.receivingShiftId) &&
             Objects.equals(this.receivingShiftStart, shiftTradeResponse.receivingShiftStart) &&
@@ -463,7 +483,7 @@ public class ShiftTradeResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, schedule, state, initiatingUser, initiatingShiftId, initiatingShiftStart, initiatingShiftEnd, receivingUser, receivingShiftId, receivingShiftStart, receivingShiftEnd, expiration, oneSided, acceptableIntervals, reviewedBy, reviewedDate, metadata);
+    return Objects.hash(id, weekDate, schedule, state, initiatingUser, initiatingShiftId, initiatingShiftStart, initiatingShiftEnd, receivingWeekDate, receivingUser, receivingShiftId, receivingShiftStart, receivingShiftEnd, expiration, oneSided, acceptableIntervals, reviewedBy, reviewedDate, metadata);
   }
 
   @Override
@@ -479,6 +499,7 @@ public class ShiftTradeResponse  implements Serializable {
     sb.append("    initiatingShiftId: ").append(toIndentedString(initiatingShiftId)).append("\n");
     sb.append("    initiatingShiftStart: ").append(toIndentedString(initiatingShiftStart)).append("\n");
     sb.append("    initiatingShiftEnd: ").append(toIndentedString(initiatingShiftEnd)).append("\n");
+    sb.append("    receivingWeekDate: ").append(toIndentedString(receivingWeekDate)).append("\n");
     sb.append("    receivingUser: ").append(toIndentedString(receivingUser)).append("\n");
     sb.append("    receivingShiftId: ").append(toIndentedString(receivingShiftId)).append("\n");
     sb.append("    receivingShiftStart: ").append(toIndentedString(receivingShiftStart)).append("\n");

@@ -156,6 +156,7 @@ public class SmsPhoneNumber  implements Serializable {
    */
  @JsonDeserialize(using = CapabilitiesEnumDeserializer.class)
   public enum CapabilitiesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),
     MMS("mms"),
     VOICE("voice");

@@ -42,6 +42,7 @@ public class FileUploadMode  implements Serializable {
    */
  @JsonDeserialize(using = FileTypesEnumDeserializer.class)
   public enum FileTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     IMAGE_JPEG("image/jpeg"),
     IMAGE_GIF("image/gif"),
     IMAGE_PNG("image/png");

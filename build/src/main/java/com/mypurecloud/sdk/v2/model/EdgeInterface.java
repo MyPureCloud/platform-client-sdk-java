@@ -49,6 +49,7 @@ public class EdgeInterface  implements Serializable {
    */
  @JsonDeserialize(using = LineTypesEnumDeserializer.class)
   public enum LineTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TIE("TIE"),
     NETWORK("NETWORK"),
     TRUNK("TRUNK"),

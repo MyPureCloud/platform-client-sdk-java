@@ -89,6 +89,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private KnowledgeConversationContextResponse conversationContext = null;
   private Float confidenceThreshold = null;
   private KnowledgeAnswerGenerationResponse answerGeneration = null;
+  private Boolean preprocessQuery = null;
 
   public KnowledgeDocumentSearch() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -269,6 +270,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether the search query should be preprocessed.
+   **/
+  public KnowledgeDocumentSearch preprocessQuery(Boolean preprocessQuery) {
+    this.preprocessQuery = preprocessQuery;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the search query should be preprocessed.")
+  @JsonProperty("preprocessQuery")
+  public Boolean getPreprocessQuery() {
+    return preprocessQuery;
+  }
+  public void setPreprocessQuery(Boolean preprocessQuery) {
+    this.preprocessQuery = preprocessQuery;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -290,12 +309,13 @@ public class KnowledgeDocumentSearch  implements Serializable {
             Objects.equals(this.application, knowledgeDocumentSearch.application) &&
             Objects.equals(this.conversationContext, knowledgeDocumentSearch.conversationContext) &&
             Objects.equals(this.confidenceThreshold, knowledgeDocumentSearch.confidenceThreshold) &&
-            Objects.equals(this.answerGeneration, knowledgeDocumentSearch.answerGeneration);
+            Objects.equals(this.answerGeneration, knowledgeDocumentSearch.answerGeneration) &&
+            Objects.equals(this.preprocessQuery, knowledgeDocumentSearch.preprocessQuery);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext, confidenceThreshold, answerGeneration);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext, confidenceThreshold, answerGeneration, preprocessQuery);
   }
 
   @Override
@@ -315,6 +335,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
     sb.append("    answerGeneration: ").append(toIndentedString(answerGeneration)).append("\n");
+    sb.append("    preprocessQuery: ").append(toIndentedString(preprocessQuery)).append("\n");
     sb.append("}");
     return sb.toString();
   }

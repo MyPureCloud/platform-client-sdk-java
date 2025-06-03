@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ConversationContentCard;
 import com.mypurecloud.sdk.v2.model.ConversationContentCarousel;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
+import com.mypurecloud.sdk.v2.model.ConversationContentPush;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReplyV2;
 import com.mypurecloud.sdk.v2.model.ConversationContentReaction;
@@ -71,6 +72,10 @@ public class ConversationMessageContent  implements Serializable {
     DATEPICKER("DatePicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication"),
     LISTPICKER("ListPicker"),
+    PAYMENTREQUEST("PaymentRequest"),
+    PAYMENTRESPONSE("PaymentResponse"),
+    PUSH("Push"),
+    FORM("Form"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -110,6 +115,7 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentText text = null;
   private ConversationContentQuickReplyV2 quickReplyV2 = null;
   private List<ConversationContentReaction> reactions = null;
+  private ConversationContentPush push = null;
 
   public ConversationMessageContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -334,6 +340,24 @@ public class ConversationMessageContent  implements Serializable {
   }
 
 
+  /**
+   * Push content.
+   **/
+  public ConversationMessageContent push(ConversationContentPush push) {
+    this.push = push;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Push content.")
+  @JsonProperty("push")
+  public ConversationContentPush getPush() {
+    return push;
+  }
+  public void setPush(ConversationContentPush push) {
+    this.push = push;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -355,12 +379,13 @@ public class ConversationMessageContent  implements Serializable {
             Objects.equals(this.carousel, conversationMessageContent.carousel) &&
             Objects.equals(this.text, conversationMessageContent.text) &&
             Objects.equals(this.quickReplyV2, conversationMessageContent.quickReplyV2) &&
-            Objects.equals(this.reactions, conversationMessageContent.reactions);
+            Objects.equals(this.reactions, conversationMessageContent.reactions) &&
+            Objects.equals(this.push, conversationMessageContent.push);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions, push);
   }
 
   @Override
@@ -380,6 +405,7 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
     sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
+    sb.append("    push: ").append(toIndentedString(push)).append("\n");
     sb.append("}");
     return sb.toString();
   }

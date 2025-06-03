@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsConvers
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsConversationSummary;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsConversationWrapUpCode;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicVirtualAgentsTriggerSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -152,6 +153,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   private ConversationSummaryTopicVirtualAgentsConversationReason reason = null;
   private ConversationSummaryTopicVirtualAgentsConversationResolution resolution = null;
   private List<ConversationSummaryTopicVirtualAgentsConversationFollowupAction> followupActions = null;
+  private List<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity> extractedEntities = null;
   private List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicVirtualAgentsTriggerSource triggerSource = null;
   private ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant lastEditedBy = null;
@@ -212,6 +214,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
       participants = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant>();
       communicationIds = new ArrayList<String>();
       followupActions = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationFollowupAction>();
+      extractedEntities = new ArrayList<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity>();
       wrapUpCodes = new ArrayList<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode>();
     }
   }
@@ -457,6 +460,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   /**
    **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent extractedEntities(List<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity> extractedEntities) {
+    this.extractedEntities = extractedEntities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("extractedEntities")
+  public List<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity> getExtractedEntities() {
+    return extractedEntities;
+  }
+  public void setExtractedEntities(List<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity> extractedEntities) {
+    this.extractedEntities = extractedEntities;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent wrapUpCodes(List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> wrapUpCodes) {
     this.wrapUpCodes = wrapUpCodes;
     return this;
@@ -564,6 +584,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
             Objects.equals(this.reason, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.reason) &&
             Objects.equals(this.resolution, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.resolution) &&
             Objects.equals(this.followupActions, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.followupActions) &&
+            Objects.equals(this.extractedEntities, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.extractedEntities) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.triggerSource) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.lastEditedBy) &&
@@ -573,7 +594,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -595,6 +616,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    followupActions: ").append(toIndentedString(followupActions)).append("\n");
+    sb.append("    extractedEntities: ").append(toIndentedString(extractedEntities)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");

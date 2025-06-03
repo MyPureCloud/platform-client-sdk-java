@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
@@ -49,6 +50,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NSURVEYERRORS | &quot;nSurveyErrors&quot; |
 | NSURVEYFULLRESPONSES | &quot;nSurveyFullResponses&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
@@ -81,4 +83,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

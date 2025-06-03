@@ -111,7 +111,8 @@ public class ConversationChannel  implements Serializable {
     WHATSAPP("WhatsApp"),
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
-    INSTAGRAM("Instagram");
+    INSTAGRAM("Instagram"),
+    APPLE("Apple");
 
     private String value;
 

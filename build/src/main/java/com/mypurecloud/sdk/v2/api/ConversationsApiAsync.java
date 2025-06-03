@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AdditionalSocialMediaMessage;
 import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
@@ -146,6 +147,7 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.Settings;
+import com.mypurecloud.sdk.v2.model.SocialMediaMessageData;
 import com.mypurecloud.sdk.v2.model.Suggestion;
 import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
 import com.mypurecloud.sdk.v2.model.SuggestionListing;
@@ -256,7 +258,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaReq
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermissionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
@@ -387,6 +391,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsVali
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationSocialmediaMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
@@ -424,7 +429,9 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
@@ -6327,6 +6334,83 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get Apple messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Apple messaging integration identity resolution settings
+   * 
+   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get Facebook messaging integration identity resolution settings
    * 
    * @param request the request object
@@ -6368,6 +6452,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Instagram integration identity resolution settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Instagram integration identity resolution settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
     try {
       final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -11450,7 +11609,7 @@ public class ConversationsApiAsync {
 
   /**
    * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -11484,7 +11643,7 @@ public class ConversationsApiAsync {
 
   /**
    * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15968,7 +16127,7 @@ public class ConversationsApiAsync {
 
   /**
    * Send message
-   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -16002,7 +16161,7 @@ public class ConversationsApiAsync {
 
   /**
    * Send message
-   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -16182,6 +16341,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessageMediaUploadData> response = (ApiResponse<MessageMediaUploadData>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a social media message
+   * Send a social media message on existing conversation/communication.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SocialMediaMessageData> postConversationsMessageCommunicationSocialmediaMessagesAsync(PostConversationsMessageCommunicationSocialmediaMessagesRequest request, final AsyncApiCallback<SocialMediaMessageData> callback) {
+    try {
+      final SettableFuture<SocialMediaMessageData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SocialMediaMessageData>() {}, new AsyncApiCallback<ApiResponse<SocialMediaMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SocialMediaMessageData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a social media message
+   * Send a social media message on existing conversation/communication.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SocialMediaMessageData>> postConversationsMessageCommunicationSocialmediaMessagesAsync(ApiRequest<AdditionalSocialMediaMessage> request, final AsyncApiCallback<ApiResponse<SocialMediaMessageData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SocialMediaMessageData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SocialMediaMessageData>() {}, new AsyncApiCallback<ApiResponse<SocialMediaMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SocialMediaMessageData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SocialMediaMessageData> response = (ApiResponse<SocialMediaMessageData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SocialMediaMessageData> response = (ApiResponse<SocialMediaMessageData>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -18983,6 +19217,83 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create an identity resolution settings for a Apple messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for a Apple messaging integration
+   * 
+   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create an identity resolution settings for a Facebook messaging integration
    * 
    * @param request the request object
@@ -19024,6 +19335,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create identity resolution settings for an Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create identity resolution settings for an Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
     try {
       final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

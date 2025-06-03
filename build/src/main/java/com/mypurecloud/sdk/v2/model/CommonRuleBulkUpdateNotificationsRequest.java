@@ -44,6 +44,7 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
    */
  @JsonDeserialize(using = TypesToAddEnumDeserializer.class)
   public enum TypesToAddEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("Sms"),
     DEVICE("Device"),
     EMAIL("Email"),
@@ -93,6 +94,7 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
    */
  @JsonDeserialize(using = TypesToRemoveEnumDeserializer.class)
   public enum TypesToRemoveEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("Sms"),
     DEVICE("Device"),
     EMAIL("Email"),

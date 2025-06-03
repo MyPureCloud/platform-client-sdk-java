@@ -307,6 +307,20 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
 	    return this;
 	} 
 
+	private Boolean includeCrossWeekShifts;
+	public Boolean getIncludeCrossWeekShifts() {
+		return this.includeCrossWeekShifts;
+	}
+
+	public void setIncludeCrossWeekShifts(Boolean includeCrossWeekShifts) {
+		this.includeCrossWeekShifts = includeCrossWeekShifts;
+	}
+
+	public GetWorkforcemanagementManagementunitWeekShifttradesRequest withIncludeCrossWeekShifts(Boolean includeCrossWeekShifts) {
+	    this.setIncludeCrossWeekShifts(includeCrossWeekShifts);
+	    return this;
+	} 
+
 	private Boolean forceDownloadService;
 	public Boolean getForceDownloadService() {
 		return this.forceDownloadService;
@@ -362,6 +376,9 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
                 .withQueryParameters("evaluateMatches", "", evaluateMatches)
         
 
+                .withQueryParameters("includeCrossWeekShifts", "", includeCrossWeekShifts)
+        
+
                 .withQueryParameters("forceDownloadService", "", forceDownloadService)
         
 		.withCustomHeaders(customHeaders)
@@ -402,6 +419,11 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
 
 		public Builder withEvaluateMatches(Boolean evaluateMatches) {
 			request.setEvaluateMatches(evaluateMatches);
+			return this;
+		}
+
+		public Builder withIncludeCrossWeekShifts(Boolean includeCrossWeekShifts) {
+			request.setIncludeCrossWeekShifts(includeCrossWeekShifts);
 			return this;
 		}
 

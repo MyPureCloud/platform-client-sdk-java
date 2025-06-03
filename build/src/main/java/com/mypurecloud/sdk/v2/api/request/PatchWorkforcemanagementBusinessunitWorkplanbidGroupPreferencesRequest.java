@@ -357,6 +357,11 @@ public class PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequ
             throw new IllegalStateException("Missing the required parameter 'bidGroupId' when building request for PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -379,9 +384,9 @@ public class PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequ
 	}
 
 
-	public static Builder builder(String businessUnitId, String bidId, String bidGroupId) {
+	public static Builder builder(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedWorkPlanOverrideRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, bidId, bidGroupId);
+	            .withRequiredParams(businessUnitId, bidId, bidGroupId, body);
 	}
 
 
@@ -415,10 +420,11 @@ public class PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequ
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String bidId, String bidGroupId) {
+		public Builder withRequiredParams(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedWorkPlanOverrideRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setBidId(bidId);
 			request.setBidGroupId(bidGroupId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -439,6 +445,11 @@ public class PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequ
             // verify the required parameter 'bidGroupId' is set
             if (request.bidGroupId == null) {
                 throw new IllegalStateException("Missing the required parameter 'bidGroupId' when building request for PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.");
             }
             
 			return request;

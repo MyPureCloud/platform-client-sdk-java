@@ -338,6 +338,11 @@ public class PostWorkforcemanagementManagementunitWorkplanCopyRequest {
             throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PostWorkforcemanagementManagementunitWorkplanCopyRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanCopyRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -358,9 +363,9 @@ public class PostWorkforcemanagementManagementunitWorkplanCopyRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String workPlanId) {
+	public static Builder builder(String managementUnitId, String workPlanId, CopyWorkPlan body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, workPlanId);
+	            .withRequiredParams(managementUnitId, workPlanId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PostWorkforcemanagementManagementunitWorkplanCopyRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String workPlanId) {
+		public Builder withRequiredParams(String managementUnitId, String workPlanId, CopyWorkPlan body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setWorkPlanId(workPlanId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PostWorkforcemanagementManagementunitWorkplanCopyRequest {
             // verify the required parameter 'workPlanId' is set
             if (request.workPlanId == null) {
                 throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PostWorkforcemanagementManagementunitWorkplanCopyRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanCopyRequest.");
             }
             
 			return request;

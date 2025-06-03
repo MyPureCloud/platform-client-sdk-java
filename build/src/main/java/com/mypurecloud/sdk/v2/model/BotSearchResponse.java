@@ -82,6 +82,7 @@ public class BotSearchResponse  implements Serializable {
   }
   private BotTypeEnum botType = null;
   private String description = null;
+  private Boolean virtualAgentEnabled = null;
   private String selfUri = null;
 
   public BotSearchResponse() {
@@ -162,6 +163,24 @@ public class BotSearchResponse  implements Serializable {
   }
 
 
+  /**
+   * Whether the bot is a virtual agent or not
+   **/
+  public BotSearchResponse virtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the bot is a virtual agent or not")
+  @JsonProperty("virtualAgentEnabled")
+  public Boolean getVirtualAgentEnabled() {
+    return virtualAgentEnabled;
+  }
+  public void setVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -183,12 +202,13 @@ public class BotSearchResponse  implements Serializable {
             Objects.equals(this.name, botSearchResponse.name) &&
             Objects.equals(this.botType, botSearchResponse.botType) &&
             Objects.equals(this.description, botSearchResponse.description) &&
+            Objects.equals(this.virtualAgentEnabled, botSearchResponse.virtualAgentEnabled) &&
             Objects.equals(this.selfUri, botSearchResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, botType, description, selfUri);
+    return Objects.hash(id, name, botType, description, virtualAgentEnabled, selfUri);
   }
 
   @Override
@@ -200,6 +220,7 @@ public class BotSearchResponse  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    botType: ").append(toIndentedString(botType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

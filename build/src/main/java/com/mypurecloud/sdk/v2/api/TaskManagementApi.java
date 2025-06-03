@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
 import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
 import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -2679,7 +2680,7 @@ public class TaskManagementApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -2691,7 +2692,7 @@ public class TaskManagementApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -2709,7 +2710,7 @@ public class TaskManagementApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return Coretype
@@ -2728,7 +2729,7 @@ public class TaskManagementApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return the response
@@ -2759,21 +2760,21 @@ public class TaskManagementApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getTaskmanagementWorkitemsSchemasCoretypes() throws IOException, ApiException {
+  public CoretypeListing getTaskmanagementWorkitemsSchemasCoretypes() throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchemasCoretypes(createGetTaskmanagementWorkitemsSchemasCoretypesRequest());
   }
 
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretypesWithHttpInfo() throws IOException {
+  public ApiResponse<CoretypeListing> getTaskmanagementWorkitemsSchemasCoretypesWithHttpInfo() throws IOException {
     return getTaskmanagementWorkitemsSchemasCoretypes(createGetTaskmanagementWorkitemsSchemasCoretypesRequest().withHttpInfo());
   }
 
@@ -2786,13 +2787,13 @@ public class TaskManagementApi {
    * Get the core types from which all schemas are built.
    * 
    * @param request The request object
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getTaskmanagementWorkitemsSchemasCoretypes(GetTaskmanagementWorkitemsSchemasCoretypesRequest request) throws IOException, ApiException {
+  public CoretypeListing getTaskmanagementWorkitemsSchemasCoretypes(GetTaskmanagementWorkitemsSchemasCoretypesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2808,13 +2809,13 @@ public class TaskManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getTaskmanagementWorkitemsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CoretypeListing> getTaskmanagementWorkitemsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2825,7 +2826,7 @@ public class TaskManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

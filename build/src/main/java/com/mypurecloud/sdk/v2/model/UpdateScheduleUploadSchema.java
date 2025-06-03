@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
 import com.mypurecloud.sdk.v2.model.BuUpdateAgentScheduleUploadSchema;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -31,7 +31,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
   private String description = null;
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
-  private BuHeadcountForecast headcountForecast = null;
+  private BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast = null;
   private List<BuUpdateAgentScheduleUploadSchema> agentSchedules = null;
   private WfmVersionedEntityMetadata metadata = null;
 
@@ -99,17 +99,17 @@ public class UpdateScheduleUploadSchema  implements Serializable {
   /**
    * The headcount forecast to associate with the schedule
    **/
-  public UpdateScheduleUploadSchema headcountForecast(BuHeadcountForecast headcountForecast) {
+  public UpdateScheduleUploadSchema headcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast) {
     this.headcountForecast = headcountForecast;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The headcount forecast to associate with the schedule")
   @JsonProperty("headcountForecast")
-  public BuHeadcountForecast getHeadcountForecast() {
+  public BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema getHeadcountForecast() {
     return headcountForecast;
   }
-  public void setHeadcountForecast(BuHeadcountForecast headcountForecast) {
+  public void setHeadcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast) {
     this.headcountForecast = headcountForecast;
   }
 

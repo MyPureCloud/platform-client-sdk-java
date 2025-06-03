@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
 import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
 import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -2496,7 +2497,7 @@ public class TaskManagementApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2530,7 +2531,7 @@ public class TaskManagementApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2577,13 +2578,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Coretype> getTaskmanagementWorkitemsSchemasCoretypesAsync(GetTaskmanagementWorkitemsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+  public Future<CoretypeListing> getTaskmanagementWorkitemsSchemasCoretypesAsync(GetTaskmanagementWorkitemsSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
     try {
-      final SettableFuture<Coretype> future = SettableFuture.create();
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2611,13 +2612,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Coretype>> getTaskmanagementWorkitemsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+  public Future<ApiResponse<CoretypeListing>> getTaskmanagementWorkitemsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2625,7 +2626,7 @@ public class TaskManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2633,7 +2634,7 @@ public class TaskManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

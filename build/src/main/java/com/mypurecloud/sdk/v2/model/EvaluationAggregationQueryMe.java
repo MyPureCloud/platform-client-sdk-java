@@ -45,6 +45,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNEEAPPLICABLE("assigneeApplicable"),
     ASSIGNEEID("assigneeId"),
     CALIBRATIONID("calibrationId"),
@@ -106,6 +107,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NEVALUATIONS("nEvaluations"),
     NEVALUATIONSDELETED("nEvaluationsDeleted"),
     NEVALUATIONSRESCORED("nEvaluationsRescored"),

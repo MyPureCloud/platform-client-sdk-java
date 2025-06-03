@@ -46,6 +46,7 @@ public class FixedAvailability  implements Serializable {
    */
  @JsonDeserialize(using = DaysOfWeekEnumDeserializer.class)
   public enum DaysOfWeekEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUNDAY("Sunday"),
     MONDAY("Monday"),
     TUESDAY("Tuesday"),

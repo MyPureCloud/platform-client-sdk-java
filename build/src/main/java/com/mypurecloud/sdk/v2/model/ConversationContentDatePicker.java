@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationContentDatePickerAvailableTime;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,7 @@ import java.io.Serializable;
 
 public class ConversationContentDatePicker  implements Serializable {
   
+  private String id = null;
   private String title = null;
   private String subtitle = null;
   private String imageUrl = null;
@@ -36,6 +38,55 @@ public class ConversationContentDatePicker  implements Serializable {
   private ConversationContentLocation location = null;
   private List<ConversationContentDatePickerAvailableTime> availableTimes = null;
 
+  private static class DateDisplayFormatEnumDeserializer extends StdDeserializer<DateDisplayFormatEnum> {
+    public DateDisplayFormatEnumDeserializer() {
+      super(DateDisplayFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public DateDisplayFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DateDisplayFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The format the date should be presented to the end user.
+   */
+ @JsonDeserialize(using = DateDisplayFormatEnumDeserializer.class)
+  public enum DateDisplayFormatEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DAYMONTHYEAR("dayMonthYear"),
+    MONTHDAYYEAR("monthDayYear"),
+    YEARMONTHDAY("yearMonthDay");
+
+    private String value;
+
+    DateDisplayFormatEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DateDisplayFormatEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DateDisplayFormatEnum value : DateDisplayFormatEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DateDisplayFormatEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DateDisplayFormatEnum dateDisplayFormat = null;
+
   public ConversationContentDatePicker() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       availableTimes = new ArrayList<ConversationContentDatePickerAvailableTime>();
@@ -43,6 +94,24 @@ public class ConversationContentDatePicker  implements Serializable {
   }
 
   
+  /**
+   * Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+   **/
+  public ConversationContentDatePicker id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * Text to show in the title.
    **/
@@ -169,6 +238,24 @@ public class ConversationContentDatePicker  implements Serializable {
   }
 
 
+  /**
+   * The format the date should be presented to the end user.
+   **/
+  public ConversationContentDatePicker dateDisplayFormat(DateDisplayFormatEnum dateDisplayFormat) {
+    this.dateDisplayFormat = dateDisplayFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The format the date should be presented to the end user.")
+  @JsonProperty("dateDisplayFormat")
+  public DateDisplayFormatEnum getDateDisplayFormat() {
+    return dateDisplayFormat;
+  }
+  public void setDateDisplayFormat(DateDisplayFormatEnum dateDisplayFormat) {
+    this.dateDisplayFormat = dateDisplayFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -179,18 +266,20 @@ public class ConversationContentDatePicker  implements Serializable {
     }
     ConversationContentDatePicker conversationContentDatePicker = (ConversationContentDatePicker) o;
 
-    return Objects.equals(this.title, conversationContentDatePicker.title) &&
+    return Objects.equals(this.id, conversationContentDatePicker.id) &&
+            Objects.equals(this.title, conversationContentDatePicker.title) &&
             Objects.equals(this.subtitle, conversationContentDatePicker.subtitle) &&
             Objects.equals(this.imageUrl, conversationContentDatePicker.imageUrl) &&
             Objects.equals(this.dateMinimum, conversationContentDatePicker.dateMinimum) &&
             Objects.equals(this.dateMaximum, conversationContentDatePicker.dateMaximum) &&
             Objects.equals(this.location, conversationContentDatePicker.location) &&
-            Objects.equals(this.availableTimes, conversationContentDatePicker.availableTimes);
+            Objects.equals(this.availableTimes, conversationContentDatePicker.availableTimes) &&
+            Objects.equals(this.dateDisplayFormat, conversationContentDatePicker.dateDisplayFormat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, subtitle, imageUrl, dateMinimum, dateMaximum, location, availableTimes);
+    return Objects.hash(id, title, subtitle, imageUrl, dateMinimum, dateMaximum, location, availableTimes, dateDisplayFormat);
   }
 
   @Override
@@ -198,6 +287,7 @@ public class ConversationContentDatePicker  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationContentDatePicker {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
@@ -205,6 +295,7 @@ public class ConversationContentDatePicker  implements Serializable {
     sb.append("    dateMaximum: ").append(toIndentedString(dateMaximum)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    availableTimes: ").append(toIndentedString(availableTimes)).append("\n");
+    sb.append("    dateDisplayFormat: ").append(toIndentedString(dateDisplayFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }

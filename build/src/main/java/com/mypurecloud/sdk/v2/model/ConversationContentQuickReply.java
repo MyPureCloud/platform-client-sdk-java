@@ -74,6 +74,7 @@ public class ConversationContentQuickReply  implements Serializable {
     }
   }
   private ActionEnum action = null;
+  private String summaryText = null;
 
   public ConversationContentQuickReply() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -153,6 +154,24 @@ public class ConversationContentQuickReply  implements Serializable {
   }
 
 
+  /**
+   * Summary of what the quick reply relates to.
+   **/
+  public ConversationContentQuickReply summaryText(String summaryText) {
+    this.summaryText = summaryText;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Summary of what the quick reply relates to.")
+  @JsonProperty("summaryText")
+  public String getSummaryText() {
+    return summaryText;
+  }
+  public void setSummaryText(String summaryText) {
+    this.summaryText = summaryText;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -166,12 +185,13 @@ public class ConversationContentQuickReply  implements Serializable {
     return Objects.equals(this.text, conversationContentQuickReply.text) &&
             Objects.equals(this.payload, conversationContentQuickReply.payload) &&
             Objects.equals(this.image, conversationContentQuickReply.image) &&
-            Objects.equals(this.action, conversationContentQuickReply.action);
+            Objects.equals(this.action, conversationContentQuickReply.action) &&
+            Objects.equals(this.summaryText, conversationContentQuickReply.summaryText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, payload, image, action);
+    return Objects.hash(text, payload, image, action, summaryText);
   }
 
   @Override
@@ -183,6 +203,7 @@ public class ConversationContentQuickReply  implements Serializable {
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    summaryText: ").append(toIndentedString(summaryText)).append("\n");
     sb.append("}");
     return sb.toString();
   }

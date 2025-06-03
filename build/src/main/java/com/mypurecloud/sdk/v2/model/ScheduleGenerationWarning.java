@@ -44,6 +44,7 @@ public class ScheduleGenerationWarning  implements Serializable {
    */
  @JsonDeserialize(using = UnableToScheduleRequiredDaysEnumDeserializer.class)
   public enum UnableToScheduleRequiredDaysEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUNDAY("Sunday"),
     MONDAY("Monday"),
     TUESDAY("Tuesday"),
@@ -98,6 +99,7 @@ public class ScheduleGenerationWarning  implements Serializable {
    */
  @JsonDeserialize(using = NoNeedDaysEnumDeserializer.class)
   public enum NoNeedDaysEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUNDAY("Sunday"),
     MONDAY("Monday"),
     TUESDAY("Tuesday"),

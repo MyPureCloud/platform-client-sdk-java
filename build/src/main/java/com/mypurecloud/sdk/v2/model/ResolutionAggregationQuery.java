@@ -48,6 +48,7 @@ public class ResolutionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONID("conversationId"),
     EXTERNALCONTACTID("externalContactId"),
     MEDIATYPE("mediaType"),
@@ -101,6 +102,7 @@ public class ResolutionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NNEXTCONTACTAVOIDED("nNextContactAvoided");
 
     private String value;

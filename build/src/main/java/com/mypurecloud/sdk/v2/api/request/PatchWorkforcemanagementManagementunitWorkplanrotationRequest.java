@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementManagementunitWorkplanrotationRequest {
             throw new IllegalStateException("Missing the required parameter 'workPlanRotationId' when building request for PatchWorkforcemanagementManagementunitWorkplanrotationRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitWorkplanrotationRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementManagementunitWorkplanrotationRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String workPlanRotationId) {
+	public static Builder builder(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, workPlanRotationId);
+	            .withRequiredParams(managementUnitId, workPlanRotationId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementManagementunitWorkplanrotationRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String workPlanRotationId) {
+		public Builder withRequiredParams(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setWorkPlanRotationId(workPlanRotationId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementManagementunitWorkplanrotationRequest {
             // verify the required parameter 'workPlanRotationId' is set
             if (request.workPlanRotationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'workPlanRotationId' when building request for PatchWorkforcemanagementManagementunitWorkplanrotationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitWorkplanrotationRequest.");
             }
             
 			return request;

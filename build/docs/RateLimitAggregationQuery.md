@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CORRELATIONID | &quot;correlationId&quot; |
 | ENTITYID | &quot;entityId&quot; |
 | LIMITNAME | &quot;limitName&quot; |
@@ -33,6 +34,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ORATELIMITRECORDED | &quot;oRateLimitRecorded&quot; |
 
 
@@ -46,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

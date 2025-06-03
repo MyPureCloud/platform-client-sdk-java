@@ -293,6 +293,20 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
 	    return this;
 	} 
 
+	private WorkPlan body;
+	public WorkPlan getBody() {
+		return this.body;
+	}
+
+	public void setBody(WorkPlan body) {
+		this.body = body;
+	}
+
+	public PatchWorkforcemanagementManagementunitWorkplanRequest withBody(WorkPlan body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private String validationMode;
 	public String getValidationMode() {
 		return this.validationMode;
@@ -336,20 +350,6 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
 		}
 	}
 
-	private WorkPlan body;
-	public WorkPlan getBody() {
-		return this.body;
-	}
-
-	public void setBody(WorkPlan body) {
-		this.body = body;
-	}
-
-	public PatchWorkforcemanagementManagementunitWorkplanRequest withBody(WorkPlan body) {
-	    this.setBody(body);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -381,6 +381,11 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
             throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PatchWorkforcemanagementManagementunitWorkplanRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitWorkplanRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -404,9 +409,9 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String workPlanId) {
+	public static Builder builder(String managementUnitId, String workPlanId, WorkPlan body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, workPlanId);
+	            .withRequiredParams(managementUnitId, workPlanId, body);
 	}
 
 
@@ -428,6 +433,11 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
 			return this;
 		}
 
+		public Builder withBody(WorkPlan body) {
+			request.setBody(body);
+			return this;
+		}
+
 		public Builder withValidationMode(String validationMode) {
 			request.setValidationMode(validationMode);
 			return this;
@@ -442,16 +452,12 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
 		    return this;
 		}
 
-		public Builder withBody(WorkPlan body) {
-			request.setBody(body);
-			return this;
-		}
 
 
-
-		public Builder withRequiredParams(String managementUnitId, String workPlanId) {
+		public Builder withRequiredParams(String managementUnitId, String workPlanId, WorkPlan body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setWorkPlanId(workPlanId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -467,6 +473,11 @@ public class PatchWorkforcemanagementManagementunitWorkplanRequest {
             // verify the required parameter 'workPlanId' is set
             if (request.workPlanId == null) {
                 throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PatchWorkforcemanagementManagementunitWorkplanRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitWorkplanRequest.");
             }
             
 			return request;

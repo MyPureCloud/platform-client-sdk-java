@@ -48,6 +48,7 @@ public class AgentCopilotAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENTASSISTANTID("agentAssistantId"),
     CANNEDRESPONSEID("cannedResponseId"),
     CANNEDRESPONSELIBRARYID("cannedResponseLibraryId"),
@@ -116,6 +117,7 @@ public class AgentCopilotAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),

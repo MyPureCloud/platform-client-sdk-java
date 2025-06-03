@@ -319,6 +319,11 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositio
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -337,9 +342,9 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositio
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, QueryWaitlistPositionsRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositio
 
 
 
-		public Builder withRequiredParams(String managementUnitId) {
+		public Builder withRequiredParams(String managementUnitId, QueryWaitlistPositionsRequest body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositio
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.");
             }
             
 			return request;

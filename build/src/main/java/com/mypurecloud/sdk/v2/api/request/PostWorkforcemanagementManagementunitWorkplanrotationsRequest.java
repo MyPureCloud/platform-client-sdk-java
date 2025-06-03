@@ -319,6 +319,11 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationsRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitWorkplanrotationsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanrotationsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -337,9 +342,9 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationsRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, AddWorkPlanRotationRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationsRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId) {
+		public Builder withRequiredParams(String managementUnitId, AddWorkPlanRotationRequest body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PostWorkforcemanagementManagementunitWorkplanrotationsRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitWorkplanrotationsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanrotationsRequest.");
             }
             
 			return request;

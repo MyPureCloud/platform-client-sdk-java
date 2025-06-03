@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.SummarySettingEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ import java.io.Serializable;
 public class SummaryGenerationConfig  implements Serializable {
   
   private Boolean enabled = null;
+  private SummarySettingEntity summarySetting = null;
 
   public SummaryGenerationConfig() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -48,6 +50,24 @@ public class SummaryGenerationConfig  implements Serializable {
   }
 
 
+  /**
+   * Configured summary setting object.
+   **/
+  public SummaryGenerationConfig summarySetting(SummarySettingEntity summarySetting) {
+    this.summarySetting = summarySetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configured summary setting object.")
+  @JsonProperty("summarySetting")
+  public SummarySettingEntity getSummarySetting() {
+    return summarySetting;
+  }
+  public void setSummarySetting(SummarySettingEntity summarySetting) {
+    this.summarySetting = summarySetting;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -58,12 +78,13 @@ public class SummaryGenerationConfig  implements Serializable {
     }
     SummaryGenerationConfig summaryGenerationConfig = (SummaryGenerationConfig) o;
 
-    return Objects.equals(this.enabled, summaryGenerationConfig.enabled);
+    return Objects.equals(this.enabled, summaryGenerationConfig.enabled) &&
+            Objects.equals(this.summarySetting, summaryGenerationConfig.summarySetting);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled);
+    return Objects.hash(enabled, summarySetting);
   }
 
   @Override
@@ -72,6 +93,7 @@ public class SummaryGenerationConfig  implements Serializable {
     sb.append("class SummaryGenerationConfig {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    summarySetting: ").append(toIndentedString(summarySetting)).append("\n");
     sb.append("}");
     return sb.toString();
   }

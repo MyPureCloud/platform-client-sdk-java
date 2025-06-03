@@ -300,6 +300,11 @@ public class PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest {
 
     public ApiRequest<HistoricalImportDeleteFilesJobRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(HistoricalImportDeleteFilesJobRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest {
 
 
 
+		public Builder withRequiredParams(HistoricalImportDeleteFilesJobRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest.");
+            }
             
 			return request;
 		}

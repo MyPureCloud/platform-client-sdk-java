@@ -43,6 +43,9 @@ import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.StaCategory;
 import com.mypurecloud.sdk.v2.model.SupportedDialectsEntityListing;
+import com.mypurecloud.sdk.v2.model.TestTopicPhraseJob;
+import com.mypurecloud.sdk.v2.model.TestTopicPhraseJobRequest;
+import com.mypurecloud.sdk.v2.model.TestTopicPhraseJobs;
 import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
@@ -92,6 +95,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialect
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsTestphraseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
@@ -103,6 +107,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPubl
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsTestphraseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
@@ -2926,6 +2931,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Get a Speech & Text Analytics test topics phrase job by id
+   * 
+   * @param jobId the id of the test topic phrase job (required)
+   * @return TestTopicPhraseJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestTopicPhraseJob getSpeechandtextanalyticsTopicsTestphraseJob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopicsTestphraseJob(createGetSpeechandtextanalyticsTopicsTestphraseJobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics test topics phrase job by id
+   * 
+   * @param jobId the id of the test topic phrase job (required)
+   * @return TestTopicPhraseJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestTopicPhraseJob> getSpeechandtextanalyticsTopicsTestphraseJobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsTopicsTestphraseJob(createGetSpeechandtextanalyticsTopicsTestphraseJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsTestphraseJobRequest createGetSpeechandtextanalyticsTopicsTestphraseJobRequest(String jobId) {
+    return GetSpeechandtextanalyticsTopicsTestphraseJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics test topics phrase job by id
+   * 
+   * @param request The request object
+   * @return TestTopicPhraseJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestTopicPhraseJob getSpeechandtextanalyticsTopicsTestphraseJob(GetSpeechandtextanalyticsTopicsTestphraseJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TestTopicPhraseJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TestTopicPhraseJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics test topics phrase job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestTopicPhraseJob> getSpeechandtextanalyticsTopicsTestphraseJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TestTopicPhraseJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestTopicPhraseJob> response = (ApiResponse<TestTopicPhraseJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestTopicPhraseJob> response = (ApiResponse<TestTopicPhraseJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Translate a single interaction recording (or an email conversation)
    * 
    * @param languageId Target translation language (required)
@@ -3787,6 +3870,84 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create new Speech & Text Analytics publish topics job
+   * 
+   * @param body The publish test topic phrase job to create (required)
+   * @return TestTopicPhraseJobs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestTopicPhraseJobs postSpeechandtextanalyticsTopicsTestphraseJobs(TestTopicPhraseJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsTopicsTestphraseJobs(createPostSpeechandtextanalyticsTopicsTestphraseJobsRequest(body));
+  }
+
+  /**
+   * Create new Speech & Text Analytics publish topics job
+   * 
+   * @param body The publish test topic phrase job to create (required)
+   * @return TestTopicPhraseJobs
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestTopicPhraseJobs> postSpeechandtextanalyticsTopicsTestphraseJobsWithHttpInfo(TestTopicPhraseJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsTopicsTestphraseJobs(createPostSpeechandtextanalyticsTopicsTestphraseJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsTopicsTestphraseJobsRequest createPostSpeechandtextanalyticsTopicsTestphraseJobsRequest(TestTopicPhraseJobRequest body) {
+    return PostSpeechandtextanalyticsTopicsTestphraseJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create new Speech & Text Analytics publish topics job
+   * 
+   * @param request The request object
+   * @return TestTopicPhraseJobs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestTopicPhraseJobs postSpeechandtextanalyticsTopicsTestphraseJobs(PostSpeechandtextanalyticsTopicsTestphraseJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TestTopicPhraseJobs> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TestTopicPhraseJobs>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech & Text Analytics publish topics job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestTopicPhraseJobs> postSpeechandtextanalyticsTopicsTestphraseJobs(ApiRequest<TestTopicPhraseJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TestTopicPhraseJobs>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestTopicPhraseJobs> response = (ApiResponse<TestTopicPhraseJobs>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestTopicPhraseJobs> response = (ApiResponse<TestTopicPhraseJobs>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

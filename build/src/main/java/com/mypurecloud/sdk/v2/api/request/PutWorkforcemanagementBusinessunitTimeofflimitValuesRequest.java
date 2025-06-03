@@ -338,6 +338,11 @@ public class PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest {
             throw new IllegalStateException("Missing the required parameter 'timeOffLimitId' when building request for PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String timeOffLimitId) {
+	public static Builder builder(String businessUnitId, String timeOffLimitId, BuSetTimeOffLimitValuesRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, timeOffLimitId);
+	            .withRequiredParams(businessUnitId, timeOffLimitId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String timeOffLimitId) {
+		public Builder withRequiredParams(String businessUnitId, String timeOffLimitId, BuSetTimeOffLimitValuesRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setTimeOffLimitId(timeOffLimitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest {
             // verify the required parameter 'timeOffLimitId' is set
             if (request.timeOffLimitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'timeOffLimitId' when building request for PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.");
             }
             
 			return request;

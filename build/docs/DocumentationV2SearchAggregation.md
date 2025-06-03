@@ -26,6 +26,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | VALUE_DESC | &quot;VALUE_DESC&quot; |
 | VALUE_ASC | &quot;VALUE_ASC&quot; |
 | COUNT_DESC | &quot;COUNT_DESC&quot; |
@@ -34,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

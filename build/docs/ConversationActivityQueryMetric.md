@@ -16,9 +16,11 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OALERTING | &quot;oAlerting&quot; | 
 | OINTERACTING | &quot;oInteracting&quot; | 
+| OLONGESTINTERACTING | &quot;oLongestInteracting&quot; | 
+| OLONGESTWAITING | &quot;oLongestWaiting&quot; | 
 | OWAITING | &quot;oWaiting&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -45,6 +45,8 @@ public class ConversationActivityMetricValue  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),
+    OLONGESTINTERACTING("oLongestInteracting"),
+    OLONGESTWAITING("oLongestWaiting"),
     OWAITING("oWaiting");
 
     private String value;
@@ -76,6 +78,7 @@ public class ConversationActivityMetricValue  implements Serializable {
   private String qualifier = null;
   private List<String> entityIds = null;
   private Integer count = null;
+  private Long calculatedMetricValue = null;
 
   public ConversationActivityMetricValue() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -156,6 +159,24 @@ public class ConversationActivityMetricValue  implements Serializable {
   }
 
 
+  /**
+   * Calculated metric value
+   **/
+  public ConversationActivityMetricValue calculatedMetricValue(Long calculatedMetricValue) {
+    this.calculatedMetricValue = calculatedMetricValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Calculated metric value")
+  @JsonProperty("calculatedMetricValue")
+  public Long getCalculatedMetricValue() {
+    return calculatedMetricValue;
+  }
+  public void setCalculatedMetricValue(Long calculatedMetricValue) {
+    this.calculatedMetricValue = calculatedMetricValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -169,12 +190,13 @@ public class ConversationActivityMetricValue  implements Serializable {
     return Objects.equals(this.metric, conversationActivityMetricValue.metric) &&
             Objects.equals(this.qualifier, conversationActivityMetricValue.qualifier) &&
             Objects.equals(this.entityIds, conversationActivityMetricValue.entityIds) &&
-            Objects.equals(this.count, conversationActivityMetricValue.count);
+            Objects.equals(this.count, conversationActivityMetricValue.count) &&
+            Objects.equals(this.calculatedMetricValue, conversationActivityMetricValue.calculatedMetricValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, qualifier, entityIds, count);
+    return Objects.hash(metric, qualifier, entityIds, count, calculatedMetricValue);
   }
 
   @Override
@@ -186,6 +208,7 @@ public class ConversationActivityMetricValue  implements Serializable {
     sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
     sb.append("    entityIds: ").append(toIndentedString(entityIds)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    calculatedMetricValue: ").append(toIndentedString(calculatedMetricValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

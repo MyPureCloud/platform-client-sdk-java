@@ -111,6 +111,20 @@ public class GetTextbotsBotsSearchRequest {
 	    return this;
 	} 
 
+	private Boolean virtualAgentEnabled;
+	public Boolean getVirtualAgentEnabled() {
+		return this.virtualAgentEnabled;
+	}
+
+	public void setVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+		this.virtualAgentEnabled = virtualAgentEnabled;
+	}
+
+	public GetTextbotsBotsSearchRequest withVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+	    this.setVirtualAgentEnabled(virtualAgentEnabled);
+	    return this;
+	} 
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -156,6 +170,9 @@ public class GetTextbotsBotsSearchRequest {
         
 
                 .withQueryParameters("botId", "multi", botId)
+        
+
+                .withQueryParameters("virtualAgentEnabled", "", virtualAgentEnabled)
         
 
                 .withQueryParameters("pageSize", "", pageSize)
@@ -204,6 +221,11 @@ public class GetTextbotsBotsSearchRequest {
 
 		public Builder withBotId(List<String> botId) {
 			request.setBotId(botId);
+			return this;
+		}
+
+		public Builder withVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+			request.setVirtualAgentEnabled(virtualAgentEnabled);
 			return this;
 		}
 

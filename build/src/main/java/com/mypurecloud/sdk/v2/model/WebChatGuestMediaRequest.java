@@ -46,6 +46,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
    */
  @JsonDeserialize(using = TypesEnumDeserializer.class)
   public enum TypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COBROWSE("COBROWSE"),
     SCREENSHARE("SCREENSHARE");
 

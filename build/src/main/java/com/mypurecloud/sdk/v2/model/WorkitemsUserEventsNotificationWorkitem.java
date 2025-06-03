@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationCustomAttribute;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationDelta;
+import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationPropertyChange;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationScoredAgent;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationSession;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationWrapup;
@@ -172,6 +173,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
   private OperationEnum operation = null;
   private List<WorkitemsUserEventsNotificationDelta> changes = null;
+  private List<WorkitemsUserEventsNotificationPropertyChange> propertyChanges = null;
 
   private static class AssignmentStateEnumDeserializer extends StdDeserializer<AssignmentStateEnum> {
     public AssignmentStateEnumDeserializer() {
@@ -249,6 +251,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   public WorkitemsUserEventsNotificationWorkitem() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       changes = new ArrayList<WorkitemsUserEventsNotificationDelta>();
+      propertyChanges = new ArrayList<WorkitemsUserEventsNotificationPropertyChange>();
       sessions = new ArrayList<WorkitemsUserEventsNotificationSession>();
       skillIds = new ArrayList<String>();
       preferredAgentIds = new ArrayList<String>();
@@ -684,6 +687,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
+  public WorkitemsUserEventsNotificationWorkitem propertyChanges(List<WorkitemsUserEventsNotificationPropertyChange> propertyChanges) {
+    this.propertyChanges = propertyChanges;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("propertyChanges")
+  public List<WorkitemsUserEventsNotificationPropertyChange> getPropertyChanges() {
+    return propertyChanges;
+  }
+  public void setPropertyChanges(List<WorkitemsUserEventsNotificationPropertyChange> propertyChanges) {
+    this.propertyChanges = propertyChanges;
+  }
+
+
+  /**
+   **/
   public WorkitemsUserEventsNotificationWorkitem assignmentState(AssignmentStateEnum assignmentState) {
     this.assignmentState = assignmentState;
     return this;
@@ -972,6 +992,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.modifiedBy, workitemsUserEventsNotificationWorkitem.modifiedBy) &&
             Objects.equals(this.operation, workitemsUserEventsNotificationWorkitem.operation) &&
             Objects.equals(this.changes, workitemsUserEventsNotificationWorkitem.changes) &&
+            Objects.equals(this.propertyChanges, workitemsUserEventsNotificationWorkitem.propertyChanges) &&
             Objects.equals(this.assignmentState, workitemsUserEventsNotificationWorkitem.assignmentState) &&
             Objects.equals(this.assignmentId, workitemsUserEventsNotificationWorkitem.assignmentId) &&
             Objects.equals(this.alertTimeoutSeconds, workitemsUserEventsNotificationWorkitem.alertTimeoutSeconds) &&
@@ -991,7 +1012,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId, workbinName, typeName, preferredAgentIds, divisionId, scoredAgents, utilizationLabelId);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, propertyChanges, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId, workbinName, typeName, preferredAgentIds, divisionId, scoredAgents, utilizationLabelId);
   }
 
   @Override
@@ -1024,6 +1045,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    changes: ").append(toIndentedString(changes)).append("\n");
+    sb.append("    propertyChanges: ").append(toIndentedString(propertyChanges)).append("\n");
     sb.append("    assignmentState: ").append(toIndentedString(assignmentState)).append("\n");
     sb.append("    assignmentId: ").append(toIndentedString(assignmentId)).append("\n");
     sb.append("    alertTimeoutSeconds: ").append(toIndentedString(alertTimeoutSeconds)).append("\n");

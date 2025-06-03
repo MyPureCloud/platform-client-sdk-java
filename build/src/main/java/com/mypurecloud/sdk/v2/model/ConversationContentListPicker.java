@@ -27,6 +27,7 @@ import java.io.Serializable;
 
 public class ConversationContentListPicker  implements Serializable {
   
+  private String id = null;
   private List<ConversationContentListPickerSection> sections = null;
   private ConversationContentReceivedReplyMessage replyMessage = null;
   private ConversationContentReceivedReplyMessage receivedMessage = null;
@@ -38,6 +39,24 @@ public class ConversationContentListPicker  implements Serializable {
   }
 
   
+  /**
+   * Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.
+   **/
+  public ConversationContentListPicker id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * An array of sections in the List Picker.
    **/
@@ -102,14 +121,15 @@ public class ConversationContentListPicker  implements Serializable {
     }
     ConversationContentListPicker conversationContentListPicker = (ConversationContentListPicker) o;
 
-    return Objects.equals(this.sections, conversationContentListPicker.sections) &&
+    return Objects.equals(this.id, conversationContentListPicker.id) &&
+            Objects.equals(this.sections, conversationContentListPicker.sections) &&
             Objects.equals(this.replyMessage, conversationContentListPicker.replyMessage) &&
             Objects.equals(this.receivedMessage, conversationContentListPicker.receivedMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sections, replyMessage, receivedMessage);
+    return Objects.hash(id, sections, replyMessage, receivedMessage);
   }
 
   @Override
@@ -117,6 +137,7 @@ public class ConversationContentListPicker  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationContentListPicker {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    sections: ").append(toIndentedString(sections)).append("\n");
     sb.append("    replyMessage: ").append(toIndentedString(replyMessage)).append("\n");
     sb.append("    receivedMessage: ").append(toIndentedString(receivedMessage)).append("\n");

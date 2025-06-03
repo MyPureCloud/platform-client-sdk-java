@@ -300,6 +300,11 @@ public class PostWorkforcemanagementTimeoffrequestsRequest {
 
     public ApiRequest<CreateAgentTimeOffRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTimeoffrequestsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/timeoffrequests")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementTimeoffrequestsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(CreateAgentTimeOffRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementTimeoffrequestsRequest {
 
 
 
+		public Builder withRequiredParams(CreateAgentTimeOffRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementTimeoffrequestsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTimeoffrequestsRequest.");
+            }
             
 			return request;
 		}

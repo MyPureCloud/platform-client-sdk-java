@@ -8,6 +8,7 @@ com/mypurecloud/sdk/v2/ApiClientRetryAsyncTest$2.class
 com/mypurecloud/sdk/v2/ApiClientRetryTest$2.class
 com/mypurecloud/sdk/v2/ConsoleColors.class
 com/mypurecloud/sdk/v2/SdkTests.class
+com/mypurecloud/sdk/v2/SdkTests$1.class
 com/mypurecloud/sdk/v2/InvokedMethodListener.class
 com/mypurecloud/sdk/v2/ApiClientRetryTest$1.class
 com/mypurecloud/sdk/v2/ApiClientRetryTest.class

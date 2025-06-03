@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementBusinessunitStaffinggroupRequest {
             throw new IllegalStateException("Missing the required parameter 'staffingGroupId' when building request for PatchWorkforcemanagementBusinessunitStaffinggroupRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitStaffinggroupRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementBusinessunitStaffinggroupRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String staffingGroupId) {
+	public static Builder builder(String businessUnitId, String staffingGroupId, UpdateStaffingGroupRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, staffingGroupId);
+	            .withRequiredParams(businessUnitId, staffingGroupId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementBusinessunitStaffinggroupRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String staffingGroupId) {
+		public Builder withRequiredParams(String businessUnitId, String staffingGroupId, UpdateStaffingGroupRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setStaffingGroupId(staffingGroupId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementBusinessunitStaffinggroupRequest {
             // verify the required parameter 'staffingGroupId' is set
             if (request.staffingGroupId == null) {
                 throw new IllegalStateException("Missing the required parameter 'staffingGroupId' when building request for PatchWorkforcemanagementBusinessunitStaffinggroupRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitStaffinggroupRequest.");
             }
             
 			return request;

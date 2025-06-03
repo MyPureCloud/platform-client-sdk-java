@@ -203,6 +203,7 @@ public class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification  i
    */
  @JsonDeserialize(using = WorkPlanFieldsVisibleToAgentsEnumDeserializer.class)
   public enum WorkPlanFieldsVisibleToAgentsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     NAME("Name"),
     PAIDHOURS("PaidHours");

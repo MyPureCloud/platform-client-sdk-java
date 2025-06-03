@@ -7175,7 +7175,7 @@ try {
 # **getWorkforcemanagementManagementunitWeekShifttrades**
 
 
-> [WeekShiftTradeListResponse](WeekShiftTradeListResponse) getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, forceDownloadService)
+> [WeekShiftTradeListResponse](WeekShiftTradeListResponse) getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService)
 
 Gets all the shift trades for a given week
 
@@ -7211,9 +7211,10 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 Boolean evaluateMatches = true; // Boolean | Whether to evaluate the matches for violations
+Boolean includeCrossWeekShifts = false; // Boolean | Whether to include all shift trades with either the initiating shift or the receiving shift in the week
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
-    WeekShiftTradeListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, forceDownloadService);
+    WeekShiftTradeListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWeekShifttrades");
@@ -7229,6 +7230,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **evaluateMatches** | **Boolean**| Whether to evaluate the matches for violations | [optional] [default to true] 
+| **includeCrossWeekShifts** | **Boolean**| Whether to include all shift trades with either the initiating shift or the receiving shift in the week | [optional] [default to false] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
@@ -8430,7 +8432,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tradeId** | **String**| The ID of the alternative shift trade | 
-| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest)| body | [optional] 
+| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8550,7 +8552,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest)| body | [optional] 
+| **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8613,7 +8615,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **activityCodeId** | **String**| The ID of the activity code to update | 
-| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest)| body | [optional] 
+| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8739,7 +8741,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest)| body | [optional] 
+| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8802,7 +8804,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
 | **planningGroupId** | **String**| The ID of a planning group to update | 
-| **body** | [**UpdatePlanningGroupRequest**](UpdatePlanningGroupRequest)| body | [optional] 
+| **body** | [**UpdatePlanningGroupRequest**](UpdatePlanningGroupRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8864,7 +8866,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **runId** | **String**| The ID of the schedule run | 
-| **body** | [**PatchBuScheduleRunRequest**](PatchBuScheduleRunRequest)| body | [optional] 
+| **body** | [**PatchBuScheduleRunRequest**](PatchBuScheduleRunRequest)| body | 
 {: class="table-striped"}
 
 
@@ -8927,7 +8929,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
 | **serviceGoalTemplateId** | **String**| The ID of a service goal template to update | 
-| **body** | [**UpdateServiceGoalTemplate**](UpdateServiceGoalTemplate)| body | [optional] 
+| **body** | [**UpdateServiceGoalTemplate**](UpdateServiceGoalTemplate)| body | 
 {: class="table-striped"}
 
 
@@ -8990,7 +8992,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **staffingGroupId** | **String**| The ID of the staffing group to update | 
-| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest)| body | [optional] 
+| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9053,7 +9055,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **timeOffPlanId** | **String**| The ID of the time-off plan to update | 
-| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest)| body | [optional] 
+| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9181,7 +9183,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **bidId** | **String**| The work plan bid id of the bid groups | 
 | **bidGroupId** | **String**| Work Plan Bid Group id | 
-| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate)| body | [optional] 
+| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate)| body | 
 {: class="table-striped"}
 
 
@@ -9246,7 +9248,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **bidId** | **String**| The work plan bid id of the bid groups | 
 | **bidGroupId** | **String**| The ID of the work plan bid group | 
-| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest)| body | [optional] 
+| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9307,7 +9309,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest)| body | [optional] 
+| **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9367,7 +9369,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest)| body | [optional] 
+| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9428,7 +9430,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**UpdateMuAgentWorkPlansBatchRequest**](UpdateMuAgentWorkPlansBatchRequest)| body | [optional] 
+| **body** | [**UpdateMuAgentWorkPlansBatchRequest**](UpdateMuAgentWorkPlansBatchRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9493,7 +9495,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The id of time off limit object to update | 
-| **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest)| body | [optional] 
+| **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9556,7 +9558,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit | 
 | **timeOffPlanId** | **String**| The ID of the time off plan to update | 
-| **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest)| body | [optional] 
+| **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9621,7 +9623,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffRequestId** | **String**| The ID of the time off request. | 
 | **userId** | **String**| The ID of user to whom the time off request belongs. | 
-| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest)| body | [optional] 
+| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9686,7 +9688,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The id of the user the requested time off request belongs to | 
 | **timeOffRequestId** | **String**| The id of the time off request to update | 
-| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch)| body | [optional] 
+| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch)| body | 
 {: class="table-striped"}
 
 
@@ -9763,7 +9765,7 @@ try {
 # **patchWorkforcemanagementManagementunitWorkplan**
 
 
-> [WorkPlan](WorkPlan) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body)
+> [WorkPlan](WorkPlan) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode)
 
 Update a work plan
 
@@ -9797,10 +9799,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
-String validationMode = "validationMode_example"; // String | Allows to update work plan even if validation result is invalid
 WorkPlan body = new WorkPlan(); // WorkPlan | body
+String validationMode = "validationMode_example"; // String | Allows to update work plan even if validation result is invalid
 try {
-    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body);
+    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan");
@@ -9815,8 +9817,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to update | 
+| **body** | [**WorkPlan**](WorkPlan)| body | 
 | **validationMode** | **String**| Allows to update work plan even if validation result is invalid | [optional]<br />**Values**: Ignore 
-| **body** | [**WorkPlan**](WorkPlan)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -9879,7 +9881,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanRotationId** | **String**| The ID of the work plan rotation to update | 
-| **body** | [**UpdateWorkPlanRotationRequest**](UpdateWorkPlanRotationRequest)| body | [optional] 
+| **body** | [**UpdateWorkPlanRotationRequest**](UpdateWorkPlanRotationRequest)| body | 
 {: class="table-striped"}
 
 
@@ -9940,7 +9942,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **timeOffRequestId** | **String**| The ID of the time off request | 
-| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch)| body | [optional] 
+| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch)| body | 
 {: class="table-striped"}
 
 
@@ -10001,7 +10003,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| The userId to whom the work plan bid ranks apply. | 
-| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks)| body | [optional] 
+| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks)| body | 
 {: class="table-striped"}
 
 
@@ -10121,7 +10123,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bidId** | **String**| The ID of the work plan bid | 
-| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference)| body | [optional] 
+| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference)| body | 
 {: class="table-striped"}
 
 
@@ -10364,7 +10366,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery)| body | [optional] 
+| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery)| body | 
 {: class="table-striped"}
 
 
@@ -10549,7 +10551,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**MoveAgentsRequest**](MoveAgentsRequest)| body | [optional] 
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -10608,7 +10610,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest)| body | [optional] 
+| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -10726,7 +10728,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest)| body | [optional] 
+| **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest)| body | 
 {: class="table-striped"}
 
 
@@ -10964,7 +10966,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest)| body | [optional] 
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11165,7 +11167,7 @@ try {
 # **postWorkforcemanagementBusinessunitAgentschedulesSearch**
 
 
-> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, forceAsync, forceDownloadService)
 
 Search published schedules
 
@@ -11199,11 +11201,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 try {
-    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, forceAsync, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch");
@@ -11217,9 +11219,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -11294,7 +11296,7 @@ try {
 # **postWorkforcemanagementBusinessunitIntraday**
 
 
-> [AsyncIntradayResponse](AsyncIntradayResponse) postWorkforcemanagementBusinessunitIntraday(businessUnitId, forceAsync, body)
+> [AsyncIntradayResponse](AsyncIntradayResponse) postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, forceAsync)
 
 Get intraday data for the given date for the requested planningGroupIds
 
@@ -11327,10 +11329,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 IntradayPlanningGroupRequest body = new IntradayPlanningGroupRequest(); // IntradayPlanningGroupRequest | body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 try {
-    AsyncIntradayResponse result = apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, forceAsync, body);
+    AsyncIntradayResponse result = apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, forceAsync);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday");
@@ -11344,8 +11346,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
-| **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -11406,7 +11408,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
-| **body** | [**CreatePlanningGroupRequest**](CreatePlanningGroupRequest)| body | [optional] 
+| **body** | [**CreatePlanningGroupRequest**](CreatePlanningGroupRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11467,7 +11469,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
-| **body** | [**CreateServiceGoalTemplate**](CreateServiceGoalTemplate)| body | [optional] 
+| **body** | [**CreateServiceGoalTemplate**](CreateServiceGoalTemplate)| body | 
 {: class="table-striped"}
 
 
@@ -11528,7 +11530,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest)| body | [optional] 
+| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11589,7 +11591,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest)| body | [optional] 
+| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11650,7 +11652,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest)| body | [optional] 
+| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11711,7 +11713,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | [optional] 
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11772,7 +11774,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest)| body | [optional] 
+| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest)| body | 
 {: class="table-striped"}
 
 
@@ -11972,7 +11974,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
 | **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
 | **scheduleId** | **String**| The ID of the schedule the performance prediction belongs to | 
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest)| body | [optional] 
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest)| body | 
 {: class="table-striped"}
 
 
@@ -12037,7 +12039,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
 | **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
 | **scheduleId** | **String**| The ID of the schedule the performance prediction belongs to | 
-| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body | [optional] 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body | 
 {: class="table-striped"}
 
 
@@ -12880,7 +12882,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **bidId** | **String**| The work plan bid id of the bid groups | 
-| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate)| body | [optional] 
+| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate)| body | 
 {: class="table-striped"}
 
 
@@ -12941,7 +12943,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid)| The work plan bid to be created | [optional] 
+| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid)| The work plan bid to be created | 
 {: class="table-striped"}
 
 
@@ -13002,7 +13004,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest)| body | [optional] 
+| **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13121,7 +13123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**HistoricalImportDeleteFilesJobRequest**](HistoricalImportDeleteFilesJobRequest)| body | [optional] 
+| **body** | [**HistoricalImportDeleteFilesJobRequest**](HistoricalImportDeleteFilesJobRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13240,7 +13242,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ValidationServiceRequest**](ValidationServiceRequest)| body | [optional] 
+| **body** | [**ValidationServiceRequest**](ValidationServiceRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13311,7 +13313,7 @@ try {
 # **postWorkforcemanagementManagementunitAgentsWorkplansQuery**
 
 
-> [AgentsWorkPlansResponse](AgentsWorkPlansResponse) postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, forceDownloadService, body)
+> [AgentsWorkPlansResponse](AgentsWorkPlansResponse) postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, forceDownloadService)
 
 Get agents work plans configuration
 
@@ -13344,10 +13346,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 GetAgentsWorkPlansRequest body = new GetAgentsWorkPlansRequest(); // GetAgentsWorkPlansRequest | body
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
-    AgentsWorkPlansResponse result = apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, forceDownloadService, body);
+    AgentsWorkPlansResponse result = apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentsWorkplansQuery");
@@ -13361,8 +13363,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**GetAgentsWorkPlansRequest**](GetAgentsWorkPlansRequest)| body | 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
-| **body** | [**GetAgentsWorkPlansRequest**](GetAgentsWorkPlansRequest)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -13374,7 +13376,7 @@ try {
 # **postWorkforcemanagementManagementunitAgentschedulesSearch**
 
 
-> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService)
 
 Query published schedules for given given time range for set of users
 
@@ -13408,11 +13410,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 try {
-    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
@@ -13426,9 +13428,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -13491,7 +13493,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit | 
-| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery)| body | [optional] 
+| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery)| body | 
 {: class="table-striped"}
 
 
@@ -13554,7 +13556,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest)| body | [optional] 
+| **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13619,7 +13621,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody)| body | [optional] 
+| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody)| body | 
 {: class="table-striped"}
 
 
@@ -13682,7 +13684,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit | 
-| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest)| body | [optional] 
+| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13745,7 +13747,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
-| **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest)| body | [optional] 
+| **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13806,7 +13808,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
-| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | [optional] 
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13867,7 +13869,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit | 
-| **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest)| body | [optional] 
+| **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13928,7 +13930,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest)| body | [optional] 
+| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest)| body | 
 {: class="table-striped"}
 
 
@@ -13989,7 +13991,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
-| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest)| body | [optional] 
+| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest)| body | 
 {: class="table-striped"}
 
 
@@ -14001,7 +14003,7 @@ try {
 # **postWorkforcemanagementManagementunitTimeoffrequestsQuery**
 
 
-> [TimeOffRequestListing](TimeOffRequestListing) postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, forceDownloadService, body)
+> [TimeOffRequestListing](TimeOffRequestListing) postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, forceDownloadService)
 
 Fetches time off requests matching the conditions specified in the request body
 
@@ -14036,10 +14038,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 TimeOffRequestQueryBody body = new TimeOffRequestQueryBody(); // TimeOffRequestQueryBody | body
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
-    TimeOffRequestListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, forceDownloadService, body);
+    TimeOffRequestListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsQuery");
@@ -14053,8 +14055,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody)| body | 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
-| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -14115,7 +14117,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
-| **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest)| body | [optional] 
+| **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -14304,7 +14306,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit | 
 | **userId** | **String**| The id of the user for whom the time off request estimate is requested | 
-| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | [optional] 
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | 
 {: class="table-striped"}
 
 
@@ -14628,7 +14630,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to create a copy | 
-| **body** | [**CopyWorkPlan**](CopyWorkPlan)| body | [optional] 
+| **body** | [**CopyWorkPlan**](CopyWorkPlan)| body | 
 {: class="table-striped"}
 
 
@@ -14640,7 +14642,7 @@ try {
 # **postWorkforcemanagementManagementunitWorkplanValidate**
 
 
-> [ValidateWorkPlanResponse](ValidateWorkPlanResponse) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body)
+> [ValidateWorkPlanResponse](ValidateWorkPlanResponse) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand)
 
 Validate Work Plan
 
@@ -14675,10 +14677,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
-List<String> expand = Arrays.asList(null); // List<String> | 
 WorkPlanValidationRequest body = new WorkPlanValidationRequest(); // WorkPlanValidationRequest | body
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
-    ValidateWorkPlanResponse result = apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body);
+    ValidateWorkPlanResponse result = apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanValidate");
@@ -14693,8 +14695,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. | 
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest)| body | 
 | **expand** | [**List&lt;String&gt;**](String)|  | [optional]<br />**Values**: messages 
-| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -14757,7 +14759,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanRotationId** | **String**| The ID of the work plan rotation to create a copy | 
-| **body** | [**CopyWorkPlanRotationRequest**](CopyWorkPlanRotationRequest)| body | [optional] 
+| **body** | [**CopyWorkPlanRotationRequest**](CopyWorkPlanRotationRequest)| body | 
 {: class="table-striped"}
 
 
@@ -14818,7 +14820,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**AddWorkPlanRotationRequest**](AddWorkPlanRotationRequest)| body | [optional] 
+| **body** | [**AddWorkPlanRotationRequest**](AddWorkPlanRotationRequest)| body | 
 {: class="table-striped"}
 
 
@@ -14830,7 +14832,7 @@ try {
 # **postWorkforcemanagementManagementunitWorkplans**
 
 
-> [WorkPlan](WorkPlan) postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body)
+> [WorkPlan](WorkPlan) postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode)
 
 Create a new work plan
 
@@ -14863,10 +14865,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-String validationMode = "validationMode_example"; // String | Allows to create work plan even if the validation result is invalid
 CreateWorkPlan body = new CreateWorkPlan(); // CreateWorkPlan | body
+String validationMode = "validationMode_example"; // String | Allows to create work plan even if the validation result is invalid
 try {
-    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body);
+    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplans");
@@ -14880,8 +14882,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**CreateWorkPlan**](CreateWorkPlan)| body | 
 | **validationMode** | **String**| Allows to create work plan even if the validation result is invalid | [optional]<br />**Values**: Ignore 
-| **body** | [**CreateWorkPlan**](CreateWorkPlan)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -14942,7 +14944,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest)| body | [optional] 
+| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15000,7 +15002,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UpdateNotificationsRequest**](UpdateNotificationsRequest)| body | [optional] 
+| **body** | [**UpdateNotificationsRequest**](UpdateNotificationsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15125,7 +15127,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| The ID of the team | 
-| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams)| body | [optional] 
+| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams)| body | 
 {: class="table-striped"}
 
 
@@ -15188,7 +15190,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| The ID of the team | 
-| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest)| body | [optional] 
+| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15306,7 +15308,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AvailableTimeOffRequest**](AvailableTimeOffRequest)| body | [optional] 
+| **body** | [**AvailableTimeOffRequest**](AvailableTimeOffRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15365,7 +15367,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest)| body | [optional] 
+| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15424,7 +15426,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | [optional] 
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15483,7 +15485,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest)| body | [optional] 
+| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15609,7 +15611,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **timeOffLimitId** | **String**| The ID of the time-off limit object to set values for | 
-| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest)| body | [optional] 
+| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15674,7 +15676,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The ID of the time off limit object to set values for | 
-| **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest)| body | [optional] 
+| **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest)| body | 
 {: class="table-striped"}
 
 
@@ -15683,4 +15685,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

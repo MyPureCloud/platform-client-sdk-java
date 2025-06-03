@@ -25,6 +25,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
 | DTMF | &quot;DTMF&quot; |
@@ -34,10 +35,11 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

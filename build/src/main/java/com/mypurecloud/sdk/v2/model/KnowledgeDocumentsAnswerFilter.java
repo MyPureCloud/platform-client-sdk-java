@@ -243,6 +243,7 @@ public class KnowledgeDocumentsAnswerFilter  implements Serializable {
    */
  @JsonDeserialize(using = AnswerModeEnumDeserializer.class)
   public enum AnswerModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ANSWERHIGHLIGHT("AnswerHighlight"),
     ANSWERGENERATION("AnswerGeneration");
 

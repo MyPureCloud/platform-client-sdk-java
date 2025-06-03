@@ -42,6 +42,7 @@ public class IgnoredActivityCategories  implements Serializable {
    */
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONQUEUEWORK("OnQueueWork"),
     BREAK("Break"),
     MEAL("Meal"),

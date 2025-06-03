@@ -319,6 +319,11 @@ public class PostWorkforcemanagementManagementunitTimeofflimitsRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeofflimitsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeofflimitsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -337,9 +342,9 @@ public class PostWorkforcemanagementManagementunitTimeofflimitsRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, CreateTimeOffLimitRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PostWorkforcemanagementManagementunitTimeofflimitsRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId) {
+		public Builder withRequiredParams(String managementUnitId, CreateTimeOffLimitRequest body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PostWorkforcemanagementManagementunitTimeofflimitsRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeofflimitsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeofflimitsRequest.");
             }
             
 			return request;

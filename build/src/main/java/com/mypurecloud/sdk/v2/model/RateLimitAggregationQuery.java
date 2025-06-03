@@ -48,6 +48,7 @@ public class RateLimitAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CORRELATIONID("correlationId"),
     ENTITYID("entityId"),
     LIMITNAME("limitName"),
@@ -101,6 +102,7 @@ public class RateLimitAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ORATELIMITRECORDED("oRateLimitRecorded");
 
     private String value;

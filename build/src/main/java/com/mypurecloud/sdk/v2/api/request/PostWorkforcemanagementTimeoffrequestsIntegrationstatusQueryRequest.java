@@ -300,6 +300,11 @@ public class PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest
 
     public ApiRequest<CurrentUserTimeOffIntegrationStatusRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest
 		return new Builder();
 	}
 
+
+	public static Builder builder(CurrentUserTimeOffIntegrationStatusRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest
 
 
 
+		public Builder withRequiredParams(CurrentUserTimeOffIntegrationStatusRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest.");
+            }
             
 			return request;
 		}

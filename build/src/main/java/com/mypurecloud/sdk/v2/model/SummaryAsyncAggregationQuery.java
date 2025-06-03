@@ -48,6 +48,7 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONID("conversationId"),
     COPIED("copied"),
     EDITEDFIELD("editedField"),
@@ -113,6 +114,7 @@ public class SummaryAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCONVERSATIONSUMMARIES("nConversationSummaries"),
     NCONVERSATIONSUMMARYENGAGEMENTS("nConversationSummaryEngagements"),
     TCONVERSATIONSUMMARY("tConversationSummary");

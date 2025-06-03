@@ -61,6 +61,7 @@
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
 | ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
+| ANALYTICS_DATA_EXTRACTION | &quot;analytics.data.extraction&quot; | 
 | ANALYTICS | &quot;analytics&quot; | 
 | ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
 | ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
@@ -127,6 +128,7 @@
 | TELEPHONY_CONFIGURATION | &quot;telephony.configuration&quot; | 
 | USAGE | &quot;usage&quot; | 
 | USERS | &quot;users&quot; | 
+| USERS_RULES | &quot;users.rules&quot; | 
 | WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
@@ -150,4 +152,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

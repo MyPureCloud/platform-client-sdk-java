@@ -45,6 +45,7 @@ public class AssistantQueue  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("Call"),
     EMAIL("Email"),
     MESSAGE("Message");

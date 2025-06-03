@@ -27,13 +27,11 @@ public class AdditionalMessage  implements Serializable {
   
   private String textBody = null;
   private List<String> mediaIds = null;
-  private List<String> stickerIds = null;
   private SendMessagingTemplateRequest messagingTemplate = null;
 
   public AdditionalMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       mediaIds = new ArrayList<String>();
-      stickerIds = new ArrayList<String>();
     }
   }
 
@@ -75,24 +73,6 @@ public class AdditionalMessage  implements Serializable {
 
 
   /**
-   * The sticker ids associated with the text message.
-   **/
-  public AdditionalMessage stickerIds(List<String> stickerIds) {
-    this.stickerIds = stickerIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The sticker ids associated with the text message.")
-  @JsonProperty("stickerIds")
-  public List<String> getStickerIds() {
-    return stickerIds;
-  }
-  public void setStickerIds(List<String> stickerIds) {
-    this.stickerIds = stickerIds;
-  }
-
-
-  /**
    * The messaging template use to send a predefined canned response with the message
    **/
   public AdditionalMessage messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
@@ -122,13 +102,12 @@ public class AdditionalMessage  implements Serializable {
 
     return Objects.equals(this.textBody, additionalMessage.textBody) &&
             Objects.equals(this.mediaIds, additionalMessage.mediaIds) &&
-            Objects.equals(this.stickerIds, additionalMessage.stickerIds) &&
             Objects.equals(this.messagingTemplate, additionalMessage.messagingTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(textBody, mediaIds, stickerIds, messagingTemplate);
+    return Objects.hash(textBody, mediaIds, messagingTemplate);
   }
 
   @Override
@@ -138,7 +117,6 @@ public class AdditionalMessage  implements Serializable {
     
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    mediaIds: ").append(toIndentedString(mediaIds)).append("\n");
-    sb.append("    stickerIds: ").append(toIndentedString(stickerIds)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("}");
     return sb.toString();

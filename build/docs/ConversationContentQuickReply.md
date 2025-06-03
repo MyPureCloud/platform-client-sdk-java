@@ -9,6 +9,7 @@
 | **payload** | **String** | Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response. |  |
 | **image** | **String** | URL of an image associated with the quick reply. |  [optional] |
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | Specifies the type of action that is triggered upon clicking the quick reply. |  [optional] |
+| **summaryText** | **String** | Summary of what the quick reply relates to. |  [optional] |
 
 
 ## Enum: ActionEnum
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

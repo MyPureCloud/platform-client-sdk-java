@@ -357,6 +357,11 @@ public class PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegration
             throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -379,9 +384,9 @@ public class PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegration
 	}
 
 
-	public static Builder builder(String managementUnitId, String timeOffRequestId, String userId) {
+	public static Builder builder(String managementUnitId, String timeOffRequestId, String userId, SetTimeOffIntegrationStatusRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, timeOffRequestId, userId);
+	            .withRequiredParams(managementUnitId, timeOffRequestId, userId, body);
 	}
 
 
@@ -415,10 +420,11 @@ public class PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegration
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String timeOffRequestId, String userId) {
+		public Builder withRequiredParams(String managementUnitId, String timeOffRequestId, String userId, SetTimeOffIntegrationStatusRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setTimeOffRequestId(timeOffRequestId);
 			request.setUserId(userId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -439,6 +445,11 @@ public class PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegration
             // verify the required parameter 'userId' is set
             if (request.userId == null) {
                 throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest.");
             }
             
 			return request;

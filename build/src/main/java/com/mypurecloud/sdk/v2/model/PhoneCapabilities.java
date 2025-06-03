@@ -49,6 +49,7 @@ public class PhoneCapabilities  implements Serializable {
    */
  @JsonDeserialize(using = MediaCodecsEnumDeserializer.class)
   public enum MediaCodecsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AUDIO_OPUS("audio/opus"),
     AUDIO_PCMU("audio/pcmu"),
     AUDIO_PCMA("audio/pcma"),

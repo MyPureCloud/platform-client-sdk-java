@@ -52,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
 import com.mypurecloud.sdk.v2.model.CsvJobResponse;
 import com.mypurecloud.sdk.v2.model.CsvSettings;

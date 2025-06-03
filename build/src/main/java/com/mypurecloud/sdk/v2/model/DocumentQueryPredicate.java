@@ -43,6 +43,7 @@ public class DocumentQueryPredicate  implements Serializable {
    */
  @JsonDeserialize(using = FieldsEnumDeserializer.class)
   public enum FieldsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALTERNATIVES("alternatives"),
     CATEGORYID("categoryId"),
     CATEGORYNAME("categoryName"),

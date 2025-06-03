@@ -550,12 +550,13 @@ public class AgentAssistantsApi {
    * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Return the assistant by the given name. (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return AssistantListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AssistantListing getAssistants(String before, String after, String limit, String pageSize, String name) throws IOException, ApiException {
-    return  getAssistants(createGetAssistantsRequest(before, after, limit, pageSize, name));
+  public AssistantListing getAssistants(String before, String after, String limit, String pageSize, String name, String expand) throws IOException, ApiException {
+    return  getAssistants(createGetAssistantsRequest(before, after, limit, pageSize, name, expand));
   }
 
   /**
@@ -566,14 +567,15 @@ public class AgentAssistantsApi {
    * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Return the assistant by the given name. (optional)
+   * @param expand Which fields, if any, to expand (optional)
    * @return AssistantListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AssistantListing> getAssistantsWithHttpInfo(String before, String after, String limit, String pageSize, String name) throws IOException {
-    return getAssistants(createGetAssistantsRequest(before, after, limit, pageSize, name).withHttpInfo());
+  public ApiResponse<AssistantListing> getAssistantsWithHttpInfo(String before, String after, String limit, String pageSize, String name, String expand) throws IOException {
+    return getAssistants(createGetAssistantsRequest(before, after, limit, pageSize, name, expand).withHttpInfo());
   }
 
-  private GetAssistantsRequest createGetAssistantsRequest(String before, String after, String limit, String pageSize, String name) {
+  private GetAssistantsRequest createGetAssistantsRequest(String before, String after, String limit, String pageSize, String name, String expand) {
     return GetAssistantsRequest.builder()
             .withBefore(before)
 
@@ -584,6 +586,8 @@ public class AgentAssistantsApi {
             .withPageSize(pageSize)
 
             .withName(name)
+
+            .withExpand(expand)
 
             .build();
   }

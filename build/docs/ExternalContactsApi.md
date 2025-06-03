@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact's schema |
 | [**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | Get a list of schemas. |
-| [**getExternalcontactsContactsSchemasCoretype**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsContactsSchemasCoretype**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretype) | Get a specific named core type. |
 | [**getExternalcontactsContactsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**getExternalcontactsContactsSchemasLimits**](ExternalContactsApi#getExternalcontactsContactsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | Fetch an External Source |
@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization's schema |
 | [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi#getExternalcontactsOrganizationsSchemas) | Get a list of schemas. |
-| [**getExternalcontactsOrganizationsSchemasCoretype**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretype) | Get the core types from which all schemas are built. |
+| [**getExternalcontactsOrganizationsSchemasCoretype**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretype) | Get a specific named core type. |
 | [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | Get quantitative limits on schemas |
 | [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | Fetch a relationship |
@@ -1532,7 +1532,7 @@ This endpoint does not require any parameters.
 
 > [Coretype](Coretype) getExternalcontactsContactsSchemasCoretype(coreTypeName)
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}  
 
@@ -1589,7 +1589,7 @@ try {
 # **getExternalcontactsContactsSchemasCoretypes**
 
 
-> [Coretype](Coretype) getExternalcontactsContactsSchemasCoretypes()
+> [CoretypeListing](CoretypeListing) getExternalcontactsContactsSchemasCoretypes()
 
 Get the core types from which all schemas are built.
 
@@ -1622,7 +1622,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 try {
-    Coretype result = apiInstance.getExternalcontactsContactsSchemasCoretypes();
+    CoretypeListing result = apiInstance.getExternalcontactsContactsSchemasCoretypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemasCoretypes");
@@ -1638,7 +1638,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 # **getExternalcontactsContactsSchemasLimits**
@@ -3022,7 +3022,7 @@ This endpoint does not require any parameters.
 
 > [Coretype](Coretype) getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}  
 
@@ -3079,7 +3079,7 @@ try {
 # **getExternalcontactsOrganizationsSchemasCoretypes**
 
 
-> [Coretype](Coretype) getExternalcontactsOrganizationsSchemasCoretypes()
+> [CoretypeListing](CoretypeListing) getExternalcontactsOrganizationsSchemasCoretypes()
 
 Get the core types from which all schemas are built.
 
@@ -3112,7 +3112,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 try {
-    Coretype result = apiInstance.getExternalcontactsOrganizationsSchemasCoretypes();
+    CoretypeListing result = apiInstance.getExternalcontactsOrganizationsSchemasCoretypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes");
@@ -3128,7 +3128,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 # **getExternalcontactsOrganizationsSchemasLimits**
@@ -7331,4 +7331,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

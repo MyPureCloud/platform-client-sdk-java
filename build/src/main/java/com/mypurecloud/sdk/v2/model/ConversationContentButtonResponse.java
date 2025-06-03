@@ -24,6 +24,7 @@ import java.io.Serializable;
 
 public class ConversationContentButtonResponse  implements Serializable {
   
+  private String originatingMessageId = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -46,7 +47,8 @@ public class ConversationContentButtonResponse  implements Serializable {
     BUTTON("Button"),
     QUICKREPLY("QuickReply"),
     DATEPICKER("DatePicker"),
-    LISTPICKER("ListPicker");
+    LISTPICKER("ListPicker"),
+    FORM("Form");
 
     private String value;
 
@@ -83,6 +85,24 @@ public class ConversationContentButtonResponse  implements Serializable {
   }
 
   
+  /**
+   * Reference to the ID of the original message (e.g., list picker) this button response is replying to.
+   **/
+  public ConversationContentButtonResponse originatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reference to the ID of the original message (e.g., list picker) this button response is replying to.")
+  @JsonProperty("originatingMessageId")
+  public String getOriginatingMessageId() {
+    return originatingMessageId;
+  }
+  public void setOriginatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+  }
+
+
   /**
    * Describes the button that resulted in the Button Response.
    **/
@@ -147,14 +167,15 @@ public class ConversationContentButtonResponse  implements Serializable {
     }
     ConversationContentButtonResponse conversationContentButtonResponse = (ConversationContentButtonResponse) o;
 
-    return Objects.equals(this.type, conversationContentButtonResponse.type) &&
+    return Objects.equals(this.originatingMessageId, conversationContentButtonResponse.originatingMessageId) &&
+            Objects.equals(this.type, conversationContentButtonResponse.type) &&
             Objects.equals(this.text, conversationContentButtonResponse.text) &&
             Objects.equals(this.payload, conversationContentButtonResponse.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, payload);
+    return Objects.hash(originatingMessageId, type, text, payload);
   }
 
   @Override
@@ -162,6 +183,7 @@ public class ConversationContentButtonResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationContentButtonResponse {\n");
     
+    sb.append("    originatingMessageId: ").append(toIndentedString(originatingMessageId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");

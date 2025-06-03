@@ -279,20 +279,6 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
 	    return this;
 	} 
 
-	private Boolean forceDownloadService;
-	public Boolean getForceDownloadService() {
-		return this.forceDownloadService;
-	}
-
-	public void setForceDownloadService(Boolean forceDownloadService) {
-		this.forceDownloadService = forceDownloadService;
-	}
-
-	public PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest withForceDownloadService(Boolean forceDownloadService) {
-	    this.setForceDownloadService(forceDownloadService);
-	    return this;
-	} 
-
 	private GetAgentsWorkPlansRequest body;
 	public GetAgentsWorkPlansRequest getBody() {
 		return this.body;
@@ -304,6 +290,20 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
 
 	public PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest withBody(GetAgentsWorkPlansRequest body) {
 	    this.setBody(body);
+	    return this;
+	} 
+
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
 	    return this;
 	} 
 
@@ -333,6 +333,11 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -354,9 +359,9 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, GetAgentsWorkPlansRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -373,20 +378,21 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
 			return this;
 		}
 
-		public Builder withForceDownloadService(Boolean forceDownloadService) {
-			request.setForceDownloadService(forceDownloadService);
-			return this;
-		}
-
 		public Builder withBody(GetAgentsWorkPlansRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
+			return this;
+		}
 
 
-		public Builder withRequiredParams(String managementUnitId) {
+
+		public Builder withRequiredParams(String managementUnitId, GetAgentsWorkPlansRequest body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -397,6 +403,11 @@ public class PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.");
             }
             
 			return request;

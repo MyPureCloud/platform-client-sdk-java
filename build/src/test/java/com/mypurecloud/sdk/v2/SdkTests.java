@@ -8,6 +8,8 @@ import com.mypurecloud.sdk.v2.connector.ning.AsyncHttpClientConnectorProvider;
 import com.mypurecloud.sdk.v2.connector.okhttp.OkHttpClientConnectorProvider;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.extensions.notifications.NotificationHandler;
+import com.mypurecloud.sdk.v2.hooksmanager.PostResponseHook;
+import com.mypurecloud.sdk.v2.hooksmanager.PreRequestHook;
 import com.mypurecloud.sdk.v2.model.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -248,9 +250,44 @@ public class SdkTests {
     }
 
     @Test(priority = 9)
-    public void deleteUser() {
+    public void testPreAndPostHooks() {
         try {
-            usersApi.deleteUser(userId);
+            final boolean[] prehookExecuted = {false};
+            final boolean[] posthookExecuted = {false};
+            // Create hook implementations
+            PreRequestHook preHook = request -> {
+                prehookExecuted[0] = true;
+                System.out.println("Pre-request hook - Method: " + request.getMethod());
+                System.out.println("Pre-request hook - URL: " + request.getUrl());
+                return request;
+            };
+
+            PostResponseHook<UserEntityListing> postHook = new PostResponseHook<UserEntityListing>() {
+                @Override
+                public <T> ApiResponse<T> execute(ApiResponse<T> response) throws ApiException {
+                    posthookExecuted[0] = true;
+                    System.out.println("Post-hook executed. Status code: " + response.getStatusCode());
+                    return response;
+                }
+            };
+
+            apiClient.addPreRequestHook(preHook);
+            apiClient.addPostResponseHook(postHook);
+
+            User user = usersApi.getUser(userId, Collections.singletonList("profileSkills"), null, null);
+
+            apiClient.removePreRequestHook(preHook);
+            apiClient.removePostResponseHook(postHook);
+
+            Assert.assertTrue(prehookExecuted[0], "Prehook was not executed");
+            Assert.assertTrue(posthookExecuted[0], "Posthook was not executed");
+
+            Assert.assertEquals(user.getId(), userId);
+            Assert.assertEquals(user.getName(), userName);
+            Assert.assertEquals(user.getEmail(), userEmail);
+            Assert.assertEquals(user.getDepartment(), userDepartment);
+
+
         } catch (ApiException ex) {
             handleApiException(ex);
         } catch (Exception ex) {
@@ -259,6 +296,19 @@ public class SdkTests {
         }
     }
 
+
+    @Test(priority = 10)
+    public void deleteUser() {
+        try {
+            // usersApi.deleteUser(userId, false);
+            usersApi.deleteUser(userId);
+        } catch (ApiException ex) {
+            handleApiException(ex);
+        } catch (Exception ex) {
+            System.out.println(ex);
+            Assert.fail();
+        }
+    }
 
 
     @AfterTest

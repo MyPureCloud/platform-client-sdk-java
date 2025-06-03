@@ -313,6 +313,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
    */
  @JsonDeserialize(using = AlertTypesEnumDeserializer.class)
   public enum AlertTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("SMS"),
     DEVICE("DEVICE"),
     EMAIL("EMAIL");

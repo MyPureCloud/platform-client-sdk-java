@@ -50,6 +50,7 @@ public class Objective  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),

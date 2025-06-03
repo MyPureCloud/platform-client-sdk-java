@@ -47,7 +47,8 @@ public class CommonRulePredicateEntity  implements Serializable {
     GROUP("Group"),
     QUEUE("Queue"),
     TEAM("Team"),
-    TEAMMEMBERS("TeamMembers");
+    TEAMMEMBERS("TeamMembers"),
+    ORGANIZATION("Organization");
 
     private String value;
 

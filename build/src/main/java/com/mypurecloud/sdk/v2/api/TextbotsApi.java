@@ -48,13 +48,14 @@ public class TextbotsApi {
    * @param botType Bot types (optional)
    * @param botName Bot name (optional)
    * @param botId Bot IDs. Maximum of 50 (optional)
+   * @param virtualAgentEnabled Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows (optional)
    * @param pageSize The maximum results to return. Maximum of 100 (optional, default to 25)
    * @return BotSearchResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BotSearchResponseEntityListing getTextbotsBotsSearch(List<String> botType, String botName, List<String> botId, Integer pageSize) throws IOException, ApiException {
-    return  getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, pageSize));
+  public BotSearchResponseEntityListing getTextbotsBotsSearch(List<String> botType, String botName, List<String> botId, Boolean virtualAgentEnabled, Integer pageSize) throws IOException, ApiException {
+    return  getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, virtualAgentEnabled, pageSize));
   }
 
   /**
@@ -63,21 +64,24 @@ public class TextbotsApi {
    * @param botType Bot types (optional)
    * @param botName Bot name (optional)
    * @param botId Bot IDs. Maximum of 50 (optional)
+   * @param virtualAgentEnabled Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows (optional)
    * @param pageSize The maximum results to return. Maximum of 100 (optional, default to 25)
    * @return BotSearchResponseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BotSearchResponseEntityListing> getTextbotsBotsSearchWithHttpInfo(List<String> botType, String botName, List<String> botId, Integer pageSize) throws IOException {
-    return getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, pageSize).withHttpInfo());
+  public ApiResponse<BotSearchResponseEntityListing> getTextbotsBotsSearchWithHttpInfo(List<String> botType, String botName, List<String> botId, Boolean virtualAgentEnabled, Integer pageSize) throws IOException {
+    return getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, virtualAgentEnabled, pageSize).withHttpInfo());
   }
 
-  private GetTextbotsBotsSearchRequest createGetTextbotsBotsSearchRequest(List<String> botType, String botName, List<String> botId, Integer pageSize) {
+  private GetTextbotsBotsSearchRequest createGetTextbotsBotsSearchRequest(List<String> botType, String botName, List<String> botId, Boolean virtualAgentEnabled, Integer pageSize) {
     return GetTextbotsBotsSearchRequest.builder()
             .withBotType(botType)
 
             .withBotName(botName)
 
             .withBotId(botId)
+
+            .withVirtualAgentEnabled(virtualAgentEnabled)
 
             .withPageSize(pageSize)
 

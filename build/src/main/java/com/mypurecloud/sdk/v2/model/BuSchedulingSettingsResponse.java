@@ -46,6 +46,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
    */
  @JsonDeserialize(using = SyncTimeOffPropertiesEnumDeserializer.class)
   public enum SyncTimeOffPropertiesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PAYABLEMINUTES("PayableMinutes");
 
     private String value;

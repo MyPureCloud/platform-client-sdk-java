@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
@@ -33,6 +34,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NNEXTCONTACTAVOIDED | &quot;nNextContactAvoided&quot; |
 
 
@@ -47,4 +49,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

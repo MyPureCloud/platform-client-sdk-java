@@ -233,12 +233,14 @@
 | **categoryIds** | **List&lt;String&gt;** | A list of category ids for filtering |  [optional] |
 | **deliveryPushed** | **Boolean** | Filter to indicate if push notification is sent |  [optional] |
 | **socialRatings** | **List&lt;Float&gt;** | A set of ratings for Google Business Profile |  [optional] |
+| **virtualAgentIds** | **List&lt;String&gt;** | A list of virtual agent ids for filtering. |  [optional] |
 
 
 ## Enum: MediaTypesEnum
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CALLBACK | &quot;callback&quot; |
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
@@ -255,6 +257,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
 
@@ -263,6 +266,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
 
@@ -271,6 +275,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;sms&quot; |
 | TWITTER | &quot;twitter&quot; |
 | LINE | &quot;line&quot; |
@@ -286,6 +291,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
 
@@ -294,6 +300,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACD | &quot;ACD&quot; |
 | USER | &quot;USER&quot; |
 | GROUP | &quot;GROUP&quot; |
@@ -310,6 +317,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | FLOW_DISCONNECT | &quot;FLOW_DISCONNECT&quot; |
 | FLOW_ERROR_DISCONNECT | &quot;FLOW_ERROR_DISCONNECT&quot; |
 | DISCONNECT | &quot;DISCONNECT&quot; |
@@ -319,6 +327,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BOT | &quot;bot&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
 | DIGITALBOT | &quot;digitalbot&quot; |
@@ -343,6 +352,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AGENT | &quot;agent&quot; |
 | DIRECT | &quot;direct&quot; |
 | DNIS | &quot;dnis&quot; |
@@ -354,6 +364,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
 | DIRECT | &quot;Direct&quot; |
@@ -369,6 +380,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
 | DIRECT | &quot;Direct&quot; |
@@ -384,6 +396,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INTERNAL | &quot;internal&quot; |
 | EXTERNAL | &quot;external&quot; |
 
@@ -392,6 +405,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | WEBCHAT | &quot;webchat&quot; |
 | WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; |
 | CONTENTOFFER | &quot;contentOffer&quot; |
@@ -404,6 +418,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CREATOR | &quot;Creator&quot; |
 | FACILITATOR | &quot;Facilitator&quot; |
 | ATTENDEE | &quot;Attendee&quot; |
@@ -413,6 +428,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INFORMATIONAL | &quot;Informational&quot; |
 | COACHING | &quot;Coaching&quot; |
 | ASSESSMENT | &quot;Assessment&quot; |
@@ -425,6 +441,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PLANNED | &quot;Planned&quot; |
 | SCHEDULED | &quot;Scheduled&quot; |
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
@@ -437,6 +454,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | PHONE | &quot;Phone&quot; |
 | SMS | &quot;SMS&quot; |
@@ -461,6 +479,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | GENESYS | &quot;Genesys&quot; |
 | AMAZON | &quot;Amazon&quot; |
@@ -472,6 +491,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | GENESYSDIALOGENGINE | &quot;GenesysDialogEngine&quot; |
 | AMAZONLEX | &quot;AmazonLex&quot; |
@@ -493,6 +513,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | NOINPUTCOLLECTION | &quot;NoInputCollection&quot; |
 | NOINPUTCONFIRMATION | &quot;NoInputConfirmation&quot; |
@@ -508,6 +529,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | EXITREQUESTEDBYUSER | &quot;ExitRequestedByUser&quot; |
 | EXITREQUESTEDBYBOT | &quot;ExitRequestedByBot&quot; |
@@ -531,6 +553,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PAGEURLCONDITIONSNOTMATCHING | &quot;PageUrlConditionsNotMatching&quot; |
 | ALREADYEXISTINGOFFER | &quot;AlreadyExistingOffer&quot; |
 | TRIGGERDATEINFUTURE | &quot;TriggerDateInFuture&quot; |
@@ -545,6 +568,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; |
 | DELIVERYPUSHED | &quot;DeliveryPushed&quot; |
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
@@ -569,6 +593,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | FINISHED | &quot;Finished&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
 | INREVIEW | &quot;InReview&quot; |
@@ -591,6 +616,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | WEB | &quot;Web&quot; |
 | VOICE | &quot;Voice&quot; |
 
@@ -599,6 +625,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | FULLRESPONSE | &quot;FullResponse&quot; |
 | PARTIALRESPONSE | &quot;PartialResponse&quot; |
@@ -608,6 +635,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | BOT | &quot;Bot&quot; |
 | DIGITALBOT | &quot;DigitalBot&quot; |
@@ -649,6 +677,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TWITTER | &quot;Twitter&quot; |
 | FACEBOOK | &quot;Facebook&quot; |
 | INSTAGRAM | &quot;Instagram&quot; |
@@ -660,6 +689,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | POSITIVE | &quot;Positive&quot; |
 | NEGATIVE | &quot;Negative&quot; |
 | NEUTRAL | &quot;Neutral&quot; |
@@ -670,6 +700,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TEXT | &quot;Text&quot; |
 | IMAGE | &quot;Image&quot; |
 | VIDEO | &quot;Video&quot; |
@@ -679,6 +710,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PUBLIC | &quot;Public&quot; |
 | PRIVATE | &quot;Private&quot; |
 
@@ -687,6 +719,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | KNOWLEDGESEARCH | &quot;KnowledgeSearch&quot; |
 | RULESENGINE | &quot;RulesEngine&quot; |
 | MANUALSEARCH | &quot;ManualSearch&quot; |
@@ -705,6 +738,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AVG_TALK_TIME | &quot;AVG_TALK_TIME&quot; |
 | AVG_HOLD_TIME | &quot;AVG_HOLD_TIME&quot; |
 | AVG_ACW_TIME | &quot;AVG_ACW_TIME&quot; |
@@ -931,6 +965,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ALERT | &quot;alert&quot; |
 | BARGING | &quot;barging&quot; |
 | CALLBACK | &quot;callback&quot; |
@@ -956,4 +991,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
 import com.mypurecloud.sdk.v2.model.CsvJobResponse;
 import com.mypurecloud.sdk.v2.model.CsvSettings;
@@ -2080,7 +2081,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -2092,7 +2093,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -2110,7 +2111,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return Coretype
@@ -2129,7 +2130,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return the response
@@ -2160,21 +2161,21 @@ public class ExternalContactsApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getExternalcontactsContactsSchemasCoretypes() throws IOException, ApiException {
+  public CoretypeListing getExternalcontactsContactsSchemasCoretypes() throws IOException, ApiException {
     return  getExternalcontactsContactsSchemasCoretypes(createGetExternalcontactsContactsSchemasCoretypesRequest());
   }
 
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretypesWithHttpInfo() throws IOException {
+  public ApiResponse<CoretypeListing> getExternalcontactsContactsSchemasCoretypesWithHttpInfo() throws IOException {
     return getExternalcontactsContactsSchemasCoretypes(createGetExternalcontactsContactsSchemasCoretypesRequest().withHttpInfo());
   }
 
@@ -2187,13 +2188,13 @@ public class ExternalContactsApi {
    * Get the core types from which all schemas are built.
    * 
    * @param request The request object
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getExternalcontactsContactsSchemasCoretypes(GetExternalcontactsContactsSchemasCoretypesRequest request) throws IOException, ApiException {
+  public CoretypeListing getExternalcontactsContactsSchemasCoretypes(GetExternalcontactsContactsSchemasCoretypesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2209,13 +2210,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getExternalcontactsContactsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CoretypeListing> getExternalcontactsContactsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2226,7 +2227,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4092,7 +4093,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -4104,7 +4105,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param coreTypeName Name of the core type (required)
    * @return Coretype
@@ -4122,7 +4123,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return Coretype
@@ -4141,7 +4142,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request The request object
    * @return the response
@@ -4172,21 +4173,21 @@ public class ExternalContactsApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getExternalcontactsOrganizationsSchemasCoretypes() throws IOException, ApiException {
+  public CoretypeListing getExternalcontactsOrganizationsSchemasCoretypes() throws IOException, ApiException {
     return  getExternalcontactsOrganizationsSchemasCoretypes(createGetExternalcontactsOrganizationsSchemasCoretypesRequest());
   }
 
   /**
    * Get the core types from which all schemas are built.
    * 
-   * @return Coretype
+   * @return CoretypeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo() throws IOException {
+  public ApiResponse<CoretypeListing> getExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo() throws IOException {
     return getExternalcontactsOrganizationsSchemasCoretypes(createGetExternalcontactsOrganizationsSchemasCoretypesRequest().withHttpInfo());
   }
 
@@ -4199,13 +4200,13 @@ public class ExternalContactsApi {
    * Get the core types from which all schemas are built.
    * 
    * @param request The request object
-   * @return Coretype
+   * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Coretype getExternalcontactsOrganizationsSchemasCoretypes(GetExternalcontactsOrganizationsSchemasCoretypesRequest request) throws IOException, ApiException {
+  public CoretypeListing getExternalcontactsOrganizationsSchemasCoretypes(GetExternalcontactsOrganizationsSchemasCoretypesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Coretype> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Coretype>() {});
+      ApiResponse<CoretypeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoretypeListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4221,13 +4222,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Coretype> getExternalcontactsOrganizationsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CoretypeListing> getExternalcontactsOrganizationsSchemasCoretypes(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Coretype>() {});
+      return pcapiClient.invoke(request, new TypeReference<CoretypeListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4238,7 +4239,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

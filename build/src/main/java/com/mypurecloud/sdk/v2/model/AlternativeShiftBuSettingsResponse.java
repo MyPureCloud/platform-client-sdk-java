@@ -43,6 +43,7 @@ public class AlternativeShiftBuSettingsResponse  implements Serializable {
    */
  @JsonDeserialize(using = EnabledGranularitiesEnumDeserializer.class)
   public enum EnabledGranularitiesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DAILY("Daily");
 
     private String value;
@@ -90,6 +91,7 @@ public class AlternativeShiftBuSettingsResponse  implements Serializable {
    */
  @JsonDeserialize(using = RetainedActivityCategoriesEnumDeserializer.class)
   public enum RetainedActivityCategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BREAK("Break"),
     MEAL("Meal"),
     MEETING("Meeting"),

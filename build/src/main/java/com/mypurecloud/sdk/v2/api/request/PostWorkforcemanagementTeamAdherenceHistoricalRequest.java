@@ -319,6 +319,11 @@ public class PostWorkforcemanagementTeamAdherenceHistoricalRequest {
             throw new IllegalStateException("Missing the required parameter 'teamId' when building request for PostWorkforcemanagementTeamAdherenceHistoricalRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTeamAdherenceHistoricalRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/teams/{teamId}/adherence/historical")
                 .withPathParameter("teamId", teamId)
@@ -337,9 +342,9 @@ public class PostWorkforcemanagementTeamAdherenceHistoricalRequest {
 	}
 
 
-	public static Builder builder(String teamId) {
+	public static Builder builder(String teamId, WfmHistoricalAdherenceQueryForTeams body) {
 	    return new Builder()
-	            .withRequiredParams(teamId);
+	            .withRequiredParams(teamId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PostWorkforcemanagementTeamAdherenceHistoricalRequest {
 
 
 
-		public Builder withRequiredParams(String teamId) {
+		public Builder withRequiredParams(String teamId, WfmHistoricalAdherenceQueryForTeams body) {
 			request.setTeamId(teamId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PostWorkforcemanagementTeamAdherenceHistoricalRequest {
             // verify the required parameter 'teamId' is set
             if (request.teamId == null) {
                 throw new IllegalStateException("Missing the required parameter 'teamId' when building request for PostWorkforcemanagementTeamAdherenceHistoricalRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTeamAdherenceHistoricalRequest.");
             }
             
 			return request;

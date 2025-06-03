@@ -52,6 +52,7 @@ public class ContactIdentifier  implements Serializable {
     SOCIALTWITTER("SocialTwitter"),
     SOCIALWHATSAPP("SocialWhatsapp"),
     SOCIALINSTAGRAM("SocialInstagram"),
+    APPLEOPAQUEID("AppleOpaqueId"),
     EMAIL("Email"),
     PHONE("Phone"),
     COOKIE("Cookie"),

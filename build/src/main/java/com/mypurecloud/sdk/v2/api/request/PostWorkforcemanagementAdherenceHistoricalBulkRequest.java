@@ -300,6 +300,11 @@ public class PostWorkforcemanagementAdherenceHistoricalBulkRequest {
 
     public ApiRequest<WfmHistoricalAdherenceBulkQuery> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAdherenceHistoricalBulkRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/adherence/historical/bulk")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementAdherenceHistoricalBulkRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(WfmHistoricalAdherenceBulkQuery body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementAdherenceHistoricalBulkRequest {
 
 
 
+		public Builder withRequiredParams(WfmHistoricalAdherenceBulkQuery body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementAdherenceHistoricalBulkRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAdherenceHistoricalBulkRequest.");
+            }
             
 			return request;
 		}

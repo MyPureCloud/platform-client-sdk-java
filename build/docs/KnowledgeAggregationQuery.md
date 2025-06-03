@@ -22,6 +22,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | APPDEPLOYMENTID | &quot;appDeploymentId&quot; |
 | APPTYPE | &quot;appType&quot; |
@@ -61,6 +62,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NDISTINCTKNOWLEDGESESSIONS | &quot;nDistinctKnowledgeSessions&quot; |
 | NKNOWLEDGEDOCUMENTCOPIED | &quot;nKnowledgeDocumentCopied&quot; |
 | NKNOWLEDGEDOCUMENTFEEDBACK | &quot;nKnowledgeDocumentFeedback&quot; |
@@ -96,4 +98,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

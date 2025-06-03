@@ -48,9 +48,11 @@ public class TranscriptAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
     ANI("ani"),
+    CATEGORYID("categoryId"),
     CHANNEL("channel"),
     CONVERSATIONID("conversationId"),
     DIRECTION("direction"),
@@ -111,6 +113,8 @@ public class TranscriptAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NSPEECHTEXTANALYZEDCONVERSATIONS("nSpeechTextAnalyzedConversations"),
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
     OCUSTOMERSENTIMENT("oCustomerSentiment"),
     OOVERTALKSPEECHINSTANCES("oOverTalkSpeechInstances"),

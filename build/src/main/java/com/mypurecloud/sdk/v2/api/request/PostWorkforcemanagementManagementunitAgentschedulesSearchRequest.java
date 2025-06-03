@@ -279,6 +279,20 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 	    return this;
 	} 
 
+	private BuSearchAgentSchedulesRequest body;
+	public BuSearchAgentSchedulesRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(BuSearchAgentSchedulesRequest body) {
+		this.body = body;
+	}
+
+	public PostWorkforcemanagementManagementunitAgentschedulesSearchRequest withBody(BuSearchAgentSchedulesRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private Boolean forceAsync;
 	public Boolean getForceAsync() {
 		return this.forceAsync;
@@ -304,20 +318,6 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 
 	public PostWorkforcemanagementManagementunitAgentschedulesSearchRequest withForceDownloadService(Boolean forceDownloadService) {
 	    this.setForceDownloadService(forceDownloadService);
-	    return this;
-	} 
-
-	private BuSearchAgentSchedulesRequest body;
-	public BuSearchAgentSchedulesRequest getBody() {
-		return this.body;
-	}
-
-	public void setBody(BuSearchAgentSchedulesRequest body) {
-		this.body = body;
-	}
-
-	public PostWorkforcemanagementManagementunitAgentschedulesSearchRequest withBody(BuSearchAgentSchedulesRequest body) {
-	    this.setBody(body);
 	    return this;
 	} 
 
@@ -347,6 +347,11 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -371,9 +376,9 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, BuSearchAgentSchedulesRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -390,6 +395,11 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 			return this;
 		}
 
+		public Builder withBody(BuSearchAgentSchedulesRequest body) {
+			request.setBody(body);
+			return this;
+		}
+
 		public Builder withForceAsync(Boolean forceAsync) {
 			request.setForceAsync(forceAsync);
 			return this;
@@ -400,15 +410,11 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 			return this;
 		}
 
-		public Builder withBody(BuSearchAgentSchedulesRequest body) {
-			request.setBody(body);
-			return this;
-		}
 
 
-
-		public Builder withRequiredParams(String managementUnitId) {
+		public Builder withRequiredParams(String managementUnitId, BuSearchAgentSchedulesRequest body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -419,6 +425,11 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.");
             }
             
 			return request;

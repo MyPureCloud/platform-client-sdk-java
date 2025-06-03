@@ -156,6 +156,7 @@ public class DomainCertificateAuthority  implements Serializable {
    */
  @JsonDeserialize(using = ServicesEnumDeserializer.class)
   public enum ServicesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SIP("SIP"),
     PROVISION("PROVISION"),
     PROVISION_PHONE("PROVISION_PHONE");

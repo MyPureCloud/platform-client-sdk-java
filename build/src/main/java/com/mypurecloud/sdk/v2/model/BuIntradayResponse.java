@@ -98,6 +98,7 @@ public class BuIntradayResponse  implements Serializable {
    */
  @JsonDeserialize(using = CategoriesEnumDeserializer.class)
   public enum CategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FORECASTDATA("ForecastData"),
     SCHEDULEDATA("ScheduleData"),
     PERFORMANCEPREDICTIONDATA("PerformancePredictionData");

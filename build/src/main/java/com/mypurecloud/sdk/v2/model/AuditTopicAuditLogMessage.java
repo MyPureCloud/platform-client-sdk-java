@@ -478,6 +478,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     MESSAGINGCAMPAIGN("MessagingCampaign"),
     MESSAGINGCAMPAIGNSCHEDULE("MessagingCampaignSchedule"),
     EMAILCAMPAIGNSCHEDULE("EmailCampaignSchedule"),
+    WHATSAPPCAMPAIGNSCHEDULE("WhatsAppCampaignSchedule"),
     PREDICTOR("Predictor"),
     KPISPECIFICATION("KpiSpecification"),
     METRIC("Metric"),

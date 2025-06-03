@@ -300,6 +300,11 @@ public class PostWorkforcemanagementManagementunitsRequest {
 
     public ApiRequest<CreateManagementUnitApiRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementManagementunitsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(CreateManagementUnitApiRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementManagementunitsRequest {
 
 
 
+		public Builder withRequiredParams(CreateManagementUnitApiRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementManagementunitsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitsRequest.");
+            }
             
 			return request;
 		}

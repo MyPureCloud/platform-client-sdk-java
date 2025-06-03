@@ -42,6 +42,7 @@ public class AlertablePresences  implements Serializable {
    */
  @JsonDeserialize(using = AlertablePresencesEnumDeserializer.class)
   public enum AlertablePresencesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVAILABLE("Available"),
     AWAY("Away"),
     BUSY("Busy"),

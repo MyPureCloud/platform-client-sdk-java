@@ -30,11 +30,11 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String firstUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String lastUri = null;
-  private String firstUri = null;
-  private String selfUri = null;
   private Integer pageCount = null;
 
   public IdentityProviderEntityListing() {
@@ -114,6 +114,57 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
 
   /**
    **/
+  public IdentityProviderEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public IdentityProviderEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public IdentityProviderEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public IdentityProviderEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -148,57 +199,6 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
 
   /**
    **/
-  public IdentityProviderEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public IdentityProviderEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public IdentityProviderEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public IdentityProviderEntityListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -228,17 +228,17 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
             Objects.equals(this.pageSize, identityProviderEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, identityProviderEntityListing.pageNumber) &&
             Objects.equals(this.total, identityProviderEntityListing.total) &&
+            Objects.equals(this.firstUri, identityProviderEntityListing.firstUri) &&
+            Objects.equals(this.lastUri, identityProviderEntityListing.lastUri) &&
+            Objects.equals(this.selfUri, identityProviderEntityListing.selfUri) &&
             Objects.equals(this.nextUri, identityProviderEntityListing.nextUri) &&
             Objects.equals(this.previousUri, identityProviderEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, identityProviderEntityListing.lastUri) &&
-            Objects.equals(this.firstUri, identityProviderEntityListing.firstUri) &&
-            Objects.equals(this.selfUri, identityProviderEntityListing.selfUri) &&
             Objects.equals(this.pageCount, identityProviderEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, nextUri, previousUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class IdentityProviderEntityListing  implements Serializable, PagedResour
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -90,14 +90,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Provider specific ID for attachment. For example, a LINE sticker ID.
+   * Provider specific ID for attachment.
    **/
   public ContentAttachment id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Provider specific ID for attachment. For example, a LINE sticker ID.")
+  @ApiModelProperty(example = "null", value = "Provider specific ID for attachment.")
   @JsonProperty("id")
   public String getId() {
     return id;

@@ -46,6 +46,7 @@ public class RoutingActivityQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUEID("queueId");
 
     private String value;

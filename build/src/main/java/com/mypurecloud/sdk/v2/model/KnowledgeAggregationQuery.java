@@ -48,6 +48,7 @@ public class KnowledgeAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENTASSISTANTID("agentAssistantId"),
     APPDEPLOYMENTID("appDeploymentId"),
     APPTYPE("appType"),
@@ -127,6 +128,7 @@ public class KnowledgeAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NDISTINCTKNOWLEDGESESSIONS("nDistinctKnowledgeSessions"),
     NKNOWLEDGEDOCUMENTCOPIED("nKnowledgeDocumentCopied"),
     NKNOWLEDGEDOCUMENTFEEDBACK("nKnowledgeDocumentFeedback"),

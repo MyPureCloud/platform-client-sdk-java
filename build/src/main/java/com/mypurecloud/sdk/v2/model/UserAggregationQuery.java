@@ -48,6 +48,7 @@ public class UserAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USERID("userId");
 
     private String value;
@@ -95,6 +96,7 @@ public class UserAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TAGENTROUTINGSTATUS("tAgentRoutingStatus"),
     TORGANIZATIONPRESENCE("tOrganizationPresence"),
     TSYSTEMPRESENCE("tSystemPresence");

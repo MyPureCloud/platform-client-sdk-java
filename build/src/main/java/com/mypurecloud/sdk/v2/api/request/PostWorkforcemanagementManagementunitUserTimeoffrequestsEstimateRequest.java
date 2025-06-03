@@ -338,6 +338,11 @@ public class PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateReq
             throw new IllegalStateException("Missing the required parameter 'userId' when building request for PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -358,9 +363,9 @@ public class PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateReq
 	}
 
 
-	public static Builder builder(String managementUnitId, String userId) {
+	public static Builder builder(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, userId);
+	            .withRequiredParams(managementUnitId, userId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateReq
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String userId) {
+		public Builder withRequiredParams(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setUserId(userId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateReq
             // verify the required parameter 'userId' is set
             if (request.userId == null) {
                 throw new IllegalStateException("Missing the required parameter 'userId' when building request for PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.");
             }
             
 			return request;

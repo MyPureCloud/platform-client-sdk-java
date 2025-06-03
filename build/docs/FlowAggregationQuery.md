@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACTIVEROUTING | &quot;activeRouting&quot; |
 | ACTIVESKILLID | &quot;activeSkillId&quot; |
 | ADDRESSFROM | &quot;addressFrom&quot; |
@@ -125,6 +126,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NFLOW | &quot;nFlow&quot; |
 | NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
@@ -146,4 +148,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

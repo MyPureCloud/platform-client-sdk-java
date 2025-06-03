@@ -44,9 +44,12 @@ public class QueueObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OACTIVEUSERS("oActiveUsers"),
     OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),
+    OLONGESTINTERACTING("oLongestInteracting"),
+    OLONGESTWAITING("oLongestWaiting"),
     OMEMBERUSERS("oMemberUsers"),
     OOFFQUEUEUSERS("oOffQueueUsers"),
     OONQUEUEUSERS("oOnQueueUsers"),
@@ -98,6 +101,7 @@ public class QueueObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = DetailMetricsEnumDeserializer.class)
   public enum DetailMetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OACTIVEUSERS("oActiveUsers"),
     OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),

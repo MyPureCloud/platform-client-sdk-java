@@ -15,7 +15,8 @@ import com.mypurecloud.sdk.v2.model.LogCaptureDownloadExecutionResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryRequest;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureUserConfiguration;
-import com.mypurecloud.sdk.v2.model.PagelessEntityListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteDiagnosticsLogcaptureBrowserUserRequest;
@@ -200,11 +201,11 @@ public class LogCaptureApi {
    * Get log capture configuration for the user
    * 
    * @param userId The id of the user to get browser log capture configuration (required)
-   * @return LogCaptureUserConfiguration
+   * @return LogCaptureUserConfigurationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LogCaptureUserConfiguration getDiagnosticsLogcaptureBrowserUser(String userId) throws IOException, ApiException {
+  public LogCaptureUserConfigurationResponse getDiagnosticsLogcaptureBrowserUser(String userId) throws IOException, ApiException {
     return  getDiagnosticsLogcaptureBrowserUser(createGetDiagnosticsLogcaptureBrowserUserRequest(userId));
   }
 
@@ -212,10 +213,10 @@ public class LogCaptureApi {
    * Get log capture configuration for the user
    * 
    * @param userId The id of the user to get browser log capture configuration (required)
-   * @return LogCaptureUserConfiguration
+   * @return LogCaptureUserConfigurationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogCaptureUserConfiguration> getDiagnosticsLogcaptureBrowserUserWithHttpInfo(String userId) throws IOException {
+  public ApiResponse<LogCaptureUserConfigurationResponse> getDiagnosticsLogcaptureBrowserUserWithHttpInfo(String userId) throws IOException {
     return getDiagnosticsLogcaptureBrowserUser(createGetDiagnosticsLogcaptureBrowserUserRequest(userId).withHttpInfo());
   }
 
@@ -230,13 +231,13 @@ public class LogCaptureApi {
    * Get log capture configuration for the user
    * 
    * @param request The request object
-   * @return LogCaptureUserConfiguration
+   * @return LogCaptureUserConfigurationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LogCaptureUserConfiguration getDiagnosticsLogcaptureBrowserUser(GetDiagnosticsLogcaptureBrowserUserRequest request) throws IOException, ApiException {
+  public LogCaptureUserConfigurationResponse getDiagnosticsLogcaptureBrowserUser(GetDiagnosticsLogcaptureBrowserUserRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<LogCaptureUserConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LogCaptureUserConfiguration>() {});
+      ApiResponse<LogCaptureUserConfigurationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LogCaptureUserConfigurationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -252,13 +253,13 @@ public class LogCaptureApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogCaptureUserConfiguration> getDiagnosticsLogcaptureBrowserUser(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LogCaptureUserConfigurationResponse> getDiagnosticsLogcaptureBrowserUser(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<LogCaptureUserConfiguration>() {});
+      return pcapiClient.invoke(request, new TypeReference<LogCaptureUserConfigurationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)exception;
+      ApiResponse<LogCaptureUserConfigurationResponse> response = (ApiResponse<LogCaptureUserConfigurationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -269,7 +270,7 @@ public class LogCaptureApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LogCaptureUserConfigurationResponse> response = (ApiResponse<LogCaptureUserConfigurationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -278,11 +279,11 @@ public class LogCaptureApi {
    * Get all log capture enabled users for an org
    * 
    * @param includeExpired Include expired users with log captures still available for search or download (optional, default to false)
-   * @return PagelessEntityListing
+   * @return LogCaptureUserConfigurationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PagelessEntityListing getDiagnosticsLogcaptureBrowserUsers(Boolean includeExpired) throws IOException, ApiException {
+  public LogCaptureUserConfigurationListing getDiagnosticsLogcaptureBrowserUsers(Boolean includeExpired) throws IOException, ApiException {
     return  getDiagnosticsLogcaptureBrowserUsers(createGetDiagnosticsLogcaptureBrowserUsersRequest(includeExpired));
   }
 
@@ -290,10 +291,10 @@ public class LogCaptureApi {
    * Get all log capture enabled users for an org
    * 
    * @param includeExpired Include expired users with log captures still available for search or download (optional, default to false)
-   * @return PagelessEntityListing
+   * @return LogCaptureUserConfigurationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PagelessEntityListing> getDiagnosticsLogcaptureBrowserUsersWithHttpInfo(Boolean includeExpired) throws IOException {
+  public ApiResponse<LogCaptureUserConfigurationListing> getDiagnosticsLogcaptureBrowserUsersWithHttpInfo(Boolean includeExpired) throws IOException {
     return getDiagnosticsLogcaptureBrowserUsers(createGetDiagnosticsLogcaptureBrowserUsersRequest(includeExpired).withHttpInfo());
   }
 
@@ -308,13 +309,13 @@ public class LogCaptureApi {
    * Get all log capture enabled users for an org
    * 
    * @param request The request object
-   * @return PagelessEntityListing
+   * @return LogCaptureUserConfigurationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PagelessEntityListing getDiagnosticsLogcaptureBrowserUsers(GetDiagnosticsLogcaptureBrowserUsersRequest request) throws IOException, ApiException {
+  public LogCaptureUserConfigurationListing getDiagnosticsLogcaptureBrowserUsers(GetDiagnosticsLogcaptureBrowserUsersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<PagelessEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PagelessEntityListing>() {});
+      ApiResponse<LogCaptureUserConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LogCaptureUserConfigurationListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -330,13 +331,13 @@ public class LogCaptureApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PagelessEntityListing> getDiagnosticsLogcaptureBrowserUsers(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LogCaptureUserConfigurationListing> getDiagnosticsLogcaptureBrowserUsers(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<PagelessEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<LogCaptureUserConfigurationListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<PagelessEntityListing> response = (ApiResponse<PagelessEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<LogCaptureUserConfigurationListing> response = (ApiResponse<LogCaptureUserConfigurationListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -347,7 +348,7 @@ public class LogCaptureApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<PagelessEntityListing> response = (ApiResponse<PagelessEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LogCaptureUserConfigurationListing> response = (ApiResponse<LogCaptureUserConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -433,7 +434,6 @@ public class LogCaptureApi {
   /**
    * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
    * 
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param body  (optional)
@@ -441,28 +441,25 @@ public class LogCaptureApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LogCaptureQueryResponse postDiagnosticsLogcaptureBrowserEntriesQuery(String before, String after, String pageSize, LogCaptureQueryRequest body) throws IOException, ApiException {
-    return  postDiagnosticsLogcaptureBrowserEntriesQuery(createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(before, after, pageSize, body));
+  public LogCaptureQueryResponse postDiagnosticsLogcaptureBrowserEntriesQuery(String after, String pageSize, LogCaptureQueryRequest body) throws IOException, ApiException {
+    return  postDiagnosticsLogcaptureBrowserEntriesQuery(createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(after, pageSize, body));
   }
 
   /**
    * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
    * 
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param body  (optional)
    * @return LogCaptureQueryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogCaptureQueryResponse> postDiagnosticsLogcaptureBrowserEntriesQueryWithHttpInfo(String before, String after, String pageSize, LogCaptureQueryRequest body) throws IOException {
-    return postDiagnosticsLogcaptureBrowserEntriesQuery(createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(before, after, pageSize, body).withHttpInfo());
+  public ApiResponse<LogCaptureQueryResponse> postDiagnosticsLogcaptureBrowserEntriesQueryWithHttpInfo(String after, String pageSize, LogCaptureQueryRequest body) throws IOException {
+    return postDiagnosticsLogcaptureBrowserEntriesQuery(createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(after, pageSize, body).withHttpInfo());
   }
 
-  private PostDiagnosticsLogcaptureBrowserEntriesQueryRequest createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(String before, String after, String pageSize, LogCaptureQueryRequest body) {
+  private PostDiagnosticsLogcaptureBrowserEntriesQueryRequest createPostDiagnosticsLogcaptureBrowserEntriesQueryRequest(String after, String pageSize, LogCaptureQueryRequest body) {
     return PostDiagnosticsLogcaptureBrowserEntriesQueryRequest.builder()
-            .withBefore(before)
-
             .withAfter(after)
 
             .withPageSize(pageSize)

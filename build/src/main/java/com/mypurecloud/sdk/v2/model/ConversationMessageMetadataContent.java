@@ -58,6 +58,10 @@ public class ConversationMessageMetadataContent  implements Serializable {
     DATEPICKER("DatePicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication"),
     LISTPICKER("ListPicker"),
+    PAYMENTREQUEST("PaymentRequest"),
+    PAYMENTRESPONSE("PaymentResponse"),
+    PUSH("Push"),
+    FORM("Form"),
     UNKNOWN("Unknown");
 
     private String value;

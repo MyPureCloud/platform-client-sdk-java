@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest {
             throw new IllegalStateException("Missing the required parameter 'serviceGoalTemplateId' when building request for PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String serviceGoalTemplateId) {
+	public static Builder builder(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, serviceGoalTemplateId);
+	            .withRequiredParams(businessUnitId, serviceGoalTemplateId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String serviceGoalTemplateId) {
+		public Builder withRequiredParams(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setServiceGoalTemplateId(serviceGoalTemplateId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest {
             // verify the required parameter 'serviceGoalTemplateId' is set
             if (request.serviceGoalTemplateId == null) {
                 throw new IllegalStateException("Missing the required parameter 'serviceGoalTemplateId' when building request for PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.");
             }
             
 			return request;

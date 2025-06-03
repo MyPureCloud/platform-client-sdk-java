@@ -23,6 +23,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUNDAY | &quot;Sunday&quot; |
 | MONDAY | &quot;Monday&quot; |
 | TUESDAY | &quot;Tuesday&quot; |
@@ -34,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -93,6 +93,7 @@ public class ApiUsageOrganizationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     STATUS200("Status200"),
     STATUS300("Status300"),
     STATUS400("Status400"),
@@ -144,6 +145,7 @@ public class ApiUsageOrganizationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OAUTHCLIENTID("OAuthClientId"),
     ORGANIZATIONID("OrganizationId"),
     USERID("UserId"),

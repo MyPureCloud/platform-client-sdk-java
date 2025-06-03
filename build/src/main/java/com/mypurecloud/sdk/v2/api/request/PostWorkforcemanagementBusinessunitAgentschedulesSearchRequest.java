@@ -279,6 +279,20 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
 	    return this;
 	} 
 
+	private BuSearchAgentSchedulesRequest body;
+	public BuSearchAgentSchedulesRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(BuSearchAgentSchedulesRequest body) {
+		this.body = body;
+	}
+
+	public PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest withBody(BuSearchAgentSchedulesRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private Boolean forceAsync;
 	public Boolean getForceAsync() {
 		return this.forceAsync;
@@ -304,20 +318,6 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
 
 	public PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest withForceDownloadService(Boolean forceDownloadService) {
 	    this.setForceDownloadService(forceDownloadService);
-	    return this;
-	} 
-
-	private BuSearchAgentSchedulesRequest body;
-	public BuSearchAgentSchedulesRequest getBody() {
-		return this.body;
-	}
-
-	public void setBody(BuSearchAgentSchedulesRequest body) {
-		this.body = body;
-	}
-
-	public PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest withBody(BuSearchAgentSchedulesRequest body) {
-	    this.setBody(body);
 	    return this;
 	} 
 
@@ -347,6 +347,11 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
             throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -371,9 +376,9 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId) {
+	public static Builder builder(String businessUnitId, BuSearchAgentSchedulesRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId);
+	            .withRequiredParams(businessUnitId, body);
 	}
 
 
@@ -390,6 +395,11 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
 			return this;
 		}
 
+		public Builder withBody(BuSearchAgentSchedulesRequest body) {
+			request.setBody(body);
+			return this;
+		}
+
 		public Builder withForceAsync(Boolean forceAsync) {
 			request.setForceAsync(forceAsync);
 			return this;
@@ -400,15 +410,11 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
 			return this;
 		}
 
-		public Builder withBody(BuSearchAgentSchedulesRequest body) {
-			request.setBody(body);
-			return this;
-		}
 
 
-
-		public Builder withRequiredParams(String businessUnitId) {
+		public Builder withRequiredParams(String businessUnitId, BuSearchAgentSchedulesRequest body) {
 			request.setBusinessUnitId(businessUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -419,6 +425,11 @@ public class PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest {
             // verify the required parameter 'businessUnitId' is set
             if (request.businessUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.");
             }
             
 			return request;

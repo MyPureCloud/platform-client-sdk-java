@@ -44,6 +44,7 @@ public class FlowObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFLOW("oFlow");
 
     private String value;
@@ -90,6 +91,7 @@ public class FlowObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = DetailMetricsEnumDeserializer.class)
   public enum DetailMetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFLOW("oFlow");
 
     private String value;

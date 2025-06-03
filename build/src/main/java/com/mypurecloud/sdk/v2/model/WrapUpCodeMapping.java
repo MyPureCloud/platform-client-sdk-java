@@ -49,6 +49,7 @@ public class WrapUpCodeMapping  implements Serializable {
    */
  @JsonDeserialize(using = DefaultSetEnumDeserializer.class)
   public enum DefaultSetEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONTACT_UNCALLABLE("CONTACT_UNCALLABLE"),
     NUMBER_UNCALLABLE("NUMBER_UNCALLABLE"),
     RIGHT_PARTY_CONTACT("RIGHT_PARTY_CONTACT"),

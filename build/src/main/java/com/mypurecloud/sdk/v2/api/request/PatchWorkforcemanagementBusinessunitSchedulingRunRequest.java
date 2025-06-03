@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementBusinessunitSchedulingRunRequest {
             throw new IllegalStateException("Missing the required parameter 'runId' when building request for PatchWorkforcemanagementBusinessunitSchedulingRunRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitSchedulingRunRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementBusinessunitSchedulingRunRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String runId) {
+	public static Builder builder(String businessUnitId, String runId, PatchBuScheduleRunRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, runId);
+	            .withRequiredParams(businessUnitId, runId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementBusinessunitSchedulingRunRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String runId) {
+		public Builder withRequiredParams(String businessUnitId, String runId, PatchBuScheduleRunRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setRunId(runId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementBusinessunitSchedulingRunRequest {
             // verify the required parameter 'runId' is set
             if (request.runId == null) {
                 throw new IllegalStateException("Missing the required parameter 'runId' when building request for PatchWorkforcemanagementBusinessunitSchedulingRunRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitSchedulingRunRequest.");
             }
             
 			return request;

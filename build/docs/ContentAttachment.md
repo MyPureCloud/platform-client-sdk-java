@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | Provider specific ID for attachment. For example, a LINE sticker ID. |  [optional] |
+| **id** | **String** | Provider specific ID for attachment. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The type of attachment this instance represents. |  |
 | **url** | **String** | URL of the attachment. |  [optional] |
 | **mime** | **String** | Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml). |  [optional] |
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

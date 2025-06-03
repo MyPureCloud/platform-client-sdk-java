@@ -44,7 +44,9 @@ public class ButtonResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BUTTON("Button"),
     QUICKREPLY("QuickReply"),
-    DATEPICKER("DatePicker");
+    DATEPICKER("DatePicker"),
+    LISTPICKER("ListPicker"),
+    FORM("Form");
 
     private String value;
 

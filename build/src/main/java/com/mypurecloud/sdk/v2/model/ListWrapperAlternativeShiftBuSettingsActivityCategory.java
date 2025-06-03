@@ -42,6 +42,7 @@ public class ListWrapperAlternativeShiftBuSettingsActivityCategory  implements S
    */
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BREAK("Break"),
     MEAL("Meal"),
     MEETING("Meeting"),

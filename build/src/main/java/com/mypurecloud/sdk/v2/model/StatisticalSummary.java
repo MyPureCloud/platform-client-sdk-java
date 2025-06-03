@@ -36,6 +36,7 @@ public class StatisticalSummary  implements Serializable {
   private BigDecimal target = null;
   private Long p95 = null;
   private Long p99 = null;
+  private Long calculatedMetricValue = null;
 
   public StatisticalSummary() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -264,6 +265,23 @@ public class StatisticalSummary  implements Serializable {
   }
 
 
+  /**
+   **/
+  public StatisticalSummary calculatedMetricValue(Long calculatedMetricValue) {
+    this.calculatedMetricValue = calculatedMetricValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("calculatedMetricValue")
+  public Long getCalculatedMetricValue() {
+    return calculatedMetricValue;
+  }
+  public void setCalculatedMetricValue(Long calculatedMetricValue) {
+    this.calculatedMetricValue = calculatedMetricValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -286,12 +304,13 @@ public class StatisticalSummary  implements Serializable {
             Objects.equals(this.denominator, statisticalSummary.denominator) &&
             Objects.equals(this.target, statisticalSummary.target) &&
             Objects.equals(this.p95, statisticalSummary.p95) &&
-            Objects.equals(this.p99, statisticalSummary.p99);
+            Objects.equals(this.p99, statisticalSummary.p99) &&
+            Objects.equals(this.calculatedMetricValue, statisticalSummary.calculatedMetricValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(max, min, count, countNegative, countPositive, sum, current, ratio, numerator, denominator, target, p95, p99);
+    return Objects.hash(max, min, count, countNegative, countPositive, sum, current, ratio, numerator, denominator, target, p95, p99, calculatedMetricValue);
   }
 
   @Override
@@ -312,6 +331,7 @@ public class StatisticalSummary  implements Serializable {
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    p95: ").append(toIndentedString(p95)).append("\n");
     sb.append("    p99: ").append(toIndentedString(p99)).append("\n");
+    sb.append("    calculatedMetricValue: ").append(toIndentedString(calculatedMetricValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

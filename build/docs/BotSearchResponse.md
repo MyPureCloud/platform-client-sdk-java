@@ -9,6 +9,7 @@
 | **name** | **String** | The name of the bot |  |
 | **botType** | [**BotTypeEnum**](#Enum--BotTypeEnum) | The provider of the bot |  |
 | **description** | **String** | The description of the bot |  [optional] |
+| **virtualAgentEnabled** | **Boolean** | Whether the bot is a virtual agent or not |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -31,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

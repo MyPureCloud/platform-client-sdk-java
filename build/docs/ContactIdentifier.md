@@ -24,6 +24,7 @@
 | SOCIALTWITTER | &quot;SocialTwitter&quot; | 
 | SOCIALWHATSAPP | &quot;SocialWhatsapp&quot; | 
 | SOCIALINSTAGRAM | &quot;SocialInstagram&quot; | 
+| APPLEOPAQUEID | &quot;AppleOpaqueId&quot; | 
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
@@ -32,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

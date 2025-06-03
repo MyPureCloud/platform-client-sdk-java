@@ -48,6 +48,7 @@ public class DataSchema  implements Serializable {
    */
  @JsonDeserialize(using = AppliesToEnumDeserializer.class)
   public enum AppliesToEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONTACT("CONTACT"),
     CONVERSATION("CONVERSATION"),
     EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION"),

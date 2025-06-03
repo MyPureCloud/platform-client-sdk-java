@@ -208,6 +208,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
    */
  @JsonDeserialize(using = AnswerModeEnumDeserializer.class)
   public enum AnswerModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ANSWERHIGHLIGHT("AnswerHighlight"),
     ANSWERGENERATION("AnswerGeneration");
 
@@ -237,6 +238,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     }
   }
   private List<AnswerModeEnum> answerMode = null;
+  private Boolean preprocessQuery = null;
 
   public KnowledgeDocumentSearchRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -520,6 +522,24 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether the search query should be preprocessed.
+   **/
+  public KnowledgeDocumentSearchRequest preprocessQuery(Boolean preprocessQuery) {
+    this.preprocessQuery = preprocessQuery;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the search query should be preprocessed.")
+  @JsonProperty("preprocessQuery")
+  public Boolean getPreprocessQuery() {
+    return preprocessQuery;
+  }
+  public void setPreprocessQuery(Boolean preprocessQuery) {
+    this.preprocessQuery = preprocessQuery;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -546,12 +566,13 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
             Objects.equals(this.conversationContext, knowledgeDocumentSearchRequest.conversationContext) &&
             Objects.equals(this.confidenceThreshold, knowledgeDocumentSearchRequest.confidenceThreshold) &&
             Objects.equals(this.answerHighlightTopResults, knowledgeDocumentSearchRequest.answerHighlightTopResults) &&
-            Objects.equals(this.answerMode, knowledgeDocumentSearchRequest.answerMode);
+            Objects.equals(this.answerMode, knowledgeDocumentSearchRequest.answerMode) &&
+            Objects.equals(this.preprocessQuery, knowledgeDocumentSearchRequest.preprocessQuery);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold, answerHighlightTopResults, answerMode);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold, answerHighlightTopResults, answerMode, preprocessQuery);
   }
 
   @Override
@@ -576,6 +597,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
     sb.append("    answerHighlightTopResults: ").append(toIndentedString(answerHighlightTopResults)).append("\n");
     sb.append("    answerMode: ").append(toIndentedString(answerMode)).append("\n");
+    sb.append("    preprocessQuery: ").append(toIndentedString(preprocessQuery)).append("\n");
     sb.append("}");
     return sb.toString();
   }

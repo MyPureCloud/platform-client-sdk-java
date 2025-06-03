@@ -103,6 +103,7 @@ public class Widget  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVG_TALK_TIME("AVG_TALK_TIME"),
     AVG_HOLD_TIME("AVG_HOLD_TIME"),
     AVG_ACW_TIME("AVG_ACW_TIME"),
@@ -478,6 +479,7 @@ public class Widget  implements Serializable {
    */
  @JsonDeserialize(using = PeriodsEnumDeserializer.class)
   public enum PeriodsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("NONE"),
     CURRENT_HALF_HOUR("CURRENT_HALF_HOUR"),
     TODAY("TODAY"),
@@ -536,6 +538,7 @@ public class Widget  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),
@@ -594,6 +597,7 @@ public class Widget  implements Serializable {
    */
  @JsonDeserialize(using = SelectedStatusesEnumDeserializer.class)
   public enum SelectedStatusesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVAILABLE("Available"),
     AWAY("Away"),
     BUSY("Busy"),
@@ -655,6 +659,7 @@ public class Widget  implements Serializable {
    */
  @JsonDeserialize(using = SelectedSegmentTypesEnumDeserializer.class)
   public enum SelectedSegmentTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERT("alert"),
     BARGING("barging"),
     CALLBACK("callback"),

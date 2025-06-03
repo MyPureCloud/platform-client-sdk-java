@@ -231,6 +231,156 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean requiresMatchingSkills = null;
   private Boolean requiresMatchingPlanningGroups = null;
   private List<ShiftTradeActivityRule> activityCategoryRules = null;
+  private Integer maxTradeSpanWeeks = null;
+  private Integer maxTradesPerAgentPerWeek = null;
+  private Integer minMinutesBetweenShifts = null;
+
+  private static class PlanningPeriodMinPaidViolationsEnumDeserializer extends StdDeserializer<PlanningPeriodMinPaidViolationsEnum> {
+    public PlanningPeriodMinPaidViolationsEnumDeserializer() {
+      super(PlanningPeriodMinPaidViolationsEnumDeserializer.class);
+    }
+
+    @Override
+    public PlanningPeriodMinPaidViolationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PlanningPeriodMinPaidViolationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How to handle shift trades which result in violations of planning period minimum paid time constraint
+   */
+ @JsonDeserialize(using = PlanningPeriodMinPaidViolationsEnumDeserializer.class)
+  public enum PlanningPeriodMinPaidViolationsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALLOW("Allow"),
+    DISALLOW("Disallow"),
+    ADMINREVIEW("AdminReview");
+
+    private String value;
+
+    PlanningPeriodMinPaidViolationsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PlanningPeriodMinPaidViolationsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PlanningPeriodMinPaidViolationsEnum value : PlanningPeriodMinPaidViolationsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PlanningPeriodMinPaidViolationsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PlanningPeriodMinPaidViolationsEnum planningPeriodMinPaidViolations = null;
+
+  private static class PlanningPeriodMaxPaidViolationsEnumDeserializer extends StdDeserializer<PlanningPeriodMaxPaidViolationsEnum> {
+    public PlanningPeriodMaxPaidViolationsEnumDeserializer() {
+      super(PlanningPeriodMaxPaidViolationsEnumDeserializer.class);
+    }
+
+    @Override
+    public PlanningPeriodMaxPaidViolationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PlanningPeriodMaxPaidViolationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How to handle shift trades which result in violations of planning period maximum paid time constraint
+   */
+ @JsonDeserialize(using = PlanningPeriodMaxPaidViolationsEnumDeserializer.class)
+  public enum PlanningPeriodMaxPaidViolationsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALLOW("Allow"),
+    DISALLOW("Disallow"),
+    ADMINREVIEW("AdminReview");
+
+    private String value;
+
+    PlanningPeriodMaxPaidViolationsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PlanningPeriodMaxPaidViolationsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PlanningPeriodMaxPaidViolationsEnum value : PlanningPeriodMaxPaidViolationsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PlanningPeriodMaxPaidViolationsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PlanningPeriodMaxPaidViolationsEnum planningPeriodMaxPaidViolations = null;
+
+  private static class MinMinutesBetweenShiftsViolationsEnumDeserializer extends StdDeserializer<MinMinutesBetweenShiftsViolationsEnum> {
+    public MinMinutesBetweenShiftsViolationsEnumDeserializer() {
+      super(MinMinutesBetweenShiftsViolationsEnumDeserializer.class);
+    }
+
+    @Override
+    public MinMinutesBetweenShiftsViolationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MinMinutesBetweenShiftsViolationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How to handle shift trades which result in violations of minimum number of minutes between shifts constraint
+   */
+ @JsonDeserialize(using = MinMinutesBetweenShiftsViolationsEnumDeserializer.class)
+  public enum MinMinutesBetweenShiftsViolationsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALLOW("Allow"),
+    DISALLOW("Disallow"),
+    ADMINREVIEW("AdminReview");
+
+    private String value;
+
+    MinMinutesBetweenShiftsViolationsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MinMinutesBetweenShiftsViolationsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MinMinutesBetweenShiftsViolationsEnum value : MinMinutesBetweenShiftsViolationsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MinMinutesBetweenShiftsViolationsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MinMinutesBetweenShiftsViolationsEnum minMinutesBetweenShiftsViolations = null;
 
   public ShiftTradeSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -473,6 +623,114 @@ public class ShiftTradeSettings  implements Serializable {
   }
 
 
+  /**
+   * The maximum number of weeks a shift trade can span
+   **/
+  public ShiftTradeSettings maxTradeSpanWeeks(Integer maxTradeSpanWeeks) {
+    this.maxTradeSpanWeeks = maxTradeSpanWeeks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of weeks a shift trade can span")
+  @JsonProperty("maxTradeSpanWeeks")
+  public Integer getMaxTradeSpanWeeks() {
+    return maxTradeSpanWeeks;
+  }
+  public void setMaxTradeSpanWeeks(Integer maxTradeSpanWeeks) {
+    this.maxTradeSpanWeeks = maxTradeSpanWeeks;
+  }
+
+
+  /**
+   * The maximum number of shift trades an agent can submit per week
+   **/
+  public ShiftTradeSettings maxTradesPerAgentPerWeek(Integer maxTradesPerAgentPerWeek) {
+    this.maxTradesPerAgentPerWeek = maxTradesPerAgentPerWeek;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of shift trades an agent can submit per week")
+  @JsonProperty("maxTradesPerAgentPerWeek")
+  public Integer getMaxTradesPerAgentPerWeek() {
+    return maxTradesPerAgentPerWeek;
+  }
+  public void setMaxTradesPerAgentPerWeek(Integer maxTradesPerAgentPerWeek) {
+    this.maxTradesPerAgentPerWeek = maxTradesPerAgentPerWeek;
+  }
+
+
+  /**
+   * The minimum number of minutes between shifts
+   **/
+  public ShiftTradeSettings minMinutesBetweenShifts(Integer minMinutesBetweenShifts) {
+    this.minMinutesBetweenShifts = minMinutesBetweenShifts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The minimum number of minutes between shifts")
+  @JsonProperty("minMinutesBetweenShifts")
+  public Integer getMinMinutesBetweenShifts() {
+    return minMinutesBetweenShifts;
+  }
+  public void setMinMinutesBetweenShifts(Integer minMinutesBetweenShifts) {
+    this.minMinutesBetweenShifts = minMinutesBetweenShifts;
+  }
+
+
+  /**
+   * How to handle shift trades which result in violations of planning period minimum paid time constraint
+   **/
+  public ShiftTradeSettings planningPeriodMinPaidViolations(PlanningPeriodMinPaidViolationsEnum planningPeriodMinPaidViolations) {
+    this.planningPeriodMinPaidViolations = planningPeriodMinPaidViolations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How to handle shift trades which result in violations of planning period minimum paid time constraint")
+  @JsonProperty("planningPeriodMinPaidViolations")
+  public PlanningPeriodMinPaidViolationsEnum getPlanningPeriodMinPaidViolations() {
+    return planningPeriodMinPaidViolations;
+  }
+  public void setPlanningPeriodMinPaidViolations(PlanningPeriodMinPaidViolationsEnum planningPeriodMinPaidViolations) {
+    this.planningPeriodMinPaidViolations = planningPeriodMinPaidViolations;
+  }
+
+
+  /**
+   * How to handle shift trades which result in violations of planning period maximum paid time constraint
+   **/
+  public ShiftTradeSettings planningPeriodMaxPaidViolations(PlanningPeriodMaxPaidViolationsEnum planningPeriodMaxPaidViolations) {
+    this.planningPeriodMaxPaidViolations = planningPeriodMaxPaidViolations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How to handle shift trades which result in violations of planning period maximum paid time constraint")
+  @JsonProperty("planningPeriodMaxPaidViolations")
+  public PlanningPeriodMaxPaidViolationsEnum getPlanningPeriodMaxPaidViolations() {
+    return planningPeriodMaxPaidViolations;
+  }
+  public void setPlanningPeriodMaxPaidViolations(PlanningPeriodMaxPaidViolationsEnum planningPeriodMaxPaidViolations) {
+    this.planningPeriodMaxPaidViolations = planningPeriodMaxPaidViolations;
+  }
+
+
+  /**
+   * How to handle shift trades which result in violations of minimum number of minutes between shifts constraint
+   **/
+  public ShiftTradeSettings minMinutesBetweenShiftsViolations(MinMinutesBetweenShiftsViolationsEnum minMinutesBetweenShiftsViolations) {
+    this.minMinutesBetweenShiftsViolations = minMinutesBetweenShiftsViolations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How to handle shift trades which result in violations of minimum number of minutes between shifts constraint")
+  @JsonProperty("minMinutesBetweenShiftsViolations")
+  public MinMinutesBetweenShiftsViolationsEnum getMinMinutesBetweenShiftsViolations() {
+    return minMinutesBetweenShiftsViolations;
+  }
+  public void setMinMinutesBetweenShiftsViolations(MinMinutesBetweenShiftsViolationsEnum minMinutesBetweenShiftsViolations) {
+    this.minMinutesBetweenShiftsViolations = minMinutesBetweenShiftsViolations;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -495,12 +753,18 @@ public class ShiftTradeSettings  implements Serializable {
             Objects.equals(this.requiresMatchingLanguages, shiftTradeSettings.requiresMatchingLanguages) &&
             Objects.equals(this.requiresMatchingSkills, shiftTradeSettings.requiresMatchingSkills) &&
             Objects.equals(this.requiresMatchingPlanningGroups, shiftTradeSettings.requiresMatchingPlanningGroups) &&
-            Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules);
+            Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules) &&
+            Objects.equals(this.maxTradeSpanWeeks, shiftTradeSettings.maxTradeSpanWeeks) &&
+            Objects.equals(this.maxTradesPerAgentPerWeek, shiftTradeSettings.maxTradesPerAgentPerWeek) &&
+            Objects.equals(this.minMinutesBetweenShifts, shiftTradeSettings.minMinutesBetweenShifts) &&
+            Objects.equals(this.planningPeriodMinPaidViolations, shiftTradeSettings.planningPeriodMinPaidViolations) &&
+            Objects.equals(this.planningPeriodMaxPaidViolations, shiftTradeSettings.planningPeriodMaxPaidViolations) &&
+            Objects.equals(this.minMinutesBetweenShiftsViolations, shiftTradeSettings.minMinutesBetweenShiftsViolations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, requiresMatchingPlanningGroups, activityCategoryRules);
+    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, requiresMatchingPlanningGroups, activityCategoryRules, maxTradeSpanWeeks, maxTradesPerAgentPerWeek, minMinutesBetweenShifts, planningPeriodMinPaidViolations, planningPeriodMaxPaidViolations, minMinutesBetweenShiftsViolations);
   }
 
   @Override
@@ -521,6 +785,12 @@ public class ShiftTradeSettings  implements Serializable {
     sb.append("    requiresMatchingSkills: ").append(toIndentedString(requiresMatchingSkills)).append("\n");
     sb.append("    requiresMatchingPlanningGroups: ").append(toIndentedString(requiresMatchingPlanningGroups)).append("\n");
     sb.append("    activityCategoryRules: ").append(toIndentedString(activityCategoryRules)).append("\n");
+    sb.append("    maxTradeSpanWeeks: ").append(toIndentedString(maxTradeSpanWeeks)).append("\n");
+    sb.append("    maxTradesPerAgentPerWeek: ").append(toIndentedString(maxTradesPerAgentPerWeek)).append("\n");
+    sb.append("    minMinutesBetweenShifts: ").append(toIndentedString(minMinutesBetweenShifts)).append("\n");
+    sb.append("    planningPeriodMinPaidViolations: ").append(toIndentedString(planningPeriodMinPaidViolations)).append("\n");
+    sb.append("    planningPeriodMaxPaidViolations: ").append(toIndentedString(planningPeriodMaxPaidViolations)).append("\n");
+    sb.append("    minMinutesBetweenShiftsViolations: ").append(toIndentedString(minMinutesBetweenShiftsViolations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

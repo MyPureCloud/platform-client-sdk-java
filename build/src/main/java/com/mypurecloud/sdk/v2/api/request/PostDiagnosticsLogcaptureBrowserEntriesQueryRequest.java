@@ -25,23 +25,10 @@ import com.mypurecloud.sdk.v2.model.LogCaptureDownloadExecutionResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryRequest;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureUserConfiguration;
-import com.mypurecloud.sdk.v2.model.PagelessEntityListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationResponse;
 
 public class PostDiagnosticsLogcaptureBrowserEntriesQueryRequest {
-
-	private String before;
-	public String getBefore() {
-		return this.before;
-	}
-
-	public void setBefore(String before) {
-		this.before = before;
-	}
-
-	public PostDiagnosticsLogcaptureBrowserEntriesQueryRequest withBefore(String before) {
-	    this.setBefore(before);
-	    return this;
-	} 
 
 	private String after;
 	public String getAfter() {
@@ -109,9 +96,6 @@ public class PostDiagnosticsLogcaptureBrowserEntriesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/diagnostics/logcapture/browser/entries/query")
 
-                .withQueryParameters("before", "", before)
-        
-
                 .withQueryParameters("after", "", after)
         
 
@@ -139,11 +123,6 @@ public class PostDiagnosticsLogcaptureBrowserEntriesQueryRequest {
 			request = new PostDiagnosticsLogcaptureBrowserEntriesQueryRequest();
 		}
 
-
-		public Builder withBefore(String before) {
-			request.setBefore(before);
-			return this;
-		}
 
 		public Builder withAfter(String after) {
 			request.setAfter(after);

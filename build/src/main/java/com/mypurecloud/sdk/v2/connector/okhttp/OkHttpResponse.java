@@ -70,5 +70,9 @@ public class OkHttpResponse implements ApiClientConnectorResponse {
     }
 
     @Override
-    public void close() throws Exception { }
+    public void close() throws Exception {
+        if (response != null && response.body() != null) {
+            response.close();
+        }
+    }
 }

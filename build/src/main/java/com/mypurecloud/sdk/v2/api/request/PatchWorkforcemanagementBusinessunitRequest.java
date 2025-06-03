@@ -319,6 +319,11 @@ public class PatchWorkforcemanagementBusinessunitRequest {
             throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -337,9 +342,9 @@ public class PatchWorkforcemanagementBusinessunitRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId) {
+	public static Builder builder(String businessUnitId, UpdateBusinessUnitRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId);
+	            .withRequiredParams(businessUnitId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PatchWorkforcemanagementBusinessunitRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId) {
+		public Builder withRequiredParams(String businessUnitId, UpdateBusinessUnitRequest body) {
 			request.setBusinessUnitId(businessUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PatchWorkforcemanagementBusinessunitRequest {
             // verify the required parameter 'businessUnitId' is set
             if (request.businessUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitRequest.");
             }
             
 			return request;

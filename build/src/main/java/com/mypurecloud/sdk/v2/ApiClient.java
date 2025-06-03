@@ -47,6 +47,12 @@ import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.Logger;
 import com.mypurecloud.sdk.v2.extensions.LocalDateSerializer;
 
+import com.mypurecloud.sdk.v2.hooksmanager.HookManager;
+import com.mypurecloud.sdk.v2.hooksmanager.LoggingPostResponseHook;
+import com.mypurecloud.sdk.v2.hooksmanager.LoggingPreRequestHook;
+import com.mypurecloud.sdk.v2.hooksmanager.PostResponseHook;
+import com.mypurecloud.sdk.v2.hooksmanager.PreRequestHook;
+
 public class ApiClient implements AutoCloseable {
     private static final String DEFAULT_BASE_PATH = "https://api.mypurecloud.com";
     private static final String DEFAULT_USER_AGENT = "PureCloud SDK/java";
@@ -88,6 +94,9 @@ public class ApiClient implements AutoCloseable {
     private String configFilePath;
     private Boolean autoReloadConfig;
 
+    // prehook/posthook declarations
+    private final HookManager hookManager;
+
     public ApiClient() {
         this(Builder.standard());
     }
@@ -98,6 +107,8 @@ public class ApiClient implements AutoCloseable {
             basePath = DEFAULT_BASE_PATH;
         }
         this.basePath = basePath;
+
+        this.hookManager = new HookManager();
 
         RetryConfiguration retryConfig = builder.retryConfiguration;
         if (retryConfig == null) {
@@ -280,6 +291,25 @@ public class ApiClient implements AutoCloseable {
             String pathParamsLogin,
             String pathParamsApi) {
         this.gatewayConfiguration = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
+    }
+
+    /**
+    *   Methods to set the hooks
+    */
+    public void addPreRequestHook(PreRequestHook hook) {
+        hookManager.addPreRequestHook(hook);
+    }
+
+    public void removePreRequestHook(PreRequestHook hook) {
+        hookManager.removePreRequestHook(hook);
+    }
+
+    public void addPostResponseHook(PostResponseHook hook) {
+        hookManager.addPostResponseHook(hook);
+    }
+
+    public void removePostResponseHook(PostResponseHook hook) {
+        hookManager.removePostResponseHook(hook);
     }
 
     /**
@@ -877,6 +907,12 @@ public class ApiClient implements AutoCloseable {
         ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request, isAuthRequest);
         ApiClientConnectorResponse connectorResponse = null;
         Map<String,String> requestHeaderCopy = new HashMap<>(connectorRequest.getHeaders());
+
+        // Execute pre-request hooks
+        for (PreRequestHook hook : hookManager.getPreRequestHooks()) {
+            connectorRequest = hook.execute(connectorRequest);
+        }
+
         try {
             Retry retry = new Retry(retryConfiguration);
             do {
@@ -887,7 +923,14 @@ public class ApiClient implements AutoCloseable {
                 logger.trace(connectorRequest.getMethod(), connectorRequest.getUrl(), connectorRequest.readBody(), connectorResponse.getStatusCode(), requestHeaderCopy, responseHeaderCopy);
             } while (retry.shouldRetry(connectorResponse));
             try {
-                return interpretConnectorResponse(connectorResponse, returnType);
+                 ApiResponse<T> response = interpretConnectorResponse(connectorResponse, returnType);
+            
+                // Execute post-response hooks
+                for (PostResponseHook<?> hook : hookManager.getPostResponseHooks()) {
+                    response = hook.execute(response);
+                }
+                
+                return response;
             } catch (ApiException e) {
                 if (e.getStatusCode() == 401 && shouldRefreshAccessToken) {
                     handleExpiredAccessToken();
@@ -1117,7 +1160,7 @@ public class ApiClient implements AutoCloseable {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "225.0.0");
+            withDefaultHeader("purecloud-sdk", "226.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

@@ -319,6 +319,11 @@ public class PatchWorkforcemanagementWorkplanbidPreferencesRequest {
             throw new IllegalStateException("Missing the required parameter 'bidId' when building request for PatchWorkforcemanagementWorkplanbidPreferencesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementWorkplanbidPreferencesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences")
                 .withPathParameter("bidId", bidId)
@@ -337,9 +342,9 @@ public class PatchWorkforcemanagementWorkplanbidPreferencesRequest {
 	}
 
 
-	public static Builder builder(String bidId) {
+	public static Builder builder(String bidId, UpdateAgentWorkPlanBiddingPreference body) {
 	    return new Builder()
-	            .withRequiredParams(bidId);
+	            .withRequiredParams(bidId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PatchWorkforcemanagementWorkplanbidPreferencesRequest {
 
 
 
-		public Builder withRequiredParams(String bidId) {
+		public Builder withRequiredParams(String bidId, UpdateAgentWorkPlanBiddingPreference body) {
 			request.setBidId(bidId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PatchWorkforcemanagementWorkplanbidPreferencesRequest {
             // verify the required parameter 'bidId' is set
             if (request.bidId == null) {
                 throw new IllegalStateException("Missing the required parameter 'bidId' when building request for PatchWorkforcemanagementWorkplanbidPreferencesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementWorkplanbidPreferencesRequest.");
             }
             
 			return request;

@@ -46,6 +46,7 @@ public class TeamActivityQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEAMID("teamId");
 
     private String value;

@@ -300,6 +300,11 @@ public class PostWorkforcemanagementAgentsRequest {
 
     public ApiRequest<MoveAgentsRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/agents")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementAgentsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(MoveAgentsRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementAgentsRequest {
 
 
 
+		public Builder withRequiredParams(MoveAgentsRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementAgentsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentsRequest.");
+            }
             
 			return request;
 		}

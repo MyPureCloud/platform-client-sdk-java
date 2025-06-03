@@ -46,6 +46,7 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COUNTRY("country"),
     LANGUAGE("language"),
     PLATFORM("platform"),
@@ -101,6 +102,7 @@ public class SocialMediaAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NSOCIALPOSTS("nSocialPosts"),
     OSOCIALAUTHORS("oSocialAuthors"),
     OSOCIALSENTIMENT("oSocialSentiment"),

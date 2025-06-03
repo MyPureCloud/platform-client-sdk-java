@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
             throw new IllegalStateException("Missing the required parameter 'activityCodeId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String activityCodeId) {
+	public static Builder builder(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, activityCodeId);
+	            .withRequiredParams(businessUnitId, activityCodeId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String activityCodeId) {
+		public Builder withRequiredParams(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setActivityCodeId(activityCodeId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
             // verify the required parameter 'activityCodeId' is set
             if (request.activityCodeId == null) {
                 throw new IllegalStateException("Missing the required parameter 'activityCodeId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
             }
             
 			return request;

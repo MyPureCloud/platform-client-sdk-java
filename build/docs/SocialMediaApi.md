@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSocialmediaEscalationsMessages**](SocialMediaApi#postSocialmediaEscalationsMessages) | Escalate message to a conversation manually |
 | [**postSocialmediaTopicDataingestionrulesFacebook**](SocialMediaApi#postSocialmediaTopicDataingestionrulesFacebook) | Create an Facebook data ingestion rule. |
 | [**postSocialmediaTopicDataingestionrulesOpen**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpen) | Create an open data ingestion rule. |
+| [**postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk) | Ingest a list of Open Social Messages |
+| [**postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk) | Ingest a list of Open Social Reactions |
 | [**postSocialmediaTopicDataingestionrulesTwitter**](SocialMediaApi#postSocialmediaTopicDataingestionrulesTwitter) | Create an twitter data ingestion rule. |
 | [**postSocialmediaTopics**](SocialMediaApi#postSocialmediaTopics) | Create a social topic. |
 | [**postSocialmediaTwitterHistoricalTweets**](SocialMediaApi#postSocialmediaTwitterHistoricalTweets) | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization. |
@@ -294,8 +296,6 @@ null (empty response body)
 > Void deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, hardDelete)
 
 Delete a open data ingestion rule.
-
-deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}  
 
@@ -1104,8 +1104,6 @@ try {
 
 Get a single open data ingestion rule.
 
-getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}  
 
 Requires ALL permissions: 
@@ -1168,8 +1166,6 @@ try {
 > [OpenDataIngestionRuleVersionResponse](OpenDataIngestionRuleVersionResponse) getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, includeDeleted)
 
 Get a single Open data ingestion rule version.
-
-getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion}  
 
@@ -1235,8 +1231,6 @@ try {
 > [OpenDataIngestionRuleVersionResponseEntityListing](OpenDataIngestionRuleVersionResponseEntityListing) getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, pageNumber, pageSize, includeDeleted)
 
 Get the Open data ingestion rule versions.
-
-getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions  
 
@@ -1689,8 +1683,6 @@ try {
 
 Update the status of a open data ingestion rule.
 
-patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}  
 
 Requires ALL permissions: 
@@ -2116,8 +2108,6 @@ try {
 
 Create an open data ingestion rule.
 
-postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open  
 
 Requires ANY permissions: 
@@ -2170,6 +2160,136 @@ try {
 ### Return type
 
 [**OpenDataIngestionRuleResponse**](OpenDataIngestionRuleResponse)
+
+
+# **postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk**
+
+
+> [OpenSocialNormalizedMessageEntityListing](OpenSocialNormalizedMessageEntityListing) postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body)
+
+Ingest a list of Open Social Messages
+
+Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk  
+
+Requires ALL permissions: 
+
+* socialmedia:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SocialMediaApi apiInstance = new SocialMediaApi();
+String topicId = "topicId_example"; // String | Topic ID
+String ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
+List<OpenSocialMediaNormalizedMessage> body = Arrays.asList(new OpenSocialMediaNormalizedMessage()); // List<OpenSocialMediaNormalizedMessage> | NormalizedMessage
+try {
+    OpenSocialNormalizedMessageEntityListing result = apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **topicId** | **String**| Topic ID | 
+| **ruleId** | **String**| Data Ingestion Rule ID | 
+| **body** | [**List&lt;OpenSocialMediaNormalizedMessage&gt;**](OpenSocialMediaNormalizedMessage)| NormalizedMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenSocialNormalizedMessageEntityListing**](OpenSocialNormalizedMessageEntityListing)
+
+
+# **postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk**
+
+
+> [OpenSocialReactionsNormalizedEventEntityListing](OpenSocialReactionsNormalizedEventEntityListing) postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body)
+
+Ingest a list of Open Social Reactions
+
+Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk  
+
+Requires ALL permissions: 
+
+* socialmedia:reaction:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SocialMediaApi apiInstance = new SocialMediaApi();
+String topicId = "topicId_example"; // String | Topic ID
+String ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
+OpenSocialMediaReactionsRequest body = new OpenSocialMediaReactionsRequest(); // OpenSocialMediaReactionsRequest | NormalizedEvent
+try {
+    OpenSocialReactionsNormalizedEventEntityListing result = apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **topicId** | **String**| Topic ID | 
+| **ruleId** | **String**| Data Ingestion Rule ID | 
+| **body** | [**OpenSocialMediaReactionsRequest**](OpenSocialMediaReactionsRequest)| NormalizedEvent | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenSocialReactionsNormalizedEventEntityListing**](OpenSocialReactionsNormalizedEventEntityListing)
 
 
 # **postSocialmediaTopicDataingestionrulesTwitter**
@@ -2482,8 +2602,6 @@ try {
 
 Update the open data ingestion rule.
 
-putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}  
 
 Requires ALL permissions: 
@@ -2603,4 +2721,4 @@ try {
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -19,11 +19,14 @@ import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
 import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
 import com.mypurecloud.sdk.v2.model.AudioConnectorIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.Bot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotExecutionConfiguration;
 import com.mypurecloud.sdk.v2.model.BotList;
+import com.mypurecloud.sdk.v2.model.BotListing;
+import com.mypurecloud.sdk.v2.model.BotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
@@ -42,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.FunctionConfig;
 import com.mypurecloud.sdk.v2.model.FunctionRuntime;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.IncomingMessageRequest;
+import com.mypurecloud.sdk.v2.model.IncomingMessageResponse;
 import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
 import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
@@ -57,6 +62,8 @@ import com.mypurecloud.sdk.v2.model.LexV2BotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBot;
 import com.mypurecloud.sdk.v2.model.NuanceBotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBotLaunchSettings;
+import com.mypurecloud.sdk.v2.model.OutgoingMessageRequest;
+import com.mypurecloud.sdk.v2.model.OutgoingMessageResponse;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.SttEngineEntity;
@@ -100,6 +107,9 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequ
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesTruststoreRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotsSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
@@ -152,6 +162,8 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsBotconnectorsIncomingMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsBotconnectorsOutgoingMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
@@ -1822,6 +1834,237 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Bot> getIntegrationsBotconnectorBotAsync(GetIntegrationsBotconnectorBotRequest request, final AsyncApiCallback<Bot> callback) {
+    try {
+      final SettableFuture<Bot> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Bot>() {}, new AsyncApiCallback<ApiResponse<Bot>>() {
+        @Override
+        public void onCompleted(ApiResponse<Bot> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Bot>> getIntegrationsBotconnectorBotAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Bot>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Bot>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Bot>() {}, new AsyncApiCallback<ApiResponse<Bot>>() {
+        @Override
+        public void onCompleted(ApiResponse<Bot> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Bot> response = (ApiResponse<Bot>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Bot> response = (ApiResponse<Bot>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BotListing> getIntegrationsBotconnectorBotsAsync(GetIntegrationsBotconnectorBotsRequest request, final AsyncApiCallback<BotListing> callback) {
+    try {
+      final SettableFuture<BotListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BotListing>() {}, new AsyncApiCallback<ApiResponse<BotListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BotListing>> getIntegrationsBotconnectorBotsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BotListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BotListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BotListing>() {}, new AsyncApiCallback<ApiResponse<BotListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotListing> response = (ApiResponse<BotListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotListing> response = (ApiResponse<BotListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BotSummaryEntityListing> getIntegrationsBotconnectorBotsSummariesAsync(GetIntegrationsBotconnectorBotsSummariesRequest request, final AsyncApiCallback<BotSummaryEntityListing> callback) {
+    try {
+      final SettableFuture<BotSummaryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BotSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<BotSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotSummaryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BotSummaryEntityListing>> getIntegrationsBotconnectorBotsSummariesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BotSummaryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BotSummaryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BotSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<BotSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotSummaryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotSummaryEntityListing> response = (ApiResponse<BotSummaryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotSummaryEntityListing> response = (ApiResponse<BotSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5724,6 +5967,160 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Action> response = (ApiResponse<Action>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IncomingMessageResponse> postIntegrationsBotconnectorsIncomingMessagesAsync(PostIntegrationsBotconnectorsIncomingMessagesRequest request, final AsyncApiCallback<IncomingMessageResponse> callback) {
+    try {
+      final SettableFuture<IncomingMessageResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IncomingMessageResponse>() {}, new AsyncApiCallback<ApiResponse<IncomingMessageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IncomingMessageResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IncomingMessageResponse>> postIntegrationsBotconnectorsIncomingMessagesAsync(ApiRequest<IncomingMessageRequest> request, final AsyncApiCallback<ApiResponse<IncomingMessageResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IncomingMessageResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IncomingMessageResponse>() {}, new AsyncApiCallback<ApiResponse<IncomingMessageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IncomingMessageResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IncomingMessageResponse> response = (ApiResponse<IncomingMessageResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IncomingMessageResponse> response = (ApiResponse<IncomingMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OutgoingMessageResponse> postIntegrationsBotconnectorsOutgoingMessagesAsync(PostIntegrationsBotconnectorsOutgoingMessagesRequest request, final AsyncApiCallback<OutgoingMessageResponse> callback) {
+    try {
+      final SettableFuture<OutgoingMessageResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutgoingMessageResponse>() {}, new AsyncApiCallback<ApiResponse<OutgoingMessageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutgoingMessageResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OutgoingMessageResponse>> postIntegrationsBotconnectorsOutgoingMessagesAsync(ApiRequest<OutgoingMessageRequest> request, final AsyncApiCallback<ApiResponse<OutgoingMessageResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OutgoingMessageResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutgoingMessageResponse>() {}, new AsyncApiCallback<ApiResponse<OutgoingMessageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutgoingMessageResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutgoingMessageResponse> response = (ApiResponse<OutgoingMessageResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutgoingMessageResponse> response = (ApiResponse<OutgoingMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

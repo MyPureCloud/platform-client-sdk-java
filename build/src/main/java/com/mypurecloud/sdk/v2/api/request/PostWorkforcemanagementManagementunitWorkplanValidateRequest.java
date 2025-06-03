@@ -293,6 +293,20 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
 	    return this;
 	} 
 
+	private WorkPlanValidationRequest body;
+	public WorkPlanValidationRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(WorkPlanValidationRequest body) {
+		this.body = body;
+	}
+
+	public PostWorkforcemanagementManagementunitWorkplanValidateRequest withBody(WorkPlanValidationRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -336,20 +350,6 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
 		}
 	}
 
-	private WorkPlanValidationRequest body;
-	public WorkPlanValidationRequest getBody() {
-		return this.body;
-	}
-
-	public void setBody(WorkPlanValidationRequest body) {
-		this.body = body;
-	}
-
-	public PostWorkforcemanagementManagementunitWorkplanValidateRequest withBody(WorkPlanValidationRequest body) {
-	    this.setBody(body);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -381,6 +381,11 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
             throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PostWorkforcemanagementManagementunitWorkplanValidateRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanValidateRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -404,9 +409,9 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String workPlanId) {
+	public static Builder builder(String managementUnitId, String workPlanId, WorkPlanValidationRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, workPlanId);
+	            .withRequiredParams(managementUnitId, workPlanId, body);
 	}
 
 
@@ -428,6 +433,11 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
 			return this;
 		}
 
+		public Builder withBody(WorkPlanValidationRequest body) {
+			request.setBody(body);
+			return this;
+		}
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
@@ -444,16 +454,12 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
 		    return this;
 		}
 
-		public Builder withBody(WorkPlanValidationRequest body) {
-			request.setBody(body);
-			return this;
-		}
 
 
-
-		public Builder withRequiredParams(String managementUnitId, String workPlanId) {
+		public Builder withRequiredParams(String managementUnitId, String workPlanId, WorkPlanValidationRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setWorkPlanId(workPlanId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -469,6 +475,11 @@ public class PostWorkforcemanagementManagementunitWorkplanValidateRequest {
             // verify the required parameter 'workPlanId' is set
             if (request.workPlanId == null) {
                 throw new IllegalStateException("Missing the required parameter 'workPlanId' when building request for PostWorkforcemanagementManagementunitWorkplanValidateRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplanValidateRequest.");
             }
             
 			return request;

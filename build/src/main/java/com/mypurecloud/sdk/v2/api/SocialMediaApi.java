@@ -27,6 +27,10 @@ import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenSocialMediaNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenSocialMediaReactionsRequest;
+import com.mypurecloud.sdk.v2.model.OpenSocialNormalizedMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenSocialReactionsNormalizedEventEntityListing;
 import com.mypurecloud.sdk.v2.model.SocialEscalationResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregationQuery;
@@ -78,6 +82,8 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
@@ -422,7 +428,6 @@ public class SocialMediaApi {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -436,7 +441,6 @@ public class SocialMediaApi {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
@@ -460,7 +464,6 @@ public class SocialMediaApi {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -479,7 +482,6 @@ public class SocialMediaApi {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1518,7 +1520,6 @@ public class SocialMediaApi {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -1533,7 +1534,6 @@ public class SocialMediaApi {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
@@ -1558,7 +1558,6 @@ public class SocialMediaApi {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -1578,7 +1577,6 @@ public class SocialMediaApi {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1608,7 +1606,6 @@ public class SocialMediaApi {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -1624,7 +1621,6 @@ public class SocialMediaApi {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param dataIngestionRuleVersion version (required)
@@ -1652,7 +1648,6 @@ public class SocialMediaApi {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleVersionResponse
    * @throws ApiException if the request fails on the server
@@ -1672,7 +1667,6 @@ public class SocialMediaApi {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1702,7 +1696,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -1719,7 +1712,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -1750,7 +1742,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleVersionResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -1770,7 +1761,6 @@ public class SocialMediaApi {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2328,7 +2318,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param body  (optional)
@@ -2343,7 +2332,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param body  (optional)
@@ -2368,7 +2356,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -2388,7 +2375,6 @@ public class SocialMediaApi {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2902,7 +2888,6 @@ public class SocialMediaApi {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return OpenDataIngestionRuleResponse
@@ -2916,7 +2901,6 @@ public class SocialMediaApi {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param body  (optional)
    * @return OpenDataIngestionRuleResponse
@@ -2938,7 +2922,6 @@ public class SocialMediaApi {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -2958,7 +2941,6 @@ public class SocialMediaApi {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2981,6 +2963,178 @@ public class SocialMediaApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenDataIngestionRuleResponse> response = (ApiResponse<OpenDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param topicId Topic ID (required)
+   * @param ruleId Data Ingestion Rule ID (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenSocialNormalizedMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenSocialNormalizedMessageEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(String topicId, String ruleId, List<OpenSocialMediaNormalizedMessage> body) throws IOException, ApiException {
+    return  postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(createPostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest(topicId, ruleId, body));
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param topicId Topic ID (required)
+   * @param ruleId Data Ingestion Rule ID (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenSocialNormalizedMessageEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenSocialNormalizedMessageEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkWithHttpInfo(String topicId, String ruleId, List<OpenSocialMediaNormalizedMessage> body) throws IOException {
+    return postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(createPostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest(topicId, ruleId, body).withHttpInfo());
+  }
+
+  private PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest createPostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest(String topicId, String ruleId, List<OpenSocialMediaNormalizedMessage> body) {
+    return PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest.builder()
+            .withTopicId(topicId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request The request object
+   * @return OpenSocialNormalizedMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenSocialNormalizedMessageEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenSocialNormalizedMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenSocialNormalizedMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenSocialNormalizedMessageEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(ApiRequest<List<OpenSocialMediaNormalizedMessage>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenSocialNormalizedMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenSocialNormalizedMessageEntityListing> response = (ApiResponse<OpenSocialNormalizedMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenSocialNormalizedMessageEntityListing> response = (ApiResponse<OpenSocialNormalizedMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param topicId Topic ID (required)
+   * @param ruleId Data Ingestion Rule ID (required)
+   * @param body NormalizedEvent (required)
+   * @return OpenSocialReactionsNormalizedEventEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenSocialReactionsNormalizedEventEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(String topicId, String ruleId, OpenSocialMediaReactionsRequest body) throws IOException, ApiException {
+    return  postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(createPostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest(topicId, ruleId, body));
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param topicId Topic ID (required)
+   * @param ruleId Data Ingestion Rule ID (required)
+   * @param body NormalizedEvent (required)
+   * @return OpenSocialReactionsNormalizedEventEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkWithHttpInfo(String topicId, String ruleId, OpenSocialMediaReactionsRequest body) throws IOException {
+    return postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(createPostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest(topicId, ruleId, body).withHttpInfo());
+  }
+
+  private PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest createPostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest(String topicId, String ruleId, OpenSocialMediaReactionsRequest body) {
+    return PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest.builder()
+            .withTopicId(topicId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request The request object
+   * @return OpenSocialReactionsNormalizedEventEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenSocialReactionsNormalizedEventEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenSocialReactionsNormalizedEventEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(ApiRequest<OpenSocialMediaReactionsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenSocialReactionsNormalizedEventEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response = (ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response = (ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3394,7 +3548,6 @@ public class SocialMediaApi {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param body  (optional)
@@ -3409,7 +3562,6 @@ public class SocialMediaApi {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param topicId topicId (required)
    * @param openId openId (required)
    * @param body  (optional)
@@ -3434,7 +3586,6 @@ public class SocialMediaApi {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OpenDataIngestionRuleResponse
    * @throws ApiException if the request fails on the server
@@ -3454,7 +3605,6 @@ public class SocialMediaApi {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

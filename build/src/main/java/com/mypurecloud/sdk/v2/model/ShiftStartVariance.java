@@ -41,6 +41,7 @@ public class ShiftStartVariance  implements Serializable {
    */
  @JsonDeserialize(using = ApplicableDaysEnumDeserializer.class)
   public enum ApplicableDaysEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUNDAY("Sunday"),
     MONDAY("Monday"),
     TUESDAY("Tuesday"),

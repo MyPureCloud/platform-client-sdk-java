@@ -319,6 +319,11 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
             throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}")
                 .withPathParameter("timeOffRequestId", timeOffRequestId)
@@ -337,9 +342,9 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 	}
 
 
-	public static Builder builder(String timeOffRequestId) {
+	public static Builder builder(String timeOffRequestId, AgentTimeOffRequestPatch body) {
 	    return new Builder()
-	            .withRequiredParams(timeOffRequestId);
+	            .withRequiredParams(timeOffRequestId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 
 
 
-		public Builder withRequiredParams(String timeOffRequestId) {
+		public Builder withRequiredParams(String timeOffRequestId, AgentTimeOffRequestPatch body) {
 			request.setTimeOffRequestId(timeOffRequestId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
             // verify the required parameter 'timeOffRequestId' is set
             if (request.timeOffRequestId == null) {
                 throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
             }
             
 			return request;

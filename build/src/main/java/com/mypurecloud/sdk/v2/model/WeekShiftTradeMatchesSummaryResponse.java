@@ -25,6 +25,7 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
   
   private LocalDate weekDate = null;
   private Integer count = null;
+  private Integer crossWeekReceivingCount = null;
 
   public WeekShiftTradeMatchesSummaryResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
   }
 
 
+  /**
+   * The number of cross-week trades in the 'Matched' state with the receiving shift for the given week
+   **/
+  public WeekShiftTradeMatchesSummaryResponse crossWeekReceivingCount(Integer crossWeekReceivingCount) {
+    this.crossWeekReceivingCount = crossWeekReceivingCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of cross-week trades in the 'Matched' state with the receiving shift for the given week")
+  @JsonProperty("crossWeekReceivingCount")
+  public Integer getCrossWeekReceivingCount() {
+    return crossWeekReceivingCount;
+  }
+  public void setCrossWeekReceivingCount(Integer crossWeekReceivingCount) {
+    this.crossWeekReceivingCount = crossWeekReceivingCount;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
     WeekShiftTradeMatchesSummaryResponse weekShiftTradeMatchesSummaryResponse = (WeekShiftTradeMatchesSummaryResponse) o;
 
     return Objects.equals(this.weekDate, weekShiftTradeMatchesSummaryResponse.weekDate) &&
-            Objects.equals(this.count, weekShiftTradeMatchesSummaryResponse.count);
+            Objects.equals(this.count, weekShiftTradeMatchesSummaryResponse.count) &&
+            Objects.equals(this.crossWeekReceivingCount, weekShiftTradeMatchesSummaryResponse.crossWeekReceivingCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(weekDate, count);
+    return Objects.hash(weekDate, count, crossWeekReceivingCount);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
     
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    crossWeekReceivingCount: ").append(toIndentedString(crossWeekReceivingCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

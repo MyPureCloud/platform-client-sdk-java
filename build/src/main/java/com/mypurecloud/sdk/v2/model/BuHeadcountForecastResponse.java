@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastBuPlanningGroupHeadcountForecastResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class BuHeadcountForecastResponse  implements Serializable {
   
-  private BuHeadcountForecast result = null;
+  private BuHeadcountForecastBuPlanningGroupHeadcountForecastResult result = null;
   private String downloadUrl = null;
 
   public BuHeadcountForecastResponse() {
@@ -35,17 +35,17 @@ public class BuHeadcountForecastResponse  implements Serializable {
   /**
    * The headcount forecast, null when downloadUrl is provided
    **/
-  public BuHeadcountForecastResponse result(BuHeadcountForecast result) {
+  public BuHeadcountForecastResponse result(BuHeadcountForecastBuPlanningGroupHeadcountForecastResult result) {
     this.result = result;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The headcount forecast, null when downloadUrl is provided")
   @JsonProperty("result")
-  public BuHeadcountForecast getResult() {
+  public BuHeadcountForecastBuPlanningGroupHeadcountForecastResult getResult() {
     return result;
   }
-  public void setResult(BuHeadcountForecast result) {
+  public void setResult(BuHeadcountForecastBuPlanningGroupHeadcountForecastResult result) {
     this.result = result;
   }
 

@@ -55,6 +55,7 @@ public class PostTextRequest  implements Serializable {
    */
  @JsonDeserialize(using = BotChannelsEnumDeserializer.class)
   public enum BotChannelsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("Call"),
     CALLBACK("Callback"),
     MESSAGING("Messaging"),

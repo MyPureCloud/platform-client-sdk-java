@@ -9348,13 +9348,14 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @param includeCrossWeekShifts Whether to include all shift trades with either the initiating shift or the receiving shift in the week (optional, default to false)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, forceDownloadService));
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean includeCrossWeekShifts, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService));
   }
 
   /**
@@ -9363,21 +9364,24 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @param includeCrossWeekShifts Whether to include all shift trades with either the initiating shift or the receiving shift in the week (optional, default to false)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) throws IOException {
-    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, forceDownloadService).withHttpInfo());
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean includeCrossWeekShifts, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) {
+  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean includeCrossWeekShifts, Boolean forceDownloadService) {
     return GetWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withWeekDateId(weekDateId)
 
             .withEvaluateMatches(evaluateMatches)
+
+            .withIncludeCrossWeekShifts(includeCrossWeekShifts)
 
             .withForceDownloadService(forceDownloadService)
 
@@ -10950,7 +10954,7 @@ public class WorkforceManagementApi {
    * Update my alternative shifts trade by trade ID
    * 
    * @param tradeId The ID of the alternative shift trade (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AlternativeShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -10963,7 +10967,7 @@ public class WorkforceManagementApi {
    * Update my alternative shifts trade by trade ID
    * 
    * @param tradeId The ID of the alternative shift trade (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AlternativeShiftTradeResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11110,7 +11114,7 @@ public class WorkforceManagementApi {
    * Update business unit
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11123,7 +11127,7 @@ public class WorkforceManagementApi {
    * Update business unit
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11193,7 +11197,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11207,7 +11211,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
    */
@@ -11364,7 +11368,7 @@ public class WorkforceManagementApi {
    * Update alternative shifts settings for a business unit
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AlternativeShiftBuSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11377,7 +11381,7 @@ public class WorkforceManagementApi {
    * Update alternative shifts settings for a business unit
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AlternativeShiftBuSettingsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11447,7 +11451,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param planningGroupId The ID of a planning group to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PlanningGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11461,7 +11465,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param planningGroupId The ID of a planning group to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PlanningGroup
    * @throws IOException if the request fails to be processed
    */
@@ -11533,7 +11537,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param runId The ID of the schedule run (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -11546,7 +11550,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param runId The ID of the schedule run (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> patchWorkforcemanagementBusinessunitSchedulingRunWithHttpInfo(String businessUnitId, String runId, PatchBuScheduleRunRequest body) throws IOException {
@@ -11616,7 +11620,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param serviceGoalTemplateId The ID of a service goal template to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ServiceGoalTemplate
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11630,7 +11634,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param serviceGoalTemplateId The ID of a service goal template to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ServiceGoalTemplate
    * @throws IOException if the request fails to be processed
    */
@@ -11702,7 +11706,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param staffingGroupId The ID of the staffing group to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return StaffingGroupResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11716,7 +11720,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param staffingGroupId The ID of the staffing group to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return StaffingGroupResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11788,7 +11792,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param timeOffPlanId The ID of the time-off plan to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffPlanResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11802,7 +11806,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param timeOffPlanId The ID of the time-off plan to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffPlanResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11961,7 +11965,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
    * @param bidGroupId Work Plan Bid Group id (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidGroupResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11976,7 +11980,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
    * @param bidGroupId Work Plan Bid Group id (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidGroupResponse
    * @throws IOException if the request fails to be processed
    */
@@ -12051,7 +12055,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
    * @param bidGroupId The ID of the work plan bid group (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AdminAgentWorkPlanPreferenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12066,7 +12070,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
    * @param bidGroupId The ID of the work plan bid group (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AdminAgentWorkPlanPreferenceResponse
    * @throws IOException if the request fails to be processed
    */
@@ -12139,7 +12143,7 @@ public class WorkforceManagementApi {
    * Update the requested management unit
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12152,7 +12156,7 @@ public class WorkforceManagementApi {
    * Update the requested management unit
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
    */
@@ -12221,7 +12225,7 @@ public class WorkforceManagementApi {
    * Update agent configurations
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -12233,7 +12237,7 @@ public class WorkforceManagementApi {
    * Update agent configurations
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> patchWorkforcemanagementManagementunitAgentsWithHttpInfo(String managementUnitId, UpdateMuAgentsRequest body) throws IOException {
@@ -12300,7 +12304,7 @@ public class WorkforceManagementApi {
    * Updates agent work plan configuration
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UpdateMuAgentWorkPlansBatchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12313,7 +12317,7 @@ public class WorkforceManagementApi {
    * Updates agent work plan configuration
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UpdateMuAgentWorkPlansBatchResponse
    * @throws IOException if the request fails to be processed
    */
@@ -12383,7 +12387,7 @@ public class WorkforceManagementApi {
    * Updates time off limit object properties, but not daily values.
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The id of time off limit object to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12397,7 +12401,7 @@ public class WorkforceManagementApi {
    * Updates time off limit object properties, but not daily values.
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The id of time off limit object to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
    */
@@ -12469,7 +12473,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12483,7 +12487,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param timeOffPlanId The ID of the time off plan to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffPlan
    * @throws IOException if the request fails to be processed
    */
@@ -12556,7 +12560,7 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffRequestId The ID of the time off request. (required)
    * @param userId The ID of user to whom the time off request belongs. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserTimeOffIntegrationStatusResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12571,7 +12575,7 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffRequestId The ID of the time off request. (required)
    * @param userId The ID of user to whom the time off request belongs. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserTimeOffIntegrationStatusResponse
    * @throws IOException if the request fails to be processed
    */
@@ -12646,7 +12650,7 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12661,7 +12665,7 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
@@ -12825,14 +12829,14 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
+   * @param body body (required)
    * @param validationMode Allows to update work plan even if validation result is invalid (optional)
-   * @param body body (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, validationMode, body));
+  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode));
   }
 
   /**
@@ -12840,24 +12844,24 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
+   * @param body body (required)
    * @param validationMode Allows to update work plan even if validation result is invalid (optional)
-   * @param body body (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) throws IOException {
-    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, validationMode, body).withHttpInfo());
+  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException {
+    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) {
+  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) {
     return PatchWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withWorkPlanId(workPlanId)
 
-            .withValidationMode(validationMode)
-
             .withBody(body)
+
+            .withValidationMode(validationMode)
 
             .build();
   }
@@ -12915,7 +12919,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12929,7 +12933,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to update (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws IOException if the request fails to be processed
    */
@@ -13000,7 +13004,7 @@ public class WorkforceManagementApi {
    * Update a time off request for the current user
    * 
    * @param timeOffRequestId The ID of the time off request (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13013,7 +13017,7 @@ public class WorkforceManagementApi {
    * Update a time off request for the current user
    * 
    * @param timeOffRequestId The ID of the time off request (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
@@ -13082,7 +13086,7 @@ public class WorkforceManagementApi {
    * Update work plan bid ranks for a user
    * 
    * @param userId The userId to whom the work plan bid ranks apply. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidRanks
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13095,7 +13099,7 @@ public class WorkforceManagementApi {
    * Update work plan bid ranks for a user
    * 
    * @param userId The userId to whom the work plan bid ranks apply. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidRanks
    * @throws IOException if the request fails to be processed
    */
@@ -13242,7 +13246,7 @@ public class WorkforceManagementApi {
    * Update an agent's work plan bidding preference
    * 
    * @param bidId The ID of the work plan bid (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AgentWorkPlanBiddingPreferenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13255,7 +13259,7 @@ public class WorkforceManagementApi {
    * Update an agent's work plan bidding preference
    * 
    * @param bidId The ID of the work plan bid (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return AgentWorkPlanBiddingPreferenceResponse
    * @throws IOException if the request fails to be processed
    */
@@ -13569,7 +13573,7 @@ public class WorkforceManagementApi {
   /**
    * Request a historical adherence report in bulk
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceBulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13581,7 +13585,7 @@ public class WorkforceManagementApi {
   /**
    * Request a historical adherence report in bulk
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceBulkResponse
    * @throws IOException if the request fails to be processed
    */
@@ -13819,7 +13823,7 @@ public class WorkforceManagementApi {
   /**
    * Move agents in and out of management unit
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return MoveAgentsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13831,7 +13835,7 @@ public class WorkforceManagementApi {
   /**
    * Move agents in and out of management unit
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return MoveAgentsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -13897,7 +13901,7 @@ public class WorkforceManagementApi {
   /**
    * Query integrations for agents
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return AgentsIntegrationsListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13909,7 +13913,7 @@ public class WorkforceManagementApi {
   /**
    * Query integrations for agents
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return AgentsIntegrationsListing
    * @throws IOException if the request fails to be processed
    */
@@ -14053,7 +14057,7 @@ public class WorkforceManagementApi {
   /**
    * Get published schedule for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuCurrentAgentScheduleSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -14065,7 +14069,7 @@ public class WorkforceManagementApi {
   /**
    * Get published schedule for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuCurrentAgentScheduleSearchResponse
    * @throws IOException if the request fails to be processed
    */
@@ -14366,7 +14370,7 @@ public class WorkforceManagementApi {
    * Create a new activity code
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -14379,7 +14383,7 @@ public class WorkforceManagementApi {
    * Create a new activity code
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
    */
@@ -14702,40 +14706,40 @@ public class WorkforceManagementApi {
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, forceAsync, forceDownloadService, body));
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService));
   }
 
   /**
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearchWithHttpInfo(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException {
-    return postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, forceAsync, forceDownloadService, body).withHttpInfo());
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearchWithHttpInfo(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) {
+  private PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
     return PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.builder()
             .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
 
             .withForceAsync(forceAsync)
 
             .withForceDownloadService(forceDownloadService)
-
-            .withBody(body)
 
             .build();
   }
@@ -14878,36 +14882,36 @@ public class WorkforceManagementApi {
    * Get intraday data for the given date for the requested planningGroupIds
    * 
    * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return AsyncIntradayResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, forceAsync, body));
+  public AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(String businessUnitId, IntradayPlanningGroupRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, body, forceAsync));
   }
 
   /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
    * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return AsyncIntradayResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AsyncIntradayResponse> postWorkforcemanagementBusinessunitIntradayWithHttpInfo(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) throws IOException {
-    return postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, forceAsync, body).withHttpInfo());
+  public ApiResponse<AsyncIntradayResponse> postWorkforcemanagementBusinessunitIntradayWithHttpInfo(String businessUnitId, IntradayPlanningGroupRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, body, forceAsync).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitIntradayRequest createPostWorkforcemanagementBusinessunitIntradayRequest(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) {
+  private PostWorkforcemanagementBusinessunitIntradayRequest createPostWorkforcemanagementBusinessunitIntradayRequest(String businessUnitId, IntradayPlanningGroupRequest body, Boolean forceAsync) {
     return PostWorkforcemanagementBusinessunitIntradayRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
-            .withForceAsync(forceAsync)
-
             .withBody(body)
+
+            .withForceAsync(forceAsync)
 
             .build();
   }
@@ -14964,7 +14968,7 @@ public class WorkforceManagementApi {
    * Adds a new planning group
    * 
    * @param businessUnitId The ID of the business unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PlanningGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -14977,7 +14981,7 @@ public class WorkforceManagementApi {
    * Adds a new planning group
    * 
    * @param businessUnitId The ID of the business unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PlanningGroup
    * @throws IOException if the request fails to be processed
    */
@@ -15046,7 +15050,7 @@ public class WorkforceManagementApi {
    * Adds a new service goal template
    * 
    * @param businessUnitId The ID of the business unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ServiceGoalTemplate
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15059,7 +15063,7 @@ public class WorkforceManagementApi {
    * Adds a new service goal template
    * 
    * @param businessUnitId The ID of the business unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return ServiceGoalTemplate
    * @throws IOException if the request fails to be processed
    */
@@ -15128,7 +15132,7 @@ public class WorkforceManagementApi {
    * Creates a new staffing group
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return StaffingGroupResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15141,7 +15145,7 @@ public class WorkforceManagementApi {
    * Creates a new staffing group
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return StaffingGroupResponse
    * @throws IOException if the request fails to be processed
    */
@@ -15210,7 +15214,7 @@ public class WorkforceManagementApi {
    * Gets staffing group associations for a list of user IDs
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserStaffingGroupListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15223,7 +15227,7 @@ public class WorkforceManagementApi {
    * Gets staffing group associations for a list of user IDs
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserStaffingGroupListing
    * @throws IOException if the request fails to be processed
    */
@@ -15292,7 +15296,7 @@ public class WorkforceManagementApi {
    * Creates a new time-off limit object
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15305,7 +15309,7 @@ public class WorkforceManagementApi {
    * Creates a new time-off limit object
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -15374,7 +15378,7 @@ public class WorkforceManagementApi {
    * Retrieves time-off limit related values based on a given set of filters.
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15387,7 +15391,7 @@ public class WorkforceManagementApi {
    * Retrieves time-off limit related values based on a given set of filters.
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitValuesResponse
    * @throws IOException if the request fails to be processed
    */
@@ -15456,7 +15460,7 @@ public class WorkforceManagementApi {
    * Creates a new time-off plan
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffPlanResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15469,7 +15473,7 @@ public class WorkforceManagementApi {
    * Creates a new time-off plan
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffPlanResponse
    * @throws IOException if the request fails to be processed
    */
@@ -15728,7 +15732,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format (required)
    * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PerformancePredictionRecalculationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15743,7 +15747,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format (required)
    * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PerformancePredictionRecalculationResponse
    * @throws IOException if the request fails to be processed
    */
@@ -15818,7 +15822,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format (required)
    * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PerformancePredictionRecalculationUploadResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15833,7 +15837,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format (required)
    * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return PerformancePredictionRecalculationUploadResponse
    * @throws IOException if the request fails to be processed
    */
@@ -16963,7 +16967,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidGroupResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -16977,7 +16981,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The work plan bid id of the bid groups (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBidGroupResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17048,7 +17052,7 @@ public class WorkforceManagementApi {
    * Create a new work plan bid
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body The work plan bid to be created (optional)
+   * @param body The work plan bid to be created (required)
    * @return WorkPlanBid
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17061,7 +17065,7 @@ public class WorkforceManagementApi {
    * Create a new work plan bid
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body The work plan bid to be created (optional)
+   * @param body The work plan bid to be created (required)
    * @return WorkPlanBid
    * @throws IOException if the request fails to be processed
    */
@@ -17129,7 +17133,7 @@ public class WorkforceManagementApi {
   /**
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17141,7 +17145,7 @@ public class WorkforceManagementApi {
   /**
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
-   * @param body body (optional)
+   * @param body body (required)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17285,7 +17289,7 @@ public class WorkforceManagementApi {
   /**
    * Delete the list of the historical data import entries
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return HistoricalImportDeleteFilesJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17297,7 +17301,7 @@ public class WorkforceManagementApi {
   /**
    * Delete the list of the historical data import entries
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return HistoricalImportDeleteFilesJobResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17441,7 +17445,7 @@ public class WorkforceManagementApi {
   /**
    * Trigger validation process for historical import
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return ValidationServiceAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17453,7 +17457,7 @@ public class WorkforceManagementApi {
   /**
    * Trigger validation process for historical import
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return ValidationServiceAsyncResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17598,36 +17602,36 @@ public class WorkforceManagementApi {
    * Get agents work plans configuration
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return AgentsWorkPlansResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, forceDownloadService, body));
+  public AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(String managementUnitId, GetAgentsWorkPlansRequest body, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, body, forceDownloadService));
   }
 
   /**
    * Get agents work plans configuration
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return AgentsWorkPlansResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentsWorkPlansResponse> postWorkforcemanagementManagementunitAgentsWorkplansQueryWithHttpInfo(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, forceDownloadService, body).withHttpInfo());
+  public ApiResponse<AgentsWorkPlansResponse> postWorkforcemanagementManagementunitAgentsWorkplansQueryWithHttpInfo(String managementUnitId, GetAgentsWorkPlansRequest body, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, body, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) {
+  private PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(String managementUnitId, GetAgentsWorkPlansRequest body, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
 
-            .withForceDownloadService(forceDownloadService)
-
             .withBody(body)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -17684,40 +17688,40 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, forceAsync, forceDownloadService, body));
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService));
   }
 
   /**
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, forceAsync, forceDownloadService, body).withHttpInfo());
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) {
+  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.builder()
             .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
 
             .withForceAsync(forceAsync)
 
             .withForceDownloadService(forceDownloadService)
-
-            .withBody(body)
 
             .build();
   }
@@ -17774,7 +17778,7 @@ public class WorkforceManagementApi {
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17787,7 +17791,7 @@ public class WorkforceManagementApi {
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17856,7 +17860,7 @@ public class WorkforceManagementApi {
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return MoveManagementUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17869,7 +17873,7 @@ public class WorkforceManagementApi {
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return MoveManagementUnitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -17938,7 +17942,7 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17952,7 +17956,7 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -18024,7 +18028,7 @@ public class WorkforceManagementApi {
    * Request a historical shrinkage report
    * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalShrinkageResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18037,7 +18041,7 @@ public class WorkforceManagementApi {
    * Request a historical shrinkage report
    * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalShrinkageResponse
    * @throws IOException if the request fails to be processed
    */
@@ -18106,7 +18110,7 @@ public class WorkforceManagementApi {
    * Creates a new time off limit object under management unit.
    * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18119,7 +18123,7 @@ public class WorkforceManagementApi {
    * Creates a new time off limit object under management unit.
    * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
    */
@@ -18188,7 +18192,7 @@ public class WorkforceManagementApi {
    * Retrieves time off limit related values based on a given set of filters.
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return QueryTimeOffLimitValuesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18201,7 +18205,7 @@ public class WorkforceManagementApi {
    * Retrieves time off limit related values based on a given set of filters.
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return QueryTimeOffLimitValuesResponse
    * @throws IOException if the request fails to be processed
    */
@@ -18270,7 +18274,7 @@ public class WorkforceManagementApi {
    * Creates a new time off plan
    * 
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18283,7 +18287,7 @@ public class WorkforceManagementApi {
    * Creates a new time off plan
    * 
    * @param managementUnitId The ID of the management unit (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffPlan
    * @throws IOException if the request fails to be processed
    */
@@ -18352,7 +18356,7 @@ public class WorkforceManagementApi {
    * Create a new time off request
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18365,7 +18369,7 @@ public class WorkforceManagementApi {
    * Create a new time off request
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
    */
@@ -18434,7 +18438,7 @@ public class WorkforceManagementApi {
    * Retrieves integration statuses for a list of time off requests
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserTimeOffIntegrationStatusResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18447,7 +18451,7 @@ public class WorkforceManagementApi {
    * Retrieves integration statuses for a list of time off requests
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return UserTimeOffIntegrationStatusResponseListing
    * @throws IOException if the request fails to be processed
    */
@@ -18516,36 +18520,36 @@ public class WorkforceManagementApi {
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, forceDownloadService, body));
+  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String managementUnitId, TimeOffRequestQueryBody body, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body, forceDownloadService));
   }
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
-   * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) throws IOException {
-    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, forceDownloadService, body).withHttpInfo());
+  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String managementUnitId, TimeOffRequestQueryBody body, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) {
+  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, TimeOffRequestQueryBody body, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
 
-            .withForceDownloadService(forceDownloadService)
-
             .withBody(body)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -18602,7 +18606,7 @@ public class WorkforceManagementApi {
    * Retrieves daily waitlist position for a list of time off requests
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WaitlistPositionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18615,7 +18619,7 @@ public class WorkforceManagementApi {
    * Retrieves daily waitlist position for a list of time off requests
    * 
    * @param managementUnitId The ID of the management unit. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WaitlistPositionListing
    * @throws IOException if the request fails to be processed
    */
@@ -18857,7 +18861,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param userId The id of the user for whom the time off request estimate is requested (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return EstimateAvailableTimeOffResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18871,7 +18875,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit (required)
    * @param userId The id of the user for whom the time off request estimate is requested (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return EstimateAvailableTimeOffResponse
    * @throws IOException if the request fails to be processed
    */
@@ -19299,7 +19303,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to create a copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19313,7 +19317,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to create a copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
@@ -19385,14 +19389,14 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
+   * @param body body (required)
    * @param expand  (optional)
-   * @param body body (optional)
    * @return ValidateWorkPlanResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, expand, body));
+  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand));
   }
 
   /**
@@ -19400,24 +19404,24 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
+   * @param body body (required)
    * @param expand  (optional)
-   * @param body body (optional)
    * @return ValidateWorkPlanResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateWithHttpInfo(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, expand, body).withHttpInfo());
+  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateWithHttpInfo(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWorkplanValidateRequest createPostWorkforcemanagementManagementunitWorkplanValidateRequest(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) {
+  private PostWorkforcemanagementManagementunitWorkplanValidateRequest createPostWorkforcemanagementManagementunitWorkplanValidateRequest(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) {
     return PostWorkforcemanagementManagementunitWorkplanValidateRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withWorkPlanId(workPlanId)
 
-            .withExpand(expand)
-
             .withBody(body)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -19475,7 +19479,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19489,7 +19493,7 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws IOException if the request fails to be processed
    */
@@ -19560,7 +19564,7 @@ public class WorkforceManagementApi {
    * Create a new work plan rotation
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19573,7 +19577,7 @@ public class WorkforceManagementApi {
    * Create a new work plan rotation
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanRotationResponse
    * @throws IOException if the request fails to be processed
    */
@@ -19642,36 +19646,36 @@ public class WorkforceManagementApi {
    * Create a new work plan
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
-   * @param body body (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, String validationMode, CreateWorkPlan body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, validationMode, body));
+  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode));
   }
 
   /**
    * Create a new work plan
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (required)
    * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
-   * @param body body (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, String validationMode, CreateWorkPlan body) throws IOException {
-    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, validationMode, body).withHttpInfo());
+  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, String validationMode, CreateWorkPlan body) {
+  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, CreateWorkPlan body, String validationMode) {
     return PostWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
 
-            .withValidationMode(validationMode)
-
             .withBody(body)
+
+            .withValidationMode(validationMode)
 
             .build();
   }
@@ -19727,7 +19731,7 @@ public class WorkforceManagementApi {
   /**
    * Add a management unit
    * It may take a minute or two for a new management unit to be available for api operations
-   * @param body body (optional)
+   * @param body body (required)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19739,7 +19743,7 @@ public class WorkforceManagementApi {
   /**
    * Add a management unit
    * It may take a minute or two for a new management unit to be available for api operations
-   * @param body body (optional)
+   * @param body body (required)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
    */
@@ -19805,7 +19809,7 @@ public class WorkforceManagementApi {
   /**
    * Mark a list of notifications as read or unread
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return UpdateNotificationsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19817,7 +19821,7 @@ public class WorkforceManagementApi {
   /**
    * Mark a list of notifications as read or unread
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return UpdateNotificationsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -19966,7 +19970,7 @@ public class WorkforceManagementApi {
    * Request a teams historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
    * @param teamId The ID of the team (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -19979,7 +19983,7 @@ public class WorkforceManagementApi {
    * Request a teams historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
    * @param teamId The ID of the team (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalAdherenceResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20048,7 +20052,7 @@ public class WorkforceManagementApi {
    * Request a historical shrinkage report
    * The maximum supported range for historical shrinkage queries is up to 32 days
    * @param teamId The ID of the team (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalShrinkageResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20061,7 +20065,7 @@ public class WorkforceManagementApi {
    * Request a historical shrinkage report
    * The maximum supported range for historical shrinkage queries is up to 32 days
    * @param teamId The ID of the team (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WfmHistoricalShrinkageResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20207,7 +20211,7 @@ public class WorkforceManagementApi {
   /**
    * Queries available time off for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return AvailableTimeOffResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20219,7 +20223,7 @@ public class WorkforceManagementApi {
   /**
    * Queries available time off for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return AvailableTimeOffResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20285,7 +20289,7 @@ public class WorkforceManagementApi {
   /**
    * Create a time off request for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20297,7 +20301,7 @@ public class WorkforceManagementApi {
   /**
    * Create a time off request for the current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20363,7 +20367,7 @@ public class WorkforceManagementApi {
   /**
    * Estimates available time off for current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return EstimateAvailableTimeOffResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20375,7 +20379,7 @@ public class WorkforceManagementApi {
   /**
    * Estimates available time off for current user
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return EstimateAvailableTimeOffResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20441,7 +20445,7 @@ public class WorkforceManagementApi {
   /**
    * Retrieves integration statuses for a list of current user time off requests
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffIntegrationStatusResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20453,7 +20457,7 @@ public class WorkforceManagementApi {
   /**
    * Retrieves integration statuses for a list of current user time off requests
    * 
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffIntegrationStatusResponseListing
    * @throws IOException if the request fails to be processed
    */
@@ -20603,7 +20607,7 @@ public class WorkforceManagementApi {
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
    * @param businessUnitId The ID of the business unit (required)
    * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20617,7 +20621,7 @@ public class WorkforceManagementApi {
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
    * @param businessUnitId The ID of the business unit (required)
    * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return BuTimeOffLimitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -20689,7 +20693,7 @@ public class WorkforceManagementApi {
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to set values for (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20703,7 +20707,7 @@ public class WorkforceManagementApi {
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
    * @param managementUnitId The ID of the management unit. (required)
    * @param timeOffLimitId The ID of the time off limit object to set values for (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return TimeOffLimit
    * @throws IOException if the request fails to be processed
    */

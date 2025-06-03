@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicAppleOpaqueId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicDataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicDivision;
@@ -113,6 +114,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   private ExternalContactsContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsContactChangedTopicInstagramId instagramId = null;
   private List<ExternalContactsContactChangedTopicExternalId> externalIds = null;
+  private List<ExternalContactsContactChangedTopicAppleOpaqueId> appleOpaqueIds = null;
   private String canonicalContactId = null;
   private ExternalContactsContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
@@ -126,6 +128,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   public ExternalContactsContactChangedTopicContact() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       externalIds = new ArrayList<ExternalContactsContactChangedTopicExternalId>();
+      appleOpaqueIds = new ArrayList<ExternalContactsContactChangedTopicAppleOpaqueId>();
       mergeSet = new ArrayList<String>();
       mergedFrom = new ArrayList<String>();
     }
@@ -559,6 +562,23 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
 
   /**
    **/
+  public ExternalContactsContactChangedTopicContact appleOpaqueIds(List<ExternalContactsContactChangedTopicAppleOpaqueId> appleOpaqueIds) {
+    this.appleOpaqueIds = appleOpaqueIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("appleOpaqueIds")
+  public List<ExternalContactsContactChangedTopicAppleOpaqueId> getAppleOpaqueIds() {
+    return appleOpaqueIds;
+  }
+  public void setAppleOpaqueIds(List<ExternalContactsContactChangedTopicAppleOpaqueId> appleOpaqueIds) {
+    this.appleOpaqueIds = appleOpaqueIds;
+  }
+
+
+  /**
+   **/
   public ExternalContactsContactChangedTopicContact canonicalContactId(String canonicalContactId) {
     this.canonicalContactId = canonicalContactId;
     return this;
@@ -745,6 +765,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
             Objects.equals(this.facebookId, externalContactsContactChangedTopicContact.facebookId) &&
             Objects.equals(this.instagramId, externalContactsContactChangedTopicContact.instagramId) &&
             Objects.equals(this.externalIds, externalContactsContactChangedTopicContact.externalIds) &&
+            Objects.equals(this.appleOpaqueIds, externalContactsContactChangedTopicContact.appleOpaqueIds) &&
             Objects.equals(this.canonicalContactId, externalContactsContactChangedTopicContact.canonicalContactId) &&
             Objects.equals(this.schema, externalContactsContactChangedTopicContact.schema) &&
             Objects.equals(this.customFields, externalContactsContactChangedTopicContact.customFields) &&
@@ -758,7 +779,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, canonicalContactId, schema, customFields, mergeSet, mergedFrom, mergedTo, mergeOperation, createDate, modifyDate);
+    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, appleOpaqueIds, canonicalContactId, schema, customFields, mergeSet, mergedFrom, mergedTo, mergeOperation, createDate, modifyDate);
   }
 
   @Override
@@ -791,6 +812,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
+    sb.append("    appleOpaqueIds: ").append(toIndentedString(appleOpaqueIds)).append("\n");
     sb.append("    canonicalContactId: ").append(toIndentedString(canonicalContactId)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");

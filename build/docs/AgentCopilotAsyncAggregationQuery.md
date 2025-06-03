@@ -23,6 +23,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | CANNEDRESPONSEID | &quot;cannedResponseId&quot; |
 | CANNEDRESPONSELIBRARYID | &quot;cannedResponseLibraryId&quot; |
@@ -51,6 +52,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NCANNEDRESPONSESUGGESTIONS | &quot;nCannedResponseSuggestions&quot; |
 | NDISTINCTSUGGESTIONS | &quot;nDistinctSuggestions&quot; |
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; |
@@ -77,4 +79,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -23,6 +23,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | COPIED | &quot;copied&quot; |
 | EDITEDFIELD | &quot;editedField&quot; |
@@ -48,6 +49,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NCONVERSATIONSUMMARIES | &quot;nConversationSummaries&quot; |
 | NCONVERSATIONSUMMARYENGAGEMENTS | &quot;nConversationSummaryEngagements&quot; |
 | TCONVERSATIONSUMMARY | &quot;tConversationSummary&quot; |
@@ -72,4 +74,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

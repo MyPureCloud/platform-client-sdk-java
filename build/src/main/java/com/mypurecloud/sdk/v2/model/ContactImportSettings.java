@@ -46,6 +46,7 @@ public class ContactImportSettings  implements Serializable {
    */
  @JsonDeserialize(using = MatchingCriteriaEnumDeserializer.class)
   public enum MatchingCriteriaEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("Email"),
     PHONE("Phone");
 

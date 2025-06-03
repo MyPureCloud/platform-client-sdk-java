@@ -42,6 +42,7 @@ public class AlertNotification  implements Serializable {
    */
  @JsonDeserialize(using = NotificationTypesEnumDeserializer.class)
   public enum NotificationTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("Sms"),
     DEVICE("Device"),
     EMAIL("Email"),

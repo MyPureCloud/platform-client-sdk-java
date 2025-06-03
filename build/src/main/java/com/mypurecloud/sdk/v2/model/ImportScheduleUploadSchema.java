@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema;
 import com.mypurecloud.sdk.v2.model.BuImportAgentScheduleUploadSchema;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +31,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
   private Integer weekCount = null;
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
-  private BuHeadcountForecast headcountForecast = null;
+  private BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast = null;
   private List<BuImportAgentScheduleUploadSchema> agentSchedules = null;
 
   public ImportScheduleUploadSchema() {
@@ -116,17 +116,17 @@ public class ImportScheduleUploadSchema  implements Serializable {
   /**
    * The headcount forecast to associate with the imported schedule
    **/
-  public ImportScheduleUploadSchema headcountForecast(BuHeadcountForecast headcountForecast) {
+  public ImportScheduleUploadSchema headcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast) {
     this.headcountForecast = headcountForecast;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The headcount forecast to associate with the imported schedule")
   @JsonProperty("headcountForecast")
-  public BuHeadcountForecast getHeadcountForecast() {
+  public BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema getHeadcountForecast() {
     return headcountForecast;
   }
-  public void setHeadcountForecast(BuHeadcountForecast headcountForecast) {
+  public void setHeadcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema headcountForecast) {
     this.headcountForecast = headcountForecast;
   }
 

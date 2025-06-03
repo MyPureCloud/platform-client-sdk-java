@@ -338,6 +338,11 @@ public class PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest {
             throw new IllegalStateException("Missing the required parameter 'bidId' when building request for PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -358,9 +363,9 @@ public class PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId, String bidId) {
+	public static Builder builder(String businessUnitId, String bidId, WorkPlanBidGroupCreate body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, bidId);
+	            .withRequiredParams(businessUnitId, bidId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest {
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String bidId) {
+		public Builder withRequiredParams(String businessUnitId, String bidId, WorkPlanBidGroupCreate body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setBidId(bidId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest {
             // verify the required parameter 'bidId' is set
             if (request.bidId == null) {
                 throw new IllegalStateException("Missing the required parameter 'bidId' when building request for PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest.");
             }
             
 			return request;

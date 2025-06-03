@@ -49,6 +49,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),
@@ -111,6 +112,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = DirectionsEnumDeserializer.class)
   public enum DirectionsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
     OUTBOUND("outbound");
 
@@ -158,6 +160,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = OriginatingDirectionsEnumDeserializer.class)
   public enum OriginatingDirectionsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
     OUTBOUND("outbound");
 
@@ -235,6 +238,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = MessageTypesEnumDeserializer.class)
   public enum MessageTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),
     TWITTER("twitter"),
     LINE("line"),
@@ -312,6 +316,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowOutcomeValuesEnumDeserializer.class)
   public enum FlowOutcomeValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUCCESS("SUCCESS"),
     FAILURE("FAILURE");
 
@@ -359,6 +364,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowDestinationTypesEnumDeserializer.class)
   public enum FlowDestinationTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACD("ACD"),
     USER("USER"),
     GROUP("GROUP"),
@@ -414,6 +420,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowDisconnectReasonsEnumDeserializer.class)
   public enum FlowDisconnectReasonsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FLOW_DISCONNECT("FLOW_DISCONNECT"),
     FLOW_ERROR_DISCONNECT("FLOW_ERROR_DISCONNECT"),
     DISCONNECT("DISCONNECT");
@@ -462,6 +469,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowTypesEnumDeserializer.class)
   public enum FlowTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
@@ -525,6 +533,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowEntryTypesEnumDeserializer.class)
   public enum FlowEntryTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENT("agent"),
     DIRECT("direct"),
     DNIS("dnis"),
@@ -589,6 +598,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = UsedRoutingTypesEnumDeserializer.class)
   public enum UsedRoutingTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
     DIRECT("Direct"),
@@ -643,6 +653,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = RequestedRoutingTypesEnumDeserializer.class)
   public enum RequestedRoutingTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
     DIRECT("Direct"),
@@ -700,6 +711,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = ParticipantPurposesEnumDeserializer.class)
   public enum ParticipantPurposesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INTERNAL("internal"),
     EXTERNAL("external");
 
@@ -753,6 +765,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = JourneyActionMapTypesEnumDeserializer.class)
   public enum JourneyActionMapTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEBCHAT("webchat"),
     WEBMESSAGINGOFFER("webMessagingOffer"),
     CONTENTOFFER("contentOffer"),
@@ -804,6 +817,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = DevelopmentRoleListEnumDeserializer.class)
   public enum DevelopmentRoleListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATOR("Creator"),
     FACILITATOR("Facilitator"),
     ATTENDEE("Attendee");
@@ -852,6 +866,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = DevelopmentTypeListEnumDeserializer.class)
   public enum DevelopmentTypeListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATIONAL("Informational"),
     COACHING("Coaching"),
     ASSESSMENT("Assessment"),
@@ -903,6 +918,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = DevelopmentStatusListEnumDeserializer.class)
   public enum DevelopmentStatusListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PLANNED("Planned"),
     SCHEDULED("Scheduled"),
     INVALIDSCHEDULE("InvalidSchedule"),
@@ -966,6 +982,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotMessageTypesEnumDeserializer.class)
   public enum BotMessageTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     PHONE("Phone"),
     SMS("SMS"),
@@ -1029,6 +1046,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotProviderListEnumDeserializer.class)
   public enum BotProviderListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     GENESYS("Genesys"),
     AMAZON("Amazon"),
@@ -1079,6 +1097,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotProductListEnumDeserializer.class)
   public enum BotProductListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     GENESYSDIALOGENGINE("GenesysDialogEngine"),
     AMAZONLEX("AmazonLex"),
@@ -1139,6 +1158,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotRecognitionFailureReasonListEnumDeserializer.class)
   public enum BotRecognitionFailureReasonListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     NOINPUTCOLLECTION("NoInputCollection"),
     NOINPUTCONFIRMATION("NoInputConfirmation"),
@@ -1196,6 +1216,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotResultListEnumDeserializer.class)
   public enum BotResultListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     EXITREQUESTEDBYUSER("ExitRequestedByUser"),
     EXITREQUESTEDBYBOT("ExitRequestedByBot"),
@@ -1258,6 +1279,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BlockedReasonsEnumDeserializer.class)
   public enum BlockedReasonsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PAGEURLCONDITIONSNOTMATCHING("PageUrlConditionsNotMatching"),
     ALREADYEXISTINGOFFER("AlreadyExistingOffer"),
     TRIGGERDATEINFUTURE("TriggerDateInFuture"),
@@ -1314,6 +1336,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = EmailDeliveryStatusListEnumDeserializer.class)
   public enum EmailDeliveryStatusListEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DELIVERYFAILED("DeliveryFailed"),
     DELIVERYPUSHED("DeliveryPushed"),
     DELIVERYSUCCESS("DeliverySuccess"),
@@ -1448,6 +1471,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = EvaluationStatusesEnumDeserializer.class)
   public enum EvaluationStatusesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FINISHED("Finished"),
     INPROGRESS("InProgress"),
     INREVIEW("InReview"),
@@ -1565,6 +1589,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SurveyTypesEnumDeserializer.class)
   public enum SurveyTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEB("Web"),
     VOICE("Voice");
 
@@ -1612,6 +1637,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SurveyResponseStatusesEnumDeserializer.class)
   public enum SurveyResponseStatusesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     FULLRESPONSE("FullResponse"),
     PARTIALRESPONSE("PartialResponse");
@@ -1660,6 +1686,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = BotFlowTypesEnumDeserializer.class)
   public enum BotFlowTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     BOT("Bot"),
     DIGITALBOT("DigitalBot"),
@@ -1878,6 +1905,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SocialChannelsEnumDeserializer.class)
   public enum SocialChannelsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TWITTER("Twitter"),
     FACEBOOK("Facebook"),
     INSTAGRAM("Instagram"),
@@ -1928,6 +1956,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SocialSentimentCategoryEnumDeserializer.class)
   public enum SocialSentimentCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     POSITIVE("Positive"),
     NEGATIVE("Negative"),
     NEUTRAL("Neutral"),
@@ -1980,6 +2009,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SocialContentTypeEnumDeserializer.class)
   public enum SocialContentTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     IMAGE("Image"),
     VIDEO("Video");
@@ -2030,6 +2060,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SocialClassificationsEnumDeserializer.class)
   public enum SocialClassificationsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PUBLIC("Public"),
     PRIVATE("Private");
 
@@ -2082,6 +2113,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = RecommendationSourcesEnumDeserializer.class)
   public enum RecommendationSourcesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     KNOWLEDGESEARCH("KnowledgeSearch"),
     RULESENGINE("RulesEngine"),
     MANUALSEARCH("ManualSearch");
@@ -2179,6 +2211,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = ViewMetricsEnumDeserializer.class)
   public enum ViewMetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVG_TALK_TIME("AVG_TALK_TIME"),
     AVG_HOLD_TIME("AVG_HOLD_TIME"),
     AVG_ACW_TIME("AVG_ACW_TIME"),
@@ -2446,6 +2479,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = SegmentTypesEnumDeserializer.class)
   public enum SegmentTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERT("alert"),
     BARGING("barging"),
     CALLBACK("callback"),
@@ -2498,6 +2532,7 @@ public class ViewFilter  implements Serializable {
   private List<String> categoryIds = null;
   private Boolean deliveryPushed = null;
   private List<Float> socialRatings = null;
+  private List<String> virtualAgentIds = null;
 
   public ViewFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -2657,6 +2692,7 @@ public class ViewFilter  implements Serializable {
       programIds = new ArrayList<String>();
       categoryIds = new ArrayList<String>();
       socialRatings = new ArrayList<Float>();
+      virtualAgentIds = new ArrayList<String>();
     }
   }
 
@@ -6765,6 +6801,24 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * A list of virtual agent ids for filtering.
+   **/
+  public ViewFilter virtualAgentIds(List<String> virtualAgentIds) {
+    this.virtualAgentIds = virtualAgentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of virtual agent ids for filtering.")
+  @JsonProperty("virtualAgentIds")
+  public List<String> getVirtualAgentIds() {
+    return virtualAgentIds;
+  }
+  public void setVirtualAgentIds(List<String> virtualAgentIds) {
+    this.virtualAgentIds = virtualAgentIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -7002,12 +7056,13 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.programIds, viewFilter.programIds) &&
             Objects.equals(this.categoryIds, viewFilter.categoryIds) &&
             Objects.equals(this.deliveryPushed, viewFilter.deliveryPushed) &&
-            Objects.equals(this.socialRatings, viewFilter.socialRatings);
+            Objects.equals(this.socialRatings, viewFilter.socialRatings) &&
+            Objects.equals(this.virtualAgentIds, viewFilter.virtualAgentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings);
+    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds);
   }
 
   @Override
@@ -7243,6 +7298,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    categoryIds: ").append(toIndentedString(categoryIds)).append("\n");
     sb.append("    deliveryPushed: ").append(toIndentedString(deliveryPushed)).append("\n");
     sb.append("    socialRatings: ").append(toIndentedString(socialRatings)).append("\n");
+    sb.append("    virtualAgentIds: ").append(toIndentedString(virtualAgentIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

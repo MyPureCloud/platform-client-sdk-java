@@ -37,7 +37,7 @@ public class ReplacementTerm  implements Serializable {
     }
   }
   /**
-   * Social Handle Type
+   * Subject search type
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -47,8 +47,8 @@ public class ReplacementTerm  implements Serializable {
     PHONE("PHONE"),
     EMAIL("EMAIL"),
     TWITTER("TWITTER"),
-    FACEBOOK("FACEBOOK"),
-    INSTAGRAM("INSTAGRAM");
+    INSTAGRAM("INSTAGRAM"),
+    FACEBOOK("FACEBOOK");
 
     private String value;
 
@@ -86,14 +86,14 @@ public class ReplacementTerm  implements Serializable {
 
   
   /**
-   * Social Handle Type
+   * Subject search type
    **/
   public ReplacementTerm type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Social Handle Type")
+  @ApiModelProperty(example = "null", value = "Subject search type")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

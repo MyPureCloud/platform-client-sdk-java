@@ -30,6 +30,10 @@ import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenSocialMediaNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenSocialMediaReactionsRequest;
+import com.mypurecloud.sdk.v2.model.OpenSocialNormalizedMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenSocialReactionsNormalizedEventEntityListing;
 import com.mypurecloud.sdk.v2.model.SocialEscalationResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SocialMediaAsyncAggregationQuery;
@@ -81,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
@@ -412,7 +418,6 @@ public class SocialMediaApiAsync {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -447,7 +452,6 @@ public class SocialMediaApiAsync {
   /**
    * Delete a open data ingestion rule.
    * 
-   * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1389,7 +1393,6 @@ public class SocialMediaApiAsync {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1424,7 +1427,6 @@ public class SocialMediaApiAsync {
   /**
    * Get a single open data ingestion rule.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1466,7 +1468,6 @@ public class SocialMediaApiAsync {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1501,7 +1502,6 @@ public class SocialMediaApiAsync {
   /**
    * Get a single Open data ingestion rule version.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1543,7 +1543,6 @@ public class SocialMediaApiAsync {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1578,7 +1577,6 @@ public class SocialMediaApiAsync {
   /**
    * Get the Open data ingestion rule versions.
    * 
-   * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2070,7 +2068,6 @@ public class SocialMediaApiAsync {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2105,7 +2102,6 @@ public class SocialMediaApiAsync {
   /**
    * Update the status of a open data ingestion rule.
    * 
-   * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2597,7 +2593,6 @@ public class SocialMediaApiAsync {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2632,7 +2627,6 @@ public class SocialMediaApiAsync {
   /**
    * Create an open data ingestion rule.
    * 
-   * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2660,6 +2654,156 @@ public class SocialMediaApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenDataIngestionRuleResponse> response = (ApiResponse<OpenDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenSocialNormalizedMessageEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkAsync(PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest request, final AsyncApiCallback<OpenSocialNormalizedMessageEntityListing> callback) {
+    try {
+      final SettableFuture<OpenSocialNormalizedMessageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenSocialNormalizedMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<OpenSocialNormalizedMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenSocialNormalizedMessageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Messages
+   * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenSocialNormalizedMessageEntityListing>> postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkAsync(ApiRequest<List<OpenSocialMediaNormalizedMessage>> request, final AsyncApiCallback<ApiResponse<OpenSocialNormalizedMessageEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenSocialNormalizedMessageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenSocialNormalizedMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<OpenSocialNormalizedMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenSocialNormalizedMessageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenSocialNormalizedMessageEntityListing> response = (ApiResponse<OpenSocialNormalizedMessageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenSocialNormalizedMessageEntityListing> response = (ApiResponse<OpenSocialNormalizedMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenSocialReactionsNormalizedEventEntityListing> postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkAsync(PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest request, final AsyncApiCallback<OpenSocialReactionsNormalizedEventEntityListing> callback) {
+    try {
+      final SettableFuture<OpenSocialReactionsNormalizedEventEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenSocialReactionsNormalizedEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Ingest a list of Open Social Reactions
+   * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>> postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkAsync(ApiRequest<OpenSocialMediaReactionsRequest> request, final AsyncApiCallback<ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenSocialReactionsNormalizedEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response = (ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenSocialReactionsNormalizedEventEntityListing> response = (ApiResponse<OpenSocialReactionsNormalizedEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3049,7 +3193,6 @@ public class SocialMediaApiAsync {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3084,7 +3227,6 @@ public class SocialMediaApiAsync {
   /**
    * Update the open data ingestion rule.
    * 
-   * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

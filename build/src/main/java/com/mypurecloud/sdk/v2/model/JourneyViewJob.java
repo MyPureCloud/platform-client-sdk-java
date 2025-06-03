@@ -51,7 +51,8 @@ public class JourneyViewJob  implements Serializable {
     EXECUTING("Executing"),
     COMPLETE("Complete"),
     FAILED("Failed"),
-    CANCELLED("Cancelled");
+    CANCELLED("Cancelled"),
+    SCHEDULED("Scheduled");
 
     private String value;
 

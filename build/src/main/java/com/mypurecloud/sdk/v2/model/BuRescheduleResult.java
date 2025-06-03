@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastBuPlanningGroupHeadcountForecastResult;
 import com.mypurecloud.sdk.v2.model.BuRescheduleAgentScheduleResult;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +29,7 @@ public class BuRescheduleResult  implements Serializable {
   
   private ScheduleGenerationResult generationResults = null;
   private String generationResultsDownloadUrl = null;
-  private BuHeadcountForecast headcountForecast = null;
+  private BuHeadcountForecastBuPlanningGroupHeadcountForecastResult headcountForecast = null;
   private String headcountForecastDownloadUrl = null;
   private List<BuRescheduleAgentScheduleResult> agentSchedules = null;
 
@@ -77,19 +77,19 @@ public class BuRescheduleResult  implements Serializable {
 
 
   /**
-   * The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
+   * The headcount forecast. Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
    **/
-  public BuRescheduleResult headcountForecast(BuHeadcountForecast headcountForecast) {
+  public BuRescheduleResult headcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastResult headcountForecast) {
     this.headcountForecast = headcountForecast;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation")
+  @ApiModelProperty(example = "null", value = "The headcount forecast. Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation")
   @JsonProperty("headcountForecast")
-  public BuHeadcountForecast getHeadcountForecast() {
+  public BuHeadcountForecastBuPlanningGroupHeadcountForecastResult getHeadcountForecast() {
     return headcountForecast;
   }
-  public void setHeadcountForecast(BuHeadcountForecast headcountForecast) {
+  public void setHeadcountForecast(BuHeadcountForecastBuPlanningGroupHeadcountForecastResult headcountForecast) {
     this.headcountForecast = headcountForecast;
   }
 

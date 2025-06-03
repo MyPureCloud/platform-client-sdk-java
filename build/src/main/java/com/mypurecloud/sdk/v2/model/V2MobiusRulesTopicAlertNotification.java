@@ -44,6 +44,7 @@ public class V2MobiusRulesTopicAlertNotification  implements Serializable {
    */
  @JsonDeserialize(using = NotificationTypesEnumDeserializer.class)
   public enum NotificationTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DEVICE("Device"),
     EMAIL("Email"),
     SMS("Sms"),

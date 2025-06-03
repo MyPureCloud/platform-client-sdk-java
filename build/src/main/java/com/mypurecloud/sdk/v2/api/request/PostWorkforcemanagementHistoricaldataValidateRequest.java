@@ -300,6 +300,11 @@ public class PostWorkforcemanagementHistoricaldataValidateRequest {
 
     public ApiRequest<ValidationServiceRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementHistoricaldataValidateRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/historicaldata/validate")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementHistoricaldataValidateRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(ValidationServiceRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementHistoricaldataValidateRequest {
 
 
 
+		public Builder withRequiredParams(ValidationServiceRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementHistoricaldataValidateRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementHistoricaldataValidateRequest.");
+            }
             
 			return request;
 		}

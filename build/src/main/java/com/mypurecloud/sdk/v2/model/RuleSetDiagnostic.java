@@ -44,6 +44,7 @@ public class RuleSetDiagnostic  implements Serializable {
    */
  @JsonDeserialize(using = WarningsEnumDeserializer.class)
   public enum WarningsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WRAPUP_CODE_NOT_IN_QUEUE("WRAPUP_CODE_NOT_IN_QUEUE"),
     CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST("CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST"),
     NO_DNC_LIST_FOR_APPEND("NO_DNC_LIST_FOR_APPEND"),

@@ -88,6 +88,7 @@ public class RecordingMessagingMessage  implements Serializable {
     MENTION("Mention"),
     BUTTONRESPONSE("ButtonResponse"),
     DATEPICKER("DatePicker"),
+    LISTPICKER("ListPicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication");
 
     private String value;

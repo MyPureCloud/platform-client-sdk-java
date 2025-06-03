@@ -49,6 +49,7 @@ public class CobrowseSettings  implements Serializable {
    */
  @JsonDeserialize(using = ChannelsEnumDeserializer.class)
   public enum ChannelsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEBMESSAGING("Webmessaging"),
     VOICE("Voice");
 

@@ -48,6 +48,7 @@ public class SurveyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONID("conversationId"),
     DIVISIONID("divisionId"),
     EXTERNALCONTACTID("externalContactId"),
@@ -117,6 +118,7 @@ public class SurveyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NSURVEYERRORS("nSurveyErrors"),
     NSURVEYFULLRESPONSES("nSurveyFullResponses"),
     NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),

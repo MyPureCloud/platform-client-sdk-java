@@ -279,6 +279,20 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 	    return this;
 	} 
 
+	private CreateWorkPlan body;
+	public CreateWorkPlan getBody() {
+		return this.body;
+	}
+
+	public void setBody(CreateWorkPlan body) {
+		this.body = body;
+	}
+
+	public PostWorkforcemanagementManagementunitWorkplansRequest withBody(CreateWorkPlan body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private String validationMode;
 	public String getValidationMode() {
 		return this.validationMode;
@@ -322,20 +336,6 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 		}
 	}
 
-	private CreateWorkPlan body;
-	public CreateWorkPlan getBody() {
-		return this.body;
-	}
-
-	public void setBody(CreateWorkPlan body) {
-		this.body = body;
-	}
-
-	public PostWorkforcemanagementManagementunitWorkplansRequest withBody(CreateWorkPlan body) {
-	    this.setBody(body);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -362,6 +362,11 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitWorkplansRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplansRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -383,9 +388,9 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, CreateWorkPlan body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -399,6 +404,11 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 
 		public Builder withManagementUnitId(String managementUnitId) {
 			request.setManagementUnitId(managementUnitId);
+			return this;
+		}
+
+		public Builder withBody(CreateWorkPlan body) {
+			request.setBody(body);
 			return this;
 		}
 
@@ -416,15 +426,11 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 		    return this;
 		}
 
-		public Builder withBody(CreateWorkPlan body) {
-			request.setBody(body);
-			return this;
-		}
 
 
-
-		public Builder withRequiredParams(String managementUnitId) {
+		public Builder withRequiredParams(String managementUnitId, CreateWorkPlan body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -435,6 +441,11 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitWorkplansRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWorkplansRequest.");
             }
             
 			return request;

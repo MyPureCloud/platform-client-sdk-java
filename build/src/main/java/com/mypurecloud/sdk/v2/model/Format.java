@@ -41,6 +41,7 @@ public class Format  implements Serializable {
    */
  @JsonDeserialize(using = FlagsEnumDeserializer.class)
   public enum FlagsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOOLPLAYYESNO("BoolPlayYesNo"),
     CURRENCYASMINORUNITS("CurrencyAsMinorUnits"),
     CURRENCYMAJORUNITSONLY("CurrencyMajorUnitsOnly"),

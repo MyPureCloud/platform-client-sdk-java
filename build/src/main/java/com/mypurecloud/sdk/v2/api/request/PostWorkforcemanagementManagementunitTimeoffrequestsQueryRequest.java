@@ -279,20 +279,6 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 	    return this;
 	} 
 
-	private Boolean forceDownloadService;
-	public Boolean getForceDownloadService() {
-		return this.forceDownloadService;
-	}
-
-	public void setForceDownloadService(Boolean forceDownloadService) {
-		this.forceDownloadService = forceDownloadService;
-	}
-
-	public PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest withForceDownloadService(Boolean forceDownloadService) {
-	    this.setForceDownloadService(forceDownloadService);
-	    return this;
-	} 
-
 	private TimeOffRequestQueryBody body;
 	public TimeOffRequestQueryBody getBody() {
 		return this.body;
@@ -304,6 +290,20 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 
 	public PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest withBody(TimeOffRequestQueryBody body) {
 	    this.setBody(body);
+	    return this;
+	} 
+
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
 	    return this;
 	} 
 
@@ -333,6 +333,11 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
             throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -354,9 +359,9 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId) {
+	public static Builder builder(String managementUnitId, TimeOffRequestQueryBody body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId);
+	            .withRequiredParams(managementUnitId, body);
 	}
 
 
@@ -373,20 +378,21 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 			return this;
 		}
 
-		public Builder withForceDownloadService(Boolean forceDownloadService) {
-			request.setForceDownloadService(forceDownloadService);
-			return this;
-		}
-
 		public Builder withBody(TimeOffRequestQueryBody body) {
 			request.setBody(body);
 			return this;
 		}
 
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
+			return this;
+		}
 
 
-		public Builder withRequiredParams(String managementUnitId) {
+
+		public Builder withRequiredParams(String managementUnitId, TimeOffRequestQueryBody body) {
 			request.setManagementUnitId(managementUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -397,6 +403,11 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
             // verify the required parameter 'managementUnitId' is set
             if (request.managementUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.");
             }
             
 			return request;

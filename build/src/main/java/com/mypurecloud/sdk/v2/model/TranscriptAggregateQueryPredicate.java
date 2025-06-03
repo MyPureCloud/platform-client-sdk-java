@@ -95,6 +95,7 @@ public class TranscriptAggregateQueryPredicate  implements Serializable {
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
     ANI("ani"),
+    CATEGORYID("categoryId"),
     CHANNEL("channel"),
     CONVERSATIONDURATION("conversationDuration"),
     CONVERSATIONID("conversationId"),

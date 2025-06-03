@@ -357,6 +357,11 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
             throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -379,9 +384,9 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String userId, String timeOffRequestId) {
+	public static Builder builder(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, userId, timeOffRequestId);
+	            .withRequiredParams(managementUnitId, userId, timeOffRequestId, body);
 	}
 
 
@@ -415,10 +420,11 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String userId, String timeOffRequestId) {
+		public Builder withRequiredParams(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setUserId(userId);
 			request.setTimeOffRequestId(timeOffRequestId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -439,6 +445,11 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
             // verify the required parameter 'timeOffRequestId' is set
             if (request.timeOffRequestId == null) {
                 throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
             }
             
 			return request;

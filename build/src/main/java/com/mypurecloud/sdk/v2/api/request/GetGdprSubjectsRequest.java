@@ -47,8 +47,8 @@ public class GetGdprSubjectsRequest {
 		PHONE("PHONE"),
 		EMAIL("EMAIL"),
 		TWITTER("TWITTER"),
-		FACEBOOK("FACEBOOK"),
-		INSTAGRAM("INSTAGRAM");
+		INSTAGRAM("INSTAGRAM"),
+		FACEBOOK("FACEBOOK");
 
 		private String value;
 

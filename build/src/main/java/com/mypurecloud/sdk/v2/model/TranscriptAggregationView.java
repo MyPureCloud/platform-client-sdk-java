@@ -43,6 +43,7 @@ public class TranscriptAggregationView  implements Serializable {
  @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NSPEECHTEXTANALYZEDCONVERSATIONS("nSpeechTextAnalyzedConversations"),
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
     OCUSTOMERSENTIMENT("oCustomerSentiment"),
     OOVERTALKSPEECHINSTANCES("oOverTalkSpeechInstances"),

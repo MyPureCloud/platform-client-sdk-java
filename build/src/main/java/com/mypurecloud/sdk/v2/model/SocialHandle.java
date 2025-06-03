@@ -43,8 +43,8 @@ public class SocialHandle  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TWITTER("TWITTER"),
-    FACEBOOK("FACEBOOK"),
-    INSTAGRAM("INSTAGRAM");
+    INSTAGRAM("INSTAGRAM"),
+    FACEBOOK("FACEBOOK");
 
     private String value;
 

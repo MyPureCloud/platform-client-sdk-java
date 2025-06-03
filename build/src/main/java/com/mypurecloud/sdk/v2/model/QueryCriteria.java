@@ -113,6 +113,7 @@ public class QueryCriteria  implements Serializable {
    */
  @JsonDeserialize(using = CriteriaGroupsEnumDeserializer.class)
   public enum CriteriaGroupsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FLOW("flow"),
     BOT("bot");
 

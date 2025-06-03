@@ -48,6 +48,7 @@ public class ActionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIONCATEGORY("actionCategory"),
     ACTIONID("actionId"),
     ACTIONNAME("actionName"),
@@ -102,6 +103,7 @@ public class ActionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TTOTALEXECUTION("tTotalExecution");
 
     private String value;

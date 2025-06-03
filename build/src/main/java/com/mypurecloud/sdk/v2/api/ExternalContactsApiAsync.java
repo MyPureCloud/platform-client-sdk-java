@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ContactsExport;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CsvJobRequest;
 import com.mypurecloud.sdk.v2.model.CsvJobResponse;
 import com.mypurecloud.sdk.v2.model.CsvSettings;
@@ -1947,7 +1948,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1981,7 +1982,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2028,13 +2029,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Coretype> getExternalcontactsContactsSchemasCoretypesAsync(GetExternalcontactsContactsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+  public Future<CoretypeListing> getExternalcontactsContactsSchemasCoretypesAsync(GetExternalcontactsContactsSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
     try {
-      final SettableFuture<Coretype> future = SettableFuture.create();
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2062,13 +2063,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Coretype>> getExternalcontactsContactsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+  public Future<ApiResponse<CoretypeListing>> getExternalcontactsContactsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2076,7 +2077,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2084,7 +2085,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3747,7 +3748,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3781,7 +3782,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get the core types from which all schemas are built.
+   * Get a specific named core type.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3828,13 +3829,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Coretype> getExternalcontactsOrganizationsSchemasCoretypesAsync(GetExternalcontactsOrganizationsSchemasCoretypesRequest request, final AsyncApiCallback<Coretype> callback) {
+  public Future<CoretypeListing> getExternalcontactsOrganizationsSchemasCoretypesAsync(GetExternalcontactsOrganizationsSchemasCoretypesRequest request, final AsyncApiCallback<CoretypeListing> callback) {
     try {
-      final SettableFuture<Coretype> future = SettableFuture.create();
+      final SettableFuture<CoretypeListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3862,13 +3863,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Coretype>> getExternalcontactsOrganizationsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Coretype>> callback) {
+  public Future<ApiResponse<CoretypeListing>> getExternalcontactsOrganizationsSchemasCoretypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoretypeListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<Coretype>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoretypeListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Coretype>() {}, new AsyncApiCallback<ApiResponse<Coretype>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoretypeListing>() {}, new AsyncApiCallback<ApiResponse<CoretypeListing>>() {
         @Override
-        public void onCompleted(ApiResponse<Coretype> response) {
+        public void onCompleted(ApiResponse<CoretypeListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3876,7 +3877,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)exception;
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3884,7 +3885,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Coretype> response = (ApiResponse<Coretype>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoretypeListing> response = (ApiResponse<CoretypeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

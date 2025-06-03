@@ -23,6 +23,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CATEGORIES | &quot;Categories&quot; |
 | LABELS | &quot;Labels&quot; |
 | VARIATIONS | &quot;Variations&quot; |
@@ -30,4 +31,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

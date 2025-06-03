@@ -44,6 +44,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NACTIVITIES("nActivities"),
     NPLANNEDACTIVITIES("nPlannedActivities"),
     NINPROGRESSACTIVITIES("nInProgressActivities"),
@@ -99,6 +100,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTENDEEID("attendeeId");
 
     private String value;

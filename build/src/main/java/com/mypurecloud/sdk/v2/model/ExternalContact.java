@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalId;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.FacebookId;
+import com.mypurecloud.sdk.v2.model.InstagramId;
 import com.mypurecloud.sdk.v2.model.LineId;
 import com.mypurecloud.sdk.v2.model.MergeOperation;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
@@ -61,6 +62,7 @@ public class ExternalContact  implements Serializable {
   private LineId lineId = null;
   private WhatsAppId whatsAppId = null;
   private FacebookId facebookId = null;
+  private InstagramId instagramId = null;
   private List<ExternalId> externalIds = null;
   private List<ContactIdentifier> identifiers = null;
   private Date modifyDate = null;
@@ -122,6 +124,8 @@ public class ExternalContact  implements Serializable {
   private TypeEnum type = null;
   private ContactAddressableEntityRef canonicalContact = null;
   private List<ContactAddressableEntityRef> mergeSet = null;
+  private List<ContactAddressableEntityRef> mergedFrom = null;
+  private ContactAddressableEntityRef mergedTo = null;
   private MergeOperation mergeOperation = null;
   private String selfUri = null;
 
@@ -131,6 +135,7 @@ public class ExternalContact  implements Serializable {
       identifiers = new ArrayList<ContactIdentifier>();
       externalDataSources = new ArrayList<ExternalDataSource>();
       mergeSet = new ArrayList<ContactAddressableEntityRef>();
+      mergedFrom = new ArrayList<ContactAddressableEntityRef>();
     }
   }
 
@@ -463,6 +468,24 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * User information for an Instagram account
+   **/
+  public ExternalContact instagramId(InstagramId instagramId) {
+    this.instagramId = instagramId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User information for an Instagram account")
+  @JsonProperty("instagramId")
+  public InstagramId getInstagramId() {
+    return instagramId;
+  }
+  public void setInstagramId(InstagramId instagramId) {
+    this.instagramId = instagramId;
+  }
+
+
+  /**
    * A list of external identifiers that identify this contact in an external system
    **/
   public ExternalContact externalIds(List<ExternalId> externalIds) {
@@ -650,6 +673,20 @@ public class ExternalContact  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The input contacts from the merge operation.")
+  @JsonProperty("mergedFrom")
+  public List<ContactAddressableEntityRef> getMergedFrom() {
+    return mergedFrom;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The output contact from the merge operation.")
+  @JsonProperty("mergedTo")
+  public ContactAddressableEntityRef getMergedTo() {
+    return mergedTo;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Information about the merge history of this contact. If null, this contact is not a part of any merge.")
   @JsonProperty("mergeOperation")
   public MergeOperation getMergeOperation() {
@@ -693,6 +730,7 @@ public class ExternalContact  implements Serializable {
             Objects.equals(this.lineId, externalContact.lineId) &&
             Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
             Objects.equals(this.facebookId, externalContact.facebookId) &&
+            Objects.equals(this.instagramId, externalContact.instagramId) &&
             Objects.equals(this.externalIds, externalContact.externalIds) &&
             Objects.equals(this.identifiers, externalContact.identifiers) &&
             Objects.equals(this.modifyDate, externalContact.modifyDate) &&
@@ -706,13 +744,15 @@ public class ExternalContact  implements Serializable {
             Objects.equals(this.type, externalContact.type) &&
             Objects.equals(this.canonicalContact, externalContact.canonicalContact) &&
             Objects.equals(this.mergeSet, externalContact.mergeSet) &&
+            Objects.equals(this.mergedFrom, externalContact.mergedFrom) &&
+            Objects.equals(this.mergedTo, externalContact.mergedTo) &&
             Objects.equals(this.mergeOperation, externalContact.mergeOperation) &&
             Objects.equals(this.selfUri, externalContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, identifiers, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
+    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, identifiers, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergedFrom, mergedTo, mergeOperation, selfUri);
   }
 
   @Override
@@ -739,6 +779,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
+    sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
@@ -752,6 +793,8 @@ public class ExternalContact  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    canonicalContact: ").append(toIndentedString(canonicalContact)).append("\n");
     sb.append("    mergeSet: ").append(toIndentedString(mergeSet)).append("\n");
+    sb.append("    mergedFrom: ").append(toIndentedString(mergedFrom)).append("\n");
+    sb.append("    mergedTo: ").append(toIndentedString(mergedTo)).append("\n");
     sb.append("    mergeOperation: ").append(toIndentedString(mergeOperation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

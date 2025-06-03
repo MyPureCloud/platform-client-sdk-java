@@ -97,6 +97,7 @@ public class HealthInfo  implements Serializable {
    */
  @JsonDeserialize(using = StaticValidationResultsEnumDeserializer.class)
   public enum StaticValidationResultsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TOOFEWUTTERANCES("TooFewUtterances"),
     TOOMANYUTTERANCES("TooManyUtterances"),
     UTTERANCETOOSHORT("UtteranceTooShort"),

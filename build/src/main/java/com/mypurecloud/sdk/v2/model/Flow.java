@@ -134,6 +134,7 @@ public class Flow  implements Serializable {
    */
  @JsonDeserialize(using = CompatibleFlowTypesEnumDeserializer.class)
   public enum CompatibleFlowTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),

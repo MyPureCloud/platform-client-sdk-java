@@ -2750,7 +2750,7 @@ JourneyApi apiInstance = new JourneyApi();
 Integer pageNumber = 1; // Integer | The number of the page to return
 Integer pageSize = 25; // Integer | Max number of entities to return
 String interval = 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z; // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
-String statuses = statuses=Accepted,Executing,Complete,Failed; // String | Job statuses to filter for
+String statuses = statuses=Accepted,Executing,Complete,Failed,Scheduled; // String | Job statuses to filter for
 try {
     JourneyViewJobListing result = apiInstance.getJourneyViewsJobs(pageNumber, pageSize, interval, statuses);
     System.out.println(result);
@@ -4373,4 +4373,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

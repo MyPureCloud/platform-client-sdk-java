@@ -335,6 +335,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
    */
  @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),
     MANUAL("MANUAL"),
     PREDICTIVE("PREDICTIVE"),

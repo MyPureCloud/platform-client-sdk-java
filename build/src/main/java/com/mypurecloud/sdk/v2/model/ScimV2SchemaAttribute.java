@@ -253,6 +253,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
    */
  @JsonDeserialize(using = ReferenceTypesEnumDeserializer.class)
   public enum ReferenceTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("User"),
     GROUP("Group"),
     EXTERNAL("external"),

@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AdditionalSocialMediaMessage;
 import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
@@ -153,6 +154,7 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.Settings;
+import com.mypurecloud.sdk.v2.model.SocialMediaMessageData;
 import com.mypurecloud.sdk.v2.model.Suggestion;
 import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
 import com.mypurecloud.sdk.v2.model.SuggestionListing;

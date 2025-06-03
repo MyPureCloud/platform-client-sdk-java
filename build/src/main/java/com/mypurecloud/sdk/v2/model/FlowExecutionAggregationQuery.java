@@ -48,6 +48,7 @@ public class FlowExecutionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DIVISIONID("divisionId"),
     FLOWID("flowId"),
     FLOWOBJECTID("flowObjectId"),
@@ -98,6 +99,7 @@ public class FlowExecutionAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NFLOWEXECUTIONS("nFlowExecutions");
 
     private String value;

@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral) | Get the Speech & Text Analytics general topics for a given dialect |
 | [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneralStatus) | Get the list of general topics from the org and the system with their current status |
 | [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob) | Get a Speech & Text Analytics publish topics job by id |
+| [**getSpeechandtextanalyticsTopicsTestphraseJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob) | Get a Speech & Text Analytics test topics phrase job by id |
 | [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | Translate a single interaction recording (or an email conversation) |
 | [**getSpeechandtextanalyticsTranslationsLanguages**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages) | Get supported translation languages |
 | [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsSettings) | Patch Speech And Text Analytics Settings |
@@ -50,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsSentimentfeedback) | Create a Speech & Text Analytics SentimentFeedback |
 | [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopics) | Create new Speech & Text Analytics topic |
 | [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech & Text Analytics publish topics job |
+| [**postSpeechandtextanalyticsTopicsTestphraseJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsTestphraseJobs) | Create new Speech & Text Analytics publish topics job |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**putSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsCategory) | Update a Speech & Text Analytics category by ID |
 | [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Update existing Speech & Text Analytics dictionary feedback by id |
@@ -2159,6 +2161,65 @@ try {
 [**TopicJob**](TopicJob)
 
 
+# **getSpeechandtextanalyticsTopicsTestphraseJob**
+
+
+> [TestTopicPhraseJob](TestTopicPhraseJob) getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
+
+Get a Speech & Text Analytics test topics phrase job by id
+
+Wraps GET /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:testPhrase
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | the id of the test topic phrase job
+try {
+    TestTopicPhraseJob result = apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| the id of the test topic phrase job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TestTopicPhraseJob**](TestTopicPhraseJob)
+
+
 # **getSpeechandtextanalyticsTranslationsLanguageConversation**
 
 
@@ -2813,6 +2874,65 @@ try {
 [**TopicJob**](TopicJob)
 
 
+# **postSpeechandtextanalyticsTopicsTestphraseJobs**
+
+
+> [TestTopicPhraseJobs](TestTopicPhraseJobs) postSpeechandtextanalyticsTopicsTestphraseJobs(body)
+
+Create new Speech & Text Analytics publish topics job
+
+Wraps POST /api/v2/speechandtextanalytics/topics/testphrase/jobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:testPhrase
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+TestTopicPhraseJobRequest body = new TestTopicPhraseJobRequest(); // TestTopicPhraseJobRequest | The publish test topic phrase job to create
+try {
+    TestTopicPhraseJobs result = apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsTestphraseJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TestTopicPhraseJobRequest**](TestTopicPhraseJobRequest)| The publish test topic phrase job to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TestTopicPhraseJobs**](TestTopicPhraseJobs)
+
+
 # **postSpeechandtextanalyticsTranscriptsSearch**
 
 
@@ -2826,6 +2946,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example
 
@@ -3360,4 +3481,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

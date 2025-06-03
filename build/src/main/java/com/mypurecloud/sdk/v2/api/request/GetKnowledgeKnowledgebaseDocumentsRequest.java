@@ -282,8 +282,7 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
 
 	public enum expandValues { 
 		CATEGORY("category"),
-		LABELS("labels"),
-		VARIATIONS("variations");
+		LABELS("labels");
 
 		private String value;
 

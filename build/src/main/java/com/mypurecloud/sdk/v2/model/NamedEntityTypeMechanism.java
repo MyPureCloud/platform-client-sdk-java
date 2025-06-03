@@ -132,6 +132,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
   private SubTypeEnum subType = null;
   private Integer maxLength = null;
   private Integer minLength = null;
+  private Boolean allowSpecialChars = null;
   private List<NamedEntityTypeMechanismExample> examples = null;
 
   public NamedEntityTypeMechanism() {
@@ -251,6 +252,24 @@ public class NamedEntityTypeMechanism  implements Serializable {
 
 
   /**
+   * Flag whether to allow for special characters during AI slot capture
+   **/
+  public NamedEntityTypeMechanism allowSpecialChars(Boolean allowSpecialChars) {
+    this.allowSpecialChars = allowSpecialChars;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag whether to allow for special characters during AI slot capture")
+  @JsonProperty("allowSpecialChars")
+  public Boolean getAllowSpecialChars() {
+    return allowSpecialChars;
+  }
+  public void setAllowSpecialChars(Boolean allowSpecialChars) {
+    this.allowSpecialChars = allowSpecialChars;
+  }
+
+
+  /**
    * Examples for entity detection
    **/
   public NamedEntityTypeMechanism examples(List<NamedEntityTypeMechanismExample> examples) {
@@ -284,12 +303,13 @@ public class NamedEntityTypeMechanism  implements Serializable {
             Objects.equals(this.subType, namedEntityTypeMechanism.subType) &&
             Objects.equals(this.maxLength, namedEntityTypeMechanism.maxLength) &&
             Objects.equals(this.minLength, namedEntityTypeMechanism.minLength) &&
+            Objects.equals(this.allowSpecialChars, namedEntityTypeMechanism.allowSpecialChars) &&
             Objects.equals(this.examples, namedEntityTypeMechanism.examples);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items, restricted, type, subType, maxLength, minLength, examples);
+    return Objects.hash(items, restricted, type, subType, maxLength, minLength, allowSpecialChars, examples);
   }
 
   @Override
@@ -303,6 +323,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
     sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
     sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
     sb.append("    minLength: ").append(toIndentedString(minLength)).append("\n");
+    sb.append("    allowSpecialChars: ").append(toIndentedString(allowSpecialChars)).append("\n");
     sb.append("    examples: ").append(toIndentedString(examples)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -47,6 +47,7 @@ public class AssessmentScoringSet  implements Serializable {
    */
  @JsonDeserialize(using = FailureReasonsEnumDeserializer.class)
   public enum FailureReasonsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SCORE("Score"),
     CRITICALSCORE("CriticalScore"),
     KILLQUESTION("KillQuestion");

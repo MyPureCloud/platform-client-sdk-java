@@ -279,20 +279,6 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
 	    return this;
 	} 
 
-	private Boolean forceAsync;
-	public Boolean getForceAsync() {
-		return this.forceAsync;
-	}
-
-	public void setForceAsync(Boolean forceAsync) {
-		this.forceAsync = forceAsync;
-	}
-
-	public PostWorkforcemanagementBusinessunitIntradayRequest withForceAsync(Boolean forceAsync) {
-	    this.setForceAsync(forceAsync);
-	    return this;
-	} 
-
 	private IntradayPlanningGroupRequest body;
 	public IntradayPlanningGroupRequest getBody() {
 		return this.body;
@@ -304,6 +290,20 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
 
 	public PostWorkforcemanagementBusinessunitIntradayRequest withBody(IntradayPlanningGroupRequest body) {
 	    this.setBody(body);
+	    return this;
+	} 
+
+	private Boolean forceAsync;
+	public Boolean getForceAsync() {
+		return this.forceAsync;
+	}
+
+	public void setForceAsync(Boolean forceAsync) {
+		this.forceAsync = forceAsync;
+	}
+
+	public PostWorkforcemanagementBusinessunitIntradayRequest withForceAsync(Boolean forceAsync) {
+	    this.setForceAsync(forceAsync);
 	    return this;
 	} 
 
@@ -333,6 +333,11 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
             throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PostWorkforcemanagementBusinessunitIntradayRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitIntradayRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -354,9 +359,9 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
 	}
 
 
-	public static Builder builder(String businessUnitId) {
+	public static Builder builder(String businessUnitId, IntradayPlanningGroupRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId);
+	            .withRequiredParams(businessUnitId, body);
 	}
 
 
@@ -373,20 +378,21 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
 			return this;
 		}
 
-		public Builder withForceAsync(Boolean forceAsync) {
-			request.setForceAsync(forceAsync);
-			return this;
-		}
-
 		public Builder withBody(IntradayPlanningGroupRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
+		public Builder withForceAsync(Boolean forceAsync) {
+			request.setForceAsync(forceAsync);
+			return this;
+		}
 
 
-		public Builder withRequiredParams(String businessUnitId) {
+
+		public Builder withRequiredParams(String businessUnitId, IntradayPlanningGroupRequest body) {
 			request.setBusinessUnitId(businessUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -397,6 +403,11 @@ public class PostWorkforcemanagementBusinessunitIntradayRequest {
             // verify the required parameter 'businessUnitId' is set
             if (request.businessUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PostWorkforcemanagementBusinessunitIntradayRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitIntradayRequest.");
             }
             
 			return request;

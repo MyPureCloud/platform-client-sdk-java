@@ -118,6 +118,7 @@ public class EvaluationResponse  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("CALL"),
     CALLBACK("CALLBACK"),
     CHAT("CHAT"),

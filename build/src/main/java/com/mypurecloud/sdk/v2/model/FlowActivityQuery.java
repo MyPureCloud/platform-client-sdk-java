@@ -46,6 +46,7 @@ public class FlowActivityQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVEROUTING("activeRouting"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),

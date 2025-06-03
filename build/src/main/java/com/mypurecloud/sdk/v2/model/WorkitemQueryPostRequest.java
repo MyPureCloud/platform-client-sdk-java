@@ -97,6 +97,7 @@ public class WorkitemQueryPostRequest  implements Serializable {
    */
  @JsonDeserialize(using = ExpandsEnumDeserializer.class)
   public enum ExpandsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TYPE("type"),
     WORKBIN("workbin"),
     STATUS("status"),

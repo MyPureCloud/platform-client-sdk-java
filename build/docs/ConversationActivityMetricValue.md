@@ -9,6 +9,7 @@
 | **qualifier** | **String** | Metric qualifier |  [optional] |
 | **entityIds** | **List&lt;String&gt;** | Entity ids for matching entities if details were requested |  [optional] |
 | **count** | **Integer** | Metric count |  [optional] |
+| **calculatedMetricValue** | **Long** | Calculated metric value |  [optional] |
 
 
 ## Enum: MetricEnum
@@ -18,9 +19,11 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OALERTING | &quot;oAlerting&quot; | 
 | OINTERACTING | &quot;oInteracting&quot; | 
+| OLONGESTINTERACTING | &quot;oLongestInteracting&quot; | 
+| OLONGESTWAITING | &quot;oLongestWaiting&quot; | 
 | OWAITING | &quot;oWaiting&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

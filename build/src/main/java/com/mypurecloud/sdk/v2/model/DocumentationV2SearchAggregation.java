@@ -95,6 +95,7 @@ public class DocumentationV2SearchAggregation  implements Serializable {
    */
  @JsonDeserialize(using = OrderEnumDeserializer.class)
   public enum OrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VALUE_DESC("VALUE_DESC"),
     VALUE_ASC("VALUE_ASC"),
     COUNT_DESC("COUNT_DESC"),

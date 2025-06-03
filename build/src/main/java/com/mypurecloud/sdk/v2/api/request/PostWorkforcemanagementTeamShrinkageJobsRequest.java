@@ -319,6 +319,11 @@ public class PostWorkforcemanagementTeamShrinkageJobsRequest {
             throw new IllegalStateException("Missing the required parameter 'teamId' when building request for PostWorkforcemanagementTeamShrinkageJobsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTeamShrinkageJobsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs")
                 .withPathParameter("teamId", teamId)
@@ -337,9 +342,9 @@ public class PostWorkforcemanagementTeamShrinkageJobsRequest {
 	}
 
 
-	public static Builder builder(String teamId) {
+	public static Builder builder(String teamId, WfmHistoricalShrinkageTeamsRequest body) {
 	    return new Builder()
-	            .withRequiredParams(teamId);
+	            .withRequiredParams(teamId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PostWorkforcemanagementTeamShrinkageJobsRequest {
 
 
 
-		public Builder withRequiredParams(String teamId) {
+		public Builder withRequiredParams(String teamId, WfmHistoricalShrinkageTeamsRequest body) {
 			request.setTeamId(teamId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PostWorkforcemanagementTeamShrinkageJobsRequest {
             // verify the required parameter 'teamId' is set
             if (request.teamId == null) {
                 throw new IllegalStateException("Missing the required parameter 'teamId' when building request for PostWorkforcemanagementTeamShrinkageJobsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementTeamShrinkageJobsRequest.");
             }
             
 			return request;

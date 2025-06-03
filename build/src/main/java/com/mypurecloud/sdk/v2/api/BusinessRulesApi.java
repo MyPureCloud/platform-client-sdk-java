@@ -769,7 +769,7 @@ public class BusinessRulesApi {
    * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableVersionListing
    * @throws ApiException if the request fails on the server
@@ -785,7 +785,7 @@ public class BusinessRulesApi {
    * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableVersionListing
    * @throws IOException if the request fails to be processed
@@ -862,7 +862,7 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
@@ -877,7 +877,7 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableListing
    * @throws IOException if the request fails to be processed
@@ -951,39 +951,35 @@ public class BusinessRulesApi {
    * Search for decision tables.
    * 
    * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
    * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableListing getBusinessrulesDecisiontablesSearch(String before, String after, String pageSize, String schemaId, String name) throws IOException, ApiException {
-    return  getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(before, after, pageSize, schemaId, name));
+  public DecisionTableListing getBusinessrulesDecisiontablesSearch(String after, String pageSize, String schemaId, String name) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name));
   }
 
   /**
    * Search for decision tables.
    * 
    * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
    * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
    * @return DecisionTableListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesSearchWithHttpInfo(String before, String after, String pageSize, String schemaId, String name) throws IOException {
-    return getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(before, after, pageSize, schemaId, name).withHttpInfo());
+  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesSearchWithHttpInfo(String after, String pageSize, String schemaId, String name) throws IOException {
+    return getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name).withHttpInfo());
   }
 
-  private GetBusinessrulesDecisiontablesSearchRequest createGetBusinessrulesDecisiontablesSearchRequest(String before, String after, String pageSize, String schemaId, String name) {
+  private GetBusinessrulesDecisiontablesSearchRequest createGetBusinessrulesDecisiontablesSearchRequest(String after, String pageSize, String schemaId, String name) {
     return GetBusinessrulesDecisiontablesSearchRequest.builder()
-            .withBefore(before)
-
             .withAfter(after)
 
             .withPageSize(pageSize)

@@ -319,6 +319,11 @@ public class PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsReques
             throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -337,9 +342,9 @@ public class PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsReques
 	}
 
 
-	public static Builder builder(String businessUnitId) {
+	public static Builder builder(String businessUnitId, UpdateAlternativeShiftBuSettingsRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId);
+	            .withRequiredParams(businessUnitId, body);
 	}
 
 
@@ -363,8 +368,9 @@ public class PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsReques
 
 
 
-		public Builder withRequiredParams(String businessUnitId) {
+		public Builder withRequiredParams(String businessUnitId, UpdateAlternativeShiftBuSettingsRequest body) {
 			request.setBusinessUnitId(businessUnitId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -375,6 +381,11 @@ public class PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsReques
             // verify the required parameter 'businessUnitId' is set
             if (request.businessUnitId == null) {
                 throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.");
             }
             
 			return request;

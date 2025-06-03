@@ -43,6 +43,7 @@ public class ApiUsageSimpleSearch  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATE("Date"),
     CLIENTNAME("ClientName"),
     HTTPMETHOD("HttpMethod"),
@@ -98,6 +99,7 @@ public class ApiUsageSimpleSearch  implements Serializable {
    */
  @JsonDeserialize(using = HttpMethodsEnumDeserializer.class)
   public enum HttpMethodsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GET("GET"),
     POST("POST"),
     DELETE("DELETE"),

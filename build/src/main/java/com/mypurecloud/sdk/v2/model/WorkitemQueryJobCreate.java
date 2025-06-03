@@ -50,6 +50,7 @@ public class WorkitemQueryJobCreate  implements Serializable {
    */
  @JsonDeserialize(using = ExpandsEnumDeserializer.class)
   public enum ExpandsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TYPE("type"),
     WORKBIN("workbin"),
     STATUS("status"),

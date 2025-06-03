@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.BulkJobTerminateResultsResponse;
 import com.mypurecloud.sdk.v2.model.BulkJobUpdate;
 import com.mypurecloud.sdk.v2.model.BulkJobsListing;
 import com.mypurecloud.sdk.v2.model.Coretype;
+import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;

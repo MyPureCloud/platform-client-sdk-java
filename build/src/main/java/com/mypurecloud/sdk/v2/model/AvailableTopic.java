@@ -104,6 +104,7 @@ public class AvailableTopic  implements Serializable {
    */
  @JsonDeserialize(using = TransportsEnumDeserializer.class)
   public enum TransportsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALL("All"),
     WEBSOCKET("Websocket"),
     EVENTBRIDGE("EventBridge"),

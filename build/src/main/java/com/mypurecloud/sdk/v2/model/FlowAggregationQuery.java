@@ -48,6 +48,7 @@ public class FlowAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVEROUTING("activeRouting"),
     ACTIVESKILLID("activeSkillId"),
     ADDRESSFROM("addressFrom"),
@@ -193,6 +194,7 @@ public class FlowAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NFLOW("nFlow"),
     NFLOWMILESTONE("nFlowMilestone"),
     NFLOWOUTCOME("nFlowOutcome"),

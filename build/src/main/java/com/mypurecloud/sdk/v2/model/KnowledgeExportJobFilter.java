@@ -92,6 +92,7 @@ public class KnowledgeExportJobFilter  implements Serializable {
    */
  @JsonDeserialize(using = ExcludeEnumDeserializer.class)
   public enum ExcludeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CATEGORIES("Categories"),
     LABELS("Labels"),
     VARIATIONS("Variations");

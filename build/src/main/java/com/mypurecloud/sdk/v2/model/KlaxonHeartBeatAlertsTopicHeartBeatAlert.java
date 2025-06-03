@@ -54,6 +54,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
    */
  @JsonDeserialize(using = AlertTypesEnumDeserializer.class)
   public enum AlertTypesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("SMS"),
     DEVICE("DEVICE"),
     EMAIL("EMAIL");

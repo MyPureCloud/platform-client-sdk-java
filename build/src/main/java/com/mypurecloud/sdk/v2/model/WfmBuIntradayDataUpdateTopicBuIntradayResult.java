@@ -50,6 +50,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
    */
  @JsonDeserialize(using = CategoriesEnumDeserializer.class)
   public enum CategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FORECASTDATA("ForecastData"),
     SCHEDULEDATA("ScheduleData"),
     PERFORMANCEPREDICTIONDATA("PerformancePredictionData");

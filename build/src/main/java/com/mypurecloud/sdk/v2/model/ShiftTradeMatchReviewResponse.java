@@ -31,10 +31,60 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
   private List<ShiftTradeMatchViolation> violations = null;
   private List<ShiftTradeMatchViolation> adminReviewViolations = null;
 
+  private static class UnevaluatedRulesEnumDeserializer extends StdDeserializer<UnevaluatedRulesEnum> {
+    public UnevaluatedRulesEnumDeserializer() {
+      super(UnevaluatedRulesEnumDeserializer.class);
+    }
+
+    @Override
+    public UnevaluatedRulesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UnevaluatedRulesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets unevaluatedRules
+   */
+ @JsonDeserialize(using = UnevaluatedRulesEnumDeserializer.class)
+  public enum UnevaluatedRulesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PLANNINGPERIODMINPAIDTIME("PlanningPeriodMinPaidTime"),
+    PLANNINGPERIODMAXPAIDTIME("PlanningPeriodMaxPaidTime"),
+    MINIMUMTIMEBETWEENSHIFTS("MinimumTimeBetweenShifts");
+
+    private String value;
+
+    UnevaluatedRulesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UnevaluatedRulesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UnevaluatedRulesEnum value : UnevaluatedRulesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UnevaluatedRulesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<UnevaluatedRulesEnum> unevaluatedRules = null;
+
   public ShiftTradeMatchReviewResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       violations = new ArrayList<ShiftTradeMatchViolation>();
       adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+      unevaluatedRules = new ArrayList<UnevaluatedRulesEnum>();
     }
   }
 
@@ -111,6 +161,24 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
   }
 
 
+  /**
+   * Unevaluated rules for this shift trade which require shift trade administrator review
+   **/
+  public ShiftTradeMatchReviewResponse unevaluatedRules(List<UnevaluatedRulesEnum> unevaluatedRules) {
+    this.unevaluatedRules = unevaluatedRules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unevaluated rules for this shift trade which require shift trade administrator review")
+  @JsonProperty("unevaluatedRules")
+  public List<UnevaluatedRulesEnum> getUnevaluatedRules() {
+    return unevaluatedRules;
+  }
+  public void setUnevaluatedRules(List<UnevaluatedRulesEnum> unevaluatedRules) {
+    this.unevaluatedRules = unevaluatedRules;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -124,12 +192,13 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     return Objects.equals(this.initiatingUser, shiftTradeMatchReviewResponse.initiatingUser) &&
             Objects.equals(this.receivingUser, shiftTradeMatchReviewResponse.receivingUser) &&
             Objects.equals(this.violations, shiftTradeMatchReviewResponse.violations) &&
-            Objects.equals(this.adminReviewViolations, shiftTradeMatchReviewResponse.adminReviewViolations);
+            Objects.equals(this.adminReviewViolations, shiftTradeMatchReviewResponse.adminReviewViolations) &&
+            Objects.equals(this.unevaluatedRules, shiftTradeMatchReviewResponse.unevaluatedRules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(initiatingUser, receivingUser, violations, adminReviewViolations);
+    return Objects.hash(initiatingUser, receivingUser, violations, adminReviewViolations, unevaluatedRules);
   }
 
   @Override
@@ -141,6 +210,7 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     sb.append("    receivingUser: ").append(toIndentedString(receivingUser)).append("\n");
     sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
     sb.append("    adminReviewViolations: ").append(toIndentedString(adminReviewViolations)).append("\n");
+    sb.append("    unevaluatedRules: ").append(toIndentedString(unevaluatedRules)).append("\n");
     sb.append("}");
     return sb.toString();
   }

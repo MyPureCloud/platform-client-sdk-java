@@ -2028,7 +2028,7 @@ try {
 | **includeSubcategories** | **Boolean**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional] 
 | **includeDrafts** | **Boolean**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional] 
 | **labelIds** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels, variations 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels 
 | **externalIds** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional] 
 {: class="table-striped"}
 
@@ -7342,4 +7342,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

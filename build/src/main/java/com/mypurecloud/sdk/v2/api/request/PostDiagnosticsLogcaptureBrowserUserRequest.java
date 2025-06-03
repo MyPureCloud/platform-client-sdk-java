@@ -25,7 +25,8 @@ import com.mypurecloud.sdk.v2.model.LogCaptureDownloadExecutionResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryRequest;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureUserConfiguration;
-import com.mypurecloud.sdk.v2.model.PagelessEntityListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfigurationResponse;
 
 public class PostDiagnosticsLogcaptureBrowserUserRequest {
 

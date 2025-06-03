@@ -43,20 +43,6 @@ import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 public class GetBusinessrulesDecisiontablesSearchRequest {
 
-	private String before;
-	public String getBefore() {
-		return this.before;
-	}
-
-	public void setBefore(String before) {
-		this.before = before;
-	}
-
-	public GetBusinessrulesDecisiontablesSearchRequest withBefore(String before) {
-	    this.setBefore(before);
-	    return this;
-	} 
-
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -137,9 +123,6 @@ public class GetBusinessrulesDecisiontablesSearchRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/businessrules/decisiontables/search")
 
-                .withQueryParameters("before", "", before)
-        
-
                 .withQueryParameters("after", "", after)
         
 
@@ -171,11 +154,6 @@ public class GetBusinessrulesDecisiontablesSearchRequest {
 			request = new GetBusinessrulesDecisiontablesSearchRequest();
 		}
 
-
-		public Builder withBefore(String before) {
-			request.setBefore(before);
-			return this;
-		}
 
 		public Builder withAfter(String after) {
 			request.setAfter(after);

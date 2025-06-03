@@ -300,6 +300,11 @@ public class PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest {
 
     public ApiRequest<QueryAgentsIntegrationsRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/agents/integrations/hris/query")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(QueryAgentsIntegrationsRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest {
 
 
 
+		public Builder withRequiredParams(QueryAgentsIntegrationsRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest.");
+            }
             
 			return request;
 		}

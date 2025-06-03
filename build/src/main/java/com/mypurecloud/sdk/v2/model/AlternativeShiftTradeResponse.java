@@ -165,6 +165,7 @@ public class AlternativeShiftTradeResponse  implements Serializable {
    */
  @JsonDeserialize(using = ViolationsEnumDeserializer.class)
   public enum ViolationsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SERVICEGOALSNOTMET("ServiceGoalsNotMet");
 
     private String value;

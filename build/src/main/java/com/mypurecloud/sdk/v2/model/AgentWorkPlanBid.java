@@ -104,6 +104,7 @@ public class AgentWorkPlanBid  implements Serializable {
    */
  @JsonDeserialize(using = WorkPlanFieldsVisibleToAgentsEnumDeserializer.class)
   public enum WorkPlanFieldsVisibleToAgentsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NAME("Name"),
     PAIDHOURS("PaidHours");
 

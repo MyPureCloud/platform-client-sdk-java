@@ -338,6 +338,11 @@ public class PatchWorkforcemanagementManagementunitTimeoffplanRequest {
             throw new IllegalStateException("Missing the required parameter 'timeOffPlanId' when building request for PatchWorkforcemanagementManagementunitTimeoffplanRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitTimeoffplanRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -358,9 +363,9 @@ public class PatchWorkforcemanagementManagementunitTimeoffplanRequest {
 	}
 
 
-	public static Builder builder(String managementUnitId, String timeOffPlanId) {
+	public static Builder builder(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, timeOffPlanId);
+	            .withRequiredParams(managementUnitId, timeOffPlanId, body);
 	}
 
 
@@ -389,9 +394,10 @@ public class PatchWorkforcemanagementManagementunitTimeoffplanRequest {
 
 
 
-		public Builder withRequiredParams(String managementUnitId, String timeOffPlanId) {
+		public Builder withRequiredParams(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) {
 			request.setManagementUnitId(managementUnitId);
 			request.setTimeOffPlanId(timeOffPlanId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -407,6 +413,11 @@ public class PatchWorkforcemanagementManagementunitTimeoffplanRequest {
             // verify the required parameter 'timeOffPlanId' is set
             if (request.timeOffPlanId == null) {
                 throw new IllegalStateException("Missing the required parameter 'timeOffPlanId' when building request for PatchWorkforcemanagementManagementunitTimeoffplanRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchWorkforcemanagementManagementunitTimeoffplanRequest.");
             }
             
 			return request;

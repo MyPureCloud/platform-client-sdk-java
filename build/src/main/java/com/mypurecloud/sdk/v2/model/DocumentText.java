@@ -43,6 +43,7 @@ public class DocumentText  implements Serializable {
    */
  @JsonDeserialize(using = MarksEnumDeserializer.class)
   public enum MarksEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOLD("Bold"),
     ITALIC("Italic"),
     UNDERLINE("Underline"),

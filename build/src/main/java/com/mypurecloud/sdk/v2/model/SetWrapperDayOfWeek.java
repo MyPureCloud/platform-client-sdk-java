@@ -41,6 +41,7 @@ public class SetWrapperDayOfWeek  implements Serializable {
    */
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUNDAY("Sunday"),
     MONDAY("Monday"),
     TUESDAY("Tuesday"),

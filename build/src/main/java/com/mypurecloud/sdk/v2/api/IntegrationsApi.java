@@ -16,11 +16,14 @@ import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
 import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
 import com.mypurecloud.sdk.v2.model.AudioConnectorIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.Bot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotExecutionConfiguration;
 import com.mypurecloud.sdk.v2.model.BotList;
+import com.mypurecloud.sdk.v2.model.BotListing;
+import com.mypurecloud.sdk.v2.model.BotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
@@ -39,6 +42,8 @@ import com.mypurecloud.sdk.v2.model.FunctionConfig;
 import com.mypurecloud.sdk.v2.model.FunctionRuntime;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.IncomingMessageRequest;
+import com.mypurecloud.sdk.v2.model.IncomingMessageResponse;
 import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
 import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
@@ -54,6 +59,8 @@ import com.mypurecloud.sdk.v2.model.LexV2BotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBot;
 import com.mypurecloud.sdk.v2.model.NuanceBotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBotLaunchSettings;
+import com.mypurecloud.sdk.v2.model.OutgoingMessageRequest;
+import com.mypurecloud.sdk.v2.model.OutgoingMessageResponse;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.SttEngineEntity;
@@ -97,6 +104,9 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequ
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesTruststoreRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorBotsSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
@@ -149,6 +159,8 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsBotconnectorsIncomingMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsBotconnectorsOutgoingMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
@@ -2074,6 +2086,276 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botId The bot ID for this bot (required)
+   * @param version Specific Version (optional)
+   * @return Bot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Bot getIntegrationsBotconnectorBot(String integrationId, String botId, String version) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorBot(createGetIntegrationsBotconnectorBotRequest(integrationId, botId, version));
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botId The bot ID for this bot (required)
+   * @param version Specific Version (optional)
+   * @return Bot
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Bot> getIntegrationsBotconnectorBotWithHttpInfo(String integrationId, String botId, String version) throws IOException {
+    return getIntegrationsBotconnectorBot(createGetIntegrationsBotconnectorBotRequest(integrationId, botId, version).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorBotRequest createGetIntegrationsBotconnectorBotRequest(String integrationId, String botId, String version) {
+    return GetIntegrationsBotconnectorBotRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBotId(botId)
+
+            .withVersion(version)
+
+            .build();
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Bot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Bot getIntegrationsBotconnectorBot(GetIntegrationsBotconnectorBotRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Bot> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Bot>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific Bot details
+   * 
+   * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Bot> getIntegrationsBotconnectorBot(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Bot>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Bot> response = (ApiResponse<Bot>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Bot> response = (ApiResponse<Bot>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots. (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotListing getIntegrationsBotconnectorBots(String integrationId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorBots(createGetIntegrationsBotconnectorBotsRequest(integrationId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots. (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotListing> getIntegrationsBotconnectorBotsWithHttpInfo(String integrationId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsBotconnectorBots(createGetIntegrationsBotconnectorBotsRequest(integrationId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorBotsRequest createGetIntegrationsBotconnectorBotsRequest(String integrationId, Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsBotconnectorBotsRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BotListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotListing getIntegrationsBotconnectorBots(GetIntegrationsBotconnectorBotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotListing> getIntegrationsBotconnectorBots(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotListing> response = (ApiResponse<BotListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotListing> response = (ApiResponse<BotListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots. (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotSummaryEntityListing getIntegrationsBotconnectorBotsSummaries(String integrationId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorBotsSummaries(createGetIntegrationsBotconnectorBotsSummariesRequest(integrationId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId The integration ID for this group of bots. (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotSummaryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotSummaryEntityListing> getIntegrationsBotconnectorBotsSummariesWithHttpInfo(String integrationId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsBotconnectorBotsSummaries(createGetIntegrationsBotconnectorBotsSummariesRequest(integrationId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorBotsSummariesRequest createGetIntegrationsBotconnectorBotsSummariesRequest(String integrationId, Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsBotconnectorBotsSummariesRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BotSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotSummaryEntityListing getIntegrationsBotconnectorBotsSummaries(GetIntegrationsBotconnectorBotsSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotSummaryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotSummaryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the summary list of bots for this integration.
+   * 
+   * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotSummaryEntityListing> getIntegrationsBotconnectorBotsSummaries(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotSummaryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotSummaryEntityListing> response = (ApiResponse<BotSummaryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotSummaryEntityListing> response = (ApiResponse<BotSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6490,6 +6772,170 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Action> response = (ApiResponse<Action>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Incoming Message Request (required)
+   * @return IncomingMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IncomingMessageResponse postIntegrationsBotconnectorsIncomingMessages(IncomingMessageRequest body) throws IOException, ApiException {
+    return  postIntegrationsBotconnectorsIncomingMessages(createPostIntegrationsBotconnectorsIncomingMessagesRequest(body));
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Incoming Message Request (required)
+   * @return IncomingMessageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IncomingMessageResponse> postIntegrationsBotconnectorsIncomingMessagesWithHttpInfo(IncomingMessageRequest body) throws IOException {
+    return postIntegrationsBotconnectorsIncomingMessages(createPostIntegrationsBotconnectorsIncomingMessagesRequest(body).withHttpInfo());
+  }
+
+  private PostIntegrationsBotconnectorsIncomingMessagesRequest createPostIntegrationsBotconnectorsIncomingMessagesRequest(IncomingMessageRequest body) {
+    return PostIntegrationsBotconnectorsIncomingMessagesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return IncomingMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IncomingMessageResponse postIntegrationsBotconnectorsIncomingMessages(PostIntegrationsBotconnectorsIncomingMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IncomingMessageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IncomingMessageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an incoming message to the bot.
+   * 
+   * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IncomingMessageResponse> postIntegrationsBotconnectorsIncomingMessages(ApiRequest<IncomingMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IncomingMessageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IncomingMessageResponse> response = (ApiResponse<IncomingMessageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IncomingMessageResponse> response = (ApiResponse<IncomingMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Outgoing Message Request (required)
+   * @return OutgoingMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutgoingMessageResponse postIntegrationsBotconnectorsOutgoingMessages(OutgoingMessageRequest body) throws IOException, ApiException {
+    return  postIntegrationsBotconnectorsOutgoingMessages(createPostIntegrationsBotconnectorsOutgoingMessagesRequest(body));
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Outgoing Message Request (required)
+   * @return OutgoingMessageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutgoingMessageResponse> postIntegrationsBotconnectorsOutgoingMessagesWithHttpInfo(OutgoingMessageRequest body) throws IOException {
+    return postIntegrationsBotconnectorsOutgoingMessages(createPostIntegrationsBotconnectorsOutgoingMessagesRequest(body).withHttpInfo());
+  }
+
+  private PostIntegrationsBotconnectorsOutgoingMessagesRequest createPostIntegrationsBotconnectorsOutgoingMessagesRequest(OutgoingMessageRequest body) {
+    return PostIntegrationsBotconnectorsOutgoingMessagesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OutgoingMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutgoingMessageResponse postIntegrationsBotconnectorsOutgoingMessages(PostIntegrationsBotconnectorsOutgoingMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutgoingMessageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutgoingMessageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an outgoing message to the end user.
+   * 
+   * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutgoingMessageResponse> postIntegrationsBotconnectorsOutgoingMessages(ApiRequest<OutgoingMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutgoingMessageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutgoingMessageResponse> response = (ApiResponse<OutgoingMessageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutgoingMessageResponse> response = (ApiResponse<OutgoingMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

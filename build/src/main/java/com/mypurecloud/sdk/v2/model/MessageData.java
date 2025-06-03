@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
-import com.mypurecloud.sdk.v2.model.MessageSticker;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -195,7 +194,6 @@ public class MessageData  implements Serializable {
   }
   private StatusEnum status = null;
   private List<MessageMedia> media = null;
-  private List<MessageSticker> stickers = null;
   private ConversationNormalizedMessage normalizedMessage = null;
   private List<ConversationNormalizedMessage> normalizedReceipts = null;
   private User createdBy = null;
@@ -205,7 +203,6 @@ public class MessageData  implements Serializable {
   public MessageData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       media = new ArrayList<MessageMedia>();
-      stickers = new ArrayList<MessageSticker>();
       normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
     }
   }
@@ -397,24 +394,6 @@ public class MessageData  implements Serializable {
   }
 
 
-  /**
-   * The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
-   **/
-  public MessageData stickers(List<MessageSticker> stickers) {
-    this.stickers = stickers;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment")
-  @JsonProperty("stickers")
-  public List<MessageSticker> getStickers() {
-    return stickers;
-  }
-  public void setStickers(List<MessageSticker> stickers) {
-    this.stickers = stickers;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The message into normalized format")
   @JsonProperty("normalizedMessage")
   public ConversationNormalizedMessage getNormalizedMessage() {
@@ -493,7 +472,6 @@ public class MessageData  implements Serializable {
             Objects.equals(this.textBody, messageData.textBody) &&
             Objects.equals(this.status, messageData.status) &&
             Objects.equals(this.media, messageData.media) &&
-            Objects.equals(this.stickers, messageData.stickers) &&
             Objects.equals(this.normalizedMessage, messageData.normalizedMessage) &&
             Objects.equals(this.normalizedReceipts, messageData.normalizedReceipts) &&
             Objects.equals(this.createdBy, messageData.createdBy) &&
@@ -503,7 +481,7 @@ public class MessageData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, normalizedMessage, normalizedReceipts, createdBy, conversationId, selfUri);
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, normalizedMessage, normalizedReceipts, createdBy, conversationId, selfUri);
   }
 
   @Override
@@ -522,7 +500,6 @@ public class MessageData  implements Serializable {
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
-    sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("    normalizedMessage: ").append(toIndentedString(normalizedMessage)).append("\n");
     sb.append("    normalizedReceipts: ").append(toIndentedString(normalizedReceipts)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

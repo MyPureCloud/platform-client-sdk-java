@@ -300,6 +300,11 @@ public class PostWorkforcemanagementNotificationsUpdateRequest {
 
     public ApiRequest<UpdateNotificationsRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementNotificationsUpdateRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/notifications/update")
                 .withBody(body)
@@ -315,6 +320,11 @@ public class PostWorkforcemanagementNotificationsUpdateRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(UpdateNotificationsRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -332,8 +342,19 @@ public class PostWorkforcemanagementNotificationsUpdateRequest {
 
 
 
+		public Builder withRequiredParams(UpdateNotificationsRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostWorkforcemanagementNotificationsUpdateRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementNotificationsUpdateRequest.");
+            }
             
 			return request;
 		}

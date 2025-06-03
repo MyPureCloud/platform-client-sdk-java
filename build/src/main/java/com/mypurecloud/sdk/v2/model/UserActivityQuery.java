@@ -46,6 +46,7 @@ public class UserActivityQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USERID("userId");
 
     private String value;

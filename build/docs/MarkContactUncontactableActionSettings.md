@@ -12,6 +12,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | VOICE | &quot;Voice&quot; |
 | EMAIL | &quot;Email&quot; |
 | SMS | &quot;Sms&quot; |
@@ -20,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationResoluti
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationSummary;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationSummaryParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicConversationWrapUpCode;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicSummaryExtractedCustomEntity;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryTopicTriggerSource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -152,6 +153,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
   private ConversationSummaryTopicConversationReason reason = null;
   private ConversationSummaryTopicConversationResolution resolution = null;
   private List<ConversationSummaryTopicConversationFollowupAction> followupActions = null;
+  private List<ConversationSummaryTopicSummaryExtractedCustomEntity> extractedEntities = null;
   private List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes = null;
   private ConversationSummaryTopicTriggerSource triggerSource = null;
   private ConversationSummaryTopicConversationSummaryParticipant lastEditedBy = null;
@@ -212,6 +214,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
       participants = new ArrayList<ConversationSummaryTopicConversationSummaryParticipant>();
       communicationIds = new ArrayList<String>();
       followupActions = new ArrayList<ConversationSummaryTopicConversationFollowupAction>();
+      extractedEntities = new ArrayList<ConversationSummaryTopicSummaryExtractedCustomEntity>();
       wrapUpCodes = new ArrayList<ConversationSummaryTopicConversationWrapUpCode>();
     }
   }
@@ -457,6 +460,23 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   /**
    **/
+  public ConversationSummaryTopicConversationSummaryEvent extractedEntities(List<ConversationSummaryTopicSummaryExtractedCustomEntity> extractedEntities) {
+    this.extractedEntities = extractedEntities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("extractedEntities")
+  public List<ConversationSummaryTopicSummaryExtractedCustomEntity> getExtractedEntities() {
+    return extractedEntities;
+  }
+  public void setExtractedEntities(List<ConversationSummaryTopicSummaryExtractedCustomEntity> extractedEntities) {
+    this.extractedEntities = extractedEntities;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicConversationSummaryEvent wrapUpCodes(List<ConversationSummaryTopicConversationWrapUpCode> wrapUpCodes) {
     this.wrapUpCodes = wrapUpCodes;
     return this;
@@ -564,6 +584,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
             Objects.equals(this.reason, conversationSummaryTopicConversationSummaryEvent.reason) &&
             Objects.equals(this.resolution, conversationSummaryTopicConversationSummaryEvent.resolution) &&
             Objects.equals(this.followupActions, conversationSummaryTopicConversationSummaryEvent.followupActions) &&
+            Objects.equals(this.extractedEntities, conversationSummaryTopicConversationSummaryEvent.extractedEntities) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicConversationSummaryEvent.triggerSource) &&
             Objects.equals(this.lastEditedBy, conversationSummaryTopicConversationSummaryEvent.lastEditedBy) &&
@@ -573,7 +594,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, lastEditedBy, errorType, durationMs);
   }
 
   @Override
@@ -595,6 +616,7 @@ public class ConversationSummaryTopicConversationSummaryEvent  implements Serial
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    followupActions: ").append(toIndentedString(followupActions)).append("\n");
+    sb.append("    extractedEntities: ").append(toIndentedString(extractedEntities)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");

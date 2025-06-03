@@ -48,6 +48,7 @@ public class JourneyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONTAINSALLCONDITION("containsAllCondition"),
     CONTAINSANYCONDITION("containsAnyCondition"),
     ENDSWITHCONDITION("endsWithCondition"),
@@ -135,6 +136,7 @@ public class JourneyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NDISTINCTJOURNEYACTIONS("nDistinctJourneyActions"),
     NDISTINCTJOURNEYSESSIONS("nDistinctJourneySessions"),
     NJOURNEYACTIONSBLOCKED("nJourneyActionsBlocked"),

@@ -357,6 +357,11 @@ public class PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictio
             throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations")
                 .withPathParameter("businessUnitId", businessUnitId)
@@ -379,9 +384,9 @@ public class PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictio
 	}
 
 
-	public static Builder builder(String businessUnitId, String weekId, String scheduleId) {
+	public static Builder builder(String businessUnitId, String weekId, String scheduleId, WfmProcessUploadRequest body) {
 	    return new Builder()
-	            .withRequiredParams(businessUnitId, weekId, scheduleId);
+	            .withRequiredParams(businessUnitId, weekId, scheduleId, body);
 	}
 
 
@@ -415,10 +420,11 @@ public class PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictio
 
 
 
-		public Builder withRequiredParams(String businessUnitId, String weekId, String scheduleId) {
+		public Builder withRequiredParams(String businessUnitId, String weekId, String scheduleId, WfmProcessUploadRequest body) {
 			request.setBusinessUnitId(businessUnitId);
 			request.setWeekId(weekId);
 			request.setScheduleId(scheduleId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -439,6 +445,11 @@ public class PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictio
             // verify the required parameter 'scheduleId' is set
             if (request.scheduleId == null) {
                 throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.");
             }
             
 			return request;

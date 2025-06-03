@@ -44,6 +44,7 @@ public class UserObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OACTIVEQUEUES("oActiveQueues"),
     OMEMBERQUEUES("oMemberQueues");
 
@@ -91,6 +92,7 @@ public class UserObservationQuery  implements Serializable {
    */
  @JsonDeserialize(using = DetailMetricsEnumDeserializer.class)
   public enum DetailMetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OACTIVEQUEUES("oActiveQueues"),
     OMEMBERQUEUES("oMemberQueues");
 

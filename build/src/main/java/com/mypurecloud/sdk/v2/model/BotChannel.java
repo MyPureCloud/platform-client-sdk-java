@@ -93,6 +93,7 @@ public class BotChannel  implements Serializable {
    */
  @JsonDeserialize(using = InputModesEnumDeserializer.class)
   public enum InputModesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     VOICE("Voice"),
     DTMF("DTMF");
@@ -141,6 +142,7 @@ public class BotChannel  implements Serializable {
    */
  @JsonDeserialize(using = OutputModesEnumDeserializer.class)
   public enum OutputModesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     VOICE("Voice");
 

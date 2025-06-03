@@ -579,7 +579,7 @@ Configuration.setDefaultApiClient(apiClient);
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 String tableId = "tableId_example"; // String | Table ID
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
 List<String> divisionIds = Arrays.asList(null); // List<String> | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 try {
     DecisionTableVersionListing result = apiInstance.getBusinessrulesDecisiontableVersions(tableId, after, pageSize, divisionIds);
@@ -597,7 +597,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **tableId** | **String**| Table ID | 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
 | **divisionIds** | [**List&lt;String&gt;**](String)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional] 
 {: class="table-striped"}
 
@@ -645,7 +645,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
 List<String> divisionIds = Arrays.asList(null); // List<String> | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 try {
     DecisionTableListing result = apiInstance.getBusinessrulesDecisiontables(after, pageSize, divisionIds);
@@ -662,7 +662,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
 | **divisionIds** | [**List&lt;String&gt;**](String)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional] 
 {: class="table-striped"}
 
@@ -675,7 +675,7 @@ try {
 # **getBusinessrulesDecisiontablesSearch**
 
 
-> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontablesSearch(before, after, pageSize, schemaId, name)
+> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name)
 
 Search for decision tables.
 
@@ -709,13 +709,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
 String schemaId = "schemaId_example"; // String | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 String name = "name_example"; // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
 try {
-    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontablesSearch(before, after, pageSize, schemaId, name);
+    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontablesSearch");
@@ -728,9 +727,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
 | **schemaId** | **String**| Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. | [optional] 
 | **name** | **String**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. | [optional] 
 {: class="table-striped"}
@@ -1873,4 +1871,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

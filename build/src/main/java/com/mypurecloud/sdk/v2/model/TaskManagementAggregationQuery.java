@@ -48,6 +48,7 @@ public class TaskManagementAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNEEID("assigneeId"),
     DIVISIONID("divisionId"),
     EXTERNALTAG("externalTag"),
@@ -110,6 +111,7 @@ public class TaskManagementAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NWORKITEMSACDCANCELLED("nWorkitemsAcdCancelled"),
     NWORKITEMSACDEXPIRED("nWorkitemsAcdExpired"),
     NWORKITEMSACDSTARTED("nWorkitemsAcdStarted"),

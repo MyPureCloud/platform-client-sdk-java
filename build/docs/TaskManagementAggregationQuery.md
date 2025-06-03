@@ -20,6 +20,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ASSIGNEEID | &quot;assigneeId&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EXTERNALTAG | &quot;externalTag&quot; |
@@ -42,6 +43,7 @@
 
 | Name | Value |
 | ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NWORKITEMSACDCANCELLED | &quot;nWorkitemsAcdCancelled&quot; |
 | NWORKITEMSACDEXPIRED | &quot;nWorkitemsAcdExpired&quot; |
 | NWORKITEMSACDSTARTED | &quot;nWorkitemsAcdStarted&quot; |
@@ -86,4 +88,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:225.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_

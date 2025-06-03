@@ -97,7 +97,7 @@ public class BuAgentScheduleActivity  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
@@ -115,7 +115,7 @@ public class BuAgentScheduleActivity  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The length of this activity in minutes")
+  @ApiModelProperty(example = "null", required = true, value = "The length of this activity in minutes")
   @JsonProperty("lengthMinutes")
   public Integer getLengthMinutes() {
     return lengthMinutes;
@@ -133,7 +133,7 @@ public class BuAgentScheduleActivity  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The description of this activity")
+  @ApiModelProperty(example = "null", required = true, value = "The description of this activity")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -151,7 +151,7 @@ public class BuAgentScheduleActivity  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the activity code associated with this activity")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the activity code associated with this activity")
   @JsonProperty("activityCodeId")
   public String getActivityCodeId() {
     return activityCodeId;

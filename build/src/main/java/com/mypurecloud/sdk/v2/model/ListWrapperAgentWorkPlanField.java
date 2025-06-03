@@ -42,6 +42,7 @@ public class ListWrapperAgentWorkPlanField  implements Serializable {
    */
  @JsonDeserialize(using = ValuesEnumDeserializer.class)
   public enum ValuesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NAME("Name"),
     PAIDHOURS("PaidHours");
 

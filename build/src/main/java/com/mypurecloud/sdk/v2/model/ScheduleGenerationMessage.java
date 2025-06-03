@@ -92,7 +92,8 @@ public class ScheduleGenerationMessage  implements Serializable {
     UNABLETOSCHEDULEPLANNINGPERIODMINDAYSOFF("UnableToSchedulePlanningPeriodMinDaysOff"),
     UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIME("UnableToSchedulePlanningPeriodMinPaidTime"),
     UNABLETOSCHEDULESHIFTVARIANCE("UnableToScheduleShiftVariance"),
-    UNABLETOSCHEDULEWORKDAY("UnableToScheduleWorkDay");
+    UNABLETOSCHEDULEWORKDAY("UnableToScheduleWorkDay"),
+    AGENTWITHOUTCAPABILITYTOHANDLEACTIVITYONQUEUEWORK("AgentWithoutCapabilityToHandleActivityOnQueueWork");
 
     private String value;
 
