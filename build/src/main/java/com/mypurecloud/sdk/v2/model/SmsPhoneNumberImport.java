@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Compliance;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -79,6 +80,7 @@ public class SmsPhoneNumberImport  implements Serializable {
   private String countryCode = null;
   private String integrationId = null;
   private Compliance compliance = null;
+  private SupportedContentReference supportedContent = null;
   private String selfUri = null;
 
   public SmsPhoneNumberImport() {
@@ -184,6 +186,24 @@ public class SmsPhoneNumberImport  implements Serializable {
   }
 
 
+  /**
+   * Defines the media SupportedContent profile configured for an MMS capable phone number.
+   **/
+  public SmsPhoneNumberImport supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the media SupportedContent profile configured for an MMS capable phone number.")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -207,12 +227,13 @@ public class SmsPhoneNumberImport  implements Serializable {
             Objects.equals(this.countryCode, smsPhoneNumberImport.countryCode) &&
             Objects.equals(this.integrationId, smsPhoneNumberImport.integrationId) &&
             Objects.equals(this.compliance, smsPhoneNumberImport.compliance) &&
+            Objects.equals(this.supportedContent, smsPhoneNumberImport.supportedContent) &&
             Objects.equals(this.selfUri, smsPhoneNumberImport.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, phoneNumber, phoneNumberType, countryCode, integrationId, compliance, selfUri);
+    return Objects.hash(id, phoneNumber, phoneNumberType, countryCode, integrationId, compliance, supportedContent, selfUri);
   }
 
   @Override
@@ -226,6 +247,7 @@ public class SmsPhoneNumberImport  implements Serializable {
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -37,6 +37,7 @@ public class ChatMediaParticipant  implements Serializable {
   private String name = null;
   private String address = null;
   private Date startTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date endTime = null;
   private Date startHoldTime = null;
@@ -181,7 +182,8 @@ public class ChatMediaParticipant  implements Serializable {
     ERROR("error"),
     PEER("peer"),
     OTHER("other"),
-    SPAM("spam");
+    SPAM("spam"),
+    INACTIVITY("inactivity");
 
     private String value;
 
@@ -360,6 +362,24 @@ public class ChatMediaParticipant  implements Serializable {
   }
   public void setStartTime(Date startTime) {
     this.startTime = startTime;
+  }
+
+
+  /**
+   * The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ChatMediaParticipant startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
   }
 
 
@@ -1007,6 +1027,7 @@ public class ChatMediaParticipant  implements Serializable {
             Objects.equals(this.name, chatMediaParticipant.name) &&
             Objects.equals(this.address, chatMediaParticipant.address) &&
             Objects.equals(this.startTime, chatMediaParticipant.startTime) &&
+            Objects.equals(this.startAlertingTime, chatMediaParticipant.startAlertingTime) &&
             Objects.equals(this.connectedTime, chatMediaParticipant.connectedTime) &&
             Objects.equals(this.endTime, chatMediaParticipant.endTime) &&
             Objects.equals(this.startHoldTime, chatMediaParticipant.startHoldTime) &&
@@ -1046,7 +1067,7 @@ public class ChatMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1058,6 +1079,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");

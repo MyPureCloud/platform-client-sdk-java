@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.CredentialInfoCursorListing;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;

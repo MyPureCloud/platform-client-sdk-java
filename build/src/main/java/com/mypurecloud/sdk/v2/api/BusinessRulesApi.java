@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
@@ -60,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersions
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesDecisiontableVersionPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesSchemaRequest;
 
 import java.io.IOException;
@@ -955,12 +957,15 @@ public class BusinessRulesApi {
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
    * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
+   * @param withPublishedVersion Filters results to only decision tables that have at least one version in Published status (optional)
+   * @param expand Fields to expand in response (optional)
+   * @param ids Decision table IDs to search for (optional)
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableListing getBusinessrulesDecisiontablesSearch(String after, String pageSize, String schemaId, String name) throws IOException, ApiException {
-    return  getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name));
+  public DecisionTableListing getBusinessrulesDecisiontablesSearch(String after, String pageSize, String schemaId, String name, Boolean withPublishedVersion, List<String> expand, List<String> ids) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name, withPublishedVersion, expand, ids));
   }
 
   /**
@@ -971,14 +976,17 @@ public class BusinessRulesApi {
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
    * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
+   * @param withPublishedVersion Filters results to only decision tables that have at least one version in Published status (optional)
+   * @param expand Fields to expand in response (optional)
+   * @param ids Decision table IDs to search for (optional)
    * @return DecisionTableListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesSearchWithHttpInfo(String after, String pageSize, String schemaId, String name) throws IOException {
-    return getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name).withHttpInfo());
+  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesSearchWithHttpInfo(String after, String pageSize, String schemaId, String name, Boolean withPublishedVersion, List<String> expand, List<String> ids) throws IOException {
+    return getBusinessrulesDecisiontablesSearch(createGetBusinessrulesDecisiontablesSearchRequest(after, pageSize, schemaId, name, withPublishedVersion, expand, ids).withHttpInfo());
   }
 
-  private GetBusinessrulesDecisiontablesSearchRequest createGetBusinessrulesDecisiontablesSearchRequest(String after, String pageSize, String schemaId, String name) {
+  private GetBusinessrulesDecisiontablesSearchRequest createGetBusinessrulesDecisiontablesSearchRequest(String after, String pageSize, String schemaId, String name, Boolean withPublishedVersion, List<String> expand, List<String> ids) {
     return GetBusinessrulesDecisiontablesSearchRequest.builder()
             .withAfter(after)
 
@@ -987,6 +995,12 @@ public class BusinessRulesApi {
             .withSchemaId(schemaId)
 
             .withName(name)
+
+            .withWithPublishedVersion(withPublishedVersion)
+
+            .withExpand(expand)
+
+            .withIds(ids)
 
             .build();
   }
@@ -1538,31 +1552,33 @@ public class BusinessRulesApi {
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
-   * @param body Update decision table row request (required)
+   * @param body Partially update decision table row request (required)
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DecisionTableRow patchBusinessrulesDecisiontableVersionRow(String tableId, Integer tableVersion, String rowId, UpdateDecisionTableRowRequest body) throws IOException, ApiException {
     return  patchBusinessrulesDecisiontableVersionRow(createPatchBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body));
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
-   * @param body Update decision table row request (required)
+   * @param body Partially update decision table row request (required)
    * @return DecisionTableRow
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DecisionTableRow> patchBusinessrulesDecisiontableVersionRowWithHttpInfo(String tableId, Integer tableVersion, String rowId, UpdateDecisionTableRowRequest body) throws IOException {
     return patchBusinessrulesDecisiontableVersionRow(createPatchBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body).withHttpInfo());
@@ -1582,13 +1598,14 @@ public class BusinessRulesApi {
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DecisionTableRow patchBusinessrulesDecisiontableVersionRow(PatchBusinessrulesDecisiontableVersionRowRequest request) throws IOException, ApiException {
     try {
@@ -1602,12 +1619,13 @@ public class BusinessRulesApi {
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DecisionTableRow> patchBusinessrulesDecisiontableVersionRow(ApiRequest<UpdateDecisionTableRowRequest> request) throws IOException {
     try {
@@ -2499,6 +2517,100 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param rowId Row ID (required)
+   * @param body Full update decision table row request (required)
+   * @return DecisionTableRow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableRow putBusinessrulesDecisiontableVersionRow(String tableId, Integer tableVersion, String rowId, PutDecisionTableRowRequest body) throws IOException, ApiException {
+    return  putBusinessrulesDecisiontableVersionRow(createPutBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body));
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param tableId Table ID (required)
+   * @param tableVersion Table Version (required)
+   * @param rowId Row ID (required)
+   * @param body Full update decision table row request (required)
+   * @return DecisionTableRow
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableRow> putBusinessrulesDecisiontableVersionRowWithHttpInfo(String tableId, Integer tableVersion, String rowId, PutDecisionTableRowRequest body) throws IOException {
+    return putBusinessrulesDecisiontableVersionRow(createPutBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body).withHttpInfo());
+  }
+
+  private PutBusinessrulesDecisiontableVersionRowRequest createPutBusinessrulesDecisiontableVersionRowRequest(String tableId, Integer tableVersion, String rowId, PutDecisionTableRowRequest body) {
+    return PutBusinessrulesDecisiontableVersionRowRequest.builder()
+            .withTableId(tableId)
+
+            .withTableVersion(tableVersion)
+
+            .withRowId(rowId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DecisionTableRow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DecisionTableRow putBusinessrulesDecisiontableVersionRow(PutBusinessrulesDecisiontableVersionRowRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DecisionTableRow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableRow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DecisionTableRow> putBusinessrulesDecisiontableVersionRow(ApiRequest<PutDecisionTableRowRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DecisionTableRow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

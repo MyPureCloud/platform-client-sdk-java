@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.CredentialInfoCursorListing;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
@@ -118,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsListingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorIntegrationIdRequest;
@@ -2667,6 +2669,81 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CredentialInfoListing> response = (ApiResponse<CredentialInfoListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CredentialInfoCursorListing> getIntegrationsCredentialsListingAsync(GetIntegrationsCredentialsListingRequest request, final AsyncApiCallback<CredentialInfoCursorListing> callback) {
+    try {
+      final SettableFuture<CredentialInfoCursorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialInfoCursorListing>() {}, new AsyncApiCallback<ApiResponse<CredentialInfoCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfoCursorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CredentialInfoCursorListing>> getIntegrationsCredentialsListingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CredentialInfoCursorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CredentialInfoCursorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CredentialInfoCursorListing>() {}, new AsyncApiCallback<ApiResponse<CredentialInfoCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfoCursorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfoCursorListing> response = (ApiResponse<CredentialInfoCursorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfoCursorListing> response = (ApiResponse<CredentialInfoCursorListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

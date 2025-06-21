@@ -387,7 +387,7 @@ public class TeamsApi {
    * @param name Return only teams whose names start with this value (case-insensitive matching) (optional)
    * @param after The cursor that points to the next item in the complete list of teams (optional)
    * @param before The cursor that points to the previous item in the complete list of teams (optional)
-   * @param expand Expand the name on each user (optional)
+   * @param expand Expand the division on each team (optional)
    * @return TeamEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -403,7 +403,7 @@ public class TeamsApi {
    * @param name Return only teams whose names start with this value (case-insensitive matching) (optional)
    * @param after The cursor that points to the next item in the complete list of teams (optional)
    * @param before The cursor that points to the previous item in the complete list of teams (optional)
-   * @param expand Expand the name on each user (optional)
+   * @param expand Expand the division on each team (optional)
    * @return TeamEntityListing
    * @throws IOException if the request fails to be processed
    */

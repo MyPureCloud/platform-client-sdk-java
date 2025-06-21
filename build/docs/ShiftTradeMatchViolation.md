@@ -19,6 +19,8 @@
 | DIRECTTRADEFOROTHERUSER | &quot;DirectTradeForOtherUser&quot; | 
 | INITIATINGAGENTMINIMUMTIMEBETWEENSHIFTS | &quot;InitiatingAgentMinimumTimeBetweenShifts&quot; | 
 | INITIATINGAGENTSCHEDULEDOESNOTEXIST | &quot;InitiatingAgentScheduleDoesNotExist&quot; | 
+| INITIATINGEXTERNALACTIVITYCANNOTINTERRUPTRECEIVINGSHIFT | &quot;InitiatingExternalActivityCannotInterruptReceivingShift&quot; | 
+| INITIATINGEXTERNALACTIVITYOUTSIDERECEIVINGSHIFT | &quot;InitiatingExternalActivityOutsideReceivingShift&quot; | 
 | INITIATINGPLANNINGPERIODMAXPAIDTIME | &quot;InitiatingPlanningPeriodMaxPaidTime&quot; | 
 | INITIATINGPLANNINGPERIODMINPAIDTIME | &quot;InitiatingPlanningPeriodMinPaidTime&quot; | 
 | INITIATINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;InitiatingShiftDisallowedActivityCategory&quot; | 
@@ -33,6 +35,8 @@
 | ONESIDEDTRADECREATION | &quot;OneSidedTradeCreation&quot; | 
 | RECEIVINGAGENTMINIMUMTIMEBETWEENSHIFTS | &quot;ReceivingAgentMinimumTimeBetweenShifts&quot; | 
 | RECEIVINGAGENTSCHEDULEDOESNOTEXIST | &quot;ReceivingAgentScheduleDoesNotExist&quot; | 
+| RECEIVINGEXTERNALACTIVITYCANNOTINTERRUPTINITIATINGSHIFT | &quot;ReceivingExternalActivityCannotInterruptInitiatingShift&quot; | 
+| RECEIVINGEXTERNALACTIVITYOUTSIDEINITIATINGSHIFT | &quot;ReceivingExternalActivityOutsideInitiatingShift&quot; | 
 | RECEIVINGPLANNINGPERIODMAXPAIDTIME | &quot;ReceivingPlanningPeriodMaxPaidTime&quot; | 
 | RECEIVINGPLANNINGPERIODMINPAIDTIME | &quot;ReceivingPlanningPeriodMinPaidTime&quot; | 
 | RECEIVINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;ReceivingShiftDisallowedActivityCategory&quot; | 
@@ -55,4 +59,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

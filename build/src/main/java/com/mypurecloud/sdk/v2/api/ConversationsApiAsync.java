@@ -107,6 +107,11 @@ import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.InternalMessageConversation;
+import com.mypurecloud.sdk.v2.model.InternalMessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.InternalMessageData;
+import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
+import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
@@ -117,6 +122,8 @@ import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
+import com.mypurecloud.sdk.v2.model.MessagingConferResponse;
+import com.mypurecloud.sdk.v2.model.MessagingConferWithUserRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingSetting;
@@ -127,6 +134,7 @@ import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedReceipt;
+import com.mypurecloud.sdk.v2.model.OpenInboundStructuredResponseMessage;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
@@ -135,6 +143,7 @@ import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenMessagingIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenStructuredResponseNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
@@ -202,6 +211,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
@@ -244,6 +255,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
@@ -262,6 +275,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
@@ -342,9 +356,11 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantInternalmessagesUsersCommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
@@ -396,6 +412,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationT
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenReceiptRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenStructuredResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
@@ -433,6 +450,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
@@ -2102,6 +2120,160 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InternalMessageData> getConversationCommunicationInternalmessageAsync(GetConversationCommunicationInternalmessageRequest request, final AsyncApiCallback<InternalMessageData> callback) {
+    try {
+      final SettableFuture<InternalMessageData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InternalMessageData>() {}, new AsyncApiCallback<ApiResponse<InternalMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InternalMessageData>> getConversationCommunicationInternalmessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InternalMessageData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InternalMessageData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InternalMessageData>() {}, new AsyncApiCallback<ApiResponse<InternalMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InternalMessageDataEntityListing> getConversationCommunicationInternalmessagesAsync(GetConversationCommunicationInternalmessagesRequest request, final AsyncApiCallback<InternalMessageDataEntityListing> callback) {
+    try {
+      final SettableFuture<InternalMessageDataEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InternalMessageDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<InternalMessageDataEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageDataEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InternalMessageDataEntityListing>> getConversationCommunicationInternalmessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InternalMessageDataEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InternalMessageDataEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InternalMessageDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<InternalMessageDataEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageDataEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5284,6 +5456,160 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InternalMessageConversation> getConversationsInternalmessageAsync(GetConversationsInternalmessageRequest request, final AsyncApiCallback<InternalMessageConversation> callback) {
+    try {
+      final SettableFuture<InternalMessageConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InternalMessageConversation>() {}, new AsyncApiCallback<ApiResponse<InternalMessageConversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageConversation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InternalMessageConversation>> getConversationsInternalmessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InternalMessageConversation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InternalMessageConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InternalMessageConversation>() {}, new AsyncApiCallback<ApiResponse<InternalMessageConversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageConversation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageConversation> response = (ApiResponse<InternalMessageConversation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageConversation> response = (ApiResponse<InternalMessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InternalMessageConversationEntityListing> getConversationsInternalmessagesAsync(GetConversationsInternalmessagesRequest request, final AsyncApiCallback<InternalMessageConversationEntityListing> callback) {
+    try {
+      final SettableFuture<InternalMessageConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InternalMessageConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<InternalMessageConversationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageConversationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InternalMessageConversationEntityListing>> getConversationsInternalmessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InternalMessageConversationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InternalMessageConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InternalMessageConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<InternalMessageConversationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageConversationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageConversationEntityListing> response = (ApiResponse<InternalMessageConversationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageConversationEntityListing> response = (ApiResponse<InternalMessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the encryption key configurations
    * 
    * @param request the request object
@@ -6624,6 +6950,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -12660,6 +13061,83 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InternalMessageData> postConversationCommunicationInternalmessagesAsync(PostConversationCommunicationInternalmessagesRequest request, final AsyncApiCallback<InternalMessageData> callback) {
+    try {
+      final SettableFuture<InternalMessageData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InternalMessageData>() {}, new AsyncApiCallback<ApiResponse<InternalMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InternalMessageData>> postConversationCommunicationInternalmessagesAsync(ApiRequest<InternalMessageRequest> request, final AsyncApiCallback<ApiResponse<InternalMessageData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InternalMessageData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InternalMessageData>() {}, new AsyncApiCallback<ApiResponse<InternalMessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<InternalMessageData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    * 
    * @param request the request object
@@ -12873,6 +13351,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingConferResponse> postConversationParticipantInternalmessagesUsersCommunicationsAsync(PostConversationParticipantInternalmessagesUsersCommunicationsRequest request, final AsyncApiCallback<MessagingConferResponse> callback) {
+    try {
+      final SettableFuture<MessagingConferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingConferResponse>() {}, new AsyncApiCallback<ApiResponse<MessagingConferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingConferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingConferResponse>> postConversationParticipantInternalmessagesUsersCommunicationsAsync(ApiRequest<MessagingConferWithUserRequest> request, final AsyncApiCallback<ApiResponse<MessagingConferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingConferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingConferResponse>() {}, new AsyncApiCallback<ApiResponse<MessagingConferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingConferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingConferResponse> response = (ApiResponse<MessagingConferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingConferResponse> response = (ApiResponse<MessagingConferResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -16728,6 +17283,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenStructuredResponseNormalizedMessage> postConversationsMessageInboundOpenStructuredResponseAsync(PostConversationsMessageInboundOpenStructuredResponseRequest request, final AsyncApiCallback<OpenStructuredResponseNormalizedMessage> callback) {
+    try {
+      final SettableFuture<OpenStructuredResponseNormalizedMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenStructuredResponseNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenStructuredResponseNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenStructuredResponseNormalizedMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenStructuredResponseNormalizedMessage>> postConversationsMessageInboundOpenStructuredResponseAsync(ApiRequest<OpenInboundStructuredResponseMessage> request, final AsyncApiCallback<ApiResponse<OpenStructuredResponseNormalizedMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenStructuredResponseNormalizedMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenStructuredResponseNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenStructuredResponseNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenStructuredResponseNormalizedMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenStructuredResponseNormalizedMessage> response = (ApiResponse<OpenStructuredResponseNormalizedMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenStructuredResponseNormalizedMessage> response = (ApiResponse<OpenStructuredResponseNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get messages in batch
    * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param request the request object
@@ -19507,6 +20137,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+    try {
+      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

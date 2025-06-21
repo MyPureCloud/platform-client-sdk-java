@@ -179,6 +179,7 @@ public class InternalMessage  implements Serializable {
     }
   }
   private DisconnectTypeEnum disconnectType = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -284,6 +285,24 @@ public class InternalMessage  implements Serializable {
   }
   public void setDisconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
+  }
+
+
+  /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public InternalMessage startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
   }
 
 
@@ -464,6 +483,7 @@ public class InternalMessage  implements Serializable {
             Objects.equals(this.id, internalMessage.id) &&
             Objects.equals(this.segments, internalMessage.segments) &&
             Objects.equals(this.disconnectType, internalMessage.disconnectType) &&
+            Objects.equals(this.startAlertingTime, internalMessage.startAlertingTime) &&
             Objects.equals(this.connectedTime, internalMessage.connectedTime) &&
             Objects.equals(this.disconnectedTime, internalMessage.disconnectedTime) &&
             Objects.equals(this.provider, internalMessage.provider) &&
@@ -477,7 +497,7 @@ public class InternalMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, segments, disconnectType, connectedTime, disconnectedTime, provider, peerId, targetUserId, sourceUserId, toAddress, fromAddress, messages);
+    return Objects.hash(state, initialState, id, segments, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, targetUserId, sourceUserId, toAddress, fromAddress, messages);
   }
 
   @Override
@@ -490,6 +510,7 @@ public class InternalMessage  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

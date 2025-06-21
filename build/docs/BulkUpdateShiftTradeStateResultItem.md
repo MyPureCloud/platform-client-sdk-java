@@ -34,14 +34,16 @@
 | INITIATINGAGENTSCHEDULENOTFOUND | &quot;InitiatingAgentScheduleNotFound&quot; | 
 | INITIATINGAGENTSHIFTHASEXTERNALACTIVITIES | &quot;InitiatingAgentShiftHasExternalActivities&quot; | 
 | INITIATINGAGENTSHIFTNOTFOUND | &quot;InitiatingAgentShiftNotFound&quot; | 
+| INITIATINGEXTERNALACTIVITYOUTSIDERECEIVINGSHIFT | &quot;InitiatingExternalActivityOutsideReceivingShift&quot; | 
 | RECEIVINGAGENTNOTFOUND | &quot;ReceivingAgentNotFound&quot; | 
 | RECEIVINGAGENTSCHEDULENOTFOUND | &quot;ReceivingAgentScheduleNotFound&quot; | 
 | RECEIVINGAGENTSHIFTHASEXTERNALACTIVITIES | &quot;ReceivingAgentShiftHasExternalActivities&quot; | 
 | RECEIVINGAGENTSHIFTNOTFOUND | &quot;ReceivingAgentShiftNotFound&quot; | 
+| RECEIVINGEXTERNALACTIVITYOUTSIDEINITIATINGSHIFT | &quot;ReceivingExternalActivityOutsideInitiatingShift&quot; | 
 | SCHEDULENOTPUBLISHED | &quot;ScheduleNotPublished&quot; | 
 | TRANSITIONNOTALLOWED | &quot;TransitionNotAllowed&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

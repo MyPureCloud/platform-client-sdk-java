@@ -5029,7 +5029,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param body query (required)
    * @return AnalyticsAgentStateCountsResponse
@@ -5041,7 +5041,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param body query (required)
    * @return AnalyticsAgentStateCountsResponse
@@ -5059,7 +5059,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param request The request object
    * @return AnalyticsAgentStateCountsResponse
@@ -5078,7 +5078,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param request The request object
    * @return the response

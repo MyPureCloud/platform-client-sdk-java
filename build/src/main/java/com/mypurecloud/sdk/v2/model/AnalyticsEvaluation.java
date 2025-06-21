@@ -88,6 +88,7 @@ public class AnalyticsEvaluation  implements Serializable {
   private String queueId = null;
   private Boolean released = null;
   private Boolean rescored = null;
+  private Boolean systemSubmitted = null;
   private String userId = null;
   private Long oTotalCriticalScore = null;
   private Long oTotalScore = null;
@@ -351,6 +352,24 @@ public class AnalyticsEvaluation  implements Serializable {
 
 
   /**
+   * Whether the evaluation was auto submitted by the system
+   **/
+  public AnalyticsEvaluation systemSubmitted(Boolean systemSubmitted) {
+    this.systemSubmitted = systemSubmitted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the evaluation was auto submitted by the system")
+  @JsonProperty("systemSubmitted")
+  public Boolean getSystemSubmitted() {
+    return systemSubmitted;
+  }
+  public void setSystemSubmitted(Boolean systemSubmitted) {
+    this.systemSubmitted = systemSubmitted;
+  }
+
+
+  /**
    * ID of the agent the evaluation was performed against
    **/
   public AnalyticsEvaluation userId(String userId) {
@@ -426,6 +445,7 @@ public class AnalyticsEvaluation  implements Serializable {
             Objects.equals(this.queueId, analyticsEvaluation.queueId) &&
             Objects.equals(this.released, analyticsEvaluation.released) &&
             Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
+            Objects.equals(this.systemSubmitted, analyticsEvaluation.systemSubmitted) &&
             Objects.equals(this.userId, analyticsEvaluation.userId) &&
             Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
             Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
@@ -433,7 +453,7 @@ public class AnalyticsEvaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assigneeApplicable, assigneeId, calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(assigneeApplicable, assigneeId, calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, systemSubmitted, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -455,6 +475,7 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    released: ").append(toIndentedString(released)).append("\n");
     sb.append("    rescored: ").append(toIndentedString(rescored)).append("\n");
+    sb.append("    systemSubmitted: ").append(toIndentedString(systemSubmitted)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");

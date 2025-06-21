@@ -20,7 +20,10 @@ import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGreetingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingDownloadsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingGroupsDownloadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingUsersDownloadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingsDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupGreetingsRequest;
@@ -206,8 +209,172 @@ public class GreetingsApi {
   }
 
   /**
-   * Get media playback URI for this greeting
+   * Download a organization greeting recording
    * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingDownloads(String greetingId, String formatId) throws IOException, ApiException {
+    return  getGreetingDownloads(createGetGreetingDownloadsRequest(greetingId, formatId));
+  }
+
+  /**
+   * Download a organization greeting recording
+   * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingDownloadsWithHttpInfo(String greetingId, String formatId) throws IOException {
+    return getGreetingDownloads(createGetGreetingDownloadsRequest(greetingId, formatId).withHttpInfo());
+  }
+
+  private GetGreetingDownloadsRequest createGetGreetingDownloadsRequest(String greetingId, String formatId) {
+    return GetGreetingDownloadsRequest.builder()
+            .withGreetingId(greetingId)
+
+            .withFormatId(formatId)
+
+            .build();
+  }
+
+  /**
+   * Download a organization greeting recording
+   * 
+   * @param request The request object
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingDownloads(GetGreetingDownloadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GreetingMediaInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Download a organization greeting recording
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingDownloads(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GreetingMediaInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingGroupsDownloads(String greetingId, String formatId) throws IOException, ApiException {
+    return  getGreetingGroupsDownloads(createGetGreetingGroupsDownloadsRequest(greetingId, formatId));
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingGroupsDownloadsWithHttpInfo(String greetingId, String formatId) throws IOException {
+    return getGreetingGroupsDownloads(createGetGreetingGroupsDownloadsRequest(greetingId, formatId).withHttpInfo());
+  }
+
+  private GetGreetingGroupsDownloadsRequest createGetGreetingGroupsDownloadsRequest(String greetingId, String formatId) {
+    return GetGreetingGroupsDownloadsRequest.builder()
+            .withGreetingId(greetingId)
+
+            .withFormatId(formatId)
+
+            .build();
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param request The request object
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingGroupsDownloads(GetGreetingGroupsDownloadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GreetingMediaInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingGroupsDownloads(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GreetingMediaInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get media playback URI for this greeting
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param greetingId Greeting ID (required)
    * @param formatId The desired media format. (optional, default to WAV)
    * @return GreetingMediaInfo
@@ -220,7 +387,7 @@ public class GreetingsApi {
 
   /**
    * Get media playback URI for this greeting
-   * 
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param greetingId Greeting ID (required)
    * @param formatId The desired media format. (optional, default to WAV)
    * @return GreetingMediaInfo
@@ -241,7 +408,7 @@ public class GreetingsApi {
 
   /**
    * Get media playback URI for this greeting
-   * 
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param request The request object
    * @return GreetingMediaInfo
    * @throws ApiException if the request fails on the server
@@ -260,12 +427,94 @@ public class GreetingsApi {
 
   /**
    * Get media playback URI for this greeting
-   * 
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<GreetingMediaInfo> getGreetingMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GreetingMediaInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingUsersDownloads(String greetingId, String formatId) throws IOException, ApiException {
+    return  getGreetingUsersDownloads(createGetGreetingUsersDownloadsRequest(greetingId, formatId));
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param greetingId Greeting ID (required)
+   * @param formatId The desired media format. (optional, default to WAV)
+   * @return GreetingMediaInfo
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingUsersDownloadsWithHttpInfo(String greetingId, String formatId) throws IOException {
+    return getGreetingUsersDownloads(createGetGreetingUsersDownloadsRequest(greetingId, formatId).withHttpInfo());
+  }
+
+  private GetGreetingUsersDownloadsRequest createGetGreetingUsersDownloadsRequest(String greetingId, String formatId) {
+    return GetGreetingUsersDownloadsRequest.builder()
+            .withGreetingId(greetingId)
+
+            .withFormatId(formatId)
+
+            .build();
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param request The request object
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GreetingMediaInfo getGreetingUsersDownloads(GetGreetingUsersDownloadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GreetingMediaInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GreetingMediaInfo> getGreetingUsersDownloads(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<GreetingMediaInfo>() {});
     }

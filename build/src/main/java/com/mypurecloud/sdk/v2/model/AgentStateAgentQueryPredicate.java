@@ -47,7 +47,12 @@ public class AgentStateAgentQueryPredicate  implements Serializable {
     ASSIGNEDLANGUAGEID("assignedLanguageId"),
     DIVISIONID("divisionId"),
     USERID("userId"),
-    MANAGERID("managerId");
+    MANAGERID("managerId"),
+    SYSTEMPRESENCE("systemPresence"),
+    ORGANIZATIONPRESENCEID("organizationPresenceId"),
+    ROUTINGSTATUS("routingStatus"),
+    ISOUTOFOFFICE("isOutOfOffice"),
+    ONLINE("online");
 
     private String value;
 

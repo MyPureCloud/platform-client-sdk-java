@@ -49,6 +49,7 @@
 | FINDUSERSBYIDACTION | &quot;FindUsersByIdAction&quot; | 
 | FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
 | FINDUTILIZATIONLABELACTION | &quot;FindUtilizationLabelAction&quot; | 
+| FORMACTION | &quot;FormAction&quot; | 
 | SWITCHACTION | &quot;SwitchAction&quot; | 
 | DATAACTION | &quot;DataAction&quot; | 
 | DATATABLELOOKUPACTION | &quot;DataTableLookupAction&quot; | 
@@ -84,9 +85,10 @@
 | TRANSFEREXTERNALACTION | &quot;TransferExternalAction&quot; | 
 | GETATTRIBUTESACTION | &quot;GetAttributesAction&quot; | 
 | SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
+| SENDINTERACTIVEAPPLICATIONACTION | &quot;SendInteractiveApplicationAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

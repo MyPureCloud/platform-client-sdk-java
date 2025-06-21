@@ -844,7 +844,7 @@ public class VoicemailApi {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return VoicemailMediaInfo
@@ -857,7 +857,7 @@ public class VoicemailApi {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return VoicemailMediaInfo
@@ -878,7 +878,7 @@ public class VoicemailApi {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param request The request object
    * @return VoicemailMediaInfo
    * @throws ApiException if the request fails on the server
@@ -897,7 +897,7 @@ public class VoicemailApi {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -193,6 +193,8 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
     NOVERSLA("nOverSla"),
     NSTATETRANSITIONERROR("nStateTransitionError"),
     NTRANSFERRED("nTransferred"),
+    OAUDIOMESSAGECOUNT("oAudioMessageCount"),
+    OEXTERNALAUDIOMESSAGECOUNT("oExternalAudioMessageCount"),
     OEXTERNALMEDIACOUNT("oExternalMediaCount"),
     OMEDIACOUNT("oMediaCount"),
     OMESSAGECOUNT("oMessageCount"),

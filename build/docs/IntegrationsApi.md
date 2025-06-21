@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi#getIntegrationsClientappsUnifiedcommunications) | UC integration client application configuration. |
 | [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | Get a single credential with sensitive fields redacted |
 | [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | List multiple sets of credentials |
+| [**getIntegrationsCredentialsListing**](IntegrationsApi#getIntegrationsCredentialsListing) | List multiple sets of credentials using cursor-based paging |
 | [**getIntegrationsCredentialsTypes**](IntegrationsApi#getIntegrationsCredentialsTypes) | List all credential types |
 | [**getIntegrationsSpeechAudioconnector**](IntegrationsApi#getIntegrationsSpeechAudioconnector) | Get a list of Audio Connector integrations |
 | [**getIntegrationsSpeechAudioconnectorIntegrationId**](IntegrationsApi#getIntegrationsSpeechAudioconnectorIntegrationId) | Get an Audio Connector integration |
@@ -2199,6 +2200,69 @@ try {
 ### Return type
 
 [**CredentialInfoListing**](CredentialInfoListing)
+
+
+# **getIntegrationsCredentialsListing**
+
+
+> [CredentialInfoCursorListing](CredentialInfoCursorListing) getIntegrationsCredentialsListing(before, after, pageSize)
+
+List multiple sets of credentials using cursor-based paging
+
+Wraps GET /api/v2/integrations/credentials/listing  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+try {
+    CredentialInfoCursorListing result = apiInstance.getIntegrationsCredentialsListing(before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsCredentialsListing");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CredentialInfoCursorListing**](CredentialInfoCursorListing)
 
 
 # **getIntegrationsCredentialsTypes**
@@ -5785,4 +5849,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

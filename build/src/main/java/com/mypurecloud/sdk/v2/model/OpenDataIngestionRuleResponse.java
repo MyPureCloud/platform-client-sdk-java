@@ -16,7 +16,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -84,11 +86,13 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String platform = null;
+  private List<String> countries = null;
   private DomainEntityRef externalSource = null;
   private String selfUri = null;
 
   public OpenDataIngestionRuleResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      countries = new ArrayList<String>();
     }
   }
 
@@ -204,6 +208,13 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
+  @JsonProperty("countries")
+  public List<String> getCountries() {
+    return countries;
+  }
+
+
   /**
    * The external source associated with this open data ingestion rule, which is used when performing identity resolution
    **/
@@ -247,13 +258,14 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
             Objects.equals(this.dateCreated, openDataIngestionRuleResponse.dateCreated) &&
             Objects.equals(this.dateModified, openDataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.platform, openDataIngestionRuleResponse.platform) &&
+            Objects.equals(this.countries, openDataIngestionRuleResponse.countries) &&
             Objects.equals(this.externalSource, openDataIngestionRuleResponse.externalSource) &&
             Objects.equals(this.selfUri, openDataIngestionRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, externalSource, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, countries, externalSource, selfUri);
   }
 
   @Override
@@ -269,6 +281,7 @@ public class OpenDataIngestionRuleResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

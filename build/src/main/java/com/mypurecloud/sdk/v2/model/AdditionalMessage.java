@@ -73,14 +73,14 @@ public class AdditionalMessage  implements Serializable {
 
 
   /**
-   * The messaging template use to send a predefined canned response with the message
+   * Pre-defined message templates for structured communications. Supports various template types including WhatsApp business messaging templates, forms and canned responses with variable substitution.
    **/
   public AdditionalMessage messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging template use to send a predefined canned response with the message")
+  @ApiModelProperty(example = "null", value = "Pre-defined message templates for structured communications. Supports various template types including WhatsApp business messaging templates, forms and canned responses with variable substitution.")
   @JsonProperty("messagingTemplate")
   public SendMessagingTemplateRequest getMessagingTemplate() {
     return messagingTemplate;

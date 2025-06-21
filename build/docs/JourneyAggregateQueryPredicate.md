@@ -48,7 +48,6 @@
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; | 
 | JOURNEYSEGMENTASSIGNMENTSTATE | &quot;journeySegmentAssignmentState&quot; | 
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; | 
-| JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; | 
 | JOURNEYSESSIONID | &quot;journeySessionId&quot; | 
 | JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; | 
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; | 
@@ -82,4 +81,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

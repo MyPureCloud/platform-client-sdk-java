@@ -39,6 +39,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private String name = null;
   private String address = null;
   private Date startTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date endTime = null;
   private Date startHoldTime = null;
@@ -183,7 +184,8 @@ public class CallbackMediaParticipant  implements Serializable {
     ERROR("error"),
     PEER("peer"),
     OTHER("other"),
-    SPAM("spam");
+    SPAM("spam"),
+    INACTIVITY("inactivity");
 
     private String value;
 
@@ -370,6 +372,24 @@ public class CallbackMediaParticipant  implements Serializable {
   }
   public void setStartTime(Date startTime) {
     this.startTime = startTime;
+  }
+
+
+  /**
+   * The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CallbackMediaParticipant startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
   }
 
 
@@ -1143,6 +1163,7 @@ public class CallbackMediaParticipant  implements Serializable {
             Objects.equals(this.name, callbackMediaParticipant.name) &&
             Objects.equals(this.address, callbackMediaParticipant.address) &&
             Objects.equals(this.startTime, callbackMediaParticipant.startTime) &&
+            Objects.equals(this.startAlertingTime, callbackMediaParticipant.startAlertingTime) &&
             Objects.equals(this.connectedTime, callbackMediaParticipant.connectedTime) &&
             Objects.equals(this.endTime, callbackMediaParticipant.endTime) &&
             Objects.equals(this.startHoldTime, callbackMediaParticipant.startHoldTime) &&
@@ -1189,7 +1210,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -1201,6 +1222,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");

@@ -106,6 +106,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     QUEUEID("queueId"),
     RELEASED("released"),
     RESCORED("rescored"),
+    SYSTEMSUBMITTED("systemSubmitted"),
     USERID("userId");
 
     private String value;

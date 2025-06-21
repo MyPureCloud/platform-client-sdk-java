@@ -104,6 +104,11 @@ import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.InternalMessageConversation;
+import com.mypurecloud.sdk.v2.model.InternalMessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.InternalMessageData;
+import com.mypurecloud.sdk.v2.model.InternalMessageDataEntityListing;
+import com.mypurecloud.sdk.v2.model.InternalMessageRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
@@ -114,6 +119,8 @@ import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
+import com.mypurecloud.sdk.v2.model.MessagingConferResponse;
+import com.mypurecloud.sdk.v2.model.MessagingConferWithUserRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingSetting;
@@ -124,6 +131,7 @@ import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedReceipt;
+import com.mypurecloud.sdk.v2.model.OpenInboundStructuredResponseMessage;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
@@ -132,6 +140,7 @@ import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenMessagingIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenStructuredResponseNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
@@ -199,6 +208,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
@@ -241,6 +252,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
@@ -259,6 +272,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
@@ -339,9 +353,11 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantInternalmessagesUsersCommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
@@ -393,6 +409,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationT
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenReceiptRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenStructuredResponseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
@@ -430,6 +447,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
@@ -2165,6 +2183,190 @@ public class ConversationsApi {
   }
 
   /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param messageId messageId (required)
+   * @return InternalMessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageData getConversationCommunicationInternalmessage(String conversationId, String communicationId, String messageId) throws IOException, ApiException {
+    return  getConversationCommunicationInternalmessage(createGetConversationCommunicationInternalmessageRequest(conversationId, communicationId, messageId));
+  }
+
+  /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param messageId messageId (required)
+   * @return InternalMessageData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageData> getConversationCommunicationInternalmessageWithHttpInfo(String conversationId, String communicationId, String messageId) throws IOException {
+    return getConversationCommunicationInternalmessage(createGetConversationCommunicationInternalmessageRequest(conversationId, communicationId, messageId).withHttpInfo());
+  }
+
+  private GetConversationCommunicationInternalmessageRequest createGetConversationCommunicationInternalmessageRequest(String conversationId, String communicationId, String messageId) {
+    return GetConversationCommunicationInternalmessageRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withMessageId(messageId)
+
+            .build();
+  }
+
+  /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return InternalMessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageData getConversationCommunicationInternalmessage(GetConversationCommunicationInternalmessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InternalMessageData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InternalMessageData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get message
+   * 
+   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageData> getConversationCommunicationInternalmessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InternalMessageData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return InternalMessageDataEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageDataEntityListing getConversationCommunicationInternalmessages(String conversationId, String communicationId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationCommunicationInternalmessages(createGetConversationCommunicationInternalmessagesRequest(conversationId, communicationId, pageSize, pageNumber));
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return InternalMessageDataEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageDataEntityListing> getConversationCommunicationInternalmessagesWithHttpInfo(String conversationId, String communicationId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationCommunicationInternalmessages(createGetConversationCommunicationInternalmessagesRequest(conversationId, communicationId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationCommunicationInternalmessagesRequest createGetConversationCommunicationInternalmessagesRequest(String conversationId, String communicationId, Integer pageSize, Integer pageNumber) {
+    return GetConversationCommunicationInternalmessagesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return InternalMessageDataEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageDataEntityListing getConversationCommunicationInternalmessages(GetConversationCommunicationInternalmessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InternalMessageDataEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InternalMessageDataEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get messages for communication
+   * 
+   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageDataEntityListing> getConversationCommunicationInternalmessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InternalMessageDataEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageDataEntityListing> response = (ApiResponse<InternalMessageDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch info on a secure session
    * 
    * @param conversationId conversation ID (required)
@@ -2998,7 +3200,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3013,7 +3215,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -3087,7 +3289,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3101,7 +3303,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -3334,7 +3536,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3349,7 +3551,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -3423,7 +3625,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3437,7 +3639,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -4170,7 +4372,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4186,7 +4388,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -4263,7 +4465,7 @@ public class ConversationsApi {
    * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4278,7 +4480,7 @@ public class ConversationsApi {
    * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -4596,7 +4798,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4612,7 +4814,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -4689,7 +4891,7 @@ public class ConversationsApi {
    * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4704,7 +4906,7 @@ public class ConversationsApi {
    * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -5256,7 +5458,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5271,7 +5473,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -5345,7 +5547,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5359,7 +5561,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -5656,6 +5858,166 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailConversationEntityListing> response = (ApiResponse<EmailConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @return InternalMessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageConversation getConversationsInternalmessage(String conversationId) throws IOException, ApiException {
+    return  getConversationsInternalmessage(createGetConversationsInternalmessageRequest(conversationId));
+  }
+
+  /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @return InternalMessageConversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageConversation> getConversationsInternalmessageWithHttpInfo(String conversationId) throws IOException {
+    return getConversationsInternalmessage(createGetConversationsInternalmessageRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationsInternalmessageRequest createGetConversationsInternalmessageRequest(String conversationId) {
+    return GetConversationsInternalmessageRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return InternalMessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageConversation getConversationsInternalmessage(GetConversationsInternalmessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InternalMessageConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InternalMessageConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get internal message conversation
+   * 
+   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageConversation> getConversationsInternalmessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InternalMessageConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageConversation> response = (ApiResponse<InternalMessageConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageConversation> response = (ApiResponse<InternalMessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return InternalMessageConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageConversationEntityListing getConversationsInternalmessages() throws IOException, ApiException {
+    return  getConversationsInternalmessages(createGetConversationsInternalmessagesRequest());
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return InternalMessageConversationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageConversationEntityListing> getConversationsInternalmessagesWithHttpInfo() throws IOException {
+    return getConversationsInternalmessages(createGetConversationsInternalmessagesRequest().withHttpInfo());
+  }
+
+  private GetConversationsInternalmessagesRequest createGetConversationsInternalmessagesRequest() {
+    return GetConversationsInternalmessagesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return InternalMessageConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageConversationEntityListing getConversationsInternalmessages(GetConversationsInternalmessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InternalMessageConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InternalMessageConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get active internal message conversations for the logged in user
+   * 
+   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageConversationEntityListing> getConversationsInternalmessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InternalMessageConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageConversationEntityListing> response = (ApiResponse<InternalMessageConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageConversationEntityListing> response = (ApiResponse<InternalMessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6150,7 +6512,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6165,7 +6527,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -6239,7 +6601,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6253,7 +6615,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -7100,6 +7462,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param integrationId Integration Id (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param integrationId Integration Id (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get X (Formally Twitter) messaging integration identity resolution settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8856,7 +9296,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -8872,7 +9312,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -9024,7 +9464,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -9039,7 +9479,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -9196,7 +9636,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -9211,7 +9651,7 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
-   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
@@ -13814,6 +14254,96 @@ public class ConversationsApi {
   }
 
   /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return InternalMessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageData postConversationCommunicationInternalmessages(String conversationId, String communicationId, InternalMessageRequest body) throws IOException, ApiException {
+    return  postConversationCommunicationInternalmessages(createPostConversationCommunicationInternalmessagesRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return InternalMessageData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageData> postConversationCommunicationInternalmessagesWithHttpInfo(String conversationId, String communicationId, InternalMessageRequest body) throws IOException {
+    return postConversationCommunicationInternalmessages(createPostConversationCommunicationInternalmessagesRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationCommunicationInternalmessagesRequest createPostConversationCommunicationInternalmessagesRequest(String conversationId, String communicationId, InternalMessageRequest body) {
+    return PostConversationCommunicationInternalmessagesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return InternalMessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InternalMessageData postConversationCommunicationInternalmessages(PostConversationCommunicationInternalmessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InternalMessageData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InternalMessageData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send internal message
+   * Send a new internal message for an existing communication.
+   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InternalMessageData> postConversationCommunicationInternalmessages(ApiRequest<InternalMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InternalMessageData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InternalMessageData> response = (ApiResponse<InternalMessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    * 
    * @param conversationId conversation ID (required)
@@ -14053,6 +14583,96 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Confer request (required)
+   * @return MessagingConferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(String conversationId, String participantId, MessagingConferWithUserRequest body) throws IOException, ApiException {
+    return  postConversationParticipantInternalmessagesUsersCommunications(createPostConversationParticipantInternalmessagesUsersCommunicationsRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Confer request (required)
+   * @return MessagingConferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingConferResponse> postConversationParticipantInternalmessagesUsersCommunicationsWithHttpInfo(String conversationId, String participantId, MessagingConferWithUserRequest body) throws IOException {
+    return postConversationParticipantInternalmessagesUsersCommunications(createPostConversationParticipantInternalmessagesUsersCommunicationsRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantInternalmessagesUsersCommunicationsRequest createPostConversationParticipantInternalmessagesUsersCommunicationsRequest(String conversationId, String participantId, MessagingConferWithUserRequest body) {
+    return PostConversationParticipantInternalmessagesUsersCommunicationsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return MessagingConferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(PostConversationParticipantInternalmessagesUsersCommunicationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingConferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingConferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Setup internal message communication with user
+   * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingConferResponse> postConversationParticipantInternalmessagesUsersCommunications(ApiRequest<MessagingConferWithUserRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingConferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingConferResponse> response = (ApiResponse<MessagingConferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingConferResponse> response = (ApiResponse<MessagingConferResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18298,6 +18918,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body OpenInboundStructuredResponseMessage (required)
+   * @return OpenStructuredResponseNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(String integrationId, OpenInboundStructuredResponseMessage body) throws IOException, ApiException {
+    return  postConversationsMessageInboundOpenStructuredResponse(createPostConversationsMessageInboundOpenStructuredResponseRequest(integrationId, body));
+  }
+
+  /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body OpenInboundStructuredResponseMessage (required)
+   * @return OpenStructuredResponseNormalizedMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenStructuredResponseNormalizedMessage> postConversationsMessageInboundOpenStructuredResponseWithHttpInfo(String integrationId, OpenInboundStructuredResponseMessage body) throws IOException {
+    return postConversationsMessageInboundOpenStructuredResponse(createPostConversationsMessageInboundOpenStructuredResponseRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageInboundOpenStructuredResponseRequest createPostConversationsMessageInboundOpenStructuredResponseRequest(String integrationId, OpenInboundStructuredResponseMessage body) {
+    return PostConversationsMessageInboundOpenStructuredResponseRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return OpenStructuredResponseNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(PostConversationsMessageInboundOpenStructuredResponseRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenStructuredResponseNormalizedMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenStructuredResponseNormalizedMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send inbound Open Response
+   * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenStructuredResponseNormalizedMessage> postConversationsMessageInboundOpenStructuredResponse(ApiRequest<OpenInboundStructuredResponseMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenStructuredResponseNormalizedMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenStructuredResponseNormalizedMessage> response = (ApiResponse<OpenStructuredResponseNormalizedMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenStructuredResponseNormalizedMessage> response = (ApiResponse<OpenStructuredResponseNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get messages in batch
    * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param conversationId  (required)
@@ -21338,6 +22040,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenMessagingIdentityResolutionConfig> response = (ApiResponse<OpenMessagingIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param integrationId Integration Id (required)
+   * @param body IdentityResolutionConfig (required)
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+    return  putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param integrationId Integration Id (required)
+   * @param body IdentityResolutionConfig (required)
+   * @return IdentityResolutionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+    return putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+    return PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param request The request object
+   * @return IdentityResolutionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an identity resolution settings for an X (Formally Twitter) messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

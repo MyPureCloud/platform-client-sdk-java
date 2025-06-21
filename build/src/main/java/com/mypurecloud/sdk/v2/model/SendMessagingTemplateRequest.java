@@ -42,14 +42,14 @@ public class SendMessagingTemplateRequest  implements Serializable {
 
   
   /**
-   * A Response Management response identifier for a messaging template defined response
+   * Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.
    **/
   public SendMessagingTemplateRequest responseId(String responseId) {
     this.responseId = responseId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A Response Management response identifier for a messaging template defined response")
+  @ApiModelProperty(example = "null", value = "Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.")
   @JsonProperty("responseId")
   public String getResponseId() {
     return responseId;

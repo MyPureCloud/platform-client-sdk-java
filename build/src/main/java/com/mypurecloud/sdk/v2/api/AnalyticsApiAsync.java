@@ -4594,7 +4594,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4628,7 +4628,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Count agents by segment type
+   * Count agents by different groupings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

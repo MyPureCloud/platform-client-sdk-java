@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MediaIceStatistics;
 import com.mypurecloud.sdk.v2.model.MediaRtpStatistics;
+import com.mypurecloud.sdk.v2.model.MediaStatisticsClientInfo;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsTrunkInfo;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +33,55 @@ public class MediaEndpointStatistics  implements Serializable {
   private NamedEntity user = null;
   private MediaIceStatistics ice = null;
   private MediaRtpStatistics rtp = null;
-  private Integer reconnectAttemptCount = null;
+  private Integer reconnectAttempts = null;
+
+  private static class SourceTypeEnumDeserializer extends StdDeserializer<SourceTypeEnum> {
+    public SourceTypeEnumDeserializer() {
+      super(SourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Source type of media endpoint
+   */
+ @JsonDeserialize(using = SourceTypeEnumDeserializer.class)
+  public enum SourceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CLIENT("Client");
+
+    private String value;
+
+    SourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SourceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SourceTypeEnum value : SourceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SourceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SourceTypeEnum sourceType = null;
+  private MediaStatisticsClientInfo clientInfo = null;
 
   public MediaEndpointStatistics() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -132,18 +182,54 @@ public class MediaEndpointStatistics  implements Serializable {
   /**
    * Media reconnect attempt count
    **/
-  public MediaEndpointStatistics reconnectAttemptCount(Integer reconnectAttemptCount) {
-    this.reconnectAttemptCount = reconnectAttemptCount;
+  public MediaEndpointStatistics reconnectAttempts(Integer reconnectAttempts) {
+    this.reconnectAttempts = reconnectAttempts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Media reconnect attempt count")
-  @JsonProperty("reconnectAttemptCount")
-  public Integer getReconnectAttemptCount() {
-    return reconnectAttemptCount;
+  @JsonProperty("reconnectAttempts")
+  public Integer getReconnectAttempts() {
+    return reconnectAttempts;
   }
-  public void setReconnectAttemptCount(Integer reconnectAttemptCount) {
-    this.reconnectAttemptCount = reconnectAttemptCount;
+  public void setReconnectAttempts(Integer reconnectAttempts) {
+    this.reconnectAttempts = reconnectAttempts;
+  }
+
+
+  /**
+   * Source type of media endpoint
+   **/
+  public MediaEndpointStatistics sourceType(SourceTypeEnum sourceType) {
+    this.sourceType = sourceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Source type of media endpoint")
+  @JsonProperty("sourceType")
+  public SourceTypeEnum getSourceType() {
+    return sourceType;
+  }
+  public void setSourceType(SourceTypeEnum sourceType) {
+    this.sourceType = sourceType;
+  }
+
+
+  /**
+   * Client information associated with media endpoint
+   **/
+  public MediaEndpointStatistics clientInfo(MediaStatisticsClientInfo clientInfo) {
+    this.clientInfo = clientInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Client information associated with media endpoint")
+  @JsonProperty("clientInfo")
+  public MediaStatisticsClientInfo getClientInfo() {
+    return clientInfo;
+  }
+  public void setClientInfo(MediaStatisticsClientInfo clientInfo) {
+    this.clientInfo = clientInfo;
   }
 
 
@@ -162,12 +248,14 @@ public class MediaEndpointStatistics  implements Serializable {
             Objects.equals(this.user, mediaEndpointStatistics.user) &&
             Objects.equals(this.ice, mediaEndpointStatistics.ice) &&
             Objects.equals(this.rtp, mediaEndpointStatistics.rtp) &&
-            Objects.equals(this.reconnectAttemptCount, mediaEndpointStatistics.reconnectAttemptCount);
+            Objects.equals(this.reconnectAttempts, mediaEndpointStatistics.reconnectAttempts) &&
+            Objects.equals(this.sourceType, mediaEndpointStatistics.sourceType) &&
+            Objects.equals(this.clientInfo, mediaEndpointStatistics.clientInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trunk, station, user, ice, rtp, reconnectAttemptCount);
+    return Objects.hash(trunk, station, user, ice, rtp, reconnectAttempts, sourceType, clientInfo);
   }
 
   @Override
@@ -180,7 +268,9 @@ public class MediaEndpointStatistics  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    ice: ").append(toIndentedString(ice)).append("\n");
     sb.append("    rtp: ").append(toIndentedString(rtp)).append("\n");
-    sb.append("    reconnectAttemptCount: ").append(toIndentedString(reconnectAttemptCount)).append("\n");
+    sb.append("    reconnectAttempts: ").append(toIndentedString(reconnectAttempts)).append("\n");
+    sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
+    sb.append("    clientInfo: ").append(toIndentedString(clientInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

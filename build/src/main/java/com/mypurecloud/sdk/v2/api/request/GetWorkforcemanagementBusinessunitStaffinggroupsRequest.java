@@ -293,6 +293,20 @@ public class GetWorkforcemanagementBusinessunitStaffinggroupsRequest {
 	    return this;
 	} 
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public GetWorkforcemanagementBusinessunitStaffinggroupsRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -325,6 +339,9 @@ public class GetWorkforcemanagementBusinessunitStaffinggroupsRequest {
         
 
                 .withQueryParameters("managementUnitId", "", managementUnitId)
+        
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -359,6 +376,11 @@ public class GetWorkforcemanagementBusinessunitStaffinggroupsRequest {
 
 		public Builder withManagementUnitId(String managementUnitId) {
 			request.setManagementUnitId(managementUnitId);
+			return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 

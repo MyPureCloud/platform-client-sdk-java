@@ -52,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
@@ -134,6 +135,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
@@ -4404,6 +4406,83 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserMe> response = (ApiResponse<UserMe>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserCursorEntityListing> getUsersQueryAsync(GetUsersQueryRequest request, final AsyncApiCallback<UserCursorEntityListing> callback) {
+    try {
+      final SettableFuture<UserCursorEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserCursorEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserCursorEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCursorEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserCursorEntityListing>> getUsersQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserCursorEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserCursorEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserCursorEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserCursorEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserCursorEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCursorEntityListing> response = (ApiResponse<UserCursorEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserCursorEntityListing> response = (ApiResponse<UserCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

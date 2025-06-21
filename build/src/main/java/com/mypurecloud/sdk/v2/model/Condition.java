@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactColumnToDataActionFieldMapping;
 import com.mypurecloud.sdk.v2.model.DataActionConditionPredicate;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.TimeAndDateSubCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -253,12 +254,16 @@ public class Condition  implements Serializable {
   private String agentWrapupField = null;
   private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
   private List<DataActionConditionPredicate> predicates = null;
+  private List<TimeAndDateSubCondition> subConditions = null;
+  private Boolean matchAnyConditions = null;
+  private String timeZoneId = null;
 
   public Condition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       codes = new ArrayList<String>();
       contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
       predicates = new ArrayList<DataActionConditionPredicate>();
+      subConditions = new ArrayList<TimeAndDateSubCondition>();
     }
   }
 
@@ -551,6 +556,60 @@ public class Condition  implements Serializable {
   }
 
 
+  /**
+   * A list of sub-conditions to evaluate. Required for a timeAndDateCondition.
+   **/
+  public Condition subConditions(List<TimeAndDateSubCondition> subConditions) {
+    this.subConditions = subConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of sub-conditions to evaluate. Required for a timeAndDateCondition.")
+  @JsonProperty("subConditions")
+  public List<TimeAndDateSubCondition> getSubConditions() {
+    return subConditions;
+  }
+  public void setSubConditions(List<TimeAndDateSubCondition> subConditions) {
+    this.subConditions = subConditions;
+  }
+
+
+  /**
+   * If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition.
+   **/
+  public Condition matchAnyConditions(Boolean matchAnyConditions) {
+    this.matchAnyConditions = matchAnyConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition.")
+  @JsonProperty("matchAnyConditions")
+  public Boolean getMatchAnyConditions() {
+    return matchAnyConditions;
+  }
+  public void setMatchAnyConditions(Boolean matchAnyConditions) {
+    this.matchAnyConditions = matchAnyConditions;
+  }
+
+
+  /**
+   * The time zone to use for this condition. Required for a timeAndDateCondition.
+   **/
+  public Condition timeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone to use for this condition. Required for a timeAndDateCondition.")
+  @JsonProperty("timeZoneId")
+  public String getTimeZoneId() {
+    return timeZoneId;
+  }
+  public void setTimeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -576,12 +635,15 @@ public class Condition  implements Serializable {
             Objects.equals(this.callAnalysisResultField, condition.callAnalysisResultField) &&
             Objects.equals(this.agentWrapupField, condition.agentWrapupField) &&
             Objects.equals(this.contactColumnToDataActionFieldMappings, condition.contactColumnToDataActionFieldMappings) &&
-            Objects.equals(this.predicates, condition.predicates);
+            Objects.equals(this.predicates, condition.predicates) &&
+            Objects.equals(this.subConditions, condition.subConditions) &&
+            Objects.equals(this.matchAnyConditions, condition.matchAnyConditions) &&
+            Objects.equals(this.timeZoneId, condition.timeZoneId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, property, propertyType, dataAction, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, property, propertyType, dataAction, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates, subConditions, matchAnyConditions, timeZoneId);
   }
 
   @Override
@@ -605,6 +667,9 @@ public class Condition  implements Serializable {
     sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
     sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    subConditions: ").append(toIndentedString(subConditions)).append("\n");
+    sb.append("    matchAnyConditions: ").append(toIndentedString(matchAnyConditions)).append("\n");
+    sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

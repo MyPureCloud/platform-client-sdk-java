@@ -31,6 +31,7 @@
 | **supportsVoice** | **Boolean** | Set to true if this phone number has the capability to support voice |  [optional] |
 | **integration** | [**DomainEntityRef**](DomainEntityRef) | The Genesys Cloud integration this phone number belongs to. |  [optional] |
 | **compliance** | [**Compliance**](Compliance) | Compliance configuration for short codes, including help, stop and opt in. |  [optional] |
+| **supportedContent** | [**SupportedContentReference**](SupportedContentReference) | Defines the media SupportedContent profile configured for an MMS capable phone number. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -88,4 +89,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

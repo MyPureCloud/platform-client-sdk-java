@@ -27,6 +27,7 @@ public class MediaRtpStatistics  implements Serializable {
   private Integer rtpEventsReceived = null;
   private Integer rtpEventsSent = null;
   private Double estimatedAverageMos = null;
+  private Double averageJitter = null;
 
   public MediaRtpStatistics() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -124,6 +125,24 @@ public class MediaRtpStatistics  implements Serializable {
   }
 
 
+  /**
+   * The average jitter
+   **/
+  public MediaRtpStatistics averageJitter(Double averageJitter) {
+    this.averageJitter = averageJitter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The average jitter")
+  @JsonProperty("averageJitter")
+  public Double getAverageJitter() {
+    return averageJitter;
+  }
+  public void setAverageJitter(Double averageJitter) {
+    this.averageJitter = averageJitter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -138,12 +157,13 @@ public class MediaRtpStatistics  implements Serializable {
             Objects.equals(this.packetsSent, mediaRtpStatistics.packetsSent) &&
             Objects.equals(this.rtpEventsReceived, mediaRtpStatistics.rtpEventsReceived) &&
             Objects.equals(this.rtpEventsSent, mediaRtpStatistics.rtpEventsSent) &&
-            Objects.equals(this.estimatedAverageMos, mediaRtpStatistics.estimatedAverageMos);
+            Objects.equals(this.estimatedAverageMos, mediaRtpStatistics.estimatedAverageMos) &&
+            Objects.equals(this.averageJitter, mediaRtpStatistics.averageJitter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(packetsReceived, packetsSent, rtpEventsReceived, rtpEventsSent, estimatedAverageMos);
+    return Objects.hash(packetsReceived, packetsSent, rtpEventsReceived, rtpEventsSent, estimatedAverageMos, averageJitter);
   }
 
   @Override
@@ -156,6 +176,7 @@ public class MediaRtpStatistics  implements Serializable {
     sb.append("    rtpEventsReceived: ").append(toIndentedString(rtpEventsReceived)).append("\n");
     sb.append("    rtpEventsSent: ").append(toIndentedString(rtpEventsSent)).append("\n");
     sb.append("    estimatedAverageMos: ").append(toIndentedString(estimatedAverageMos)).append("\n");
+    sb.append("    averageJitter: ").append(toIndentedString(averageJitter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

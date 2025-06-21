@@ -140,6 +140,7 @@ public class Miner  implements Serializable {
     }
   }
   private MinerTypeEnum minerType = null;
+  private Boolean seeding = null;
   private Date dateCreated = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
@@ -388,6 +389,24 @@ public class Miner  implements Serializable {
   }
 
 
+  /**
+   * Flag to indicate whether seeding is supported for this miner.
+   **/
+  public Miner seeding(Boolean seeding) {
+    this.seeding = seeding;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate whether seeding is supported for this miner.")
+  @JsonProperty("seeding")
+  public Boolean getSeeding() {
+    return seeding;
+  }
+  public void setSeeding(Boolean seeding) {
+    this.seeding = seeding;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -535,6 +554,7 @@ public class Miner  implements Serializable {
             Objects.equals(this.name, miner.name) &&
             Objects.equals(this.language, miner.language) &&
             Objects.equals(this.minerType, miner.minerType) &&
+            Objects.equals(this.seeding, miner.seeding) &&
             Objects.equals(this.dateCreated, miner.dateCreated) &&
             Objects.equals(this.status, miner.status) &&
             Objects.equals(this.conversationsDateRangeStart, miner.conversationsDateRangeStart) &&
@@ -558,7 +578,7 @@ public class Miner  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, language, minerType, dateCreated, status, conversationsDateRangeStart, conversationsDateRangeEnd, dateCompleted, message, errorInfo, warningInfo, conversationDataUploaded, mediaType, participantType, queueIds, dateTriggered, dateModified, latestDraftVersion, conversationsFetchedCount, conversationsValidCount, getminedItemCount, selfUri);
+    return Objects.hash(id, name, language, minerType, seeding, dateCreated, status, conversationsDateRangeStart, conversationsDateRangeEnd, dateCompleted, message, errorInfo, warningInfo, conversationDataUploaded, mediaType, participantType, queueIds, dateTriggered, dateModified, latestDraftVersion, conversationsFetchedCount, conversationsValidCount, getminedItemCount, selfUri);
   }
 
   @Override
@@ -570,6 +590,7 @@ public class Miner  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    minerType: ").append(toIndentedString(minerType)).append("\n");
+    sb.append("    seeding: ").append(toIndentedString(seeding)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    conversationsDateRangeStart: ").append(toIndentedString(conversationsDateRangeStart)).append("\n");

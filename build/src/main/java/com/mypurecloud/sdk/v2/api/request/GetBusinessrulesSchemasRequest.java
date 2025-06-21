@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;

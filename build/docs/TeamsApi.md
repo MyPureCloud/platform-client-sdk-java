@@ -302,7 +302,7 @@ Integer pageSize = 25; // Integer | Page size
 String name = "name_example"; // String | Return only teams whose names start with this value (case-insensitive matching)
 String after = "after_example"; // String | The cursor that points to the next item in the complete list of teams
 String before = "before_example"; // String | The cursor that points to the previous item in the complete list of teams
-String expand = "expand_example"; // String | Expand the name on each user
+String expand = "expand_example"; // String | Expand the division on each team
 try {
     TeamEntityListing result = apiInstance.getTeams(pageSize, name, after, before, expand);
     System.out.println(result);
@@ -321,7 +321,7 @@ try {
 | **name** | **String**| Return only teams whose names start with this value (case-insensitive matching) | [optional] 
 | **after** | **String**| The cursor that points to the next item in the complete list of teams | [optional] 
 | **before** | **String**| The cursor that points to the previous item in the complete list of teams | [optional] 
-| **expand** | **String**| Expand the name on each user | [optional]<br />**Values**: entities.division 
+| **expand** | **String**| Expand the division on each team | [optional]<br />**Values**: entities.division 
 {: class="table-striped"}
 
 
@@ -633,4 +633,4 @@ try {
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

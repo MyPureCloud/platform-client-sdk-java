@@ -11,9 +11,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
+import com.mypurecloud.sdk.v2.model.DeploymentIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
@@ -944,11 +944,11 @@ public class WebDeploymentsApi {
    * Get a deployment identity resolution setting.
    * 
    * @param deploymentId The deployment ID (required)
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(String deploymentId) throws IOException, ApiException {
+  public DeploymentIdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(String deploymentId) throws IOException, ApiException {
     return  getWebdeploymentsDeploymentIdentityresolution(createGetWebdeploymentsDeploymentIdentityresolutionRequest(deploymentId));
   }
 
@@ -956,10 +956,10 @@ public class WebDeploymentsApi {
    * Get a deployment identity resolution setting.
    * 
    * @param deploymentId The deployment ID (required)
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(String deploymentId) throws IOException {
+  public ApiResponse<DeploymentIdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(String deploymentId) throws IOException {
     return getWebdeploymentsDeploymentIdentityresolution(createGetWebdeploymentsDeploymentIdentityresolutionRequest(deploymentId).withHttpInfo());
   }
 
@@ -974,13 +974,13 @@ public class WebDeploymentsApi {
    * Get a deployment identity resolution setting.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(GetWebdeploymentsDeploymentIdentityresolutionRequest request) throws IOException, ApiException {
+  public DeploymentIdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(GetWebdeploymentsDeploymentIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<DeploymentIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DeploymentIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -996,13 +996,13 @@ public class WebDeploymentsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolution(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DeploymentIdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolution(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<DeploymentIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1013,7 +1013,7 @@ public class WebDeploymentsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1655,11 +1655,11 @@ public class WebDeploymentsApi {
    * 
    * @param deploymentId The deployment ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(String deploymentId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public DeploymentIdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(String deploymentId, DeploymentIdentityResolutionConfig body) throws IOException, ApiException {
     return  putWebdeploymentsDeploymentIdentityresolution(createPutWebdeploymentsDeploymentIdentityresolutionRequest(deploymentId, body));
   }
 
@@ -1668,14 +1668,14 @@ public class WebDeploymentsApi {
    * 
    * @param deploymentId The deployment ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(String deploymentId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<DeploymentIdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(String deploymentId, DeploymentIdentityResolutionConfig body) throws IOException {
     return putWebdeploymentsDeploymentIdentityresolution(createPutWebdeploymentsDeploymentIdentityresolutionRequest(deploymentId, body).withHttpInfo());
   }
 
-  private PutWebdeploymentsDeploymentIdentityresolutionRequest createPutWebdeploymentsDeploymentIdentityresolutionRequest(String deploymentId, IdentityResolutionConfig body) {
+  private PutWebdeploymentsDeploymentIdentityresolutionRequest createPutWebdeploymentsDeploymentIdentityresolutionRequest(String deploymentId, DeploymentIdentityResolutionConfig body) {
     return PutWebdeploymentsDeploymentIdentityresolutionRequest.builder()
             .withDeploymentId(deploymentId)
 
@@ -1688,13 +1688,13 @@ public class WebDeploymentsApi {
    * Update identity resolution settings for a deployment.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return DeploymentIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(PutWebdeploymentsDeploymentIdentityresolutionRequest request) throws IOException, ApiException {
+  public DeploymentIdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(PutWebdeploymentsDeploymentIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<DeploymentIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DeploymentIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1710,13 +1710,13 @@ public class WebDeploymentsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolution(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<DeploymentIdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolution(ApiRequest<DeploymentIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<DeploymentIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1727,7 +1727,7 @@ public class WebDeploymentsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

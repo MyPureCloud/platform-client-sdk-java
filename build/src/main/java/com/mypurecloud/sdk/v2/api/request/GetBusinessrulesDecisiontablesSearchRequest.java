@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
@@ -99,6 +100,78 @@ public class GetBusinessrulesDecisiontablesSearchRequest {
 	    return this;
 	} 
 
+	private Boolean withPublishedVersion;
+	public Boolean getWithPublishedVersion() {
+		return this.withPublishedVersion;
+	}
+
+	public void setWithPublishedVersion(Boolean withPublishedVersion) {
+		this.withPublishedVersion = withPublishedVersion;
+	}
+
+	public GetBusinessrulesDecisiontablesSearchRequest withWithPublishedVersion(Boolean withPublishedVersion) {
+	    this.setWithPublishedVersion(withPublishedVersion);
+	    return this;
+	} 
+
+	private List<String> expand;
+	public List<String> getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(List<String> expand) {
+		this.expand = expand;
+	}
+
+	public GetBusinessrulesDecisiontablesSearchRequest withExpand(List<String> expand) {
+	    this.setExpand(expand);
+	    return this;
+	} 
+
+	public enum expandValues { 
+		EXECUTIONINPUTSCHEMA("ExecutionInputSchema"),
+		EXECUTIONOUTPUTSCHEMA("ExecutionOutputSchema");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
+	private List<String> ids;
+	public List<String> getIds() {
+		return this.ids;
+	}
+
+	public void setIds(List<String> ids) {
+		this.ids = ids;
+	}
+
+	public GetBusinessrulesDecisiontablesSearchRequest withIds(List<String> ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,6 +206,15 @@ public class GetBusinessrulesDecisiontablesSearchRequest {
         
 
                 .withQueryParameters("name", "", name)
+        
+
+                .withQueryParameters("withPublishedVersion", "", withPublishedVersion)
+        
+
+                .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("ids", "multi", ids)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -172,6 +254,32 @@ public class GetBusinessrulesDecisiontablesSearchRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withWithPublishedVersion(Boolean withPublishedVersion) {
+			request.setWithPublishedVersion(withPublishedVersion);
+			return this;
+		}
+
+		public Builder withExpand(List<String> expand) {
+			request.setExpand(expand);
+			return this;
+		}
+
+
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
+
+		public Builder withIds(List<String> ids) {
+			request.setIds(ids);
 			return this;
 		}
 

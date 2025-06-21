@@ -293,6 +293,20 @@ public class PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest {
 	    return this;
 	} 
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -327,6 +341,9 @@ public class PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query")
                 .withPathParameter("businessUnitId", businessUnitId)
+        
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
         
                 .withBody(body)
 
@@ -363,6 +380,11 @@ public class PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest {
 
 		public Builder withBody(QueryUserStaffingGroupListRequest body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 

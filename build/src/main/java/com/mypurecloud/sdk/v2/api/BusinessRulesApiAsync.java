@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DecisionTableRowListing;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
 import com.mypurecloud.sdk.v2.model.DecisionTableVersionListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
@@ -63,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersions
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesDecisiontableVersionPublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutBusinessrulesSchemaRequest;
 
 import java.io.IOException;
@@ -1393,12 +1395,13 @@ public class BusinessRulesApiAsync {
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DecisionTableRow> patchBusinessrulesDecisiontableVersionRowAsync(PatchBusinessrulesDecisiontableVersionRowRequest request, final AsyncApiCallback<DecisionTableRow> callback) {
     try {
@@ -1428,12 +1431,13 @@ public class BusinessRulesApiAsync {
   }
 
   /**
-   * Update a decision table row
+   * Partially update a decision table row. Will be deprecated, we should use PUT request.
    * 
    * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DecisionTableRow>> patchBusinessrulesDecisiontableVersionRowAsync(ApiRequest<UpdateDecisionTableRowRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableRow>> callback) {
     try {
@@ -2228,6 +2232,83 @@ public class BusinessRulesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DecisionTableRow> putBusinessrulesDecisiontableVersionRowAsync(PutBusinessrulesDecisiontableVersionRowRequest request, final AsyncApiCallback<DecisionTableRow> callback) {
+    try {
+      final SettableFuture<DecisionTableRow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DecisionTableRow>() {}, new AsyncApiCallback<ApiResponse<DecisionTableRow>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableRow> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Full update a decision table row
+   * 
+   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DecisionTableRow>> putBusinessrulesDecisiontableVersionRowAsync(ApiRequest<PutDecisionTableRowRequest> request, final AsyncApiCallback<ApiResponse<DecisionTableRow>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DecisionTableRow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DecisionTableRow>() {}, new AsyncApiCallback<ApiResponse<DecisionTableRow>>() {
+        @Override
+        public void onCompleted(ApiResponse<DecisionTableRow> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

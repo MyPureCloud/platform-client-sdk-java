@@ -2819,7 +2819,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic emergency group objects filterable by query parameters.
-   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -2837,7 +2837,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic emergency group objects filterable by query parameters.
-   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -2873,7 +2873,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic emergency group objects filterable by query parameters.
-   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return EmergencyGroupDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
@@ -2892,7 +2892,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic emergency group objects filterable by query parameters.
-   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9285,6 +9285,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a user prompt file
    * 
+   * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAssetUpload
@@ -9298,6 +9299,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a user prompt file
    * 
+   * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAssetUpload
@@ -9319,6 +9321,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a user prompt file
    * 
+   * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return PromptAssetUpload
    * @throws ApiException if the request fails on the server
@@ -9338,6 +9341,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a user prompt file
    * 
+   * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9761,6 +9765,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a system prompt file
    * 
+   * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAssetUpload
@@ -9774,6 +9779,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a system prompt file
    * 
+   * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAssetUpload
@@ -9795,6 +9801,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a system prompt file
    * 
+   * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return PromptAssetUpload
    * @throws ApiException if the request fails on the server
@@ -9814,6 +9821,7 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a system prompt file
    * 
+   * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

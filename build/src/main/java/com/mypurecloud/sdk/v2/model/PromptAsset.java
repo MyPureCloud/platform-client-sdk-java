@@ -183,7 +183,7 @@ public class PromptAsset  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Upload URI for the resource audio")
+  @ApiModelProperty(example = "null", value = "Deprecated. This was use for uploading the resource audio.")
   @JsonProperty("uploadUri")
   public String getUploadUri() {
     return uploadUri;

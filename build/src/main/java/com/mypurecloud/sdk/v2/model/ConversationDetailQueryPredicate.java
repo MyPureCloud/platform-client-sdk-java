@@ -167,6 +167,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     NOVERSLA("nOverSla"),
     NSTATETRANSITIONERROR("nStateTransitionError"),
     NTRANSFERRED("nTransferred"),
+    OAUDIOMESSAGECOUNT("oAudioMessageCount"),
+    OEXTERNALAUDIOMESSAGECOUNT("oExternalAudioMessageCount"),
     OEXTERNALMEDIACOUNT("oExternalMediaCount"),
     OFLOWMILESTONE("oFlowMilestone"),
     OMEDIACOUNT("oMediaCount"),

@@ -70,7 +70,6 @@ public class JourneyAsyncAggregationQuery  implements Serializable {
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTASSIGNMENTSTATE("journeySegmentAssignmentState"),
     JOURNEYSEGMENTID("journeySegmentId"),
-    JOURNEYSEGMENTSCOPE("journeySegmentScope"),
     JOURNEYSESSIONID("journeySessionId"),
     JOURNEYSESSIONSEGMENTID("journeySessionSegmentId"),
     JOURNEYSESSIONTYPE("journeySessionType"),

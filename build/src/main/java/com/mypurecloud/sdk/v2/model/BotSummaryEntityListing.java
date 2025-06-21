@@ -33,8 +33,8 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
   private String firstUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   public BotSummaryEntityListing() {
@@ -165,23 +165,6 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
 
   /**
    **/
-  public BotSummaryEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public BotSummaryEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -194,6 +177,23 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public BotSummaryEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -231,14 +231,14 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
             Objects.equals(this.firstUri, botSummaryEntityListing.firstUri) &&
             Objects.equals(this.lastUri, botSummaryEntityListing.lastUri) &&
             Objects.equals(this.selfUri, botSummaryEntityListing.selfUri) &&
-            Objects.equals(this.nextUri, botSummaryEntityListing.nextUri) &&
             Objects.equals(this.previousUri, botSummaryEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, botSummaryEntityListing.nextUri) &&
             Objects.equals(this.pageCount, botSummaryEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class BotSummaryEntityListing  implements Serializable, PagedResource<Bot
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

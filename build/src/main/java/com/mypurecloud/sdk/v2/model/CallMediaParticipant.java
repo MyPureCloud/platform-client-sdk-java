@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
+import com.mypurecloud.sdk.v2.model.RecordersState;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -39,6 +40,7 @@ public class CallMediaParticipant  implements Serializable {
   private String name = null;
   private String address = null;
   private Date startTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date endTime = null;
   private Date startHoldTime = null;
@@ -183,7 +185,8 @@ public class CallMediaParticipant  implements Serializable {
     ERROR("error"),
     PEER("peer"),
     OTHER("other"),
-    SPAM("spam");
+    SPAM("spam"),
+    INACTIVITY("inactivity");
 
     private String value;
 
@@ -335,6 +338,7 @@ public class CallMediaParticipant  implements Serializable {
     }
   }
   private RecordingStateEnum recordingState = null;
+  private RecordersState recordersState = null;
   private DomainEntityRef group = null;
   private String ani = null;
   private String dnis = null;
@@ -425,6 +429,24 @@ public class CallMediaParticipant  implements Serializable {
   }
   public void setStartTime(Date startTime) {
     this.startTime = startTime;
+  }
+
+
+  /**
+   * The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CallMediaParticipant startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
   }
 
 
@@ -1095,6 +1117,24 @@ public class CallMediaParticipant  implements Serializable {
 
 
   /**
+   * Contains the states of different recorders.
+   **/
+  public CallMediaParticipant recordersState(RecordersState recordersState) {
+    this.recordersState = recordersState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Contains the states of different recorders.")
+  @JsonProperty("recordersState")
+  public RecordersState getRecordersState() {
+    return recordersState;
+  }
+  public void setRecordersState(RecordersState recordersState) {
+    this.recordersState = recordersState;
+  }
+
+
+  /**
    * The group involved in the group ring call.
    **/
   public CallMediaParticipant group(DomainEntityRef group) {
@@ -1342,6 +1382,7 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.name, callMediaParticipant.name) &&
             Objects.equals(this.address, callMediaParticipant.address) &&
             Objects.equals(this.startTime, callMediaParticipant.startTime) &&
+            Objects.equals(this.startAlertingTime, callMediaParticipant.startAlertingTime) &&
             Objects.equals(this.connectedTime, callMediaParticipant.connectedTime) &&
             Objects.equals(this.endTime, callMediaParticipant.endTime) &&
             Objects.equals(this.startHoldTime, callMediaParticipant.startHoldTime) &&
@@ -1379,6 +1420,7 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.confined, callMediaParticipant.confined) &&
             Objects.equals(this.recording, callMediaParticipant.recording) &&
             Objects.equals(this.recordingState, callMediaParticipant.recordingState) &&
+            Objects.equals(this.recordersState, callMediaParticipant.recordersState) &&
             Objects.equals(this.group, callMediaParticipant.group) &&
             Objects.equals(this.ani, callMediaParticipant.ani) &&
             Objects.equals(this.dnis, callMediaParticipant.dnis) &&
@@ -1396,7 +1438,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
+    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, muted, confined, recording, recordingState, recordersState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
   }
 
   @Override
@@ -1408,6 +1450,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
@@ -1445,6 +1488,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");

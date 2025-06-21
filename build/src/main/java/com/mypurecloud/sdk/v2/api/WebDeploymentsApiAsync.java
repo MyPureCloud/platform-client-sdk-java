@@ -14,9 +14,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
+import com.mypurecloud.sdk.v2.model.DeploymentIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
@@ -899,13 +899,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolutionAsync(GetWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<DeploymentIdentityResolutionConfig> getWebdeploymentsDeploymentIdentityresolutionAsync(GetWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<DeploymentIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<DeploymentIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DeploymentIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<DeploymentIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -933,13 +933,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<DeploymentIdentityResolutionConfig>> getWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DeploymentIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DeploymentIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<DeploymentIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -947,7 +947,7 @@ public class WebDeploymentsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -955,7 +955,7 @@ public class WebDeploymentsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1574,13 +1574,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolutionAsync(PutWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<DeploymentIdentityResolutionConfig> putWebdeploymentsDeploymentIdentityresolutionAsync(PutWebdeploymentsDeploymentIdentityresolutionRequest request, final AsyncApiCallback<DeploymentIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<DeploymentIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DeploymentIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<DeploymentIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1608,13 +1608,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<DeploymentIdentityResolutionConfig>> putWebdeploymentsDeploymentIdentityresolutionAsync(ApiRequest<DeploymentIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DeploymentIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DeploymentIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<DeploymentIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<DeploymentIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1622,7 +1622,7 @@ public class WebDeploymentsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1630,7 +1630,7 @@ public class WebDeploymentsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DeploymentIdentityResolutionConfig> response = (ApiResponse<DeploymentIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

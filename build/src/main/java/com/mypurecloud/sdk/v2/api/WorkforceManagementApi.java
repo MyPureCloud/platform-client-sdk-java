@@ -5011,12 +5011,13 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return StaffingGroupListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(String businessUnitId, String managementUnitId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId));
+  public StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId, forceDownloadService));
   }
 
   /**
@@ -5024,18 +5025,21 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return StaffingGroupListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StaffingGroupListing> getWorkforcemanagementBusinessunitStaffinggroupsWithHttpInfo(String businessUnitId, String managementUnitId) throws IOException {
-    return getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId).withHttpInfo());
+  public ApiResponse<StaffingGroupListing> getWorkforcemanagementBusinessunitStaffinggroupsWithHttpInfo(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId, forceDownloadService).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitStaffinggroupsRequest createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(String businessUnitId, String managementUnitId) {
+  private GetWorkforcemanagementBusinessunitStaffinggroupsRequest createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(String businessUnitId, String managementUnitId, Boolean forceDownloadService) {
     return GetWorkforcemanagementBusinessunitStaffinggroupsRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withManagementUnitId(managementUnitId)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -15215,12 +15219,13 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service (optional)
    * @return UserStaffingGroupListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(String businessUnitId, QueryUserStaffingGroupListRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body));
+  public UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(String businessUnitId, QueryUserStaffingGroupListRequest body, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body, forceDownloadService));
   }
 
   /**
@@ -15228,18 +15233,21 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service (optional)
    * @return UserStaffingGroupListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserStaffingGroupListing> postWorkforcemanagementBusinessunitStaffinggroupsQueryWithHttpInfo(String businessUnitId, QueryUserStaffingGroupListRequest body) throws IOException {
-    return postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body).withHttpInfo());
+  public ApiResponse<UserStaffingGroupListing> postWorkforcemanagementBusinessunitStaffinggroupsQueryWithHttpInfo(String businessUnitId, QueryUserStaffingGroupListRequest body, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(String businessUnitId, QueryUserStaffingGroupListRequest body) {
+  private PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(String businessUnitId, QueryUserStaffingGroupListRequest body, Boolean forceDownloadService) {
     return PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withBody(body)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -16881,7 +16889,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The ID of the work plan bid to copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBid
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -16895,7 +16903,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param bidId The ID of the work plan bid to copy (required)
-   * @param body body (optional)
+   * @param body body (required)
    * @return WorkPlanBid
    * @throws IOException if the request fails to be processed
    */

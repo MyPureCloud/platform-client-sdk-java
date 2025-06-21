@@ -114,6 +114,7 @@ public class Limit  implements Serializable {
     USAGE("usage"),
     USERS("users"),
     USERS_RULES("users.rules"),
+    VOICE_TRANSCRIPTION("voice.transcription"),
     WEB_DEPLOYMENTS("web.deployments"),
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),

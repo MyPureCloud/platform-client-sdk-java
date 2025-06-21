@@ -27,11 +27,13 @@ public class AgentQueueTimeRequest  implements Serializable {
   private String agentId = null;
   private List<Integer> startOffsetMinutes = null;
   private List<Integer> onQueueLengthMinutesPerInterval = null;
+  private List<String> onQueueActivityCodeIds = null;
 
   public AgentQueueTimeRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       startOffsetMinutes = new ArrayList<Integer>();
       onQueueLengthMinutesPerInterval = new ArrayList<Integer>();
+      onQueueActivityCodeIds = new ArrayList<String>();
     }
   }
 
@@ -73,20 +75,38 @@ public class AgentQueueTimeRequest  implements Serializable {
 
 
   /**
-   * List of on queue time lengths in minutes per interval of elements in startOffsetMinutes
+   * List of on-queue time lengths in minutes per interval of elements in startOffsetMinutes
    **/
   public AgentQueueTimeRequest onQueueLengthMinutesPerInterval(List<Integer> onQueueLengthMinutesPerInterval) {
     this.onQueueLengthMinutesPerInterval = onQueueLengthMinutesPerInterval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of on queue time lengths in minutes per interval of elements in startOffsetMinutes")
+  @ApiModelProperty(example = "null", required = true, value = "List of on-queue time lengths in minutes per interval of elements in startOffsetMinutes")
   @JsonProperty("onQueueLengthMinutesPerInterval")
   public List<Integer> getOnQueueLengthMinutesPerInterval() {
     return onQueueLengthMinutesPerInterval;
   }
   public void setOnQueueLengthMinutesPerInterval(List<Integer> onQueueLengthMinutesPerInterval) {
     this.onQueueLengthMinutesPerInterval = onQueueLengthMinutesPerInterval;
+  }
+
+
+  /**
+   * List of on-queue activity code ids
+   **/
+  public AgentQueueTimeRequest onQueueActivityCodeIds(List<String> onQueueActivityCodeIds) {
+    this.onQueueActivityCodeIds = onQueueActivityCodeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of on-queue activity code ids")
+  @JsonProperty("onQueueActivityCodeIds")
+  public List<String> getOnQueueActivityCodeIds() {
+    return onQueueActivityCodeIds;
+  }
+  public void setOnQueueActivityCodeIds(List<String> onQueueActivityCodeIds) {
+    this.onQueueActivityCodeIds = onQueueActivityCodeIds;
   }
 
 
@@ -102,12 +122,13 @@ public class AgentQueueTimeRequest  implements Serializable {
 
     return Objects.equals(this.agentId, agentQueueTimeRequest.agentId) &&
             Objects.equals(this.startOffsetMinutes, agentQueueTimeRequest.startOffsetMinutes) &&
-            Objects.equals(this.onQueueLengthMinutesPerInterval, agentQueueTimeRequest.onQueueLengthMinutesPerInterval);
+            Objects.equals(this.onQueueLengthMinutesPerInterval, agentQueueTimeRequest.onQueueLengthMinutesPerInterval) &&
+            Objects.equals(this.onQueueActivityCodeIds, agentQueueTimeRequest.onQueueActivityCodeIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(agentId, startOffsetMinutes, onQueueLengthMinutesPerInterval);
+    return Objects.hash(agentId, startOffsetMinutes, onQueueLengthMinutesPerInterval, onQueueActivityCodeIds);
   }
 
   @Override
@@ -118,6 +139,7 @@ public class AgentQueueTimeRequest  implements Serializable {
     sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
     sb.append("    startOffsetMinutes: ").append(toIndentedString(startOffsetMinutes)).append("\n");
     sb.append("    onQueueLengthMinutesPerInterval: ").append(toIndentedString(onQueueLengthMinutesPerInterval)).append("\n");
+    sb.append("    onQueueActivityCodeIds: ").append(toIndentedString(onQueueActivityCodeIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

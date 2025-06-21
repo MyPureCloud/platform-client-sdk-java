@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.LineEntityListing;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
+import com.mypurecloud.sdk.v2.model.MediaStatisticsPostRequest;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;

@@ -23,7 +23,10 @@ import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGreetingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingDownloadsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingGroupsDownloadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGreetingUsersDownloadsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGreetingsDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupGreetingsRequest;
@@ -207,8 +210,158 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Get media playback URI for this greeting
+   * Download a organization greeting recording
    * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GreetingMediaInfo> getGreetingDownloadsAsync(GetGreetingDownloadsRequest request, final AsyncApiCallback<GreetingMediaInfo> callback) {
+    try {
+      final SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Download a organization greeting recording
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GreetingMediaInfo>> getGreetingDownloadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GreetingMediaInfo> getGreetingGroupsDownloadsAsync(GetGreetingGroupsDownloadsRequest request, final AsyncApiCallback<GreetingMediaInfo> callback) {
+    try {
+      final SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Download a group greeting recording
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GreetingMediaInfo>> getGreetingGroupsDownloadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get media playback URI for this greeting
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -242,12 +395,87 @@ public class GreetingsApiAsync {
 
   /**
    * Get media playback URI for this greeting
-   * 
+   * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GreetingMediaInfo> getGreetingUsersDownloadsAsync(GetGreetingUsersDownloadsRequest request, final AsyncApiCallback<GreetingMediaInfo> callback) {
+    try {
+      final SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Download a user greeting recording
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GreetingMediaInfo>> getGreetingUsersDownloadsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
     try {
       final SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

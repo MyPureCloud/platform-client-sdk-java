@@ -13,7 +13,7 @@
 | **ttsString** | **String** | Text to speech of the resource |  [optional] |
 | **text** | **String** | Text of the resource |  [optional] |
 | **uploadStatus** | [**UploadStatusEnum**](#Enum--UploadStatusEnum) | Audio upload status |  [optional] |
-| **uploadUri** | **String** | Upload URI for the resource audio |  [optional] |
+| **uploadUri** | **String** | Deprecated. This was use for uploading the resource audio. |  [optional] |
 | **languageDefault** | **Boolean** | Whether or not this resource locale is the default for the language |  [optional] |
 | **tags** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) |  |  [optional] |
 | **durationSeconds** | **Double** |  |  [optional] |
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

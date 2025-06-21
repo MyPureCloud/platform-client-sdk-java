@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.Compliance;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsProvisioningStatus;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -299,6 +300,7 @@ public class SmsPhoneNumber  implements Serializable {
   private Boolean supportsVoice = null;
   private DomainEntityRef integration = null;
   private Compliance compliance = null;
+  private SupportedContentReference supportedContent = null;
   private String selfUri = null;
 
   public SmsPhoneNumber() {
@@ -742,6 +744,24 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
 
+  /**
+   * Defines the media SupportedContent profile configured for an MMS capable phone number.
+   **/
+  public SmsPhoneNumber supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the media SupportedContent profile configured for an MMS capable phone number.")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -785,12 +805,13 @@ public class SmsPhoneNumber  implements Serializable {
             Objects.equals(this.supportsVoice, smsPhoneNumber.supportsVoice) &&
             Objects.equals(this.integration, smsPhoneNumber.integration) &&
             Objects.equals(this.compliance, smsPhoneNumber.compliance) &&
+            Objects.equals(this.supportedContent, smsPhoneNumber.supportedContent) &&
             Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, country, supportsSms, supportsMms, supportsVoice, integration, compliance, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, country, supportsSms, supportsMms, supportsVoice, integration, compliance, supportedContent, selfUri);
   }
 
   @Override
@@ -824,6 +845,7 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    supportsVoice: ").append(toIndentedString(supportsVoice)).append("\n");
     sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

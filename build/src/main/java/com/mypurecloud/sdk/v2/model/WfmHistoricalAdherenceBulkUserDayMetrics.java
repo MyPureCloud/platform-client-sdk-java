@@ -221,14 +221,14 @@ public class WfmHistoricalAdherenceBulkUserDayMetrics  implements Serializable {
 
 
   /**
-   * Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
+   * Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on-queue time is greater than the scheduled on-queue time for the same period.
    **/
   public WfmHistoricalAdherenceBulkUserDayMetrics conformancePercentage(Double conformancePercentage) {
     this.conformancePercentage = conformancePercentage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.")
+  @ApiModelProperty(example = "null", value = "Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on-queue time is greater than the scheduled on-queue time for the same period.")
   @JsonProperty("conformancePercentage")
   public Double getConformancePercentage() {
     return conformancePercentage;

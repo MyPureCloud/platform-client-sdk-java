@@ -55,14 +55,14 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
 
 
   /**
-   * The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
+   * The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
    **/
   public QueryTimeOffLimitValuesRequest activityCodeId(String activityCodeId) {
     this.activityCodeId = activityCodeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified")
+  @ApiModelProperty(example = "null", value = "The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified")
   @JsonProperty("activityCodeId")
   public String getActivityCodeId() {
     return activityCodeId;

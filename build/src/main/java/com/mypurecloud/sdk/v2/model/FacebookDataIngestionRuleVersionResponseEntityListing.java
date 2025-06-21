@@ -33,8 +33,8 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
   private String firstUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   public FacebookDataIngestionRuleVersionResponseEntityListing() {
@@ -165,23 +165,6 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
 
   /**
    **/
-  public FacebookDataIngestionRuleVersionResponseEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public FacebookDataIngestionRuleVersionResponseEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -194,6 +177,23 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public FacebookDataIngestionRuleVersionResponseEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -231,14 +231,14 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
             Objects.equals(this.firstUri, facebookDataIngestionRuleVersionResponseEntityListing.firstUri) &&
             Objects.equals(this.lastUri, facebookDataIngestionRuleVersionResponseEntityListing.lastUri) &&
             Objects.equals(this.selfUri, facebookDataIngestionRuleVersionResponseEntityListing.selfUri) &&
-            Objects.equals(this.nextUri, facebookDataIngestionRuleVersionResponseEntityListing.nextUri) &&
             Objects.equals(this.previousUri, facebookDataIngestionRuleVersionResponseEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, facebookDataIngestionRuleVersionResponseEntityListing.nextUri) &&
             Objects.equals(this.pageCount, facebookDataIngestionRuleVersionResponseEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class FacebookDataIngestionRuleVersionResponseEntityListing  implements S
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

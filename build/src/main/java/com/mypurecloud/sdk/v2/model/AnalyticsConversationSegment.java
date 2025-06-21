@@ -68,7 +68,8 @@ public class AnalyticsConversationSegment  implements Serializable {
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
     TRANSPORTFAILURE("transportFailure"),
-    UNCALLABLE("uncallable");
+    UNCALLABLE("uncallable"),
+    INACTIVITY("inactivity");
 
     private String value;
 

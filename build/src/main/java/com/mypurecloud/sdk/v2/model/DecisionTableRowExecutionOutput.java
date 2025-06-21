@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class DecisionTableRowExecutionOutput  implements Serializable {
   
   private String rowId = null;
+  private Integer rowIndex = null;
   private Map<String, Object> outputs = null;
 
   public DecisionTableRowExecutionOutput() {
@@ -49,6 +50,24 @@ public class DecisionTableRowExecutionOutput  implements Serializable {
   }
   public void setRowId(String rowId) {
     this.rowId = rowId;
+  }
+
+
+  /**
+   * Unique rule identifier.
+   **/
+  public DecisionTableRowExecutionOutput rowIndex(Integer rowIndex) {
+    this.rowIndex = rowIndex;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Unique rule identifier.")
+  @JsonProperty("rowIndex")
+  public Integer getRowIndex() {
+    return rowIndex;
+  }
+  public void setRowIndex(Integer rowIndex) {
+    this.rowIndex = rowIndex;
   }
 
 
@@ -81,12 +100,13 @@ public class DecisionTableRowExecutionOutput  implements Serializable {
     DecisionTableRowExecutionOutput decisionTableRowExecutionOutput = (DecisionTableRowExecutionOutput) o;
 
     return Objects.equals(this.rowId, decisionTableRowExecutionOutput.rowId) &&
+            Objects.equals(this.rowIndex, decisionTableRowExecutionOutput.rowIndex) &&
             Objects.equals(this.outputs, decisionTableRowExecutionOutput.outputs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rowId, outputs);
+    return Objects.hash(rowId, rowIndex, outputs);
   }
 
   @Override
@@ -95,6 +115,7 @@ public class DecisionTableRowExecutionOutput  implements Serializable {
     sb.append("class DecisionTableRowExecutionOutput {\n");
     
     sb.append("    rowId: ").append(toIndentedString(rowId)).append("\n");
+    sb.append("    rowIndex: ").append(toIndentedString(rowIndex)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("}");
     return sb.toString();

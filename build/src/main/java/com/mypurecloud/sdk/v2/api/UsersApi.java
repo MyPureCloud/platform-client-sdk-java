@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
@@ -131,6 +132,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
@@ -4890,6 +4892,108 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserMe> response = (ApiResponse<UserMe>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param state Only list users of this state (optional, default to active)
+   * @return UserCursorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCursorEntityListing getUsersQuery(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
+    return  getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state));
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+   * @param state Only list users of this state (optional, default to active)
+   * @return UserCursorEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCursorEntityListing> getUsersQueryWithHttpInfo(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException {
+    return getUsersQuery(createGetUsersQueryRequest(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state).withHttpInfo());
+  }
+
+  private GetUsersQueryRequest createGetUsersQueryRequest(String cursor, Integer pageSize, String sortOrder, List<String> expand, String integrationPresenceSource, String state) {
+    return GetUsersQueryRequest.builder()
+            .withCursor(cursor)
+
+            .withPageSize(pageSize)
+
+            .withSortOrder(sortOrder)
+
+            .withExpand(expand)
+
+            .withIntegrationPresenceSource(integrationPresenceSource)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UserCursorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserCursorEntityListing getUsersQuery(GetUsersQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserCursorEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserCursorEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+   * 
+   * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserCursorEntityListing> getUsersQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserCursorEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCursorEntityListing> response = (ApiResponse<UserCursorEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserCursorEntityListing> response = (ApiResponse<UserCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -15,7 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -83,10 +85,12 @@ public class DataIngestionRuleResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String platform = null;
+  private List<String> countries = null;
   private String selfUri = null;
 
   public DataIngestionRuleResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      countries = new ArrayList<String>();
     }
   }
 
@@ -202,6 +206,13 @@ public class DataIngestionRuleResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
+  @JsonProperty("countries")
+  public List<String> getCountries() {
+    return countries;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -227,12 +238,13 @@ public class DataIngestionRuleResponse  implements Serializable {
             Objects.equals(this.dateCreated, dataIngestionRuleResponse.dateCreated) &&
             Objects.equals(this.dateModified, dataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.platform, dataIngestionRuleResponse.platform) &&
+            Objects.equals(this.countries, dataIngestionRuleResponse.countries) &&
             Objects.equals(this.selfUri, dataIngestionRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, countries, selfUri);
   }
 
   @Override
@@ -248,6 +260,7 @@ public class DataIngestionRuleResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

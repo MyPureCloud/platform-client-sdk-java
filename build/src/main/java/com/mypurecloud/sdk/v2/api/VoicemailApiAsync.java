@@ -824,7 +824,7 @@ public class VoicemailApiAsync {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -858,7 +858,7 @@ public class VoicemailApiAsync {
 
   /**
    * Get media playback URI for this voicemail message
-   * 
+   * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

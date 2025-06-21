@@ -103,10 +103,12 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     INITIATINGAGENTSCHEDULENOTFOUND("InitiatingAgentScheduleNotFound"),
     INITIATINGAGENTSHIFTHASEXTERNALACTIVITIES("InitiatingAgentShiftHasExternalActivities"),
     INITIATINGAGENTSHIFTNOTFOUND("InitiatingAgentShiftNotFound"),
+    INITIATINGEXTERNALACTIVITYOUTSIDERECEIVINGSHIFT("InitiatingExternalActivityOutsideReceivingShift"),
     RECEIVINGAGENTNOTFOUND("ReceivingAgentNotFound"),
     RECEIVINGAGENTSCHEDULENOTFOUND("ReceivingAgentScheduleNotFound"),
     RECEIVINGAGENTSHIFTHASEXTERNALACTIVITIES("ReceivingAgentShiftHasExternalActivities"),
     RECEIVINGAGENTSHIFTNOTFOUND("ReceivingAgentShiftNotFound"),
+    RECEIVINGEXTERNALACTIVITYOUTSIDEINITIATINGSHIFT("ReceivingExternalActivityOutsideInitiatingShift"),
     SCHEDULENOTPUBLISHED("ScheduleNotPublished"),
     TRANSITIONNOTALLOWED("TransitionNotAllowed");
 

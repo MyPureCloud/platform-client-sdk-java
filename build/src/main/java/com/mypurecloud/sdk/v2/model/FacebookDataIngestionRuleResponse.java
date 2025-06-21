@@ -15,7 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -83,11 +85,13 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String platform = null;
+  private List<String> countries = null;
   private String integrationId = null;
   private String selfUri = null;
 
   public FacebookDataIngestionRuleResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      countries = new ArrayList<String>();
     }
   }
 
@@ -203,6 +207,13 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.")
+  @JsonProperty("countries")
+  public List<String> getCountries() {
+    return countries;
+  }
+
+
   /**
    * The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
    **/
@@ -246,13 +257,14 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
             Objects.equals(this.dateCreated, facebookDataIngestionRuleResponse.dateCreated) &&
             Objects.equals(this.dateModified, facebookDataIngestionRuleResponse.dateModified) &&
             Objects.equals(this.platform, facebookDataIngestionRuleResponse.platform) &&
+            Objects.equals(this.countries, facebookDataIngestionRuleResponse.countries) &&
             Objects.equals(this.integrationId, facebookDataIngestionRuleResponse.integrationId) &&
             Objects.equals(this.selfUri, facebookDataIngestionRuleResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, integrationId, selfUri);
+    return Objects.hash(id, name, description, status, version, dateCreated, dateModified, platform, countries, integrationId, selfUri);
   }
 
   @Override
@@ -268,6 +280,7 @@ public class FacebookDataIngestionRuleResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

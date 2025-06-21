@@ -55,14 +55,14 @@ public class PerformancePredictionUploadSchema  implements Serializable {
 
 
   /**
-   * List of agent on queue times by management unit
+   * List of agent on-queue times by management unit
    **/
   public PerformancePredictionUploadSchema onQueueTimes(List<MuAgentQueueTimeRequest> onQueueTimes) {
     this.onQueueTimes = onQueueTimes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of agent on queue times by management unit")
+  @ApiModelProperty(example = "null", required = true, value = "List of agent on-queue times by management unit")
   @JsonProperty("onQueueTimes")
   public List<MuAgentQueueTimeRequest> getOnQueueTimes() {
     return onQueueTimes;

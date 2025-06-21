@@ -48,7 +48,12 @@ public class AgentStateQueryRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USERNAME("userName"),
     SEGMENTSTART("segmentStart"),
-    SESSIONSTART("sessionStart");
+    SESSIONSTART("sessionStart"),
+    PRESENCEDATE("presenceDate"),
+    ROUTINGSTATUSDATE("routingStatusDate"),
+    SYSTEMPRESENCE("systemPresence"),
+    ROUTINGSTATUS("routingStatus"),
+    ORGANIZATIONPRESENCEID("organizationPresenceId");
 
     private String value;
 

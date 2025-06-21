@@ -351,14 +351,18 @@ public class GetWorkforcemanagementManagementunitsRequest {
 	} 
 
 	public enum featureValues { 
+		AGENTHISTORICALADHERENCE("AgentHistoricalAdherence"),
+		AGENTHISTORICALADHERENCECONFORMANCE("AgentHistoricalAdherenceConformance"),
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		AGENTWORKPLANBID("AgentWorkPlanBid"),
 		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
 		LEARNING("Learning"),
+		AGENTUNAVAILABLETIMES("AgentUnavailableTimes"),
 		ACTIVITYCODES("ActivityCodes"),
 		ACTIVITYPLANS("ActivityPlans"),
+		UNAVAILABLETIMES("UnavailableTimes"),
 		AGENTS("Agents"),
 		BUACTIVITYCODES("BuActivityCodes"),
 		BUSINESSUNITS("BusinessUnits"),

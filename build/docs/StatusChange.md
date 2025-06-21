@@ -129,6 +129,7 @@
 | USAGE | &quot;usage&quot; | 
 | USERS | &quot;users&quot; | 
 | USERS_RULES | &quot;users.rules&quot; | 
+| VOICE_TRANSCRIPTION | &quot;voice.transcription&quot; | 
 | WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
@@ -152,4 +153,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

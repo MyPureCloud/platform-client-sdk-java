@@ -21,9 +21,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
+import com.mypurecloud.sdk.v2.model.DeploymentIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
@@ -49,16 +49,16 @@ public class PutWebdeploymentsDeploymentIdentityresolutionRequest {
 	    return this;
 	} 
 
-	private IdentityResolutionConfig body;
-	public IdentityResolutionConfig getBody() {
+	private DeploymentIdentityResolutionConfig body;
+	public DeploymentIdentityResolutionConfig getBody() {
 		return this.body;
 	}
 
-	public void setBody(IdentityResolutionConfig body) {
+	public void setBody(DeploymentIdentityResolutionConfig body) {
 		this.body = body;
 	}
 
-	public PutWebdeploymentsDeploymentIdentityresolutionRequest withBody(IdentityResolutionConfig body) {
+	public PutWebdeploymentsDeploymentIdentityresolutionRequest withBody(DeploymentIdentityResolutionConfig body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -82,7 +82,7 @@ public class PutWebdeploymentsDeploymentIdentityresolutionRequest {
         return this;
     }
 
-    public ApiRequest<IdentityResolutionConfig> withHttpInfo() {
+    public ApiRequest<DeploymentIdentityResolutionConfig> withHttpInfo() {
         
         // verify the required parameter 'deploymentId' is set
         if (this.deploymentId == null) {
@@ -112,7 +112,7 @@ public class PutWebdeploymentsDeploymentIdentityresolutionRequest {
 	}
 
 
-	public static Builder builder(String deploymentId, IdentityResolutionConfig body) {
+	public static Builder builder(String deploymentId, DeploymentIdentityResolutionConfig body) {
 	    return new Builder()
 	            .withRequiredParams(deploymentId, body);
 	}
@@ -131,14 +131,14 @@ public class PutWebdeploymentsDeploymentIdentityresolutionRequest {
 			return this;
 		}
 
-		public Builder withBody(IdentityResolutionConfig body) {
+		public Builder withBody(DeploymentIdentityResolutionConfig body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String deploymentId, IdentityResolutionConfig body) {
+		public Builder withRequiredParams(String deploymentId, DeploymentIdentityResolutionConfig body) {
 			request.setDeploymentId(deploymentId);
 			request.setBody(body);
 

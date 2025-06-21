@@ -101,7 +101,7 @@ public class Conversation  implements Serializable {
     }
   }
   /**
-   * The conversation's state
+   * On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -149,6 +149,7 @@ public class Conversation  implements Serializable {
   private List<TransferResponse> recentTransfers = null;
   private Boolean securePause = null;
   private String utilizationLabelId = null;
+  private Date inactivityTimeout = null;
   private String selfUri = null;
 
   public Conversation() {
@@ -330,14 +331,14 @@ public class Conversation  implements Serializable {
 
 
   /**
-   * The conversation's state
+   * On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.
    **/
   public Conversation state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The conversation's state")
+  @ApiModelProperty(example = "null", value = "On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -419,6 +420,24 @@ public class Conversation  implements Serializable {
   }
 
 
+  /**
+   * The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Conversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -451,12 +470,13 @@ public class Conversation  implements Serializable {
             Objects.equals(this.recentTransfers, conversation.recentTransfers) &&
             Objects.equals(this.securePause, conversation.securePause) &&
             Objects.equals(this.utilizationLabelId, conversation.utilizationLabelId) &&
+            Objects.equals(this.inactivityTimeout, conversation.inactivityTimeout) &&
             Objects.equals(this.selfUri, conversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, securePause, utilizationLabelId, selfUri);
+    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, securePause, utilizationLabelId, inactivityTimeout, selfUri);
   }
 
   @Override
@@ -479,6 +499,7 @@ public class Conversation  implements Serializable {
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

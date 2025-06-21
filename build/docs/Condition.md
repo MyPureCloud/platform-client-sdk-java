@@ -21,6 +21,9 @@
 | **agentWrapupField** | **String** | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition. |  [optional] |
 | **contactColumnToDataActionFieldMappings** | [**List&lt;ContactColumnToDataActionFieldMapping&gt;**](ContactColumnToDataActionFieldMapping) | A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition. |  [optional] |
 | **predicates** | [**List&lt;DataActionConditionPredicate&gt;**](DataActionConditionPredicate) | A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition. |  [optional] |
+| **subConditions** | [**List&lt;TimeAndDateSubCondition&gt;**](TimeAndDateSubCondition) | A list of sub-conditions to evaluate. Required for a timeAndDateCondition. |  [optional] |
+| **matchAnyConditions** | **Boolean** | If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition. |  [optional] |
+| **timeZoneId** | **String** | The time zone to use for this condition. Required for a timeAndDateCondition. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -82,4 +85,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

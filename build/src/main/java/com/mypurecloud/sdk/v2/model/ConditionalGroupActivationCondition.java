@@ -47,7 +47,9 @@ public class ConditionalGroupActivationCondition  implements Serializable {
     GREATERTHAN("GreaterThan"),
     GREATERTHANOREQUALTO("GreaterThanOrEqualTo"),
     LESSTHAN("LessThan"),
-    LESSTHANOREQUALTO("LessThanOrEqualTo");
+    LESSTHANOREQUALTO("LessThanOrEqualTo"),
+    EQUALTO("EqualTo"),
+    NOTEQUALTO("NotEqualTo");
 
     private String value;
 

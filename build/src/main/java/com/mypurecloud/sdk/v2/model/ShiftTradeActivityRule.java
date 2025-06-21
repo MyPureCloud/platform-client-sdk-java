@@ -172,14 +172,14 @@ public class ShiftTradeActivityRule  implements Serializable {
 
 
   /**
-   * The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
+   * The ID of the activity code with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
    **/
   public ShiftTradeActivityRule activityCodeIdReplacement(String activityCodeIdReplacement) {
     this.activityCodeIdReplacement = activityCodeIdReplacement;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)")
+  @ApiModelProperty(example = "null", value = "The ID of the activity code with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)")
   @JsonProperty("activityCodeIdReplacement")
   public String getActivityCodeIdReplacement() {
     return activityCodeIdReplacement;

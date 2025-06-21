@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.TransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -33,6 +34,7 @@ public class ChatConversation  implements Serializable {
   private List<String> otherMediaUris = null;
   private List<TransferResponse> recentTransfers = null;
   private String utilizationLabelId = null;
+  private Date inactivityTimeout = null;
   private List<ConversationDivisionMembership> divisions = null;
   private String selfUri = null;
 
@@ -143,6 +145,24 @@ public class ChatConversation  implements Serializable {
 
 
   /**
+   * The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ChatConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
    * Identifiers of divisions associated with this conversation.
    **/
   public ChatConversation divisions(List<ConversationDivisionMembership> divisions) {
@@ -183,13 +203,14 @@ public class ChatConversation  implements Serializable {
             Objects.equals(this.otherMediaUris, chatConversation.otherMediaUris) &&
             Objects.equals(this.recentTransfers, chatConversation.recentTransfers) &&
             Objects.equals(this.utilizationLabelId, chatConversation.utilizationLabelId) &&
+            Objects.equals(this.inactivityTimeout, chatConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, chatConversation.divisions) &&
             Objects.equals(this.selfUri, chatConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, divisions, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, inactivityTimeout, divisions, selfUri);
   }
 
   @Override
@@ -203,6 +224,7 @@ public class ChatConversation  implements Serializable {
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

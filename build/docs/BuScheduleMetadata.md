@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The ID of the schedule |  [optional] |
 | **weekDate** | [**LocalDate**](LocalDate) | The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **weekCount** | **Integer** | The number of weeks spanned by this schedule |  [optional] |
 | **description** | **String** | The description of this schedule |  [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

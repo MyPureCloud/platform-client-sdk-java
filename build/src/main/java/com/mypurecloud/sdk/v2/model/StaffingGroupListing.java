@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class StaffingGroupListing  implements Serializable {
   
   private List<StaffingGroupResponse> entities = null;
+  private String downloadUrl = null;
 
   public StaffingGroupListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -51,6 +52,24 @@ public class StaffingGroupListing  implements Serializable {
   }
 
 
+  /**
+   * URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+   **/
+  public StaffingGroupListing downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -61,12 +80,13 @@ public class StaffingGroupListing  implements Serializable {
     }
     StaffingGroupListing staffingGroupListing = (StaffingGroupListing) o;
 
-    return Objects.equals(this.entities, staffingGroupListing.entities);
+    return Objects.equals(this.entities, staffingGroupListing.entities) &&
+            Objects.equals(this.downloadUrl, staffingGroupListing.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, downloadUrl);
   }
 
   @Override
@@ -75,6 +95,7 @@ public class StaffingGroupListing  implements Serializable {
     sb.append("class StaffingGroupListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

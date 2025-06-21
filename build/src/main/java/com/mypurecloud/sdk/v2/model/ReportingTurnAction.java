@@ -78,6 +78,7 @@ public class ReportingTurnAction  implements Serializable {
     FINDUSERSBYIDACTION("FindUsersByIdAction"),
     FINDUSERPROMPTACTION("FindUserPromptAction"),
     FINDUTILIZATIONLABELACTION("FindUtilizationLabelAction"),
+    FORMACTION("FormAction"),
     SWITCHACTION("SwitchAction"),
     DATAACTION("DataAction"),
     DATATABLELOOKUPACTION("DataTableLookupAction"),
@@ -113,6 +114,7 @@ public class ReportingTurnAction  implements Serializable {
     TRANSFEREXTERNALACTION("TransferExternalAction"),
     GETATTRIBUTESACTION("GetAttributesAction"),
     SETATTRIBUTESACTION("SetAttributesAction"),
+    SENDINTERACTIVEAPPLICATIONACTION("SendInteractiveApplicationAction"),
     UNKNOWN("Unknown");
 
     private String value;

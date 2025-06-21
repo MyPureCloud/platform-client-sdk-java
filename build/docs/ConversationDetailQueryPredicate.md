@@ -64,6 +64,8 @@
 | NOVERSLA | &quot;nOverSla&quot; | 
 | NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; | 
 | NTRANSFERRED | &quot;nTransferred&quot; | 
+| OAUDIOMESSAGECOUNT | &quot;oAudioMessageCount&quot; | 
+| OEXTERNALAUDIOMESSAGECOUNT | &quot;oExternalAudioMessageCount&quot; | 
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
 | OFLOWMILESTONE | &quot;oFlowMilestone&quot; | 
 | OMEDIACOUNT | &quot;oMediaCount&quot; | 
@@ -124,4 +126,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

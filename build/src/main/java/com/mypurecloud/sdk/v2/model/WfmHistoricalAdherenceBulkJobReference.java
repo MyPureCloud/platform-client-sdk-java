@@ -38,7 +38,7 @@ public class WfmHistoricalAdherenceBulkJobReference  implements Serializable {
     }
   }
   /**
-   * The status of the historical adherence bulk job
+   * The status of the historical adherence job
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -82,14 +82,14 @@ public class WfmHistoricalAdherenceBulkJobReference  implements Serializable {
 
   
   /**
-   * The ID of the historical adherence bulk job to listen for via notification or query using the jobs route
+   * The ID of the historical adherence job to listen for via notification or query using the jobs route
    **/
   public WfmHistoricalAdherenceBulkJobReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the historical adherence bulk job to listen for via notification or query using the jobs route")
+  @ApiModelProperty(example = "null", value = "The ID of the historical adherence job to listen for via notification or query using the jobs route")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -100,14 +100,14 @@ public class WfmHistoricalAdherenceBulkJobReference  implements Serializable {
 
 
   /**
-   * The status of the historical adherence bulk job
+   * The status of the historical adherence job
    **/
   public WfmHistoricalAdherenceBulkJobReference status(StatusEnum status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The status of the historical adherence bulk job")
+  @ApiModelProperty(example = "null", value = "The status of the historical adherence job")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;

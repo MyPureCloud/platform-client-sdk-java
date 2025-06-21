@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The ID of the historical adherence bulk job to listen for via notification or query using the jobs route |  [optional] |
-| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the historical adherence bulk job |  [optional] |
+| **id** | **String** | The ID of the historical adherence job to listen for via notification or query using the jobs route |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the historical adherence job |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -22,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

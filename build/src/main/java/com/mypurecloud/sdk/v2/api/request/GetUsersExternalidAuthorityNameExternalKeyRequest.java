@@ -59,6 +59,7 @@ import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
@@ -142,10 +143,10 @@ public class GetUsersExternalidAuthorityNameExternalKeyRequest {
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
 		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
+		GROUPS("groups"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),
-		GROUPS("groups"),
 		SKILLS("skills"),
 		LANGUAGES("languages"),
 		LANGUAGEPREFERENCE("languagePreference"),

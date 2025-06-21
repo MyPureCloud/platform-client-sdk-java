@@ -6,7 +6,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteGreeting**](GreetingsApi#deleteGreeting) | Deletes a Greeting with the given GreetingId |
 | [**getGreeting**](GreetingsApi#getGreeting) | Get a Greeting with the given GreetingId |
+| [**getGreetingDownloads**](GreetingsApi#getGreetingDownloads) | Download a organization greeting recording |
+| [**getGreetingGroupsDownloads**](GreetingsApi#getGreetingGroupsDownloads) | Download a group greeting recording |
 | [**getGreetingMedia**](GreetingsApi#getGreetingMedia) | Get media playback URI for this greeting |
+| [**getGreetingUsersDownloads**](GreetingsApi#getGreetingUsersDownloads) | Download a user greeting recording |
 | [**getGreetings**](GreetingsApi#getGreetings) | Gets an Organization's Greetings |
 | [**getGreetingsDefaults**](GreetingsApi#getGreetingsDefaults) | Get an Organization's DefaultGreetingList |
 | [**getGroupGreetings**](GreetingsApi#getGroupGreetings) | Get a list of the Group's Greetings |
@@ -138,12 +141,136 @@ try {
 [**Greeting**](Greeting)
 
 
+# **getGreetingDownloads**
+
+
+> [GreetingMediaInfo](GreetingMediaInfo) getGreetingDownloads(greetingId, formatId)
+
+Download a organization greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/downloads  
+
+Requires ANY permissions: 
+
+* greetings:greeting:download
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GreetingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GreetingsApi apiInstance = new GreetingsApi();
+String greetingId = "greetingId_example"; // String | Greeting ID
+String formatId = "WAV"; // String | The desired media format.
+try {
+    GreetingMediaInfo result = apiInstance.getGreetingDownloads(greetingId, formatId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GreetingsApi#getGreetingDownloads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **greetingId** | **String**| Greeting ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
+# **getGreetingGroupsDownloads**
+
+
+> [GreetingMediaInfo](GreetingMediaInfo) getGreetingGroupsDownloads(greetingId, formatId)
+
+Download a group greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/groups/downloads  
+
+Requires ANY permissions: 
+
+* greetings:groupGreeting:download
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GreetingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GreetingsApi apiInstance = new GreetingsApi();
+String greetingId = "greetingId_example"; // String | Greeting ID
+String formatId = "WAV"; // String | The desired media format.
+try {
+    GreetingMediaInfo result = apiInstance.getGreetingGroupsDownloads(greetingId, formatId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GreetingsApi#getGreetingGroupsDownloads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **greetingId** | **String**| Greeting ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
 # **getGreetingMedia**
 
 
 > [GreetingMediaInfo](GreetingMediaInfo) getGreetingMedia(greetingId, formatId)
 
 Get media playback URI for this greeting
+
+API should migrate to use GET api/v2/greetings/{greetingId}/downloads
 
 Wraps GET /api/v2/greetings/{greetingId}/media  
 
@@ -179,6 +306,67 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GreetingsApi#getGreetingMedia");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **greetingId** | **String**| Greeting ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
+# **getGreetingUsersDownloads**
+
+
+> [GreetingMediaInfo](GreetingMediaInfo) getGreetingUsersDownloads(greetingId, formatId)
+
+Download a user greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/users/downloads  
+
+Requires ANY permissions: 
+
+* greetings:greeting:download
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GreetingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GreetingsApi apiInstance = new GreetingsApi();
+String greetingId = "greetingId_example"; // String | Greeting ID
+String formatId = "WAV"; // String | The desired media format.
+try {
+    GreetingMediaInfo result = apiInstance.getGreetingUsersDownloads(greetingId, formatId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GreetingsApi#getGreetingUsersDownloads");
     e.printStackTrace();
 }
 ```
@@ -968,4 +1156,4 @@ try {
 [**DefaultGreetingList**](DefaultGreetingList)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

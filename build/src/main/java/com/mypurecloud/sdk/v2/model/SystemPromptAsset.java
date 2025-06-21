@@ -223,20 +223,10 @@ public class SystemPromptAsset  implements Serializable {
   }
 
 
-  /**
-   **/
-  public SystemPromptAsset uploadUri(String uploadUri) {
-    this.uploadUri = uploadUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated. This was use for uploading the resource audio.")
   @JsonProperty("uploadUri")
   public String getUploadUri() {
     return uploadUri;
-  }
-  public void setUploadUri(String uploadUri) {
-    this.uploadUri = uploadUri;
   }
 
 

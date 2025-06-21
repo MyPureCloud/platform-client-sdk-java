@@ -109,6 +109,7 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
     QUEUEID("queueId"),
     RELEASED("released"),
     RESCORED("rescored"),
+    SYSTEMSUBMITTED("systemSubmitted"),
     TEAMID("teamId"),
     USERID("userId");
 

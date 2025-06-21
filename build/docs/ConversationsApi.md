@@ -26,6 +26,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi#getConversation) | Get conversation |
+| [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | Get message |
+| [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | Get messages for communication |
 | [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
 | [**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
 | [**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | Get the wrap-up for this conversation participant.  |
@@ -68,6 +70,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | Get emails settings for a given conversation |
 | [**getConversationsEmails**](ConversationsApi#getConversationsEmails) | Get active email conversations for the logged in user |
+| [**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | Get internal message conversation |
+| [**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | Get active internal message conversations for the logged in user |
 | [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | Get the encryption key configurations |
 | [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | Get a list of key configurations data |
 | [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | Get message conversation |
@@ -86,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | Get Facebook messaging integration identity resolution settings |
 | [**getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | Get an Instagram integration identity resolution settings |
 | [**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | Get an open messaging integration Identity Resolution settings |
+| [**getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | Get X (Formally Twitter) messaging integration identity resolution settings |
 | [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | Get a whatsApp integration Identity Resolution settings |
 | [**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | Get twitter oauth settings to patch an integration |
 | [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | Get a list of Integrations |
@@ -166,9 +171,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationAssign**](ConversationsApi#postConversationAssign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages. |
 | [**postConversationBarge**](ConversationsApi#postConversationBarge) | Barge a conversation creating a barged in conference of connected participants. |
 | [**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission. |
+| [**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | Send internal message |
 | [**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation. |
 | [**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | Sends DTMF to the participant |
+| [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | Setup internal message communication with user |
 | [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | Replace this participant with the specified agent |
 | [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact |
@@ -220,6 +227,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageInboundOpenEvent**](ConversationsApi#postConversationsMessageInboundOpenEvent) | Send an inbound Open Event Message |
 | [**postConversationsMessageInboundOpenMessage**](ConversationsApi#postConversationsMessageInboundOpenMessage) | Send inbound Open Message |
 | [**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | Send an inbound Open Receipt Message |
+| [**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | Send inbound Open Response |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
@@ -257,6 +265,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | Create an identity resolution settings for a Facebook messaging integration |
 | [**putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | Create identity resolution settings for an Instagram messaging integration |
 | [**putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | Update an open messaging integration Identity Resolution settings |
+| [**putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | Create an identity resolution settings for an X (Formally Twitter) messaging integration |
 | [**putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | Update a whatsApp integration Identity Resolution settings |
 | [**putConversationsMessagingSettingsDefault**](ConversationsApi#putConversationsMessagingSettingsDefault) | Set the organization's default setting that may be applied to to integrations without settings |
 | [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi#putConversationsMessagingSupportedcontentDefault) | Set the organization's default supported content profile that may be assigned to an integration when it is created. |
@@ -1569,6 +1578,138 @@ try {
 [**Conversation**](Conversation)
 
 
+# **getConversationCommunicationInternalmessage**
+
+
+> [InternalMessageData](InternalMessageData) getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+
+Get message
+
+getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+String messageId = "messageId_example"; // String | messageId
+try {
+    InternalMessageData result = apiInstance.getConversationCommunicationInternalmessage(conversationId, communicationId, messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCommunicationInternalmessage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
+# **getConversationCommunicationInternalmessages**
+
+
+> [InternalMessageDataEntityListing](InternalMessageDataEntityListing) getConversationCommunicationInternalmessages(conversationId, communicationId, pageSize, pageNumber)
+
+Get messages for communication
+
+getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+Integer pageSize = 25; // Integer | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200.
+Integer pageNumber = 1; // Integer | Page number
+try {
+    InternalMessageDataEntityListing result = apiInstance.getConversationCommunicationInternalmessages(conversationId, communicationId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCommunicationInternalmessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **pageSize** | **Integer**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
 # **getConversationParticipantSecureivrsession**
 
 
@@ -2214,7 +2355,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -2232,7 +2373,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -2277,7 +2418,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -2294,7 +2435,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -2458,7 +2599,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -2476,7 +2617,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -2521,7 +2662,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -2538,7 +2679,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3074,7 +3215,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -3092,7 +3233,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3142,7 +3283,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -3159,7 +3300,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3392,7 +3533,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -3410,7 +3551,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3460,7 +3601,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -3477,7 +3618,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3876,7 +4017,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -3894,7 +4035,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3939,7 +4080,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -3956,7 +4097,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -4135,6 +4276,124 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing)
+
+
+# **getConversationsInternalmessage**
+
+
+> [InternalMessageConversation](InternalMessageConversation) getConversationsInternalmessage(conversationId)
+
+Get internal message conversation
+
+getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/internalmessages/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+try {
+    InternalMessageConversation result = apiInstance.getConversationsInternalmessage(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsInternalmessage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InternalMessageConversation**](InternalMessageConversation)
+
+
+# **getConversationsInternalmessages**
+
+
+> [InternalMessageConversationEntityListing](InternalMessageConversationEntityListing) getConversationsInternalmessages()
+
+Get active internal message conversations for the logged in user
+
+getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/internalmessages  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    InternalMessageConversationEntityListing result = apiInstance.getConversationsInternalmessages();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsInternalmessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing)
 
 
 # **getConversationsKeyconfiguration**
@@ -4538,7 +4797,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -4556,7 +4815,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -4601,7 +4860,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
@@ -4618,7 +4877,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -5215,6 +5474,66 @@ try {
 ### Return type
 
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
+
+
+# **getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+
+Get X (Formally Twitter) messaging integration identity resolution settings
+
+Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionX:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration Id
+try {
+    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 # **getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**
@@ -6555,7 +6874,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -6573,7 +6892,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -6674,7 +6993,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -6692,7 +7011,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -6799,7 +7118,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+Boolean provisional = false; // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 try {
     AssignedWrapupCode result = apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
     System.out.println(result);
@@ -6817,7 +7136,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+| **provisional** | **Boolean**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -6902,6 +7221,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -7398,6 +7718,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -7709,6 +8030,8 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -8028,6 +8351,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -8298,6 +8622,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -8622,6 +8947,8 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
+* conversation:email:park
 
 ### Example
 
@@ -8934,6 +9261,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -10212,6 +10540,73 @@ try {
 [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
+# **postConversationCommunicationInternalmessages**
+
+
+> [InternalMessageData](InternalMessageData) postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+
+Send internal message
+
+Send a new internal message for an existing communication.
+
+postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+InternalMessageRequest body = new InternalMessageRequest(); // InternalMessageRequest | Message
+try {
+    InternalMessageData result = apiInstance.postConversationCommunicationInternalmessages(conversationId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCommunicationInternalmessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**InternalMessageRequest**](InternalMessageRequest)| Message | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
 # **postConversationDisconnect**
 
 
@@ -10392,6 +10787,73 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **postConversationParticipantInternalmessagesUsersCommunications**
+
+
+> [MessagingConferResponse](MessagingConferResponse) postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+
+Setup internal message communication with user
+
+The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+
+postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications  
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:setupWithUser
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+MessagingConferWithUserRequest body = new MessagingConferWithUserRequest(); // MessagingConferWithUserRequest | Confer request
+try {
+    MessagingConferResponse result = apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**MessagingConferWithUserRequest**](MessagingConferWithUserRequest)| Confer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingConferResponse**](MessagingConferResponse)
 
 
 # **postConversationParticipantReplace**
@@ -13593,6 +14055,69 @@ try {
 [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage)
 
 
+# **postConversationsMessageInboundOpenStructuredResponse**
+
+
+> [OpenStructuredResponseNormalizedMessage](OpenStructuredResponseNormalizedMessage) postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+
+Send inbound Open Response
+
+Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response  
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | integrationId
+OpenInboundStructuredResponseMessage body = new OpenInboundStructuredResponseMessage(); // OpenInboundStructuredResponseMessage | OpenInboundStructuredResponseMessage
+try {
+    OpenStructuredResponseNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageInboundOpenStructuredResponse");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| integrationId | 
+| **body** | [**OpenInboundStructuredResponseMessage**](OpenInboundStructuredResponseMessage)| OpenInboundStructuredResponseMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenStructuredResponseNormalizedMessage**](OpenStructuredResponseNormalizedMessage)
+
+
 # **postConversationsMessageMessagesBulk**
 
 
@@ -15886,6 +16411,68 @@ try {
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
 
 
+# **putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**
+
+
+> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+
+Create an identity resolution settings for an X (Formally Twitter) messaging integration
+
+Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:edit
+* messaging:identityResolutionX:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration Id
+IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+try {
+    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration Id | 
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 # **putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**
 
 
@@ -16319,4 +16906,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

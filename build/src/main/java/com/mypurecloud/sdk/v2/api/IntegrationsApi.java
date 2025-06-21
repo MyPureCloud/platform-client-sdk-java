@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.CredentialInfoCursorListing;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
@@ -115,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsListingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorIntegrationIdRequest;
@@ -3056,6 +3058,92 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CredentialInfoListing> response = (ApiResponse<CredentialInfoListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return CredentialInfoCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CredentialInfoCursorListing getIntegrationsCredentialsListing(String before, String after, String pageSize) throws IOException, ApiException {
+    return  getIntegrationsCredentialsListing(createGetIntegrationsCredentialsListingRequest(before, after, pageSize));
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @return CredentialInfoCursorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CredentialInfoCursorListing> getIntegrationsCredentialsListingWithHttpInfo(String before, String after, String pageSize) throws IOException {
+    return getIntegrationsCredentialsListing(createGetIntegrationsCredentialsListingRequest(before, after, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsCredentialsListingRequest createGetIntegrationsCredentialsListingRequest(String before, String after, String pageSize) {
+    return GetIntegrationsCredentialsListingRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param request The request object
+   * @return CredentialInfoCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CredentialInfoCursorListing getIntegrationsCredentialsListing(GetIntegrationsCredentialsListingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CredentialInfoCursorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CredentialInfoCursorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List multiple sets of credentials using cursor-based paging
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CredentialInfoCursorListing> getIntegrationsCredentialsListing(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CredentialInfoCursorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CredentialInfoCursorListing> response = (ApiResponse<CredentialInfoCursorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CredentialInfoCursorListing> response = (ApiResponse<CredentialInfoCursorListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

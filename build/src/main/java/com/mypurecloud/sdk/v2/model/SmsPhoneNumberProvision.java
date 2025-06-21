@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -78,6 +79,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
   private String countryCode = null;
   private String name = null;
   private String addressId = null;
+  private SupportedContentReference supportedContent = null;
   private String selfUri = null;
 
   public SmsPhoneNumberProvision() {
@@ -182,6 +184,24 @@ public class SmsPhoneNumberProvision  implements Serializable {
   }
 
 
+  /**
+   * Defines the media SupportedContent profile configured for an MMS capable phone number.
+   **/
+  public SmsPhoneNumberProvision supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the media SupportedContent profile configured for an MMS capable phone number.")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -205,12 +225,13 @@ public class SmsPhoneNumberProvision  implements Serializable {
             Objects.equals(this.countryCode, smsPhoneNumberProvision.countryCode) &&
             Objects.equals(this.name, smsPhoneNumberProvision.name) &&
             Objects.equals(this.addressId, smsPhoneNumberProvision.addressId) &&
+            Objects.equals(this.supportedContent, smsPhoneNumberProvision.supportedContent) &&
             Objects.equals(this.selfUri, smsPhoneNumberProvision.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, phoneNumber, phoneNumberType, countryCode, name, addressId, selfUri);
+    return Objects.hash(id, phoneNumber, phoneNumberType, countryCode, name, addressId, supportedContent, selfUri);
   }
 
   @Override
@@ -224,6 +245,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -35,6 +35,7 @@ public class ConversationBasic  implements Serializable {
   private List<ConversationDivisionMembership> divisions = null;
   private Boolean securePause = null;
   private String utilizationLabelId = null;
+  private Date inactivityTimeout = null;
   private String selfUri = null;
   private List<ParticipantBasic> participants = null;
 
@@ -178,6 +179,24 @@ public class ConversationBasic  implements Serializable {
   }
 
 
+  /**
+   * The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ConversationBasic inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -210,13 +229,14 @@ public class ConversationBasic  implements Serializable {
             Objects.equals(this.divisions, conversationBasic.divisions) &&
             Objects.equals(this.securePause, conversationBasic.securePause) &&
             Objects.equals(this.utilizationLabelId, conversationBasic.utilizationLabelId) &&
+            Objects.equals(this.inactivityTimeout, conversationBasic.inactivityTimeout) &&
             Objects.equals(this.selfUri, conversationBasic.selfUri) &&
             Objects.equals(this.participants, conversationBasic.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, securePause, utilizationLabelId, selfUri, participants);
+    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, securePause, utilizationLabelId, inactivityTimeout, selfUri, participants);
   }
 
   @Override
@@ -232,6 +252,7 @@ public class ConversationBasic  implements Serializable {
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");
