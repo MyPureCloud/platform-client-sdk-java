@@ -61,7 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | Query for action aggregates |
 | [**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | Query for agent copilot aggregates asynchronously |
 | [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | Query for agent copilot aggregates |
-| [**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | Count agents by segment type |
+| [**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | Count agents by different groupings |
 | [**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | Retrieve the top 50 agents matching the query filters |
 | [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | Query for bot aggregates asynchronously |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
@@ -3653,7 +3653,7 @@ try {
 
 > [AnalyticsAgentStateCountsResponse](AnalyticsAgentStateCountsResponse) postAnalyticsAgentsStatusCounts(body)
 
-Count agents by segment type
+Count agents by different groupings
 
 Wraps POST /api/v2/analytics/agents/status/counts  
 
@@ -6533,4 +6533,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

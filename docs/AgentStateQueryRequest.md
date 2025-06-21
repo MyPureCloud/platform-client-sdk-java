@@ -21,6 +21,11 @@
 | USERNAME | &quot;userName&quot; | 
 | SEGMENTSTART | &quot;segmentStart&quot; | 
 | SESSIONSTART | &quot;sessionStart&quot; | 
+| PRESENCEDATE | &quot;presenceDate&quot; | 
+| ROUTINGSTATUSDATE | &quot;routingStatusDate&quot; | 
+| SYSTEMPRESENCE | &quot;systemPresence&quot; | 
+| ROUTINGSTATUS | &quot;routingStatus&quot; | 
+| ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; | 
 
 
 ## Enum: UserOrderEnum
@@ -52,4 +57,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

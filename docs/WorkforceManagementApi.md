@@ -3329,7 +3329,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -3842,7 +3842,7 @@ try {
 # **getWorkforcemanagementBusinessunitStaffinggroups**
 
 
-> [StaffingGroupListing](StaffingGroupListing) getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId)
+> [StaffingGroupListing](StaffingGroupListing) getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId, forceDownloadService)
 
 Gets a list of staffing groups
 
@@ -3876,8 +3876,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit to get management unit specific staffing groups
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
-    StaffingGroupListing result = apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId);
+    StaffingGroupListing result = apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroups");
@@ -3892,6 +3893,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **managementUnitId** | **String**| The ID of the management unit to get management unit specific staffing groups | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
 
@@ -5424,7 +5426,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **feature** | **String**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
+| **feature** | **String**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**| If specified, the list of business units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -7553,7 +7555,7 @@ try {
 | **pageSize** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **pageNumber** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **expand** | **String**| Deprecated, expand settings on the single MU route | [optional]<br />**Values**: details 
-| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -11542,7 +11544,7 @@ try {
 # **postWorkforcemanagementBusinessunitStaffinggroupsQuery**
 
 
-> [UserStaffingGroupListing](UserStaffingGroupListing) postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body)
+> [UserStaffingGroupListing](UserStaffingGroupListing) postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, forceDownloadService)
 
 Gets staffing group associations for a list of user IDs
 
@@ -11576,8 +11578,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 QueryUserStaffingGroupListRequest body = new QueryUserStaffingGroupListRequest(); // QueryUserStaffingGroupListRequest | body
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service
 try {
-    UserStaffingGroupListing result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body);
+    UserStaffingGroupListing result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery");
@@ -11592,6 +11595,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest)| body | 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service | [optional] 
 {: class="table-striped"}
 
 
@@ -12819,7 +12823,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **bidId** | **String**| The ID of the work plan bid to copy | 
-| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid)| body | [optional] 
+| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid)| body | 
 {: class="table-striped"}
 
 
@@ -15685,4 +15689,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

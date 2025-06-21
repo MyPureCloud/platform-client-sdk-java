@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The mobile push integration id associated with the deployment |  [optional] |
 | **provider** | [**ProviderEnum**](#Enum--ProviderEnum) | The integration provider associated with the deployment |  [optional] |
 
 
@@ -20,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

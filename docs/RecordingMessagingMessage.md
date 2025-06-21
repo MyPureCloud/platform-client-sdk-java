@@ -49,6 +49,8 @@
 | DATEPICKER | &quot;DatePicker&quot; | 
 | LISTPICKER | &quot;ListPicker&quot; | 
 | INTERACTIVEAPPLICATION | &quot;InteractiveApplication&quot; | 
+| PAYMENTREQUEST | &quot;PaymentRequest&quot; | 
+| PAYMENTRESPONSE | &quot;PaymentResponse&quot; | 
 
 
 ## Enum: SocialVisibilityEnum
@@ -62,4 +64,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

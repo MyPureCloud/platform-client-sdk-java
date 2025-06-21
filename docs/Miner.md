@@ -9,6 +9,7 @@
 | **name** | **String** | Chat Corpus Name. |  |
 | **language** | [**LanguageEnum**](#Enum--LanguageEnum) | Language Localization code. |  [optional] |
 | **minerType** | [**MinerTypeEnum**](#Enum--MinerTypeEnum) | Type of the miner, intent or topic. |  [optional] |
+| **seeding** | **Boolean** | Flag to indicate whether seeding is supported for this miner. |  [optional] |
 | **dateCreated** | [**Date**](Date) | Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | Status of the miner. |  [optional] |
 | **conversationsDateRangeStart** | [**LocalDate**](LocalDate) | Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
@@ -109,4 +110,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

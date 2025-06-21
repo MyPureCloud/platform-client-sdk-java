@@ -42,6 +42,7 @@
 | QUEUEID | &quot;queueId&quot; | 
 | RELEASED | &quot;released&quot; | 
 | RESCORED | &quot;rescored&quot; | 
+| SYSTEMSUBMITTED | &quot;systemSubmitted&quot; | 
 | USERID | &quot;userId&quot; | 
 
 
@@ -66,4 +67,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

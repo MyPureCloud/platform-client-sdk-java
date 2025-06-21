@@ -50,8 +50,9 @@
 | SCHEDULE | &quot;SCHEDULE&quot; | 
 | MESSAGING_CAMPAIGN_SCHEDULE | &quot;MESSAGING_CAMPAIGN_SCHEDULE&quot; | 
 | EMAIL_CAMPAIGN_SCHEDULE | &quot;EMAIL_CAMPAIGN_SCHEDULE&quot; | 
+| WHATSAPP_CAMPAIGN_SCHEDULE | &quot;WHATSAPP_CAMPAIGN_SCHEDULE&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

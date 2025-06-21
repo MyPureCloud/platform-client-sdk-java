@@ -10,8 +10,9 @@
 | **rtpEventsReceived** | **Integer** | Number of RFC#2833 packets received |  [optional] |
 | **rtpEventsSent** | **Integer** | Number of RFC#2833 packets sent |  [optional] |
 | **estimatedAverageMos** | **Double** | The estimated average MOS score |  [optional] |
+| **averageJitter** | **Double** | The average jitter |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

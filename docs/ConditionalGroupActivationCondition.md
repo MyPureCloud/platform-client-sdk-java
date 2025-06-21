@@ -19,8 +19,10 @@
 | GREATERTHANOREQUALTO | &quot;GreaterThanOrEqualTo&quot; | 
 | LESSTHAN | &quot;LessThan&quot; | 
 | LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot; | 
+| EQUALTO | &quot;EqualTo&quot; | 
+| NOTEQUALTO | &quot;NotEqualTo&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

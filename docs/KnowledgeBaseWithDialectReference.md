@@ -44,8 +44,10 @@
 | HI_IN | &quot;hi-IN&quot; | 
 | TR_TR | &quot;tr-TR&quot; | 
 | ES_AR | &quot;es-AR&quot; | 
+| FI_FI | &quot;fi-FI&quot; | 
+| NB_NO | &quot;nb-NO&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

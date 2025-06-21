@@ -20,8 +20,13 @@
 | DIVISIONID | &quot;divisionId&quot; | 
 | USERID | &quot;userId&quot; | 
 | MANAGERID | &quot;managerId&quot; | 
+| SYSTEMPRESENCE | &quot;systemPresence&quot; | 
+| ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; | 
+| ROUTINGSTATUS | &quot;routingStatus&quot; | 
+| ISOUTOFOFFICE | &quot;isOutOfOffice&quot; | 
+| ONLINE | &quot;online&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

@@ -13,7 +13,7 @@
 | **mediaUri** | **String** |  |  [optional] |
 | **ttsString** | **String** |  |  [optional] |
 | **text** | **String** |  |  [optional] |
-| **uploadUri** | **String** |  |  [optional] |
+| **uploadUri** | **String** | Deprecated. This was use for uploading the resource audio. |  [optional] |
 | **uploadStatus** | [**UploadStatusEnum**](#Enum--UploadStatusEnum) |  |  [optional] |
 | **hasDefault** | **Boolean** |  |  [optional] |
 | **languageDefault** | **Boolean** |  |  [optional] |
@@ -34,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

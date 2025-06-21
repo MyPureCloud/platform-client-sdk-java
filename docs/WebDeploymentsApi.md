@@ -650,7 +650,7 @@ try {
 # **getWebdeploymentsDeploymentIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+> [DeploymentIdentityResolutionConfig](DeploymentIdentityResolutionConfig) getWebdeploymentsDeploymentIdentityresolution(deploymentId)
 
 Get a deployment identity resolution setting.
 
@@ -685,7 +685,7 @@ Configuration.setDefaultApiClient(apiClient);
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 String deploymentId = "deploymentId_example"; // String | The deployment ID
 try {
-    IdentityResolutionConfig result = apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId);
+    DeploymentIdentityResolutionConfig result = apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentIdentityresolution");
@@ -704,7 +704,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
 # **getWebdeploymentsDeployments**
@@ -1159,7 +1159,7 @@ try {
 # **putWebdeploymentsDeploymentIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+> [DeploymentIdentityResolutionConfig](DeploymentIdentityResolutionConfig) putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 
 Update identity resolution settings for a deployment.
 
@@ -1193,9 +1193,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 String deploymentId = "deploymentId_example"; // String | The deployment ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+DeploymentIdentityResolutionConfig body = new DeploymentIdentityResolutionConfig(); // DeploymentIdentityResolutionConfig | 
 try {
-    IdentityResolutionConfig result = apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body);
+    DeploymentIdentityResolutionConfig result = apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#putWebdeploymentsDeploymentIdentityresolution");
@@ -1209,13 +1209,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The deployment ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+| **body** | [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

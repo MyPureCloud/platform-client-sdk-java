@@ -19,6 +19,7 @@
 | **queueId** | **String** | The ID of the associated queue |  [optional] |
 | **released** | **Boolean** | Whether the evaluation has been released |  [optional] |
 | **rescored** | **Boolean** | Whether the evaluation has been rescored at least once |  [optional] |
+| **systemSubmitted** | **Boolean** | Whether the evaluation was auto submitted by the system |  [optional] |
 | **userId** | **String** | ID of the agent the evaluation was performed against |  [optional] |
 | **oTotalCriticalScore** | **Long** |  |  [optional] |
 | **oTotalScore** | **Long** |  |  [optional] |
@@ -38,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**patchBusinessrulesDecisiontable**](BusinessRulesApi#patchBusinessrulesDecisiontable) | Update a decision table |
 | [**patchBusinessrulesDecisiontableVersion**](BusinessRulesApi#patchBusinessrulesDecisiontableVersion) | Update a decision table version |
-| [**patchBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#patchBusinessrulesDecisiontableVersionRow) | Update a decision table row |
+| [**patchBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#patchBusinessrulesDecisiontableVersionRow) | Partially update a decision table row. Will be deprecated, we should use PUT request. |
 | [**postBusinessrulesDecisiontableExecute**](BusinessRulesApi#postBusinessrulesDecisiontableExecute) | Execute a published decision table |
 | [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | Copy a decision table version |
 | [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | Execute a decision table version |
@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postBusinessrulesDecisiontables**](BusinessRulesApi#postBusinessrulesDecisiontables) | Create a decision table |
 | [**postBusinessrulesSchemas**](BusinessRulesApi#postBusinessrulesSchemas) | Create a schema |
 | [**putBusinessrulesDecisiontableVersionPublish**](BusinessRulesApi#putBusinessrulesDecisiontableVersionPublish) | Publish a decision table version |
+| [**putBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#putBusinessrulesDecisiontableVersionRow) | Full update a decision table row |
 | [**putBusinessrulesSchema**](BusinessRulesApi#putBusinessrulesSchema) | Update a schema |
 {: class="table-striped"}
 
@@ -171,9 +172,10 @@ deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to
 
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:delete
+* routing:queue:view
 
 ### Example
 
@@ -675,7 +677,7 @@ try {
 # **getBusinessrulesDecisiontablesSearch**
 
 
-> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name)
+> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name, withPublishedVersion, expand, ids)
 
 Search for decision tables.
 
@@ -713,8 +715,11 @@ String after = "after_example"; // String | The cursor that points to the end of
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
 String schemaId = "schemaId_example"; // String | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 String name = "name_example"; // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
+Boolean withPublishedVersion = true; // Boolean | Filters results to only decision tables that have at least one version in Published status
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response
+List<String> ids = Arrays.asList(null); // List<String> | Decision table IDs to search for
 try {
-    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name);
+    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name, withPublishedVersion, expand, ids);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontablesSearch");
@@ -731,6 +736,9 @@ try {
 | **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
 | **schemaId** | **String**| Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. | [optional] 
 | **name** | **String**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. | [optional] 
+| **withPublishedVersion** | **Boolean**| Filters results to only decision tables that have at least one version in Published status | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response | [optional]<br />**Values**: ExecutionInputSchema, ExecutionOutputSchema 
+| **ids** | [**List&lt;String&gt;**](String)| Decision table IDs to search for | [optional] 
 {: class="table-striped"}
 
 
@@ -1106,18 +1114,22 @@ try {
 
 # **patchBusinessrulesDecisiontableVersionRow**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DecisionTableRow](DecisionTableRow) patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
 
-Update a decision table row
+Partially update a decision table row. Will be deprecated, we should use PUT request.
 
 patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:edit
+* routing:queue:view
 
 ### Example
 
@@ -1144,7 +1156,7 @@ BusinessRulesApi apiInstance = new BusinessRulesApi();
 String tableId = "tableId_example"; // String | Table ID
 Integer tableVersion = 56; // Integer | Table Version
 String rowId = "rowId_example"; // String | Row ID
-UpdateDecisionTableRowRequest body = new UpdateDecisionTableRowRequest(); // UpdateDecisionTableRowRequest | Update decision table row request
+UpdateDecisionTableRowRequest body = new UpdateDecisionTableRowRequest(); // UpdateDecisionTableRowRequest | Partially update decision table row request
 try {
     DecisionTableRow result = apiInstance.patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body);
     System.out.println(result);
@@ -1162,7 +1174,7 @@ try {
 | **tableId** | **String**| Table ID | 
 | **tableVersion** | **Integer**| Table Version | 
 | **rowId** | **String**| Row ID | 
-| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Update decision table row request | 
+| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Partially update decision table row request | 
 {: class="table-striped"}
 
 
@@ -1375,9 +1387,10 @@ postBusinessrulesDecisiontableVersionRows is a preview method and is subject to 
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:add
+* routing:queue:view
 
 ### Example
 
@@ -1808,6 +1821,74 @@ try {
 [**DecisionTableVersion**](DecisionTableVersion)
 
 
+# **putBusinessrulesDecisiontableVersionRow**
+
+
+> [DecisionTableRow](DecisionTableRow) putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
+
+Full update a decision table row
+
+putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:edit
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+BusinessRulesApi apiInstance = new BusinessRulesApi();
+String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+String rowId = "rowId_example"; // String | Row ID
+PutDecisionTableRowRequest body = new PutDecisionTableRowRequest(); // PutDecisionTableRowRequest | Full update decision table row request
+try {
+    DecisionTableRow result = apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessRulesApi#putBusinessrulesDecisiontableVersionRow");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tableId** | **String**| Table ID | 
+| **tableVersion** | **Integer**| Table Version | 
+| **rowId** | **String**| Row ID | 
+| **body** | [**PutDecisionTableRowRequest**](PutDecisionTableRowRequest)| Full update decision table row request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DecisionTableRow**](DecisionTableRow)
+
+
 # **putBusinessrulesSchema**
 
 
@@ -1871,4 +1952,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_

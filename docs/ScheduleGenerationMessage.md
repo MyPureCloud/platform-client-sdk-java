@@ -23,28 +23,6 @@
 | AGENTWITHOUTCAPABILITY | &quot;AgentWithoutCapability&quot; | 
 | NONEEDDAYS | &quot;NoNeedDays&quot; | 
 | UNABLETOPRODUCEAGENTSCHEDULE | &quot;UnableToProduceAgentSchedule&quot; | 
-| UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYSFROMAGENTHISTORY | &quot;UnableToScheduleMaxConsecutiveWorkingDaysFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToScheduleMaxConsecutiveWorkingWeekendsFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEMAXWEEKLYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMaxWeeklyPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEMAXWORKDAYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMaxWorkDayPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEMININTERSHIFTTIMEFROMAGENTHISTORY | &quot;UnableToScheduleMinIntershiftTimeFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEMININTERSHIFTTIMEFROMDST | &quot;UnableToScheduleMinIntershiftTimeFromDst&quot; | 
-| UNABLETOSCHEDULEMINSHIFTSTARTDISTANCEFROMAGENTHISTORY | &quot;UnableToScheduleMinShiftStartDistanceFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEMINSHIFTSTARTDISTANCEFROMDST | &quot;UnableToScheduleMinShiftStartDistanceFromDst&quot; | 
-| UNABLETOSCHEDULEMINWEEKLYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMinWeeklyPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEMINWEEKLYWORKDAYSFROMTIMEOFF | &quot;UnableToScheduleMinWeeklyWorkDaysFromTimeOff&quot; | 
-| UNABLETOSCHEDULEMINWORKDAYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMinWorkDayPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxDaysOffFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMINDAYSOFFFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMINCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMinCountFromAgentHistory&quot; | 
-| UNABLETOSCHEDULEWORKDAYFROMTIMEOFF | &quot;UnableToScheduleWorkDayFromTimeOff&quot; | 
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS | &quot;UnableToScheduleMaxConsecutiveWorkingDays&quot; | 
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS | &quot;UnableToScheduleMaxConsecutiveWorkingWeekends&quot; | 
 | UNABLETOSCHEDULEMAXWEEKLYPAIDTIME | &quot;UnableToScheduleMaxWeeklyPaidTime&quot; | 
@@ -62,9 +40,33 @@
 | UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIME | &quot;UnableToSchedulePlanningPeriodMinPaidTime&quot; | 
 | UNABLETOSCHEDULESHIFTVARIANCE | &quot;UnableToScheduleShiftVariance&quot; | 
 | UNABLETOSCHEDULEWORKDAY | &quot;UnableToScheduleWorkDay&quot; | 
+| UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYSFROMAGENTHISTORY | &quot;UnableToScheduleMaxConsecutiveWorkingDaysFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToScheduleMaxConsecutiveWorkingWeekendsFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEMAXWEEKLYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMaxWeeklyPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMAXWORKDAYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMaxWorkDayPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMININTERSHIFTTIMEFROMAGENTHISTORY | &quot;UnableToScheduleMinIntershiftTimeFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEMININTERSHIFTTIMEFROMDST | &quot;UnableToScheduleMinIntershiftTimeFromDst&quot; | 
+| UNABLETOSCHEDULEMINSHIFTSTARTDISTANCEFROMAGENTHISTORY | &quot;UnableToScheduleMinShiftStartDistanceFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEMINSHIFTSTARTDISTANCEFROMDST | &quot;UnableToScheduleMinShiftStartDistanceFromDst&quot; | 
+| UNABLETOSCHEDULEMINWEEKLYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMinWeeklyPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMINWEEKLYWORKDAYSFROMTIMEOFF | &quot;UnableToScheduleMinWeeklyWorkDaysFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMINWORKDAYPAIDTIMEFROMTIMEOFF | &quot;UnableToScheduleMinWorkDayPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxDaysOffFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXDAYSOFFFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMINDAYSOFFFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIMEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff&quot; | 
+| UNABLETOSCHEDULEWORKDAYFROMTIMEOFF | &quot;UnableToScheduleWorkDayFromTimeOff&quot; | 
 | AGENTWITHOUTCAPABILITYTOHANDLEACTIVITYONQUEUEWORK | &quot;AgentWithoutCapabilityToHandleActivityOnQueueWork&quot; | 
+| UNABLETOPRODUCEAGENTSCHEDULEDUETOUNAVAILABLETIMES | &quot;UnableToProduceAgentScheduleDueToUnavailableTimes&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTTIMEVARIANCEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODSHIFTMINCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMinCountFromAgentHistory&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:226.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
