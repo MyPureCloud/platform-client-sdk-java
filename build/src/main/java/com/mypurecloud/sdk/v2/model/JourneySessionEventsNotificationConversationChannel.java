@@ -106,7 +106,8 @@ public class JourneySessionEventsNotificationConversationChannel  implements Ser
     WHATSAPP("WhatsApp"),
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
-    INSTAGRAM("Instagram");
+    INSTAGRAM("Instagram"),
+    APPLE("Apple");
 
     private String value;
 

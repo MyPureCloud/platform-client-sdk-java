@@ -244,7 +244,8 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     PEER("peer"),
     OTHER("other"),
     SPAM("spam"),
-    UNCALLABLE("uncallable");
+    UNCALLABLE("uncallable"),
+    INACTIVITY("inactivity");
 
     private String value;
 

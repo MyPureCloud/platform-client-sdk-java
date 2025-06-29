@@ -13,8 +13,8 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationMessageContent;
 import com.mypurecloud.sdk.v2.model.Format;
-import com.mypurecloud.sdk.v2.model.MessageContent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -79,11 +79,11 @@ public class TextBotPromptSegment  implements Serializable {
   }
   private TypeEnum type = null;
   private Format format = null;
-  private List<MessageContent> content = null;
+  private List<ConversationMessageContent> content = null;
 
   public TextBotPromptSegment() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      content = new ArrayList<MessageContent>();
+      content = new ArrayList<ConversationMessageContent>();
     }
   }
 
@@ -145,17 +145,17 @@ public class TextBotPromptSegment  implements Serializable {
   /**
    * Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
    **/
-  public TextBotPromptSegment content(List<MessageContent> content) {
+  public TextBotPromptSegment content(List<ConversationMessageContent> content) {
     this.content = content;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.")
   @JsonProperty("content")
-  public List<MessageContent> getContent() {
+  public List<ConversationMessageContent> getContent() {
     return content;
   }
-  public void setContent(List<MessageContent> content) {
+  public void setContent(List<ConversationMessageContent> content) {
     this.content = content;
   }
 

@@ -55,7 +55,9 @@ public class OutboundMessagingEmailCampaignConfigChangeMessagingCampaign  implem
     OFF("off"),
     COMPLETE("complete"),
     STOPPING("stopping"),
-    INVALID("invalid");
+    INVALID("invalid"),
+    FORCED_OFF("forced_off"),
+    FORCED_STOPPING("forced_stopping");
 
     private String value;
 

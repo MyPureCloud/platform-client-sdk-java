@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicT
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -36,6 +37,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
+  private Date inactivityTimeout = null;
   private List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = null;
 
   public QueueConversationSocialExpressionEventTopicConversation() {
@@ -202,6 +204,23 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
 
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicConversation divisions(List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -236,12 +255,13 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
             Objects.equals(this.externalTag, queueConversationSocialExpressionEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, queueConversationSocialExpressionEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationSocialExpressionEventTopicConversation.securePause) &&
+            Objects.equals(this.inactivityTimeout, queueConversationSocialExpressionEventTopicConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, queueConversationSocialExpressionEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
   }
 
   @Override
@@ -258,6 +278,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

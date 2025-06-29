@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicTransferResp
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -36,6 +37,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
+  private Date inactivityTimeout = null;
   private List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions = null;
 
   public QueueConversationVideoEventTopicConversation() {
@@ -202,6 +204,23 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
 
   /**
    **/
+  public QueueConversationVideoEventTopicConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
+   **/
   public QueueConversationVideoEventTopicConversation divisions(List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -236,12 +255,13 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
             Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, queueConversationVideoEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationVideoEventTopicConversation.securePause) &&
+            Objects.equals(this.inactivityTimeout, queueConversationVideoEventTopicConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, queueConversationVideoEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
   }
 
   @Override
@@ -258,6 +278,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

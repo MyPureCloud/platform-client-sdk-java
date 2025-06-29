@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicConversationDi
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -32,6 +33,7 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private Date inactivityTimeout = null;
   private List<ConversationCobrowseEventTopicConversationDivisionMembership> divisions = null;
 
   public ConversationCobrowseEventTopicCobrowseConversation() {
@@ -147,6 +149,23 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
 
   /**
    **/
+  public ConversationCobrowseEventTopicCobrowseConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
+   **/
   public ConversationCobrowseEventTopicCobrowseConversation divisions(List<ConversationCobrowseEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -178,12 +197,13 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
             Objects.equals(this.otherMediaUris, conversationCobrowseEventTopicCobrowseConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationCobrowseEventTopicCobrowseConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationCobrowseEventTopicCobrowseConversation.utilizationLabelId) &&
+            Objects.equals(this.inactivityTimeout, conversationCobrowseEventTopicCobrowseConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationCobrowseEventTopicCobrowseConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
   }
 
   @Override
@@ -197,6 +217,7 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

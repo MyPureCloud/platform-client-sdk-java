@@ -72,14 +72,14 @@ public class DecisionTableRowExecutionOutput  implements Serializable {
 
 
   /**
-   * The JSON output produced by this rule. Valid according to the execution output contract.
+   * The JSON output produced by this rule. Valid according to the execution output contract. In the case of enum decision table output columns, the enum options key will be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will always be returned  regardless of the business rules queue attribute key and these do not change.
    **/
   public DecisionTableRowExecutionOutput outputs(Map<String, Object> outputs) {
     this.outputs = outputs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The JSON output produced by this rule. Valid according to the execution output contract.")
+  @ApiModelProperty(example = "&quot;{\n    outputs: {\n        string_attribute: value,\n        integer_attribute: 1234,\n        number_attribute: 1234.567,\n        boolean_attribute: true,\n        enum_attribute: enum_option_key,\n        date_attribute: 2024-12-01,\n        date_time_attribute: 2024-12-01T00:00:00.000Z,\n        business_rules_queue_attribute: {\n            queue: {\n                id: 4340dbda-acba-4bbb-a861-7016da22cbf6\n            }\n        }\n    }\n}&quot;", required = true, value = "The JSON output produced by this rule. Valid according to the execution output contract. In the case of enum decision table output columns, the enum options key will be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will always be returned  regardless of the business rules queue attribute key and these do not change.")
   @JsonProperty("outputs")
   public Map<String, Object> getOutputs() {
     return outputs;

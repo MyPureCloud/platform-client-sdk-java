@@ -350,6 +350,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     ENDPOINTDND("endpointDnd"),
     ERROR("error"),
     FORWARDTRANSFER("forwardTransfer"),
+    INACTIVITY("inactivity"),
     NOANSWERTRANSFER("noAnswerTransfer"),
     NOTAVAILABLETRANSFER("notAvailableTransfer"),
     OTHER("other"),

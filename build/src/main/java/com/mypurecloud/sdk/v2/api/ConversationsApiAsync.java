@@ -44,8 +44,10 @@ import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToAddress;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToAgent;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToExternal;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToExternalContact;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
@@ -165,7 +167,9 @@ import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.TransferToAddressRequest;
 import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
+import com.mypurecloud.sdk.v2.model.TransferToExternalContactRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
@@ -363,9 +367,11 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsReque
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantInternalmessagesUsersCommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceContactExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantTransferRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionEngagementRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
@@ -375,10 +381,12 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachR
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultContactExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantVoiceConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
@@ -13592,6 +13600,83 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationParticipantReplaceContactExternalAsync(PostConversationParticipantReplaceContactExternalRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationParticipantReplaceContactExternalAsync(ApiRequest<TransferToExternalContactRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -13803,6 +13888,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationParticipantTransferAsync(PostConversationParticipantTransferRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationParticipantTransferAsync(ApiRequest<TransferToAddressRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -14494,6 +14656,83 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultContactExternalAsync(PostConversationsCallParticipantConsultContactExternalRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
+    try {
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultContactExternalAsync(ApiRequest<ConsultTransferToExternalContact> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14780,6 +15019,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConsultTransferResponse> postConversationsCallParticipantVoiceConsultAsync(PostConversationsCallParticipantVoiceConsultRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
+    try {
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantVoiceConsultAsync(ApiRequest<ConsultTransferToAddress> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

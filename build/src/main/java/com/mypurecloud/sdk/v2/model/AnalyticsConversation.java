@@ -102,6 +102,7 @@ public class AnalyticsConversation  implements Serializable {
   private Boolean customerParticipation = null;
   private List<String> divisionIds = null;
   private String externalTag = null;
+  private Date inactivityTimeout = null;
   private List<String> knowledgeBaseIds = null;
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
@@ -317,6 +318,24 @@ public class AnalyticsConversation  implements Serializable {
 
 
   /**
+   * The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
    * The unique identifier(s) of the knowledge base(s) used
    **/
   public AnalyticsConversation knowledgeBaseIds(List<String> knowledgeBaseIds) {
@@ -514,6 +533,7 @@ public class AnalyticsConversation  implements Serializable {
             Objects.equals(this.customerParticipation, analyticsConversation.customerParticipation) &&
             Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
             Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
+            Objects.equals(this.inactivityTimeout, analyticsConversation.inactivityTimeout) &&
             Objects.equals(this.knowledgeBaseIds, analyticsConversation.knowledgeBaseIds) &&
             Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
             Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
@@ -528,7 +548,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, originatingSocialMediaPublic, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, inactivityTimeout, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, originatingSocialMediaPublic, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -544,6 +564,7 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");

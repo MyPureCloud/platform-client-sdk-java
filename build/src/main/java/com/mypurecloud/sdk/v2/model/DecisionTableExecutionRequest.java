@@ -34,14 +34,14 @@ public class DecisionTableExecutionRequest  implements Serializable {
 
   
   /**
-   * The JSON input data for executing the decision table. Must be valid according to the execution input contract defined on the table
+   * The JSON input data for executing the decision table. Must be valid according to the execution input contract defined on the table. In the case of enum decision table columns the enum options key should be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will be required regardless of the queue attribute key and these do not change.
    **/
   public DecisionTableExecutionRequest inputs(Map<String, Object> inputs) {
     this.inputs = inputs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The JSON input data for executing the decision table. Must be valid according to the execution input contract defined on the table")
+  @ApiModelProperty(example = "&quot;{\n    inputs: {\n        string_attribute: value,\n        integer_attribute: 1234,\n        number_attribute: 1234.567,\n        boolean_attribute: true,\n        enum_attribute: enum_option_key,\n        date_attribute: 2024-12-01,\n        date_time_attribute: 2024-12-01T00:00:00.000Z,\n        queue_attribute: {\n            queue: {\n                id: 4340dbda-acba-4bbb-a861-7016da22cbf6\n            }\n        }\n    }\n}&quot;", required = true, value = "The JSON input data for executing the decision table. Must be valid according to the execution input contract defined on the table. In the case of enum decision table columns the enum options key should be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will be required regardless of the queue attribute key and these do not change.")
   @JsonProperty("inputs")
   public Map<String, Object> getInputs() {
     return inputs;

@@ -25,6 +25,7 @@ import java.io.Serializable;
 
 public class ListPicker  implements Serializable {
   
+  private String id = null;
   private String title = null;
   private String subtitle = null;
   private List<ListPickerSection> sections = null;
@@ -36,6 +37,24 @@ public class ListPicker  implements Serializable {
   }
 
   
+  /**
+   * Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.
+   **/
+  public ListPicker id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * Text to show in the title.
    **/
@@ -100,14 +119,15 @@ public class ListPicker  implements Serializable {
     }
     ListPicker listPicker = (ListPicker) o;
 
-    return Objects.equals(this.title, listPicker.title) &&
+    return Objects.equals(this.id, listPicker.id) &&
+            Objects.equals(this.title, listPicker.title) &&
             Objects.equals(this.subtitle, listPicker.subtitle) &&
             Objects.equals(this.sections, listPicker.sections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, subtitle, sections);
+    return Objects.hash(id, title, subtitle, sections);
   }
 
   @Override
@@ -115,6 +135,7 @@ public class ListPicker  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListPicker {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
     sb.append("    sections: ").append(toIndentedString(sections)).append("\n");

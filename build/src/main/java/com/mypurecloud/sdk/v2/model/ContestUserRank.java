@@ -24,6 +24,7 @@ public class ContestUserRank  implements Serializable {
   
   private String id = null;
   private Integer rank = null;
+  private Double score = null;
   private String selfUri = null;
 
   public ContestUserRank() {
@@ -68,6 +69,24 @@ public class ContestUserRank  implements Serializable {
   }
 
 
+  /**
+   * The user's contest score
+   **/
+  public ContestUserRank score(Double score) {
+    this.score = score;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's contest score")
+  @JsonProperty("score")
+  public Double getScore() {
+    return score;
+  }
+  public void setScore(Double score) {
+    this.score = score;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -87,12 +106,13 @@ public class ContestUserRank  implements Serializable {
 
     return Objects.equals(this.id, contestUserRank.id) &&
             Objects.equals(this.rank, contestUserRank.rank) &&
+            Objects.equals(this.score, contestUserRank.score) &&
             Objects.equals(this.selfUri, contestUserRank.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rank, selfUri);
+    return Objects.hash(id, rank, score, selfUri);
   }
 
   @Override
@@ -102,6 +122,7 @@ public class ContestUserRank  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

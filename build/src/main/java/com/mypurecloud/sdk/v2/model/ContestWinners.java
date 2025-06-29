@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class ContestWinners  implements Serializable {
   
   private Integer tier = null;
+  private Integer winnersCount = null;
   private List<ContestUserRank> users = null;
 
   public ContestWinners() {
@@ -50,6 +51,24 @@ public class ContestWinners  implements Serializable {
   }
   public void setTier(Integer tier) {
     this.tier = tier;
+  }
+
+
+  /**
+   * The number of Contest Winners in a tier
+   **/
+  public ContestWinners winnersCount(Integer winnersCount) {
+    this.winnersCount = winnersCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of Contest Winners in a tier")
+  @JsonProperty("winnersCount")
+  public Integer getWinnersCount() {
+    return winnersCount;
+  }
+  public void setWinnersCount(Integer winnersCount) {
+    this.winnersCount = winnersCount;
   }
 
 
@@ -82,12 +101,13 @@ public class ContestWinners  implements Serializable {
     ContestWinners contestWinners = (ContestWinners) o;
 
     return Objects.equals(this.tier, contestWinners.tier) &&
+            Objects.equals(this.winnersCount, contestWinners.winnersCount) &&
             Objects.equals(this.users, contestWinners.users);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tier, users);
+    return Objects.hash(tier, winnersCount, users);
   }
 
   @Override
@@ -96,6 +116,7 @@ public class ContestWinners  implements Serializable {
     sb.append("class ContestWinners {\n");
     
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
+    sb.append("    winnersCount: ").append(toIndentedString(winnersCount)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("}");
     return sb.toString();

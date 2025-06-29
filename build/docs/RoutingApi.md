@@ -3693,7 +3693,7 @@ try {
 # **getRoutingQueueWrapupcodes**
 
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber, name)
 
 Get the wrap-up codes for a queue
 
@@ -3728,8 +3728,9 @@ RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Wrapup code's name (trailing asterisks allowed)
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber);
+    WrapupCodeEntityListing result = apiInstance.getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueWrapupcodes");
@@ -3745,6 +3746,7 @@ try {
 | **queueId** | **String**| Queue ID | 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Wrapup code&#39;s name (trailing asterisks allowed) | [optional] 
 {: class="table-striped"}
 
 
@@ -9748,4 +9750,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

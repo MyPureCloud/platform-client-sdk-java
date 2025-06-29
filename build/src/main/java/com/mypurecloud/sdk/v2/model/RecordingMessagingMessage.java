@@ -91,7 +91,8 @@ public class RecordingMessagingMessage  implements Serializable {
     LISTPICKER("ListPicker"),
     INTERACTIVEAPPLICATION("InteractiveApplication"),
     PAYMENTREQUEST("PaymentRequest"),
-    PAYMENTRESPONSE("PaymentResponse");
+    PAYMENTRESPONSE("PaymentResponse"),
+    FORM("Form");
 
     private String value;
 

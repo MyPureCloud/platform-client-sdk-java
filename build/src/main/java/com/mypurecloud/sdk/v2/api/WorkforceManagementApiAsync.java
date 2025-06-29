@@ -130,7 +130,6 @@ import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobResponse;
-import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportOverallDeleteStatusResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
@@ -343,7 +342,6 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusJobIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisRequest;
@@ -461,7 +459,6 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataBulkRemoveJobsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest;
@@ -6966,83 +6963,6 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<HistoricalImportOverallDeleteStatusResponse> response = (ApiResponse<HistoricalImportOverallDeleteStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieves delete job status for historical data imports of the organization.
-   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<HistoricalImportDeleteJobResponse> getWorkforcemanagementHistoricaldataDeletejobAsync(GetWorkforcemanagementHistoricaldataDeletejobRequest request, final AsyncApiCallback<HistoricalImportDeleteJobResponse> callback) {
-    try {
-      final SettableFuture<HistoricalImportDeleteJobResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<HistoricalImportDeleteJobResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieves delete job status for historical data imports of the organization.
-   * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<HistoricalImportDeleteJobResponse>> getWorkforcemanagementHistoricaldataDeletejobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<HistoricalImportDeleteJobResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportDeleteJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<HistoricalImportDeleteJobResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<HistoricalImportDeleteJobResponse> response = (ApiResponse<HistoricalImportDeleteJobResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<HistoricalImportDeleteJobResponse> response = (ApiResponse<HistoricalImportDeleteJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -15826,83 +15746,6 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<HistoricalImportDeleteFilesJobResponse> response = (ApiResponse<HistoricalImportDeleteFilesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete the entries of the historical data imports in the organization.
-   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<HistoricalImportDeleteJobResponse> postWorkforcemanagementHistoricaldataDeletejobAsync(PostWorkforcemanagementHistoricaldataDeletejobRequest request, final AsyncApiCallback<HistoricalImportDeleteJobResponse> callback) {
-    try {
-      final SettableFuture<HistoricalImportDeleteJobResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoricalImportDeleteJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<HistoricalImportDeleteJobResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete the entries of the historical data imports in the organization.
-   * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<HistoricalImportDeleteJobResponse>> postWorkforcemanagementHistoricaldataDeletejobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<HistoricalImportDeleteJobResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<HistoricalImportDeleteJobResponse>() {}, new AsyncApiCallback<ApiResponse<HistoricalImportDeleteJobResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<HistoricalImportDeleteJobResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<HistoricalImportDeleteJobResponse> response = (ApiResponse<HistoricalImportDeleteJobResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<HistoricalImportDeleteJobResponse> response = (ApiResponse<HistoricalImportDeleteJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -24,6 +24,7 @@ import java.io.Serializable;
 public class V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage  implements Serializable {
   
   private String text = null;
+  private String description = null;
   private BigDecimal score = null;
 
   public V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage() {
@@ -46,6 +47,23 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationReason
   }
   public void setText(String text) {
     this.text = text;
+  }
+
+
+  /**
+   **/
+  public V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -77,12 +95,13 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationReason
     V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage v2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage = (V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage) o;
 
     return Objects.equals(this.text, v2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage.text) &&
+            Objects.equals(this.description, v2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage.description) &&
             Objects.equals(this.score, v2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage.score);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, score);
+    return Objects.hash(text, description, score);
   }
 
   @Override
@@ -91,6 +110,7 @@ public class V2SessionConversationsSummarySettingsPreviewEventConversationReason
     sb.append("class V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage {\n");
     
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("}");
     return sb.toString();

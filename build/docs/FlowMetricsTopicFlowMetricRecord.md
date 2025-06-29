@@ -201,6 +201,7 @@
 | ENDPOINTDND | &quot;endpointDnd&quot; | 
 | ERROR | &quot;error&quot; | 
 | FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
+| INACTIVITY | &quot;inactivity&quot; | 
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
 | OTHER | &quot;other&quot; | 
@@ -365,4 +366,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

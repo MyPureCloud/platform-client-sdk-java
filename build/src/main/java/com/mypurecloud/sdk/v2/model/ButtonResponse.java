@@ -125,6 +125,7 @@ public class ButtonResponse  implements Serializable {
     }
   }
   private MessageTypeEnum messageType = null;
+  private String originatingMessageId = null;
 
   public ButtonResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -204,6 +205,24 @@ public class ButtonResponse  implements Serializable {
   }
 
 
+  /**
+   * Reference to the ID of the original message (e.g., list picker) this button response is replying to.
+   **/
+  public ButtonResponse originatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reference to the ID of the original message (e.g., list picker) this button response is replying to.")
+  @JsonProperty("originatingMessageId")
+  public String getOriginatingMessageId() {
+    return originatingMessageId;
+  }
+  public void setOriginatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -217,12 +236,13 @@ public class ButtonResponse  implements Serializable {
     return Objects.equals(this.type, buttonResponse.type) &&
             Objects.equals(this.text, buttonResponse.text) &&
             Objects.equals(this.payload, buttonResponse.payload) &&
-            Objects.equals(this.messageType, buttonResponse.messageType);
+            Objects.equals(this.messageType, buttonResponse.messageType) &&
+            Objects.equals(this.originatingMessageId, buttonResponse.originatingMessageId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, payload, messageType);
+    return Objects.hash(type, text, payload, messageType, originatingMessageId);
   }
 
   @Override
@@ -234,6 +254,7 @@ public class ButtonResponse  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
+    sb.append("    originatingMessageId: ").append(toIndentedString(originatingMessageId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

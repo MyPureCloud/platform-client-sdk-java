@@ -66,7 +66,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     NOT_AVAILABLE_TRANSFER("NOT_AVAILABLE_TRANSFER"),
     UNCALLABLE("UNCALLABLE"),
     DND_ENDPOINT("DND_ENDPOINT"),
-    DND_TRANSFER("DND_TRANSFER");
+    DND_TRANSFER("DND_TRANSFER"),
+    INACTIVITY("INACTIVITY");
 
     private String value;
 

@@ -2607,10 +2607,11 @@ public class IntegrationsApiAsync {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<CredentialInfoListing> getIntegrationsCredentialsAsync(GetIntegrationsCredentialsRequest request, final AsyncApiCallback<CredentialInfoListing> callback) {
     try {
@@ -2641,10 +2642,11 @@ public class IntegrationsApiAsync {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<CredentialInfoListing>> getIntegrationsCredentialsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CredentialInfoListing>> callback) {
     try {

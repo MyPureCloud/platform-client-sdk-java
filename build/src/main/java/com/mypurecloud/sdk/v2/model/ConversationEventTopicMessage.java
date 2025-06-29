@@ -221,7 +221,8 @@ public class ConversationEventTopicMessage  implements Serializable {
     PEER("peer"),
     OTHER("other"),
     SPAM("spam"),
-    UNCALLABLE("uncallable");
+    UNCALLABLE("uncallable"),
+    INACTIVITY("inactivity");
 
     private String value;
 

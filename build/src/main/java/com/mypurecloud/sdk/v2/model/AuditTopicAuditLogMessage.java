@@ -170,6 +170,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SHAREADD("ShareAdd"),
     SHAREREMOVE("ShareRemove"),
     FAX("Fax"),
+    CONVERT("Convert"),
+    RECEIVE("Receive"),
     VERSIONCREATE("VersionCreate"),
     TAGADD("TagAdd"),
     TAGREMOVE("TagRemove"),
@@ -561,7 +563,11 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DECISIONTABLEVERSION("DecisionTableVersion"),
     DECISIONTABLEROW("DecisionTableRow"),
     ESCALATIONRULE("EscalationRule"),
-    RULES("Rules");
+    RULES("Rules"),
+    CONTACT("Contact"),
+    NOTE("Note"),
+    RELATIONSHIP("Relationship"),
+    EXTERNALORG("ExternalOrg");
 
     private String value;
 

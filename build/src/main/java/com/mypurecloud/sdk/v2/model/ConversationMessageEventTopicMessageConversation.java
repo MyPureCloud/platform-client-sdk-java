@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageMediaPar
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -32,6 +33,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
   private List<String> otherMediaUris = null;
   private String address = null;
   private String utilizationLabelId = null;
+  private Date inactivityTimeout = null;
   private List<ConversationMessageEventTopicConversationDivisionMembership> divisions = null;
 
   public ConversationMessageEventTopicMessageConversation() {
@@ -147,6 +149,23 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
 
   /**
    **/
+  public ConversationMessageEventTopicMessageConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageConversation divisions(List<ConversationMessageEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -178,12 +197,13 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
             Objects.equals(this.otherMediaUris, conversationMessageEventTopicMessageConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationMessageEventTopicMessageConversation.address) &&
             Objects.equals(this.utilizationLabelId, conversationMessageEventTopicMessageConversation.utilizationLabelId) &&
+            Objects.equals(this.inactivityTimeout, conversationMessageEventTopicMessageConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, conversationMessageEventTopicMessageConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, inactivityTimeout, divisions);
   }
 
   @Override
@@ -197,6 +217,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

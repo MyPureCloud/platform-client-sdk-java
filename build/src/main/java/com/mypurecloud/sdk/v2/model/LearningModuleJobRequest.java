@@ -46,7 +46,8 @@ public class LearningModuleJobRequest  implements Serializable {
     REASSIGN("Reassign"),
     GRACEFULARCHIVE("GracefulArchive"),
     IMMEDIATEARCHIVE("ImmediateArchive"),
-    UNARCHIVE("Unarchive");
+    UNARCHIVE("Unarchive"),
+    ASSIGN("Assign");
 
     private String value;
 

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.DatePickerAvailableDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -25,9 +26,11 @@ import java.io.Serializable;
 
 public class DatePicker  implements Serializable {
   
+  private String id = null;
   private String title = null;
   private String subtitle = null;
   private List<DatePickerAvailableDateTime> datePickerAvailableDateTimes = null;
+  private Date dateSelected = null;
 
   public DatePicker() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -36,6 +39,24 @@ public class DatePicker  implements Serializable {
   }
 
   
+  /**
+   * Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+   **/
+  public DatePicker id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    * Text to show in the title.
    **/
@@ -90,6 +111,24 @@ public class DatePicker  implements Serializable {
   }
 
 
+  /**
+   * Selected date response from end customer. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public DatePicker dateSelected(Date dateSelected) {
+    this.dateSelected = dateSelected;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Selected date response from end customer. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateSelected")
+  public Date getDateSelected() {
+    return dateSelected;
+  }
+  public void setDateSelected(Date dateSelected) {
+    this.dateSelected = dateSelected;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -100,14 +139,16 @@ public class DatePicker  implements Serializable {
     }
     DatePicker datePicker = (DatePicker) o;
 
-    return Objects.equals(this.title, datePicker.title) &&
+    return Objects.equals(this.id, datePicker.id) &&
+            Objects.equals(this.title, datePicker.title) &&
             Objects.equals(this.subtitle, datePicker.subtitle) &&
-            Objects.equals(this.datePickerAvailableDateTimes, datePicker.datePickerAvailableDateTimes);
+            Objects.equals(this.datePickerAvailableDateTimes, datePicker.datePickerAvailableDateTimes) &&
+            Objects.equals(this.dateSelected, datePicker.dateSelected);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, subtitle, datePickerAvailableDateTimes);
+    return Objects.hash(id, title, subtitle, datePickerAvailableDateTimes, dateSelected);
   }
 
   @Override
@@ -115,9 +156,11 @@ public class DatePicker  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatePicker {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
     sb.append("    datePickerAvailableDateTimes: ").append(toIndentedString(datePickerAvailableDateTimes)).append("\n");
+    sb.append("    dateSelected: ").append(toIndentedString(dateSelected)).append("\n");
     sb.append("}");
     return sb.toString();
   }

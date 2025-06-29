@@ -11,9 +11,10 @@
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 | **address** | **String** |  |  [optional] |
 | **utilizationLabelId** | **String** |  |  [optional] |
+| **inactivityTimeout** | [**Date**](Date) |  |  [optional] |
 | **divisions** | [**List&lt;ConversationEmailEventTopicConversationDivisionMembership&gt;**](ConversationEmailEventTopicConversationDivisionMembership) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

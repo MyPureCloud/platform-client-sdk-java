@@ -41,8 +41,10 @@ import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToAddress;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToAgent;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToExternal;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToExternalContact;
 import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
@@ -162,7 +164,9 @@ import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.TransferToAddressRequest;
 import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
+import com.mypurecloud.sdk.v2.model.TransferToExternalContactRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
@@ -360,9 +364,11 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsReque
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantInternalmessagesUsersCommunicationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceContactExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantTransferRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionEngagementRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
@@ -372,10 +378,12 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachR
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultContactExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantVoiceConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
@@ -14846,6 +14854,93 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceContactExternal(String conversationId, String participantId, TransferToExternalContactRequest body) throws IOException, ApiException {
+     postConversationParticipantReplaceContactExternal(createPostConversationParticipantReplaceContactExternalRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceContactExternalWithHttpInfo(String conversationId, String participantId, TransferToExternalContactRequest body) throws IOException {
+    return postConversationParticipantReplaceContactExternal(createPostConversationParticipantReplaceContactExternalRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantReplaceContactExternalRequest createPostConversationParticipantReplaceContactExternalRequest(String conversationId, String participantId, TransferToExternalContactRequest body) {
+    return PostConversationParticipantReplaceContactExternalRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceContactExternal(PostConversationParticipantReplaceContactExternalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceContactExternal(ApiRequest<TransferToExternalContactRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -15091,6 +15186,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantTransfer(String conversationId, String participantId, TransferToAddressRequest body) throws IOException, ApiException {
+     postConversationParticipantTransfer(createPostConversationParticipantTransferRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantTransferWithHttpInfo(String conversationId, String participantId, TransferToAddressRequest body) throws IOException {
+    return postConversationParticipantTransfer(createPostConversationParticipantTransferRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantTransferRequest createPostConversationParticipantTransferRequest(String conversationId, String participantId, TransferToAddressRequest body) {
+    return PostConversationParticipantTransferRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantTransfer(PostConversationParticipantTransferRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant by another one using the address of the destination.
+   * 
+   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantTransfer(ApiRequest<TransferToAddressRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -15849,6 +16031,96 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(String conversationId, String participantId, ConsultTransferToExternalContact body) throws IOException, ApiException {
+    return  postConversationsCallParticipantConsultContactExternal(createPostConversationsCallParticipantConsultContactExternalRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultContactExternalWithHttpInfo(String conversationId, String participantId, ConsultTransferToExternalContact body) throws IOException {
+    return postConversationsCallParticipantConsultContactExternal(createPostConversationsCallParticipantConsultContactExternalRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantConsultContactExternalRequest createPostConversationsCallParticipantConsultContactExternalRequest(String conversationId, String participantId, ConsultTransferToExternalContact body) {
+    return PostConversationsCallParticipantConsultContactExternalRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(PostConversationsCallParticipantConsultContactExternalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultContactExternal(ApiRequest<ConsultTransferToExternalContact> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -16176,6 +16448,96 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantVoiceConsult(String conversationId, String participantId, ConsultTransferToAddress body) throws IOException, ApiException {
+    return  postConversationsCallParticipantVoiceConsult(createPostConversationsCallParticipantVoiceConsultRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantVoiceConsultWithHttpInfo(String conversationId, String participantId, ConsultTransferToAddress body) throws IOException {
+    return postConversationsCallParticipantVoiceConsult(createPostConversationsCallParticipantVoiceConsultRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantVoiceConsultRequest createPostConversationsCallParticipantVoiceConsultRequest(String conversationId, String participantId, ConsultTransferToAddress body) {
+    return PostConversationsCallParticipantVoiceConsultRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantVoiceConsult(PostConversationsCallParticipantVoiceConsultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate voice consult transfer
+   * 
+   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantVoiceConsult(ApiRequest<ConsultTransferToAddress> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

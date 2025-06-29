@@ -2982,12 +2982,13 @@ public class IntegrationsApi {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return CredentialInfoListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public CredentialInfoListing getIntegrationsCredentials(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return  getIntegrationsCredentials(createGetIntegrationsCredentialsRequest(pageNumber, pageSize));
@@ -2995,11 +2996,12 @@ public class IntegrationsApi {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return CredentialInfoListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<CredentialInfoListing> getIntegrationsCredentialsWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
     return getIntegrationsCredentials(createGetIntegrationsCredentialsRequest(pageNumber, pageSize).withHttpInfo());
@@ -3016,11 +3018,12 @@ public class IntegrationsApi {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param request The request object
    * @return CredentialInfoListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public CredentialInfoListing getIntegrationsCredentials(GetIntegrationsCredentialsRequest request) throws IOException, ApiException {
     try {
@@ -3035,10 +3038,11 @@ public class IntegrationsApi {
 
   /**
    * List multiple sets of credentials
-   * 
+   * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<CredentialInfoListing> getIntegrationsCredentials(ApiRequest<Void> request) throws IOException {
     try {

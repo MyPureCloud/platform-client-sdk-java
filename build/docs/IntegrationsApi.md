@@ -2143,10 +2143,15 @@ try {
 
 # **getIntegrationsCredentials**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [CredentialInfoListing](CredentialInfoListing) getIntegrationsCredentials(pageNumber, pageSize)
 
 List multiple sets of credentials
+
+This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
 
 Wraps GET /api/v2/integrations/credentials  
 
@@ -5849,4 +5854,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

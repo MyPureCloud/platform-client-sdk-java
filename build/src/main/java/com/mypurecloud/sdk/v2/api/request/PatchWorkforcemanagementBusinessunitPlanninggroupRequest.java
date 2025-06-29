@@ -137,7 +137,6 @@ import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobResponse;
-import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportOverallDeleteStatusResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;

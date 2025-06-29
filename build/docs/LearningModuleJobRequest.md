@@ -17,8 +17,9 @@
 | GRACEFULARCHIVE | &quot;GracefulArchive&quot; | 
 | IMMEDIATEARCHIVE | &quot;ImmediateArchive&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
+| ASSIGN | &quot;Assign&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

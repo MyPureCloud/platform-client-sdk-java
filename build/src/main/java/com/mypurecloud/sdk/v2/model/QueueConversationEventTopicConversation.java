@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -36,6 +37,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
+  private Date inactivityTimeout = null;
   private List<QueueConversationEventTopicConversationDivisionMembership> divisions = null;
 
   public QueueConversationEventTopicConversation() {
@@ -202,6 +204,23 @@ public class QueueConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
+  public QueueConversationEventTopicConversation inactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inactivityTimeout")
+  public Date getInactivityTimeout() {
+    return inactivityTimeout;
+  }
+  public void setInactivityTimeout(Date inactivityTimeout) {
+    this.inactivityTimeout = inactivityTimeout;
+  }
+
+
+  /**
+   **/
   public QueueConversationEventTopicConversation divisions(List<QueueConversationEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -236,12 +255,13 @@ public class QueueConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.externalTag, queueConversationEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, queueConversationEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationEventTopicConversation.securePause) &&
+            Objects.equals(this.inactivityTimeout, queueConversationEventTopicConversation.inactivityTimeout) &&
             Objects.equals(this.divisions, queueConversationEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
   }
 
   @Override
@@ -258,6 +278,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

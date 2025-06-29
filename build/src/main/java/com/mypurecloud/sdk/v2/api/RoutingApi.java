@@ -4995,12 +4995,13 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param name Wrapup code's name (trailing asterisks allowed) (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(String queueId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRoutingQueueWrapupcodes(createGetRoutingQueueWrapupcodesRequest(queueId, pageSize, pageNumber));
+  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(String queueId, Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
+    return  getRoutingQueueWrapupcodes(createGetRoutingQueueWrapupcodesRequest(queueId, pageSize, pageNumber, name));
   }
 
   /**
@@ -5009,20 +5010,23 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param name Wrapup code's name (trailing asterisks allowed) (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodesWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber) throws IOException {
-    return getRoutingQueueWrapupcodes(createGetRoutingQueueWrapupcodesRequest(queueId, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodesWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String name) throws IOException {
+    return getRoutingQueueWrapupcodes(createGetRoutingQueueWrapupcodesRequest(queueId, pageSize, pageNumber, name).withHttpInfo());
   }
 
-  private GetRoutingQueueWrapupcodesRequest createGetRoutingQueueWrapupcodesRequest(String queueId, Integer pageSize, Integer pageNumber) {
+  private GetRoutingQueueWrapupcodesRequest createGetRoutingQueueWrapupcodesRequest(String queueId, Integer pageSize, Integer pageNumber, String name) {
     return GetRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
 
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
+
+            .withName(name)
 
             .build();
   }
