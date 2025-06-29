@@ -41,8 +41,9 @@
 | WEBMESSAGING | &quot;WebMessaging&quot; | 
 | OPEN | &quot;Open&quot; | 
 | INSTAGRAM | &quot;Instagram&quot; | 
+| APPLE | &quot;Apple&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

@@ -33,6 +33,7 @@
 | PAYMENTRESPONSE | &quot;PaymentResponse&quot; | 
 | PUSH | &quot;Push&quot; | 
 | FORM | &quot;Form&quot; | 
+| ROADSIDEASSISTANCE | &quot;RoadsideAssistance&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
@@ -56,4 +57,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

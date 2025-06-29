@@ -277,6 +277,8 @@
 | TOTAL_PARK_TIME | &quot;TOTAL_PARK_TIME&quot; |
 | MIN_PARK_TIME | &quot;MIN_PARK_TIME&quot; |
 | MAX_PARK_TIME | &quot;MAX_PARK_TIME&quot; |
+| INBOUND_AUDIO_COUNT | &quot;INBOUND_AUDIO_COUNT&quot; |
+| OUTBOUND_AUDIO_COUNT | &quot;OUTBOUND_AUDIO_COUNT&quot; |
 
 
 ## Enum: SortOrderEnum
@@ -396,4 +398,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

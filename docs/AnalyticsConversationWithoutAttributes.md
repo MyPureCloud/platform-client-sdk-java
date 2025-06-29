@@ -13,6 +13,7 @@
 | **customerParticipation** | **Boolean** | Indicates a messaging conversation in which the customer participated by sending at least one message |  [optional] |
 | **divisionIds** | **List&lt;String&gt;** | Identifier(s) of division(s) associated with a conversation |  [optional] |
 | **externalTag** | **String** | External tag for the conversation |  [optional] |
+| **inactivityTimeout** | [**Date**](Date) | The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **knowledgeBaseIds** | **List&lt;String&gt;** | The unique identifier(s) of the knowledge base(s) used |  [optional] |
 | **mediaStatsMinConversationMos** | **Double** | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
 | **mediaStatsMinConversationRFactor** | **Double** | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
@@ -62,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

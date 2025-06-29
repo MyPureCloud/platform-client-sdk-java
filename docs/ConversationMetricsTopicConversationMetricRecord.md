@@ -110,6 +110,8 @@
 | NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; | 
 | NOVERSLA | &quot;nOverSla&quot; | 
 | NTRANSFERRED | &quot;nTransferred&quot; | 
+| OAUDIOMESSAGECOUNT | &quot;oAudioMessageCount&quot; | 
+| OEXTERNALAUDIOMESSAGECOUNT | &quot;oExternalAudioMessageCount&quot; | 
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
 | OMEDIACOUNT | &quot;oMediaCount&quot; | 
 | OMESSAGECOUNT | &quot;oMessageCount&quot; | 
@@ -230,6 +232,7 @@
 | ENDPOINTDND | &quot;endpointDnd&quot; | 
 | ERROR | &quot;error&quot; | 
 | FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
+| INACTIVITY | &quot;inactivity&quot; | 
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
 | OTHER | &quot;other&quot; | 
@@ -348,4 +351,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

@@ -98,6 +98,8 @@
 | SHAREADD | &quot;ShareAdd&quot; | 
 | SHAREREMOVE | &quot;ShareRemove&quot; | 
 | FAX | &quot;Fax&quot; | 
+| CONVERT | &quot;Convert&quot; | 
+| RECEIVE | &quot;Receive&quot; | 
 | VERSIONCREATE | &quot;VersionCreate&quot; | 
 | TAGADD | &quot;TagAdd&quot; | 
 | TAGREMOVE | &quot;TagRemove&quot; | 
@@ -451,8 +453,12 @@
 | DECISIONTABLEROW | &quot;DecisionTableRow&quot; | 
 | ESCALATIONRULE | &quot;EscalationRule&quot; | 
 | RULES | &quot;Rules&quot; | 
+| CONTACT | &quot;Contact&quot; | 
+| NOTE | &quot;Note&quot; | 
+| RELATIONSHIP | &quot;Relationship&quot; | 
+| EXTERNALORG | &quot;ExternalOrg&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_

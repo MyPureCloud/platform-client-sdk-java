@@ -178,9 +178,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | Setup internal message communication with user |
 | [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | Replace this participant with the specified agent |
+| [**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | Replace this participant with the an external contact |
 | [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact |
 | [**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | Replace this participant with the specified queue |
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
+| [**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | Replace this participant by another one using the address of the destination. |
 | [**postConversationSuggestionEngagement**](ConversationsApi#postConversationSuggestionEngagement) | Save an engagement on the suggestion. |
 | [**postConversationSuggestionsFeedback**](ConversationsApi#postConversationSuggestionsFeedback) | Suggestion feedback. |
 | [**postConversationSummaryFeedback**](ConversationsApi#postConversationSummaryFeedback) | Submit feedback for the summary. |
@@ -190,10 +192,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
 | [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | Initiate a consult transfer to an agent |
+| [**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | Initiate a consult transfer to an external contact |
 | [**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | Initiate a consult transfer to an external contact |
 | [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | Initiate a consult transfer to a queue |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | Initiate voice consult transfer |
 | [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | Add participants to a conversation |
 | [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -10981,6 +10985,71 @@ try {
 null (empty response body)
 
 
+# **postConversationParticipantReplaceContactExternal**
+
+
+> Void postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+
+Replace this participant with the an external contact
+
+postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external  
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternalContact
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+TransferToExternalContactRequest body = new TransferToExternalContactRequest(); // TransferToExternalContactRequest | Transfer request
+try {
+    apiInstance.postConversationParticipantReplaceContactExternal(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantReplaceContactExternal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferToExternalContactRequest**](TransferToExternalContactRequest)| Transfer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **postConversationParticipantReplaceExternal**
 
 
@@ -11167,6 +11236,70 @@ try {
 ### Return type
 
 [**SecureSession**](SecureSession)
+
+
+# **postConversationParticipantTransfer**
+
+
+> Void postConversationParticipantTransfer(conversationId, participantId, body)
+
+Replace this participant by another one using the address of the destination.
+
+postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer  
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+TransferToAddressRequest body = new TransferToAddressRequest(); // TransferToAddressRequest | Transfer request
+try {
+    apiInstance.postConversationParticipantTransfer(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantTransfer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferToAddressRequest**](TransferToAddressRequest)| Transfer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **postConversationSuggestionEngagement**
@@ -11730,6 +11863,72 @@ try {
 [**ConsultTransferResponse**](ConsultTransferResponse)
 
 
+# **postConversationsCallParticipantConsultContactExternal**
+
+
+> [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+
+Initiate a consult transfer to an external contact
+
+postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external  
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternalContact
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ConsultTransferToExternalContact body = new ConsultTransferToExternalContact(); // ConsultTransferToExternalContact | Destination address & initial speak to
+try {
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantConsultContactExternal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferToExternalContact**](ConsultTransferToExternalContact)| Destination address &amp; initial speak to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
+
+
 # **postConversationsCallParticipantConsultExternal**
 
 
@@ -11978,6 +12177,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **postConversationsCallParticipantVoiceConsult**
+
+
+> [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+
+Initiate voice consult transfer
+
+postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult  
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ConsultTransferToAddress body = new ConsultTransferToAddress(); // ConsultTransferToAddress | Destination address & initial speak to
+try {
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantVoiceConsult");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferToAddress**](ConsultTransferToAddress)| Destination address &amp; initial speak to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 # **postConversationsCallParticipants**
@@ -16906,4 +17170,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:227.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
