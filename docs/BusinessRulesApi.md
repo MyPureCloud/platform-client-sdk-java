@@ -21,7 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | Get the core types from which all schemas are built. |
 | [**patchBusinessrulesDecisiontable**](BusinessRulesApi#patchBusinessrulesDecisiontable) | Update a decision table |
 | [**patchBusinessrulesDecisiontableVersion**](BusinessRulesApi#patchBusinessrulesDecisiontableVersion) | Update a decision table version |
-| [**patchBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#patchBusinessrulesDecisiontableVersionRow) | Partially update a decision table row. Will be deprecated, we should use PUT request. |
 | [**postBusinessrulesDecisiontableExecute**](BusinessRulesApi#postBusinessrulesDecisiontableExecute) | Execute a published decision table |
 | [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | Copy a decision table version |
 | [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | Execute a decision table version |
@@ -545,7 +544,7 @@ try {
 # **getBusinessrulesDecisiontableVersions**
 
 
-> [DecisionTableVersionListing](DecisionTableVersionListing) getBusinessrulesDecisiontableVersions(tableId, after, pageSize, divisionIds)
+> [DecisionTableVersionListing](DecisionTableVersionListing) getBusinessrulesDecisiontableVersions(tableId, after, pageSize)
 
 Get a list of decision table versions
 
@@ -582,9 +581,8 @@ BusinessRulesApi apiInstance = new BusinessRulesApi();
 String tableId = "tableId_example"; // String | Table ID
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
-List<String> divisionIds = Arrays.asList(null); // List<String> | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 try {
-    DecisionTableVersionListing result = apiInstance.getBusinessrulesDecisiontableVersions(tableId, after, pageSize, divisionIds);
+    DecisionTableVersionListing result = apiInstance.getBusinessrulesDecisiontableVersions(tableId, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontableVersions");
@@ -600,7 +598,6 @@ try {
 | **tableId** | **String**| Table ID | 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
-| **divisionIds** | [**List&lt;String&gt;**](String)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional] 
 {: class="table-striped"}
 
 
@@ -612,7 +609,7 @@ try {
 # **getBusinessrulesDecisiontables**
 
 
-> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontables(after, pageSize, divisionIds)
+> [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontables(after, pageSize, divisionIds, name)
 
 Get a list of decision tables.
 
@@ -649,8 +646,9 @@ BusinessRulesApi apiInstance = new BusinessRulesApi();
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 100.
 List<String> divisionIds = Arrays.asList(null); // List<String> | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+String name = "name_example"; // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
 try {
-    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontables(after, pageSize, divisionIds);
+    DecisionTableListing result = apiInstance.getBusinessrulesDecisiontables(after, pageSize, divisionIds, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesDecisiontables");
@@ -666,6 +664,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 100. | [optional] 
 | **divisionIds** | [**List&lt;String&gt;**](String)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional] 
+| **name** | **String**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. | [optional] 
 {: class="table-striped"}
 
 
@@ -1111,77 +1110,6 @@ try {
 ### Return type
 
 [**DecisionTableVersion**](DecisionTableVersion)
-
-
-# **patchBusinessrulesDecisiontableVersionRow**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [DecisionTableRow](DecisionTableRow) patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
-
-Partially update a decision table row. Will be deprecated, we should use PUT request.
-
-patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
-
-Requires ALL permissions: 
-
-* businessrules:decisionTableRow:edit
-* routing:queue:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-BusinessRulesApi apiInstance = new BusinessRulesApi();
-String tableId = "tableId_example"; // String | Table ID
-Integer tableVersion = 56; // Integer | Table Version
-String rowId = "rowId_example"; // String | Row ID
-UpdateDecisionTableRowRequest body = new UpdateDecisionTableRowRequest(); // UpdateDecisionTableRowRequest | Partially update decision table row request
-try {
-    DecisionTableRow result = apiInstance.patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BusinessRulesApi#patchBusinessrulesDecisiontableVersionRow");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **tableId** | **String**| Table ID | 
-| **tableVersion** | **Integer**| Table Version | 
-| **rowId** | **String**| Row ID | 
-| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Partially update decision table row request | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**DecisionTableRow**](DecisionTableRow)
 
 
 # **postBusinessrulesDecisiontableExecute**
@@ -1954,4 +1882,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

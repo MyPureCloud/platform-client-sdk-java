@@ -1050,7 +1050,7 @@ try {
 # **getTaskmanagementWorkitemUserWrapups**
 
 
-> [WorkitemWrapup](WorkitemWrapup) getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder)
+> [WorkitemWrapupEntityListing](WorkitemWrapupEntityListing) getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder)
 
 Get all wrapup codes added for the given user for a workitem.
 
@@ -1089,7 +1089,7 @@ String after = "after_example"; // String | The cursor that points to the end of
 Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.
 String sortOrder = "descending"; // String | Ascending or descending sort order
 try {
-    WorkitemWrapup result = apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder);
+    WorkitemWrapupEntityListing result = apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemUserWrapups");
@@ -1113,7 +1113,7 @@ try {
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+[**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing)
 
 
 # **getTaskmanagementWorkitemVersion**
@@ -1851,7 +1851,7 @@ try {
 # **getTaskmanagementWorkitemsSchemaVersions**
 
 
-> [DataSchema](DataSchema) getTaskmanagementWorkitemsSchemaVersions(schemaId)
+> [DataSchemaListing](DataSchemaListing) getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 Get all versions of a schema
 
@@ -1885,7 +1885,7 @@ Configuration.setDefaultApiClient(apiClient);
 TaskManagementApi apiInstance = new TaskManagementApi();
 String schemaId = "schemaId_example"; // String | Schema ID
 try {
-    DataSchema result = apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId);
+    DataSchemaListing result = apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions");
@@ -1904,7 +1904,7 @@ try {
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 # **getTaskmanagementWorkitemsSchemas**
@@ -4698,4 +4698,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

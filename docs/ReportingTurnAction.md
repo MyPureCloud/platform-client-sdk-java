@@ -16,9 +16,11 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASKFORAUTHENTICATIONACTION | &quot;AskForAuthenticationAction&quot; | 
 | ADDFLOWMILESTONEACTION | &quot;AddFlowMilestoneAction&quot; | 
 | ASKFORNLUINTENTACTION | &quot;AskForNLUIntentAction&quot; | 
 | ASKFORBOOLEANACTION | &quot;AskForBooleanAction&quot; | 
+| ASKFORPAYMENTACTION | &quot;AskForPaymentAction&quot; | 
 | ASKFORSLOTACTION | &quot;AskForSlotAction&quot; | 
 | ASKSURVEYQUESTIONACTION | &quot;AskSurveyQuestionAction&quot; | 
 | ASKFORNLUNEXTINTENTACTION | &quot;AskForNLUNextIntentAction&quot; | 
@@ -91,4 +93,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteChatsRoomParticipant**](ChatApi#deleteChatsRoomParticipant) | Remove a user from a room. |
 | [**deleteChatsUserMessage**](ChatApi#deleteChatsUserMessage) | Delete a message to a user |
 | [**deleteChatsUserMessagesPin**](ChatApi#deleteChatsUserMessagesPin) | Remove a pinned message from a 1on1 |
+| [**deleteChatsUsersMeSettings**](ChatApi#deleteChatsUsersMeSettings) | Delete a user's chat settings |
 | [**getChatsMessage**](ChatApi#getChatsMessage) | Get a message |
 | [**getChatsRoom**](ChatApi#getChatsRoom) | Get a room |
 | [**getChatsRoomMessage**](ChatApi#getChatsRoomMessage) | Get messages by id(s) from a room |
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postChatsRooms**](ChatApi#postChatsRooms) | Create an adhoc room |
 | [**postChatsUserMessages**](ChatApi#postChatsUserMessages) | Send a message to a user |
 | [**postChatsUserMessagesPins**](ChatApi#postChatsUserMessagesPins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages |
+| [**postChatsUsersMeSettings**](ChatApi#postChatsUsersMeSettings) | Create a user's chat settings |
 | [**putChatsMessageReactions**](ChatApi#putChatsMessageReactions) | Update reactions to a message |
 | [**putChatsSettings**](ChatApi#putChatsSettings) | Update Chat Settings. |
 {: class="table-striped"}
@@ -344,6 +346,59 @@ try {
 null (empty response body)
 
 
+# **deleteChatsUsersMeSettings**
+
+
+> Void deleteChatsUsersMeSettings()
+
+Delete a user's chat settings
+
+Wraps DELETE /api/v2/chats/users/me/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+try {
+    apiInstance.deleteChatsUsersMeSettings();
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#deleteChatsUsersMeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+null (empty response body)
+
+
 # **getChatsMessage**
 
 
@@ -530,7 +585,7 @@ try {
 # **getChatsRoomMessages**
 
 
-> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessages(roomJid, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessages(roomJid, limit, before, after, excludeMetadata)
 
 Get a room's message history
 
@@ -567,8 +622,9 @@ String roomJid = "roomJid_example"; // String | roomJid
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
+Boolean excludeMetadata = true; // Boolean | Whether to exclude metadata for messages
 try {
-    ChatMessageEntityListing result = apiInstance.getChatsRoomMessages(roomJid, limit, before, after);
+    ChatMessageEntityListing result = apiInstance.getChatsRoomMessages(roomJid, limit, before, after, excludeMetadata);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsRoomMessages");
@@ -585,6 +641,7 @@ try {
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
+| **excludeMetadata** | **Boolean**| Whether to exclude metadata for messages | [optional] 
 {: class="table-striped"}
 
 
@@ -774,7 +831,7 @@ This endpoint does not require any parameters.
 # **getChatsThreadMessages**
 
 
-> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsThreadMessages(threadId, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsThreadMessages(threadId, limit, before, after, excludeMetadata)
 
 Get history by thread
 
@@ -811,8 +868,9 @@ String threadId = "threadId_example"; // String | threadId
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
+Boolean excludeMetadata = true; // Boolean | Whether to exclude metadata for messages
 try {
-    ChatMessageEntityListing result = apiInstance.getChatsThreadMessages(threadId, limit, before, after);
+    ChatMessageEntityListing result = apiInstance.getChatsThreadMessages(threadId, limit, before, after, excludeMetadata);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsThreadMessages");
@@ -829,6 +887,7 @@ try {
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
+| **excludeMetadata** | **Boolean**| Whether to exclude metadata for messages | [optional] 
 {: class="table-striped"}
 
 
@@ -962,7 +1021,7 @@ try {
 # **getChatsUserMessages**
 
 
-> [ChatMessageResponse](ChatMessageResponse) getChatsUserMessages(userId, limit, before, after)
+> [ChatMessageResponse](ChatMessageResponse) getChatsUserMessages(userId, limit, before, after, excludeMetadata)
 
 Get 1on1 History between a user
 
@@ -999,8 +1058,9 @@ String userId = "userId_example"; // String | userId
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
+Boolean excludeMetadata = true; // Boolean | Whether to exclude metadata for messages
 try {
-    ChatMessageResponse result = apiInstance.getChatsUserMessages(userId, limit, before, after);
+    ChatMessageResponse result = apiInstance.getChatsUserMessages(userId, limit, before, after, excludeMetadata);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsUserMessages");
@@ -1017,6 +1077,7 @@ try {
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
+| **excludeMetadata** | **Boolean**| Whether to exclude metadata for messages | [optional] 
 {: class="table-striped"}
 
 
@@ -1874,6 +1935,63 @@ try {
 null (empty response body)
 
 
+# **postChatsUsersMeSettings**
+
+
+> Void postChatsUsersMeSettings(body)
+
+Create a user's chat settings
+
+Wraps POST /api/v2/chats/users/me/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+UserChatSettingsPost body = new UserChatSettingsPost(); // UserChatSettingsPost | 
+try {
+    apiInstance.postChatsUsersMeSettings(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#postChatsUsersMeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserChatSettingsPost**](UserChatSettingsPost)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **putChatsMessageReactions**
 
 
@@ -1994,4 +2112,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

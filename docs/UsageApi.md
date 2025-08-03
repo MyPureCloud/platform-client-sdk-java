@@ -6,9 +6,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getOauthClientUsageQueryResult**](UsageApi#getOauthClientUsageQueryResult) | Get the results of a usage query |
 | [**getOauthClientUsageSummary**](UsageApi#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
+| [**getUsageAggregatesQueryJob**](UsageApi#getUsageAggregatesQueryJob) | Get the status and results of the usage query |
+| [**getUsageClientClientIdAggregatesQueryJob**](UsageApi#getUsageClientClientIdAggregatesQueryJob) | Get the status and results of the usage query |
 | [**getUsageQueryExecutionIdResults**](UsageApi#getUsageQueryExecutionIdResults) | Get the results of a usage query |
 | [**getUsageSimplesearchExecutionIdResults**](UsageApi#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results. |
 | [**postOauthClientUsageQuery**](UsageApi#postOauthClientUsageQuery) | Query for OAuth client API usage |
+| [**postUsageAggregatesQueryJobs**](UsageApi#postUsageAggregatesQueryJobs) | Query your organization's public api usage. |
+| [**postUsageClientClientIdAggregatesQueryJobs**](UsageApi#postUsageClientClientIdAggregatesQueryJobs) | Query your client's public api usage. |
 | [**postUsageQuery**](UsageApi#postUsageQuery) | Query organization API Usage -  |
 | [**postUsageSimplesearch**](UsageApi#postUsageSimplesearch) | Search organization API Usage |
 {: class="table-striped"}
@@ -138,6 +142,134 @@ try {
 ### Return type
 
 [**UsageExecutionResult**](UsageExecutionResult)
+
+
+# **getUsageAggregatesQueryJob**
+
+
+> [OrganizationPublicApiUsageResultsResponse](OrganizationPublicApiUsageResultsResponse) getUsageAggregatesQueryJob(jobId, pageSize, after)
+
+Get the status and results of the usage query
+
+Wraps GET /api/v2/usage/aggregates/query/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* usage:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+String jobId = "jobId_example"; // String | jobId
+Integer pageSize = 100; // Integer | Page size of the results. Max is 1000.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+try {
+    OrganizationPublicApiUsageResultsResponse result = apiInstance.getUsageAggregatesQueryJob(jobId, pageSize, after);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#getUsageAggregatesQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **pageSize** | **Integer**| Page size of the results. Max is 1000. | [optional] [default to 100] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationPublicApiUsageResultsResponse**](OrganizationPublicApiUsageResultsResponse)
+
+
+# **getUsageClientClientIdAggregatesQueryJob**
+
+
+> [ClientPublicApiUsageResultsResponse](ClientPublicApiUsageResultsResponse) getUsageClientClientIdAggregatesQueryJob(clientId, jobId, pageSize, after)
+
+Get the status and results of the usage query
+
+Wraps GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* usage:client:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+String clientId = "clientId_example"; // String | clientId
+String jobId = "jobId_example"; // String | jobId
+Integer pageSize = 100; // Integer | Page size of the results. Max is 1000.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+try {
+    ClientPublicApiUsageResultsResponse result = apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, pageSize, after);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#getUsageClientClientIdAggregatesQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **String**| clientId | 
+| **jobId** | **String**| jobId | 
+| **pageSize** | **Integer**| Page size of the results. Max is 1000. | [optional] [default to 100] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClientPublicApiUsageResultsResponse**](ClientPublicApiUsageResultsResponse)
 
 
 # **getUsageQueryExecutionIdResults**
@@ -328,6 +460,130 @@ try {
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
+# **postUsageAggregatesQueryJobs**
+
+
+> [OrganizationUsageQueryResponse](OrganizationUsageQueryResponse) postUsageAggregatesQueryJobs(body)
+
+Query your organization's public api usage.
+
+After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+Wraps POST /api/v2/usage/aggregates/query/jobs  
+
+Requires ANY permissions: 
+
+* usage:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+OrganizationPublicApiUsageQueryRequest body = new OrganizationPublicApiUsageQueryRequest(); // OrganizationPublicApiUsageQueryRequest | Query
+try {
+    OrganizationUsageQueryResponse result = apiInstance.postUsageAggregatesQueryJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#postUsageAggregatesQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OrganizationPublicApiUsageQueryRequest**](OrganizationPublicApiUsageQueryRequest)| Query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationUsageQueryResponse**](OrganizationUsageQueryResponse)
+
+
+# **postUsageClientClientIdAggregatesQueryJobs**
+
+
+> [ClientUsageQueryResponse](ClientUsageQueryResponse) postUsageClientClientIdAggregatesQueryJobs(clientId, body)
+
+Query your client's public api usage.
+
+After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+Wraps POST /api/v2/usage/client/{clientId}/aggregates/query/jobs  
+
+Requires ANY permissions: 
+
+* usage:client:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+String clientId = "clientId_example"; // String | clientId
+ClientPublicApiUsageQueryRequest body = new ClientPublicApiUsageQueryRequest(); // ClientPublicApiUsageQueryRequest | Query
+try {
+    ClientUsageQueryResponse result = apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#postUsageClientClientIdAggregatesQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **String**| clientId | 
+| **body** | [**ClientPublicApiUsageQueryRequest**](ClientPublicApiUsageQueryRequest)| Query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClientUsageQueryResponse**](ClientUsageQueryResponse)
+
+
 # **postUsageQuery**
 
 
@@ -452,4 +708,4 @@ try {
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

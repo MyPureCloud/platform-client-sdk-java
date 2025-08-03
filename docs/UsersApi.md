@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsUsersAggregatesJob**](UsersApi#deleteAnalyticsUsersAggregatesJob) | Delete/cancel an async request for user aggregates |
 | [**deleteAnalyticsUsersDetailsJob**](UsersApi#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**deleteAuthorizationSubjectDivisionRole**](UsersApi#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
 | [**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi#deleteRoutingDirectroutingbackupSettingsMe) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
@@ -108,6 +109,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | Set default station |
 | [**putUserVerifier**](UsersApi#putUserVerifier) | Update a verifier |
 {: class="table-striped"}
+
+
+# **deleteAnalyticsUsersAggregatesJob**
+
+
+> Void deleteAnalyticsUsersAggregatesJob(jobId)
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsUsersAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteAnalyticsUsersAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteAnalyticsUsersDetailsJob**
@@ -6476,4 +6537,4 @@ try {
 [**Verifier**](Verifier)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

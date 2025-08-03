@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsJourneysAggregatesJob**](JourneyApi#deleteAnalyticsJourneysAggregatesJob) | Delete/cancel an async request for journey aggregates |
 | [**deleteJourneyActionmap**](JourneyApi#deleteJourneyActionmap) | Delete single action map. |
 | [**deleteJourneyActiontemplate**](JourneyApi#deleteJourneyActiontemplate) | Delete a single action template. |
 | [**deleteJourneyOutcome**](JourneyApi#deleteJourneyOutcome) | Delete an outcome. |
@@ -13,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneyViewSchedules**](JourneyApi#deleteJourneyViewSchedules) | Delete the Schedule of a JourneyView |
 | [**getAnalyticsJourneysAggregatesJob**](JourneyApi#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
 | [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getExternalcontactsContactJourneySegments**](JourneyApi#getExternalcontactsContactJourneySegments) | Retrieve segment assignments by external contact ID. |
 | [**getExternalcontactsContactJourneySessions**](JourneyApi#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
 | [**getJourneyActionmap**](JourneyApi#getJourneyActionmap) | Retrieve a single action map. |
 | [**getJourneyActionmaps**](JourneyApi#getJourneyActionmaps) | Retrieve all action maps. |
@@ -57,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchJourneyViewVersionJob**](JourneyApi#patchJourneyViewVersionJob) | Update the job for a journey view version. Only the status can be changed and only to Cancelled |
 | [**postAnalyticsJourneysAggregatesJobs**](JourneyApi#postAnalyticsJourneysAggregatesJobs) | Query for journey aggregates asynchronously |
 | [**postAnalyticsJourneysAggregatesQuery**](JourneyApi#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
+| [**postExternalcontactsContactJourneySegments**](JourneyApi#postExternalcontactsContactJourneySegments) | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success. |
 | [**postJourneyActionmaps**](JourneyApi#postJourneyActionmaps) | Create an action map. |
 | [**postJourneyActionmapsEstimatesJobs**](JourneyApi#postJourneyActionmapsEstimatesJobs) | Query for estimates |
 | [**postJourneyActiontemplates**](JourneyApi#postJourneyActiontemplates) | Create a single action template. |
@@ -76,6 +79,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | Update the Schedule for a JourneyView |
 | [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | Update a Journey View by ID and version |
 {: class="table-striped"}
+
+
+# **deleteAnalyticsJourneysAggregatesJob**
+
+
+> Void deleteAnalyticsJourneysAggregatesJob(jobId)
+
+Delete/cancel an async request for journey aggregates
+
+deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteAnalyticsJourneysAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteJourneyActionmap**
@@ -611,6 +674,69 @@ try {
 ### Return type
 
 [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse)
+
+
+# **getExternalcontactsContactJourneySegments**
+
+
+> [SegmentAssignmentListing](SegmentAssignmentListing) getExternalcontactsContactJourneySegments(contactId, includeMerged, limit)
+
+Retrieve segment assignments by external contact ID.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments  
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+Boolean includeMerged = true; // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+Integer limit = 56; // Integer | Number of entities to return. Default of 25, maximum of 500.
+try {
+    SegmentAssignmentListing result = apiInstance.getExternalcontactsContactJourneySegments(contactId, includeMerged, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getExternalcontactsContactJourneySegments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **includeMerged** | **Boolean**| Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional] 
+| **limit** | **Integer**| Number of entities to return. Default of 25, maximum of 500. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing)
 
 
 # **getExternalcontactsContactJourneySessions**
@@ -3328,6 +3454,68 @@ try {
 [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse)
 
 
+# **postExternalcontactsContactJourneySegments**
+
+
+> [UpdateSegmentAssignmentResponse](UpdateSegmentAssignmentResponse) postExternalcontactsContactJourneySegments(contactId, body)
+
+Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+
+Wraps POST /api/v2/externalcontacts/contacts/{contactId}/journey/segments  
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:add
+* externalContacts:segmentAssignment:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+UpdateSegmentAssignmentRequest body = new UpdateSegmentAssignmentRequest(); // UpdateSegmentAssignmentRequest | 
+try {
+    UpdateSegmentAssignmentResponse result = apiInstance.postExternalcontactsContactJourneySegments(contactId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postExternalcontactsContactJourneySegments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **body** | [**UpdateSegmentAssignmentRequest**](UpdateSegmentAssignmentRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse)
+
+
 # **postJourneyActionmaps**
 
 
@@ -4373,4 +4561,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

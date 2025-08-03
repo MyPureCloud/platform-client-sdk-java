@@ -25,6 +25,7 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
+| WHATSAPP | &quot;WHATSAPP&quot; | 
 
 
 ## Enum: WrapupCodeEnum
@@ -47,8 +48,9 @@
 | ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED | &quot;ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED&quot; | 
 | ININ_OUTBOUND_ON_DO_NOT_CALL_LIST | &quot;ININ_OUTBOUND_ON_DO_NOT_CALL_LIST&quot; | 
 | ININ_OUTBOUND_NOT_CALLABLE_TIME | &quot;ININ_OUTBOUND_NOT_CALLABLE_TIME&quot; | 
+| OUTBOUND_STUCK_CONTACT | &quot;OUTBOUND_STUCK_CONTACT&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

@@ -22,7 +22,7 @@ This resource has been deprecated
 
 Delete a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps DELETE /api/v2/widgets/deployments/{deploymentId}  
 
@@ -86,7 +86,7 @@ This resource has been deprecated
 
 Get a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments/{deploymentId}  
 
@@ -151,7 +151,7 @@ This resource has been deprecated
 
 List Widget deployments
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments  
 
@@ -212,7 +212,7 @@ This resource has been deprecated
 
 Create Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps POST /api/v2/widgets/deployments  
 
@@ -277,7 +277,7 @@ This resource has been deprecated
 
 Update a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps PUT /api/v2/widgets/deployments/{deploymentId}  
 
@@ -334,4 +334,4 @@ try {
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

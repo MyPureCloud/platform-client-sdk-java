@@ -7545,7 +7545,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-OutboundDomain body = new OutboundDomain(); // OutboundDomain | Domain
+OutboundDomainRequest body = new OutboundDomainRequest(); // OutboundDomainRequest | Domain
 try {
     EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomains(body);
     System.out.println(result);
@@ -7560,7 +7560,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomain**](OutboundDomain)| Domain | 
+| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain | 
 {: class="table-striped"}
 
 
@@ -7604,7 +7604,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-OutboundDomain body = new OutboundDomain(); // OutboundDomain | Domain
+OutboundDomainRequest body = new OutboundDomainRequest(); // OutboundDomainRequest | Domain
 try {
     EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomainsSimulated(body);
     System.out.println(result);
@@ -7619,7 +7619,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomain**](OutboundDomain)| Domain | 
+| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain | 
 {: class="table-striped"}
 
 
@@ -9750,4 +9750,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

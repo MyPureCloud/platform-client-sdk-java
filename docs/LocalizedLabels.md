@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | [**KeyEnum**](#Enum--KeyEnum) | Contains localized label key used in messenger homescreen |  [optional] |
-| **value** | **String** | Contains localized label value used in messenger homescreen |  [optional] |
+| **key** | [**KeyEnum**](#Enum--KeyEnum) | Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled. |  [optional] |
+| **value** | **String** | Contains localized label value used in messenger homescreen and push notification |  [optional] |
 
 
 ## Enum: KeyEnum
@@ -22,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

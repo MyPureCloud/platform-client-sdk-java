@@ -1,0 +1,54 @@
+# OutboundMessagingCampaignPreContactWhatsappEventTopicOutboundMessagingCampaignPreContactWhatsAppEvent
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **eventTime** | **Long** |  |  [optional] |
+| **outboundCampaignType** | [**OutboundCampaignTypeEnum**](#Enum--OutboundCampaignTypeEnum) |  |  [optional] |
+| **whatsAppAttributes** | [**OutboundMessagingCampaignPreContactWhatsappEventTopicWhatsAppAttributes**](OutboundMessagingCampaignPreContactWhatsappEventTopicWhatsAppAttributes) |  |  [optional] |
+| **wrapupCode** | [**WrapupCodeEnum**](#Enum--WrapupCodeEnum) |  |  [optional] |
+| **outboundCampaignId** | **String** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **contentTemplateId** | **String** |  |  [optional] |
+| **outboundContactListId** | **String** |  |  [optional] |
+| **outboundContactId** | **String** |  |  [optional] |
+| **isCampaignAlwaysRunning** | **Boolean** |  |  [optional] |
+
+
+## Enum: OutboundCampaignTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| SMS | &quot;SMS&quot; | 
+| WHATSAPP | &quot;WHATSAPP&quot; | 
+
+
+## Enum: WrapupCodeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| ININ_OUTBOUND_NUMBERS_INVALID | &quot;ININ_OUTBOUND_NUMBERS_INVALID&quot; | 
+| ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED | &quot;ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED&quot; | 
+| ININ_OUTBOUND_DNC_SKIPPED | &quot;ININ_OUTBOUND_DNC_SKIPPED&quot; | 
+| ININ_OUTBOUND_ZONE_BLOCKED_SKIPPED | &quot;ININ_OUTBOUND_ZONE_BLOCKED_SKIPPED&quot; | 
+| OUTBOUND_CONTACT_UNCONTACTABLE_SKIPPED | &quot;OUTBOUND_CONTACT_UNCONTACTABLE_SKIPPED&quot; | 
+| OUTBOUND_NUMBER_UNCONTACTABLE_SKIPPED | &quot;OUTBOUND_NUMBER_UNCONTACTABLE_SKIPPED&quot; | 
+| OUTBOUND_INVALID_PHONE_NUMBER | &quot;OUTBOUND_INVALID_PHONE_NUMBER&quot; | 
+| ININ_OUTBOUND_DNC_AUTHENTICATION_FAILED | &quot;ININ_OUTBOUND_DNC_AUTHENTICATION_FAILED&quot; | 
+| ININ_OUTBOUND_ON_DO_NOT_CALL_LIST | &quot;ININ_OUTBOUND_ON_DO_NOT_CALL_LIST&quot; | 
+| OUTBOUND_MAX_MESSAGE_LENGTH_EXCEEDED | &quot;OUTBOUND_MAX_MESSAGE_LENGTH_EXCEEDED&quot; | 
+| OUTBOUND_STUCK_CONTACT | &quot;OUTBOUND_STUCK_CONTACT&quot; | 
+| OUTBOUND_MESSAGE_HEADER_PARAMETER_VALUE_TOO_LONG | &quot;OUTBOUND_MESSAGE_HEADER_PARAMETER_VALUE_TOO_LONG&quot; | 
+| OUTBOUND_MESSAGE_BUTTON_URL_PARAMETER_VALUE_TOO_LONG | &quot;OUTBOUND_MESSAGE_BUTTON_URL_PARAMETER_VALUE_TOO_LONG&quot; | 
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

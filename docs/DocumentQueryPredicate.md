@@ -29,6 +29,7 @@
 | VARIATIONID | &quot;variationId&quot; |
 | VISIBLE | &quot;visible&quot; |
 | STATE | &quot;state&quot; |
+| CHUNKID | &quot;chunkId&quot; |
 
 
 ## Enum: TypeEnum
@@ -45,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

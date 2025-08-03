@@ -23,6 +23,7 @@
 | **story** | [**RecordingContentStory**](RecordingContentStory) | Ephemeral story content. |  [optional] |
 | **cards** | [**List&lt;Card&gt;**](Card) | List of cards offered for this message |  [optional] |
 | **notificationTemplate** | [**RecordingNotificationTemplate**](RecordingNotificationTemplate) | Template notification content. |  [optional] |
+| **datePicker** | [**DatePicker**](DatePicker) | DatePicker content object. |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
 | **socialVisibility** | [**SocialVisibilityEnum**](#Enum--SocialVisibilityEnum) | For social media messages, the visibility of the message in the originating social platform |  [optional] |
 | **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements |  [optional] |
@@ -52,6 +53,7 @@
 | PAYMENTREQUEST | &quot;PaymentRequest&quot; | 
 | PAYMENTRESPONSE | &quot;PaymentResponse&quot; | 
 | FORM | &quot;Form&quot; | 
+| ROADSIDEASSISTANCE | &quot;RoadsideAssistance&quot; | 
 
 
 ## Enum: SocialVisibilityEnum
@@ -65,4 +67,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
+| **contextId** | **String** | An identifier for this question that stays the same across versions of the form. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **text** | **String** | The question text |  |
 | **helpText** | **String** |  |  [optional] |
@@ -31,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

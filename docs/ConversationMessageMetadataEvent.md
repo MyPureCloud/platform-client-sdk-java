@@ -36,9 +36,12 @@
 | CLEAR | &quot;Clear&quot; | 
 | SIGNIN | &quot;SignIn&quot; | 
 | SESSIONEXPIRED | &quot;SessionExpired&quot; | 
+| AUTHENTICATE | &quot;Authenticate&quot; | 
+| AUTHENTICATEFAILURE | &quot;AuthenticateFailure&quot; | 
+| AUTHENTICATECANCEL | &quot;AuthenticateCancel&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

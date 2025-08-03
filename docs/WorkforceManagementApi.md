@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunit) | Delete business unit |
 | [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | Deletes an activity code |
+| [**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date |
 | [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | Deletes the planning group |
 | [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulingRun) | Cancel a scheduling run |
 | [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | Delete a service goal template |
@@ -47,6 +48,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Get alternative shifts settings for a business unit |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | Get an alternative shifts trade in a business unit for a given trade ID |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplan) | Get a capacity plan |
+| [**getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | Get a capacity plan's staffing group allocations |
+| [**getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements) | Get a capacity plan's staffing requirements |
+| [**getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast) | Get the latest long term staffing requirements for a business unit |
+| [**getWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplans) | Get list of capacity plans for a business unit |
 | [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | Get intraday planning groups for the given date |
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession) | Get the latest session for the business unit ID |
 | [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | Get the session details for the session ID |
@@ -122,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi#getWorkforcemanagementShrinkageJob) | Request to fetch the status of the historical shrinkage query |
+| [**getWorkforcemanagementTeamAdherence**](WorkforceManagementApi#getWorkforcemanagementTeamAdherence) | Get a list of user schedule adherence records for the requested team |
 | [**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi#getWorkforcemanagementTimeoffbalanceJob) | Query the results of time off types job |
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequestWaitlistpositions) | Get the daily waitlist positions of a time off request for the current user |
@@ -137,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | Update an activity code |
 | [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | Update an activity plan |
 | [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Update alternative shifts settings for a business unit |
+| [**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | Update a capacity plan configuration |
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
@@ -178,10 +186,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | Query adherence explanations across an entire business unit for the requested period |
 | [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch) | Search published schedules |
 | [**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | List alternative shifts trades for a given management unit or agent |
+| [**postWorkforcemanagementBusinessunitCapacityplanCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanCopy) | Copy a capacity plan |
+| [**postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate) | Regenerate requirements for capacity plan |
+| [**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | Create staffing group allocations for a capacity plan |
+| [**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery) | Query staffing groups allocations history for a capacity plan |
+| [**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | Force regenerate the latest long term staffing requirements for a business unit |
+| [**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | Create a new capacity plan |
+| [**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | Delete capacity plans in a business unit |
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
 | [**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups) | Creates a new staffing group |
+| [**postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | Gets a list of planning group to staffing groups list association |
 | [**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | Gets staffing group associations for a list of user IDs |
 | [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | Creates a new time-off limit object |
 | [**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | Retrieves time-off limit related values based on a given set of filters. |
@@ -362,6 +378,68 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **activityCodeId** | **String**| The ID of the activity code to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**
+
+
+> Void deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, beforeDateId)
+
+Delete staffing group allocations history created for a capacity plan before the given date
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+LocalDate beforeDateId = new LocalDate(); // LocalDate | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, beforeDateId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **beforeDateId** | **LocalDate**| The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 {: class="table-striped"}
 
 
@@ -2288,7 +2366,7 @@ try {
 # **getWorkforcemanagementBusinessunit**
 
 
-> [BusinessUnitResponse](BusinessUnitResponse) getWorkforcemanagementBusinessunit(businessUnitId, expand)
+> [BusinessUnitResponse](BusinessUnitResponse) getWorkforcemanagementBusinessunit(businessUnitId, expand, includeSchedulingDefaultMessageSeverities)
 
 Get business unit
 
@@ -2394,8 +2472,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the business unit
+Boolean includeSchedulingDefaultMessageSeverities = true; // Boolean | Whether to include scheduling default message severities
 try {
-    BusinessUnitResponse result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand);
+    BusinessUnitResponse result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand, includeSchedulingDefaultMessageSeverities);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunit");
@@ -2410,6 +2489,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **expand** | [**List&lt;String&gt;**](String)| Include to access additional data on the business unit | [optional]<br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching 
+| **includeSchedulingDefaultMessageSeverities** | **Boolean**| Whether to include scheduling default message severities | [optional] 
 {: class="table-striped"}
 
 
@@ -3023,6 +3103,311 @@ try {
 ### Return type
 
 [**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplan**
+
+
+> [CapacityPlanResponse](CapacityPlanResponse) getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+
+Get a capacity plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+try {
+    CapacityPlanResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**
+
+
+> [CapacityPlanStaffingGroupAllocationsResponse](CapacityPlanStaffingGroupAllocationsResponse) getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+
+Get a capacity plan's staffing group allocations
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+try {
+    CapacityPlanStaffingGroupAllocationsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**
+
+
+> [CapacityPlanStaffingRequirementResult](CapacityPlanStaffingRequirementResult) getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+
+Get a capacity plan's staffing requirements
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+try {
+    CapacityPlanStaffingRequirementResult result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**
+
+
+> [LongTermRequirementsResponse](LongTermRequirementsResponse) getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+
+Get the latest long term staffing requirements for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}  
+
+Requires ANY permissions: 
+
+* wfm:longTermStaffing:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | 
+LocalDate weekDateId = new LocalDate(); // LocalDate | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String forecastId = "forecastId_example"; // String | forecastId of forecast
+try {
+    LongTermRequirementsResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**|  | 
+| **weekDateId** | **LocalDate**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **forecastId** | **String**| forecastId of forecast | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LongTermRequirementsResponse**](LongTermRequirementsResponse)
+
+
+# **getWorkforcemanagementBusinessunitCapacityplans**
+
+
+> [CapacityPlansListResponse](CapacityPlansListResponse) getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+
+Get list of capacity plans for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    CapacityPlansListResponse result = apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlansListResponse**](CapacityPlansListResponse)
 
 
 # **getWorkforcemanagementBusinessunitIntradayPlanninggroups**
@@ -7792,6 +8177,65 @@ try {
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse)
 
 
+# **getWorkforcemanagementTeamAdherence**
+
+
+> [UserScheduleAdherenceListing](UserScheduleAdherenceListing) getWorkforcemanagementTeamAdherence(teamId)
+
+Get a list of user schedule adherence records for the requested team
+
+Wraps GET /api/v2/workforcemanagement/teams/{teamId}/adherence  
+
+Requires ANY permissions: 
+
+* wfm:realtimeAdherence:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String teamId = "teamId_example"; // String | The ID of the team
+try {
+    UserScheduleAdherenceListing result = apiInstance.getWorkforcemanagementTeamAdherence(teamId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementTeamAdherence");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| The ID of the team | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserScheduleAdherenceListing**](UserScheduleAdherenceListing)
+
+
 # **getWorkforcemanagementTimeoffbalanceJob**
 
 
@@ -8443,7 +8887,7 @@ try {
 # **patchWorkforcemanagementBusinessunit**
 
 
-> [BusinessUnitResponse](BusinessUnitResponse) patchWorkforcemanagementBusinessunit(businessUnitId, body)
+> [BusinessUnitResponse](BusinessUnitResponse) patchWorkforcemanagementBusinessunit(businessUnitId, body, includeSchedulingDefaultMessageSeverities)
 
 Update business unit
 
@@ -8477,8 +8921,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 UpdateBusinessUnitRequest body = new UpdateBusinessUnitRequest(); // UpdateBusinessUnitRequest | body
+Boolean includeSchedulingDefaultMessageSeverities = true; // Boolean | Whether to include scheduling default message severities
 try {
-    BusinessUnitResponse result = apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body);
+    BusinessUnitResponse result = apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, includeSchedulingDefaultMessageSeverities);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunit");
@@ -8493,6 +8938,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest)| body | 
+| **includeSchedulingDefaultMessageSeverities** | **Boolean**| Whether to include scheduling default message severities | [optional] 
 {: class="table-striped"}
 
 
@@ -8688,6 +9134,69 @@ try {
 ### Return type
 
 [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse)
+
+
+# **patchWorkforcemanagementBusinessunitCapacityplan**
+
+
+> [CapacityPlanResponse](CapacityPlanResponse) patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+
+Update a capacity plan configuration
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+UpdateCapacityPlanRequest body = new UpdateCapacityPlanRequest(); // UpdateCapacityPlanRequest | body
+try {
+    CapacityPlanResponse result = apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **body** | [**UpdateCapacityPlanRequest**](UpdateCapacityPlanRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
 
 
 # **patchWorkforcemanagementBusinessunitPlanninggroup**
@@ -11233,6 +11742,440 @@ try {
 [**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse)
 
 
+# **postWorkforcemanagementBusinessunitCapacityplanCopy**
+
+
+> [CapacityPlanResponse](CapacityPlanResponse) postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+
+Copy a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+CopyCapacityPlanRequest body = new CopyCapacityPlanRequest(); // CopyCapacityPlanRequest | body
+try {
+    CapacityPlanResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanCopy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **body** | [**CopyCapacityPlanRequest**](CopyCapacityPlanRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate**
+
+
+> [CapacityPlanStaffingRequirementResult](CapacityPlanStaffingRequirementResult) postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+
+Regenerate requirements for capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+try {
+    CapacityPlanStaffingRequirementResult result = apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**
+
+
+> [CapacityPlanStaffingGroupMetricChangeResponse](CapacityPlanStaffingGroupMetricChangeResponse) postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+
+Create staffing group allocations for a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+CreateCapacityPlanStaffingGroupMetricChangeRequest body = new CreateCapacityPlanStaffingGroupMetricChangeRequest(); // CreateCapacityPlanStaffingGroupMetricChangeRequest | 
+try {
+    CapacityPlanStaffingGroupMetricChangeResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **body** | [**CreateCapacityPlanStaffingGroupMetricChangeRequest**](CreateCapacityPlanStaffingGroupMetricChangeRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanStaffingGroupMetricChangeResponse**](CapacityPlanStaffingGroupMetricChangeResponse)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery**
+
+
+> [CapacityPlanStaffingGroupMetricChangeHistoryListResponse](CapacityPlanStaffingGroupMetricChangeHistoryListResponse) postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+
+Query staffing groups allocations history for a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+QueryCapacityPlanStaffingGroupMetricChangeHistory body = new QueryCapacityPlanStaffingGroupMetricChangeHistory(); // QueryCapacityPlanStaffingGroupMetricChangeHistory | 
+try {
+    CapacityPlanStaffingGroupMetricChangeHistoryListResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **capacityPlanId** | **String**| The ID of the capacity plan | 
+| **body** | [**QueryCapacityPlanStaffingGroupMetricChangeHistory**](QueryCapacityPlanStaffingGroupMetricChangeHistory)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanStaffingGroupMetricChangeHistoryListResponse**](CapacityPlanStaffingGroupMetricChangeHistoryListResponse)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**
+
+
+> [LongTermRequirementsResponse](LongTermRequirementsResponse) postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+
+Force regenerate the latest long term staffing requirements for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate  
+
+Requires ANY permissions: 
+
+* wfm:longTermStaffing:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | 
+LocalDate weekDateId = new LocalDate(); // LocalDate | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String forecastId = "forecastId_example"; // String | forecastId of forecast
+try {
+    LongTermRequirementsResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**|  | 
+| **weekDateId** | **LocalDate**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **forecastId** | **String**| forecastId of forecast | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LongTermRequirementsResponse**](LongTermRequirementsResponse)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplans**
+
+
+> [CapacityPlanResponse](CapacityPlanResponse) postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+
+Create a new capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CapacityPlanRequest body = new CapacityPlanRequest(); // CapacityPlanRequest | body
+try {
+    CapacityPlanResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CapacityPlanRequest**](CapacityPlanRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplansBulkRemove**
+
+
+> Void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+
+Delete capacity plans in a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CapacityPlanDeleteRequest body = new CapacityPlanDeleteRequest(); // CapacityPlanDeleteRequest | body
+try {
+    apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CapacityPlanDeleteRequest**](CapacityPlanDeleteRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **postWorkforcemanagementBusinessunitIntraday**
 
 
@@ -11477,6 +12420,67 @@ try {
 ### Return type
 
 [**StaffingGroupResponse**](StaffingGroupResponse)
+
+
+# **postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**
+
+
+> [PlanningGroupToStaffingGroupsListing](PlanningGroupToStaffingGroupsListing) postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+
+Gets a list of planning group to staffing groups list association
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryPlanningGroupToStaffingGroupsRequest body = new QueryPlanningGroupToStaffingGroupsRequest(); // QueryPlanningGroupToStaffingGroupsRequest | body
+try {
+    PlanningGroupToStaffingGroupsListing result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryPlanningGroupToStaffingGroupsRequest**](QueryPlanningGroupToStaffingGroupsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PlanningGroupToStaffingGroupsListing**](PlanningGroupToStaffingGroupsListing)
 
 
 # **postWorkforcemanagementBusinessunitStaffinggroupsQuery**
@@ -12897,7 +13901,7 @@ try {
 # **postWorkforcemanagementBusinessunits**
 
 
-> [BusinessUnitResponse](BusinessUnitResponse) postWorkforcemanagementBusinessunits(body)
+> [BusinessUnitResponse](BusinessUnitResponse) postWorkforcemanagementBusinessunits(body, includeSchedulingDefaultMessageSeverities)
 
 Add a new business unit
 
@@ -12932,8 +13936,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 CreateBusinessUnitRequest body = new CreateBusinessUnitRequest(); // CreateBusinessUnitRequest | body
+Boolean includeSchedulingDefaultMessageSeverities = true; // Boolean | Whether to include scheduling default message severities
 try {
-    BusinessUnitResponse result = apiInstance.postWorkforcemanagementBusinessunits(body);
+    BusinessUnitResponse result = apiInstance.postWorkforcemanagementBusinessunits(body, includeSchedulingDefaultMessageSeverities);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunits");
@@ -12947,6 +13952,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest)| body | 
+| **includeSchedulingDefaultMessageSeverities** | **Boolean**| Whether to include scheduling default message severities | [optional] 
 {: class="table-striped"}
 
 
@@ -15567,4 +16573,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

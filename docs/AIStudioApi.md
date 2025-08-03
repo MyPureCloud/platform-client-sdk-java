@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGuideVersionJob**](AIStudioApi#getGuideVersionJob) | Get the status of the publishing job for this guide version. |
 | [**getGuides**](AIStudioApi#getGuides) | Get all guides. |
 | [**getGuidesJob**](AIStudioApi#getGuidesJob) | Get the status of the guide content generation job. |
+| [**patchGuide**](AIStudioApi#patchGuide) | Update a guide. |
 | [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | Update a guide version. |
 | [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | Start the publishing of a guide version. |
 | [**postGuideVersions**](AIStudioApi#postGuideVersions) | Create a guide version. |
@@ -466,6 +467,69 @@ try {
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
+# **patchGuide**
+
+
+> [Guide](Guide) patchGuide(guideId, body)
+
+Update a guide.
+
+patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/guides/{guideId}  
+
+Requires ALL permissions: 
+
+* aiStudio:guide:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String guideId = "guideId_example"; // String | Guide ID
+UpdateGuide body = new UpdateGuide(); // UpdateGuide | 
+try {
+    Guide result = apiInstance.patchGuide(guideId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#patchGuide");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guideId** | **String**| Guide ID | 
+| **body** | [**UpdateGuide**](UpdateGuide)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Guide**](Guide)
+
+
 # **patchGuideVersion**
 
 
@@ -781,4 +845,4 @@ try {
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

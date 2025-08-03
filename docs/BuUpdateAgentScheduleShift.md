@@ -11,9 +11,11 @@
 | **activities** | [**List&lt;BuAgentScheduleActivity&gt;**](BuAgentScheduleActivity) | The activities associated with this shift |  [optional] |
 | **manuallyEdited** | **Boolean** | Whether this shift was manually edited. This is only set by clients and is used for rescheduling |  [optional] |
 | **schedule** | [**BuScheduleReference**](BuScheduleReference) | The schedule to which this shift belongs |  [optional] |
+| **workPlanId** | [**ValueWrapperString**](ValueWrapperString) | The ID of the work plan for which the work plan shift emanates from |  [optional] |
+| **workPlanShiftId** | [**ValueWrapperString**](ValueWrapperString) | The ID of the work plan shift that was used in schedule generation |  [optional] |
 | **delete** | **Boolean** | Set to true to delete the shift from the agent's schedule |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

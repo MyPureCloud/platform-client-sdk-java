@@ -9,6 +9,7 @@
 | **interval** | **Long** | the amount of time in between occurrences |  [optional] |
 | **daysOfWeek** | **List&lt;String&gt;** | the day(s) of the week the occurrence happens |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

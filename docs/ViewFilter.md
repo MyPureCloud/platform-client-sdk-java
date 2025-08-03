@@ -234,6 +234,9 @@
 | **deliveryPushed** | **Boolean** | Filter to indicate if push notification is sent |  [optional] |
 | **socialRatings** | **List&lt;Float&gt;** | A set of ratings for Google Business Profile |  [optional] |
 | **virtualAgentIds** | **List&lt;String&gt;** | A list of virtual agent ids for filtering. |  [optional] |
+| **empathyScoreCategories** | [**List<EmpathyScoreCategoriesEnum>**](#Enum--EmpathyScoreCategoriesEnum) | A set of Empathy Score Categories for filtering |  [optional] |
+| **sentimentScoreCategories** | [**List<SentimentScoreCategoriesEnum>**](#Enum--SentimentScoreCategoriesEnum) | A set of Sentiment Score Categories  for filtering |  [optional] |
+| **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -991,6 +994,40 @@
 | WRAPUP | &quot;wrapup&quot; |
 
 
+## Enum: EmpathyScoreCategoriesEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNHELPFUL | &quot;Unhelpful&quot; |
+| NEUTRAL | &quot;Neutral&quot; |
+| EMPATHETIC | &quot;Empathetic&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+## Enum: SentimentScoreCategoriesEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| VERYNEGATIVE | &quot;VeryNegative&quot; |
+| SLIGHTLYNEGATIVE | &quot;SlightlyNegative&quot; |
+| NEUTRAL | &quot;Neutral&quot; |
+| SLIGHTLYPOSITIVE | &quot;SlightlyPositive&quot; |
+| VERYPOSITIVE | &quot;VeryPositive&quot; |
+
+
+## Enum: SentimentTrendCategoriesEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| DECLINING | &quot;Declining&quot; |
+| SLIGHTLYDECLINING | &quot;SlightlyDeclining&quot; |
+| NOCHANGE | &quot;NoChange&quot; |
+| SLIGHTLYIMPROVING | &quot;SlightlyImproving&quot; |
+| IMPROVING | &quot;Improving&quot; |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

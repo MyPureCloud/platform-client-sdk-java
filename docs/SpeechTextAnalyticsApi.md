@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsCategory) | Delete a Speech & Text Analytics category by ID |
 | [**deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Delete a Speech & Text Analytics DictionaryFeedback by Id |
 | [**deleteSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsProgram) | Delete a Speech & Text Analytics program by id |
+| [**deleteSpeechandtextanalyticsReprocessingJob**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsReprocessingJob) | Delete a Speech & Text Analytics Reprocessing job by Id |
 | [**deleteSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsSentimentfeedback) | Delete All Speech & Text Analytics SentimentFeedback |
 | [**deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId) | Delete a Speech & Text Analytics SentimentFeedback by Id |
 | [**deleteSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsTopic) | Delete a Speech & Text Analytics topic by id |
@@ -16,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCategories) | Get the list of detected Speech and Text Analytics categories of conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation |
+| [**getSpeechandtextanalyticsConversationSentiments**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSentiments) | Get sentiment data |
 | [**getSpeechandtextanalyticsConversationSummaries**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSummaries) | Get conversation summaries by conversation id. |
 | [**getSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback) | Get the list of Speech & Text Analytics dictionary feedbacks |
 | [**getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Get a Speech & Text Analytics dictionary feedback by id |
@@ -30,6 +32,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | Get the list of program AI Insights settings for the organization |
 | [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | Get supported dialects for each transcription engine |
 | [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | Get the list of Speech & Text Analytics unpublished programs |
+| [**getSpeechandtextanalyticsReprocessingJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJob) | Get a Speech & Text Analytics reprocess job by id |
+| [**getSpeechandtextanalyticsReprocessingJobInteractions**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJobInteractions) | Get a Speech & Text Analytics Reprocessing interactions statuses by job id |
+| [**getSpeechandtextanalyticsReprocessingJobs**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJobs) | Get the list of Speech & Text Analytics reprocess jobs |
 | [**getSpeechandtextanalyticsSentimentDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsSentimentDialects) | Get the list of Speech & Text Analytics sentiment supported dialects |
 | [**getSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsSentimentfeedback) | Get the list of Speech & Text Analytics SentimentFeedback |
 | [**getSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsSettings) | Get Speech And Text Analytics Settings |
@@ -48,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsPrograms) | Create new Speech & Text Analytics program |
 | [**postSpeechandtextanalyticsProgramsGeneralJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsProgramsGeneralJobs) | Create new Speech & Text Analytics general program job |
 | [**postSpeechandtextanalyticsProgramsPublishjobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsProgramsPublishjobs) | Create new Speech & Text Analytics publish programs job |
+| [**postSpeechandtextanalyticsReprocessingJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsReprocessingJobs) | Create a Speech & Text Analytics reprocess job. |
 | [**postSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsSentimentfeedback) | Create a Speech & Text Analytics SentimentFeedback |
 | [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopics) | Create new Speech & Text Analytics topic |
 | [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech & Text Analytics publish topics job |
@@ -239,6 +245,66 @@ try {
 ### Return type
 
 [**DeleteProgramResponse**](DeleteProgramResponse)
+
+
+# **deleteSpeechandtextanalyticsReprocessingJob**
+
+
+> Void deleteSpeechandtextanalyticsReprocessingJob(jobId)
+
+Delete a Speech & Text Analytics Reprocessing job by Id
+
+deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The Id of the Reprocessing job
+try {
+    apiInstance.deleteSpeechandtextanalyticsReprocessingJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsReprocessingJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The Id of the Reprocessing job | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteSpeechandtextanalyticsSentimentfeedback**
@@ -784,6 +850,68 @@ try {
 ### Return type
 
 [**TranscriptUrls**](TranscriptUrls)
+
+
+# **getSpeechandtextanalyticsConversationSentiments**
+
+
+> [SentimentData](SentimentData) getSpeechandtextanalyticsConversationSentiments(conversationId)
+
+Get sentiment data
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:sentimentData:view
+* speechAndTextAnalytics:data:view
+* recording:recording:view
+* recording:recording:viewSensitiveData
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String conversationId = "conversationId_example"; // String | The conversation ID of the sentiment data
+try {
+    SentimentData result = apiInstance.getSpeechandtextanalyticsConversationSentiments(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSentiments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| The conversation ID of the sentiment data | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SentimentData**](SentimentData)
 
 
 # **getSpeechandtextanalyticsConversationSummaries**
@@ -1628,6 +1756,195 @@ try {
 ### Return type
 
 [**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing)
+
+
+# **getSpeechandtextanalyticsReprocessingJob**
+
+
+> [ReprocessJobResponse](ReprocessJobResponse) getSpeechandtextanalyticsReprocessingJob(jobId)
+
+Get a Speech & Text Analytics reprocess job by id
+
+getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The Id of the Reprocessing job
+try {
+    ReprocessJobResponse result = apiInstance.getSpeechandtextanalyticsReprocessingJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The Id of the Reprocessing job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReprocessJobResponse**](ReprocessJobResponse)
+
+
+# **getSpeechandtextanalyticsReprocessingJobInteractions**
+
+
+> [ReprocessInteractionsByJobIdResponse](ReprocessInteractionsByJobIdResponse) getSpeechandtextanalyticsReprocessingJobInteractions(jobId)
+
+Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+
+getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The Id of the Reprocessing job
+try {
+    ReprocessInteractionsByJobIdResponse result = apiInstance.getSpeechandtextanalyticsReprocessingJobInteractions(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJobInteractions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The Id of the Reprocessing job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReprocessInteractionsByJobIdResponse**](ReprocessInteractionsByJobIdResponse)
+
+
+# **getSpeechandtextanalyticsReprocessingJobs**
+
+
+> [ReprocessJobEntityListingResponse](ReprocessJobEntityListingResponse) getSpeechandtextanalyticsReprocessingJobs(pageSize, pageNumber, sortOrder, name)
+
+Get the list of Speech & Text Analytics reprocess jobs
+
+getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+Integer pageSize = 56; // Integer | The page size for the listing. The max that will be returned is 100. Default is 25.
+Integer pageNumber = 56; // Integer | The page number for the listing. Defaults to 1.
+String sortOrder = "sortOrder_example"; // String | Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc).
+String name = "name_example"; // String | Case insensitive partial name to filter by.
+try {
+    ReprocessJobEntityListingResponse result = apiInstance.getSpeechandtextanalyticsReprocessingJobs(pageSize, pageNumber, sortOrder, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 100. Default is 25. | [optional] 
+| **pageNumber** | **Integer**| The page number for the listing. Defaults to 1. | [optional] 
+| **sortOrder** | **String**| Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). | [optional]<br />**Values**: asc, desc 
+| **name** | **String**| Case insensitive partial name to filter by. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReprocessJobEntityListingResponse**](ReprocessJobEntityListingResponse)
 
 
 # **getSpeechandtextanalyticsSentimentDialects**
@@ -2697,6 +3014,67 @@ try {
 [**ProgramJob**](ProgramJob)
 
 
+# **postSpeechandtextanalyticsReprocessingJobs**
+
+
+> [ReprocessJobResponse](ReprocessJobResponse) postSpeechandtextanalyticsReprocessingJobs(body)
+
+Create a Speech & Text Analytics reprocess job.
+
+postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/speechandtextanalytics/reprocessing/jobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+CreateReprocessJobRequest body = new CreateReprocessJobRequest(); // CreateReprocessJobRequest | The ReprocessJob to create
+try {
+    ReprocessJobResponse result = apiInstance.postSpeechandtextanalyticsReprocessingJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsReprocessingJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateReprocessJobRequest**](CreateReprocessJobRequest)| The ReprocessJob to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReprocessJobResponse**](ReprocessJobResponse)
+
+
 # **postSpeechandtextanalyticsSentimentfeedback**
 
 
@@ -3481,4 +3859,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

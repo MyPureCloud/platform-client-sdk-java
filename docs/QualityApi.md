@@ -4,6 +4,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsEvaluationsAggregatesJob**](QualityApi#deleteAnalyticsEvaluationsAggregatesJob) | Delete/cancel an async request for evaluation aggregates |
+| [**deleteAnalyticsSurveysAggregatesJob**](QualityApi#deleteAnalyticsSurveysAggregatesJob) | Delete/cancel an async request for survey aggregates |
 | [**deleteQualityCalibration**](QualityApi#deleteQualityCalibration) | Delete a calibration by id. |
 | [**deleteQualityConversationEvaluation**](QualityApi#deleteQualityConversationEvaluation) | Delete an evaluation |
 | [**deleteQualityForm**](QualityApi#deleteQualityForm) | Delete an evaluation form. |
@@ -67,6 +69,126 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putQualityFormsSurvey**](QualityApi#putQualityFormsSurvey) | Update a survey form. |
 | [**putQualitySurveysScorable**](QualityApi#putQualitySurveysScorable) | Update a survey as an end-customer, for the purposes of scoring it. |
 {: class="table-striped"}
+
+
+# **deleteAnalyticsEvaluationsAggregatesJob**
+
+
+> Void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+
+Delete/cancel an async request for evaluation aggregates
+
+deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteAnalyticsEvaluationsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsSurveysAggregatesJob**
+
+
+> Void deleteAnalyticsSurveysAggregatesJob(jobId)
+
+Delete/cancel an async request for survey aggregates
+
+deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteAnalyticsSurveysAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteQualityCalibration**
@@ -3978,4 +4100,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

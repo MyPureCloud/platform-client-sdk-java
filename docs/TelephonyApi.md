@@ -4,13 +4,135 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**getTelephonyAgentGreetings**](TelephonyApi#getTelephonyAgentGreetings) | Get an agent's greetings. |
+| [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | Get the agent's own greetings. |
 | [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
 | [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
 | [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
 | [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | Fetch SIP metadata |
 | [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
 | [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
+| [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | Updates an agent's greetings. |
+| [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | Updates the agent's own greetings. |
 {: class="table-striped"}
+
+
+# **getTelephonyAgentGreetings**
+
+
+> [AgentGreeting](AgentGreeting) getTelephonyAgentGreetings(agentId)
+
+Get an agent's greetings.
+
+getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/agents/{agentId}/greetings  
+
+Requires ANY permissions: 
+
+* telephony:otherAgentGreeting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String agentId = "agentId_example"; // String | User ID
+try {
+    AgentGreeting result = apiInstance.getTelephonyAgentGreetings(agentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyAgentGreetings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentGreeting**](AgentGreeting)
+
+
+# **getTelephonyAgentsGreetingsMe**
+
+
+> [SelfAgentGreeting](SelfAgentGreeting) getTelephonyAgentsGreetingsMe()
+
+Get the agent's own greetings.
+
+getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/agents/greetings/me  
+
+Requires ANY permissions: 
+
+* telephony:selfAgentGreeting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+try {
+    SelfAgentGreeting result = apiInstance.getTelephonyAgentsGreetingsMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyAgentsGreetingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SelfAgentGreeting**](SelfAgentGreeting)
 
 
 # **getTelephonyMediaregions**
@@ -381,4 +503,128 @@ try {
 [**SipDownloadResponse**](SipDownloadResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+# **putTelephonyAgentGreetings**
+
+
+> [AgentGreeting](AgentGreeting) putTelephonyAgentGreetings(agentId, body)
+
+Updates an agent's greetings.
+
+putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/telephony/agents/{agentId}/greetings  
+
+Requires ANY permissions: 
+
+* telephony:otherAgentGreeting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String agentId = "agentId_example"; // String | User ID
+AgentGreeting body = new AgentGreeting(); // AgentGreeting | Agent Greeting
+try {
+    AgentGreeting result = apiInstance.putTelephonyAgentGreetings(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#putTelephonyAgentGreetings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| User ID | 
+| **body** | [**AgentGreeting**](AgentGreeting)| Agent Greeting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentGreeting**](AgentGreeting)
+
+
+# **putTelephonyAgentsGreetingsMe**
+
+
+> [SelfAgentGreeting](SelfAgentGreeting) putTelephonyAgentsGreetingsMe(body)
+
+Updates the agent's own greetings.
+
+putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/telephony/agents/greetings/me  
+
+Requires ANY permissions: 
+
+* telephony:selfAgentGreeting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+SelfAgentGreeting body = new SelfAgentGreeting(); // SelfAgentGreeting | Agent Greeting
+try {
+    SelfAgentGreeting result = apiInstance.putTelephonyAgentsGreetingsMe(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#putTelephonyAgentsGreetingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SelfAgentGreeting**](SelfAgentGreeting)| Agent Greeting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfAgentGreeting**](SelfAgentGreeting)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

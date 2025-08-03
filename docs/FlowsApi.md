@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsFlowsAggregatesJob**](FlowsApi#deleteAnalyticsFlowsAggregatesJob) | Delete/cancel an async request for flow aggregates |
 | [**getAnalyticsFlowsAggregatesJob**](FlowsApi#getAnalyticsFlowsAggregatesJob) | Get status for async query for Flow aggregates |
 | [**getAnalyticsFlowsAggregatesJobResults**](FlowsApi#getAnalyticsFlowsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**postAnalyticsFlowsActivityQuery**](FlowsApi#postAnalyticsFlowsActivityQuery) | Query for flow activity observations |
@@ -11,6 +12,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsFlowsAggregatesQuery**](FlowsApi#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
 | [**postAnalyticsFlowsObservationsQuery**](FlowsApi#postAnalyticsFlowsObservationsQuery) | Query for flow observations |
 {: class="table-striped"}
+
+
+# **deleteAnalyticsFlowsAggregatesJob**
+
+
+> Void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FlowsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+FlowsApi apiInstance = new FlowsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowsApi#deleteAnalyticsFlowsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **getAnalyticsFlowsAggregatesJob**
@@ -379,4 +440,4 @@ try {
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

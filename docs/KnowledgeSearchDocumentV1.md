@@ -71,6 +71,7 @@
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
+| CS_CZ | &quot;cs-CZ&quot; | 
 
 
 ## Enum: TypeEnum
@@ -84,4 +85,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

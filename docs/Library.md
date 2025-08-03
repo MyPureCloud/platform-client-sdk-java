@@ -23,8 +23,9 @@
 | CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; | 
 | CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
 | FOOTER | &quot;Footer&quot; | 
+| FORM | &quot;Form&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_
