@@ -13,14 +13,10 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.BaseMediaSettings;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -34,7 +30,6 @@ public class CallbackMediaSettings  implements Serializable {
   private ServiceLevel serviceLevel = null;
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
-  private Map<String, BaseMediaSettings> subTypeSettings = null;
 
   private static class ModeEnumDeserializer extends StdDeserializer<ModeEnum> {
     public ModeEnumDeserializer() {
@@ -87,6 +82,8 @@ public class CallbackMediaSettings  implements Serializable {
   private Integer autoDialDelaySeconds = null;
   private Integer autoEndDelaySeconds = null;
   private Double pacingModifier = null;
+  private Integer maxRetryCount = null;
+  private Integer retryDelaySeconds = null;
 
   private static class LiveVoiceReactionTypeEnumDeserializer extends StdDeserializer<LiveVoiceReactionTypeEnum> {
     public LiveVoiceReactionTypeEnumDeserializer() {
@@ -285,24 +282,6 @@ public class CallbackMediaSettings  implements Serializable {
 
 
   /**
-   * Map of media subtype to media subtype specific settings.
-   **/
-  public CallbackMediaSettings subTypeSettings(Map<String, BaseMediaSettings> subTypeSettings) {
-    this.subTypeSettings = subTypeSettings;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Map of media subtype to media subtype specific settings.")
-  @JsonProperty("subTypeSettings")
-  public Map<String, BaseMediaSettings> getSubTypeSettings() {
-    return subTypeSettings;
-  }
-  public void setSubTypeSettings(Map<String, BaseMediaSettings> subTypeSettings) {
-    this.subTypeSettings = subTypeSettings;
-  }
-
-
-  /**
    * The mode callbacks will use on this queue.
    **/
   public CallbackMediaSettings mode(ModeEnum mode) {
@@ -393,6 +372,42 @@ public class CallbackMediaSettings  implements Serializable {
 
 
   /**
+   * Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.
+   **/
+  public CallbackMediaSettings maxRetryCount(Integer maxRetryCount) {
+    this.maxRetryCount = maxRetryCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.")
+  @JsonProperty("maxRetryCount")
+  public Integer getMaxRetryCount() {
+    return maxRetryCount;
+  }
+  public void setMaxRetryCount(Integer maxRetryCount) {
+    this.maxRetryCount = maxRetryCount;
+  }
+
+
+  /**
+   * Delay in seconds between each retry of a customer first callback.
+   **/
+  public CallbackMediaSettings retryDelaySeconds(Integer retryDelaySeconds) {
+    this.retryDelaySeconds = retryDelaySeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Delay in seconds between each retry of a customer first callback.")
+  @JsonProperty("retryDelaySeconds")
+  public Integer getRetryDelaySeconds() {
+    return retryDelaySeconds;
+  }
+  public void setRetryDelaySeconds(Integer retryDelaySeconds) {
+    this.retryDelaySeconds = retryDelaySeconds;
+  }
+
+
+  /**
    * The action to take if a live voice is detected during the outbound call of a customer first callback.
    **/
   public CallbackMediaSettings liveVoiceReactionType(LiveVoiceReactionTypeEnum liveVoiceReactionType) {
@@ -479,12 +494,13 @@ public class CallbackMediaSettings  implements Serializable {
             Objects.equals(this.serviceLevel, callbackMediaSettings.serviceLevel) &&
             Objects.equals(this.autoAnswerAlertToneSeconds, callbackMediaSettings.autoAnswerAlertToneSeconds) &&
             Objects.equals(this.manualAnswerAlertToneSeconds, callbackMediaSettings.manualAnswerAlertToneSeconds) &&
-            Objects.equals(this.subTypeSettings, callbackMediaSettings.subTypeSettings) &&
             Objects.equals(this.mode, callbackMediaSettings.mode) &&
             Objects.equals(this.enableAutoDialAndEnd, callbackMediaSettings.enableAutoDialAndEnd) &&
             Objects.equals(this.autoDialDelaySeconds, callbackMediaSettings.autoDialDelaySeconds) &&
             Objects.equals(this.autoEndDelaySeconds, callbackMediaSettings.autoEndDelaySeconds) &&
             Objects.equals(this.pacingModifier, callbackMediaSettings.pacingModifier) &&
+            Objects.equals(this.maxRetryCount, callbackMediaSettings.maxRetryCount) &&
+            Objects.equals(this.retryDelaySeconds, callbackMediaSettings.retryDelaySeconds) &&
             Objects.equals(this.liveVoiceReactionType, callbackMediaSettings.liveVoiceReactionType) &&
             Objects.equals(this.liveVoiceFlow, callbackMediaSettings.liveVoiceFlow) &&
             Objects.equals(this.answeringMachineReactionType, callbackMediaSettings.answeringMachineReactionType) &&
@@ -493,7 +509,7 @@ public class CallbackMediaSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings, mode, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds, pacingModifier, liveVoiceReactionType, liveVoiceFlow, answeringMachineReactionType, answeringMachineFlow);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, mode, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds, pacingModifier, maxRetryCount, retryDelaySeconds, liveVoiceReactionType, liveVoiceFlow, answeringMachineReactionType, answeringMachineFlow);
   }
 
   @Override
@@ -506,12 +522,13 @@ public class CallbackMediaSettings  implements Serializable {
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
     sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
     sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
-    sb.append("    subTypeSettings: ").append(toIndentedString(subTypeSettings)).append("\n");
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    enableAutoDialAndEnd: ").append(toIndentedString(enableAutoDialAndEnd)).append("\n");
     sb.append("    autoDialDelaySeconds: ").append(toIndentedString(autoDialDelaySeconds)).append("\n");
     sb.append("    autoEndDelaySeconds: ").append(toIndentedString(autoEndDelaySeconds)).append("\n");
     sb.append("    pacingModifier: ").append(toIndentedString(pacingModifier)).append("\n");
+    sb.append("    maxRetryCount: ").append(toIndentedString(maxRetryCount)).append("\n");
+    sb.append("    retryDelaySeconds: ").append(toIndentedString(retryDelaySeconds)).append("\n");
     sb.append("    liveVoiceReactionType: ").append(toIndentedString(liveVoiceReactionType)).append("\n");
     sb.append("    liveVoiceFlow: ").append(toIndentedString(liveVoiceFlow)).append("\n");
     sb.append("    answeringMachineReactionType: ").append(toIndentedString(answeringMachineReactionType)).append("\n");

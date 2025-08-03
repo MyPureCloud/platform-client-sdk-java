@@ -41,6 +41,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
@@ -198,6 +200,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSear
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseChunksSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
@@ -6271,6 +6274,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CategoryResponse> response = (ApiResponse<CategoryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeDocumentChunkResponse> postKnowledgeKnowledgebaseChunksSearchAsync(PostKnowledgeKnowledgebaseChunksSearchRequest request, final AsyncApiCallback<KnowledgeDocumentChunkResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeDocumentChunkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeDocumentChunkResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentChunkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentChunkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeDocumentChunkResponse>> postKnowledgeKnowledgebaseChunksSearchAsync(ApiRequest<KnowledgeDocumentChunkRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentChunkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeDocumentChunkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeDocumentChunkResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentChunkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentChunkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentChunkResponse> response = (ApiResponse<KnowledgeDocumentChunkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentChunkResponse> response = (ApiResponse<KnowledgeDocumentChunkResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

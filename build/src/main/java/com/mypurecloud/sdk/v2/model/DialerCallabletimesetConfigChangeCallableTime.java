@@ -30,6 +30,7 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
   private List<DialerCallabletimesetConfigChangeTimeSlot> timeSlots = null;
   private String timeZoneId = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCallabletimesetConfigChangeCallableTime() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -91,6 +92,23 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
   }
 
 
+  /**
+   **/
+  public DialerCallabletimesetConfigChangeCallableTime getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -103,12 +121,13 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
 
     return Objects.equals(this.timeSlots, dialerCallabletimesetConfigChangeCallableTime.timeSlots) &&
             Objects.equals(this.timeZoneId, dialerCallabletimesetConfigChangeCallableTime.timeZoneId) &&
-            Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeCallableTime.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeCallableTime.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerCallabletimesetConfigChangeCallableTime.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeSlots, timeZoneId, additionalProperties);
+    return Objects.hash(timeSlots, timeZoneId, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -119,6 +138,7 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     sb.append("    timeSlots: ").append(toIndentedString(timeSlots)).append("\n");
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -48,6 +48,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistConfigChangeContactList() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -362,6 +363,23 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerContactlistConfigChangeContactList getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -388,12 +406,13 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
             Objects.equals(this.name, dialerContactlistConfigChangeContactList.name) &&
             Objects.equals(this.dateCreated, dialerContactlistConfigChangeContactList.dateCreated) &&
             Objects.equals(this.dateModified, dialerContactlistConfigChangeContactList.dateModified) &&
-            Objects.equals(this.version, dialerContactlistConfigChangeContactList.version);
+            Objects.equals(this.version, dialerContactlistConfigChangeContactList.version) &&
+            Objects.equals(this.getAdditionalProperties, dialerContactlistConfigChangeContactList.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
   }
 
   @Override
@@ -418,6 +437,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

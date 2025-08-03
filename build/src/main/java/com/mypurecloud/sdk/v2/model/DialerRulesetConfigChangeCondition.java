@@ -200,6 +200,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private String agentWrapupField = null;
   private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
   private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerRulesetConfigChangeCondition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -515,6 +516,23 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -541,12 +559,13 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
             Objects.equals(this.callAnalysisResultField, dialerRulesetConfigChangeCondition.callAnalysisResultField) &&
             Objects.equals(this.agentWrapupField, dialerRulesetConfigChangeCondition.agentWrapupField) &&
             Objects.equals(this.contactColumnToDataActionFieldMappings, dialerRulesetConfigChangeCondition.contactColumnToDataActionFieldMappings) &&
-            Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates);
+            Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates) &&
+            Objects.equals(this.getAdditionalProperties, dialerRulesetConfigChangeCondition.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataAction, additionalProperties, type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
+    return Objects.hash(dataAction, additionalProperties, type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates, getAdditionalProperties);
   }
 
   @Override
@@ -571,6 +590,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
     sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

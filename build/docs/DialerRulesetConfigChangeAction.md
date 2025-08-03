@@ -10,8 +10,9 @@
 | **updateOption** | **String** | Indicator of the type of update action (applicable only to certain types of actions) |  [optional] |
 | **properties** | **Map&lt;String, String&gt;** | Map of key-value pairs pertinent to the action (different actions require different properties) |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

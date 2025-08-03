@@ -77,6 +77,7 @@ public class DialerCampaignScheduleConfigChangeAlteration  implements Serializab
   private String start = null;
   private String end = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCampaignScheduleConfigChangeAlteration() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -154,6 +155,23 @@ public class DialerCampaignScheduleConfigChangeAlteration  implements Serializab
   }
 
 
+  /**
+   **/
+  public DialerCampaignScheduleConfigChangeAlteration getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +185,13 @@ public class DialerCampaignScheduleConfigChangeAlteration  implements Serializab
     return Objects.equals(this.type, dialerCampaignScheduleConfigChangeAlteration.type) &&
             Objects.equals(this.start, dialerCampaignScheduleConfigChangeAlteration.start) &&
             Objects.equals(this.end, dialerCampaignScheduleConfigChangeAlteration.end) &&
-            Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeAlteration.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeAlteration.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerCampaignScheduleConfigChangeAlteration.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, start, end, additionalProperties);
+    return Objects.hash(type, start, end, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -184,6 +203,7 @@ public class DialerCampaignScheduleConfigChangeAlteration  implements Serializab
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -76,6 +76,7 @@ import com.mypurecloud.sdk.v2.model.Verifier;
 import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettingsMeRequest;
@@ -195,6 +196,85 @@ public class UsersApi {
 
   public UsersApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete/cancel an async request for user aggregates
+   * 
+   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsUsersAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsUsersAggregatesJob(createDeleteAnalyticsUsersAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for user aggregates
+   * 
+   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsUsersAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsUsersAggregatesJob(createDeleteAnalyticsUsersAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsUsersAggregatesJobRequest createDeleteAnalyticsUsersAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsUsersAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for user aggregates
+   * 
+   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsUsersAggregatesJob(DeleteAnalyticsUsersAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for user aggregates
+   * 
+   * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsUsersAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**

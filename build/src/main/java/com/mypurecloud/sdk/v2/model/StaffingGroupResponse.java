@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.PlanningGroupReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -30,12 +31,14 @@ public class StaffingGroupResponse  implements Serializable {
   private String name = null;
   private List<UserReference> users = null;
   private ManagementUnitReference managementUnit = null;
+  private List<PlanningGroupReference> planningGroups = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
   public StaffingGroupResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       users = new ArrayList<UserReference>();
+      planningGroups = new ArrayList<PlanningGroupReference>();
     }
   }
 
@@ -102,6 +105,24 @@ public class StaffingGroupResponse  implements Serializable {
 
 
   /**
+   * The list of planning groups that are associated with the staffing group
+   **/
+  public StaffingGroupResponse planningGroups(List<PlanningGroupReference> planningGroups) {
+    this.planningGroups = planningGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of planning groups that are associated with the staffing group")
+  @JsonProperty("planningGroups")
+  public List<PlanningGroupReference> getPlanningGroups() {
+    return planningGroups;
+  }
+  public void setPlanningGroups(List<PlanningGroupReference> planningGroups) {
+    this.planningGroups = planningGroups;
+  }
+
+
+  /**
    * Version metadata for the staffing group
    **/
   public StaffingGroupResponse metadata(WfmVersionedEntityMetadata metadata) {
@@ -140,13 +161,14 @@ public class StaffingGroupResponse  implements Serializable {
             Objects.equals(this.name, staffingGroupResponse.name) &&
             Objects.equals(this.users, staffingGroupResponse.users) &&
             Objects.equals(this.managementUnit, staffingGroupResponse.managementUnit) &&
+            Objects.equals(this.planningGroups, staffingGroupResponse.planningGroups) &&
             Objects.equals(this.metadata, staffingGroupResponse.metadata) &&
             Objects.equals(this.selfUri, staffingGroupResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, users, managementUnit, metadata, selfUri);
+    return Objects.hash(id, name, users, managementUnit, planningGroups, metadata, selfUri);
   }
 
   @Override
@@ -158,6 +180,7 @@ public class StaffingGroupResponse  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    managementUnit: ").append(toIndentedString(managementUnit)).append("\n");
+    sb.append("    planningGroups: ").append(toIndentedString(planningGroups)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

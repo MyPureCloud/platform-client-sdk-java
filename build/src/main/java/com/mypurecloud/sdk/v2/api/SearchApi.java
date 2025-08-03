@@ -10,7 +10,6 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
@@ -33,7 +32,6 @@ import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
 import com.mypurecloud.sdk.v2.model.TeamSearchRequest;
 import com.mypurecloud.sdk.v2.model.TeamsSearchResponse;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
@@ -50,7 +48,6 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationAllSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
@@ -824,84 +821,6 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Search resources.
-   * 
-   * @param body Search request options (required)
-   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(TranscriptConversationDetailSearchRequest body) throws IOException, ApiException {
-    return  postAnalyticsConversationsTranscriptsQuery(createPostAnalyticsConversationsTranscriptsQueryRequest(body));
-  }
-
-  /**
-   * Search resources.
-   * 
-   * @param body Search request options (required)
-   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> postAnalyticsConversationsTranscriptsQueryWithHttpInfo(TranscriptConversationDetailSearchRequest body) throws IOException {
-    return postAnalyticsConversationsTranscriptsQuery(createPostAnalyticsConversationsTranscriptsQueryRequest(body).withHttpInfo());
-  }
-
-  private PostAnalyticsConversationsTranscriptsQueryRequest createPostAnalyticsConversationsTranscriptsQueryRequest(TranscriptConversationDetailSearchRequest body) {
-    return PostAnalyticsConversationsTranscriptsQueryRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Search resources.
-   * 
-   * @param request The request object
-   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(PostAnalyticsConversationsTranscriptsQueryRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Search resources.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> postAnalyticsConversationsTranscriptsQuery(ApiRequest<TranscriptConversationDetailSearchRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

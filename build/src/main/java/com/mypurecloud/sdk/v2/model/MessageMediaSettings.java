@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BaseMediaSettings;
+import com.mypurecloud.sdk.v2.model.MessageSubtypeSettings;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,7 +32,7 @@ public class MessageMediaSettings  implements Serializable {
   private ServiceLevel serviceLevel = null;
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
-  private Map<String, BaseMediaSettings> subTypeSettings = null;
+  private Map<String, MessageSubtypeSettings> subTypeSettings = null;
 
   public MessageMediaSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -133,17 +133,17 @@ public class MessageMediaSettings  implements Serializable {
   /**
    * Map of media subtype to media subtype specific settings.
    **/
-  public MessageMediaSettings subTypeSettings(Map<String, BaseMediaSettings> subTypeSettings) {
+  public MessageMediaSettings subTypeSettings(Map<String, MessageSubtypeSettings> subTypeSettings) {
     this.subTypeSettings = subTypeSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Map of media subtype to media subtype specific settings.")
   @JsonProperty("subTypeSettings")
-  public Map<String, BaseMediaSettings> getSubTypeSettings() {
+  public Map<String, MessageSubtypeSettings> getSubTypeSettings() {
     return subTypeSettings;
   }
-  public void setSubTypeSettings(Map<String, BaseMediaSettings> subTypeSettings) {
+  public void setSubTypeSettings(Map<String, MessageSubtypeSettings> subTypeSettings) {
     this.subTypeSettings = subTypeSettings;
   }
 

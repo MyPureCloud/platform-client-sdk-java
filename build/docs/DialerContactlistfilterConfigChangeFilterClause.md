@@ -8,6 +8,7 @@
 | **filterType** | [**FilterTypeEnum**](#Enum--FilterTypeEnum) | Contact list filter type |  [optional] |
 | **predicates** | [**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate) | The list of predicates in that clause |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: FilterTypeEnum
@@ -21,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

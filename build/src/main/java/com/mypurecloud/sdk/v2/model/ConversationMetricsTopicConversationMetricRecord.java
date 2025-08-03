@@ -74,6 +74,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
+    TAGENTVIDEOCONNECTED("tAgentVideoConnected"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
     TAVERAGEAGENTRESPONSETIME("tAverageAgentResponseTime"),

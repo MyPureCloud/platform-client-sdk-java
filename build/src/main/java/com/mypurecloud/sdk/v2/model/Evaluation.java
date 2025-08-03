@@ -160,6 +160,7 @@ public class Evaluation  implements Serializable {
     }
   }
   private List<MediaTypeEnum> mediaType = null;
+  private List<String> divisionIds = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
   private Date conversationEndDate = null;
@@ -226,6 +227,7 @@ public class Evaluation  implements Serializable {
   public Evaluation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       mediaType = new ArrayList<MediaTypeEnum>();
+      divisionIds = new ArrayList<String>();
       authorizedActions = new ArrayList<String>();
     }
   }
@@ -571,6 +573,24 @@ public class Evaluation  implements Serializable {
 
 
   /**
+   * Evaluation is assigned in the following division(s).
+   **/
+  public Evaluation divisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Evaluation is assigned in the following division(s).")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
+  }
+  public void setDivisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+  }
+
+
+  /**
    * Is only true when evaluation is re-scored.
    **/
   public Evaluation rescore(Boolean rescore) {
@@ -854,6 +874,7 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.revisionCreatedDate, evaluation.revisionCreatedDate) &&
             Objects.equals(this.queue, evaluation.queue) &&
             Objects.equals(this.mediaType, evaluation.mediaType) &&
+            Objects.equals(this.divisionIds, evaluation.divisionIds) &&
             Objects.equals(this.rescore, evaluation.rescore) &&
             Objects.equals(this.conversationDate, evaluation.conversationDate) &&
             Objects.equals(this.conversationEndDate, evaluation.conversationEndDate) &&
@@ -874,7 +895,7 @@ public class Evaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, createdDate, changedDate, submittedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, createdDate, changedDate, submittedDate, revisionCreatedDate, queue, mediaType, divisionIds, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, aiScoring, selfUri);
   }
 
   @Override
@@ -902,6 +923,7 @@ public class Evaluation  implements Serializable {
     sb.append("    revisionCreatedDate: ").append(toIndentedString(revisionCreatedDate)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");
     sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    conversationEndDate: ").append(toIndentedString(conversationEndDate)).append("\n");

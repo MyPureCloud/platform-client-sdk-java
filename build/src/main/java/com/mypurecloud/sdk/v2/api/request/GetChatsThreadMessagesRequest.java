@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.RoomParticipant;
 import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
+import com.mypurecloud.sdk.v2.model.UserChatSettingsPost;
 import com.mypurecloud.sdk.v2.model.UserSettingsForChat;
 
 public class GetChatsThreadMessagesRequest {
@@ -96,6 +97,20 @@ public class GetChatsThreadMessagesRequest {
 	    return this;
 	} 
 
+	private Boolean excludeMetadata;
+	public Boolean getExcludeMetadata() {
+		return this.excludeMetadata;
+	}
+
+	public void setExcludeMetadata(Boolean excludeMetadata) {
+		this.excludeMetadata = excludeMetadata;
+	}
+
+	public GetChatsThreadMessagesRequest withExcludeMetadata(Boolean excludeMetadata) {
+	    this.setExcludeMetadata(excludeMetadata);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -134,6 +149,9 @@ public class GetChatsThreadMessagesRequest {
         
 
                 .withQueryParameters("after", "", after)
+        
+
+                .withQueryParameters("excludeMetadata", "", excludeMetadata)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -178,6 +196,11 @@ public class GetChatsThreadMessagesRequest {
 
 		public Builder withAfter(String after) {
 			request.setAfter(after);
+			return this;
+		}
+
+		public Builder withExcludeMetadata(Boolean excludeMetadata) {
+			request.setExcludeMetadata(excludeMetadata);
 			return this;
 		}
 

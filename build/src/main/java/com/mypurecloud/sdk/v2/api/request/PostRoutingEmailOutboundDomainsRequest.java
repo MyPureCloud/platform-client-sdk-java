@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -118,16 +119,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PostRoutingEmailOutboundDomainsRequest {
 
-	private OutboundDomain body;
-	public OutboundDomain getBody() {
+	private OutboundDomainRequest body;
+	public OutboundDomainRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(OutboundDomain body) {
+	public void setBody(OutboundDomainRequest body) {
 		this.body = body;
 	}
 
-	public PostRoutingEmailOutboundDomainsRequest withBody(OutboundDomain body) {
+	public PostRoutingEmailOutboundDomainsRequest withBody(OutboundDomainRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -151,7 +152,7 @@ public class PostRoutingEmailOutboundDomainsRequest {
         return this;
     }
 
-    public ApiRequest<OutboundDomain> withHttpInfo() {
+    public ApiRequest<OutboundDomainRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -174,7 +175,7 @@ public class PostRoutingEmailOutboundDomainsRequest {
 	}
 
 
-	public static Builder builder(OutboundDomain body) {
+	public static Builder builder(OutboundDomainRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -188,14 +189,14 @@ public class PostRoutingEmailOutboundDomainsRequest {
 		}
 
 
-		public Builder withBody(OutboundDomain body) {
+		public Builder withBody(OutboundDomainRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(OutboundDomain body) {
+		public Builder withRequiredParams(OutboundDomainRequest body) {
 			request.setBody(body);
 
 			return this;

@@ -79,7 +79,10 @@ import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -94,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrus
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNotesRequest;
@@ -165,6 +169,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsR
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
@@ -1155,6 +1160,92 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+   * @param limit Number of entities to return. Default of 25, maximum of 500. (optional)
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentAssignmentListing getExternalcontactsContactJourneySegments(String contactId, Boolean includeMerged, Integer limit) throws IOException, ApiException {
+    return  getExternalcontactsContactJourneySegments(createGetExternalcontactsContactJourneySegmentsRequest(contactId, includeMerged, limit));
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+   * @param limit Number of entities to return. Default of 25, maximum of 500. (optional)
+   * @return SegmentAssignmentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentAssignmentListing> getExternalcontactsContactJourneySegmentsWithHttpInfo(String contactId, Boolean includeMerged, Integer limit) throws IOException {
+    return getExternalcontactsContactJourneySegments(createGetExternalcontactsContactJourneySegmentsRequest(contactId, includeMerged, limit).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactJourneySegmentsRequest createGetExternalcontactsContactJourneySegmentsRequest(String contactId, Boolean includeMerged, Integer limit) {
+    return GetExternalcontactsContactJourneySegmentsRequest.builder()
+            .withContactId(contactId)
+
+            .withIncludeMerged(includeMerged)
+
+            .withLimit(limit)
+
+            .build();
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request The request object
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentAssignmentListing getExternalcontactsContactJourneySegments(GetExternalcontactsContactJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SegmentAssignmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentAssignmentListing> getExternalcontactsContactJourneySegments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SegmentAssignmentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve all sessions for a given external contact.
    * 
    * @param contactId ExternalContact ID (required)
@@ -1932,11 +2023,11 @@ public class ExternalContactsApi {
    * Get all versions of an external contact's schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getExternalcontactsContactsSchemaVersions(String schemaId) throws IOException, ApiException {
+  public DataSchemaListing getExternalcontactsContactsSchemaVersions(String schemaId) throws IOException, ApiException {
     return  getExternalcontactsContactsSchemaVersions(createGetExternalcontactsContactsSchemaVersionsRequest(schemaId));
   }
 
@@ -1944,10 +2035,10 @@ public class ExternalContactsApi {
    * Get all versions of an external contact's schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+  public ApiResponse<DataSchemaListing> getExternalcontactsContactsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
     return getExternalcontactsContactsSchemaVersions(createGetExternalcontactsContactsSchemaVersionsRequest(schemaId).withHttpInfo());
   }
 
@@ -1962,13 +2053,13 @@ public class ExternalContactsApi {
    * Get all versions of an external contact's schema
    * 
    * @param request The request object
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getExternalcontactsContactsSchemaVersions(GetExternalcontactsContactsSchemaVersionsRequest request) throws IOException, ApiException {
+  public DataSchemaListing getExternalcontactsContactsSchemaVersions(GetExternalcontactsContactsSchemaVersionsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1984,13 +2075,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataSchemaListing> getExternalcontactsContactsSchemaVersions(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2001,7 +2092,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3944,11 +4035,11 @@ public class ExternalContactsApi {
    * Get all versions of an external organization's schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getExternalcontactsOrganizationsSchemaVersions(String schemaId) throws IOException, ApiException {
+  public DataSchemaListing getExternalcontactsOrganizationsSchemaVersions(String schemaId) throws IOException, ApiException {
     return  getExternalcontactsOrganizationsSchemaVersions(createGetExternalcontactsOrganizationsSchemaVersionsRequest(schemaId));
   }
 
@@ -3956,10 +4047,10 @@ public class ExternalContactsApi {
    * Get all versions of an external organization's schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+  public ApiResponse<DataSchemaListing> getExternalcontactsOrganizationsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
     return getExternalcontactsOrganizationsSchemaVersions(createGetExternalcontactsOrganizationsSchemaVersionsRequest(schemaId).withHttpInfo());
   }
 
@@ -3974,13 +4065,13 @@ public class ExternalContactsApi {
    * Get all versions of an external organization's schema
    * 
    * @param request The request object
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getExternalcontactsOrganizationsSchemaVersions(GetExternalcontactsOrganizationsSchemaVersionsRequest request) throws IOException, ApiException {
+  public DataSchemaListing getExternalcontactsOrganizationsSchemaVersions(GetExternalcontactsOrganizationsSchemaVersionsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3996,13 +4087,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataSchemaListing> getExternalcontactsOrganizationsSchemaVersions(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4013,7 +4104,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6964,6 +7055,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body  (optional)
+   * @return UpdateSegmentAssignmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateSegmentAssignmentResponse postExternalcontactsContactJourneySegments(String contactId, UpdateSegmentAssignmentRequest body) throws IOException, ApiException {
+    return  postExternalcontactsContactJourneySegments(createPostExternalcontactsContactJourneySegmentsRequest(contactId, body));
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body  (optional)
+   * @return UpdateSegmentAssignmentResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateSegmentAssignmentResponse> postExternalcontactsContactJourneySegmentsWithHttpInfo(String contactId, UpdateSegmentAssignmentRequest body) throws IOException {
+    return postExternalcontactsContactJourneySegments(createPostExternalcontactsContactJourneySegmentsRequest(contactId, body).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactJourneySegmentsRequest createPostExternalcontactsContactJourneySegmentsRequest(String contactId, UpdateSegmentAssignmentRequest body) {
+    return PostExternalcontactsContactJourneySegmentsRequest.builder()
+            .withContactId(contactId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request The request object
+   * @return UpdateSegmentAssignmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateSegmentAssignmentResponse postExternalcontactsContactJourneySegments(PostExternalcontactsContactJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateSegmentAssignmentResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateSegmentAssignmentResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateSegmentAssignmentResponse> postExternalcontactsContactJourneySegments(ApiRequest<UpdateSegmentAssignmentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateSegmentAssignmentResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

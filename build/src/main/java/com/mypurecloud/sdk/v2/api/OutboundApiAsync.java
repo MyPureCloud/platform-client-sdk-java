@@ -94,6 +94,8 @@ import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
@@ -128,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesEmailcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesSequenceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesWhatsappcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundAttemptlimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundAttemptlimitsRequest;
@@ -195,6 +198,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignR
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesWhatsappcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesWhatsappcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
@@ -264,6 +269,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesEmailcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesWhatsappcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundWrapupcodemappingsRequest;
 
@@ -2502,6 +2508,81 @@ public class OutboundApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteOutboundSchedulesSequenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOutboundSchedulesWhatsappcampaignAsync(DeleteOutboundSchedulesWhatsappcampaignRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOutboundSchedulesWhatsappcampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -7549,6 +7630,156 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<SequenceSchedule>> response = (ApiResponse<List<SequenceSchedule>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WhatsAppCampaignSchedule> getOutboundSchedulesWhatsappcampaignAsync(GetOutboundSchedulesWhatsappcampaignRequest request, final AsyncApiCallback<WhatsAppCampaignSchedule> callback) {
+    try {
+      final SettableFuture<WhatsAppCampaignSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WhatsAppCampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignSchedule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WhatsAppCampaignSchedule>> getOutboundSchedulesWhatsappcampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WhatsAppCampaignSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WhatsAppCampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignSchedule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WhatsAppCampaignScheduleEntityListing> getOutboundSchedulesWhatsappcampaignsAsync(GetOutboundSchedulesWhatsappcampaignsRequest request, final AsyncApiCallback<WhatsAppCampaignScheduleEntityListing> callback) {
+    try {
+      final SettableFuture<WhatsAppCampaignScheduleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WhatsAppCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignScheduleEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignScheduleEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WhatsAppCampaignScheduleEntityListing>> getOutboundSchedulesWhatsappcampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WhatsAppCampaignScheduleEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WhatsAppCampaignScheduleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WhatsAppCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignScheduleEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignScheduleEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignScheduleEntityListing> response = (ApiResponse<WhatsAppCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignScheduleEntityListing> response = (ApiResponse<WhatsAppCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -12726,6 +12957,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WhatsAppCampaignSchedule> putOutboundSchedulesWhatsappcampaignAsync(PutOutboundSchedulesWhatsappcampaignRequest request, final AsyncApiCallback<WhatsAppCampaignSchedule> callback) {
+    try {
+      final SettableFuture<WhatsAppCampaignSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WhatsAppCampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignSchedule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WhatsAppCampaignSchedule>> putOutboundSchedulesWhatsappcampaignAsync(ApiRequest<WhatsAppCampaignSchedule> request, final AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WhatsAppCampaignSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WhatsAppCampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<WhatsAppCampaignSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WhatsAppCampaignSchedule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

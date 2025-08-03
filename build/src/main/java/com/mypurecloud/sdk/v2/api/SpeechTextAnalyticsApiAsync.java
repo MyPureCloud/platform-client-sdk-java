@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
 import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.CreateReprocessJobRequest;
 import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
@@ -39,6 +40,10 @@ import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
+import com.mypurecloud.sdk.v2.model.ReprocessJobEntityListingResponse;
+import com.mypurecloud.sdk.v2.model.ReprocessJobResponse;
+import com.mypurecloud.sdk.v2.model.SentimentData;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsConversationSummaryListing;
@@ -66,6 +71,7 @@ import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsReprocessingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
@@ -75,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSentimentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
@@ -89,6 +96,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPubli
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobInteractionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
@@ -107,6 +117,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfe
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
@@ -353,6 +364,83 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DeleteProgramResponse> response = (ApiResponse<DeleteProgramResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteSpeechandtextanalyticsReprocessingJobAsync(DeleteSpeechandtextanalyticsReprocessingJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteSpeechandtextanalyticsReprocessingJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1028,6 +1116,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SentimentData> getSpeechandtextanalyticsConversationSentimentsAsync(GetSpeechandtextanalyticsConversationSentimentsRequest request, final AsyncApiCallback<SentimentData> callback) {
+    try {
+      final SettableFuture<SentimentData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SentimentData>() {}, new AsyncApiCallback<ApiResponse<SentimentData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SentimentData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SentimentData>> getSpeechandtextanalyticsConversationSentimentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SentimentData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SentimentData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SentimentData>() {}, new AsyncApiCallback<ApiResponse<SentimentData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SentimentData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SentimentData> response = (ApiResponse<SentimentData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SentimentData> response = (ApiResponse<SentimentData>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2078,6 +2241,237 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UnpublishedProgramsEntityListing> response = (ApiResponse<UnpublishedProgramsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ReprocessJobResponse> getSpeechandtextanalyticsReprocessingJobAsync(GetSpeechandtextanalyticsReprocessingJobRequest request, final AsyncApiCallback<ReprocessJobResponse> callback) {
+    try {
+      final SettableFuture<ReprocessJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReprocessJobResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReprocessJobResponse>> getSpeechandtextanalyticsReprocessingJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReprocessJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReprocessJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReprocessJobResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ReprocessInteractionsByJobIdResponse> getSpeechandtextanalyticsReprocessingJobInteractionsAsync(GetSpeechandtextanalyticsReprocessingJobInteractionsRequest request, final AsyncApiCallback<ReprocessInteractionsByJobIdResponse> callback) {
+    try {
+      final SettableFuture<ReprocessInteractionsByJobIdResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReprocessInteractionsByJobIdResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessInteractionsByJobIdResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessInteractionsByJobIdResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReprocessInteractionsByJobIdResponse>> getSpeechandtextanalyticsReprocessingJobInteractionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReprocessInteractionsByJobIdResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReprocessInteractionsByJobIdResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReprocessInteractionsByJobIdResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessInteractionsByJobIdResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessInteractionsByJobIdResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessInteractionsByJobIdResponse> response = (ApiResponse<ReprocessInteractionsByJobIdResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessInteractionsByJobIdResponse> response = (ApiResponse<ReprocessInteractionsByJobIdResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ReprocessJobEntityListingResponse> getSpeechandtextanalyticsReprocessingJobsAsync(GetSpeechandtextanalyticsReprocessingJobsRequest request, final AsyncApiCallback<ReprocessJobEntityListingResponse> callback) {
+    try {
+      final SettableFuture<ReprocessJobEntityListingResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReprocessJobEntityListingResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobEntityListingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobEntityListingResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReprocessJobEntityListingResponse>> getSpeechandtextanalyticsReprocessingJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReprocessJobEntityListingResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReprocessJobEntityListingResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReprocessJobEntityListingResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobEntityListingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobEntityListingResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobEntityListingResponse> response = (ApiResponse<ReprocessJobEntityListingResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobEntityListingResponse> response = (ApiResponse<ReprocessJobEntityListingResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3428,6 +3822,83 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ReprocessJobResponse> postSpeechandtextanalyticsReprocessingJobsAsync(PostSpeechandtextanalyticsReprocessingJobsRequest request, final AsyncApiCallback<ReprocessJobResponse> callback) {
+    try {
+      final SettableFuture<ReprocessJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReprocessJobResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReprocessJobResponse>> postSpeechandtextanalyticsReprocessingJobsAsync(ApiRequest<CreateReprocessJobRequest> request, final AsyncApiCallback<ApiResponse<ReprocessJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReprocessJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReprocessJobResponse>() {}, new AsyncApiCallback<ApiResponse<ReprocessJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReprocessJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

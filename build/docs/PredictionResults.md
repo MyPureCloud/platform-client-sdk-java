@@ -35,8 +35,10 @@
 | SIMPLE | &quot;SIMPLE&quot; | 
 | ABANDON | &quot;ABANDON&quot; | 
 | PATIENCE_ABANDON | &quot;PATIENCE_ABANDON&quot; | 
+| AI_ADJUSTED_AHT | &quot;AI-ADJUSTED-AHT&quot; | 
+| POSITION_IN_QUEUE | &quot;POSITION-IN-QUEUE&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

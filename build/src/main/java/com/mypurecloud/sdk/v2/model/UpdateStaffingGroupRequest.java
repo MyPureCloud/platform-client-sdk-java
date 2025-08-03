@@ -26,6 +26,7 @@ public class UpdateStaffingGroupRequest  implements Serializable {
   
   private String name = null;
   private SetWrapperString userIds = null;
+  private SetWrapperString planningGroupIds = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   public UpdateStaffingGroupRequest() {
@@ -71,6 +72,24 @@ public class UpdateStaffingGroupRequest  implements Serializable {
 
 
   /**
+   * The set of planning group Ids to associate with the staffing group
+   **/
+  public UpdateStaffingGroupRequest planningGroupIds(SetWrapperString planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The set of planning group Ids to associate with the staffing group")
+  @JsonProperty("planningGroupIds")
+  public SetWrapperString getPlanningGroupIds() {
+    return planningGroupIds;
+  }
+  public void setPlanningGroupIds(SetWrapperString planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+  }
+
+
+  /**
    * Version metadata for the staffing group
    **/
   public UpdateStaffingGroupRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -100,12 +119,13 @@ public class UpdateStaffingGroupRequest  implements Serializable {
 
     return Objects.equals(this.name, updateStaffingGroupRequest.name) &&
             Objects.equals(this.userIds, updateStaffingGroupRequest.userIds) &&
+            Objects.equals(this.planningGroupIds, updateStaffingGroupRequest.planningGroupIds) &&
             Objects.equals(this.metadata, updateStaffingGroupRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, userIds, metadata);
+    return Objects.hash(name, userIds, planningGroupIds, metadata);
   }
 
   @Override
@@ -115,6 +135,7 @@ public class UpdateStaffingGroupRequest  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

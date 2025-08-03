@@ -208,6 +208,7 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
     TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
+    TAGENTVIDEOCONNECTED("tAgentVideoConnected"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
     TAVERAGEAGENTRESPONSETIME("tAverageAgentResponseTime"),

@@ -104,6 +104,9 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     CLEAR("Clear"),
     SIGNIN("SignIn"),
     SESSIONEXPIRED("SessionExpired"),
+    AUTHENTICATE("Authenticate"),
+    AUTHENTICATEFAILURE("AuthenticateFailure"),
+    AUTHENTICATECANCEL("AuthenticateCancel"),
     UNKNOWN("Unknown");
 
     private String value;

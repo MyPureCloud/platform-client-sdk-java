@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | **Boolean** | The toggle to enable or disable notifications |  [optional] |
+| **enabled** | **Boolean** | The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required. |  [optional] |
 | **notificationContentType** | [**NotificationContentTypeEnum**](#Enum--NotificationContentTypeEnum) | The notification content type settings for messenger |  [optional] |
 
 
@@ -20,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

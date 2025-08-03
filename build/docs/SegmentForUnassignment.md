@@ -1,0 +1,13 @@
+# SegmentForUnassignment
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The ID of the segment to be unassigned. |  |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

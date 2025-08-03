@@ -82,7 +82,10 @@ import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -97,6 +100,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrus
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNotesRequest;
@@ -168,6 +172,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsR
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
@@ -1123,6 +1128,81 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SegmentAssignmentListing> getExternalcontactsContactJourneySegmentsAsync(GetExternalcontactsContactJourneySegmentsRequest request, final AsyncApiCallback<SegmentAssignmentListing> callback) {
+    try {
+      final SettableFuture<SegmentAssignmentListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {}, new AsyncApiCallback<ApiResponse<SegmentAssignmentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SegmentAssignmentListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SegmentAssignmentListing>> getExternalcontactsContactJourneySegmentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SegmentAssignmentListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SegmentAssignmentListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SegmentAssignmentListing>() {}, new AsyncApiCallback<ApiResponse<SegmentAssignmentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SegmentAssignmentListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Retrieve all sessions for a given external contact.
    * 
    * @param request the request object
@@ -1804,13 +1884,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchema> getExternalcontactsContactsSchemaVersionsAsync(GetExternalcontactsContactsSchemaVersionsRequest request, final AsyncApiCallback<DataSchema> callback) {
+  public Future<DataSchemaListing> getExternalcontactsContactsSchemaVersionsAsync(GetExternalcontactsContactsSchemaVersionsRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
     try {
-      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final SettableFuture<DataSchemaListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1838,13 +1918,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchema>> getExternalcontactsContactsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+  public Future<ApiResponse<DataSchemaListing>> getExternalcontactsContactsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DataSchemaListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1852,7 +1932,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1860,7 +1940,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3604,13 +3684,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchema> getExternalcontactsOrganizationsSchemaVersionsAsync(GetExternalcontactsOrganizationsSchemaVersionsRequest request, final AsyncApiCallback<DataSchema> callback) {
+  public Future<DataSchemaListing> getExternalcontactsOrganizationsSchemaVersionsAsync(GetExternalcontactsOrganizationsSchemaVersionsRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
     try {
-      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final SettableFuture<DataSchemaListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3638,13 +3718,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchema>> getExternalcontactsOrganizationsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+  public Future<ApiResponse<DataSchemaListing>> getExternalcontactsOrganizationsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DataSchemaListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<DataSchemaListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3652,7 +3732,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3660,7 +3740,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6436,6 +6516,81 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdateSegmentAssignmentResponse> postExternalcontactsContactJourneySegmentsAsync(PostExternalcontactsContactJourneySegmentsRequest request, final AsyncApiCallback<UpdateSegmentAssignmentResponse> callback) {
+    try {
+      final SettableFuture<UpdateSegmentAssignmentResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdateSegmentAssignmentResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateSegmentAssignmentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateSegmentAssignmentResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdateSegmentAssignmentResponse>> postExternalcontactsContactJourneySegmentsAsync(ApiRequest<UpdateSegmentAssignmentRequest> request, final AsyncApiCallback<ApiResponse<UpdateSegmentAssignmentResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdateSegmentAssignmentResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdateSegmentAssignmentResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateSegmentAssignmentResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateSegmentAssignmentResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

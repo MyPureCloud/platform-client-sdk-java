@@ -140,6 +140,7 @@
 | TACTIVECALLBACKCOMPLETE | &quot;tActiveCallbackComplete&quot; |
 | TACW | &quot;tAcw&quot; |
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
+| TAGENTVIDEOCONNECTED | &quot;tAgentVideoConnected&quot; |
 | TALERT | &quot;tAlert&quot; |
 | TANSWERED | &quot;tAnswered&quot; |
 | TAVERAGEAGENTRESPONSETIME | &quot;tAverageAgentResponseTime&quot; |
@@ -182,4 +183,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

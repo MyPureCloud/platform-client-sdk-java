@@ -25,6 +25,7 @@
 | **revisionCreatedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **queue** | [**Queue**](Queue) |  |  [optional] |
 | **mediaType** | [**List<MediaTypeEnum>**](#Enum--MediaTypeEnum) | List of different communication types used in conversation. |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** | Evaluation is assigned in the following division(s). |  [optional] |
 | **rescore** | **Boolean** | Is only true when evaluation is re-scored. |  [optional] |
 | **conversationDate** | [**Date**](Date) | Creation date of the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **conversationEndDate** | [**Date**](Date) | End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -82,4 +83,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

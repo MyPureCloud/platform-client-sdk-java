@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#Enum--TypeEnum) | Subject search type |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Replacement term type |  [optional] |
 | **existingValue** | **String** |  |  [optional] |
 | **updatedValue** | **String** |  |  [optional] |
 
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

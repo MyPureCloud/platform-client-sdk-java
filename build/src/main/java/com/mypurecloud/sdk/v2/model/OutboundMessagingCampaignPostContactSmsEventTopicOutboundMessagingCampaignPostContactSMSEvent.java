@@ -47,7 +47,8 @@ public class OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingC
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),
     EMAIL("EMAIL"),
-    SMS("SMS");
+    SMS("SMS"),
+    WHATSAPP("WHATSAPP");
 
     private String value;
 

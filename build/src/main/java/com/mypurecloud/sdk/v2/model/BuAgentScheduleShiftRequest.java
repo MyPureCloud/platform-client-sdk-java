@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleActivity;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
+import com.mypurecloud.sdk.v2.model.ValueWrapperString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class BuAgentScheduleShiftRequest  implements Serializable {
   private List<BuAgentScheduleActivity> activities = null;
   private Boolean manuallyEdited = null;
   private BuScheduleReference schedule = null;
+  private ValueWrapperString workPlanId = null;
+  private ValueWrapperString workPlanShiftId = null;
 
   public BuAgentScheduleShiftRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -116,6 +119,42 @@ public class BuAgentScheduleShiftRequest  implements Serializable {
   }
 
 
+  /**
+   * The ID of the work plan for which the work plan shift emanates from
+   **/
+  public BuAgentScheduleShiftRequest workPlanId(ValueWrapperString workPlanId) {
+    this.workPlanId = workPlanId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the work plan for which the work plan shift emanates from")
+  @JsonProperty("workPlanId")
+  public ValueWrapperString getWorkPlanId() {
+    return workPlanId;
+  }
+  public void setWorkPlanId(ValueWrapperString workPlanId) {
+    this.workPlanId = workPlanId;
+  }
+
+
+  /**
+   * The ID of the work plan shift that was used in schedule generation
+   **/
+  public BuAgentScheduleShiftRequest workPlanShiftId(ValueWrapperString workPlanShiftId) {
+    this.workPlanShiftId = workPlanShiftId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the work plan shift that was used in schedule generation")
+  @JsonProperty("workPlanShiftId")
+  public ValueWrapperString getWorkPlanShiftId() {
+    return workPlanShiftId;
+  }
+  public void setWorkPlanShiftId(ValueWrapperString workPlanShiftId) {
+    this.workPlanShiftId = workPlanShiftId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +170,14 @@ public class BuAgentScheduleShiftRequest  implements Serializable {
             Objects.equals(this.lengthMinutes, buAgentScheduleShiftRequest.lengthMinutes) &&
             Objects.equals(this.activities, buAgentScheduleShiftRequest.activities) &&
             Objects.equals(this.manuallyEdited, buAgentScheduleShiftRequest.manuallyEdited) &&
-            Objects.equals(this.schedule, buAgentScheduleShiftRequest.schedule);
+            Objects.equals(this.schedule, buAgentScheduleShiftRequest.schedule) &&
+            Objects.equals(this.workPlanId, buAgentScheduleShiftRequest.workPlanId) &&
+            Objects.equals(this.workPlanShiftId, buAgentScheduleShiftRequest.workPlanShiftId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startDate, lengthMinutes, activities, manuallyEdited, schedule);
+    return Objects.hash(id, startDate, lengthMinutes, activities, manuallyEdited, schedule, workPlanId, workPlanShiftId);
   }
 
   @Override
@@ -150,6 +191,8 @@ public class BuAgentScheduleShiftRequest  implements Serializable {
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("    manuallyEdited: ").append(toIndentedString(manuallyEdited)).append("\n");
     sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
+    sb.append("    workPlanId: ").append(toIndentedString(workPlanId)).append("\n");
+    sb.append("    workPlanShiftId: ").append(toIndentedString(workPlanShiftId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

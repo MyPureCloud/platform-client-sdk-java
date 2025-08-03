@@ -33,6 +33,8 @@ public class BuAgentScheduleShift  implements Serializable {
   private List<BuAgentScheduleActivity> activities = null;
   private Boolean manuallyEdited = null;
   private BuScheduleReference schedule = null;
+  private String workPlanId = null;
+  private String workPlanShiftId = null;
 
   public BuAgentScheduleShift() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -116,6 +118,42 @@ public class BuAgentScheduleShift  implements Serializable {
   }
 
 
+  /**
+   * The ID of the work plan for which the work plan shift emanates from
+   **/
+  public BuAgentScheduleShift workPlanId(String workPlanId) {
+    this.workPlanId = workPlanId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the work plan for which the work plan shift emanates from")
+  @JsonProperty("workPlanId")
+  public String getWorkPlanId() {
+    return workPlanId;
+  }
+  public void setWorkPlanId(String workPlanId) {
+    this.workPlanId = workPlanId;
+  }
+
+
+  /**
+   * The ID of the work plan shift that was used in schedule generation
+   **/
+  public BuAgentScheduleShift workPlanShiftId(String workPlanShiftId) {
+    this.workPlanShiftId = workPlanShiftId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the work plan shift that was used in schedule generation")
+  @JsonProperty("workPlanShiftId")
+  public String getWorkPlanShiftId() {
+    return workPlanShiftId;
+  }
+  public void setWorkPlanShiftId(String workPlanShiftId) {
+    this.workPlanShiftId = workPlanShiftId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +169,14 @@ public class BuAgentScheduleShift  implements Serializable {
             Objects.equals(this.lengthMinutes, buAgentScheduleShift.lengthMinutes) &&
             Objects.equals(this.activities, buAgentScheduleShift.activities) &&
             Objects.equals(this.manuallyEdited, buAgentScheduleShift.manuallyEdited) &&
-            Objects.equals(this.schedule, buAgentScheduleShift.schedule);
+            Objects.equals(this.schedule, buAgentScheduleShift.schedule) &&
+            Objects.equals(this.workPlanId, buAgentScheduleShift.workPlanId) &&
+            Objects.equals(this.workPlanShiftId, buAgentScheduleShift.workPlanShiftId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startDate, lengthMinutes, activities, manuallyEdited, schedule);
+    return Objects.hash(id, startDate, lengthMinutes, activities, manuallyEdited, schedule, workPlanId, workPlanShiftId);
   }
 
   @Override
@@ -150,6 +190,8 @@ public class BuAgentScheduleShift  implements Serializable {
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("    manuallyEdited: ").append(toIndentedString(manuallyEdited)).append("\n");
     sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
+    sb.append("    workPlanId: ").append(toIndentedString(workPlanId)).append("\n");
+    sb.append("    workPlanShiftId: ").append(toIndentedString(workPlanShiftId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

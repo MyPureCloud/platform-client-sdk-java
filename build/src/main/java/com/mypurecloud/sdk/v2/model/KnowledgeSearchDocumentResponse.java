@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
-import com.mypurecloud.sdk.v2.model.DocumentVariationAnswer;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseReference;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentAlternative;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchVariation;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -101,7 +101,7 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
   private String externalUrl = null;
   private AddressableEntityRef source = null;
   private Boolean readonly = null;
-  private List<DocumentVariationAnswer> variations = null;
+  private List<KnowledgeDocumentSearchVariation> variations = null;
   private String answer = null;
   private String selfUri = null;
 
@@ -109,7 +109,7 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       alternatives = new ArrayList<KnowledgeDocumentAlternative>();
       labels = new ArrayList<LabelResponse>();
-      variations = new ArrayList<DocumentVariationAnswer>();
+      variations = new ArrayList<KnowledgeDocumentSearchVariation>();
     }
   }
 
@@ -444,17 +444,17 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
   /**
    * Variations of the document.
    **/
-  public KnowledgeSearchDocumentResponse variations(List<DocumentVariationAnswer> variations) {
+  public KnowledgeSearchDocumentResponse variations(List<KnowledgeDocumentSearchVariation> variations) {
     this.variations = variations;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Variations of the document.")
   @JsonProperty("variations")
-  public List<DocumentVariationAnswer> getVariations() {
+  public List<KnowledgeDocumentSearchVariation> getVariations() {
     return variations;
   }
-  public void setVariations(List<DocumentVariationAnswer> variations) {
+  public void setVariations(List<KnowledgeDocumentSearchVariation> variations) {
     this.variations = variations;
   }
 

@@ -27,12 +27,14 @@ public class Transcripts  implements Serializable {
   private List<String> exactMatch = null;
   private List<String> contains = null;
   private List<String> doesNotContain = null;
+  private List<String> notSimilarTo = null;
 
   public Transcripts() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       exactMatch = new ArrayList<String>();
       contains = new ArrayList<String>();
       doesNotContain = new ArrayList<String>();
+      notSimilarTo = new ArrayList<String>();
     }
   }
 
@@ -91,6 +93,24 @@ public class Transcripts  implements Serializable {
   }
 
 
+  /**
+   * List of words or phrases used to filter out transcripts that contain content similar to any item in this list
+   **/
+  public Transcripts notSimilarTo(List<String> notSimilarTo) {
+    this.notSimilarTo = notSimilarTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of words or phrases used to filter out transcripts that contain content similar to any item in this list")
+  @JsonProperty("notSimilarTo")
+  public List<String> getNotSimilarTo() {
+    return notSimilarTo;
+  }
+  public void setNotSimilarTo(List<String> notSimilarTo) {
+    this.notSimilarTo = notSimilarTo;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -103,12 +123,13 @@ public class Transcripts  implements Serializable {
 
     return Objects.equals(this.exactMatch, transcripts.exactMatch) &&
             Objects.equals(this.contains, transcripts.contains) &&
-            Objects.equals(this.doesNotContain, transcripts.doesNotContain);
+            Objects.equals(this.doesNotContain, transcripts.doesNotContain) &&
+            Objects.equals(this.notSimilarTo, transcripts.notSimilarTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exactMatch, contains, doesNotContain);
+    return Objects.hash(exactMatch, contains, doesNotContain, notSimilarTo);
   }
 
   @Override
@@ -119,6 +140,7 @@ public class Transcripts  implements Serializable {
     sb.append("    exactMatch: ").append(toIndentedString(exactMatch)).append("\n");
     sb.append("    contains: ").append(toIndentedString(contains)).append("\n");
     sb.append("    doesNotContain: ").append(toIndentedString(doesNotContain)).append("\n");
+    sb.append("    notSimilarTo: ").append(toIndentedString(notSimilarTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

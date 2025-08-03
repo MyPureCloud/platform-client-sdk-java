@@ -12,8 +12,9 @@
 | **percentage** | **Long** | numberOfContactsContacted/totalNumberOfContacts*100 |  [optional] |
 | **numberOfContactsSkipped** | **Map&lt;String, Long&gt;** | A map of skipped reasons and the number of contacts associated with each. |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

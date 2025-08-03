@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
 import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.CreateReprocessJobRequest;
 import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
@@ -36,6 +37,10 @@ import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.ReprocessInteractionsByJobIdResponse;
+import com.mypurecloud.sdk.v2.model.ReprocessJobEntityListingResponse;
+import com.mypurecloud.sdk.v2.model.ReprocessJobResponse;
+import com.mypurecloud.sdk.v2.model.SentimentData;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsConversationSummaryListing;
@@ -63,6 +68,7 @@ import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsReprocessingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
@@ -72,6 +78,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSentimentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
@@ -86,6 +93,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPubli
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobInteractionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
@@ -104,6 +114,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfe
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsReprocessingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
@@ -363,6 +374,85 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DeleteProgramResponse> response = (ApiResponse<DeleteProgramResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsReprocessingJob(String jobId) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsReprocessingJob(createDeleteSpeechandtextanalyticsReprocessingJobRequest(jobId));
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsReprocessingJobWithHttpInfo(String jobId) throws IOException {
+    return deleteSpeechandtextanalyticsReprocessingJob(createDeleteSpeechandtextanalyticsReprocessingJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsReprocessingJobRequest createDeleteSpeechandtextanalyticsReprocessingJobRequest(String jobId) {
+    return DeleteSpeechandtextanalyticsReprocessingJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsReprocessingJob(DeleteSpeechandtextanalyticsReprocessingJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics Reprocessing job by Id
+   * 
+   * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsReprocessingJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1088,6 +1178,84 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param conversationId The conversation ID of the sentiment data (required)
+   * @return SentimentData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentData getSpeechandtextanalyticsConversationSentiments(String conversationId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversationSentiments(createGetSpeechandtextanalyticsConversationSentimentsRequest(conversationId));
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param conversationId The conversation ID of the sentiment data (required)
+   * @return SentimentData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentData> getSpeechandtextanalyticsConversationSentimentsWithHttpInfo(String conversationId) throws IOException {
+    return getSpeechandtextanalyticsConversationSentiments(createGetSpeechandtextanalyticsConversationSentimentsRequest(conversationId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationSentimentsRequest createGetSpeechandtextanalyticsConversationSentimentsRequest(String conversationId) {
+    return GetSpeechandtextanalyticsConversationSentimentsRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param request The request object
+   * @return SentimentData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentData getSpeechandtextanalyticsConversationSentiments(GetSpeechandtextanalyticsConversationSentimentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SentimentData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SentimentData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get sentiment data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentData> getSpeechandtextanalyticsConversationSentiments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SentimentData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentData> response = (ApiResponse<SentimentData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentData> response = (ApiResponse<SentimentData>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2208,6 +2376,264 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UnpublishedProgramsEntityListing> response = (ApiResponse<UnpublishedProgramsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @return ReprocessJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobResponse getSpeechandtextanalyticsReprocessingJob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsReprocessingJob(createGetSpeechandtextanalyticsReprocessingJobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @return ReprocessJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobResponse> getSpeechandtextanalyticsReprocessingJobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsReprocessingJob(createGetSpeechandtextanalyticsReprocessingJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsReprocessingJobRequest createGetSpeechandtextanalyticsReprocessingJobRequest(String jobId) {
+    return GetSpeechandtextanalyticsReprocessingJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ReprocessJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobResponse getSpeechandtextanalyticsReprocessingJob(GetSpeechandtextanalyticsReprocessingJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReprocessJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReprocessJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics reprocess job by id
+   * 
+   * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobResponse> getSpeechandtextanalyticsReprocessingJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReprocessJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @return ReprocessInteractionsByJobIdResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessInteractionsByJobIdResponse getSpeechandtextanalyticsReprocessingJobInteractions(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsReprocessingJobInteractions(createGetSpeechandtextanalyticsReprocessingJobInteractionsRequest(jobId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId The Id of the Reprocessing job (required)
+   * @return ReprocessInteractionsByJobIdResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessInteractionsByJobIdResponse> getSpeechandtextanalyticsReprocessingJobInteractionsWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsReprocessingJobInteractions(createGetSpeechandtextanalyticsReprocessingJobInteractionsRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsReprocessingJobInteractionsRequest createGetSpeechandtextanalyticsReprocessingJobInteractionsRequest(String jobId) {
+    return GetSpeechandtextanalyticsReprocessingJobInteractionsRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ReprocessInteractionsByJobIdResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessInteractionsByJobIdResponse getSpeechandtextanalyticsReprocessingJobInteractions(GetSpeechandtextanalyticsReprocessingJobInteractionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReprocessInteractionsByJobIdResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReprocessInteractionsByJobIdResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+   * 
+   * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessInteractionsByJobIdResponse> getSpeechandtextanalyticsReprocessingJobInteractions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReprocessInteractionsByJobIdResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessInteractionsByJobIdResponse> response = (ApiResponse<ReprocessInteractionsByJobIdResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessInteractionsByJobIdResponse> response = (ApiResponse<ReprocessInteractionsByJobIdResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageSize The page size for the listing. The max that will be returned is 100. Default is 25. (optional)
+   * @param pageNumber The page number for the listing. Defaults to 1. (optional)
+   * @param sortOrder Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). (optional)
+   * @param name Case insensitive partial name to filter by. (optional)
+   * @return ReprocessJobEntityListingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobEntityListingResponse getSpeechandtextanalyticsReprocessingJobs(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsReprocessingJobs(createGetSpeechandtextanalyticsReprocessingJobsRequest(pageSize, pageNumber, sortOrder, name));
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageSize The page size for the listing. The max that will be returned is 100. Default is 25. (optional)
+   * @param pageNumber The page number for the listing. Defaults to 1. (optional)
+   * @param sortOrder Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). (optional)
+   * @param name Case insensitive partial name to filter by. (optional)
+   * @return ReprocessJobEntityListingResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobEntityListingResponse> getSpeechandtextanalyticsReprocessingJobsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
+    return getSpeechandtextanalyticsReprocessingJobs(createGetSpeechandtextanalyticsReprocessingJobsRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsReprocessingJobsRequest createGetSpeechandtextanalyticsReprocessingJobsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
+    return GetSpeechandtextanalyticsReprocessingJobsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortOrder(sortOrder)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ReprocessJobEntityListingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobEntityListingResponse getSpeechandtextanalyticsReprocessingJobs(GetSpeechandtextanalyticsReprocessingJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReprocessJobEntityListingResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReprocessJobEntityListingResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics reprocess jobs
+   * 
+   * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobEntityListingResponse> getSpeechandtextanalyticsReprocessingJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReprocessJobEntityListingResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobEntityListingResponse> response = (ApiResponse<ReprocessJobEntityListingResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobEntityListingResponse> response = (ApiResponse<ReprocessJobEntityListingResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3636,6 +4062,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body The ReprocessJob to create (required)
+   * @return ReprocessJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobResponse postSpeechandtextanalyticsReprocessingJobs(CreateReprocessJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsReprocessingJobs(createPostSpeechandtextanalyticsReprocessingJobsRequest(body));
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body The ReprocessJob to create (required)
+   * @return ReprocessJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobResponse> postSpeechandtextanalyticsReprocessingJobsWithHttpInfo(CreateReprocessJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsReprocessingJobs(createPostSpeechandtextanalyticsReprocessingJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsReprocessingJobsRequest createPostSpeechandtextanalyticsReprocessingJobsRequest(CreateReprocessJobRequest body) {
+    return PostSpeechandtextanalyticsReprocessingJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ReprocessJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReprocessJobResponse postSpeechandtextanalyticsReprocessingJobs(PostSpeechandtextanalyticsReprocessingJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReprocessJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReprocessJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics reprocess job.
+   * 
+   * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReprocessJobResponse> postSpeechandtextanalyticsReprocessingJobs(ApiRequest<CreateReprocessJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReprocessJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReprocessJobResponse> response = (ApiResponse<ReprocessJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

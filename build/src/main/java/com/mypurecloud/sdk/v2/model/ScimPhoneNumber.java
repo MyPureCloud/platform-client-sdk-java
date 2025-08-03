@@ -53,7 +53,8 @@ public class ScimPhoneNumber  implements Serializable {
     OTHER("other"),
     MICROSOFTTEAMS("microsoftteams"),
     ZOOMPHONE("zoomphone"),
-    EIGHTBYEIGHT("eightbyeight");
+    EIGHTBYEIGHT("eightbyeight"),
+    RINGCENTRAL("ringcentral");
 
     private String value;
 

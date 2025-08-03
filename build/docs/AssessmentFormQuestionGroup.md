@@ -8,6 +8,7 @@
 | **id** | **String** | The ID of the question group, |  [optional] |
 | **name** | **String** | The question group name |  |
 | **type** | **String** | The question group type |  |
+| **contextId** | **String** | An identifier for this question group that stays the same across versions of the form. |  [optional] |
 | **defaultAnswersToHighest** | **Boolean** |  |  [optional] |
 | **defaultAnswersToNA** | **Boolean** |  |  [optional] |
 | **naEnabled** | **Boolean** |  |  [optional] |
@@ -20,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

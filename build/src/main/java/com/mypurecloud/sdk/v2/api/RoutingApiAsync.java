@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -9267,7 +9268,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsAsync(ApiRequest<OutboundDomain> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
+  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsAsync(ApiRequest<OutboundDomainRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
     try {
       final SettableFuture<ApiResponse<EmailOutboundDomainResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9342,7 +9343,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsSimulatedAsync(ApiRequest<OutboundDomain> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
+  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsSimulatedAsync(ApiRequest<OutboundDomainRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
     try {
       final SettableFuture<ApiResponse<EmailOutboundDomainResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

@@ -79,6 +79,7 @@ public class DialerSequenceScheduleConfigChangeRecurrencePattern  implements Ser
   private Long interval = null;
   private List<String> daysOfWeek = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerSequenceScheduleConfigChangeRecurrencePattern() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -157,6 +158,23 @@ public class DialerSequenceScheduleConfigChangeRecurrencePattern  implements Ser
   }
 
 
+  /**
+   **/
+  public DialerSequenceScheduleConfigChangeRecurrencePattern getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -170,12 +188,13 @@ public class DialerSequenceScheduleConfigChangeRecurrencePattern  implements Ser
     return Objects.equals(this.type, dialerSequenceScheduleConfigChangeRecurrencePattern.type) &&
             Objects.equals(this.interval, dialerSequenceScheduleConfigChangeRecurrencePattern.interval) &&
             Objects.equals(this.daysOfWeek, dialerSequenceScheduleConfigChangeRecurrencePattern.daysOfWeek) &&
-            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeRecurrencePattern.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeRecurrencePattern.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerSequenceScheduleConfigChangeRecurrencePattern.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, interval, daysOfWeek, additionalProperties);
+    return Objects.hash(type, interval, daysOfWeek, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -187,6 +206,7 @@ public class DialerSequenceScheduleConfigChangeRecurrencePattern  implements Ser
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    daysOfWeek: ").append(toIndentedString(daysOfWeek)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

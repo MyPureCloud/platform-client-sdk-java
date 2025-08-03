@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AiAnswer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -32,9 +34,11 @@ public class EvaluationQuestionScore  implements Serializable {
   private Boolean failedKillQuestion = null;
   private String comments = null;
   private AiAnswer aiAnswer = null;
+  private List<EvaluationQuestionScore> multipleSelectQuestionOptionScores = null;
 
   public EvaluationQuestionScore() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      multipleSelectQuestionOptionScores = new ArrayList<EvaluationQuestionScore>();
     }
   }
 
@@ -188,6 +192,24 @@ public class EvaluationQuestionScore  implements Serializable {
   }
 
 
+  /**
+   * Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions.
+   **/
+  public EvaluationQuestionScore multipleSelectQuestionOptionScores(List<EvaluationQuestionScore> multipleSelectQuestionOptionScores) {
+    this.multipleSelectQuestionOptionScores = multipleSelectQuestionOptionScores;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions.")
+  @JsonProperty("multipleSelectQuestionOptionScores")
+  public List<EvaluationQuestionScore> getMultipleSelectQuestionOptionScores() {
+    return multipleSelectQuestionOptionScores;
+  }
+  public void setMultipleSelectQuestionOptionScores(List<EvaluationQuestionScore> multipleSelectQuestionOptionScores) {
+    this.multipleSelectQuestionOptionScores = multipleSelectQuestionOptionScores;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,12 +228,13 @@ public class EvaluationQuestionScore  implements Serializable {
             Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
             Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
             Objects.equals(this.comments, evaluationQuestionScore.comments) &&
-            Objects.equals(this.aiAnswer, evaluationQuestionScore.aiAnswer);
+            Objects.equals(this.aiAnswer, evaluationQuestionScore.aiAnswer) &&
+            Objects.equals(this.multipleSelectQuestionOptionScores, evaluationQuestionScore.multipleSelectQuestionOptionScores);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, failedKillQuestion, comments, aiAnswer);
+    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, failedKillQuestion, comments, aiAnswer, multipleSelectQuestionOptionScores);
   }
 
   @Override
@@ -228,6 +251,7 @@ public class EvaluationQuestionScore  implements Serializable {
     sb.append("    failedKillQuestion: ").append(toIndentedString(failedKillQuestion)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    aiAnswer: ").append(toIndentedString(aiAnswer)).append("\n");
+    sb.append("    multipleSelectQuestionOptionScores: ").append(toIndentedString(multipleSelectQuestionOptionScores)).append("\n");
     sb.append("}");
     return sb.toString();
   }

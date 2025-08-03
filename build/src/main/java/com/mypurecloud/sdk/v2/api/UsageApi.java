@@ -14,15 +14,25 @@ import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageOrganizationQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageSimpleSearch;
+import com.mypurecloud.sdk.v2.model.ClientPublicApiUsageQueryRequest;
+import com.mypurecloud.sdk.v2.model.ClientPublicApiUsageResultsResponse;
+import com.mypurecloud.sdk.v2.model.ClientUsageQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationPublicApiUsageQueryRequest;
+import com.mypurecloud.sdk.v2.model.OrganizationPublicApiUsageResultsResponse;
+import com.mypurecloud.sdk.v2.model.OrganizationUsageQueryResponse;
 import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageQueryResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageSummaryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsageAggregatesQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsageClientClientIdAggregatesQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsageQueryExecutionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsageSimplesearchExecutionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientUsageQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsageAggregatesQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsageClientClientIdAggregatesQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsageQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsageSimplesearchRequest;
 
@@ -203,6 +213,182 @@ public class UsageApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param jobId jobId (required)
+   * @param pageSize Page size of the results. Max is 1000. (optional, default to 100)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return OrganizationPublicApiUsageResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationPublicApiUsageResultsResponse getUsageAggregatesQueryJob(String jobId, Integer pageSize, String after) throws IOException, ApiException {
+    return  getUsageAggregatesQueryJob(createGetUsageAggregatesQueryJobRequest(jobId, pageSize, after));
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param jobId jobId (required)
+   * @param pageSize Page size of the results. Max is 1000. (optional, default to 100)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return OrganizationPublicApiUsageResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationPublicApiUsageResultsResponse> getUsageAggregatesQueryJobWithHttpInfo(String jobId, Integer pageSize, String after) throws IOException {
+    return getUsageAggregatesQueryJob(createGetUsageAggregatesQueryJobRequest(jobId, pageSize, after).withHttpInfo());
+  }
+
+  private GetUsageAggregatesQueryJobRequest createGetUsageAggregatesQueryJobRequest(String jobId, Integer pageSize, String after) {
+    return GetUsageAggregatesQueryJobRequest.builder()
+            .withJobId(jobId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .build();
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param request The request object
+   * @return OrganizationPublicApiUsageResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationPublicApiUsageResultsResponse getUsageAggregatesQueryJob(GetUsageAggregatesQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationPublicApiUsageResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPublicApiUsageResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationPublicApiUsageResultsResponse> getUsageAggregatesQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPublicApiUsageResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPublicApiUsageResultsResponse> response = (ApiResponse<OrganizationPublicApiUsageResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPublicApiUsageResultsResponse> response = (ApiResponse<OrganizationPublicApiUsageResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param clientId clientId (required)
+   * @param jobId jobId (required)
+   * @param pageSize Page size of the results. Max is 1000. (optional, default to 100)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return ClientPublicApiUsageResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClientPublicApiUsageResultsResponse getUsageClientClientIdAggregatesQueryJob(String clientId, String jobId, Integer pageSize, String after) throws IOException, ApiException {
+    return  getUsageClientClientIdAggregatesQueryJob(createGetUsageClientClientIdAggregatesQueryJobRequest(clientId, jobId, pageSize, after));
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param clientId clientId (required)
+   * @param jobId jobId (required)
+   * @param pageSize Page size of the results. Max is 1000. (optional, default to 100)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return ClientPublicApiUsageResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClientPublicApiUsageResultsResponse> getUsageClientClientIdAggregatesQueryJobWithHttpInfo(String clientId, String jobId, Integer pageSize, String after) throws IOException {
+    return getUsageClientClientIdAggregatesQueryJob(createGetUsageClientClientIdAggregatesQueryJobRequest(clientId, jobId, pageSize, after).withHttpInfo());
+  }
+
+  private GetUsageClientClientIdAggregatesQueryJobRequest createGetUsageClientClientIdAggregatesQueryJobRequest(String clientId, String jobId, Integer pageSize, String after) {
+    return GetUsageClientClientIdAggregatesQueryJobRequest.builder()
+            .withClientId(clientId)
+
+            .withJobId(jobId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .build();
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param request The request object
+   * @return ClientPublicApiUsageResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClientPublicApiUsageResultsResponse getUsageClientClientIdAggregatesQueryJob(GetUsageClientClientIdAggregatesQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClientPublicApiUsageResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClientPublicApiUsageResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status and results of the usage query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClientPublicApiUsageResultsResponse> getUsageClientClientIdAggregatesQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClientPublicApiUsageResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClientPublicApiUsageResultsResponse> response = (ApiResponse<ClientPublicApiUsageResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClientPublicApiUsageResultsResponse> response = (ApiResponse<ClientPublicApiUsageResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -449,6 +635,166 @@ public class UsageApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query your organization's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param body Query (required)
+   * @return OrganizationUsageQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationUsageQueryResponse postUsageAggregatesQueryJobs(OrganizationPublicApiUsageQueryRequest body) throws IOException, ApiException {
+    return  postUsageAggregatesQueryJobs(createPostUsageAggregatesQueryJobsRequest(body));
+  }
+
+  /**
+   * Query your organization's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param body Query (required)
+   * @return OrganizationUsageQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationUsageQueryResponse> postUsageAggregatesQueryJobsWithHttpInfo(OrganizationPublicApiUsageQueryRequest body) throws IOException {
+    return postUsageAggregatesQueryJobs(createPostUsageAggregatesQueryJobsRequest(body).withHttpInfo());
+  }
+
+  private PostUsageAggregatesQueryJobsRequest createPostUsageAggregatesQueryJobsRequest(OrganizationPublicApiUsageQueryRequest body) {
+    return PostUsageAggregatesQueryJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query your organization's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param request The request object
+   * @return OrganizationUsageQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrganizationUsageQueryResponse postUsageAggregatesQueryJobs(PostUsageAggregatesQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationUsageQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationUsageQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query your organization's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrganizationUsageQueryResponse> postUsageAggregatesQueryJobs(ApiRequest<OrganizationPublicApiUsageQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationUsageQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationUsageQueryResponse> response = (ApiResponse<OrganizationUsageQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationUsageQueryResponse> response = (ApiResponse<OrganizationUsageQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query your client's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param clientId clientId (required)
+   * @param body Query (required)
+   * @return ClientUsageQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClientUsageQueryResponse postUsageClientClientIdAggregatesQueryJobs(String clientId, ClientPublicApiUsageQueryRequest body) throws IOException, ApiException {
+    return  postUsageClientClientIdAggregatesQueryJobs(createPostUsageClientClientIdAggregatesQueryJobsRequest(clientId, body));
+  }
+
+  /**
+   * Query your client's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param clientId clientId (required)
+   * @param body Query (required)
+   * @return ClientUsageQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClientUsageQueryResponse> postUsageClientClientIdAggregatesQueryJobsWithHttpInfo(String clientId, ClientPublicApiUsageQueryRequest body) throws IOException {
+    return postUsageClientClientIdAggregatesQueryJobs(createPostUsageClientClientIdAggregatesQueryJobsRequest(clientId, body).withHttpInfo());
+  }
+
+  private PostUsageClientClientIdAggregatesQueryJobsRequest createPostUsageClientClientIdAggregatesQueryJobsRequest(String clientId, ClientPublicApiUsageQueryRequest body) {
+    return PostUsageClientClientIdAggregatesQueryJobsRequest.builder()
+            .withClientId(clientId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query your client's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param request The request object
+   * @return ClientUsageQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClientUsageQueryResponse postUsageClientClientIdAggregatesQueryJobs(PostUsageClientClientIdAggregatesQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClientUsageQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClientUsageQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query your client's public api usage.
+   * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClientUsageQueryResponse> postUsageClientClientIdAggregatesQueryJobs(ApiRequest<ClientPublicApiUsageQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClientUsageQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClientUsageQueryResponse> response = (ApiResponse<ClientUsageQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClientUsageQueryResponse> response = (ApiResponse<ClientUsageQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

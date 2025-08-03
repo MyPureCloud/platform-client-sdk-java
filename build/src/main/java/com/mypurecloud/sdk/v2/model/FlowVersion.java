@@ -97,6 +97,7 @@ public class FlowVersion  implements Serializable {
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
   private Boolean virtualAgentEnabled = null;
+  private Boolean agenticVirtualAgentEnabled = null;
   private Date datePublished = null;
   private Date datePublishedEnd = null;
   private NluInfo nluInfo = null;
@@ -483,6 +484,23 @@ public class FlowVersion  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FlowVersion agenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agenticVirtualAgentEnabled")
+  public Boolean getAgenticVirtualAgentEnabled() {
+    return agenticVirtualAgentEnabled;
+  }
+  public void setAgenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("datePublished")
   public Date getDatePublished() {
@@ -553,6 +571,7 @@ public class FlowVersion  implements Serializable {
             Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
             Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
             Objects.equals(this.virtualAgentEnabled, flowVersion.virtualAgentEnabled) &&
+            Objects.equals(this.agenticVirtualAgentEnabled, flowVersion.agenticVirtualAgentEnabled) &&
             Objects.equals(this.datePublished, flowVersion.datePublished) &&
             Objects.equals(this.datePublishedEnd, flowVersion.datePublishedEnd) &&
             Objects.equals(this.nluInfo, flowVersion.nluInfo) &&
@@ -563,7 +582,7 @@ public class FlowVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, dateCheckedIn, dateSaved, generationId, publishResultUri, inputSchema, outputSchema, virtualAgentEnabled, datePublished, datePublishedEnd, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, dateCheckedIn, dateSaved, generationId, publishResultUri, inputSchema, outputSchema, virtualAgentEnabled, agenticVirtualAgentEnabled, datePublished, datePublishedEnd, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
   }
 
   @Override
@@ -589,6 +608,7 @@ public class FlowVersion  implements Serializable {
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
     sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
+    sb.append("    agenticVirtualAgentEnabled: ").append(toIndentedString(agenticVirtualAgentEnabled)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    datePublishedEnd: ").append(toIndentedString(datePublishedEnd)).append("\n");
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");

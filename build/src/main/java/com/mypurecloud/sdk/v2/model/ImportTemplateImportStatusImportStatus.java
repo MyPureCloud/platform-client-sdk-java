@@ -82,6 +82,7 @@ public class ImportTemplateImportStatusImportStatus  implements Serializable {
   private List<String> targetContactListIds = null;
   private String listNamePrefix = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public ImportTemplateImportStatusImportStatus() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -233,6 +234,23 @@ public class ImportTemplateImportStatusImportStatus  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ImportTemplateImportStatusImportStatus getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -250,12 +268,13 @@ public class ImportTemplateImportStatusImportStatus  implements Serializable {
             Objects.equals(this.failureReason, importTemplateImportStatusImportStatus.failureReason) &&
             Objects.equals(this.targetContactListIds, importTemplateImportStatusImportStatus.targetContactListIds) &&
             Objects.equals(this.listNamePrefix, importTemplateImportStatusImportStatus.listNamePrefix) &&
-            Objects.equals(this.additionalProperties, importTemplateImportStatusImportStatus.additionalProperties);
+            Objects.equals(this.additionalProperties, importTemplateImportStatusImportStatus.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, importTemplateImportStatusImportStatus.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, targetContactListIds, listNamePrefix, additionalProperties);
+    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, targetContactListIds, listNamePrefix, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -271,6 +290,7 @@ public class ImportTemplateImportStatusImportStatus  implements Serializable {
     sb.append("    targetContactListIds: ").append(toIndentedString(targetContactListIds)).append("\n");
     sb.append("    listNamePrefix: ").append(toIndentedString(listNamePrefix)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

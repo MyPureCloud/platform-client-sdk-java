@@ -27,6 +27,7 @@ import java.io.Serializable;
 public class SurveyQuestionGroup  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
   private String name = null;
   private String type = null;
   private Boolean naEnabled = null;
@@ -54,6 +55,13 @@ public class SurveyQuestionGroup  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question group that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -153,6 +161,7 @@ public class SurveyQuestionGroup  implements Serializable {
     SurveyQuestionGroup surveyQuestionGroup = (SurveyQuestionGroup) o;
 
     return Objects.equals(this.id, surveyQuestionGroup.id) &&
+            Objects.equals(this.contextId, surveyQuestionGroup.contextId) &&
             Objects.equals(this.name, surveyQuestionGroup.name) &&
             Objects.equals(this.type, surveyQuestionGroup.type) &&
             Objects.equals(this.naEnabled, surveyQuestionGroup.naEnabled) &&
@@ -162,7 +171,7 @@ public class SurveyQuestionGroup  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, naEnabled, questions, visibilityCondition);
+    return Objects.hash(id, contextId, name, type, naEnabled, questions, visibilityCondition);
   }
 
   @Override
@@ -171,6 +180,7 @@ public class SurveyQuestionGroup  implements Serializable {
     sb.append("class SurveyQuestionGroup {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    naEnabled: ").append(toIndentedString(naEnabled)).append("\n");

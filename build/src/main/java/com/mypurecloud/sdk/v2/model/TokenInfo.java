@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.TokenInfoClonedUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -31,6 +32,7 @@ public class TokenInfo  implements Serializable {
   private NamedEntity homeOrganization = null;
   private List<String> authorizedScope = null;
   private TokenInfoClonedUser clonedUser = null;
+  private Date dateTokenIdles = null;
   private OrgOAuthClient oAuthClient = null;
 
   public TokenInfo() {
@@ -68,6 +70,13 @@ public class TokenInfo  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Date/Time when token is due to expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateTokenIdles")
+  public Date getDateTokenIdles() {
+    return dateTokenIdles;
+  }
+
+
   /**
    **/
   public TokenInfo oAuthClient(OrgOAuthClient oAuthClient) {
@@ -99,12 +108,13 @@ public class TokenInfo  implements Serializable {
             Objects.equals(this.homeOrganization, tokenInfo.homeOrganization) &&
             Objects.equals(this.authorizedScope, tokenInfo.authorizedScope) &&
             Objects.equals(this.clonedUser, tokenInfo.clonedUser) &&
+            Objects.equals(this.dateTokenIdles, tokenInfo.dateTokenIdles) &&
             Objects.equals(this.oAuthClient, tokenInfo.oAuthClient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organization, homeOrganization, authorizedScope, clonedUser, oAuthClient);
+    return Objects.hash(organization, homeOrganization, authorizedScope, clonedUser, dateTokenIdles, oAuthClient);
   }
 
   @Override
@@ -116,6 +126,7 @@ public class TokenInfo  implements Serializable {
     sb.append("    homeOrganization: ").append(toIndentedString(homeOrganization)).append("\n");
     sb.append("    authorizedScope: ").append(toIndentedString(authorizedScope)).append("\n");
     sb.append("    clonedUser: ").append(toIndentedString(clonedUser)).append("\n");
+    sb.append("    dateTokenIdles: ").append(toIndentedString(dateTokenIdles)).append("\n");
     sb.append("    oAuthClient: ").append(toIndentedString(oAuthClient)).append("\n");
     sb.append("}");
     return sb.toString();

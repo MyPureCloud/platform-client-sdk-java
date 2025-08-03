@@ -19,6 +19,7 @@
 | **dateCreated** | [**Date**](Date) | Creation time of the entity |  [optional] |
 | **dateModified** | [**Date**](Date) | Last modified time of the entity |  [optional] |
 | **version** | **Long** | Required for updates, must match the version number of the most recent update |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: DncSourceTypeEnum
@@ -42,4 +43,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

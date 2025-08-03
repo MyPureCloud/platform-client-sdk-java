@@ -14,11 +14,14 @@
 | **permissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
 | **userCount** | **Integer** |  |  [optional] |
 | **roleNeedsUpdate** | **Boolean** | Optional unless patch operation. |  [optional] |
-| **base** | **Boolean** |  |  [optional] |
+| **baseLicense** | **String** |  |  [optional] |
+| **addonLicenses** | **List&lt;String&gt;** |  |  [optional] |
+| **dateLicenseLastUpdated** | [**Date**](Date) | The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **_default** | **Boolean** |  |  [optional] |
+| **base** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

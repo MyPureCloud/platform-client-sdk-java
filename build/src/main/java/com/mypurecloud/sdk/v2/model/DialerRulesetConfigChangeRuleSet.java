@@ -38,6 +38,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerRulesetConfigChangeRuleSet() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -205,6 +206,23 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerRulesetConfigChangeRuleSet getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -223,12 +241,13 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
             Objects.equals(this.name, dialerRulesetConfigChangeRuleSet.name) &&
             Objects.equals(this.dateCreated, dialerRulesetConfigChangeRuleSet.dateCreated) &&
             Objects.equals(this.dateModified, dialerRulesetConfigChangeRuleSet.dateModified) &&
-            Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version);
+            Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version) &&
+            Objects.equals(this.getAdditionalProperties, dialerRulesetConfigChangeRuleSet.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactList, queue, rules, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(contactList, queue, rules, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
   }
 
   @Override
@@ -245,6 +264,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

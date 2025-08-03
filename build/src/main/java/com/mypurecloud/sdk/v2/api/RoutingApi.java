@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -10178,7 +10179,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailOutboundDomainResult postRoutingEmailOutboundDomains(OutboundDomain body) throws IOException, ApiException {
+  public EmailOutboundDomainResult postRoutingEmailOutboundDomains(OutboundDomainRequest body) throws IOException, ApiException {
     return  postRoutingEmailOutboundDomains(createPostRoutingEmailOutboundDomainsRequest(body));
   }
 
@@ -10189,11 +10190,11 @@ public class RoutingApi {
    * @return EmailOutboundDomainResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsWithHttpInfo(OutboundDomain body) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsWithHttpInfo(OutboundDomainRequest body) throws IOException {
     return postRoutingEmailOutboundDomains(createPostRoutingEmailOutboundDomainsRequest(body).withHttpInfo());
   }
 
-  private PostRoutingEmailOutboundDomainsRequest createPostRoutingEmailOutboundDomainsRequest(OutboundDomain body) {
+  private PostRoutingEmailOutboundDomainsRequest createPostRoutingEmailOutboundDomainsRequest(OutboundDomainRequest body) {
     return PostRoutingEmailOutboundDomainsRequest.builder()
             .withBody(body)
 
@@ -10226,7 +10227,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomains(ApiRequest<OutboundDomain> request) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomains(ApiRequest<OutboundDomainRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EmailOutboundDomainResult>() {});
     }
@@ -10256,7 +10257,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(OutboundDomain body) throws IOException, ApiException {
+  public EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(OutboundDomainRequest body) throws IOException, ApiException {
     return  postRoutingEmailOutboundDomainsSimulated(createPostRoutingEmailOutboundDomainsSimulatedRequest(body));
   }
 
@@ -10267,11 +10268,11 @@ public class RoutingApi {
    * @return EmailOutboundDomainResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulatedWithHttpInfo(OutboundDomain body) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulatedWithHttpInfo(OutboundDomainRequest body) throws IOException {
     return postRoutingEmailOutboundDomainsSimulated(createPostRoutingEmailOutboundDomainsSimulatedRequest(body).withHttpInfo());
   }
 
-  private PostRoutingEmailOutboundDomainsSimulatedRequest createPostRoutingEmailOutboundDomainsSimulatedRequest(OutboundDomain body) {
+  private PostRoutingEmailOutboundDomainsSimulatedRequest createPostRoutingEmailOutboundDomainsSimulatedRequest(OutboundDomainRequest body) {
     return PostRoutingEmailOutboundDomainsSimulatedRequest.builder()
             .withBody(body)
 
@@ -10304,7 +10305,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulated(ApiRequest<OutboundDomain> request) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulated(ApiRequest<OutboundDomainRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EmailOutboundDomainResult>() {});
     }

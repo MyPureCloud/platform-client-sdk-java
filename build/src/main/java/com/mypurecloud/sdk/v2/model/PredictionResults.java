@@ -100,7 +100,9 @@ public class PredictionResults  implements Serializable {
     BEST("BEST"),
     SIMPLE("SIMPLE"),
     ABANDON("ABANDON"),
-    PATIENCE_ABANDON("PATIENCE_ABANDON");
+    PATIENCE_ABANDON("PATIENCE_ABANDON"),
+    AI_ADJUSTED_AHT("AI-ADJUSTED-AHT"),
+    POSITION_IN_QUEUE("POSITION-IN-QUEUE");
 
     private String value;
 

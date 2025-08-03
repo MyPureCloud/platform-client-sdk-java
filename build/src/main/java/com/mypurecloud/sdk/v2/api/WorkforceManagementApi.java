@@ -95,10 +95,19 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupAllocationsResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupMetricChangeHistoryListResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupMetricChangeResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingRequirementResult;
+import com.mypurecloud.sdk.v2.model.CapacityPlansListResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastGetSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.CopyCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
@@ -108,6 +117,7 @@ import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.CreateCapacityPlanStaffingGroupMetricChangeRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
@@ -139,6 +149,7 @@ import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.ListAlternativeShiftTradesResponse;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
@@ -155,9 +166,12 @@ import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResp
 import com.mypurecloud.sdk.v2.model.PerformancePredictionResponse;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
+import com.mypurecloud.sdk.v2.model.PlanningGroupToStaffingGroupsListing;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
@@ -196,6 +210,7 @@ import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
@@ -255,6 +270,7 @@ import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
@@ -296,6 +312,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActi
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdRequest;
@@ -371,6 +392,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTeamAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
@@ -386,6 +408,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRe
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
@@ -427,10 +450,18 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAct
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
@@ -647,6 +678,89 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete staffing group allocations history created for a capacity plan before the given date
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(String businessUnitId, String capacityPlanId, LocalDate beforeDateId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(createDeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest(businessUnitId, capacityPlanId, beforeDateId));
+  }
+
+  /**
+   * Delete staffing group allocations history created for a capacity plan before the given date
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryWithHttpInfo(String businessUnitId, String capacityPlanId, LocalDate beforeDateId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(createDeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest(businessUnitId, capacityPlanId, beforeDateId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest createDeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest(String businessUnitId, String capacityPlanId, LocalDate beforeDateId) {
+    return DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withBeforeDateId(beforeDateId)
+
+            .build();
+  }
+
+  /**
+   * Delete staffing group allocations history created for a capacity plan before the given date
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete staffing group allocations history created for a capacity plan before the given date
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3106,12 +3220,13 @@ public class WorkforceManagementApi {
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand Include to access additional data on the business unit (optional)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitResponse getWorkforcemanagementBusinessunit(String businessUnitId, List<String> expand) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand));
+  public BusinessUnitResponse getWorkforcemanagementBusinessunit(String businessUnitId, List<String> expand, Boolean includeSchedulingDefaultMessageSeverities) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand, includeSchedulingDefaultMessageSeverities));
   }
 
   /**
@@ -3119,18 +3234,21 @@ public class WorkforceManagementApi {
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand Include to access additional data on the business unit (optional)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitResponse> getWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, List<String> expand) throws IOException {
-    return getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand).withHttpInfo());
+  public ApiResponse<BusinessUnitResponse> getWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, List<String> expand, Boolean includeSchedulingDefaultMessageSeverities) throws IOException {
+    return getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand, includeSchedulingDefaultMessageSeverities).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitRequest createGetWorkforcemanagementBusinessunitRequest(String businessUnitId, List<String> expand) {
+  private GetWorkforcemanagementBusinessunitRequest createGetWorkforcemanagementBusinessunitRequest(String businessUnitId, List<String> expand, Boolean includeSchedulingDefaultMessageSeverities) {
     return GetWorkforcemanagementBusinessunitRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withExpand(expand)
+
+            .withIncludeSchedulingDefaultMessageSeverities(includeSchedulingDefaultMessageSeverities)
 
             .build();
   }
@@ -3913,6 +4031,416 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuAlternativeShiftJobResponse> response = (ApiResponse<BuAlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(String businessUnitId, String capacityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplan(createGetWorkforcemanagementBusinessunitCapacityplanRequest(businessUnitId, capacityPlanId));
+  }
+
+  /**
+   * Get a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> getWorkforcemanagementBusinessunitCapacityplanWithHttpInfo(String businessUnitId, String capacityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplan(createGetWorkforcemanagementBusinessunitCapacityplanRequest(businessUnitId, capacityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplanRequest createGetWorkforcemanagementBusinessunitCapacityplanRequest(String businessUnitId, String capacityPlanId) {
+    return GetWorkforcemanagementBusinessunitCapacityplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Get a capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(GetWorkforcemanagementBusinessunitCapacityplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> getWorkforcemanagementBusinessunitCapacityplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a capacity plan's staffing group allocations
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingGroupAllocationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(String businessUnitId, String capacityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId));
+  }
+
+  /**
+   * Get a capacity plan's staffing group allocations
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingGroupAllocationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(String businessUnitId, String capacityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest createGetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(String businessUnitId, String capacityPlanId) {
+    return GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Get a capacity plan's staffing group allocations
+   * 
+   * @param request The request object
+   * @return CapacityPlanStaffingGroupAllocationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanStaffingGroupAllocationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a capacity plan's staffing group allocations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanStaffingGroupAllocationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> response = (ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> response = (ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a capacity plan's staffing requirements
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(String businessUnitId, String capacityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(createGetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest(businessUnitId, capacityPlanId));
+  }
+
+  /**
+   * Get a capacity plan's staffing requirements
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingRequirementResult> getWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsWithHttpInfo(String businessUnitId, String capacityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(createGetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest(businessUnitId, capacityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest createGetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest(String businessUnitId, String capacityPlanId) {
+    return GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Get a capacity plan's staffing requirements
+   * 
+   * @param request The request object
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirementsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanStaffingRequirementResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a capacity plan's staffing requirements
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingRequirementResult> getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanStaffingRequirementResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = (ApiResponse<CapacityPlanStaffingRequirementResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = (ApiResponse<CapacityPlanStaffingRequirementResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the latest long term staffing requirements for a business unit
+   * 
+   * @param businessUnitId  (required)
+   * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId forecastId of forecast (required)
+   * @return LongTermRequirementsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId));
+  }
+
+  /**
+   * Get the latest long term staffing requirements for a business unit
+   * 
+   * @param businessUnitId  (required)
+   * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId forecastId of forecast (required)
+   * @return LongTermRequirementsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermRequirementsResponse> getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest createGetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+    return GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekDateId(weekDateId)
+
+            .withForecastId(forecastId)
+
+            .build();
+  }
+
+  /**
+   * Get the latest long term staffing requirements for a business unit
+   * 
+   * @param request The request object
+   * @return LongTermRequirementsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LongTermRequirementsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LongTermRequirementsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the latest long term staffing requirements for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermRequirementsResponse> getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LongTermRequirementsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermRequirementsResponse> response = (ApiResponse<LongTermRequirementsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermRequirementsResponse> response = (ApiResponse<LongTermRequirementsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of capacity plans for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return CapacityPlansListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitCapacityplans(createGetWorkforcemanagementBusinessunitCapacityplansRequest(businessUnitId));
+  }
+
+  /**
+   * Get list of capacity plans for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return CapacityPlansListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlansListResponse> getWorkforcemanagementBusinessunitCapacityplansWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitCapacityplans(createGetWorkforcemanagementBusinessunitCapacityplansRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitCapacityplansRequest createGetWorkforcemanagementBusinessunitCapacityplansRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitCapacityplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get list of capacity plans for a business unit
+   * 
+   * @param request The request object
+   * @return CapacityPlansListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(GetWorkforcemanagementBusinessunitCapacityplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlansListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlansListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of capacity plans for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlansListResponse> getWorkforcemanagementBusinessunitCapacityplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlansListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlansListResponse> response = (ApiResponse<CapacityPlansListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlansListResponse> response = (ApiResponse<CapacityPlansListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10172,6 +10700,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get a list of user schedule adherence records for the requested team
+   * 
+   * @param teamId The ID of the team (required)
+   * @return UserScheduleAdherenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(String teamId) throws IOException, ApiException {
+    return  getWorkforcemanagementTeamAdherence(createGetWorkforcemanagementTeamAdherenceRequest(teamId));
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested team
+   * 
+   * @param teamId The ID of the team (required)
+   * @return UserScheduleAdherenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserScheduleAdherenceListing> getWorkforcemanagementTeamAdherenceWithHttpInfo(String teamId) throws IOException {
+    return getWorkforcemanagementTeamAdherence(createGetWorkforcemanagementTeamAdherenceRequest(teamId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementTeamAdherenceRequest createGetWorkforcemanagementTeamAdherenceRequest(String teamId) {
+    return GetWorkforcemanagementTeamAdherenceRequest.builder()
+            .withTeamId(teamId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested team
+   * 
+   * @param request The request object
+   * @return UserScheduleAdherenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(GetWorkforcemanagementTeamAdherenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserScheduleAdherenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserScheduleAdherenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested team
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserScheduleAdherenceListing> getWorkforcemanagementTeamAdherence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserScheduleAdherenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleAdherenceListing> response = (ApiResponse<UserScheduleAdherenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleAdherenceListing> response = (ApiResponse<UserScheduleAdherenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query the results of time off types job
    * 
    * @param jobId The ID of the job. (required)
@@ -11038,12 +11644,13 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (required)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitResponse patchWorkforcemanagementBusinessunit(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException, ApiException {
-    return  patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body));
+  public BusinessUnitResponse patchWorkforcemanagementBusinessunit(String businessUnitId, UpdateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body, includeSchedulingDefaultMessageSeverities));
   }
 
   /**
@@ -11051,18 +11658,21 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (required)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitResponse> patchWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException {
-    return patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body).withHttpInfo());
+  public ApiResponse<BusinessUnitResponse> patchWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, UpdateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) throws IOException {
+    return patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body, includeSchedulingDefaultMessageSeverities).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementBusinessunitRequest createPatchWorkforcemanagementBusinessunitRequest(String businessUnitId, UpdateBusinessUnitRequest body) {
+  private PatchWorkforcemanagementBusinessunitRequest createPatchWorkforcemanagementBusinessunitRequest(String businessUnitId, UpdateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) {
     return PatchWorkforcemanagementBusinessunitRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withBody(body)
+
+            .withIncludeSchedulingDefaultMessageSeverities(includeSchedulingDefaultMessageSeverities)
 
             .build();
   }
@@ -11365,6 +11975,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a capacity plan configuration
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(String businessUnitId, String capacityPlanId, UpdateCapacityPlanRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitCapacityplan(createPatchWorkforcemanagementBusinessunitCapacityplanRequest(businessUnitId, capacityPlanId, body));
+  }
+
+  /**
+   * Update a capacity plan configuration
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> patchWorkforcemanagementBusinessunitCapacityplanWithHttpInfo(String businessUnitId, String capacityPlanId, UpdateCapacityPlanRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitCapacityplan(createPatchWorkforcemanagementBusinessunitCapacityplanRequest(businessUnitId, capacityPlanId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitCapacityplanRequest createPatchWorkforcemanagementBusinessunitCapacityplanRequest(String businessUnitId, String capacityPlanId, UpdateCapacityPlanRequest body) {
+    return PatchWorkforcemanagementBusinessunitCapacityplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a capacity plan configuration
+   * 
+   * @param request The request object
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(PatchWorkforcemanagementBusinessunitCapacityplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a capacity plan configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> patchWorkforcemanagementBusinessunitCapacityplan(ApiRequest<UpdateCapacityPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14802,6 +15498,593 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Copy a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(String businessUnitId, String capacityPlanId, CopyCapacityPlanRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplanCopy(createPostWorkforcemanagementBusinessunitCapacityplanCopyRequest(businessUnitId, capacityPlanId, body));
+  }
+
+  /**
+   * Copy a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> postWorkforcemanagementBusinessunitCapacityplanCopyWithHttpInfo(String businessUnitId, String capacityPlanId, CopyCapacityPlanRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplanCopy(createPostWorkforcemanagementBusinessunitCapacityplanCopyRequest(businessUnitId, capacityPlanId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplanCopyRequest createPostWorkforcemanagementBusinessunitCapacityplanCopyRequest(String businessUnitId, String capacityPlanId, CopyCapacityPlanRequest body) {
+    return PostWorkforcemanagementBusinessunitCapacityplanCopyRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Copy a capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(PostWorkforcemanagementBusinessunitCapacityplanCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy a capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> postWorkforcemanagementBusinessunitCapacityplanCopy(ApiRequest<CopyCapacityPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Regenerate requirements for capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(String businessUnitId, String capacityPlanId) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(createPostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest(businessUnitId, capacityPlanId));
+  }
+
+  /**
+   * Regenerate requirements for capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingRequirementResult> postWorkforcemanagementBusinessunitCapacityplanRequirementGenerateWithHttpInfo(String businessUnitId, String capacityPlanId) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(createPostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest(businessUnitId, capacityPlanId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest createPostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest(String businessUnitId, String capacityPlanId) {
+    return PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Regenerate requirements for capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanStaffingRequirementResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanStaffingRequirementResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Regenerate requirements for capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingRequirementResult> postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanStaffingRequirementResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = (ApiResponse<CapacityPlanStaffingRequirementResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingRequirementResult> response = (ApiResponse<CapacityPlanStaffingRequirementResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create staffing group allocations for a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body  (required)
+   * @return CapacityPlanStaffingGroupMetricChangeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(String businessUnitId, String capacityPlanId, CreateCapacityPlanStaffingGroupMetricChangeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId, body));
+  }
+
+  /**
+   * Create staffing group allocations for a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body  (required)
+   * @return CapacityPlanStaffingGroupMetricChangeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse> postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(String businessUnitId, String capacityPlanId, CreateCapacityPlanStaffingGroupMetricChangeRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(businessUnitId, capacityPlanId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest(String businessUnitId, String capacityPlanId, CreateCapacityPlanStaffingGroupMetricChangeRequest body) {
+    return PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create staffing group allocations for a capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanStaffingGroupMetricChangeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanStaffingGroupMetricChangeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create staffing group allocations for a capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse> postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(ApiRequest<CreateCapacityPlanStaffingGroupMetricChangeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanStaffingGroupMetricChangeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse> response = (ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse> response = (ApiResponse<CapacityPlanStaffingGroupMetricChangeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query staffing groups allocations history for a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body  (required)
+   * @return CapacityPlanStaffingGroupMetricChangeHistoryListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(String businessUnitId, String capacityPlanId, QueryCapacityPlanStaffingGroupMetricChangeHistory body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest(businessUnitId, capacityPlanId, body));
+  }
+
+  /**
+   * Query staffing groups allocations history for a capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param capacityPlanId The ID of the capacity plan (required)
+   * @param body  (required)
+   * @return CapacityPlanStaffingGroupMetricChangeHistoryListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse> postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryWithHttpInfo(String businessUnitId, String capacityPlanId, QueryCapacityPlanStaffingGroupMetricChangeHistory body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest(businessUnitId, capacityPlanId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest createPostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest(String businessUnitId, String capacityPlanId, QueryCapacityPlanStaffingGroupMetricChangeHistory body) {
+    return PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withCapacityPlanId(capacityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query staffing groups allocations history for a capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanStaffingGroupMetricChangeHistoryListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanStaffingGroupMetricChangeHistoryListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query staffing groups allocations history for a capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse> postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(ApiRequest<QueryCapacityPlanStaffingGroupMetricChangeHistory> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanStaffingGroupMetricChangeHistoryListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse> response = (ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse> response = (ApiResponse<CapacityPlanStaffingGroupMetricChangeHistoryListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Force regenerate the latest long term staffing requirements for a business unit
+   * 
+   * @param businessUnitId  (required)
+   * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId forecastId of forecast (required)
+   * @return LongTermRequirementsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(createPostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest(businessUnitId, weekDateId, forecastId));
+  }
+
+  /**
+   * Force regenerate the latest long term staffing requirements for a business unit
+   * 
+   * @param businessUnitId  (required)
+   * @param weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId forecastId of forecast (required)
+   * @return LongTermRequirementsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermRequirementsResponse> postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(createPostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest createPostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+    return PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekDateId(weekDateId)
+
+            .withForecastId(forecastId)
+
+            .build();
+  }
+
+  /**
+   * Force regenerate the latest long term staffing requirements for a business unit
+   * 
+   * @param request The request object
+   * @return LongTermRequirementsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LongTermRequirementsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LongTermRequirementsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Force regenerate the latest long term staffing requirements for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermRequirementsResponse> postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LongTermRequirementsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermRequirementsResponse> response = (ApiResponse<LongTermRequirementsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermRequirementsResponse> response = (ApiResponse<LongTermRequirementsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(String businessUnitId, CapacityPlanRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplans(createPostWorkforcemanagementBusinessunitCapacityplansRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a new capacity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return CapacityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> postWorkforcemanagementBusinessunitCapacityplansWithHttpInfo(String businessUnitId, CapacityPlanRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplans(createPostWorkforcemanagementBusinessunitCapacityplansRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplansRequest createPostWorkforcemanagementBusinessunitCapacityplansRequest(String businessUnitId, CapacityPlanRequest body) {
+    return PostWorkforcemanagementBusinessunitCapacityplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new capacity plan
+   * 
+   * @param request The request object
+   * @return CapacityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(PostWorkforcemanagementBusinessunitCapacityplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new capacity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanResponse> postWorkforcemanagementBusinessunitCapacityplans(ApiRequest<CapacityPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanResponse> response = (ApiResponse<CapacityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete capacity plans in a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(String businessUnitId, CapacityPlanDeleteRequest body) throws IOException, ApiException {
+     postWorkforcemanagementBusinessunitCapacityplansBulkRemove(createPostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest(businessUnitId, body));
+  }
+
+  /**
+   * Delete capacity plans in a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postWorkforcemanagementBusinessunitCapacityplansBulkRemoveWithHttpInfo(String businessUnitId, CapacityPlanDeleteRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplansBulkRemove(createPostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest createPostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest(String businessUnitId, CapacityPlanDeleteRequest body) {
+    return PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Delete capacity plans in a business unit
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete capacity plans in a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postWorkforcemanagementBusinessunitCapacityplansBulkRemove(ApiRequest<CapacityPlanDeleteRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -15129,6 +16412,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a list of planning group to staffing groups list association
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return PlanningGroupToStaffingGroupsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(String businessUnitId, QueryPlanningGroupToStaffingGroupsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Gets a list of planning group to staffing groups list association
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return PlanningGroupToStaffingGroupsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroupToStaffingGroupsListing> postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryWithHttpInfo(String businessUnitId, QueryPlanningGroupToStaffingGroupsRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest createPostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest(String businessUnitId, QueryPlanningGroupToStaffingGroupsRequest body) {
+    return PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Gets a list of planning group to staffing groups list association
+   * 
+   * @param request The request object
+   * @return PlanningGroupToStaffingGroupsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PlanningGroupToStaffingGroupsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PlanningGroupToStaffingGroupsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of planning group to staffing groups list association
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroupToStaffingGroupsListing> postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(ApiRequest<QueryPlanningGroupToStaffingGroupsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PlanningGroupToStaffingGroupsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroupToStaffingGroupsListing> response = (ApiResponse<PlanningGroupToStaffingGroupsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroupToStaffingGroupsListing> response = (ApiResponse<PlanningGroupToStaffingGroupsListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17061,28 +18426,32 @@ public class WorkforceManagementApi {
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
    * @param body body (required)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitResponse postWorkforcemanagementBusinessunits(CreateBusinessUnitRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body));
+  public BusinessUnitResponse postWorkforcemanagementBusinessunits(CreateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body, includeSchedulingDefaultMessageSeverities));
   }
 
   /**
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
    * @param body body (required)
+   * @param includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities (optional)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitResponse> postWorkforcemanagementBusinessunitsWithHttpInfo(CreateBusinessUnitRequest body) throws IOException {
-    return postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body).withHttpInfo());
+  public ApiResponse<BusinessUnitResponse> postWorkforcemanagementBusinessunitsWithHttpInfo(CreateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) throws IOException {
+    return postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body, includeSchedulingDefaultMessageSeverities).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitsRequest createPostWorkforcemanagementBusinessunitsRequest(CreateBusinessUnitRequest body) {
+  private PostWorkforcemanagementBusinessunitsRequest createPostWorkforcemanagementBusinessunitsRequest(CreateBusinessUnitRequest body, Boolean includeSchedulingDefaultMessageSeverities) {
     return PostWorkforcemanagementBusinessunitsRequest.builder()
             .withBody(body)
+
+            .withIncludeSchedulingDefaultMessageSeverities(includeSchedulingDefaultMessageSeverities)
 
             .build();
   }

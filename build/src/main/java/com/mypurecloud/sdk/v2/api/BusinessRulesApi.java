@@ -29,7 +29,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
-import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 
@@ -50,7 +49,6 @@ import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypeRequest
 import com.mypurecloud.sdk.v2.api.request.GetBusinessrulesSchemasCoretypesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableVersionRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchBusinessrulesDecisiontableVersionRowRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostBusinessrulesDecisiontableVersionExecuteRequest;
@@ -772,13 +770,12 @@ public class BusinessRulesApi {
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
-   * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableVersionListing getBusinessrulesDecisiontableVersions(String tableId, String after, String pageSize, List<String> divisionIds) throws IOException, ApiException {
-    return  getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize, divisionIds));
+  public DecisionTableVersionListing getBusinessrulesDecisiontableVersions(String tableId, String after, String pageSize) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize));
   }
 
   /**
@@ -788,23 +785,20 @@ public class BusinessRulesApi {
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
-   * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
    * @return DecisionTableVersionListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableVersionListing> getBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId, String after, String pageSize, List<String> divisionIds) throws IOException {
-    return getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize, divisionIds).withHttpInfo());
+  public ApiResponse<DecisionTableVersionListing> getBusinessrulesDecisiontableVersionsWithHttpInfo(String tableId, String after, String pageSize) throws IOException {
+    return getBusinessrulesDecisiontableVersions(createGetBusinessrulesDecisiontableVersionsRequest(tableId, after, pageSize).withHttpInfo());
   }
 
-  private GetBusinessrulesDecisiontableVersionsRequest createGetBusinessrulesDecisiontableVersionsRequest(String tableId, String after, String pageSize, List<String> divisionIds) {
+  private GetBusinessrulesDecisiontableVersionsRequest createGetBusinessrulesDecisiontableVersionsRequest(String tableId, String after, String pageSize) {
     return GetBusinessrulesDecisiontableVersionsRequest.builder()
             .withTableId(tableId)
 
             .withAfter(after)
 
             .withPageSize(pageSize)
-
-            .withDivisionIds(divisionIds)
 
             .build();
   }
@@ -866,12 +860,13 @@ public class BusinessRulesApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
+   * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. (optional)
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DecisionTableListing getBusinessrulesDecisiontables(String after, String pageSize, List<String> divisionIds) throws IOException, ApiException {
-    return  getBusinessrulesDecisiontables(createGetBusinessrulesDecisiontablesRequest(after, pageSize, divisionIds));
+  public DecisionTableListing getBusinessrulesDecisiontables(String after, String pageSize, List<String> divisionIds, String name) throws IOException, ApiException {
+    return  getBusinessrulesDecisiontables(createGetBusinessrulesDecisiontablesRequest(after, pageSize, divisionIds, name));
   }
 
   /**
@@ -881,20 +876,23 @@ public class BusinessRulesApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
+   * @param name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. (optional)
    * @return DecisionTableListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesWithHttpInfo(String after, String pageSize, List<String> divisionIds) throws IOException {
-    return getBusinessrulesDecisiontables(createGetBusinessrulesDecisiontablesRequest(after, pageSize, divisionIds).withHttpInfo());
+  public ApiResponse<DecisionTableListing> getBusinessrulesDecisiontablesWithHttpInfo(String after, String pageSize, List<String> divisionIds, String name) throws IOException {
+    return getBusinessrulesDecisiontables(createGetBusinessrulesDecisiontablesRequest(after, pageSize, divisionIds, name).withHttpInfo());
   }
 
-  private GetBusinessrulesDecisiontablesRequest createGetBusinessrulesDecisiontablesRequest(String after, String pageSize, List<String> divisionIds) {
+  private GetBusinessrulesDecisiontablesRequest createGetBusinessrulesDecisiontablesRequest(String after, String pageSize, List<String> divisionIds, String name) {
     return GetBusinessrulesDecisiontablesRequest.builder()
             .withAfter(after)
 
             .withPageSize(pageSize)
 
             .withDivisionIds(divisionIds)
+
+            .withName(name)
 
             .build();
   }
@@ -1547,104 +1545,6 @@ public class BusinessRulesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DecisionTableVersion> response = (ApiResponse<DecisionTableVersion>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Partially update a decision table row. Will be deprecated, we should use PUT request.
-   * 
-   * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tableId Table ID (required)
-   * @param tableVersion Table Version (required)
-   * @param rowId Row ID (required)
-   * @param body Partially update decision table row request (required)
-   * @return DecisionTableRow
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DecisionTableRow patchBusinessrulesDecisiontableVersionRow(String tableId, Integer tableVersion, String rowId, UpdateDecisionTableRowRequest body) throws IOException, ApiException {
-    return  patchBusinessrulesDecisiontableVersionRow(createPatchBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body));
-  }
-
-  /**
-   * Partially update a decision table row. Will be deprecated, we should use PUT request.
-   * 
-   * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param tableId Table ID (required)
-   * @param tableVersion Table Version (required)
-   * @param rowId Row ID (required)
-   * @param body Partially update decision table row request (required)
-   * @return DecisionTableRow
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DecisionTableRow> patchBusinessrulesDecisiontableVersionRowWithHttpInfo(String tableId, Integer tableVersion, String rowId, UpdateDecisionTableRowRequest body) throws IOException {
-    return patchBusinessrulesDecisiontableVersionRow(createPatchBusinessrulesDecisiontableVersionRowRequest(tableId, tableVersion, rowId, body).withHttpInfo());
-  }
-
-  private PatchBusinessrulesDecisiontableVersionRowRequest createPatchBusinessrulesDecisiontableVersionRowRequest(String tableId, Integer tableVersion, String rowId, UpdateDecisionTableRowRequest body) {
-    return PatchBusinessrulesDecisiontableVersionRowRequest.builder()
-            .withTableId(tableId)
-
-            .withTableVersion(tableVersion)
-
-            .withRowId(rowId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Partially update a decision table row. Will be deprecated, we should use PUT request.
-   * 
-   * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return DecisionTableRow
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DecisionTableRow patchBusinessrulesDecisiontableVersionRow(PatchBusinessrulesDecisiontableVersionRowRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<DecisionTableRow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DecisionTableRow>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Partially update a decision table row. Will be deprecated, we should use PUT request.
-   * 
-   * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DecisionTableRow> patchBusinessrulesDecisiontableVersionRow(ApiRequest<UpdateDecisionTableRowRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<DecisionTableRow>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<DecisionTableRow> response = (ApiResponse<DecisionTableRow>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

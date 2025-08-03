@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.GuideJob;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
+import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
 
 
@@ -31,6 +32,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
@@ -664,6 +666,92 @@ public class AIStudioApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GuideContentGenerationJob> response = (ApiResponse<GuideContentGenerationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param guideId Guide ID (required)
+   * @param body  (required)
+   * @return Guide
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Guide patchGuide(String guideId, UpdateGuide body) throws IOException, ApiException {
+    return  patchGuide(createPatchGuideRequest(guideId, body));
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param guideId Guide ID (required)
+   * @param body  (required)
+   * @return Guide
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Guide> patchGuideWithHttpInfo(String guideId, UpdateGuide body) throws IOException {
+    return patchGuide(createPatchGuideRequest(guideId, body).withHttpInfo());
+  }
+
+  private PatchGuideRequest createPatchGuideRequest(String guideId, UpdateGuide body) {
+    return PatchGuideRequest.builder()
+            .withGuideId(guideId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Guide
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Guide patchGuide(PatchGuideRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Guide> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Guide>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Guide> patchGuide(ApiRequest<UpdateGuide> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Guide>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Guide> response = (ApiResponse<Guide>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Guide> response = (ApiResponse<Guide>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

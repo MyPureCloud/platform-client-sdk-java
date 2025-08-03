@@ -33,6 +33,7 @@ public class DialerContactlistfilterConfigChangeFilterRange  implements Serializ
   private Boolean maxInclusive = null;
   private List<String> inSet = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistfilterConfigChangeFilterRange() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -148,6 +149,23 @@ public class DialerContactlistfilterConfigChangeFilterRange  implements Serializ
   }
 
 
+  /**
+   **/
+  public DialerContactlistfilterConfigChangeFilterRange getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -163,12 +181,13 @@ public class DialerContactlistfilterConfigChangeFilterRange  implements Serializ
             Objects.equals(this.minInclusive, dialerContactlistfilterConfigChangeFilterRange.minInclusive) &&
             Objects.equals(this.maxInclusive, dialerContactlistfilterConfigChangeFilterRange.maxInclusive) &&
             Objects.equals(this.inSet, dialerContactlistfilterConfigChangeFilterRange.inSet) &&
-            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterRange.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterRange.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerContactlistfilterConfigChangeFilterRange.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(min, max, minInclusive, maxInclusive, inSet, additionalProperties);
+    return Objects.hash(min, max, minInclusive, maxInclusive, inSet, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -182,6 +201,7 @@ public class DialerContactlistfilterConfigChangeFilterRange  implements Serializ
     sb.append("    maxInclusive: ").append(toIndentedString(maxInclusive)).append("\n");
     sb.append("    inSet: ").append(toIndentedString(inSet)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

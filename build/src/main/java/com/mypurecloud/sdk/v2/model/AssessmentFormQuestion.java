@@ -28,6 +28,7 @@ import java.io.Serializable;
 public class AssessmentFormQuestion  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -109,6 +110,13 @@ public class AssessmentFormQuestion  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -298,6 +306,7 @@ public class AssessmentFormQuestion  implements Serializable {
     AssessmentFormQuestion assessmentFormQuestion = (AssessmentFormQuestion) o;
 
     return Objects.equals(this.id, assessmentFormQuestion.id) &&
+            Objects.equals(this.contextId, assessmentFormQuestion.contextId) &&
             Objects.equals(this.type, assessmentFormQuestion.type) &&
             Objects.equals(this.text, assessmentFormQuestion.text) &&
             Objects.equals(this.helpText, assessmentFormQuestion.helpText) &&
@@ -312,7 +321,7 @@ public class AssessmentFormQuestion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, text, helpText, naEnabled, commentsRequired, visibilityCondition, answerOptions, maxResponseCharacters, isKill, isCritical);
+    return Objects.hash(id, contextId, type, text, helpText, naEnabled, commentsRequired, visibilityCondition, answerOptions, maxResponseCharacters, isKill, isCritical);
   }
 
   @Override
@@ -321,6 +330,7 @@ public class AssessmentFormQuestion  implements Serializable {
     sb.append("class AssessmentFormQuestion {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");

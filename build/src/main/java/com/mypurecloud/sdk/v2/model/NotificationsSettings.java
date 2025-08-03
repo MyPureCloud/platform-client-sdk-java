@@ -81,14 +81,14 @@ public class NotificationsSettings  implements Serializable {
 
   
   /**
-   * The toggle to enable or disable notifications
+   * The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.
    **/
   public NotificationsSettings enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The toggle to enable or disable notifications")
+  @ApiModelProperty(example = "null", value = "The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

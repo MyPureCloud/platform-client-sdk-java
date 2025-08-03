@@ -39,7 +39,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
-import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 public class GetBusinessrulesDecisiontablesRequest {
@@ -86,6 +85,20 @@ public class GetBusinessrulesDecisiontablesRequest {
 	    return this;
 	} 
 
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetBusinessrulesDecisiontablesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -117,6 +130,9 @@ public class GetBusinessrulesDecisiontablesRequest {
         
 
                 .withQueryParameters("divisionIds", "multi", divisionIds)
+        
+
+                .withQueryParameters("name", "", name)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -151,6 +167,11 @@ public class GetBusinessrulesDecisiontablesRequest {
 
 		public Builder withDivisionIds(List<String> divisionIds) {
 			request.setDivisionIds(divisionIds);
+			return this;
+		}
+
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 

@@ -14,8 +14,9 @@
 | **failedKillQuestion** | **Boolean** | Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question |  [optional] |
 | **comments** | **String** | Comments from the evaluator specific to this question |  [optional] |
 | **aiAnswer** | [**AiAnswer**](AiAnswer) | Suggested AI answer |  [optional] |
+| **multipleSelectQuestionOptionScores** | [**List&lt;EvaluationQuestionScore&gt;**](EvaluationQuestionScore) | Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

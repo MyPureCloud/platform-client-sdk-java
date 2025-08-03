@@ -168,6 +168,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerCampaignConfigChangeCampaign() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -789,6 +790,23 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerCampaignConfigChangeCampaign getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -832,12 +850,13 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
             Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
             Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
             Objects.equals(this.dateModified, dialerCampaignConfigChangeCampaign.dateModified) &&
-            Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version);
+            Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version) &&
+            Objects.equals(this.getAdditionalProperties, dialerCampaignConfigChangeCampaign.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
   }
 
   @Override
@@ -879,6 +898,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

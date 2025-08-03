@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.RoomParticipant;
 import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
+import com.mypurecloud.sdk.v2.model.UserChatSettingsPost;
 import com.mypurecloud.sdk.v2.model.UserSettingsForChat;
 
 public class GetChatsRoomParticipantsRequest {

@@ -26,10 +26,12 @@ public class CreateStaffingGroupRequest  implements Serializable {
   private String name = null;
   private List<String> userIds = null;
   private String managementUnitId = null;
+  private List<String> planningGroupIds = null;
 
   public CreateStaffingGroupRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       userIds = new ArrayList<String>();
+      planningGroupIds = new ArrayList<String>();
     }
   }
 
@@ -88,6 +90,24 @@ public class CreateStaffingGroupRequest  implements Serializable {
   }
 
 
+  /**
+   * The set of planning group IDs to associate with the staffing group
+   **/
+  public CreateStaffingGroupRequest planningGroupIds(List<String> planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The set of planning group IDs to associate with the staffing group")
+  @JsonProperty("planningGroupIds")
+  public List<String> getPlanningGroupIds() {
+    return planningGroupIds;
+  }
+  public void setPlanningGroupIds(List<String> planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -100,12 +120,13 @@ public class CreateStaffingGroupRequest  implements Serializable {
 
     return Objects.equals(this.name, createStaffingGroupRequest.name) &&
             Objects.equals(this.userIds, createStaffingGroupRequest.userIds) &&
-            Objects.equals(this.managementUnitId, createStaffingGroupRequest.managementUnitId);
+            Objects.equals(this.managementUnitId, createStaffingGroupRequest.managementUnitId) &&
+            Objects.equals(this.planningGroupIds, createStaffingGroupRequest.planningGroupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, userIds, managementUnitId);
+    return Objects.hash(name, userIds, managementUnitId, planningGroupIds);
   }
 
   @Override
@@ -116,6 +137,7 @@ public class CreateStaffingGroupRequest  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
+    sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

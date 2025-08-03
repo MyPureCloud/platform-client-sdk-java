@@ -11,6 +11,7 @@
 | **outputFieldMissingResolution** | **Boolean** | The result of this predicate if the requested output field is missing from the data action's result |  [optional] |
 | **inverted** | **Boolean** | If true, inverts the result of evaluating this Predicate. Default is false. |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: OutputOperatorEnum
@@ -32,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

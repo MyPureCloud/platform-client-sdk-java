@@ -91,6 +91,8 @@ import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
@@ -125,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesEmailcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesSequenceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesWhatsappcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundAttemptlimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundAttemptlimitsRequest;
@@ -192,6 +195,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignR
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesWhatsappcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesWhatsappcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
@@ -261,6 +266,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesEmailcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesWhatsappcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundWrapupcodemappingsRequest;
 
@@ -2540,6 +2546,81 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesWhatsappcampaign(String whatsAppCampaignId) throws IOException, ApiException {
+     deleteOutboundSchedulesWhatsappcampaign(createDeleteOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId));
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesWhatsappcampaignWithHttpInfo(String whatsAppCampaignId) throws IOException {
+    return deleteOutboundSchedulesWhatsappcampaign(createDeleteOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId).withHttpInfo());
+  }
+
+  private DeleteOutboundSchedulesWhatsappcampaignRequest createDeleteOutboundSchedulesWhatsappcampaignRequest(String whatsAppCampaignId) {
+    return DeleteOutboundSchedulesWhatsappcampaignRequest.builder()
+            .withWhatsAppCampaignId(whatsAppCampaignId)
+
+            .build();
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesWhatsappcampaign(DeleteOutboundSchedulesWhatsappcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesWhatsappcampaign(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -8473,6 +8554,158 @@ public class OutboundApi {
   }
 
   /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @return WhatsAppCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignSchedule getOutboundSchedulesWhatsappcampaign(String whatsAppCampaignId) throws IOException, ApiException {
+    return  getOutboundSchedulesWhatsappcampaign(createGetOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId));
+  }
+
+  /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @return WhatsAppCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignSchedule> getOutboundSchedulesWhatsappcampaignWithHttpInfo(String whatsAppCampaignId) throws IOException {
+    return getOutboundSchedulesWhatsappcampaign(createGetOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundSchedulesWhatsappcampaignRequest createGetOutboundSchedulesWhatsappcampaignRequest(String whatsAppCampaignId) {
+    return GetOutboundSchedulesWhatsappcampaignRequest.builder()
+            .withWhatsAppCampaignId(whatsAppCampaignId)
+
+            .build();
+  }
+
+  /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @return WhatsAppCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignSchedule getOutboundSchedulesWhatsappcampaign(GetOutboundSchedulesWhatsappcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignSchedule> getOutboundSchedulesWhatsappcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @return WhatsAppCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignScheduleEntityListing getOutboundSchedulesWhatsappcampaigns() throws IOException, ApiException {
+    return  getOutboundSchedulesWhatsappcampaigns(createGetOutboundSchedulesWhatsappcampaignsRequest());
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @return WhatsAppCampaignScheduleEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignScheduleEntityListing> getOutboundSchedulesWhatsappcampaignsWithHttpInfo() throws IOException {
+    return getOutboundSchedulesWhatsappcampaigns(createGetOutboundSchedulesWhatsappcampaignsRequest().withHttpInfo());
+  }
+
+  private GetOutboundSchedulesWhatsappcampaignsRequest createGetOutboundSchedulesWhatsappcampaignsRequest() {
+    return GetOutboundSchedulesWhatsappcampaignsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @param request The request object
+   * @return WhatsAppCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignScheduleEntityListing getOutboundSchedulesWhatsappcampaigns(GetOutboundSchedulesWhatsappcampaignsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppCampaignScheduleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppCampaignScheduleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for a list of WhatsApp campaign schedules.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignScheduleEntityListing> getOutboundSchedulesWhatsappcampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppCampaignScheduleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignScheduleEntityListing> response = (ApiResponse<WhatsAppCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignScheduleEntityListing> response = (ApiResponse<WhatsAppCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a dialer campaign sequence.
    * 
    * @param sequenceId Campaign Sequence ID (required)
@@ -14000,6 +14233,88 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @param body WhatsAppCampaignSchedule (required)
+   * @return WhatsAppCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignSchedule putOutboundSchedulesWhatsappcampaign(String whatsAppCampaignId, WhatsAppCampaignSchedule body) throws IOException, ApiException {
+    return  putOutboundSchedulesWhatsappcampaign(createPutOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId, body));
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param whatsAppCampaignId WhatsApp Campaign ID (required)
+   * @param body WhatsAppCampaignSchedule (required)
+   * @return WhatsAppCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignSchedule> putOutboundSchedulesWhatsappcampaignWithHttpInfo(String whatsAppCampaignId, WhatsAppCampaignSchedule body) throws IOException {
+    return putOutboundSchedulesWhatsappcampaign(createPutOutboundSchedulesWhatsappcampaignRequest(whatsAppCampaignId, body).withHttpInfo());
+  }
+
+  private PutOutboundSchedulesWhatsappcampaignRequest createPutOutboundSchedulesWhatsappcampaignRequest(String whatsAppCampaignId, WhatsAppCampaignSchedule body) {
+    return PutOutboundSchedulesWhatsappcampaignRequest.builder()
+            .withWhatsAppCampaignId(whatsAppCampaignId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @return WhatsAppCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppCampaignSchedule putOutboundSchedulesWhatsappcampaign(PutOutboundSchedulesWhatsappcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a WhatsApp campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppCampaignSchedule> putOutboundSchedulesWhatsappcampaign(ApiRequest<WhatsAppCampaignSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppCampaignSchedule> response = (ApiResponse<WhatsAppCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

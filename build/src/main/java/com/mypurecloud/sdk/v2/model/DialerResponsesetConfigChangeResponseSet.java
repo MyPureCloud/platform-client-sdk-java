@@ -35,6 +35,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerResponsesetConfigChangeResponseSet() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -185,6 +186,23 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerResponsesetConfigChangeResponseSet getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -202,12 +220,13 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
             Objects.equals(this.name, dialerResponsesetConfigChangeResponseSet.name) &&
             Objects.equals(this.dateCreated, dialerResponsesetConfigChangeResponseSet.dateCreated) &&
             Objects.equals(this.dateModified, dialerResponsesetConfigChangeResponseSet.dateModified) &&
-            Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version);
+            Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version) &&
+            Objects.equals(this.getAdditionalProperties, dialerResponsesetConfigChangeResponseSet.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responses, beepDetectionEnabled, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(responses, beepDetectionEnabled, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
   }
 
   @Override
@@ -223,6 +242,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

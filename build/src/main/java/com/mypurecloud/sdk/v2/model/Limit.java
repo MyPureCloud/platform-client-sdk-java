@@ -119,6 +119,7 @@ public class Limit  implements Serializable {
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
+    WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY("workforce.management.agent.availability"),
     WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
     WORKFORCE_MANAGEMENT("workforce.management"),
     SYSTEM("system");

@@ -38,7 +38,7 @@ public class LocalizedLabels  implements Serializable {
     }
   }
   /**
-   * Contains localized label key used in messenger homescreen
+   * Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.
    */
  @JsonDeserialize(using = KeyEnumDeserializer.class)
   public enum KeyEnum {
@@ -83,14 +83,14 @@ public class LocalizedLabels  implements Serializable {
 
   
   /**
-   * Contains localized label key used in messenger homescreen
+   * Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.
    **/
   public LocalizedLabels key(KeyEnum key) {
     this.key = key;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contains localized label key used in messenger homescreen")
+  @ApiModelProperty(example = "null", value = "Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.")
   @JsonProperty("key")
   public KeyEnum getKey() {
     return key;
@@ -101,14 +101,14 @@ public class LocalizedLabels  implements Serializable {
 
 
   /**
-   * Contains localized label value used in messenger homescreen
+   * Contains localized label value used in messenger homescreen and push notification
    **/
   public LocalizedLabels value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contains localized label value used in messenger homescreen")
+  @ApiModelProperty(example = "null", value = "Contains localized label value used in messenger homescreen and push notification")
   @JsonProperty("value")
   public String getValue() {
     return value;

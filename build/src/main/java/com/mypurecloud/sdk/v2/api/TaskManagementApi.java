@@ -1454,11 +1454,11 @@ public class TaskManagementApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
-   * @return WorkitemWrapup
+   * @return WorkitemWrapupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup getTaskmanagementWorkitemUserWrapups(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
+  public WorkitemWrapupEntityListing getTaskmanagementWorkitemUserWrapups(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkitemUserWrapups(createGetTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, expands, after, pageSize, sortOrder));
   }
 
@@ -1471,10 +1471,10 @@ public class TaskManagementApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
-   * @return WorkitemWrapup
+   * @return WorkitemWrapupEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> getTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException {
+  public ApiResponse<WorkitemWrapupEntityListing> getTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkitemUserWrapups(createGetTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, expands, after, pageSize, sortOrder).withHttpInfo());
   }
 
@@ -1499,13 +1499,13 @@ public class TaskManagementApi {
    * Get all wrapup codes added for the given user for a workitem.
    * 
    * @param request The request object
-   * @return WorkitemWrapup
+   * @return WorkitemWrapupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup getTaskmanagementWorkitemUserWrapups(GetTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
+  public WorkitemWrapupEntityListing getTaskmanagementWorkitemUserWrapups(GetTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<WorkitemWrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemWrapup>() {});
+      ApiResponse<WorkitemWrapupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemWrapupEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1521,13 +1521,13 @@ public class TaskManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> getTaskmanagementWorkitemUserWrapups(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<WorkitemWrapupEntityListing> getTaskmanagementWorkitemUserWrapups(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<WorkitemWrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<WorkitemWrapupEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)exception;
+      ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1538,7 +1538,7 @@ public class TaskManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2531,11 +2531,11 @@ public class TaskManagementApi {
    * Get all versions of a schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getTaskmanagementWorkitemsSchemaVersions(String schemaId) throws IOException, ApiException {
+  public DataSchemaListing getTaskmanagementWorkitemsSchemaVersions(String schemaId) throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchemaVersions(createGetTaskmanagementWorkitemsSchemaVersionsRequest(schemaId));
   }
 
@@ -2543,10 +2543,10 @@ public class TaskManagementApi {
    * Get all versions of a schema
    * 
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+  public ApiResponse<DataSchemaListing> getTaskmanagementWorkitemsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
     return getTaskmanagementWorkitemsSchemaVersions(createGetTaskmanagementWorkitemsSchemaVersionsRequest(schemaId).withHttpInfo());
   }
 
@@ -2561,13 +2561,13 @@ public class TaskManagementApi {
    * Get all versions of a schema
    * 
    * @param request The request object
-   * @return DataSchema
+   * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getTaskmanagementWorkitemsSchemaVersions(GetTaskmanagementWorkitemsSchemaVersionsRequest request) throws IOException, ApiException {
+  public DataSchemaListing getTaskmanagementWorkitemsSchemaVersions(GetTaskmanagementWorkitemsSchemaVersionsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2583,13 +2583,13 @@ public class TaskManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataSchemaListing> getTaskmanagementWorkitemsSchemaVersions(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2600,7 +2600,7 @@ public class TaskManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

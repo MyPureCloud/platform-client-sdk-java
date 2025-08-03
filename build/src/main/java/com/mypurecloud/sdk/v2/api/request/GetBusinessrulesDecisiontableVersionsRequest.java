@@ -39,7 +39,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
-import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 public class GetBusinessrulesDecisiontableVersionsRequest {
@@ -86,20 +85,6 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
 	    return this;
 	} 
 
-	private List<String> divisionIds;
-	public List<String> getDivisionIds() {
-		return this.divisionIds;
-	}
-
-	public void setDivisionIds(List<String> divisionIds) {
-		this.divisionIds = divisionIds;
-	}
-
-	public GetBusinessrulesDecisiontableVersionsRequest withDivisionIds(List<String> divisionIds) {
-	    this.setDivisionIds(divisionIds);
-	    return this;
-	} 
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,9 +120,6 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
         
 
                 .withQueryParameters("pageSize", "", pageSize)
-        
-
-                .withQueryParameters("divisionIds", "multi", divisionIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -177,11 +159,6 @@ public class GetBusinessrulesDecisiontableVersionsRequest {
 
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
-			return this;
-		}
-
-		public Builder withDivisionIds(List<String> divisionIds) {
-			request.setDivisionIds(divisionIds);
 			return this;
 		}
 

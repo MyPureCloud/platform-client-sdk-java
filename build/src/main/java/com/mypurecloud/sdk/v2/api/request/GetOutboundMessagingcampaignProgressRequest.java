@@ -101,6 +101,8 @@ import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.WhatsAppCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 

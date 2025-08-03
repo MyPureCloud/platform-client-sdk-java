@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ButtonResponse;
 import com.mypurecloud.sdk.v2.model.Card;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
+import com.mypurecloud.sdk.v2.model.DatePicker;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
@@ -55,6 +56,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private RecordingContentStory story = null;
   private List<Card> cards = null;
   private RecordingNotificationTemplate notificationTemplate = null;
+  private DatePicker datePicker = null;
 
   private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
     public ContentTypeEnumDeserializer() {
@@ -92,7 +94,8 @@ public class RecordingMessagingMessage  implements Serializable {
     INTERACTIVEAPPLICATION("InteractiveApplication"),
     PAYMENTREQUEST("PaymentRequest"),
     PAYMENTRESPONSE("PaymentResponse"),
-    FORM("Form");
+    FORM("Form"),
+    ROADSIDEASSISTANCE("RoadsideAssistance");
 
     private String value;
 
@@ -506,6 +509,24 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * DatePicker content object.
+   **/
+  public RecordingMessagingMessage datePicker(DatePicker datePicker) {
+    this.datePicker = datePicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "DatePicker content object.")
+  @JsonProperty("datePicker")
+  public DatePicker getDatePicker() {
+    return datePicker;
+  }
+  public void setDatePicker(DatePicker datePicker) {
+    this.datePicker = datePicker;
+  }
+
+
+  /**
    * Indicates the content type for this message
    **/
   public RecordingMessagingMessage contentType(ContentTypeEnum contentType) {
@@ -587,6 +608,7 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.story, recordingMessagingMessage.story) &&
             Objects.equals(this.cards, recordingMessagingMessage.cards) &&
             Objects.equals(this.notificationTemplate, recordingMessagingMessage.notificationTemplate) &&
+            Objects.equals(this.datePicker, recordingMessagingMessage.datePicker) &&
             Objects.equals(this.contentType, recordingMessagingMessage.contentType) &&
             Objects.equals(this.socialVisibility, recordingMessagingMessage.socialVisibility) &&
             Objects.equals(this.events, recordingMessagingMessage.events);
@@ -594,7 +616,7 @@ public class RecordingMessagingMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, contentType, socialVisibility, events);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, datePicker, contentType, socialVisibility, events);
   }
 
   @Override
@@ -620,6 +642,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    cards: ").append(toIndentedString(cards)).append("\n");
     sb.append("    notificationTemplate: ").append(toIndentedString(notificationTemplate)).append("\n");
+    sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");

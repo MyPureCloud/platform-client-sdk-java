@@ -49,7 +49,8 @@ public class OutboundDomain  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("Unknown"),
     EMAILDOMAIN("EmailDomain"),
-    MOCKEMAILDOMAIN("MockEmailDomain");
+    MOCKEMAILDOMAIN("MockEmailDomain"),
+    EMAILSMTPDOMAIN("EmailSmtpDomain");
 
     private String value;
 

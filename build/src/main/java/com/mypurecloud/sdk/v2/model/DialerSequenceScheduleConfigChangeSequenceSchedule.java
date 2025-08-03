@@ -40,6 +40,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   private Date dateCreated = null;
   private Date dateModified = null;
   private Long version = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerSequenceScheduleConfigChangeSequenceSchedule() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -227,6 +228,23 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   }
 
 
+  /**
+   **/
+  public DialerSequenceScheduleConfigChangeSequenceSchedule getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -246,12 +264,13 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
             Objects.equals(this.name, dialerSequenceScheduleConfigChangeSequenceSchedule.name) &&
             Objects.equals(this.dateCreated, dialerSequenceScheduleConfigChangeSequenceSchedule.dateCreated) &&
             Objects.equals(this.dateModified, dialerSequenceScheduleConfigChangeSequenceSchedule.dateModified) &&
-            Objects.equals(this.version, dialerSequenceScheduleConfigChangeSequenceSchedule.version);
+            Objects.equals(this.version, dialerSequenceScheduleConfigChangeSequenceSchedule.version) &&
+            Objects.equals(this.getAdditionalProperties, dialerSequenceScheduleConfigChangeSequenceSchedule.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, recurrences, timeZone, sequence, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(intervals, recurrences, timeZone, sequence, additionalProperties, id, name, dateCreated, dateModified, version, getAdditionalProperties);
   }
 
   @Override
@@ -269,6 +288,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

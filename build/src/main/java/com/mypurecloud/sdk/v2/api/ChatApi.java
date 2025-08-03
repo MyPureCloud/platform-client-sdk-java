@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.RoomParticipant;
 import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
+import com.mypurecloud.sdk.v2.model.UserChatSettingsPost;
 import com.mypurecloud.sdk.v2.model.UserSettingsForChat;
 
 
@@ -34,6 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessagesPinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessagesPinRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessageRequest;
@@ -59,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesPinsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsMessageReactionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
@@ -475,6 +478,77 @@ public class ChatApi {
   }
 
   /**
+   * Delete a user's chat settings
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsUsersMeSettings() throws IOException, ApiException {
+     deleteChatsUsersMeSettings(createDeleteChatsUsersMeSettingsRequest());
+  }
+
+  /**
+   * Delete a user's chat settings
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsUsersMeSettingsWithHttpInfo() throws IOException {
+    return deleteChatsUsersMeSettings(createDeleteChatsUsersMeSettingsRequest().withHttpInfo());
+  }
+
+  private DeleteChatsUsersMeSettingsRequest createDeleteChatsUsersMeSettingsRequest() {
+    return DeleteChatsUsersMeSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete a user's chat settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsUsersMeSettings(DeleteChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a user's chat settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsUsersMeSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a message
    * 
    * @param messageId messageId (required)
@@ -719,12 +793,13 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageEntityListing getChatsRoomMessages(String roomJid, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after));
+  public ChatMessageEntityListing getChatsRoomMessages(String roomJid, String limit, String before, String after, Boolean excludeMetadata) throws IOException, ApiException {
+    return  getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after, excludeMetadata));
   }
 
   /**
@@ -734,14 +809,15 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageEntityListing> getChatsRoomMessagesWithHttpInfo(String roomJid, String limit, String before, String after) throws IOException {
-    return getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageEntityListing> getChatsRoomMessagesWithHttpInfo(String roomJid, String limit, String before, String after, Boolean excludeMetadata) throws IOException {
+    return getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after, excludeMetadata).withHttpInfo());
   }
 
-  private GetChatsRoomMessagesRequest createGetChatsRoomMessagesRequest(String roomJid, String limit, String before, String after) {
+  private GetChatsRoomMessagesRequest createGetChatsRoomMessagesRequest(String roomJid, String limit, String before, String after, Boolean excludeMetadata) {
     return GetChatsRoomMessagesRequest.builder()
             .withRoomJid(roomJid)
 
@@ -750,6 +826,8 @@ public class ChatApi {
             .withBefore(before)
 
             .withAfter(after)
+
+            .withExcludeMetadata(excludeMetadata)
 
             .build();
   }
@@ -1047,12 +1125,13 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageEntityListing getChatsThreadMessages(String threadId, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after));
+  public ChatMessageEntityListing getChatsThreadMessages(String threadId, String limit, String before, String after, Boolean excludeMetadata) throws IOException, ApiException {
+    return  getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after, excludeMetadata));
   }
 
   /**
@@ -1062,14 +1141,15 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageEntityListing> getChatsThreadMessagesWithHttpInfo(String threadId, String limit, String before, String after) throws IOException {
-    return getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageEntityListing> getChatsThreadMessagesWithHttpInfo(String threadId, String limit, String before, String after, Boolean excludeMetadata) throws IOException {
+    return getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after, excludeMetadata).withHttpInfo());
   }
 
-  private GetChatsThreadMessagesRequest createGetChatsThreadMessagesRequest(String threadId, String limit, String before, String after) {
+  private GetChatsThreadMessagesRequest createGetChatsThreadMessagesRequest(String threadId, String limit, String before, String after, Boolean excludeMetadata) {
     return GetChatsThreadMessagesRequest.builder()
             .withThreadId(threadId)
 
@@ -1078,6 +1158,8 @@ public class ChatApi {
             .withBefore(before)
 
             .withAfter(after)
+
+            .withExcludeMetadata(excludeMetadata)
 
             .build();
   }
@@ -1297,12 +1379,13 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageResponse getChatsUserMessages(String userId, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after));
+  public ChatMessageResponse getChatsUserMessages(String userId, String limit, String before, String after, Boolean excludeMetadata) throws IOException, ApiException {
+    return  getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after, excludeMetadata));
   }
 
   /**
@@ -1312,14 +1395,15 @@ public class ChatApi {
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
+   * @param excludeMetadata Whether to exclude metadata for messages (optional)
    * @return ChatMessageResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageResponse> getChatsUserMessagesWithHttpInfo(String userId, String limit, String before, String after) throws IOException {
-    return getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageResponse> getChatsUserMessagesWithHttpInfo(String userId, String limit, String before, String after, Boolean excludeMetadata) throws IOException {
+    return getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after, excludeMetadata).withHttpInfo());
   }
 
-  private GetChatsUserMessagesRequest createGetChatsUserMessagesRequest(String userId, String limit, String before, String after) {
+  private GetChatsUserMessagesRequest createGetChatsUserMessagesRequest(String userId, String limit, String before, String after, Boolean excludeMetadata) {
     return GetChatsUserMessagesRequest.builder()
             .withUserId(userId)
 
@@ -1328,6 +1412,8 @@ public class ChatApi {
             .withBefore(before)
 
             .withAfter(after)
+
+            .withExcludeMetadata(excludeMetadata)
 
             .build();
   }
@@ -2479,6 +2565,81 @@ public class ChatApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postChatsUserMessagesPins(ApiRequest<PinnedMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a user's chat settings
+   * 
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsUsersMeSettings(UserChatSettingsPost body) throws IOException, ApiException {
+     postChatsUsersMeSettings(createPostChatsUsersMeSettingsRequest(body));
+  }
+
+  /**
+   * Create a user's chat settings
+   * 
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsUsersMeSettingsWithHttpInfo(UserChatSettingsPost body) throws IOException {
+    return postChatsUsersMeSettings(createPostChatsUsersMeSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostChatsUsersMeSettingsRequest createPostChatsUsersMeSettingsRequest(UserChatSettingsPost body) {
+    return PostChatsUsersMeSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a user's chat settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsUsersMeSettings(PostChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Create a user's chat settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsUsersMeSettings(ApiRequest<UserChatSettingsPost> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -24,7 +25,7 @@ public class SnapshotInfo  implements Serializable {
   
   private Integer version = null;
   private String snapshotId = null;
-  private String sessionId = null;
+  private Date dateSnapshot = null;
   private String businessUnitId = null;
   private Integer planningGroupsVersion = null;
 
@@ -71,20 +72,20 @@ public class SnapshotInfo  implements Serializable {
 
 
   /**
-   * Session Id of the continuous forecast session
+   * Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
-  public SnapshotInfo sessionId(String sessionId) {
-    this.sessionId = sessionId;
+  public SnapshotInfo dateSnapshot(Date dateSnapshot) {
+    this.dateSnapshot = dateSnapshot;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Session Id of the continuous forecast session")
-  @JsonProperty("sessionId")
-  public String getSessionId() {
-    return sessionId;
+  @ApiModelProperty(example = "null", value = "Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateSnapshot")
+  public Date getDateSnapshot() {
+    return dateSnapshot;
   }
-  public void setSessionId(String sessionId) {
-    this.sessionId = sessionId;
+  public void setDateSnapshot(Date dateSnapshot) {
+    this.dateSnapshot = dateSnapshot;
   }
 
 
@@ -136,14 +137,14 @@ public class SnapshotInfo  implements Serializable {
 
     return Objects.equals(this.version, snapshotInfo.version) &&
             Objects.equals(this.snapshotId, snapshotInfo.snapshotId) &&
-            Objects.equals(this.sessionId, snapshotInfo.sessionId) &&
+            Objects.equals(this.dateSnapshot, snapshotInfo.dateSnapshot) &&
             Objects.equals(this.businessUnitId, snapshotInfo.businessUnitId) &&
             Objects.equals(this.planningGroupsVersion, snapshotInfo.planningGroupsVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, snapshotId, sessionId, businessUnitId, planningGroupsVersion);
+    return Objects.hash(version, snapshotId, dateSnapshot, businessUnitId, planningGroupsVersion);
   }
 
   @Override
@@ -153,7 +154,7 @@ public class SnapshotInfo  implements Serializable {
     
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
-    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    dateSnapshot: ").append(toIndentedString(dateSnapshot)).append("\n");
     sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
     sb.append("    planningGroupsVersion: ").append(toIndentedString(planningGroupsVersion)).append("\n");
     sb.append("}");

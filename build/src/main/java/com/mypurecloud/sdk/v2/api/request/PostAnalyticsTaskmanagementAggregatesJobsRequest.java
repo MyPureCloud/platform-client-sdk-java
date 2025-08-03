@@ -122,7 +122,6 @@ import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAsyncAggregationQuery;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAnalyticsDataRetentionRequest;
 import com.mypurecloud.sdk.v2.model.UserActivityQuery;
 import com.mypurecloud.sdk.v2.model.UserActivityResponse;

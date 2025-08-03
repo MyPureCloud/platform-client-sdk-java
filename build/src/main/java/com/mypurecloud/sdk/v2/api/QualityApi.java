@@ -50,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsEvaluationsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsSurveysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
@@ -128,6 +130,164 @@ public class QualityApi {
 
   public QualityApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete/cancel an async request for evaluation aggregates
+   * 
+   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsEvaluationsAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsEvaluationsAggregatesJob(createDeleteAnalyticsEvaluationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for evaluation aggregates
+   * 
+   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsEvaluationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsEvaluationsAggregatesJob(createDeleteAnalyticsEvaluationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsEvaluationsAggregatesJobRequest createDeleteAnalyticsEvaluationsAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsEvaluationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for evaluation aggregates
+   * 
+   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsEvaluationsAggregatesJob(DeleteAnalyticsEvaluationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for evaluation aggregates
+   * 
+   * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsEvaluationsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for survey aggregates
+   * 
+   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsSurveysAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsSurveysAggregatesJob(createDeleteAnalyticsSurveysAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for survey aggregates
+   * 
+   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsSurveysAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsSurveysAggregatesJob(createDeleteAnalyticsSurveysAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsSurveysAggregatesJobRequest createDeleteAnalyticsSurveysAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsSurveysAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for survey aggregates
+   * 
+   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsSurveysAggregatesJob(DeleteAnalyticsSurveysAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for survey aggregates
+   * 
+   * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsSurveysAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**

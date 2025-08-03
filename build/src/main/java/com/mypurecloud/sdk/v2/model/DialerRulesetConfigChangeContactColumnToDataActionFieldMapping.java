@@ -28,6 +28,7 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
   private String contactColumnName = null;
   private String dataActionField = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -88,6 +89,23 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
   }
 
 
+  /**
+   **/
+  public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -100,12 +118,13 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
 
     return Objects.equals(this.contactColumnName, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.contactColumnName) &&
             Objects.equals(this.dataActionField, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.dataActionField) &&
-            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactColumnName, dataActionField, additionalProperties);
+    return Objects.hash(contactColumnName, dataActionField, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -116,6 +135,7 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     sb.append("    contactColumnName: ").append(toIndentedString(contactColumnName)).append("\n");
     sb.append("    dataActionField: ").append(toIndentedString(dataActionField)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

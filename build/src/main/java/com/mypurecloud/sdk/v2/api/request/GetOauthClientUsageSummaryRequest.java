@@ -24,7 +24,13 @@ import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageOrganizationQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageSimpleSearch;
+import com.mypurecloud.sdk.v2.model.ClientPublicApiUsageQueryRequest;
+import com.mypurecloud.sdk.v2.model.ClientPublicApiUsageResultsResponse;
+import com.mypurecloud.sdk.v2.model.ClientUsageQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationPublicApiUsageQueryRequest;
+import com.mypurecloud.sdk.v2.model.OrganizationPublicApiUsageResultsResponse;
+import com.mypurecloud.sdk.v2.model.OrganizationUsageQueryResponse;
 import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthClientUsageSummaryRequest {

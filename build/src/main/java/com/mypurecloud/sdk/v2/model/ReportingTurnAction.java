@@ -45,9 +45,11 @@ public class ReportingTurnAction  implements Serializable {
  @JsonDeserialize(using = ActionTypeEnumDeserializer.class)
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASKFORAUTHENTICATIONACTION("AskForAuthenticationAction"),
     ADDFLOWMILESTONEACTION("AddFlowMilestoneAction"),
     ASKFORNLUINTENTACTION("AskForNLUIntentAction"),
     ASKFORBOOLEANACTION("AskForBooleanAction"),
+    ASKFORPAYMENTACTION("AskForPaymentAction"),
     ASKFORSLOTACTION("AskForSlotAction"),
     ASKSURVEYQUESTIONACTION("AskSurveyQuestionAction"),
     ASKFORNLUNEXTINTENTACTION("AskForNLUNextIntentAction"),

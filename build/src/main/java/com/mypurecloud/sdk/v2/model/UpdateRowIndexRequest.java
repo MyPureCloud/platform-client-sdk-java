@@ -50,14 +50,14 @@ public class UpdateRowIndexRequest  implements Serializable {
 
 
   /**
-   * The updated row index. Must be an integer value greater than or equal to 0. Must be less than or equal to x-1, where x is the number of rows in the decision table version.
+   * The updated row index. Must be an integer value greater than or equal to 1. Must be less than or equal to x, where x is the number of rows in the decision table version.
    **/
   public UpdateRowIndexRequest rowIndex(Integer rowIndex) {
     this.rowIndex = rowIndex;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The updated row index. Must be an integer value greater than or equal to 0. Must be less than or equal to x-1, where x is the number of rows in the decision table version.")
+  @ApiModelProperty(example = "null", required = true, value = "The updated row index. Must be an integer value greater than or equal to 1. Must be less than or equal to x, where x is the number of rows in the decision table version.")
   @JsonProperty("rowIndex")
   public Integer getRowIndex() {
     return rowIndex;

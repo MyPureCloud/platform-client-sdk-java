@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
@@ -195,6 +197,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSear
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseChunksSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
@@ -7394,6 +7397,88 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CategoryResponse> response = (ApiResponse<CategoryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentChunkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentChunkResponse postKnowledgeKnowledgebaseChunksSearch(String knowledgeBaseId, KnowledgeDocumentChunkRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseChunksSearch(createPostKnowledgeKnowledgebaseChunksSearchRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentChunkResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentChunkResponse> postKnowledgeKnowledgebaseChunksSearchWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentChunkRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseChunksSearch(createPostKnowledgeKnowledgebaseChunksSearchRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseChunksSearchRequest createPostKnowledgeKnowledgebaseChunksSearchRequest(String knowledgeBaseId, KnowledgeDocumentChunkRequest body) {
+    return PostKnowledgeKnowledgebaseChunksSearchRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentChunkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentChunkResponse postKnowledgeKnowledgebaseChunksSearch(PostKnowledgeKnowledgebaseChunksSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentChunkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentChunkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search for chunks in a knowledge base
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentChunkResponse> postKnowledgeKnowledgebaseChunksSearch(ApiRequest<KnowledgeDocumentChunkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentChunkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentChunkResponse> response = (ApiResponse<KnowledgeDocumentChunkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentChunkResponse> response = (ApiResponse<KnowledgeDocumentChunkResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

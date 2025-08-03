@@ -28,6 +28,7 @@ import java.io.Serializable;
 public class SurveyQuestion  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
   private String text = null;
   private String helpText = null;
 
@@ -108,6 +109,13 @@ public class SurveyQuestion  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -261,6 +269,7 @@ public class SurveyQuestion  implements Serializable {
     SurveyQuestion surveyQuestion = (SurveyQuestion) o;
 
     return Objects.equals(this.id, surveyQuestion.id) &&
+            Objects.equals(this.contextId, surveyQuestion.contextId) &&
             Objects.equals(this.text, surveyQuestion.text) &&
             Objects.equals(this.helpText, surveyQuestion.helpText) &&
             Objects.equals(this.type, surveyQuestion.type) &&
@@ -273,7 +282,7 @@ public class SurveyQuestion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, helpText, type, naEnabled, visibilityCondition, answerOptions, maxResponseCharacters, explanationPrompt);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, visibilityCondition, answerOptions, maxResponseCharacters, explanationPrompt);
   }
 
   @Override
@@ -282,6 +291,7 @@ public class SurveyQuestion  implements Serializable {
     sb.append("class SurveyQuestion {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

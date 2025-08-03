@@ -89,7 +89,10 @@ import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 
 public class GetExternalcontactsImportJobsRequest {
 

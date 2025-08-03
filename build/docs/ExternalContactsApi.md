@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteExternalcontactsRelationship**](ExternalContactsApi#deleteExternalcontactsRelationship) | Delete a relationship |
 | [**getExternalcontactsContact**](ExternalContactsApi#getExternalcontactsContact) | Fetch an external contact |
 | [**getExternalcontactsContactIdentifiers**](ExternalContactsApi#getExternalcontactsContactIdentifiers) | List the identifiers for a contact |
+| [**getExternalcontactsContactJourneySegments**](ExternalContactsApi#getExternalcontactsContactJourneySegments) | Retrieve segment assignments by external contact ID. |
 | [**getExternalcontactsContactJourneySessions**](ExternalContactsApi#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
 | [**getExternalcontactsContactNote**](ExternalContactsApi#getExternalcontactsContactNote) | Fetch a note for an external contact |
 | [**getExternalcontactsContactNotes**](ExternalContactsApi#getExternalcontactsContactNotes) | List notes for an external contact |
@@ -87,6 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsBulkRelationshipsAdd**](ExternalContactsApi#postExternalcontactsBulkRelationshipsAdd) | Bulk add relationships |
 | [**postExternalcontactsBulkRelationshipsRemove**](ExternalContactsApi#postExternalcontactsBulkRelationshipsRemove) | Bulk remove relationships |
 | [**postExternalcontactsBulkRelationshipsUpdate**](ExternalContactsApi#postExternalcontactsBulkRelationshipsUpdate) | Bulk update relationships |
+| [**postExternalcontactsContactJourneySegments**](ExternalContactsApi#postExternalcontactsContactJourneySegments) | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success. |
 | [**postExternalcontactsContactNotes**](ExternalContactsApi#postExternalcontactsContactNotes) | Create a note for an external contact |
 | [**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | Promote an observed contact (ephemeral or identified) to a curated contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | Create an external contact |
@@ -841,6 +843,69 @@ try {
 [**ContactIdentifierListing**](ContactIdentifierListing)
 
 
+# **getExternalcontactsContactJourneySegments**
+
+
+> [SegmentAssignmentListing](SegmentAssignmentListing) getExternalcontactsContactJourneySegments(contactId, includeMerged, limit)
+
+Retrieve segment assignments by external contact ID.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments  
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+Boolean includeMerged = true; // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+Integer limit = 56; // Integer | Number of entities to return. Default of 25, maximum of 500.
+try {
+    SegmentAssignmentListing result = apiInstance.getExternalcontactsContactJourneySegments(contactId, includeMerged, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactJourneySegments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **includeMerged** | **Boolean**| Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional] 
+| **limit** | **Integer**| Number of entities to return. Default of 25, maximum of 500. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing)
+
+
 # **getExternalcontactsContactJourneySessions**
 
 
@@ -1416,7 +1481,7 @@ try {
 # **getExternalcontactsContactsSchemaVersions**
 
 
-> [DataSchema](DataSchema) getExternalcontactsContactsSchemaVersions(schemaId)
+> [DataSchemaListing](DataSchemaListing) getExternalcontactsContactsSchemaVersions(schemaId)
 
 Get all versions of an external contact's schema
 
@@ -1450,7 +1515,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String schemaId = "schemaId_example"; // String | Schema ID
 try {
-    DataSchema result = apiInstance.getExternalcontactsContactsSchemaVersions(schemaId);
+    DataSchemaListing result = apiInstance.getExternalcontactsContactsSchemaVersions(schemaId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemaVersions");
@@ -1469,7 +1534,7 @@ try {
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 # **getExternalcontactsContactsSchemas**
@@ -2906,7 +2971,7 @@ try {
 # **getExternalcontactsOrganizationsSchemaVersions**
 
 
-> [DataSchema](DataSchema) getExternalcontactsOrganizationsSchemaVersions(schemaId)
+> [DataSchemaListing](DataSchemaListing) getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 Get all versions of an external organization's schema
 
@@ -2940,7 +3005,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String schemaId = "schemaId_example"; // String | Schema ID
 try {
-    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId);
+    DataSchemaListing result = apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions");
@@ -2959,7 +3024,7 @@ try {
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 # **getExternalcontactsOrganizationsSchemas**
@@ -5188,6 +5253,68 @@ try {
 [**BulkRelationshipsResponse**](BulkRelationshipsResponse)
 
 
+# **postExternalcontactsContactJourneySegments**
+
+
+> [UpdateSegmentAssignmentResponse](UpdateSegmentAssignmentResponse) postExternalcontactsContactJourneySegments(contactId, body)
+
+Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+
+Wraps POST /api/v2/externalcontacts/contacts/{contactId}/journey/segments  
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:add
+* externalContacts:segmentAssignment:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+UpdateSegmentAssignmentRequest body = new UpdateSegmentAssignmentRequest(); // UpdateSegmentAssignmentRequest | 
+try {
+    UpdateSegmentAssignmentResponse result = apiInstance.postExternalcontactsContactJourneySegments(contactId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsContactJourneySegments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **body** | [**UpdateSegmentAssignmentRequest**](UpdateSegmentAssignmentRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse)
+
+
 # **postExternalcontactsContactNotes**
 
 
@@ -7331,4 +7458,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

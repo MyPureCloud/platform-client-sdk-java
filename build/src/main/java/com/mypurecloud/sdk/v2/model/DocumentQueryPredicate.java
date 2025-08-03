@@ -57,7 +57,8 @@ public class DocumentQueryPredicate  implements Serializable {
     TITLE("title"),
     VARIATIONID("variationId"),
     VISIBLE("visible"),
-    STATE("state");
+    STATE("state"),
+    CHUNKID("chunkId");
 
     private String value;
 

@@ -46,7 +46,8 @@ public class OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessaging
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),
     EMAIL("EMAIL"),
-    SMS("SMS");
+    SMS("SMS"),
+    WHATSAPP("WHATSAPP");
 
     private String value;
 
@@ -108,7 +109,8 @@ public class OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessaging
     ININ_OUTBOUND_DNC_SKIPPED("ININ_OUTBOUND_DNC_SKIPPED"),
     ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED("ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED"),
     ININ_OUTBOUND_ON_DO_NOT_CALL_LIST("ININ_OUTBOUND_ON_DO_NOT_CALL_LIST"),
-    ININ_OUTBOUND_NOT_CALLABLE_TIME("ININ_OUTBOUND_NOT_CALLABLE_TIME");
+    ININ_OUTBOUND_NOT_CALLABLE_TIME("ININ_OUTBOUND_NOT_CALLABLE_TIME"),
+    OUTBOUND_STUCK_CONTACT("OUTBOUND_STUCK_CONTACT");
 
     private String value;
 

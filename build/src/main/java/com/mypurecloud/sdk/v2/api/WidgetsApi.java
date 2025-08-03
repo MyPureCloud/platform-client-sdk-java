@@ -40,7 +40,7 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -52,7 +52,7 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -70,7 +70,7 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -89,7 +89,7 @@ public class WidgetsApi {
 
   /**
    * Delete a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -119,7 +119,7 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
@@ -132,7 +132,7 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @return WidgetDeployment
    * @throws IOException if the request fails to be processed
@@ -151,7 +151,7 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
@@ -171,7 +171,7 @@ public class WidgetsApi {
 
   /**
    * Get a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -201,7 +201,7 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @return WidgetDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -213,7 +213,7 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @return WidgetDeploymentEntityListing
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -229,7 +229,7 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeploymentEntityListing
    * @throws ApiException if the request fails on the server
@@ -249,7 +249,7 @@ public class WidgetsApi {
 
   /**
    * List Widget deployments
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -279,7 +279,7 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
@@ -292,7 +292,7 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param body Deployment (required)
    * @return WidgetDeployment
    * @throws IOException if the request fails to be processed
@@ -311,7 +311,7 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
@@ -331,7 +331,7 @@ public class WidgetsApi {
 
   /**
    * Create Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -361,7 +361,7 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @param body Deployment (required)
    * @return WidgetDeployment
@@ -375,7 +375,7 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param deploymentId Widget Config Id (required)
    * @param body Deployment (required)
    * @return WidgetDeployment
@@ -397,7 +397,7 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return WidgetDeployment
    * @throws ApiException if the request fails on the server
@@ -417,7 +417,7 @@ public class WidgetsApi {
 
   /**
    * Update a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

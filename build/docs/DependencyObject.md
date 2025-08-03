@@ -33,6 +33,7 @@
 | COMMONMODULEFLOW | &quot;COMMONMODULEFLOW&quot; | 
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; | 
 | CONTACTLIST | &quot;CONTACTLIST&quot; | 
+| CONVERSATIONCUSTOMATTRIBUTESCHEMA | &quot;CONVERSATIONCUSTOMATTRIBUTESCHEMA&quot; | 
 | DATAACTION | &quot;DATAACTION&quot; | 
 | DATATABLE | &quot;DATATABLE&quot; | 
 | DECISIONTABLE | &quot;DECISIONTABLE&quot; | 
@@ -103,4 +104,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

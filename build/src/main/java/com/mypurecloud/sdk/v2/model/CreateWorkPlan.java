@@ -52,6 +52,8 @@ public class CreateWorkPlan  implements Serializable {
   private Integer maximumDaysOffPerPlanningPeriod = null;
   private Integer minimumPaidMinutesPerPlanningPeriod = null;
   private Integer maximumPaidMinutesPerPlanningPeriod = null;
+  private Boolean constrainMaximumWorkingWeekendsPerPlanningPeriod = null;
+  private Integer maximumWorkingWeekendsPerPlanningPeriod = null;
   private SetWrapperDayOfWeek optionalDays = null;
 
   private static class ShiftStartVarianceTypeEnumDeserializer extends StdDeserializer<ShiftStartVarianceTypeEnum> {
@@ -528,6 +530,42 @@ public class CreateWorkPlan  implements Serializable {
 
 
   /**
+   * Whether to constrain the maximum working weekends in the planning period
+   **/
+  public CreateWorkPlan constrainMaximumWorkingWeekendsPerPlanningPeriod(Boolean constrainMaximumWorkingWeekendsPerPlanningPeriod) {
+    this.constrainMaximumWorkingWeekendsPerPlanningPeriod = constrainMaximumWorkingWeekendsPerPlanningPeriod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to constrain the maximum working weekends in the planning period")
+  @JsonProperty("constrainMaximumWorkingWeekendsPerPlanningPeriod")
+  public Boolean getConstrainMaximumWorkingWeekendsPerPlanningPeriod() {
+    return constrainMaximumWorkingWeekendsPerPlanningPeriod;
+  }
+  public void setConstrainMaximumWorkingWeekendsPerPlanningPeriod(Boolean constrainMaximumWorkingWeekendsPerPlanningPeriod) {
+    this.constrainMaximumWorkingWeekendsPerPlanningPeriod = constrainMaximumWorkingWeekendsPerPlanningPeriod;
+  }
+
+
+  /**
+   * Maximum working weekends in the planning period
+   **/
+  public CreateWorkPlan maximumWorkingWeekendsPerPlanningPeriod(Integer maximumWorkingWeekendsPerPlanningPeriod) {
+    this.maximumWorkingWeekendsPerPlanningPeriod = maximumWorkingWeekendsPerPlanningPeriod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Maximum working weekends in the planning period")
+  @JsonProperty("maximumWorkingWeekendsPerPlanningPeriod")
+  public Integer getMaximumWorkingWeekendsPerPlanningPeriod() {
+    return maximumWorkingWeekendsPerPlanningPeriod;
+  }
+  public void setMaximumWorkingWeekendsPerPlanningPeriod(Integer maximumWorkingWeekendsPerPlanningPeriod) {
+    this.maximumWorkingWeekendsPerPlanningPeriod = maximumWorkingWeekendsPerPlanningPeriod;
+  }
+
+
+  /**
    * Optional days to schedule for this work plan
    **/
   public CreateWorkPlan optionalDays(SetWrapperDayOfWeek optionalDays) {
@@ -650,6 +688,8 @@ public class CreateWorkPlan  implements Serializable {
             Objects.equals(this.maximumDaysOffPerPlanningPeriod, createWorkPlan.maximumDaysOffPerPlanningPeriod) &&
             Objects.equals(this.minimumPaidMinutesPerPlanningPeriod, createWorkPlan.minimumPaidMinutesPerPlanningPeriod) &&
             Objects.equals(this.maximumPaidMinutesPerPlanningPeriod, createWorkPlan.maximumPaidMinutesPerPlanningPeriod) &&
+            Objects.equals(this.constrainMaximumWorkingWeekendsPerPlanningPeriod, createWorkPlan.constrainMaximumWorkingWeekendsPerPlanningPeriod) &&
+            Objects.equals(this.maximumWorkingWeekendsPerPlanningPeriod, createWorkPlan.maximumWorkingWeekendsPerPlanningPeriod) &&
             Objects.equals(this.optionalDays, createWorkPlan.optionalDays) &&
             Objects.equals(this.shiftStartVarianceType, createWorkPlan.shiftStartVarianceType) &&
             Objects.equals(this.shiftStartVariances, createWorkPlan.shiftStartVariances) &&
@@ -659,7 +699,7 @@ public class CreateWorkPlan  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents);
+    return Objects.hash(name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, constrainMaximumWorkingWeekendsPerPlanningPeriod, maximumWorkingWeekendsPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents);
   }
 
   @Override
@@ -690,6 +730,8 @@ public class CreateWorkPlan  implements Serializable {
     sb.append("    maximumDaysOffPerPlanningPeriod: ").append(toIndentedString(maximumDaysOffPerPlanningPeriod)).append("\n");
     sb.append("    minimumPaidMinutesPerPlanningPeriod: ").append(toIndentedString(minimumPaidMinutesPerPlanningPeriod)).append("\n");
     sb.append("    maximumPaidMinutesPerPlanningPeriod: ").append(toIndentedString(maximumPaidMinutesPerPlanningPeriod)).append("\n");
+    sb.append("    constrainMaximumWorkingWeekendsPerPlanningPeriod: ").append(toIndentedString(constrainMaximumWorkingWeekendsPerPlanningPeriod)).append("\n");
+    sb.append("    maximumWorkingWeekendsPerPlanningPeriod: ").append(toIndentedString(maximumWorkingWeekendsPerPlanningPeriod)).append("\n");
     sb.append("    optionalDays: ").append(toIndentedString(optionalDays)).append("\n");
     sb.append("    shiftStartVarianceType: ").append(toIndentedString(shiftStartVarianceType)).append("\n");
     sb.append("    shiftStartVariances: ").append(toIndentedString(shiftStartVariances)).append("\n");

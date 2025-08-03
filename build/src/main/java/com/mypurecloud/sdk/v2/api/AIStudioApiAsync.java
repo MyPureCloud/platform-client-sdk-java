@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.GuideJob;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
+import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
 
 
@@ -34,6 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
@@ -586,6 +588,83 @@ public class AIStudioApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GuideContentGenerationJob> response = (ApiResponse<GuideContentGenerationJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Guide> patchGuideAsync(PatchGuideRequest request, final AsyncApiCallback<Guide> callback) {
+    try {
+      final SettableFuture<Guide> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Guide>() {}, new AsyncApiCallback<ApiResponse<Guide>>() {
+        @Override
+        public void onCompleted(ApiResponse<Guide> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a guide.
+   * 
+   * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Guide>> patchGuideAsync(ApiRequest<UpdateGuide> request, final AsyncApiCallback<ApiResponse<Guide>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Guide>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Guide>() {}, new AsyncApiCallback<ApiResponse<Guide>>() {
+        @Override
+        public void onCompleted(ApiResponse<Guide> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Guide> response = (ApiResponse<Guide>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Guide> response = (ApiResponse<Guide>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

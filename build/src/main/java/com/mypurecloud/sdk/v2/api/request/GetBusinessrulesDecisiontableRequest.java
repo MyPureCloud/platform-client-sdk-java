@@ -39,7 +39,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PutDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.SearchDecisionTableRowsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRequest;
-import com.mypurecloud.sdk.v2.model.UpdateDecisionTableRowRequest;
 import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 public class GetBusinessrulesDecisiontableRequest {

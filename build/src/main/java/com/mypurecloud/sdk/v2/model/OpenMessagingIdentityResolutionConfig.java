@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionExternalSource;
 import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +27,7 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
   private String id = null;
   private WritableStarrableDivision division = null;
   private Boolean resolveIdentities = null;
-  private AddressableEntityRef externalSource = null;
+  private IdentityResolutionExternalSource externalSource = null;
   private String selfUri = null;
 
   public OpenMessagingIdentityResolutionConfig() {
@@ -80,19 +80,19 @@ public class OpenMessagingIdentityResolutionConfig  implements Serializable {
 
 
   /**
-   * The external source used for stitching this channel - used only for Open Messaging.
+   * The external source used for stitching this channel.
    **/
-  public OpenMessagingIdentityResolutionConfig externalSource(AddressableEntityRef externalSource) {
+  public OpenMessagingIdentityResolutionConfig externalSource(IdentityResolutionExternalSource externalSource) {
     this.externalSource = externalSource;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The external source used for stitching this channel - used only for Open Messaging.")
+  @ApiModelProperty(example = "null", value = "The external source used for stitching this channel.")
   @JsonProperty("externalSource")
-  public AddressableEntityRef getExternalSource() {
+  public IdentityResolutionExternalSource getExternalSource() {
     return externalSource;
   }
-  public void setExternalSource(AddressableEntityRef externalSource) {
+  public void setExternalSource(IdentityResolutionExternalSource externalSource) {
     this.externalSource = externalSource;
   }
 

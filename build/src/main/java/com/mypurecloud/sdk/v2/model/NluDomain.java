@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -27,8 +27,8 @@ public class NluDomain  implements Serializable {
   private String id = null;
   private String name = null;
   private String language = null;
-  private NluDomainVersion draftVersion = null;
-  private NluDomainVersion lastPublishedVersion = null;
+  private NluDomainVersionReference draftVersion = null;
+  private NluDomainVersionReference lastPublishedVersion = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String engineVersion = null;
@@ -85,14 +85,14 @@ public class NluDomain  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "The draft version of that NLU domain.")
   @JsonProperty("draftVersion")
-  public NluDomainVersion getDraftVersion() {
+  public NluDomainVersionReference getDraftVersion() {
     return draftVersion;
   }
 
 
   @ApiModelProperty(example = "null", value = "The last published version of that NLU domain.")
   @JsonProperty("lastPublishedVersion")
-  public NluDomainVersion getLastPublishedVersion() {
+  public NluDomainVersionReference getLastPublishedVersion() {
     return lastPublishedVersion;
   }
 

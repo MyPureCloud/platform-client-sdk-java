@@ -37,7 +37,7 @@ public class ReplacementTerm  implements Serializable {
     }
   }
   /**
-   * Subject search type
+   * Replacement term type
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -86,14 +86,14 @@ public class ReplacementTerm  implements Serializable {
 
   
   /**
-   * Subject search type
+   * Replacement term type
    **/
   public ReplacementTerm type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Subject search type")
+  @ApiModelProperty(example = "null", value = "Replacement term type")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

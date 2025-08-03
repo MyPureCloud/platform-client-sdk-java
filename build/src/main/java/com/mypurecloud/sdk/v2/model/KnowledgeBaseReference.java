@@ -88,7 +88,8 @@ public class KnowledgeBaseReference  implements Serializable {
     TH_TH("th-TH"),
     HU_HU("hu-HU"),
     VI_VN("vi-VN"),
-    UK_UA("uk-UA");
+    UK_UA("uk-UA"),
+    CS_CZ("cs-CZ");
 
     private String value;
 

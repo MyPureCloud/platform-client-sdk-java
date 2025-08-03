@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
 import com.mypurecloud.sdk.v2.model.CannedResponseLibraries;
+import com.mypurecloud.sdk.v2.model.ConditionalGroupActivation;
 import com.mypurecloud.sdk.v2.model.ConditionalGroupRouting;
 import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -56,6 +57,7 @@ public class CreateQueueRequest  implements Serializable {
   private QueueMediaSettings mediaSettings = null;
   private List<RoutingRule> routingRules = null;
   private ConditionalGroupRouting conditionalGroupRouting = null;
+  private ConditionalGroupActivation conditionalGroupActivation = null;
   private Bullseye bullseye = null;
 
   private static class ScoringMethodEnumDeserializer extends StdDeserializer<ScoringMethodEnum> {
@@ -440,6 +442,24 @@ public class CreateQueueRequest  implements Serializable {
   }
   public void setConditionalGroupRouting(ConditionalGroupRouting conditionalGroupRouting) {
     this.conditionalGroupRouting = conditionalGroupRouting;
+  }
+
+
+  /**
+   * The Conditional Group Activation settings for the queue.
+   **/
+  public CreateQueueRequest conditionalGroupActivation(ConditionalGroupActivation conditionalGroupActivation) {
+    this.conditionalGroupActivation = conditionalGroupActivation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Conditional Group Activation settings for the queue.")
+  @JsonProperty("conditionalGroupActivation")
+  public ConditionalGroupActivation getConditionalGroupActivation() {
+    return conditionalGroupActivation;
+  }
+  public void setConditionalGroupActivation(ConditionalGroupActivation conditionalGroupActivation) {
+    this.conditionalGroupActivation = conditionalGroupActivation;
   }
 
 
@@ -942,6 +962,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.mediaSettings, createQueueRequest.mediaSettings) &&
             Objects.equals(this.routingRules, createQueueRequest.routingRules) &&
             Objects.equals(this.conditionalGroupRouting, createQueueRequest.conditionalGroupRouting) &&
+            Objects.equals(this.conditionalGroupActivation, createQueueRequest.conditionalGroupActivation) &&
             Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
             Objects.equals(this.scoringMethod, createQueueRequest.scoringMethod) &&
             Objects.equals(this.lastAgentRoutingMode, createQueueRequest.lastAgentRoutingMode) &&
@@ -973,7 +994,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, conditionalGroupActivation, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
   }
 
   @Override
@@ -995,6 +1016,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
     sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
     sb.append("    conditionalGroupRouting: ").append(toIndentedString(conditionalGroupRouting)).append("\n");
+    sb.append("    conditionalGroupActivation: ").append(toIndentedString(conditionalGroupActivation)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    scoringMethod: ").append(toIndentedString(scoringMethod)).append("\n");
     sb.append("    lastAgentRoutingMode: ").append(toIndentedString(lastAgentRoutingMode)).append("\n");

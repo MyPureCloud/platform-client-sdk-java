@@ -37,14 +37,14 @@ public class CreateDecisionTableRowRequest  implements Serializable {
 
   
   /**
-   * The absolute position of this row in the decision table. Must be an integerstarting from 0, must be non-negative and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
+   * The absolute position of this row in the decision table. Must be an integerstarting from 1, must be positive and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
    **/
   public CreateDecisionTableRowRequest rowIndex(Integer rowIndex) {
     this.rowIndex = rowIndex;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The absolute position of this row in the decision table. Must be an integerstarting from 0, must be non-negative and less than or equal to the size of the table. If not provided row will be append to the end of the table. ")
+  @ApiModelProperty(example = "null", value = "The absolute position of this row in the decision table. Must be an integerstarting from 1, must be positive and less than or equal to the size of the table. If not provided row will be append to the end of the table. ")
   @JsonProperty("rowIndex")
   public Integer getRowIndex() {
     return rowIndex;

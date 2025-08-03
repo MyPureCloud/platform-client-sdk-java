@@ -687,7 +687,7 @@ public class ExternalContact  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Information about the merge history of this contact. If null, this contact is not a part of any merge.")
+  @ApiModelProperty(example = "null", value = "(Deprecated: use mergedTo and mergedFrom instead) Information about the merge history of this contact. If null, this contact is not a part of any merge.")
   @JsonProperty("mergeOperation")
   public MergeOperation getMergeOperation() {
     return mergeOperation;

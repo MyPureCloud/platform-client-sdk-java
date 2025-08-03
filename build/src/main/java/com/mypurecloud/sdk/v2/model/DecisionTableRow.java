@@ -69,14 +69,14 @@ public class DecisionTableRow  implements Serializable {
 
 
   /**
-   * The absolute index of this row in the decision table, starting at 0
+   * The absolute index of this row in the decision table, starting at 1
    **/
   public DecisionTableRow rowIndex(Integer rowIndex) {
     this.rowIndex = rowIndex;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The absolute index of this row in the decision table, starting at 0")
+  @ApiModelProperty(example = "null", value = "The absolute index of this row in the decision table, starting at 1")
   @JsonProperty("rowIndex")
   public Integer getRowIndex() {
     return rowIndex;

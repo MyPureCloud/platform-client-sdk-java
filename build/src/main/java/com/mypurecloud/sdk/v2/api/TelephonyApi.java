@@ -10,23 +10,29 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AgentGreeting;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,6 +49,166 @@ public class TelephonyApi {
 
   public TelephonyApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId User ID (required)
+   * @return AgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentGreeting getTelephonyAgentGreetings(String agentId) throws IOException, ApiException {
+    return  getTelephonyAgentGreetings(createGetTelephonyAgentGreetingsRequest(agentId));
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId User ID (required)
+   * @return AgentGreeting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentGreeting> getTelephonyAgentGreetingsWithHttpInfo(String agentId) throws IOException {
+    return getTelephonyAgentGreetings(createGetTelephonyAgentGreetingsRequest(agentId).withHttpInfo());
+  }
+
+  private GetTelephonyAgentGreetingsRequest createGetTelephonyAgentGreetingsRequest(String agentId) {
+    return GetTelephonyAgentGreetingsRequest.builder()
+            .withAgentId(agentId)
+
+            .build();
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentGreeting getTelephonyAgentGreetings(GetTelephonyAgentGreetingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentGreeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentGreeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentGreeting> getTelephonyAgentGreetings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentGreeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return SelfAgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfAgentGreeting getTelephonyAgentsGreetingsMe() throws IOException, ApiException {
+    return  getTelephonyAgentsGreetingsMe(createGetTelephonyAgentsGreetingsMeRequest());
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return SelfAgentGreeting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfAgentGreeting> getTelephonyAgentsGreetingsMeWithHttpInfo() throws IOException {
+    return getTelephonyAgentsGreetingsMe(createGetTelephonyAgentsGreetingsMeRequest().withHttpInfo());
+  }
+
+  private GetTelephonyAgentsGreetingsMeRequest createGetTelephonyAgentsGreetingsMeRequest() {
+    return GetTelephonyAgentsGreetingsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SelfAgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfAgentGreeting getTelephonyAgentsGreetingsMe(GetTelephonyAgentsGreetingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfAgentGreeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfAgentGreeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfAgentGreeting> getTelephonyAgentsGreetingsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfAgentGreeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -529,6 +695,174 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SipDownloadResponse> response = (ApiResponse<SipDownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId User ID (required)
+   * @param body Agent Greeting (required)
+   * @return AgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentGreeting putTelephonyAgentGreetings(String agentId, AgentGreeting body) throws IOException, ApiException {
+    return  putTelephonyAgentGreetings(createPutTelephonyAgentGreetingsRequest(agentId, body));
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId User ID (required)
+   * @param body Agent Greeting (required)
+   * @return AgentGreeting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentGreeting> putTelephonyAgentGreetingsWithHttpInfo(String agentId, AgentGreeting body) throws IOException {
+    return putTelephonyAgentGreetings(createPutTelephonyAgentGreetingsRequest(agentId, body).withHttpInfo());
+  }
+
+  private PutTelephonyAgentGreetingsRequest createPutTelephonyAgentGreetingsRequest(String agentId, AgentGreeting body) {
+    return PutTelephonyAgentGreetingsRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentGreeting putTelephonyAgentGreetings(PutTelephonyAgentGreetingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentGreeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentGreeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentGreeting> putTelephonyAgentGreetings(ApiRequest<AgentGreeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentGreeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Agent Greeting (required)
+   * @return SelfAgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfAgentGreeting putTelephonyAgentsGreetingsMe(SelfAgentGreeting body) throws IOException, ApiException {
+    return  putTelephonyAgentsGreetingsMe(createPutTelephonyAgentsGreetingsMeRequest(body));
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Agent Greeting (required)
+   * @return SelfAgentGreeting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfAgentGreeting> putTelephonyAgentsGreetingsMeWithHttpInfo(SelfAgentGreeting body) throws IOException {
+    return putTelephonyAgentsGreetingsMe(createPutTelephonyAgentsGreetingsMeRequest(body).withHttpInfo());
+  }
+
+  private PutTelephonyAgentsGreetingsMeRequest createPutTelephonyAgentsGreetingsMeRequest(SelfAgentGreeting body) {
+    return PutTelephonyAgentsGreetingsMeRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SelfAgentGreeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfAgentGreeting putTelephonyAgentsGreetingsMe(PutTelephonyAgentsGreetingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfAgentGreeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfAgentGreeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfAgentGreeting> putTelephonyAgentsGreetingsMe(ApiRequest<SelfAgentGreeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfAgentGreeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

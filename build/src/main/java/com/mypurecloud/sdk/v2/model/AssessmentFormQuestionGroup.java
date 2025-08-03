@@ -29,6 +29,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
   private String id = null;
   private String name = null;
   private String type = null;
+  private String contextId = null;
   private Boolean defaultAnswersToHighest = null;
   private Boolean defaultAnswersToNA = null;
   private Boolean naEnabled = null;
@@ -96,6 +97,13 @@ public class AssessmentFormQuestionGroup  implements Serializable {
   }
   public void setType(String type) {
     this.type = type;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this question group that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
   }
 
 
@@ -239,6 +247,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     return Objects.equals(this.id, assessmentFormQuestionGroup.id) &&
             Objects.equals(this.name, assessmentFormQuestionGroup.name) &&
             Objects.equals(this.type, assessmentFormQuestionGroup.type) &&
+            Objects.equals(this.contextId, assessmentFormQuestionGroup.contextId) &&
             Objects.equals(this.defaultAnswersToHighest, assessmentFormQuestionGroup.defaultAnswersToHighest) &&
             Objects.equals(this.defaultAnswersToNA, assessmentFormQuestionGroup.defaultAnswersToNA) &&
             Objects.equals(this.naEnabled, assessmentFormQuestionGroup.naEnabled) &&
@@ -251,7 +260,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition, selfUri);
+    return Objects.hash(id, name, type, contextId, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition, selfUri);
   }
 
   @Override
@@ -262,6 +271,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    defaultAnswersToHighest: ").append(toIndentedString(defaultAnswersToHighest)).append("\n");
     sb.append("    defaultAnswersToNA: ").append(toIndentedString(defaultAnswersToNA)).append("\n");
     sb.append("    naEnabled: ").append(toIndentedString(naEnabled)).append("\n");

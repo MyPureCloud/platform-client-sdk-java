@@ -91,6 +91,7 @@ public class HistoryEntry  implements Serializable {
   private String version = null;
   private Boolean secure = null;
   private Boolean virtualAgentEnabled = null;
+  private Boolean agenticVirtualAgentEnabled = null;
 
   public HistoryEntry() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -239,6 +240,23 @@ public class HistoryEntry  implements Serializable {
   }
 
 
+  /**
+   **/
+  public HistoryEntry agenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agenticVirtualAgentEnabled")
+  public Boolean getAgenticVirtualAgentEnabled() {
+    return agenticVirtualAgentEnabled;
+  }
+  public void setAgenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -256,12 +274,13 @@ public class HistoryEntry  implements Serializable {
             Objects.equals(this.client, historyEntry.client) &&
             Objects.equals(this.version, historyEntry.version) &&
             Objects.equals(this.secure, historyEntry.secure) &&
-            Objects.equals(this.virtualAgentEnabled, historyEntry.virtualAgentEnabled);
+            Objects.equals(this.virtualAgentEnabled, historyEntry.virtualAgentEnabled) &&
+            Objects.equals(this.agenticVirtualAgentEnabled, historyEntry.agenticVirtualAgentEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, resource, timestamp, user, client, version, secure, virtualAgentEnabled);
+    return Objects.hash(action, resource, timestamp, user, client, version, secure, virtualAgentEnabled, agenticVirtualAgentEnabled);
   }
 
   @Override
@@ -277,6 +296,7 @@ public class HistoryEntry  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    secure: ").append(toIndentedString(secure)).append("\n");
     sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
+    sb.append("    agenticVirtualAgentEnabled: ").append(toIndentedString(agenticVirtualAgentEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

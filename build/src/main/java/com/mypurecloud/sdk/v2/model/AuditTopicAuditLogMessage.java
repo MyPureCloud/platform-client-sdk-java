@@ -190,6 +190,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     AUTHORIZATIONCHANGED("AuthorizationChanged"),
     CHANGEPASSWORD("ChangePassword"),
     REVOKE("Revoke"),
+    LICENSEUPDATE("LicenseUpdate"),
     CHECKIN("Checkin"),
     CHECKOUT("Checkout"),
     DEACTIVATE("Deactivate"),
@@ -242,6 +243,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CHANGEIMPLEMENTED("ChangeImplemented"),
     IMPLEMENTINGROLLBACK("ImplementingRollback"),
     ROLLBACKIMPLEMENTED("RollbackImplemented"),
+    INREVIEW("InReview"),
+    ACTIVE("Active"),
     WRITE("Write"),
     REPLACE("Replace"),
     UPDATEINSERVICE("UpdateInService"),
@@ -285,7 +288,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     REVERSEMANUALLY("ReverseManually"),
     CALCULATE("Calculate"),
     PROVISIONED("Provisioned"),
-    UPDATEABORTED("UpdateAborted");
+    UPDATEABORTED("UpdateAborted"),
+    EDIT("Edit");
 
     private String value;
 
@@ -500,6 +504,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     EXPORTPDFTEMPLATES("ExportPdfTemplates"),
     CHANGEREQUEST("ChangeRequest"),
     MIGRATION("Migration"),
+    SUSPENSION("Suspension"),
     EXTERNALMETRICSDEFINITION("ExternalMetricsDefinition"),
     EXTERNALMETRICSDATA("ExternalMetricsData"),
     SCHEMA("Schema"),
@@ -567,7 +572,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CONTACT("Contact"),
     NOTE("Note"),
     RELATIONSHIP("Relationship"),
-    EXTERNALORG("ExternalOrg");
+    EXTERNALORG("ExternalOrg"),
+    SOCIALMEDIAMESSAGE("SocialMediaMessage");
 
     private String value;
 

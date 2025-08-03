@@ -28,6 +28,7 @@ public class UserRoutingStatusUserParam  implements Serializable {
   private String key = null;
   private String value = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public UserRoutingStatusUserParam() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -86,6 +87,23 @@ public class UserRoutingStatusUserParam  implements Serializable {
   }
 
 
+  /**
+   **/
+  public UserRoutingStatusUserParam getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -98,12 +116,13 @@ public class UserRoutingStatusUserParam  implements Serializable {
 
     return Objects.equals(this.key, userRoutingStatusUserParam.key) &&
             Objects.equals(this.value, userRoutingStatusUserParam.value) &&
-            Objects.equals(this.additionalProperties, userRoutingStatusUserParam.additionalProperties);
+            Objects.equals(this.additionalProperties, userRoutingStatusUserParam.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, userRoutingStatusUserParam.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value, additionalProperties);
+    return Objects.hash(key, value, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -114,6 +133,7 @@ public class UserRoutingStatusUserParam  implements Serializable {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

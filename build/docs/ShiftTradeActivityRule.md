@@ -23,7 +23,6 @@
 | TIMEOFF | &quot;TimeOff&quot; | 
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
-| UNSCHEDULED | &quot;Unscheduled&quot; | 
 
 
 ## Enum: ActionEnum
@@ -38,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

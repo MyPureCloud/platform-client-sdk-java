@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,11 +29,11 @@ public class KnowledgeDocumentQueryResponse  implements Serializable {
   private Integer pageNumber = null;
   private Long total = null;
   private Integer pageCount = null;
-  private List<KnowledgeDocumentResponse> results = null;
+  private List<KnowledgeDocumentQueryResult> results = null;
 
   public KnowledgeDocumentQueryResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      results = new ArrayList<KnowledgeDocumentResponse>();
+      results = new ArrayList<KnowledgeDocumentQueryResult>();
     }
   }
 
@@ -88,10 +88,21 @@ public class KnowledgeDocumentQueryResponse  implements Serializable {
   }
 
 
+  /**
+   * Documents matching the query.
+   **/
+  public KnowledgeDocumentQueryResponse results(List<KnowledgeDocumentQueryResult> results) {
+    this.results = results;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Documents matching the query.")
   @JsonProperty("results")
-  public List<KnowledgeDocumentResponse> getResults() {
+  public List<KnowledgeDocumentQueryResult> getResults() {
     return results;
+  }
+  public void setResults(List<KnowledgeDocumentQueryResult> results) {
+    this.results = results;
   }
 
 

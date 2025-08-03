@@ -65,13 +65,17 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSegmentAssignmentResponse;
 import com.mypurecloud.sdk.v2.model.WebEventRequest;
 import com.mypurecloud.sdk.v2.model.WebEventResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
@@ -81,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteJourneyViewRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsRequest;
@@ -125,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyViewVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
@@ -159,6 +165,85 @@ public class JourneyApi {
 
   public JourneyApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete/cancel an async request for journey aggregates
+   * 
+   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsJourneysAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsJourneysAggregatesJob(createDeleteAnalyticsJourneysAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for journey aggregates
+   * 
+   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsJourneysAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsJourneysAggregatesJob(createDeleteAnalyticsJourneysAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsJourneysAggregatesJobRequest createDeleteAnalyticsJourneysAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsJourneysAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for journey aggregates
+   * 
+   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsJourneysAggregatesJob(DeleteAnalyticsJourneysAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for journey aggregates
+   * 
+   * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsJourneysAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -857,6 +942,92 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyAsyncAggregateQueryResponse> response = (ApiResponse<JourneyAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+   * @param limit Number of entities to return. Default of 25, maximum of 500. (optional)
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentAssignmentListing getExternalcontactsContactJourneySegments(String contactId, Boolean includeMerged, Integer limit) throws IOException, ApiException {
+    return  getExternalcontactsContactJourneySegments(createGetExternalcontactsContactJourneySegmentsRequest(contactId, includeMerged, limit));
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+   * @param limit Number of entities to return. Default of 25, maximum of 500. (optional)
+   * @return SegmentAssignmentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentAssignmentListing> getExternalcontactsContactJourneySegmentsWithHttpInfo(String contactId, Boolean includeMerged, Integer limit) throws IOException {
+    return getExternalcontactsContactJourneySegments(createGetExternalcontactsContactJourneySegmentsRequest(contactId, includeMerged, limit).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactJourneySegmentsRequest createGetExternalcontactsContactJourneySegmentsRequest(String contactId, Boolean includeMerged, Integer limit) {
+    return GetExternalcontactsContactJourneySegmentsRequest.builder()
+            .withContactId(contactId)
+
+            .withIncludeMerged(includeMerged)
+
+            .withLimit(limit)
+
+            .build();
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request The request object
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentAssignmentListing getExternalcontactsContactJourneySegments(GetExternalcontactsContactJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SegmentAssignmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by external contact ID.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentAssignmentListing> getExternalcontactsContactJourneySegments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SegmentAssignmentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4557,6 +4728,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyAggregateQueryResponse> response = (ApiResponse<JourneyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body  (optional)
+   * @return UpdateSegmentAssignmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateSegmentAssignmentResponse postExternalcontactsContactJourneySegments(String contactId, UpdateSegmentAssignmentRequest body) throws IOException, ApiException {
+    return  postExternalcontactsContactJourneySegments(createPostExternalcontactsContactJourneySegmentsRequest(contactId, body));
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body  (optional)
+   * @return UpdateSegmentAssignmentResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateSegmentAssignmentResponse> postExternalcontactsContactJourneySegmentsWithHttpInfo(String contactId, UpdateSegmentAssignmentRequest body) throws IOException {
+    return postExternalcontactsContactJourneySegments(createPostExternalcontactsContactJourneySegmentsRequest(contactId, body).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactJourneySegmentsRequest createPostExternalcontactsContactJourneySegmentsRequest(String contactId, UpdateSegmentAssignmentRequest body) {
+    return PostExternalcontactsContactJourneySegmentsRequest.builder()
+            .withContactId(contactId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request The request object
+   * @return UpdateSegmentAssignmentResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateSegmentAssignmentResponse postExternalcontactsContactJourneySegments(PostExternalcontactsContactJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateSegmentAssignmentResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateSegmentAssignmentResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateSegmentAssignmentResponse> postExternalcontactsContactJourneySegments(ApiRequest<UpdateSegmentAssignmentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateSegmentAssignmentResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateSegmentAssignmentResponse> response = (ApiResponse<UpdateSegmentAssignmentResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

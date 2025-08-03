@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanActivity;
+import com.mypurecloud.sdk.v2.model.PlanningPeriodShiftConstraints;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -95,6 +96,7 @@ public class CreateWorkPlanShift  implements Serializable {
     }
   }
   private DayOffRuleEnum dayOffRule = null;
+  private PlanningPeriodShiftConstraints planningPeriodConstraints = null;
   private List<CreateWorkPlanActivity> activities = null;
 
   public CreateWorkPlanShift() {
@@ -483,6 +485,24 @@ public class CreateWorkPlanShift  implements Serializable {
 
 
   /**
+   * Planning period constraints
+   **/
+  public CreateWorkPlanShift planningPeriodConstraints(PlanningPeriodShiftConstraints planningPeriodConstraints) {
+    this.planningPeriodConstraints = planningPeriodConstraints;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Planning period constraints")
+  @JsonProperty("planningPeriodConstraints")
+  public PlanningPeriodShiftConstraints getPlanningPeriodConstraints() {
+    return planningPeriodConstraints;
+  }
+  public void setPlanningPeriodConstraints(PlanningPeriodShiftConstraints planningPeriodConstraints) {
+    this.planningPeriodConstraints = planningPeriodConstraints;
+  }
+
+
+  /**
    * Activities configured for this shift
    **/
   public CreateWorkPlanShift activities(List<CreateWorkPlanActivity> activities) {
@@ -531,12 +551,13 @@ public class CreateWorkPlanShift  implements Serializable {
             Objects.equals(this.maximumContiguousWorkTimeMinutes, createWorkPlanShift.maximumContiguousWorkTimeMinutes) &&
             Objects.equals(this.constrainDayOff, createWorkPlanShift.constrainDayOff) &&
             Objects.equals(this.dayOffRule, createWorkPlanShift.dayOffRule) &&
+            Objects.equals(this.planningPeriodConstraints, createWorkPlanShift.planningPeriodConstraints) &&
             Objects.equals(this.activities, createWorkPlanShift.activities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, constrainDayOff, dayOffRule, activities);
+    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, constrainDayOff, dayOffRule, planningPeriodConstraints, activities);
   }
 
   @Override
@@ -565,6 +586,7 @@ public class CreateWorkPlanShift  implements Serializable {
     sb.append("    maximumContiguousWorkTimeMinutes: ").append(toIndentedString(maximumContiguousWorkTimeMinutes)).append("\n");
     sb.append("    constrainDayOff: ").append(toIndentedString(constrainDayOff)).append("\n");
     sb.append("    dayOffRule: ").append(toIndentedString(dayOffRule)).append("\n");
+    sb.append("    planningPeriodConstraints: ").append(toIndentedString(planningPeriodConstraints)).append("\n");
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("}");
     return sb.toString();

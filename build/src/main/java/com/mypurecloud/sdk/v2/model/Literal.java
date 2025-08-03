@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class Literal  implements Serializable {
   
   private String string = null;
-  private Integer integer = null;
+  private Long integer = null;
   private Double number = null;
   private LocalDate date = null;
   private Date datetime = null;
@@ -107,32 +107,32 @@ public class Literal  implements Serializable {
 
 
   /**
-   * An integer value
+   * A positive or negative whole number, including zero
    **/
-  public Literal integer(Integer integer) {
+  public Literal integer(Long integer) {
     this.integer = integer;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An integer value")
+  @ApiModelProperty(example = "null", value = "A positive or negative whole number, including zero")
   @JsonProperty("integer")
-  public Integer getInteger() {
+  public Long getInteger() {
     return integer;
   }
-  public void setInteger(Integer integer) {
+  public void setInteger(Long integer) {
     this.integer = integer;
   }
 
 
   /**
-   * A decimal value
+   * A positive or negative decimal number, including zero
    **/
   public Literal number(Double number) {
     this.number = number;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A decimal value")
+  @ApiModelProperty(example = "null", value = "A positive or negative decimal number, including zero")
   @JsonProperty("number")
   public Double getNumber() {
     return number;

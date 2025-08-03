@@ -190,6 +190,7 @@ import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupInput;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
@@ -479,6 +480,85 @@ public class ConversationsApi {
 
   public ConversationsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete/cancel an async request for conversation aggregates
+   * 
+   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsConversationsAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsConversationsAggregatesJob(createDeleteAnalyticsConversationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for conversation aggregates
+   * 
+   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsConversationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsConversationsAggregatesJob(createDeleteAnalyticsConversationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsConversationsAggregatesJobRequest createDeleteAnalyticsConversationsAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsConversationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for conversation aggregates
+   * 
+   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsConversationsAggregatesJob(DeleteAnalyticsConversationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for conversation aggregates
+   * 
+   * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsConversationsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4110,7 +4190,7 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
@@ -4123,7 +4203,7 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @return ChatConversation
    * @throws IOException if the request fails to be processed
@@ -4142,7 +4222,7 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
@@ -4162,7 +4242,7 @@ public class ConversationsApi {
 
   /**
    * Get chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4192,7 +4272,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
@@ -4206,7 +4286,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
@@ -4228,7 +4308,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
@@ -4248,7 +4328,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4278,7 +4358,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -4295,7 +4375,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -4326,7 +4406,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessageEntityList
    * @throws ApiException if the request fails on the server
@@ -4346,7 +4426,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4376,7 +4456,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4392,7 +4472,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4420,7 +4500,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
@@ -4440,7 +4520,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4470,7 +4550,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
@@ -4485,7 +4565,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
@@ -4510,7 +4590,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
@@ -4530,7 +4610,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4560,7 +4640,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
@@ -4574,7 +4654,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
@@ -4596,7 +4676,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
@@ -4616,7 +4696,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4646,7 +4726,7 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @return ChatConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4658,7 +4738,7 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @return ChatConversationEntityListing
    * @throws IOException if the request fails to be processed
    * @deprecated
@@ -4674,7 +4754,7 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -4694,7 +4774,7 @@ public class ConversationsApi {
 
   /**
    * Get active chat conversations for the logged in user
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4802,7 +4882,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4818,7 +4898,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4846,7 +4926,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
@@ -4866,7 +4946,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4896,7 +4976,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
@@ -4911,7 +4991,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)
@@ -4936,7 +5016,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
@@ -4956,7 +5036,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4986,7 +5066,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
@@ -5000,7 +5080,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
@@ -5022,7 +5102,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
@@ -5042,7 +5122,7 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9300,7 +9380,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -9316,7 +9396,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -9344,7 +9424,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
@@ -9364,7 +9444,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10648,7 +10728,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -10663,7 +10743,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -10690,7 +10770,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return Empty
@@ -10709,7 +10789,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return the response
@@ -11244,7 +11324,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
@@ -11258,7 +11338,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
@@ -11280,7 +11360,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return Conversation
    * @throws ApiException if the request fails on the server
@@ -11300,7 +11380,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11330,7 +11410,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
@@ -11344,7 +11424,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
@@ -11368,7 +11448,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11387,7 +11467,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11417,7 +11497,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
@@ -11432,7 +11512,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
@@ -11457,7 +11537,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
@@ -11477,7 +11557,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11506,8 +11586,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -11522,8 +11602,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -11550,8 +11630,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -11570,8 +11650,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11601,7 +11681,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
@@ -11615,7 +11695,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
@@ -11637,7 +11717,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return Conversation
    * @throws ApiException if the request fails on the server
@@ -11657,7 +11737,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11687,7 +11767,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -11701,7 +11781,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -11725,7 +11805,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -11744,7 +11824,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11774,7 +11854,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -11789,7 +11869,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -11814,7 +11894,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
@@ -11834,7 +11914,7 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11864,7 +11944,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -11880,7 +11960,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -11908,7 +11988,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -11928,7 +12008,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12298,7 +12378,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -12313,7 +12393,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -12340,7 +12420,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return Empty
@@ -12359,7 +12439,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return the response
@@ -12722,7 +12802,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -12737,7 +12817,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -12764,7 +12844,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return Empty
@@ -12783,7 +12863,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant's communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
    * 
    * @param request The request object
    * @return the response
@@ -17105,7 +17185,7 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
@@ -17120,7 +17200,7 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
@@ -17145,7 +17225,7 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
@@ -17165,7 +17245,7 @@ public class ConversationsApi {
 
   /**
    * Send a message on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17195,7 +17275,7 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return WebChatTyping
@@ -17209,7 +17289,7 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return WebChatTyping
@@ -17231,7 +17311,7 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return WebChatTyping
    * @throws ApiException if the request fails on the server
@@ -17251,7 +17331,7 @@ public class ConversationsApi {
 
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17281,7 +17361,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -17296,7 +17376,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -17323,7 +17403,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17342,7 +17422,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17372,7 +17452,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
@@ -17386,7 +17466,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
@@ -17410,7 +17490,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17429,7 +17509,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17459,7 +17539,7 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param body Create web chat request (required)
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
@@ -17472,7 +17552,7 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param body Create web chat request (required)
    * @return ChatConversation
    * @throws IOException if the request fails to be processed
@@ -17491,7 +17571,7 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return ChatConversation
    * @throws ApiException if the request fails on the server
@@ -17511,7 +17591,7 @@ public class ConversationsApi {
 
   /**
    * Create a web chat conversation
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17541,7 +17621,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -17556,7 +17636,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -17583,7 +17663,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17602,7 +17682,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17632,7 +17712,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -17646,7 +17726,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
@@ -17670,7 +17750,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -17689,7 +17769,7 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -20646,7 +20726,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -20661,7 +20741,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -20688,7 +20768,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -20707,7 +20787,7 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -21576,7 +21656,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -21590,7 +21670,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -21612,7 +21692,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
@@ -21632,7 +21712,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -21662,7 +21742,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -21676,7 +21756,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -21698,7 +21778,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
@@ -21718,7 +21798,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -22806,7 +22886,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -22820,7 +22900,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
@@ -22842,7 +22922,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
@@ -22862,7 +22942,7 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

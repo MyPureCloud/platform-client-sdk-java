@@ -27,6 +27,7 @@ import java.io.Serializable;
 public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Serializable {
   
   private Map<String, String> additionalProperties = null;
+  private Map<String, String> getAdditionalProperties = null;
 
   public ArchitectFlowOutcomeNotificationErrorMessageParams() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -51,6 +52,23 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
   }
 
 
+  /**
+   **/
+  public ArchitectFlowOutcomeNotificationErrorMessageParams getAdditionalProperties(Map<String, String> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, String> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, String> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -61,12 +79,13 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
     }
     ArchitectFlowOutcomeNotificationErrorMessageParams architectFlowOutcomeNotificationErrorMessageParams = (ArchitectFlowOutcomeNotificationErrorMessageParams) o;
 
-    return Objects.equals(this.additionalProperties, architectFlowOutcomeNotificationErrorMessageParams.additionalProperties);
+    return Objects.equals(this.additionalProperties, architectFlowOutcomeNotificationErrorMessageParams.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, architectFlowOutcomeNotificationErrorMessageParams.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties);
+    return Objects.hash(additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -75,6 +94,7 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
     sb.append("class ArchitectFlowOutcomeNotificationErrorMessageParams {\n");
     
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

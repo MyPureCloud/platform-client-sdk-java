@@ -2536,6 +2536,157 @@ public class ViewFilter  implements Serializable {
   private List<Float> socialRatings = null;
   private List<String> virtualAgentIds = null;
 
+  private static class EmpathyScoreCategoriesEnumDeserializer extends StdDeserializer<EmpathyScoreCategoriesEnum> {
+    public EmpathyScoreCategoriesEnumDeserializer() {
+      super(EmpathyScoreCategoriesEnumDeserializer.class);
+    }
+
+    @Override
+    public EmpathyScoreCategoriesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EmpathyScoreCategoriesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets empathyScoreCategories
+   */
+ @JsonDeserialize(using = EmpathyScoreCategoriesEnumDeserializer.class)
+  public enum EmpathyScoreCategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNHELPFUL("Unhelpful"),
+    NEUTRAL("Neutral"),
+    EMPATHETIC("Empathetic");
+
+    private String value;
+
+    EmpathyScoreCategoriesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EmpathyScoreCategoriesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EmpathyScoreCategoriesEnum value : EmpathyScoreCategoriesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EmpathyScoreCategoriesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<EmpathyScoreCategoriesEnum> empathyScoreCategories = null;
+
+  private static class SentimentScoreCategoriesEnumDeserializer extends StdDeserializer<SentimentScoreCategoriesEnum> {
+    public SentimentScoreCategoriesEnumDeserializer() {
+      super(SentimentScoreCategoriesEnumDeserializer.class);
+    }
+
+    @Override
+    public SentimentScoreCategoriesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SentimentScoreCategoriesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets sentimentScoreCategories
+   */
+ @JsonDeserialize(using = SentimentScoreCategoriesEnumDeserializer.class)
+  public enum SentimentScoreCategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    VERYNEGATIVE("VeryNegative"),
+    SLIGHTLYNEGATIVE("SlightlyNegative"),
+    NEUTRAL("Neutral"),
+    SLIGHTLYPOSITIVE("SlightlyPositive"),
+    VERYPOSITIVE("VeryPositive");
+
+    private String value;
+
+    SentimentScoreCategoriesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SentimentScoreCategoriesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SentimentScoreCategoriesEnum value : SentimentScoreCategoriesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SentimentScoreCategoriesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SentimentScoreCategoriesEnum> sentimentScoreCategories = null;
+
+  private static class SentimentTrendCategoriesEnumDeserializer extends StdDeserializer<SentimentTrendCategoriesEnum> {
+    public SentimentTrendCategoriesEnumDeserializer() {
+      super(SentimentTrendCategoriesEnumDeserializer.class);
+    }
+
+    @Override
+    public SentimentTrendCategoriesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SentimentTrendCategoriesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets sentimentTrendCategories
+   */
+ @JsonDeserialize(using = SentimentTrendCategoriesEnumDeserializer.class)
+  public enum SentimentTrendCategoriesEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DECLINING("Declining"),
+    SLIGHTLYDECLINING("SlightlyDeclining"),
+    NOCHANGE("NoChange"),
+    SLIGHTLYIMPROVING("SlightlyImproving"),
+    IMPROVING("Improving");
+
+    private String value;
+
+    SentimentTrendCategoriesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SentimentTrendCategoriesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SentimentTrendCategoriesEnum value : SentimentTrendCategoriesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SentimentTrendCategoriesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SentimentTrendCategoriesEnum> sentimentTrendCategories = null;
+
   public ViewFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       mediaTypes = new ArrayList<MediaTypesEnum>();
@@ -2695,6 +2846,9 @@ public class ViewFilter  implements Serializable {
       categoryIds = new ArrayList<String>();
       socialRatings = new ArrayList<Float>();
       virtualAgentIds = new ArrayList<String>();
+      empathyScoreCategories = new ArrayList<EmpathyScoreCategoriesEnum>();
+      sentimentScoreCategories = new ArrayList<SentimentScoreCategoriesEnum>();
+      sentimentTrendCategories = new ArrayList<SentimentTrendCategoriesEnum>();
     }
   }
 
@@ -6821,6 +6975,60 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * A set of Empathy Score Categories for filtering
+   **/
+  public ViewFilter empathyScoreCategories(List<EmpathyScoreCategoriesEnum> empathyScoreCategories) {
+    this.empathyScoreCategories = empathyScoreCategories;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A set of Empathy Score Categories for filtering")
+  @JsonProperty("empathyScoreCategories")
+  public List<EmpathyScoreCategoriesEnum> getEmpathyScoreCategories() {
+    return empathyScoreCategories;
+  }
+  public void setEmpathyScoreCategories(List<EmpathyScoreCategoriesEnum> empathyScoreCategories) {
+    this.empathyScoreCategories = empathyScoreCategories;
+  }
+
+
+  /**
+   * A set of Sentiment Score Categories  for filtering
+   **/
+  public ViewFilter sentimentScoreCategories(List<SentimentScoreCategoriesEnum> sentimentScoreCategories) {
+    this.sentimentScoreCategories = sentimentScoreCategories;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A set of Sentiment Score Categories  for filtering")
+  @JsonProperty("sentimentScoreCategories")
+  public List<SentimentScoreCategoriesEnum> getSentimentScoreCategories() {
+    return sentimentScoreCategories;
+  }
+  public void setSentimentScoreCategories(List<SentimentScoreCategoriesEnum> sentimentScoreCategories) {
+    this.sentimentScoreCategories = sentimentScoreCategories;
+  }
+
+
+  /**
+   * A set of Sentiment Trend Categories for filtering
+   **/
+  public ViewFilter sentimentTrendCategories(List<SentimentTrendCategoriesEnum> sentimentTrendCategories) {
+    this.sentimentTrendCategories = sentimentTrendCategories;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A set of Sentiment Trend Categories for filtering")
+  @JsonProperty("sentimentTrendCategories")
+  public List<SentimentTrendCategoriesEnum> getSentimentTrendCategories() {
+    return sentimentTrendCategories;
+  }
+  public void setSentimentTrendCategories(List<SentimentTrendCategoriesEnum> sentimentTrendCategories) {
+    this.sentimentTrendCategories = sentimentTrendCategories;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -7059,12 +7267,15 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.categoryIds, viewFilter.categoryIds) &&
             Objects.equals(this.deliveryPushed, viewFilter.deliveryPushed) &&
             Objects.equals(this.socialRatings, viewFilter.socialRatings) &&
-            Objects.equals(this.virtualAgentIds, viewFilter.virtualAgentIds);
+            Objects.equals(this.virtualAgentIds, viewFilter.virtualAgentIds) &&
+            Objects.equals(this.empathyScoreCategories, viewFilter.empathyScoreCategories) &&
+            Objects.equals(this.sentimentScoreCategories, viewFilter.sentimentScoreCategories) &&
+            Objects.equals(this.sentimentTrendCategories, viewFilter.sentimentTrendCategories);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds, empathyScoreCategories, sentimentScoreCategories, sentimentTrendCategories);
   }
 
   @Override
@@ -7301,6 +7512,9 @@ public class ViewFilter  implements Serializable {
     sb.append("    deliveryPushed: ").append(toIndentedString(deliveryPushed)).append("\n");
     sb.append("    socialRatings: ").append(toIndentedString(socialRatings)).append("\n");
     sb.append("    virtualAgentIds: ").append(toIndentedString(virtualAgentIds)).append("\n");
+    sb.append("    empathyScoreCategories: ").append(toIndentedString(empathyScoreCategories)).append("\n");
+    sb.append("    sentimentScoreCategories: ").append(toIndentedString(sentimentScoreCategories)).append("\n");
+    sb.append("    sentimentTrendCategories: ").append(toIndentedString(sentimentTrendCategories)).append("\n");
     sb.append("}");
     return sb.toString();
   }

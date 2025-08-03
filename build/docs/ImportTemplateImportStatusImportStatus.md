@@ -13,6 +13,7 @@
 | **targetContactListIds** | **List&lt;String&gt;** | The ids for target contact lists |  [optional] |
 | **listNamePrefix** | **String** | The prefix used for target contact list names |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **getAdditionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 ## Enum: ImportStateEnum
@@ -26,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

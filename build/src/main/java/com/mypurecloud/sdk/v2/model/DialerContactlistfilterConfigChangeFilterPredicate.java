@@ -138,6 +138,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
   private DialerContactlistfilterConfigChangeFilterRange range = null;
   private Boolean inverted = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerContactlistfilterConfigChangeFilterPredicate() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -269,6 +270,23 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
   }
 
 
+  /**
+   **/
+  public DialerContactlistfilterConfigChangeFilterPredicate getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -285,12 +303,13 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
             Objects.equals(this.value, dialerContactlistfilterConfigChangeFilterPredicate.value) &&
             Objects.equals(this.range, dialerContactlistfilterConfigChangeFilterPredicate.range) &&
             Objects.equals(this.inverted, dialerContactlistfilterConfigChangeFilterPredicate.inverted) &&
-            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterPredicate.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterPredicate.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerContactlistfilterConfigChangeFilterPredicate.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(column, columnType, operator, value, range, inverted, additionalProperties);
+    return Objects.hash(column, columnType, operator, value, range, inverted, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -305,6 +324,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssistanceCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +27,55 @@ import java.io.Serializable;
 public class AnswerOption  implements Serializable {
   
   private String id = null;
+  private String contextId = null;
+
+  private static class BuiltInTypeEnumDeserializer extends StdDeserializer<BuiltInTypeEnum> {
+    public BuiltInTypeEnumDeserializer() {
+      super(BuiltInTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public BuiltInTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BuiltInTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected
+   */
+ @JsonDeserialize(using = BuiltInTypeEnumDeserializer.class)
+  public enum BuiltInTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SELECTED("Selected"),
+    UNSELECTED("Unselected");
+
+    private String value;
+
+    BuiltInTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BuiltInTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BuiltInTypeEnum value : BuiltInTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BuiltInTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private BuiltInTypeEnum builtInType = null;
   private String text = null;
   private Integer value = null;
   private List<AssistanceCondition> assistanceConditions = null;
@@ -51,6 +101,31 @@ public class AnswerOption  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "An identifier for this answer that stays the same across versions of the form.")
+  @JsonProperty("contextId")
+  public String getContextId() {
+    return contextId;
+  }
+
+
+  /**
+   * The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected
+   **/
+  public AnswerOption builtInType(BuiltInTypeEnum builtInType) {
+    this.builtInType = builtInType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected")
+  @JsonProperty("builtInType")
+  public BuiltInTypeEnum getBuiltInType() {
+    return builtInType;
+  }
+  public void setBuiltInType(BuiltInTypeEnum builtInType) {
+    this.builtInType = builtInType;
   }
 
 
@@ -117,6 +192,8 @@ public class AnswerOption  implements Serializable {
     AnswerOption answerOption = (AnswerOption) o;
 
     return Objects.equals(this.id, answerOption.id) &&
+            Objects.equals(this.contextId, answerOption.contextId) &&
+            Objects.equals(this.builtInType, answerOption.builtInType) &&
             Objects.equals(this.text, answerOption.text) &&
             Objects.equals(this.value, answerOption.value) &&
             Objects.equals(this.assistanceConditions, answerOption.assistanceConditions);
@@ -124,7 +201,7 @@ public class AnswerOption  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, value, assistanceConditions);
+    return Objects.hash(id, contextId, builtInType, text, value, assistanceConditions);
   }
 
   @Override
@@ -133,6 +210,8 @@ public class AnswerOption  implements Serializable {
     sb.append("class AnswerOption {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
+    sb.append("    builtInType: ").append(toIndentedString(builtInType)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    assistanceConditions: ").append(toIndentedString(assistanceConditions)).append("\n");

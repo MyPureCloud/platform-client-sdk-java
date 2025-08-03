@@ -77,6 +77,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
   private DirectionEnum direction = null;
   private Boolean numeric = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public OutboundMessagingMessagingCampaignConfigChangeContactSort() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -153,6 +154,23 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
   }
 
 
+  /**
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeContactSort getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -166,12 +184,13 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     return Objects.equals(this.fieldName, outboundMessagingMessagingCampaignConfigChangeContactSort.fieldName) &&
             Objects.equals(this.direction, outboundMessagingMessagingCampaignConfigChangeContactSort.direction) &&
             Objects.equals(this.numeric, outboundMessagingMessagingCampaignConfigChangeContactSort.numeric) &&
-            Objects.equals(this.additionalProperties, outboundMessagingMessagingCampaignConfigChangeContactSort.additionalProperties);
+            Objects.equals(this.additionalProperties, outboundMessagingMessagingCampaignConfigChangeContactSort.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, outboundMessagingMessagingCampaignConfigChangeContactSort.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldName, direction, numeric, additionalProperties);
+    return Objects.hash(fieldName, direction, numeric, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -183,6 +202,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    numeric: ").append(toIndentedString(numeric)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainPermissionPolicy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -33,8 +34,11 @@ public class DomainOrganizationRole  implements Serializable {
   private List<DomainPermissionPolicy> permissionPolicies = null;
   private Integer userCount = null;
   private Boolean roleNeedsUpdate = null;
-  private Boolean base = null;
+  private String baseLicense = null;
+  private List<String> addonLicenses = null;
+  private Date dateLicenseLastUpdated = null;
   private Boolean _default = null;
+  private Boolean base = null;
   private String selfUri = null;
 
   public DomainOrganizationRole() {
@@ -42,6 +46,7 @@ public class DomainOrganizationRole  implements Serializable {
       permissions = new ArrayList<String>();
       unusedPermissions = new ArrayList<String>();
       permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+      addonLicenses = new ArrayList<String>();
     }
   }
 
@@ -193,18 +198,42 @@ public class DomainOrganizationRole  implements Serializable {
 
   /**
    **/
-  public DomainOrganizationRole base(Boolean base) {
-    this.base = base;
+  public DomainOrganizationRole baseLicense(String baseLicense) {
+    this.baseLicense = baseLicense;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("base")
-  public Boolean getBase() {
-    return base;
+  @JsonProperty("baseLicense")
+  public String getBaseLicense() {
+    return baseLicense;
   }
-  public void setBase(Boolean base) {
-    this.base = base;
+  public void setBaseLicense(String baseLicense) {
+    this.baseLicense = baseLicense;
+  }
+
+
+  /**
+   **/
+  public DomainOrganizationRole addonLicenses(List<String> addonLicenses) {
+    this.addonLicenses = addonLicenses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("addonLicenses")
+  public List<String> getAddonLicenses() {
+    return addonLicenses;
+  }
+  public void setAddonLicenses(List<String> addonLicenses) {
+    this.addonLicenses = addonLicenses;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateLicenseLastUpdated")
+  public Date getDateLicenseLastUpdated() {
+    return dateLicenseLastUpdated;
   }
 
 
@@ -222,6 +251,23 @@ public class DomainOrganizationRole  implements Serializable {
   }
   public void setDefault(Boolean _default) {
     this._default = _default;
+  }
+
+
+  /**
+   **/
+  public DomainOrganizationRole base(Boolean base) {
+    this.base = base;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("base")
+  public Boolean getBase() {
+    return base;
+  }
+  public void setBase(Boolean base) {
+    this.base = base;
   }
 
 
@@ -251,14 +297,17 @@ public class DomainOrganizationRole  implements Serializable {
             Objects.equals(this.permissionPolicies, domainOrganizationRole.permissionPolicies) &&
             Objects.equals(this.userCount, domainOrganizationRole.userCount) &&
             Objects.equals(this.roleNeedsUpdate, domainOrganizationRole.roleNeedsUpdate) &&
-            Objects.equals(this.base, domainOrganizationRole.base) &&
+            Objects.equals(this.baseLicense, domainOrganizationRole.baseLicense) &&
+            Objects.equals(this.addonLicenses, domainOrganizationRole.addonLicenses) &&
+            Objects.equals(this.dateLicenseLastUpdated, domainOrganizationRole.dateLicenseLastUpdated) &&
             Objects.equals(this._default, domainOrganizationRole._default) &&
+            Objects.equals(this.base, domainOrganizationRole.base) &&
             Objects.equals(this.selfUri, domainOrganizationRole.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, defaultRoleId, permissions, unusedPermissions, permissionPolicies, userCount, roleNeedsUpdate, base, _default, selfUri);
+    return Objects.hash(id, name, description, defaultRoleId, permissions, unusedPermissions, permissionPolicies, userCount, roleNeedsUpdate, baseLicense, addonLicenses, dateLicenseLastUpdated, _default, base, selfUri);
   }
 
   @Override
@@ -275,8 +324,11 @@ public class DomainOrganizationRole  implements Serializable {
     sb.append("    permissionPolicies: ").append(toIndentedString(permissionPolicies)).append("\n");
     sb.append("    userCount: ").append(toIndentedString(userCount)).append("\n");
     sb.append("    roleNeedsUpdate: ").append(toIndentedString(roleNeedsUpdate)).append("\n");
-    sb.append("    base: ").append(toIndentedString(base)).append("\n");
+    sb.append("    baseLicense: ").append(toIndentedString(baseLicense)).append("\n");
+    sb.append("    addonLicenses: ").append(toIndentedString(addonLicenses)).append("\n");
+    sb.append("    dateLicenseLastUpdated: ").append(toIndentedString(dateLicenseLastUpdated)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    sb.append("    base: ").append(toIndentedString(base)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

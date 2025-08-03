@@ -88,6 +88,7 @@ public class JourneyEventsSettings  implements Serializable {
   private List<IdleEventTrigger> idleEvents = null;
   private List<SelectorEventTrigger> inViewportEvents = null;
   private List<ScrollPercentageEventTrigger> scrollDepthEvents = null;
+  private Object trackingSettings = null;
 
   public JourneyEventsSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -121,14 +122,14 @@ public class JourneyEventsSettings  implements Serializable {
 
 
   /**
-   * List of parameters to be excluded from the query string.
+   * (deprecated) List of parameters to be excluded from the query string.
    **/
   public JourneyEventsSettings excludedQueryParameters(List<String> excludedQueryParameters) {
     this.excludedQueryParameters = excludedQueryParameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of parameters to be excluded from the query string.")
+  @ApiModelProperty(example = "null", value = "(deprecated) List of parameters to be excluded from the query string.")
   @JsonProperty("excludedQueryParameters")
   public List<String> getExcludedQueryParameters() {
     return excludedQueryParameters;
@@ -139,14 +140,14 @@ public class JourneyEventsSettings  implements Serializable {
 
 
   /**
-   * Whether or not to keep the URL fragment.
+   * (deprecated) Whether or not to keep the URL fragment.
    **/
   public JourneyEventsSettings shouldKeepUrlFragment(Boolean shouldKeepUrlFragment) {
     this.shouldKeepUrlFragment = shouldKeepUrlFragment;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not to keep the URL fragment.")
+  @ApiModelProperty(example = "null", value = "(deprecated) Whether or not to keep the URL fragment.")
   @JsonProperty("shouldKeepUrlFragment")
   public Boolean getShouldKeepUrlFragment() {
     return shouldKeepUrlFragment;
@@ -157,14 +158,14 @@ public class JourneyEventsSettings  implements Serializable {
 
 
   /**
-   * List of query parameters used for search (e.g. 'q').
+   * (deprecated) List of query parameters used for search (e.g. 'q').
    **/
   public JourneyEventsSettings searchQueryParameters(List<String> searchQueryParameters) {
     this.searchQueryParameters = searchQueryParameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of query parameters used for search (e.g. 'q').")
+  @ApiModelProperty(example = "null", value = "(deprecated) List of query parameters used for search (e.g. 'q').")
   @JsonProperty("searchQueryParameters")
   public List<String> getSearchQueryParameters() {
     return searchQueryParameters;
@@ -282,6 +283,24 @@ public class JourneyEventsSettings  implements Serializable {
   }
 
 
+  /**
+   * Configuration settings for tracking behavior and filtering
+   **/
+  public JourneyEventsSettings trackingSettings(Object trackingSettings) {
+    this.trackingSettings = trackingSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration settings for tracking behavior and filtering")
+  @JsonProperty("trackingSettings")
+  public Object getTrackingSettings() {
+    return trackingSettings;
+  }
+  public void setTrackingSettings(Object trackingSettings) {
+    this.trackingSettings = trackingSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -301,12 +320,13 @@ public class JourneyEventsSettings  implements Serializable {
             Objects.equals(this.formsTrackEvents, journeyEventsSettings.formsTrackEvents) &&
             Objects.equals(this.idleEvents, journeyEventsSettings.idleEvents) &&
             Objects.equals(this.inViewportEvents, journeyEventsSettings.inViewportEvents) &&
-            Objects.equals(this.scrollDepthEvents, journeyEventsSettings.scrollDepthEvents);
+            Objects.equals(this.scrollDepthEvents, journeyEventsSettings.scrollDepthEvents) &&
+            Objects.equals(this.trackingSettings, journeyEventsSettings.trackingSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, excludedQueryParameters, shouldKeepUrlFragment, searchQueryParameters, pageviewConfig, clickEvents, formsTrackEvents, idleEvents, inViewportEvents, scrollDepthEvents);
+    return Objects.hash(enabled, excludedQueryParameters, shouldKeepUrlFragment, searchQueryParameters, pageviewConfig, clickEvents, formsTrackEvents, idleEvents, inViewportEvents, scrollDepthEvents, trackingSettings);
   }
 
   @Override
@@ -324,6 +344,7 @@ public class JourneyEventsSettings  implements Serializable {
     sb.append("    idleEvents: ").append(toIndentedString(idleEvents)).append("\n");
     sb.append("    inViewportEvents: ").append(toIndentedString(inViewportEvents)).append("\n");
     sb.append("    scrollDepthEvents: ").append(toIndentedString(scrollDepthEvents)).append("\n");
+    sb.append("    trackingSettings: ").append(toIndentedString(trackingSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

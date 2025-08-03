@@ -20,9 +20,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The localization settings for homescreen
+ * The localization settings for homescreen and push notification
  */
-@ApiModel(description = "The localization settings for homescreen")
+@ApiModel(description = "The localization settings for homescreen and push notification")
 
 public class CustomI18nLabels  implements Serializable {
   
@@ -37,14 +37,14 @@ public class CustomI18nLabels  implements Serializable {
 
   
   /**
-   * Language of localized labels in homescreen app (eg. en-us, de-de)
+   * Language of localized labels in homescreen app (eg. en-us, de-de) and push notification
    **/
   public CustomI18nLabels language(String language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Language of localized labels in homescreen app (eg. en-us, de-de)")
+  @ApiModelProperty(example = "null", value = "Language of localized labels in homescreen app (eg. en-us, de-de) and push notification")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
@@ -55,14 +55,14 @@ public class CustomI18nLabels  implements Serializable {
 
 
   /**
-   * Contains localized labels used in homescreen app
+   * Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled.
    **/
   public CustomI18nLabels localizedLabels(List<LocalizedLabels> localizedLabels) {
     this.localizedLabels = localizedLabels;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contains localized labels used in homescreen app")
+  @ApiModelProperty(example = "null", value = "Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled.")
   @JsonProperty("localizedLabels")
   public List<LocalizedLabels> getLocalizedLabels() {
     return localizedLabels;

@@ -118,6 +118,7 @@
 | AUTHORIZATIONCHANGED | &quot;AuthorizationChanged&quot; | 
 | CHANGEPASSWORD | &quot;ChangePassword&quot; | 
 | REVOKE | &quot;Revoke&quot; | 
+| LICENSEUPDATE | &quot;LicenseUpdate&quot; | 
 | CHECKIN | &quot;Checkin&quot; | 
 | CHECKOUT | &quot;Checkout&quot; | 
 | DEACTIVATE | &quot;Deactivate&quot; | 
@@ -170,6 +171,8 @@
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
+| INREVIEW | &quot;InReview&quot; | 
+| ACTIVE | &quot;Active&quot; | 
 | WRITE | &quot;Write&quot; | 
 | REPLACE | &quot;Replace&quot; | 
 | UPDATEINSERVICE | &quot;UpdateInService&quot; | 
@@ -214,6 +217,7 @@
 | CALCULATE | &quot;Calculate&quot; | 
 | PROVISIONED | &quot;Provisioned&quot; | 
 | UPDATEABORTED | &quot;UpdateAborted&quot; | 
+| EDIT | &quot;Edit&quot; | 
 
 
 ## Enum: EntityTypeEnum
@@ -389,6 +393,7 @@
 | EXPORTPDFTEMPLATES | &quot;ExportPdfTemplates&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
 | MIGRATION | &quot;Migration&quot; | 
+| SUSPENSION | &quot;Suspension&quot; | 
 | EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; | 
 | EXTERNALMETRICSDATA | &quot;ExternalMetricsData&quot; | 
 | SCHEMA | &quot;Schema&quot; | 
@@ -457,8 +462,9 @@
 | NOTE | &quot;Note&quot; | 
 | RELATIONSHIP | &quot;Relationship&quot; | 
 | EXTERNALORG | &quot;ExternalOrg&quot; | 
+| SOCIALMEDIAMESSAGE | &quot;SocialMediaMessage&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

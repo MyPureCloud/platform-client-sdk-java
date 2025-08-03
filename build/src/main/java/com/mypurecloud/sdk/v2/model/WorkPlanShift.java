@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.PlanningPeriodShiftConstraints;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
 import com.mypurecloud.sdk.v2.model.WorkPlanActivity;
 import io.swagger.annotations.ApiModel;
@@ -95,6 +96,7 @@ public class WorkPlanShift  implements Serializable {
     }
   }
   private DayOffRuleEnum dayOffRule = null;
+  private PlanningPeriodShiftConstraints planningPeriodConstraints = null;
   private List<WorkPlanActivity> activities = null;
   private String id = null;
   private Boolean delete = null;
@@ -486,6 +488,24 @@ public class WorkPlanShift  implements Serializable {
 
 
   /**
+   * Planning period constraints
+   **/
+  public WorkPlanShift planningPeriodConstraints(PlanningPeriodShiftConstraints planningPeriodConstraints) {
+    this.planningPeriodConstraints = planningPeriodConstraints;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Planning period constraints")
+  @JsonProperty("planningPeriodConstraints")
+  public PlanningPeriodShiftConstraints getPlanningPeriodConstraints() {
+    return planningPeriodConstraints;
+  }
+  public void setPlanningPeriodConstraints(PlanningPeriodShiftConstraints planningPeriodConstraints) {
+    this.planningPeriodConstraints = planningPeriodConstraints;
+  }
+
+
+  /**
    * Activities configured for this shift
    **/
   public WorkPlanShift activities(List<WorkPlanActivity> activities) {
@@ -588,6 +608,7 @@ public class WorkPlanShift  implements Serializable {
             Objects.equals(this.maximumContiguousWorkTimeMinutes, workPlanShift.maximumContiguousWorkTimeMinutes) &&
             Objects.equals(this.constrainDayOff, workPlanShift.constrainDayOff) &&
             Objects.equals(this.dayOffRule, workPlanShift.dayOffRule) &&
+            Objects.equals(this.planningPeriodConstraints, workPlanShift.planningPeriodConstraints) &&
             Objects.equals(this.activities, workPlanShift.activities) &&
             Objects.equals(this.id, workPlanShift.id) &&
             Objects.equals(this.delete, workPlanShift.delete) &&
@@ -596,7 +617,7 @@ public class WorkPlanShift  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, constrainDayOff, dayOffRule, activities, id, delete, validationId);
+    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, constrainDayOff, dayOffRule, planningPeriodConstraints, activities, id, delete, validationId);
   }
 
   @Override
@@ -625,6 +646,7 @@ public class WorkPlanShift  implements Serializable {
     sb.append("    maximumContiguousWorkTimeMinutes: ").append(toIndentedString(maximumContiguousWorkTimeMinutes)).append("\n");
     sb.append("    constrainDayOff: ").append(toIndentedString(constrainDayOff)).append("\n");
     sb.append("    dayOffRule: ").append(toIndentedString(dayOffRule)).append("\n");
+    sb.append("    planningPeriodConstraints: ").append(toIndentedString(planningPeriodConstraints)).append("\n");
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    delete: ").append(toIndentedString(delete)).append("\n");

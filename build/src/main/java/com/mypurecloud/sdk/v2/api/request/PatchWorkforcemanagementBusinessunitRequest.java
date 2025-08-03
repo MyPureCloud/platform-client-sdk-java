@@ -105,10 +105,19 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupAllocationsResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupMetricChangeHistoryListResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingGroupMetricChangeResponse;
+import com.mypurecloud.sdk.v2.model.CapacityPlanStaffingRequirementResult;
+import com.mypurecloud.sdk.v2.model.CapacityPlansListResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastGetSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSessionResponse;
 import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.CopyCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
@@ -118,6 +127,7 @@ import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.CreateCapacityPlanStaffingGroupMetricChangeRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
@@ -149,6 +159,7 @@ import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.ListAlternativeShiftTradesResponse;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.LongTermRequirementsResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
@@ -165,9 +176,12 @@ import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResp
 import com.mypurecloud.sdk.v2.model.PerformancePredictionResponse;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
+import com.mypurecloud.sdk.v2.model.PlanningGroupToStaffingGroupsListing;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.QueryCapacityPlanStaffingGroupMetricChangeHistory;
+import com.mypurecloud.sdk.v2.model.QueryPlanningGroupToStaffingGroupsRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
@@ -206,6 +220,7 @@ import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
@@ -292,6 +307,20 @@ public class PatchWorkforcemanagementBusinessunitRequest {
 	    return this;
 	} 
 
+	private Boolean includeSchedulingDefaultMessageSeverities;
+	public Boolean getIncludeSchedulingDefaultMessageSeverities() {
+		return this.includeSchedulingDefaultMessageSeverities;
+	}
+
+	public void setIncludeSchedulingDefaultMessageSeverities(Boolean includeSchedulingDefaultMessageSeverities) {
+		this.includeSchedulingDefaultMessageSeverities = includeSchedulingDefaultMessageSeverities;
+	}
+
+	public PatchWorkforcemanagementBusinessunitRequest withIncludeSchedulingDefaultMessageSeverities(Boolean includeSchedulingDefaultMessageSeverities) {
+	    this.setIncludeSchedulingDefaultMessageSeverities(includeSchedulingDefaultMessageSeverities);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -326,6 +355,9 @@ public class PatchWorkforcemanagementBusinessunitRequest {
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}")
                 .withPathParameter("businessUnitId", businessUnitId)
+        
+
+                .withQueryParameters("includeSchedulingDefaultMessageSeverities", "", includeSchedulingDefaultMessageSeverities)
         
                 .withBody(body)
 
@@ -362,6 +394,11 @@ public class PatchWorkforcemanagementBusinessunitRequest {
 
 		public Builder withBody(UpdateBusinessUnitRequest body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withIncludeSchedulingDefaultMessageSeverities(Boolean includeSchedulingDefaultMessageSeverities) {
+			request.setIncludeSchedulingDefaultMessageSeverities(includeSchedulingDefaultMessageSeverities);
 			return this;
 		}
 

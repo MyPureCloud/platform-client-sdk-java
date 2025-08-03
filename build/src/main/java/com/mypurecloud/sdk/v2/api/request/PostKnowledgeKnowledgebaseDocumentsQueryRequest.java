@@ -48,6 +48,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentChunkResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
@@ -157,7 +159,8 @@ public class PostKnowledgeKnowledgebaseDocumentsQueryRequest {
 	public enum expandValues { 
 		DOCUMENTVARIATIONS("documentVariations"),
 		DOCUMENTALTERNATIVES("documentAlternatives"),
-		KNOWLEDGEBASELANGUAGECODE("knowledgeBaseLanguageCode");
+		KNOWLEDGEBASELANGUAGECODE("knowledgeBaseLanguageCode"),
+		VARIATIONCHUNKS("variationChunks");
 
 		private String value;
 

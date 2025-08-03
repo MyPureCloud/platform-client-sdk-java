@@ -86,12 +86,14 @@ public class EvaluationQuestion  implements Serializable {
   private Boolean commentsRequired = null;
   private VisibilityCondition visibilityCondition = null;
   private List<AnswerOption> answerOptions = null;
+  private List<EvaluationQuestion> multipleSelectOptionQuestions = null;
   private Boolean isKill = null;
   private Boolean isCritical = null;
 
   public EvaluationQuestion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       answerOptions = new ArrayList<AnswerOption>();
+      multipleSelectOptionQuestions = new ArrayList<EvaluationQuestion>();
     }
   }
 
@@ -241,6 +243,24 @@ public class EvaluationQuestion  implements Serializable {
 
 
   /**
+   * Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options.
+   **/
+  public EvaluationQuestion multipleSelectOptionQuestions(List<EvaluationQuestion> multipleSelectOptionQuestions) {
+    this.multipleSelectOptionQuestions = multipleSelectOptionQuestions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options.")
+  @JsonProperty("multipleSelectOptionQuestions")
+  public List<EvaluationQuestion> getMultipleSelectOptionQuestions() {
+    return multipleSelectOptionQuestions;
+  }
+  public void setMultipleSelectOptionQuestions(List<EvaluationQuestion> multipleSelectOptionQuestions) {
+    this.multipleSelectOptionQuestions = multipleSelectOptionQuestions;
+  }
+
+
+  /**
    **/
   public EvaluationQuestion isKill(Boolean isKill) {
     this.isKill = isKill;
@@ -293,13 +313,14 @@ public class EvaluationQuestion  implements Serializable {
             Objects.equals(this.commentsRequired, evaluationQuestion.commentsRequired) &&
             Objects.equals(this.visibilityCondition, evaluationQuestion.visibilityCondition) &&
             Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
+            Objects.equals(this.multipleSelectOptionQuestions, evaluationQuestion.multipleSelectOptionQuestions) &&
             Objects.equals(this.isKill, evaluationQuestion.isKill) &&
             Objects.equals(this.isCritical, evaluationQuestion.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, isKill, isCritical);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, isKill, isCritical);
   }
 
   @Override
@@ -316,6 +337,7 @@ public class EvaluationQuestion  implements Serializable {
     sb.append("    commentsRequired: ").append(toIndentedString(commentsRequired)).append("\n");
     sb.append("    visibilityCondition: ").append(toIndentedString(visibilityCondition)).append("\n");
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
+    sb.append("    multipleSelectOptionQuestions: ").append(toIndentedString(multipleSelectOptionQuestions)).append("\n");
     sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
     sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");

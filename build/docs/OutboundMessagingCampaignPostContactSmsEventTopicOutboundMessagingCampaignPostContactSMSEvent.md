@@ -26,6 +26,7 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
+| WHATSAPP | &quot;WHATSAPP&quot; | 
 
 
 ## Enum: WrapupCodeEnum
@@ -41,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_

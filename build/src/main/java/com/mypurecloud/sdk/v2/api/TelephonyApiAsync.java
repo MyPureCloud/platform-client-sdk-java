@@ -13,23 +13,29 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AgentGreeting;
 import com.mypurecloud.sdk.v2.model.Callheader;
 import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SelfAgentGreeting;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentGreetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyAgentsGreetingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentGreetingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyAgentsGreetingsMeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +53,160 @@ public class TelephonyApiAsync {
 
   public TelephonyApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentGreeting> getTelephonyAgentGreetingsAsync(GetTelephonyAgentGreetingsRequest request, final AsyncApiCallback<AgentGreeting> callback) {
+    try {
+      final SettableFuture<AgentGreeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentGreeting>() {}, new AsyncApiCallback<ApiResponse<AgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentGreeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an agent's greetings.
+   * 
+   * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentGreeting>> getTelephonyAgentGreetingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentGreeting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentGreeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentGreeting>() {}, new AsyncApiCallback<ApiResponse<AgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentGreeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfAgentGreeting> getTelephonyAgentsGreetingsMeAsync(GetTelephonyAgentsGreetingsMeRequest request, final AsyncApiCallback<SelfAgentGreeting> callback) {
+    try {
+      final SettableFuture<SelfAgentGreeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfAgentGreeting>() {}, new AsyncApiCallback<ApiResponse<SelfAgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfAgentGreeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the agent's own greetings.
+   * 
+   * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfAgentGreeting>> getTelephonyAgentsGreetingsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfAgentGreeting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfAgentGreeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfAgentGreeting>() {}, new AsyncApiCallback<ApiResponse<SelfAgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfAgentGreeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -488,6 +648,160 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SipDownloadResponse> response = (ApiResponse<SipDownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentGreeting> putTelephonyAgentGreetingsAsync(PutTelephonyAgentGreetingsRequest request, final AsyncApiCallback<AgentGreeting> callback) {
+    try {
+      final SettableFuture<AgentGreeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentGreeting>() {}, new AsyncApiCallback<ApiResponse<AgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentGreeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates an agent's greetings.
+   * 
+   * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentGreeting>> putTelephonyAgentGreetingsAsync(ApiRequest<AgentGreeting> request, final AsyncApiCallback<ApiResponse<AgentGreeting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentGreeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentGreeting>() {}, new AsyncApiCallback<ApiResponse<AgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentGreeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentGreeting> response = (ApiResponse<AgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfAgentGreeting> putTelephonyAgentsGreetingsMeAsync(PutTelephonyAgentsGreetingsMeRequest request, final AsyncApiCallback<SelfAgentGreeting> callback) {
+    try {
+      final SettableFuture<SelfAgentGreeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfAgentGreeting>() {}, new AsyncApiCallback<ApiResponse<SelfAgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfAgentGreeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates the agent's own greetings.
+   * 
+   * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfAgentGreeting>> putTelephonyAgentsGreetingsMeAsync(ApiRequest<SelfAgentGreeting> request, final AsyncApiCallback<ApiResponse<SelfAgentGreeting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfAgentGreeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfAgentGreeting>() {}, new AsyncApiCallback<ApiResponse<SelfAgentGreeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfAgentGreeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfAgentGreeting> response = (ApiResponse<SelfAgentGreeting>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

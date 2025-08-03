@@ -115,7 +115,8 @@ public class Response  implements Serializable {
     MESSAGINGTEMPLATE("MessagingTemplate"),
     CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate"),
     CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate"),
-    FOOTER("Footer");
+    FOOTER("Footer"),
+    FORM("Form");
 
     private String value;
 

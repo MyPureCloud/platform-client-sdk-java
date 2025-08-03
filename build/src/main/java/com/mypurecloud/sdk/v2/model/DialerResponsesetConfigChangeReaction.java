@@ -79,6 +79,7 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
   }
   private ReactionTypeEnum reactionType = null;
   private Map<String, Object> additionalProperties = null;
+  private Map<String, Object> getAdditionalProperties = null;
 
   public DialerResponsesetConfigChangeReaction() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -154,6 +155,23 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerResponsesetConfigChangeReaction getAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("getAdditionalProperties")
+  public Map<String, Object> getGetAdditionalProperties() {
+    return getAdditionalProperties;
+  }
+  public void setGetAdditionalProperties(Map<String, Object> getAdditionalProperties) {
+    this.getAdditionalProperties = getAdditionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +185,13 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     return Objects.equals(this.data, dialerResponsesetConfigChangeReaction.data) &&
             Objects.equals(this.name, dialerResponsesetConfigChangeReaction.name) &&
             Objects.equals(this.reactionType, dialerResponsesetConfigChangeReaction.reactionType) &&
-            Objects.equals(this.additionalProperties, dialerResponsesetConfigChangeReaction.additionalProperties);
+            Objects.equals(this.additionalProperties, dialerResponsesetConfigChangeReaction.additionalProperties) &&
+            Objects.equals(this.getAdditionalProperties, dialerResponsesetConfigChangeReaction.getAdditionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data, name, reactionType, additionalProperties);
+    return Objects.hash(data, name, reactionType, additionalProperties, getAdditionalProperties);
   }
 
   @Override
@@ -184,6 +203,7 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    reactionType: ").append(toIndentedString(reactionType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    getAdditionalProperties: ").append(toIndentedString(getAdditionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

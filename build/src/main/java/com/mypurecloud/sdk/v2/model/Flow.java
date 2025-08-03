@@ -183,6 +183,7 @@ public class Flow  implements Serializable {
   private List<CompatibleFlowTypesEnum> compatibleFlowTypes = null;
   private String worktypeId = null;
   private Boolean virtualAgentEnabled = null;
+  private Boolean agenticVirtualAgentEnabled = null;
   private String selfUri = null;
 
   public Flow() {
@@ -561,6 +562,23 @@ public class Flow  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Flow agenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agenticVirtualAgentEnabled")
+  public Boolean getAgenticVirtualAgentEnabled() {
+    return agenticVirtualAgentEnabled;
+  }
+  public void setAgenticVirtualAgentEnabled(Boolean agenticVirtualAgentEnabled) {
+    this.agenticVirtualAgentEnabled = agenticVirtualAgentEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -601,12 +619,13 @@ public class Flow  implements Serializable {
             Objects.equals(this.compatibleFlowTypes, flow.compatibleFlowTypes) &&
             Objects.equals(this.worktypeId, flow.worktypeId) &&
             Objects.equals(this.virtualAgentEnabled, flow.virtualAgentEnabled) &&
+            Objects.equals(this.agenticVirtualAgentEnabled, flow.agenticVirtualAgentEnabled) &&
             Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, compatibleFlowTypes, worktypeId, virtualAgentEnabled, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, compatibleFlowTypes, worktypeId, virtualAgentEnabled, agenticVirtualAgentEnabled, selfUri);
   }
 
   @Override
@@ -637,6 +656,7 @@ public class Flow  implements Serializable {
     sb.append("    compatibleFlowTypes: ").append(toIndentedString(compatibleFlowTypes)).append("\n");
     sb.append("    worktypeId: ").append(toIndentedString(worktypeId)).append("\n");
     sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
+    sb.append("    agenticVirtualAgentEnabled: ").append(toIndentedString(agenticVirtualAgentEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

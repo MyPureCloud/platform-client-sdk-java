@@ -50,8 +50,7 @@ public class IgnoredActivityCategories  implements Serializable {
     OFFQUEUEWORK("OffQueueWork"),
     TIMEOFF("TimeOff"),
     TRAINING("Training"),
-    UNAVAILABLE("Unavailable"),
-    UNSCHEDULED("Unscheduled");
+    UNAVAILABLE("Unavailable");
 
     private String value;
 

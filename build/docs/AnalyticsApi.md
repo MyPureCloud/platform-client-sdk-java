@@ -4,7 +4,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | Delete/cancel an async request for action aggregates |
+| [**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | Delete/cancel an async request for agent copilot aggregates |
+| [**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | Delete/cancel an async request for bot aggregates |
+| [**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | Delete/cancel an async request for conversation aggregates |
 | [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
+| [**deleteAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob) | Delete/cancel an async request for evaluation aggregates |
+| [**deleteAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowexecutionsAggregatesJob) | Delete/cancel an async request for flow execution aggregates |
+| [**deleteAnalyticsFlowsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowsAggregatesJob) | Delete/cancel an async request for flow aggregates |
+| [**deleteAnalyticsJourneysAggregatesJob**](AnalyticsApi#deleteAnalyticsJourneysAggregatesJob) | Delete/cancel an async request for journey aggregates |
+| [**deleteAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#deleteAnalyticsKnowledgeAggregatesJob) | Delete/cancel an async request for knowledge aggregates |
+| [**deleteAnalyticsResolutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsResolutionsAggregatesJob) | Delete/cancel an async request for resolution aggregates |
+| [**deleteAnalyticsSummariesAggregatesJob**](AnalyticsApi#deleteAnalyticsSummariesAggregatesJob) | Delete/cancel an async request for summary aggregates |
+| [**deleteAnalyticsSurveysAggregatesJob**](AnalyticsApi#deleteAnalyticsSurveysAggregatesJob) | Delete/cancel an async request for survey aggregates |
+| [**deleteAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsTaskmanagementAggregatesJob) | Delete/cancel an async request for task management aggregates |
+| [**deleteAnalyticsTranscriptsAggregatesJob**](AnalyticsApi#deleteAnalyticsTranscriptsAggregatesJob) | Delete/cancel an async request for transcript aggregates |
+| [**deleteAnalyticsUsersAggregatesJob**](AnalyticsApi#deleteAnalyticsUsersAggregatesJob) | Delete/cancel an async request for user aggregates |
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | Get status for async query for action aggregates |
 | [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -71,7 +86,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
 | [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
-| [**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
 | [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | Query for evaluation aggregates asynchronously |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | Query for flow execution aggregates asynchronously |
@@ -110,6 +124,247 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersObservationsQuery**](AnalyticsApi#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**putAnalyticsDataretentionSettings**](AnalyticsApi#putAnalyticsDataretentionSettings) | Update analytics data retention setting |
 {: class="table-striped"}
+
+
+# **deleteAnalyticsActionsAggregatesJob**
+
+
+> Void deleteAnalyticsActionsAggregatesJob(jobId)
+
+Delete/cancel an async request for action aggregates
+
+deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsActionsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsActionsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsAgentcopilotsAggregatesJob**
+
+
+> Void deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+Delete/cancel an async request for agent copilot aggregates
+
+deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsBotsAggregatesJob**
+
+
+> Void deleteAnalyticsBotsAggregatesJob(jobId)
+
+Delete/cancel an async request for bot aggregates
+
+deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsBotsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsBotsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsConversationsAggregatesJob**
+
+
+> Void deleteAnalyticsConversationsAggregatesJob(jobId)
+
+Delete/cancel an async request for conversation aggregates
+
+deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsConversationsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteAnalyticsConversationsDetailsJob**
@@ -153,6 +408,666 @@ try {
     apiInstance.deleteAnalyticsConversationsDetailsJob(jobId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsConversationsDetailsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsEvaluationsAggregatesJob**
+
+
+> Void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+
+Delete/cancel an async request for evaluation aggregates
+
+deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsFlowexecutionsAggregatesJob**
+
+
+> Void deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+
+Delete/cancel an async request for flow execution aggregates
+
+deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsFlowexecutionsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsFlowsAggregatesJob**
+
+
+> Void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsFlowsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsJourneysAggregatesJob**
+
+
+> Void deleteAnalyticsJourneysAggregatesJob(jobId)
+
+Delete/cancel an async request for journey aggregates
+
+deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsJourneysAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsKnowledgeAggregatesJob**
+
+
+> Void deleteAnalyticsKnowledgeAggregatesJob(jobId)
+
+Delete/cancel an async request for knowledge aggregates
+
+deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsKnowledgeAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsResolutionsAggregatesJob**
+
+
+> Void deleteAnalyticsResolutionsAggregatesJob(jobId)
+
+Delete/cancel an async request for resolution aggregates
+
+deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsResolutionsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsSummariesAggregatesJob**
+
+
+> Void deleteAnalyticsSummariesAggregatesJob(jobId)
+
+Delete/cancel an async request for summary aggregates
+
+deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsSummariesAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsSurveysAggregatesJob**
+
+
+> Void deleteAnalyticsSurveysAggregatesJob(jobId)
+
+Delete/cancel an async request for survey aggregates
+
+deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsSurveysAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsTaskmanagementAggregatesJob**
+
+
+> Void deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+
+Delete/cancel an async request for task management aggregates
+
+deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsTaskmanagementAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsTranscriptsAggregatesJob**
+
+
+> Void deleteAnalyticsTranscriptsAggregatesJob(jobId)
+
+Delete/cancel an async request for transcript aggregates
+
+deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsTranscriptsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsUsersAggregatesJob**
+
+
+> Void deleteAnalyticsUsersAggregatesJob(jobId)
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsUsersAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsUsersAggregatesJob");
     e.printStackTrace();
 }
 ```
@@ -4250,65 +5165,6 @@ try {
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
 
-# **postAnalyticsConversationsTranscriptsQuery**
-
-
-> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) postAnalyticsConversationsTranscriptsQuery(body)
-
-Search resources.
-
-Wraps POST /api/v2/analytics/conversations/transcripts/query  
-
-Requires ANY permissions: 
-
-* analytics:conversationDetail:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-TranscriptConversationDetailSearchRequest body = new TranscriptConversationDetailSearchRequest(); // TranscriptConversationDetailSearchRequest | Search request options
-try {
-    AnalyticsConversationWithoutAttributesMultiGetResponse result = apiInstance.postAnalyticsConversationsTranscriptsQuery(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#postAnalyticsConversationsTranscriptsQuery");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest)| Search request options | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
-
-
 # **postAnalyticsEvaluationsAggregatesJobs**
 
 
@@ -6533,4 +7389,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:228.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:229.0.0_
