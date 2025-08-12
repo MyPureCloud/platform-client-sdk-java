@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UserRecordingsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DownloadResponse;
+
+public class ExamplegetUserrecordingMedia {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UserRecordingsApi apiInstance = new UserRecordingsApi();
+        String recordingId = "recordingId_example"; // String | User Recording ID
+String formatId = "WEBM"; // String | The desired media format.
+Boolean async = true; // Boolean | When set to true, api will return 202 response until the recording is ready for download
+        try { 
+            // Download a user recording.
+            DownloadResponse result = apiInstance.getUserrecordingMedia(recordingId, formatId, async);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserRecordingsApi#getUserrecordingMedia");
+            e.printStackTrace();
+        }
+    }
+}

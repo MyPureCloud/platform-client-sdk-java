@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CategoryListing;
+
+public class ExamplegetKnowledgeKnowledgebaseLanguageCategories {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        KnowledgeApi apiInstance = new KnowledgeApi();
+        String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String name = "name_example"; // String | Filter to return the categories that starts with the given category name.
+        try { 
+            // Get categories
+            CategoryListing result = apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseLanguageCategories");
+            e.printStackTrace();
+        }
+    }
+}

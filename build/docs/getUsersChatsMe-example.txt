@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
+
+public class ExamplegetUsersChatsMe {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        Boolean excludeClosed = true; // Boolean | Whether or not to exclude closed chats
+Boolean includePresence = true; // Boolean | Whether or not to include user presence
+String after = "after_example"; // String | The key to start after
+        try { 
+            // Get chats for a user
+            ChatItemCursorListing result = apiInstance.getUsersChatsMe(excludeClosed, includePresence, after);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#getUsersChatsMe");
+            e.printStackTrace();
+        }
+    }
+}

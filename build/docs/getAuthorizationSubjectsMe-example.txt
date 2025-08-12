@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AuthzSubject;
+
+public class ExamplegetAuthorizationSubjectsMe {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
+        try { 
+            // Returns a listing of roles and permissions for the currently authenticated user.
+            AuthzSubject result = apiInstance.getAuthorizationSubjectsMe(includeDuplicates);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#getAuthorizationSubjectsMe");
+            e.printStackTrace();
+        }
+    }
+}

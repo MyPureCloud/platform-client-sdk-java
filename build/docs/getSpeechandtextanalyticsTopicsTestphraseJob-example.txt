@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+import com.mypurecloud.sdk.v2.model.TestTopicPhraseJob;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetSpeechandtextanalyticsTopicsTestphraseJob {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+        String jobId = "jobId_example"; // String | the id of the test topic phrase job
+        try { 
+            // Get a Speech & Text Analytics test topics phrase job by id
+            TestTopicPhraseJob result = apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob");
+            e.printStackTrace();
+        }
+    }
+}

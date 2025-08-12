@@ -1,0 +1,28 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+import com.mypurecloud.sdk.v2.model.TranslateSupportedLanguageList;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetSpeechandtextanalyticsTranslationsLanguages {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+                try { 
+            // Get supported translation languages
+            TranslateSupportedLanguageList result = apiInstance.getSpeechandtextanalyticsTranslationsLanguages();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages");
+            e.printStackTrace();
+        }
+    }
+}

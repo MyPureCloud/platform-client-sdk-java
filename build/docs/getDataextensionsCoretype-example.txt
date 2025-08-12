@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.DataExtensionsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Coretype;
+
+public class ExamplegetDataextensionsCoretype {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        DataExtensionsApi apiInstance = new DataExtensionsApi();
+        String coretypeName = "coretypeName_example"; // String | The core type's name
+        try { 
+            // Get a specific named core type.
+            Coretype result = apiInstance.getDataextensionsCoretype(coretypeName);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DataExtensionsApi#getDataextensionsCoretype");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContinuousForecastSnapshotResponse;
+
+public class ExamplegetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String businessUnitId = "businessUnitId_example"; // String | 
+String sessionId = "sessionId_example"; // String | 
+String snapshotId = "snapshotId_example"; // String | 
+        try { 
+            // Get the snapshot details for the snapshot ID
+            ContinuousForecastSnapshotResponse result = apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId");
+            e.printStackTrace();
+        }
+    }
+}

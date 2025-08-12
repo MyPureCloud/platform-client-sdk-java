@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuditApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AuditQueryRequest;import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
+
+public class ExamplepostAuditsQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuditApi apiInstance = new AuditApi();
+        AuditQueryRequest body = new AuditQueryRequest(); // AuditQueryRequest | query
+        try { 
+            // Create audit query execution
+            AuditQueryExecutionStatusResponse result = apiInstance.postAuditsQuery(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuditApi#postAuditsQuery");
+            e.printStackTrace();
+        }
+    }
+}

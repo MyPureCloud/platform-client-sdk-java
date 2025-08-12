@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.model.DialerContact;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampleputOutboundContactlistContact {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OutboundApi apiInstance = new OutboundApi();
+        String contactListId = "contactListId_example"; // String | Contact List ID
+String contactId = "contactId_example"; // String | Contact ID
+DialerContact body = new DialerContact(); // DialerContact | Contact
+        try { 
+            // Update a contact.
+            DialerContact result = apiInstance.putOutboundContactlistContact(contactListId, contactId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OutboundApi#putOutboundContactlistContact");
+            e.printStackTrace();
+        }
+    }
+}

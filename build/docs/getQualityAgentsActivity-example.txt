@@ -1,0 +1,43 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;import com.mypurecloud.sdk.v2.model.Date;
+
+public class ExamplegetQualityAgentsActivity {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        QualityApi apiInstance = new QualityApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+Date startTime = new Date(); // Date | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+Date endTime = new Date(); // Date | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+List<String> agentUserId = Arrays.asList(null); // List<String> | user id of agent requested
+String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
+String name = "name_example"; // String | name
+String group = "group_example"; // String | group id
+String agentTeamId = "agentTeamId_example"; // String | team id of agents requested
+String formContextId = "formContextId_example"; // String | shared id between form versions
+String userState = "Legacy"; // String | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
+        try { 
+            // Gets a list of Agent Activities
+            AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId, userState);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QualityApi#getQualityAgentsActivity");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;
+
+public class ExamplegetGamificationScorecardsUserPointsTrends {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GamificationApi apiInstance = new GamificationApi();
+        String userId = "userId_example"; // String | 
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String dayOfWeek = "dayOfWeek_example"; // String | Optional filter to specify which day of weeks to be included in the response
+        try { 
+            // Points trend for a user
+            WorkdayPointsTrend result = apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, dayOfWeek);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GamificationApi#getGamificationScorecardsUserPointsTrends");
+            e.printStackTrace();
+        }
+    }
+}

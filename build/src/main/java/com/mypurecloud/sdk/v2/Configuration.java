@@ -6,8 +6,11 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import org.ini4j.Ini;
+import org.apache.commons.configuration2.INIConfiguration;
+import org.apache.commons.configuration2.SubnodeConfiguration;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Configuration {
   private static ApiClient defaultApiClient = null;
@@ -196,7 +199,7 @@ public class Configuration {
   private class ConfigurationParser {
     private String filePath;
     private FileFormat fileFormat;
-    private Ini iniData;
+    private INIConfiguration iniData;
     private Map<String, Object> jsonData;
 
     public ConfigurationParser(String filePath) {
@@ -207,14 +210,29 @@ public class Configuration {
     private boolean read() {
       boolean emptyData = true;
       try {
-        byte[] data = Files.readAllBytes(Paths.get(filePath));
-        String contents = new String(data).replaceAll("\\\\", "/");
-        InputStream stream = new ByteArrayInputStream(contents.getBytes());
-
-        iniData = new Ini(stream);
-        
+        iniData = new INIConfiguration();
+        FileReader fileReader = new FileReader(filePath);
+        iniData.read(fileReader);
         fileFormat = FileFormat.INI;
         emptyData = iniData.isEmpty();
+        if (emptyData == true) {
+          throw new Exception("Empty Ini file");
+        }
+        Set<String> iniSections = iniData.getSections();
+        if (iniSections.isEmpty() == true || (iniSections.size() == 1 && iniSections.contains(null))) {
+          throw new Exception("Empty Ini file");
+        }
+        if (iniSections.contains(null)) {
+          Set<String> sectionNames = new HashSet<>();
+          for (String name : iniSections) {
+              if (name != null) {
+                sectionNames.add(name);
+              }
+          }
+          if (sectionNames.isEmpty()) {
+            throw new Exception("Empty Ini file");
+          }
+        }
       } catch (FileNotFoundException e) {
         return false;
       } catch (Exception e) {
@@ -294,8 +312,11 @@ public class Configuration {
 
     private String getIniString(String section, String key) {
       try {
-        Ini.Section sectionData = iniData.get(section);
-        return sectionData.get(key).trim();
+        SubnodeConfiguration sectionData = iniData.getSection(section);
+        if (sectionData == null) {
+          return "";
+        }
+        return sectionData.getProperty(key).toString().trim();
       } catch (Exception e) {
         return "";
       }
@@ -303,8 +324,11 @@ public class Configuration {
 
     private boolean getIniBool(String section, String key) {
       try {
-        Ini.Section sectionData = iniData.get(section);
-        return Boolean.parseBoolean(sectionData.get(key).trim());
+        SubnodeConfiguration sectionData = iniData.getSection(section);
+        if (sectionData == null) {
+          return false;
+        }
+        return Boolean.parseBoolean(sectionData.getProperty(key).toString().trim());
       } catch (Exception e) {
         return false;
       }
@@ -312,8 +336,11 @@ public class Configuration {
 
     private int getIniInt(String section, String key) {
       try {
-        Ini.Section sectionData = iniData.get(section);
-        return Integer.parseInt(sectionData.get(key).trim());
+        SubnodeConfiguration sectionData = iniData.getSection(section);
+        if (sectionData == null) {
+          return -1;
+        }
+        return Integer.parseInt(sectionData.getProperty(key).toString().trim());
       } catch (Exception e) {
         return -1;
       }

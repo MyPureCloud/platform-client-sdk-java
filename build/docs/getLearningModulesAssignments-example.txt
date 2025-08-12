@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+import com.mypurecloud.sdk.v2.model.AssignedLearningModuleDomainEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetLearningModulesAssignments {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        LearningApi apiInstance = new LearningApi();
+        List<String> userIds = Arrays.asList(null); // List<String> | The IDs of the users to include
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String searchTerm = "searchTerm_example"; // String | Search Term (searches by name and description)
+String overdue = "Any"; // String | Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned.
+List<String> assignmentStates = Arrays.asList(null); // List<String> | Specifies the assignment states to return.
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
+        try { 
+            // Get all learning modules of an organization including assignments for a specific user
+            AssignedLearningModuleDomainEntityListing result = apiInstance.getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LearningApi#getLearningModulesAssignments");
+            e.printStackTrace();
+        }
+    }
+}

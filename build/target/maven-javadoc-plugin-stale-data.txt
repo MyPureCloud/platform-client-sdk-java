@@ -3,12 +3,12 @@
 @options
 @packages
 -classpath
-'/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar'
+'/Users/jsaintma/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/Users/jsaintma/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/jsaintma/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/jsaintma/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/jsaintma/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar:/Users/jsaintma/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/Users/jsaintma/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/Users/jsaintma/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/Users/jsaintma/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/Users/jsaintma/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/jsaintma/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/jsaintma/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/Users/jsaintma/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/Users/jsaintma/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/Users/jsaintma/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/Users/jsaintma/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/Users/jsaintma/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/Users/jsaintma/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/Users/jsaintma/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar:/Users/jsaintma/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/Users/jsaintma/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/Users/jsaintma/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/jsaintma/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/Users/jsaintma/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/Users/jsaintma/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/Users/jsaintma/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/Users/jsaintma/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/Users/jsaintma/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/jsaintma/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/jsaintma/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/jsaintma/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/Users/jsaintma/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/generated-sources/annotations'
+'/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/main/java:/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/generated-sources/annotations'
 -Xdoclint:none
 -author
 -bottom
@@ -16,122 +16,124 @@
 -charset
 'UTF-8'
 -d
-'/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs'
+'/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs'
 -docencoding
 'UTF-8'
 -Xdoclint:none
 -doctitle
 'platform-client-v2 229.0.0 API'
 -linkoffline
-'https://docs.oracle.com/javase/8/docs/api' '/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/javadoc-bundle-options'
+'https://docs.oracle.com/javase/8/docs/api' '/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/javadoc-bundle-options'
 -use
 -windowtitle
 'platform-client-v2 229.0.0 API'
-com.mypurecloud.sdk.v2.model
-com.mypurecloud.sdk.v2.api
-com.mypurecloud.sdk.v2.api.request
 com.mypurecloud.sdk.v2
+com.mypurecloud.sdk.v2.hooksmanager
 com.mypurecloud.sdk.v2.auth
-com.mypurecloud.sdk.v2.connector
-com.mypurecloud.sdk.v2.connector.apache
-com.mypurecloud.sdk.v2.connector.ning
-com.mypurecloud.sdk.v2.connector.okhttp
 com.mypurecloud.sdk.v2.extensions
 com.mypurecloud.sdk.v2.extensions.notifications
-com.mypurecloud.sdk.v2.hooksmanager
-/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar = 1754205674782
-/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar = 1536758932000
-/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar = 1504739599000
-/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar = 1754200663053
-/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar = 1754202340235
-/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar = 1669833653000
-/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar = 1669455900000
-/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar = 1754200675149
-/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar = 1508252044000
-/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1697509437000
-/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1696213723000
-/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1696213713000
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1692781294000
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1682396738000
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1682396733000
-/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1682396736000
-/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar = 1754205674922
-/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar = 1754205674910
-/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar = 1754205675138
-/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar = 1754205675074
-/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar = 1754205674926
-/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar = 1754205674938
-/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar = 1754205675234
-/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar = 1754205675158
-/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar = 1754205675262
-/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar = 1754205675146
-/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar = 1754200662589
-/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar = 1754205675158
-/home/jenkins/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar = 1754205675166
-/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar = 1754205675238
-/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar = 1754205675186
-/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar = 1754205675226
-/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar = 1754205675270
-/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar = 1754205675402
-/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar = 1754205675314
-/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar = 1754205675394
-/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar = 1754205675298
-/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar = 1754205676102
-/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar = 1754205675334
-/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar = 1754205675346
-/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar = 1754205675358
-/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar = 1754205675362
-/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar = 1754205675378
-/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar = 1754205675378
-/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar = 1754205675398
-/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar = 1754205675406
-/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar = 1754205675418
-/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar = 1754205675418
-/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar = 1754205675418
-/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar = 1754205675458
-/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar = 1754205675450
-/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar = 1754205675458
-/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar = 1754205675466
-/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar = 1754205675478
-/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar = 1754205675510
-/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar = 1754205675550
-/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar = 1754205676294
-/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar = 1313799071000
-/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar = 1754205676170
-/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar = 1754205676014
-/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar = 1754205676398
-/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar = 1754205676130
-/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar = 1754205676146
-/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar = 1754205676178
-/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1582223866000
-/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar = 1754205676186
-/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar = 1754200663045
-/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar = 1754202341119
-/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar = 1615855178000
-/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar = 1754200663081
-/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar = 1754200663045
-/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1536694843000
-/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar = 1754200663045
-/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar = 1754205676406
-/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar = 1710004379000
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java = 1754205332049
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/generated-sources/annotations = 1754205677782
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/element-list = 1754206016420
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1754206020348
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1754206044616
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1754206044648
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index.html = 1754206044652
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1754206090228
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1754206090228
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1754206090228
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1754206090228
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1754206090252
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1754206090524
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1754206090524
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/index-all.html = 1754206095804
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1754206095804
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1754206095808
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1754206095808
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/script.js = 1754206095808
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/search.js = 1754206095808
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1754206095812
+com.mypurecloud.sdk.v2.model
+com.mypurecloud.sdk.v2.connector
+com.mypurecloud.sdk.v2.connector.ning
+com.mypurecloud.sdk.v2.connector.okhttp
+com.mypurecloud.sdk.v2.connector.apache
+com.mypurecloud.sdk.v2.api
+com.mypurecloud.sdk.v2.api.request
+/Users/jsaintma/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar = 1747304300000
+/Users/jsaintma/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar = 1536758932000
+/Users/jsaintma/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar = 1504739599000
+/Users/jsaintma/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar = 1740501792000
+/Users/jsaintma/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar = 1745357808000
+/Users/jsaintma/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar = 1724526388000
+/Users/jsaintma/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar = 1744054988000
+/Users/jsaintma/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar = 1738337232000
+/Users/jsaintma/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar = 1669833653000
+/Users/jsaintma/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar = 1669455900000
+/Users/jsaintma/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar = 1508252044000
+/Users/jsaintma/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1697509437000
+/Users/jsaintma/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1696213723000
+/Users/jsaintma/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1696213713000
+/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1692781294000
+/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1682396738000
+/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1682396733000
+/Users/jsaintma/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1682396736000
+/Users/jsaintma/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar = 1743426303000
+/Users/jsaintma/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar = 1740560879000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar = 1740560943000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar = 1740560975000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar = 1740554579000
+/Users/jsaintma/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar = 1740554575000
+/Users/jsaintma/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar = 1740560933000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar = 1740560923000
+/Users/jsaintma/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar = 1740560827000
+/Users/jsaintma/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar = 1740560861000
+/Users/jsaintma/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar = 1613118231000
+/Users/jsaintma/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar = 1737555653000
+/Users/jsaintma/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar = 1717253539000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar = 1736884832000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar = 1752519152000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar = 1752519152000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar = 1752519152000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar = 1752519153000
+/Users/jsaintma/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar = 1752519154000
+/Users/jsaintma/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar = 1643278662000
+/Users/jsaintma/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar = 1313799071000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar = 1752860478000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar = 1752860067000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar = 1752861007000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar = 1752863585000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar = 1752863585000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar = 1752861587000
+/Users/jsaintma/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1582223866000
+/Users/jsaintma/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar = 1752862855000
+/Users/jsaintma/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar = 1743250930000
+/Users/jsaintma/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar = 1398270807000
+/Users/jsaintma/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar = 1615855178000
+/Users/jsaintma/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar = 1744651522000
+/Users/jsaintma/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar = 1742400951000
+/Users/jsaintma/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1536694843000
+/Users/jsaintma/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar = 1721163610000
+/Users/jsaintma/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar = 1731976966000
+/Users/jsaintma/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar = 1710004379000
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/main/java = 1754806895760
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/generated-sources/annotations = 1754806988258
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1754807216402
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1754807203560
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1754807216283
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/index.html = 1754807203571
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1754807216284
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1754807218026
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1754807189221
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/index-all.html = 1754807218019
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1754807216283
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1754807203570
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1754807216401
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/script.js = 1754807218024
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1754807218024
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1754807218019
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1754807218021
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/element-list = 1754807187864
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1754807216281
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1754807216294
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/search.js = 1754807218024

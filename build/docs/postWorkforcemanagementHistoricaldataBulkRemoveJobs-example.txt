@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobRequest;import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteFilesJobResponse;
+
+public class ExamplepostWorkforcemanagementHistoricaldataBulkRemoveJobs {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        HistoricalImportDeleteFilesJobRequest body = new HistoricalImportDeleteFilesJobRequest(); // HistoricalImportDeleteFilesJobRequest | body
+        try { 
+            // Delete the list of the historical data import entries
+            HistoricalImportDeleteFilesJobResponse result = apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementHistoricaldataBulkRemoveJobs");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,34 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AssistantListing;
+
+public class ExamplegetAssistants {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+        String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String name = "name_example"; // String | Return the assistant by the given name.
+String expand = "expand_example"; // String | Which fields, if any, to expand
+        try { 
+            // Get all assistants.
+            AssistantListing result = apiInstance.getAssistants(before, after, limit, pageSize, name, expand);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AgentAssistantsApi#getAssistants");
+            e.printStackTrace();
+        }
+    }
+}

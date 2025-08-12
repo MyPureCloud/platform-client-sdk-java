@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GreetingsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
+
+public class ExamplegetGreetingGroupsDownloads {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GreetingsApi apiInstance = new GreetingsApi();
+        String greetingId = "greetingId_example"; // String | Greeting ID
+String formatId = "WAV"; // String | The desired media format.
+        try { 
+            // Download a group greeting recording
+            GreetingMediaInfo result = apiInstance.getGreetingGroupsDownloads(greetingId, formatId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GreetingsApi#getGreetingGroupsDownloads");
+            e.printStackTrace();
+        }
+    }
+}

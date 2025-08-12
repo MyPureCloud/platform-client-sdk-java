@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+import com.mypurecloud.sdk.v2.model.WorkitemWrapup;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WorkitemWrapupUpdate;
+
+public class ExamplepatchTaskmanagementWorkitemUserWrapups {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TaskManagementApi apiInstance = new TaskManagementApi();
+        String workitemId = "workitemId_example"; // String | The ID of the Workitem.
+String userId = "userId_example"; // String | The ID of the user
+WorkitemWrapupUpdate body = new WorkitemWrapupUpdate(); // WorkitemWrapupUpdate | Request body to add/remove a wrapup code for a workitem
+        try { 
+            // Add/Remove a wrapup code for a given user in a workitem.
+            WorkitemWrapup result = apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemUserWrapups");
+            e.printStackTrace();
+        }
+    }
+}

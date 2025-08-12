@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+
+public class ExamplegetRoutingSmsAvailablephonenumbers {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        RoutingApi apiInstance = new RoutingApi();
+        String countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+String phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+String region = "region_example"; // String | Region/province/state that can be used to restrict the numbers returned
+String city = "city_example"; // String | City that can be used to restrict the numbers returned
+String areaCode = "areaCode_example"; // String | Area code that can be used to restrict the numbers returned
+String pattern = "pattern_example"; // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+String addressRequirement = "addressRequirement_example"; // String | This indicates whether the phone number requires to have an Address registered.
+        try { 
+            // Get a list of available phone numbers for SMS provisioning.
+            SMSAvailablePhoneNumberEntityListing result = apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RoutingApi#getRoutingSmsAvailablephonenumbers");
+            e.printStackTrace();
+        }
+    }
+}

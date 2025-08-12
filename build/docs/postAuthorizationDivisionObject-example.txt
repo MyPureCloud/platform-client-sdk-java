@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ObjectsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.List;
+
+public class ExamplepostAuthorizationDivisionObject {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ObjectsApi apiInstance = new ObjectsApi();
+        String divisionId = "divisionId_example"; // String | Division ID
+String objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
+List<String> body = Arrays.asList(null); // List<String> | Object Id List
+        try { 
+            // Assign a list of objects to a division
+            apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ObjectsApi#postAuthorizationDivisionObject");
+            e.printStackTrace();
+        }
+    }
+}

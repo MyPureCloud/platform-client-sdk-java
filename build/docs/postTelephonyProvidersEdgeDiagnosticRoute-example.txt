@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
+
+public class ExamplepostTelephonyProvidersEdgeDiagnosticRoute {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+        String edgeId = "edgeId_example"; // String | Edge Id
+EdgeNetworkDiagnosticRequest body = new EdgeNetworkDiagnosticRequest(); // EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+        try { 
+            // Route request command to collect networking-related information from an Edge for a target IP or host.
+            EdgeNetworkDiagnostic result = apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgeDiagnosticRoute");
+            e.printStackTrace();
+        }
+    }
+}

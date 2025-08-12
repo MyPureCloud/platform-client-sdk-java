@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UserRecordingsApi;
+import com.mypurecloud.sdk.v2.model.UserRecording;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampleputUserrecording {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UserRecordingsApi apiInstance = new UserRecordingsApi();
+        String recordingId = "recordingId_example"; // String | User Recording ID
+UserRecording body = new UserRecording(); // UserRecording | UserRecording
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+        try { 
+            // Update a user recording.
+            UserRecording result = apiInstance.putUserrecording(recordingId, body, expand);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserRecordingsApi#putUserrecording");
+            e.printStackTrace();
+        }
+    }
+}

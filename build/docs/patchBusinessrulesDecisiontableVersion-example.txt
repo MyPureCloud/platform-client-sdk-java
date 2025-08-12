@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.BusinessRulesApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;import com.mypurecloud.sdk.v2.model.DecisionTableVersion;
+
+public class ExamplepatchBusinessrulesDecisiontableVersion {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        BusinessRulesApi apiInstance = new BusinessRulesApi();
+        String tableId = "tableId_example"; // String | Table ID
+Integer tableVersion = 56; // Integer | Table Version
+UpdateDecisionTableVersionRequest body = new UpdateDecisionTableVersionRequest(); // UpdateDecisionTableVersionRequest | Decision Table
+        try { 
+            // Update a decision table version
+            DecisionTableVersion result = apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling BusinessRulesApi#patchBusinessrulesDecisiontableVersion");
+            e.printStackTrace();
+        }
+    }
+}

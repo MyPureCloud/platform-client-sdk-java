@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+import com.mypurecloud.sdk.v2.model.AutoAnswerSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplepatchUsersAgentuiAgentsAutoanswerAgentIdSettings {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SettingsApi apiInstance = new SettingsApi();
+        String agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
+AutoAnswerSettings body = new AutoAnswerSettings(); // AutoAnswerSettings | AutoAnswerSettings
+        try { 
+            // Update agent auto answer settings
+            AutoAnswerSettings result = apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
+
+public class ExamplegetKnowledgeGuestSessionDocuments {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+
+        KnowledgeApi apiInstance = new KnowledgeApi();
+        String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+List<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum of 200.
+        try { 
+            // Get documents.
+            KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling KnowledgeApi#getKnowledgeGuestSessionDocuments");
+            e.printStackTrace();
+        }
+    }
+}

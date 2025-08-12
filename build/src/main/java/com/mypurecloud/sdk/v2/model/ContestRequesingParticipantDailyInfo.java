@@ -41,7 +41,7 @@ public class ContestRequesingParticipantDailyInfo  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "Fri Jan 12 00:00:00 UTC 2024", value = "Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Fri Jan 12 01:00:00 CET 2024", value = "Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateWorkday")
   public LocalDate getDateWorkday() {
     return dateWorkday;

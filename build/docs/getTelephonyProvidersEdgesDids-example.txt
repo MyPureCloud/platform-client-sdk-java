@@ -1,0 +1,36 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+import com.mypurecloud.sdk.v2.model.DIDEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetTelephonyProvidersEdgesDids {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "number"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+String phoneNumber = "phoneNumber_example"; // String | Filter by phoneNumber
+String ownerId = "ownerId_example"; // String | Filter by the owner of a phone number
+String didPoolId = "didPoolId_example"; // String | Filter by the DID Pool assignment
+List<String> id = Arrays.asList(null); // List<String> | Filter by a specific list of ID's
+        try { 
+            // Get a listing of DIDs
+            DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDids");
+            e.printStackTrace();
+        }
+    }
+}

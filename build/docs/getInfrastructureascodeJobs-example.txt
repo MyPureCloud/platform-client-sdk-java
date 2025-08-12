@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.InfrastructureAsCodeApi;
+import com.mypurecloud.sdk.v2.model.InfrastructureascodeJob;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetInfrastructureascodeJobs {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        InfrastructureAsCodeApi apiInstance = new InfrastructureAsCodeApi();
+        Integer maxResults = 1; // Integer | Number of jobs to show
+Boolean includeErrors = false; // Boolean | Include error messages
+String sortBy = "dateSubmitted"; // String | Sort by
+String sortOrder = "desc"; // String | Sort order
+String acceleratorId = "acceleratorId_example"; // String | Find only jobs associated with this accelerator
+String submittedBy = "submittedBy_example"; // String | Find only jobs submitted by this user
+String status = "status_example"; // String | Find only jobs in this state
+        try { 
+            // Get job history
+            InfrastructureascodeJob result = apiInstance.getInfrastructureascodeJobs(maxResults, includeErrors, sortBy, sortOrder, acceleratorId, submittedBy, status);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InfrastructureAsCodeApi#getInfrastructureascodeJobs");
+            e.printStackTrace();
+        }
+    }
+}

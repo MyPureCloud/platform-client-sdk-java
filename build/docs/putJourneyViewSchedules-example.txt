@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.JourneyViewSchedule;
+
+public class ExampleputJourneyViewSchedules {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        JourneyApi apiInstance = new JourneyApi();
+        String viewId = "viewId_example"; // String | Journey View Id
+JourneyViewSchedule body = new JourneyViewSchedule(); // JourneyViewSchedule | journeyViewSchedule
+        try { 
+            // Update the Schedule for a JourneyView
+            JourneyViewSchedule result = apiInstance.putJourneyViewSchedules(viewId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling JourneyApi#putJourneyViewSchedules");
+            e.printStackTrace();
+        }
+    }
+}

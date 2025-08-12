@@ -145,7 +145,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "Wed Apr 01 00:00:00 UTC 2020", value = "Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Wed Apr 01 02:00:00 CEST 2020", value = "Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStart")
   public LocalDate getDateStart() {
     return dateStart;
@@ -163,7 +163,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "Wed Apr 01 00:00:00 UTC 2020", value = "End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Wed Apr 01 02:00:00 CEST 2020", value = "End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEnd")
   public LocalDate getDateEnd() {
     return dateEnd;

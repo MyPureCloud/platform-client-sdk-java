@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UcUserPresence;
+
+public class ExamplegetUsersPresencesPurecloudBulk {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        PresenceApi apiInstance = new PresenceApi();
+        List<String> id = Arrays.asList(null); // List<String> | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+        try { 
+            // Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+            List<UcUserPresence> result = apiInstance.getUsersPresencesPurecloudBulk(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PresenceApi#getUsersPresencesPurecloudBulk");
+            e.printStackTrace();
+        }
+    }
+}

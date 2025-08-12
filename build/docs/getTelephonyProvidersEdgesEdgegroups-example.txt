@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
+
+public class ExamplegetTelephonyProvidersEdgesEdgegroups {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+String sortBy = "name"; // String | Sort by
+Boolean managed = true; // Boolean | Filter by managed
+        try { 
+            // Get the list of edge groups.
+            EdgeGroupEntityListing result = apiInstance.getTelephonyProvidersEdgesEdgegroups(pageSize, pageNumber, name, sortBy, managed);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesEdgegroups");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;
+
+public class ExamplegetWorkforcemanagementManagementunitWeekShifttrades {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+Boolean evaluateMatches = true; // Boolean | Whether to evaluate the matches for violations
+Boolean includeCrossWeekShifts = false; // Boolean | Whether to include all shift trades with either the initiating shift or the receiving shift in the week
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+        try { 
+            // Gets all the shift trades for a given week
+            WeekShiftTradeListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, includeCrossWeekShifts, forceDownloadService);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWeekShifttrades");
+            e.printStackTrace();
+        }
+    }
+}
