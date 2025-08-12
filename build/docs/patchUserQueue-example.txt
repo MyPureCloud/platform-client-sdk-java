@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserQueue;
+
+public class ExamplepatchUserQueue {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        String queueId = "queueId_example"; // String | Queue ID
+String userId = "userId_example"; // String | User ID
+UserQueue body = new UserQueue(); // UserQueue | Queue Member
+        try { 
+            // Join or unjoin a queue for a user
+            UserQueue result = apiInstance.patchUserQueue(queueId, userId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#patchUserQueue");
+            e.printStackTrace();
+        }
+    }
+}

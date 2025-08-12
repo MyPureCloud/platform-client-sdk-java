@@ -1,0 +1,36 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.StationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.StationEntityListing;
+
+public class ExamplegetStations {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        StationsApi apiInstance = new StationsApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | Sort by
+String name = "name_example"; // String | Name
+String userSelectable = "userSelectable_example"; // String | True for stations that the user can select otherwise false
+String webRtcUserId = "webRtcUserId_example"; // String | Filter for the webRtc station of the webRtcUserId
+String id = "id_example"; // String | Comma separated list of stationIds
+String lineAppearanceId = "lineAppearanceId_example"; // String | lineAppearanceId
+        try { 
+            // Get the list of available stations.
+            StationEntityListing result = apiInstance.getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StationsApi#getStations");
+            e.printStackTrace();
+        }
+    }
+}

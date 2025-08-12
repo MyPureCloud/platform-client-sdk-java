@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
+
+public class ExampledeleteSpeechandtextanalyticsProgram {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+        String programId = "programId_example"; // String | The id of the program
+Boolean forceDelete = false; // Boolean | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
+        try { 
+            // Delete a Speech & Text Analytics program by id
+            DeleteProgramResponse result = apiInstance.deleteSpeechandtextanalyticsProgram(programId, forceDelete);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsProgram");
+            e.printStackTrace();
+        }
+    }
+}

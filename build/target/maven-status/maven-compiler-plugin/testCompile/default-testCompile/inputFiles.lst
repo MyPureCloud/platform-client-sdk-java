@@ -1,8 +1,8 @@
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiClientRetryAsyncTest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiClientRetryTest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiMTLSClientInjectionTest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ConsoleColors.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/InvokedMethodListener.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/MockPojo.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/SdkTests.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/UserPresenceListener.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiClientRetryAsyncTest.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiClientRetryTest.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ApiMTLSClientInjectionTest.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/ConsoleColors.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/InvokedMethodListener.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/MockPojo.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/SdkTests.java
+/Users/jsaintma/genesys_src/back_to_sdk/platform-client-sdk-common/output/purecloudjava/build/src/test/java/com/mypurecloud/sdk/v2/UserPresenceListener.java

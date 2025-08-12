@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplepatchOutboundDnclistEmailaddresses {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OutboundApi apiInstance = new OutboundApi();
+        String dncListId = "dncListId_example"; // String | DncList ID
+DncPatchEmailsRequest body = new DncPatchEmailsRequest(); // DncPatchEmailsRequest | DNC Emails
+        try { 
+            // Add emails to or Delete emails from a DNC list.
+            apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OutboundApi#patchOutboundDnclistEmailaddresses");
+            e.printStackTrace();
+        }
+    }
+}

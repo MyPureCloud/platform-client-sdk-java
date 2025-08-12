@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
+
+public class ExamplepostWorkforcemanagementAgentAdherenceExplanationsQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String agentId = "agentId_example"; // String | The ID of the agent to query
+AgentQueryAdherenceExplanationsRequest body = new AgentQueryAdherenceExplanationsRequest(); // AgentQueryAdherenceExplanationsRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+        try { 
+            // Query adherence explanations for the given agent across a specified range
+            AgentQueryAdherenceExplanationsResponse result = apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, forceAsync, forceDownloadService);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery");
+            e.printStackTrace();
+        }
+    }
+}

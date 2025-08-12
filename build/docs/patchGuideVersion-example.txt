@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GuideVersion;import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
+
+public class ExamplepatchGuideVersion {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AIStudioApi apiInstance = new AIStudioApi();
+        String guideId = "guideId_example"; // String | Guide ID
+String versionId = "versionId_example"; // String | Version ID
+UpdateGuideVersion body = new UpdateGuideVersion(); // UpdateGuideVersion | 
+        try { 
+            // Update a guide version.
+            GuideVersion result = apiInstance.patchGuideVersion(guideId, versionId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AIStudioApi#patchGuideVersion");
+            e.printStackTrace();
+        }
+    }
+}

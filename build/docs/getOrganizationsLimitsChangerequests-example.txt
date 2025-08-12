@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
+
+public class ExamplegetOrganizationsLimitsChangerequests {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OrganizationApi apiInstance = new OrganizationApi();
+        Long after = 56L; // Long | Timestamp indicating the date to begin after when searching for requests.
+Long before = 56L; // Long | Timestamp indicating the date to end before when searching for requests.
+String status = "status_example"; // String | Status of the request to be filtered by
+Integer pageSize = 25; // Integer | Page Size
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
+        try { 
+            // Get the available limit change requests
+            LimitChangeRequestsEntityListing result = apiInstance.getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsChangerequests");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteKnowledgeKnowledgebaseDocumentVariation {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        KnowledgeApi apiInstance = new KnowledgeApi();
+        String documentVariationId = "documentVariationId_example"; // String | Globally unique identifier for a document variation.
+String documentId = "documentId_example"; // String | Globally unique identifier for a document.
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
+        try { 
+            // Delete a variation for a document.
+            apiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeKnowledgebaseDocumentVariation");
+            e.printStackTrace();
+        }
+    }
+}

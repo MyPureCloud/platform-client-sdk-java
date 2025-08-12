@@ -1,0 +1,36 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EvaluationFormResponseEntityListing;
+
+public class ExamplegetQualityFormsEvaluations {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        QualityApi apiInstance = new QualityApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String expand = "expand_example"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
+String name = "name_example"; // String | Name
+String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
+        try { 
+            // Get the list of evaluation forms
+            EvaluationFormResponseEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QualityApi#getQualityFormsEvaluations");
+            e.printStackTrace();
+        }
+    }
+}

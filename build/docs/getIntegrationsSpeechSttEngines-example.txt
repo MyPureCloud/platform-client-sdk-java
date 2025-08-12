@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
+
+public class ExamplegetIntegrationsSpeechSttEngines {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        IntegrationsApi apiInstance = new IntegrationsApi();
+        Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on engine name
+        try { 
+            // Get a list of STT engines enabled for org
+            SttEngineEntityListing result = apiInstance.getIntegrationsSpeechSttEngines(pageNumber, pageSize, name);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechSttEngines");
+            e.printStackTrace();
+        }
+    }
+}

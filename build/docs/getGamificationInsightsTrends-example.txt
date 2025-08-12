@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+import com.mypurecloud.sdk.v2.model.UserInsightsTrend;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;
+
+public class ExamplegetGamificationInsightsTrends {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GamificationApi apiInstance = new GamificationApi();
+        String filterType = "filterType_example"; // String | Filter type for the query request.
+String filterId = "filterId_example"; // String | ID for the filter type.
+String granularity = "granularity_example"; // String | Granularity
+LocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate comparativePeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate primaryPeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        try { 
+            // Get insights user trend for the current user
+            UserInsightsTrend result = apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GamificationApi#getGamificationInsightsTrends");
+            e.printStackTrace();
+        }
+    }
+}

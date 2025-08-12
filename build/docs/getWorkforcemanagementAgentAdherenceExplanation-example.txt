@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
+
+public class ExamplegetWorkforcemanagementAgentAdherenceExplanation {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String agentId = "agentId_example"; // String | The ID of the agent to query
+String explanationId = "explanationId_example"; // String | The ID of the explanation to update
+        try { 
+            // Get an adherence explanation
+            AdherenceExplanationResponse result = apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CoachingNotification;
+
+public class ExamplepatchCoachingNotification {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CoachingApi apiInstance = new CoachingApi();
+        String notificationId = "notificationId_example"; // String | The ID of the notification.
+CoachingNotification body = new CoachingNotification(); // CoachingNotification | Change the read state of a notification
+        try { 
+            // Update an existing notification.
+            CoachingNotification result = apiInstance.patchCoachingNotification(notificationId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CoachingApi#patchCoachingNotification");
+            e.printStackTrace();
+        }
+    }
+}

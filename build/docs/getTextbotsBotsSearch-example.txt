@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TextbotsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
+
+public class ExamplegetTextbotsBotsSearch {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TextbotsApi apiInstance = new TextbotsApi();
+        List<String> botType = Arrays.asList(null); // List<String> | Bot types
+String botName = "botName_example"; // String | Bot name
+List<String> botId = Arrays.asList(null); // List<String> | Bot IDs. Maximum of 50
+Boolean virtualAgentEnabled = true; // Boolean | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
+Integer pageSize = 25; // Integer | The maximum results to return. Maximum of 100
+        try { 
+            // Find bots using the currently configured friendly name or ID.
+            BotSearchResponseEntityListing result = apiInstance.getTextbotsBotsSearch(botType, botName, botId, virtualAgentEnabled, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TextbotsApi#getTextbotsBotsSearch");
+            e.printStackTrace();
+        }
+    }
+}

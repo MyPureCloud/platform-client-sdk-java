@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Topic;
+
+public class ExamplegetSpeechandtextanalyticsTopic {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+        String topicId = "topicId_example"; // String | The id of the topic
+        try { 
+            // Get a Speech & Text Analytics topic by id
+            Topic result = apiInstance.getSpeechandtextanalyticsTopic(topicId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopic");
+            e.printStackTrace();
+        }
+    }
+}

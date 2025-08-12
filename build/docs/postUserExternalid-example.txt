@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
+
+public class ExamplepostUserExternalid {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        String userId = "userId_example"; // String | User ID
+UserExternalIdentifier body = new UserExternalIdentifier(); // UserExternalIdentifier | 
+        try { 
+            // Create mapping between external identifier and user. Limit 100 per entity.
+            List<UserExternalIdentifier> result = apiInstance.postUserExternalid(userId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#postUserExternalid");
+            e.printStackTrace();
+        }
+    }
+}

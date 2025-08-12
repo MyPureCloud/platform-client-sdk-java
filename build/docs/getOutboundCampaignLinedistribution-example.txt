@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
+
+public class ExamplegetOutboundCampaignLinedistribution {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OutboundApi apiInstance = new OutboundApi();
+        String campaignId = "campaignId_example"; // String | Campaign ID
+Boolean includeOnlyActiveCampaigns = true; // Boolean | If true will return only active Campaigns
+String edgeGroupId = "edgeGroupId_example"; // String | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+String siteId = "siteId_example"; // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+Boolean useWeight = true; // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+Integer relativeWeight = 56; // Integer | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+Integer outboundLineCount = 56; // Integer | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+        try { 
+            // Get line distribution information for campaigns using same Edge Group or Site as given campaign
+            CampaignOutboundLinesDistribution result = apiInstance.getOutboundCampaignLinedistribution(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OutboundApi#getOutboundCampaignLinedistribution");
+            e.printStackTrace();
+        }
+    }
+}

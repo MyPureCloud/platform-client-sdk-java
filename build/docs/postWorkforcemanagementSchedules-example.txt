@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
+
+public class ExamplepostWorkforcemanagementSchedules {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        CurrentUserScheduleRequestBody body = new CurrentUserScheduleRequestBody(); // CurrentUserScheduleRequestBody | body
+        try { 
+            // Get published schedule for the current user
+            UserScheduleContainer result = apiInstance.postWorkforcemanagementSchedules(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementSchedules");
+            e.printStackTrace();
+        }
+    }
+}

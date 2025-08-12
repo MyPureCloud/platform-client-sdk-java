@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Map;
+
+public class ExamplepostIntegrationsActionExecute {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        IntegrationsApi apiInstance = new IntegrationsApi();
+        String actionId = "actionId_example"; // String | actionId
+Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+        try { 
+            // Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
+            Object result = apiInstance.postIntegrationsActionExecute(actionId, body, flatten);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionExecute");
+            e.printStackTrace();
+        }
+    }
+}

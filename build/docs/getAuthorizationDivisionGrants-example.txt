@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
+
+public class ExamplegetAuthorizationDivisionGrants {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuthorizationApi apiInstance = new AuthorizationApi();
+        String divisionId = "divisionId_example"; // String | Division ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+        try { 
+            // Gets all grants for a given division.
+            AuthzDivisionGrantEntityListing result = apiInstance.getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthorizationApi#getAuthorizationDivisionGrants");
+            e.printStackTrace();
+        }
+    }
+}

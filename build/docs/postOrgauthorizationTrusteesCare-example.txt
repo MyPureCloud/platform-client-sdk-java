@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+
+public class ExamplepostOrgauthorizationTrusteesCare {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+        Boolean assignDefaultRole = true; // Boolean | Assign Admin role to default pairing with Customer Care
+Boolean autoExpire = true; // Boolean | Automatically expire pairing after 30 days
+Boolean assignFullAccess = true; // Boolean | Grant Customer Care full access to the organization
+Boolean allowTrustedUserAccess = true; // Boolean | Make Customer Care a Trusted User
+        try { 
+            // Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+            TrustEntityListing result = apiInstance.postOrgauthorizationTrusteesCare(assignDefaultRole, autoExpire, assignFullAccess, allowTrustedUserAccess);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrusteesCare");
+            e.printStackTrace();
+        }
+    }
+}

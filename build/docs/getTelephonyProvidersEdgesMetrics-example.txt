@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+import com.mypurecloud.sdk.v2.model.EdgeMetrics;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetTelephonyProvidersEdgesMetrics {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+        String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
+        try { 
+            // Get the metrics for a list of edges.
+            List<EdgeMetrics> result = apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesMetrics");
+            e.printStackTrace();
+        }
+    }
+}

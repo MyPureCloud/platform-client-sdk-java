@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+import com.mypurecloud.sdk.v2.model.PolicyAttributeSet;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetAuthorizationPolicyAttributes {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuthorizationApi apiInstance = new AuthorizationApi();
+        String policyId = "policyId_example"; // String | The ID of the policy to retrieve attributes
+        try { 
+            // Get the list of attributes used to evaluate an access control policy with the specified policy ID
+            PolicyAttributeSet result = apiInstance.getAuthorizationPolicyAttributes(policyId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthorizationApi#getAuthorizationPolicyAttributes");
+            e.printStackTrace();
+        }
+    }
+}

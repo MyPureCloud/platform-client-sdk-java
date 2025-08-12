@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteAuthorizationPoliciesTargetSubjectSubjectId {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuthorizationApi apiInstance = new AuthorizationApi();
+        String targetName = "targetName_example"; // String | The domain:entity:action target to which the policy is applied
+String subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+        try { 
+            // Delete an access control policy
+            apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthorizationApi#deleteAuthorizationPoliciesTargetSubjectSubjectId");
+            e.printStackTrace();
+        }
+    }
+}

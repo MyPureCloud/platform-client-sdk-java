@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LineEntityListing;
+
+public class ExamplegetTelephonyProvidersEdgesLines {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+String sortBy = "name"; // String | Value by which to sort
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
+        try { 
+            // Get a list of Lines
+            LineEntityListing result = apiInstance.getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesLines");
+            e.printStackTrace();
+        }
+    }
+}

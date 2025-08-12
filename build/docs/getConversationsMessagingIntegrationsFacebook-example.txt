@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetConversationsMessagingIntegrationsFacebook {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ConversationsApi apiInstance = new ConversationsApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand instructions for the return value.
+String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
+        try { 
+            // Get a list of Facebook Integrations
+            FacebookIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsFacebook");
+            e.printStackTrace();
+        }
+    }
+}

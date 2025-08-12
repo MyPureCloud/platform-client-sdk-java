@@ -1,0 +1,36 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+
+public class ExamplegetRecordingJobs {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        RecordingApi apiInstance = new RecordingApi();
+        Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "userId"; // String | Sort by
+String state = "state_example"; // String | Filter by state
+Boolean showOnlyMyJobs = true; // Boolean | Show only my jobs
+String jobType = "jobType_example"; // String | Job Type (Can be left empty for both)
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+        try { 
+            // Get the status of all jobs within the user's organization
+            RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RecordingApi#getRecordingJobs");
+            e.printStackTrace();
+        }
+    }
+}

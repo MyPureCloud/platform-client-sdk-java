@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+import com.mypurecloud.sdk.v2.model.JourneyViewChart;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetJourneyViewVersionChartVersion {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        JourneyApi apiInstance = new JourneyApi();
+        String viewId = "viewId_example"; // String | viewId
+String journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
+String chartId = "chartId_example"; // String | chartId
+String chartVersion = "chartVersion_example"; // String | chartVersion
+        try { 
+            // Get a Chart by ID and version
+            JourneyViewChart result = apiInstance.getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling JourneyApi#getJourneyViewVersionChartVersion");
+            e.printStackTrace();
+        }
+    }
+}

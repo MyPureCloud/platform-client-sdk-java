@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+
+public class ExamplegetAnalyticsConversationsDetailsJobResults {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ConversationsApi apiInstance = new ConversationsApi();
+        String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 56; // Integer | The desired maximum number of results
+        try { 
+            // Fetch a page of results for an async details job
+            AnalyticsConversationAsyncQueryResponse result = apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationsDetailsJobResults");
+            e.printStackTrace();
+        }
+    }
+}

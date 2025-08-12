@@ -1,0 +1,34 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.model.UserCursorEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetUsersQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UsersApi apiInstance = new UsersApi();
+        String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+Integer pageSize = 25; // Integer | Page size
+String sortOrder = "ASC"; // String | Ascending or descending sort order
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
+String state = "active"; // String | Only list users of this state
+        try { 
+            // Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+            UserCursorEntityListing result = apiInstance.getUsersQuery(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#getUsersQuery");
+            e.printStackTrace();
+        }
+    }
+}

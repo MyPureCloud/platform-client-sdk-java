@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.EmployeeEngagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Recognition;
+
+public class ExamplegetEmployeeengagementRecognition {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        EmployeeEngagementApi apiInstance = new EmployeeEngagementApi();
+        String recognitionId = "recognitionId_example"; // String | The Recognition ID
+        try { 
+            // Gets a single recognition
+            Recognition result = apiInstance.getEmployeeengagementRecognition(recognitionId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeeEngagementApi#getEmployeeengagementRecognition");
+            e.printStackTrace();
+        }
+    }
+}

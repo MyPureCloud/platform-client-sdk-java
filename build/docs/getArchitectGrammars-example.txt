@@ -1,0 +1,37 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GrammarListing;
+
+public class ExamplegetArchitectGrammars {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ArchitectApi apiInstance = new ArchitectApi();
+        Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID
+String name = "name_example"; // String | Name
+String description = "description_example"; // String | Description
+String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+Boolean includeFileUrls = true; // Boolean | Include grammar language file URLs
+        try { 
+            // Get a pageable list of grammars, filtered by query parameters
+            GrammarListing result = apiInstance.getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArchitectApi#getArchitectGrammars");
+            e.printStackTrace();
+        }
+    }
+}

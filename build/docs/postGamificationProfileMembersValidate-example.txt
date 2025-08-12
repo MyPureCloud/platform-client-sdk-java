@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AssignmentValidation;import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+
+public class ExamplepostGamificationProfileMembersValidate {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GamificationApi apiInstance = new GamificationApi();
+        String profileId = "profileId_example"; // String | Profile Id
+ValidateAssignUsers body = new ValidateAssignUsers(); // ValidateAssignUsers | memberAssignments
+        try { 
+            // Validate member assignment
+            AssignmentValidation result = apiInstance.postGamificationProfileMembersValidate(profileId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GamificationApi#postGamificationProfileMembersValidate");
+            e.printStackTrace();
+        }
+    }
+}

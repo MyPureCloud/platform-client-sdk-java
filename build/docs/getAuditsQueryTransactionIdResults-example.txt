@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuditApi;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionLargeResultsResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+
+public class ExamplegetAuditsQueryTransactionIdResults {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuditApi apiInstance = new AuditApi();
+        String transactionId = "transactionId_example"; // String | Transaction ID
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 25; // Integer | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+Boolean allowRedirect = true; // Boolean | Result sets with large amounts of data will respond with a download url
+        try { 
+            // Get results of audit query
+            AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand, allowRedirect);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuditApi#getAuditsQueryTransactionIdResults");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GrammarFileUploadRequest;import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+
+public class ExamplepostArchitectGrammarLanguageFilesDtmf {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ArchitectApi apiInstance = new ArchitectApi();
+        String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+GrammarFileUploadRequest body = new GrammarFileUploadRequest(); // GrammarFileUploadRequest | query
+        try { 
+            // Creates a presigned URL for uploading a grammar DTMF mode file
+            UploadUrlResponse result = apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArchitectApi#postArchitectGrammarLanguageFilesDtmf");
+            e.printStackTrace();
+        }
+    }
+}

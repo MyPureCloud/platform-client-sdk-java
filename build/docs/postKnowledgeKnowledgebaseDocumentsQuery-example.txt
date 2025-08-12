@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQuery;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResponse;
+
+public class ExamplepostKnowledgeKnowledgebaseDocumentsQuery {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        KnowledgeApi apiInstance = new KnowledgeApi();
+        String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+List<String> expand = Arrays.asList(null); // List<String> | Fields, if any, to expand for each document in the search result matching the query.
+KnowledgeDocumentQuery body = new KnowledgeDocumentQuery(); // KnowledgeDocumentQuery | 
+        try { 
+            // Query for knowledge documents.
+            KnowledgeDocumentQueryResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsQuery");
+            e.printStackTrace();
+        }
+    }
+}

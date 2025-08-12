@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContestScoresAgentsPagedList;import com.mypurecloud.sdk.v2.model.LocalDate;
+
+public class ExamplegetGamificationContestAgentsScores {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GamificationApi apiInstance = new GamificationApi();
+        String contestId = "contestId_example"; // String | The ID of the contest
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String returnsView = "All"; // String | Desired response results
+        try { 
+            // Get Contest Scores (Admin)
+            ContestScoresAgentsPagedList result = apiInstance.getGamificationContestAgentsScores(contestId, pageNumber, pageSize, workday, returnsView);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GamificationApi#getGamificationContestAgentsScores");
+            e.printStackTrace();
+        }
+    }
+}

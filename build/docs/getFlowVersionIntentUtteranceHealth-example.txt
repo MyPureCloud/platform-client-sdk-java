@@ -1,0 +1,33 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
+
+public class ExamplegetFlowVersionIntentUtteranceHealth {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ArchitectApi apiInstance = new ArchitectApi();
+        String flowId = "flowId_example"; // String | Flow ID.
+String versionId = "versionId_example"; // String | Version ID.
+String intentId = "intentId_example"; // String | Intent ID.
+String utteranceId = "utteranceId_example"; // String | Utterance ID.
+String language = "language_example"; // String | Language to filter for
+        try { 
+            // Get health metrics associated with a specific utterance of an intent.
+            FlowHealthUtterance result = apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArchitectApi#getFlowVersionIntentUtteranceHealth");
+            e.printStackTrace();
+        }
+    }
+}

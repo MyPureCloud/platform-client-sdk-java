@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
+
+public class ExamplegetSpeechandtextanalyticsTranslationsLanguageConversation {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+        String languageId = "languageId_example"; // String | Target translation language
+String conversationId = "conversationId_example"; // String | Conversation id
+String communicationId = "communicationId_example"; // String | Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
+String recordingId = "recordingId_example"; // String | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
+        try { 
+            // Translate a single interaction recording (or an email conversation)
+            CommunicationTranslationList result = apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, communicationId, recordingId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation");
+            e.printStackTrace();
+        }
+    }
+}

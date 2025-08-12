@@ -1,0 +1,27 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.TokensApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampleheadTokensMe {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        TokensApi apiInstance = new TokensApi();
+                try { 
+            // Verify user token
+            apiInstance.headTokensMe();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TokensApi#headTokensMe");
+            e.printStackTrace();
+        }
+    }
+}

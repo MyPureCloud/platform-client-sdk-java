@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UploadUrlRequest;import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+
+public class ExamplepostUploadsWorkforcemanagementHistoricaldataCsv {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        UploadsApi apiInstance = new UploadsApi();
+        UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+        try { 
+            // Creates presigned url for uploading WFM historical data file. Requires data in csv format.
+            UploadUrlResponse result = apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UploadsApi#postUploadsWorkforcemanagementHistoricaldataCsv");
+            e.printStackTrace();
+        }
+    }
+}

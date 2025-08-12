@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampleputOutboundSchedulesMessagingcampaign {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        OutboundApi apiInstance = new OutboundApi();
+        String messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+MessagingCampaignSchedule body = new MessagingCampaignSchedule(); // MessagingCampaignSchedule | MessagingCampaignSchedule
+        try { 
+            // Update a new messaging campaign schedule.
+            MessagingCampaignSchedule result = apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OutboundApi#putOutboundSchedulesMessagingcampaign");
+            e.printStackTrace();
+        }
+    }
+}

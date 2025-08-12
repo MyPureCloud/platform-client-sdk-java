@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.NotificationsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ChannelTopic;import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;import com.mypurecloud.sdk.v2.model.List;
+
+public class ExamplepostNotificationsChannelSubscriptions {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        NotificationsApi apiInstance = new NotificationsApi();
+        String channelId = "channelId_example"; // String | Channel ID
+List<ChannelTopic> body = Arrays.asList(new ChannelTopic()); // List<ChannelTopic> | Body
+Boolean ignoreErrors = false; // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+        try { 
+            // Add a list of subscriptions to the existing list of subscriptions
+            ChannelTopicEntityListing result = apiInstance.postNotificationsChannelSubscriptions(channelId, body, ignoreErrors);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotificationsApi#postNotificationsChannelSubscriptions");
+            e.printStackTrace();
+        }
+    }
+}

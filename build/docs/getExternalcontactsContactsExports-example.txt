@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExportListing;
+
+public class ExamplegetExternalcontactsContactsExports {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ExternalContactsApi apiInstance = new ExternalContactsApi();
+        List<String> divisionIds = Arrays.asList(null); // List<String> | Division IDs of entities
+String after = "after_example"; // String | The cursor that points to the end of the set of entities
+Integer pageSize = 56; // Integer | Number of entities to return
+        try { 
+            // List exports for organization
+            ExportListing result = apiInstance.getExternalcontactsContactsExports(divisionIds, after, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsExports");
+            e.printStackTrace();
+        }
+    }
+}

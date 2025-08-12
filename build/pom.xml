@@ -251,9 +251,9 @@
       <version>${slf4j-version}</version>
     </dependency>
     <dependency>
-      <groupId>org.ini4j</groupId>
-      <artifactId>ini4j</artifactId>
-      <version>${ini4j-version}</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-configuration2</artifactId>
+      <version>${commons-configuration-version}</version>
     </dependency>
     <!-- HTTP client: apache httpclient -->
     <dependency>
@@ -365,7 +365,7 @@
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
     <guava-version>33.4.8-jre</guava-version>
     <mockito.version>5.18.0</mockito.version>
-    <ini4j-version>0.5.4</ini4j-version>
+    <commons-configuration-version>2.12.0</commons-configuration-version>
     <io-netty-version>4.2.3.Final</io-netty-version>
 
     <name>platform-client-v2</name>

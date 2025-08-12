@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupResponse;import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupCreate;
+
+public class ExamplepostWorkforcemanagementBusinessunitWorkplanbidGroups {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+WorkPlanBidGroupCreate body = new WorkPlanBidGroupCreate(); // WorkPlanBidGroupCreate | body
+        try { 
+            // Add a bid group in a given work plan bid
+            WorkPlanBidGroupResponse result = apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbidGroups");
+            e.printStackTrace();
+        }
+    }
+}

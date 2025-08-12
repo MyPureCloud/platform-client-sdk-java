@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SocialMediaApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+
+public class ExamplegetSocialmediaTopics {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SocialMediaApi apiInstance = new SocialMediaApi();
+        Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+List<String> divisionIds = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
+Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
+        try { 
+            // Retrieve all social topics.
+            SocialTopicResponseEntityListing result = apiInstance.getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopics");
+            e.printStackTrace();
+        }
+    }
+}

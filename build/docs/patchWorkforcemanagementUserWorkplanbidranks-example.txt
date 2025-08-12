@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WorkPlanBidRanks;
+
+public class ExamplepatchWorkforcemanagementUserWorkplanbidranks {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+WorkPlanBidRanks body = new WorkPlanBidRanks(); // WorkPlanBidRanks | body
+        try { 
+            // Update work plan bid ranks for a user
+            WorkPlanBidRanks result = apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks");
+            e.printStackTrace();
+        }
+    }
+}
