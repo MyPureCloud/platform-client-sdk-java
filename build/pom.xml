@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>229.0.0</version>
+  <version>229.1.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -364,12 +364,12 @@
     <ning-asynchttpclient-version>3.0.2</ning-asynchttpclient-version>
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
     <guava-version>33.4.8-jre</guava-version>
-    <mockito.version>5.18.0</mockito.version>
+    <mockito.version>5.19.0</mockito.version>
     <ini4j-version>0.5.4</ini4j-version>
-    <io-netty-version>4.2.3.Final</io-netty-version>
+    <io-netty-version>4.2.4.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>229.0.0</version>
+    <version>229.1.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>

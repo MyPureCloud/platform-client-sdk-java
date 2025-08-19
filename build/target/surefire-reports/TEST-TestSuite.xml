@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="138.524" tests="48" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="142.732" tests="48" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.3.Final/netty-transport-native-kqueue-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.3.Final/netty-transport-native-kqueue-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.3.Final/netty-resolver-dns-native-macos-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.3.Final/netty-resolver-dns-native-macos-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-windows-x86_64.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/jenkins/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/jenkins/.m2/repository/org/mockito/mockito-core/5.18.0/mockito-core-5.18.0.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar:/home/jenkins/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:"/>
+    <property name="java.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-all/4.2.4.Final/netty-all-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.4.Final/netty-codec-base-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.4.Final/netty-codec-dns-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.4.Final/netty-codec-haproxy-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.4.Final/netty-codec-compression-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.4.Final/netty-codec-http2-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.4.Final/netty-codec-http3-4.2.4.Final.jar:/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.4.Final/netty-transport-native-unix-common-4.2.4.Final.jar:/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.4.Final/netty-codec-memcache-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.4.Final/netty-codec-mqtt-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.4.Final/netty-codec-redis-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.4.Final/netty-codec-smtp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.4.Final/netty-codec-stomp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.4.Final/netty-codec-xml-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.4.Final/netty-codec-protobuf-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.4.Final/netty-codec-marshalling-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.4.Final/netty-handler-ssl-ocsp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.4.Final/netty-resolver-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.4.Final/netty-transport-rxtx-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.4.Final/netty-transport-sctp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.4.Final/netty-transport-udt-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.4.Final/netty-transport-classes-epoll-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.4.Final/netty-transport-classes-kqueue-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.4.Final/netty-resolver-dns-classes-macos-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.4.Final/netty-transport-classes-io_uring-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.4.Final/netty-codec-classes-quic-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.4.Final/netty-transport-native-kqueue-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.4.Final/netty-transport-native-kqueue-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.4.Final/netty-resolver-dns-native-macos-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.4.Final/netty-resolver-dns-native-macos-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-windows-x86_64.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/jenkins/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/jenkins/.m2/repository/org/mockito/mockito-core/5.19.0/mockito-core-5.19.0.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy/1.17.6/byte-buddy-1.17.6.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.6/byte-buddy-agent-1.17.6.jar:/home/jenkins/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:"/>
     <property name="gpg.passphrase" value="M0nkeyYawn"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -15,23 +15,23 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/var/build/tools/hudson.model.JDK/OpenJDK_17.0.4/jdk-17.0.4+8/lib"/>
-    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20250803072231202_3.jar /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire 2025-08-03T07-22-31_006-jvmRun1 surefire-20250803072231202_1tmp surefire_0-20250803072231202_2tmp"/>
+    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20250819171819026_3.jar /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire 2025-08-19T17-18-18_662-jvmRun1 surefire-20250819171819026_1tmp surefire_0-20250819171819026_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-all/4.2.3.Final/netty-all-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.3.Final/netty-codec-base-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.3.Final/netty-codec-dns-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.3.Final/netty-codec-haproxy-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.3.Final/netty-codec-compression-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.3.Final/netty-codec-http2-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.3.Final/netty-codec-http3-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.3.Final/netty-transport-native-unix-common-4.2.3.Final.jar:/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.3.Final/netty-codec-memcache-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.3.Final/netty-codec-mqtt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.3.Final/netty-codec-redis-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.3.Final/netty-codec-smtp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.3.Final/netty-codec-stomp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.3.Final/netty-codec-xml-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.3.Final/netty-codec-protobuf-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.3.Final/netty-codec-marshalling-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.3.Final/netty-handler-ssl-ocsp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.3.Final/netty-resolver-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.3.Final/netty-transport-rxtx-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.3.Final/netty-transport-sctp-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.3.Final/netty-transport-udt-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.3.Final/netty-transport-classes-epoll-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.3.Final/netty-transport-classes-kqueue-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.3.Final/netty-resolver-dns-classes-macos-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.3.Final/netty-transport-classes-io_uring-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.3.Final/netty-codec-classes-quic-4.2.3.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.3.Final/netty-transport-native-epoll-4.2.3.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.3.Final/netty-transport-native-io_uring-4.2.3.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.3.Final/netty-transport-native-kqueue-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.3.Final/netty-transport-native-kqueue-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.3.Final/netty-resolver-dns-native-macos-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.3.Final/netty-resolver-dns-native-macos-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.3.Final/netty-codec-native-quic-4.2.3.Final-windows-x86_64.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/jenkins/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/jenkins/.m2/repository/org/mockito/mockito-core/5.18.0/mockito-core-5.18.0.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar:/home/jenkins/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:"/>
+    <property name="surefire.test.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/3.0.2/async-http-client-3.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.119.Final/netty-buffer-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.119.Final/netty-codec-http-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.119.Final/netty-codec-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.119.Final/netty-codec-socks-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.119.Final/netty-handler-proxy-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.119.Final/netty-common-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.119.Final/netty-transport-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.119.Final/netty-handler-4.1.119.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns/4.1.119.Final/netty-resolver-dns-4.1.119.Final.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar:/home/jenkins/.m2/repository/io/netty/netty-all/4.2.4.Final/netty-all-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-base/4.2.4.Final/netty-codec-base-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-dns/4.2.4.Final/netty-codec-dns-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-haproxy/4.2.4.Final/netty-codec-haproxy-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-compression/4.2.4.Final/netty-codec-compression-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http2/4.2.4.Final/netty-codec-http2-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http3/4.2.4.Final/netty-codec-http3-4.2.4.Final.jar:/home/jenkins/.m2/repository/org/jctools/jctools-core/4.0.5/jctools-core-4.0.5.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.4.Final/netty-transport-native-unix-common-4.2.4.Final.jar:/home/jenkins/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-memcache/4.2.4.Final/netty-codec-memcache-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-mqtt/4.2.4.Final/netty-codec-mqtt-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-redis/4.2.4.Final/netty-codec-redis-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-smtp/4.2.4.Final/netty-codec-smtp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-stomp/4.2.4.Final/netty-codec-stomp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-xml/4.2.4.Final/netty-codec-xml-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-protobuf/4.2.4.Final/netty-codec-protobuf-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-marshalling/4.2.4.Final/netty-codec-marshalling-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.4.Final/netty-handler-ssl-ocsp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.2.4.Final/netty-resolver-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-rxtx/4.2.4.Final/netty-transport-rxtx-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-sctp/4.2.4.Final/netty-transport-sctp-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-udt/4.2.4.Final/netty-transport-udt-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.4.Final/netty-transport-classes-epoll-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.4.Final/netty-transport-classes-kqueue-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.4.Final/netty-resolver-dns-classes-macos-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.4.Final/netty-transport-classes-io_uring-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-classes-quic/4.2.4.Final/netty-codec-classes-quic-4.2.4.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.2.4.Final/netty-transport-native-epoll-4.2.4.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-io_uring/4.2.4.Final/netty-transport-native-io_uring-4.2.4.Final-linux-riscv64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.4.Final/netty-transport-native-kqueue-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.2.4.Final/netty-transport-native-kqueue-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.4.Final/netty-resolver-dns-native-macos-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.2.4.Final/netty-resolver-dns-native-macos-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-linux-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-osx-aarch_64.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-native-quic/4.2.4.Final/netty-codec-native-quic-4.2.4.Final-windows-x86_64.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.19.2/jackson-jaxrs-json-provider-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.19.2/jackson-jaxrs-base-2.19.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.19.2/jackson-module-jaxb-annotations-2.19.2.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.19.2/jackson-datatype-joda-2.19.2.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.14.0/joda-time-2.14.0.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/jenkins/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/jenkins/.m2/repository/org/mockito/mockito-core/5.19.0/mockito-core-5.19.0.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy/1.17.6/byte-buddy-1.17.6.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.6/byte-buddy-agent-1.17.6.jar:/home/jenkins/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/jenkins"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2022-07-19"/>
     <property name="java.home" value="/var/build/tools/hudson.model.JDK/OpenJDK_17.0.4/jdk-17.0.4+8"/>
-    <property name="version" value="229.0.0"/>
+    <property name="version" value="229.1.0"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20250803072231202_3.jar"/>
+    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20250819171819026_3.jar"/>
     <property name="com.sun.jndi.rmi.object.trustURLCodebase" value="false"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.4+8"/>
@@ -58,14 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.008">
+  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.009">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] beforeTest
 Before test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
 [&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
 PURECLOUD_ENVIRONMENT=mypurecloud.com
 PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=f9b7917c-d0e4-4c3e-bec0-113880205982@mypurecloud.com
+userEmail=b0fce90d-4ecc-40d5-8951-d11f3818d117@mypurecloud.com
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
 ]]></system-out>
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
@@ -83,11 +83,11 @@ Before test
 [&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
 PURECLOUD_ENVIRONMENT=mypurecloud.com
 PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=06ca0bd7-4a3b-412c-82ff-4ad49a66a85f@mypurecloud.com
+userEmail=396beb37-f38a-4e06-884f-789f3fca5fd7@mypurecloud.com
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
 ]]></system-out>
   </testcase>
-  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.001">
+  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.007">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
 After test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
@@ -97,105 +97,107 @@ Before test
 [&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
 PURECLOUD_ENVIRONMENT=mypurecloud.com
 PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=ab08e688-6b65-4d6b-95f2-d25db0c05929@mypurecloud.com
+userEmail=42f1aba2-b0f0-4d01-b808-44b220a065d1@mypurecloud.com
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.848">
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="1.528">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.415">
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.534">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
+system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.235">
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.263">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
+system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 ]]></system-out>
   </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.621">
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.757">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
-Created user with ID ca5cf055-458e-4065-8d3f-4e597224280c
+Created user with ID 808836c9-3f34-4c4a-8f99-ed31280fa745
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.475">
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.527">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
-Created user with ID 13957d42-4e09-4324-8d2d-81c0b1305868
+Created user with ID d0a5754b-da27-4964-b40c-bc525ca8f02b
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.391">
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.507">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
-Created user with ID 424ad86a-7c08-4739-bcf7-8fda48348a72
+Created user with ID 205bc075-334b-4a11-8617-90b450c26055
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.182">
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.237">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.104">
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.248">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.106">
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.255">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.105">
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.21">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
 ]]></system-out>
   </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.158">
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.127">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
 ]]></system-out>
   </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.093">
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.193">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.534">
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.548">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
 system presence -> BUSY
 system presence -> AVAILABLE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.394">
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.588">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
 system presence -> BUSY
 system presence -> AVAILABLE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.327">
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.583">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
 system presence -> BUSY
 system presence -> AVAILABLE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
 ]]></system-out>
   </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.127">
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.106">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
 ]]></system-out>
   </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.046">
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.076">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
 ]]></system-out>
   </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.082">
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.066">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
 ]]></system-out>
@@ -206,7 +208,7 @@ MockPojo [id 12345]
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 ]]></system-out>
   </testcase>
-  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.001">
+  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.0">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 MockPojo [id 12345]
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
@@ -218,171 +220,169 @@ MockPojo [id 12345]
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 ]]></system-out>
   </testcase>
-  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.044">
+  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.043">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testPreAndPostHooks
 Pre-request hook - Method: GET
-Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/ca5cf055-458e-4065-8d3f-4e597224280c?expand=profileSkills
+Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/808836c9-3f34-4c4a-8f99-ed31280fa745?expand=profileSkills
 Post-hook executed. Status code: 200
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testPreAndPostHooks
 ]]></system-out>
   </testcase>
-  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.104">
+  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.046">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testPreAndPostHooks
 Pre-request hook - Method: GET
-Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/13957d42-4e09-4324-8d2d-81c0b1305868?expand=profileSkills
+Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/d0a5754b-da27-4964-b40c-bc525ca8f02b?expand=profileSkills
 Post-hook executed. Status code: 200
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testPreAndPostHooks
 ]]></system-out>
   </testcase>
-  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.123">
+  <testcase name="testPreAndPostHooks" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.098">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testPreAndPostHooks
 Pre-request hook - Method: GET
-Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/424ad86a-7c08-4739-bcf7-8fda48348a72?expand=profileSkills
+Pre-request hook - URL: https://api.mypurecloud.com/api/v2/users/205bc075-334b-4a11-8617-90b450c26055?expand=profileSkills
 Post-hook executed. Status code: 200
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testPreAndPostHooks
 ]]></system-out>
   </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.234">
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.26">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
-system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
 ]]></system-out>
   </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.148">
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.228">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
-system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
 ]]></system-out>
   </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.123">
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.138">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
-system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="6.235">
+  <testcase name="invokeTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="6.29">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
 After test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
 [&amp#27;[1;36mTEST&amp#27;[0m] setup
+system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.135">
+  <testcase name="invokeTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.174">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_429_And_No_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_429_And_No_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="13.099">
+  <testcase name="invokeTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="13.202">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="40.091">
+  <testcase name="invokeTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="40.157">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_503
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_503
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="2.101">
+  <testcase name="invokeTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="2.277">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_504
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_504
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_504_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.076">
+  <testcase name="invokeTestWith_504_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.184">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_504_No_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_504_No_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_200" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.001">
+  <testcase name="shouldRetryTestWith_200" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.0">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_200
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_200
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.001">
+  <testcase name="shouldRetryTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.0">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.0">
+  <testcase name="shouldRetryTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.003">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_502_And_0_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.001">
+  <testcase name="shouldRetryTestWith_502_And_0_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.0">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_502_And_0_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_502_And_0_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_503_And_RetryConfig" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.001">
+  <testcase name="shouldRetryTestWith_503_And_RetryConfig" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.005">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_503_And_RetryConfig
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_503_And_RetryConfig
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_504_And_No_RetryAfter_Header" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.001">
+  <testcase name="shouldRetryTestWith_504_And_No_RetryAfter_Header" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.017">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_504_And_No_RetryAfter_Header
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_504_And_No_RetryAfter_Header
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="5.119">
+  <testcase name="invokeAsyncTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="5.209">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.088">
+  <testcase name="invokeAsyncTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.155">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_429_And_No_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_429_And_No_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="13.105">
+  <testcase name="invokeAsyncTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="13.162">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="40.08">
+  <testcase name="invokeAsyncTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="40.238">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_503
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_503
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="2.089">
+  <testcase name="invokeAsyncTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="2.099">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_504
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_504
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_504_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.087">
+  <testcase name="invokeAsyncTestWith_504_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.102">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_504_And_No_MaxRetryTime
