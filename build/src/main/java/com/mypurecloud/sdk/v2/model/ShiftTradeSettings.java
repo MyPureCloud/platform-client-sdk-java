@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ShiftTradeActivityRule;
+import com.mypurecloud.sdk.v2.model.ShiftTradeExternalActivityRule;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -231,6 +232,8 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean requiresMatchingSkills = null;
   private Boolean requiresMatchingPlanningGroups = null;
   private List<ShiftTradeActivityRule> activityCategoryRules = null;
+  private List<ShiftTradeExternalActivityRule> externalActivityRules = null;
+  private Boolean externalActivityRuleIgnoresActivityCategoryRule = null;
   private Integer maxTradeSpanWeeks = null;
   private Integer maxTradesPerAgentPerWeek = null;
   private Integer minMinutesBetweenShifts = null;
@@ -385,6 +388,7 @@ public class ShiftTradeSettings  implements Serializable {
   public ShiftTradeSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
+      externalActivityRules = new ArrayList<ShiftTradeExternalActivityRule>();
     }
   }
 
@@ -624,6 +628,42 @@ public class ShiftTradeSettings  implements Serializable {
 
 
   /**
+   * Rules that specify what to do with external activities that are part of a shift
+   **/
+  public ShiftTradeSettings externalActivityRules(List<ShiftTradeExternalActivityRule> externalActivityRules) {
+    this.externalActivityRules = externalActivityRules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Rules that specify what to do with external activities that are part of a shift")
+  @JsonProperty("externalActivityRules")
+  public List<ShiftTradeExternalActivityRule> getExternalActivityRules() {
+    return externalActivityRules;
+  }
+  public void setExternalActivityRules(List<ShiftTradeExternalActivityRule> externalActivityRules) {
+    this.externalActivityRules = externalActivityRules;
+  }
+
+
+  /**
+   * Whether external activity rules ignore activity category rules
+   **/
+  public ShiftTradeSettings externalActivityRuleIgnoresActivityCategoryRule(Boolean externalActivityRuleIgnoresActivityCategoryRule) {
+    this.externalActivityRuleIgnoresActivityCategoryRule = externalActivityRuleIgnoresActivityCategoryRule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether external activity rules ignore activity category rules")
+  @JsonProperty("externalActivityRuleIgnoresActivityCategoryRule")
+  public Boolean getExternalActivityRuleIgnoresActivityCategoryRule() {
+    return externalActivityRuleIgnoresActivityCategoryRule;
+  }
+  public void setExternalActivityRuleIgnoresActivityCategoryRule(Boolean externalActivityRuleIgnoresActivityCategoryRule) {
+    this.externalActivityRuleIgnoresActivityCategoryRule = externalActivityRuleIgnoresActivityCategoryRule;
+  }
+
+
+  /**
    * The maximum number of weeks a shift trade can span
    **/
   public ShiftTradeSettings maxTradeSpanWeeks(Integer maxTradeSpanWeeks) {
@@ -754,6 +794,8 @@ public class ShiftTradeSettings  implements Serializable {
             Objects.equals(this.requiresMatchingSkills, shiftTradeSettings.requiresMatchingSkills) &&
             Objects.equals(this.requiresMatchingPlanningGroups, shiftTradeSettings.requiresMatchingPlanningGroups) &&
             Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules) &&
+            Objects.equals(this.externalActivityRules, shiftTradeSettings.externalActivityRules) &&
+            Objects.equals(this.externalActivityRuleIgnoresActivityCategoryRule, shiftTradeSettings.externalActivityRuleIgnoresActivityCategoryRule) &&
             Objects.equals(this.maxTradeSpanWeeks, shiftTradeSettings.maxTradeSpanWeeks) &&
             Objects.equals(this.maxTradesPerAgentPerWeek, shiftTradeSettings.maxTradesPerAgentPerWeek) &&
             Objects.equals(this.minMinutesBetweenShifts, shiftTradeSettings.minMinutesBetweenShifts) &&
@@ -764,7 +806,7 @@ public class ShiftTradeSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, requiresMatchingPlanningGroups, activityCategoryRules, maxTradeSpanWeeks, maxTradesPerAgentPerWeek, minMinutesBetweenShifts, planningPeriodMinPaidViolations, planningPeriodMaxPaidViolations, minMinutesBetweenShiftsViolations);
+    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, requiresMatchingPlanningGroups, activityCategoryRules, externalActivityRules, externalActivityRuleIgnoresActivityCategoryRule, maxTradeSpanWeeks, maxTradesPerAgentPerWeek, minMinutesBetweenShifts, planningPeriodMinPaidViolations, planningPeriodMaxPaidViolations, minMinutesBetweenShiftsViolations);
   }
 
   @Override
@@ -785,6 +827,8 @@ public class ShiftTradeSettings  implements Serializable {
     sb.append("    requiresMatchingSkills: ").append(toIndentedString(requiresMatchingSkills)).append("\n");
     sb.append("    requiresMatchingPlanningGroups: ").append(toIndentedString(requiresMatchingPlanningGroups)).append("\n");
     sb.append("    activityCategoryRules: ").append(toIndentedString(activityCategoryRules)).append("\n");
+    sb.append("    externalActivityRules: ").append(toIndentedString(externalActivityRules)).append("\n");
+    sb.append("    externalActivityRuleIgnoresActivityCategoryRule: ").append(toIndentedString(externalActivityRuleIgnoresActivityCategoryRule)).append("\n");
     sb.append("    maxTradeSpanWeeks: ").append(toIndentedString(maxTradeSpanWeeks)).append("\n");
     sb.append("    maxTradesPerAgentPerWeek: ").append(toIndentedString(maxTradesPerAgentPerWeek)).append("\n");
     sb.append("    minMinutesBetweenShifts: ").append(toIndentedString(minMinutesBetweenShifts)).append("\n");

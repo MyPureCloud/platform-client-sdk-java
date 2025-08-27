@@ -54,7 +54,8 @@ public class MessagingCommunicationEndedEvent  implements Serializable {
     ERROR("Error"),
     TRANSFER("Transfer"),
     TRANSFERACD("TransferACD"),
-    TRANSFERUSER("TransferUser");
+    TRANSFERUSER("TransferUser"),
+    SESSIONEXPIRED("SessionExpired");
 
     private String value;
 

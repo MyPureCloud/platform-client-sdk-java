@@ -17,6 +17,11 @@ import com.mypurecloud.sdk.v2.model.Assistant;
 import com.mypurecloud.sdk.v2.model.AssistantListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
+import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
@@ -30,6 +35,9 @@ import com.mypurecloud.sdk.v2.api.request.GetAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAssistantQueueRequest;
 
@@ -790,6 +798,231 @@ public class AgentAssistantsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AssistantQueueListing> response = (ApiResponse<AssistantQueueListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkResponse> postAssistantQueueUsersBulkAddAsync(PostAssistantQueueUsersBulkAddRequest request, final AsyncApiCallback<BulkResponse> callback) {
+    try {
+      final SettableFuture<BulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkResponse>> postAssistantQueueUsersBulkAddAsync(ApiRequest<AssistantQueueUsersBulkAddRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkResponse> postAssistantQueueUsersBulkRemoveAsync(PostAssistantQueueUsersBulkRemoveRequest request, final AsyncApiCallback<BulkResponse> callback) {
+    try {
+      final SettableFuture<BulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkResponse>> postAssistantQueueUsersBulkRemoveAsync(ApiRequest<AssistantQueueUsersBulkRemoveRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssistantQueueUsersQueryResponse> postAssistantQueueUsersQueryAsync(PostAssistantQueueUsersQueryRequest request, final AsyncApiCallback<AssistantQueueUsersQueryResponse> callback) {
+    try {
+      final SettableFuture<AssistantQueueUsersQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssistantQueueUsersQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssistantQueueUsersQueryResponse>> postAssistantQueueUsersQueryAsync(ApiRequest<AssistantQueueUsersQueryRequest> request, final AsyncApiCallback<ApiResponse<AssistantQueueUsersQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssistantQueueUsersQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssistantQueueUsersQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AssistantQueueUsersQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssistantQueueUsersQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersQueryResponse> response = (ApiResponse<AssistantQueueUsersQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssistantQueueUsersQueryResponse> response = (ApiResponse<AssistantQueueUsersQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -256,14 +256,14 @@ public class EscalationRuleResponse  implements Serializable {
 
 
   /**
-   * The target integration configuration used for an open social media message if the match criteria returns true.
+   * The target integration configuration used for an open message escalation.
    **/
   public EscalationRuleResponse openEscalation(EscalationTarget openEscalation) {
     this.openEscalation = openEscalation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target integration configuration used for an open social media message if the match criteria returns true.")
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for an open message escalation.")
   @JsonProperty("openEscalation")
   public EscalationTarget getOpenEscalation() {
     return openEscalation;
@@ -274,14 +274,14 @@ public class EscalationRuleResponse  implements Serializable {
 
 
   /**
-   * The target integration configuration used for a Facebook social media message if the match criteria returns true.
+   * The target integration configuration used for a Facebook message escalation.
    **/
   public EscalationRuleResponse facebookEscalation(EscalationTarget facebookEscalation) {
     this.facebookEscalation = facebookEscalation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target integration configuration used for a Facebook social media message if the match criteria returns true.")
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for a Facebook message escalation.")
   @JsonProperty("facebookEscalation")
   public EscalationTarget getFacebookEscalation() {
     return facebookEscalation;
@@ -292,14 +292,14 @@ public class EscalationRuleResponse  implements Serializable {
 
 
   /**
-   * The target integration configuration used for an Instagram social media message if the match criteria returns true.
+   * The target integration configuration used for an Instagram message escalation.
    **/
   public EscalationRuleResponse instagramEscalation(EscalationTarget instagramEscalation) {
     this.instagramEscalation = instagramEscalation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target integration configuration used for an Instagram social media message if the match criteria returns true.")
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for an Instagram message escalation.")
   @JsonProperty("instagramEscalation")
   public EscalationTarget getInstagramEscalation() {
     return instagramEscalation;
@@ -310,14 +310,14 @@ public class EscalationRuleResponse  implements Serializable {
 
 
   /**
-   * The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.
+   * The target integration configuration used for a X (formerly Twitter) message escalation.
    **/
   public EscalationRuleResponse twitterEscalation(EscalationTarget twitterEscalation) {
     this.twitterEscalation = twitterEscalation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.")
+  @ApiModelProperty(example = "null", value = "The target integration configuration used for a X (formerly Twitter) message escalation.")
   @JsonProperty("twitterEscalation")
   public EscalationTarget getTwitterEscalation() {
     return twitterEscalation;

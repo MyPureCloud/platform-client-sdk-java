@@ -26,10 +26,10 @@ import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.DomainPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.PolicyAttributeSet;
 import com.mypurecloud.sdk.v2.model.PolicyTestPayload;
 import com.mypurecloud.sdk.v2.model.PolicyTestResult;
@@ -1184,13 +1184,13 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PermissionCollectionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, final AsyncApiCallback<PermissionCollectionEntityListing> callback) {
+  public Future<DomainPermissionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, final AsyncApiCallback<DomainPermissionEntityListing> callback) {
     try {
-      final SettableFuture<PermissionCollectionEntityListing> future = SettableFuture.create();
+      final SettableFuture<DomainPermissionEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {}, new AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainPermissionEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainPermissionEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<PermissionCollectionEntityListing> response) {
+        public void onCompleted(ApiResponse<DomainPermissionEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1218,13 +1218,13 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PermissionCollectionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>> callback) {
+  public Future<ApiResponse<DomainPermissionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainPermissionEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<PermissionCollectionEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DomainPermissionEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<PermissionCollectionEntityListing>() {}, new AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DomainPermissionEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainPermissionEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<PermissionCollectionEntityListing> response) {
+        public void onCompleted(ApiResponse<DomainPermissionEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1232,7 +1232,7 @@ public class AuthorizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<DomainPermissionEntityListing> response = (ApiResponse<DomainPermissionEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1240,7 +1240,7 @@ public class AuthorizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DomainPermissionEntityListing> response = (ApiResponse<DomainPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

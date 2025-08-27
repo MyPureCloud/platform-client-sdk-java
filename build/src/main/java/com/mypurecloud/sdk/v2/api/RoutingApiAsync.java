@@ -148,7 +148,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
@@ -3054,81 +3053,6 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailOutboundDomainResult> response = (ApiResponse<EmailOutboundDomainResult>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<OutboundDomain> getRoutingEmailOutboundDomainSearchAsync(GetRoutingEmailOutboundDomainSearchRequest request, final AsyncApiCallback<OutboundDomain> callback) {
-    try {
-      final SettableFuture<OutboundDomain> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundDomain> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<OutboundDomain>> getRoutingEmailOutboundDomainSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutboundDomain>> callback) {
-    try {
-      final SettableFuture<ApiResponse<OutboundDomain>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundDomain> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9078,8 +9002,8 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9112,8 +9036,8 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

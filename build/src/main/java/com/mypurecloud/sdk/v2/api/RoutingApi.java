@@ -145,7 +145,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
@@ -3172,84 +3171,6 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailOutboundDomainResult> response = (ApiResponse<EmailOutboundDomainResult>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param domainId domain ID (required)
-   * @return OutboundDomain
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundDomain getRoutingEmailOutboundDomainSearch(String domainId) throws IOException, ApiException {
-    return  getRoutingEmailOutboundDomainSearch(createGetRoutingEmailOutboundDomainSearchRequest(domainId));
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param domainId domain ID (required)
-   * @return OutboundDomain
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundDomain> getRoutingEmailOutboundDomainSearchWithHttpInfo(String domainId) throws IOException {
-    return getRoutingEmailOutboundDomainSearch(createGetRoutingEmailOutboundDomainSearchRequest(domainId).withHttpInfo());
-  }
-
-  private GetRoutingEmailOutboundDomainSearchRequest createGetRoutingEmailOutboundDomainSearchRequest(String domainId) {
-    return GetRoutingEmailOutboundDomainSearchRequest.builder()
-            .withDomainId(domainId)
-
-            .build();
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param request The request object
-   * @return OutboundDomain
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundDomain getRoutingEmailOutboundDomainSearch(GetRoutingEmailOutboundDomainSearchRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<OutboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundDomain>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Search a domain across organizations
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundDomain> getRoutingEmailOutboundDomainSearch(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<OutboundDomain>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10012,8 +9933,8 @@ public class RoutingApi {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param domainId domain ID (required)
    * @param body TestMessage (optional)
    * @return TestMessage
@@ -10025,8 +9946,8 @@ public class RoutingApi {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param domainId domain ID (required)
    * @param body TestMessage (optional)
    * @return TestMessage
@@ -10046,8 +9967,8 @@ public class RoutingApi {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param request The request object
    * @return TestMessage
    * @throws ApiException if the request fails on the server
@@ -10065,8 +9986,8 @@ public class RoutingApi {
   }
 
   /**
-   * Tests the custom SMTP server integration connection set on this domain
-   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * Tests the custom SMTP server integration connection set on this ACD domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

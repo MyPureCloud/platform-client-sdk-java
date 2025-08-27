@@ -75,6 +75,8 @@ public class JourneyEventDefinition  implements Serializable {
     }
   }
   private SourceEnum source = null;
+  private Integer rank = null;
+  private String displayName = null;
   private String description = null;
   private JsonSchemaDocument jsonSchema = null;
   private String selfUri = null;
@@ -103,6 +105,20 @@ public class JourneyEventDefinition  implements Serializable {
   @JsonProperty("source")
   public SourceEnum getSource() {
     return source;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The rank of the event definition")
+  @JsonProperty("rank")
+  public Integer getRank() {
+    return rank;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The display name of the event definition")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
   }
 
 
@@ -140,6 +156,8 @@ public class JourneyEventDefinition  implements Serializable {
     return Objects.equals(this.id, journeyEventDefinition.id) &&
             Objects.equals(this.name, journeyEventDefinition.name) &&
             Objects.equals(this.source, journeyEventDefinition.source) &&
+            Objects.equals(this.rank, journeyEventDefinition.rank) &&
+            Objects.equals(this.displayName, journeyEventDefinition.displayName) &&
             Objects.equals(this.description, journeyEventDefinition.description) &&
             Objects.equals(this.jsonSchema, journeyEventDefinition.jsonSchema) &&
             Objects.equals(this.selfUri, journeyEventDefinition.selfUri);
@@ -147,7 +165,7 @@ public class JourneyEventDefinition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, source, description, jsonSchema, selfUri);
+    return Objects.hash(id, name, source, rank, displayName, description, jsonSchema, selfUri);
   }
 
   @Override
@@ -158,6 +176,8 @@ public class JourneyEventDefinition  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    jsonSchema: ").append(toIndentedString(jsonSchema)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -100,7 +100,8 @@ public class SocialMediaQueryPredicate  implements Serializable {
     MESSAGECONTENTTYPE("messageContentType"),
     SENTIMENT("sentiment"),
     DATAINGESTIONRULE("dataIngestionRule"),
-    TEXT("text");
+    TEXT("text"),
+    MODERATIONFLAG("moderationFlag");
 
     private String value;
 

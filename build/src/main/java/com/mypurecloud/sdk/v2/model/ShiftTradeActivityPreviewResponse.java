@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -28,6 +29,56 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
   private String activityCodeId = null;
   private Boolean countsAsPaidTime = null;
   private Integer payableMinutes = null;
+
+  private static class ExternalActivityTypeEnumDeserializer extends StdDeserializer<ExternalActivityTypeEnum> {
+    public ExternalActivityTypeEnumDeserializer() {
+      super(ExternalActivityTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ExternalActivityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExternalActivityTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the external activity associated with this activity, if applicable
+   */
+ @JsonDeserialize(using = ExternalActivityTypeEnumDeserializer.class)
+  public enum ExternalActivityTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVITYPLAN("ActivityPlan"),
+    COACHING("Coaching"),
+    LEARNING("Learning");
+
+    private String value;
+
+    ExternalActivityTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ExternalActivityTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ExternalActivityTypeEnum value : ExternalActivityTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ExternalActivityTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ExternalActivityTypeEnum externalActivityType = null;
+  private String externalActivityId = null;
 
   public ShiftTradeActivityPreviewResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -125,6 +176,42 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
   }
 
 
+  /**
+   * The type of the external activity associated with this activity, if applicable
+   **/
+  public ShiftTradeActivityPreviewResponse externalActivityType(ExternalActivityTypeEnum externalActivityType) {
+    this.externalActivityType = externalActivityType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the external activity associated with this activity, if applicable")
+  @JsonProperty("externalActivityType")
+  public ExternalActivityTypeEnum getExternalActivityType() {
+    return externalActivityType;
+  }
+  public void setExternalActivityType(ExternalActivityTypeEnum externalActivityType) {
+    this.externalActivityType = externalActivityType;
+  }
+
+
+  /**
+   * The ID of the external activity associated with this activity, if applicable
+   **/
+  public ShiftTradeActivityPreviewResponse externalActivityId(String externalActivityId) {
+    this.externalActivityId = externalActivityId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the external activity associated with this activity, if applicable")
+  @JsonProperty("externalActivityId")
+  public String getExternalActivityId() {
+    return externalActivityId;
+  }
+  public void setExternalActivityId(String externalActivityId) {
+    this.externalActivityId = externalActivityId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -139,12 +226,14 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
             Objects.equals(this.lengthMinutes, shiftTradeActivityPreviewResponse.lengthMinutes) &&
             Objects.equals(this.activityCodeId, shiftTradeActivityPreviewResponse.activityCodeId) &&
             Objects.equals(this.countsAsPaidTime, shiftTradeActivityPreviewResponse.countsAsPaidTime) &&
-            Objects.equals(this.payableMinutes, shiftTradeActivityPreviewResponse.payableMinutes);
+            Objects.equals(this.payableMinutes, shiftTradeActivityPreviewResponse.payableMinutes) &&
+            Objects.equals(this.externalActivityType, shiftTradeActivityPreviewResponse.externalActivityType) &&
+            Objects.equals(this.externalActivityId, shiftTradeActivityPreviewResponse.externalActivityId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, lengthMinutes, activityCodeId, countsAsPaidTime, payableMinutes);
+    return Objects.hash(startDate, lengthMinutes, activityCodeId, countsAsPaidTime, payableMinutes, externalActivityType, externalActivityId);
   }
 
   @Override
@@ -157,6 +246,8 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
+    sb.append("    externalActivityType: ").append(toIndentedString(externalActivityType)).append("\n");
+    sb.append("    externalActivityId: ").append(toIndentedString(externalActivityId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

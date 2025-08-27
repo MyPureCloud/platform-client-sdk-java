@@ -31,10 +31,10 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
   private Integer pageNumber = null;
   private Long total = null;
   private Integer queueTotal = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private String lastUri = null;
-  private String firstUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -133,6 +133,23 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
 
   /**
    **/
+  public ReprocessJobEntityListingResponse firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
   public ReprocessJobEntityListingResponse nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -179,23 +196,6 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public ReprocessJobEntityListingResponse firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
   }
 
 
@@ -248,17 +248,17 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
             Objects.equals(this.pageNumber, reprocessJobEntityListingResponse.pageNumber) &&
             Objects.equals(this.total, reprocessJobEntityListingResponse.total) &&
             Objects.equals(this.queueTotal, reprocessJobEntityListingResponse.queueTotal) &&
+            Objects.equals(this.firstUri, reprocessJobEntityListingResponse.firstUri) &&
             Objects.equals(this.nextUri, reprocessJobEntityListingResponse.nextUri) &&
             Objects.equals(this.previousUri, reprocessJobEntityListingResponse.previousUri) &&
             Objects.equals(this.lastUri, reprocessJobEntityListingResponse.lastUri) &&
-            Objects.equals(this.firstUri, reprocessJobEntityListingResponse.firstUri) &&
             Objects.equals(this.selfUri, reprocessJobEntityListingResponse.selfUri) &&
             Objects.equals(this.pageCount, reprocessJobEntityListingResponse.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, queueTotal, nextUri, previousUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, queueTotal, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -271,10 +271,10 @@ public class ReprocessJobEntityListingResponse  implements Serializable, PagedRe
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    queueTotal: ").append(toIndentedString(queueTotal)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

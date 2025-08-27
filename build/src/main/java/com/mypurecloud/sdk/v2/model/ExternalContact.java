@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AppleOpaqueId;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.ContactAddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
@@ -63,6 +64,7 @@ public class ExternalContact  implements Serializable {
   private WhatsAppId whatsAppId = null;
   private FacebookId facebookId = null;
   private InstagramId instagramId = null;
+  private List<AppleOpaqueId> appleOpaqueIds = null;
   private List<ExternalId> externalIds = null;
   private List<ContactIdentifier> identifiers = null;
   private Date modifyDate = null;
@@ -131,6 +133,7 @@ public class ExternalContact  implements Serializable {
 
   public ExternalContact() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      appleOpaqueIds = new ArrayList<AppleOpaqueId>();
       externalIds = new ArrayList<ExternalId>();
       identifiers = new ArrayList<ContactIdentifier>();
       externalDataSources = new ArrayList<ExternalDataSource>();
@@ -486,6 +489,24 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * User information for an Apple account
+   **/
+  public ExternalContact appleOpaqueIds(List<AppleOpaqueId> appleOpaqueIds) {
+    this.appleOpaqueIds = appleOpaqueIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User information for an Apple account")
+  @JsonProperty("appleOpaqueIds")
+  public List<AppleOpaqueId> getAppleOpaqueIds() {
+    return appleOpaqueIds;
+  }
+  public void setAppleOpaqueIds(List<AppleOpaqueId> appleOpaqueIds) {
+    this.appleOpaqueIds = appleOpaqueIds;
+  }
+
+
+  /**
    * A list of external identifiers that identify this contact in an external system
    **/
   public ExternalContact externalIds(List<ExternalId> externalIds) {
@@ -731,6 +752,7 @@ public class ExternalContact  implements Serializable {
             Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
             Objects.equals(this.facebookId, externalContact.facebookId) &&
             Objects.equals(this.instagramId, externalContact.instagramId) &&
+            Objects.equals(this.appleOpaqueIds, externalContact.appleOpaqueIds) &&
             Objects.equals(this.externalIds, externalContact.externalIds) &&
             Objects.equals(this.identifiers, externalContact.identifiers) &&
             Objects.equals(this.modifyDate, externalContact.modifyDate) &&
@@ -752,7 +774,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, identifiers, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergedFrom, mergedTo, mergeOperation, selfUri);
+    return Objects.hash(id, division, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, instagramId, appleOpaqueIds, externalIds, identifiers, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergedFrom, mergedTo, mergeOperation, selfUri);
   }
 
   @Override
@@ -780,6 +802,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
+    sb.append("    appleOpaqueIds: ").append(toIndentedString(appleOpaqueIds)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");

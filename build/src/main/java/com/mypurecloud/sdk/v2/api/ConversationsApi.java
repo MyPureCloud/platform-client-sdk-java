@@ -175,6 +175,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
+import com.mypurecloud.sdk.v2.model.UpdateConferenceRequest;
 import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
@@ -192,6 +193,7 @@ import com.mypurecloud.sdk.v2.model.WrapupInput;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
@@ -307,12 +309,14 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommun
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryEngagementsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationUtilizationlabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallConferenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantCommunicationRequest;
@@ -615,6 +619,81 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAnalyticsConversationsDetailsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param conversationId conversation ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversation(String conversationId) throws IOException, ApiException {
+     deleteConversation(createDeleteConversationRequest(conversationId));
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param conversationId conversation ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationWithHttpInfo(String conversationId) throws IOException {
+    return deleteConversation(createDeleteConversationRequest(conversationId).withHttpInfo());
+  }
+
+  private DeleteConversationRequest createDeleteConversationRequest(String conversationId) {
+    return DeleteConversationRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversation(DeleteConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversation(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -10057,6 +10136,85 @@ public class ConversationsApi {
   }
 
   /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body SetRecordingState (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+     patchConversationRecordingstate(createPatchConversationRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body SetRecordingState (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return patchConversationRecordingstate(createPatchConversationRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationRecordingstateRequest createPatchConversationRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PatchConversationRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationRecordingstate(PatchConversationRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the secure attributes on a conversation.
    * 
    * @param conversationId conversation ID (required)
@@ -10554,6 +10712,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by merging in other conversations to create a conference
+   * 
+   * @param conversationId conversationId (required)
+   * @param body UpdateConferenceRequest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallConference(String conversationId, UpdateConferenceRequest body) throws IOException, ApiException {
+     patchConversationsCallConference(createPatchConversationsCallConferenceRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by merging in other conversations to create a conference
+   * 
+   * @param conversationId conversationId (required)
+   * @param body UpdateConferenceRequest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallConferenceWithHttpInfo(String conversationId, UpdateConferenceRequest body) throws IOException {
+    return patchConversationsCallConference(createPatchConversationsCallConferenceRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsCallConferenceRequest createPatchConversationsCallConferenceRequest(String conversationId, UpdateConferenceRequest body) {
+    return PatchConversationsCallConferenceRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by merging in other conversations to create a conference
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallConference(PatchConversationsCallConferenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update a conversation by merging in other conversations to create a conference
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallConference(ApiRequest<UpdateConferenceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

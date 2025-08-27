@@ -271,7 +271,8 @@ public class QualityAuditLogMessage  implements Serializable {
     CALIBRATION("Calibration"),
     ANNOTATION("Annotation"),
     SCREENRECORDING("ScreenRecording"),
-    SURVEY("Survey");
+    SURVEY("Survey"),
+    SNIPPETRECORDING("SnippetRecording");
 
     private String value;
 

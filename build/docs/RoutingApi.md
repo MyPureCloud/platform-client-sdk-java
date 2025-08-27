@@ -41,7 +41,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | Get domains |
 | [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | Get domain |
 | [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
-| [**getRoutingEmailOutboundDomainSearch**](RoutingApi#getRoutingEmailOutboundDomainSearch) | Search a domain across organizations |
 | [**getRoutingEmailOutboundDomains**](RoutingApi#getRoutingEmailOutboundDomains) | Get outbound domains |
 | [**getRoutingEmailSetup**](RoutingApi#getRoutingEmailSetup) | Get email setup |
 | [**getRoutingLanguage**](RoutingApi#getRoutingLanguage) | Get a routing language |
@@ -121,7 +120,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingAssessments**](RoutingApi#postRoutingAssessments) | Create a benefit assessment. |
 | [**postRoutingAssessmentsJobs**](RoutingApi#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
 | [**postRoutingEmailDomainRoutes**](RoutingApi#postRoutingEmailDomainRoutes) | Create a route |
-| [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
+| [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this ACD domain |
 | [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
@@ -2356,65 +2355,6 @@ try {
 ### Return type
 
 [**EmailOutboundDomainResult**](EmailOutboundDomainResult)
-
-
-# **getRoutingEmailOutboundDomainSearch**
-
-
-> [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomainSearch(domainId)
-
-Search a domain across organizations
-
-Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/search  
-
-Requires ALL permissions: 
-
-* routing:email:manage
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RoutingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RoutingApi apiInstance = new RoutingApi();
-String domainId = "domainId_example"; // String | domain ID
-try {
-    OutboundDomain result = apiInstance.getRoutingEmailOutboundDomainSearch(domainId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomainSearch");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **domainId** | **String**| domain ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**OutboundDomain**](OutboundDomain)
 
 
 # **getRoutingEmailOutboundDomains**
@@ -7393,9 +7333,9 @@ try {
 
 > [TestMessage](TestMessage) postRoutingEmailDomainTestconnection(domainId, body)
 
-Tests the custom SMTP server integration connection set on this domain
+Tests the custom SMTP server integration connection set on this ACD domain
 
-The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 
 Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection  
 
@@ -9750,4 +9690,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

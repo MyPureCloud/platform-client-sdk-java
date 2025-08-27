@@ -31,10 +31,10 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
   private Integer pageNumber = null;
   private Long total = null;
   private Long totalNumberOfEntities = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private String lastUri = null;
-  private String firstUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -133,6 +133,23 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
 
   /**
    **/
+  public IVRDivisionViewEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
   public IVRDivisionViewEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -179,23 +196,6 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public IVRDivisionViewEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
   }
 
 
@@ -248,17 +248,17 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
             Objects.equals(this.pageNumber, iVRDivisionViewEntityListing.pageNumber) &&
             Objects.equals(this.total, iVRDivisionViewEntityListing.total) &&
             Objects.equals(this.totalNumberOfEntities, iVRDivisionViewEntityListing.totalNumberOfEntities) &&
+            Objects.equals(this.firstUri, iVRDivisionViewEntityListing.firstUri) &&
             Objects.equals(this.nextUri, iVRDivisionViewEntityListing.nextUri) &&
             Objects.equals(this.previousUri, iVRDivisionViewEntityListing.previousUri) &&
             Objects.equals(this.lastUri, iVRDivisionViewEntityListing.lastUri) &&
-            Objects.equals(this.firstUri, iVRDivisionViewEntityListing.firstUri) &&
             Objects.equals(this.selfUri, iVRDivisionViewEntityListing.selfUri) &&
             Objects.equals(this.pageCount, iVRDivisionViewEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, nextUri, previousUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -271,10 +271,10 @@ public class IVRDivisionViewEntityListing  implements Serializable, PagedResourc
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

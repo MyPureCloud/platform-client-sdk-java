@@ -49,6 +49,7 @@ public class WorkPlanConstraintMessage  implements Serializable {
     ACTIVITYEARLIESTSTARTTIMEMINUTESFROMSHIFTSTART("ActivityEarliestStartTimeMinutesFromShiftStart"),
     ACTIVITYLATESTSTARTTIMEMINUTESFROMMIDNIGHT("ActivityLatestStartTimeMinutesFromMidnight"),
     ACTIVITYLATESTSTARTTIMEMINUTESFROMSHIFTSTART("ActivityLatestStartTimeMinutesFromShiftStart"),
+    ACTIVITYMAXIMUMLENGTHFROMSHIFTENDMINUTES("ActivityMaximumLengthFromShiftEndMinutes"),
     ACTIVITYMINIMUMLENGTHFROMSHIFTENDMINUTES("ActivityMinimumLengthFromShiftEndMinutes"),
     ACTIVITYMINIMUMLENGTHFROMSHIFTSTARTMINUTES("ActivityMinimumLengthFromShiftStartMinutes"),
     ACTIVITYSTARTTIMEINCREMENTINMINUTES("ActivityStartTimeIncrementInMinutes"),

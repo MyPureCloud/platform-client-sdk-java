@@ -18,6 +18,7 @@
 | ACTIVITYEARLIESTSTARTTIMEMINUTESFROMSHIFTSTART | &quot;ActivityEarliestStartTimeMinutesFromShiftStart&quot; | 
 | ACTIVITYLATESTSTARTTIMEMINUTESFROMMIDNIGHT | &quot;ActivityLatestStartTimeMinutesFromMidnight&quot; | 
 | ACTIVITYLATESTSTARTTIMEMINUTESFROMSHIFTSTART | &quot;ActivityLatestStartTimeMinutesFromShiftStart&quot; | 
+| ACTIVITYMAXIMUMLENGTHFROMSHIFTENDMINUTES | &quot;ActivityMaximumLengthFromShiftEndMinutes&quot; | 
 | ACTIVITYMINIMUMLENGTHFROMSHIFTENDMINUTES | &quot;ActivityMinimumLengthFromShiftEndMinutes&quot; | 
 | ACTIVITYMINIMUMLENGTHFROMSHIFTSTARTMINUTES | &quot;ActivityMinimumLengthFromShiftStartMinutes&quot; | 
 | ACTIVITYSTARTTIMEINCREMENTINMINUTES | &quot;ActivityStartTimeIncrementInMinutes&quot; | 
@@ -55,4 +56,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

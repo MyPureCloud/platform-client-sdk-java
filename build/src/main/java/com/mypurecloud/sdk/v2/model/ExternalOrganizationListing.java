@@ -31,10 +31,10 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
   private Integer pageNumber = null;
   private Long total = null;
   private Boolean partialResults = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private String lastUri = null;
-  private String firstUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -132,6 +132,23 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
 
   /**
    **/
+  public ExternalOrganizationListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
   public ExternalOrganizationListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -178,23 +195,6 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public ExternalOrganizationListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
   }
 
 
@@ -247,17 +247,17 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
             Objects.equals(this.pageNumber, externalOrganizationListing.pageNumber) &&
             Objects.equals(this.total, externalOrganizationListing.total) &&
             Objects.equals(this.partialResults, externalOrganizationListing.partialResults) &&
+            Objects.equals(this.firstUri, externalOrganizationListing.firstUri) &&
             Objects.equals(this.nextUri, externalOrganizationListing.nextUri) &&
             Objects.equals(this.previousUri, externalOrganizationListing.previousUri) &&
             Objects.equals(this.lastUri, externalOrganizationListing.lastUri) &&
-            Objects.equals(this.firstUri, externalOrganizationListing.firstUri) &&
             Objects.equals(this.selfUri, externalOrganizationListing.selfUri) &&
             Objects.equals(this.pageCount, externalOrganizationListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, partialResults, nextUri, previousUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, partialResults, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -270,10 +270,10 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    partialResults: ").append(toIndentedString(partialResults)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

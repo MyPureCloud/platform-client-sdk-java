@@ -14,6 +14,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | Get all queues assigned to any assistant. |
 | [**patchAssistant**](AgentAssistantsApi#patchAssistant) | Update an assistant. |
 | [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | Update Queues for an Assistant. |
+| [**postAssistantQueueUsersBulkAdd**](AgentAssistantsApi#postAssistantQueueUsersBulkAdd) | Bulk add users to assistant-queue (requires manual assignment mode). |
+| [**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | Bulk remove users from assistant-queue (requires manual assignment mode). |
+| [**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | Query for users in the assistant-queue (requires manual assignment mode). |
 | [**postAssistants**](AgentAssistantsApi#postAssistants) | Create an Assistant. |
 | [**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | Create a queue assistant association. |
 {: class="table-striped"}
@@ -646,6 +649,197 @@ try {
 [**AssistantQueueListing**](AssistantQueueListing)
 
 
+# **postAssistantQueueUsersBulkAdd**
+
+
+> [BulkResponse](BulkResponse) postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
+
+Bulk add users to assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add  
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String assistantId = "assistantId_example"; // String | Assistant ID
+String queueId = "queueId_example"; // String | Queue ID
+AssistantQueueUsersBulkAddRequest body = new AssistantQueueUsersBulkAddRequest(); // AssistantQueueUsersBulkAddRequest | 
+try {
+    BulkResponse result = apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#postAssistantQueueUsersBulkAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assistantId** | **String**| Assistant ID | 
+| **queueId** | **String**| Queue ID | 
+| **body** | [**AssistantQueueUsersBulkAddRequest**](AssistantQueueUsersBulkAddRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkResponse**](BulkResponse)
+
+
+# **postAssistantQueueUsersBulkRemove**
+
+
+> [BulkResponse](BulkResponse) postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
+
+Bulk remove users from assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove  
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String assistantId = "assistantId_example"; // String | Assistant ID
+String queueId = "queueId_example"; // String | Queue ID
+AssistantQueueUsersBulkRemoveRequest body = new AssistantQueueUsersBulkRemoveRequest(); // AssistantQueueUsersBulkRemoveRequest | 
+try {
+    BulkResponse result = apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#postAssistantQueueUsersBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assistantId** | **String**| Assistant ID | 
+| **queueId** | **String**| Queue ID | 
+| **body** | [**AssistantQueueUsersBulkRemoveRequest**](AssistantQueueUsersBulkRemoveRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkResponse**](BulkResponse)
+
+
+# **postAssistantQueueUsersQuery**
+
+
+> [AssistantQueueUsersQueryResponse](AssistantQueueUsersQueryResponse) postAssistantQueueUsersQuery(assistantId, queueId, body, expand)
+
+Query for users in the assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/query  
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String assistantId = "assistantId_example"; // String | Assistant ID
+String queueId = "queueId_example"; // String | Queue ID
+AssistantQueueUsersQueryRequest body = new AssistantQueueUsersQueryRequest(); // AssistantQueueUsersQueryRequest | 
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand with.
+try {
+    AssistantQueueUsersQueryResponse result = apiInstance.postAssistantQueueUsersQuery(assistantId, queueId, body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#postAssistantQueueUsersQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assistantId** | **String**| Assistant ID | 
+| **queueId** | **String**| Queue ID | 
+| **body** | [**AssistantQueueUsersQueryRequest**](AssistantQueueUsersQueryRequest)|  | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand with. | [optional]<br />**Values**: assistant, copilot 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssistantQueueUsersQueryResponse**](AssistantQueueUsersQueryResponse)
+
+
 # **postAssistants**
 
 
@@ -768,4 +962,4 @@ try {
 [**AssistantQueue**](AssistantQueue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

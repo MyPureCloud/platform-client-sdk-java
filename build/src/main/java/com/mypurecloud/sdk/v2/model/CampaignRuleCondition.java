@@ -53,7 +53,14 @@ public class CampaignRuleCondition  implements Serializable {
     CAMPAIGNBUSINESSFAILURE("campaignBusinessFailure"),
     CAMPAIGNBUSINESSNEUTRAL("campaignBusinessNeutral"),
     CAMPAIGNVALIDATTEMPTS("campaignValidAttempts"),
-    CAMPAIGNRIGHTPARTYCONTACTS("campaignRightPartyContacts");
+    CAMPAIGNRIGHTPARTYCONTACTS("campaignRightPartyContacts"),
+    TIMEOFDAY("timeOfDay"),
+    DAYOFWEEK("dayOfWeek"),
+    DAYOFMONTH("dayOfMonth"),
+    WEEKDAYOFMONTH("weekDayOfMonth"),
+    SPECIFICDATE("specificDate"),
+    CAMPAIGNRUNTIME("campaignRunTime"),
+    CAMPAIGNWAITTIME("campaignWaitTime");
 
     private String value;
 

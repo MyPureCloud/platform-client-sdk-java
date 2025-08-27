@@ -24,6 +24,11 @@ import com.mypurecloud.sdk.v2.model.Assistant;
 import com.mypurecloud.sdk.v2.model.AssistantListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
+import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAssistantsQueuesRequest {

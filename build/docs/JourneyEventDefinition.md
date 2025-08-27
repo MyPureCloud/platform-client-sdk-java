@@ -8,6 +8,8 @@
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The name of the event definition |  |
 | **source** | [**SourceEnum**](#Enum--SourceEnum) | The source of the event definition |  |
+| **rank** | **Integer** | The rank of the event definition |  [optional] |
+| **displayName** | **String** | The display name of the event definition |  [optional] |
 | **description** | **String** | The description of this event definition |  |
 | **jsonSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | The JSON schema of this event definition |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -24,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

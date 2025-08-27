@@ -55,7 +55,13 @@ public class DecisionTableInputColumnExpression  implements Serializable {
     ENDSWITH("EndsWith"),
     NOTENDSWITH("NotEndsWith"),
     CONTAINS("Contains"),
-    NOTCONTAINS("NotContains");
+    NOTCONTAINS("NotContains"),
+    CONTAINSANY("ContainsAny"),
+    NOTCONTAINSANY("NotContainsAny"),
+    CONTAINSALL("ContainsAll"),
+    NOTCONTAINSALL("NotContainsAll"),
+    CONTAINSEXACTLY("ContainsExactly"),
+    NOTCONTAINSEXACTLY("NotContainsExactly");
 
     private String value;
 

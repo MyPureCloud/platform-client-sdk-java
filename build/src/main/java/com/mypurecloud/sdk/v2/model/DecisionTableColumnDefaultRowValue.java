@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -25,6 +27,7 @@ import java.io.Serializable;
 public class DecisionTableColumnDefaultRowValue  implements Serializable {
   
   private String value = null;
+  private List<String> values = null;
 
   private static class SpecialEnumDeserializer extends StdDeserializer<SpecialEnum> {
     public SpecialEnumDeserializer() {
@@ -78,6 +81,7 @@ public class DecisionTableColumnDefaultRowValue  implements Serializable {
 
   public DecisionTableColumnDefaultRowValue() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      values = new ArrayList<String>();
     }
   }
 
@@ -97,6 +101,24 @@ public class DecisionTableColumnDefaultRowValue  implements Serializable {
   }
   public void setValue(String value) {
     this.value = value;
+  }
+
+
+  /**
+   * A default list of values for this column, items will be cast to appropriate type according to the relevant contract schema property
+   **/
+  public DecisionTableColumnDefaultRowValue values(List<String> values) {
+    this.values = values;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A default list of values for this column, items will be cast to appropriate type according to the relevant contract schema property")
+  @JsonProperty("values")
+  public List<String> getValues() {
+    return values;
+  }
+  public void setValues(List<String> values) {
+    this.values = values;
   }
 
 
@@ -129,12 +151,13 @@ public class DecisionTableColumnDefaultRowValue  implements Serializable {
     DecisionTableColumnDefaultRowValue decisionTableColumnDefaultRowValue = (DecisionTableColumnDefaultRowValue) o;
 
     return Objects.equals(this.value, decisionTableColumnDefaultRowValue.value) &&
+            Objects.equals(this.values, decisionTableColumnDefaultRowValue.values) &&
             Objects.equals(this.special, decisionTableColumnDefaultRowValue.special);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, special);
+    return Objects.hash(value, values, special);
   }
 
   @Override
@@ -143,6 +166,7 @@ public class DecisionTableColumnDefaultRowValue  implements Serializable {
     sb.append("class DecisionTableColumnDefaultRowValue {\n");
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("    special: ").append(toIndentedString(special)).append("\n");
     sb.append("}");
     return sb.toString();

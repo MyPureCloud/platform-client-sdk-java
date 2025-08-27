@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PushDeviceInsertRequest;
+import com.mypurecloud.sdk.v2.model.PushDeviceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.WebMessagingMessageEntityList;
 
 public class GetWebmessagingMessagesRequest {

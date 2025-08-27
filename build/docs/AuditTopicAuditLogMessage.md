@@ -40,6 +40,7 @@
 | KNOWLEDGE | &quot;Knowledge&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
+| USERSRULES | &quot;UsersRules&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | EMPLOYEEENGAGEMENT | &quot;EmployeeEngagement&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
@@ -263,10 +264,12 @@
 | SURVEYFORM | &quot;SurveyForm&quot; | 
 | RECORDING | &quot;Recording&quot; | 
 | SCREENRECORDING | &quot;ScreenRecording&quot; | 
+| SNIPPETRECORDING | &quot;SnippetRecording&quot; | 
 | BULKACTIONS | &quot;BulkActions&quot; | 
 | ORPHANEDRECORDING | &quot;OrphanedRecording&quot; | 
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; | 
+| SNIPPETRECORDINGSETTINGS | &quot;SnippetRecordingSettings&quot; | 
 | RECORDINGKEY | &quot;RecordingKey&quot; | 
 | RECORDINGKEYCONFIG | &quot;RecordingKeyConfig&quot; | 
 | TOPIC | &quot;Topic&quot; | 
@@ -417,6 +420,8 @@
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; | 
 | EDGEPCAPS | &quot;EdgePcaps&quot; | 
 | EDGELOG | &quot;EdgeLog&quot; | 
+| DISASTERRECOVERYLINKORG | &quot;DisasterRecoveryLinkOrg&quot; | 
+| DISASTERRECOVERYNUMBERROUTING | &quot;DisasterRecoveryNumberRouting&quot; | 
 | ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; | 
 | PRODUCT | &quot;Product&quot; | 
 | USER | &quot;User&quot; | 
@@ -441,6 +446,7 @@
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
 | OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
+| EMAILSETTING | &quot;EmailSetting&quot; | 
 | ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
 | COMPOSERPAGE | &quot;ComposerPage&quot; | 
 | COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
@@ -467,4 +473,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

@@ -78,6 +78,7 @@ public class KnowledgeSuggestionConfig  implements Serializable {
   private VendorNameEnum vendorName = null;
   private KnowledgeBaseReference knowledgeBase = null;
   private List<KnowledgeBaseWithDialectReference> knowledgeBases = null;
+  private Boolean receiveSegmentedArticles = null;
 
   public KnowledgeSuggestionConfig() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -140,6 +141,24 @@ public class KnowledgeSuggestionConfig  implements Serializable {
   }
 
 
+  /**
+   * Include segmented articles in knowledge suggestions.
+   **/
+  public KnowledgeSuggestionConfig receiveSegmentedArticles(Boolean receiveSegmentedArticles) {
+    this.receiveSegmentedArticles = receiveSegmentedArticles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Include segmented articles in knowledge suggestions.")
+  @JsonProperty("receiveSegmentedArticles")
+  public Boolean getReceiveSegmentedArticles() {
+    return receiveSegmentedArticles;
+  }
+  public void setReceiveSegmentedArticles(Boolean receiveSegmentedArticles) {
+    this.receiveSegmentedArticles = receiveSegmentedArticles;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -152,12 +171,13 @@ public class KnowledgeSuggestionConfig  implements Serializable {
 
     return Objects.equals(this.vendorName, knowledgeSuggestionConfig.vendorName) &&
             Objects.equals(this.knowledgeBase, knowledgeSuggestionConfig.knowledgeBase) &&
-            Objects.equals(this.knowledgeBases, knowledgeSuggestionConfig.knowledgeBases);
+            Objects.equals(this.knowledgeBases, knowledgeSuggestionConfig.knowledgeBases) &&
+            Objects.equals(this.receiveSegmentedArticles, knowledgeSuggestionConfig.receiveSegmentedArticles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(vendorName, knowledgeBase, knowledgeBases);
+    return Objects.hash(vendorName, knowledgeBase, knowledgeBases, receiveSegmentedArticles);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class KnowledgeSuggestionConfig  implements Serializable {
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    knowledgeBases: ").append(toIndentedString(knowledgeBases)).append("\n");
+    sb.append("    receiveSegmentedArticles: ").append(toIndentedString(receiveSegmentedArticles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

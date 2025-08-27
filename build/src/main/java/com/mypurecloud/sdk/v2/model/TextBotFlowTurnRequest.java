@@ -49,6 +49,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NOOP("NoOp"),
     USERINPUT("UserInput"),
+    RICHMEDIAINPUT("RichMediaInput"),
     ERROR("Error"),
     NOMATCH("NoMatch"),
     NOINPUT("NoInput"),

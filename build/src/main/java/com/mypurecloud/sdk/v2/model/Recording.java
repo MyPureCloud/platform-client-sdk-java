@@ -755,14 +755,14 @@ public class Recording  implements Serializable {
 
 
   /**
-   * How many archive restorations the organization is allowed to have.
+   * How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
    **/
   public Recording maxAllowedRestorationsForOrg(Integer maxAllowedRestorationsForOrg) {
     this.maxAllowedRestorationsForOrg = maxAllowedRestorationsForOrg;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How many archive restorations the organization is allowed to have.")
+  @ApiModelProperty(example = "null", value = "How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.")
   @JsonProperty("maxAllowedRestorationsForOrg")
   public Integer getMaxAllowedRestorationsForOrg() {
     return maxAllowedRestorationsForOrg;
@@ -773,14 +773,14 @@ public class Recording  implements Serializable {
 
 
   /**
-   * The remaining archive restorations the organization has.
+   * The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
    **/
   public Recording remainingRestorationsAllowedForOrg(Integer remainingRestorationsAllowedForOrg) {
     this.remainingRestorationsAllowedForOrg = remainingRestorationsAllowedForOrg;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The remaining archive restorations the organization has.")
+  @ApiModelProperty(example = "null", value = "The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.")
   @JsonProperty("remainingRestorationsAllowedForOrg")
   public Integer getRemainingRestorationsAllowedForOrg() {
     return remainingRestorationsAllowedForOrg;

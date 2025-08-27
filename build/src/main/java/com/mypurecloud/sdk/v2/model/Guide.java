@@ -164,7 +164,7 @@ public class Guide  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The date and time the guide was created.. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The date and time the guide was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;

@@ -16,7 +16,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -80,10 +82,12 @@ public class Literal  implements Serializable {
     }
   }
   private SpecialEnum special = null;
+  private List<String> strings = null;
   private Boolean _boolean = null;
 
   public Literal() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      strings = new ArrayList<String>();
     }
   }
 
@@ -197,6 +201,24 @@ public class Literal  implements Serializable {
 
 
   /**
+   * A string list value
+   **/
+  public Literal strings(List<String> strings) {
+    this.strings = strings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A string list value")
+  @JsonProperty("strings")
+  public List<String> getStrings() {
+    return strings;
+  }
+  public void setStrings(List<String> strings) {
+    this.strings = strings;
+  }
+
+
+  /**
    * A boolean value
    **/
   public Literal _boolean(Boolean _boolean) {
@@ -230,12 +252,13 @@ public class Literal  implements Serializable {
             Objects.equals(this.date, literal.date) &&
             Objects.equals(this.datetime, literal.datetime) &&
             Objects.equals(this.special, literal.special) &&
+            Objects.equals(this.strings, literal.strings) &&
             Objects.equals(this._boolean, literal._boolean);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(string, integer, number, date, datetime, special, _boolean);
+    return Objects.hash(string, integer, number, date, datetime, special, strings, _boolean);
   }
 
   @Override
@@ -249,6 +272,7 @@ public class Literal  implements Serializable {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    datetime: ").append(toIndentedString(datetime)).append("\n");
     sb.append("    special: ").append(toIndentedString(special)).append("\n");
+    sb.append("    strings: ").append(toIndentedString(strings)).append("\n");
     sb.append("    _boolean: ").append(toIndentedString(_boolean)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -185,6 +185,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterOAuthSettings;
 import com.mypurecloud.sdk.v2.model.TwitterSignupOAuthSettings;
+import com.mypurecloud.sdk.v2.model.UpdateConferenceRequest;
 import com.mypurecloud.sdk.v2.model.UploadMediaRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;

@@ -47,7 +47,8 @@ public class CopilotAction  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     KNOWLEDGEARTICLE("KnowledgeArticle"),
     CANNEDRESPONSE("CannedResponse"),
-    SCRIPT("Script");
+    SCRIPT("Script"),
+    CHECKLIST("Checklist");
 
     private String value;
 

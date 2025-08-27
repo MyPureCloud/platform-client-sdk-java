@@ -14,6 +14,11 @@ import com.mypurecloud.sdk.v2.model.Assistant;
 import com.mypurecloud.sdk.v2.model.AssistantListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AssistantQueueListing;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkAddRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
+import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
+import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
@@ -27,6 +32,9 @@ import com.mypurecloud.sdk.v2.api.request.GetAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAssistantQueueRequest;
 
@@ -894,6 +902,268 @@ public class AgentAssistantsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssistantQueueListing> response = (ApiResponse<AssistantQueueListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkResponse postAssistantQueueUsersBulkAdd(String assistantId, String queueId, AssistantQueueUsersBulkAddRequest body) throws IOException, ApiException {
+    return  postAssistantQueueUsersBulkAdd(createPostAssistantQueueUsersBulkAddRequest(assistantId, queueId, body));
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkResponse> postAssistantQueueUsersBulkAddWithHttpInfo(String assistantId, String queueId, AssistantQueueUsersBulkAddRequest body) throws IOException {
+    return postAssistantQueueUsersBulkAdd(createPostAssistantQueueUsersBulkAddRequest(assistantId, queueId, body).withHttpInfo());
+  }
+
+  private PostAssistantQueueUsersBulkAddRequest createPostAssistantQueueUsersBulkAddRequest(String assistantId, String queueId, AssistantQueueUsersBulkAddRequest body) {
+    return PostAssistantQueueUsersBulkAddRequest.builder()
+            .withAssistantId(assistantId)
+
+            .withQueueId(queueId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkResponse postAssistantQueueUsersBulkAdd(PostAssistantQueueUsersBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add users to assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkResponse> postAssistantQueueUsersBulkAdd(ApiRequest<AssistantQueueUsersBulkAddRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkResponse postAssistantQueueUsersBulkRemove(String assistantId, String queueId, AssistantQueueUsersBulkRemoveRequest body) throws IOException, ApiException {
+    return  postAssistantQueueUsersBulkRemove(createPostAssistantQueueUsersBulkRemoveRequest(assistantId, queueId, body));
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkResponse> postAssistantQueueUsersBulkRemoveWithHttpInfo(String assistantId, String queueId, AssistantQueueUsersBulkRemoveRequest body) throws IOException {
+    return postAssistantQueueUsersBulkRemove(createPostAssistantQueueUsersBulkRemoveRequest(assistantId, queueId, body).withHttpInfo());
+  }
+
+  private PostAssistantQueueUsersBulkRemoveRequest createPostAssistantQueueUsersBulkRemoveRequest(String assistantId, String queueId, AssistantQueueUsersBulkRemoveRequest body) {
+    return PostAssistantQueueUsersBulkRemoveRequest.builder()
+            .withAssistantId(assistantId)
+
+            .withQueueId(queueId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkResponse postAssistantQueueUsersBulkRemove(PostAssistantQueueUsersBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk remove users from assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkResponse> postAssistantQueueUsersBulkRemove(ApiRequest<AssistantQueueUsersBulkRemoveRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @param expand Which fields, if any, to expand with. (optional)
+   * @return AssistantQueueUsersQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersQueryResponse postAssistantQueueUsersQuery(String assistantId, String queueId, AssistantQueueUsersQueryRequest body, List<String> expand) throws IOException, ApiException {
+    return  postAssistantQueueUsersQuery(createPostAssistantQueueUsersQueryRequest(assistantId, queueId, body, expand));
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param assistantId Assistant ID (required)
+   * @param queueId Queue ID (required)
+   * @param body  (required)
+   * @param expand Which fields, if any, to expand with. (optional)
+   * @return AssistantQueueUsersQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersQueryResponse> postAssistantQueueUsersQueryWithHttpInfo(String assistantId, String queueId, AssistantQueueUsersQueryRequest body, List<String> expand) throws IOException {
+    return postAssistantQueueUsersQuery(createPostAssistantQueueUsersQueryRequest(assistantId, queueId, body, expand).withHttpInfo());
+  }
+
+  private PostAssistantQueueUsersQueryRequest createPostAssistantQueueUsersQueryRequest(String assistantId, String queueId, AssistantQueueUsersQueryRequest body, List<String> expand) {
+    return PostAssistantQueueUsersQueryRequest.builder()
+            .withAssistantId(assistantId)
+
+            .withQueueId(queueId)
+
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return AssistantQueueUsersQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueueUsersQueryResponse postAssistantQueueUsersQuery(PostAssistantQueueUsersQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssistantQueueUsersQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssistantQueueUsersQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for users in the assistant-queue (requires manual assignment mode).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueueUsersQueryResponse> postAssistantQueueUsersQuery(ApiRequest<AssistantQueueUsersQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssistantQueueUsersQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersQueryResponse> response = (ApiResponse<AssistantQueueUsersQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueueUsersQueryResponse> response = (ApiResponse<AssistantQueueUsersQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

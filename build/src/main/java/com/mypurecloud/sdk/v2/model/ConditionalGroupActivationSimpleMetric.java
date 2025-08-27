@@ -44,6 +44,7 @@ public class ConditionalGroupActivationSimpleMetric  implements Serializable {
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ESTIMATEDWAITTIME("EstimatedWaitTime"),
+    IDLEAGENTCOUNT("IdleAgentCount"),
     SERVICELEVEL("ServiceLevel");
 
     private String value;

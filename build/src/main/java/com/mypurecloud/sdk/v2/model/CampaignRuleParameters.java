@@ -48,7 +48,11 @@ public class CampaignRuleParameters  implements Serializable {
     GREATERTHAN("greaterThan"),
     GREATERTHANEQUALTO("greaterThanEqualTo"),
     LESSTHAN("lessThan"),
-    LESSTHANEQUALTO("lessThanEqualTo");
+    LESSTHANEQUALTO("lessThanEqualTo"),
+    BEFORE("before"),
+    AFTER("after"),
+    BETWEEN("between"),
+    IN("in");
 
     private String value;
 
