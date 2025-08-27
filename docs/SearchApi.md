@@ -1531,4 +1531,4 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

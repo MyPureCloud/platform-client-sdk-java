@@ -49,8 +49,9 @@
 | ININ_OUTBOUND_ON_DO_NOT_CALL_LIST | &quot;ININ_OUTBOUND_ON_DO_NOT_CALL_LIST&quot; | 
 | ININ_OUTBOUND_NOT_CALLABLE_TIME | &quot;ININ_OUTBOUND_NOT_CALLABLE_TIME&quot; | 
 | OUTBOUND_STUCK_CONTACT | &quot;OUTBOUND_STUCK_CONTACT&quot; | 
+| OUTBOUND_CONTACT_DOMAIN_BLOCKED | &quot;OUTBOUND_CONTACT_DOMAIN_BLOCKED&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

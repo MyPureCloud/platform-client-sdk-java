@@ -22,8 +22,8 @@
 | **deleteDate** | [**Date**](Date) | The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **exportDate** | [**Date**](Date) | The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **exportedDate** | [**Date**](Date) | The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **maxAllowedRestorationsForOrg** | **Integer** | How many archive restorations the organization is allowed to have. |  [optional] |
-| **remainingRestorationsAllowedForOrg** | **Integer** | The remaining archive restorations the organization has. |  [optional] |
+| **maxAllowedRestorationsForOrg** | **Integer** | How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced. |  [optional] |
+| **remainingRestorationsAllowedForOrg** | **Integer** | The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced. |  [optional] |
 | **sessionId** | **String** | The session id represents an external resource id, such as email, call, chat, etc |  [optional] |
 | **region** | [**RegionEnum**](#Enum--RegionEnum) | The region the source recording is stored in |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -90,4 +90,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

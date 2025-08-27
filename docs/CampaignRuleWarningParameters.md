@@ -46,8 +46,15 @@
 | CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
 | CAMPAIGNVALIDATTEMPTS | &quot;campaignValidAttempts&quot; | 
 | CAMPAIGNRIGHTPARTYCONTACTS | &quot;campaignRightPartyContacts&quot; | 
+| TIMEOFDAY | &quot;timeOfDay&quot; | 
+| DAYOFWEEK | &quot;dayOfWeek&quot; | 
+| DAYOFMONTH | &quot;dayOfMonth&quot; | 
+| WEEKDAYOFMONTH | &quot;weekDayOfMonth&quot; | 
+| SPECIFICDATE | &quot;specificDate&quot; | 
+| CAMPAIGNRUNTIME | &quot;campaignRunTime&quot; | 
+| CAMPAIGNWAITTIME | &quot;campaignWaitTime&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

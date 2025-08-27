@@ -61,6 +61,7 @@
 | UNABLETOSCHEDULEWORKDAYFROMTIMEOFF | &quot;UnableToScheduleWorkDayFromTimeOff&quot; | 
 | AGENTWITHOUTCAPABILITYTOHANDLEACTIVITYONQUEUEWORK | &quot;AgentWithoutCapabilityToHandleActivityOnQueueWork&quot; | 
 | UNABLETOPRODUCEAGENTSCHEDULEDUETOUNAVAILABLETIMES | &quot;UnableToProduceAgentScheduleDueToUnavailableTimes&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTANDPAIDDURATIONVARIANCEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxShiftStartAndPaidDurationVarianceFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTTIMEVARIANCEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory&quot; | 
@@ -80,4 +81,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

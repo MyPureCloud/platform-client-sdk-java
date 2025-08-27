@@ -18,6 +18,7 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NOOP | &quot;NoOp&quot; | 
 | USERINPUT | &quot;UserInput&quot; | 
+| RICHMEDIAINPUT | &quot;RichMediaInput&quot; | 
 | ERROR | &quot;Error&quot; | 
 | NOMATCH | &quot;NoMatch&quot; | 
 | NOINPUT | &quot;NoInput&quot; | 
@@ -27,4 +28,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

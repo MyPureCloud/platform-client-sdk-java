@@ -26,8 +26,14 @@
 | NOTENDSWITH | &quot;NotEndsWith&quot; | 
 | CONTAINS | &quot;Contains&quot; | 
 | NOTCONTAINS | &quot;NotContains&quot; | 
+| CONTAINSANY | &quot;ContainsAny&quot; | 
+| NOTCONTAINSANY | &quot;NotContainsAny&quot; | 
+| CONTAINSALL | &quot;ContainsAll&quot; | 
+| NOTCONTAINSALL | &quot;NotContainsAll&quot; | 
+| CONTAINSEXACTLY | &quot;ContainsExactly&quot; | 
+| NOTCONTAINSEXACTLY | &quot;NotContainsExactly&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_

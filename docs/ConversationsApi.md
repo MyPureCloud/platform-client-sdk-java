@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | Delete/cancel an async request for conversation aggregates |
 | [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
+| [**deleteConversation**](ConversationsApi#deleteConversation) | Update a conversation by disconnecting all of the participants |
 | [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | Delete a code used to add a communication to this participant |
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | Cancel the transfer |
@@ -121,12 +122,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | Gets a record for a given meetingId |
 | [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
+| [**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | Update a conversation by setting its recording state |
 | [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
 | [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | Update agent's engagement for the summary. |
 | [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | Update the feedback for the summary. |
 | [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied |
 | [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | Update after-call work for this conversation communication. |
 | [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
+| [**patchConversationsCallConference**](ConversationsApi#patchConversationsCallConference) | Update a conversation by merging in other conversations to create a conference |
 | [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | Update conversation participant |
 | [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup. |
@@ -392,6 +395,64 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteConversation**
+
+
+> Void deleteConversation(conversationId)
+
+Update a conversation by disconnecting all of the participants
+
+Wraps DELETE /api/v2/conversations/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+try {
+    apiInstance.deleteConversation(conversationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
 {: class="table-striped"}
 
 
@@ -7398,6 +7459,66 @@ try {
 null (empty response body)
 
 
+# **patchConversationRecordingstate**
+
+
+> Void patchConversationRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PATCH /api/v2/conversations/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    apiInstance.patchConversationRecordingstate(conversationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **patchConversationSecureattributes**
 
 
@@ -7768,6 +7889,66 @@ try {
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+# **patchConversationsCallConference**
+
+
+> Void patchConversationsCallConference(conversationId, body)
+
+Update a conversation by merging in other conversations to create a conference
+
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/conference  
+
+Requires ANY permissions: 
+
+* conversation:conference:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+UpdateConferenceRequest body = new UpdateConferenceRequest(); // UpdateConferenceRequest | UpdateConferenceRequest
+try {
+    apiInstance.patchConversationsCallConference(conversationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsCallConference");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**UpdateConferenceRequest**](UpdateConferenceRequest)| UpdateConferenceRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **patchConversationsCallParticipant**
@@ -17231,4 +17412,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:229.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
