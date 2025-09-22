@@ -6,7 +6,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteUserrecording**](UserRecordingsApi#deleteUserrecording) | Delete a user recording. |
 | [**getUserrecording**](UserRecordingsApi#getUserrecording) | Get a user recording. |
-| [**getUserrecordingMedia**](UserRecordingsApi#getUserrecordingMedia) | Download a user recording. |
 | [**getUserrecordingTranscoding**](UserRecordingsApi#getUserrecordingTranscoding) | Download a user recording. |
 | [**getUserrecordings**](UserRecordingsApi#getUserrecordings) | Get a list of user recordings. |
 | [**getUserrecordingsSummary**](UserRecordingsApi#getUserrecordingsSummary) | Get user recording summary |
@@ -129,73 +128,6 @@ try {
 ### Return type
 
 [**UserRecording**](UserRecording)
-
-
-# **getUserrecordingMedia**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [DownloadResponse](DownloadResponse) getUserrecordingMedia(recordingId, formatId, async)
-
-Download a user recording.
-
-API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-
-Wraps GET /api/v2/userrecordings/{recordingId}/media  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.UserRecordingsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-UserRecordingsApi apiInstance = new UserRecordingsApi();
-String recordingId = "recordingId_example"; // String | User Recording ID
-String formatId = "WEBM"; // String | The desired media format.
-Boolean async = true; // Boolean | When set to true, api will return 202 response until the recording is ready for download
-try {
-    DownloadResponse result = apiInstance.getUserrecordingMedia(recordingId, formatId, async);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserRecordingsApi#getUserrecordingMedia");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **recordingId** | **String**| User Recording ID | 
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
-| **async** | **Boolean**| When set to true, api will return 202 response until the recording is ready for download | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**DownloadResponse**](DownloadResponse)
 
 
 # **getUserrecordingTranscoding**
@@ -437,4 +369,4 @@ try {
 [**UserRecording**](UserRecording)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

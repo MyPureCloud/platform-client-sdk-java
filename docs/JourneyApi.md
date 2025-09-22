@@ -50,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | Get an Event Definition |
 | [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
 | [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | Get the jobs for an organization. |
+| [**getJourneyViewsJobsMe**](JourneyApi#getJourneyViewsJobsMe) | Get my jobs |
 | [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | Get the journey schedules for an organization. |
 | [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Update a single action target. |
@@ -2903,6 +2904,71 @@ try {
 [**JourneyViewJobListing**](JourneyViewJobListing)
 
 
+# **getJourneyViewsJobsMe**
+
+
+> [JourneyViewJobListing](JourneyViewJobListing) getJourneyViewsJobsMe(pageNumber, pageSize, interval, statuses)
+
+Get my jobs
+
+Wraps GET /api/v2/journey/views/jobs/me  
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | The number of the page to return
+Integer pageSize = 25; // Integer | Max number of entities to return
+String interval = 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z; // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+String statuses = statuses=Accepted,Executing,Complete,Failed,Scheduled; // String | Job statuses to filter for
+try {
+    JourneyViewJobListing result = apiInstance.getJourneyViewsJobsMe(pageNumber, pageSize, interval, statuses);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsJobsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| The number of the page to return | [optional] [default to 1] 
+| **pageSize** | **Integer**| Max number of entities to return | [optional] [default to 25] 
+| **interval** | **String**| An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional] [default to null] 
+| **statuses** | **String**| Job statuses to filter for | [optional] [default to null] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewJobListing**](JourneyViewJobListing)
+
+
 # **getJourneyViewsSchedules**
 
 
@@ -4561,4 +4627,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

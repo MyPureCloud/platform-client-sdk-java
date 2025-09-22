@@ -174,6 +174,7 @@
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
 | INREVIEW | &quot;InReview&quot; | 
 | ACTIVE | &quot;Active&quot; | 
+| DELETED | &quot;Deleted&quot; | 
 | WRITE | &quot;Write&quot; | 
 | REPLACE | &quot;Replace&quot; | 
 | UPDATEINSERVICE | &quot;UpdateInService&quot; | 
@@ -473,4 +474,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

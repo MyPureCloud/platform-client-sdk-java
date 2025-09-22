@@ -1,4 +1,4 @@
-# OutboundDomainRequest
+# OutboundDomainCreateRequest
 
 
 ## Properties
@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | Unique Id of the domain such as: example.com |  |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | Sender Type |  [optional] |
+| **emailSetting** | [**EmailSettingReference**](EmailSettingReference) | The email settings to associate with this domain. |  [optional] |
 | **name** | **String** | The domain such as: example.com |  |
 
 
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

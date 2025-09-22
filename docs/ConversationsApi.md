@@ -203,12 +203,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | Initiate voice consult transfer |
 | [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | Add participants to a conversation |
+| [**postConversationsCallParticipantsUserUserId**](ConversationsApi#postConversationsCallParticipantsUserUserId) | Add participants to a conversation without a user context |
 | [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallbacks**](ConversationsApi#postConversationsCallbacks) | Create a Callback |
 | [**postConversationsCallbacksBulkDisconnect**](ConversationsApi#postConversationsCallbacksBulkDisconnect) | Disconnect multiple scheduled callbacks |
 | [**postConversationsCallbacksBulkUpdate**](ConversationsApi#postConversationsCallbacksBulkUpdate) | Update multiple scheduled callbacks |
 | [**postConversationsCalls**](ConversationsApi#postConversationsCalls) | Create a call conversation |
+| [**postConversationsCallsUserUserId**](ConversationsApi#postConversationsCallsUserUserId) | Create a call conversation on behalf of a user |
 | [**postConversationsChatCommunicationMessages**](ConversationsApi#postConversationsChatCommunicationMessages) | Send a message on behalf of a communication in a chat conversation. |
 | [**postConversationsChatCommunicationTyping**](ConversationsApi#postConversationsChatCommunicationTyping) | Send a typing-indicator on behalf of a communication in a chat conversation. |
 | [**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi#postConversationsChatParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
@@ -9445,6 +9447,7 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}
 Requires ANY permissions: 
 
 * conversation:communication:disconnect
+* conversation:message:park
 
 ### Example
 
@@ -12546,6 +12549,69 @@ try {
 [**Conversation**](Conversation)
 
 
+# **postConversationsCallParticipantsUserUserId**
+
+
+> [Conversation](Conversation) postConversationsCallParticipantsUserUserId(conversationId, userId, body)
+
+Add participants to a conversation without a user context
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId}  
+
+Requires ANY permissions: 
+
+* conversation:agentlessCall:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String userId = "userId_example"; // String | userId
+Conversation body = new Conversation(); // Conversation | Conversation
+try {
+    Conversation result = apiInstance.postConversationsCallParticipantsUserUserId(conversationId, userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantsUserUserId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **userId** | **String**| userId | 
+| **body** | [**Conversation**](Conversation)| Conversation | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Conversation**](Conversation)
+
+
 # **postConversationsCallbackParticipantCommunicationWrapup**
 
 
@@ -12898,6 +12964,68 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateCallRequest**](CreateCallRequest)| Call request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CreateCallResponse**](CreateCallResponse)
+
+
+# **postConversationsCallsUserUserId**
+
+
+> [CreateCallResponse](CreateCallResponse) postConversationsCallsUserUserId(userId, body)
+
+Create a call conversation on behalf of a user
+
+Wraps POST /api/v2/conversations/calls/user/{userId}  
+
+Requires ANY permissions: 
+
+* conversation:agentlessCall:add
+* conversation:call:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String userId = "userId_example"; // String | userId
+CreateCallRequest body = new CreateCallRequest(); // CreateCallRequest | Call request
+try {
+    CreateCallResponse result = apiInstance.postConversationsCallsUserUserId(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallsUserUserId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
 | **body** | [**CreateCallRequest**](CreateCallRequest)| Call request | 
 {: class="table-striped"}
 
@@ -13688,6 +13816,8 @@ null (empty response body)
 > Void postConversationsEmailReconnect(conversationId)
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+This request is not valid when using the Client Credentials OAuth grant.
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/reconnect  
 
@@ -17412,4 +17542,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

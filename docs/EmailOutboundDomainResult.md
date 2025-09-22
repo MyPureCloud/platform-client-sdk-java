@@ -10,6 +10,7 @@
 | **domainName** | **String** |  |  [optional] |
 | **senderStatus** | [**SenderStatusEnum**](#Enum--SenderStatusEnum) |  |  [optional] |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) |  |  [optional] |
+| **emailSetting** | [**EmailSetting**](EmailSetting) | The email settings associated with this domain. |  [optional] |
 
 
 ## Enum: SenderStatusEnum
@@ -37,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

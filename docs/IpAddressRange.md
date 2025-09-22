@@ -27,6 +27,7 @@
 | AUDIO_CONNECTOR | &quot;audio-connector&quot; | 
 | BYOT_STT | &quot;byot-stt&quot; | 
 | BOT_CONNECTOR | &quot;bot-connector&quot; | 
+| BYO_SMPP | &quot;byo-smpp&quot; | 
 
 
 ## Enum: DirectionEnum
@@ -41,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

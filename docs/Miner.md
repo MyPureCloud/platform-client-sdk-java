@@ -51,6 +51,8 @@
 | IT_IT | &quot;it-it&quot; | 
 | NL_NL | &quot;nl-nl&quot; | 
 | DE_CH | &quot;de-ch&quot; | 
+| JA_JP | &quot;ja-jp&quot; | 
+| KO_KR | &quot;ko-kr&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -110,4 +112,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

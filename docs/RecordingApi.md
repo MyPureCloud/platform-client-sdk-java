@@ -3244,7 +3244,7 @@ try {
 
 Execute the recording bulk job.
 
-A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
 Wraps PUT /api/v2/recording/jobs/{jobId}  
 
@@ -3370,7 +3370,7 @@ try {
 
 Update a media retention policy
 
-Policy does not work retroactively
+Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId}  
 
@@ -3607,4 +3607,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

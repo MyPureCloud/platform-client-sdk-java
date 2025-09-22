@@ -27,8 +27,9 @@
 | OPEN_ACTION | &quot;OPEN_ACTION&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
 | DECISION_TABLE | &quot;DECISION_TABLE&quot; |
+| USER_CUSTOM_ATTRIBUTES | &quot;USER_CUSTOM_ATTRIBUTES&quot; |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
