@@ -24,6 +24,10 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleRequest;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleResponse;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponse;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ManualEscalationRequest;
 import com.mypurecloud.sdk.v2.model.ManualEscalationResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleRequest;
@@ -55,6 +59,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaEscalationruleRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsAggregatesJobRequest;
@@ -68,6 +73,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesR
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdVersionsRequest;
@@ -77,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesT
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsAggregatesJobsRequest;
@@ -84,6 +93,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsMessagesJobsRe
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest;
@@ -92,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaEscalationruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 
@@ -382,6 +393,81 @@ public class SocialMediaApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1391,6 +1477,231 @@ public class SocialMediaApiAsync {
   }
 
   /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request, final AsyncApiCallback<InstagramDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleResponse>> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsync(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest request, final AsyncApiCallback<InstagramDataIngestionRuleVersionResponse> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleVersionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleVersionResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleVersionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleVersionResponse>> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleVersionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleVersionResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleVersionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleVersionResponse> response = (ApiResponse<InstagramDataIngestionRuleVersionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleVersionResponse> response = (ApiResponse<InstagramDataIngestionRuleVersionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsync(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest request, final AsyncApiCallback<InstagramDataIngestionRuleVersionResponseEntityListing> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleVersionResponseEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleVersionResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleVersionResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a single open data ingestion rule.
    * 
    * @param request the request object
@@ -2066,6 +2377,81 @@ public class SocialMediaApiAsync {
   }
 
   /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request, final AsyncApiCallback<InstagramDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleResponse>> patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(ApiRequest<DataIngestionRuleStatusPatchRequest> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the status of a open data ingestion rule.
    * 
    * @param request the request object
@@ -2579,6 +2965,81 @@ public class SocialMediaApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesInstagramAsync(PostSocialmediaTopicDataingestionrulesInstagramRequest request, final AsyncApiCallback<InstagramDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleResponse>> postSocialmediaTopicDataingestionrulesInstagramAsync(ApiRequest<InstagramDataIngestionRuleRequest> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3179,6 +3640,81 @@ public class SocialMediaApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request, final AsyncApiCallback<InstagramDataIngestionRuleResponse> callback) {
+    try {
+      final SettableFuture<InstagramDataIngestionRuleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramDataIngestionRuleResponse>> putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync(ApiRequest<InstagramDataIngestionRuleRequest> request, final AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramDataIngestionRuleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramDataIngestionRuleResponse>() {}, new AsyncApiCallback<ApiResponse<InstagramDataIngestionRuleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramDataIngestionRuleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
@@ -42,8 +43,8 @@ import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
+import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -2593,28 +2594,32 @@ public class RoutingApi {
    * Get domain
    * 
    * @param domainId domain ID (required)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return InboundDomain
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomain getRoutingEmailDomain(String domainId) throws IOException, ApiException {
-    return  getRoutingEmailDomain(createGetRoutingEmailDomainRequest(domainId));
+  public InboundDomain getRoutingEmailDomain(String domainId, String expand) throws IOException, ApiException {
+    return  getRoutingEmailDomain(createGetRoutingEmailDomainRequest(domainId, expand));
   }
 
   /**
    * Get domain
    * 
    * @param domainId domain ID (required)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return InboundDomain
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomain> getRoutingEmailDomainWithHttpInfo(String domainId) throws IOException {
-    return getRoutingEmailDomain(createGetRoutingEmailDomainRequest(domainId).withHttpInfo());
+  public ApiResponse<InboundDomain> getRoutingEmailDomainWithHttpInfo(String domainId, String expand) throws IOException {
+    return getRoutingEmailDomain(createGetRoutingEmailDomainRequest(domainId, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainRequest createGetRoutingEmailDomainRequest(String domainId) {
+  private GetRoutingEmailDomainRequest createGetRoutingEmailDomainRequest(String domainId, String expand) {
     return GetRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -2936,12 +2941,13 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
    * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return InboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomainEntityListing getRoutingEmailDomains(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) throws IOException, ApiException {
-    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter));
+  public InboundDomainEntityListing getRoutingEmailDomains(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter, String expand) throws IOException, ApiException {
+    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter, expand));
   }
 
   /**
@@ -2951,14 +2957,15 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
    * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return InboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) throws IOException {
-    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter).withHttpInfo());
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter, String expand) throws IOException {
+    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) {
+  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter, String expand) {
     return GetRoutingEmailDomainsRequest.builder()
             .withPageSize(pageSize)
 
@@ -2967,6 +2974,8 @@ public class RoutingApi {
             .withExcludeStatus(excludeStatus)
 
             .withFilter(filter)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -3023,28 +3032,32 @@ public class RoutingApi {
    * Get domain
    * 
    * @param domainId domain ID (required)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return OutboundDomain
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundDomain getRoutingEmailOutboundDomain(String domainId) throws IOException, ApiException {
-    return  getRoutingEmailOutboundDomain(createGetRoutingEmailOutboundDomainRequest(domainId));
+  public OutboundDomain getRoutingEmailOutboundDomain(String domainId, String expand) throws IOException, ApiException {
+    return  getRoutingEmailOutboundDomain(createGetRoutingEmailOutboundDomainRequest(domainId, expand));
   }
 
   /**
    * Get domain
    * 
    * @param domainId domain ID (required)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return OutboundDomain
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundDomain> getRoutingEmailOutboundDomainWithHttpInfo(String domainId) throws IOException {
-    return getRoutingEmailOutboundDomain(createGetRoutingEmailOutboundDomainRequest(domainId).withHttpInfo());
+  public ApiResponse<OutboundDomain> getRoutingEmailOutboundDomainWithHttpInfo(String domainId, String expand) throws IOException {
+    return getRoutingEmailOutboundDomain(createGetRoutingEmailOutboundDomainRequest(domainId, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailOutboundDomainRequest createGetRoutingEmailOutboundDomainRequest(String domainId) {
+  private GetRoutingEmailOutboundDomainRequest createGetRoutingEmailOutboundDomainRequest(String domainId, String expand) {
     return GetRoutingEmailOutboundDomainRequest.builder()
             .withDomainId(domainId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -3181,12 +3194,13 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return OutboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundDomainEntityListing getRoutingEmailOutboundDomains(Integer pageSize, Integer pageNumber, String filter) throws IOException, ApiException {
-    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter));
+  public OutboundDomainEntityListing getRoutingEmailOutboundDomains(Integer pageSize, Integer pageNumber, String filter, String expand) throws IOException, ApiException {
+    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter, expand));
   }
 
   /**
@@ -3195,20 +3209,23 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+   * @param expand Expand options. Valid values: settings (optional)
    * @return OutboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, String filter) throws IOException {
-    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter).withHttpInfo());
+  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, String filter, String expand) throws IOException {
+    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(pageSize, pageNumber, filter, expand).withHttpInfo());
   }
 
-  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest(Integer pageSize, Integer pageNumber, String filter) {
+  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest(Integer pageSize, Integer pageNumber, String filter, String expand) {
     return GetRoutingEmailOutboundDomainsRequest.builder()
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
 
             .withFilter(filter)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -10022,7 +10039,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomain postRoutingEmailDomains(InboundDomain body) throws IOException, ApiException {
+  public InboundDomain postRoutingEmailDomains(InboundDomainCreateRequest body) throws IOException, ApiException {
     return  postRoutingEmailDomains(createPostRoutingEmailDomainsRequest(body));
   }
 
@@ -10033,11 +10050,11 @@ public class RoutingApi {
    * @return InboundDomain
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomain> postRoutingEmailDomainsWithHttpInfo(InboundDomain body) throws IOException {
+  public ApiResponse<InboundDomain> postRoutingEmailDomainsWithHttpInfo(InboundDomainCreateRequest body) throws IOException {
     return postRoutingEmailDomains(createPostRoutingEmailDomainsRequest(body).withHttpInfo());
   }
 
-  private PostRoutingEmailDomainsRequest createPostRoutingEmailDomainsRequest(InboundDomain body) {
+  private PostRoutingEmailDomainsRequest createPostRoutingEmailDomainsRequest(InboundDomainCreateRequest body) {
     return PostRoutingEmailDomainsRequest.builder()
             .withBody(body)
 
@@ -10070,7 +10087,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomain> postRoutingEmailDomains(ApiRequest<InboundDomain> request) throws IOException {
+  public ApiResponse<InboundDomain> postRoutingEmailDomains(ApiRequest<InboundDomainCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<InboundDomain>() {});
     }
@@ -10100,7 +10117,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailOutboundDomainResult postRoutingEmailOutboundDomains(OutboundDomainRequest body) throws IOException, ApiException {
+  public EmailOutboundDomainResult postRoutingEmailOutboundDomains(OutboundDomainCreateRequest body) throws IOException, ApiException {
     return  postRoutingEmailOutboundDomains(createPostRoutingEmailOutboundDomainsRequest(body));
   }
 
@@ -10111,11 +10128,11 @@ public class RoutingApi {
    * @return EmailOutboundDomainResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsWithHttpInfo(OutboundDomainRequest body) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsWithHttpInfo(OutboundDomainCreateRequest body) throws IOException {
     return postRoutingEmailOutboundDomains(createPostRoutingEmailOutboundDomainsRequest(body).withHttpInfo());
   }
 
-  private PostRoutingEmailOutboundDomainsRequest createPostRoutingEmailOutboundDomainsRequest(OutboundDomainRequest body) {
+  private PostRoutingEmailOutboundDomainsRequest createPostRoutingEmailOutboundDomainsRequest(OutboundDomainCreateRequest body) {
     return PostRoutingEmailOutboundDomainsRequest.builder()
             .withBody(body)
 
@@ -10148,7 +10165,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomains(ApiRequest<OutboundDomainRequest> request) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomains(ApiRequest<OutboundDomainCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EmailOutboundDomainResult>() {});
     }
@@ -10178,7 +10195,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(OutboundDomainRequest body) throws IOException, ApiException {
+  public EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(OutboundDomainCreateRequest body) throws IOException, ApiException {
     return  postRoutingEmailOutboundDomainsSimulated(createPostRoutingEmailOutboundDomainsSimulatedRequest(body));
   }
 
@@ -10189,11 +10206,11 @@ public class RoutingApi {
    * @return EmailOutboundDomainResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulatedWithHttpInfo(OutboundDomainRequest body) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulatedWithHttpInfo(OutboundDomainCreateRequest body) throws IOException {
     return postRoutingEmailOutboundDomainsSimulated(createPostRoutingEmailOutboundDomainsSimulatedRequest(body).withHttpInfo());
   }
 
-  private PostRoutingEmailOutboundDomainsSimulatedRequest createPostRoutingEmailOutboundDomainsSimulatedRequest(OutboundDomainRequest body) {
+  private PostRoutingEmailOutboundDomainsSimulatedRequest createPostRoutingEmailOutboundDomainsSimulatedRequest(OutboundDomainCreateRequest body) {
     return PostRoutingEmailOutboundDomainsSimulatedRequest.builder()
             .withBody(body)
 
@@ -10226,7 +10243,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulated(ApiRequest<OutboundDomainRequest> request) throws IOException {
+  public ApiResponse<EmailOutboundDomainResult> postRoutingEmailOutboundDomainsSimulated(ApiRequest<OutboundDomainCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EmailOutboundDomainResult>() {});
     }

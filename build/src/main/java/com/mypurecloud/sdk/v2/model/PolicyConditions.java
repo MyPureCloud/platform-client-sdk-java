@@ -14,10 +14,10 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
+import com.mypurecloud.sdk.v2.model.PolicyUser;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
-import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +31,7 @@ import java.io.Serializable;
 
 public class PolicyConditions  implements Serializable {
   
-  private List<User> forUsers = null;
+  private List<PolicyUser> forUsers = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -185,7 +185,7 @@ public class PolicyConditions  implements Serializable {
 
   public PolicyConditions() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      forUsers = new ArrayList<User>();
+      forUsers = new ArrayList<PolicyUser>();
       directions = new ArrayList<DirectionsEnum>();
       dateRanges = new ArrayList<String>();
       mediaTypes = new ArrayList<MediaTypesEnum>();
@@ -197,18 +197,19 @@ public class PolicyConditions  implements Serializable {
 
   
   /**
+   * List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
    **/
-  public PolicyConditions forUsers(List<User> forUsers) {
+  public PolicyConditions forUsers(List<PolicyUser> forUsers) {
     this.forUsers = forUsers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].")
   @JsonProperty("forUsers")
-  public List<User> getForUsers() {
+  public List<PolicyUser> getForUsers() {
     return forUsers;
   }
-  public void setForUsers(List<User> forUsers) {
+  public void setForUsers(List<PolicyUser> forUsers) {
     this.forUsers = forUsers;
   }
 

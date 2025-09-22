@@ -38,6 +38,7 @@
 | STATION | &quot;Station&quot; | 
 | CONSULT | &quot;Consult&quot; | 
 | SCREEN | &quot;Screen&quot; | 
+| SNIPPET | &quot;Snippet&quot; | 
 
 
 ## Enum: FileStateEnum
@@ -83,6 +84,7 @@
 | EU_WEST_2 | &quot;eu-west-2&quot; | 
 | EU_WEST_3 | &quot;eu-west-3&quot; | 
 | ME_CENTRAL_1 | &quot;me-central-1&quot; | 
+| MX_CENTRAL_1 | &quot;mx-central-1&quot; | 
 | SA_EAST_1 | &quot;sa-east-1&quot; | 
 | US_EAST_1 | &quot;us-east-1&quot; | 
 | US_WEST_2 | &quot;us-west-2&quot; | 
@@ -90,4 +92,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

@@ -19,7 +19,6 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteUserrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingRequest;
-import com.mypurecloud.sdk.v2.api.request.GetUserrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingTranscodingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsSummaryRequest;
@@ -195,96 +194,6 @@ public class UserRecordingsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param recordingId User Recording ID (required)
-   * @param formatId The desired media format. (optional, default to WEBM)
-   * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
-   * @return DownloadResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DownloadResponse getUserrecordingMedia(String recordingId, String formatId, Boolean async) throws IOException, ApiException {
-    return  getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async));
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param recordingId User Recording ID (required)
-   * @param formatId The desired media format. (optional, default to WEBM)
-   * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
-   * @return DownloadResponse
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId, Boolean async) throws IOException {
-    return getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async).withHttpInfo());
-  }
-
-  private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId, Boolean async) {
-    return GetUserrecordingMediaRequest.builder()
-            .withRecordingId(recordingId)
-
-            .withFormatId(formatId)
-
-            .withAsync(async)
-
-            .build();
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param request The request object
-   * @return DownloadResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DownloadResponse getUserrecordingMedia(GetUserrecordingMediaRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DownloadResponse> getUserrecordingMedia(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailSettingReference;
 import com.mypurecloud.sdk.v2.model.ImapSettings;
 import com.mypurecloud.sdk.v2.model.MailFromResult;
 import io.swagger.annotations.ApiModel;
@@ -28,6 +29,7 @@ public class InboundDomainPatchRequest  implements Serializable {
   private MailFromResult mailFromSettings = null;
   private DomainEntityRef customSMTPServer = null;
   private ImapSettings imapSettings = null;
+  private EmailSettingReference emailSetting = null;
 
   public InboundDomainPatchRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -89,6 +91,24 @@ public class InboundDomainPatchRequest  implements Serializable {
   }
 
 
+  /**
+   * The email settings to associate with this domain.
+   **/
+  public InboundDomainPatchRequest emailSetting(EmailSettingReference emailSetting) {
+    this.emailSetting = emailSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email settings to associate with this domain.")
+  @JsonProperty("emailSetting")
+  public EmailSettingReference getEmailSetting() {
+    return emailSetting;
+  }
+  public void setEmailSetting(EmailSettingReference emailSetting) {
+    this.emailSetting = emailSetting;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -101,12 +121,13 @@ public class InboundDomainPatchRequest  implements Serializable {
 
     return Objects.equals(this.mailFromSettings, inboundDomainPatchRequest.mailFromSettings) &&
             Objects.equals(this.customSMTPServer, inboundDomainPatchRequest.customSMTPServer) &&
-            Objects.equals(this.imapSettings, inboundDomainPatchRequest.imapSettings);
+            Objects.equals(this.imapSettings, inboundDomainPatchRequest.imapSettings) &&
+            Objects.equals(this.emailSetting, inboundDomainPatchRequest.emailSetting);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mailFromSettings, customSMTPServer, imapSettings);
+    return Objects.hash(mailFromSettings, customSMTPServer, imapSettings, emailSetting);
   }
 
   @Override
@@ -117,6 +138,7 @@ public class InboundDomainPatchRequest  implements Serializable {
     sb.append("    mailFromSettings: ").append(toIndentedString(mailFromSettings)).append("\n");
     sb.append("    customSMTPServer: ").append(toIndentedString(customSMTPServer)).append("\n");
     sb.append("    imapSettings: ").append(toIndentedString(imapSettings)).append("\n");
+    sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ContentModeration;
 import com.mypurecloud.sdk.v2.model.ConversationNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.SocialMediaMessageEscalationInfo;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,7 @@ public class SocialMediaDetailMessageContainer  implements Serializable {
   private String id = null;
   private ConversationNormalizedMessage normalizedMessage = null;
   private SocialMediaMessageEscalationInfo escalationInfo = null;
+  private ContentModeration contentModeration = null;
 
   public SocialMediaDetailMessageContainer() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -85,6 +87,23 @@ public class SocialMediaDetailMessageContainer  implements Serializable {
   }
 
 
+  /**
+   **/
+  public SocialMediaDetailMessageContainer contentModeration(ContentModeration contentModeration) {
+    this.contentModeration = contentModeration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contentModeration")
+  public ContentModeration getContentModeration() {
+    return contentModeration;
+  }
+  public void setContentModeration(ContentModeration contentModeration) {
+    this.contentModeration = contentModeration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -97,12 +116,13 @@ public class SocialMediaDetailMessageContainer  implements Serializable {
 
     return Objects.equals(this.id, socialMediaDetailMessageContainer.id) &&
             Objects.equals(this.normalizedMessage, socialMediaDetailMessageContainer.normalizedMessage) &&
-            Objects.equals(this.escalationInfo, socialMediaDetailMessageContainer.escalationInfo);
+            Objects.equals(this.escalationInfo, socialMediaDetailMessageContainer.escalationInfo) &&
+            Objects.equals(this.contentModeration, socialMediaDetailMessageContainer.contentModeration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, normalizedMessage, escalationInfo);
+    return Objects.hash(id, normalizedMessage, escalationInfo, contentModeration);
   }
 
   @Override
@@ -113,6 +133,7 @@ public class SocialMediaDetailMessageContainer  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    normalizedMessage: ").append(toIndentedString(normalizedMessage)).append("\n");
     sb.append("    escalationInfo: ").append(toIndentedString(escalationInfo)).append("\n");
+    sb.append("    contentModeration: ").append(toIndentedString(contentModeration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

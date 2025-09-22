@@ -17,11 +17,11 @@
 | **baseLicense** | **String** |  |  [optional] |
 | **addonLicenses** | **List&lt;String&gt;** |  |  [optional] |
 | **dateLicenseLastUpdated** | [**Date**](Date) | The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **_default** | **Boolean** |  |  [optional] |
 | **base** | **Boolean** |  |  [optional] |
+| **_default** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

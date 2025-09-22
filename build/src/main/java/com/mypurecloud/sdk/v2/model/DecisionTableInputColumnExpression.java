@@ -61,7 +61,13 @@ public class DecisionTableInputColumnExpression  implements Serializable {
     CONTAINSALL("ContainsAll"),
     NOTCONTAINSALL("NotContainsAll"),
     CONTAINSEXACTLY("ContainsExactly"),
-    NOTCONTAINSEXACTLY("NotContainsExactly");
+    NOTCONTAINSEXACTLY("NotContainsExactly"),
+    CONTAINSSEQUENCE("ContainsSequence"),
+    NOTCONTAINSSEQUENCE("NotContainsSequence"),
+    ISSUBSET("IsSubset"),
+    NOTISSUBSET("NotIsSubset"),
+    ISSUBSEQUENCE("IsSubsequence"),
+    NOTISSUBSEQUENCE("NotIsSubsequence");
 
     private String value;
 

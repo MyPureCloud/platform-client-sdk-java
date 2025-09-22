@@ -121,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
@@ -3969,6 +3970,96 @@ public class JourneyApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<JourneyViewJobListing> getJourneyViewsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
+   * @param statuses Job statuses to filter for (optional, default to null)
+   * @return JourneyViewJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJobListing getJourneyViewsJobsMe(Integer pageNumber, Integer pageSize, String interval, String statuses) throws IOException, ApiException {
+    return  getJourneyViewsJobsMe(createGetJourneyViewsJobsMeRequest(pageNumber, pageSize, interval, statuses));
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
+   * @param statuses Job statuses to filter for (optional, default to null)
+   * @return JourneyViewJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJobListing> getJourneyViewsJobsMeWithHttpInfo(Integer pageNumber, Integer pageSize, String interval, String statuses) throws IOException {
+    return getJourneyViewsJobsMe(createGetJourneyViewsJobsMeRequest(pageNumber, pageSize, interval, statuses).withHttpInfo());
+  }
+
+  private GetJourneyViewsJobsMeRequest createGetJourneyViewsJobsMeRequest(Integer pageNumber, Integer pageSize, String interval, String statuses) {
+    return GetJourneyViewsJobsMeRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withInterval(interval)
+
+            .withStatuses(statuses)
+
+            .build();
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param request The request object
+   * @return JourneyViewJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJobListing getJourneyViewsJobsMe(GetJourneyViewsJobsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJobListing> getJourneyViewsJobsMe(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<JourneyViewJobListing>() {});
     }

@@ -14,6 +14,12 @@ import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesRequest;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesResponse;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsRequest;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsResponse;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedPhraseListing;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedTopicListing;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -35,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.NluOrganization;
+import com.mypurecloud.sdk.v2.model.RemoveEntitiesRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -49,6 +56,8 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionR
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingIgnorephraseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingIgnoretopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftsRequest;
@@ -67,6 +76,10 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersion
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnorephraseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnorephraseRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnoretopicRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnoretopicRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinersRequest;
@@ -1102,6 +1115,202 @@ public class LanguageUnderstandingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NluDomainListing> response = (ApiResponse<NluDomainListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param languageCode Language Code (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 200. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param text The phrase text filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to desc)
+   * @param sortBy The field to sort by for the listing (optional, default to dateModified)
+   * @return IgnoredMinedPhraseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoredMinedPhraseListing getLanguageunderstandingIgnorephrase(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) throws IOException, ApiException {
+    return  getLanguageunderstandingIgnorephrase(createGetLanguageunderstandingIgnorephraseRequest(languageCode, pageSize, pageNumber, text, sortOrder, sortBy));
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param languageCode Language Code (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 200. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param text The phrase text filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to desc)
+   * @param sortBy The field to sort by for the listing (optional, default to dateModified)
+   * @return IgnoredMinedPhraseListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoredMinedPhraseListing> getLanguageunderstandingIgnorephraseWithHttpInfo(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) throws IOException {
+    return getLanguageunderstandingIgnorephrase(createGetLanguageunderstandingIgnorephraseRequest(languageCode, pageSize, pageNumber, text, sortOrder, sortBy).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingIgnorephraseRequest createGetLanguageunderstandingIgnorephraseRequest(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) {
+    return GetLanguageunderstandingIgnorephraseRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withText(text)
+
+            .withSortOrder(sortOrder)
+
+            .withSortBy(sortBy)
+
+            .build();
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param request The request object
+   * @return IgnoredMinedPhraseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoredMinedPhraseListing getLanguageunderstandingIgnorephrase(GetLanguageunderstandingIgnorephraseRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IgnoredMinedPhraseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IgnoredMinedPhraseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoredMinedPhraseListing> getLanguageunderstandingIgnorephrase(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IgnoredMinedPhraseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoredMinedPhraseListing> response = (ApiResponse<IgnoredMinedPhraseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoredMinedPhraseListing> response = (ApiResponse<IgnoredMinedPhraseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param languageCode Language Code (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 200. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param text The topic text filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to desc)
+   * @param sortBy The field to sort by for the listing (optional, default to dateModified)
+   * @return IgnoredMinedTopicListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoredMinedTopicListing getLanguageunderstandingIgnoretopic(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) throws IOException, ApiException {
+    return  getLanguageunderstandingIgnoretopic(createGetLanguageunderstandingIgnoretopicRequest(languageCode, pageSize, pageNumber, text, sortOrder, sortBy));
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param languageCode Language Code (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 200. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param text The topic text filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to desc)
+   * @param sortBy The field to sort by for the listing (optional, default to dateModified)
+   * @return IgnoredMinedTopicListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoredMinedTopicListing> getLanguageunderstandingIgnoretopicWithHttpInfo(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) throws IOException {
+    return getLanguageunderstandingIgnoretopic(createGetLanguageunderstandingIgnoretopicRequest(languageCode, pageSize, pageNumber, text, sortOrder, sortBy).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingIgnoretopicRequest createGetLanguageunderstandingIgnoretopicRequest(String languageCode, Integer pageSize, Integer pageNumber, String text, String sortOrder, String sortBy) {
+    return GetLanguageunderstandingIgnoretopicRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withText(text)
+
+            .withSortOrder(sortOrder)
+
+            .withSortBy(sortBy)
+
+            .build();
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param request The request object
+   * @return IgnoredMinedTopicListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoredMinedTopicListing getLanguageunderstandingIgnoretopic(GetLanguageunderstandingIgnoretopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IgnoredMinedTopicListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IgnoredMinedTopicListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoredMinedTopicListing> getLanguageunderstandingIgnoretopic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IgnoredMinedTopicListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoredMinedTopicListing> response = (ApiResponse<IgnoredMinedTopicListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoredMinedTopicListing> response = (ApiResponse<IgnoredMinedTopicListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2582,6 +2791,328 @@ public class LanguageUnderstandingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NluDomain> response = (ApiResponse<NluDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing phrases to be ignored (required)
+   * @return IgnorePhrasesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnorePhrasesResponse postLanguageunderstandingIgnorephrase(String languageCode, IgnorePhrasesRequest body) throws IOException, ApiException {
+    return  postLanguageunderstandingIgnorephrase(createPostLanguageunderstandingIgnorephraseRequest(languageCode, body));
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing phrases to be ignored (required)
+   * @return IgnorePhrasesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnorePhrasesResponse> postLanguageunderstandingIgnorephraseWithHttpInfo(String languageCode, IgnorePhrasesRequest body) throws IOException {
+    return postLanguageunderstandingIgnorephrase(createPostLanguageunderstandingIgnorephraseRequest(languageCode, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingIgnorephraseRequest createPostLanguageunderstandingIgnorephraseRequest(String languageCode, IgnorePhrasesRequest body) {
+    return PostLanguageunderstandingIgnorephraseRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param request The request object
+   * @return IgnorePhrasesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnorePhrasesResponse postLanguageunderstandingIgnorephrase(PostLanguageunderstandingIgnorephraseRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IgnorePhrasesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IgnorePhrasesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnorePhrasesResponse> postLanguageunderstandingIgnorephrase(ApiRequest<IgnorePhrasesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IgnorePhrasesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnorePhrasesResponse> response = (ApiResponse<IgnorePhrasesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnorePhrasesResponse> response = (ApiResponse<IgnorePhrasesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing entities to be removed (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postLanguageunderstandingIgnorephraseRemove(String languageCode, RemoveEntitiesRequest body) throws IOException, ApiException {
+     postLanguageunderstandingIgnorephraseRemove(createPostLanguageunderstandingIgnorephraseRemoveRequest(languageCode, body));
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing entities to be removed (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postLanguageunderstandingIgnorephraseRemoveWithHttpInfo(String languageCode, RemoveEntitiesRequest body) throws IOException {
+    return postLanguageunderstandingIgnorephraseRemove(createPostLanguageunderstandingIgnorephraseRemoveRequest(languageCode, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingIgnorephraseRemoveRequest createPostLanguageunderstandingIgnorephraseRemoveRequest(String languageCode, RemoveEntitiesRequest body) {
+    return PostLanguageunderstandingIgnorephraseRemoveRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postLanguageunderstandingIgnorephraseRemove(PostLanguageunderstandingIgnorephraseRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postLanguageunderstandingIgnorephraseRemove(ApiRequest<RemoveEntitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing topics to be ignored (required)
+   * @return IgnoreTopicsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoreTopicsResponse postLanguageunderstandingIgnoretopic(String languageCode, IgnoreTopicsRequest body) throws IOException, ApiException {
+    return  postLanguageunderstandingIgnoretopic(createPostLanguageunderstandingIgnoretopicRequest(languageCode, body));
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing topics to be ignored (required)
+   * @return IgnoreTopicsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoreTopicsResponse> postLanguageunderstandingIgnoretopicWithHttpInfo(String languageCode, IgnoreTopicsRequest body) throws IOException {
+    return postLanguageunderstandingIgnoretopic(createPostLanguageunderstandingIgnoretopicRequest(languageCode, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingIgnoretopicRequest createPostLanguageunderstandingIgnoretopicRequest(String languageCode, IgnoreTopicsRequest body) {
+    return PostLanguageunderstandingIgnoretopicRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param request The request object
+   * @return IgnoreTopicsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IgnoreTopicsResponse postLanguageunderstandingIgnoretopic(PostLanguageunderstandingIgnoretopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IgnoreTopicsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IgnoreTopicsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IgnoreTopicsResponse> postLanguageunderstandingIgnoretopic(ApiRequest<IgnoreTopicsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IgnoreTopicsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoreTopicsResponse> response = (ApiResponse<IgnoreTopicsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IgnoreTopicsResponse> response = (ApiResponse<IgnoreTopicsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing entities to be removed (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postLanguageunderstandingIgnoretopicRemove(String languageCode, RemoveEntitiesRequest body) throws IOException, ApiException {
+     postLanguageunderstandingIgnoretopicRemove(createPostLanguageunderstandingIgnoretopicRemoveRequest(languageCode, body));
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param languageCode Language Code (required)
+   * @param body Request body containing entities to be removed (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postLanguageunderstandingIgnoretopicRemoveWithHttpInfo(String languageCode, RemoveEntitiesRequest body) throws IOException {
+    return postLanguageunderstandingIgnoretopicRemove(createPostLanguageunderstandingIgnoretopicRemoveRequest(languageCode, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingIgnoretopicRemoveRequest createPostLanguageunderstandingIgnoretopicRemoveRequest(String languageCode, RemoveEntitiesRequest body) {
+    return PostLanguageunderstandingIgnoretopicRemoveRequest.builder()
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postLanguageunderstandingIgnoretopicRemove(PostLanguageunderstandingIgnoretopicRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postLanguageunderstandingIgnoretopicRemove(ApiRequest<RemoveEntitiesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

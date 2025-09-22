@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.MediaRtpStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsClientInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -75,6 +76,7 @@ public class MediaStatisticsPostRequest  implements Serializable {
   private MediaStatisticsClientInfo clientInfo = null;
   private MediaRtpStatistics rtp = null;
   private Integer reconnectAttempts = null;
+  private Date dateCreated = null;
 
   public MediaStatisticsPostRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -154,6 +156,24 @@ public class MediaStatisticsPostRequest  implements Serializable {
   }
 
 
+  /**
+   * Media endpoint statistics creation time. Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public MediaStatisticsPostRequest dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Media endpoint statistics creation time. Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +187,13 @@ public class MediaStatisticsPostRequest  implements Serializable {
     return Objects.equals(this.sourceType, mediaStatisticsPostRequest.sourceType) &&
             Objects.equals(this.clientInfo, mediaStatisticsPostRequest.clientInfo) &&
             Objects.equals(this.rtp, mediaStatisticsPostRequest.rtp) &&
-            Objects.equals(this.reconnectAttempts, mediaStatisticsPostRequest.reconnectAttempts);
+            Objects.equals(this.reconnectAttempts, mediaStatisticsPostRequest.reconnectAttempts) &&
+            Objects.equals(this.dateCreated, mediaStatisticsPostRequest.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceType, clientInfo, rtp, reconnectAttempts);
+    return Objects.hash(sourceType, clientInfo, rtp, reconnectAttempts, dateCreated);
   }
 
   @Override
@@ -184,6 +205,7 @@ public class MediaStatisticsPostRequest  implements Serializable {
     sb.append("    clientInfo: ").append(toIndentedString(clientInfo)).append("\n");
     sb.append("    rtp: ").append(toIndentedString(rtp)).append("\n");
     sb.append("    reconnectAttempts: ").append(toIndentedString(reconnectAttempts)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

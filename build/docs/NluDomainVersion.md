@@ -19,6 +19,7 @@
 | **intents** | [**List&lt;IntentDefinition&gt;**](IntentDefinition) | The intents defined for this NLU domain version. |  [optional] |
 | **entityTypes** | [**List&lt;NamedEntityTypeDefinition&gt;**](NamedEntityTypeDefinition) | The entity types defined for this NLU domain version. |  [optional] |
 | **entities** | [**List&lt;NamedEntityDefinition&gt;**](NamedEntityDefinition) | The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings |  [optional] |
+| **languageVersions** | **Map&lt;String, String&gt;** | Map of language code to NLU domain version UUID for multilingual domains. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -47,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

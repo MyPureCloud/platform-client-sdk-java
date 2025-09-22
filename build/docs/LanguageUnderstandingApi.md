@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersionReport) | Retrieved quality report for the specified NLU Domain Version |
 | [**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersions) | Get all NLU Domain Versions for a given Domain. |
 | [**getLanguageunderstandingDomains**](LanguageUnderstandingApi#getLanguageunderstandingDomains) | Get all NLU Domains. |
+| [**getLanguageunderstandingIgnorephrase**](LanguageUnderstandingApi#getLanguageunderstandingIgnorephrase) | Get list of all ignored phrases of the specified language code |
+| [**getLanguageunderstandingIgnoretopic**](LanguageUnderstandingApi#getLanguageunderstandingIgnoretopic) | Get list of all ignored topics of the specified language code |
 | [**getLanguageunderstandingMiner**](LanguageUnderstandingApi#getLanguageunderstandingMiner) | Get information about a miner. |
 | [**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi#getLanguageunderstandingMinerDraft) | Get information about a draft. |
 | [**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#getLanguageunderstandingMinerDrafts) | Retrieve the list of drafts created. |
@@ -34,6 +36,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersionTrain) | Train the draft NLU Domain Version. |
 | [**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersions) | Create an NLU Domain Version. |
 | [**postLanguageunderstandingDomains**](LanguageUnderstandingApi#postLanguageunderstandingDomains) | Create an NLU Domain. |
+| [**postLanguageunderstandingIgnorephrase**](LanguageUnderstandingApi#postLanguageunderstandingIgnorephrase) | Add phrases to the ignored phrases list |
+| [**postLanguageunderstandingIgnorephraseRemove**](LanguageUnderstandingApi#postLanguageunderstandingIgnorephraseRemove) | Delete ignored phrases |
+| [**postLanguageunderstandingIgnoretopic**](LanguageUnderstandingApi#postLanguageunderstandingIgnoretopic) | Add topics to the ignored topics list |
+| [**postLanguageunderstandingIgnoretopicRemove**](LanguageUnderstandingApi#postLanguageunderstandingIgnoretopicRemove) | Delete ignored topics |
 | [**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#postLanguageunderstandingMinerDrafts) | Create a new draft resource. |
 | [**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi#postLanguageunderstandingMinerExecute) | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file. |
 | [**postLanguageunderstandingMiners**](LanguageUnderstandingApi#postLanguageunderstandingMiners) | Create a unique miner. |
@@ -800,6 +806,144 @@ try {
 ### Return type
 
 [**NluDomainListing**](NluDomainListing)
+
+
+# **getLanguageunderstandingIgnorephrase**
+
+
+> [IgnoredMinedPhraseListing](IgnoredMinedPhraseListing) getLanguageunderstandingIgnorephrase(languageCode, pageSize, pageNumber, text, sortOrder, sortBy)
+
+Get list of all ignored phrases of the specified language code
+
+Wraps GET /api/v2/languageunderstanding/ignorephrases/{languageCode}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 200.
+Integer pageNumber = 1; // Integer | The page number for the listing
+String text = "text_example"; // String | The phrase text filter applied to the listing
+String sortOrder = "desc"; // String | The sort order for the listing
+String sortBy = "dateModified"; // String | The field to sort by for the listing
+try {
+    IgnoredMinedPhraseListing result = apiInstance.getLanguageunderstandingIgnorephrase(languageCode, pageSize, pageNumber, text, sortOrder, sortBy);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingIgnorephrase");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number for the listing | [optional] [default to 1] 
+| **text** | **String**| The phrase text filter applied to the listing | [optional] 
+| **sortOrder** | **String**| The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc 
+| **sortBy** | **String**| The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IgnoredMinedPhraseListing**](IgnoredMinedPhraseListing)
+
+
+# **getLanguageunderstandingIgnoretopic**
+
+
+> [IgnoredMinedTopicListing](IgnoredMinedTopicListing) getLanguageunderstandingIgnoretopic(languageCode, pageSize, pageNumber, text, sortOrder, sortBy)
+
+Get list of all ignored topics of the specified language code
+
+Wraps GET /api/v2/languageunderstanding/ignoretopics/{languageCode}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 200.
+Integer pageNumber = 1; // Integer | The page number for the listing
+String text = "text_example"; // String | The topic text filter applied to the listing
+String sortOrder = "desc"; // String | The sort order for the listing
+String sortBy = "dateModified"; // String | The field to sort by for the listing
+try {
+    IgnoredMinedTopicListing result = apiInstance.getLanguageunderstandingIgnoretopic(languageCode, pageSize, pageNumber, text, sortOrder, sortBy);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingIgnoretopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number for the listing | [optional] [default to 1] 
+| **text** | **String**| The topic text filter applied to the listing | [optional] 
+| **sortOrder** | **String**| The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc 
+| **sortBy** | **String**| The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IgnoredMinedTopicListing**](IgnoredMinedTopicListing)
 
 
 # **getLanguageunderstandingMiner**
@@ -1907,6 +2051,248 @@ try {
 [**NluDomain**](NluDomain)
 
 
+# **postLanguageunderstandingIgnorephrase**
+
+
+> [IgnorePhrasesResponse](IgnorePhrasesResponse) postLanguageunderstandingIgnorephrase(languageCode, body)
+
+Add phrases to the ignored phrases list
+
+Wraps POST /api/v2/languageunderstanding/ignorephrases/{languageCode}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+IgnorePhrasesRequest body = new IgnorePhrasesRequest(); // IgnorePhrasesRequest | Request body containing phrases to be ignored
+try {
+    IgnorePhrasesResponse result = apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingIgnorephrase");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **body** | [**IgnorePhrasesRequest**](IgnorePhrasesRequest)| Request body containing phrases to be ignored | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IgnorePhrasesResponse**](IgnorePhrasesResponse)
+
+
+# **postLanguageunderstandingIgnorephraseRemove**
+
+
+> Void postLanguageunderstandingIgnorephraseRemove(languageCode, body)
+
+Delete ignored phrases
+
+Wraps POST /api/v2/languageunderstanding/ignorephrases/{languageCode}/remove  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+RemoveEntitiesRequest body = new RemoveEntitiesRequest(); // RemoveEntitiesRequest | Request body containing entities to be removed
+try {
+    apiInstance.postLanguageunderstandingIgnorephraseRemove(languageCode, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingIgnorephraseRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **body** | [**RemoveEntitiesRequest**](RemoveEntitiesRequest)| Request body containing entities to be removed | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postLanguageunderstandingIgnoretopic**
+
+
+> [IgnoreTopicsResponse](IgnoreTopicsResponse) postLanguageunderstandingIgnoretopic(languageCode, body)
+
+Add topics to the ignored topics list
+
+Wraps POST /api/v2/languageunderstanding/ignoretopics/{languageCode}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+IgnoreTopicsRequest body = new IgnoreTopicsRequest(); // IgnoreTopicsRequest | Request body containing topics to be ignored
+try {
+    IgnoreTopicsResponse result = apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingIgnoretopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **body** | [**IgnoreTopicsRequest**](IgnoreTopicsRequest)| Request body containing topics to be ignored | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IgnoreTopicsResponse**](IgnoreTopicsResponse)
+
+
+# **postLanguageunderstandingIgnoretopicRemove**
+
+
+> Void postLanguageunderstandingIgnoretopicRemove(languageCode, body)
+
+Delete ignored topics
+
+Wraps POST /api/v2/languageunderstanding/ignoretopics/{languageCode}/remove  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String languageCode = "languageCode_example"; // String | Language Code
+RemoveEntitiesRequest body = new RemoveEntitiesRequest(); // RemoveEntitiesRequest | Request body containing entities to be removed
+try {
+    apiInstance.postLanguageunderstandingIgnoretopicRemove(languageCode, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingIgnoretopicRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageCode** | **String**| Language Code | 
+| **body** | [**RemoveEntitiesRequest**](RemoveEntitiesRequest)| Request body containing entities to be removed | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **postLanguageunderstandingMinerDrafts**
 
 
@@ -2152,4 +2538,4 @@ try {
 [**NluDomainVersion**](NluDomainVersion)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

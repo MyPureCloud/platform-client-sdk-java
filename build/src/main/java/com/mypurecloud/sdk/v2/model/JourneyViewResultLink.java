@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class JourneyViewResultLink  implements Serializable {
   
   private String id = null;
-  private Integer connectionCount = null;
+  private Long connectionCount = null;
   private String selfUri = null;
 
   public JourneyViewResultLink() {
@@ -42,7 +42,7 @@ public class JourneyViewResultLink  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "the number of connections for the journey view link")
   @JsonProperty("connectionCount")
-  public Integer getConnectionCount() {
+  public Long getConnectionCount() {
     return connectionCount;
   }
 

@@ -21,6 +21,10 @@ import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleRequest;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponse;
 import com.mypurecloud.sdk.v2.model.FacebookDataIngestionRuleVersionResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleRequest;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleResponse;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponse;
+import com.mypurecloud.sdk.v2.model.InstagramDataIngestionRuleVersionResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ManualEscalationRequest;
 import com.mypurecloud.sdk.v2.model.ManualEscalationResponse;
 import com.mypurecloud.sdk.v2.model.OpenDataIngestionRuleRequest;
@@ -52,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaEscalationruleRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaAnalyticsAggregatesJobRequest;
@@ -65,6 +70,9 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesR
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesOpenOpenIdVersionsRequest;
@@ -74,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicDataingestionrulesT
 import com.mypurecloud.sdk.v2.api.request.GetSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsAggregatesJobsRequest;
@@ -81,6 +90,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaAnalyticsMessagesJobsRe
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaEscalationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulkRequest;
@@ -89,6 +99,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSocialmediaTwitterHistoricalTweetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaEscalationruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesOpenOpenIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdRequest;
 
@@ -404,6 +415,89 @@ public class SocialMediaApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param hardDelete Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(String topicId, String instagramIngestionRuleId, Boolean hardDelete) throws IOException, ApiException {
+     deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createDeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, hardDelete));
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param hardDelete Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(String topicId, String instagramIngestionRuleId, Boolean hardDelete) throws IOException {
+    return deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createDeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, hardDelete).withHttpInfo());
+  }
+
+  private DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest createDeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(String topicId, String instagramIngestionRuleId, Boolean hardDelete) {
+    return DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withHardDelete(hardDelete)
+
+            .build();
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1518,6 +1612,276 @@ public class SocialMediaApi {
   }
 
   /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(String topicId, String instagramIngestionRuleId, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, includeDeleted));
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(String topicId, String instagramIngestionRuleId, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(String topicId, String instagramIngestionRuleId, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param dataIngestionRuleVersion version (required)
+   * @param includeDeleted Determines whether to include soft-deleted item in the result. (optional)
+   * @return InstagramDataIngestionRuleVersionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleVersionResponse getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(String topicId, String instagramIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, includeDeleted));
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param dataIngestionRuleVersion version (required)
+   * @param includeDeleted Determines whether to include soft-deleted item in the result. (optional)
+   * @return InstagramDataIngestionRuleVersionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionWithHttpInfo(String topicId, String instagramIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest(String topicId, String instagramIngestionRuleId, String dataIngestionRuleVersion, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withDataIngestionRuleVersion(dataIngestionRuleVersion)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleVersionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleVersionResponse getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleVersionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleVersionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single Instagram data ingestion rule version.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleVersionResponse> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleVersionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleVersionResponse> response = (ApiResponse<InstagramDataIngestionRuleVersionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleVersionResponse> response = (ApiResponse<InstagramDataIngestionRuleVersionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return InstagramDataIngestionRuleVersionResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleVersionResponseEntityListing getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(String topicId, String instagramIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException, ApiException {
+    return  getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest(topicId, instagramIngestionRuleId, pageNumber, pageSize, includeDeleted));
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @return InstagramDataIngestionRuleVersionResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsWithHttpInfo(String topicId, String instagramIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) throws IOException {
+    return getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest(topicId, instagramIngestionRuleId, pageNumber, pageSize, includeDeleted).withHttpInfo());
+  }
+
+  private GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest createGetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest(String topicId, String instagramIngestionRuleId, Integer pageNumber, Integer pageSize, Boolean includeDeleted) {
+    return GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withIncludeDeleted(includeDeleted)
+
+            .build();
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleVersionResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleVersionResponseEntityListing getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleVersionResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the Instagram data ingestion rule versions.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleVersionResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> response = (ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a single open data ingestion rule.
    * 
    * @param topicId topicId (required)
@@ -2316,6 +2680,92 @@ public class SocialMediaApi {
   }
 
   /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(String topicId, String instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body) throws IOException, ApiException {
+    return  patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createPatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, body));
+  }
+
+  /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(String topicId, String instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body) throws IOException {
+    return patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createPatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, body).withHttpInfo());
+  }
+
+  private PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest createPatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(String topicId, String instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body) {
+    return PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the status of a Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(ApiRequest<DataIngestionRuleStatusPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the status of a open data ingestion rule.
    * 
    * @param topicId topicId (required)
@@ -2881,6 +3331,88 @@ public class SocialMediaApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesInstagram(String topicId, InstagramDataIngestionRuleRequest body) throws IOException, ApiException {
+    return  postSocialmediaTopicDataingestionrulesInstagram(createPostSocialmediaTopicDataingestionrulesInstagramRequest(topicId, body));
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesInstagramWithHttpInfo(String topicId, InstagramDataIngestionRuleRequest body) throws IOException {
+    return postSocialmediaTopicDataingestionrulesInstagram(createPostSocialmediaTopicDataingestionrulesInstagramRequest(topicId, body).withHttpInfo());
+  }
+
+  private PostSocialmediaTopicDataingestionrulesInstagramRequest createPostSocialmediaTopicDataingestionrulesInstagramRequest(String topicId, InstagramDataIngestionRuleRequest body) {
+    return PostSocialmediaTopicDataingestionrulesInstagramRequest.builder()
+            .withTopicId(topicId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesInstagram(PostSocialmediaTopicDataingestionrulesInstagramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> postSocialmediaTopicDataingestionrulesInstagram(ApiRequest<InstagramDataIngestionRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3541,6 +4073,92 @@ public class SocialMediaApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookDataIngestionRuleResponse> response = (ApiResponse<FacebookDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(String topicId, String instagramIngestionRuleId, InstagramDataIngestionRuleRequest body) throws IOException, ApiException {
+    return  putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createPutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, body));
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param topicId topicId (required)
+   * @param instagramIngestionRuleId instagramIngestionRuleId (required)
+   * @param body  (optional)
+   * @return InstagramDataIngestionRuleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(String topicId, String instagramIngestionRuleId, InstagramDataIngestionRuleRequest body) throws IOException {
+    return putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(createPutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(topicId, instagramIngestionRuleId, body).withHttpInfo());
+  }
+
+  private PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest createPutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest(String topicId, String instagramIngestionRuleId, InstagramDataIngestionRuleRequest body) {
+    return PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest.builder()
+            .withTopicId(topicId)
+
+            .withInstagramIngestionRuleId(instagramIngestionRuleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return InstagramDataIngestionRuleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramDataIngestionRuleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramDataIngestionRuleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the Instagram data ingestion rule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramDataIngestionRuleResponse> putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(ApiRequest<InstagramDataIngestionRuleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramDataIngestionRuleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramDataIngestionRuleResponse> response = (ApiResponse<InstagramDataIngestionRuleResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

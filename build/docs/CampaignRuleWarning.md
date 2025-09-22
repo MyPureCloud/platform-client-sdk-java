@@ -27,8 +27,10 @@
 | NOCONTENTTEMPLATES | &quot;NoContentTemplates&quot; | 
 | NOSMSCONTENTTEMPLATE | &quot;NoSmsContentTemplate&quot; | 
 | NOEMAILCONTENTTEMPLATE | &quot;NoEmailContentTemplate&quot; | 
+| CONDITIONSWAITINGFORLINESONLYPREVIEWOREXTERNAL | &quot;ConditionsWaitingForLinesOnlyPreviewOrExternal&quot; | 
+| CONDITIONSWAITINGFORAGENTSONLYAGENTLESS | &quot;ConditionsWaitingForAgentsOnlyAgentless&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

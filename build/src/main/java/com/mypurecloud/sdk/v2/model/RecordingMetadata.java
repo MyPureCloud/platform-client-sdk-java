@@ -56,7 +56,8 @@ public class RecordingMetadata  implements Serializable {
     TRUNK("Trunk"),
     STATION("Station"),
     CONSULT("Consult"),
-    SCREEN("Screen");
+    SCREEN("Screen"),
+    SNIPPET("Snippet");
 
     private String value;
 
@@ -229,6 +230,7 @@ public class RecordingMetadata  implements Serializable {
     EU_WEST_2("eu-west-2"),
     EU_WEST_3("eu-west-3"),
     ME_CENTRAL_1("me-central-1"),
+    MX_CENTRAL_1("mx-central-1"),
     SA_EAST_1("sa-east-1"),
     US_EAST_1("us-east-1"),
     US_WEST_2("us-west-2");

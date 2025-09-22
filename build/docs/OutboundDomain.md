@@ -10,6 +10,7 @@
 | **cnameVerificationResult** | [**VerificationResult**](VerificationResult) | CNAME registration Status |  [optional] |
 | **dkimVerificationResult** | [**VerificationResult**](VerificationResult) | DKIM registration Status |  [optional] |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | Sender Type |  [optional] |
+| **emailSetting** | [**EmailSetting**](EmailSetting) | The email settings associated with this domain. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -26,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

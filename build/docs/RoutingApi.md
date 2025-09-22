@@ -1926,7 +1926,7 @@ This endpoint does not require any parameters.
 # **getRoutingEmailDomain**
 
 
-> [InboundDomain](InboundDomain) getRoutingEmailDomain(domainId)
+> [InboundDomain](InboundDomain) getRoutingEmailDomain(domainId, expand)
 
 Get domain
 
@@ -1959,8 +1959,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String domainId = "domainId_example"; // String | domain ID
+String expand = "expand_example"; // String | Expand options. Valid values: settings
 try {
-    InboundDomain result = apiInstance.getRoutingEmailDomain(domainId);
+    InboundDomain result = apiInstance.getRoutingEmailDomain(domainId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomain");
@@ -1974,6 +1975,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
+| **expand** | **String**| Expand options. Valid values: settings | [optional]<br />**Values**: settings 
 {: class="table-striped"}
 
 
@@ -2177,7 +2179,7 @@ try {
 # **getRoutingEmailDomains**
 
 
-> [InboundDomainEntityListing](InboundDomainEntityListing) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)
+> [InboundDomainEntityListing](InboundDomainEntityListing) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter, expand)
 
 Get domains
 
@@ -2213,8 +2215,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean excludeStatus = false; // Boolean | Exclude MX record data
 String filter = "filter_example"; // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+String expand = "expand_example"; // String | Expand options. Valid values: settings
 try {
-    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter);
+    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomains");
@@ -2231,6 +2234,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **excludeStatus** | **Boolean**| Exclude MX record data | [optional] [default to false] 
 | **filter** | **String**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional] 
+| **expand** | **String**| Expand options. Valid values: settings | [optional]<br />**Values**: settings 
 {: class="table-striped"}
 
 
@@ -2242,7 +2246,7 @@ try {
 # **getRoutingEmailOutboundDomain**
 
 
-> [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomain(domainId)
+> [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomain(domainId, expand)
 
 Get domain
 
@@ -2275,8 +2279,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String domainId = "domainId_example"; // String | domain ID
+String expand = "expand_example"; // String | Expand options. Valid values: settings
 try {
-    OutboundDomain result = apiInstance.getRoutingEmailOutboundDomain(domainId);
+    OutboundDomain result = apiInstance.getRoutingEmailOutboundDomain(domainId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomain");
@@ -2290,6 +2295,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
+| **expand** | **String**| Expand options. Valid values: settings | [optional]<br />**Values**: settings 
 {: class="table-striped"}
 
 
@@ -2360,7 +2366,7 @@ try {
 # **getRoutingEmailOutboundDomains**
 
 
-> [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(pageSize, pageNumber, filter)
+> [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(pageSize, pageNumber, filter, expand)
 
 Get outbound domains
 
@@ -2395,8 +2401,9 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String filter = "filter_example"; // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+String expand = "expand_example"; // String | Expand options. Valid values: settings
 try {
-    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(pageSize, pageNumber, filter);
+    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(pageSize, pageNumber, filter, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomains");
@@ -2412,6 +2419,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filter** | **String**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional] 
+| **expand** | **String**| Expand options. Valid values: settings | [optional]<br />**Values**: settings 
 {: class="table-striped"}
 
 
@@ -7426,7 +7434,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-InboundDomain body = new InboundDomain(); // InboundDomain | Domain
+InboundDomainCreateRequest body = new InboundDomainCreateRequest(); // InboundDomainCreateRequest | Domain
 try {
     InboundDomain result = apiInstance.postRoutingEmailDomains(body);
     System.out.println(result);
@@ -7441,7 +7449,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**InboundDomain**](InboundDomain)| Domain | 
+| **body** | [**InboundDomainCreateRequest**](InboundDomainCreateRequest)| Domain | 
 {: class="table-striped"}
 
 
@@ -7485,7 +7493,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-OutboundDomainRequest body = new OutboundDomainRequest(); // OutboundDomainRequest | Domain
+OutboundDomainCreateRequest body = new OutboundDomainCreateRequest(); // OutboundDomainCreateRequest | Domain
 try {
     EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomains(body);
     System.out.println(result);
@@ -7500,7 +7508,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain | 
+| **body** | [**OutboundDomainCreateRequest**](OutboundDomainCreateRequest)| Domain | 
 {: class="table-striped"}
 
 
@@ -7544,7 +7552,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-OutboundDomainRequest body = new OutboundDomainRequest(); // OutboundDomainRequest | Domain
+OutboundDomainCreateRequest body = new OutboundDomainCreateRequest(); // OutboundDomainCreateRequest | Domain
 try {
     EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomainsSimulated(body);
     System.out.println(result);
@@ -7559,7 +7567,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain | 
+| **body** | [**OutboundDomainCreateRequest**](OutboundDomainCreateRequest)| Domain | 
 {: class="table-striped"}
 
 
@@ -9690,4 +9698,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

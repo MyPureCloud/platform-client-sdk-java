@@ -4,7 +4,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteConversationsSummariesSetting**](AIStudioApi#deleteConversationsSummariesSetting) | Delete a summary setting. |
 | [**deleteGuideJobs**](AIStudioApi#deleteGuideJobs) | Start the deletion of a guide. |
+| [**getConversationsSummariesSetting**](AIStudioApi#getConversationsSummariesSetting) | Receive a summary setting. |
+| [**getConversationsSummariesSettings**](AIStudioApi#getConversationsSummariesSettings) | Get all summary settings. |
 | [**getGuide**](AIStudioApi#getGuide) | Get guide. |
 | [**getGuideJob**](AIStudioApi#getGuideJob) | Get the specified guide deletion job. |
 | [**getGuideVersion**](AIStudioApi#getGuideVersion) | Get a guide version. |
@@ -13,11 +16,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGuidesJob**](AIStudioApi#getGuidesJob) | Get the status of the guide content generation job. |
 | [**patchGuide**](AIStudioApi#patchGuide) | Update a guide. |
 | [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | Update a guide version. |
+| [**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | Trigger summary preview event generation. |
+| [**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | Create a summary setting. |
 | [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | Start the publishing of a guide version. |
 | [**postGuideVersions**](AIStudioApi#postGuideVersions) | Create a guide version. |
 | [**postGuides**](AIStudioApi#postGuides) | Create a guide. |
 | [**postGuidesJobs**](AIStudioApi#postGuidesJobs) | Start a guide content generation job. |
+| [**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | Update a summary setting. |
 {: class="table-striped"}
+
+
+# **deleteConversationsSummariesSetting**
+
+
+> Void deleteConversationsSummariesSetting(summarySettingId)
+
+Delete a summary setting.
+
+Wraps DELETE /api/v2/conversations/summaries/settings/{summarySettingId}  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String summarySettingId = "summarySettingId_example"; // String | Summary setting id
+try {
+    apiInstance.deleteConversationsSummariesSetting(summarySettingId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#deleteConversationsSummariesSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **summarySettingId** | **String**| Summary setting id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **deleteGuideJobs**
@@ -79,6 +143,134 @@ try {
 ### Return type
 
 [**GuideJob**](GuideJob)
+
+
+# **getConversationsSummariesSetting**
+
+
+> [SummarySetting](SummarySetting) getConversationsSummariesSetting(summarySettingId)
+
+Receive a summary setting.
+
+Wraps GET /api/v2/conversations/summaries/settings/{summarySettingId}  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String summarySettingId = "summarySettingId_example"; // String | Summary setting id
+try {
+    SummarySetting result = apiInstance.getConversationsSummariesSetting(summarySettingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#getConversationsSummariesSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **summarySettingId** | **String**| Summary setting id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
+# **getConversationsSummariesSettings**
+
+
+> [SummarySettingEntityListing](SummarySettingEntityListing) getConversationsSummariesSettings(language, name, sortBy, sortOrder, pageNumber, pageSize)
+
+Get all summary settings.
+
+Wraps GET /api/v2/conversations/summaries/settings  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String language = "language_example"; // String | Filter by matching language - case insensitive.
+String name = "name_example"; // String | Filter by partially matching name - case insensitive.
+String sortBy = "dateModified"; // String | Sort by. Default value dateModified.
+String sortOrder = "desc"; // String | Sort Order. Default value desc.
+Integer pageNumber = 1; // Integer | Page number.
+Integer pageSize = 25; // Integer | Page size. The maximum page size is 100.
+try {
+    SummarySettingEntityListing result = apiInstance.getConversationsSummariesSettings(language, name, sortBy, sortOrder, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#getConversationsSummariesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **language** | **String**| Filter by matching language - case insensitive. | [optional] 
+| **name** | **String**| Filter by partially matching name - case insensitive. | [optional] 
+| **sortBy** | **String**| Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name 
+| **sortOrder** | **String**| Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc 
+| **pageNumber** | **Integer**| Page number. | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size. The maximum page size is 100. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummarySettingEntityListing**](SummarySettingEntityListing)
 
 
 # **getGuide**
@@ -595,6 +787,123 @@ try {
 [**GuideVersion**](GuideVersion)
 
 
+# **postConversationsSummariesPreview**
+
+
+> Void postConversationsSummariesPreview(body)
+
+Trigger summary preview event generation.
+
+Wraps POST /api/v2/conversations/summaries/preview  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryPreview:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+SummarySettingWithTranscript body = new SummarySettingWithTranscript(); // SummarySettingWithTranscript | 
+try {
+    apiInstance.postConversationsSummariesPreview(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postConversationsSummariesPreview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SummarySettingWithTranscript**](SummarySettingWithTranscript)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postConversationsSummariesSettings**
+
+
+> [SummarySetting](SummarySetting) postConversationsSummariesSettings(body)
+
+Create a summary setting.
+
+Wraps POST /api/v2/conversations/summaries/settings  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+SummarySetting body = new SummarySetting(); // SummarySetting | 
+try {
+    SummarySetting result = apiInstance.postConversationsSummariesSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postConversationsSummariesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SummarySetting**](SummarySetting)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
 # **postGuideVersionJobs**
 
 
@@ -845,4 +1154,65 @@ try {
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+# **putConversationsSummariesSetting**
+
+
+> [SummarySetting](SummarySetting) putConversationsSummariesSetting(summarySettingId, body)
+
+Update a summary setting.
+
+Wraps PUT /api/v2/conversations/summaries/settings/{summarySettingId}  
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String summarySettingId = "summarySettingId_example"; // String | Summary setting id
+SummarySetting body = new SummarySetting(); // SummarySetting | 
+try {
+    SummarySetting result = apiInstance.putConversationsSummariesSetting(summarySettingId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#putConversationsSummariesSetting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **summarySettingId** | **String**| Summary setting id | 
+| **body** | [**SummarySetting**](SummarySetting)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

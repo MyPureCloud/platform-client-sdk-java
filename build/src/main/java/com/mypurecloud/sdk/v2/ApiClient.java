@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -181,6 +182,7 @@ public class ApiClient implements AutoCloseable {
         objectMapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
         objectMapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
         objectMapper.registerModule(new JodaModule());
+        objectMapper.registerModule(new JavaTimeModule());
         objectMapper.setDateFormat(dateFormat);
         SimpleModule localDateModule = new SimpleModule();
         localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer());
@@ -1160,7 +1162,7 @@ public class ApiClient implements AutoCloseable {
             this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "230.0.0");
+            withDefaultHeader("purecloud-sdk", "231.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

@@ -4388,7 +4388,7 @@ public class RecordingApi {
 
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param jobId jobId (required)
    * @param body query (required)
    * @return RecordingJob
@@ -4401,7 +4401,7 @@ public class RecordingApi {
 
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param jobId jobId (required)
    * @param body query (required)
    * @return RecordingJob
@@ -4422,7 +4422,7 @@ public class RecordingApi {
 
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param request The request object
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -4441,7 +4441,7 @@ public class RecordingApi {
 
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4552,7 +4552,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * Policy does not work retroactively
+   * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
@@ -4565,7 +4565,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * Policy does not work retroactively
+   * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
@@ -4586,7 +4586,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * Policy does not work retroactively
+   * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
    * @param request The request object
    * @return Policy
    * @throws ApiException if the request fails on the server
@@ -4605,7 +4605,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * Policy does not work retroactively
+   * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

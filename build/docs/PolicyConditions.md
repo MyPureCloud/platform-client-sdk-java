@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **forUsers** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **forUsers** | [**List&lt;PolicyUser&gt;**](PolicyUser) | List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}]. |  [optional] |
 | **directions** | [**List<DirectionsEnum>**](#Enum--DirectionsEnum) |  |  [optional] |
 | **dateRanges** | **List&lt;String&gt;** |  |  [optional] |
 | **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) |  |  [optional] |
@@ -46,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

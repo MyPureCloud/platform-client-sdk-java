@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
@@ -52,8 +53,8 @@ import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
+import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -119,16 +120,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PostRoutingEmailDomainsRequest {
 
-	private InboundDomain body;
-	public InboundDomain getBody() {
+	private InboundDomainCreateRequest body;
+	public InboundDomainCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(InboundDomain body) {
+	public void setBody(InboundDomainCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostRoutingEmailDomainsRequest withBody(InboundDomain body) {
+	public PostRoutingEmailDomainsRequest withBody(InboundDomainCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -152,7 +153,7 @@ public class PostRoutingEmailDomainsRequest {
         return this;
     }
 
-    public ApiRequest<InboundDomain> withHttpInfo() {
+    public ApiRequest<InboundDomainCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -175,7 +176,7 @@ public class PostRoutingEmailDomainsRequest {
 	}
 
 
-	public static Builder builder(InboundDomain body) {
+	public static Builder builder(InboundDomainCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -189,14 +190,14 @@ public class PostRoutingEmailDomainsRequest {
 		}
 
 
-		public Builder withBody(InboundDomain body) {
+		public Builder withBody(InboundDomainCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(InboundDomain body) {
+		public Builder withRequiredParams(InboundDomainCreateRequest body) {
 			request.setBody(body);
 
 			return this;

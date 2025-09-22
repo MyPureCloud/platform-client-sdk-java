@@ -48,7 +48,8 @@ public class AiScoring  implements Serializable {
     SERVICEERROR("ServiceError"),
     INVALIDREQUEST("InvalidRequest"),
     DUPLICATEFORMSAMEAGENT("DuplicateFormSameAgent"),
-    UNAUTHORIZED("Unauthorized");
+    UNAUTHORIZED("Unauthorized"),
+    DUPLICATEAUTOMATEDFORMWITHCOPIEDSCORE("DuplicateAutomatedFormWithCopiedScore");
 
     private String value;
 

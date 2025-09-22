@@ -32,8 +32,14 @@
 | NOTCONTAINSALL | &quot;NotContainsAll&quot; | 
 | CONTAINSEXACTLY | &quot;ContainsExactly&quot; | 
 | NOTCONTAINSEXACTLY | &quot;NotContainsExactly&quot; | 
+| CONTAINSSEQUENCE | &quot;ContainsSequence&quot; | 
+| NOTCONTAINSSEQUENCE | &quot;NotContainsSequence&quot; | 
+| ISSUBSET | &quot;IsSubset&quot; | 
+| NOTISSUBSET | &quot;NotIsSubset&quot; | 
+| ISSUBSEQUENCE | &quot;IsSubsequence&quot; | 
+| NOTISSUBSEQUENCE | &quot;NotIsSubsequence&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

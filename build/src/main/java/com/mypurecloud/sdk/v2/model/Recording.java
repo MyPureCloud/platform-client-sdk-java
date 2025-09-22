@@ -63,7 +63,8 @@ public class Recording  implements Serializable {
     TRUNK("Trunk"),
     STATION("Station"),
     CONSULT("Consult"),
-    SCREEN("Screen");
+    SCREEN("Screen"),
+    SNIPPET("Snippet");
 
     private String value;
 

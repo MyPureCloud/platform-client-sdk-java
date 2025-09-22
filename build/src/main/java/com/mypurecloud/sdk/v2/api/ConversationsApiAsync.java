@@ -393,12 +393,14 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonito
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantVoiceConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantCommunicationWrapupRequest;
@@ -15490,6 +15492,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Conversation> postConversationsCallParticipantsUserUserIdAsync(PostConversationsCallParticipantsUserUserIdRequest request, final AsyncApiCallback<Conversation> callback) {
+    try {
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Conversation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Conversation>> postConversationsCallParticipantsUserUserIdAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Conversation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param request the request object
@@ -15906,6 +15983,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<CreateCallResponse>> postConversationsCallsAsync(ApiRequest<CreateCallRequest> request, final AsyncApiCallback<ApiResponse<CreateCallResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CreateCallResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CreateCallResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateCallResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CreateCallResponse> postConversationsCallsUserUserIdAsync(PostConversationsCallsUserUserIdRequest request, final AsyncApiCallback<CreateCallResponse> callback) {
+    try {
+      final SettableFuture<CreateCallResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateCallResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CreateCallResponse>> postConversationsCallsUserUserIdAsync(ApiRequest<CreateCallRequest> request, final AsyncApiCallback<ApiResponse<CreateCallResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<CreateCallResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -16855,7 +17007,7 @@ public class ConversationsApiAsync {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -16889,7 +17041,7 @@ public class ConversationsApiAsync {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

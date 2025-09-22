@@ -32,7 +32,6 @@ public class UserRecording  implements Serializable {
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private String contentUri = null;
   private DomainEntityRef workspace = null;
   private DomainEntityRef createdBy = null;
   private Conversation conversation = null;
@@ -106,23 +105,6 @@ public class UserRecording  implements Serializable {
   }
   public void setDateModified(Date dateModified) {
     this.dateModified = dateModified;
-  }
-
-
-  /**
-   **/
-  public UserRecording contentUri(String contentUri) {
-    this.contentUri = contentUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("contentUri")
-  public String getContentUri() {
-    return contentUri;
-  }
-  public void setContentUri(String contentUri) {
-    this.contentUri = contentUri;
   }
 
 
@@ -266,7 +248,6 @@ public class UserRecording  implements Serializable {
             Objects.equals(this.name, userRecording.name) &&
             Objects.equals(this.dateCreated, userRecording.dateCreated) &&
             Objects.equals(this.dateModified, userRecording.dateModified) &&
-            Objects.equals(this.contentUri, userRecording.contentUri) &&
             Objects.equals(this.workspace, userRecording.workspace) &&
             Objects.equals(this.createdBy, userRecording.createdBy) &&
             Objects.equals(this.conversation, userRecording.conversation) &&
@@ -279,7 +260,7 @@ public class UserRecording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, contentUri, workspace, createdBy, conversation, contentLength, durationMilliseconds, thumbnails, read, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, workspace, createdBy, conversation, contentLength, durationMilliseconds, thumbnails, read, selfUri);
   }
 
   @Override
@@ -291,7 +272,6 @@ public class UserRecording  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");

@@ -53,7 +53,8 @@ public class IpAddressRange  implements Serializable {
     TTS_CONNECTOR("tts-connector"),
     AUDIO_CONNECTOR("audio-connector"),
     BYOT_STT("byot-stt"),
-    BOT_CONNECTOR("bot-connector");
+    BOT_CONNECTOR("bot-connector"),
+    BYO_SMPP("byo-smpp");
 
     private String value;
 

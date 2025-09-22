@@ -31,6 +31,9 @@ import com.mypurecloud.sdk.v2.model.GuideJob;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
+import com.mypurecloud.sdk.v2.model.SummarySetting;
+import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
+import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
 

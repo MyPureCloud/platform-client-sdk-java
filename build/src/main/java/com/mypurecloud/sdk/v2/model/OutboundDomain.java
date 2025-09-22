@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.EmailSetting;
 import com.mypurecloud.sdk.v2.model.VerificationResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -78,6 +79,7 @@ public class OutboundDomain  implements Serializable {
     }
   }
   private SenderTypeEnum senderType = null;
+  private EmailSetting emailSetting = null;
   private String selfUri = null;
 
   public OutboundDomain() {
@@ -175,6 +177,24 @@ public class OutboundDomain  implements Serializable {
   }
 
 
+  /**
+   * The email settings associated with this domain.
+   **/
+  public OutboundDomain emailSetting(EmailSetting emailSetting) {
+    this.emailSetting = emailSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email settings associated with this domain.")
+  @JsonProperty("emailSetting")
+  public EmailSetting getEmailSetting() {
+    return emailSetting;
+  }
+  public void setEmailSetting(EmailSetting emailSetting) {
+    this.emailSetting = emailSetting;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -197,12 +217,13 @@ public class OutboundDomain  implements Serializable {
             Objects.equals(this.cnameVerificationResult, outboundDomain.cnameVerificationResult) &&
             Objects.equals(this.dkimVerificationResult, outboundDomain.dkimVerificationResult) &&
             Objects.equals(this.senderType, outboundDomain.senderType) &&
+            Objects.equals(this.emailSetting, outboundDomain.emailSetting) &&
             Objects.equals(this.selfUri, outboundDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, cnameVerificationResult, dkimVerificationResult, senderType, selfUri);
+    return Objects.hash(id, name, cnameVerificationResult, dkimVerificationResult, senderType, emailSetting, selfUri);
   }
 
   @Override
@@ -215,6 +236,7 @@ public class OutboundDomain  implements Serializable {
     sb.append("    cnameVerificationResult: ").append(toIndentedString(cnameVerificationResult)).append("\n");
     sb.append("    dkimVerificationResult: ").append(toIndentedString(dkimVerificationResult)).append("\n");
     sb.append("    senderType: ").append(toIndentedString(senderType)).append("\n");
+    sb.append("    emailSetting: ").append(toIndentedString(emailSetting)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

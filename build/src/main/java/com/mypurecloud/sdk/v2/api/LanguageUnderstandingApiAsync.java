@@ -17,6 +17,12 @@ import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesRequest;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesResponse;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsRequest;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsResponse;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedPhraseListing;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedTopicListing;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -38,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.NluOrganization;
+import com.mypurecloud.sdk.v2.model.RemoveEntitiesRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -52,6 +59,8 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionR
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingIgnorephraseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingIgnoretopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftsRequest;
@@ -70,6 +79,10 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersion
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnorephraseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnorephraseRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnoretopicRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingIgnoretopicRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinersRequest;
@@ -982,6 +995,156 @@ public class LanguageUnderstandingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<NluDomainListing> response = (ApiResponse<NluDomainListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IgnoredMinedPhraseListing> getLanguageunderstandingIgnorephraseAsync(GetLanguageunderstandingIgnorephraseRequest request, final AsyncApiCallback<IgnoredMinedPhraseListing> callback) {
+    try {
+      final SettableFuture<IgnoredMinedPhraseListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IgnoredMinedPhraseListing>() {}, new AsyncApiCallback<ApiResponse<IgnoredMinedPhraseListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoredMinedPhraseListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of all ignored phrases of the specified language code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IgnoredMinedPhraseListing>> getLanguageunderstandingIgnorephraseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IgnoredMinedPhraseListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IgnoredMinedPhraseListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IgnoredMinedPhraseListing>() {}, new AsyncApiCallback<ApiResponse<IgnoredMinedPhraseListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoredMinedPhraseListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoredMinedPhraseListing> response = (ApiResponse<IgnoredMinedPhraseListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoredMinedPhraseListing> response = (ApiResponse<IgnoredMinedPhraseListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IgnoredMinedTopicListing> getLanguageunderstandingIgnoretopicAsync(GetLanguageunderstandingIgnoretopicRequest request, final AsyncApiCallback<IgnoredMinedTopicListing> callback) {
+    try {
+      final SettableFuture<IgnoredMinedTopicListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IgnoredMinedTopicListing>() {}, new AsyncApiCallback<ApiResponse<IgnoredMinedTopicListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoredMinedTopicListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of all ignored topics of the specified language code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IgnoredMinedTopicListing>> getLanguageunderstandingIgnoretopicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IgnoredMinedTopicListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IgnoredMinedTopicListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IgnoredMinedTopicListing>() {}, new AsyncApiCallback<ApiResponse<IgnoredMinedTopicListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoredMinedTopicListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoredMinedTopicListing> response = (ApiResponse<IgnoredMinedTopicListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoredMinedTopicListing> response = (ApiResponse<IgnoredMinedTopicListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2332,6 +2495,306 @@ public class LanguageUnderstandingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<NluDomain> response = (ApiResponse<NluDomain>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IgnorePhrasesResponse> postLanguageunderstandingIgnorephraseAsync(PostLanguageunderstandingIgnorephraseRequest request, final AsyncApiCallback<IgnorePhrasesResponse> callback) {
+    try {
+      final SettableFuture<IgnorePhrasesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IgnorePhrasesResponse>() {}, new AsyncApiCallback<ApiResponse<IgnorePhrasesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnorePhrasesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add phrases to the ignored phrases list
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IgnorePhrasesResponse>> postLanguageunderstandingIgnorephraseAsync(ApiRequest<IgnorePhrasesRequest> request, final AsyncApiCallback<ApiResponse<IgnorePhrasesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IgnorePhrasesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IgnorePhrasesResponse>() {}, new AsyncApiCallback<ApiResponse<IgnorePhrasesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnorePhrasesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnorePhrasesResponse> response = (ApiResponse<IgnorePhrasesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnorePhrasesResponse> response = (ApiResponse<IgnorePhrasesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postLanguageunderstandingIgnorephraseRemoveAsync(PostLanguageunderstandingIgnorephraseRemoveRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ignored phrases
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postLanguageunderstandingIgnorephraseRemoveAsync(ApiRequest<RemoveEntitiesRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IgnoreTopicsResponse> postLanguageunderstandingIgnoretopicAsync(PostLanguageunderstandingIgnoretopicRequest request, final AsyncApiCallback<IgnoreTopicsResponse> callback) {
+    try {
+      final SettableFuture<IgnoreTopicsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IgnoreTopicsResponse>() {}, new AsyncApiCallback<ApiResponse<IgnoreTopicsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoreTopicsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add topics to the ignored topics list
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IgnoreTopicsResponse>> postLanguageunderstandingIgnoretopicAsync(ApiRequest<IgnoreTopicsRequest> request, final AsyncApiCallback<ApiResponse<IgnoreTopicsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IgnoreTopicsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IgnoreTopicsResponse>() {}, new AsyncApiCallback<ApiResponse<IgnoreTopicsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<IgnoreTopicsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoreTopicsResponse> response = (ApiResponse<IgnoreTopicsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IgnoreTopicsResponse> response = (ApiResponse<IgnoreTopicsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postLanguageunderstandingIgnoretopicRemoveAsync(PostLanguageunderstandingIgnoretopicRemoveRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ignored topics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postLanguageunderstandingIgnoretopicRemoveAsync(ApiRequest<RemoveEntitiesRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

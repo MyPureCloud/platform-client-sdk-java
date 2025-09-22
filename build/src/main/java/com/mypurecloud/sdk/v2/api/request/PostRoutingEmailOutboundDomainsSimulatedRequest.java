@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
@@ -52,8 +53,8 @@ import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
+import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -119,16 +120,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PostRoutingEmailOutboundDomainsSimulatedRequest {
 
-	private OutboundDomainRequest body;
-	public OutboundDomainRequest getBody() {
+	private OutboundDomainCreateRequest body;
+	public OutboundDomainCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(OutboundDomainRequest body) {
+	public void setBody(OutboundDomainCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostRoutingEmailOutboundDomainsSimulatedRequest withBody(OutboundDomainRequest body) {
+	public PostRoutingEmailOutboundDomainsSimulatedRequest withBody(OutboundDomainCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -152,7 +153,7 @@ public class PostRoutingEmailOutboundDomainsSimulatedRequest {
         return this;
     }
 
-    public ApiRequest<OutboundDomainRequest> withHttpInfo() {
+    public ApiRequest<OutboundDomainCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -175,7 +176,7 @@ public class PostRoutingEmailOutboundDomainsSimulatedRequest {
 	}
 
 
-	public static Builder builder(OutboundDomainRequest body) {
+	public static Builder builder(OutboundDomainCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -189,14 +190,14 @@ public class PostRoutingEmailOutboundDomainsSimulatedRequest {
 		}
 
 
-		public Builder withBody(OutboundDomainRequest body) {
+		public Builder withBody(OutboundDomainCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(OutboundDomainRequest body) {
+		public Builder withRequiredParams(OutboundDomainCreateRequest body) {
 			request.setBody(body);
 
 			return this;

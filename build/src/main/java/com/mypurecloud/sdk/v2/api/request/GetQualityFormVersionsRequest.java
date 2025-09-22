@@ -39,6 +39,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormDivisionView;
+import com.mypurecloud.sdk.v2.model.EvaluationFormDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationResponse;
@@ -56,6 +58,8 @@ import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormDivisionView;
+import com.mypurecloud.sdk.v2.model.SurveyFormDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 

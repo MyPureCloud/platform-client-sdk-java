@@ -22,7 +22,6 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteUserrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingRequest;
-import com.mypurecloud.sdk.v2.api.request.GetUserrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingTranscodingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsSummaryRequest;
@@ -185,83 +184,6 @@ public class UserRecordingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<DownloadResponse> getUserrecordingMediaAsync(GetUserrecordingMediaRequest request, final AsyncApiCallback<DownloadResponse> callback) {
-    try {
-      final SettableFuture<DownloadResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<DownloadResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Download a user recording.
-   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<DownloadResponse>> getUserrecordingMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<DownloadResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<DownloadResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -37,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
@@ -45,8 +46,8 @@ import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
+import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundDomainRequest;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
@@ -9117,7 +9118,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundDomain>> postRoutingEmailDomainsAsync(ApiRequest<InboundDomain> request, final AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
+  public Future<ApiResponse<InboundDomain>> postRoutingEmailDomainsAsync(ApiRequest<InboundDomainCreateRequest> request, final AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
     try {
       final SettableFuture<ApiResponse<InboundDomain>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9192,7 +9193,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsAsync(ApiRequest<OutboundDomainRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
+  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsAsync(ApiRequest<OutboundDomainCreateRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
     try {
       final SettableFuture<ApiResponse<EmailOutboundDomainResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9267,7 +9268,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsSimulatedAsync(ApiRequest<OutboundDomainRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
+  public Future<ApiResponse<EmailOutboundDomainResult>> postRoutingEmailOutboundDomainsSimulatedAsync(ApiRequest<OutboundDomainCreateRequest> request, final AsyncApiCallback<ApiResponse<EmailOutboundDomainResult>> callback) {
     try {
       final SettableFuture<ApiResponse<EmailOutboundDomainResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

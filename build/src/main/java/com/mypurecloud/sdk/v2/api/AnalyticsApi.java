@@ -52,6 +52,10 @@ import com.mypurecloud.sdk.v2.model.DashboardConfigurationQueryRequest;
 import com.mypurecloud.sdk.v2.model.DashboardUser;
 import com.mypurecloud.sdk.v2.model.DashboardUserListing;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DataExtractionFileSchemaListing;
+import com.mypurecloud.sdk.v2.model.DataExtractionFileUrlListing;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.DownloadServiceRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
@@ -158,6 +162,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataextractionDownloadRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataextractionDownloadsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataretentionSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobResultsRequest;
@@ -206,6 +212,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesJo
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsDataextractionDownloadsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowexecutionsAggregatesJobsRequest;
@@ -3050,6 +3057,187 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get analytics data warehouse file download
+   * 
+   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param downloadId Unique file Id to download (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getAnalyticsDataextractionDownload(String downloadId) throws IOException, ApiException {
+     getAnalyticsDataextractionDownload(createGetAnalyticsDataextractionDownloadRequest(downloadId));
+  }
+
+  /**
+   * Get analytics data warehouse file download
+   * 
+   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param downloadId Unique file Id to download (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getAnalyticsDataextractionDownloadWithHttpInfo(String downloadId) throws IOException {
+    return getAnalyticsDataextractionDownload(createGetAnalyticsDataextractionDownloadRequest(downloadId).withHttpInfo());
+  }
+
+  private GetAnalyticsDataextractionDownloadRequest createGetAnalyticsDataextractionDownloadRequest(String downloadId) {
+    return GetAnalyticsDataextractionDownloadRequest.builder()
+            .withDownloadId(downloadId)
+
+            .build();
+  }
+
+  /**
+   * Get analytics data warehouse file download
+   * 
+   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getAnalyticsDataextractionDownload(GetAnalyticsDataextractionDownloadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Get analytics data warehouse file download
+   * 
+   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getAnalyticsDataextractionDownload(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get metadata on files available for extraction
+   * 
+   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param dataSchema Data schema like conversations (optional)
+   * @param dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @return DataExtractionFileSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataExtractionFileSchemaListing getAnalyticsDataextractionDownloadsMetadata(String before, String after, String pageSize, String dataSchema, Date dateStart, Date dateEnd) throws IOException, ApiException {
+    return  getAnalyticsDataextractionDownloadsMetadata(createGetAnalyticsDataextractionDownloadsMetadataRequest(before, after, pageSize, dataSchema, dateStart, dateEnd));
+  }
+
+  /**
+   * Get metadata on files available for extraction
+   * 
+   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param dataSchema Data schema like conversations (optional)
+   * @param dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @return DataExtractionFileSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataExtractionFileSchemaListing> getAnalyticsDataextractionDownloadsMetadataWithHttpInfo(String before, String after, String pageSize, String dataSchema, Date dateStart, Date dateEnd) throws IOException {
+    return getAnalyticsDataextractionDownloadsMetadata(createGetAnalyticsDataextractionDownloadsMetadataRequest(before, after, pageSize, dataSchema, dateStart, dateEnd).withHttpInfo());
+  }
+
+  private GetAnalyticsDataextractionDownloadsMetadataRequest createGetAnalyticsDataextractionDownloadsMetadataRequest(String before, String after, String pageSize, String dataSchema, Date dateStart, Date dateEnd) {
+    return GetAnalyticsDataextractionDownloadsMetadataRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withDataSchema(dataSchema)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
+
+            .build();
+  }
+
+  /**
+   * Get metadata on files available for extraction
+   * 
+   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataExtractionFileSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataExtractionFileSchemaListing getAnalyticsDataextractionDownloadsMetadata(GetAnalyticsDataextractionDownloadsMetadataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataExtractionFileSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataExtractionFileSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get metadata on files available for extraction
+   * 
+   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataExtractionFileSchemaListing> getAnalyticsDataextractionDownloadsMetadata(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataExtractionFileSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataExtractionFileSchemaListing> response = (ApiResponse<DataExtractionFileSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataExtractionFileSchemaListing> response = (ApiResponse<DataExtractionFileSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7022,6 +7210,88 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationQueryResponse> response = (ApiResponse<AnalyticsConversationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get download URLs for analytics data warehouse files
+   * 
+   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body request (required)
+   * @return DataExtractionFileUrlListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(DownloadServiceRequest body) throws IOException, ApiException {
+    return  postAnalyticsDataextractionDownloadsBulk(createPostAnalyticsDataextractionDownloadsBulkRequest(body));
+  }
+
+  /**
+   * Get download URLs for analytics data warehouse files
+   * 
+   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body request (required)
+   * @return DataExtractionFileUrlListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataExtractionFileUrlListing> postAnalyticsDataextractionDownloadsBulkWithHttpInfo(DownloadServiceRequest body) throws IOException {
+    return postAnalyticsDataextractionDownloadsBulk(createPostAnalyticsDataextractionDownloadsBulkRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsDataextractionDownloadsBulkRequest createPostAnalyticsDataextractionDownloadsBulkRequest(DownloadServiceRequest body) {
+    return PostAnalyticsDataextractionDownloadsBulkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get download URLs for analytics data warehouse files
+   * 
+   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return DataExtractionFileUrlListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(PostAnalyticsDataextractionDownloadsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataExtractionFileUrlListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataExtractionFileUrlListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get download URLs for analytics data warehouse files
+   * 
+   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataExtractionFileUrlListing> postAnalyticsDataextractionDownloadsBulk(ApiRequest<DownloadServiceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataExtractionFileUrlListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataExtractionFileUrlListing> response = (ApiResponse<DataExtractionFileUrlListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataExtractionFileUrlListing> response = (ApiResponse<DataExtractionFileUrlListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -21,11 +21,17 @@ import com.mypurecloud.sdk.v2.model.GuideJob;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
+import com.mypurecloud.sdk.v2.model.SummarySetting;
+import com.mypurecloud.sdk.v2.model.SummarySettingEntityListing;
+import com.mypurecloud.sdk.v2.model.SummarySettingWithTranscript;
 import com.mypurecloud.sdk.v2.model.UpdateGuide;
 import com.mypurecloud.sdk.v2.model.UpdateGuideVersion;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsSummariesSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteGuideJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsSummariesSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsSummariesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuideVersionRequest;
@@ -34,10 +40,13 @@ import com.mypurecloud.sdk.v2.api.request.GetGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGuidesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesPreviewRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsSummariesSettingRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,6 +63,81 @@ public class AIStudioApi {
 
   public AIStudioApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsSummariesSetting(String summarySettingId) throws IOException, ApiException {
+     deleteConversationsSummariesSetting(createDeleteConversationsSummariesSettingRequest(summarySettingId));
+  }
+
+  /**
+   * Delete a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsSummariesSettingWithHttpInfo(String summarySettingId) throws IOException {
+    return deleteConversationsSummariesSetting(createDeleteConversationsSummariesSettingRequest(summarySettingId).withHttpInfo());
+  }
+
+  private DeleteConversationsSummariesSettingRequest createDeleteConversationsSummariesSettingRequest(String summarySettingId) {
+    return DeleteConversationsSummariesSettingRequest.builder()
+            .withSummarySettingId(summarySettingId)
+
+            .build();
+  }
+
+  /**
+   * Delete a summary setting.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsSummariesSetting(DeleteConversationsSummariesSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a summary setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsSummariesSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -134,6 +218,182 @@ public class AIStudioApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GuideJob> response = (ApiResponse<GuideJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Receive a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting getConversationsSummariesSetting(String summarySettingId) throws IOException, ApiException {
+    return  getConversationsSummariesSetting(createGetConversationsSummariesSettingRequest(summarySettingId));
+  }
+
+  /**
+   * Receive a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @return SummarySetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> getConversationsSummariesSettingWithHttpInfo(String summarySettingId) throws IOException {
+    return getConversationsSummariesSetting(createGetConversationsSummariesSettingRequest(summarySettingId).withHttpInfo());
+  }
+
+  private GetConversationsSummariesSettingRequest createGetConversationsSummariesSettingRequest(String summarySettingId) {
+    return GetConversationsSummariesSettingRequest.builder()
+            .withSummarySettingId(summarySettingId)
+
+            .build();
+  }
+
+  /**
+   * Receive a summary setting.
+   * 
+   * @param request The request object
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting getConversationsSummariesSetting(GetConversationsSummariesSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummarySetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummarySetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Receive a summary setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> getConversationsSummariesSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummarySetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all summary settings.
+   * 
+   * @param language Filter by matching language - case insensitive. (optional)
+   * @param name Filter by partially matching name - case insensitive. (optional)
+   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
+   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
+   * @param pageNumber Page number. (optional, default to 1)
+   * @param pageSize Page size. The maximum page size is 100. (optional, default to 25)
+   * @return SummarySettingEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySettingEntityListing getConversationsSummariesSettings(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(language, name, sortBy, sortOrder, pageNumber, pageSize));
+  }
+
+  /**
+   * Get all summary settings.
+   * 
+   * @param language Filter by matching language - case insensitive. (optional)
+   * @param name Filter by partially matching name - case insensitive. (optional)
+   * @param sortBy Sort by. Default value dateModified. (optional, default to dateModified)
+   * @param sortOrder Sort Order. Default value desc. (optional, default to desc)
+   * @param pageNumber Page number. (optional, default to 1)
+   * @param pageSize Page size. The maximum page size is 100. (optional, default to 25)
+   * @return SummarySettingEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySettingEntityListing> getConversationsSummariesSettingsWithHttpInfo(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) throws IOException {
+    return getConversationsSummariesSettings(createGetConversationsSummariesSettingsRequest(language, name, sortBy, sortOrder, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetConversationsSummariesSettingsRequest createGetConversationsSummariesSettingsRequest(String language, String name, String sortBy, String sortOrder, Integer pageNumber, Integer pageSize) {
+    return GetConversationsSummariesSettingsRequest.builder()
+            .withLanguage(language)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get all summary settings.
+   * 
+   * @param request The request object
+   * @return SummarySettingEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySettingEntityListing getConversationsSummariesSettings(GetConversationsSummariesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummarySettingEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummarySettingEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all summary settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySettingEntityListing> getConversationsSummariesSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummarySettingEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySettingEntityListing> response = (ApiResponse<SummarySettingEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySettingEntityListing> response = (ApiResponse<SummarySettingEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -847,6 +1107,159 @@ public class AIStudioApi {
   }
 
   /**
+   * Trigger summary preview event generation.
+   * 
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsSummariesPreview(SummarySettingWithTranscript body) throws IOException, ApiException {
+     postConversationsSummariesPreview(createPostConversationsSummariesPreviewRequest(body));
+  }
+
+  /**
+   * Trigger summary preview event generation.
+   * 
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsSummariesPreviewWithHttpInfo(SummarySettingWithTranscript body) throws IOException {
+    return postConversationsSummariesPreview(createPostConversationsSummariesPreviewRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsSummariesPreviewRequest createPostConversationsSummariesPreviewRequest(SummarySettingWithTranscript body) {
+    return PostConversationsSummariesPreviewRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Trigger summary preview event generation.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsSummariesPreview(PostConversationsSummariesPreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Trigger summary preview event generation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsSummariesPreview(ApiRequest<SummarySettingWithTranscript> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a summary setting.
+   * 
+   * @param body  (required)
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting postConversationsSummariesSettings(SummarySetting body) throws IOException, ApiException {
+    return  postConversationsSummariesSettings(createPostConversationsSummariesSettingsRequest(body));
+  }
+
+  /**
+   * Create a summary setting.
+   * 
+   * @param body  (required)
+   * @return SummarySetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> postConversationsSummariesSettingsWithHttpInfo(SummarySetting body) throws IOException {
+    return postConversationsSummariesSettings(createPostConversationsSummariesSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsSummariesSettingsRequest createPostConversationsSummariesSettingsRequest(SummarySetting body) {
+    return PostConversationsSummariesSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a summary setting.
+   * 
+   * @param request The request object
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting postConversationsSummariesSettings(PostConversationsSummariesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummarySetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummarySetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a summary setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> postConversationsSummariesSettings(ApiRequest<SummarySetting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummarySetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Start the publishing of a guide version.
    * 
    * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -1182,6 +1595,88 @@ public class AIStudioApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GuideContentGenerationJob> response = (ApiResponse<GuideContentGenerationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @param body  (required)
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting putConversationsSummariesSetting(String summarySettingId, SummarySetting body) throws IOException, ApiException {
+    return  putConversationsSummariesSetting(createPutConversationsSummariesSettingRequest(summarySettingId, body));
+  }
+
+  /**
+   * Update a summary setting.
+   * 
+   * @param summarySettingId Summary setting id (required)
+   * @param body  (required)
+   * @return SummarySetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> putConversationsSummariesSettingWithHttpInfo(String summarySettingId, SummarySetting body) throws IOException {
+    return putConversationsSummariesSetting(createPutConversationsSummariesSettingRequest(summarySettingId, body).withHttpInfo());
+  }
+
+  private PutConversationsSummariesSettingRequest createPutConversationsSummariesSettingRequest(String summarySettingId, SummarySetting body) {
+    return PutConversationsSummariesSettingRequest.builder()
+            .withSummarySettingId(summarySettingId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a summary setting.
+   * 
+   * @param request The request object
+   * @return SummarySetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SummarySetting putConversationsSummariesSetting(PutConversationsSummariesSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SummarySetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SummarySetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a summary setting.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SummarySetting> putConversationsSummariesSetting(ApiRequest<SummarySetting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SummarySetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -13,6 +13,8 @@
 | **reconnectAttempts** | **Integer** | Media reconnect attempt count |  [optional] |
 | **sourceType** | [**SourceTypeEnum**](#Enum--SourceTypeEnum) | Source type of media endpoint |  [optional] |
 | **clientInfo** | [**MediaStatisticsClientInfo**](MediaStatisticsClientInfo) | Client information associated with media endpoint |  [optional] |
+| **dateCreated** | [**Date**](Date) | Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateProcessed** | [**Date**](Date) | Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
 ## Enum: SourceTypeEnum
@@ -25,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

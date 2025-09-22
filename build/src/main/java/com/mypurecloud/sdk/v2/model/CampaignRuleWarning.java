@@ -54,7 +54,9 @@ public class CampaignRuleWarning  implements Serializable {
     NOQUEUE("NoQueue"),
     NOCONTENTTEMPLATES("NoContentTemplates"),
     NOSMSCONTENTTEMPLATE("NoSmsContentTemplate"),
-    NOEMAILCONTENTTEMPLATE("NoEmailContentTemplate");
+    NOEMAILCONTENTTEMPLATE("NoEmailContentTemplate"),
+    CONDITIONSWAITINGFORLINESONLYPREVIEWOREXTERNAL("ConditionsWaitingForLinesOnlyPreviewOrExternal"),
+    CONDITIONSWAITINGFORAGENTSONLYAGENTLESS("ConditionsWaitingForAgentsOnlyAgentless");
 
     private String value;
 

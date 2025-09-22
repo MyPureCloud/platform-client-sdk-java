@@ -390,12 +390,14 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonito
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantVoiceConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantCommunicationWrapupRequest;
@@ -16942,6 +16944,92 @@ public class ConversationsApi {
   }
 
   /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param conversationId conversationId (required)
+   * @param userId userId (required)
+   * @param body Conversation (required)
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Conversation postConversationsCallParticipantsUserUserId(String conversationId, String userId, Conversation body) throws IOException, ApiException {
+    return  postConversationsCallParticipantsUserUserId(createPostConversationsCallParticipantsUserUserIdRequest(conversationId, userId, body));
+  }
+
+  /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param conversationId conversationId (required)
+   * @param userId userId (required)
+   * @param body Conversation (required)
+   * @return Conversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Conversation> postConversationsCallParticipantsUserUserIdWithHttpInfo(String conversationId, String userId, Conversation body) throws IOException {
+    return postConversationsCallParticipantsUserUserId(createPostConversationsCallParticipantsUserUserIdRequest(conversationId, userId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantsUserUserIdRequest createPostConversationsCallParticipantsUserUserIdRequest(String conversationId, String userId, Conversation body) {
+    return PostConversationsCallParticipantsUserUserIdRequest.builder()
+            .withConversationId(conversationId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Conversation postConversationsCallParticipantsUserUserId(PostConversationsCallParticipantsUserUserIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add participants to a conversation without a user context
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Conversation> postConversationsCallParticipantsUserUserId(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Apply wrap-up for this conversation communication
    * 
    * @param conversationId conversationId (required)
@@ -17399,6 +17487,88 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<CreateCallResponse> postConversationsCalls(ApiRequest<CreateCallRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateCallResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param userId userId (required)
+   * @param body Call request (required)
+   * @return CreateCallResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateCallResponse postConversationsCallsUserUserId(String userId, CreateCallRequest body) throws IOException, ApiException {
+    return  postConversationsCallsUserUserId(createPostConversationsCallsUserUserIdRequest(userId, body));
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param userId userId (required)
+   * @param body Call request (required)
+   * @return CreateCallResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateCallResponse> postConversationsCallsUserUserIdWithHttpInfo(String userId, CreateCallRequest body) throws IOException {
+    return postConversationsCallsUserUserId(createPostConversationsCallsUserUserIdRequest(userId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallsUserUserIdRequest createPostConversationsCallsUserUserIdRequest(String userId, CreateCallRequest body) {
+    return PostConversationsCallsUserUserIdRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param request The request object
+   * @return CreateCallResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateCallResponse postConversationsCallsUserUserId(PostConversationsCallsUserUserIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CreateCallResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a call conversation on behalf of a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateCallResponse> postConversationsCallsUserUserId(ApiRequest<CreateCallRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<CreateCallResponse>() {});
     }
@@ -18452,7 +18622,7 @@ public class ConversationsApi {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param conversationId conversationId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18463,7 +18633,7 @@ public class ConversationsApi {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param conversationId conversationId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -18480,7 +18650,7 @@ public class ConversationsApi {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -18498,7 +18668,7 @@ public class ConversationsApi {
 
   /**
    * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-   * 
+   * This request is not valid when using the Client Credentials OAuth grant.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

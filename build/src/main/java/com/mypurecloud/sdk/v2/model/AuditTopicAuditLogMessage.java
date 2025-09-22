@@ -246,6 +246,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ROLLBACKIMPLEMENTED("RollbackImplemented"),
     INREVIEW("InReview"),
     ACTIVE("Active"),
+    DELETED("Deleted"),
     WRITE("Write"),
     REPLACE("Replace"),
     UPDATEINSERVICE("UpdateInService"),

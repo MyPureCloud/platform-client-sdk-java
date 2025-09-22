@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormDivisionView;
+import com.mypurecloud.sdk.v2.model.EvaluationFormDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationFormResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationResponse;
@@ -49,6 +51,8 @@ import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormDivisionView;
+import com.mypurecloud.sdk.v2.model.SurveyFormDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
@@ -89,8 +93,12 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualitySurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualitySurveysScorableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
@@ -2861,6 +2869,160 @@ public class QualityApiAsync {
   }
 
   /**
+   * Get the most recent published version of an evaluation form across any division.
+   * 
+   * getQualityPublishedformsEvaluationsDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationFormDivisionView> getQualityPublishedformsEvaluationsDivisionviewAsync(GetQualityPublishedformsEvaluationsDivisionviewRequest request, final AsyncApiCallback<EvaluationFormDivisionView> callback) {
+    try {
+      final SettableFuture<EvaluationFormDivisionView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormDivisionView>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormDivisionView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the most recent published version of an evaluation form across any division.
+   * 
+   * getQualityPublishedformsEvaluationsDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationFormDivisionView>> getQualityPublishedformsEvaluationsDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormDivisionView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationFormDivisionView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormDivisionView>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormDivisionView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormDivisionView> response = (ApiResponse<EvaluationFormDivisionView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormDivisionView> response = (ApiResponse<EvaluationFormDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published evaluation forms across any division.
+   * 
+   * getQualityPublishedformsEvaluationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationFormDivisionViewListing> getQualityPublishedformsEvaluationsDivisionviewsAsync(GetQualityPublishedformsEvaluationsDivisionviewsRequest request, final AsyncApiCallback<EvaluationFormDivisionViewListing> callback) {
+    try {
+      final SettableFuture<EvaluationFormDivisionViewListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormDivisionViewListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published evaluation forms across any division.
+   * 
+   * getQualityPublishedformsEvaluationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationFormDivisionViewListing>> getQualityPublishedformsEvaluationsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormDivisionViewListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationFormDivisionViewListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormDivisionViewListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormDivisionViewListing> response = (ApiResponse<EvaluationFormDivisionViewListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormDivisionViewListing> response = (ApiResponse<EvaluationFormDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the most recent published version of a survey form.
    * 
    * @param request the request object
@@ -2999,6 +3161,160 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the most recent published version of an enabled survey form across any division.
+   * 
+   * getQualityPublishedformsSurveysDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormDivisionView> getQualityPublishedformsSurveysDivisionviewAsync(GetQualityPublishedformsSurveysDivisionviewRequest request, final AsyncApiCallback<SurveyFormDivisionView> callback) {
+    try {
+      final SettableFuture<SurveyFormDivisionView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormDivisionView>() {}, new AsyncApiCallback<ApiResponse<SurveyFormDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormDivisionView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the most recent published version of an enabled survey form across any division.
+   * 
+   * getQualityPublishedformsSurveysDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormDivisionView>> getQualityPublishedformsSurveysDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormDivisionView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormDivisionView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormDivisionView>() {}, new AsyncApiCallback<ApiResponse<SurveyFormDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormDivisionView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormDivisionView> response = (ApiResponse<SurveyFormDivisionView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormDivisionView> response = (ApiResponse<SurveyFormDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published and enabled survey forms across any division.
+   * 
+   * getQualityPublishedformsSurveysDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormDivisionViewListing> getQualityPublishedformsSurveysDivisionviewsAsync(GetQualityPublishedformsSurveysDivisionviewsRequest request, final AsyncApiCallback<SurveyFormDivisionViewListing> callback) {
+    try {
+      final SettableFuture<SurveyFormDivisionViewListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormDivisionViewListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published and enabled survey forms across any division.
+   * 
+   * getQualityPublishedformsSurveysDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormDivisionViewListing>> getQualityPublishedformsSurveysDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormDivisionViewListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormDivisionViewListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormDivisionViewListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormDivisionViewListing> response = (ApiResponse<SurveyFormDivisionViewListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormDivisionViewListing> response = (ApiResponse<SurveyFormDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

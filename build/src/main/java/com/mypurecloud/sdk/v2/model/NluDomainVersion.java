@@ -21,7 +21,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -143,6 +145,7 @@ public class NluDomainVersion  implements Serializable {
   private List<IntentDefinition> intents = null;
   private List<NamedEntityTypeDefinition> entityTypes = null;
   private List<NamedEntityDefinition> entities = null;
+  private Map<String, String> languageVersions = null;
   private String selfUri = null;
 
   public NluDomainVersion() {
@@ -307,6 +310,13 @@ public class NluDomainVersion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Map of language code to NLU domain version UUID for multilingual domains.")
+  @JsonProperty("languageVersions")
+  public Map<String, String> getLanguageVersions() {
+    return languageVersions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -338,12 +348,13 @@ public class NluDomainVersion  implements Serializable {
             Objects.equals(this.intents, nluDomainVersion.intents) &&
             Objects.equals(this.entityTypes, nluDomainVersion.entityTypes) &&
             Objects.equals(this.entities, nluDomainVersion.entities) &&
+            Objects.equals(this.languageVersions, nluDomainVersion.languageVersions) &&
             Objects.equals(this.selfUri, nluDomainVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, domain, description, language, published, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, entities, selfUri);
+    return Objects.hash(id, domain, description, language, published, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, entities, languageVersions, selfUri);
   }
 
   @Override
@@ -365,6 +376,7 @@ public class NluDomainVersion  implements Serializable {
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    entityTypes: ").append(toIndentedString(entityTypes)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    languageVersions: ").append(toIndentedString(languageVersions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

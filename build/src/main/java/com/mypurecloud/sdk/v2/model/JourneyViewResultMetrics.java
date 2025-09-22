@@ -23,11 +23,11 @@ import java.io.Serializable;
 
 public class JourneyViewResultMetrics  implements Serializable {
   
-  private Integer participantCount = null;
-  private Integer activeCount = null;
-  private Integer completedCount = null;
-  private Integer dropoutCount = null;
-  private Integer flowCount = null;
+  private Long participantCount = null;
+  private Long activeCount = null;
+  private Long completedCount = null;
+  private Long dropoutCount = null;
+  private Long flowCount = null;
 
   public JourneyViewResultMetrics() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -37,35 +37,35 @@ public class JourneyViewResultMetrics  implements Serializable {
   
   @ApiModelProperty(example = "null", value = "number of external contacts who participated at the element")
   @JsonProperty("participantCount")
-  public Integer getParticipantCount() {
+  public Long getParticipantCount() {
     return participantCount;
   }
 
 
   @ApiModelProperty(example = "null", value = "number of external contacts who could still complete the journey")
   @JsonProperty("activeCount")
-  public Integer getActiveCount() {
+  public Long getActiveCount() {
     return activeCount;
   }
 
 
   @ApiModelProperty(example = "null", value = "number of external contacts who completed the journey forward")
   @JsonProperty("completedCount")
-  public Integer getCompletedCount() {
+  public Long getCompletedCount() {
     return completedCount;
   }
 
 
   @ApiModelProperty(example = "null", value = "number of external contacts who did not make it to the next element")
   @JsonProperty("dropoutCount")
-  public Integer getDropoutCount() {
+  public Long getDropoutCount() {
     return dropoutCount;
   }
 
 
   @ApiModelProperty(example = "null", value = "number of external contacts who moved from one element to next element but did not complete the journey")
   @JsonProperty("flowCount")
-  public Integer getFlowCount() {
+  public Long getFlowCount() {
     return flowCount;
   }
 

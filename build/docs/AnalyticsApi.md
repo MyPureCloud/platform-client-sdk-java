@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJob**](AnalyticsApi#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
 | [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
+| [**getAnalyticsDataextractionDownload**](AnalyticsApi#getAnalyticsDataextractionDownload) | Get analytics data warehouse file download |
+| [**getAnalyticsDataextractionDownloadsMetadata**](AnalyticsApi#getAnalyticsDataextractionDownloadsMetadata) | Get metadata on files available for extraction |
 | [**getAnalyticsDataretentionSettings**](AnalyticsApi#getAnalyticsDataretentionSettings) | Get analytics data retention setting |
 | [**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJob) | Get status for async query for evaluation aggregates |
 | [**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -86,6 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
 | [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
+| [**postAnalyticsDataextractionDownloadsBulk**](AnalyticsApi#postAnalyticsDataextractionDownloadsBulk) | Get download URLs for analytics data warehouse files |
 | [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | Query for evaluation aggregates asynchronously |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | Query for flow execution aggregates asynchronously |
@@ -2222,6 +2225,137 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**DataAvailabilityResponse**](DataAvailabilityResponse)
+
+
+# **getAnalyticsDataextractionDownload**
+
+
+> Void getAnalyticsDataextractionDownload(downloadId)
+
+Get analytics data warehouse file download
+
+getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/dataextraction/downloads/{downloadId}  
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String downloadId = "downloadId_example"; // String | Unique file Id to download
+try {
+    apiInstance.getAnalyticsDataextractionDownload(downloadId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsDataextractionDownload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **downloadId** | **String**| Unique file Id to download | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **getAnalyticsDataextractionDownloadsMetadata**
+
+
+> [DataExtractionFileSchemaListing](DataExtractionFileSchemaListing) getAnalyticsDataextractionDownloadsMetadata(before, after, pageSize, dataSchema, dateStart, dateEnd)
+
+Get metadata on files available for extraction
+
+getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/dataextraction/downloads/metadata  
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String dataSchema = "dataSchema_example"; // String | Data schema like conversations
+Date dateStart = new Date(); // Date | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+Date dateEnd = new Date(); // Date | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+try {
+    DataExtractionFileSchemaListing result = apiInstance.getAnalyticsDataextractionDownloadsMetadata(before, after, pageSize, dataSchema, dateStart, dateEnd);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsDataextractionDownloadsMetadata");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **dataSchema** | **String**| Data schema like conversations | [optional] 
+| **dateStart** | **Date**| Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] 
+| **dateEnd** | **Date**| End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataExtractionFileSchemaListing**](DataExtractionFileSchemaListing)
 
 
 # **getAnalyticsDataretentionSettings**
@@ -5165,6 +5299,67 @@ try {
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
 
+# **postAnalyticsDataextractionDownloadsBulk**
+
+
+> [DataExtractionFileUrlListing](DataExtractionFileUrlListing) postAnalyticsDataextractionDownloadsBulk(body)
+
+Get download URLs for analytics data warehouse files
+
+postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/dataextraction/downloads/bulk  
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+DownloadServiceRequest body = new DownloadServiceRequest(); // DownloadServiceRequest | request
+try {
+    DataExtractionFileUrlListing result = apiInstance.postAnalyticsDataextractionDownloadsBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsDataextractionDownloadsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DownloadServiceRequest**](DownloadServiceRequest)| request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataExtractionFileUrlListing**](DataExtractionFileUrlListing)
+
+
 # **postAnalyticsEvaluationsAggregatesJobs**
 
 
@@ -7389,4 +7584,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

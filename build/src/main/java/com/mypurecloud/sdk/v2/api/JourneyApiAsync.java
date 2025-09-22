@@ -124,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsDataDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
@@ -3598,6 +3599,81 @@ public class JourneyApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<JourneyViewJobListing>> getJourneyViewsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewJobListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewJobListing> getJourneyViewsJobsMeAsync(GetJourneyViewsJobsMeRequest request, final AsyncApiCallback<JourneyViewJobListing> callback) {
+    try {
+      final SettableFuture<JourneyViewJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewJobListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get my jobs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewJobListing>> getJourneyViewsJobsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewJobListing>> callback) {
     try {
       final SettableFuture<ApiResponse<JourneyViewJobListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

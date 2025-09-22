@@ -85,7 +85,7 @@ public class JourneyViewChart  implements Serializable {
   private List<JourneyViewChartGroupByAttribute> groupByAttributes = null;
   private List<JourneyViewChartMetric> metrics = null;
   private JourneyViewChartDisplayAttributes displayAttributes = null;
-  private Integer groupByMax = null;
+  private Long groupByMax = null;
   private String selfUri = null;
 
   public JourneyViewChart() {
@@ -202,17 +202,17 @@ public class JourneyViewChart  implements Serializable {
   /**
    * A maximum on the number of values being grouped by
    **/
-  public JourneyViewChart groupByMax(Integer groupByMax) {
+  public JourneyViewChart groupByMax(Long groupByMax) {
     this.groupByMax = groupByMax;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A maximum on the number of values being grouped by")
   @JsonProperty("groupByMax")
-  public Integer getGroupByMax() {
+  public Long getGroupByMax() {
     return groupByMax;
   }
-  public void setGroupByMax(Integer groupByMax) {
+  public void setGroupByMax(Long groupByMax) {
     this.groupByMax = groupByMax;
   }
 

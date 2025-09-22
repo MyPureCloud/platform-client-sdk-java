@@ -61,8 +61,18 @@
 | UNABLETOSCHEDULEWORKDAYFROMTIMEOFF | &quot;UnableToScheduleWorkDayFromTimeOff&quot; | 
 | AGENTWITHOUTCAPABILITYTOHANDLEACTIVITYONQUEUEWORK | &quot;AgentWithoutCapabilityToHandleActivityOnQueueWork&quot; | 
 | UNABLETOPRODUCEAGENTSCHEDULEDUETOUNAVAILABLETIMES | &quot;UnableToProduceAgentScheduleDueToUnavailableTimes&quot; | 
+| UNABLETOSCHEDULEMAXACTIVITYLENGTHFROMSHIFTENDFROMDST | &quot;UnableToScheduleMaxActivityLengthFromShiftEndFromDst&quot; | 
+| UNABLETOSCHEDULEMAXACTIVITYLENGTHFROMSHIFTENDFROMTIMEOFF | &quot;UnableToScheduleMaxActivityLengthFromShiftEndFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMAXSHIFTSTARTANDPAIDDURATIONVARIANCEFROMTIMEOFF | &quot;UnableToScheduleMaxShiftStartAndPaidDurationVarianceFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMAXSHIFTSTARTTIMEVARIANCEFROMDST | &quot;UnableToScheduleMaxShiftStartTimeVarianceFromDst&quot; | 
+| UNABLETOSCHEDULEMAXSHIFTSTARTTIMEVARIANCEFROMTIMEOFF | &quot;UnableToScheduleMaxShiftStartTimeVarianceFromTimeOff&quot; | 
+| UNABLETOSCHEDULEMINACTIVITYLENGTHFROMSHIFTENDFROMDST | &quot;UnableToScheduleMinActivityLengthFromShiftEndFromDst&quot; | 
+| UNABLETOSCHEDULEMINACTIVITYLENGTHFROMSHIFTSTARTFROMDST | &quot;UnableToScheduleMinActivityLengthFromShiftStartFromDst&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTANDPAIDDURATIONVARIANCEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxShiftStartAndPaidDurationVarianceFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTANDPAIDDURATIONVARIANCEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxShiftStartAndPaidDurationVarianceFromTimeOff&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTTIMEVARIANCEFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromAgentHistory&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTTIMEVARIANCEFROMDST | &quot;UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromDst&quot; | 
+| UNABLETOSCHEDULEPLANNINGPERIODMAXSHIFTSTARTTIMEVARIANCEFROMTIMEOFF | &quot;UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromTimeOff&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODMAXWORKINGWEEKENDSFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodMaxWorkingWeekendsFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODSHIFTMAXCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMaxCountFromAgentHistory&quot; | 
 | UNABLETOSCHEDULEPLANNINGPERIODSHIFTMINCOUNTFROMAGENTHISTORY | &quot;UnableToSchedulePlanningPeriodShiftMinCountFromAgentHistory&quot; | 
@@ -70,4 +80,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:230.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_

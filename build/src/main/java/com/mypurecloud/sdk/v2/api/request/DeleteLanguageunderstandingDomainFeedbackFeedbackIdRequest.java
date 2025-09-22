@@ -24,6 +24,12 @@ import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesRequest;
+import com.mypurecloud.sdk.v2.model.IgnorePhrasesResponse;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsRequest;
+import com.mypurecloud.sdk.v2.model.IgnoreTopicsResponse;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedPhraseListing;
+import com.mypurecloud.sdk.v2.model.IgnoredMinedTopicListing;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -45,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.NluOrganization;
+import com.mypurecloud.sdk.v2.model.RemoveEntitiesRequest;
 
 public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 

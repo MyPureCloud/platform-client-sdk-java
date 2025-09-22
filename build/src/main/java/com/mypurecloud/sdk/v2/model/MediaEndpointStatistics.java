@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.MediaStatisticsTrunkInfo;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -82,6 +83,8 @@ public class MediaEndpointStatistics  implements Serializable {
   }
   private SourceTypeEnum sourceType = null;
   private MediaStatisticsClientInfo clientInfo = null;
+  private Date dateCreated = null;
+  private Date dateProcessed = null;
 
   public MediaEndpointStatistics() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -233,6 +236,42 @@ public class MediaEndpointStatistics  implements Serializable {
   }
 
 
+  /**
+   * Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public MediaEndpointStatistics dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+
+  /**
+   * Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public MediaEndpointStatistics dateProcessed(Date dateProcessed) {
+    this.dateProcessed = dateProcessed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateProcessed")
+  public Date getDateProcessed() {
+    return dateProcessed;
+  }
+  public void setDateProcessed(Date dateProcessed) {
+    this.dateProcessed = dateProcessed;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -250,12 +289,14 @@ public class MediaEndpointStatistics  implements Serializable {
             Objects.equals(this.rtp, mediaEndpointStatistics.rtp) &&
             Objects.equals(this.reconnectAttempts, mediaEndpointStatistics.reconnectAttempts) &&
             Objects.equals(this.sourceType, mediaEndpointStatistics.sourceType) &&
-            Objects.equals(this.clientInfo, mediaEndpointStatistics.clientInfo);
+            Objects.equals(this.clientInfo, mediaEndpointStatistics.clientInfo) &&
+            Objects.equals(this.dateCreated, mediaEndpointStatistics.dateCreated) &&
+            Objects.equals(this.dateProcessed, mediaEndpointStatistics.dateProcessed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trunk, station, user, ice, rtp, reconnectAttempts, sourceType, clientInfo);
+    return Objects.hash(trunk, station, user, ice, rtp, reconnectAttempts, sourceType, clientInfo, dateCreated, dateProcessed);
   }
 
   @Override
@@ -271,6 +312,8 @@ public class MediaEndpointStatistics  implements Serializable {
     sb.append("    reconnectAttempts: ").append(toIndentedString(reconnectAttempts)).append("\n");
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    clientInfo: ").append(toIndentedString(clientInfo)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateProcessed: ").append(toIndentedString(dateProcessed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

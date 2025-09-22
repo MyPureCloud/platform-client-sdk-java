@@ -54,6 +54,8 @@ public class ReportingTurnAction  implements Serializable {
     ASKSURVEYQUESTIONACTION("AskSurveyQuestionAction"),
     ASKFORNLUNEXTINTENTACTION("AskForNLUNextIntentAction"),
     BOTSTATE("BotState"),
+    CALLBOTFLOWACTION("CallBotFlowAction"),
+    CALLDIGITALBOTFLOWACTION("CallDigitalBotFlowAction"),
     CALLTASKACTION("CallTaskAction"),
     CALLGUIDEACTION("CallGuideAction"),
     CLEARSLOTACTION("ClearSlotAction"),

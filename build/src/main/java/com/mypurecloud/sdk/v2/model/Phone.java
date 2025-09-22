@@ -107,6 +107,7 @@ public class Phone  implements Serializable {
   private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
   private DomainEntityRef webRtcUser = null;
+  private Boolean standAlone = null;
   private Edge primaryEdge = null;
   private Edge secondaryEdge = null;
   private String selfUri = null;
@@ -429,6 +430,13 @@ public class Phone  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Boolean indicating whether the phone is standAlone.")
+  @JsonProperty("standAlone")
+  public Boolean getStandAlone() {
+    return standAlone;
+  }
+
+
   /**
    **/
   public Phone primaryEdge(Edge primaryEdge) {
@@ -503,6 +511,7 @@ public class Phone  implements Serializable {
             Objects.equals(this.properties, phone.properties) &&
             Objects.equals(this.capabilities, phone.capabilities) &&
             Objects.equals(this.webRtcUser, phone.webRtcUser) &&
+            Objects.equals(this.standAlone, phone.standAlone) &&
             Objects.equals(this.primaryEdge, phone.primaryEdge) &&
             Objects.equals(this.secondaryEdge, phone.secondaryEdge) &&
             Objects.equals(this.selfUri, phone.selfUri);
@@ -510,7 +519,7 @@ public class Phone  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, site, phoneBaseSettings, lineBaseSettings, phoneMetaBase, lines, status, secondaryStatus, userAgentInfo, properties, capabilities, webRtcUser, primaryEdge, secondaryEdge, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, site, phoneBaseSettings, lineBaseSettings, phoneMetaBase, lines, status, secondaryStatus, userAgentInfo, properties, capabilities, webRtcUser, standAlone, primaryEdge, secondaryEdge, selfUri);
   }
 
   @Override
@@ -541,6 +550,7 @@ public class Phone  implements Serializable {
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    webRtcUser: ").append(toIndentedString(webRtcUser)).append("\n");
+    sb.append("    standAlone: ").append(toIndentedString(standAlone)).append("\n");
     sb.append("    primaryEdge: ").append(toIndentedString(primaryEdge)).append("\n");
     sb.append("    secondaryEdge: ").append(toIndentedString(secondaryEdge)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
