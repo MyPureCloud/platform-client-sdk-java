@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityConversationsAuditsQueryTransactionId**](QualityApi#getQualityConversationsAuditsQueryTransactionId) | Get status of audit query execution |
 | [**getQualityConversationsAuditsQueryTransactionIdResults**](QualityApi#getQualityConversationsAuditsQueryTransactionIdResults) | Get results of audit query |
 | [**getQualityEvaluationsQuery**](QualityApi#getQualityEvaluationsQuery) | Queries Evaluations and returns a paged list |
-| [**getQualityEvaluatorsActivity**](QualityApi#getQualityEvaluatorsActivity) | Get an evaluator activity |
+| [**getQualityEvaluatorsActivity**](QualityApi#getQualityEvaluatorsActivity) | Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests. |
 | [**getQualityForm**](QualityApi#getQualityForm) | Get an evaluation form |
 | [**getQualityFormVersions**](QualityApi#getQualityFormVersions) | Gets all the revisions for a specific evaluation. |
 | [**getQualityForms**](QualityApi#getQualityForms) | Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. |
@@ -1327,7 +1327,7 @@ try {
 
 > [EvaluatorActivityEntityListing](EvaluatorActivityEntityListing) getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group, agentTeamId)
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 Wraps GET /api/v2/quality/evaluators/activity  
 
@@ -4356,4 +4356,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

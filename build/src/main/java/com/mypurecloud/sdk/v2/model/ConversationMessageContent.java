@@ -17,8 +17,14 @@ import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import com.mypurecloud.sdk.v2.model.ConversationContentButtonResponse;
 import com.mypurecloud.sdk.v2.model.ConversationContentCard;
 import com.mypurecloud.sdk.v2.model.ConversationContentCarousel;
+import com.mypurecloud.sdk.v2.model.ConversationContentDatePicker;
+import com.mypurecloud.sdk.v2.model.ConversationContentForm;
+import com.mypurecloud.sdk.v2.model.ConversationContentInteractiveApplication;
+import com.mypurecloud.sdk.v2.model.ConversationContentListPicker;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
+import com.mypurecloud.sdk.v2.model.ConversationContentPaymentRequest;
+import com.mypurecloud.sdk.v2.model.ConversationContentPaymentResponse;
 import com.mypurecloud.sdk.v2.model.ConversationContentPush;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReplyV2;
@@ -116,7 +122,13 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentText text = null;
   private ConversationContentQuickReplyV2 quickReplyV2 = null;
   private List<ConversationContentReaction> reactions = null;
+  private ConversationContentDatePicker datePicker = null;
+  private ConversationContentInteractiveApplication interactiveApplication = null;
+  private ConversationContentListPicker listPicker = null;
+  private ConversationContentPaymentRequest paymentRequest = null;
+  private ConversationContentPaymentResponse paymentResponse = null;
   private ConversationContentPush push = null;
+  private ConversationContentForm form = null;
 
   public ConversationMessageContent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -342,6 +354,96 @@ public class ConversationMessageContent  implements Serializable {
 
 
   /**
+   * Date picker content.
+   **/
+  public ConversationMessageContent datePicker(ConversationContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date picker content.")
+  @JsonProperty("datePicker")
+  public ConversationContentDatePicker getDatePicker() {
+    return datePicker;
+  }
+  public void setDatePicker(ConversationContentDatePicker datePicker) {
+    this.datePicker = datePicker;
+  }
+
+
+  /**
+   * InteractiveApplication content.
+   **/
+  public ConversationMessageContent interactiveApplication(ConversationContentInteractiveApplication interactiveApplication) {
+    this.interactiveApplication = interactiveApplication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "InteractiveApplication content.")
+  @JsonProperty("interactiveApplication")
+  public ConversationContentInteractiveApplication getInteractiveApplication() {
+    return interactiveApplication;
+  }
+  public void setInteractiveApplication(ConversationContentInteractiveApplication interactiveApplication) {
+    this.interactiveApplication = interactiveApplication;
+  }
+
+
+  /**
+   * List picker content.
+   **/
+  public ConversationMessageContent listPicker(ConversationContentListPicker listPicker) {
+    this.listPicker = listPicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List picker content.")
+  @JsonProperty("listPicker")
+  public ConversationContentListPicker getListPicker() {
+    return listPicker;
+  }
+  public void setListPicker(ConversationContentListPicker listPicker) {
+    this.listPicker = listPicker;
+  }
+
+
+  /**
+   * Payment request content.
+   **/
+  public ConversationMessageContent paymentRequest(ConversationContentPaymentRequest paymentRequest) {
+    this.paymentRequest = paymentRequest;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payment request content.")
+  @JsonProperty("paymentRequest")
+  public ConversationContentPaymentRequest getPaymentRequest() {
+    return paymentRequest;
+  }
+  public void setPaymentRequest(ConversationContentPaymentRequest paymentRequest) {
+    this.paymentRequest = paymentRequest;
+  }
+
+
+  /**
+   * Payment response content.
+   **/
+  public ConversationMessageContent paymentResponse(ConversationContentPaymentResponse paymentResponse) {
+    this.paymentResponse = paymentResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payment response content.")
+  @JsonProperty("paymentResponse")
+  public ConversationContentPaymentResponse getPaymentResponse() {
+    return paymentResponse;
+  }
+  public void setPaymentResponse(ConversationContentPaymentResponse paymentResponse) {
+    this.paymentResponse = paymentResponse;
+  }
+
+
+  /**
    * Push content.
    **/
   public ConversationMessageContent push(ConversationContentPush push) {
@@ -356,6 +458,24 @@ public class ConversationMessageContent  implements Serializable {
   }
   public void setPush(ConversationContentPush push) {
     this.push = push;
+  }
+
+
+  /**
+   * Form content.
+   **/
+  public ConversationMessageContent form(ConversationContentForm form) {
+    this.form = form;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Form content.")
+  @JsonProperty("form")
+  public ConversationContentForm getForm() {
+    return form;
+  }
+  public void setForm(ConversationContentForm form) {
+    this.form = form;
   }
 
 
@@ -381,12 +501,18 @@ public class ConversationMessageContent  implements Serializable {
             Objects.equals(this.text, conversationMessageContent.text) &&
             Objects.equals(this.quickReplyV2, conversationMessageContent.quickReplyV2) &&
             Objects.equals(this.reactions, conversationMessageContent.reactions) &&
-            Objects.equals(this.push, conversationMessageContent.push);
+            Objects.equals(this.datePicker, conversationMessageContent.datePicker) &&
+            Objects.equals(this.interactiveApplication, conversationMessageContent.interactiveApplication) &&
+            Objects.equals(this.listPicker, conversationMessageContent.listPicker) &&
+            Objects.equals(this.paymentRequest, conversationMessageContent.paymentRequest) &&
+            Objects.equals(this.paymentResponse, conversationMessageContent.paymentResponse) &&
+            Objects.equals(this.push, conversationMessageContent.push) &&
+            Objects.equals(this.form, conversationMessageContent.form);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions, push);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2, reactions, datePicker, interactiveApplication, listPicker, paymentRequest, paymentResponse, push, form);
   }
 
   @Override
@@ -406,7 +532,13 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
     sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
+    sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
+    sb.append("    interactiveApplication: ").append(toIndentedString(interactiveApplication)).append("\n");
+    sb.append("    listPicker: ").append(toIndentedString(listPicker)).append("\n");
+    sb.append("    paymentRequest: ").append(toIndentedString(paymentRequest)).append("\n");
+    sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
     sb.append("    push: ").append(toIndentedString(push)).append("\n");
+    sb.append("    form: ").append(toIndentedString(form)).append("\n");
     sb.append("}");
     return sb.toString();
   }

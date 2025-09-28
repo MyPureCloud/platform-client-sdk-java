@@ -190,6 +190,65 @@ public class GetRoutingPredictorsRequest {
 	    return this;
 	} 
 
+	private String kpiId;
+	public String getKpiId() {
+		return this.kpiId;
+	}
+
+	public void setKpiId(String kpiId) {
+		this.kpiId = kpiId;
+	}
+
+	public GetRoutingPredictorsRequest withKpiId(String kpiId) {
+	    this.setKpiId(kpiId);
+	    return this;
+	} 
+
+	private String state;
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public GetRoutingPredictorsRequest withState(String state) {
+	    this.setState(state);
+	    return this;
+	} 
+
+	public enum stateValues { 
+		CREATED("Created"),
+		ERROR("Error"),
+		ACTIVE("Active");
+
+		private String value;
+
+		stateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static stateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (stateValues value : stateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return stateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -227,6 +286,12 @@ public class GetRoutingPredictorsRequest {
         
 
                 .withQueryParameters("queueId", "multi", queueId)
+        
+
+                .withQueryParameters("kpiId", "", kpiId)
+        
+
+                .withQueryParameters("state", "", state)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -272,6 +337,25 @@ public class GetRoutingPredictorsRequest {
 		public Builder withQueueId(List<String> queueId) {
 			request.setQueueId(queueId);
 			return this;
+		}
+
+		public Builder withKpiId(String kpiId) {
+			request.setKpiId(kpiId);
+			return this;
+		}
+
+		public Builder withState(String state) {
+			request.setState(state);
+			return this;
+		}
+
+
+
+		
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+
+		    return this;
 		}
 
 

@@ -1932,9 +1932,10 @@ Get domain
 
 Wraps GET /api/v2/routing/email/domains/{domainId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:email:manage
+* routing:email:view
 
 ### Example
 
@@ -2059,7 +2060,7 @@ Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityre
 Requires ALL permissions: 
 
 * routing:email:manage
-* routing:identityResolution:view
+* routing:identityResolutionEmail:view
 
 ### Example
 
@@ -2252,9 +2253,10 @@ Get domain
 
 Wraps GET /api/v2/routing/email/outbound/domains/{domainId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:email:manage
+* routing:email:view
 
 ### Example
 
@@ -2913,7 +2915,7 @@ try {
 # **getRoutingPredictors**
 
 
-> [PredictorListing](PredictorListing) getRoutingPredictors(before, after, limit, pageSize, queueId)
+> [PredictorListing](PredictorListing) getRoutingPredictors(before, after, limit, pageSize, queueId, kpiId, state)
 
 Retrieve all predictors.
 
@@ -2951,8 +2953,10 @@ String after = "after_example"; // String | The cursor that points to the end of
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 List<String> queueId = Arrays.asList(null); // List<String> | Comma-separated list of queue Ids to filter by.
+String kpiId = "kpiId_example"; // String | Standard or custom KPI id used to filter predictors.
+String state = "state_example"; // String | The state used to filter predictors.
 try {
-    PredictorListing result = apiInstance.getRoutingPredictors(before, after, limit, pageSize, queueId);
+    PredictorListing result = apiInstance.getRoutingPredictors(before, after, limit, pageSize, queueId, kpiId, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingPredictors");
@@ -2970,6 +2974,8 @@ try {
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **queueId** | [**List&lt;String&gt;**](String)| Comma-separated list of queue Ids to filter by. | [optional] 
+| **kpiId** | **String**| Standard or custom KPI id used to filter predictors. | [optional] 
+| **state** | **String**| The state used to filter predictors. | [optional]<br />**Values**: Created, Error, Active 
 {: class="table-striped"}
 
 
@@ -3136,7 +3142,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-String expand = "expand_example"; // String | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     AssistantQueue result = apiInstance.getRoutingQueueAssistant(queueId, expand);
     System.out.println(result);
@@ -3152,7 +3158,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **expand** | **String**| Which fields, if any, to expand. | [optional]<br />**Values**: assistant 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: assistant, copilot 
 {: class="table-striped"}
 
 
@@ -3356,7 +3362,7 @@ Wraps GET /api/v2/routing/queues/{queueId}/identityresolution
 Requires ALL permissions: 
 
 * routing:queue:view
-* routing:identityResolution:view
+* queue:identityResolution:view
 
 ### Example
 
@@ -4720,7 +4726,7 @@ Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 Requires ALL permissions: 
 
 * sms:phoneNumber:view
-* routing:identityResolution:view
+* sms:identityResolution:view
 
 ### Example
 
@@ -8796,7 +8802,7 @@ Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityre
 Requires ALL permissions: 
 
 * routing:email:manage
-* routing:identityResolution:edit
+* routing:identityResolutionEmail:edit
 
 ### Example
 
@@ -9041,7 +9047,7 @@ Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution
 Requires ALL permissions: 
 
 * routing:queue:edit
-* routing:identityResolution:edit
+* queue:identityResolution:edit
 
 ### Example
 
@@ -9221,7 +9227,7 @@ Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 Requires ALL permissions: 
 
 * sms:phoneNumber:edit
-* routing:identityResolution:edit
+* sms:identityResolution:edit
 
 ### Example
 
@@ -9698,4 +9704,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

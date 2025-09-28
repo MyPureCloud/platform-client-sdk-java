@@ -46,8 +46,10 @@
 | ES_AR | &quot;es-AR&quot; | 
 | FI_FI | &quot;fi-FI&quot; | 
 | NB_NO | &quot;nb-NO&quot; | 
+| CS_CZ | &quot;cs-CZ&quot; | 
+| HU_HU | &quot;hu-HU&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

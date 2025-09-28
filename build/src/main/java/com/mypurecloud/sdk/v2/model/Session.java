@@ -167,7 +167,8 @@ public class Session  implements Serializable {
     NOTAVAILABLETRANSFER("NotAvailableTransfer"),
     UNCALLABLE("Uncallable"),
     DONOTDISTURBENDPOINT("DoNotDisturbEndpoint"),
-    DONOTDISTURBTRANSFER("DoNotDisturbTransfer");
+    DONOTDISTURBTRANSFER("DoNotDisturbTransfer"),
+    SESSIONEXPIRED("SessionExpired");
 
     private String value;
 

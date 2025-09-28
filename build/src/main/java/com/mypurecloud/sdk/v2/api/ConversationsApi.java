@@ -19,6 +19,10 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AppleIntegration;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.AssignedWrapupCode;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -129,6 +133,7 @@ import com.mypurecloud.sdk.v2.model.MessagingSetting;
 import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
+import com.mypurecloud.sdk.v2.model.OAuthAppleAuthorizationResponse;
 import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
@@ -199,6 +204,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedre
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
@@ -283,6 +289,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsAppleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
@@ -294,6 +302,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsT
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingOauthAppleCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsDefaultRequest;
@@ -344,6 +353,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
@@ -432,6 +442,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantRep
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsAppleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
@@ -1091,6 +1102,81 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsMessagesCachedmediaCachedMediaItemId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsAppleIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsAppleIntegrationId(createDeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsAppleIntegrationId(createDeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest createDeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsAppleIntegrationId(DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsAppleIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -7322,7 +7408,6 @@ public class ConversationsApi {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -7335,7 +7420,6 @@ public class ConversationsApi {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return IdentityResolutionConfig
    * @throws IOException if the request fails to be processed
@@ -7354,7 +7438,6 @@ public class ConversationsApi {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -7374,7 +7457,6 @@ public class ConversationsApi {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7959,6 +8041,182 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessagingIntegrationEntityListing> response = (ApiResponse<MessagingIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return AppleIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegrationEntityListing getConversationsMessagingIntegrationsApple(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsApple(createGetConversationsMessagingIntegrationsAppleRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return AppleIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegrationEntityListing> getConversationsMessagingIntegrationsAppleWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
+    return getConversationsMessagingIntegrationsApple(createGetConversationsMessagingIntegrationsAppleRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsAppleRequest createGetConversationsMessagingIntegrationsAppleRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) {
+    return GetConversationsMessagingIntegrationsAppleRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withExpand(expand)
+
+            .withSupportedContentId(supportedContentId)
+
+            .withMessagingSettingId(messagingSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param request The request object
+   * @return AppleIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegrationEntityListing getConversationsMessagingIntegrationsApple(GetConversationsMessagingIntegrationsAppleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AppleIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegrationEntityListing> getConversationsMessagingIntegrationsApple(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AppleIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegrationEntityListing> response = (ApiResponse<AppleIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegrationEntityListing> response = (ApiResponse<AppleIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration getConversationsMessagingIntegrationsAppleIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsAppleIntegrationId(createGetConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId, expand));
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return AppleIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> getConversationsMessagingIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsAppleIntegrationId(createGetConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId, expand).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsAppleIntegrationIdRequest createGetConversationsMessagingIntegrationsAppleIntegrationIdRequest(String integrationId, String expand) {
+    return GetConversationsMessagingIntegrationsAppleIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param request The request object
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration getConversationsMessagingIntegrationsAppleIntegrationId(GetConversationsMessagingIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AppleIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> getConversationsMessagingIntegrationsAppleIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AppleIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8913,6 +9171,92 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param code The authorization code to be sent to the authentication server during the token request. (required)
+   * @param state The state/nonce value generated by Genesys Auth-Client Service. (required)
+   * @param error Error parameter from OAuth provider (optional)
+   * @return OAuthAppleAuthorizationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAppleAuthorizationResponse getConversationsMessagingOauthAppleCallback(String code, String state, String error) throws IOException, ApiException {
+    return  getConversationsMessagingOauthAppleCallback(createGetConversationsMessagingOauthAppleCallbackRequest(code, state, error));
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param code The authorization code to be sent to the authentication server during the token request. (required)
+   * @param state The state/nonce value generated by Genesys Auth-Client Service. (required)
+   * @param error Error parameter from OAuth provider (optional)
+   * @return OAuthAppleAuthorizationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAppleAuthorizationResponse> getConversationsMessagingOauthAppleCallbackWithHttpInfo(String code, String state, String error) throws IOException {
+    return getConversationsMessagingOauthAppleCallback(createGetConversationsMessagingOauthAppleCallbackRequest(code, state, error).withHttpInfo());
+  }
+
+  private GetConversationsMessagingOauthAppleCallbackRequest createGetConversationsMessagingOauthAppleCallbackRequest(String code, String state, String error) {
+    return GetConversationsMessagingOauthAppleCallbackRequest.builder()
+            .withCode(code)
+
+            .withState(state)
+
+            .withError(error)
+
+            .build();
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param request The request object
+   * @return OAuthAppleAuthorizationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAppleAuthorizationResponse getConversationsMessagingOauthAppleCallback(GetConversationsMessagingOauthAppleCallbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthAppleAuthorizationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthAppleAuthorizationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAppleAuthorizationResponse> getConversationsMessagingOauthAppleCallback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthAppleAuthorizationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAppleAuthorizationResponse> response = (ApiResponse<OAuthAppleAuthorizationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAppleAuthorizationResponse> response = (ApiResponse<OAuthAppleAuthorizationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -13131,6 +13475,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Update an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body AppleIntegrationUpdateRequest (required)
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration patchConversationsMessagingIntegrationsAppleIntegrationId(String integrationId, AppleIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsAppleIntegrationId(createPatchConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update an Apple messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body AppleIntegrationUpdateRequest (required)
+   * @return AppleIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> patchConversationsMessagingIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId, AppleIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsAppleIntegrationId(createPatchConversationsMessagingIntegrationsAppleIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest createPatchConversationsMessagingIntegrationsAppleIntegrationIdRequest(String integrationId, AppleIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an Apple messaging integration
+   * 
+   * @param request The request object
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration patchConversationsMessagingIntegrationsAppleIntegrationId(PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AppleIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Apple messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> patchConversationsMessagingIntegrationsAppleIntegrationId(ApiRequest<AppleIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AppleIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update Facebook messaging integration
    * 
    * @param integrationId Integration ID (required)
@@ -16944,7 +17370,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param conversationId conversationId (required)
    * @param userId userId (required)
@@ -16958,7 +17384,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param conversationId conversationId (required)
    * @param userId userId (required)
@@ -16982,7 +17408,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param request The request object
    * @return Conversation
@@ -17001,7 +17427,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param request The request object
    * @return the response
@@ -20426,6 +20852,84 @@ public class ConversationsApi {
   }
 
   /**
+   * Create Apple Integration
+   * 
+   * @param body AppleIntegrationRequest (required)
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration postConversationsMessagingIntegrationsApple(AppleIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsApple(createPostConversationsMessagingIntegrationsAppleRequest(body));
+  }
+
+  /**
+   * Create Apple Integration
+   * 
+   * @param body AppleIntegrationRequest (required)
+   * @return AppleIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> postConversationsMessagingIntegrationsAppleWithHttpInfo(AppleIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsApple(createPostConversationsMessagingIntegrationsAppleRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsAppleRequest createPostConversationsMessagingIntegrationsAppleRequest(AppleIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsAppleRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Apple Integration
+   * 
+   * @param request The request object
+   * @return AppleIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppleIntegration postConversationsMessagingIntegrationsApple(PostConversationsMessagingIntegrationsAppleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AppleIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Apple Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppleIntegration> postConversationsMessagingIntegrationsApple(ApiRequest<AppleIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AppleIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a Facebook Integration
    * 
    * @param body FacebookIntegrationRequest (required)
@@ -22564,7 +23068,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
    * @return IdentityResolutionConfig
@@ -22578,7 +23081,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
    * @return IdentityResolutionConfig
@@ -22600,7 +23102,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdentityResolutionConfig
    * @throws ApiException if the request fails on the server
@@ -22620,7 +23121,6 @@ public class ConversationsApi {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

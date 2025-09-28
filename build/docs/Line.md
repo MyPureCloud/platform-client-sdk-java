@@ -19,9 +19,9 @@
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
 | **properties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **edgeGroup** | [**DomainEntityRef**](DomainEntityRef) | The edge group associated with the line. (Deprecated) |  [optional] |
-| **template** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **template** | [**DomainEntityRef**](DomainEntityRef) | The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data) |  [optional] |
 | **site** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
-| **lineBaseSettings** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **lineBaseSettings** | [**DomainEntityRef**](DomainEntityRef) | The station base/template. |  [optional] |
 | **primaryEdge** | [**Edge**](Edge) | The primary edge associated to the line. (Deprecated) |  [optional] |
 | **secondaryEdge** | [**Edge**](Edge) | The secondary edge associated to the line. (Deprecated) |  [optional] |
 | **loggedInUser** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
@@ -41,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

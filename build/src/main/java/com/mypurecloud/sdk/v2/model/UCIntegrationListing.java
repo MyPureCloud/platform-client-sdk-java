@@ -33,8 +33,8 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
   private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String lastUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   public UCIntegrationListing() {
@@ -165,23 +165,6 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
 
   /**
    **/
-  public UCIntegrationListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public UCIntegrationListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -194,6 +177,23 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public UCIntegrationListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -231,14 +231,14 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
             Objects.equals(this.firstUri, uCIntegrationListing.firstUri) &&
             Objects.equals(this.previousUri, uCIntegrationListing.previousUri) &&
             Objects.equals(this.nextUri, uCIntegrationListing.nextUri) &&
-            Objects.equals(this.lastUri, uCIntegrationListing.lastUri) &&
             Objects.equals(this.selfUri, uCIntegrationListing.selfUri) &&
+            Objects.equals(this.lastUri, uCIntegrationListing.lastUri) &&
             Objects.equals(this.pageCount, uCIntegrationListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

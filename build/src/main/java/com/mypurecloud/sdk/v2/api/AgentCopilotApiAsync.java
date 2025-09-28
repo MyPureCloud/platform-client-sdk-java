@@ -15,9 +15,11 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Copilot;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LanguageSupportResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAssistantCopilotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantsCopilotFeaturesupportRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAssistantCopilotRequest;
 
 import java.io.IOException;
@@ -102,6 +104,81 @@ public class AgentCopilotApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Copilot> response = (ApiResponse<Copilot>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LanguageSupportResponse> getAssistantsCopilotFeaturesupportAsync(GetAssistantsCopilotFeaturesupportRequest request, final AsyncApiCallback<LanguageSupportResponse> callback) {
+    try {
+      final SettableFuture<LanguageSupportResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LanguageSupportResponse>() {}, new AsyncApiCallback<ApiResponse<LanguageSupportResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LanguageSupportResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LanguageSupportResponse>> getAssistantsCopilotFeaturesupportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LanguageSupportResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LanguageSupportResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LanguageSupportResponse>() {}, new AsyncApiCallback<ApiResponse<LanguageSupportResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LanguageSupportResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LanguageSupportResponse> response = (ApiResponse<LanguageSupportResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LanguageSupportResponse> response = (ApiResponse<LanguageSupportResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

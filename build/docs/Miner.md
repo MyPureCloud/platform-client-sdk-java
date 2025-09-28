@@ -53,6 +53,14 @@
 | DE_CH | &quot;de-ch&quot; | 
 | JA_JP | &quot;ja-jp&quot; | 
 | KO_KR | &quot;ko-kr&quot; | 
+| HI_IN | &quot;hi-in&quot; | 
+| AR_001 | &quot;ar-001&quot; | 
+| AR_AE | &quot;ar-ae&quot; | 
+| AR_BH | &quot;ar-bh&quot; | 
+| AR_EG | &quot;ar-eg&quot; | 
+| AR_IL | &quot;ar-il&quot; | 
+| AR_SA | &quot;ar-sa&quot; | 
+| AR_TN | &quot;ar-tn&quot; | 
 
 
 ## Enum: MinerTypeEnum
@@ -112,4 +120,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

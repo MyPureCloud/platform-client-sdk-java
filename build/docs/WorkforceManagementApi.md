@@ -176,6 +176,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
 | [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi#postWorkforcemanagementAgentsMePossibleworkshifts) | Get agent possible work shifts for requested time frame |
+| [**postWorkforcemanagementAgentschedulesManagementunitsMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesManagementunitsMine) | Fetch agent schedules for the logged in user's management unit |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
 | [**postWorkforcemanagementAlternativeshiftsOffersJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersJobs) | Request a list of alternative shift offers for a given schedule |
 | [**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | Request a search of alternative shift offers for a given shift |
@@ -11127,6 +11128,69 @@ try {
 [**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse)
 
 
+# **postWorkforcemanagementAgentschedulesManagementunitsMine**
+
+
+> [AgentMuQueryResponse](AgentMuQueryResponse) postWorkforcemanagementAgentschedulesManagementunitsMine(body, forceAsync, forceDownloadService)
+
+Fetch agent schedules for the logged in user's management unit
+
+Wraps POST /api/v2/workforcemanagement/agentschedules/managementunits/mine  
+
+Requires ANY permissions: 
+
+* wfm:agentManagementUnitSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AgentMuScheduleQuery body = new AgentMuScheduleQuery(); // AgentMuScheduleQuery | body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    AgentMuQueryResponse result = apiInstance.postWorkforcemanagementAgentschedulesManagementunitsMine(body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentschedulesManagementunitsMine");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentMuScheduleQuery**](AgentMuScheduleQuery)| body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentMuQueryResponse**](AgentMuQueryResponse)
+
+
 # **postWorkforcemanagementAgentschedulesMine**
 
 
@@ -16573,4 +16637,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

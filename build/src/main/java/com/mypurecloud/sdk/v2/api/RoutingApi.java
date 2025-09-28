@@ -3938,12 +3938,14 @@ public class RoutingApi {
    * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
+   * @param kpiId Standard or custom KPI id used to filter predictors. (optional)
+   * @param state The state used to filter predictors. (optional)
    * @return PredictorListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PredictorListing getRoutingPredictors(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException, ApiException {
-    return  getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId));
+  public PredictorListing getRoutingPredictors(String before, String after, String limit, String pageSize, List<String> queueId, String kpiId, String state) throws IOException, ApiException {
+    return  getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId, kpiId, state));
   }
 
   /**
@@ -3954,14 +3956,16 @@ public class RoutingApi {
    * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
+   * @param kpiId Standard or custom KPI id used to filter predictors. (optional)
+   * @param state The state used to filter predictors. (optional)
    * @return PredictorListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PredictorListing> getRoutingPredictorsWithHttpInfo(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException {
-    return getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId).withHttpInfo());
+  public ApiResponse<PredictorListing> getRoutingPredictorsWithHttpInfo(String before, String after, String limit, String pageSize, List<String> queueId, String kpiId, String state) throws IOException {
+    return getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId, kpiId, state).withHttpInfo());
   }
 
-  private GetRoutingPredictorsRequest createGetRoutingPredictorsRequest(String before, String after, String limit, String pageSize, List<String> queueId) {
+  private GetRoutingPredictorsRequest createGetRoutingPredictorsRequest(String before, String after, String limit, String pageSize, List<String> queueId, String kpiId, String state) {
     return GetRoutingPredictorsRequest.builder()
             .withBefore(before)
 
@@ -3972,6 +3976,10 @@ public class RoutingApi {
             .withPageSize(pageSize)
 
             .withQueueId(queueId)
+
+            .withKpiId(kpiId)
+
+            .withState(state)
 
             .build();
   }
@@ -4197,7 +4205,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AssistantQueue getRoutingQueueAssistant(String queueId, String expand) throws IOException, ApiException {
+  public AssistantQueue getRoutingQueueAssistant(String queueId, List<String> expand) throws IOException, ApiException {
     return  getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand));
   }
 
@@ -4209,11 +4217,11 @@ public class RoutingApi {
    * @return AssistantQueue
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AssistantQueue> getRoutingQueueAssistantWithHttpInfo(String queueId, String expand) throws IOException {
+  public ApiResponse<AssistantQueue> getRoutingQueueAssistantWithHttpInfo(String queueId, List<String> expand) throws IOException {
     return getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand).withHttpInfo());
   }
 
-  private GetRoutingQueueAssistantRequest createGetRoutingQueueAssistantRequest(String queueId, String expand) {
+  private GetRoutingQueueAssistantRequest createGetRoutingQueueAssistantRequest(String queueId, List<String> expand) {
     return GetRoutingQueueAssistantRequest.builder()
             .withQueueId(queueId)
 

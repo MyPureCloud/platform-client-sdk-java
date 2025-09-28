@@ -12,9 +12,11 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Copilot;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LanguageSupportResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAssistantCopilotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantsCopilotFeaturesupportRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAssistantCopilotRequest;
 
 import java.io.IOException;
@@ -108,6 +110,84 @@ public class AgentCopilotApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Copilot> response = (ApiResponse<Copilot>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param language Which language are the features supported for (optional)
+   * @return LanguageSupportResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LanguageSupportResponse getAssistantsCopilotFeaturesupport(String language) throws IOException, ApiException {
+    return  getAssistantsCopilotFeaturesupport(createGetAssistantsCopilotFeaturesupportRequest(language));
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param language Which language are the features supported for (optional)
+   * @return LanguageSupportResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LanguageSupportResponse> getAssistantsCopilotFeaturesupportWithHttpInfo(String language) throws IOException {
+    return getAssistantsCopilotFeaturesupport(createGetAssistantsCopilotFeaturesupportRequest(language).withHttpInfo());
+  }
+
+  private GetAssistantsCopilotFeaturesupportRequest createGetAssistantsCopilotFeaturesupportRequest(String language) {
+    return GetAssistantsCopilotFeaturesupportRequest.builder()
+            .withLanguage(language)
+
+            .build();
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param request The request object
+   * @return LanguageSupportResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LanguageSupportResponse getAssistantsCopilotFeaturesupport(GetAssistantsCopilotFeaturesupportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LanguageSupportResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LanguageSupportResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information about the support of features for all the languages or only for a certain language.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LanguageSupportResponse> getAssistantsCopilotFeaturesupport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LanguageSupportResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LanguageSupportResponse> response = (ApiResponse<LanguageSupportResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LanguageSupportResponse> response = (ApiResponse<LanguageSupportResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

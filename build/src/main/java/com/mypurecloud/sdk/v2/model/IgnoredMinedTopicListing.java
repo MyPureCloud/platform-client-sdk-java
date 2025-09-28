@@ -33,8 +33,8 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
   private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String lastUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   public IgnoredMinedTopicListing() {
@@ -165,23 +165,6 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
 
   /**
    **/
-  public IgnoredMinedTopicListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public IgnoredMinedTopicListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -194,6 +177,23 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public IgnoredMinedTopicListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -231,14 +231,14 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
             Objects.equals(this.firstUri, ignoredMinedTopicListing.firstUri) &&
             Objects.equals(this.previousUri, ignoredMinedTopicListing.previousUri) &&
             Objects.equals(this.nextUri, ignoredMinedTopicListing.nextUri) &&
-            Objects.equals(this.lastUri, ignoredMinedTopicListing.lastUri) &&
             Objects.equals(this.selfUri, ignoredMinedTopicListing.selfUri) &&
+            Objects.equals(this.lastUri, ignoredMinedTopicListing.lastUri) &&
             Objects.equals(this.pageCount, ignoredMinedTopicListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class IgnoredMinedTopicListing  implements Serializable, PagedResource<Ig
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

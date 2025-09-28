@@ -10,6 +10,7 @@
 | **description** | **String** |  |  [optional] |
 | **published** | **Boolean** |  |  [optional] |
 | **strictness** | [**StrictnessEnum**](#Enum--StrictnessEnum) |  |  [optional] |
+| **matchingType** | [**MatchingTypeEnum**](#Enum--MatchingTypeEnum) |  |  [optional] |
 | **programs** | [**List&lt;BaseProgramEntity&gt;**](BaseProgramEntity) |  |  [optional] |
 | **tags** | **List&lt;String&gt;** |  |  [optional] |
 | **dialect** | **String** |  |  [optional] |
@@ -35,6 +36,15 @@
 | _90 | &quot;90&quot; | 
 
 
+## Enum: MatchingTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LEXICAL | &quot;Lexical&quot; | 
+| SEMANTIC | &quot;Semantic&quot; | 
+
+
 ## Enum: ParticipantsEnum
 
 | Name | Value |
@@ -47,4 +57,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

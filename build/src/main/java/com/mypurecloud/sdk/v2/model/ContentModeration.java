@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -72,9 +74,11 @@ public class ContentModeration  implements Serializable {
     }
   }
   private FlagEnum flag = null;
+  private List<String> categories = null;
 
   public ContentModeration() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      categories = new ArrayList<String>();
     }
   }
 
@@ -97,6 +101,24 @@ public class ContentModeration  implements Serializable {
   }
 
 
+  /**
+   * The Content Moderation Categories of the message.
+   **/
+  public ContentModeration categories(List<String> categories) {
+    this.categories = categories;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Content Moderation Categories of the message.")
+  @JsonProperty("categories")
+  public List<String> getCategories() {
+    return categories;
+  }
+  public void setCategories(List<String> categories) {
+    this.categories = categories;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -107,12 +129,13 @@ public class ContentModeration  implements Serializable {
     }
     ContentModeration contentModeration = (ContentModeration) o;
 
-    return Objects.equals(this.flag, contentModeration.flag);
+    return Objects.equals(this.flag, contentModeration.flag) &&
+            Objects.equals(this.categories, contentModeration.categories);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flag);
+    return Objects.hash(flag, categories);
   }
 
   @Override
@@ -121,6 +144,7 @@ public class ContentModeration  implements Serializable {
     sb.append("class ContentModeration {\n");
     
     sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("}");
     return sb.toString();
   }

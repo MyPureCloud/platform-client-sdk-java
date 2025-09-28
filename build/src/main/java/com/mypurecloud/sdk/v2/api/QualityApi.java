@@ -1852,7 +1852,7 @@ public class QualityApi {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1875,7 +1875,7 @@ public class QualityApi {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1926,7 +1926,7 @@ public class QualityApi {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param request The request object
    * @return EvaluatorActivityEntityListing
@@ -1945,7 +1945,7 @@ public class QualityApi {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param request The request object
    * @return the response

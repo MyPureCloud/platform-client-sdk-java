@@ -24,6 +24,7 @@ public class DocumentChunkReference  implements Serializable {
   
   private String id = null;
   private String title = null;
+  private String selfUri = null;
 
   public DocumentChunkReference() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -39,7 +40,7 @@ public class DocumentChunkReference  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the document.")
+  @ApiModelProperty(example = "null", required = true, value = "The globally unique identifier for the document.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -67,6 +68,13 @@ public class DocumentChunkReference  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,12 +86,13 @@ public class DocumentChunkReference  implements Serializable {
     DocumentChunkReference documentChunkReference = (DocumentChunkReference) o;
 
     return Objects.equals(this.id, documentChunkReference.id) &&
-            Objects.equals(this.title, documentChunkReference.title);
+            Objects.equals(this.title, documentChunkReference.title) &&
+            Objects.equals(this.selfUri, documentChunkReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title);
+    return Objects.hash(id, title, selfUri);
   }
 
   @Override
@@ -93,6 +102,7 @@ public class DocumentChunkReference  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

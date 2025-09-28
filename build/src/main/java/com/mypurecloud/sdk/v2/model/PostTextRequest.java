@@ -255,14 +255,14 @@ public class PostTextRequest  implements Serializable {
 
 
   /**
-   * The launguage code the bot will run under
+   * The language code the bot will run under
    **/
   public PostTextRequest languageCode(String languageCode) {
     this.languageCode = languageCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The launguage code the bot will run under")
+  @ApiModelProperty(example = "null", value = "The language code the bot will run under")
   @JsonProperty("languageCode")
   public String getLanguageCode() {
     return languageCode;

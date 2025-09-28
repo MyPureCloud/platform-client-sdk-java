@@ -249,7 +249,8 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 	} 
 
 	public enum sortByValues { 
-		NAME("name");
+		NAME("name"),
+		MATCHINGTYPE("matchingType");
 
 		private String value;
 

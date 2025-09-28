@@ -39,6 +39,7 @@
 | **dnis** | **String** | Dialed number identification service (number dialed by the calling party) |  [optional] |
 | **edgeId** | **String** | Unique identifier of the edge device |  [optional] |
 | **eligibleAgentCounts** | **List&lt;Integer&gt;** | Number of eligible agents for each predictive routing attempt |  [optional] |
+| **engagementSource** | [**EngagementSourceEnum**](#Enum--EngagementSourceEnum) | Open Messaging engagement source type |  [optional] |
 | **extendedDeliveryStatus** | **String** | Extended delivery status |  [optional] |
 | **flowInType** | **String** | Type of flow in that occurred when entering ACD. |  [optional] |
 | **flowOutType** | **String** | Type of flow out that occurred when emitting tFlowOut. |  [optional] |
@@ -116,6 +117,46 @@
 | OUTBOUND | &quot;outbound&quot; | 
 
 
+## Enum: EngagementSourceEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| APPLEMESSAGESFORBUSINESS | &quot;AppleMessagesForBusiness&quot; | 
+| DISCORD | &quot;Discord&quot; | 
+| EMAIL | &quot;Email&quot; | 
+| FACEBOOK | &quot;Facebook&quot; | 
+| FACEBOOKMESSENGER | &quot;FacebookMessenger&quot; | 
+| GLASSDOOR | &quot;Glassdoor&quot; | 
+| GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; | 
+| INSTAGRAM | &quot;Instagram&quot; | 
+| KAKAOTALK | &quot;KakaoTalk&quot; | 
+| LINE | &quot;Line&quot; | 
+| LINKEDIN | &quot;LinkedIn&quot; | 
+| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
+| MOBILECHAT | &quot;MobileChat&quot; | 
+| OTHER | &quot;Other&quot; | 
+| QQ | &quot;QQ&quot; | 
+| REDDIT | &quot;Reddit&quot; | 
+| SERVICENOW | &quot;ServiceNow&quot; | 
+| SFDC | &quot;SFDC&quot; | 
+| SMS | &quot;SMS&quot; | 
+| SNAPCHAT | &quot;Snapchat&quot; | 
+| TELEGRAM | &quot;Telegram&quot; | 
+| THREADS | &quot;Threads&quot; | 
+| TRUSTPILOT | &quot;Trustpilot&quot; | 
+| UNSPECIFIED | &quot;Unspecified&quot; | 
+| VIBER | &quot;Viber&quot; | 
+| WEBCHAT | &quot;WebChat&quot; | 
+| WECHAT | &quot;WeChat&quot; | 
+| WEIBO | &quot;Weibo&quot; | 
+| WHATSAPP | &quot;WhatsApp&quot; | 
+| X | &quot;X&quot; | 
+| YELP | &quot;Yelp&quot; | 
+| YOUTUBE | &quot;YouTube&quot; | 
+| ZENDESK | &quot;Zendesk&quot; | 
+
+
 ## Enum: MediaTypeEnum
 
 | Name | Value |
@@ -178,4 +219,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

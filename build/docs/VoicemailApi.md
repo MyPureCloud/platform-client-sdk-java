@@ -1633,4 +1633,4 @@ try {
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

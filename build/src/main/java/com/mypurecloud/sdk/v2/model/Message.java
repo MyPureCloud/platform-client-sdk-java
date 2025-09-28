@@ -55,6 +55,7 @@ public class Message  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
     CONNECTED("connected"),
+    PARKED("parked"),
     DISCONNECTED("disconnected");
 
     private String value;
@@ -104,6 +105,7 @@ public class Message  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
     CONNECTED("connected"),
+    PARKED("parked"),
     DISCONNECTED("disconnected");
 
     private String value;
@@ -220,7 +222,8 @@ public class Message  implements Serializable {
     OTHER("other"),
     SPAM("spam"),
     UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 
@@ -326,6 +329,85 @@ public class Message  implements Serializable {
   private String agentAssistantId = null;
   private String byoSmsIntegrationId = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
+
+  private static class EngagementSourceEnumDeserializer extends StdDeserializer<EngagementSourceEnum> {
+    public EngagementSourceEnumDeserializer() {
+      super(EngagementSourceEnumDeserializer.class);
+    }
+
+    @Override
+    public EngagementSourceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EngagementSourceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets engagementSource
+   */
+ @JsonDeserialize(using = EngagementSourceEnumDeserializer.class)
+  public enum EngagementSourceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    APPLEMESSAGESFORBUSINESS("AppleMessagesForBusiness"),
+    DISCORD("Discord"),
+    EMAIL("Email"),
+    FACEBOOK("Facebook"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    GLASSDOOR("Glassdoor"),
+    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
+    INSTAGRAM("Instagram"),
+    KAKAOTALK("KakaoTalk"),
+    LINE("Line"),
+    LINKEDIN("LinkedIn"),
+    MICROSOFTTEAMS("MicrosoftTeams"),
+    MOBILECHAT("MobileChat"),
+    OTHER("Other"),
+    QQ("QQ"),
+    REDDIT("Reddit"),
+    SERVICENOW("ServiceNow"),
+    SFDC("SFDC"),
+    SMS("SMS"),
+    SNAPCHAT("Snapchat"),
+    TELEGRAM("Telegram"),
+    THREADS("Threads"),
+    TRUSTPILOT("Trustpilot"),
+    UNSPECIFIED("Unspecified"),
+    VIBER("Viber"),
+    WEBCHAT("WebChat"),
+    WECHAT("WeChat"),
+    WEIBO("Weibo"),
+    WHATSAPP("WhatsApp"),
+    X("X"),
+    YELP("Yelp"),
+    YOUTUBE("YouTube"),
+    ZENDESK("Zendesk");
+
+    private String value;
+
+    EngagementSourceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EngagementSourceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EngagementSourceEnum value : EngagementSourceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EngagementSourceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EngagementSourceEnum engagementSource = null;
 
   public Message() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -874,6 +956,23 @@ public class Message  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Message engagementSource(EngagementSourceEnum engagementSource) {
+    this.engagementSource = engagementSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("engagementSource")
+  public EngagementSourceEnum getEngagementSource() {
+    return engagementSource;
+  }
+  public void setEngagementSource(EngagementSourceEnum engagementSource) {
+    this.engagementSource = engagementSource;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -913,12 +1012,13 @@ public class Message  implements Serializable {
             Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, message.agentAssistantId) &&
             Objects.equals(this.byoSmsIntegrationId, message.byoSmsIntegrationId) &&
-            Objects.equals(this.queueMediaSettings, message.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, message.queueMediaSettings) &&
+            Objects.equals(this.engagementSource, message.engagementSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings);
+    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings, engagementSource);
   }
 
   @Override
@@ -956,6 +1056,7 @@ public class Message  implements Serializable {
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SelectedAnswer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -26,9 +28,11 @@ public class SearchUpdateRequest  implements Serializable {
   private String sessionId = null;
   private Boolean answered = null;
   private SelectedAnswer selectedAnswer = null;
+  private List<SelectedAnswer> selectedAnswers = null;
 
   public SearchUpdateRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      selectedAnswers = new ArrayList<SelectedAnswer>();
     }
   }
 
@@ -76,6 +80,24 @@ public class SearchUpdateRequest  implements Serializable {
   }
 
 
+  /**
+   * The search results selected as answers
+   **/
+  public SearchUpdateRequest selectedAnswers(List<SelectedAnswer> selectedAnswers) {
+    this.selectedAnswers = selectedAnswers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The search results selected as answers")
+  @JsonProperty("selectedAnswers")
+  public List<SelectedAnswer> getSelectedAnswers() {
+    return selectedAnswers;
+  }
+  public void setSelectedAnswers(List<SelectedAnswer> selectedAnswers) {
+    this.selectedAnswers = selectedAnswers;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -88,12 +110,13 @@ public class SearchUpdateRequest  implements Serializable {
 
     return Objects.equals(this.sessionId, searchUpdateRequest.sessionId) &&
             Objects.equals(this.answered, searchUpdateRequest.answered) &&
-            Objects.equals(this.selectedAnswer, searchUpdateRequest.selectedAnswer);
+            Objects.equals(this.selectedAnswer, searchUpdateRequest.selectedAnswer) &&
+            Objects.equals(this.selectedAnswers, searchUpdateRequest.selectedAnswers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sessionId, answered, selectedAnswer);
+    return Objects.hash(sessionId, answered, selectedAnswer, selectedAnswers);
   }
 
   @Override
@@ -104,6 +127,7 @@ public class SearchUpdateRequest  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    answered: ").append(toIndentedString(answered)).append("\n");
     sb.append("    selectedAnswer: ").append(toIndentedString(selectedAnswer)).append("\n");
+    sb.append("    selectedAnswers: ").append(toIndentedString(selectedAnswers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -271,13 +271,14 @@ public class Line  implements Serializable {
 
 
   /**
+   * The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data)
    **/
   public Line template(DomainEntityRef template) {
     this.template = template;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data)")
   @JsonProperty("template")
   public DomainEntityRef getTemplate() {
     return template;
@@ -305,13 +306,14 @@ public class Line  implements Serializable {
 
 
   /**
+   * The station base/template.
    **/
   public Line lineBaseSettings(DomainEntityRef lineBaseSettings) {
     this.lineBaseSettings = lineBaseSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The station base/template.")
   @JsonProperty("lineBaseSettings")
   public DomainEntityRef getLineBaseSettings() {
     return lineBaseSettings;

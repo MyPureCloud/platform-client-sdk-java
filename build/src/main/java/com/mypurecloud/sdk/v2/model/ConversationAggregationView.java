@@ -49,6 +49,7 @@ public class ConversationAggregationView  implements Serializable {
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),
     NCONSULTTRANSFERRED("nConsultTransferred"),
+    NCONVERSATIONS("nConversations"),
     NERROR("nError"),
     NOFFERED("nOffered"),
     NOUTBOUND("nOutbound"),

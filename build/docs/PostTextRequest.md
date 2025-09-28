@@ -10,7 +10,7 @@
 | **integrationId** | **String** | the integration service id for the bot's credentials |  |
 | **botSessionId** | **String** | GUID for this bot's session |  |
 | **postTextMessage** | [**PostTextMessage**](PostTextMessage) | Message to send to the bot |  |
-| **languageCode** | **String** | The launguage code the bot will run under |  [optional] |
+| **languageCode** | **String** | The language code the bot will run under |  [optional] |
 | **botSessionTimeoutMinutes** | **Integer** | Override timeout for the bot session. This should be greater than 10 minutes. |  [optional] |
 | **botChannels** | [**List<BotChannelsEnum>**](#Enum--BotChannelsEnum) | The channels this bot is utilizing |  [optional] |
 | **botCorrelationId** | **String** | Id for tracking the activity - this will be returned in the response |  [optional] |
@@ -59,4 +59,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

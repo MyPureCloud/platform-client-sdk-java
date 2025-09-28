@@ -126,7 +126,8 @@ public class CallHistoryParticipant  implements Serializable {
     PEER("peer"),
     OTHER("other"),
     SPAM("spam"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 

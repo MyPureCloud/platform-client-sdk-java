@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentMuQueryResponse;
+import com.mypurecloud.sdk.v2.model.AgentMuScheduleQuery;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
@@ -443,6 +445,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceE
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest;
@@ -13452,6 +13455,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentMuQueryResponse> postWorkforcemanagementAgentschedulesManagementunitsMineAsync(PostWorkforcemanagementAgentschedulesManagementunitsMineRequest request, final AsyncApiCallback<AgentMuQueryResponse> callback) {
+    try {
+      final SettableFuture<AgentMuQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentMuQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AgentMuQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentMuQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentMuQueryResponse>> postWorkforcemanagementAgentschedulesManagementunitsMineAsync(ApiRequest<AgentMuScheduleQuery> request, final AsyncApiCallback<ApiResponse<AgentMuQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentMuQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentMuQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AgentMuQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentMuQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentMuQueryResponse> response = (ApiResponse<AgentMuQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentMuQueryResponse> response = (ApiResponse<AgentMuQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

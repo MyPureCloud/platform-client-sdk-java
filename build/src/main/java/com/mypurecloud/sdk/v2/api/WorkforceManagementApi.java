@@ -29,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentMuQueryResponse;
+import com.mypurecloud.sdk.v2.model.AgentMuScheduleQuery;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
@@ -440,6 +442,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceE
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest;
@@ -14669,6 +14672,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentMuQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentMuQueryResponse postWorkforcemanagementAgentschedulesManagementunitsMine(AgentMuScheduleQuery body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentschedulesManagementunitsMine(createPostWorkforcemanagementAgentschedulesManagementunitsMineRequest(body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentMuQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentMuQueryResponse> postWorkforcemanagementAgentschedulesManagementunitsMineWithHttpInfo(AgentMuScheduleQuery body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementAgentschedulesManagementunitsMine(createPostWorkforcemanagementAgentschedulesManagementunitsMineRequest(body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentschedulesManagementunitsMineRequest createPostWorkforcemanagementAgentschedulesManagementunitsMineRequest(AgentMuScheduleQuery body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementAgentschedulesManagementunitsMineRequest.builder()
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param request The request object
+   * @return AgentMuQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentMuQueryResponse postWorkforcemanagementAgentschedulesManagementunitsMine(PostWorkforcemanagementAgentschedulesManagementunitsMineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentMuQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentMuQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch agent schedules for the logged in user's management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentMuQueryResponse> postWorkforcemanagementAgentschedulesManagementunitsMine(ApiRequest<AgentMuScheduleQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentMuQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentMuQueryResponse> response = (ApiResponse<AgentMuQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentMuQueryResponse> response = (ApiResponse<AgentMuQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

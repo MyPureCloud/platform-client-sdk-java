@@ -33,8 +33,8 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
   private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String lastUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   public TwitterDataIngestionRuleVersionResponseEntityListing() {
@@ -165,23 +165,6 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
 
   /**
    **/
-  public TwitterDataIngestionRuleVersionResponseEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public TwitterDataIngestionRuleVersionResponseEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -194,6 +177,23 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public TwitterDataIngestionRuleVersionResponseEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -231,14 +231,14 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
             Objects.equals(this.firstUri, twitterDataIngestionRuleVersionResponseEntityListing.firstUri) &&
             Objects.equals(this.previousUri, twitterDataIngestionRuleVersionResponseEntityListing.previousUri) &&
             Objects.equals(this.nextUri, twitterDataIngestionRuleVersionResponseEntityListing.nextUri) &&
-            Objects.equals(this.lastUri, twitterDataIngestionRuleVersionResponseEntityListing.lastUri) &&
             Objects.equals(this.selfUri, twitterDataIngestionRuleVersionResponseEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, twitterDataIngestionRuleVersionResponseEntityListing.lastUri) &&
             Objects.equals(this.pageCount, twitterDataIngestionRuleVersionResponseEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -685,12 +685,15 @@ public class IntegrationsApi {
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
+   * @param ids Comma-separated list of integration IDs to filter by (max 100) (optional, default to new ArrayList<String>())
+   * @param integrationType Filter integrations by integration type ID (optional, default to null)
+   * @param reportedState Filter integrations by reported state (case-insensitive) (optional, default to null)
    * @return IntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IntegrationEntityListing getIntegrations(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
-    return  getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
+  public IntegrationEntityListing getIntegrations(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, List<String> ids, String integrationType, String reportedState) throws IOException, ApiException {
+    return  getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState));
   }
 
   /**
@@ -702,14 +705,17 @@ public class IntegrationsApi {
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
+   * @param ids Comma-separated list of integration IDs to filter by (max 100) (optional, default to new ArrayList<String>())
+   * @param integrationType Filter integrations by integration type ID (optional, default to null)
+   * @param reportedState Filter integrations by reported state (case-insensitive) (optional, default to null)
    * @return IntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IntegrationEntityListing> getIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
-    return getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
+  public ApiResponse<IntegrationEntityListing> getIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, List<String> ids, String integrationType, String reportedState) throws IOException {
+    return getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState).withHttpInfo());
   }
 
-  private GetIntegrationsRequest createGetIntegrationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
+  private GetIntegrationsRequest createGetIntegrationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, List<String> ids, String integrationType, String reportedState) {
     return GetIntegrationsRequest.builder()
             .withPageSize(pageSize)
 
@@ -722,6 +728,12 @@ public class IntegrationsApi {
             .withNextPage(nextPage)
 
             .withPreviousPage(previousPage)
+
+            .withIds(ids)
+
+            .withIntegrationType(integrationType)
+
+            .withReportedState(reportedState)
 
             .build();
   }

@@ -2417,7 +2417,7 @@ Wraps GET /api/v2/architect/ivrs/{ivrId}/identityresolution
 Requires ALL permissions: 
 
 * routing:callRoute:view
-* routing:identityResolution:view
+* routing:identityResolutionIvr:view
 
 ### Example
 
@@ -8717,7 +8717,7 @@ Wraps PUT /api/v2/architect/ivrs/{ivrId}/identityresolution
 Requires ALL permissions: 
 
 * routing:callRoute:edit
-* routing:identityResolution:edit
+* routing:identityResolutionIvr:edit
 
 ### Example
 
@@ -9520,4 +9520,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

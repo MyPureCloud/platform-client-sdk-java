@@ -66,7 +66,15 @@ public class Miner  implements Serializable {
     NL_NL("nl-nl"),
     DE_CH("de-ch"),
     JA_JP("ja-jp"),
-    KO_KR("ko-kr");
+    KO_KR("ko-kr"),
+    HI_IN("hi-in"),
+    AR_001("ar-001"),
+    AR_AE("ar-ae"),
+    AR_BH("ar-bh"),
+    AR_EG("ar-eg"),
+    AR_IL("ar-il"),
+    AR_SA("ar-sa"),
+    AR_TN("ar-tn");
 
     private String value;
 

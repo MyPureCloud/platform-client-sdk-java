@@ -241,14 +241,14 @@ public class MessageDetails  implements Serializable {
 
 
   /**
-   * The media (images, files, etc) associated with this message, if any
+   * Deprecated: Use the API /api/v2/conversations/messages/{conversationId}/messages/{messageId} to get the associated media.
    **/
   public MessageDetails media(List<MessageMedia> media) {
     this.media = media;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The media (images, files, etc) associated with this message, if any")
+  @ApiModelProperty(example = "null", value = "Deprecated: Use the API /api/v2/conversations/messages/{conversationId}/messages/{messageId} to get the associated media.")
   @JsonProperty("media")
   public List<MessageMedia> getMedia() {
     return media;
@@ -259,14 +259,14 @@ public class MessageDetails  implements Serializable {
 
 
   /**
-   * One or more stickers associated with this message, if any
+   * Deprecated: This attribute is no longer used. Messages have not included associated stickers for a long time.
    **/
   public MessageDetails stickers(List<MessageSticker> stickers) {
     this.stickers = stickers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "One or more stickers associated with this message, if any")
+  @ApiModelProperty(example = "null", value = "Deprecated: This attribute is no longer used. Messages have not included associated stickers for a long time.")
   @JsonProperty("stickers")
   public List<MessageSticker> getStickers() {
     return stickers;

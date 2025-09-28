@@ -22,6 +22,10 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AppleIntegration;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.AppleIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.AssignedWrapupCode;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -132,6 +136,7 @@ import com.mypurecloud.sdk.v2.model.MessagingSetting;
 import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
+import com.mypurecloud.sdk.v2.model.OAuthAppleAuthorizationResponse;
 import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
@@ -202,6 +207,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedre
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
@@ -286,6 +292,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresol
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsAppleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
@@ -297,6 +305,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsT
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterOauthSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingOauthAppleCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsDefaultRequest;
@@ -347,6 +356,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
@@ -435,6 +445,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantRep
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsAppleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
@@ -1061,6 +1072,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationsMessagesCachedmediaCachedMediaItemIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteConversationsMessagingIntegrationsAppleIntegrationIdAsync(DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsAppleIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -6829,7 +6915,6 @@ public class ConversationsApiAsync {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6864,7 +6949,6 @@ public class ConversationsApiAsync {
   /**
    * Get Apple messaging integration identity resolution settings
    * 
-   * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7417,6 +7501,156 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessagingIntegrationEntityListing> response = (ApiResponse<MessagingIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AppleIntegrationEntityListing> getConversationsMessagingIntegrationsAppleAsync(GetConversationsMessagingIntegrationsAppleRequest request, final AsyncApiCallback<AppleIntegrationEntityListing> callback) {
+    try {
+      final SettableFuture<AppleIntegrationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<AppleIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Apple Integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AppleIntegrationEntityListing>> getConversationsMessagingIntegrationsAppleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AppleIntegrationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AppleIntegrationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<AppleIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegrationEntityListing> response = (ApiResponse<AppleIntegrationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegrationEntityListing> response = (ApiResponse<AppleIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AppleIntegration> getConversationsMessagingIntegrationsAppleIntegrationIdAsync(GetConversationsMessagingIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<AppleIntegration> callback) {
+    try {
+      final SettableFuture<AppleIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AppleIntegration>> getConversationsMessagingIntegrationsAppleIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AppleIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AppleIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8242,6 +8476,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthAppleAuthorizationResponse> getConversationsMessagingOauthAppleCallbackAsync(GetConversationsMessagingOauthAppleCallbackRequest request, final AsyncApiCallback<OAuthAppleAuthorizationResponse> callback) {
+    try {
+      final SettableFuture<OAuthAppleAuthorizationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthAppleAuthorizationResponse>() {}, new AsyncApiCallback<ApiResponse<OAuthAppleAuthorizationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAppleAuthorizationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Call Authentication provider callback to validate state and code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthAppleAuthorizationResponse>> getConversationsMessagingOauthAppleCallbackAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthAppleAuthorizationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthAppleAuthorizationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthAppleAuthorizationResponse>() {}, new AsyncApiCallback<ApiResponse<OAuthAppleAuthorizationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAppleAuthorizationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAppleAuthorizationResponse> response = (ApiResponse<OAuthAppleAuthorizationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAppleAuthorizationResponse> response = (ApiResponse<OAuthAppleAuthorizationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -12026,6 +12335,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Update an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AppleIntegration> patchConversationsMessagingIntegrationsAppleIntegrationIdAsync(PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<AppleIntegration> callback) {
+    try {
+      final SettableFuture<AppleIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Apple messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AppleIntegration>> patchConversationsMessagingIntegrationsAppleIntegrationIdAsync(ApiRequest<AppleIntegrationUpdateRequest> request, final AsyncApiCallback<ApiResponse<AppleIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AppleIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update Facebook messaging integration
    * 
    * @param request the request object
@@ -15492,7 +15876,7 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -15526,7 +15910,7 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Add participants to a conversation without a user context
+   * Add participants to a conversation on behalf of a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -18660,6 +19044,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Create Apple Integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AppleIntegration> postConversationsMessagingIntegrationsAppleAsync(PostConversationsMessagingIntegrationsAppleRequest request, final AsyncApiCallback<AppleIntegration> callback) {
+    try {
+      final SettableFuture<AppleIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Apple Integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AppleIntegration>> postConversationsMessagingIntegrationsAppleAsync(ApiRequest<AppleIntegrationRequest> request, final AsyncApiCallback<ApiResponse<AppleIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AppleIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIntegration>() {}, new AsyncApiCallback<ApiResponse<AppleIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppleIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppleIntegration> response = (ApiResponse<AppleIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a Facebook Integration
    * 
    * @param request the request object
@@ -20624,7 +21083,6 @@ public class ConversationsApiAsync {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -20659,7 +21117,6 @@ public class ConversationsApiAsync {
   /**
    * Create an identity resolution settings for a Apple messaging integration
    * 
-   * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

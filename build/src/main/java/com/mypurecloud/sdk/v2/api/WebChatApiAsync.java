@@ -223,10 +223,11 @@ public class WebChatApiAsync {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteWebchatSettingsAsync(DeleteWebchatSettingsRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -257,10 +258,11 @@ public class WebChatApiAsync {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteWebchatSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -914,10 +916,11 @@ public class WebChatApiAsync {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatSettings> getWebchatSettingsAsync(GetWebchatSettingsRequest request, final AsyncApiCallback<WebChatSettings> callback) {
     try {
@@ -948,10 +951,11 @@ public class WebChatApiAsync {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatSettings>> getWebchatSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatSettings>> callback) {
     try {
@@ -1451,10 +1455,11 @@ public class WebChatApiAsync {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatSettings> putWebchatSettingsAsync(PutWebchatSettingsRequest request, final AsyncApiCallback<WebChatSettings> callback) {
     try {
@@ -1485,10 +1490,11 @@ public class WebChatApiAsync {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatSettings>> putWebchatSettingsAsync(ApiRequest<WebChatSettings> request, final AsyncApiCallback<ApiResponse<WebChatSettings>> callback) {
     try {

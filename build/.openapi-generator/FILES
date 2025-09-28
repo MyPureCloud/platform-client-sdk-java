@@ -141,6 +141,11 @@ docs/AgentIntegrationsRequest.md
 docs/AgentIntegrationsResponse.md
 docs/AgentManagementUnitReference.md
 docs/AgentMaxUtilizationResponse.md
+docs/AgentMuQueryResponse.md
+docs/AgentMuScheduleItem.md
+docs/AgentMuScheduleQuery.md
+docs/AgentMuScheduleResult.md
+docs/AgentMuScheduleShift.md
 docs/AgentOwnedMappingPreview.md
 docs/AgentOwnedMappingPreviewListing.md
 docs/AgentOwnedRouting.md
@@ -149,6 +154,7 @@ docs/AgentPossibleWorkShiftsResponse.md
 docs/AgentQueryAdherenceExplanationsRequest.md
 docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentQueueTimeRequest.md
+docs/AgentScheduleShiftActivity.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
@@ -267,7 +273,14 @@ docs/AppEventRequest.md
 docs/AppEventResponse.md
 docs/AppEventResponseSession.md
 docs/AppendToDncActionSettings.md
+docs/AppleAuthentication.md
+docs/AppleIMessageApp.md
+docs/AppleIntegration.md
+docs/AppleIntegrationEntityListing.md
+docs/AppleIntegrationRequest.md
+docs/AppleIntegrationUpdateRequest.md
 docs/AppleOpaqueId.md
+docs/ApplePay.md
 docs/ApprovalNamespace.md
 docs/ArchitectApi.json
 docs/ArchitectApi.md
@@ -1780,7 +1793,9 @@ docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
 docs/DisconnectReason.md
 docs/Disposition.md
+docs/DispositionAmdTimeout.md
 docs/DispositionParameters.md
+docs/DispositionSilentCallTimeout.md
 docs/Division.md
 docs/DivisionEntityRef.md
 docs/DivisionReference.md
@@ -1893,8 +1908,7 @@ docs/DomainOrganizationRole.md
 docs/DomainOrganizationRoleCreate.md
 docs/DomainOrganizationRoleUpdate.md
 docs/DomainPermission.md
-docs/DomainPermissionCollectionDomainPermission.md
-docs/DomainPermissionEntityListing.md
+docs/DomainPermissionCollection.md
 docs/DomainPermissionPolicy.md
 docs/DomainPhysicalCapabilities.md
 docs/DomainPhysicalInterface.md
@@ -2258,6 +2272,7 @@ docs/FaxTopicLockData.md
 docs/FaxTopicUserData.md
 docs/FaxTopicWorkspaceData.md
 docs/FeatureState.md
+docs/FeatureSupport.md
 docs/Feedback.md
 docs/FeedbackAddRequest.md
 docs/FeedbackUpdateRequest.md
@@ -2970,6 +2985,8 @@ docs/Language.md
 docs/LanguageEntityListing.md
 docs/LanguageOverride.md
 docs/LanguageReference.md
+docs/LanguageSupportInfoRecord.md
+docs/LanguageSupportResponse.md
 docs/LanguageUnderstandingApi.json
 docs/LanguageUnderstandingApi.md
 docs/LanguagesApi.json
@@ -3375,6 +3392,8 @@ docs/NumberPlan.md
 docs/NumericRange.md
 docs/OAuthApi.json
 docs/OAuthApi.md
+docs/OAuthAppleAuthorizationResponse.md
+docs/OAuthAppleAuthorizationResponseError.md
 docs/OAuthAuthorization.md
 docs/OAuthAuthorizationListing.md
 docs/OAuthClient.md
@@ -3649,6 +3668,7 @@ docs/PerformancePredictionRecalculationUploadResponse.md
 docs/PerformancePredictionResponse.md
 docs/PerformancePredictionUploadSchema.md
 docs/PerformanceProfile.md
+docs/PermissionCollectionEntityListing.md
 docs/PermissionDetails.md
 docs/Permissions.md
 docs/PersistentConnectionChangeTopicErrorInfo.md
@@ -5883,6 +5903,7 @@ docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
 docs/deleteConversationsMessagesCachedmediaCachedMediaItemId-example.txt
+docs/deleteConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
@@ -6261,6 +6282,7 @@ docs/getAssistantCopilot-example.txt
 docs/getAssistantQueue-example.txt
 docs/getAssistantQueues-example.txt
 docs/getAssistants-example.txt
+docs/getAssistantsCopilotFeaturesupport-example.txt
 docs/getAssistantsQueues-example.txt
 docs/getAuditsQueryRealtimeServicemapping-example.txt
 docs/getAuditsQueryServicemapping-example.txt
@@ -6441,6 +6463,8 @@ docs/getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
 docs/getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationTwitterOauthSettings-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
+docs/getConversationsMessagingIntegrationsApple-example.txt
+docs/getConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
 docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsInstagram-example.txt
@@ -6452,6 +6476,7 @@ docs/getConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsTwitterOauthSettings-example.txt
 docs/getConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/getConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
+docs/getConversationsMessagingOauthAppleCallback-example.txt
 docs/getConversationsMessagingSetting-example.txt
 docs/getConversationsMessagingSettings-example.txt
 docs/getConversationsMessagingSettingsDefault-example.txt
@@ -7625,6 +7650,7 @@ docs/patchConversationsMessage-example.txt
 docs/patchConversationsMessageParticipant-example.txt
 docs/patchConversationsMessageParticipantAttributes-example.txt
 docs/patchConversationsMessageParticipantCommunication-example.txt
+docs/patchConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
@@ -8014,6 +8040,7 @@ docs/postConversationsMessageParticipantReplace-example.txt
 docs/postConversationsMessages-example.txt
 docs/postConversationsMessagesAgentless-example.txt
 docs/postConversationsMessagesInboundOpen-example.txt
+docs/postConversationsMessagingIntegrationsApple-example.txt
 docs/postConversationsMessagingIntegrationsFacebook-example.txt
 docs/postConversationsMessagingIntegrationsInstagram-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
@@ -8504,6 +8531,7 @@ docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAgents-example.txt
 docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
 docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
+docs/postWorkforcemanagementAgentschedulesManagementunitsMine-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
 docs/postWorkforcemanagementAlternativeshiftsOffersJobs-example.txt
 docs/postWorkforcemanagementAlternativeshiftsOffersSearchJobs-example.txt
@@ -9105,6 +9133,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsCallParticipantConsultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsEmailMessagesDraftAttachmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsAppleIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
@@ -9482,6 +9511,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantCopilotRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantQueuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantsCopilotFeaturesupportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantsQueuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAssistantsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuditsQueryRealtimeServicemappingRequest.java
@@ -9661,6 +9691,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIdenti
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationTwitterOauthSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsAppleIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsAppleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsFacebookRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
@@ -9673,6 +9705,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegr
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsTwitterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsWhatsappRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingOauthAppleCallbackRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingSettingsDefaultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingSettingsRequest.java
@@ -10847,6 +10880,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagePartic
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageParticipantCommunicationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsAppleIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
@@ -11236,6 +11270,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagePartici
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesAgentlessRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesInboundOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsAppleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsFacebookRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsInstagramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsOpenRequest.java
@@ -11726,6 +11761,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentAdh
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsMePossibleworkshiftsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentschedulesManagementunitsMineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentschedulesMineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAlternativeshiftsOffersJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest.java
@@ -12212,6 +12248,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentIntegrationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentIntegrationsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentManagementUnitReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentMaxUtilizationResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentMuQueryResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentMuScheduleItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentMuScheduleQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentMuScheduleResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentMuScheduleShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedMappingPreview.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedMappingPreviewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedRouting.java
@@ -12220,6 +12261,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentPossibleWorkShiftsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryAdherenceExplanationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryAdherenceExplanationsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentQueueTimeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleShiftActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateCountsRequest.java
@@ -12332,7 +12374,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/AppEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AppEventResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AppEventResponseSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/AppendToDncActionSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleAuthentication.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleIMessageApp.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleIntegration.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleIntegrationEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleIntegrationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AppleIntegrationUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AppleOpaqueId.java
+src/main/java/com/mypurecloud/sdk/v2/model/ApplePay.java
 src/main/java/com/mypurecloud/sdk/v2/model/ApprovalNamespace.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArchitectDependencyTrackingBuildNotificationClient.java
 src/main/java/com/mypurecloud/sdk/v2/model/ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.java
@@ -13821,7 +13870,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentIte
 src/main/java/com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/DisconnectReason.java
 src/main/java/com/mypurecloud/sdk/v2/model/Disposition.java
+src/main/java/com/mypurecloud/sdk/v2/model/DispositionAmdTimeout.java
 src/main/java/com/mypurecloud/sdk/v2/model/DispositionParameters.java
+src/main/java/com/mypurecloud/sdk/v2/model/DispositionSilentCallTimeout.java
 src/main/java/com/mypurecloud/sdk/v2/model/Division.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivisionEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivisionReference.java
@@ -13934,8 +13985,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/DomainOrganizationRole.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainOrganizationRoleCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainOrganizationRoleUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainPermission.java
-src/main/java/com/mypurecloud/sdk/v2/model/DomainPermissionCollectionDomainPermission.java
-src/main/java/com/mypurecloud/sdk/v2/model/DomainPermissionEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/DomainPermissionCollection.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainPermissionPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainPhysicalCapabilities.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainPhysicalInterface.java
@@ -14287,6 +14337,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicLockData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicUserData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicWorkspaceData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FeatureState.java
+src/main/java/com/mypurecloud/sdk/v2/model/FeatureSupport.java
 src/main/java/com/mypurecloud/sdk/v2/model/Feedback.java
 src/main/java/com/mypurecloud/sdk/v2/model/FeedbackAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/FeedbackUpdateRequest.java
@@ -14977,6 +15028,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/Language.java
 src/main/java/com/mypurecloud/sdk/v2/model/LanguageEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LanguageOverride.java
 src/main/java/com/mypurecloud/sdk/v2/model/LanguageReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/LanguageSupportInfoRecord.java
+src/main/java/com/mypurecloud/sdk/v2/model/LanguageSupportResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LastAttemptByColumnConditionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/LastAttemptOverallConditionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/LastResultByColumnConditionSettings.java
@@ -15362,6 +15415,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/NuanceOrganization.java
 src/main/java/com/mypurecloud/sdk/v2/model/Number.java
 src/main/java/com/mypurecloud/sdk/v2/model/NumberPlan.java
 src/main/java/com/mypurecloud/sdk/v2/model/NumericRange.java
+src/main/java/com/mypurecloud/sdk/v2/model/OAuthAppleAuthorizationResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/OAuthAppleAuthorizationResponseError.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthAuthorization.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthAuthorizationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthClient.java
@@ -15626,6 +15681,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionRecalculationUpl
 src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionUploadSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/PerformanceProfile.java
+src/main/java/com/mypurecloud/sdk/v2/model/PermissionCollectionEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PermissionDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/Permissions.java
 src/main/java/com/mypurecloud/sdk/v2/model/PersistentConnectionChangeTopicErrorInfo.java

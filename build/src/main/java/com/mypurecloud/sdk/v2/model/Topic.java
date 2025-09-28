@@ -85,6 +85,54 @@ public class Topic  implements Serializable {
     }
   }
   private StrictnessEnum strictness = null;
+
+  private static class MatchingTypeEnumDeserializer extends StdDeserializer<MatchingTypeEnum> {
+    public MatchingTypeEnumDeserializer() {
+      super(MatchingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MatchingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MatchingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets matchingType
+   */
+ @JsonDeserialize(using = MatchingTypeEnumDeserializer.class)
+  public enum MatchingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LEXICAL("Lexical"),
+    SEMANTIC("Semantic");
+
+    private String value;
+
+    MatchingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MatchingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MatchingTypeEnum value : MatchingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MatchingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MatchingTypeEnum matchingType = null;
   private List<BaseProgramEntity> programs = null;
   private List<String> tags = null;
   private String dialect = null;
@@ -225,6 +273,23 @@ public class Topic  implements Serializable {
   }
   public void setStrictness(StrictnessEnum strictness) {
     this.strictness = strictness;
+  }
+
+
+  /**
+   **/
+  public Topic matchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("matchingType")
+  public MatchingTypeEnum getMatchingType() {
+    return matchingType;
+  }
+  public void setMatchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
   }
 
 
@@ -405,6 +470,7 @@ public class Topic  implements Serializable {
             Objects.equals(this.description, topic.description) &&
             Objects.equals(this.published, topic.published) &&
             Objects.equals(this.strictness, topic.strictness) &&
+            Objects.equals(this.matchingType, topic.matchingType) &&
             Objects.equals(this.programs, topic.programs) &&
             Objects.equals(this.tags, topic.tags) &&
             Objects.equals(this.dialect, topic.dialect) &&
@@ -419,7 +485,7 @@ public class Topic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, published, strictness, programs, tags, dialect, participants, phrases, modifiedBy, dateModified, publishedBy, datePublished, selfUri);
+    return Objects.hash(id, name, description, published, strictness, matchingType, programs, tags, dialect, participants, phrases, modifiedBy, dateModified, publishedBy, datePublished, selfUri);
   }
 
   @Override
@@ -432,6 +498,7 @@ public class Topic  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    strictness: ").append(toIndentedString(strictness)).append("\n");
+    sb.append("    matchingType: ").append(toIndentedString(matchingType)).append("\n");
     sb.append("    programs: ").append(toIndentedString(programs)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");

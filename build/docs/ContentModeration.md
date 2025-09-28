@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **flag** | [**FlagEnum**](#Enum--FlagEnum) | The Content Moderation Flag of the message. |  |
+| **categories** | **List&lt;String&gt;** | The Content Moderation Categories of the message. |  [optional] |
 
 
 ## Enum: FlagEnum
@@ -20,4 +21,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

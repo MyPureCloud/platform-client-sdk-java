@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.Card;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.DatePicker;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.InteractiveApplication;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
 import com.mypurecloud.sdk.v2.model.QuickReply;
@@ -172,6 +173,7 @@ public class RecordingMessagingMessage  implements Serializable {
   }
   private SocialVisibilityEnum socialVisibility = null;
   private List<ConversationMessageEvent> events = null;
+  private InteractiveApplication interactiveApplication = null;
 
   public RecordingMessagingMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -580,6 +582,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * InteractiveApplication content.
+   **/
+  public RecordingMessagingMessage interactiveApplication(InteractiveApplication interactiveApplication) {
+    this.interactiveApplication = interactiveApplication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "InteractiveApplication content.")
+  @JsonProperty("interactiveApplication")
+  public InteractiveApplication getInteractiveApplication() {
+    return interactiveApplication;
+  }
+  public void setInteractiveApplication(InteractiveApplication interactiveApplication) {
+    this.interactiveApplication = interactiveApplication;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -611,12 +631,13 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.datePicker, recordingMessagingMessage.datePicker) &&
             Objects.equals(this.contentType, recordingMessagingMessage.contentType) &&
             Objects.equals(this.socialVisibility, recordingMessagingMessage.socialVisibility) &&
-            Objects.equals(this.events, recordingMessagingMessage.events);
+            Objects.equals(this.events, recordingMessagingMessage.events) &&
+            Objects.equals(this.interactiveApplication, recordingMessagingMessage.interactiveApplication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, datePicker, contentType, socialVisibility, events);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, datePicker, contentType, socialVisibility, events, interactiveApplication);
   }
 
   @Override
@@ -646,6 +667,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
+    sb.append("    interactiveApplication: ").append(toIndentedString(interactiveApplication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

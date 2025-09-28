@@ -227,9 +227,10 @@ public class WebChatApi {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWebchatSettings() throws IOException, ApiException {
      deleteWebchatSettings(createDeleteWebchatSettingsRequest());
@@ -237,8 +238,9 @@ public class WebChatApi {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWebchatSettingsWithHttpInfo() throws IOException {
     return deleteWebchatSettings(createDeleteWebchatSettingsRequest().withHttpInfo());
@@ -251,10 +253,11 @@ public class WebChatApi {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWebchatSettings(DeleteWebchatSettingsRequest request) throws IOException, ApiException {
     try {
@@ -269,10 +272,11 @@ public class WebChatApi {
 
   /**
    * Remove WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWebchatSettings(ApiRequest<Void> request) throws IOException {
     try {
@@ -990,10 +994,11 @@ public class WebChatApi {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @return WebChatSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatSettings getWebchatSettings() throws IOException, ApiException {
     return  getWebchatSettings(createGetWebchatSettingsRequest());
@@ -1001,9 +1006,10 @@ public class WebChatApi {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @return WebChatSettings
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatSettings> getWebchatSettingsWithHttpInfo() throws IOException {
     return getWebchatSettings(createGetWebchatSettingsRequest().withHttpInfo());
@@ -1016,11 +1022,12 @@ public class WebChatApi {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @return WebChatSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatSettings getWebchatSettings(GetWebchatSettingsRequest request) throws IOException, ApiException {
     try {
@@ -1035,10 +1042,11 @@ public class WebChatApi {
 
   /**
    * Get WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatSettings> getWebchatSettings(ApiRequest<Void> request) throws IOException {
     try {
@@ -1580,11 +1588,12 @@ public class WebChatApi {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param body webChatSettings (required)
    * @return WebChatSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatSettings putWebchatSettings(WebChatSettings body) throws IOException, ApiException {
     return  putWebchatSettings(createPutWebchatSettingsRequest(body));
@@ -1592,10 +1601,11 @@ public class WebChatApi {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param body webChatSettings (required)
    * @return WebChatSettings
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatSettings> putWebchatSettingsWithHttpInfo(WebChatSettings body) throws IOException {
     return putWebchatSettings(createPutWebchatSettingsRequest(body).withHttpInfo());
@@ -1610,11 +1620,12 @@ public class WebChatApi {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @return WebChatSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatSettings putWebchatSettings(PutWebchatSettingsRequest request) throws IOException, ApiException {
     try {
@@ -1629,10 +1640,11 @@ public class WebChatApi {
 
   /**
    * Update WebChat deployment settings
-   * 
+   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatSettings> putWebchatSettings(ApiRequest<WebChatSettings> request) throws IOException {
     try {

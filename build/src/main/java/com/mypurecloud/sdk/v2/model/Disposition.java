@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DispositionAmdTimeout;
 import com.mypurecloud.sdk.v2.model.DispositionParameters;
+import com.mypurecloud.sdk.v2.model.DispositionSilentCallTimeout;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -29,6 +31,8 @@ public class Disposition  implements Serializable {
   private DispositionParameters dispositionParameters = null;
   private Date detectedSpeechStart = null;
   private Date detectedSpeechEnd = null;
+  private DispositionAmdTimeout amdTimeout = null;
+  private DispositionSilentCallTimeout silentCallTimeout = null;
 
   public Disposition() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -126,6 +130,42 @@ public class Disposition  implements Serializable {
   }
 
 
+  /**
+   * Answering Machine Detection timeout configuration.
+   **/
+  public Disposition amdTimeout(DispositionAmdTimeout amdTimeout) {
+    this.amdTimeout = amdTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Answering Machine Detection timeout configuration.")
+  @JsonProperty("amdTimeout")
+  public DispositionAmdTimeout getAmdTimeout() {
+    return amdTimeout;
+  }
+  public void setAmdTimeout(DispositionAmdTimeout amdTimeout) {
+    this.amdTimeout = amdTimeout;
+  }
+
+
+  /**
+   * Silent Call timeout configuration.
+   **/
+  public Disposition silentCallTimeout(DispositionSilentCallTimeout silentCallTimeout) {
+    this.silentCallTimeout = silentCallTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Silent Call timeout configuration.")
+  @JsonProperty("silentCallTimeout")
+  public DispositionSilentCallTimeout getSilentCallTimeout() {
+    return silentCallTimeout;
+  }
+  public void setSilentCallTimeout(DispositionSilentCallTimeout silentCallTimeout) {
+    this.silentCallTimeout = silentCallTimeout;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -140,12 +180,14 @@ public class Disposition  implements Serializable {
             Objects.equals(this.analyzer, disposition.analyzer) &&
             Objects.equals(this.dispositionParameters, disposition.dispositionParameters) &&
             Objects.equals(this.detectedSpeechStart, disposition.detectedSpeechStart) &&
-            Objects.equals(this.detectedSpeechEnd, disposition.detectedSpeechEnd);
+            Objects.equals(this.detectedSpeechEnd, disposition.detectedSpeechEnd) &&
+            Objects.equals(this.amdTimeout, disposition.amdTimeout) &&
+            Objects.equals(this.silentCallTimeout, disposition.silentCallTimeout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, analyzer, dispositionParameters, detectedSpeechStart, detectedSpeechEnd);
+    return Objects.hash(name, analyzer, dispositionParameters, detectedSpeechStart, detectedSpeechEnd, amdTimeout, silentCallTimeout);
   }
 
   @Override
@@ -158,6 +200,8 @@ public class Disposition  implements Serializable {
     sb.append("    dispositionParameters: ").append(toIndentedString(dispositionParameters)).append("\n");
     sb.append("    detectedSpeechStart: ").append(toIndentedString(detectedSpeechStart)).append("\n");
     sb.append("    detectedSpeechEnd: ").append(toIndentedString(detectedSpeechEnd)).append("\n");
+    sb.append("    amdTimeout: ").append(toIndentedString(amdTimeout)).append("\n");
+    sb.append("    silentCallTimeout: ").append(toIndentedString(silentCallTimeout)).append("\n");
     sb.append("}");
     return sb.toString();
   }

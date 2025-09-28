@@ -3007,12 +3007,13 @@ public class LearningApi {
    * This will update a learning module rule with the specified fields.
    * @param moduleId The ID of the learning module (required)
    * @param body The learning module rule to be updated (required)
+   * @param assign Whether to assign the module to users or not (optional, default to true)
    * @return LearningModuleRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModuleRule putLearningModuleRule(String moduleId, LearningModuleRule body) throws IOException, ApiException {
-    return  putLearningModuleRule(createPutLearningModuleRuleRequest(moduleId, body));
+  public LearningModuleRule putLearningModuleRule(String moduleId, LearningModuleRule body, Boolean assign) throws IOException, ApiException {
+    return  putLearningModuleRule(createPutLearningModuleRuleRequest(moduleId, body, assign));
   }
 
   /**
@@ -3020,18 +3021,21 @@ public class LearningApi {
    * This will update a learning module rule with the specified fields.
    * @param moduleId The ID of the learning module (required)
    * @param body The learning module rule to be updated (required)
+   * @param assign Whether to assign the module to users or not (optional, default to true)
    * @return LearningModuleRule
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModuleRule> putLearningModuleRuleWithHttpInfo(String moduleId, LearningModuleRule body) throws IOException {
-    return putLearningModuleRule(createPutLearningModuleRuleRequest(moduleId, body).withHttpInfo());
+  public ApiResponse<LearningModuleRule> putLearningModuleRuleWithHttpInfo(String moduleId, LearningModuleRule body, Boolean assign) throws IOException {
+    return putLearningModuleRule(createPutLearningModuleRuleRequest(moduleId, body, assign).withHttpInfo());
   }
 
-  private PutLearningModuleRuleRequest createPutLearningModuleRuleRequest(String moduleId, LearningModuleRule body) {
+  private PutLearningModuleRuleRequest createPutLearningModuleRuleRequest(String moduleId, LearningModuleRule body, Boolean assign) {
     return PutLearningModuleRuleRequest.builder()
             .withModuleId(moduleId)
 
             .withBody(body)
+
+            .withAssign(assign)
 
             .build();
   }

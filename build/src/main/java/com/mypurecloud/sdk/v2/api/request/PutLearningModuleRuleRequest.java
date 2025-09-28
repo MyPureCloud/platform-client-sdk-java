@@ -86,6 +86,20 @@ public class PutLearningModuleRuleRequest {
 	    return this;
 	} 
 
+	private Boolean assign;
+	public Boolean getAssign() {
+		return this.assign;
+	}
+
+	public void setAssign(Boolean assign) {
+		this.assign = assign;
+	}
+
+	public PutLearningModuleRuleRequest withAssign(Boolean assign) {
+	    this.setAssign(assign);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -120,6 +134,9 @@ public class PutLearningModuleRuleRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/learning/modules/{moduleId}/rule")
                 .withPathParameter("moduleId", moduleId)
+        
+
+                .withQueryParameters("assign", "", assign)
         
                 .withBody(body)
 
@@ -156,6 +173,11 @@ public class PutLearningModuleRuleRequest {
 
 		public Builder withBody(LearningModuleRule body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withAssign(Boolean assign) {
+			request.setAssign(assign);
 			return this;
 		}
 

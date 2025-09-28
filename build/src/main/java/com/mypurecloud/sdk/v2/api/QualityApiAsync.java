@@ -1584,7 +1584,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1618,7 +1618,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get an evaluator activity
+   * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

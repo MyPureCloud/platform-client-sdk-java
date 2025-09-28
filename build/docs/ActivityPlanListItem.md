@@ -14,7 +14,7 @@
 | **optimizationObjective** | [**OptimizationObjectiveEnum**](#Enum--OptimizationObjectiveEnum) | The optimization objective of this activity plan |  |
 | **recurrenceSettings** | [**RecurrenceSettings**](RecurrenceSettings) | Recurrence settings for this activity plan |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of this activity plan |  |
-| **lastRunDate** | [**Date**](Date) | The date the activity plan was last run, in ISO-8601 format |  [optional] |
+| **lastRunDate** | [**Date**](Date) | The date on which the activity plan was last manually run, in ISO-8601 format |  [optional] |
 | **lastRunBy** | [**UserReference**](UserReference) | The last user to run this activity plan |  [optional] |
 | **createdDate** | [**Date**](Date) | The date the activity plan was created, in ISO-8601 format |  |
 | **createdBy** | [**UserReference**](UserReference) | The user who created this activity plan |  |
@@ -52,4 +52,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

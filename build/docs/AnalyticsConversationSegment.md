@@ -45,17 +45,18 @@
 | ENDPOINT | &quot;endpoint&quot; | 
 | ERROR | &quot;error&quot; | 
 | FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
+| INACTIVITY | &quot;inactivity&quot; | 
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
 | OTHER | &quot;other&quot; | 
 | PEER | &quot;peer&quot; | 
+| SESSIONEXPIRED | &quot;sessionExpired&quot; | 
 | SPAM | &quot;spam&quot; | 
 | SYSTEM | &quot;system&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-| INACTIVITY | &quot;inactivity&quot; | 
 
 
 ## Enum: SegmentTypeEnum
@@ -88,4 +89,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

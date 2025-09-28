@@ -167,6 +167,85 @@ public class AnalyticsSession  implements Serializable {
   private String dnis = null;
   private String edgeId = null;
   private List<Integer> eligibleAgentCounts = null;
+
+  private static class EngagementSourceEnumDeserializer extends StdDeserializer<EngagementSourceEnum> {
+    public EngagementSourceEnumDeserializer() {
+      super(EngagementSourceEnumDeserializer.class);
+    }
+
+    @Override
+    public EngagementSourceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EngagementSourceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Open Messaging engagement source type
+   */
+ @JsonDeserialize(using = EngagementSourceEnumDeserializer.class)
+  public enum EngagementSourceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    APPLEMESSAGESFORBUSINESS("AppleMessagesForBusiness"),
+    DISCORD("Discord"),
+    EMAIL("Email"),
+    FACEBOOK("Facebook"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    GLASSDOOR("Glassdoor"),
+    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
+    INSTAGRAM("Instagram"),
+    KAKAOTALK("KakaoTalk"),
+    LINE("Line"),
+    LINKEDIN("LinkedIn"),
+    MICROSOFTTEAMS("MicrosoftTeams"),
+    MOBILECHAT("MobileChat"),
+    OTHER("Other"),
+    QQ("QQ"),
+    REDDIT("Reddit"),
+    SERVICENOW("ServiceNow"),
+    SFDC("SFDC"),
+    SMS("SMS"),
+    SNAPCHAT("Snapchat"),
+    TELEGRAM("Telegram"),
+    THREADS("Threads"),
+    TRUSTPILOT("Trustpilot"),
+    UNSPECIFIED("Unspecified"),
+    VIBER("Viber"),
+    WEBCHAT("WebChat"),
+    WECHAT("WeChat"),
+    WEIBO("Weibo"),
+    WHATSAPP("WhatsApp"),
+    X("X"),
+    YELP("Yelp"),
+    YOUTUBE("YouTube"),
+    ZENDESK("Zendesk");
+
+    private String value;
+
+    EngagementSourceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EngagementSourceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EngagementSourceEnum value : EngagementSourceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EngagementSourceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EngagementSourceEnum engagementSource = null;
   private String extendedDeliveryStatus = null;
   private String flowInType = null;
   private String flowOutType = null;
@@ -1059,6 +1138,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setEligibleAgentCounts(List<Integer> eligibleAgentCounts) {
     this.eligibleAgentCounts = eligibleAgentCounts;
+  }
+
+
+  /**
+   * Open Messaging engagement source type
+   **/
+  public AnalyticsSession engagementSource(EngagementSourceEnum engagementSource) {
+    this.engagementSource = engagementSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Open Messaging engagement source type")
+  @JsonProperty("engagementSource")
+  public EngagementSourceEnum getEngagementSource() {
+    return engagementSource;
+  }
+  public void setEngagementSource(EngagementSourceEnum engagementSource) {
+    this.engagementSource = engagementSource;
   }
 
 
@@ -2006,6 +2103,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.dnis, analyticsSession.dnis) &&
             Objects.equals(this.edgeId, analyticsSession.edgeId) &&
             Objects.equals(this.eligibleAgentCounts, analyticsSession.eligibleAgentCounts) &&
+            Objects.equals(this.engagementSource, analyticsSession.engagementSource) &&
             Objects.equals(this.extendedDeliveryStatus, analyticsSession.extendedDeliveryStatus) &&
             Objects.equals(this.flowInType, analyticsSession.flowInType) &&
             Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
@@ -2060,7 +2158,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2102,6 +2200,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    edgeId: ").append(toIndentedString(edgeId)).append("\n");
     sb.append("    eligibleAgentCounts: ").append(toIndentedString(eligibleAgentCounts)).append("\n");
+    sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("    extendedDeliveryStatus: ").append(toIndentedString(extendedDeliveryStatus)).append("\n");
     sb.append("    flowInType: ").append(toIndentedString(flowInType)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");

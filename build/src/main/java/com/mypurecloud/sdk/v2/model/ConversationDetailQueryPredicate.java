@@ -154,6 +154,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),
     NCONSULTTRANSFERRED("nConsultTransferred"),
+    NCONVERSATIONS("nConversations"),
     NERROR("nError"),
     NFLOW("nFlow"),
     NFLOWMILESTONE("nFlowMilestone"),

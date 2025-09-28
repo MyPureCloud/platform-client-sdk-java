@@ -947,7 +947,7 @@ try {
 # **getAuthorizationPermissions**
 
 
-> [DomainPermissionEntityListing](DomainPermissionEntityListing) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
+> [PermissionCollectionEntityListing](PermissionCollectionEntityListing) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
 
 Get all permissions.
 
@@ -985,7 +985,7 @@ Integer pageNumber = 1; // Integer | Page number
 String queryType = "queryType_example"; // String | Query filter type
 String query = "query_example"; // String | Comma-separated list of permissions or domains to query
 try {
-    DomainPermissionEntityListing result = apiInstance.getAuthorizationPermissions(pageSize, pageNumber, queryType, query);
+    PermissionCollectionEntityListing result = apiInstance.getAuthorizationPermissions(pageSize, pageNumber, queryType, query);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationPermissions");
@@ -1007,7 +1007,7 @@ try {
 
 ### Return type
 
-[**DomainPermissionEntityListing**](DomainPermissionEntityListing)
+[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
 
 
 # **getAuthorizationPolicies**
@@ -3745,4 +3745,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

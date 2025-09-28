@@ -115,6 +115,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     DISCONNECTTYPE("disconnectType"),
     DNIS("dnis"),
     EDGEID("edgeId"),
+    ENGAGEMENTSOURCE("engagementSource"),
     ERRORCODE("errorCode"),
     EXITREASON("exitReason"),
     EXTENDEDDELIVERYSTATUS("extendedDeliveryStatus"),

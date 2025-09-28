@@ -615,14 +615,14 @@ public class ActivityPlanResponse  implements Serializable {
 
 
   /**
-   * The date the activity plan was last run, in ISO-8601 format
+   * The date on which the activity plan was last manually run, in ISO-8601 format
    **/
   public ActivityPlanResponse lastRunDate(Date lastRunDate) {
     this.lastRunDate = lastRunDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the activity plan was last run, in ISO-8601 format")
+  @ApiModelProperty(example = "null", value = "The date on which the activity plan was last manually run, in ISO-8601 format")
   @JsonProperty("lastRunDate")
   public Date getLastRunDate() {
     return lastRunDate;

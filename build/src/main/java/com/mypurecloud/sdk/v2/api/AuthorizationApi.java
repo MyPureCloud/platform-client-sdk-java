@@ -23,10 +23,10 @@ import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
-import com.mypurecloud.sdk.v2.model.DomainPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.PolicyAttributeSet;
 import com.mypurecloud.sdk.v2.model.PolicyTestPayload;
 import com.mypurecloud.sdk.v2.model.PolicyTestResult;
@@ -1312,11 +1312,11 @@ public class AuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param queryType Query filter type (optional)
    * @param query Comma-separated list of permissions or domains to query (optional)
-   * @return DomainPermissionEntityListing
+   * @return PermissionCollectionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DomainPermissionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException, ApiException {
+  public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException, ApiException {
     return  getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber, queryType, query));
   }
 
@@ -1327,10 +1327,10 @@ public class AuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param queryType Query filter type (optional)
    * @param query Comma-separated list of permissions or domains to query (optional)
-   * @return DomainPermissionEntityListing
+   * @return PermissionCollectionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainPermissionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException {
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException {
     return getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber, queryType, query).withHttpInfo());
   }
 
@@ -1351,13 +1351,13 @@ public class AuthorizationApi {
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
    * @param request The request object
-   * @return DomainPermissionEntityListing
+   * @return PermissionCollectionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DomainPermissionEntityListing getAuthorizationPermissions(GetAuthorizationPermissionsRequest request) throws IOException, ApiException {
+  public PermissionCollectionEntityListing getAuthorizationPermissions(GetAuthorizationPermissionsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DomainPermissionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainPermissionEntityListing>() {});
+      ApiResponse<PermissionCollectionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1373,13 +1373,13 @@ public class AuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainPermissionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DomainPermissionEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<PermissionCollectionEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DomainPermissionEntityListing> response = (ApiResponse<DomainPermissionEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1390,7 +1390,7 @@ public class AuthorizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DomainPermissionEntityListing> response = (ApiResponse<DomainPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

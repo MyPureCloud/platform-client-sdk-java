@@ -81,6 +81,54 @@ public class MaskingRule  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * inbound/outbound
+   */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
+  public enum DirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DirectionEnum value : DirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DirectionEnum direction = null;
   private List<String> integrations = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -208,6 +256,24 @@ public class MaskingRule  implements Serializable {
 
 
   /**
+   * inbound/outbound
+   **/
+  public MaskingRule direction(DirectionEnum direction) {
+    this.direction = direction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "inbound/outbound")
+  @JsonProperty("direction")
+  public DirectionEnum getDirection() {
+    return direction;
+  }
+  public void setDirection(DirectionEnum direction) {
+    this.direction = direction;
+  }
+
+
+  /**
    * Associated integration channels
    **/
   public MaskingRule integrations(List<String> integrations) {
@@ -256,6 +322,7 @@ public class MaskingRule  implements Serializable {
             Objects.equals(this.definition, maskingRule.definition) &&
             Objects.equals(this.enabled, maskingRule.enabled) &&
             Objects.equals(this.type, maskingRule.type) &&
+            Objects.equals(this.direction, maskingRule.direction) &&
             Objects.equals(this.integrations, maskingRule.integrations) &&
             Objects.equals(this.dateCreated, maskingRule.dateCreated) &&
             Objects.equals(this.dateModified, maskingRule.dateModified);
@@ -263,7 +330,7 @@ public class MaskingRule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, substituteCharacter, definition, enabled, type, integrations, dateCreated, dateModified);
+    return Objects.hash(id, name, description, substituteCharacter, definition, enabled, type, direction, integrations, dateCreated, dateModified);
   }
 
   @Override
@@ -278,6 +345,7 @@ public class MaskingRule  implements Serializable {
     sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    integrations: ").append(toIndentedString(integrations)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");

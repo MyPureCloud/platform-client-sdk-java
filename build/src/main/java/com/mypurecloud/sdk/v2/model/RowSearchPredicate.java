@@ -48,7 +48,8 @@ public class RowSearchPredicate  implements Serializable {
     GREATERTHAN("GreaterThan"),
     GREATERTHANOREQUALS("GreaterThanOrEquals"),
     LESSTHAN("LessThan"),
-    LESSTHANOREQUALS("LessThanOrEquals");
+    LESSTHANOREQUALS("LessThanOrEquals"),
+    CONTAINSITEM("ContainsItem");
 
     private String value;
 

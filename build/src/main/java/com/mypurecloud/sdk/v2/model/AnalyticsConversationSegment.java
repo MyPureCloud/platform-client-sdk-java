@@ -59,17 +59,18 @@ public class AnalyticsConversationSegment  implements Serializable {
     ENDPOINT("endpoint"),
     ERROR("error"),
     FORWARDTRANSFER("forwardTransfer"),
+    INACTIVITY("inactivity"),
     NOANSWERTRANSFER("noAnswerTransfer"),
     NOTAVAILABLETRANSFER("notAvailableTransfer"),
     OTHER("other"),
     PEER("peer"),
+    SESSIONEXPIRED("sessionExpired"),
     SPAM("spam"),
     SYSTEM("system"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
     TRANSPORTFAILURE("transportFailure"),
-    UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    UNCALLABLE("uncallable");
 
     private String value;
 

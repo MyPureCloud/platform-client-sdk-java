@@ -178,6 +178,81 @@ public class GetIntegrationsRequest {
 	    return this;
 	} 
 
+	private List<String> ids;
+	public List<String> getIds() {
+		return this.ids;
+	}
+
+	public void setIds(List<String> ids) {
+		this.ids = ids;
+	}
+
+	public GetIntegrationsRequest withIds(List<String> ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+
+	private String integrationType;
+	public String getIntegrationType() {
+		return this.integrationType;
+	}
+
+	public void setIntegrationType(String integrationType) {
+		this.integrationType = integrationType;
+	}
+
+	public GetIntegrationsRequest withIntegrationType(String integrationType) {
+	    this.setIntegrationType(integrationType);
+	    return this;
+	} 
+
+	private String reportedState;
+	public String getReportedState() {
+		return this.reportedState;
+	}
+
+	public void setReportedState(String reportedState) {
+		this.reportedState = reportedState;
+	}
+
+	public GetIntegrationsRequest withReportedState(String reportedState) {
+	    this.setReportedState(reportedState);
+	    return this;
+	} 
+
+	public enum reportedStateValues { 
+		ACTIVE("ACTIVE"),
+		ACTIVATING("ACTIVATING"),
+		INACTIVE("INACTIVE"),
+		DEACTIVATING("DEACTIVATING"),
+		ERROR("ERROR");
+
+		private String value;
+
+		reportedStateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static reportedStateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (reportedStateValues value : reportedStateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return reportedStateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -218,6 +293,15 @@ public class GetIntegrationsRequest {
         
 
                 .withQueryParameters("previousPage", "", previousPage)
+        
+
+                .withQueryParameters("ids", "multi", ids)
+        
+
+                .withQueryParameters("integrationType", "", integrationType)
+        
+
+                .withQueryParameters("reportedState", "", reportedState)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -268,6 +352,30 @@ public class GetIntegrationsRequest {
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
+		}
+
+		public Builder withIds(List<String> ids) {
+			request.setIds(ids);
+			return this;
+		}
+
+		public Builder withIntegrationType(String integrationType) {
+			request.setIntegrationType(integrationType);
+			return this;
+		}
+
+		public Builder withReportedState(String reportedState) {
+			request.setReportedState(reportedState);
+			return this;
+		}
+
+
+
+		
+		public Builder withReportedState(reportedStateValues reportedState) {
+		    request.setReportedState(reportedState.toString());
+
+		    return this;
 		}
 
 
