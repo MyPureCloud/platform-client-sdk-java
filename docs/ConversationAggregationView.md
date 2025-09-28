@@ -22,6 +22,7 @@
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; | 
+| NCONVERSATIONS | &quot;nConversations&quot; | 
 | NERROR | &quot;nError&quot; | 
 | NOFFERED | &quot;nOffered&quot; | 
 | NOUTBOUND | &quot;nOutbound&quot; | 
@@ -89,4 +90,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

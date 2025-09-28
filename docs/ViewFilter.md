@@ -237,6 +237,7 @@
 | **empathyScoreCategories** | [**List<EmpathyScoreCategoriesEnum>**](#Enum--EmpathyScoreCategoriesEnum) | A set of Empathy Score Categories for filtering |  [optional] |
 | **sentimentScoreCategories** | [**List<SentimentScoreCategoriesEnum>**](#Enum--SentimentScoreCategoriesEnum) | A set of Sentiment Score Categories  for filtering |  [optional] |
 | **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
+| **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -1028,6 +1029,16 @@
 | IMPROVING | &quot;Improving&quot; |
 
 
+## Enum: ContentModerationFlagsEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| NOTSAFEFORWORK | &quot;NotSafeForWork&quot; |
+| SAFEFORWORK | &quot;SafeForWork&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

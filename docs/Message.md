@@ -35,6 +35,7 @@
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **byoSmsIntegrationId** | **String** | The internal id representing the customer supplied sms integration message. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
+| **engagementSource** | [**EngagementSourceEnum**](#Enum--EngagementSourceEnum) |  |  [optional] |
 
 
 ## Enum: StateEnum
@@ -44,6 +45,7 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
+| PARKED | &quot;parked&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
 
 
@@ -54,6 +56,7 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
+| PARKED | &quot;parked&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
 
 
@@ -88,6 +91,7 @@
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 | INACTIVITY | &quot;inactivity&quot; | 
+| SESSION_EXPIRED | &quot;session.expired&quot; | 
 
 
 ## Enum: TypeEnum
@@ -109,6 +113,46 @@
 | UNKNOWN | &quot;unknown&quot; | 
 
 
+## Enum: EngagementSourceEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| APPLEMESSAGESFORBUSINESS | &quot;AppleMessagesForBusiness&quot; | 
+| DISCORD | &quot;Discord&quot; | 
+| EMAIL | &quot;Email&quot; | 
+| FACEBOOK | &quot;Facebook&quot; | 
+| FACEBOOKMESSENGER | &quot;FacebookMessenger&quot; | 
+| GLASSDOOR | &quot;Glassdoor&quot; | 
+| GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; | 
+| INSTAGRAM | &quot;Instagram&quot; | 
+| KAKAOTALK | &quot;KakaoTalk&quot; | 
+| LINE | &quot;Line&quot; | 
+| LINKEDIN | &quot;LinkedIn&quot; | 
+| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
+| MOBILECHAT | &quot;MobileChat&quot; | 
+| OTHER | &quot;Other&quot; | 
+| QQ | &quot;QQ&quot; | 
+| REDDIT | &quot;Reddit&quot; | 
+| SERVICENOW | &quot;ServiceNow&quot; | 
+| SFDC | &quot;SFDC&quot; | 
+| SMS | &quot;SMS&quot; | 
+| SNAPCHAT | &quot;Snapchat&quot; | 
+| TELEGRAM | &quot;Telegram&quot; | 
+| THREADS | &quot;Threads&quot; | 
+| TRUSTPILOT | &quot;Trustpilot&quot; | 
+| UNSPECIFIED | &quot;Unspecified&quot; | 
+| VIBER | &quot;Viber&quot; | 
+| WEBCHAT | &quot;WebChat&quot; | 
+| WECHAT | &quot;WeChat&quot; | 
+| WEIBO | &quot;Weibo&quot; | 
+| WHATSAPP | &quot;WhatsApp&quot; | 
+| X | &quot;X&quot; | 
+| YELP | &quot;Yelp&quot; | 
+| YOUTUBE | &quot;YouTube&quot; | 
+| ZENDESK | &quot;Zendesk&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

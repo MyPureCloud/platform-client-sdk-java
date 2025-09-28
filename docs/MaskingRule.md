@@ -12,6 +12,7 @@
 | **definition** | **String** | Definition of masking rule (a valid regex or builtin AI based mask name). |  |
 | **enabled** | **Boolean** | True/False |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Masking rule type |  |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | inbound/outbound |  [optional] |
 | **integrations** | **List&lt;String&gt;** | Associated integration channels |  [optional] |
 | **dateCreated** | [**Date**](Date) | Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | Date when the rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -27,6 +28,15 @@
 | DEFAULT | &quot;Default&quot; | 
 
 
+## Enum: DirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

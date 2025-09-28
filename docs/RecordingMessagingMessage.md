@@ -27,6 +27,7 @@
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
 | **socialVisibility** | [**SocialVisibilityEnum**](#Enum--SocialVisibilityEnum) | For social media messages, the visibility of the message in the originating social platform |  [optional] |
 | **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements |  [optional] |
+| **interactiveApplication** | [**InteractiveApplication**](InteractiveApplication) | InteractiveApplication content. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -67,4 +68,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

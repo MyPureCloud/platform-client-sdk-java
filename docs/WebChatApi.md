@@ -150,10 +150,15 @@ null (empty response body)
 
 # **deleteWebchatSettings**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteWebchatSettings()
 
 Remove WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Wraps DELETE /api/v2/webchat/settings  
 
@@ -704,10 +709,15 @@ try {
 
 # **getWebchatSettings**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatSettings](WebChatSettings) getWebchatSettings()
 
 Get WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Wraps GET /api/v2/webchat/settings  
 
@@ -1125,10 +1135,15 @@ try {
 
 # **putWebchatSettings**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatSettings](WebChatSettings) putWebchatSettings(body)
 
 Update WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Wraps PUT /api/v2/webchat/settings  
 
@@ -1182,4 +1197,4 @@ try {
 [**WebChatSettings**](WebChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

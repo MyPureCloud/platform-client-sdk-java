@@ -2202,7 +2202,7 @@ try {
 # **putLearningModuleRule**
 
 
-> [LearningModuleRule](LearningModuleRule) putLearningModuleRule(moduleId, body)
+> [LearningModuleRule](LearningModuleRule) putLearningModuleRule(moduleId, body, assign)
 
 Update a learning module rule
 
@@ -2238,8 +2238,9 @@ Configuration.setDefaultApiClient(apiClient);
 LearningApi apiInstance = new LearningApi();
 String moduleId = "moduleId_example"; // String | The ID of the learning module
 LearningModuleRule body = new LearningModuleRule(); // LearningModuleRule | The learning module rule to be updated
+Boolean assign = true; // Boolean | Whether to assign the module to users or not
 try {
-    LearningModuleRule result = apiInstance.putLearningModuleRule(moduleId, body);
+    LearningModuleRule result = apiInstance.putLearningModuleRule(moduleId, body, assign);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#putLearningModuleRule");
@@ -2254,6 +2255,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
 | **body** | [**LearningModuleRule**](LearningModuleRule)| The learning module rule to be updated | 
+| **assign** | **Boolean**| Whether to assign the module to users or not | [optional] [default to true] 
 {: class="table-striped"}
 
 
@@ -2262,4 +2264,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

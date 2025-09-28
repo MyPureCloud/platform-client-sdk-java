@@ -465,7 +465,7 @@ try {
 # **getIntegrations**
 
 
-> [IntegrationEntityListing](IntegrationEntityListing) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+> [IntegrationEntityListing](IntegrationEntityListing) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState)
 
 List integrations
 
@@ -503,8 +503,11 @@ String sortBy = "sortBy_example"; // String | variable name requested to sort by
 List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
+List<String> ids = 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376; // List<String> | Comma-separated list of integration IDs to filter by (max 100)
+String integrationType = webhook; // String | Filter integrations by integration type ID
+String reportedState = ACTIVE; // String | Filter integrations by reported state (case-insensitive)
 try {
-    IntegrationEntityListing result = apiInstance.getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    IntegrationEntityListing result = apiInstance.getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrations");
@@ -523,6 +526,9 @@ try {
 | **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
+| **ids** | [**List&lt;String&gt;**](String)| Comma-separated list of integration IDs to filter by (max 100) | [optional] [default to new ArrayList&lt;String&gt;()] 
+| **integrationType** | **String**| Filter integrations by integration type ID | [optional] [default to null] 
+| **reportedState** | **String**| Filter integrations by reported state (case-insensitive) | [optional] [default to null]<br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR 
 {: class="table-striped"}
 
 
@@ -5854,4 +5860,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

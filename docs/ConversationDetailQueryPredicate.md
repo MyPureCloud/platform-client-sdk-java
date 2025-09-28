@@ -51,6 +51,7 @@
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; | 
+| NCONVERSATIONS | &quot;nConversations&quot; | 
 | NERROR | &quot;nError&quot; | 
 | NFLOW | &quot;nFlow&quot; | 
 | NFLOWMILESTONE | &quot;nFlowMilestone&quot; | 
@@ -127,4 +128,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_

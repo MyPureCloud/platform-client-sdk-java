@@ -15,6 +15,7 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
 | ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
@@ -24,6 +25,7 @@
 | ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
 | ARCHITECT | &quot;architect&quot; | 
 | AUDIOHOOK | &quot;audiohook&quot; | 
+| AUDIOHOOK_MONITOR | &quot;audiohook.monitor&quot; | 
 | AUDIT | &quot;audit&quot; | 
 | AUTH_API | &quot;auth.api&quot; | 
 | AUTHORIZATION | &quot;authorization&quot; | 
@@ -74,6 +76,7 @@
 | RESPONSE_MANAGEMENT | &quot;response.management&quot; | 
 | ROUTING | &quot;routing&quot; | 
 | SCIM | &quot;scim&quot; | 
+| SCREEN_MONITORING | &quot;screen.monitoring&quot; | 
 | SEARCH | &quot;search&quot; | 
 | SECONDARY_AUTOMATION_TESTING | &quot;secondary.automation.testing&quot; | 
 | SKILLS | &quot;skills&quot; | 
@@ -93,7 +96,6 @@
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY | &quot;workforce.management.agent.availability&quot; | 
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
-| WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | SYSTEM | &quot;system&quot; | 
 
 
@@ -129,4 +131,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:231.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
