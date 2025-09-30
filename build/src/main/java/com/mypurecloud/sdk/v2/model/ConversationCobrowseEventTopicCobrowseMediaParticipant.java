@@ -245,7 +245,8 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     OTHER("other"),
     SPAM("spam"),
     UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 

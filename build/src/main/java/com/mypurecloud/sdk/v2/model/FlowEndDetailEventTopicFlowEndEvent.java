@@ -67,7 +67,8 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     UNCALLABLE("UNCALLABLE"),
     DND_ENDPOINT("DND_ENDPOINT"),
     DND_TRANSFER("DND_TRANSFER"),
-    INACTIVITY("INACTIVITY");
+    INACTIVITY("INACTIVITY"),
+    SESSION_EXPIRED("SESSION_EXPIRED");
 
     private String value;
 

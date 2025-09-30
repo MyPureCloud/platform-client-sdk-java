@@ -31,6 +31,7 @@ public class V2StaTopicsDetectedTopicTopicsDetectedMessage  implements Serializa
   private String recordingId = null;
   private String transcriptId = null;
   private String mediaType = null;
+  private String programId = null;
   private List<V2StaTopicsDetectedTopicTopicDetected> topics = null;
   private List<V2StaTopicsDetectedTopicParticipant> participants = null;
 
@@ -129,6 +130,23 @@ public class V2StaTopicsDetectedTopicTopicsDetectedMessage  implements Serializa
 
   /**
    **/
+  public V2StaTopicsDetectedTopicTopicsDetectedMessage programId(String programId) {
+    this.programId = programId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("programId")
+  public String getProgramId() {
+    return programId;
+  }
+  public void setProgramId(String programId) {
+    this.programId = programId;
+  }
+
+
+  /**
+   **/
   public V2StaTopicsDetectedTopicTopicsDetectedMessage topics(List<V2StaTopicsDetectedTopicTopicDetected> topics) {
     this.topics = topics;
     return this;
@@ -176,13 +194,14 @@ public class V2StaTopicsDetectedTopicTopicsDetectedMessage  implements Serializa
             Objects.equals(this.recordingId, v2StaTopicsDetectedTopicTopicsDetectedMessage.recordingId) &&
             Objects.equals(this.transcriptId, v2StaTopicsDetectedTopicTopicsDetectedMessage.transcriptId) &&
             Objects.equals(this.mediaType, v2StaTopicsDetectedTopicTopicsDetectedMessage.mediaType) &&
+            Objects.equals(this.programId, v2StaTopicsDetectedTopicTopicsDetectedMessage.programId) &&
             Objects.equals(this.topics, v2StaTopicsDetectedTopicTopicsDetectedMessage.topics) &&
             Objects.equals(this.participants, v2StaTopicsDetectedTopicTopicsDetectedMessage.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, communicationId, recordingId, transcriptId, mediaType, topics, participants);
+    return Objects.hash(conversationId, communicationId, recordingId, transcriptId, mediaType, programId, topics, participants);
   }
 
   @Override
@@ -195,6 +214,7 @@ public class V2StaTopicsDetectedTopicTopicsDetectedMessage  implements Serializa
     sb.append("    recordingId: ").append(toIndentedString(recordingId)).append("\n");
     sb.append("    transcriptId: ").append(toIndentedString(transcriptId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    programId: ").append(toIndentedString(programId)).append("\n");
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

@@ -102,6 +102,7 @@
 | NCONNECTED | &quot;nConnected&quot; | 
 | NCONSULT | &quot;nConsult&quot; | 
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; | 
+| NCONVERSATIONS | &quot;nConversations&quot; | 
 | NERROR | &quot;nError&quot; | 
 | NOFFERED | &quot;nOffered&quot; | 
 | NOUTBOUND | &quot;nOutbound&quot; | 
@@ -238,6 +239,7 @@
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
 | OTHER | &quot;other&quot; | 
 | PEER | &quot;peer&quot; | 
+| SESSIONEXPIRED | &quot;sessionExpired&quot; | 
 | SPAM | &quot;spam&quot; | 
 | SYSTEM | &quot;system&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
@@ -352,4 +354,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_

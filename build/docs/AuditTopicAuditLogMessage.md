@@ -345,6 +345,7 @@
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; | 
 | IVR | &quot;IVR&quot; | 
 | ALERTABLEPRESENCESOVERRIDES | &quot;AlertablePresencesOverrides&quot; | 
+| CALLERIDGROUP | &quot;CallerIdGroup&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
 | EXTENSION | &quot;Extension&quot; | 
@@ -421,8 +422,8 @@
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; | 
 | EDGEPCAPS | &quot;EdgePcaps&quot; | 
 | EDGELOG | &quot;EdgeLog&quot; | 
-| DISASTERRECOVERYLINKORG | &quot;DisasterRecoveryLinkOrg&quot; | 
-| DISASTERRECOVERYNUMBERROUTING | &quot;DisasterRecoveryNumberRouting&quot; | 
+| ORGANIZATIONLINK | &quot;OrganizationLink&quot; | 
+| NUMBERROUTING | &quot;NumberRouting&quot; | 
 | ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; | 
 | PRODUCT | &quot;Product&quot; | 
 | USER | &quot;User&quot; | 
@@ -474,4 +475,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_

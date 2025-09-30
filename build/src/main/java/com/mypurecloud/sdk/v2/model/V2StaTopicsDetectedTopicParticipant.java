@@ -26,6 +26,7 @@ public class V2StaTopicsDetectedTopicParticipant  implements Serializable {
   private String queueId = null;
   private String divisionId = null;
   private String purpose = null;
+  private String flowId = null;
 
   public V2StaTopicsDetectedTopicParticipant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -101,6 +102,23 @@ public class V2StaTopicsDetectedTopicParticipant  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2StaTopicsDetectedTopicParticipant flowId(String flowId) {
+    this.flowId = flowId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flowId")
+  public String getFlowId() {
+    return flowId;
+  }
+  public void setFlowId(String flowId) {
+    this.flowId = flowId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,12 +132,13 @@ public class V2StaTopicsDetectedTopicParticipant  implements Serializable {
     return Objects.equals(this.userId, v2StaTopicsDetectedTopicParticipant.userId) &&
             Objects.equals(this.queueId, v2StaTopicsDetectedTopicParticipant.queueId) &&
             Objects.equals(this.divisionId, v2StaTopicsDetectedTopicParticipant.divisionId) &&
-            Objects.equals(this.purpose, v2StaTopicsDetectedTopicParticipant.purpose);
+            Objects.equals(this.purpose, v2StaTopicsDetectedTopicParticipant.purpose) &&
+            Objects.equals(this.flowId, v2StaTopicsDetectedTopicParticipant.flowId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, queueId, divisionId, purpose);
+    return Objects.hash(userId, queueId, divisionId, purpose, flowId);
   }
 
   @Override
@@ -131,6 +150,7 @@ public class V2StaTopicsDetectedTopicParticipant  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    flowId: ").append(toIndentedString(flowId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

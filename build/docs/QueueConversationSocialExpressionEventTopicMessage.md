@@ -30,6 +30,7 @@
 | **afterCallWork** | [**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork) | A communication's after-call work data. |  [optional] |
 | **afterCallWorkRequired** | **Boolean** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
+| **engagementSource** | **String** | Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_* |  [optional] |
 | **byoSmsIntegrationId** | **String** |  |  [optional] |
 | **queueMediaSettings** | [**QueueConversationSocialExpressionEventTopicQueueMediaSettings**](QueueConversationSocialExpressionEventTopicQueueMediaSettings) | Represents the queue setting for this media. |  [optional] |
 
@@ -87,6 +88,7 @@
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 | INACTIVITY | &quot;inactivity&quot; | 
+| SESSION_EXPIRED | &quot;session.expired&quot; | 
 
 
 ## Enum: TypeEnum
@@ -112,4 +114,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_

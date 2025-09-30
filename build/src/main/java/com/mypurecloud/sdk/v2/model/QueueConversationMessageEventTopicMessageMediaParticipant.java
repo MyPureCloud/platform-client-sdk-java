@@ -246,7 +246,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     OTHER("other"),
     SPAM("spam"),
     UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 
@@ -412,6 +413,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private String recipientCountry = null;
   private String recipientType = null;
   private String byoSmsIntegrationId = null;
+  private String engagementSource = null;
   private String monitoredParticipantId = null;
 
   public QueueConversationMessageEventTopicMessageMediaParticipant() {
@@ -1189,6 +1191,23 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant engagementSource(String engagementSource) {
+    this.engagementSource = engagementSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("engagementSource")
+  public String getEngagementSource() {
+    return engagementSource;
+  }
+  public void setEngagementSource(String engagementSource) {
+    this.engagementSource = engagementSource;
+  }
+
+
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant monitoredParticipantId(String monitoredParticipantId) {
     this.monitoredParticipantId = monitoredParticipantId;
     return this;
@@ -1259,12 +1278,13 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
             Objects.equals(this.recipientCountry, queueConversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
             Objects.equals(this.recipientType, queueConversationMessageEventTopicMessageMediaParticipant.recipientType) &&
             Objects.equals(this.byoSmsIntegrationId, queueConversationMessageEventTopicMessageMediaParticipant.byoSmsIntegrationId) &&
+            Objects.equals(this.engagementSource, queueConversationMessageEventTopicMessageMediaParticipant.engagementSource) &&
             Objects.equals(this.monitoredParticipantId, queueConversationMessageEventTopicMessageMediaParticipant.monitoredParticipantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, engagementSource, monitoredParticipantId);
   }
 
   @Override
@@ -1317,6 +1337,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
+    sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("}");
     return sb.toString();

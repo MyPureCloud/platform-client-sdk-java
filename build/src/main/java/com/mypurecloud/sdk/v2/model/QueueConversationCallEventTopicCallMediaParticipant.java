@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicConversationRoutingData;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicDisposition;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicJourneyContext;
@@ -247,7 +248,8 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     OTHER("other"),
     SPAM("spam"),
     UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 
@@ -402,6 +404,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   }
   private RecordingStateEnum recordingState = null;
   private QueueConversationCallEventTopicRecordersState recordersState = null;
+  private QueueConversationCallEventTopicDisposition disposition = null;
   private Boolean securePause = null;
   private QueueConversationCallEventTopicUriReference group = null;
   private String ani = null;
@@ -1188,6 +1191,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant disposition(QueueConversationCallEventTopicDisposition disposition) {
+    this.disposition = disposition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disposition")
+  public QueueConversationCallEventTopicDisposition getDisposition() {
+    return disposition;
+  }
+  public void setDisposition(QueueConversationCallEventTopicDisposition disposition) {
+    this.disposition = disposition;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -1428,6 +1448,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
             Objects.equals(this.recording, queueConversationCallEventTopicCallMediaParticipant.recording) &&
             Objects.equals(this.recordingState, queueConversationCallEventTopicCallMediaParticipant.recordingState) &&
             Objects.equals(this.recordersState, queueConversationCallEventTopicCallMediaParticipant.recordersState) &&
+            Objects.equals(this.disposition, queueConversationCallEventTopicCallMediaParticipant.disposition) &&
             Objects.equals(this.securePause, queueConversationCallEventTopicCallMediaParticipant.securePause) &&
             Objects.equals(this.group, queueConversationCallEventTopicCallMediaParticipant.group) &&
             Objects.equals(this.ani, queueConversationCallEventTopicCallMediaParticipant.ani) &&
@@ -1443,7 +1464,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, disposition, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1496,6 +1517,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
+    sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");

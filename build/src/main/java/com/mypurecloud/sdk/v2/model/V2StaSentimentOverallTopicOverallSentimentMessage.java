@@ -30,11 +30,13 @@ public class V2StaSentimentOverallTopicOverallSentimentMessage  implements Seria
   private BigDecimal sentimentTrendScore = null;
   private List<String> queueIds = null;
   private List<String> divisionIds = null;
+  private List<String> flowIds = null;
 
   public V2StaSentimentOverallTopicOverallSentimentMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       queueIds = new ArrayList<String>();
       divisionIds = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
     }
   }
 
@@ -124,6 +126,23 @@ public class V2StaSentimentOverallTopicOverallSentimentMessage  implements Seria
   }
 
 
+  /**
+   **/
+  public V2StaSentimentOverallTopicOverallSentimentMessage flowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flowIds")
+  public List<String> getFlowIds() {
+    return flowIds;
+  }
+  public void setFlowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -138,12 +157,13 @@ public class V2StaSentimentOverallTopicOverallSentimentMessage  implements Seria
             Objects.equals(this.sentimentOverallScore, v2StaSentimentOverallTopicOverallSentimentMessage.sentimentOverallScore) &&
             Objects.equals(this.sentimentTrendScore, v2StaSentimentOverallTopicOverallSentimentMessage.sentimentTrendScore) &&
             Objects.equals(this.queueIds, v2StaSentimentOverallTopicOverallSentimentMessage.queueIds) &&
-            Objects.equals(this.divisionIds, v2StaSentimentOverallTopicOverallSentimentMessage.divisionIds);
+            Objects.equals(this.divisionIds, v2StaSentimentOverallTopicOverallSentimentMessage.divisionIds) &&
+            Objects.equals(this.flowIds, v2StaSentimentOverallTopicOverallSentimentMessage.flowIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, sentimentOverallScore, sentimentTrendScore, queueIds, divisionIds);
+    return Objects.hash(conversationId, sentimentOverallScore, sentimentTrendScore, queueIds, divisionIds, flowIds);
   }
 
   @Override
@@ -156,6 +176,7 @@ public class V2StaSentimentOverallTopicOverallSentimentMessage  implements Seria
     sb.append("    sentimentTrendScore: ").append(toIndentedString(sentimentTrendScore)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    flowIds: ").append(toIndentedString(flowIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDisconnectReason;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDisposition;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
@@ -335,6 +336,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
   private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
+  private QueueConversationSocialExpressionEventTopicDisposition disposition = null;
 
   public QueueConversationSocialExpressionEventTopicCall() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -893,6 +895,23 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   }
 
 
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicCall disposition(QueueConversationSocialExpressionEventTopicDisposition disposition) {
+    this.disposition = disposition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disposition")
+  public QueueConversationSocialExpressionEventTopicDisposition getDisposition() {
+    return disposition;
+  }
+  public void setDisposition(QueueConversationSocialExpressionEventTopicDisposition disposition) {
+    this.disposition = disposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -933,12 +952,13 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCall.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId) &&
-            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicCall.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicCall.queueMediaSettings) &&
+            Objects.equals(this.disposition, queueConversationSocialExpressionEventTopicCall.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
   }
 
   @Override
@@ -977,6 +997,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

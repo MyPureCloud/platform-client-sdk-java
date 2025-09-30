@@ -222,7 +222,8 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     OTHER("other"),
     SPAM("spam"),
     UNCALLABLE("uncallable"),
-    INACTIVITY("inactivity");
+    INACTIVITY("inactivity"),
+    SESSION_EXPIRED("session.expired");
 
     private String value;
 
@@ -324,6 +325,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private String engagementSource = null;
   private String byoSmsIntegrationId = null;
   private QueueConversationVideoEventTopicQueueMediaSettings queueMediaSettings = null;
 
@@ -783,6 +785,24 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
 
   /**
+   * Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_*
+   **/
+  public QueueConversationVideoEventTopicMessage engagementSource(String engagementSource) {
+    this.engagementSource = engagementSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_*")
+  @JsonProperty("engagementSource")
+  public String getEngagementSource() {
+    return engagementSource;
+  }
+  public void setEngagementSource(String engagementSource) {
+    this.engagementSource = engagementSource;
+  }
+
+
+  /**
    **/
   public QueueConversationVideoEventTopicMessage byoSmsIntegrationId(String byoSmsIntegrationId) {
     this.byoSmsIntegrationId = byoSmsIntegrationId;
@@ -852,13 +872,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
             Objects.equals(this.afterCallWork, queueConversationVideoEventTopicMessage.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicMessage.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, queueConversationVideoEventTopicMessage.agentAssistantId) &&
+            Objects.equals(this.engagementSource, queueConversationVideoEventTopicMessage.engagementSource) &&
             Objects.equals(this.byoSmsIntegrationId, queueConversationVideoEventTopicMessage.byoSmsIntegrationId) &&
             Objects.equals(this.queueMediaSettings, queueConversationVideoEventTopicMessage.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, engagementSource, byoSmsIntegrationId, queueMediaSettings);
   }
 
   @Override
@@ -891,6 +912,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");

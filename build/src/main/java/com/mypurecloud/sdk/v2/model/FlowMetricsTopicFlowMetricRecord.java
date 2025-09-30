@@ -355,6 +355,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     NOTAVAILABLETRANSFER("notAvailableTransfer"),
     OTHER("other"),
     PEER("peer"),
+    SESSIONEXPIRED("sessionExpired"),
     SPAM("spam"),
     SYSTEM("system"),
     TIMEOUT("timeout"),

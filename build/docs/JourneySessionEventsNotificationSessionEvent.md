@@ -83,6 +83,7 @@
 | UNCALLABLE | &quot;Uncallable&quot; | 
 | DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
 | DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
+| SESSIONEXPIRED | &quot;SessionExpired&quot; | 
 
 
 ## Enum: LastAcdOutcomeEnum
@@ -98,4 +99,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_

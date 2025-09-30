@@ -28,12 +28,14 @@ public class V2StaEmpathyOverallTopicOverallEmpathyMessage  implements Serializa
   private String conversationId = null;
   private List<String> queueIds = null;
   private List<String> divisionIds = null;
+  private List<String> flowIds = null;
   private List<V2StaEmpathyOverallTopicAgentEmpathyScore> agents = null;
 
   public V2StaEmpathyOverallTopicOverallEmpathyMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       queueIds = new ArrayList<String>();
       divisionIds = new ArrayList<String>();
+      flowIds = new ArrayList<String>();
       agents = new ArrayList<V2StaEmpathyOverallTopicAgentEmpathyScore>();
     }
   }
@@ -92,6 +94,23 @@ public class V2StaEmpathyOverallTopicOverallEmpathyMessage  implements Serializa
 
   /**
    **/
+  public V2StaEmpathyOverallTopicOverallEmpathyMessage flowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flowIds")
+  public List<String> getFlowIds() {
+    return flowIds;
+  }
+  public void setFlowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+  }
+
+
+  /**
+   **/
   public V2StaEmpathyOverallTopicOverallEmpathyMessage agents(List<V2StaEmpathyOverallTopicAgentEmpathyScore> agents) {
     this.agents = agents;
     return this;
@@ -120,12 +139,13 @@ public class V2StaEmpathyOverallTopicOverallEmpathyMessage  implements Serializa
     return Objects.equals(this.conversationId, v2StaEmpathyOverallTopicOverallEmpathyMessage.conversationId) &&
             Objects.equals(this.queueIds, v2StaEmpathyOverallTopicOverallEmpathyMessage.queueIds) &&
             Objects.equals(this.divisionIds, v2StaEmpathyOverallTopicOverallEmpathyMessage.divisionIds) &&
+            Objects.equals(this.flowIds, v2StaEmpathyOverallTopicOverallEmpathyMessage.flowIds) &&
             Objects.equals(this.agents, v2StaEmpathyOverallTopicOverallEmpathyMessage.agents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueIds, divisionIds, agents);
+    return Objects.hash(conversationId, queueIds, divisionIds, flowIds, agents);
   }
 
   @Override
@@ -136,6 +156,7 @@ public class V2StaEmpathyOverallTopicOverallEmpathyMessage  implements Serializa
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    flowIds: ").append(toIndentedString(flowIds)).append("\n");
     sb.append("    agents: ").append(toIndentedString(agents)).append("\n");
     sb.append("}");
     return sb.toString();

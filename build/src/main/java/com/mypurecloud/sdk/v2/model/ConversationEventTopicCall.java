@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicDisconnectReason;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicDisposition;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicQueueMediaSettings;
@@ -335,6 +336,7 @@ public class ConversationEventTopicCall  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
   private ConversationEventTopicQueueMediaSettings queueMediaSettings = null;
+  private ConversationEventTopicDisposition disposition = null;
 
   public ConversationEventTopicCall() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -893,6 +895,23 @@ public class ConversationEventTopicCall  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationEventTopicCall disposition(ConversationEventTopicDisposition disposition) {
+    this.disposition = disposition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disposition")
+  public ConversationEventTopicDisposition getDisposition() {
+    return disposition;
+  }
+  public void setDisposition(ConversationEventTopicDisposition disposition) {
+    this.disposition = disposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -933,12 +952,13 @@ public class ConversationEventTopicCall  implements Serializable {
             Objects.equals(this.afterCallWork, conversationEventTopicCall.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, conversationEventTopicCall.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, conversationEventTopicCall.agentAssistantId) &&
-            Objects.equals(this.queueMediaSettings, conversationEventTopicCall.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, conversationEventTopicCall.queueMediaSettings) &&
+            Objects.equals(this.disposition, conversationEventTopicCall.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
   }
 
   @Override
@@ -977,6 +997,7 @@ public class ConversationEventTopicCall  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
