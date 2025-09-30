@@ -124,6 +124,7 @@
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 | INACTIVITY | &quot;inactivity&quot; | 
+| SESSION_EXPIRED | &quot;session.expired&quot; | 
 
 
 ## Enum: FlaggedReasonEnum
@@ -136,4 +137,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:232.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
