@@ -9,11 +9,11 @@
 | **pageNumber** | **Integer** |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
 | **firstUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
 | **previousUri** | **String** |  |  [optional] |
 | **nextUri** | **String** |  |  [optional] |
-| **selfUri** | **String** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

@@ -20,14 +20,18 @@
 | **messageStickerAttachments** | [**List&lt;MessageStickerAttachment&gt;**](MessageStickerAttachment) | List of message stickers attached with this message. |  [optional] |
 | **quickReplies** | [**List&lt;QuickReply&gt;**](QuickReply) | List of quick reply options offered with this message. |  [optional] |
 | **buttonResponse** | [**ButtonResponse**](ButtonResponse) | Button Response selected by user for this message. |  [optional] |
+| **buttonResponses** | [**List&lt;ButtonResponse&gt;**](ButtonResponse) | List of Button Response selected by user for this message. |  [optional] |
 | **story** | [**RecordingContentStory**](RecordingContentStory) | Ephemeral story content. |  [optional] |
 | **cards** | [**List&lt;Card&gt;**](Card) | List of cards offered for this message |  [optional] |
 | **notificationTemplate** | [**RecordingNotificationTemplate**](RecordingNotificationTemplate) | Template notification content. |  [optional] |
 | **datePicker** | [**DatePicker**](DatePicker) | DatePicker content object. |  [optional] |
+| **listPicker** | [**ListPicker**](ListPicker) | ListPicker content object. |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
 | **socialVisibility** | [**SocialVisibilityEnum**](#Enum--SocialVisibilityEnum) | For social media messages, the visibility of the message in the originating social platform |  [optional] |
 | **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements |  [optional] |
 | **interactiveApplication** | [**InteractiveApplication**](InteractiveApplication) | InteractiveApplication content. |  [optional] |
+| **paymentRequest** | [**PaymentRequest**](PaymentRequest) | Payment request content. |  [optional] |
+| **paymentResponse** | [**PaymentResponse**](PaymentResponse) | Payment response content. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -68,4 +72,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

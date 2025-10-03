@@ -749,7 +749,7 @@ try {
 # **getBusinessrulesSchema**
 
 
-> [DataSchema](DataSchema) getBusinessrulesSchema(schemaId)
+> [BusinessRulesDataSchema](BusinessRulesDataSchema) getBusinessrulesSchema(schemaId)
 
 Get a schema
 
@@ -785,7 +785,7 @@ Configuration.setDefaultApiClient(apiClient);
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 String schemaId = "schemaId_example"; // String | Schema ID
 try {
-    DataSchema result = apiInstance.getBusinessrulesSchema(schemaId);
+    BusinessRulesDataSchema result = apiInstance.getBusinessrulesSchema(schemaId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesSchema");
@@ -804,13 +804,13 @@ try {
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
 # **getBusinessrulesSchemas**
 
 
-> [DataSchemaListing](DataSchemaListing) getBusinessrulesSchemas()
+> [BusinessRulesDataSchemaListing](BusinessRulesDataSchemaListing) getBusinessrulesSchemas()
 
 Get a list of schemas.
 
@@ -845,7 +845,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 try {
-    DataSchemaListing result = apiInstance.getBusinessrulesSchemas();
+    BusinessRulesDataSchemaListing result = apiInstance.getBusinessrulesSchemas();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#getBusinessrulesSchemas");
@@ -861,7 +861,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**DataSchemaListing**](DataSchemaListing)
+[**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing)
 
 
 # **getBusinessrulesSchemasCoretype**
@@ -1630,7 +1630,7 @@ try {
 # **postBusinessrulesSchemas**
 
 
-> [DataSchema](DataSchema) postBusinessrulesSchemas(body)
+> [BusinessRulesDataSchema](BusinessRulesDataSchema) postBusinessrulesSchemas(body)
 
 Create a schema
 
@@ -1664,9 +1664,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
-DataSchema body = new DataSchema(); // DataSchema | Schema
+BusinessRulesSchemaCreateRequest body = new BusinessRulesSchemaCreateRequest(); // BusinessRulesSchemaCreateRequest | Business Rules Schema Create Request
 try {
-    DataSchema result = apiInstance.postBusinessrulesSchemas(body);
+    BusinessRulesDataSchema result = apiInstance.postBusinessrulesSchemas(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#postBusinessrulesSchemas");
@@ -1679,13 +1679,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DataSchema**](DataSchema)| Schema | 
+| **body** | [**BusinessRulesSchemaCreateRequest**](BusinessRulesSchemaCreateRequest)| Business Rules Schema Create Request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
 # **putBusinessrulesDecisiontableVersionPublish**
@@ -1822,7 +1822,7 @@ try {
 # **putBusinessrulesSchema**
 
 
-> [DataSchema](DataSchema) putBusinessrulesSchema(schemaId, body)
+> [BusinessRulesDataSchema](BusinessRulesDataSchema) putBusinessrulesSchema(schemaId, body)
 
 Update a schema
 
@@ -1857,9 +1857,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 BusinessRulesApi apiInstance = new BusinessRulesApi();
 String schemaId = "schemaId_example"; // String | Schema ID
-DataSchema body = new DataSchema(); // DataSchema | Data Schema
+BusinessRulesSchemaUpdateRequest body = new BusinessRulesSchemaUpdateRequest(); // BusinessRulesSchemaUpdateRequest | Business Rules Schema Update Request
 try {
-    DataSchema result = apiInstance.putBusinessrulesSchema(schemaId, body);
+    BusinessRulesDataSchema result = apiInstance.putBusinessrulesSchema(schemaId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessRulesApi#putBusinessrulesSchema");
@@ -1873,13 +1873,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **schemaId** | **String**| Schema ID | 
-| **body** | [**DataSchema**](DataSchema)| Data Schema | 
+| **body** | [**BusinessRulesSchemaUpdateRequest**](BusinessRulesSchemaUpdateRequest)| Business Rules Schema Update Request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
