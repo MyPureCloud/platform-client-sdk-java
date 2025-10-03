@@ -1282,7 +1282,7 @@ public class TaskManagementApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Workitem getTaskmanagementWorkitem(String workitemId, String expands) throws IOException, ApiException {
+  public Workitem getTaskmanagementWorkitem(String workitemId, List<String> expands) throws IOException, ApiException {
     return  getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId, expands));
   }
 
@@ -1294,11 +1294,11 @@ public class TaskManagementApi {
    * @return Workitem
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workitem> getTaskmanagementWorkitemWithHttpInfo(String workitemId, String expands) throws IOException {
+  public ApiResponse<Workitem> getTaskmanagementWorkitemWithHttpInfo(String workitemId, List<String> expands) throws IOException {
     return getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId, expands).withHttpInfo());
   }
 
-  private GetTaskmanagementWorkitemRequest createGetTaskmanagementWorkitemRequest(String workitemId, String expands) {
+  private GetTaskmanagementWorkitemRequest createGetTaskmanagementWorkitemRequest(String workitemId, List<String> expands) {
     return GetTaskmanagementWorkitemRequest.builder()
             .withWorkitemId(workitemId)
 

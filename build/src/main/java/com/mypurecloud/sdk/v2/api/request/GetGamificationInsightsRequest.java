@@ -356,6 +356,20 @@ public class GetGamificationInsightsRequest {
 	    return this;
 	} 
 
+	private String reportsTo;
+	public String getReportsTo() {
+		return this.reportsTo;
+	}
+
+	public void setReportsTo(String reportsTo) {
+		this.reportsTo = reportsTo;
+	}
+
+	public GetGamificationInsightsRequest withReportsTo(String reportsTo) {
+	    this.setReportsTo(reportsTo);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -436,6 +450,9 @@ public class GetGamificationInsightsRequest {
         
 
                 .withQueryParameters("userIds", "", userIds)
+        
+
+                .withQueryParameters("reportsTo", "", reportsTo)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -551,6 +568,11 @@ public class GetGamificationInsightsRequest {
 
 		public Builder withUserIds(String userIds) {
 			request.setUserIds(userIds);
+			return this;
+		}
+
+		public Builder withReportsTo(String reportsTo) {
+			request.setReportsTo(reportsTo);
 			return this;
 		}
 

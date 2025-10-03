@@ -20,13 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;

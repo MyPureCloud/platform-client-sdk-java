@@ -104,6 +104,20 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 	    return this;
 	} 
 
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetSpeechandtextanalyticsTopicsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+
 	private String state;
 	public String getState() {
 		return this.state;
@@ -352,6 +366,9 @@ public class GetSpeechandtextanalyticsTopicsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
 
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
+
                 .withQueryParameters("state", "", state)
         
 
@@ -397,6 +414,11 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
 			return this;
 		}
 

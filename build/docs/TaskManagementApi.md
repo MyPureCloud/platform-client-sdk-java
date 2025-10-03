@@ -957,7 +957,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
 String workitemId = "workitemId_example"; // String | Workitem ID
-String expands = "expands_example"; // String | Which fields to expand. Comma separated if more than one.
+List<String> expands = Arrays.asList(null); // List<String> | Which fields to expand. Comma separated if more than one.
 try {
     Workitem result = apiInstance.getTaskmanagementWorkitem(workitemId, expands);
     System.out.println(result);
@@ -973,7 +973,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workitemId** | **String**| Workitem ID | 
-| **expands** | **String**| Which fields to expand. Comma separated if more than one. | [optional]<br />**Values**: type, workbin, status, queue, assignee 
+| **expands** | [**List&lt;String&gt;**](String)| Which fields to expand. Comma separated if more than one. | [optional]<br />**Values**: type, workbin, status, queue, assignee 
 {: class="table-striped"}
 
 
@@ -4698,4 +4698,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

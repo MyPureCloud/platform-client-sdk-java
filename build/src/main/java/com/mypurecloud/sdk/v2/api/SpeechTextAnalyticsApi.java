@@ -2947,6 +2947,7 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing. The max that will be returned is 500. (optional, default to 20)
+   * @param pageNumber The page number for the listing (optional)
    * @param state Topic state. Defaults to latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
    * @param ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
@@ -2957,8 +2958,8 @@ public class SpeechTextAnalyticsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TopicsEntityListing getSpeechandtextanalyticsTopics(String nextPage, Integer pageSize, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder));
+  public TopicsEntityListing getSpeechandtextanalyticsTopics(String nextPage, Integer pageSize, Integer pageNumber, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize, pageNumber, state, name, ids, dialects, sortBy, sortOrder));
   }
 
   /**
@@ -2966,6 +2967,7 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing. The max that will be returned is 500. (optional, default to 20)
+   * @param pageNumber The page number for the listing (optional)
    * @param state Topic state. Defaults to latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
    * @param ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
@@ -2975,15 +2977,17 @@ public class SpeechTextAnalyticsApi {
    * @return TopicsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TopicsEntityListing> getSpeechandtextanalyticsTopicsWithHttpInfo(String nextPage, Integer pageSize, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) throws IOException {
-    return getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<TopicsEntityListing> getSpeechandtextanalyticsTopicsWithHttpInfo(String nextPage, Integer pageSize, Integer pageNumber, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) throws IOException {
+    return getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize, pageNumber, state, name, ids, dialects, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetSpeechandtextanalyticsTopicsRequest createGetSpeechandtextanalyticsTopicsRequest(String nextPage, Integer pageSize, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) {
+  private GetSpeechandtextanalyticsTopicsRequest createGetSpeechandtextanalyticsTopicsRequest(String nextPage, Integer pageSize, Integer pageNumber, String state, String name, List<String> ids, List<String> dialects, String sortBy, String sortOrder) {
     return GetSpeechandtextanalyticsTopicsRequest.builder()
             .withNextPage(nextPage)
 
             .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
 
             .withState(state)
 

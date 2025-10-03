@@ -43,13 +43,14 @@ public class EmailSetting  implements Serializable {
 
 
   /**
+   * The name of the email setting.
    **/
   public EmailSetting name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the email setting.")
   @JsonProperty("name")
   public String getName() {
     return name;

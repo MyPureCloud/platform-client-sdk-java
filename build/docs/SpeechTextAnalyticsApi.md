@@ -2177,7 +2177,7 @@ try {
 # **getSpeechandtextanalyticsTopics**
 
 
-> [TopicsEntityListing](TopicsEntityListing) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder)
+> [TopicsEntityListing](TopicsEntityListing) getSpeechandtextanalyticsTopics(nextPage, pageSize, pageNumber, state, name, ids, dialects, sortBy, sortOrder)
 
 Get the list of Speech & Text Analytics topics
 
@@ -2211,6 +2211,7 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing. The max that will be returned is 500.
+Integer pageNumber = 56; // Integer | The page number for the listing
 String state = "state_example"; // String | Topic state. Defaults to latest
 String name = "name_example"; // String | Case insensitive partial name to filter by
 List<String> ids = Arrays.asList(null); // List<String> | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
@@ -2218,7 +2219,7 @@ List<String> dialects = Arrays.asList(null); // List<String> | Comma separated d
 String sortBy = "sortBy_example"; // String | Sort results by. Defaults to name
 String sortOrder = "sortOrder_example"; // String | Sort order. Defaults to asc
 try {
-    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder);
+    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, pageNumber, state, name, ids, dialects, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopics");
@@ -2233,6 +2234,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] 
+| **pageNumber** | **Integer**| The page number for the listing | [optional] 
 | **state** | **String**| Topic state. Defaults to latest | [optional]<br />**Values**: latest, published 
 | **name** | **String**| Case insensitive partial name to filter by | [optional] 
 | **ids** | [**List&lt;String&gt;**](String)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
@@ -3859,4 +3861,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

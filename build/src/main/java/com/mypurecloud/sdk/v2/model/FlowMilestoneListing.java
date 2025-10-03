@@ -31,10 +31,10 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String selfUri = null;
-  private String lastUri = null;
   private Integer pageCount = null;
 
   public FlowMilestoneListing() {
@@ -131,6 +131,40 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
 
   /**
    **/
+  public FlowMilestoneListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public FlowMilestoneListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public FlowMilestoneListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -160,40 +194,6 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
-  public FlowMilestoneListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public FlowMilestoneListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -229,16 +229,16 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
             Objects.equals(this.pageNumber, flowMilestoneListing.pageNumber) &&
             Objects.equals(this.total, flowMilestoneListing.total) &&
             Objects.equals(this.firstUri, flowMilestoneListing.firstUri) &&
+            Objects.equals(this.lastUri, flowMilestoneListing.lastUri) &&
+            Objects.equals(this.selfUri, flowMilestoneListing.selfUri) &&
             Objects.equals(this.previousUri, flowMilestoneListing.previousUri) &&
             Objects.equals(this.nextUri, flowMilestoneListing.nextUri) &&
-            Objects.equals(this.selfUri, flowMilestoneListing.selfUri) &&
-            Objects.equals(this.lastUri, flowMilestoneListing.lastUri) &&
             Objects.equals(this.pageCount, flowMilestoneListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -251,10 +251,10 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

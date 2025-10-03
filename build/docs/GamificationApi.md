@@ -841,7 +841,7 @@ try {
 # **getGamificationInsights**
 
 
-> [InsightsSummary](InsightsSummary) getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds)
+> [InsightsSummary](InsightsSummary) getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds, reportsTo)
 
 Get insights summary
 
@@ -884,8 +884,9 @@ String sortKey = "sortKey_example"; // String | Sort key
 String sortMetricId = "sortMetricId_example"; // String | Sort Metric Id
 String sortOrder = "asc"; // String | Sort order
 String userIds = "userIds_example"; // String | A list of up to 100 comma-separated user Ids
+String reportsTo = "reportsTo_example"; // String | The reportsTo used by ABAC policies.
 try {
-    InsightsSummary result = apiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds);
+    InsightsSummary result = apiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds, reportsTo);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationInsights");
@@ -909,6 +910,7 @@ try {
 | **sortMetricId** | **String**| Sort Metric Id | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
 | **userIds** | **String**| A list of up to 100 comma-separated user Ids | [optional] 
+| **reportsTo** | **String**| The reportsTo used by ABAC policies. | [optional] 
 {: class="table-striped"}
 
 
@@ -1129,7 +1131,7 @@ try {
 # **getGamificationInsightsMembers**
 
 
-> [InsightsAgents](InsightsAgents) getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+> [InsightsAgents](InsightsAgents) getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, reportsTo)
 
 Query users in a profile during a period of time
 
@@ -1165,8 +1167,9 @@ String filterType = "filterType_example"; // String | Filter type for the query 
 String filterId = "filterId_example"; // String | ID for the filter type.
 String granularity = "granularity_example"; // String | Granularity
 LocalDate startWorkday = new LocalDate(); // LocalDate | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String reportsTo = "reportsTo_example"; // String | The reportsTo used by ABAC policies.
 try {
-    InsightsAgents result = apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday);
+    InsightsAgents result = apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, reportsTo);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationInsightsMembers");
@@ -1183,6 +1186,7 @@ try {
 | **filterId** | **String**| ID for the filter type. | 
 | **granularity** | **String**| Granularity |<br />**Values**: Weekly, Monthly 
 | **startWorkday** | **LocalDate**| The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **reportsTo** | **String**| The reportsTo used by ABAC policies. | [optional] 
 {: class="table-striped"}
 
 
@@ -1194,7 +1198,7 @@ try {
 # **getGamificationInsightsRankings**
 
 
-> [InsightsRankings](InsightsRankings) getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds)
+> [InsightsRankings](InsightsRankings) getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds, reportsTo)
 
 Get insights rankings
 
@@ -1235,8 +1239,9 @@ String sortKey = "sortKey_example"; // String | Sort key
 String sortMetricId = "sortMetricId_example"; // String | Sort Metric Id
 Integer sectionSize = 56; // Integer | The number of top and bottom users to return before ties
 String userIds = "userIds_example"; // String | A list of up to 100 comma-separated user Ids
+String reportsTo = "reportsTo_example"; // String | The reportsTo used by ABAC policies.
 try {
-    InsightsRankings result = apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds);
+    InsightsRankings result = apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds, reportsTo);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationInsightsRankings");
@@ -1258,6 +1263,7 @@ try {
 | **sortMetricId** | **String**| Sort Metric Id | [optional] 
 | **sectionSize** | **Integer**| The number of top and bottom users to return before ties | [optional] 
 | **userIds** | **String**| A list of up to 100 comma-separated user Ids | [optional] 
+| **reportsTo** | **String**| The reportsTo used by ABAC policies. | [optional] 
 {: class="table-striped"}
 
 
@@ -4925,4 +4931,4 @@ try {
 [**GamificationStatus**](GamificationStatus)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

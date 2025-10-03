@@ -10,13 +10,15 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -1058,11 +1060,11 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getBusinessrulesSchema(String schemaId) throws IOException, ApiException {
+  public BusinessRulesDataSchema getBusinessrulesSchema(String schemaId) throws IOException, ApiException {
     return  getBusinessrulesSchema(createGetBusinessrulesSchemaRequest(schemaId));
   }
 
@@ -1071,10 +1073,10 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
-   * @return DataSchema
+   * @return BusinessRulesDataSchema
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getBusinessrulesSchemaWithHttpInfo(String schemaId) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> getBusinessrulesSchemaWithHttpInfo(String schemaId) throws IOException {
     return getBusinessrulesSchema(createGetBusinessrulesSchemaRequest(schemaId).withHttpInfo());
   }
 
@@ -1090,13 +1092,13 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return DataSchema
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema getBusinessrulesSchema(GetBusinessrulesSchemaRequest request) throws IOException, ApiException {
+  public BusinessRulesDataSchema getBusinessrulesSchema(GetBusinessrulesSchemaRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<BusinessRulesDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1113,13 +1115,13 @@ public class BusinessRulesApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> getBusinessrulesSchema(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> getBusinessrulesSchema(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchema>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1130,7 +1132,7 @@ public class BusinessRulesApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1139,11 +1141,11 @@ public class BusinessRulesApi {
    * Get a list of schemas.
    * 
    * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @return DataSchemaListing
+   * @return BusinessRulesDataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchemaListing getBusinessrulesSchemas() throws IOException, ApiException {
+  public BusinessRulesDataSchemaListing getBusinessrulesSchemas() throws IOException, ApiException {
     return  getBusinessrulesSchemas(createGetBusinessrulesSchemasRequest());
   }
 
@@ -1151,10 +1153,10 @@ public class BusinessRulesApi {
    * Get a list of schemas.
    * 
    * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @return DataSchemaListing
+   * @return BusinessRulesDataSchemaListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchemaListing> getBusinessrulesSchemasWithHttpInfo() throws IOException {
+  public ApiResponse<BusinessRulesDataSchemaListing> getBusinessrulesSchemasWithHttpInfo() throws IOException {
     return getBusinessrulesSchemas(createGetBusinessrulesSchemasRequest().withHttpInfo());
   }
 
@@ -1168,13 +1170,13 @@ public class BusinessRulesApi {
    * 
    * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return DataSchemaListing
+   * @return BusinessRulesDataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchemaListing getBusinessrulesSchemas(GetBusinessrulesSchemasRequest request) throws IOException, ApiException {
+  public BusinessRulesDataSchemaListing getBusinessrulesSchemas(GetBusinessrulesSchemasRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
+      ApiResponse<BusinessRulesDataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchemaListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1191,13 +1193,13 @@ public class BusinessRulesApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchemaListing> getBusinessrulesSchemas(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<BusinessRulesDataSchemaListing> getBusinessrulesSchemas(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchemaListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1208,7 +1210,7 @@ public class BusinessRulesApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2257,12 +2259,12 @@ public class BusinessRulesApi {
    * Create a schema
    * 
    * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Schema (required)
-   * @return DataSchema
+   * @param body Business Rules Schema Create Request (required)
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema postBusinessrulesSchemas(DataSchema body) throws IOException, ApiException {
+  public BusinessRulesDataSchema postBusinessrulesSchemas(BusinessRulesSchemaCreateRequest body) throws IOException, ApiException {
     return  postBusinessrulesSchemas(createPostBusinessrulesSchemasRequest(body));
   }
 
@@ -2270,15 +2272,15 @@ public class BusinessRulesApi {
    * Create a schema
    * 
    * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Schema (required)
-   * @return DataSchema
+   * @param body Business Rules Schema Create Request (required)
+   * @return BusinessRulesDataSchema
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> postBusinessrulesSchemasWithHttpInfo(DataSchema body) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> postBusinessrulesSchemasWithHttpInfo(BusinessRulesSchemaCreateRequest body) throws IOException {
     return postBusinessrulesSchemas(createPostBusinessrulesSchemasRequest(body).withHttpInfo());
   }
 
-  private PostBusinessrulesSchemasRequest createPostBusinessrulesSchemasRequest(DataSchema body) {
+  private PostBusinessrulesSchemasRequest createPostBusinessrulesSchemasRequest(BusinessRulesSchemaCreateRequest body) {
     return PostBusinessrulesSchemasRequest.builder()
             .withBody(body)
 
@@ -2290,13 +2292,13 @@ public class BusinessRulesApi {
    * 
    * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return DataSchema
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema postBusinessrulesSchemas(PostBusinessrulesSchemasRequest request) throws IOException, ApiException {
+  public BusinessRulesDataSchema postBusinessrulesSchemas(PostBusinessrulesSchemasRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<BusinessRulesDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2313,13 +2315,13 @@ public class BusinessRulesApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> postBusinessrulesSchemas(ApiRequest<DataSchema> request) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> postBusinessrulesSchemas(ApiRequest<BusinessRulesSchemaCreateRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchema>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2330,7 +2332,7 @@ public class BusinessRulesApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2520,12 +2522,12 @@ public class BusinessRulesApi {
    * 
    * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
-   * @param body Data Schema (required)
-   * @return DataSchema
+   * @param body Business Rules Schema Update Request (required)
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema putBusinessrulesSchema(String schemaId, DataSchema body) throws IOException, ApiException {
+  public BusinessRulesDataSchema putBusinessrulesSchema(String schemaId, BusinessRulesSchemaUpdateRequest body) throws IOException, ApiException {
     return  putBusinessrulesSchema(createPutBusinessrulesSchemaRequest(schemaId, body));
   }
 
@@ -2534,15 +2536,15 @@ public class BusinessRulesApi {
    * 
    * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
-   * @param body Data Schema (required)
-   * @return DataSchema
+   * @param body Business Rules Schema Update Request (required)
+   * @return BusinessRulesDataSchema
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> putBusinessrulesSchemaWithHttpInfo(String schemaId, DataSchema body) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> putBusinessrulesSchemaWithHttpInfo(String schemaId, BusinessRulesSchemaUpdateRequest body) throws IOException {
     return putBusinessrulesSchema(createPutBusinessrulesSchemaRequest(schemaId, body).withHttpInfo());
   }
 
-  private PutBusinessrulesSchemaRequest createPutBusinessrulesSchemaRequest(String schemaId, DataSchema body) {
+  private PutBusinessrulesSchemaRequest createPutBusinessrulesSchemaRequest(String schemaId, BusinessRulesSchemaUpdateRequest body) {
     return PutBusinessrulesSchemaRequest.builder()
             .withSchemaId(schemaId)
 
@@ -2556,13 +2558,13 @@ public class BusinessRulesApi {
    * 
    * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return DataSchema
+   * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataSchema putBusinessrulesSchema(PutBusinessrulesSchemaRequest request) throws IOException, ApiException {
+  public BusinessRulesDataSchema putBusinessrulesSchema(PutBusinessrulesSchemaRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      ApiResponse<BusinessRulesDataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2579,13 +2581,13 @@ public class BusinessRulesApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataSchema> putBusinessrulesSchema(ApiRequest<DataSchema> request) throws IOException {
+  public ApiResponse<BusinessRulesDataSchema> putBusinessrulesSchema(ApiRequest<BusinessRulesSchemaUpdateRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessRulesDataSchema>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2596,7 +2598,7 @@ public class BusinessRulesApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

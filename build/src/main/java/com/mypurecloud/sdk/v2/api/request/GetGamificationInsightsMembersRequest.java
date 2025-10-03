@@ -194,6 +194,20 @@ public class GetGamificationInsightsMembersRequest {
 	    return this;
 	} 
 
+	private String reportsTo;
+	public String getReportsTo() {
+		return this.reportsTo;
+	}
+
+	public void setReportsTo(String reportsTo) {
+		this.reportsTo = reportsTo;
+	}
+
+	public GetGamificationInsightsMembersRequest withReportsTo(String reportsTo) {
+	    this.setReportsTo(reportsTo);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -248,6 +262,9 @@ public class GetGamificationInsightsMembersRequest {
         
 
                 .withQueryParameters("startWorkday", "", startWorkday)
+        
+
+                .withQueryParameters("reportsTo", "", reportsTo)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -310,6 +327,11 @@ public class GetGamificationInsightsMembersRequest {
 
 		public Builder withStartWorkday(LocalDate startWorkday) {
 			request.setStartWorkday(startWorkday);
+			return this;
+		}
+
+		public Builder withReportsTo(String reportsTo) {
+			request.setReportsTo(reportsTo);
 			return this;
 		}
 

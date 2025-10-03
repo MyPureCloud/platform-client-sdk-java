@@ -13,13 +13,15 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -938,13 +940,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchema> getBusinessrulesSchemaAsync(GetBusinessrulesSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
+  public Future<BusinessRulesDataSchema> getBusinessrulesSchemaAsync(GetBusinessrulesSchemaRequest request, final AsyncApiCallback<BusinessRulesDataSchema> callback) {
     try {
-      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final SettableFuture<BusinessRulesDataSchema> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -973,13 +975,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchema>> getBusinessrulesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+  public Future<ApiResponse<BusinessRulesDataSchema>> getBusinessrulesSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<BusinessRulesDataSchema>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -987,7 +989,7 @@ public class BusinessRulesApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -995,7 +997,7 @@ public class BusinessRulesApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1015,13 +1017,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchemaListing> getBusinessrulesSchemasAsync(GetBusinessrulesSchemasRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
+  public Future<BusinessRulesDataSchemaListing> getBusinessrulesSchemasAsync(GetBusinessrulesSchemasRequest request, final AsyncApiCallback<BusinessRulesDataSchemaListing> callback) {
     try {
-      final SettableFuture<DataSchemaListing> future = SettableFuture.create();
+      final SettableFuture<BusinessRulesDataSchemaListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchemaListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1050,13 +1052,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchemaListing>> getBusinessrulesSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
+  public Future<ApiResponse<BusinessRulesDataSchemaListing>> getBusinessrulesSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchemaListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<BusinessRulesDataSchemaListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<DataSchemaListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchemaListing>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchemaListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchemaListing> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchemaListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1064,7 +1066,7 @@ public class BusinessRulesApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+            ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1072,7 +1074,7 @@ public class BusinessRulesApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<BusinessRulesDataSchemaListing> response = (ApiResponse<BusinessRulesDataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2016,13 +2018,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchema> postBusinessrulesSchemasAsync(PostBusinessrulesSchemasRequest request, final AsyncApiCallback<DataSchema> callback) {
+  public Future<BusinessRulesDataSchema> postBusinessrulesSchemasAsync(PostBusinessrulesSchemasRequest request, final AsyncApiCallback<BusinessRulesDataSchema> callback) {
     try {
-      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final SettableFuture<BusinessRulesDataSchema> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2051,13 +2053,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchema>> postBusinessrulesSchemasAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+  public Future<ApiResponse<BusinessRulesDataSchema>> postBusinessrulesSchemasAsync(ApiRequest<BusinessRulesSchemaCreateRequest> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<BusinessRulesDataSchema>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2065,7 +2067,7 @@ public class BusinessRulesApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2073,7 +2075,7 @@ public class BusinessRulesApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2247,13 +2249,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DataSchema> putBusinessrulesSchemaAsync(PutBusinessrulesSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
+  public Future<BusinessRulesDataSchema> putBusinessrulesSchemaAsync(PutBusinessrulesSchemaRequest request, final AsyncApiCallback<BusinessRulesDataSchema> callback) {
     try {
-      final SettableFuture<DataSchema> future = SettableFuture.create();
+      final SettableFuture<BusinessRulesDataSchema> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2282,13 +2284,13 @@ public class BusinessRulesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DataSchema>> putBusinessrulesSchemaAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
+  public Future<ApiResponse<BusinessRulesDataSchema>> putBusinessrulesSchemaAsync(ApiRequest<BusinessRulesSchemaUpdateRequest> request, final AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>> callback) {
     try {
-      final SettableFuture<ApiResponse<DataSchema>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<BusinessRulesDataSchema>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DataSchema>() {}, new AsyncApiCallback<ApiResponse<DataSchema>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessRulesDataSchema>() {}, new AsyncApiCallback<ApiResponse<BusinessRulesDataSchema>>() {
         @Override
-        public void onCompleted(ApiResponse<DataSchema> response) {
+        public void onCompleted(ApiResponse<BusinessRulesDataSchema> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2296,7 +2298,7 @@ public class BusinessRulesApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2304,7 +2306,7 @@ public class BusinessRulesApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<BusinessRulesDataSchema> response = (ApiResponse<BusinessRulesDataSchema>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

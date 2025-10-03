@@ -20,13 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -43,16 +45,16 @@ import com.mypurecloud.sdk.v2.model.UpdateDecisionTableVersionRequest;
 
 public class PostBusinessrulesSchemasRequest {
 
-	private DataSchema body;
-	public DataSchema getBody() {
+	private BusinessRulesSchemaCreateRequest body;
+	public BusinessRulesSchemaCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(DataSchema body) {
+	public void setBody(BusinessRulesSchemaCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostBusinessrulesSchemasRequest withBody(DataSchema body) {
+	public PostBusinessrulesSchemasRequest withBody(BusinessRulesSchemaCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -76,7 +78,7 @@ public class PostBusinessrulesSchemasRequest {
         return this;
     }
 
-    public ApiRequest<DataSchema> withHttpInfo() {
+    public ApiRequest<BusinessRulesSchemaCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -99,7 +101,7 @@ public class PostBusinessrulesSchemasRequest {
 	}
 
 
-	public static Builder builder(DataSchema body) {
+	public static Builder builder(BusinessRulesSchemaCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -113,14 +115,14 @@ public class PostBusinessrulesSchemasRequest {
 		}
 
 
-		public Builder withBody(DataSchema body) {
+		public Builder withBody(BusinessRulesSchemaCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(DataSchema body) {
+		public Builder withRequiredParams(BusinessRulesSchemaCreateRequest body) {
 			request.setBody(body);
 
 			return this;

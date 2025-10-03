@@ -651,6 +651,10 @@ docs/BulkUpdateShiftTradeStateResultItem.md
 docs/Bullseye.md
 docs/BusinessRulesApi.json
 docs/BusinessRulesApi.md
+docs/BusinessRulesDataSchema.md
+docs/BusinessRulesDataSchemaListing.md
+docs/BusinessRulesSchemaCreateRequest.md
+docs/BusinessRulesSchemaUpdateRequest.md
 docs/BusinessUnitActivityCode.md
 docs/BusinessUnitActivityCodeListing.md
 docs/BusinessUnitListItem.md
@@ -1034,6 +1038,10 @@ docs/ContextPattern.md
 docs/ContinuousForecastGetSessionResponse.md
 docs/ContinuousForecastSessionResponse.md
 docs/ContinuousForecastSnapshotResponse.md
+docs/ContractDefinition.md
+docs/ContractItems.md
+docs/ContractJsonSchema.md
+docs/ContractPropertyDefinition.md
 docs/Contractual.md
 docs/Conversation.md
 docs/ConversationActivityData.md
@@ -12769,6 +12777,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/BulkUpdateShiftTradeStateResponse.jav
 src/main/java/com/mypurecloud/sdk/v2/model/BulkUpdateShiftTradeStateResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkUpdateShiftTradeStateResultItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/Bullseye.java
+src/main/java/com/mypurecloud/sdk/v2/model/BusinessRulesDataSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/BusinessRulesDataSchemaListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/BusinessRulesSchemaCreateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BusinessRulesSchemaUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BusinessUnitActivityCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/BusinessUnitActivityCodeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/BusinessUnitListItem.java
@@ -13144,6 +13156,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContextPattern.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContinuousForecastGetSessionResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContinuousForecastSessionResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContinuousForecastSnapshotResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContractDefinition.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContractItems.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContractJsonSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContractPropertyDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/Contractual.java
 src/main/java/com/mypurecloud/sdk/v2/model/Conversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationActivityData.java

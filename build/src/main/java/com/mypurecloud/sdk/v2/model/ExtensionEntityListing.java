@@ -32,10 +32,10 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
   private Long total = null;
   private Long totalNumberOfEntities = null;
   private String firstUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String selfUri = null;
-  private String lastUri = null;
   private Integer pageCount = null;
 
   public ExtensionEntityListing() {
@@ -150,6 +150,40 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
 
   /**
    **/
+  public ExtensionEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public ExtensionEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public ExtensionEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -179,40 +213,6 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
-  public ExtensionEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public ExtensionEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -249,16 +249,16 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
             Objects.equals(this.total, extensionEntityListing.total) &&
             Objects.equals(this.totalNumberOfEntities, extensionEntityListing.totalNumberOfEntities) &&
             Objects.equals(this.firstUri, extensionEntityListing.firstUri) &&
+            Objects.equals(this.lastUri, extensionEntityListing.lastUri) &&
+            Objects.equals(this.selfUri, extensionEntityListing.selfUri) &&
             Objects.equals(this.previousUri, extensionEntityListing.previousUri) &&
             Objects.equals(this.nextUri, extensionEntityListing.nextUri) &&
-            Objects.equals(this.selfUri, extensionEntityListing.selfUri) &&
-            Objects.equals(this.lastUri, extensionEntityListing.lastUri) &&
             Objects.equals(this.pageCount, extensionEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -272,10 +272,10 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

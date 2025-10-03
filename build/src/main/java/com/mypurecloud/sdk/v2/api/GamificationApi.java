@@ -1198,12 +1198,13 @@ public class GamificationApi {
    * @param sortMetricId Sort Metric Id (optional)
    * @param sortOrder Sort order (optional, default to asc)
    * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsSummary
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InsightsSummary getGamificationInsights(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) throws IOException, ApiException {
-    return  getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds));
+  public InsightsSummary getGamificationInsights(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds, String reportsTo) throws IOException, ApiException {
+    return  getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds, reportsTo));
   }
 
   /**
@@ -1220,14 +1221,15 @@ public class GamificationApi {
    * @param sortMetricId Sort Metric Id (optional)
    * @param sortOrder Sort order (optional, default to asc)
    * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsSummary
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InsightsSummary> getGamificationInsightsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) throws IOException {
-    return getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds).withHttpInfo());
+  public ApiResponse<InsightsSummary> getGamificationInsightsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds, String reportsTo) throws IOException {
+    return getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds, reportsTo).withHttpInfo());
   }
 
-  private GetGamificationInsightsRequest createGetGamificationInsightsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) {
+  private GetGamificationInsightsRequest createGetGamificationInsightsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds, String reportsTo) {
     return GetGamificationInsightsRequest.builder()
             .withFilterType(filterType)
 
@@ -1250,6 +1252,8 @@ public class GamificationApi {
             .withSortOrder(sortOrder)
 
             .withUserIds(userIds)
+
+            .withReportsTo(reportsTo)
 
             .build();
   }
@@ -1607,12 +1611,13 @@ public class GamificationApi {
    * @param filterId ID for the filter type. (required)
    * @param granularity Granularity (required)
    * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsAgents
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InsightsAgents getGamificationInsightsMembers(String filterType, String filterId, String granularity, LocalDate startWorkday) throws IOException, ApiException {
-    return  getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday));
+  public InsightsAgents getGamificationInsightsMembers(String filterType, String filterId, String granularity, LocalDate startWorkday, String reportsTo) throws IOException, ApiException {
+    return  getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday, reportsTo));
   }
 
   /**
@@ -1622,14 +1627,15 @@ public class GamificationApi {
    * @param filterId ID for the filter type. (required)
    * @param granularity Granularity (required)
    * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsAgents
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InsightsAgents> getGamificationInsightsMembersWithHttpInfo(String filterType, String filterId, String granularity, LocalDate startWorkday) throws IOException {
-    return getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday).withHttpInfo());
+  public ApiResponse<InsightsAgents> getGamificationInsightsMembersWithHttpInfo(String filterType, String filterId, String granularity, LocalDate startWorkday, String reportsTo) throws IOException {
+    return getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday, reportsTo).withHttpInfo());
   }
 
-  private GetGamificationInsightsMembersRequest createGetGamificationInsightsMembersRequest(String filterType, String filterId, String granularity, LocalDate startWorkday) {
+  private GetGamificationInsightsMembersRequest createGetGamificationInsightsMembersRequest(String filterType, String filterId, String granularity, LocalDate startWorkday, String reportsTo) {
     return GetGamificationInsightsMembersRequest.builder()
             .withFilterType(filterType)
 
@@ -1638,6 +1644,8 @@ public class GamificationApi {
             .withGranularity(granularity)
 
             .withStartWorkday(startWorkday)
+
+            .withReportsTo(reportsTo)
 
             .build();
   }
@@ -1702,12 +1710,13 @@ public class GamificationApi {
    * @param sortMetricId Sort Metric Id (optional)
    * @param sectionSize The number of top and bottom users to return before ties (optional)
    * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsRankings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InsightsRankings getGamificationInsightsRankings(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) throws IOException, ApiException {
-    return  getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds));
+  public InsightsRankings getGamificationInsightsRankings(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds, String reportsTo) throws IOException, ApiException {
+    return  getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds, reportsTo));
   }
 
   /**
@@ -1722,14 +1731,15 @@ public class GamificationApi {
    * @param sortMetricId Sort Metric Id (optional)
    * @param sectionSize The number of top and bottom users to return before ties (optional)
    * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @param reportsTo The reportsTo used by ABAC policies. (optional)
    * @return InsightsRankings
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InsightsRankings> getGamificationInsightsRankingsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) throws IOException {
-    return getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds).withHttpInfo());
+  public ApiResponse<InsightsRankings> getGamificationInsightsRankingsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds, String reportsTo) throws IOException {
+    return getGamificationInsightsRankings(createGetGamificationInsightsRankingsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds, reportsTo).withHttpInfo());
   }
 
-  private GetGamificationInsightsRankingsRequest createGetGamificationInsightsRankingsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds) {
+  private GetGamificationInsightsRankingsRequest createGetGamificationInsightsRankingsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, String sortKey, String sortMetricId, Integer sectionSize, String userIds, String reportsTo) {
     return GetGamificationInsightsRankingsRequest.builder()
             .withFilterType(filterType)
 
@@ -1748,6 +1758,8 @@ public class GamificationApi {
             .withSectionSize(sectionSize)
 
             .withUserIds(userIds)
+
+            .withReportsTo(reportsTo)
 
             .build();
   }

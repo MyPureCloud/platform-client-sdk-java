@@ -20,8 +20,11 @@ import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.DatePicker;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.InteractiveApplication;
+import com.mypurecloud.sdk.v2.model.ListPicker;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
+import com.mypurecloud.sdk.v2.model.PaymentRequest;
+import com.mypurecloud.sdk.v2.model.PaymentResponse;
 import com.mypurecloud.sdk.v2.model.QuickReply;
 import com.mypurecloud.sdk.v2.model.RecordingContentStory;
 import com.mypurecloud.sdk.v2.model.RecordingNotificationTemplate;
@@ -54,10 +57,12 @@ public class RecordingMessagingMessage  implements Serializable {
   private List<MessageStickerAttachment> messageStickerAttachments = null;
   private List<QuickReply> quickReplies = null;
   private ButtonResponse buttonResponse = null;
+  private List<ButtonResponse> buttonResponses = null;
   private RecordingContentStory story = null;
   private List<Card> cards = null;
   private RecordingNotificationTemplate notificationTemplate = null;
   private DatePicker datePicker = null;
+  private ListPicker listPicker = null;
 
   private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
     public ContentTypeEnumDeserializer() {
@@ -174,12 +179,15 @@ public class RecordingMessagingMessage  implements Serializable {
   private SocialVisibilityEnum socialVisibility = null;
   private List<ConversationMessageEvent> events = null;
   private InteractiveApplication interactiveApplication = null;
+  private PaymentRequest paymentRequest = null;
+  private PaymentResponse paymentResponse = null;
 
   public RecordingMessagingMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
       messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
       quickReplies = new ArrayList<QuickReply>();
+      buttonResponses = new ArrayList<ButtonResponse>();
       cards = new ArrayList<Card>();
       events = new ArrayList<ConversationMessageEvent>();
     }
@@ -457,6 +465,24 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * List of Button Response selected by user for this message.
+   **/
+  public RecordingMessagingMessage buttonResponses(List<ButtonResponse> buttonResponses) {
+    this.buttonResponses = buttonResponses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of Button Response selected by user for this message.")
+  @JsonProperty("buttonResponses")
+  public List<ButtonResponse> getButtonResponses() {
+    return buttonResponses;
+  }
+  public void setButtonResponses(List<ButtonResponse> buttonResponses) {
+    this.buttonResponses = buttonResponses;
+  }
+
+
+  /**
    * Ephemeral story content.
    **/
   public RecordingMessagingMessage story(RecordingContentStory story) {
@@ -525,6 +551,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
   public void setDatePicker(DatePicker datePicker) {
     this.datePicker = datePicker;
+  }
+
+
+  /**
+   * ListPicker content object.
+   **/
+  public RecordingMessagingMessage listPicker(ListPicker listPicker) {
+    this.listPicker = listPicker;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ListPicker content object.")
+  @JsonProperty("listPicker")
+  public ListPicker getListPicker() {
+    return listPicker;
+  }
+  public void setListPicker(ListPicker listPicker) {
+    this.listPicker = listPicker;
   }
 
 
@@ -600,6 +644,42 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * Payment request content.
+   **/
+  public RecordingMessagingMessage paymentRequest(PaymentRequest paymentRequest) {
+    this.paymentRequest = paymentRequest;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payment request content.")
+  @JsonProperty("paymentRequest")
+  public PaymentRequest getPaymentRequest() {
+    return paymentRequest;
+  }
+  public void setPaymentRequest(PaymentRequest paymentRequest) {
+    this.paymentRequest = paymentRequest;
+  }
+
+
+  /**
+   * Payment response content.
+   **/
+  public RecordingMessagingMessage paymentResponse(PaymentResponse paymentResponse) {
+    this.paymentResponse = paymentResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payment response content.")
+  @JsonProperty("paymentResponse")
+  public PaymentResponse getPaymentResponse() {
+    return paymentResponse;
+  }
+  public void setPaymentResponse(PaymentResponse paymentResponse) {
+    this.paymentResponse = paymentResponse;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -625,19 +705,23 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
             Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
             Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
+            Objects.equals(this.buttonResponses, recordingMessagingMessage.buttonResponses) &&
             Objects.equals(this.story, recordingMessagingMessage.story) &&
             Objects.equals(this.cards, recordingMessagingMessage.cards) &&
             Objects.equals(this.notificationTemplate, recordingMessagingMessage.notificationTemplate) &&
             Objects.equals(this.datePicker, recordingMessagingMessage.datePicker) &&
+            Objects.equals(this.listPicker, recordingMessagingMessage.listPicker) &&
             Objects.equals(this.contentType, recordingMessagingMessage.contentType) &&
             Objects.equals(this.socialVisibility, recordingMessagingMessage.socialVisibility) &&
             Objects.equals(this.events, recordingMessagingMessage.events) &&
-            Objects.equals(this.interactiveApplication, recordingMessagingMessage.interactiveApplication);
+            Objects.equals(this.interactiveApplication, recordingMessagingMessage.interactiveApplication) &&
+            Objects.equals(this.paymentRequest, recordingMessagingMessage.paymentRequest) &&
+            Objects.equals(this.paymentResponse, recordingMessagingMessage.paymentResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, notificationTemplate, datePicker, contentType, socialVisibility, events, interactiveApplication);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse);
   }
 
   @Override
@@ -660,14 +744,18 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    messageStickerAttachments: ").append(toIndentedString(messageStickerAttachments)).append("\n");
     sb.append("    quickReplies: ").append(toIndentedString(quickReplies)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
+    sb.append("    buttonResponses: ").append(toIndentedString(buttonResponses)).append("\n");
     sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    cards: ").append(toIndentedString(cards)).append("\n");
     sb.append("    notificationTemplate: ").append(toIndentedString(notificationTemplate)).append("\n");
     sb.append("    datePicker: ").append(toIndentedString(datePicker)).append("\n");
+    sb.append("    listPicker: ").append(toIndentedString(listPicker)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    interactiveApplication: ").append(toIndentedString(interactiveApplication)).append("\n");
+    sb.append("    paymentRequest: ").append(toIndentedString(paymentRequest)).append("\n");
+    sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }

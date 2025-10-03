@@ -15,8 +15,8 @@
 | **visibilityCondition** | [**VisibilityCondition**](VisibilityCondition) |  |  [optional] |
 | **answerOptions** | [**List&lt;AnswerOption&gt;**](AnswerOption) | Options from which to choose an answer for this question. Only used by Multiple Choice type questions. |  [optional] |
 | **multipleSelectOptionQuestions** | [**List&lt;EvaluationQuestion&gt;**](EvaluationQuestion) | Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options. |  [optional] |
-| **isKill** | **Boolean** |  |  [optional] |
 | **isCritical** | **Boolean** |  |  [optional] |
+| **isKill** | **Boolean** |  |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:233.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_

@@ -31,10 +31,10 @@ public class LexV2BotEntityListing  implements Serializable, PagedResource<LexV2
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
-  private String selfUri = null;
-  private String lastUri = null;
   private Integer pageCount = null;
 
   public LexV2BotEntityListing() {
@@ -131,6 +131,40 @@ public class LexV2BotEntityListing  implements Serializable, PagedResource<LexV2
 
   /**
    **/
+  public LexV2BotEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public LexV2BotEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public LexV2BotEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -160,40 +194,6 @@ public class LexV2BotEntityListing  implements Serializable, PagedResource<LexV2
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
-  public LexV2BotEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public LexV2BotEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -229,16 +229,16 @@ public class LexV2BotEntityListing  implements Serializable, PagedResource<LexV2
             Objects.equals(this.pageNumber, lexV2BotEntityListing.pageNumber) &&
             Objects.equals(this.total, lexV2BotEntityListing.total) &&
             Objects.equals(this.firstUri, lexV2BotEntityListing.firstUri) &&
+            Objects.equals(this.lastUri, lexV2BotEntityListing.lastUri) &&
+            Objects.equals(this.selfUri, lexV2BotEntityListing.selfUri) &&
             Objects.equals(this.previousUri, lexV2BotEntityListing.previousUri) &&
             Objects.equals(this.nextUri, lexV2BotEntityListing.nextUri) &&
-            Objects.equals(this.selfUri, lexV2BotEntityListing.selfUri) &&
-            Objects.equals(this.lastUri, lexV2BotEntityListing.lastUri) &&
             Objects.equals(this.pageCount, lexV2BotEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, selfUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -251,10 +251,10 @@ public class LexV2BotEntityListing  implements Serializable, PagedResource<LexV2
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

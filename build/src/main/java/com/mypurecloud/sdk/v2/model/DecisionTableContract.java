@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ContractJsonSchema;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.JsonSchemaWithDefinitions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -25,9 +25,9 @@ import java.io.Serializable;
 public class DecisionTableContract  implements Serializable {
   
   private DomainEntityRef parentSchema = null;
-  private JsonSchemaWithDefinitions rowAuthoringSchema = null;
-  private JsonSchemaWithDefinitions executionInputSchema = null;
-  private JsonSchemaWithDefinitions executionOutputSchema = null;
+  private ContractJsonSchema rowAuthoringSchema = null;
+  private ContractJsonSchema executionInputSchema = null;
+  private ContractJsonSchema executionOutputSchema = null;
 
   public DecisionTableContract() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -36,14 +36,14 @@ public class DecisionTableContract  implements Serializable {
 
   
   /**
-   * DSS V1 schema entity defining source properties for the decision table contract schemas
+   * DSS schema entity defining source properties for the decision table contract schemas
    **/
   public DecisionTableContract parentSchema(DomainEntityRef parentSchema) {
     this.parentSchema = parentSchema;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "DSS V1 schema entity defining source properties for the decision table contract schemas")
+  @ApiModelProperty(example = "null", value = "DSS schema entity defining source properties for the decision table contract schemas")
   @JsonProperty("parentSchema")
   public DomainEntityRef getParentSchema() {
     return parentSchema;
@@ -56,17 +56,17 @@ public class DecisionTableContract  implements Serializable {
   /**
    * JSON schema describing required value types for each column in every row in a decision table
    **/
-  public DecisionTableContract rowAuthoringSchema(JsonSchemaWithDefinitions rowAuthoringSchema) {
+  public DecisionTableContract rowAuthoringSchema(ContractJsonSchema rowAuthoringSchema) {
     this.rowAuthoringSchema = rowAuthoringSchema;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "JSON schema describing required value types for each column in every row in a decision table")
   @JsonProperty("rowAuthoringSchema")
-  public JsonSchemaWithDefinitions getRowAuthoringSchema() {
+  public ContractJsonSchema getRowAuthoringSchema() {
     return rowAuthoringSchema;
   }
-  public void setRowAuthoringSchema(JsonSchemaWithDefinitions rowAuthoringSchema) {
+  public void setRowAuthoringSchema(ContractJsonSchema rowAuthoringSchema) {
     this.rowAuthoringSchema = rowAuthoringSchema;
   }
 
@@ -74,17 +74,17 @@ public class DecisionTableContract  implements Serializable {
   /**
    * JSON schema for execution input data for a decision table
    **/
-  public DecisionTableContract executionInputSchema(JsonSchemaWithDefinitions executionInputSchema) {
+  public DecisionTableContract executionInputSchema(ContractJsonSchema executionInputSchema) {
     this.executionInputSchema = executionInputSchema;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "JSON schema for execution input data for a decision table")
   @JsonProperty("executionInputSchema")
-  public JsonSchemaWithDefinitions getExecutionInputSchema() {
+  public ContractJsonSchema getExecutionInputSchema() {
     return executionInputSchema;
   }
-  public void setExecutionInputSchema(JsonSchemaWithDefinitions executionInputSchema) {
+  public void setExecutionInputSchema(ContractJsonSchema executionInputSchema) {
     this.executionInputSchema = executionInputSchema;
   }
 
@@ -92,17 +92,17 @@ public class DecisionTableContract  implements Serializable {
   /**
    * JSON schema for execution output data for a decision table
    **/
-  public DecisionTableContract executionOutputSchema(JsonSchemaWithDefinitions executionOutputSchema) {
+  public DecisionTableContract executionOutputSchema(ContractJsonSchema executionOutputSchema) {
     this.executionOutputSchema = executionOutputSchema;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "JSON schema for execution output data for a decision table")
   @JsonProperty("executionOutputSchema")
-  public JsonSchemaWithDefinitions getExecutionOutputSchema() {
+  public ContractJsonSchema getExecutionOutputSchema() {
     return executionOutputSchema;
   }
-  public void setExecutionOutputSchema(JsonSchemaWithDefinitions executionOutputSchema) {
+  public void setExecutionOutputSchema(ContractJsonSchema executionOutputSchema) {
     this.executionOutputSchema = executionOutputSchema;
   }
 

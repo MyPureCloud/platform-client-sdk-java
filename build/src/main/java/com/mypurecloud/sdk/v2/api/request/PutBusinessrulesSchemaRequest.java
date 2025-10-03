@@ -20,13 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchema;
+import com.mypurecloud.sdk.v2.model.BusinessRulesDataSchemaListing;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaCreateRequest;
+import com.mypurecloud.sdk.v2.model.BusinessRulesSchemaUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRequest;
 import com.mypurecloud.sdk.v2.model.CreateDecisionTableRowRequest;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.DecisionTable;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionRequest;
 import com.mypurecloud.sdk.v2.model.DecisionTableExecutionResponse;
@@ -57,16 +59,16 @@ public class PutBusinessrulesSchemaRequest {
 	    return this;
 	} 
 
-	private DataSchema body;
-	public DataSchema getBody() {
+	private BusinessRulesSchemaUpdateRequest body;
+	public BusinessRulesSchemaUpdateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(DataSchema body) {
+	public void setBody(BusinessRulesSchemaUpdateRequest body) {
 		this.body = body;
 	}
 
-	public PutBusinessrulesSchemaRequest withBody(DataSchema body) {
+	public PutBusinessrulesSchemaRequest withBody(BusinessRulesSchemaUpdateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -90,7 +92,7 @@ public class PutBusinessrulesSchemaRequest {
         return this;
     }
 
-    public ApiRequest<DataSchema> withHttpInfo() {
+    public ApiRequest<BusinessRulesSchemaUpdateRequest> withHttpInfo() {
         
         // verify the required parameter 'schemaId' is set
         if (this.schemaId == null) {
@@ -120,7 +122,7 @@ public class PutBusinessrulesSchemaRequest {
 	}
 
 
-	public static Builder builder(String schemaId, DataSchema body) {
+	public static Builder builder(String schemaId, BusinessRulesSchemaUpdateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(schemaId, body);
 	}
@@ -139,14 +141,14 @@ public class PutBusinessrulesSchemaRequest {
 			return this;
 		}
 
-		public Builder withBody(DataSchema body) {
+		public Builder withBody(BusinessRulesSchemaUpdateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String schemaId, DataSchema body) {
+		public Builder withRequiredParams(String schemaId, BusinessRulesSchemaUpdateRequest body) {
 			request.setSchemaId(schemaId);
 			request.setBody(body);
 
