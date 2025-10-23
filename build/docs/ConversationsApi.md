@@ -138,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup. |
 | [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | Change who can speak |
+| [**patchConversationsCallParticipantUserUserId**](ConversationsApi#patchConversationsCallParticipantUserUserId) | Update conversation participant on behalf of a user |
 | [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | Update a conversation by disconnecting all of the participants |
 | [**patchConversationsCallbackParticipant**](ConversationsApi#patchConversationsCallbackParticipant) | Update conversation participant |
 | [**patchConversationsCallbackParticipantAttributes**](ConversationsApi#patchConversationsCallbackParticipantAttributes) | Update the attributes on a conversation participant. |
@@ -5429,7 +5430,7 @@ This endpoint does not require any parameters.
 # **getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+> [AppleIdentityResolutionConfig](AppleIdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
 
 Get Apple messaging integration identity resolution settings
 
@@ -5464,7 +5465,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
 try {
-    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId);
+    AppleIdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
@@ -5483,13 +5484,13 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**AppleIdentityResolutionConfig**](AppleIdentityResolutionConfig)
 
 
 # **getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+> [FacebookIdentityResolutionConfig](FacebookIdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
 
 Get Facebook messaging integration identity resolution settings
 
@@ -5524,7 +5525,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
 try {
-    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId);
+    FacebookIdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId");
@@ -5543,13 +5544,13 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**FacebookIdentityResolutionConfig**](FacebookIdentityResolutionConfig)
 
 
 # **getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+> [InstagramIdentityResolutionConfig](InstagramIdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
 
 Get an Instagram integration identity resolution settings
 
@@ -5584,7 +5585,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
 try {
-    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId);
+    InstagramIdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
@@ -5603,7 +5604,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**InstagramIdentityResolutionConfig**](InstagramIdentityResolutionConfig)
 
 
 # **getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**
@@ -5669,7 +5670,7 @@ try {
 # **getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+> [TwitterIdentityResolutionConfig](TwitterIdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
 
 Get X (Formally Twitter) messaging integration identity resolution settings
 
@@ -5704,7 +5705,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
 try {
-    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId);
+    TwitterIdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
@@ -5723,13 +5724,13 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**TwitterIdentityResolutionConfig**](TwitterIdentityResolutionConfig)
 
 
 # **getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+> [WhatsAppIdentityResolutionConfig](WhatsAppIdentityResolutionConfig) getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
 
 Get a whatsApp integration Identity Resolution settings
 
@@ -5764,7 +5765,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
 try {
-    IdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId);
+    WhatsAppIdentityResolutionConfig result = apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId");
@@ -5783,7 +5784,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**WhatsAppIdentityResolutionConfig**](WhatsAppIdentityResolutionConfig)
 
 
 # **getConversationsMessagingIntegrationTwitterOauthSettings**
@@ -8442,6 +8443,73 @@ try {
 ### Return type
 
 [**ConsultTransferResponse**](ConsultTransferResponse)
+
+
+# **patchConversationsCallParticipantUserUserId**
+
+
+> Void patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body)
+
+Update conversation participant on behalf of a user
+
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
+* conversation:agentlessCall:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String userId = "userId_example"; // String | userId
+MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant request
+try {
+    apiInstance.patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantUserUserId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **userId** | **String**| userId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **patchConversationsCallback**
@@ -17159,7 +17227,7 @@ try {
 # **putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+> [AppleIdentityResolutionConfig](AppleIdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
 
 Create an identity resolution settings for a Apple messaging integration
 
@@ -17193,9 +17261,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+AppleIdentityResolutionConfig body = new AppleIdentityResolutionConfig(); // AppleIdentityResolutionConfig | IdentityResolutionConfig
 try {
-    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body);
+    AppleIdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
@@ -17209,19 +17277,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig | 
+| **body** | [**AppleIdentityResolutionConfig**](AppleIdentityResolutionConfig)| IdentityResolutionConfig | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**AppleIdentityResolutionConfig**](AppleIdentityResolutionConfig)
 
 
 # **putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+> [FacebookIdentityResolutionConfig](FacebookIdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
 
 Create an identity resolution settings for a Facebook messaging integration
 
@@ -17255,9 +17323,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+FacebookIdentityResolutionConfig body = new FacebookIdentityResolutionConfig(); // FacebookIdentityResolutionConfig | IdentityResolutionConfig
 try {
-    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body);
+    FacebookIdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId");
@@ -17271,19 +17339,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig | 
+| **body** | [**FacebookIdentityResolutionConfig**](FacebookIdentityResolutionConfig)| IdentityResolutionConfig | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**FacebookIdentityResolutionConfig**](FacebookIdentityResolutionConfig)
 
 
 # **putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+> [InstagramIdentityResolutionConfig](InstagramIdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
 
 Create identity resolution settings for an Instagram messaging integration
 
@@ -17317,9 +17385,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+InstagramIdentityResolutionConfig body = new InstagramIdentityResolutionConfig(); // InstagramIdentityResolutionConfig | IdentityResolutionConfig
 try {
-    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body);
+    InstagramIdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
@@ -17333,13 +17401,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig | 
+| **body** | [**InstagramIdentityResolutionConfig**](InstagramIdentityResolutionConfig)| IdentityResolutionConfig | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**InstagramIdentityResolutionConfig**](InstagramIdentityResolutionConfig)
 
 
 # **putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**
@@ -17407,7 +17475,7 @@ try {
 # **putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+> [TwitterIdentityResolutionConfig](TwitterIdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
 
 Create an identity resolution settings for an X (Formally Twitter) messaging integration
 
@@ -17441,9 +17509,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+TwitterIdentityResolutionConfig body = new TwitterIdentityResolutionConfig(); // TwitterIdentityResolutionConfig | IdentityResolutionConfig
 try {
-    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body);
+    TwitterIdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
@@ -17457,19 +17525,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration Id | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig | 
+| **body** | [**TwitterIdentityResolutionConfig**](TwitterIdentityResolutionConfig)| IdentityResolutionConfig | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**TwitterIdentityResolutionConfig**](TwitterIdentityResolutionConfig)
 
 
 # **putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+> [WhatsAppIdentityResolutionConfig](WhatsAppIdentityResolutionConfig) putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
 
 Update a whatsApp integration Identity Resolution settings
 
@@ -17503,9 +17571,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | Integration ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+WhatsAppIdentityResolutionConfig body = new WhatsAppIdentityResolutionConfig(); // WhatsAppIdentityResolutionConfig | 
 try {
-    IdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body);
+    WhatsAppIdentityResolutionConfig result = apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId");
@@ -17519,13 +17587,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+| **body** | [**WhatsAppIdentityResolutionConfig**](WhatsAppIdentityResolutionConfig)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**WhatsAppIdentityResolutionConfig**](WhatsAppIdentityResolutionConfig)
 
 
 # **putConversationsMessagingSettingsDefault**
@@ -17899,4 +17967,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

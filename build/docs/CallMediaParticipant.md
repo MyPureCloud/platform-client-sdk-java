@@ -61,6 +61,7 @@
 | **bargedTime** | [**Date**](Date) | The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **securePause** | **Boolean** | True when the recording of this call is in secure pause status. |  [optional] |
 | **disposition** | [**Disposition**](Disposition) | Call resolution data for Dialer bulk make calls commands. |  [optional] |
+| **transferSource** | **String** | Indicates how call reaches the agent. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -136,4 +137,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

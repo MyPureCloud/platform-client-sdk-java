@@ -76,7 +76,7 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IVRIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
@@ -115,16 +115,16 @@ public class PutArchitectIvrIdentityresolutionRequest {
 	    return this;
 	} 
 
-	private IdentityResolutionConfig body;
-	public IdentityResolutionConfig getBody() {
+	private IVRIdentityResolutionConfig body;
+	public IVRIdentityResolutionConfig getBody() {
 		return this.body;
 	}
 
-	public void setBody(IdentityResolutionConfig body) {
+	public void setBody(IVRIdentityResolutionConfig body) {
 		this.body = body;
 	}
 
-	public PutArchitectIvrIdentityresolutionRequest withBody(IdentityResolutionConfig body) {
+	public PutArchitectIvrIdentityresolutionRequest withBody(IVRIdentityResolutionConfig body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -148,7 +148,7 @@ public class PutArchitectIvrIdentityresolutionRequest {
         return this;
     }
 
-    public ApiRequest<IdentityResolutionConfig> withHttpInfo() {
+    public ApiRequest<IVRIdentityResolutionConfig> withHttpInfo() {
         
         // verify the required parameter 'ivrId' is set
         if (this.ivrId == null) {
@@ -178,7 +178,7 @@ public class PutArchitectIvrIdentityresolutionRequest {
 	}
 
 
-	public static Builder builder(String ivrId, IdentityResolutionConfig body) {
+	public static Builder builder(String ivrId, IVRIdentityResolutionConfig body) {
 	    return new Builder()
 	            .withRequiredParams(ivrId, body);
 	}
@@ -197,14 +197,14 @@ public class PutArchitectIvrIdentityresolutionRequest {
 			return this;
 		}
 
-		public Builder withBody(IdentityResolutionConfig body) {
+		public Builder withBody(IVRIdentityResolutionConfig body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String ivrId, IdentityResolutionConfig body) {
+		public Builder withRequiredParams(String ivrId, IVRIdentityResolutionConfig body) {
 			request.setIvrId(ivrId);
 			request.setBody(body);
 

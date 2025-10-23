@@ -41,7 +41,6 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
@@ -52,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
@@ -71,6 +71,7 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
 import com.mypurecloud.sdk.v2.model.RecipientRequest;
+import com.mypurecloud.sdk.v2.model.RouteIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -89,6 +90,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsAlphanumericProvision;
+import com.mypurecloud.sdk.v2.model.SmsIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
@@ -112,6 +114,7 @@ import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
 import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
+import com.mypurecloud.sdk.v2.model.VerificationResult;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -148,16 +151,16 @@ public class PutRoutingEmailDomainRouteIdentityresolutionRequest {
 	    return this;
 	} 
 
-	private IdentityResolutionConfig body;
-	public IdentityResolutionConfig getBody() {
+	private RouteIdentityResolutionConfig body;
+	public RouteIdentityResolutionConfig getBody() {
 		return this.body;
 	}
 
-	public void setBody(IdentityResolutionConfig body) {
+	public void setBody(RouteIdentityResolutionConfig body) {
 		this.body = body;
 	}
 
-	public PutRoutingEmailDomainRouteIdentityresolutionRequest withBody(IdentityResolutionConfig body) {
+	public PutRoutingEmailDomainRouteIdentityresolutionRequest withBody(RouteIdentityResolutionConfig body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -181,7 +184,7 @@ public class PutRoutingEmailDomainRouteIdentityresolutionRequest {
         return this;
     }
 
-    public ApiRequest<IdentityResolutionConfig> withHttpInfo() {
+    public ApiRequest<RouteIdentityResolutionConfig> withHttpInfo() {
         
         // verify the required parameter 'domainName' is set
         if (this.domainName == null) {
@@ -218,7 +221,7 @@ public class PutRoutingEmailDomainRouteIdentityresolutionRequest {
 	}
 
 
-	public static Builder builder(String domainName, String routeId, IdentityResolutionConfig body) {
+	public static Builder builder(String domainName, String routeId, RouteIdentityResolutionConfig body) {
 	    return new Builder()
 	            .withRequiredParams(domainName, routeId, body);
 	}
@@ -242,14 +245,14 @@ public class PutRoutingEmailDomainRouteIdentityresolutionRequest {
 			return this;
 		}
 
-		public Builder withBody(IdentityResolutionConfig body) {
+		public Builder withBody(RouteIdentityResolutionConfig body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String domainName, String routeId, IdentityResolutionConfig body) {
+		public Builder withRequiredParams(String domainName, String routeId, RouteIdentityResolutionConfig body) {
 			request.setDomainName(domainName);
 			request.setRouteId(routeId);
 			request.setBody(body);

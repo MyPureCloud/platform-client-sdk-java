@@ -405,6 +405,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private RecordingStateEnum recordingState = null;
   private ConversationCallEventTopicRecordersState recordersState = null;
   private ConversationCallEventTopicDisposition disposition = null;
+  private String transferSource = null;
   private Boolean securePause = null;
   private ConversationCallEventTopicUriReference group = null;
   private String ani = null;
@@ -1208,6 +1209,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   /**
    **/
+  public ConversationCallEventTopicCallMediaParticipant transferSource(String transferSource) {
+    this.transferSource = transferSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("transferSource")
+  public String getTransferSource() {
+    return transferSource;
+  }
+  public void setTransferSource(String transferSource) {
+    this.transferSource = transferSource;
+  }
+
+
+  /**
+   **/
   public ConversationCallEventTopicCallMediaParticipant securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -1449,6 +1467,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
             Objects.equals(this.recordingState, conversationCallEventTopicCallMediaParticipant.recordingState) &&
             Objects.equals(this.recordersState, conversationCallEventTopicCallMediaParticipant.recordersState) &&
             Objects.equals(this.disposition, conversationCallEventTopicCallMediaParticipant.disposition) &&
+            Objects.equals(this.transferSource, conversationCallEventTopicCallMediaParticipant.transferSource) &&
             Objects.equals(this.securePause, conversationCallEventTopicCallMediaParticipant.securePause) &&
             Objects.equals(this.group, conversationCallEventTopicCallMediaParticipant.group) &&
             Objects.equals(this.ani, conversationCallEventTopicCallMediaParticipant.ani) &&
@@ -1464,7 +1483,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, disposition, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, recordersState, disposition, transferSource, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1518,6 +1537,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    recordersState: ").append(toIndentedString(recordersState)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
+    sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");

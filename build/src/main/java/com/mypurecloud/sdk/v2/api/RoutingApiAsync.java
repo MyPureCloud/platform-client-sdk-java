@@ -34,7 +34,6 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
@@ -45,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
 import com.mypurecloud.sdk.v2.model.RecipientRequest;
+import com.mypurecloud.sdk.v2.model.RouteIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -82,6 +83,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsAlphanumericProvision;
+import com.mypurecloud.sdk.v2.model.SmsIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
@@ -105,6 +107,7 @@ import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
 import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
+import com.mypurecloud.sdk.v2.model.VerificationResult;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -143,9 +146,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainDkimRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainMailfromRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
@@ -227,8 +233,11 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainDkimRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainMailfromRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
@@ -2616,6 +2625,156 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get domain dkim settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VerificationResult> getRoutingEmailDomainDkimAsync(GetRoutingEmailDomainDkimRequest request, final AsyncApiCallback<VerificationResult> callback) {
+    try {
+      final SettableFuture<VerificationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get domain dkim settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VerificationResult>> getRoutingEmailDomainDkimAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VerificationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VerificationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MailFromResult> getRoutingEmailDomainMailfromAsync(GetRoutingEmailDomainMailfromRequest request, final AsyncApiCallback<MailFromResult> callback) {
+    try {
+      final SettableFuture<MailFromResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MailFromResult>() {}, new AsyncApiCallback<ApiResponse<MailFromResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<MailFromResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MailFromResult>> getRoutingEmailDomainMailfromAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MailFromResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MailFromResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MailFromResult>() {}, new AsyncApiCallback<ApiResponse<MailFromResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<MailFromResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a route
    * 
    * @param request the request object
@@ -2697,13 +2856,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionAsync(GetRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<RouteIdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionAsync(GetRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<RouteIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<RouteIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RouteIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<RouteIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2731,13 +2890,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<RouteIdentityResolutionConfig>> getRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<RouteIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<RouteIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<RouteIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2745,7 +2904,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2753,7 +2912,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2829,6 +2988,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InboundRouteEntityListing> response = (ApiResponse<InboundRouteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VerificationResult> getRoutingEmailDomainVerificationAsync(GetRoutingEmailDomainVerificationRequest request, final AsyncApiCallback<VerificationResult> callback) {
+    try {
+      final SettableFuture<VerificationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VerificationResult>> getRoutingEmailDomainVerificationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VerificationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VerificationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5849,13 +6083,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberAsync(GetRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<SmsIdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberAsync(GetRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<SmsIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<SmsIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<SmsIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -5883,13 +6117,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<SmsIdentityResolutionConfig>> getRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<SmsIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<SmsIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<SmsIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -5897,7 +6131,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5905,7 +6139,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8928,6 +9162,156 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Restart domain dkim
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VerificationResult> postRoutingEmailDomainDkimAsync(PostRoutingEmailDomainDkimRequest request, final AsyncApiCallback<VerificationResult> callback) {
+    try {
+      final SettableFuture<VerificationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Restart domain dkim
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VerificationResult>> postRoutingEmailDomainDkimAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VerificationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VerificationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MailFromResult> postRoutingEmailDomainMailfromAsync(PostRoutingEmailDomainMailfromRequest request, final AsyncApiCallback<MailFromResult> callback) {
+    try {
+      final SettableFuture<MailFromResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MailFromResult>() {}, new AsyncApiCallback<ApiResponse<MailFromResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<MailFromResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MailFromResult>> postRoutingEmailDomainMailfromAsync(ApiRequest<MailFromResult> request, final AsyncApiCallback<ApiResponse<MailFromResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MailFromResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MailFromResult>() {}, new AsyncApiCallback<ApiResponse<MailFromResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<MailFromResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a route
    * 
    * @param request the request object
@@ -9066,6 +9450,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VerificationResult> postRoutingEmailDomainVerificationAsync(PostRoutingEmailDomainVerificationRequest request, final AsyncApiCallback<VerificationResult> callback) {
+    try {
+      final SettableFuture<VerificationResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VerificationResult>> postRoutingEmailDomainVerificationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VerificationResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VerificationResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VerificationResult>() {}, new AsyncApiCallback<ApiResponse<VerificationResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<VerificationResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10815,13 +11274,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionAsync(PutRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<RouteIdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionAsync(PutRoutingEmailDomainRouteIdentityresolutionRequest request, final AsyncApiCallback<RouteIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<RouteIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RouteIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<RouteIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -10849,13 +11308,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<RouteIdentityResolutionConfig>> putRoutingEmailDomainRouteIdentityresolutionAsync(ApiRequest<RouteIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<RouteIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<RouteIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<RouteIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<RouteIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -10863,7 +11322,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -10871,7 +11330,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -11340,13 +11799,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberAsync(PutRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<SmsIdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberAsync(PutRoutingSmsIdentityresolutionPhonenumberRequest request, final AsyncApiCallback<SmsIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<SmsIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<SmsIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -11374,13 +11833,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<SmsIdentityResolutionConfig>> putRoutingSmsIdentityresolutionPhonenumberAsync(ApiRequest<SmsIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<SmsIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<SmsIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<SmsIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<SmsIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -11388,7 +11847,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -11396,7 +11855,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

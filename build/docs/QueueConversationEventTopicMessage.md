@@ -33,6 +33,8 @@
 | **engagementSource** | **String** | Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_* |  [optional] |
 | **byoSmsIntegrationId** | **String** |  |  [optional] |
 | **queueMediaSettings** | [**QueueConversationEventTopicQueueMediaSettings**](QueueConversationEventTopicQueueMediaSettings) | Represents the queue setting for this media. |  [optional] |
+| **resumeTime** | [**Date**](Date) | The time when a parked message should resume. |  [optional] |
+| **parkTime** | [**Date**](Date) | The time when an  parked message was parked. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -43,6 +45,7 @@
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
+| PARKED | &quot;parked&quot; | 
 
 
 ## Enum: InitialStateEnum
@@ -53,6 +56,7 @@
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
+| PARKED | &quot;parked&quot; | 
 
 
 ## Enum: DirectionEnum
@@ -114,4 +118,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

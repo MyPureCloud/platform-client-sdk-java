@@ -4698,4 +4698,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

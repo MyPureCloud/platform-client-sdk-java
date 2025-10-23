@@ -89,10 +89,12 @@ public class CreateActivityCodeRequest  implements Serializable {
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
   private List<SecondaryPresence> secondaryPresences = null;
+  private List<String> planningGroupIds = null;
 
   public CreateActivityCodeRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       secondaryPresences = new ArrayList<SecondaryPresence>();
+      planningGroupIds = new ArrayList<String>();
     }
   }
 
@@ -277,6 +279,24 @@ public class CreateActivityCodeRequest  implements Serializable {
   }
 
 
+  /**
+   * The planning group IDs associated with this activity code
+   **/
+  public CreateActivityCodeRequest planningGroupIds(List<String> planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The planning group IDs associated with this activity code")
+  @JsonProperty("planningGroupIds")
+  public List<String> getPlanningGroupIds() {
+    return planningGroupIds;
+  }
+  public void setPlanningGroupIds(List<String> planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -296,12 +316,13 @@ public class CreateActivityCodeRequest  implements Serializable {
             Objects.equals(this.countsTowardShrinkage, createActivityCodeRequest.countsTowardShrinkage) &&
             Objects.equals(this.plannedShrinkage, createActivityCodeRequest.plannedShrinkage) &&
             Objects.equals(this.interruptible, createActivityCodeRequest.interruptible) &&
-            Objects.equals(this.secondaryPresences, createActivityCodeRequest.secondaryPresences);
+            Objects.equals(this.secondaryPresences, createActivityCodeRequest.secondaryPresences) &&
+            Objects.equals(this.planningGroupIds, createActivityCodeRequest.planningGroupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences);
+    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroupIds);
   }
 
   @Override
@@ -319,6 +340,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     sb.append("    plannedShrinkage: ").append(toIndentedString(plannedShrinkage)).append("\n");
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
     sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
+    sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

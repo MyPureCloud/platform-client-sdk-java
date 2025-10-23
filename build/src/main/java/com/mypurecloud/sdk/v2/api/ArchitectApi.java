@@ -66,7 +66,7 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IVRIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
@@ -3275,11 +3275,11 @@ public class ArchitectApi {
    * Get an IVR IdentityResolutionConfig.
    * 
    * @param ivrId IVR id (required)
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getArchitectIvrIdentityresolution(String ivrId) throws IOException, ApiException {
+  public IVRIdentityResolutionConfig getArchitectIvrIdentityresolution(String ivrId) throws IOException, ApiException {
     return  getArchitectIvrIdentityresolution(createGetArchitectIvrIdentityresolutionRequest(ivrId));
   }
 
@@ -3287,10 +3287,10 @@ public class ArchitectApi {
    * Get an IVR IdentityResolutionConfig.
    * 
    * @param ivrId IVR id (required)
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getArchitectIvrIdentityresolutionWithHttpInfo(String ivrId) throws IOException {
+  public ApiResponse<IVRIdentityResolutionConfig> getArchitectIvrIdentityresolutionWithHttpInfo(String ivrId) throws IOException {
     return getArchitectIvrIdentityresolution(createGetArchitectIvrIdentityresolutionRequest(ivrId).withHttpInfo());
   }
 
@@ -3305,13 +3305,13 @@ public class ArchitectApi {
    * Get an IVR IdentityResolutionConfig.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getArchitectIvrIdentityresolution(GetArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
+  public IVRIdentityResolutionConfig getArchitectIvrIdentityresolution(GetArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<IVRIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVRIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3327,13 +3327,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getArchitectIvrIdentityresolution(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<IVRIdentityResolutionConfig> getArchitectIvrIdentityresolution(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<IVRIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3344,7 +3344,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11773,11 +11773,11 @@ public class ArchitectApi {
    * 
    * @param ivrId IVR id (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putArchitectIvrIdentityresolution(String ivrId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public IVRIdentityResolutionConfig putArchitectIvrIdentityresolution(String ivrId, IVRIdentityResolutionConfig body) throws IOException, ApiException {
     return  putArchitectIvrIdentityresolution(createPutArchitectIvrIdentityresolutionRequest(ivrId, body));
   }
 
@@ -11786,14 +11786,14 @@ public class ArchitectApi {
    * 
    * @param ivrId IVR id (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putArchitectIvrIdentityresolutionWithHttpInfo(String ivrId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<IVRIdentityResolutionConfig> putArchitectIvrIdentityresolutionWithHttpInfo(String ivrId, IVRIdentityResolutionConfig body) throws IOException {
     return putArchitectIvrIdentityresolution(createPutArchitectIvrIdentityresolutionRequest(ivrId, body).withHttpInfo());
   }
 
-  private PutArchitectIvrIdentityresolutionRequest createPutArchitectIvrIdentityresolutionRequest(String ivrId, IdentityResolutionConfig body) {
+  private PutArchitectIvrIdentityresolutionRequest createPutArchitectIvrIdentityresolutionRequest(String ivrId, IVRIdentityResolutionConfig body) {
     return PutArchitectIvrIdentityresolutionRequest.builder()
             .withIvrId(ivrId)
 
@@ -11806,13 +11806,13 @@ public class ArchitectApi {
    * Update an IVR IdentityResolutionConfig.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return IVRIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putArchitectIvrIdentityresolution(PutArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
+  public IVRIdentityResolutionConfig putArchitectIvrIdentityresolution(PutArchitectIvrIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<IVRIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVRIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -11828,13 +11828,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putArchitectIvrIdentityresolution(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<IVRIdentityResolutionConfig> putArchitectIvrIdentityresolution(ApiRequest<IVRIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<IVRIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -11845,7 +11845,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

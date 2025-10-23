@@ -42,14 +42,14 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
 
 
   /**
-   * The division to which this entity belongs.
+   * The division to use when performing identity resolution.
    **/
   public DeploymentIdentityResolutionConfig division(WritableStarrableDivision division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @ApiModelProperty(example = "null", value = "The division to use when performing identity resolution.")
   @JsonProperty("division")
   public WritableStarrableDivision getDivision() {
     return division;

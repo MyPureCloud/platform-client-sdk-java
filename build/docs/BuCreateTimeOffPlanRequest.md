@@ -9,6 +9,8 @@
 | **activityCodeIds** | **List&lt;String&gt;** | The IDs of activity codes to associate with this time-off plan |  [optional] |
 | **autoApprovalRule** | [**AutoApprovalRuleEnum**](#Enum--AutoApprovalRuleEnum) | Auto approval rule for this time-off plan. Default is Never |  [optional] |
 | **daysBeforeStartToExpireFromWaitlist** | **Integer** | The number of days before the time-off request start date for when the request will be expired from the waitlist. Default is 0 |  [optional] |
+| **autoPublishApprovedTimeOffRequests** | **Boolean** | Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule |  [optional] |
+| **restrictedActivityCodeIds** | **List&lt;String&gt;** | The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved |  [optional] |
 | **hrisTimeOffType** | [**HrisTimeOffType**](HrisTimeOffType) | Time-off type, if this time-off plan is associated with the integration |  [optional] |
 | **enabled** | **Boolean** | Whether this time-off plan should be used by agents. Default is true |  [optional] |
 | **countAgainstTimeOffLimits** | **Boolean** | Whether this time-off plan should count against time-off limits. Default is false |  [optional] |
@@ -30,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

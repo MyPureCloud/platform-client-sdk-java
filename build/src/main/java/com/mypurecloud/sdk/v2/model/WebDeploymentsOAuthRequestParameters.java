@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class WebDeploymentsOAuthRequestParameters  implements Serializable {
   
   private String code = null;
+  private String idToken = null;
   private String redirectUri = null;
   private String nonce = null;
   private Integer maxAge = null;
@@ -43,13 +44,31 @@ public class WebDeploymentsOAuthRequestParameters  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest")
+  @ApiModelProperty(example = "null", value = "The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest")
   @JsonProperty("code")
   public String getCode() {
     return code;
   }
   public void setCode(String code) {
     this.code = code;
+  }
+
+
+  /**
+   * The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
+   **/
+  public WebDeploymentsOAuthRequestParameters idToken(String idToken) {
+    this.idToken = idToken;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest")
+  @JsonProperty("idToken")
+  public String getIdToken() {
+    return idToken;
+  }
+  public void setIdToken(String idToken) {
+    this.idToken = idToken;
   }
 
 
@@ -154,6 +173,7 @@ public class WebDeploymentsOAuthRequestParameters  implements Serializable {
     WebDeploymentsOAuthRequestParameters webDeploymentsOAuthRequestParameters = (WebDeploymentsOAuthRequestParameters) o;
 
     return Objects.equals(this.code, webDeploymentsOAuthRequestParameters.code) &&
+            Objects.equals(this.idToken, webDeploymentsOAuthRequestParameters.idToken) &&
             Objects.equals(this.redirectUri, webDeploymentsOAuthRequestParameters.redirectUri) &&
             Objects.equals(this.nonce, webDeploymentsOAuthRequestParameters.nonce) &&
             Objects.equals(this.maxAge, webDeploymentsOAuthRequestParameters.maxAge) &&
@@ -163,7 +183,7 @@ public class WebDeploymentsOAuthRequestParameters  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, redirectUri, nonce, maxAge, codeVerifier, iss);
+    return Objects.hash(code, idToken, redirectUri, nonce, maxAge, codeVerifier, iss);
   }
 
   @Override
@@ -172,6 +192,7 @@ public class WebDeploymentsOAuthRequestParameters  implements Serializable {
     sb.append("class WebDeploymentsOAuthRequestParameters {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    idToken: ").append(toIndentedString(idToken)).append("\n");
     sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
     sb.append("    maxAge: ").append(toIndentedString(maxAge)).append("\n");

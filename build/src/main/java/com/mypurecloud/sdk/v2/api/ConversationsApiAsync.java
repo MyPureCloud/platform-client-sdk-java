@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AppleIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.AppleIntegration;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationRequest;
@@ -96,6 +97,7 @@ import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.EngagementRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
+import com.mypurecloud.sdk.v2.model.FacebookIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
@@ -107,8 +109,8 @@ import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
@@ -177,6 +179,7 @@ import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalContactRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -191,6 +194,7 @@ import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationActivationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
@@ -333,6 +337,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantReque
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantConsultRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantAttributesRequest;
@@ -6919,13 +6924,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<AppleIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<AppleIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<AppleIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<AppleIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6953,13 +6958,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<AppleIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AppleIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<AppleIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6967,7 +6972,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6975,7 +6980,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6994,13 +6999,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<FacebookIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<FacebookIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<FacebookIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FacebookIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<FacebookIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -7028,13 +7033,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<FacebookIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<FacebookIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<FacebookIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<FacebookIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -7042,7 +7047,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -7050,7 +7055,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7069,13 +7074,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<InstagramIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<InstagramIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<InstagramIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<InstagramIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -7103,13 +7108,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<InstagramIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<InstagramIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<InstagramIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -7117,7 +7122,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -7125,7 +7130,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7219,13 +7224,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<TwitterIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<TwitterIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<TwitterIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -7253,13 +7258,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<TwitterIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<TwitterIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<TwitterIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<TwitterIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -7267,7 +7272,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -7275,7 +7280,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7294,13 +7299,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<WhatsAppIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<WhatsAppIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<WhatsAppIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WhatsAppIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<WhatsAppIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -7328,13 +7333,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<WhatsAppIdentityResolutionConfig>> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<WhatsAppIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<WhatsAppIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<WhatsAppIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -7342,7 +7347,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -7350,7 +7355,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10582,6 +10587,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchConversationsCallParticipantUserUserIdAsync(PatchConversationsCallParticipantUserUserIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchConversationsCallParticipantUserUserIdAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -21087,13 +21167,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<AppleIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request, final AsyncApiCallback<AppleIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<AppleIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppleIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<AppleIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -21121,13 +21201,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<AppleIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync(ApiRequest<AppleIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AppleIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AppleIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<AppleIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<AppleIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -21135,7 +21215,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -21143,7 +21223,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -21162,13 +21242,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<FacebookIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request, final AsyncApiCallback<FacebookIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<FacebookIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FacebookIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<FacebookIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -21196,13 +21276,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<FacebookIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsync(ApiRequest<FacebookIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<FacebookIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<FacebookIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<FacebookIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<FacebookIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -21210,7 +21290,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -21218,7 +21298,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -21237,13 +21317,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<InstagramIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<InstagramIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<InstagramIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<InstagramIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -21271,13 +21351,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<InstagramIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync(ApiRequest<InstagramIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<InstagramIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<InstagramIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<InstagramIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -21285,7 +21365,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -21293,7 +21373,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -21387,13 +21467,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<TwitterIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<TwitterIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<TwitterIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -21421,13 +21501,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<TwitterIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync(ApiRequest<TwitterIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<TwitterIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<TwitterIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<TwitterIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<TwitterIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -21435,7 +21515,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -21443,7 +21523,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -21462,13 +21542,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<WhatsAppIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request, final AsyncApiCallback<WhatsAppIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<WhatsAppIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WhatsAppIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<WhatsAppIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -21496,13 +21576,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<WhatsAppIdentityResolutionConfig>> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdAsync(ApiRequest<WhatsAppIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<WhatsAppIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<WhatsAppIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<WhatsAppIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<WhatsAppIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -21510,7 +21590,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -21518,7 +21598,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

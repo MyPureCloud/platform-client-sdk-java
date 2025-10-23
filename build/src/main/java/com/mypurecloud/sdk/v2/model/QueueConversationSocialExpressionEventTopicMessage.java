@@ -55,7 +55,8 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
     CONNECTED("connected"),
-    DISCONNECTED("disconnected");
+    DISCONNECTED("disconnected"),
+    PARKED("parked");
 
     private String value;
 
@@ -104,7 +105,8 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
     CONNECTED("connected"),
-    DISCONNECTED("disconnected");
+    DISCONNECTED("disconnected"),
+    PARKED("parked");
 
     private String value;
 
@@ -328,6 +330,8 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private String engagementSource = null;
   private String byoSmsIntegrationId = null;
   private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
+  private Date resumeTime = null;
+  private Date parkTime = null;
 
   public QueueConversationSocialExpressionEventTopicMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -837,6 +841,42 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   }
 
 
+  /**
+   * The time when a parked message should resume.
+   **/
+  public QueueConversationSocialExpressionEventTopicMessage resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when a parked message should resume.")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   * The time when an  parked message was parked.
+   **/
+  public QueueConversationSocialExpressionEventTopicMessage parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when an  parked message was parked.")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -874,12 +914,14 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
             Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicMessage.agentAssistantId) &&
             Objects.equals(this.engagementSource, queueConversationSocialExpressionEventTopicMessage.engagementSource) &&
             Objects.equals(this.byoSmsIntegrationId, queueConversationSocialExpressionEventTopicMessage.byoSmsIntegrationId) &&
-            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicMessage.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicMessage.queueMediaSettings) &&
+            Objects.equals(this.resumeTime, queueConversationSocialExpressionEventTopicMessage.resumeTime) &&
+            Objects.equals(this.parkTime, queueConversationSocialExpressionEventTopicMessage.parkTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, engagementSource, byoSmsIntegrationId, queueMediaSettings);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, engagementSource, byoSmsIntegrationId, queueMediaSettings, resumeTime, parkTime);
   }
 
   @Override
@@ -915,6 +957,8 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

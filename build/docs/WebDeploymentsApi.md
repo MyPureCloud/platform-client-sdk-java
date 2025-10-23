@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi#postWebdeploymentsConfigurationVersionsDraftPublish) | Publish the configuration draft and create a new version |
 | [**postWebdeploymentsConfigurations**](WebDeploymentsApi#postWebdeploymentsConfigurations) | Create a configuration draft |
 | [**postWebdeploymentsDeployments**](WebDeploymentsApi#postWebdeploymentsDeployments) | Create a deployment |
-| [**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments. |
+| [**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments. |
 | [**postWebdeploymentsTokenRefresh**](WebDeploymentsApi#postWebdeploymentsTokenRefresh) | Refresh a JWT. |
 | [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi#putWebdeploymentsConfigurationVersionsDraft) | Update the configuration draft |
 | [**putWebdeploymentsDeployment**](WebDeploymentsApi#putWebdeploymentsDeployment) | Update a deployment |
@@ -949,7 +949,7 @@ try {
 
 > [WebDeploymentsAuthorizationResponse](WebDeploymentsAuthorizationResponse) postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
 
-Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 Wraps POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange  
 
@@ -1218,4 +1218,4 @@ try {
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

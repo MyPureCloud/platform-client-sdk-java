@@ -1331,7 +1331,7 @@ public class WebDeploymentsApi {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param body webDeploymentsOAuthExchangeRequest (required)
    * @return WebDeploymentsAuthorizationResponse
@@ -1343,7 +1343,7 @@ public class WebDeploymentsApi {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param body webDeploymentsOAuthExchangeRequest (required)
    * @return WebDeploymentsAuthorizationResponse
@@ -1361,7 +1361,7 @@ public class WebDeploymentsApi {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param request The request object
    * @return WebDeploymentsAuthorizationResponse
@@ -1380,7 +1380,7 @@ public class WebDeploymentsApi {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param request The request object
    * @return the response

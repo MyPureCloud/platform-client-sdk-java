@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAggregateQueryFilter;
+import com.mypurecloud.sdk.v2.model.AgentCopilotAggregationSort;
 import com.mypurecloud.sdk.v2.model.AgentCopilotAggregationView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -213,11 +214,12 @@ public class AgentCopilotAggregationQuery  implements Serializable {
     }
   }
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    */
  @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
   public enum QueryTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BOTTOMN("bottomN"),
     GROUPBY("groupBy"),
     TOPN("topN");
 
@@ -247,6 +249,7 @@ public class AgentCopilotAggregationQuery  implements Serializable {
     }
   }
   private QueryTypeEnum queryType = null;
+  private AgentCopilotAggregationSort sortMetric = null;
   private Integer limit = null;
 
   public AgentCopilotAggregationQuery() {
@@ -421,14 +424,14 @@ public class AgentCopilotAggregationQuery  implements Serializable {
 
 
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    **/
   public AgentCopilotAggregationQuery queryType(QueryTypeEnum queryType) {
     this.queryType = queryType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)")
+  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.")
   @JsonProperty("queryType")
   public QueryTypeEnum getQueryType() {
     return queryType;
@@ -439,14 +442,32 @@ public class AgentCopilotAggregationQuery  implements Serializable {
 
 
   /**
-   * How many results you want in the topN list. Only applicable for topN query type.
+   * Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+   **/
+  public AgentCopilotAggregationQuery sortMetric(AgentCopilotAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required when requesting multiple metrics. Only applicable for topN/bottomN query type.")
+  @JsonProperty("sortMetric")
+  public AgentCopilotAggregationSort getSortMetric() {
+    return sortMetric;
+  }
+  public void setSortMetric(AgentCopilotAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+  }
+
+
+  /**
+   * How many results you want in an ordered list. Only applicable for topN/bottomN query type.
    **/
   public AgentCopilotAggregationQuery limit(Integer limit) {
     this.limit = limit;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How many results you want in the topN list. Only applicable for topN query type.")
+  @ApiModelProperty(example = "null", value = "How many results you want in an ordered list. Only applicable for topN/bottomN query type.")
   @JsonProperty("limit")
   public Integer getLimit() {
     return limit;
@@ -476,12 +497,13 @@ public class AgentCopilotAggregationQuery  implements Serializable {
             Objects.equals(this.views, agentCopilotAggregationQuery.views) &&
             Objects.equals(this.alternateTimeDimension, agentCopilotAggregationQuery.alternateTimeDimension) &&
             Objects.equals(this.queryType, agentCopilotAggregationQuery.queryType) &&
+            Objects.equals(this.sortMetric, agentCopilotAggregationQuery.sortMetric) &&
             Objects.equals(this.limit, agentCopilotAggregationQuery.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, limit);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, sortMetric, limit);
   }
 
   @Override
@@ -499,6 +521,7 @@ public class AgentCopilotAggregationQuery  implements Serializable {
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
     sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    sortMetric: ").append(toIndentedString(sortMetric)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();

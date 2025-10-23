@@ -43,7 +43,8 @@ public class CallbackIdentifier  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACD("ACD"),
-    EXTERNAL("EXTERNAL");
+    EXTERNAL("EXTERNAL"),
+    DIALER("DIALER");
 
     private String value;
 

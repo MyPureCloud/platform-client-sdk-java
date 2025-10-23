@@ -337,6 +337,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private String agentAssistantId = null;
   private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
   private QueueConversationSocialExpressionEventTopicDisposition disposition = null;
+  private String transferSource = null;
 
   public QueueConversationSocialExpressionEventTopicCall() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -912,6 +913,24 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   }
 
 
+  /**
+   * Indicates how call reaches the agent.
+   **/
+  public QueueConversationSocialExpressionEventTopicCall transferSource(String transferSource) {
+    this.transferSource = transferSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates how call reaches the agent.")
+  @JsonProperty("transferSource")
+  public String getTransferSource() {
+    return transferSource;
+  }
+  public void setTransferSource(String transferSource) {
+    this.transferSource = transferSource;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -953,12 +972,13 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
             Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId) &&
             Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicCall.queueMediaSettings) &&
-            Objects.equals(this.disposition, queueConversationSocialExpressionEventTopicCall.disposition);
+            Objects.equals(this.disposition, queueConversationSocialExpressionEventTopicCall.disposition) &&
+            Objects.equals(this.transferSource, queueConversationSocialExpressionEventTopicCall.transferSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
+    return Objects.hash(id, state, initialState, recording, recordingState, recordersState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition, transferSource);
   }
 
   @Override
@@ -998,6 +1018,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
+    sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

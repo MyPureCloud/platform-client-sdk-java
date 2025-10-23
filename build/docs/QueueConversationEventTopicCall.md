@@ -37,6 +37,7 @@
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **queueMediaSettings** | [**QueueConversationEventTopicQueueMediaSettings**](QueueConversationEventTopicQueueMediaSettings) |  |  [optional] |
 | **disposition** | [**QueueConversationEventTopicDisposition**](QueueConversationEventTopicDisposition) |  |  [optional] |
+| **transferSource** | **String** | Indicates how call reaches the agent. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -121,4 +122,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

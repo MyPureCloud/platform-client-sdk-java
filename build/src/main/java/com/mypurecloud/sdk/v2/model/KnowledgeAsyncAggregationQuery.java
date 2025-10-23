@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeAggregateQueryFilter;
+import com.mypurecloud.sdk.v2.model.KnowledgeAggregationSort;
 import com.mypurecloud.sdk.v2.model.KnowledgeAggregationView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -233,11 +234,12 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
     }
   }
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    */
  @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
   public enum QueryTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BOTTOMN("bottomN"),
     GROUPBY("groupBy"),
     TOPN("topN");
 
@@ -267,6 +269,7 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
     }
   }
   private QueryTypeEnum queryType = null;
+  private KnowledgeAggregationSort sortMetric = null;
   private Integer limit = null;
   private Integer pageSize = null;
 
@@ -442,14 +445,14 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
 
 
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    **/
   public KnowledgeAsyncAggregationQuery queryType(QueryTypeEnum queryType) {
     this.queryType = queryType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)")
+  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.")
   @JsonProperty("queryType")
   public QueryTypeEnum getQueryType() {
     return queryType;
@@ -460,14 +463,32 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
 
 
   /**
-   * How many results you want in the topN list. Only applicable for topN query type.
+   * Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+   **/
+  public KnowledgeAsyncAggregationQuery sortMetric(KnowledgeAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required when requesting multiple metrics. Only applicable for topN/bottomN query type.")
+  @JsonProperty("sortMetric")
+  public KnowledgeAggregationSort getSortMetric() {
+    return sortMetric;
+  }
+  public void setSortMetric(KnowledgeAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+  }
+
+
+  /**
+   * How many results you want in an ordered list. Only applicable for topN/bottomN query type.
    **/
   public KnowledgeAsyncAggregationQuery limit(Integer limit) {
     this.limit = limit;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How many results you want in the topN list. Only applicable for topN query type.")
+  @ApiModelProperty(example = "null", value = "How many results you want in an ordered list. Only applicable for topN/bottomN query type.")
   @JsonProperty("limit")
   public Integer getLimit() {
     return limit;
@@ -515,13 +536,14 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
             Objects.equals(this.views, knowledgeAsyncAggregationQuery.views) &&
             Objects.equals(this.alternateTimeDimension, knowledgeAsyncAggregationQuery.alternateTimeDimension) &&
             Objects.equals(this.queryType, knowledgeAsyncAggregationQuery.queryType) &&
+            Objects.equals(this.sortMetric, knowledgeAsyncAggregationQuery.sortMetric) &&
             Objects.equals(this.limit, knowledgeAsyncAggregationQuery.limit) &&
             Objects.equals(this.pageSize, knowledgeAsyncAggregationQuery.pageSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, limit, pageSize);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, sortMetric, limit, pageSize);
   }
 
   @Override
@@ -539,6 +561,7 @@ public class KnowledgeAsyncAggregationQuery  implements Serializable {
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
     sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    sortMetric: ").append(toIndentedString(sortMetric)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("}");

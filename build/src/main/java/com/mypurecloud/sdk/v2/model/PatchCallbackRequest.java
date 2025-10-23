@@ -14,7 +14,9 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -27,9 +29,13 @@ public class PatchCallbackRequest  implements Serializable {
   private String queueId = null;
   private String agentId = null;
   private Date callbackScheduledTime = null;
+  private String countryCode = null;
+  private List<String> callbackNumbers = null;
+  private Boolean validateCallbackNumbers = null;
 
   public PatchCallbackRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      callbackNumbers = new ArrayList<String>();
     }
   }
 
@@ -106,6 +112,60 @@ public class PatchCallbackRequest  implements Serializable {
   }
 
 
+  /**
+   * The countryCode
+   **/
+  public PatchCallbackRequest countryCode(String countryCode) {
+    this.countryCode = countryCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The countryCode")
+  @JsonProperty("countryCode")
+  public String getCountryCode() {
+    return countryCode;
+  }
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
+  }
+
+
+  /**
+   * The callbackNumbers
+   **/
+  public PatchCallbackRequest callbackNumbers(List<String> callbackNumbers) {
+    this.callbackNumbers = callbackNumbers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The callbackNumbers")
+  @JsonProperty("callbackNumbers")
+  public List<String> getCallbackNumbers() {
+    return callbackNumbers;
+  }
+  public void setCallbackNumbers(List<String> callbackNumbers) {
+    this.callbackNumbers = callbackNumbers;
+  }
+
+
+  /**
+   * validateCallbackNumbers
+   **/
+  public PatchCallbackRequest validateCallbackNumbers(Boolean validateCallbackNumbers) {
+    this.validateCallbackNumbers = validateCallbackNumbers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "validateCallbackNumbers")
+  @JsonProperty("validateCallbackNumbers")
+  public Boolean getValidateCallbackNumbers() {
+    return validateCallbackNumbers;
+  }
+  public void setValidateCallbackNumbers(Boolean validateCallbackNumbers) {
+    this.validateCallbackNumbers = validateCallbackNumbers;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -119,12 +179,15 @@ public class PatchCallbackRequest  implements Serializable {
     return Objects.equals(this.conversationId, patchCallbackRequest.conversationId) &&
             Objects.equals(this.queueId, patchCallbackRequest.queueId) &&
             Objects.equals(this.agentId, patchCallbackRequest.agentId) &&
-            Objects.equals(this.callbackScheduledTime, patchCallbackRequest.callbackScheduledTime);
+            Objects.equals(this.callbackScheduledTime, patchCallbackRequest.callbackScheduledTime) &&
+            Objects.equals(this.countryCode, patchCallbackRequest.countryCode) &&
+            Objects.equals(this.callbackNumbers, patchCallbackRequest.callbackNumbers) &&
+            Objects.equals(this.validateCallbackNumbers, patchCallbackRequest.validateCallbackNumbers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, agentId, callbackScheduledTime);
+    return Objects.hash(conversationId, queueId, agentId, callbackScheduledTime, countryCode, callbackNumbers, validateCallbackNumbers);
   }
 
   @Override
@@ -136,6 +199,9 @@ public class PatchCallbackRequest  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
+    sb.append("    validateCallbackNumbers: ").append(toIndentedString(validateCallbackNumbers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
 import com.mypurecloud.sdk.v2.model.CampaignPatchRequest;
+import com.mypurecloud.sdk.v2.model.CampaignPerformanceDataListing;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
@@ -219,6 +220,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStartRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStopRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsPerformanceQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
@@ -9207,6 +9209,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CampaignPerformanceDataListing> postOutboundCampaignsPerformanceQueryAsync(PostOutboundCampaignsPerformanceQueryRequest request, final AsyncApiCallback<CampaignPerformanceDataListing> callback) {
+    try {
+      final SettableFuture<CampaignPerformanceDataListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignPerformanceDataListing>() {}, new AsyncApiCallback<ApiResponse<CampaignPerformanceDataListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignPerformanceDataListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CampaignPerformanceDataListing>> postOutboundCampaignsPerformanceQueryAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<CampaignPerformanceDataListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CampaignPerformanceDataListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CampaignPerformanceDataListing>() {}, new AsyncApiCallback<ApiResponse<CampaignPerformanceDataListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignPerformanceDataListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignPerformanceDataListing> response = (ApiResponse<CampaignPerformanceDataListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignPerformanceDataListing> response = (ApiResponse<CampaignPerformanceDataListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

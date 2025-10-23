@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ActivityCodesReference;
 import com.mypurecloud.sdk.v2.model.BuTimeOffLimitReference;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffType;
 import com.mypurecloud.sdk.v2.model.TimeOffPlanBusinessUnitAssociation;
@@ -85,6 +86,8 @@ public class BuTimeOffPlanResponse  implements Serializable {
   }
   private AutoApprovalRuleEnum autoApprovalRule = null;
   private Integer daysBeforeStartToExpireFromWaitlist = null;
+  private Boolean autoPublishApprovedTimeOffRequests = null;
+  private ActivityCodesReference restrictedActivityCodes = null;
   private HrisTimeOffType hrisTimeOffType = null;
   private Boolean enabled = null;
   private Boolean countAgainstTimeOffLimits = null;
@@ -195,6 +198,42 @@ public class BuTimeOffPlanResponse  implements Serializable {
   }
   public void setDaysBeforeStartToExpireFromWaitlist(Integer daysBeforeStartToExpireFromWaitlist) {
     this.daysBeforeStartToExpireFromWaitlist = daysBeforeStartToExpireFromWaitlist;
+  }
+
+
+  /**
+   * Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+   **/
+  public BuTimeOffPlanResponse autoPublishApprovedTimeOffRequests(Boolean autoPublishApprovedTimeOffRequests) {
+    this.autoPublishApprovedTimeOffRequests = autoPublishApprovedTimeOffRequests;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule")
+  @JsonProperty("autoPublishApprovedTimeOffRequests")
+  public Boolean getAutoPublishApprovedTimeOffRequests() {
+    return autoPublishApprovedTimeOffRequests;
+  }
+  public void setAutoPublishApprovedTimeOffRequests(Boolean autoPublishApprovedTimeOffRequests) {
+    this.autoPublishApprovedTimeOffRequests = autoPublishApprovedTimeOffRequests;
+  }
+
+
+  /**
+   * The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+   **/
+  public BuTimeOffPlanResponse restrictedActivityCodes(ActivityCodesReference restrictedActivityCodes) {
+    this.restrictedActivityCodes = restrictedActivityCodes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved")
+  @JsonProperty("restrictedActivityCodes")
+  public ActivityCodesReference getRestrictedActivityCodes() {
+    return restrictedActivityCodes;
+  }
+  public void setRestrictedActivityCodes(ActivityCodesReference restrictedActivityCodes) {
+    this.restrictedActivityCodes = restrictedActivityCodes;
   }
 
 
@@ -329,6 +368,8 @@ public class BuTimeOffPlanResponse  implements Serializable {
             Objects.equals(this.timeOffLimits, buTimeOffPlanResponse.timeOffLimits) &&
             Objects.equals(this.autoApprovalRule, buTimeOffPlanResponse.autoApprovalRule) &&
             Objects.equals(this.daysBeforeStartToExpireFromWaitlist, buTimeOffPlanResponse.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.autoPublishApprovedTimeOffRequests, buTimeOffPlanResponse.autoPublishApprovedTimeOffRequests) &&
+            Objects.equals(this.restrictedActivityCodes, buTimeOffPlanResponse.restrictedActivityCodes) &&
             Objects.equals(this.hrisTimeOffType, buTimeOffPlanResponse.hrisTimeOffType) &&
             Objects.equals(this.enabled, buTimeOffPlanResponse.enabled) &&
             Objects.equals(this.countAgainstTimeOffLimits, buTimeOffPlanResponse.countAgainstTimeOffLimits) &&
@@ -340,7 +381,7 @@ public class BuTimeOffPlanResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, activityCodeIds, timeOffLimits, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation, metadata, selfUri);
+    return Objects.hash(id, name, activityCodeIds, timeOffLimits, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, autoPublishApprovedTimeOffRequests, restrictedActivityCodes, hrisTimeOffType, enabled, countAgainstTimeOffLimits, businessUnitAssociation, managementUnitAssociation, metadata, selfUri);
   }
 
   @Override
@@ -354,6 +395,8 @@ public class BuTimeOffPlanResponse  implements Serializable {
     sb.append("    timeOffLimits: ").append(toIndentedString(timeOffLimits)).append("\n");
     sb.append("    autoApprovalRule: ").append(toIndentedString(autoApprovalRule)).append("\n");
     sb.append("    daysBeforeStartToExpireFromWaitlist: ").append(toIndentedString(daysBeforeStartToExpireFromWaitlist)).append("\n");
+    sb.append("    autoPublishApprovedTimeOffRequests: ").append(toIndentedString(autoPublishApprovedTimeOffRequests)).append("\n");
+    sb.append("    restrictedActivityCodes: ").append(toIndentedString(restrictedActivityCodes)).append("\n");
     sb.append("    hrisTimeOffType: ").append(toIndentedString(hrisTimeOffType)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    countAgainstTimeOffLimits: ").append(toIndentedString(countAgainstTimeOffLimits)).append("\n");

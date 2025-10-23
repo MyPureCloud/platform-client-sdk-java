@@ -132,6 +132,7 @@ public class ContentOffer  implements Serializable {
   private String body = null;
   private CallToAction callToAction = null;
   private ContentOfferStylingConfiguration style = null;
+  private String imageAltText = null;
 
   public ContentOffer() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -283,6 +284,24 @@ public class ContentOffer  implements Serializable {
   }
 
 
+  /**
+   * Image description text for accessibility compliance and assistive technology support.
+   **/
+  public ContentOffer imageAltText(String imageAltText) {
+    this.imageAltText = imageAltText;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Image description text for accessibility compliance and assistive technology support.")
+  @JsonProperty("imageAltText")
+  public String getImageAltText() {
+    return imageAltText;
+  }
+  public void setImageAltText(String imageAltText) {
+    this.imageAltText = imageAltText;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -300,12 +319,13 @@ public class ContentOffer  implements Serializable {
             Objects.equals(this.headline, contentOffer.headline) &&
             Objects.equals(this.body, contentOffer.body) &&
             Objects.equals(this.callToAction, contentOffer.callToAction) &&
-            Objects.equals(this.style, contentOffer.style);
+            Objects.equals(this.style, contentOffer.style) &&
+            Objects.equals(this.imageAltText, contentOffer.imageAltText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(imageUrl, displayMode, layoutMode, title, headline, body, callToAction, style);
+    return Objects.hash(imageUrl, displayMode, layoutMode, title, headline, body, callToAction, style, imageAltText);
   }
 
   @Override
@@ -321,6 +341,7 @@ public class ContentOffer  implements Serializable {
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    callToAction: ").append(toIndentedString(callToAction)).append("\n");
     sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    imageAltText: ").append(toIndentedString(imageAltText)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,6 +25,7 @@ public class UserVideoSettings  implements Serializable {
   
   private Boolean allowCamera = null;
   private Boolean allowScreenShare = null;
+  private Boolean allowMicrophone = null;
 
   public UserVideoSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -68,6 +69,24 @@ public class UserVideoSettings  implements Serializable {
   }
 
 
+  /**
+   * whether or not user microphone is allowed
+   **/
+  public UserVideoSettings allowMicrophone(Boolean allowMicrophone) {
+    this.allowMicrophone = allowMicrophone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "whether or not user microphone is allowed")
+  @JsonProperty("allowMicrophone")
+  public Boolean getAllowMicrophone() {
+    return allowMicrophone;
+  }
+  public void setAllowMicrophone(Boolean allowMicrophone) {
+    this.allowMicrophone = allowMicrophone;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +98,13 @@ public class UserVideoSettings  implements Serializable {
     UserVideoSettings userVideoSettings = (UserVideoSettings) o;
 
     return Objects.equals(this.allowCamera, userVideoSettings.allowCamera) &&
-            Objects.equals(this.allowScreenShare, userVideoSettings.allowScreenShare);
+            Objects.equals(this.allowScreenShare, userVideoSettings.allowScreenShare) &&
+            Objects.equals(this.allowMicrophone, userVideoSettings.allowMicrophone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowCamera, allowScreenShare);
+    return Objects.hash(allowCamera, allowScreenShare, allowMicrophone);
   }
 
   @Override
@@ -94,6 +114,7 @@ public class UserVideoSettings  implements Serializable {
     
     sb.append("    allowCamera: ").append(toIndentedString(allowCamera)).append("\n");
     sb.append("    allowScreenShare: ").append(toIndentedString(allowScreenShare)).append("\n");
+    sb.append("    allowMicrophone: ").append(toIndentedString(allowMicrophone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

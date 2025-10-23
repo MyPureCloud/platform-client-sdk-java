@@ -15,6 +15,7 @@
 | **plannedShrinkage** | **Boolean** | Whether this activity code is considered planned or unplanned shrinkage |  [optional] |
 | **interruptible** | **Boolean** | Whether this activity code is considered interruptible |  [optional] |
 | **secondaryPresences** | [**ListWrapperSecondaryPresence**](ListWrapperSecondaryPresence) | The secondary presences of this activity code |  [optional] |
+| **planningGroupIds** | [**ListWrapperString**](ListWrapperString) | The planning group IDs associated with this activity code |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the associated business unit's list of activity codes |  |
 
 
@@ -35,4 +36,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

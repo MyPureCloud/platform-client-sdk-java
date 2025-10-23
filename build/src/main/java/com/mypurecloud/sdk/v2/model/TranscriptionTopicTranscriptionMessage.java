@@ -35,6 +35,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
   private Long transcriptionStartTimeMs = null;
   private List<TranscriptionTopicTranscriptResult> transcripts = null;
   private TranscriptionTopicTranscriptionRequestStatus status = null;
+  private String speechTextAnalyticsProgramId = null;
 
   public TranscriptionTopicTranscriptionMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -179,6 +180,23 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
   }
 
 
+  /**
+   **/
+  public TranscriptionTopicTranscriptionMessage speechTextAnalyticsProgramId(String speechTextAnalyticsProgramId) {
+    this.speechTextAnalyticsProgramId = speechTextAnalyticsProgramId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("speechTextAnalyticsProgramId")
+  public String getSpeechTextAnalyticsProgramId() {
+    return speechTextAnalyticsProgramId;
+  }
+  public void setSpeechTextAnalyticsProgramId(String speechTextAnalyticsProgramId) {
+    this.speechTextAnalyticsProgramId = speechTextAnalyticsProgramId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -196,12 +214,13 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
             Objects.equals(this.sessionStartTimeMs, transcriptionTopicTranscriptionMessage.sessionStartTimeMs) &&
             Objects.equals(this.transcriptionStartTimeMs, transcriptionTopicTranscriptionMessage.transcriptionStartTimeMs) &&
             Objects.equals(this.transcripts, transcriptionTopicTranscriptionMessage.transcripts) &&
-            Objects.equals(this.status, transcriptionTopicTranscriptionMessage.status);
+            Objects.equals(this.status, transcriptionTopicTranscriptionMessage.status) &&
+            Objects.equals(this.speechTextAnalyticsProgramId, transcriptionTopicTranscriptionMessage.speechTextAnalyticsProgramId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, organizationId, conversationId, communicationId, sessionStartTimeMs, transcriptionStartTimeMs, transcripts, status);
+    return Objects.hash(eventTime, organizationId, conversationId, communicationId, sessionStartTimeMs, transcriptionStartTimeMs, transcripts, status, speechTextAnalyticsProgramId);
   }
 
   @Override
@@ -217,6 +236,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     sb.append("    transcriptionStartTimeMs: ").append(toIndentedString(transcriptionStartTimeMs)).append("\n");
     sb.append("    transcripts: ").append(toIndentedString(transcripts)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    speechTextAnalyticsProgramId: ").append(toIndentedString(speechTextAnalyticsProgramId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

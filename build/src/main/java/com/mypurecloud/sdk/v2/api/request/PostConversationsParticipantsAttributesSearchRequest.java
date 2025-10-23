@@ -32,8 +32,6 @@ import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.SearchRequest;

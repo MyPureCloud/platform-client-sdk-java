@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AppleAuthentication;
+import com.mypurecloud.sdk.v2.model.AppleIMessageApp;
+import com.mypurecloud.sdk.v2.model.ApplePay;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequestReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
@@ -30,6 +33,9 @@ public class AppleIntegrationUpdateRequest  implements Serializable {
   private MessagingSettingRequestReference messagingSetting = null;
   private String businessName = null;
   private String logoUrl = null;
+  private AppleIMessageApp appleIMessageApp = null;
+  private AppleAuthentication appleAuthentication = null;
+  private ApplePay applePay = null;
   private String selfUri = null;
 
   public AppleIntegrationUpdateRequest() {
@@ -135,6 +141,60 @@ public class AppleIntegrationUpdateRequest  implements Serializable {
   }
 
 
+  /**
+   * Interactive Application (iMessage App) Settings.
+   **/
+  public AppleIntegrationUpdateRequest appleIMessageApp(AppleIMessageApp appleIMessageApp) {
+    this.appleIMessageApp = appleIMessageApp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Interactive Application (iMessage App) Settings.")
+  @JsonProperty("appleIMessageApp")
+  public AppleIMessageApp getAppleIMessageApp() {
+    return appleIMessageApp;
+  }
+  public void setAppleIMessageApp(AppleIMessageApp appleIMessageApp) {
+    this.appleIMessageApp = appleIMessageApp;
+  }
+
+
+  /**
+   * The Apple Messages for Business authentication setting.
+   **/
+  public AppleIntegrationUpdateRequest appleAuthentication(AppleAuthentication appleAuthentication) {
+    this.appleAuthentication = appleAuthentication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Apple Messages for Business authentication setting.")
+  @JsonProperty("appleAuthentication")
+  public AppleAuthentication getAppleAuthentication() {
+    return appleAuthentication;
+  }
+  public void setAppleAuthentication(AppleAuthentication appleAuthentication) {
+    this.appleAuthentication = appleAuthentication;
+  }
+
+
+  /**
+   * Apple Pay settings.
+   **/
+  public AppleIntegrationUpdateRequest applePay(ApplePay applePay) {
+    this.applePay = applePay;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Apple Pay settings.")
+  @JsonProperty("applePay")
+  public ApplePay getApplePay() {
+    return applePay;
+  }
+  public void setApplePay(ApplePay applePay) {
+    this.applePay = applePay;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -158,12 +218,15 @@ public class AppleIntegrationUpdateRequest  implements Serializable {
             Objects.equals(this.messagingSetting, appleIntegrationUpdateRequest.messagingSetting) &&
             Objects.equals(this.businessName, appleIntegrationUpdateRequest.businessName) &&
             Objects.equals(this.logoUrl, appleIntegrationUpdateRequest.logoUrl) &&
+            Objects.equals(this.appleIMessageApp, appleIntegrationUpdateRequest.appleIMessageApp) &&
+            Objects.equals(this.appleAuthentication, appleIntegrationUpdateRequest.appleAuthentication) &&
+            Objects.equals(this.applePay, appleIntegrationUpdateRequest.applePay) &&
             Objects.equals(this.selfUri, appleIntegrationUpdateRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, messagingSetting, businessName, logoUrl, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, businessName, logoUrl, appleIMessageApp, appleAuthentication, applePay, selfUri);
   }
 
   @Override
@@ -177,6 +240,9 @@ public class AppleIntegrationUpdateRequest  implements Serializable {
     sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
+    sb.append("    appleIMessageApp: ").append(toIndentedString(appleIMessageApp)).append("\n");
+    sb.append("    appleAuthentication: ").append(toIndentedString(appleAuthentication)).append("\n");
+    sb.append("    applePay: ").append(toIndentedString(applePay)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

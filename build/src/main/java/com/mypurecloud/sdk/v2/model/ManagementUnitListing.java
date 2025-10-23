@@ -31,10 +31,10 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String lastUri = null;
-  private Integer pageCount = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private Integer pageCount = null;
   private String selfUri = null;
 
   public ManagementUnitListing() {
@@ -136,42 +136,6 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
   /**
    * Deprecated, paging is not supported
    **/
-  public ManagementUnitListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   * Deprecated, paging is not supported
-   **/
-  public ManagementUnitListing pageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
-  @JsonProperty("pageCount")
-  public Integer getPageCount() {
-    return pageCount;
-  }
-  public void setPageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-  }
-
-
-  /**
-   * Deprecated, paging is not supported
-   **/
   public ManagementUnitListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -202,6 +166,42 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   * Deprecated, paging is not supported
+   **/
+  public ManagementUnitListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   * Deprecated, paging is not supported
+   **/
+  public ManagementUnitListing pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
   }
 
 
@@ -237,16 +237,16 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
             Objects.equals(this.pageNumber, managementUnitListing.pageNumber) &&
             Objects.equals(this.total, managementUnitListing.total) &&
             Objects.equals(this.firstUri, managementUnitListing.firstUri) &&
-            Objects.equals(this.lastUri, managementUnitListing.lastUri) &&
-            Objects.equals(this.pageCount, managementUnitListing.pageCount) &&
             Objects.equals(this.previousUri, managementUnitListing.previousUri) &&
             Objects.equals(this.nextUri, managementUnitListing.nextUri) &&
+            Objects.equals(this.lastUri, managementUnitListing.lastUri) &&
+            Objects.equals(this.pageCount, managementUnitListing.pageCount) &&
             Objects.equals(this.selfUri, managementUnitListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, pageCount, previousUri, nextUri, selfUri);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, pageCount, selfUri);
   }
 
   @Override
@@ -259,10 +259,10 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

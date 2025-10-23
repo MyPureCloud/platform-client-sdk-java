@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **allowCamera** | **Boolean** | whether or not agent camera is allowed |  [optional] |
 | **allowScreenShare** | **Boolean** | whether or not agent screen share is allowed |  [optional] |
+| **allowMicrophone** | **Boolean** | whether or not agent microphone is allowed |  [optional] |
 | **background** | [**BackgroundEnum**](#Enum--BackgroundEnum) | background for agent |  [optional] |
 | **backgroundImage** | [**BackgroundImageSettings**](BackgroundImageSettings) | background image settings for agent |  [optional] |
 
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

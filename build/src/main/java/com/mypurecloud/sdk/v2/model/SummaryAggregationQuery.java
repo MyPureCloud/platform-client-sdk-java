@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SummaryAggregateQueryFilter;
+import com.mypurecloud.sdk.v2.model.SummaryAggregationSort;
 import com.mypurecloud.sdk.v2.model.SummaryAggregationView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -208,11 +209,12 @@ public class SummaryAggregationQuery  implements Serializable {
     }
   }
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    */
  @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
   public enum QueryTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BOTTOMN("bottomN"),
     GROUPBY("groupBy"),
     TOPN("topN");
 
@@ -242,6 +244,7 @@ public class SummaryAggregationQuery  implements Serializable {
     }
   }
   private QueryTypeEnum queryType = null;
+  private SummaryAggregationSort sortMetric = null;
   private Integer limit = null;
 
   public SummaryAggregationQuery() {
@@ -416,14 +419,14 @@ public class SummaryAggregationQuery  implements Serializable {
 
 
   /**
-   * Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+   * Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
    **/
   public SummaryAggregationQuery queryType(QueryTypeEnum queryType) {
     this.queryType = queryType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)")
+  @ApiModelProperty(example = "null", value = "Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.")
   @JsonProperty("queryType")
   public QueryTypeEnum getQueryType() {
     return queryType;
@@ -434,14 +437,32 @@ public class SummaryAggregationQuery  implements Serializable {
 
 
   /**
-   * How many results you want in the topN list. Only applicable for topN query type.
+   * Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+   **/
+  public SummaryAggregationQuery sortMetric(SummaryAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required when requesting multiple metrics. Only applicable for topN/bottomN query type.")
+  @JsonProperty("sortMetric")
+  public SummaryAggregationSort getSortMetric() {
+    return sortMetric;
+  }
+  public void setSortMetric(SummaryAggregationSort sortMetric) {
+    this.sortMetric = sortMetric;
+  }
+
+
+  /**
+   * How many results you want in an ordered list. Only applicable for topN/bottomN query type.
    **/
   public SummaryAggregationQuery limit(Integer limit) {
     this.limit = limit;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How many results you want in the topN list. Only applicable for topN query type.")
+  @ApiModelProperty(example = "null", value = "How many results you want in an ordered list. Only applicable for topN/bottomN query type.")
   @JsonProperty("limit")
   public Integer getLimit() {
     return limit;
@@ -471,12 +492,13 @@ public class SummaryAggregationQuery  implements Serializable {
             Objects.equals(this.views, summaryAggregationQuery.views) &&
             Objects.equals(this.alternateTimeDimension, summaryAggregationQuery.alternateTimeDimension) &&
             Objects.equals(this.queryType, summaryAggregationQuery.queryType) &&
+            Objects.equals(this.sortMetric, summaryAggregationQuery.sortMetric) &&
             Objects.equals(this.limit, summaryAggregationQuery.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, limit);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension, queryType, sortMetric, limit);
   }
 
   @Override
@@ -494,6 +516,7 @@ public class SummaryAggregationQuery  implements Serializable {
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
     sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    sortMetric: ").append(toIndentedString(sortMetric)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();

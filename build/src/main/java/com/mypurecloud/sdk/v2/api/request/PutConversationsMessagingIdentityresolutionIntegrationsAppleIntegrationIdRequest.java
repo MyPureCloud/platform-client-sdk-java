@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AppleIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.AppleIntegration;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationRequest;
@@ -103,6 +104,7 @@ import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.EngagementRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
+import com.mypurecloud.sdk.v2.model.FacebookIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
@@ -114,8 +116,8 @@ import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
@@ -184,6 +186,7 @@ import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalContactRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -198,6 +201,7 @@ import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationActivationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
@@ -221,16 +225,16 @@ public class PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegra
 	    return this;
 	} 
 
-	private IdentityResolutionConfig body;
-	public IdentityResolutionConfig getBody() {
+	private AppleIdentityResolutionConfig body;
+	public AppleIdentityResolutionConfig getBody() {
 		return this.body;
 	}
 
-	public void setBody(IdentityResolutionConfig body) {
+	public void setBody(AppleIdentityResolutionConfig body) {
 		this.body = body;
 	}
 
-	public PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest withBody(IdentityResolutionConfig body) {
+	public PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest withBody(AppleIdentityResolutionConfig body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -254,7 +258,7 @@ public class PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegra
         return this;
     }
 
-    public ApiRequest<IdentityResolutionConfig> withHttpInfo() {
+    public ApiRequest<AppleIdentityResolutionConfig> withHttpInfo() {
         
         // verify the required parameter 'integrationId' is set
         if (this.integrationId == null) {
@@ -284,7 +288,7 @@ public class PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegra
 	}
 
 
-	public static Builder builder(String integrationId, IdentityResolutionConfig body) {
+	public static Builder builder(String integrationId, AppleIdentityResolutionConfig body) {
 	    return new Builder()
 	            .withRequiredParams(integrationId, body);
 	}
@@ -303,14 +307,14 @@ public class PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegra
 			return this;
 		}
 
-		public Builder withBody(IdentityResolutionConfig body) {
+		public Builder withBody(AppleIdentityResolutionConfig body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String integrationId, IdentityResolutionConfig body) {
+		public Builder withRequiredParams(String integrationId, AppleIdentityResolutionConfig body) {
 			request.setIntegrationId(integrationId);
 			request.setBody(body);
 

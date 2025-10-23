@@ -1009,28 +1009,32 @@ public class SocialMediaApi {
    * Get a single escalation rule.
    * 
    * @param escalationRuleId escalationRuleId (required)
+   * @param expand which fields, if any, to expand (optional)
    * @return EscalationRuleResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EscalationRuleResponse getSocialmediaEscalationrule(String escalationRuleId) throws IOException, ApiException {
-    return  getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId));
+  public EscalationRuleResponse getSocialmediaEscalationrule(String escalationRuleId, String expand) throws IOException, ApiException {
+    return  getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId, expand));
   }
 
   /**
    * Get a single escalation rule.
    * 
    * @param escalationRuleId escalationRuleId (required)
+   * @param expand which fields, if any, to expand (optional)
    * @return EscalationRuleResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EscalationRuleResponse> getSocialmediaEscalationruleWithHttpInfo(String escalationRuleId) throws IOException {
-    return getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId).withHttpInfo());
+  public ApiResponse<EscalationRuleResponse> getSocialmediaEscalationruleWithHttpInfo(String escalationRuleId, String expand) throws IOException {
+    return getSocialmediaEscalationrule(createGetSocialmediaEscalationruleRequest(escalationRuleId, expand).withHttpInfo());
   }
 
-  private GetSocialmediaEscalationruleRequest createGetSocialmediaEscalationruleRequest(String escalationRuleId) {
+  private GetSocialmediaEscalationruleRequest createGetSocialmediaEscalationruleRequest(String escalationRuleId, String expand) {
     return GetSocialmediaEscalationruleRequest.builder()
             .withEscalationRuleId(escalationRuleId)
+
+            .withExpand(expand)
 
             .build();
   }

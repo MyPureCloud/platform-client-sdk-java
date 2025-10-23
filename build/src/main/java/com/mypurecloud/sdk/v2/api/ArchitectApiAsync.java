@@ -69,7 +69,7 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IVRIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
@@ -2966,13 +2966,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> getArchitectIvrIdentityresolutionAsync(GetArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<IVRIdentityResolutionConfig> getArchitectIvrIdentityresolutionAsync(GetArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IVRIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<IVRIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IVRIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<IVRIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3000,13 +3000,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> getArchitectIvrIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<IVRIdentityResolutionConfig>> getArchitectIvrIdentityresolutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IVRIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IVRIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<IVRIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3014,7 +3014,7 @@ public class ArchitectApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3022,7 +3022,7 @@ public class ArchitectApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10320,13 +10320,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityResolutionConfig> putArchitectIvrIdentityresolutionAsync(PutArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IdentityResolutionConfig> callback) {
+  public Future<IVRIdentityResolutionConfig> putArchitectIvrIdentityresolutionAsync(PutArchitectIvrIdentityresolutionRequest request, final AsyncApiCallback<IVRIdentityResolutionConfig> callback) {
     try {
-      final SettableFuture<IdentityResolutionConfig> future = SettableFuture.create();
+      final SettableFuture<IVRIdentityResolutionConfig> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IVRIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<IVRIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -10354,13 +10354,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityResolutionConfig>> putArchitectIvrIdentityresolutionAsync(ApiRequest<IdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IdentityResolutionConfig>> callback) {
+  public Future<ApiResponse<IVRIdentityResolutionConfig>> putArchitectIvrIdentityresolutionAsync(ApiRequest<IVRIdentityResolutionConfig> request, final AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>> callback) {
     try {
-      final SettableFuture<ApiResponse<IdentityResolutionConfig>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IVRIdentityResolutionConfig>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<IdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IdentityResolutionConfig>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IVRIdentityResolutionConfig>() {}, new AsyncApiCallback<ApiResponse<IVRIdentityResolutionConfig>>() {
         @Override
-        public void onCompleted(ApiResponse<IdentityResolutionConfig> response) {
+        public void onCompleted(ApiResponse<IVRIdentityResolutionConfig> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -10368,7 +10368,7 @@ public class ArchitectApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+            ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -10376,7 +10376,7 @@ public class ArchitectApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IVRIdentityResolutionConfig> response = (ApiResponse<IVRIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

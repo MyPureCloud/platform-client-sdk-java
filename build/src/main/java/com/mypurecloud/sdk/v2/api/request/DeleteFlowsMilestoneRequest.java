@@ -76,7 +76,7 @@ import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.IVRIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;

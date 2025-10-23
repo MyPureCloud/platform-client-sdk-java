@@ -132,14 +132,14 @@ public class MediaParticipantRequest  implements Serializable {
 
 
   /**
-   * True to enable recording of this participant, otherwise false to disable recording.
+   * True to enable ad-hoc recording of this participant, otherwise false to disable recording.
    **/
   public MediaParticipantRequest recording(Boolean recording) {
     this.recording = recording;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "True to enable recording of this participant, otherwise false to disable recording.")
+  @ApiModelProperty(example = "null", value = "True to enable ad-hoc recording of this participant, otherwise false to disable recording.")
   @JsonProperty("recording")
   public Boolean getRecording() {
     return recording;

@@ -31,7 +31,6 @@ import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.IdentityResolutionQueueConfig;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundDomainCreateRequest;
@@ -42,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.MailFromResult;
 import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.OutboundDomainCreateRequest;
 import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;
@@ -61,6 +61,7 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
 import com.mypurecloud.sdk.v2.model.RecipientRequest;
+import com.mypurecloud.sdk.v2.model.RouteIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -79,6 +80,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsAlphanumericProvision;
+import com.mypurecloud.sdk.v2.model.SmsIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
@@ -102,6 +104,7 @@ import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
 import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
+import com.mypurecloud.sdk.v2.model.VerificationResult;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -140,9 +143,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainDkimRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainMailfromRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteIdentityresolutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivationRequest;
@@ -224,8 +230,11 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainDkimRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainMailfromRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainVerificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
@@ -2673,6 +2682,162 @@ public class RoutingApi {
   }
 
   /**
+   * Get domain dkim settings
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult getRoutingEmailDomainDkim(String domainId) throws IOException, ApiException {
+    return  getRoutingEmailDomainDkim(createGetRoutingEmailDomainDkimRequest(domainId));
+  }
+
+  /**
+   * Get domain dkim settings
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> getRoutingEmailDomainDkimWithHttpInfo(String domainId) throws IOException {
+    return getRoutingEmailDomainDkim(createGetRoutingEmailDomainDkimRequest(domainId).withHttpInfo());
+  }
+
+  private GetRoutingEmailDomainDkimRequest createGetRoutingEmailDomainDkimRequest(String domainId) {
+    return GetRoutingEmailDomainDkimRequest.builder()
+            .withDomainId(domainId)
+
+            .build();
+  }
+
+  /**
+   * Get domain dkim settings
+   * 
+   * @param request The request object
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult getRoutingEmailDomainDkim(GetRoutingEmailDomainDkimRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VerificationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VerificationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get domain dkim settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> getRoutingEmailDomainDkim(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VerificationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param domainId domain ID (required)
+   * @return MailFromResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MailFromResult getRoutingEmailDomainMailfrom(String domainId) throws IOException, ApiException {
+    return  getRoutingEmailDomainMailfrom(createGetRoutingEmailDomainMailfromRequest(domainId));
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param domainId domain ID (required)
+   * @return MailFromResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MailFromResult> getRoutingEmailDomainMailfromWithHttpInfo(String domainId) throws IOException {
+    return getRoutingEmailDomainMailfrom(createGetRoutingEmailDomainMailfromRequest(domainId).withHttpInfo());
+  }
+
+  private GetRoutingEmailDomainMailfromRequest createGetRoutingEmailDomainMailfromRequest(String domainId) {
+    return GetRoutingEmailDomainMailfromRequest.builder()
+            .withDomainId(domainId)
+
+            .build();
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param request The request object
+   * @return MailFromResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MailFromResult getRoutingEmailDomainMailfrom(GetRoutingEmailDomainMailfromRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MailFromResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MailFromResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get domain mail from settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MailFromResult> getRoutingEmailDomainMailfrom(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MailFromResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a route
    * 
    * @param domainName email domain (required)
@@ -2763,11 +2928,11 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId) throws IOException, ApiException {
+  public RouteIdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId) throws IOException, ApiException {
     return  getRoutingEmailDomainRouteIdentityresolution(createGetRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId));
   }
 
@@ -2776,10 +2941,10 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId) throws IOException {
+  public ApiResponse<RouteIdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId) throws IOException {
     return getRoutingEmailDomainRouteIdentityresolution(createGetRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId).withHttpInfo());
   }
 
@@ -2796,13 +2961,13 @@ public class RoutingApi {
    * Get a route identity resolution setting.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(GetRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
+  public RouteIdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(GetRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<RouteIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RouteIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2818,13 +2983,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolution(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<RouteIdentityResolutionConfig> getRoutingEmailDomainRouteIdentityresolution(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<RouteIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2835,7 +3000,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2930,6 +3095,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundRouteEntityListing> response = (ApiResponse<InboundRouteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult getRoutingEmailDomainVerification(String domainId) throws IOException, ApiException {
+    return  getRoutingEmailDomainVerification(createGetRoutingEmailDomainVerificationRequest(domainId));
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> getRoutingEmailDomainVerificationWithHttpInfo(String domainId) throws IOException {
+    return getRoutingEmailDomainVerification(createGetRoutingEmailDomainVerificationRequest(domainId).withHttpInfo());
+  }
+
+  private GetRoutingEmailDomainVerificationRequest createGetRoutingEmailDomainVerificationRequest(String domainId) {
+    return GetRoutingEmailDomainVerificationRequest.builder()
+            .withDomainId(domainId)
+
+            .build();
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param request The request object
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult getRoutingEmailDomainVerification(GetRoutingEmailDomainVerificationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VerificationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VerificationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get domain verification settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> getRoutingEmailDomainVerification(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VerificationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6418,11 +6661,11 @@ public class RoutingApi {
    * Get a SMS identity resolution settings.
    * 
    * @param addressId Address ID (required)
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(String addressId) throws IOException, ApiException {
+  public SmsIdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(String addressId) throws IOException, ApiException {
     return  getRoutingSmsIdentityresolutionPhonenumber(createGetRoutingSmsIdentityresolutionPhonenumberRequest(addressId));
   }
 
@@ -6430,10 +6673,10 @@ public class RoutingApi {
    * Get a SMS identity resolution settings.
    * 
    * @param addressId Address ID (required)
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId) throws IOException {
+  public ApiResponse<SmsIdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId) throws IOException {
     return getRoutingSmsIdentityresolutionPhonenumber(createGetRoutingSmsIdentityresolutionPhonenumberRequest(addressId).withHttpInfo());
   }
 
@@ -6448,13 +6691,13 @@ public class RoutingApi {
    * Get a SMS identity resolution settings.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(GetRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
+  public SmsIdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(GetRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<SmsIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -6470,13 +6713,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumber(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<SmsIdentityResolutionConfig> getRoutingSmsIdentityresolutionPhonenumber(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<SmsIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -6487,7 +6730,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9876,6 +10119,166 @@ public class RoutingApi {
   }
 
   /**
+   * Restart domain dkim
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult postRoutingEmailDomainDkim(String domainId) throws IOException, ApiException {
+    return  postRoutingEmailDomainDkim(createPostRoutingEmailDomainDkimRequest(domainId));
+  }
+
+  /**
+   * Restart domain dkim
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> postRoutingEmailDomainDkimWithHttpInfo(String domainId) throws IOException {
+    return postRoutingEmailDomainDkim(createPostRoutingEmailDomainDkimRequest(domainId).withHttpInfo());
+  }
+
+  private PostRoutingEmailDomainDkimRequest createPostRoutingEmailDomainDkimRequest(String domainId) {
+    return PostRoutingEmailDomainDkimRequest.builder()
+            .withDomainId(domainId)
+
+            .build();
+  }
+
+  /**
+   * Restart domain dkim
+   * 
+   * @param request The request object
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult postRoutingEmailDomainDkim(PostRoutingEmailDomainDkimRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VerificationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VerificationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Restart domain dkim
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> postRoutingEmailDomainDkim(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VerificationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Mail From Settings (required)
+   * @return MailFromResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MailFromResult postRoutingEmailDomainMailfrom(String domainId, MailFromResult body) throws IOException, ApiException {
+    return  postRoutingEmailDomainMailfrom(createPostRoutingEmailDomainMailfromRequest(domainId, body));
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Mail From Settings (required)
+   * @return MailFromResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MailFromResult> postRoutingEmailDomainMailfromWithHttpInfo(String domainId, MailFromResult body) throws IOException {
+    return postRoutingEmailDomainMailfrom(createPostRoutingEmailDomainMailfromRequest(domainId, body).withHttpInfo());
+  }
+
+  private PostRoutingEmailDomainMailfromRequest createPostRoutingEmailDomainMailfromRequest(String domainId, MailFromResult body) {
+    return PostRoutingEmailDomainMailfromRequest.builder()
+            .withDomainId(domainId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param request The request object
+   * @return MailFromResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MailFromResult postRoutingEmailDomainMailfrom(PostRoutingEmailDomainMailfromRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MailFromResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MailFromResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set domain mail from settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MailFromResult> postRoutingEmailDomainMailfrom(ApiRequest<MailFromResult> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MailFromResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MailFromResult> response = (ApiResponse<MailFromResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a route
    * 
    * @param domainName email domain (required)
@@ -10035,6 +10438,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult postRoutingEmailDomainVerification(String domainId) throws IOException, ApiException {
+    return  postRoutingEmailDomainVerification(createPostRoutingEmailDomainVerificationRequest(domainId));
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param domainId domain ID (required)
+   * @return VerificationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> postRoutingEmailDomainVerificationWithHttpInfo(String domainId) throws IOException {
+    return postRoutingEmailDomainVerification(createPostRoutingEmailDomainVerificationRequest(domainId).withHttpInfo());
+  }
+
+  private PostRoutingEmailDomainVerificationRequest createPostRoutingEmailDomainVerificationRequest(String domainId) {
+    return PostRoutingEmailDomainVerificationRequest.builder()
+            .withDomainId(domainId)
+
+            .build();
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param request The request object
+   * @return VerificationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerificationResult postRoutingEmailDomainVerification(PostRoutingEmailDomainVerificationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VerificationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VerificationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Restart domain verification
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerificationResult> postRoutingEmailDomainVerification(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VerificationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerificationResult> response = (ApiResponse<VerificationResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11882,11 +12363,11 @@ public class RoutingApi {
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public RouteIdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(String domainName, String routeId, RouteIdentityResolutionConfig body) throws IOException, ApiException {
     return  putRoutingEmailDomainRouteIdentityresolution(createPutRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId, body));
   }
 
@@ -11896,14 +12377,14 @@ public class RoutingApi {
    * @param domainName email domain (required)
    * @param routeId route ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<RouteIdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolutionWithHttpInfo(String domainName, String routeId, RouteIdentityResolutionConfig body) throws IOException {
     return putRoutingEmailDomainRouteIdentityresolution(createPutRoutingEmailDomainRouteIdentityresolutionRequest(domainName, routeId, body).withHttpInfo());
   }
 
-  private PutRoutingEmailDomainRouteIdentityresolutionRequest createPutRoutingEmailDomainRouteIdentityresolutionRequest(String domainName, String routeId, IdentityResolutionConfig body) {
+  private PutRoutingEmailDomainRouteIdentityresolutionRequest createPutRoutingEmailDomainRouteIdentityresolutionRequest(String domainName, String routeId, RouteIdentityResolutionConfig body) {
     return PutRoutingEmailDomainRouteIdentityresolutionRequest.builder()
             .withDomainName(domainName)
 
@@ -11918,13 +12399,13 @@ public class RoutingApi {
    * Update identity resolution settings for a route.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return RouteIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(PutRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
+  public RouteIdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(PutRoutingEmailDomainRouteIdentityresolutionRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<RouteIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RouteIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -11940,13 +12421,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolution(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<RouteIdentityResolutionConfig> putRoutingEmailDomainRouteIdentityresolution(ApiRequest<RouteIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<RouteIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -11957,7 +12438,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<RouteIdentityResolutionConfig> response = (ApiResponse<RouteIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -12447,11 +12928,11 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(String addressId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public SmsIdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(String addressId, SmsIdentityResolutionConfig body) throws IOException, ApiException {
     return  putRoutingSmsIdentityresolutionPhonenumber(createPutRoutingSmsIdentityresolutionPhonenumberRequest(addressId, body));
   }
 
@@ -12460,14 +12941,14 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<SmsIdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumberWithHttpInfo(String addressId, SmsIdentityResolutionConfig body) throws IOException {
     return putRoutingSmsIdentityresolutionPhonenumber(createPutRoutingSmsIdentityresolutionPhonenumberRequest(addressId, body).withHttpInfo());
   }
 
-  private PutRoutingSmsIdentityresolutionPhonenumberRequest createPutRoutingSmsIdentityresolutionPhonenumberRequest(String addressId, IdentityResolutionConfig body) {
+  private PutRoutingSmsIdentityresolutionPhonenumberRequest createPutRoutingSmsIdentityresolutionPhonenumberRequest(String addressId, SmsIdentityResolutionConfig body) {
     return PutRoutingSmsIdentityresolutionPhonenumberRequest.builder()
             .withAddressId(addressId)
 
@@ -12480,13 +12961,13 @@ public class RoutingApi {
    * Update an SMS identity resolution settings.
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return SmsIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(PutRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
+  public SmsIdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(PutRoutingSmsIdentityresolutionPhonenumberRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<SmsIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -12502,13 +12983,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumber(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<SmsIdentityResolutionConfig> putRoutingSmsIdentityresolutionPhonenumber(ApiRequest<SmsIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<SmsIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -12519,7 +13000,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<SmsIdentityResolutionConfig> response = (ApiResponse<SmsIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -338,6 +338,7 @@ public class CallBasic  implements Serializable {
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private String transferSource = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
   private Disposition disposition = null;
 
@@ -925,6 +926,24 @@ public class CallBasic  implements Serializable {
 
 
   /**
+   * Indicates how call reaches the agent.
+   **/
+  public CallBasic transferSource(String transferSource) {
+    this.transferSource = transferSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates how call reaches the agent.")
+  @JsonProperty("transferSource")
+  public String getTransferSource() {
+    return transferSource;
+  }
+  public void setTransferSource(String transferSource) {
+    this.transferSource = transferSource;
+  }
+
+
+  /**
    * Represents the queue settings for this media type.
    **/
   public CallBasic queueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
@@ -1002,13 +1021,14 @@ public class CallBasic  implements Serializable {
             Objects.equals(this.afterCallWork, callBasic.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, callBasic.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, callBasic.agentAssistantId) &&
+            Objects.equals(this.transferSource, callBasic.transferSource) &&
             Objects.equals(this.queueMediaSettings, callBasic.queueMediaSettings) &&
             Objects.equals(this.disposition, callBasic.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, recording, recordingState, recordersState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
+    return Objects.hash(state, initialState, id, direction, recording, recordingState, recordersState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, transferSource, queueMediaSettings, disposition);
   }
 
   @Override
@@ -1048,6 +1068,7 @@ public class CallBasic  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    transferSource: ").append(toIndentedString(transferSource)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");

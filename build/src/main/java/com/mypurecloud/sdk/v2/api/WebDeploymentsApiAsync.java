@@ -1268,7 +1268,7 @@ public class WebDeploymentsApiAsync {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1302,7 +1302,7 @@ public class WebDeploymentsApiAsync {
   }
 
   /**
-   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

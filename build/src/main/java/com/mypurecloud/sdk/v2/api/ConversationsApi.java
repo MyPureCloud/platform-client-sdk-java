@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AppleIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.AppleIntegration;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.AppleIntegrationRequest;
@@ -93,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.EngagementRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
+import com.mypurecloud.sdk.v2.model.FacebookIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
@@ -104,8 +106,8 @@ import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.FeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
@@ -174,6 +176,7 @@ import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalContactRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -188,6 +191,7 @@ import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationActivationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppIdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
@@ -330,6 +334,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantReque
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantConsultRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantUserUserIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantAttributesRequest;
@@ -7409,11 +7414,11 @@ public class ConversationsApi {
    * Get Apple messaging integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(String integrationId) throws IOException, ApiException {
+  public AppleIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(String integrationId) throws IOException, ApiException {
     return  getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(integrationId));
   }
 
@@ -7421,10 +7426,10 @@ public class ConversationsApi {
    * Get Apple messaging integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+  public ApiResponse<AppleIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(integrationId).withHttpInfo());
   }
 
@@ -7439,13 +7444,13 @@ public class ConversationsApi {
    * Get Apple messaging integration identity resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
+  public AppleIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<AppleIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7461,13 +7466,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AppleIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<AppleIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7478,7 +7483,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7487,11 +7492,11 @@ public class ConversationsApi {
    * Get Facebook messaging integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
+  public FacebookIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
     return  getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId));
   }
 
@@ -7499,10 +7504,10 @@ public class ConversationsApi {
    * Get Facebook messaging integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+  public ApiResponse<FacebookIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId).withHttpInfo());
   }
 
@@ -7517,13 +7522,13 @@ public class ConversationsApi {
    * Get Facebook messaging integration identity resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+  public FacebookIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<FacebookIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7539,13 +7544,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<FacebookIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<FacebookIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7556,7 +7561,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7565,11 +7570,11 @@ public class ConversationsApi {
    * Get an Instagram integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(String integrationId) throws IOException, ApiException {
+  public InstagramIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(String integrationId) throws IOException, ApiException {
     return  getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(integrationId));
   }
 
@@ -7577,10 +7582,10 @@ public class ConversationsApi {
    * Get an Instagram integration identity resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+  public ApiResponse<InstagramIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(integrationId).withHttpInfo());
   }
 
@@ -7595,13 +7600,13 @@ public class ConversationsApi {
    * Get an Instagram integration identity resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
+  public InstagramIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<InstagramIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7617,13 +7622,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<InstagramIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<InstagramIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7634,7 +7639,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7721,11 +7726,11 @@ public class ConversationsApi {
    * Get X (Formally Twitter) messaging integration identity resolution settings
    * 
    * @param integrationId Integration Id (required)
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
+  public TwitterIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
     return  getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId));
   }
 
@@ -7733,10 +7738,10 @@ public class ConversationsApi {
    * Get X (Formally Twitter) messaging integration identity resolution settings
    * 
    * @param integrationId Integration Id (required)
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+  public ApiResponse<TwitterIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
   }
 
@@ -7751,13 +7756,13 @@ public class ConversationsApi {
    * Get X (Formally Twitter) messaging integration identity resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+  public TwitterIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<TwitterIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7773,13 +7778,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<TwitterIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<TwitterIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7790,7 +7795,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7799,11 +7804,11 @@ public class ConversationsApi {
    * Get a whatsApp integration Identity Resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
+  public WhatsAppIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
     return  getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId));
   }
 
@@ -7811,10 +7816,10 @@ public class ConversationsApi {
    * Get a whatsApp integration Identity Resolution settings
    * 
    * @param integrationId Integration ID (required)
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+  public ApiResponse<WhatsAppIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId).withHttpInfo());
   }
 
@@ -7829,13 +7834,13 @@ public class ConversationsApi {
    * Get a whatsApp integration Identity Resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+  public WhatsAppIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7851,13 +7856,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<WhatsAppIdentityResolutionConfig> getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7868,7 +7873,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11482,6 +11487,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param userId userId (required)
+   * @param body Participant request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallParticipantUserUserId(String conversationId, String participantId, String userId, MediaParticipantRequest body) throws IOException, ApiException {
+     patchConversationsCallParticipantUserUserId(createPatchConversationsCallParticipantUserUserIdRequest(conversationId, participantId, userId, body));
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param userId userId (required)
+   * @param body Participant request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallParticipantUserUserIdWithHttpInfo(String conversationId, String participantId, String userId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCallParticipantUserUserId(createPatchConversationsCallParticipantUserUserIdRequest(conversationId, participantId, userId, body).withHttpInfo());
+  }
+
+  private PatchConversationsCallParticipantUserUserIdRequest createPatchConversationsCallParticipantUserUserIdRequest(String conversationId, String participantId, String userId, MediaParticipantRequest body) {
+    return PatchConversationsCallParticipantUserUserIdRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsCallParticipantUserUserId(PatchConversationsCallParticipantUserUserIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update conversation participant on behalf of a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsCallParticipantUserUserId(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -23070,11 +23162,11 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public AppleIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(String integrationId, AppleIdentityResolutionConfig body) throws IOException, ApiException {
     return  putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(integrationId, body));
   }
 
@@ -23083,14 +23175,14 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<AppleIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(String integrationId, AppleIdentityResolutionConfig body) throws IOException {
     return putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(integrationId, body).withHttpInfo());
   }
 
-  private PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+  private PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest(String integrationId, AppleIdentityResolutionConfig body) {
     return PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
 
@@ -23103,13 +23195,13 @@ public class ConversationsApi {
    * Create an identity resolution settings for a Apple messaging integration
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return AppleIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
+  public AppleIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<AppleIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppleIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -23125,13 +23217,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<AppleIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(ApiRequest<AppleIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<AppleIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -23142,7 +23234,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AppleIdentityResolutionConfig> response = (ApiResponse<AppleIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -23152,11 +23244,11 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public FacebookIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(String integrationId, FacebookIdentityResolutionConfig body) throws IOException, ApiException {
     return  putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId, body));
   }
 
@@ -23165,14 +23257,14 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<FacebookIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId, FacebookIdentityResolutionConfig body) throws IOException {
     return putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(integrationId, body).withHttpInfo());
   }
 
-  private PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+  private PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest(String integrationId, FacebookIdentityResolutionConfig body) {
     return PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
 
@@ -23185,13 +23277,13 @@ public class ConversationsApi {
    * Create an identity resolution settings for a Facebook messaging integration
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return FacebookIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+  public FacebookIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<FacebookIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -23207,13 +23299,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<FacebookIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(ApiRequest<FacebookIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<FacebookIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -23224,7 +23316,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<FacebookIdentityResolutionConfig> response = (ApiResponse<FacebookIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -23234,11 +23326,11 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public InstagramIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(String integrationId, InstagramIdentityResolutionConfig body) throws IOException, ApiException {
     return  putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(integrationId, body));
   }
 
@@ -23247,14 +23339,14 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<InstagramIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId, InstagramIdentityResolutionConfig body) throws IOException {
     return putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(integrationId, body).withHttpInfo());
   }
 
-  private PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+  private PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest(String integrationId, InstagramIdentityResolutionConfig body) {
     return PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
 
@@ -23267,13 +23359,13 @@ public class ConversationsApi {
    * Create identity resolution settings for an Instagram messaging integration
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return InstagramIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
+  public InstagramIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<InstagramIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -23289,13 +23381,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<InstagramIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(ApiRequest<InstagramIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<InstagramIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -23306,7 +23398,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<InstagramIdentityResolutionConfig> response = (ApiResponse<InstagramIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -23398,11 +23490,11 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration Id (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public TwitterIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(String integrationId, TwitterIdentityResolutionConfig body) throws IOException, ApiException {
     return  putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId, body));
   }
 
@@ -23411,14 +23503,14 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration Id (required)
    * @param body IdentityResolutionConfig (required)
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<TwitterIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, TwitterIdentityResolutionConfig body) throws IOException {
     return putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(integrationId, body).withHttpInfo());
   }
 
-  private PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+  private PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest(String integrationId, TwitterIdentityResolutionConfig body) {
     return PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
 
@@ -23431,13 +23523,13 @@ public class ConversationsApi {
    * Create an identity resolution settings for an X (Formally Twitter) messaging integration
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return TwitterIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+  public TwitterIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<TwitterIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -23453,13 +23545,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<TwitterIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(ApiRequest<TwitterIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<TwitterIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -23470,7 +23562,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TwitterIdentityResolutionConfig> response = (ApiResponse<TwitterIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -23480,11 +23572,11 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId, IdentityResolutionConfig body) throws IOException, ApiException {
+  public WhatsAppIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(String integrationId, WhatsAppIdentityResolutionConfig body) throws IOException, ApiException {
     return  putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId, body));
   }
 
@@ -23493,14 +23585,14 @@ public class ConversationsApi {
    * 
    * @param integrationId Integration ID (required)
    * @param body  (required)
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId, IdentityResolutionConfig body) throws IOException {
+  public ApiResponse<WhatsAppIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId, WhatsAppIdentityResolutionConfig body) throws IOException {
     return putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(integrationId, body).withHttpInfo());
   }
 
-  private PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(String integrationId, IdentityResolutionConfig body) {
+  private PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest createPutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest(String integrationId, WhatsAppIdentityResolutionConfig body) {
     return PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
 
@@ -23513,13 +23605,13 @@ public class ConversationsApi {
    * Update a whatsApp integration Identity Resolution settings
    * 
    * @param request The request object
-   * @return IdentityResolutionConfig
+   * @return WhatsAppIdentityResolutionConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+  public WhatsAppIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<IdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityResolutionConfig>() {});
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIdentityResolutionConfig>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -23535,13 +23627,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<IdentityResolutionConfig> request) throws IOException {
+  public ApiResponse<WhatsAppIdentityResolutionConfig> putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(ApiRequest<WhatsAppIdentityResolutionConfig> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<IdentityResolutionConfig>() {});
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIdentityResolutionConfig>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)exception;
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -23552,7 +23644,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<IdentityResolutionConfig> response = (ApiResponse<IdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<WhatsAppIdentityResolutionConfig> response = (ApiResponse<WhatsAppIdentityResolutionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

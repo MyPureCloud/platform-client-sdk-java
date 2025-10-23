@@ -31,10 +31,10 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public BotListing() {
@@ -131,40 +131,6 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
 
   /**
    **/
-  public BotListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public BotListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public BotListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -194,6 +160,40 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public BotListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public BotListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -229,16 +229,16 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
             Objects.equals(this.pageNumber, botListing.pageNumber) &&
             Objects.equals(this.total, botListing.total) &&
             Objects.equals(this.firstUri, botListing.firstUri) &&
-            Objects.equals(this.lastUri, botListing.lastUri) &&
-            Objects.equals(this.selfUri, botListing.selfUri) &&
             Objects.equals(this.previousUri, botListing.previousUri) &&
             Objects.equals(this.nextUri, botListing.nextUri) &&
+            Objects.equals(this.lastUri, botListing.lastUri) &&
+            Objects.equals(this.selfUri, botListing.selfUri) &&
             Objects.equals(this.pageCount, botListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -251,10 +251,10 @@ public class BotListing  implements Serializable, PagedResource<Bot> {
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

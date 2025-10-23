@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ListWrapperSecondaryPresence;
+import com.mypurecloud.sdk.v2.model.ListWrapperString;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -88,6 +89,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
   private ListWrapperSecondaryPresence secondaryPresences = null;
+  private ListWrapperString planningGroupIds = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   public UpdateActivityCodeRequest() {
@@ -277,6 +279,24 @@ public class UpdateActivityCodeRequest  implements Serializable {
 
 
   /**
+   * The planning group IDs associated with this activity code
+   **/
+  public UpdateActivityCodeRequest planningGroupIds(ListWrapperString planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The planning group IDs associated with this activity code")
+  @JsonProperty("planningGroupIds")
+  public ListWrapperString getPlanningGroupIds() {
+    return planningGroupIds;
+  }
+  public void setPlanningGroupIds(ListWrapperString planningGroupIds) {
+    this.planningGroupIds = planningGroupIds;
+  }
+
+
+  /**
    * Version metadata for the associated business unit's list of activity codes
    **/
   public UpdateActivityCodeRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -314,12 +334,13 @@ public class UpdateActivityCodeRequest  implements Serializable {
             Objects.equals(this.plannedShrinkage, updateActivityCodeRequest.plannedShrinkage) &&
             Objects.equals(this.interruptible, updateActivityCodeRequest.interruptible) &&
             Objects.equals(this.secondaryPresences, updateActivityCodeRequest.secondaryPresences) &&
+            Objects.equals(this.planningGroupIds, updateActivityCodeRequest.planningGroupIds) &&
             Objects.equals(this.metadata, updateActivityCodeRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, metadata);
+    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroupIds, metadata);
   }
 
   @Override
@@ -337,6 +358,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     sb.append("    plannedShrinkage: ").append(toIndentedString(plannedShrinkage)).append("\n");
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
     sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
+    sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

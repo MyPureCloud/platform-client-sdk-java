@@ -13,9 +13,12 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AppleAuthentication;
+import com.mypurecloud.sdk.v2.model.AppleIMessageApp;
+import com.mypurecloud.sdk.v2.model.AppleIdentityResolutionConfig;
+import com.mypurecloud.sdk.v2.model.ApplePay;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.IdentityResolutionConfig;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
@@ -92,7 +95,10 @@ public class AppleIntegration  implements Serializable {
   }
   private CreateStatusEnum createStatus = null;
   private ErrorBody createError = null;
-  private IdentityResolutionConfig identityResolution = null;
+  private AppleIMessageApp appleIMessageApp = null;
+  private AppleAuthentication appleAuthentication = null;
+  private ApplePay applePay = null;
+  private AppleIdentityResolutionConfig identityResolution = null;
   private String selfUri = null;
 
   public AppleIntegration() {
@@ -326,9 +332,63 @@ public class AppleIntegration  implements Serializable {
   }
 
 
+  /**
+   * Interactive Application (iMessage App) Settings.
+   **/
+  public AppleIntegration appleIMessageApp(AppleIMessageApp appleIMessageApp) {
+    this.appleIMessageApp = appleIMessageApp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Interactive Application (iMessage App) Settings.")
+  @JsonProperty("appleIMessageApp")
+  public AppleIMessageApp getAppleIMessageApp() {
+    return appleIMessageApp;
+  }
+  public void setAppleIMessageApp(AppleIMessageApp appleIMessageApp) {
+    this.appleIMessageApp = appleIMessageApp;
+  }
+
+
+  /**
+   * The Apple Messages for Business authentication setting.
+   **/
+  public AppleIntegration appleAuthentication(AppleAuthentication appleAuthentication) {
+    this.appleAuthentication = appleAuthentication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Apple Messages for Business authentication setting.")
+  @JsonProperty("appleAuthentication")
+  public AppleAuthentication getAppleAuthentication() {
+    return appleAuthentication;
+  }
+  public void setAppleAuthentication(AppleAuthentication appleAuthentication) {
+    this.appleAuthentication = appleAuthentication;
+  }
+
+
+  /**
+   * Apple Pay settings.
+   **/
+  public AppleIntegration applePay(ApplePay applePay) {
+    this.applePay = applePay;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Apple Pay settings.")
+  @JsonProperty("applePay")
+  public ApplePay getApplePay() {
+    return applePay;
+  }
+  public void setApplePay(ApplePay applePay) {
+    this.applePay = applePay;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The configuration to control identity resolution.")
   @JsonProperty("identityResolution")
-  public IdentityResolutionConfig getIdentityResolution() {
+  public AppleIdentityResolutionConfig getIdentityResolution() {
     return identityResolution;
   }
 
@@ -365,13 +425,16 @@ public class AppleIntegration  implements Serializable {
             Objects.equals(this.modifiedBy, appleIntegration.modifiedBy) &&
             Objects.equals(this.createStatus, appleIntegration.createStatus) &&
             Objects.equals(this.createError, appleIntegration.createError) &&
+            Objects.equals(this.appleIMessageApp, appleIntegration.appleIMessageApp) &&
+            Objects.equals(this.appleAuthentication, appleIntegration.appleAuthentication) &&
+            Objects.equals(this.applePay, appleIntegration.applePay) &&
             Objects.equals(this.identityResolution, appleIntegration.identityResolution) &&
             Objects.equals(this.selfUri, appleIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, messagingSetting, messagesForBusinessId, businessName, logoUrl, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, createStatus, createError, identityResolution, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, messagesForBusinessId, businessName, logoUrl, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, createStatus, createError, appleIMessageApp, appleAuthentication, applePay, identityResolution, selfUri);
   }
 
   @Override
@@ -394,6 +457,9 @@ public class AppleIntegration  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
     sb.append("    createError: ").append(toIndentedString(createError)).append("\n");
+    sb.append("    appleIMessageApp: ").append(toIndentedString(appleIMessageApp)).append("\n");
+    sb.append("    appleAuthentication: ").append(toIndentedString(appleAuthentication)).append("\n");
+    sb.append("    applePay: ").append(toIndentedString(applePay)).append("\n");
     sb.append("    identityResolution: ").append(toIndentedString(identityResolution)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

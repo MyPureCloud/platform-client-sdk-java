@@ -198,6 +198,7 @@ public class WhatsAppIntegration  implements Serializable {
   }
   private CreateStatusEnum createStatus = null;
   private ErrorBody createError = null;
+  private String whatsAppBusinessAccountId = null;
   private String selfUri = null;
 
   public WhatsAppIntegration() {
@@ -434,6 +435,13 @@ public class WhatsAppIntegration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The WhatsApp Business Account Id (WABA Id)")
+  @JsonProperty("whatsAppBusinessAccountId")
+  public String getWhatsAppBusinessAccountId() {
+    return whatsAppBusinessAccountId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -468,12 +476,13 @@ public class WhatsAppIntegration  implements Serializable {
             Objects.equals(this.activationErrorInfo, whatsAppIntegration.activationErrorInfo) &&
             Objects.equals(this.createStatus, whatsAppIntegration.createStatus) &&
             Objects.equals(this.createError, whatsAppIntegration.createError) &&
+            Objects.equals(this.whatsAppBusinessAccountId, whatsAppIntegration.whatsAppBusinessAccountId) &&
             Objects.equals(this.selfUri, whatsAppIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, messagingSetting, phoneNumber, availablePhoneNumbers, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, createStatus, createError, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, phoneNumber, availablePhoneNumbers, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, createStatus, createError, whatsAppBusinessAccountId, selfUri);
   }
 
   @Override
@@ -498,6 +507,7 @@ public class WhatsAppIntegration  implements Serializable {
     sb.append("    activationErrorInfo: ").append(toIndentedString(activationErrorInfo)).append("\n");
     sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
     sb.append("    createError: ").append(toIndentedString(createError)).append("\n");
+    sb.append("    whatsAppBusinessAccountId: ").append(toIndentedString(whatsAppBusinessAccountId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

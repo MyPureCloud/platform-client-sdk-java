@@ -35,9 +35,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingAvailablemediatypes**](RoutingApi#getRoutingAvailablemediatypes) | Get available media types |
 | [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
 | [**getRoutingEmailDomain**](RoutingApi#getRoutingEmailDomain) | Get domain |
+| [**getRoutingEmailDomainDkim**](RoutingApi#getRoutingEmailDomainDkim) | Get domain dkim settings |
+| [**getRoutingEmailDomainMailfrom**](RoutingApi#getRoutingEmailDomainMailfrom) | Get domain mail from settings |
 | [**getRoutingEmailDomainRoute**](RoutingApi#getRoutingEmailDomainRoute) | Get a route |
 | [**getRoutingEmailDomainRouteIdentityresolution**](RoutingApi#getRoutingEmailDomainRouteIdentityresolution) | Get a route identity resolution setting. |
 | [**getRoutingEmailDomainRoutes**](RoutingApi#getRoutingEmailDomainRoutes) | Get routes |
+| [**getRoutingEmailDomainVerification**](RoutingApi#getRoutingEmailDomainVerification) | Get domain verification settings |
 | [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | Get domains |
 | [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | Get domain |
 | [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
@@ -119,8 +122,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsRoutingActivityQuery**](RoutingApi#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
 | [**postRoutingAssessments**](RoutingApi#postRoutingAssessments) | Create a benefit assessment. |
 | [**postRoutingAssessmentsJobs**](RoutingApi#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
+| [**postRoutingEmailDomainDkim**](RoutingApi#postRoutingEmailDomainDkim) | Restart domain dkim |
+| [**postRoutingEmailDomainMailfrom**](RoutingApi#postRoutingEmailDomainMailfrom) | Set domain mail from settings |
 | [**postRoutingEmailDomainRoutes**](RoutingApi#postRoutingEmailDomainRoutes) | Create a route |
 | [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this ACD domain |
+| [**postRoutingEmailDomainVerification**](RoutingApi#postRoutingEmailDomainVerification) | Restart domain verification |
 | [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | Create a domain |
 | [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
@@ -1985,6 +1991,124 @@ try {
 [**InboundDomain**](InboundDomain)
 
 
+# **getRoutingEmailDomainDkim**
+
+
+> [VerificationResult](VerificationResult) getRoutingEmailDomainDkim(domainId)
+
+Get domain dkim settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/dkim  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    VerificationResult result = apiInstance.getRoutingEmailDomainDkim(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainDkim");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
+
+
+# **getRoutingEmailDomainMailfrom**
+
+
+> [MailFromResult](MailFromResult) getRoutingEmailDomainMailfrom(domainId)
+
+Get domain mail from settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/mailfrom  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    MailFromResult result = apiInstance.getRoutingEmailDomainMailfrom(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainMailfrom");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MailFromResult**](MailFromResult)
+
+
 # **getRoutingEmailDomainRoute**
 
 
@@ -2051,7 +2175,7 @@ try {
 # **getRoutingEmailDomainRouteIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+> [RouteIdentityResolutionConfig](RouteIdentityResolutionConfig) getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
 
 Get a route identity resolution setting.
 
@@ -2087,7 +2211,7 @@ RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
 String routeId = "routeId_example"; // String | route ID
 try {
-    IdentityResolutionConfig result = apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId);
+    RouteIdentityResolutionConfig result = apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainRouteIdentityresolution");
@@ -2107,7 +2231,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)
 
 
 # **getRoutingEmailDomainRoutes**
@@ -2175,6 +2299,65 @@ try {
 ### Return type
 
 [**InboundRouteEntityListing**](InboundRouteEntityListing)
+
+
+# **getRoutingEmailDomainVerification**
+
+
+> [VerificationResult](VerificationResult) getRoutingEmailDomainVerification(domainId)
+
+Get domain verification settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/verification  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    VerificationResult result = apiInstance.getRoutingEmailDomainVerification(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailDomainVerification");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
 
 
 # **getRoutingEmailDomains**
@@ -4717,7 +4900,7 @@ try {
 # **getRoutingSmsIdentityresolutionPhonenumber**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getRoutingSmsIdentityresolutionPhonenumber(addressId)
+> [SmsIdentityResolutionConfig](SmsIdentityResolutionConfig) getRoutingSmsIdentityresolutionPhonenumber(addressId)
 
 Get a SMS identity resolution settings.
 
@@ -4752,7 +4935,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
 try {
-    IdentityResolutionConfig result = apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId);
+    SmsIdentityResolutionConfig result = apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsIdentityresolutionPhonenumber");
@@ -4771,7 +4954,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)
 
 
 # **getRoutingSmsPhonenumber**
@@ -7281,6 +7464,126 @@ try {
 [**BenefitAssessmentJob**](BenefitAssessmentJob)
 
 
+# **postRoutingEmailDomainDkim**
+
+
+> [VerificationResult](VerificationResult) postRoutingEmailDomainDkim(domainId)
+
+Restart domain dkim
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/dkim  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    VerificationResult result = apiInstance.postRoutingEmailDomainDkim(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailDomainDkim");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
+
+
+# **postRoutingEmailDomainMailfrom**
+
+
+> [MailFromResult](MailFromResult) postRoutingEmailDomainMailfrom(domainId, body)
+
+Set domain mail from settings
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/mailfrom  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+MailFromResult body = new MailFromResult(); // MailFromResult | Mail From Settings
+try {
+    MailFromResult result = apiInstance.postRoutingEmailDomainMailfrom(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailDomainMailfrom");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**MailFromResult**](MailFromResult)| Mail From Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MailFromResult**](MailFromResult)
+
+
 # **postRoutingEmailDomainRoutes**
 
 
@@ -7403,6 +7706,65 @@ try {
 ### Return type
 
 [**TestMessage**](TestMessage)
+
+
+# **postRoutingEmailDomainVerification**
+
+
+> [VerificationResult](VerificationResult) postRoutingEmailDomainVerification(domainId)
+
+Restart domain verification
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/verification  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    VerificationResult result = apiInstance.postRoutingEmailDomainVerification(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailDomainVerification");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
 
 
 # **postRoutingEmailDomains**
@@ -8793,7 +9155,7 @@ try {
 # **putRoutingEmailDomainRouteIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+> [RouteIdentityResolutionConfig](RouteIdentityResolutionConfig) putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
 
 Update identity resolution settings for a route.
 
@@ -8828,9 +9190,9 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
 String routeId = "routeId_example"; // String | route ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+RouteIdentityResolutionConfig body = new RouteIdentityResolutionConfig(); // RouteIdentityResolutionConfig | 
 try {
-    IdentityResolutionConfig result = apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body);
+    RouteIdentityResolutionConfig result = apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingEmailDomainRouteIdentityresolution");
@@ -8845,13 +9207,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
 | **routeId** | **String**| route ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+| **body** | [**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)
 
 
 # **putRoutingEmailOutboundDomainActivation**
@@ -9218,7 +9580,7 @@ try {
 # **putRoutingSmsIdentityresolutionPhonenumber**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+> [SmsIdentityResolutionConfig](SmsIdentityResolutionConfig) putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 
 Update an SMS identity resolution settings.
 
@@ -9252,9 +9614,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+SmsIdentityResolutionConfig body = new SmsIdentityResolutionConfig(); // SmsIdentityResolutionConfig | 
 try {
-    IdentityResolutionConfig result = apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body);
+    SmsIdentityResolutionConfig result = apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingSmsIdentityresolutionPhonenumber");
@@ -9268,13 +9630,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+| **body** | [**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)
 
 
 # **putRoutingUserDirectroutingbackupSettings**
@@ -9704,4 +10066,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

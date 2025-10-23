@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
 import com.mypurecloud.sdk.v2.model.CampaignPatchRequest;
+import com.mypurecloud.sdk.v2.model.CampaignPerformanceDataListing;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
@@ -216,6 +217,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStartRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStopRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsPerformanceQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
@@ -10211,6 +10213,84 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param body Campaign IDs. Maximum of 50 IDs allowed. (required)
+   * @return CampaignPerformanceDataListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignPerformanceDataListing postOutboundCampaignsPerformanceQuery(List<String> body) throws IOException, ApiException {
+    return  postOutboundCampaignsPerformanceQuery(createPostOutboundCampaignsPerformanceQueryRequest(body));
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param body Campaign IDs. Maximum of 50 IDs allowed. (required)
+   * @return CampaignPerformanceDataListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignPerformanceDataListing> postOutboundCampaignsPerformanceQueryWithHttpInfo(List<String> body) throws IOException {
+    return postOutboundCampaignsPerformanceQuery(createPostOutboundCampaignsPerformanceQueryRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundCampaignsPerformanceQueryRequest createPostOutboundCampaignsPerformanceQueryRequest(List<String> body) {
+    return PostOutboundCampaignsPerformanceQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param request The request object
+   * @return CampaignPerformanceDataListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignPerformanceDataListing postOutboundCampaignsPerformanceQuery(PostOutboundCampaignsPerformanceQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignPerformanceDataListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignPerformanceDataListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get performance data for a list of campaigns
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignPerformanceDataListing> postOutboundCampaignsPerformanceQuery(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignPerformanceDataListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignPerformanceDataListing> response = (ApiResponse<CampaignPerformanceDataListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignPerformanceDataListing> response = (ApiResponse<CampaignPerformanceDataListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -75,6 +75,7 @@ public class DataIngestionRuleCriteria  implements Serializable {
   }
   private EffectivePlatformEnum effectivePlatform = null;
   private String id = null;
+  private String name = null;
 
   public DataIngestionRuleCriteria() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -118,6 +119,13 @@ public class DataIngestionRuleCriteria  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The name of the data ingestion rule. Only populated when expanded.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -129,12 +137,13 @@ public class DataIngestionRuleCriteria  implements Serializable {
     DataIngestionRuleCriteria dataIngestionRuleCriteria = (DataIngestionRuleCriteria) o;
 
     return Objects.equals(this.effectivePlatform, dataIngestionRuleCriteria.effectivePlatform) &&
-            Objects.equals(this.id, dataIngestionRuleCriteria.id);
+            Objects.equals(this.id, dataIngestionRuleCriteria.id) &&
+            Objects.equals(this.name, dataIngestionRuleCriteria.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(effectivePlatform, id);
+    return Objects.hash(effectivePlatform, id, name);
   }
 
   @Override
@@ -144,6 +153,7 @@ public class DataIngestionRuleCriteria  implements Serializable {
     
     sb.append("    effectivePlatform: ").append(toIndentedString(effectivePlatform)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

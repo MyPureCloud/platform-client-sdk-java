@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **wrapup** | [**WrapupInput**](WrapupInput) | Wrap-up to assign to this participant. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'. |  [optional] |
-| **recording** | **Boolean** | True to enable recording of this participant, otherwise false to disable recording. |  [optional] |
+| **recording** | **Boolean** | True to enable ad-hoc recording of this participant, otherwise false to disable recording. |  [optional] |
 | **muted** | **Boolean** | True to mute this conversation participant. |  [optional] |
 | **confined** | **Boolean** | True to confine this conversation participant.  Should only be used for ad-hoc conferences |  [optional] |
 | **held** | **Boolean** | True to hold this conversation participant. |  [optional] |
@@ -35,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

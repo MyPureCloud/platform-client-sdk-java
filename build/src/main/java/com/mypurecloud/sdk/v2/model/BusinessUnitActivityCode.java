@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.PlanningGroupReference;
 import com.mypurecloud.sdk.v2.model.SecondaryPresence;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -93,12 +94,14 @@ public class BusinessUnitActivityCode  implements Serializable {
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
   private List<SecondaryPresence> secondaryPresences = null;
+  private List<PlanningGroupReference> planningGroups = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
   public BusinessUnitActivityCode() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       secondaryPresences = new ArrayList<SecondaryPresence>();
+      planningGroups = new ArrayList<PlanningGroupReference>();
     }
   }
 
@@ -326,6 +329,24 @@ public class BusinessUnitActivityCode  implements Serializable {
 
 
   /**
+   * Planning groups associated with this activity code
+   **/
+  public BusinessUnitActivityCode planningGroups(List<PlanningGroupReference> planningGroups) {
+    this.planningGroups = planningGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Planning groups associated with this activity code")
+  @JsonProperty("planningGroups")
+  public List<PlanningGroupReference> getPlanningGroups() {
+    return planningGroups;
+  }
+  public void setPlanningGroups(List<PlanningGroupReference> planningGroups) {
+    this.planningGroups = planningGroups;
+  }
+
+
+  /**
    * Version metadata of this activity code
    **/
   public BusinessUnitActivityCode metadata(WfmVersionedEntityMetadata metadata) {
@@ -373,13 +394,14 @@ public class BusinessUnitActivityCode  implements Serializable {
             Objects.equals(this.plannedShrinkage, businessUnitActivityCode.plannedShrinkage) &&
             Objects.equals(this.interruptible, businessUnitActivityCode.interruptible) &&
             Objects.equals(this.secondaryPresences, businessUnitActivityCode.secondaryPresences) &&
+            Objects.equals(this.planningGroups, businessUnitActivityCode.planningGroups) &&
             Objects.equals(this.metadata, businessUnitActivityCode.metadata) &&
             Objects.equals(this.selfUri, businessUnitActivityCode.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, defaultCode, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, metadata, selfUri);
+    return Objects.hash(id, name, active, defaultCode, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, planningGroups, metadata, selfUri);
   }
 
   @Override
@@ -400,6 +422,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     sb.append("    plannedShrinkage: ").append(toIndentedString(plannedShrinkage)).append("\n");
     sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
     sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
+    sb.append("    planningGroups: ").append(toIndentedString(planningGroups)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

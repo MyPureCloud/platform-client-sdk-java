@@ -84,7 +84,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param forceDelete Force delete decision table (under certain conditions) (optional, default to false)
    * @throws ApiException if the request fails on the server
@@ -97,7 +96,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param forceDelete Force delete decision table (under certain conditions) (optional, default to false)
    * @throws IOException if the request fails to be processed
@@ -118,7 +116,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -137,7 +134,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -167,7 +163,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @throws ApiException if the request fails on the server
@@ -180,7 +175,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @throws IOException if the request fails to be processed
@@ -201,7 +195,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -220,7 +213,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -250,7 +242,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -264,7 +255,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -288,7 +278,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -307,7 +296,6 @@ public class BusinessRulesApi {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -337,7 +325,6 @@ public class BusinessRulesApi {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -349,7 +336,6 @@ public class BusinessRulesApi {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -367,7 +353,6 @@ public class BusinessRulesApi {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -386,7 +371,6 @@ public class BusinessRulesApi {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -416,7 +400,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @return DecisionTable
    * @throws ApiException if the request fails on the server
@@ -429,7 +412,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @return DecisionTable
    * @throws IOException if the request fails to be processed
@@ -448,7 +430,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTable
    * @throws ApiException if the request fails on the server
@@ -468,7 +449,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -498,7 +478,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -512,7 +491,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -534,7 +512,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -554,7 +531,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -584,7 +560,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -599,7 +574,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -624,7 +598,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
@@ -644,7 +617,6 @@ public class BusinessRulesApi {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -674,7 +646,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param pageNumber Page number of the entities to return. Defaults to 1. (optional)
@@ -690,7 +661,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param pageNumber Page number of the entities to return. Defaults to 1. (optional)
@@ -718,7 +688,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRowListing
    * @throws ApiException if the request fails on the server
@@ -738,7 +707,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -768,7 +736,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
@@ -783,7 +750,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
@@ -808,7 +774,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersionListing
    * @throws ApiException if the request fails on the server
@@ -828,7 +793,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -858,7 +822,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
@@ -874,7 +837,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
@@ -902,7 +864,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
@@ -922,7 +883,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -952,7 +912,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
@@ -971,7 +930,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
@@ -1008,7 +966,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableListing
    * @throws ApiException if the request fails on the server
@@ -1028,7 +985,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1058,7 +1014,6 @@ public class BusinessRulesApi {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
@@ -1071,7 +1026,6 @@ public class BusinessRulesApi {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return BusinessRulesDataSchema
    * @throws IOException if the request fails to be processed
@@ -1090,7 +1044,6 @@ public class BusinessRulesApi {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
@@ -1110,7 +1063,6 @@ public class BusinessRulesApi {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1140,7 +1092,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return BusinessRulesDataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1152,7 +1103,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return BusinessRulesDataSchemaListing
    * @throws IOException if the request fails to be processed
    */
@@ -1168,7 +1118,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BusinessRulesDataSchemaListing
    * @throws ApiException if the request fails on the server
@@ -1188,7 +1137,6 @@ public class BusinessRulesApi {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1218,7 +1166,6 @@ public class BusinessRulesApi {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param coreTypeName The core type's name (required)
    * @return Coretype
    * @throws ApiException if the request fails on the server
@@ -1231,7 +1178,6 @@ public class BusinessRulesApi {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param coreTypeName The core type's name (required)
    * @return Coretype
    * @throws IOException if the request fails to be processed
@@ -1250,7 +1196,6 @@ public class BusinessRulesApi {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Coretype
    * @throws ApiException if the request fails on the server
@@ -1270,7 +1215,6 @@ public class BusinessRulesApi {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1300,7 +1244,6 @@ public class BusinessRulesApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return CoretypeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1312,7 +1255,6 @@ public class BusinessRulesApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return CoretypeListing
    * @throws IOException if the request fails to be processed
    */
@@ -1328,7 +1270,6 @@ public class BusinessRulesApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CoretypeListing
    * @throws ApiException if the request fails on the server
@@ -1348,7 +1289,6 @@ public class BusinessRulesApi {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1378,7 +1318,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTable
@@ -1392,7 +1331,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTable
@@ -1414,7 +1352,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTable
    * @throws ApiException if the request fails on the server
@@ -1434,7 +1371,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1464,7 +1400,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1479,7 +1414,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1504,7 +1438,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -1524,7 +1457,6 @@ public class BusinessRulesApi {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1554,7 +1486,6 @@ public class BusinessRulesApi {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTableExecutionResponse
@@ -1568,7 +1499,6 @@ public class BusinessRulesApi {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param body Decision Table (required)
    * @return DecisionTableExecutionResponse
@@ -1590,7 +1520,6 @@ public class BusinessRulesApi {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableExecutionResponse
    * @throws ApiException if the request fails on the server
@@ -1610,7 +1539,6 @@ public class BusinessRulesApi {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1640,7 +1568,6 @@ public class BusinessRulesApi {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1655,7 +1582,6 @@ public class BusinessRulesApi {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1680,7 +1606,6 @@ public class BusinessRulesApi {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -1700,7 +1625,6 @@ public class BusinessRulesApi {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1730,7 +1654,6 @@ public class BusinessRulesApi {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1745,7 +1668,6 @@ public class BusinessRulesApi {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Decision Table (required)
@@ -1770,7 +1692,6 @@ public class BusinessRulesApi {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableExecutionResponse
    * @throws ApiException if the request fails on the server
@@ -1790,7 +1711,6 @@ public class BusinessRulesApi {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1820,7 +1740,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Create decision table row request (required)
@@ -1835,7 +1754,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Create decision table row request (required)
@@ -1860,7 +1778,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
@@ -1880,7 +1797,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1910,7 +1826,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Search decision table rows request (required)
@@ -1927,7 +1842,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param body Search decision table rows request (required)
@@ -1958,7 +1872,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRowListing
    * @throws ApiException if the request fails on the server
@@ -1978,7 +1891,6 @@ public class BusinessRulesApi {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2008,7 +1920,6 @@ public class BusinessRulesApi {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -2022,7 +1933,6 @@ public class BusinessRulesApi {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -2044,7 +1954,6 @@ public class BusinessRulesApi {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2064,7 +1973,6 @@ public class BusinessRulesApi {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2094,7 +2002,6 @@ public class BusinessRulesApi {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2107,7 +2014,6 @@ public class BusinessRulesApi {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @return DecisionTableVersion
    * @throws IOException if the request fails to be processed
@@ -2126,7 +2032,6 @@ public class BusinessRulesApi {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2146,7 +2051,6 @@ public class BusinessRulesApi {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2176,7 +2080,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Decision Table (required)
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2189,7 +2092,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Decision Table (required)
    * @return DecisionTableVersion
    * @throws IOException if the request fails to be processed
@@ -2208,7 +2110,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2228,7 +2129,6 @@ public class BusinessRulesApi {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2258,7 +2158,6 @@ public class BusinessRulesApi {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Business Rules Schema Create Request (required)
    * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
@@ -2271,7 +2170,6 @@ public class BusinessRulesApi {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Business Rules Schema Create Request (required)
    * @return BusinessRulesDataSchema
    * @throws IOException if the request fails to be processed
@@ -2290,7 +2188,6 @@ public class BusinessRulesApi {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
@@ -2310,7 +2207,6 @@ public class BusinessRulesApi {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2340,7 +2236,6 @@ public class BusinessRulesApi {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -2354,7 +2249,6 @@ public class BusinessRulesApi {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @return DecisionTableVersion
@@ -2376,7 +2270,6 @@ public class BusinessRulesApi {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableVersion
    * @throws ApiException if the request fails on the server
@@ -2396,7 +2289,6 @@ public class BusinessRulesApi {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2426,7 +2318,6 @@ public class BusinessRulesApi {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -2442,7 +2333,6 @@ public class BusinessRulesApi {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param tableId Table ID (required)
    * @param tableVersion Table Version (required)
    * @param rowId Row ID (required)
@@ -2470,7 +2360,6 @@ public class BusinessRulesApi {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DecisionTableRow
    * @throws ApiException if the request fails on the server
@@ -2490,7 +2379,6 @@ public class BusinessRulesApi {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2520,7 +2408,6 @@ public class BusinessRulesApi {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Business Rules Schema Update Request (required)
    * @return BusinessRulesDataSchema
@@ -2534,7 +2421,6 @@ public class BusinessRulesApi {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Business Rules Schema Update Request (required)
    * @return BusinessRulesDataSchema
@@ -2556,7 +2442,6 @@ public class BusinessRulesApi {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BusinessRulesDataSchema
    * @throws ApiException if the request fails on the server
@@ -2576,7 +2461,6 @@ public class BusinessRulesApi {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

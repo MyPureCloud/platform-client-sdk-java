@@ -25,6 +25,7 @@ public class QueueConversationCallEventTopicRecordersState  implements Serializa
   private String adhocState = null;
   private String customerExperienceState = null;
   private String agentExperienceState = null;
+  private String snippetState = null;
 
   public QueueConversationCallEventTopicRecordersState() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -86,6 +87,24 @@ public class QueueConversationCallEventTopicRecordersState  implements Serializa
   }
 
 
+  /**
+   * State of the snippet recording for this session. Note that snippets may never be paused. Valid values are in Constants.java with a prefix of RECORDER_STATE_*.
+   **/
+  public QueueConversationCallEventTopicRecordersState snippetState(String snippetState) {
+    this.snippetState = snippetState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "State of the snippet recording for this session. Note that snippets may never be paused. Valid values are in Constants.java with a prefix of RECORDER_STATE_*.")
+  @JsonProperty("snippetState")
+  public String getSnippetState() {
+    return snippetState;
+  }
+  public void setSnippetState(String snippetState) {
+    this.snippetState = snippetState;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -98,12 +117,13 @@ public class QueueConversationCallEventTopicRecordersState  implements Serializa
 
     return Objects.equals(this.adhocState, queueConversationCallEventTopicRecordersState.adhocState) &&
             Objects.equals(this.customerExperienceState, queueConversationCallEventTopicRecordersState.customerExperienceState) &&
-            Objects.equals(this.agentExperienceState, queueConversationCallEventTopicRecordersState.agentExperienceState);
+            Objects.equals(this.agentExperienceState, queueConversationCallEventTopicRecordersState.agentExperienceState) &&
+            Objects.equals(this.snippetState, queueConversationCallEventTopicRecordersState.snippetState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adhocState, customerExperienceState, agentExperienceState);
+    return Objects.hash(adhocState, customerExperienceState, agentExperienceState, snippetState);
   }
 
   @Override
@@ -114,6 +134,7 @@ public class QueueConversationCallEventTopicRecordersState  implements Serializa
     sb.append("    adhocState: ").append(toIndentedString(adhocState)).append("\n");
     sb.append("    customerExperienceState: ").append(toIndentedString(customerExperienceState)).append("\n");
     sb.append("    agentExperienceState: ").append(toIndentedString(agentExperienceState)).append("\n");
+    sb.append("    snippetState: ").append(toIndentedString(snippetState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

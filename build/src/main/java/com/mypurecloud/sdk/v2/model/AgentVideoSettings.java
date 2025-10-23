@@ -27,6 +27,7 @@ public class AgentVideoSettings  implements Serializable {
   
   private Boolean allowCamera = null;
   private Boolean allowScreenShare = null;
+  private Boolean allowMicrophone = null;
 
   private static class BackgroundEnumDeserializer extends StdDeserializer<BackgroundEnum> {
     public BackgroundEnumDeserializer() {
@@ -121,6 +122,24 @@ public class AgentVideoSettings  implements Serializable {
 
 
   /**
+   * whether or not agent microphone is allowed
+   **/
+  public AgentVideoSettings allowMicrophone(Boolean allowMicrophone) {
+    this.allowMicrophone = allowMicrophone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "whether or not agent microphone is allowed")
+  @JsonProperty("allowMicrophone")
+  public Boolean getAllowMicrophone() {
+    return allowMicrophone;
+  }
+  public void setAllowMicrophone(Boolean allowMicrophone) {
+    this.allowMicrophone = allowMicrophone;
+  }
+
+
+  /**
    * background for agent
    **/
   public AgentVideoSettings background(BackgroundEnum background) {
@@ -168,13 +187,14 @@ public class AgentVideoSettings  implements Serializable {
 
     return Objects.equals(this.allowCamera, agentVideoSettings.allowCamera) &&
             Objects.equals(this.allowScreenShare, agentVideoSettings.allowScreenShare) &&
+            Objects.equals(this.allowMicrophone, agentVideoSettings.allowMicrophone) &&
             Objects.equals(this.background, agentVideoSettings.background) &&
             Objects.equals(this.backgroundImage, agentVideoSettings.backgroundImage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowCamera, allowScreenShare, background, backgroundImage);
+    return Objects.hash(allowCamera, allowScreenShare, allowMicrophone, background, backgroundImage);
   }
 
   @Override
@@ -184,6 +204,7 @@ public class AgentVideoSettings  implements Serializable {
     
     sb.append("    allowCamera: ").append(toIndentedString(allowCamera)).append("\n");
     sb.append("    allowScreenShare: ").append(toIndentedString(allowScreenShare)).append("\n");
+    sb.append("    allowMicrophone: ").append(toIndentedString(allowMicrophone)).append("\n");
     sb.append("    background: ").append(toIndentedString(background)).append("\n");
     sb.append("    backgroundImage: ").append(toIndentedString(backgroundImage)).append("\n");
     sb.append("}");

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
 import com.mypurecloud.sdk.v2.model.CampaignPatchRequest;
+import com.mypurecloud.sdk.v2.model.CampaignPerformanceDataListing;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;

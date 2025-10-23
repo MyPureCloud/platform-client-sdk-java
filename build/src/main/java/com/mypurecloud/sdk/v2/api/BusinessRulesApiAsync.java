@@ -88,7 +88,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -123,7 +122,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table
    * 
-   * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -165,7 +163,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -200,7 +197,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table version
    * 
-   * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -242,7 +238,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -277,7 +272,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a decision table row
    * 
-   * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -319,7 +313,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -354,7 +347,6 @@ public class BusinessRulesApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -396,7 +388,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -431,7 +422,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table
    * 
-   * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -473,7 +463,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -508,7 +497,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table version
    * 
-   * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -550,7 +538,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -585,7 +572,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a decision table row
    * 
-   * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -627,7 +613,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -662,7 +647,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision table rows.
    * 
-   * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -704,7 +688,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -739,7 +722,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision table versions
    * 
-   * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -781,7 +763,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -816,7 +797,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of decision tables.
    * 
-   * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -858,7 +838,6 @@ public class BusinessRulesApiAsync {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -893,7 +872,6 @@ public class BusinessRulesApiAsync {
   /**
    * Search for decision tables.
    * 
-   * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -935,7 +913,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -970,7 +947,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a schema
    * 
-   * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1012,7 +988,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1047,7 +1022,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1089,7 +1063,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1124,7 +1097,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get a specific named core type.
    * 
-   * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1166,7 +1138,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1201,7 +1172,6 @@ public class BusinessRulesApiAsync {
   /**
    * Get the core types from which all schemas are built.
    * 
-   * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1243,7 +1213,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1278,7 +1247,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a decision table
    * 
-   * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1320,7 +1288,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1355,7 +1322,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a decision table version
    * 
-   * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1397,7 +1363,6 @@ public class BusinessRulesApiAsync {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1432,7 +1397,6 @@ public class BusinessRulesApiAsync {
   /**
    * Execute a published decision table
    * 
-   * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1474,7 +1438,6 @@ public class BusinessRulesApiAsync {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1509,7 +1472,6 @@ public class BusinessRulesApiAsync {
   /**
    * Copy a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1551,7 +1513,6 @@ public class BusinessRulesApiAsync {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1586,7 +1547,6 @@ public class BusinessRulesApiAsync {
   /**
    * Execute a decision table version
    * 
-   * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1628,7 +1588,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1663,7 +1622,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a decision table row
    * 
-   * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1705,7 +1663,6 @@ public class BusinessRulesApiAsync {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1740,7 +1697,6 @@ public class BusinessRulesApiAsync {
   /**
    * Search for decision table rows
    * 
-   * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1782,7 +1738,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1817,7 +1772,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update the Business Rules Schema to the latest version for a given decision table version
    * 
-   * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1859,7 +1813,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1894,7 +1847,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a new decision table version
    * 
-   * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1936,7 +1888,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1971,7 +1922,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a decision table
    * 
-   * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2013,7 +1963,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2048,7 +1997,6 @@ public class BusinessRulesApiAsync {
   /**
    * Create a schema
    * 
-   * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2090,7 +2038,6 @@ public class BusinessRulesApiAsync {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2125,7 +2072,6 @@ public class BusinessRulesApiAsync {
   /**
    * Publish a decision table version
    * 
-   * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2167,7 +2113,6 @@ public class BusinessRulesApiAsync {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2202,7 +2147,6 @@ public class BusinessRulesApiAsync {
   /**
    * Full update a decision table row
    * 
-   * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2244,7 +2188,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2279,7 +2222,6 @@ public class BusinessRulesApiAsync {
   /**
    * Update a schema
    * 
-   * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
