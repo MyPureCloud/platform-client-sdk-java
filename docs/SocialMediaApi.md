@@ -726,7 +726,7 @@ try {
 # **getSocialmediaEscalationrule**
 
 
-> [EscalationRuleResponse](EscalationRuleResponse) getSocialmediaEscalationrule(escalationRuleId)
+> [EscalationRuleResponse](EscalationRuleResponse) getSocialmediaEscalationrule(escalationRuleId, expand)
 
 Get a single escalation rule.
 
@@ -759,8 +759,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 SocialMediaApi apiInstance = new SocialMediaApi();
 String escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+String expand = "expand_example"; // String | which fields, if any, to expand
 try {
-    EscalationRuleResponse result = apiInstance.getSocialmediaEscalationrule(escalationRuleId);
+    EscalationRuleResponse result = apiInstance.getSocialmediaEscalationrule(escalationRuleId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialMediaApi#getSocialmediaEscalationrule");
@@ -774,6 +775,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **escalationRuleId** | **String**| escalationRuleId | 
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: dataIngestionRule 
 {: class="table-striped"}
 
 
@@ -3172,4 +3174,4 @@ try {
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

@@ -13,6 +13,7 @@
 | **body** | **String** | Body text of the content offer. |  [optional] |
 | **callToAction** | [**CallToAction**](CallToAction) | Properties customizing the call to action button on the content offer. |  [optional] |
 | **style** | [**ContentOfferStylingConfiguration**](ContentOfferStylingConfiguration) | Properties customizing the styling of the content offer. |  [optional] |
+| **imageAltText** | **String** | Image description text for accessibility compliance and assistive technology support. |  [optional] |
 
 
 ## Enum: DisplayModeEnum
@@ -40,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

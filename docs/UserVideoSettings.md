@@ -7,8 +7,9 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **allowCamera** | **Boolean** | whether or not user camera is allowed |  [optional] |
 | **allowScreenShare** | **Boolean** | whether or not user screen share is allowed |  [optional] |
+| **allowMicrophone** | **Boolean** | whether or not user microphone is allowed |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

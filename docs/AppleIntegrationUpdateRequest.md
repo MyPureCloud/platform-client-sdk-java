@@ -11,9 +11,12 @@
 | **messagingSetting** | [**MessagingSettingRequestReference**](MessagingSettingRequestReference) | Defines the message settings to be applied for this integration |  [optional] |
 | **businessName** | **String** | The name of the business. |  [optional] |
 | **logoUrl** | **String** | The url of the businesses logo. |  [optional] |
+| **appleIMessageApp** | [**AppleIMessageApp**](AppleIMessageApp) | Interactive Application (iMessage App) Settings. |  [optional] |
+| **appleAuthentication** | [**AppleAuthentication**](AppleAuthentication) | The Apple Messages for Business authentication setting. |  [optional] |
+| **applePay** | [**ApplePay**](ApplePay) | Apple Pay settings. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

@@ -15,6 +15,7 @@
 | **plannedShrinkage** | **Boolean** | Whether this activity code is considered planned or unplanned shrinkage |  [optional] |
 | **interruptible** | **Boolean** | Whether this activity code is considered interruptible |  [optional] |
 | **secondaryPresences** | [**List&lt;SecondaryPresence&gt;**](SecondaryPresence) | The secondary presences of this activity code |  [optional] |
+| **planningGroupIds** | **List&lt;String&gt;** | The planning group IDs associated with this activity code |  [optional] |
 
 
 ## Enum: CategoryEnum
@@ -34,4 +35,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

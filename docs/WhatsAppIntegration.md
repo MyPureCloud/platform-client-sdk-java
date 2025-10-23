@@ -22,6 +22,7 @@
 | **activationErrorInfo** | [**ErrorBody**](ErrorBody) | The error information of WhatsApp Integration activation process |  [optional] |
 | **createStatus** | [**CreateStatusEnum**](#Enum--CreateStatusEnum) | Status of asynchronous create operation |  [optional] |
 | **createError** | [**ErrorBody**](ErrorBody) | Error information returned, if createStatus is set to Error |  [optional] |
+| **whatsAppBusinessAccountId** | **String** | The WhatsApp Business Account Id (WABA Id) |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -65,4 +66,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

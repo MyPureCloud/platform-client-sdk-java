@@ -123,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | Stop the campaign |
 | [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | Create Campaign Rule |
 | [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | Create a campaign. |
+| [**postOutboundCampaignsPerformanceQuery**](OutboundApi#postOutboundCampaignsPerformanceQuery) | Get performance data for a list of campaigns |
 | [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
 | [**postOutboundContactlistClear**](OutboundApi#postOutboundContactlistClear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
 | [**postOutboundContactlistContacts**](OutboundApi#postOutboundContactlistContacts) | Add contacts to a contact list. |
@@ -7611,6 +7612,66 @@ try {
 [**Campaign**](Campaign)
 
 
+# **postOutboundCampaignsPerformanceQuery**
+
+
+> [CampaignPerformanceDataListing](CampaignPerformanceDataListing) postOutboundCampaignsPerformanceQuery(body)
+
+Get performance data for a list of campaigns
+
+Wraps POST /api/v2/outbound/campaigns/performance/query  
+
+Requires ANY permissions: 
+
+* outbound:performance:view
+* outbound:campaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<String> body = Arrays.asList(null); // List<String> | Campaign IDs. Maximum of 50 IDs allowed.
+try {
+    CampaignPerformanceDataListing result = apiInstance.postOutboundCampaignsPerformanceQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundCampaignsPerformanceQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;String&gt;**](String)| Campaign IDs. Maximum of 50 IDs allowed. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CampaignPerformanceDataListing**](CampaignPerformanceDataListing)
+
+
 # **postOutboundCampaignsProgress**
 
 
@@ -10836,4 +10897,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

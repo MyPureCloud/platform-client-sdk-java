@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **effectivePlatform** | [**EffectivePlatformEnum**](#Enum--EffectivePlatformEnum) | The effective platform for the data ingestion rule. |  |
 | **id** | **String** | The ID of the data ingestion rule. |  |
+| **name** | **String** | The name of the data ingestion rule. Only populated when expanded. |  [optional] |
 
 
 ## Enum: EffectivePlatformEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

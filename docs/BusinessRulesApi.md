@@ -43,8 +43,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a decision table
 
-deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}  
 
 Requires ANY permissions: 
@@ -105,8 +103,6 @@ null (empty response body)
 
 Delete a decision table version
 
-deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}  
 
 Requires ANY permissions: 
@@ -166,8 +162,6 @@ null (empty response body)
 > Void deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
 
 Delete a decision table row
-
-deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
 
@@ -232,8 +226,6 @@ null (empty response body)
 
 Delete a schema
 
-deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -291,8 +283,6 @@ null (empty response body)
 > [DecisionTable](DecisionTable) getBusinessrulesDecisiontable(tableId)
 
 Get a decision table
-
-getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}  
 
@@ -352,8 +342,6 @@ try {
 > [DecisionTableVersion](DecisionTableVersion) getBusinessrulesDecisiontableVersion(tableId, tableVersion)
 
 Get a decision table version
-
-getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}  
 
@@ -415,8 +403,6 @@ try {
 > [DecisionTableRow](DecisionTableRow) getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
 
 Get a decision table row
-
-getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
 
@@ -480,8 +466,6 @@ try {
 > [DecisionTableRowListing](DecisionTableRowListing) getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, pageNumber, pageSize)
 
 Get a list of decision table rows.
-
-getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows  
 
@@ -548,8 +532,6 @@ try {
 
 Get a list of decision table versions
 
-getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions  
 
 Requires ANY permissions: 
@@ -612,8 +594,6 @@ try {
 > [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontables(after, pageSize, divisionIds, name)
 
 Get a list of decision tables.
-
-getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables  
 
@@ -679,8 +659,6 @@ try {
 > [DecisionTableListing](DecisionTableListing) getBusinessrulesDecisiontablesSearch(after, pageSize, schemaId, name, withPublishedVersion, expand, ids)
 
 Search for decision tables.
-
-getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/search  
 
@@ -753,8 +731,6 @@ try {
 
 Get a schema
 
-getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -814,8 +790,6 @@ try {
 
 Get a list of schemas.
 
-getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas  
 
 Requires ANY permissions: 
@@ -870,8 +844,6 @@ This endpoint does not require any parameters.
 > [Coretype](Coretype) getBusinessrulesSchemasCoretype(coreTypeName)
 
 Get a specific named core type.
-
-getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/schemas/coretypes/{coreTypeName}  
 
@@ -932,8 +904,6 @@ try {
 
 Get the core types from which all schemas are built.
 
-getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas/coretypes  
 
 Requires ANY permissions: 
@@ -988,8 +958,6 @@ This endpoint does not require any parameters.
 > [DecisionTable](DecisionTable) patchBusinessrulesDecisiontable(tableId, body)
 
 Update a decision table
-
-patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}  
 
@@ -1054,8 +1022,6 @@ try {
 
 Update a decision table version
 
-patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}  
 
 Requires ANY permissions: 
@@ -1119,8 +1085,6 @@ try {
 
 Execute a published decision table
 
-postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/execute  
 
 Requires ANY permissions: 
@@ -1181,8 +1145,6 @@ try {
 > [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body)
 
 Copy a decision table version
-
-postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy  
 
@@ -1247,8 +1209,6 @@ try {
 
 Execute a decision table version
 
-postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute  
 
 Requires ANY permissions: 
@@ -1311,8 +1271,6 @@ try {
 > [DecisionTableRow](DecisionTableRow) postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body)
 
 Create a decision table row
-
-postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows  
 
@@ -1377,8 +1335,6 @@ try {
 > [DecisionTableRowListing](DecisionTableRowListing) postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, pageNumber, pageSize)
 
 Search for decision table rows
-
-postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search  
 
@@ -1447,8 +1403,6 @@ try {
 
 Update the Business Rules Schema to the latest version for a given decision table version
 
-postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync  
 
 Requires ANY permissions: 
@@ -1510,8 +1464,6 @@ try {
 
 Create a new decision table version
 
-postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions  
 
 Requires ANY permissions: 
@@ -1570,8 +1522,6 @@ try {
 > [DecisionTableVersion](DecisionTableVersion) postBusinessrulesDecisiontables(body)
 
 Create a decision table
-
-postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables  
 
@@ -1634,8 +1584,6 @@ try {
 
 Create a schema
 
-postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/schemas  
 
 Requires ANY permissions: 
@@ -1694,8 +1642,6 @@ try {
 > [DecisionTableVersion](DecisionTableVersion) putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion)
 
 Publish a decision table version
-
-putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish  
 
@@ -1757,8 +1703,6 @@ try {
 > [DecisionTableRow](DecisionTableRow) putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
 
 Full update a decision table row
-
-putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}  
 
@@ -1826,8 +1770,6 @@ try {
 
 Update a schema
 
-putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/businessrules/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -1882,4 +1824,4 @@ try {
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

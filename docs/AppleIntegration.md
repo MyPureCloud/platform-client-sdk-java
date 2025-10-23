@@ -20,7 +20,10 @@
 | **modifiedBy** | [**DomainEntityRef**](DomainEntityRef) | User reference that last modified this Integration |  [optional] |
 | **createStatus** | [**CreateStatusEnum**](#Enum--CreateStatusEnum) | Status of asynchronous create operation |  [optional] |
 | **createError** | [**ErrorBody**](ErrorBody) | Error information returned, if createStatus is set to Error |  [optional] |
-| **identityResolution** | [**IdentityResolutionConfig**](IdentityResolutionConfig) | The configuration to control identity resolution. |  [optional] |
+| **appleIMessageApp** | [**AppleIMessageApp**](AppleIMessageApp) | Interactive Application (iMessage App) Settings. |  [optional] |
+| **appleAuthentication** | [**AppleAuthentication**](AppleAuthentication) | The Apple Messages for Business authentication setting. |  [optional] |
+| **applePay** | [**ApplePay**](ApplePay) | Apple Pay settings. |  [optional] |
+| **identityResolution** | [**AppleIdentityResolutionConfig**](AppleIdentityResolutionConfig) | The configuration to control identity resolution. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -36,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

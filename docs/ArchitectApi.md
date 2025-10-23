@@ -2408,7 +2408,7 @@ try {
 # **getArchitectIvrIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) getArchitectIvrIdentityresolution(ivrId)
+> [IVRIdentityResolutionConfig](IVRIdentityResolutionConfig) getArchitectIvrIdentityresolution(ivrId)
 
 Get an IVR IdentityResolutionConfig.
 
@@ -2443,7 +2443,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String ivrId = "ivrId_example"; // String | IVR id
 try {
-    IdentityResolutionConfig result = apiInstance.getArchitectIvrIdentityresolution(ivrId);
+    IVRIdentityResolutionConfig result = apiInstance.getArchitectIvrIdentityresolution(ivrId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectIvrIdentityresolution");
@@ -2462,7 +2462,7 @@ try {
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)
 
 
 # **getArchitectIvrs**
@@ -8708,7 +8708,7 @@ try {
 # **putArchitectIvrIdentityresolution**
 
 
-> [IdentityResolutionConfig](IdentityResolutionConfig) putArchitectIvrIdentityresolution(ivrId, body)
+> [IVRIdentityResolutionConfig](IVRIdentityResolutionConfig) putArchitectIvrIdentityresolution(ivrId, body)
 
 Update an IVR IdentityResolutionConfig.
 
@@ -8742,9 +8742,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String ivrId = "ivrId_example"; // String | IVR id
-IdentityResolutionConfig body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+IVRIdentityResolutionConfig body = new IVRIdentityResolutionConfig(); // IVRIdentityResolutionConfig | 
 try {
-    IdentityResolutionConfig result = apiInstance.putArchitectIvrIdentityresolution(ivrId, body);
+    IVRIdentityResolutionConfig result = apiInstance.putArchitectIvrIdentityresolution(ivrId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#putArchitectIvrIdentityresolution");
@@ -8758,13 +8758,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ivrId** | **String**| IVR id | 
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  | 
+| **body** | [**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)
 
 
 # **putArchitectPrompt**
@@ -9520,4 +9520,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_

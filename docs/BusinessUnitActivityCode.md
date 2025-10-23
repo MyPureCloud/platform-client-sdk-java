@@ -18,6 +18,7 @@
 | **plannedShrinkage** | **Boolean** | Whether this activity code is considered planned or unplanned shrinkage |  [optional] |
 | **interruptible** | **Boolean** | Whether this activity code is considered interruptible |  [optional] |
 | **secondaryPresences** | [**List&lt;SecondaryPresence&gt;**](SecondaryPresence) | The secondary presences of this activity code |  [optional] |
+| **planningGroups** | [**List&lt;PlanningGroupReference&gt;**](PlanningGroupReference) | Planning groups associated with this activity code |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata of this activity code |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -39,4 +40,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:234.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
