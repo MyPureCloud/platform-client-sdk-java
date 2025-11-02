@@ -32,10 +32,10 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
   private Long total = null;
   private Long totalNumberOfEntities = null;
   private String firstUri = null;
-  private String previousUri = null;
-  private String nextUri = null;
   private String lastUri = null;
   private String selfUri = null;
+  private String previousUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   public EmergencyGroupDivisionViewEntityListing() {
@@ -150,40 +150,6 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
 
   /**
    **/
-  public EmergencyGroupDivisionViewEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public EmergencyGroupDivisionViewEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public EmergencyGroupDivisionViewEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -213,6 +179,40 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public EmergencyGroupDivisionViewEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public EmergencyGroupDivisionViewEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -249,16 +249,16 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
             Objects.equals(this.total, emergencyGroupDivisionViewEntityListing.total) &&
             Objects.equals(this.totalNumberOfEntities, emergencyGroupDivisionViewEntityListing.totalNumberOfEntities) &&
             Objects.equals(this.firstUri, emergencyGroupDivisionViewEntityListing.firstUri) &&
-            Objects.equals(this.previousUri, emergencyGroupDivisionViewEntityListing.previousUri) &&
-            Objects.equals(this.nextUri, emergencyGroupDivisionViewEntityListing.nextUri) &&
             Objects.equals(this.lastUri, emergencyGroupDivisionViewEntityListing.lastUri) &&
             Objects.equals(this.selfUri, emergencyGroupDivisionViewEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, emergencyGroupDivisionViewEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, emergencyGroupDivisionViewEntityListing.nextUri) &&
             Objects.equals(this.pageCount, emergencyGroupDivisionViewEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -272,10 +272,10 @@ public class EmergencyGroupDivisionViewEntityListing  implements Serializable, P
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

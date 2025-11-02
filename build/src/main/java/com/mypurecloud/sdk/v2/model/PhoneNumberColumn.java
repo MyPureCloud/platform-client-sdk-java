@@ -24,6 +24,7 @@ public class PhoneNumberColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private String callableTimeColumnName = null;
 
   public PhoneNumberColumn() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -65,6 +66,23 @@ public class PhoneNumberColumn  implements Serializable {
   }
 
 
+  /**
+   **/
+  public PhoneNumberColumn callableTimeColumnName(String callableTimeColumnName) {
+    this.callableTimeColumnName = callableTimeColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callableTimeColumnName")
+  public String getCallableTimeColumnName() {
+    return callableTimeColumnName;
+  }
+  public void setCallableTimeColumnName(String callableTimeColumnName) {
+    this.callableTimeColumnName = callableTimeColumnName;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -76,12 +94,13 @@ public class PhoneNumberColumn  implements Serializable {
     PhoneNumberColumn phoneNumberColumn = (PhoneNumberColumn) o;
 
     return Objects.equals(this.columnName, phoneNumberColumn.columnName) &&
-            Objects.equals(this.type, phoneNumberColumn.type);
+            Objects.equals(this.type, phoneNumberColumn.type) &&
+            Objects.equals(this.callableTimeColumnName, phoneNumberColumn.callableTimeColumnName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type);
+    return Objects.hash(columnName, type, callableTimeColumnName);
   }
 
   @Override
@@ -91,6 +110,7 @@ public class PhoneNumberColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    callableTimeColumnName: ").append(toIndentedString(callableTimeColumnName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

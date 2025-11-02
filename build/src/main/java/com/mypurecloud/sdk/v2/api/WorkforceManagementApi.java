@@ -7027,12 +7027,13 @@ public class WorkforceManagementApi {
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId The ID of the forecast (required)
    * @param weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+   * @param expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) (optional)
    * @return BuForecastStaffingRequirementsResultResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuForecastStaffingRequirementsResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers));
+  public BuForecastStaffingRequirementsResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers, expand));
   }
 
   /**
@@ -7042,14 +7043,15 @@ public class WorkforceManagementApi {
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId The ID of the forecast (required)
    * @param weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+   * @param expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) (optional)
    * @return BuForecastStaffingRequirementsResultResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuForecastStaffingRequirementsResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) throws IOException {
-    return getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers).withHttpInfo());
+  public ApiResponse<BuForecastStaffingRequirementsResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) {
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers, List<String> expand) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
@@ -7058,6 +7060,8 @@ public class WorkforceManagementApi {
             .withForecastId(forecastId)
 
             .withWeekNumbers(weekNumbers)
+
+            .withExpand(expand)
 
             .build();
   }

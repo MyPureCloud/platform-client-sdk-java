@@ -1778,8 +1778,6 @@ try {
 
 Get message
 
-getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}  
 
 Requires ANY permissions: 
@@ -1842,8 +1840,6 @@ try {
 > [InternalMessageDataEntityListing](InternalMessageDataEntityListing) getConversationCommunicationInternalmessages(conversationId, communicationId, pageSize, pageNumber)
 
 Get messages for communication
-
-getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages  
 
@@ -2326,7 +2322,7 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **type** | **String**| Suggestion type to filter by. | [optional]<br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script 
+| **type** | **String**| Suggestion type to filter by. | [optional]<br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer 
 | **state** | **String**| Suggestion state to filter Copilot suggestions. | [optional]<br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated 
 {: class="table-striped"}
 
@@ -4478,8 +4474,6 @@ This endpoint does not require any parameters.
 
 Get internal message conversation
 
-getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/internalmessages/{conversationId}  
 
 Requires ANY permissions: 
@@ -4538,8 +4532,6 @@ try {
 > [InternalMessageConversationEntityListing](InternalMessageConversationEntityListing) getConversationsInternalmessages()
 
 Get active internal message conversations for the logged in user
-
-getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/internalmessages  
 
@@ -11166,8 +11158,6 @@ Send internal message
 
 Send a new internal message for an existing communication.
 
-postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages  
 
 Requires ANY permissions: 
@@ -11414,8 +11404,6 @@ null (empty response body)
 Setup internal message communication with user
 
 The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-
-postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications  
 
@@ -15129,7 +15117,7 @@ try {
 
 Get messages in batch
 
-The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk  
 
@@ -17967,4 +17955,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

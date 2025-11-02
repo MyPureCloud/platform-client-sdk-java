@@ -80,7 +80,7 @@ public class BillingContract  implements Serializable {
   }
   private StatusEnum status = null;
   private String commercialModel = null;
-  private List<String> getpurchaseOrderNumbers = null;
+  private List<String> purchaseOrderNumbers = null;
   private Customer billToCustomer = null;
   private Customer soldToCustomer = null;
   private Customer endCustomer = null;
@@ -93,7 +93,7 @@ public class BillingContract  implements Serializable {
 
   public BillingContract() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      getpurchaseOrderNumbers = new ArrayList<String>();
+      purchaseOrderNumbers = new ArrayList<String>();
       billingPeriods = new ArrayList<BillingContractPeriod>();
       plans = new ArrayList<BillingPlan>();
     }
@@ -164,18 +164,18 @@ public class BillingContract  implements Serializable {
   /**
    * List of po numbers periods for this contract.
    **/
-  public BillingContract getpurchaseOrderNumbers(List<String> getpurchaseOrderNumbers) {
-    this.getpurchaseOrderNumbers = getpurchaseOrderNumbers;
+  public BillingContract purchaseOrderNumbers(List<String> purchaseOrderNumbers) {
+    this.purchaseOrderNumbers = purchaseOrderNumbers;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "List of po numbers periods for this contract.")
-  @JsonProperty("getpurchaseOrderNumbers")
-  public List<String> getGetpurchaseOrderNumbers() {
-    return getpurchaseOrderNumbers;
+  @JsonProperty("purchaseOrderNumbers")
+  public List<String> getPurchaseOrderNumbers() {
+    return purchaseOrderNumbers;
   }
-  public void setGetpurchaseOrderNumbers(List<String> getpurchaseOrderNumbers) {
-    this.getpurchaseOrderNumbers = getpurchaseOrderNumbers;
+  public void setPurchaseOrderNumbers(List<String> purchaseOrderNumbers) {
+    this.purchaseOrderNumbers = purchaseOrderNumbers;
   }
 
 
@@ -355,7 +355,7 @@ public class BillingContract  implements Serializable {
             Objects.equals(this.externalNumber, billingContract.externalNumber) &&
             Objects.equals(this.status, billingContract.status) &&
             Objects.equals(this.commercialModel, billingContract.commercialModel) &&
-            Objects.equals(this.getpurchaseOrderNumbers, billingContract.getpurchaseOrderNumbers) &&
+            Objects.equals(this.purchaseOrderNumbers, billingContract.purchaseOrderNumbers) &&
             Objects.equals(this.billToCustomer, billingContract.billToCustomer) &&
             Objects.equals(this.soldToCustomer, billingContract.soldToCustomer) &&
             Objects.equals(this.endCustomer, billingContract.endCustomer) &&
@@ -369,7 +369,7 @@ public class BillingContract  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalNumber, status, commercialModel, getpurchaseOrderNumbers, billToCustomer, soldToCustomer, endCustomer, dateStart, dateEnd, dateRampStart, dateRampEnd, billingPeriods, plans);
+    return Objects.hash(id, externalNumber, status, commercialModel, purchaseOrderNumbers, billToCustomer, soldToCustomer, endCustomer, dateStart, dateEnd, dateRampStart, dateRampEnd, billingPeriods, plans);
   }
 
   @Override
@@ -381,7 +381,7 @@ public class BillingContract  implements Serializable {
     sb.append("    externalNumber: ").append(toIndentedString(externalNumber)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    commercialModel: ").append(toIndentedString(commercialModel)).append("\n");
-    sb.append("    getpurchaseOrderNumbers: ").append(toIndentedString(getpurchaseOrderNumbers)).append("\n");
+    sb.append("    purchaseOrderNumbers: ").append(toIndentedString(purchaseOrderNumbers)).append("\n");
     sb.append("    billToCustomer: ").append(toIndentedString(billToCustomer)).append("\n");
     sb.append("    soldToCustomer: ").append(toIndentedString(soldToCustomer)).append("\n");
     sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");

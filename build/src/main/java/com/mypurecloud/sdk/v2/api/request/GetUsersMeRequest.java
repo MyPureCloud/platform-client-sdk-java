@@ -116,6 +116,7 @@ public class GetUsersMeRequest {
 		WORKPLANBIDRANKS("workPlanBidRanks"),
 		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
 		GROUPS("groups"),
+		CUSTOMATTRIBUTES("customAttributes"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),

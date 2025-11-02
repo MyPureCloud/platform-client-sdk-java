@@ -43,6 +43,8 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
 import com.mypurecloud.sdk.v2.model.LearningScormResponse;
@@ -64,6 +66,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningScheduleslotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningScormScormIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
@@ -80,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRequest;
@@ -1143,6 +1147,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningModuleCoverArtResponse> response = (ApiResponse<LearningModuleCoverArtResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningScheduleSlotsJobResponse> getLearningScheduleslotsJobAsync(GetLearningScheduleslotsJobRequest request, final AsyncApiCallback<LearningScheduleSlotsJobResponse> callback) {
+    try {
+      final SettableFuture<LearningScheduleSlotsJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningScheduleSlotsJobResponse>> getLearningScheduleslotsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningScheduleSlotsJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2343,6 +2422,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningAssignmentUserListing> response = (ApiResponse<LearningAssignmentUserListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningScheduleSlotsJobResponse> postLearningScheduleslotsJobsAsync(PostLearningScheduleslotsJobsRequest request, final AsyncApiCallback<LearningScheduleSlotsJobResponse> callback) {
+    try {
+      final SettableFuture<LearningScheduleSlotsJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningScheduleSlotsJobResponse>> postLearningScheduleslotsJobsAsync(ApiRequest<LearningScheduleSlotsJobRequest> request, final AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningScheduleSlotsJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

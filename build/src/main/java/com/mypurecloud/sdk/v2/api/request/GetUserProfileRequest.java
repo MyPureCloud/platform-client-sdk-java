@@ -129,7 +129,8 @@ public class GetUserProfileRequest {
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
 		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
-		GROUPS("groups");
+		GROUPS("groups"),
+		CUSTOMATTRIBUTES("customAttributes");
 
 		private String value;
 

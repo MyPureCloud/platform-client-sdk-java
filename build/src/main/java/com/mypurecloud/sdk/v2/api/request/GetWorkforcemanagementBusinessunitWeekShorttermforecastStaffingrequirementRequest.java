@@ -337,6 +337,50 @@ public class GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequ
 	    return this;
 	} 
 
+	private List<String> expand;
+	public List<String> getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(List<String> expand) {
+		this.expand = expand;
+	}
+
+	public GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest withExpand(List<String> expand) {
+	    this.setExpand(expand);
+	    return this;
+	} 
+
+	public enum expandValues { 
+		RESULTS_PLANNINGGROUPSTAFFINGREQUIREMENTS_MINIMUMSTAFFPERINTERVAL("results.planningGroupStaffingRequirements.minimumStaffPerInterval"),
+		RESULTS_PLANNINGGROUPSTAFFINGREQUIREMENTS_EFFECTIVESTAFFPERINTERVAL("results.planningGroupStaffingRequirements.effectiveStaffPerInterval");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -384,6 +428,9 @@ public class GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequ
 
                 .withQueryParameters("weekNumbers", "multi", weekNumbers)
         
+
+                .withQueryParameters("expand", "multi", expand)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -428,6 +475,22 @@ public class GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequ
 		public Builder withWeekNumbers(List<String> weekNumbers) {
 			request.setWeekNumbers(weekNumbers);
 			return this;
+		}
+
+		public Builder withExpand(List<String> expand) {
+			request.setExpand(expand);
+			return this;
+		}
+
+
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
 		}
 
 

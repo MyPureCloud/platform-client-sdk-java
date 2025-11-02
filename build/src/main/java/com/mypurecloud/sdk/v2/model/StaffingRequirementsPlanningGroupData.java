@@ -26,10 +26,14 @@ public class StaffingRequirementsPlanningGroupData  implements Serializable {
   
   private String planningGroupId = null;
   private List<Double> staffingRequirementsPerInterval = null;
+  private List<Double> minimumStaffPerInterval = null;
+  private List<Double> effectiveStaffPerInterval = null;
 
   public StaffingRequirementsPlanningGroupData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       staffingRequirementsPerInterval = new ArrayList<Double>();
+      minimumStaffPerInterval = new ArrayList<Double>();
+      effectiveStaffPerInterval = new ArrayList<Double>();
     }
   }
 
@@ -70,6 +74,42 @@ public class StaffingRequirementsPlanningGroupData  implements Serializable {
   }
 
 
+  /**
+   * Minimum Staff per interval for this week forecast
+   **/
+  public StaffingRequirementsPlanningGroupData minimumStaffPerInterval(List<Double> minimumStaffPerInterval) {
+    this.minimumStaffPerInterval = minimumStaffPerInterval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Minimum Staff per interval for this week forecast")
+  @JsonProperty("minimumStaffPerInterval")
+  public List<Double> getMinimumStaffPerInterval() {
+    return minimumStaffPerInterval;
+  }
+  public void setMinimumStaffPerInterval(List<Double> minimumStaffPerInterval) {
+    this.minimumStaffPerInterval = minimumStaffPerInterval;
+  }
+
+
+  /**
+   * Effective Staff per interval for this week forecast
+   **/
+  public StaffingRequirementsPlanningGroupData effectiveStaffPerInterval(List<Double> effectiveStaffPerInterval) {
+    this.effectiveStaffPerInterval = effectiveStaffPerInterval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Effective Staff per interval for this week forecast")
+  @JsonProperty("effectiveStaffPerInterval")
+  public List<Double> getEffectiveStaffPerInterval() {
+    return effectiveStaffPerInterval;
+  }
+  public void setEffectiveStaffPerInterval(List<Double> effectiveStaffPerInterval) {
+    this.effectiveStaffPerInterval = effectiveStaffPerInterval;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -81,12 +121,14 @@ public class StaffingRequirementsPlanningGroupData  implements Serializable {
     StaffingRequirementsPlanningGroupData staffingRequirementsPlanningGroupData = (StaffingRequirementsPlanningGroupData) o;
 
     return Objects.equals(this.planningGroupId, staffingRequirementsPlanningGroupData.planningGroupId) &&
-            Objects.equals(this.staffingRequirementsPerInterval, staffingRequirementsPlanningGroupData.staffingRequirementsPerInterval);
+            Objects.equals(this.staffingRequirementsPerInterval, staffingRequirementsPlanningGroupData.staffingRequirementsPerInterval) &&
+            Objects.equals(this.minimumStaffPerInterval, staffingRequirementsPlanningGroupData.minimumStaffPerInterval) &&
+            Objects.equals(this.effectiveStaffPerInterval, staffingRequirementsPlanningGroupData.effectiveStaffPerInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(planningGroupId, staffingRequirementsPerInterval);
+    return Objects.hash(planningGroupId, staffingRequirementsPerInterval, minimumStaffPerInterval, effectiveStaffPerInterval);
   }
 
   @Override
@@ -96,6 +138,8 @@ public class StaffingRequirementsPlanningGroupData  implements Serializable {
     
     sb.append("    planningGroupId: ").append(toIndentedString(planningGroupId)).append("\n");
     sb.append("    staffingRequirementsPerInterval: ").append(toIndentedString(staffingRequirementsPerInterval)).append("\n");
+    sb.append("    minimumStaffPerInterval: ").append(toIndentedString(minimumStaffPerInterval)).append("\n");
+    sb.append("    effectiveStaffPerInterval: ").append(toIndentedString(effectiveStaffPerInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

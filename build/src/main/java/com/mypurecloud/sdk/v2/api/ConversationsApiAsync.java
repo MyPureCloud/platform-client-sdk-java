@@ -2392,7 +2392,6 @@ public class ConversationsApiAsync {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2427,7 +2426,6 @@ public class ConversationsApiAsync {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2469,7 +2467,6 @@ public class ConversationsApiAsync {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2504,7 +2501,6 @@ public class ConversationsApiAsync {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5716,7 +5712,6 @@ public class ConversationsApiAsync {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5751,7 +5746,6 @@ public class ConversationsApiAsync {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5793,7 +5787,6 @@ public class ConversationsApiAsync {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5828,7 +5821,6 @@ public class ConversationsApiAsync {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -13844,7 +13836,6 @@ public class ConversationsApiAsync {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -13879,7 +13870,6 @@ public class ConversationsApiAsync {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14146,7 +14136,6 @@ public class ConversationsApiAsync {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14181,7 +14170,6 @@ public class ConversationsApiAsync {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -18598,7 +18586,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -18632,7 +18620,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

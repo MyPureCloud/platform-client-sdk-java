@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingNotification;
 import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
@@ -45,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.GetCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingAppointmentsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingNotificationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCoachingScheduleslotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
@@ -53,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsQueryRequest;
 
 import java.io.IOException;
@@ -824,6 +828,81 @@ public class CoachingApiAsync {
   }
 
   /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoachingScheduleSlotsJobResponse> getCoachingScheduleslotsJobAsync(GetCoachingScheduleslotsJobRequest request, final AsyncApiCallback<CoachingScheduleSlotsJobResponse> callback) {
+    try {
+      final SettableFuture<CoachingScheduleSlotsJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoachingScheduleSlotsJobResponse>> getCoachingScheduleslotsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoachingScheduleSlotsJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an existing appointment
    * Permission not required if you are the creator or facilitator of the appointment
    * @param request the request object
@@ -1412,6 +1491,81 @@ public class CoachingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoachingScheduleSlotsJobResponse> postCoachingScheduleslotsJobsAsync(PostCoachingScheduleslotsJobsRequest request, final AsyncApiCallback<CoachingScheduleSlotsJobResponse> callback) {
+    try {
+      final SettableFuture<CoachingScheduleSlotsJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoachingScheduleSlotsJobResponse>> postCoachingScheduleslotsJobsAsync(ApiRequest<CoachingScheduleSlotsJobRequest> request, final AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoachingScheduleSlotsJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingScheduleSlotsJobResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingScheduleSlotsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingScheduleSlotsJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

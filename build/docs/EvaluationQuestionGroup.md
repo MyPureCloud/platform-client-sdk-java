@@ -16,8 +16,9 @@
 | **manualWeight** | **Boolean** |  |  [optional] |
 | **questions** | [**List&lt;EvaluationQuestion&gt;**](EvaluationQuestion) |  |  [optional] |
 | **visibilityCondition** | [**VisibilityCondition**](VisibilityCondition) |  |  [optional] |
+| **defaultAnswersTo** | [**DefaultAnswersTo**](DefaultAnswersTo) | Default scoring settings for the questions within this question group. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

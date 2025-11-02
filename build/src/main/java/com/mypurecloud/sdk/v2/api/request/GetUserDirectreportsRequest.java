@@ -130,6 +130,7 @@ public class GetUserDirectreportsRequest {
 		WORKPLANBIDRANKS("workPlanBidRanks"),
 		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
 		GROUPS("groups"),
+		CUSTOMATTRIBUTES("customAttributes"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),

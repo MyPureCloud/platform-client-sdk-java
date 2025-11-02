@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DefaultAnswersTo;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestion;
 import com.mypurecloud.sdk.v2.model.VisibilityCondition;
 import io.swagger.annotations.ApiModel;
@@ -37,6 +38,7 @@ public class EvaluationQuestionGroup  implements Serializable {
   private Boolean manualWeight = null;
   private List<EvaluationQuestion> questions = null;
   private VisibilityCondition visibilityCondition = null;
+  private DefaultAnswersTo defaultAnswersTo = null;
 
   public EvaluationQuestionGroup() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -222,6 +224,24 @@ public class EvaluationQuestionGroup  implements Serializable {
   }
 
 
+  /**
+   * Default scoring settings for the questions within this question group.
+   **/
+  public EvaluationQuestionGroup defaultAnswersTo(DefaultAnswersTo defaultAnswersTo) {
+    this.defaultAnswersTo = defaultAnswersTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Default scoring settings for the questions within this question group.")
+  @JsonProperty("defaultAnswersTo")
+  public DefaultAnswersTo getDefaultAnswersTo() {
+    return defaultAnswersTo;
+  }
+  public void setDefaultAnswersTo(DefaultAnswersTo defaultAnswersTo) {
+    this.defaultAnswersTo = defaultAnswersTo;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -242,12 +262,13 @@ public class EvaluationQuestionGroup  implements Serializable {
             Objects.equals(this.weight, evaluationQuestionGroup.weight) &&
             Objects.equals(this.manualWeight, evaluationQuestionGroup.manualWeight) &&
             Objects.equals(this.questions, evaluationQuestionGroup.questions) &&
-            Objects.equals(this.visibilityCondition, evaluationQuestionGroup.visibilityCondition);
+            Objects.equals(this.visibilityCondition, evaluationQuestionGroup.visibilityCondition) &&
+            Objects.equals(this.defaultAnswersTo, evaluationQuestionGroup.defaultAnswersTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contextId, name, type, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition);
+    return Objects.hash(id, contextId, name, type, defaultAnswersToHighest, defaultAnswersToNA, naEnabled, weight, manualWeight, questions, visibilityCondition, defaultAnswersTo);
   }
 
   @Override
@@ -266,6 +287,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     sb.append("    manualWeight: ").append(toIndentedString(manualWeight)).append("\n");
     sb.append("    questions: ").append(toIndentedString(questions)).append("\n");
     sb.append("    visibilityCondition: ").append(toIndentedString(visibilityCondition)).append("\n");
+    sb.append("    defaultAnswersTo: ").append(toIndentedString(defaultAnswersTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

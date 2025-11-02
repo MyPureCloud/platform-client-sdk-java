@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionAutomergeConfig;
+import com.mypurecloud.sdk.v2.model.IdentityResolutionExternalSource;
 import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +28,8 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
   private String id = null;
   private WritableStarrableDivision division = null;
   private Boolean resolveIdentities = null;
+  private IdentityResolutionExternalSource externalSource = null;
+  private IdentityResolutionAutomergeConfig automerge = null;
   private String selfUri = null;
 
   public DeploymentIdentityResolutionConfig() {
@@ -77,6 +81,42 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
   }
 
 
+  /**
+   * The external source used for stitching this channel.
+   **/
+  public DeploymentIdentityResolutionConfig externalSource(IdentityResolutionExternalSource externalSource) {
+    this.externalSource = externalSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external source used for stitching this channel.")
+  @JsonProperty("externalSource")
+  public IdentityResolutionExternalSource getExternalSource() {
+    return externalSource;
+  }
+  public void setExternalSource(IdentityResolutionExternalSource externalSource) {
+    this.externalSource = externalSource;
+  }
+
+
+  /**
+   * Whether automerging of contacts should be enabled for each channel.
+   **/
+  public DeploymentIdentityResolutionConfig automerge(IdentityResolutionAutomergeConfig automerge) {
+    this.automerge = automerge;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether automerging of contacts should be enabled for each channel.")
+  @JsonProperty("automerge")
+  public IdentityResolutionAutomergeConfig getAutomerge() {
+    return automerge;
+  }
+  public void setAutomerge(IdentityResolutionAutomergeConfig automerge) {
+    this.automerge = automerge;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -97,12 +137,14 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
     return Objects.equals(this.id, deploymentIdentityResolutionConfig.id) &&
             Objects.equals(this.division, deploymentIdentityResolutionConfig.division) &&
             Objects.equals(this.resolveIdentities, deploymentIdentityResolutionConfig.resolveIdentities) &&
+            Objects.equals(this.externalSource, deploymentIdentityResolutionConfig.externalSource) &&
+            Objects.equals(this.automerge, deploymentIdentityResolutionConfig.automerge) &&
             Objects.equals(this.selfUri, deploymentIdentityResolutionConfig.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, resolveIdentities, selfUri);
+    return Objects.hash(id, division, resolveIdentities, externalSource, automerge, selfUri);
   }
 
   @Override
@@ -113,6 +155,8 @@ public class DeploymentIdentityResolutionConfig  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    resolveIdentities: ").append(toIndentedString(resolveIdentities)).append("\n");
+    sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
+    sb.append("    automerge: ").append(toIndentedString(automerge)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

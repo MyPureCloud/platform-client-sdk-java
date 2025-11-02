@@ -850,6 +850,11 @@ docs/CoachingAppointmentStatusResponse.md
 docs/CoachingAppointmentStatusResponseList.md
 docs/CoachingNotification.md
 docs/CoachingNotificationList.md
+docs/CoachingScheduleSlotsJobRequest.md
+docs/CoachingScheduleSlotsJobResponse.md
+docs/CoachingScheduleSlotsJobResult.md
+docs/CoachingScheduleSlotsJobSchedule.md
+docs/CoachingScheduleSlotsJobSlot.md
 docs/CoachingSlot.md
 docs/CoachingSlotsRequest.md
 docs/CoachingSlotsResponse.md
@@ -1071,6 +1076,7 @@ docs/ConversationAppSettings.md
 docs/ConversationAssociation.md
 docs/ConversationAsyncAggregateQueryResponse.md
 docs/ConversationAsyncAggregationQuery.md
+docs/ConversationAttributeFilter.md
 docs/ConversationBasic.md
 docs/ConversationCallEventTopicCallConversation.md
 docs/ConversationCallEventTopicCallMediaParticipant.md
@@ -1367,6 +1373,9 @@ docs/ConversationResponseSuggestionsTopicSuggestedIntentSlot.md
 docs/ConversationResponseSuggestionsTopicSuggestionContext.md
 docs/ConversationResponseSuggestionsTopicSuggestionFeedback.md
 docs/ConversationRoutingData.md
+docs/ConversationSchemaAttribute.md
+docs/ConversationSchemaData.md
+docs/ConversationSchemaReference.md
 docs/ConversationScreenShareEventTopicConversationDivisionMembership.md
 docs/ConversationScreenShareEventTopicConversationRoutingData.md
 docs/ConversationScreenShareEventTopicDetail.md
@@ -2101,8 +2110,6 @@ docs/EvaluationDetailQueryPredicate.md
 docs/EvaluationEntityListing.md
 docs/EvaluationForm.md
 docs/EvaluationFormAndScoringSet.md
-docs/EvaluationFormDivisionView.md
-docs/EvaluationFormDivisionViewListing.md
 docs/EvaluationFormResponse.md
 docs/EvaluationFormResponseEntityListing.md
 docs/EvaluationQualityV2TopicCalibration.md
@@ -2974,6 +2981,7 @@ docs/KnowledgeParseJobResponse.md
 docs/KnowledgeParseRecord.md
 docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocumentResponse.md
+docs/KnowledgeSetting.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
@@ -3074,6 +3082,11 @@ docs/LearningModuleRule.md
 docs/LearningModuleRuleParts.md
 docs/LearningModuleSummary.md
 docs/LearningModulesDomainEntityListing.md
+docs/LearningScheduleSlotsJobRequest.md
+docs/LearningScheduleSlotsJobResponse.md
+docs/LearningScheduleSlotsJobResult.md
+docs/LearningScheduleSlotsJobSchedule.md
+docs/LearningScheduleSlotsJobSlot.md
 docs/LearningScheduleSlotsQueryRequest.md
 docs/LearningScheduleSlotsQueryResponse.md
 docs/LearningScormResponse.md
@@ -4708,11 +4721,13 @@ docs/SuggestApi.json
 docs/SuggestApi.md
 docs/SuggestSearchCriteria.md
 docs/SuggestSearchRequest.md
+docs/SuggestedSearchChunk.md
 docs/Suggestion.md
 docs/SuggestionCannedResponse.md
 docs/SuggestionContext.md
 docs/SuggestionEngagement.md
 docs/SuggestionFeedback.md
+docs/SuggestionGeneratedKnowledgeAnswer.md
 docs/SuggestionKnowledgeAnswer.md
 docs/SuggestionKnowledgeArticle.md
 docs/SuggestionKnowledgeSearch.md
@@ -4777,8 +4792,6 @@ docs/SurveyDetailQueryPredicate.md
 docs/SurveyErrorDetails.md
 docs/SurveyForm.md
 docs/SurveyFormAndScoringSet.md
-docs/SurveyFormDivisionView.md
-docs/SurveyFormDivisionViewListing.md
 docs/SurveyFormEntityListing.md
 docs/SurveyQuestion.md
 docs/SurveyQuestionGroup.md
@@ -4978,6 +4991,7 @@ docs/TransferToAgentRequest.md
 docs/TransferToExternalContactRequest.md
 docs/TransferToExternalRequest.md
 docs/TransferToQueueRequest.md
+docs/TransfersFullTimeEquivalent.md
 docs/TranslateSupportedLanguage.md
 docs/TranslateSupportedLanguageList.md
 docs/TrendData.md
@@ -5173,6 +5187,7 @@ docs/UserConversationsEventMediaSummary.md
 docs/UserConversationsEventMediaSummaryDetail.md
 docs/UserConversationsEventUserConversationSummary.md
 docs/UserCursorEntityListing.md
+docs/UserCustomAttributes.md
 docs/UserDetailQueryClause.md
 docs/UserDetailQueryFilter.md
 docs/UserDetailQueryPredicate.md
@@ -6407,6 +6422,7 @@ docs/getCoachingAppointments-example.txt
 docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
+docs/getCoachingScheduleslotsJob-example.txt
 docs/getContentmanagementDocument-example.txt
 docs/getContentmanagementDocumentContent-example.txt
 docs/getContentmanagementDocuments-example.txt
@@ -6661,6 +6677,7 @@ docs/getGamificationInsights-example.txt
 docs/getGamificationInsightsDetails-example.txt
 docs/getGamificationInsightsGroupsTrends-example.txt
 docs/getGamificationInsightsGroupsTrendsAll-example.txt
+docs/getGamificationInsightsManagers-example.txt
 docs/getGamificationInsightsMembers-example.txt
 docs/getGamificationInsightsRankings-example.txt
 docs/getGamificationInsightsTrends-example.txt
@@ -6917,6 +6934,7 @@ docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
 docs/getLearningModulesAssignments-example.txt
 docs/getLearningModulesCoverartCoverArtId-example.txt
+docs/getLearningScheduleslotsJob-example.txt
 docs/getLearningScormScormId-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
@@ -7093,12 +7111,8 @@ docs/getQualityPublishedform-example.txt
 docs/getQualityPublishedforms-example.txt
 docs/getQualityPublishedformsEvaluation-example.txt
 docs/getQualityPublishedformsEvaluations-example.txt
-docs/getQualityPublishedformsEvaluationsDivisionview-example.txt
-docs/getQualityPublishedformsEvaluationsDivisionviews-example.txt
 docs/getQualityPublishedformsSurvey-example.txt
 docs/getQualityPublishedformsSurveys-example.txt
-docs/getQualityPublishedformsSurveysDivisionview-example.txt
-docs/getQualityPublishedformsSurveysDivisionviews-example.txt
 docs/getQualitySurvey-example.txt
 docs/getQualitySurveysScorable-example.txt
 docs/getRecordingBatchrequest-example.txt
@@ -7987,6 +8001,7 @@ docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
 docs/postCoachingAppointmentsAggregatesQuery-example.txt
+docs/postCoachingScheduleslotsJobs-example.txt
 docs/postCoachingScheduleslotsQuery-example.txt
 docs/postContentmanagementDocument-example.txt
 docs/postContentmanagementDocumentContent-example.txt
@@ -8292,6 +8307,7 @@ docs/postLearningModuleJobs-example.txt
 docs/postLearningModulePublish-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt
+docs/postLearningScheduleslotsJobs-example.txt
 docs/postLearningScheduleslotsQuery-example.txt
 docs/postLearningScorm-example.txt
 docs/postLicenseInfer-example.txt
@@ -9622,6 +9638,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsMeReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingScheduleslotsJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentsRequest.java
@@ -9875,6 +9892,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationContestsRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsGroupsTrendsAllRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsGroupsTrendsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsManagersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsMembersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsRankingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsRequest.java
@@ -10132,6 +10150,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModuleVersionRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesAssignmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesCoverartCoverArtIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningScheduleslotsJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningScormScormIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLicenseDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLicenseDefinitionsRequest.java
@@ -10306,13 +10325,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityFormsSurveysBulkReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityFormsSurveysRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsEvaluationRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsEvaluationsDivisionviewRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsEvaluationsDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsEvaluationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsSurveyRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsSurveysDivisionviewRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsSurveysDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualityPublishedformsSurveysRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualitySurveyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetQualitySurveysScorableRequest.java
@@ -11202,6 +11217,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentAnnotati
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentConversationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingScheduleslotsJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingScheduleslotsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentRequest.java
@@ -11507,6 +11523,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningModuleJobsRequest.j
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningModulePublishRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningModulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningRulesQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningScheduleslotsJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningScheduleslotsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLearningScormRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostLicenseInferRequest.java
@@ -12946,6 +12963,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/CoachingAppointmentStatusResponse.jav
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingAppointmentStatusResponseList.java
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingNotificationList.java
+src/main/java/com/mypurecloud/sdk/v2/model/CoachingScheduleSlotsJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CoachingScheduleSlotsJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/CoachingScheduleSlotsJobResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/CoachingScheduleSlotsJobSchedule.java
+src/main/java/com/mypurecloud/sdk/v2/model/CoachingScheduleSlotsJobSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingSlotsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CoachingSlotsResponse.java
@@ -13165,6 +13187,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationAppSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationAsyncAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationAsyncAggregationQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationAttributeFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationBasic.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicCallConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicCallMediaParticipant.java
@@ -13461,6 +13484,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationResponseSuggestionsTopicS
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationResponseSuggestionsTopicSuggestionContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationResponseSuggestionsTopicSuggestionFeedback.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationRoutingData.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaAttribute.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaData.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSchemaReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicConversationDivisionMembership.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicDetail.java
@@ -14183,8 +14209,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/EvaluationDetailQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationForm.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormAndScoringSet.java
-src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormDivisionView.java
-src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormDivisionViewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicCalibration.java
@@ -15028,6 +15052,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeParseJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeParseRecord.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchClientApplication.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchDocumentResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSuggestionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobReport.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobRequest.java
@@ -15122,6 +15147,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRuleParts.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulesDomainEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobSchedule.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScormResponse.java
@@ -16702,11 +16732,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/Subscription.java
 src/main/java/com/mypurecloud/sdk/v2/model/SubscriptionOverviewUsage.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestSearchCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/SuggestedSearchChunk.java
 src/main/java/com/mypurecloud/sdk/v2/model/Suggestion.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionCannedResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionEngagement.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionFeedback.java
+src/main/java/com/mypurecloud/sdk/v2/model/SuggestionGeneratedKnowledgeAnswer.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionKnowledgeAnswer.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionKnowledgeArticle.java
 src/main/java/com/mypurecloud/sdk/v2/model/SuggestionKnowledgeSearch.java
@@ -16771,8 +16803,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/SurveyDetailQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyForm.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyFormAndScoringSet.java
-src/main/java/com/mypurecloud/sdk/v2/model/SurveyFormDivisionView.java
-src/main/java/com/mypurecloud/sdk/v2/model/SurveyFormDivisionViewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyFormEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyQuestion.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyQuestionGroup.java
@@ -16960,6 +16990,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TransferToAgentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToExternalContactRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToExternalRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToQueueRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TransfersFullTimeEquivalent.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranslateSupportedLanguage.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranslateSupportedLanguageList.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrendData.java
@@ -17151,6 +17182,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserConversationsEventMediaSummary.ja
 src/main/java/com/mypurecloud/sdk/v2/model/UserConversationsEventMediaSummaryDetail.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserConversationsEventUserConversationSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserCursorEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserCustomAttributes.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserDetailQueryFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserDetailQueryPredicate.java

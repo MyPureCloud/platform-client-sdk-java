@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDate;
 
 import java.io.Serializable;
 /**
@@ -23,8 +25,57 @@ import java.io.Serializable;
 public class TimeOffSettingsResponse  implements Serializable {
   
   private Boolean submissionRangeEnforced = null;
+
+  private static class SubmissionRangeTypeEnumDeserializer extends StdDeserializer<SubmissionRangeTypeEnum> {
+    public SubmissionRangeTypeEnumDeserializer() {
+      super(SubmissionRangeTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SubmissionRangeTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubmissionRangeTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the submission range
+   */
+ @JsonDeserialize(using = SubmissionRangeTypeEnumDeserializer.class)
+  public enum SubmissionRangeTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    RELATIVE("Relative"),
+    FIXEDEND("FixedEnd");
+
+    private String value;
+
+    SubmissionRangeTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SubmissionRangeTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SubmissionRangeTypeEnum value : SubmissionRangeTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SubmissionRangeTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SubmissionRangeTypeEnum submissionRangeType = null;
   private Integer submissionEarliestDaysFromNow = null;
   private Integer submissionLatestDaysFromNow = null;
+  private LocalDate submissionLatestDate = null;
 
   public TimeOffSettingsResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -47,6 +98,24 @@ public class TimeOffSettingsResponse  implements Serializable {
   }
   public void setSubmissionRangeEnforced(Boolean submissionRangeEnforced) {
     this.submissionRangeEnforced = submissionRangeEnforced;
+  }
+
+
+  /**
+   * The type of the submission range
+   **/
+  public TimeOffSettingsResponse submissionRangeType(SubmissionRangeTypeEnum submissionRangeType) {
+    this.submissionRangeType = submissionRangeType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the submission range")
+  @JsonProperty("submissionRangeType")
+  public SubmissionRangeTypeEnum getSubmissionRangeType() {
+    return submissionRangeType;
+  }
+  public void setSubmissionRangeType(SubmissionRangeTypeEnum submissionRangeType) {
+    this.submissionRangeType = submissionRangeType;
   }
 
 
@@ -86,6 +155,24 @@ public class TimeOffSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * The latest date for the time off request submission interpreted in the business unit time zone in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   **/
+  public TimeOffSettingsResponse submissionLatestDate(LocalDate submissionLatestDate) {
+    this.submissionLatestDate = submissionLatestDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The latest date for the time off request submission interpreted in the business unit time zone in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("submissionLatestDate")
+  public LocalDate getSubmissionLatestDate() {
+    return submissionLatestDate;
+  }
+  public void setSubmissionLatestDate(LocalDate submissionLatestDate) {
+    this.submissionLatestDate = submissionLatestDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -97,13 +184,15 @@ public class TimeOffSettingsResponse  implements Serializable {
     TimeOffSettingsResponse timeOffSettingsResponse = (TimeOffSettingsResponse) o;
 
     return Objects.equals(this.submissionRangeEnforced, timeOffSettingsResponse.submissionRangeEnforced) &&
+            Objects.equals(this.submissionRangeType, timeOffSettingsResponse.submissionRangeType) &&
             Objects.equals(this.submissionEarliestDaysFromNow, timeOffSettingsResponse.submissionEarliestDaysFromNow) &&
-            Objects.equals(this.submissionLatestDaysFromNow, timeOffSettingsResponse.submissionLatestDaysFromNow);
+            Objects.equals(this.submissionLatestDaysFromNow, timeOffSettingsResponse.submissionLatestDaysFromNow) &&
+            Objects.equals(this.submissionLatestDate, timeOffSettingsResponse.submissionLatestDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submissionRangeEnforced, submissionEarliestDaysFromNow, submissionLatestDaysFromNow);
+    return Objects.hash(submissionRangeEnforced, submissionRangeType, submissionEarliestDaysFromNow, submissionLatestDaysFromNow, submissionLatestDate);
   }
 
   @Override
@@ -112,8 +201,10 @@ public class TimeOffSettingsResponse  implements Serializable {
     sb.append("class TimeOffSettingsResponse {\n");
     
     sb.append("    submissionRangeEnforced: ").append(toIndentedString(submissionRangeEnforced)).append("\n");
+    sb.append("    submissionRangeType: ").append(toIndentedString(submissionRangeType)).append("\n");
     sb.append("    submissionEarliestDaysFromNow: ").append(toIndentedString(submissionEarliestDaysFromNow)).append("\n");
     sb.append("    submissionLatestDaysFromNow: ").append(toIndentedString(submissionLatestDaysFromNow)).append("\n");
+    sb.append("    submissionLatestDate: ").append(toIndentedString(submissionLatestDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

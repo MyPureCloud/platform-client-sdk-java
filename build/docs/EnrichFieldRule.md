@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **field** | **String** | A restricted JSONPath naming the specific field this combining behavior should apply to. You may use dot-notation for named fields, and array indexing for lists, but nothing more sophisticated (e.g. wildcards, sublists, filter expressions, etc). For example, to target the `firstName` field of a Contact, this should be \"$.firstName\". |  [optional] |
+| **field** | **String** | A restricted JSONPath naming the specific field this combining behavior should apply to. Only dot notation with alphanumeric characters and underscores (e.g., $.address.address1, $.externalOrganization, $.tickers) are allowed. Bracket notation, array indexing, wildcards, sublists, and filter expressions are not permitted. |  [optional] |
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | The behavior for how to combine data from the request body and the database. |  [optional] |
 | **arrayAction** | [**ArrayActionEnum**](#Enum--ArrayActionEnum) | The behavior for how to combine items in array field from the request body and the database. |  [optional] |
 
@@ -32,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

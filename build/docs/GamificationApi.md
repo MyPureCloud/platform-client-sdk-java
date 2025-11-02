@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | Get insights details for the current user |
 | [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | Get insights overall trend for the current user |
 | [**getGamificationInsightsGroupsTrendsAll**](GamificationApi#getGamificationInsightsGroupsTrendsAll) | Get insights overall trend |
+| [**getGamificationInsightsManagers**](GamificationApi#getGamificationInsightsManagers) | Query managers in a profile during a period of time |
 | [**getGamificationInsightsMembers**](GamificationApi#getGamificationInsightsMembers) | Query users in a profile during a period of time |
 | [**getGamificationInsightsRankings**](GamificationApi#getGamificationInsightsRankings) | Get insights rankings |
 | [**getGamificationInsightsTrends**](GamificationApi#getGamificationInsightsTrends) | Get insights user trend for the current user |
@@ -1126,6 +1127,75 @@ try {
 ### Return type
 
 [**InsightsTrend**](InsightsTrend)
+
+
+# **getGamificationInsightsManagers**
+
+
+> [InsightsAgents](InsightsAgents) getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, pageSize, pageNumber)
+
+Query managers in a profile during a period of time
+
+Wraps GET /api/v2/gamification/insights/managers  
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String filterType = "filterType_example"; // String | Filter type for the query request.
+String filterId = "filterId_example"; // String | ID for the filter type.
+String granularity = "granularity_example"; // String | Granularity
+LocalDate startWorkday = new LocalDate(); // LocalDate | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+Integer pageSize = 100; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    InsightsAgents result = apiInstance.getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationInsightsManagers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
+| **filterId** | **String**| ID for the filter type. | 
+| **granularity** | **String**| Granularity |<br />**Values**: Weekly, Monthly 
+| **startWorkday** | **LocalDate**| The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 100] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InsightsAgents**](InsightsAgents)
 
 
 # **getGamificationInsightsMembers**
@@ -4931,4 +5001,4 @@ try {
 [**GamificationStatus**](GamificationStatus)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

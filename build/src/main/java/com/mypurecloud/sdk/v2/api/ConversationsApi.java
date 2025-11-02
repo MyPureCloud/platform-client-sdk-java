@@ -2445,7 +2445,6 @@ public class ConversationsApi {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param messageId messageId (required)
@@ -2460,7 +2459,6 @@ public class ConversationsApi {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param messageId messageId (required)
@@ -2485,7 +2483,6 @@ public class ConversationsApi {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return InternalMessageData
    * @throws ApiException if the request fails on the server
@@ -2505,7 +2502,6 @@ public class ConversationsApi {
   /**
    * Get message
    * 
-   * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2535,7 +2531,6 @@ public class ConversationsApi {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)
@@ -2551,7 +2546,6 @@ public class ConversationsApi {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)
@@ -2579,7 +2573,6 @@ public class ConversationsApi {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return InternalMessageDataEntityListing
    * @throws ApiException if the request fails on the server
@@ -2599,7 +2592,6 @@ public class ConversationsApi {
   /**
    * Get messages for communication
    * 
-   * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6125,7 +6117,6 @@ public class ConversationsApi {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @return InternalMessageConversation
    * @throws ApiException if the request fails on the server
@@ -6138,7 +6129,6 @@ public class ConversationsApi {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @return InternalMessageConversation
    * @throws IOException if the request fails to be processed
@@ -6157,7 +6147,6 @@ public class ConversationsApi {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return InternalMessageConversation
    * @throws ApiException if the request fails on the server
@@ -6177,7 +6166,6 @@ public class ConversationsApi {
   /**
    * Get internal message conversation
    * 
-   * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6207,7 +6195,6 @@ public class ConversationsApi {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return InternalMessageConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6219,7 +6206,6 @@ public class ConversationsApi {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return InternalMessageConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -6235,7 +6221,6 @@ public class ConversationsApi {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return InternalMessageConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -6255,7 +6240,6 @@ public class ConversationsApi {
   /**
    * Get active internal message conversations for the logged in user
    * 
-   * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -15101,7 +15085,6 @@ public class ConversationsApi {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
@@ -15116,7 +15099,6 @@ public class ConversationsApi {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param body Message (required)
@@ -15141,7 +15123,6 @@ public class ConversationsApi {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return InternalMessageData
    * @throws ApiException if the request fails on the server
@@ -15161,7 +15142,6 @@ public class ConversationsApi {
   /**
    * Send internal message
    * Send a new internal message for an existing communication.
-   * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -15435,7 +15415,6 @@ public class ConversationsApi {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Confer request (required)
@@ -15450,7 +15429,6 @@ public class ConversationsApi {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Confer request (required)
@@ -15475,7 +15453,6 @@ public class ConversationsApi {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return MessagingConferResponse
    * @throws ApiException if the request fails on the server
@@ -15495,7 +15472,6 @@ public class ConversationsApi {
   /**
    * Setup internal message communication with user
    * The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-   * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -20368,7 +20344,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param conversationId  (required)
    * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @param body messageIds (optional)
@@ -20382,7 +20358,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param conversationId  (required)
    * @param useNormalizedMessage If true, response removes deprecated fields (textBody, media) (optional, default to false)
    * @param body messageIds (optional)
@@ -20406,7 +20382,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param request The request object
    * @return TextMessageListing
    * @throws ApiException if the request fails on the server
@@ -20425,7 +20401,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -30,10 +30,10 @@ public class BillingCharge  implements Serializable {
   private String id = null;
   private BillingProduct product = null;
   private List<NamedEntity> organizations = null;
-  private Integer getprepaidQuantity = null;
-  private Integer getfairuseQuantity = null;
-  private Integer getactualQuantity = null;
-  private Integer getoverageQuantity = null;
+  private Integer prepaidQuantity = null;
+  private Integer fairuseQuantity = null;
+  private Integer actualQuantity = null;
+  private Integer overageQuantity = null;
   private BigDecimal overageRate = null;
   private BigDecimal overageCharge = null;
   private String overageCurrency = null;
@@ -91,72 +91,72 @@ public class BillingCharge  implements Serializable {
   /**
    * The quantity of usage that is prepaid.
    **/
-  public BillingCharge getprepaidQuantity(Integer getprepaidQuantity) {
-    this.getprepaidQuantity = getprepaidQuantity;
+  public BillingCharge prepaidQuantity(Integer prepaidQuantity) {
+    this.prepaidQuantity = prepaidQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage that is prepaid.")
-  @JsonProperty("getprepaidQuantity")
-  public Integer getGetprepaidQuantity() {
-    return getprepaidQuantity;
+  @JsonProperty("prepaidQuantity")
+  public Integer getPrepaidQuantity() {
+    return prepaidQuantity;
   }
-  public void setGetprepaidQuantity(Integer getprepaidQuantity) {
-    this.getprepaidQuantity = getprepaidQuantity;
+  public void setPrepaidQuantity(Integer prepaidQuantity) {
+    this.prepaidQuantity = prepaidQuantity;
   }
 
 
   /**
    * The quantity of usage allowed under fair use policies.
    **/
-  public BillingCharge getfairuseQuantity(Integer getfairuseQuantity) {
-    this.getfairuseQuantity = getfairuseQuantity;
+  public BillingCharge fairuseQuantity(Integer fairuseQuantity) {
+    this.fairuseQuantity = fairuseQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage allowed under fair use policies.")
-  @JsonProperty("getfairuseQuantity")
-  public Integer getGetfairuseQuantity() {
-    return getfairuseQuantity;
+  @JsonProperty("fairuseQuantity")
+  public Integer getFairuseQuantity() {
+    return fairuseQuantity;
   }
-  public void setGetfairuseQuantity(Integer getfairuseQuantity) {
-    this.getfairuseQuantity = getfairuseQuantity;
+  public void setFairuseQuantity(Integer fairuseQuantity) {
+    this.fairuseQuantity = fairuseQuantity;
   }
 
 
   /**
    * The actual quantity of usage.
    **/
-  public BillingCharge getactualQuantity(Integer getactualQuantity) {
-    this.getactualQuantity = getactualQuantity;
+  public BillingCharge actualQuantity(Integer actualQuantity) {
+    this.actualQuantity = actualQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The actual quantity of usage.")
-  @JsonProperty("getactualQuantity")
-  public Integer getGetactualQuantity() {
-    return getactualQuantity;
+  @JsonProperty("actualQuantity")
+  public Integer getActualQuantity() {
+    return actualQuantity;
   }
-  public void setGetactualQuantity(Integer getactualQuantity) {
-    this.getactualQuantity = getactualQuantity;
+  public void setActualQuantity(Integer actualQuantity) {
+    this.actualQuantity = actualQuantity;
   }
 
 
   /**
    * The quantity of usage that exceeds prepaid or fair use limits.
    **/
-  public BillingCharge getoverageQuantity(Integer getoverageQuantity) {
-    this.getoverageQuantity = getoverageQuantity;
+  public BillingCharge overageQuantity(Integer overageQuantity) {
+    this.overageQuantity = overageQuantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The quantity of usage that exceeds prepaid or fair use limits.")
-  @JsonProperty("getoverageQuantity")
-  public Integer getGetoverageQuantity() {
-    return getoverageQuantity;
+  @JsonProperty("overageQuantity")
+  public Integer getOverageQuantity() {
+    return overageQuantity;
   }
-  public void setGetoverageQuantity(Integer getoverageQuantity) {
-    this.getoverageQuantity = getoverageQuantity;
+  public void setOverageQuantity(Integer overageQuantity) {
+    this.overageQuantity = overageQuantity;
   }
 
 
@@ -227,10 +227,10 @@ public class BillingCharge  implements Serializable {
     return Objects.equals(this.id, billingCharge.id) &&
             Objects.equals(this.product, billingCharge.product) &&
             Objects.equals(this.organizations, billingCharge.organizations) &&
-            Objects.equals(this.getprepaidQuantity, billingCharge.getprepaidQuantity) &&
-            Objects.equals(this.getfairuseQuantity, billingCharge.getfairuseQuantity) &&
-            Objects.equals(this.getactualQuantity, billingCharge.getactualQuantity) &&
-            Objects.equals(this.getoverageQuantity, billingCharge.getoverageQuantity) &&
+            Objects.equals(this.prepaidQuantity, billingCharge.prepaidQuantity) &&
+            Objects.equals(this.fairuseQuantity, billingCharge.fairuseQuantity) &&
+            Objects.equals(this.actualQuantity, billingCharge.actualQuantity) &&
+            Objects.equals(this.overageQuantity, billingCharge.overageQuantity) &&
             Objects.equals(this.overageRate, billingCharge.overageRate) &&
             Objects.equals(this.overageCharge, billingCharge.overageCharge) &&
             Objects.equals(this.overageCurrency, billingCharge.overageCurrency);
@@ -238,7 +238,7 @@ public class BillingCharge  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, product, organizations, getprepaidQuantity, getfairuseQuantity, getactualQuantity, getoverageQuantity, overageRate, overageCharge, overageCurrency);
+    return Objects.hash(id, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency);
   }
 
   @Override
@@ -249,10 +249,10 @@ public class BillingCharge  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
-    sb.append("    getprepaidQuantity: ").append(toIndentedString(getprepaidQuantity)).append("\n");
-    sb.append("    getfairuseQuantity: ").append(toIndentedString(getfairuseQuantity)).append("\n");
-    sb.append("    getactualQuantity: ").append(toIndentedString(getactualQuantity)).append("\n");
-    sb.append("    getoverageQuantity: ").append(toIndentedString(getoverageQuantity)).append("\n");
+    sb.append("    prepaidQuantity: ").append(toIndentedString(prepaidQuantity)).append("\n");
+    sb.append("    fairuseQuantity: ").append(toIndentedString(fairuseQuantity)).append("\n");
+    sb.append("    actualQuantity: ").append(toIndentedString(actualQuantity)).append("\n");
+    sb.append("    overageQuantity: ").append(toIndentedString(overageQuantity)).append("\n");
     sb.append("    overageRate: ").append(toIndentedString(overageRate)).append("\n");
     sb.append("    overageCharge: ").append(toIndentedString(overageCharge)).append("\n");
     sb.append("    overageCurrency: ").append(toIndentedString(overageCurrency)).append("\n");

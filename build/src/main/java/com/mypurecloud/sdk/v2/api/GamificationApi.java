@@ -83,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsManagersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRankingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsTrendsRequest;
@@ -1600,6 +1601,104 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return InsightsAgents
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsAgents getGamificationInsightsManagers(String filterType, String filterId, String granularity, LocalDate startWorkday, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getGamificationInsightsManagers(createGetGamificationInsightsManagersRequest(filterType, filterId, granularity, startWorkday, pageSize, pageNumber));
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return InsightsAgents
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsAgents> getGamificationInsightsManagersWithHttpInfo(String filterType, String filterId, String granularity, LocalDate startWorkday, Integer pageSize, Integer pageNumber) throws IOException {
+    return getGamificationInsightsManagers(createGetGamificationInsightsManagersRequest(filterType, filterId, granularity, startWorkday, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetGamificationInsightsManagersRequest createGetGamificationInsightsManagersRequest(String filterType, String filterId, String granularity, LocalDate startWorkday, Integer pageSize, Integer pageNumber) {
+    return GetGamificationInsightsManagersRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withStartWorkday(startWorkday)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param request The request object
+   * @return InsightsAgents
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsAgents getGamificationInsightsManagers(GetGamificationInsightsManagersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsAgents> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsAgents>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsAgents> getGamificationInsightsManagers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsAgents>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

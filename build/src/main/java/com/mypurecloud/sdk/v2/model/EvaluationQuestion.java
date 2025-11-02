@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnswerOption;
+import com.mypurecloud.sdk.v2.model.DefaultAnswer;
 import com.mypurecloud.sdk.v2.model.VisibilityCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,8 +88,9 @@ public class EvaluationQuestion  implements Serializable {
   private VisibilityCondition visibilityCondition = null;
   private List<AnswerOption> answerOptions = null;
   private List<EvaluationQuestion> multipleSelectOptionQuestions = null;
-  private Boolean isCritical = null;
+  private DefaultAnswer defaultAnswer = null;
   private Boolean isKill = null;
+  private Boolean isCritical = null;
 
   public EvaluationQuestion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -261,19 +263,20 @@ public class EvaluationQuestion  implements Serializable {
 
 
   /**
+   * The default selected answer for the question
    **/
-  public EvaluationQuestion isCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
+  public EvaluationQuestion defaultAnswer(DefaultAnswer defaultAnswer) {
+    this.defaultAnswer = defaultAnswer;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("isCritical")
-  public Boolean getIsCritical() {
-    return isCritical;
+  @ApiModelProperty(example = "null", value = "The default selected answer for the question")
+  @JsonProperty("defaultAnswer")
+  public DefaultAnswer getDefaultAnswer() {
+    return defaultAnswer;
   }
-  public void setIsCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
+  public void setDefaultAnswer(DefaultAnswer defaultAnswer) {
+    this.defaultAnswer = defaultAnswer;
   }
 
 
@@ -291,6 +294,23 @@ public class EvaluationQuestion  implements Serializable {
   }
   public void setIsKill(Boolean isKill) {
     this.isKill = isKill;
+  }
+
+
+  /**
+   **/
+  public EvaluationQuestion isCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isCritical")
+  public Boolean getIsCritical() {
+    return isCritical;
+  }
+  public void setIsCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
   }
 
 
@@ -314,13 +334,14 @@ public class EvaluationQuestion  implements Serializable {
             Objects.equals(this.visibilityCondition, evaluationQuestion.visibilityCondition) &&
             Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
             Objects.equals(this.multipleSelectOptionQuestions, evaluationQuestion.multipleSelectOptionQuestions) &&
-            Objects.equals(this.isCritical, evaluationQuestion.isCritical) &&
-            Objects.equals(this.isKill, evaluationQuestion.isKill);
+            Objects.equals(this.defaultAnswer, evaluationQuestion.defaultAnswer) &&
+            Objects.equals(this.isKill, evaluationQuestion.isKill) &&
+            Objects.equals(this.isCritical, evaluationQuestion.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, isCritical, isKill);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, defaultAnswer, isKill, isCritical);
   }
 
   @Override
@@ -338,8 +359,9 @@ public class EvaluationQuestion  implements Serializable {
     sb.append("    visibilityCondition: ").append(toIndentedString(visibilityCondition)).append("\n");
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
     sb.append("    multipleSelectOptionQuestions: ").append(toIndentedString(multipleSelectOptionQuestions)).append("\n");
-    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
+    sb.append("    defaultAnswer: ").append(toIndentedString(defaultAnswer)).append("\n");
     sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
+    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");
     return sb.toString();
   }

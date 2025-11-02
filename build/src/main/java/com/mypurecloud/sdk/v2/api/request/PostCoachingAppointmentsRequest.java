@@ -35,6 +35,8 @@ import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingNotification;
 import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;

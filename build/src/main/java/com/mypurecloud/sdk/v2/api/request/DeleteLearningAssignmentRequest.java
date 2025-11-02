@@ -50,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
 import com.mypurecloud.sdk.v2.model.LearningScormResponse;

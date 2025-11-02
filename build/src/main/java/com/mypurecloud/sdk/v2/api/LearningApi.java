@@ -40,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
 import com.mypurecloud.sdk.v2.model.LearningScormResponse;
@@ -61,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningScheduleslotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningScormScormIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
@@ -77,6 +80,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRequest;
@@ -1395,6 +1399,84 @@ public class LearningApi {
   }
 
   /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param jobId The ID of the job (required)
+   * @return LearningScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsJobResponse getLearningScheduleslotsJob(String jobId) throws IOException, ApiException {
+    return  getLearningScheduleslotsJob(createGetLearningScheduleslotsJobRequest(jobId));
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param jobId The ID of the job (required)
+   * @return LearningScheduleSlotsJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsJobResponse> getLearningScheduleslotsJobWithHttpInfo(String jobId) throws IOException {
+    return getLearningScheduleslotsJob(createGetLearningScheduleslotsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetLearningScheduleslotsJobRequest createGetLearningScheduleslotsJobRequest(String jobId) {
+    return GetLearningScheduleslotsJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return LearningScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsJobResponse getLearningScheduleslotsJob(GetLearningScheduleslotsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningScheduleSlotsJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningScheduleSlotsJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsJobResponse> getLearningScheduleslotsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningScheduleSlotsJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get Learning SCORM Result
    * 
    * @param scormId The ID of the SCORM package (required)
@@ -2678,6 +2760,84 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignmentUserListing> response = (ApiResponse<LearningAssignmentUserListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param body The slots search request (required)
+   * @return LearningScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsJobResponse postLearningScheduleslotsJobs(LearningScheduleSlotsJobRequest body) throws IOException, ApiException {
+    return  postLearningScheduleslotsJobs(createPostLearningScheduleslotsJobsRequest(body));
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param body The slots search request (required)
+   * @return LearningScheduleSlotsJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsJobResponse> postLearningScheduleslotsJobsWithHttpInfo(LearningScheduleSlotsJobRequest body) throws IOException {
+    return postLearningScheduleslotsJobs(createPostLearningScheduleslotsJobsRequest(body).withHttpInfo());
+  }
+
+  private PostLearningScheduleslotsJobsRequest createPostLearningScheduleslotsJobsRequest(LearningScheduleSlotsJobRequest body) {
+    return PostLearningScheduleslotsJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return LearningScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsJobResponse postLearningScheduleslotsJobs(PostLearningScheduleslotsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningScheduleSlotsJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningScheduleSlotsJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start job to retrieve slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsJobResponse> postLearningScheduleslotsJobs(ApiRequest<LearningScheduleSlotsJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningScheduleSlotsJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsJobResponse> response = (ApiResponse<LearningScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

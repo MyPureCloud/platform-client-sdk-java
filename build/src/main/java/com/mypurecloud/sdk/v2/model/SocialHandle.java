@@ -44,7 +44,8 @@ public class SocialHandle  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TWITTER("TWITTER"),
     INSTAGRAM("INSTAGRAM"),
-    FACEBOOK("FACEBOOK");
+    FACEBOOK("FACEBOOK"),
+    APPLE_MESSAGES("APPLE_MESSAGES");
 
     private String value;
 

@@ -86,6 +86,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsManagersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRankingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsTrendsRequest;
@@ -1355,6 +1356,81 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsAgents> getGamificationInsightsManagersAsync(GetGamificationInsightsManagersRequest request, final AsyncApiCallback<InsightsAgents> callback) {
+    try {
+      final SettableFuture<InsightsAgents> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsAgents>() {}, new AsyncApiCallback<ApiResponse<InsightsAgents>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsAgents> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query managers in a profile during a period of time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsAgents>> getGamificationInsightsManagersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsAgents>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsAgents>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsAgents>() {}, new AsyncApiCallback<ApiResponse<InsightsAgents>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsAgents> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

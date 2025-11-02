@@ -46,7 +46,8 @@ public class EvaluationSource  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     POLICY("Policy"),
     USER("User"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    PROGRAM("Program");
 
     private String value;
 

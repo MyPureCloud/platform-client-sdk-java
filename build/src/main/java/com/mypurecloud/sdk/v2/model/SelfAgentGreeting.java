@@ -27,6 +27,8 @@ public class SelfAgentGreeting  implements Serializable {
   private String name = null;
   private Prompt inboundPrompt = null;
   private Prompt outboundPrompt = null;
+  private String inboundPromptDefaultLanguage = null;
+  private String outboundPromptDefaultLanguage = null;
   private String selfUri = null;
 
   public SelfAgentGreeting() {
@@ -60,14 +62,14 @@ public class SelfAgentGreeting  implements Serializable {
 
 
   /**
-   * The agent greeting prompt to use when the call is connected
+   * The agent greeting prompt to use when inbound calls are connected
    **/
   public SelfAgentGreeting inboundPrompt(Prompt inboundPrompt) {
     this.inboundPrompt = inboundPrompt;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The agent greeting prompt to use when the call is connected")
+  @ApiModelProperty(example = "null", value = "The agent greeting prompt to use when inbound calls are connected")
   @JsonProperty("inboundPrompt")
   public Prompt getInboundPrompt() {
     return inboundPrompt;
@@ -78,20 +80,56 @@ public class SelfAgentGreeting  implements Serializable {
 
 
   /**
-   * The agent greeting prompt to use when the call is about to be disconnected
+   * The agent greeting prompt to use when outbound calls are connected
    **/
   public SelfAgentGreeting outboundPrompt(Prompt outboundPrompt) {
     this.outboundPrompt = outboundPrompt;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The agent greeting prompt to use when the call is about to be disconnected")
+  @ApiModelProperty(example = "null", value = "The agent greeting prompt to use when outbound calls are connected")
   @JsonProperty("outboundPrompt")
   public Prompt getOutboundPrompt() {
     return outboundPrompt;
   }
   public void setOutboundPrompt(Prompt outboundPrompt) {
     this.outboundPrompt = outboundPrompt;
+  }
+
+
+  /**
+   * The default language to use for the agent greeting inbound prompt
+   **/
+  public SelfAgentGreeting inboundPromptDefaultLanguage(String inboundPromptDefaultLanguage) {
+    this.inboundPromptDefaultLanguage = inboundPromptDefaultLanguage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default language to use for the agent greeting inbound prompt")
+  @JsonProperty("inboundPromptDefaultLanguage")
+  public String getInboundPromptDefaultLanguage() {
+    return inboundPromptDefaultLanguage;
+  }
+  public void setInboundPromptDefaultLanguage(String inboundPromptDefaultLanguage) {
+    this.inboundPromptDefaultLanguage = inboundPromptDefaultLanguage;
+  }
+
+
+  /**
+   * The default language to use for the agent greeting outbound prompt
+   **/
+  public SelfAgentGreeting outboundPromptDefaultLanguage(String outboundPromptDefaultLanguage) {
+    this.outboundPromptDefaultLanguage = outboundPromptDefaultLanguage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default language to use for the agent greeting outbound prompt")
+  @JsonProperty("outboundPromptDefaultLanguage")
+  public String getOutboundPromptDefaultLanguage() {
+    return outboundPromptDefaultLanguage;
+  }
+  public void setOutboundPromptDefaultLanguage(String outboundPromptDefaultLanguage) {
+    this.outboundPromptDefaultLanguage = outboundPromptDefaultLanguage;
   }
 
 
@@ -116,12 +154,14 @@ public class SelfAgentGreeting  implements Serializable {
             Objects.equals(this.name, selfAgentGreeting.name) &&
             Objects.equals(this.inboundPrompt, selfAgentGreeting.inboundPrompt) &&
             Objects.equals(this.outboundPrompt, selfAgentGreeting.outboundPrompt) &&
+            Objects.equals(this.inboundPromptDefaultLanguage, selfAgentGreeting.inboundPromptDefaultLanguage) &&
+            Objects.equals(this.outboundPromptDefaultLanguage, selfAgentGreeting.outboundPromptDefaultLanguage) &&
             Objects.equals(this.selfUri, selfAgentGreeting.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, inboundPrompt, outboundPrompt, selfUri);
+    return Objects.hash(id, name, inboundPrompt, outboundPrompt, inboundPromptDefaultLanguage, outboundPromptDefaultLanguage, selfUri);
   }
 
   @Override
@@ -133,6 +173,8 @@ public class SelfAgentGreeting  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    inboundPrompt: ").append(toIndentedString(inboundPrompt)).append("\n");
     sb.append("    outboundPrompt: ").append(toIndentedString(outboundPrompt)).append("\n");
+    sb.append("    inboundPromptDefaultLanguage: ").append(toIndentedString(inboundPromptDefaultLanguage)).append("\n");
+    sb.append("    outboundPromptDefaultLanguage: ").append(toIndentedString(outboundPromptDefaultLanguage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

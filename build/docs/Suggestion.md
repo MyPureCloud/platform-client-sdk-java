@@ -34,6 +34,7 @@
 | KNOWLEDGESEARCH | &quot;KnowledgeSearch&quot; | 
 | CANNEDRESPONSE | &quot;CannedResponse&quot; | 
 | SCRIPT | &quot;Script&quot; | 
+| SUGGESTEDKNOWLEDGEANSWER | &quot;SuggestedKnowledgeAnswer&quot; | 
 
 
 ## Enum: TriggerTypeEnum
@@ -63,4 +64,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingNotification;
 import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobRequest;
+import com.mypurecloud.sdk.v2.model.CoachingScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
@@ -42,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.GetCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingAppointmentsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCoachingNotificationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetCoachingScheduleslotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
@@ -50,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsQueryRequest;
 
 import java.io.IOException;
@@ -959,6 +963,84 @@ public class CoachingApi {
   }
 
   /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param jobId The ID of job (required)
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingScheduleSlotsJobResponse getCoachingScheduleslotsJob(String jobId) throws IOException, ApiException {
+    return  getCoachingScheduleslotsJob(createGetCoachingScheduleslotsJobRequest(jobId));
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param jobId The ID of job (required)
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingScheduleSlotsJobResponse> getCoachingScheduleslotsJobWithHttpInfo(String jobId) throws IOException {
+    return getCoachingScheduleslotsJob(createGetCoachingScheduleslotsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetCoachingScheduleslotsJobRequest createGetCoachingScheduleslotsJobRequest(String jobId) {
+    return GetCoachingScheduleslotsJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingScheduleSlotsJobResponse getCoachingScheduleslotsJob(GetCoachingScheduleslotsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingScheduleSlotsJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingScheduleSlotsJobResponse> getCoachingScheduleslotsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoachingScheduleSlotsJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an existing appointment
    * Permission not required if you are the creator or facilitator of the appointment
    * @param appointmentId The ID of the coaching appointment. (required)
@@ -1606,6 +1688,84 @@ public class CoachingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param body The slots search request (required)
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingScheduleSlotsJobResponse postCoachingScheduleslotsJobs(CoachingScheduleSlotsJobRequest body) throws IOException, ApiException {
+    return  postCoachingScheduleslotsJobs(createPostCoachingScheduleslotsJobsRequest(body));
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param body The slots search request (required)
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingScheduleSlotsJobResponse> postCoachingScheduleslotsJobsWithHttpInfo(CoachingScheduleSlotsJobRequest body) throws IOException {
+    return postCoachingScheduleslotsJobs(createPostCoachingScheduleslotsJobsRequest(body).withHttpInfo());
+  }
+
+  private PostCoachingScheduleslotsJobsRequest createPostCoachingScheduleslotsJobsRequest(CoachingScheduleSlotsJobRequest body) {
+    return PostCoachingScheduleslotsJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return CoachingScheduleSlotsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingScheduleSlotsJobResponse postCoachingScheduleslotsJobs(PostCoachingScheduleslotsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingScheduleSlotsJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start job to retrieve the slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingScheduleSlotsJobResponse> postCoachingScheduleslotsJobs(ApiRequest<CoachingScheduleSlotsJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoachingScheduleSlotsJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingScheduleSlotsJobResponse> response = (ApiResponse<CoachingScheduleSlotsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

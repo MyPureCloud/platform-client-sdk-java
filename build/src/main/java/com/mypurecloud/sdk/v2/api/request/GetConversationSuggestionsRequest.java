@@ -287,7 +287,8 @@ public class GetConversationSuggestionsRequest {
 		KNOWLEDGEARTICLE("KnowledgeArticle"),
 		KNOWLEDGESEARCH("KnowledgeSearch"),
 		CANNEDRESPONSE("CannedResponse"),
-		SCRIPT("Script");
+		SCRIPT("Script"),
+		SUGGESTEDKNOWLEDGEANSWER("SuggestedKnowledgeAnswer");
 
 		private String value;
 

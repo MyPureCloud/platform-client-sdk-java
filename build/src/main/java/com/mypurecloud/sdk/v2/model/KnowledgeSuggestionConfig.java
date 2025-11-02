@@ -48,6 +48,7 @@ public class KnowledgeSuggestionConfig  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GOOGLEDIALOGFLOW("GoogleDialogflow"),
     GENESYSKNOWLEDGE("GenesysKnowledge"),
+    GENESYSKNOWLEDGEV3("GenesysKnowledgeV3"),
     UNKNOWN("Unknown");
 
     private String value;

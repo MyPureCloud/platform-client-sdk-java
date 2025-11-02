@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.FormsTrackTrigger;
 import com.mypurecloud.sdk.v2.model.IdleEventTrigger;
 import com.mypurecloud.sdk.v2.model.ScrollPercentageEventTrigger;
 import com.mypurecloud.sdk.v2.model.SelectorEventTrigger;
+import com.mypurecloud.sdk.v2.model.TrackingSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -88,7 +89,7 @@ public class JourneyEventsSettings  implements Serializable {
   private List<IdleEventTrigger> idleEvents = null;
   private List<SelectorEventTrigger> inViewportEvents = null;
   private List<ScrollPercentageEventTrigger> scrollDepthEvents = null;
-  private Object trackingSettings = null;
+  private TrackingSettings trackingSettings = null;
 
   public JourneyEventsSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -286,17 +287,17 @@ public class JourneyEventsSettings  implements Serializable {
   /**
    * Configuration settings for tracking behavior and filtering
    **/
-  public JourneyEventsSettings trackingSettings(Object trackingSettings) {
+  public JourneyEventsSettings trackingSettings(TrackingSettings trackingSettings) {
     this.trackingSettings = trackingSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Configuration settings for tracking behavior and filtering")
   @JsonProperty("trackingSettings")
-  public Object getTrackingSettings() {
+  public TrackingSettings getTrackingSettings() {
     return trackingSettings;
   }
-  public void setTrackingSettings(Object trackingSettings) {
+  public void setTrackingSettings(TrackingSettings trackingSettings) {
     this.trackingSettings = trackingSettings;
   }
 

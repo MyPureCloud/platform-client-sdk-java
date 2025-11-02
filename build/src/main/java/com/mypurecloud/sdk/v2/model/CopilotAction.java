@@ -48,7 +48,8 @@ public class CopilotAction  implements Serializable {
     KNOWLEDGEARTICLE("KnowledgeArticle"),
     CANNEDRESPONSE("CannedResponse"),
     SCRIPT("Script"),
-    CHECKLIST("Checklist");
+    CHECKLIST("Checklist"),
+    THIRDPARTYACTION("ThirdPartyAction");
 
     private String value;
 

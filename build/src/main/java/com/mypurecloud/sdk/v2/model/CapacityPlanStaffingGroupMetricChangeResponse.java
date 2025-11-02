@@ -53,7 +53,9 @@ public class CapacityPlanStaffingGroupMetricChangeResponse  implements Serializa
     STARTINGWEEKLYFULLTIMEEQUIVALENTCOUNT("StartingWeeklyFullTimeEquivalentCount"),
     NEWHIRESFULLTIMEEQUIVALENTCOUNT("NewHiresFullTimeEquivalentCount"),
     ATTRITIONPERCENTAGE("AttritionPercentage"),
-    SHRINKAGEPERCENTAGE("ShrinkagePercentage");
+    SHRINKAGEPERCENTAGE("ShrinkagePercentage"),
+    TRANSFERSFULLTIMEEQUIVALENTCOUNT("TransfersFullTimeEquivalentCount"),
+    EXTRATIMEUNDERTIMEFULLTIMEEQUIVALENTCOUNT("ExtraTimeUnderTimeFullTimeEquivalentCount");
 
     private String value;
 

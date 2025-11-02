@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class InvoiceAddress  implements Serializable {
   
-  private LocalDate getdateEffective = null;
+  private LocalDate dateEffective = null;
 
   private static class AddressTypeEnumDeserializer extends StdDeserializer<AddressTypeEnum> {
     public AddressTypeEnumDeserializer() {
@@ -83,7 +83,7 @@ public class InvoiceAddress  implements Serializable {
   private String postalCode = null;
   private String stateCode = null;
   private String countryCode = null;
-  private String getcitySubdivision1 = null;
+  private String citySubdivision1 = null;
   private String regionSubdivision1 = null;
   private String regionSubdivision2 = null;
   private String country = null;
@@ -97,18 +97,18 @@ public class InvoiceAddress  implements Serializable {
   /**
    * The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
-  public InvoiceAddress getdateEffective(LocalDate getdateEffective) {
-    this.getdateEffective = getdateEffective;
+  public InvoiceAddress dateEffective(LocalDate dateEffective) {
+    this.dateEffective = dateEffective;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
-  @JsonProperty("getdateEffective")
-  public LocalDate getGetdateEffective() {
-    return getdateEffective;
+  @JsonProperty("dateEffective")
+  public LocalDate getDateEffective() {
+    return dateEffective;
   }
-  public void setGetdateEffective(LocalDate getdateEffective) {
-    this.getdateEffective = getdateEffective;
+  public void setDateEffective(LocalDate dateEffective) {
+    this.dateEffective = dateEffective;
   }
 
 
@@ -277,18 +277,18 @@ public class InvoiceAddress  implements Serializable {
   /**
    * The primary subdivision within a city (e.g., district, neighborhood).
    **/
-  public InvoiceAddress getcitySubdivision1(String getcitySubdivision1) {
-    this.getcitySubdivision1 = getcitySubdivision1;
+  public InvoiceAddress citySubdivision1(String citySubdivision1) {
+    this.citySubdivision1 = citySubdivision1;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The primary subdivision within a city (e.g., district, neighborhood).")
-  @JsonProperty("getcitySubdivision1")
-  public String getGetcitySubdivision1() {
-    return getcitySubdivision1;
+  @JsonProperty("citySubdivision1")
+  public String getCitySubdivision1() {
+    return citySubdivision1;
   }
-  public void setGetcitySubdivision1(String getcitySubdivision1) {
-    this.getcitySubdivision1 = getcitySubdivision1;
+  public void setCitySubdivision1(String citySubdivision1) {
+    this.citySubdivision1 = citySubdivision1;
   }
 
 
@@ -356,7 +356,7 @@ public class InvoiceAddress  implements Serializable {
     }
     InvoiceAddress invoiceAddress = (InvoiceAddress) o;
 
-    return Objects.equals(this.getdateEffective, invoiceAddress.getdateEffective) &&
+    return Objects.equals(this.dateEffective, invoiceAddress.dateEffective) &&
             Objects.equals(this.addressType, invoiceAddress.addressType) &&
             Objects.equals(this.currencyIsoCode, invoiceAddress.currencyIsoCode) &&
             Objects.equals(this.line1, invoiceAddress.line1) &&
@@ -366,7 +366,7 @@ public class InvoiceAddress  implements Serializable {
             Objects.equals(this.postalCode, invoiceAddress.postalCode) &&
             Objects.equals(this.stateCode, invoiceAddress.stateCode) &&
             Objects.equals(this.countryCode, invoiceAddress.countryCode) &&
-            Objects.equals(this.getcitySubdivision1, invoiceAddress.getcitySubdivision1) &&
+            Objects.equals(this.citySubdivision1, invoiceAddress.citySubdivision1) &&
             Objects.equals(this.regionSubdivision1, invoiceAddress.regionSubdivision1) &&
             Objects.equals(this.regionSubdivision2, invoiceAddress.regionSubdivision2) &&
             Objects.equals(this.country, invoiceAddress.country);
@@ -374,7 +374,7 @@ public class InvoiceAddress  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(getdateEffective, addressType, currencyIsoCode, line1, line2, line3, cityName, postalCode, stateCode, countryCode, getcitySubdivision1, regionSubdivision1, regionSubdivision2, country);
+    return Objects.hash(dateEffective, addressType, currencyIsoCode, line1, line2, line3, cityName, postalCode, stateCode, countryCode, citySubdivision1, regionSubdivision1, regionSubdivision2, country);
   }
 
   @Override
@@ -382,7 +382,7 @@ public class InvoiceAddress  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoiceAddress {\n");
     
-    sb.append("    getdateEffective: ").append(toIndentedString(getdateEffective)).append("\n");
+    sb.append("    dateEffective: ").append(toIndentedString(dateEffective)).append("\n");
     sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
     sb.append("    currencyIsoCode: ").append(toIndentedString(currencyIsoCode)).append("\n");
     sb.append("    line1: ").append(toIndentedString(line1)).append("\n");
@@ -392,7 +392,7 @@ public class InvoiceAddress  implements Serializable {
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    stateCode: ").append(toIndentedString(stateCode)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    getcitySubdivision1: ").append(toIndentedString(getcitySubdivision1)).append("\n");
+    sb.append("    citySubdivision1: ").append(toIndentedString(citySubdivision1)).append("\n");
     sb.append("    regionSubdivision1: ").append(toIndentedString(regionSubdivision1)).append("\n");
     sb.append("    regionSubdivision2: ").append(toIndentedString(regionSubdivision2)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");

@@ -32,14 +32,14 @@ public class SetContentTemplateActionSettings  implements Serializable {
 
   
   /**
-   * A string of sms contentTemplateId.
+   * A String containing the SMS contentTemplateId.
    **/
   public SetContentTemplateActionSettings smsContentTemplateId(String smsContentTemplateId) {
     this.smsContentTemplateId = smsContentTemplateId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A string of sms contentTemplateId.")
+  @ApiModelProperty(example = "null", required = true, value = "A String containing the SMS contentTemplateId.")
   @JsonProperty("smsContentTemplateId")
   public String getSmsContentTemplateId() {
     return smsContentTemplateId;
@@ -50,14 +50,14 @@ public class SetContentTemplateActionSettings  implements Serializable {
 
 
   /**
-   * A string of email contentTemplateId.
+   * A String containing the Email contentTemplateId.
    **/
   public SetContentTemplateActionSettings emailContentTemplateId(String emailContentTemplateId) {
     this.emailContentTemplateId = emailContentTemplateId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A string of email contentTemplateId.")
+  @ApiModelProperty(example = "null", required = true, value = "A String containing the Email contentTemplateId.")
   @JsonProperty("emailContentTemplateId")
   public String getEmailContentTemplateId() {
     return emailContentTemplateId;

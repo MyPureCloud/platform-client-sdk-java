@@ -48,7 +48,8 @@ public class CopilotFallbackAction  implements Serializable {
     KNOWLEDGEARTICLE("KnowledgeArticle"),
     CANNEDRESPONSE("CannedResponse"),
     SCRIPT("Script"),
-    KNOWLEDGESEARCH("KnowledgeSearch");
+    KNOWLEDGESEARCH("KnowledgeSearch"),
+    THIRDPARTYACTION("ThirdPartyAction");
 
     private String value;
 

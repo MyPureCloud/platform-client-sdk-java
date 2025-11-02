@@ -48,7 +48,9 @@ public class ReplacementTerm  implements Serializable {
     EMAIL("EMAIL"),
     TWITTER("TWITTER"),
     INSTAGRAM("INSTAGRAM"),
-    FACEBOOK("FACEBOOK");
+    FACEBOOK("FACEBOOK"),
+    APPLE_MESSAGES("APPLE_MESSAGES"),
+    EXTERNAL_ID("EXTERNAL_ID");
 
     private String value;
 
