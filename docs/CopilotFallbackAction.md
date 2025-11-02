@@ -18,8 +18,9 @@
 | CANNEDRESPONSE | &quot;CannedResponse&quot; | 
 | SCRIPT | &quot;Script&quot; | 
 | KNOWLEDGESEARCH | &quot;KnowledgeSearch&quot; | 
+| THIRDPARTYACTION | &quot;ThirdPartyAction&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

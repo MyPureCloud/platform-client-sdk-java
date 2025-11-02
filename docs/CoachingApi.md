@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getCoachingAppointmentsMe**](CoachingApi#getCoachingAppointmentsMe) | Get my appointments for a given date range |
 | [**getCoachingNotification**](CoachingApi#getCoachingNotification) | Get an existing notification |
 | [**getCoachingNotifications**](CoachingApi#getCoachingNotifications) | Retrieve the list of your notifications. |
+| [**getCoachingScheduleslotsJob**](CoachingApi#getCoachingScheduleslotsJob) | Retrieve the status of the job for the slots where a coaching appointment can be scheduled. |
 | [**patchCoachingAppointment**](CoachingApi#patchCoachingAppointment) | Update an existing appointment |
 | [**patchCoachingAppointmentAnnotation**](CoachingApi#patchCoachingAppointmentAnnotation) | Update an existing annotation. |
 | [**patchCoachingAppointmentStatus**](CoachingApi#patchCoachingAppointmentStatus) | Update the status of a coaching appointment |
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCoachingAppointmentConversations**](CoachingApi#postCoachingAppointmentConversations) | Add a conversation to an appointment |
 | [**postCoachingAppointments**](CoachingApi#postCoachingAppointments) | Create a new appointment |
 | [**postCoachingAppointmentsAggregatesQuery**](CoachingApi#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
+| [**postCoachingScheduleslotsJobs**](CoachingApi#postCoachingScheduleslotsJobs) | Start job to retrieve the slots where a coaching appointment can be scheduled. |
 | [**postCoachingScheduleslotsQuery**](CoachingApi#postCoachingScheduleslotsQuery) | Get list of possible slots where a coaching appointment can be scheduled. |
 {: class="table-striped"}
 
@@ -686,6 +688,65 @@ try {
 [**CoachingNotificationList**](CoachingNotificationList)
 
 
+# **getCoachingScheduleslotsJob**
+
+
+> [CoachingScheduleSlotsJobResponse](CoachingScheduleSlotsJobResponse) getCoachingScheduleslotsJob(jobId)
+
+Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+
+Wraps GET /api/v2/coaching/scheduleslots/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlotJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CoachingApi apiInstance = new CoachingApi();
+String jobId = "jobId_example"; // String | The ID of job
+try {
+    CoachingScheduleSlotsJobResponse result = apiInstance.getCoachingScheduleslotsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CoachingApi#getCoachingScheduleslotsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse)
+
+
 # **patchCoachingAppointment**
 
 
@@ -1186,6 +1247,65 @@ try {
 [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse)
 
 
+# **postCoachingScheduleslotsJobs**
+
+
+> [CoachingScheduleSlotsJobResponse](CoachingScheduleSlotsJobResponse) postCoachingScheduleslotsJobs(body)
+
+Start job to retrieve the slots where a coaching appointment can be scheduled.
+
+Wraps POST /api/v2/coaching/scheduleslots/jobs  
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlotJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CoachingApi apiInstance = new CoachingApi();
+CoachingScheduleSlotsJobRequest body = new CoachingScheduleSlotsJobRequest(); // CoachingScheduleSlotsJobRequest | The slots search request
+try {
+    CoachingScheduleSlotsJobResponse result = apiInstance.postCoachingScheduleslotsJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CoachingApi#postCoachingScheduleslotsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CoachingScheduleSlotsJobRequest**](CoachingScheduleSlotsJobRequest)| The slots search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse)
+
+
 # **postCoachingScheduleslotsQuery**
 
 
@@ -1245,4 +1365,4 @@ try {
 [**CoachingSlotsResponse**](CoachingSlotsResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

@@ -7,11 +7,13 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
-| **inboundPrompt** | [**Prompt**](Prompt) | The agent greeting prompt to use when the call is connected |  [optional] |
-| **outboundPrompt** | [**Prompt**](Prompt) | The agent greeting prompt to use when the call is about to be disconnected |  [optional] |
+| **inboundPrompt** | [**Prompt**](Prompt) | The agent greeting prompt to use when inbound calls are connected |  [optional] |
+| **outboundPrompt** | [**Prompt**](Prompt) | The agent greeting prompt to use when outbound calls are connected |  [optional] |
+| **inboundPromptDefaultLanguage** | **String** | The default language to use for the agent greeting inbound prompt |  [optional] |
+| **outboundPromptDefaultLanguage** | **String** | The default language to use for the agent greeting outbound prompt |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

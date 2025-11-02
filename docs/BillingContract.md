@@ -9,7 +9,7 @@
 | **externalNumber** | **String** | Unique external number. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the contract. |  [optional] |
 | **commercialModel** | **String** | The type of commercial model. |  [optional] |
-| **getpurchaseOrderNumbers** | **List&lt;String&gt;** | List of po numbers periods for this contract. |  [optional] |
+| **purchaseOrderNumbers** | **List&lt;String&gt;** | List of po numbers periods for this contract. |  [optional] |
 | **billToCustomer** | [**Customer**](Customer) | The bill to customer. |  [optional] |
 | **soldToCustomer** | [**Customer**](Customer) | The sold to customer. |  [optional] |
 | **endCustomer** | [**Customer**](Customer) | The end customer. |  [optional] |
@@ -32,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

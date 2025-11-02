@@ -25,6 +25,7 @@
 | BUILDINCOMPLETE | &quot;BUILDINCOMPLETE&quot; | 
 | BUILDINITIALIZING | &quot;BUILDINITIALIZING&quot; | 
 | BUILDINPROGRESS | &quot;BUILDINPROGRESS&quot; | 
+| BUILDQUEUED | &quot;BUILDQUEUED&quot; | 
 | NOTBUILT | &quot;NOTBUILT&quot; | 
 | OPERATIONAL | &quot;OPERATIONAL&quot; | 
 | OPERATIONALNEEDSREBUILD | &quot;OPERATIONALNEEDSREBUILD&quot; | 
@@ -32,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

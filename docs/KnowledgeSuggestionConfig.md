@@ -18,9 +18,10 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GOOGLEDIALOGFLOW | &quot;GoogleDialogflow&quot; | 
 | GENESYSKNOWLEDGE | &quot;GenesysKnowledge&quot; | 
+| GENESYSKNOWLEDGEV3 | &quot;GenesysKnowledgeV3&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

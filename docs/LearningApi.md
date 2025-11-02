@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModules**](LearningApi#getLearningModules) | Get all learning modules of an organization |
 | [**getLearningModulesAssignments**](LearningApi#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
 | [**getLearningModulesCoverartCoverArtId**](LearningApi#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
+| [**getLearningScheduleslotsJob**](LearningApi#getLearningScheduleslotsJob) | Retrieve the status of the job for the slots where a learning activity can be scheduled. |
 | [**getLearningScormScormId**](LearningApi#getLearningScormScormId) | Get Learning SCORM Result |
 | [**patchLearningAssignment**](LearningApi#patchLearningAssignment) | Update Learning Assignment |
 | [**patchLearningAssignmentReschedule**](LearningApi#patchLearningAssignmentReschedule) | Reschedule Learning Assignment |
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLearningModulePublish**](LearningApi#postLearningModulePublish) | Publish a Learning module |
 | [**postLearningModules**](LearningApi#postLearningModules) | Create a new learning module |
 | [**postLearningRulesQuery**](LearningApi#postLearningRulesQuery) | Get users for learning module rule |
+| [**postLearningScheduleslotsJobs**](LearningApi#postLearningScheduleslotsJobs) | Start job to retrieve slots where a learning activity can be scheduled. |
 | [**postLearningScheduleslotsQuery**](LearningApi#postLearningScheduleslotsQuery) | Get list of possible slots where a learning activity can be scheduled. |
 | [**postLearningScorm**](LearningApi#postLearningScorm) | Create a SCORM package upload request |
 | [**putLearningModule**](LearningApi#putLearningModule) | Update a learning module |
@@ -976,6 +978,65 @@ try {
 ### Return type
 
 [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse)
+
+
+# **getLearningScheduleslotsJob**
+
+
+> [LearningScheduleSlotsJobResponse](LearningScheduleSlotsJobResponse) getLearningScheduleslotsJob(jobId)
+
+Retrieve the status of the job for the slots where a learning activity can be scheduled.
+
+Wraps GET /api/v2/learning/scheduleslots/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* learning:scheduleSlotJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    LearningScheduleSlotsJobResponse result = apiInstance.getLearningScheduleslotsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#getLearningScheduleslotsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse)
 
 
 # **getLearningScormScormId**
@@ -1955,6 +2016,65 @@ try {
 [**LearningAssignmentUserListing**](LearningAssignmentUserListing)
 
 
+# **postLearningScheduleslotsJobs**
+
+
+> [LearningScheduleSlotsJobResponse](LearningScheduleSlotsJobResponse) postLearningScheduleslotsJobs(body)
+
+Start job to retrieve slots where a learning activity can be scheduled.
+
+Wraps POST /api/v2/learning/scheduleslots/jobs  
+
+Requires ANY permissions: 
+
+* learning:scheduleSlotJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+LearningScheduleSlotsJobRequest body = new LearningScheduleSlotsJobRequest(); // LearningScheduleSlotsJobRequest | The slots search request
+try {
+    LearningScheduleSlotsJobResponse result = apiInstance.postLearningScheduleslotsJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningScheduleslotsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LearningScheduleSlotsJobRequest**](LearningScheduleSlotsJobRequest)| The slots search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse)
+
+
 # **postLearningScheduleslotsQuery**
 
 
@@ -2264,4 +2384,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_

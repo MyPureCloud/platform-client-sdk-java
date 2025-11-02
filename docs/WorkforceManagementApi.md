@@ -5327,7 +5327,7 @@ try {
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**
 
 
-> [BuForecastStaffingRequirementsResultResponse](BuForecastStaffingRequirementsResultResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers)
+> [BuForecastStaffingRequirementsResultResponse](BuForecastStaffingRequirementsResultResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers, expand)
 
 Get the staffing requirement by planning group for a forecast
 
@@ -5363,8 +5363,9 @@ String businessUnitId = "businessUnitId_example"; // String | The ID of the busi
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 List<String> weekNumbers = Arrays.asList(null); // List<String> | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+List<String> expand = Arrays.asList(null); // List<String> | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
 try {
-    BuForecastStaffingRequirementsResultResponse result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers);
+    BuForecastStaffingRequirementsResultResponse result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement");
@@ -5381,6 +5382,7 @@ try {
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 | **weekNumbers** | [**List&lt;String&gt;**](String)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) | [optional]<br />**Values**: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval 
 {: class="table-striped"}
 
 
@@ -16637,4 +16639,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:235.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
