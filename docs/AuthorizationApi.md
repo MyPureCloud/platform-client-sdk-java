@@ -718,7 +718,7 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String pageSize = "25"; // String | Page size (max 200, default 25)
 List<String> id = Arrays.asList(null); // List<String> | Optionally request specific divisions by their IDs
 String name = "name_example"; // String | Optionally request specific divisions by division name
 try {
@@ -737,7 +737,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **pageSize** | **String**| Page size (max 200, default 25) | [optional] [default to 25] 
 | **id** | [**List&lt;String&gt;**](String)| Optionally request specific divisions by their IDs | [optional] 
 | **name** | **String**| Optionally request specific divisions by division name | [optional] 
 {: class="table-striped"}
@@ -3745,4 +3745,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

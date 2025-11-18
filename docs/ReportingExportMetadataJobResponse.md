@@ -154,8 +154,9 @@
 | DIGITAL_INTENT_VIEW | &quot;DIGITAL_INTENT_VIEW&quot; | 
 | DIGITAL_PERFORMANCE_VIEW | &quot;DIGITAL_PERFORMANCE_VIEW&quot; | 
 | COPILOT_USAGE_VIEW | &quot;COPILOT_USAGE_VIEW&quot; | 
+| PREDICTIVE_ROUTING_THROUGHPUT_VIEW | &quot;PREDICTIVE_ROUTING_THROUGHPUT_VIEW&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

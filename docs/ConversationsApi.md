@@ -78,6 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | Get the encryption key configurations |
 | [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | Get a list of key configurations data |
 | [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | Get message conversation |
+| [**getConversationsMessageCommunicationMessagesMedia**](ConversationsApi#getConversationsMessageCommunicationMessagesMedia) | Get message media list by status |
 | [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
 | [**getConversationsMessageDetails**](ConversationsApi#getConversationsMessageDetails) | Get message |
 | [**getConversationsMessageMessage**](ConversationsApi#getConversationsMessageMessage) | Get conversation message |
@@ -4751,6 +4752,73 @@ try {
 ### Return type
 
 [**MessageConversation**](MessageConversation)
+
+
+# **getConversationsMessageCommunicationMessagesMedia**
+
+
+> [MessageMediaListing](MessageMediaListing) getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, status, pageNumber, pageSize)
+
+Get message media list by status
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media  
+
+Requires ANY permissions: 
+
+* conversation:messageMedia:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+String status = "status_example"; // String | The status on which to filter the response.
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    MessageMediaListing result = apiInstance.getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, status, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageCommunicationMessagesMedia");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **status** | **String**| The status on which to filter the response. | [optional]<br />**Values**: uploading, valid, invalid 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessageMediaListing**](MessageMediaListing)
 
 
 # **getConversationsMessageCommunicationMessagesMediaMediaId**
@@ -17955,4 +18023,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

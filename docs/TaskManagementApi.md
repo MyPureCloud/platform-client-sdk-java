@@ -3064,7 +3064,7 @@ null (empty response body)
 # **patchTaskmanagementWorkitemUserWrapups**
 
 
-> [WorkitemWrapup](WorkitemWrapup) patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
+> Void patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
 
 Add/Remove a wrapup code for a given user in a workitem.
 
@@ -3100,8 +3100,7 @@ String workitemId = "workitemId_example"; // String | The ID of the Workitem.
 String userId = "userId_example"; // String | The ID of the user
 WorkitemWrapupUpdate body = new WorkitemWrapupUpdate(); // WorkitemWrapupUpdate | Request body to add/remove a wrapup code for a workitem
 try {
-    WorkitemWrapup result = apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body);
-    System.out.println(result);
+    apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemUserWrapups");
     e.printStackTrace();
@@ -3121,13 +3120,13 @@ try {
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+null (empty response body)
 
 
 # **patchTaskmanagementWorkitemUsersMeWrapups**
 
 
-> [WorkitemWrapup](WorkitemWrapup) patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
+> Void patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 Add/Remove a wrapup code for the current user in a workitem.
 
@@ -3162,8 +3161,7 @@ TaskManagementApi apiInstance = new TaskManagementApi();
 String workitemId = "workitemId_example"; // String | The ID of the Workitem.
 WorkitemWrapupUpdate body = new WorkitemWrapupUpdate(); // WorkitemWrapupUpdate | Request body to add/remove the wrapup code for workitem
 try {
-    WorkitemWrapup result = apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body);
-    System.out.println(result);
+    apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups");
     e.printStackTrace();
@@ -3182,7 +3180,7 @@ try {
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+null (empty response body)
 
 
 # **patchTaskmanagementWorkitemsBulkAddJob**
@@ -4698,4 +4696,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
