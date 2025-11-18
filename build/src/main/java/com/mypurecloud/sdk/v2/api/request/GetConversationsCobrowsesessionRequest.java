@@ -135,6 +135,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageMediaListing;
 import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConferResponse;

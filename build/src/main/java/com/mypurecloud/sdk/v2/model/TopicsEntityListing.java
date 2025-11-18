@@ -28,8 +28,8 @@ public class TopicsEntityListing  implements Serializable {
   private List<ListedTopic> entities = null;
   private Integer pageSize = null;
   private Integer total = null;
-  private String selfUri = null;
   private String nextUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public TopicsEntityListing() {
@@ -92,23 +92,6 @@ public class TopicsEntityListing  implements Serializable {
 
   /**
    **/
-  public TopicsEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public TopicsEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -121,6 +104,23 @@ public class TopicsEntityListing  implements Serializable {
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public TopicsEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -154,14 +154,14 @@ public class TopicsEntityListing  implements Serializable {
     return Objects.equals(this.entities, topicsEntityListing.entities) &&
             Objects.equals(this.pageSize, topicsEntityListing.pageSize) &&
             Objects.equals(this.total, topicsEntityListing.total) &&
-            Objects.equals(this.selfUri, topicsEntityListing.selfUri) &&
             Objects.equals(this.nextUri, topicsEntityListing.nextUri) &&
+            Objects.equals(this.selfUri, topicsEntityListing.selfUri) &&
             Objects.equals(this.pageCount, topicsEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, total, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, total, nextUri, selfUri, pageCount);
   }
 
   @Override
@@ -172,8 +172,8 @@ public class TopicsEntityListing  implements Serializable {
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

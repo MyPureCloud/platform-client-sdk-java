@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -29,6 +30,143 @@ public class ConversationContentInput  implements Serializable {
   private String placeholderText = null;
   private Boolean isRequired = null;
   private Boolean isMultipleLine = null;
+
+  private static class KeyboardTypeEnumDeserializer extends StdDeserializer<KeyboardTypeEnum> {
+    public KeyboardTypeEnumDeserializer() {
+      super(KeyboardTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public KeyboardTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return KeyboardTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of keyboard to be shown.
+   */
+ @JsonDeserialize(using = KeyboardTypeEnumDeserializer.class)
+  public enum KeyboardTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DEFAULT("Default"),
+    NUMBERPUNCTUATION("NumberPunctuation"),
+    NUMBER("Number"),
+    PHONE("Phone"),
+    EMAIL("Email"),
+    DECIMAL("Decimal"),
+    WEBSEARCH("Websearch"),
+    URL("URL");
+
+    private String value;
+
+    KeyboardTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static KeyboardTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (KeyboardTypeEnum value : KeyboardTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return KeyboardTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private KeyboardTypeEnum keyboardType = null;
+
+  private static class AutoCompleteTypeEnumDeserializer extends StdDeserializer<AutoCompleteTypeEnum> {
+    public AutoCompleteTypeEnumDeserializer() {
+      super(AutoCompleteTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public AutoCompleteTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AutoCompleteTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter.
+   */
+ @JsonDeserialize(using = AutoCompleteTypeEnumDeserializer.class)
+  public enum AutoCompleteTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PREFIX("Prefix"),
+    NAME("Name"),
+    GIVENNAME("GivenName"),
+    MIDDLENAME("MiddleName"),
+    FAMILYNAME("FamilyName"),
+    SUFFIX("Suffix"),
+    NICKNAME("Nickname"),
+    TITLE("Title"),
+    ORGANIZATION("Organization"),
+    LOCATION("Location"),
+    STREETADDRESS("StreetAddress"),
+    ADDRESSLINE1("Addressline1"),
+    ADDRESSLINE2("Addressline2"),
+    CITY("City"),
+    STATE("State"),
+    COUNTRY("Country"),
+    POSTALCODE("PostalCode"),
+    USERNAME("Username"),
+    ONETIMECODE("OneTimeCode"),
+    EMAIL("Email"),
+    PHONE("Phone"),
+    PAYMENTCARDNUMBER("PaymentCardNumber"),
+    PAYMENTCARDEXPIRATION("PaymentCardExpiration"),
+    PAYMENTCARDEXPIRATIONMONTH("PaymentCardExpirationMonth"),
+    PAYMENTCARDEXPIRATIONYEAR("PaymentCardExpirationYear"),
+    PAYMENTCARDSECURITYCODE("PaymentCardSecurityCode"),
+    PAYMENTCARDTYPE("PaymentCardType"),
+    PAYMENTCARDNAME("PaymentCardName"),
+    PAYMENTCARDGIVENNAME("PaymentCardGivenName"),
+    PAYMENTCARDMIDDLENAME("PaymentCardMiddleName"),
+    PAYMENTCARDFAMILYNAME("PaymentCardFamilyName"),
+    BIRTHDATE("Birthdate"),
+    BIRTHDATEDAY("BirthdateDay"),
+    BIRTHDATEMONTH("BirthdateMonth"),
+    BIRTHDATEYEAR("BirthdateYear"),
+    DATETIME("DateTime"),
+    FLIGHTNUMBER("FlightNumber");
+
+    private String value;
+
+    AutoCompleteTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AutoCompleteTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AutoCompleteTypeEnum value : AutoCompleteTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AutoCompleteTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AutoCompleteTypeEnum autoCompleteType = null;
 
   public ConversationContentInput() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -144,6 +282,42 @@ public class ConversationContentInput  implements Serializable {
   }
 
 
+  /**
+   * Type of keyboard to be shown.
+   **/
+  public ConversationContentInput keyboardType(KeyboardTypeEnum keyboardType) {
+    this.keyboardType = keyboardType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of keyboard to be shown.")
+  @JsonProperty("keyboardType")
+  public KeyboardTypeEnum getKeyboardType() {
+    return keyboardType;
+  }
+  public void setKeyboardType(KeyboardTypeEnum keyboardType) {
+    this.keyboardType = keyboardType;
+  }
+
+
+  /**
+   * A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter.
+   **/
+  public ConversationContentInput autoCompleteType(AutoCompleteTypeEnum autoCompleteType) {
+    this.autoCompleteType = autoCompleteType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter.")
+  @JsonProperty("autoCompleteType")
+  public AutoCompleteTypeEnum getAutoCompleteType() {
+    return autoCompleteType;
+  }
+  public void setAutoCompleteType(AutoCompleteTypeEnum autoCompleteType) {
+    this.autoCompleteType = autoCompleteType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,12 +333,14 @@ public class ConversationContentInput  implements Serializable {
             Objects.equals(this.subtitle, conversationContentInput.subtitle) &&
             Objects.equals(this.placeholderText, conversationContentInput.placeholderText) &&
             Objects.equals(this.isRequired, conversationContentInput.isRequired) &&
-            Objects.equals(this.isMultipleLine, conversationContentInput.isMultipleLine);
+            Objects.equals(this.isMultipleLine, conversationContentInput.isMultipleLine) &&
+            Objects.equals(this.keyboardType, conversationContentInput.keyboardType) &&
+            Objects.equals(this.autoCompleteType, conversationContentInput.autoCompleteType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, subtitle, placeholderText, isRequired, isMultipleLine);
+    return Objects.hash(id, title, subtitle, placeholderText, isRequired, isMultipleLine, keyboardType, autoCompleteType);
   }
 
   @Override
@@ -178,6 +354,8 @@ public class ConversationContentInput  implements Serializable {
     sb.append("    placeholderText: ").append(toIndentedString(placeholderText)).append("\n");
     sb.append("    isRequired: ").append(toIndentedString(isRequired)).append("\n");
     sb.append("    isMultipleLine: ").append(toIndentedString(isMultipleLine)).append("\n");
+    sb.append("    keyboardType: ").append(toIndentedString(keyboardType)).append("\n");
+    sb.append("    autoCompleteType: ").append(toIndentedString(autoCompleteType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,11 +30,11 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private String firstUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public ProgramInsightsSettingsEntityListing() {
@@ -114,57 +114,6 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
 
   /**
    **/
-  public ProgramInsightsSettingsEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public ProgramInsightsSettingsEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public ProgramInsightsSettingsEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public ProgramInsightsSettingsEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -199,6 +148,57 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
 
   /**
    **/
+  public ProgramInsightsSettingsEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public ProgramInsightsSettingsEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public ProgramInsightsSettingsEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public ProgramInsightsSettingsEntityListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -228,17 +228,17 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
             Objects.equals(this.pageSize, programInsightsSettingsEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, programInsightsSettingsEntityListing.pageNumber) &&
             Objects.equals(this.total, programInsightsSettingsEntityListing.total) &&
-            Objects.equals(this.firstUri, programInsightsSettingsEntityListing.firstUri) &&
-            Objects.equals(this.lastUri, programInsightsSettingsEntityListing.lastUri) &&
-            Objects.equals(this.selfUri, programInsightsSettingsEntityListing.selfUri) &&
             Objects.equals(this.previousUri, programInsightsSettingsEntityListing.previousUri) &&
             Objects.equals(this.nextUri, programInsightsSettingsEntityListing.nextUri) &&
+            Objects.equals(this.lastUri, programInsightsSettingsEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, programInsightsSettingsEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, programInsightsSettingsEntityListing.selfUri) &&
             Objects.equals(this.pageCount, programInsightsSettingsEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class ProgramInsightsSettingsEntityListing  implements Serializable, Page
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -128,6 +128,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageMediaListing;
 import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConferResponse;
@@ -277,6 +278,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessagesReques
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
@@ -6073,6 +6075,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessageMediaListing> getConversationsMessageCommunicationMessagesMediaAsync(GetConversationsMessageCommunicationMessagesMediaRequest request, final AsyncApiCallback<MessageMediaListing> callback) {
+    try {
+      final SettableFuture<MessageMediaListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessageMediaListing>() {}, new AsyncApiCallback<ApiResponse<MessageMediaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageMediaListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessageMediaListing>> getConversationsMessageCommunicationMessagesMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessageMediaListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessageMediaListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessageMediaListing>() {}, new AsyncApiCallback<ApiResponse<MessageMediaListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageMediaListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageMediaListing> response = (ApiResponse<MessageMediaListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageMediaListing> response = (ApiResponse<MessageMediaListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

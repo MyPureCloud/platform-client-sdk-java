@@ -2735,6 +2735,87 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<ContentModerationFlagsEnum> contentModerationFlags = null;
+  private Boolean sessionExpired = null;
+
+  private static class EngagementSourceEnumDeserializer extends StdDeserializer<EngagementSourceEnum> {
+    public EngagementSourceEnumDeserializer() {
+      super(EngagementSourceEnumDeserializer.class);
+    }
+
+    @Override
+    public EngagementSourceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EngagementSourceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets engagementSource
+   */
+ @JsonDeserialize(using = EngagementSourceEnumDeserializer.class)
+  public enum EngagementSourceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    APPLEMESSAGESFORBUSINESS("AppleMessagesForBusiness"),
+    DISCORD("Discord"),
+    EMAIL("Email"),
+    FACEBOOK("Facebook"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    GLASSDOOR("Glassdoor"),
+    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
+    INSTAGRAM("Instagram"),
+    KAKAOTALK("KakaoTalk"),
+    LINE("Line"),
+    LINKEDIN("LinkedIn"),
+    MICROSOFTTEAMS("MicrosoftTeams"),
+    MOBILECHAT("MobileChat"),
+    OTHER("Other"),
+    QQ("QQ"),
+    REDDIT("Reddit"),
+    SERVICENOW("ServiceNow"),
+    SFDC("SFDC"),
+    SMS("SMS"),
+    SNAPCHAT("Snapchat"),
+    TELEGRAM("Telegram"),
+    THREADS("Threads"),
+    TRUSTPILOT("Trustpilot"),
+    UNSPECIFIED("Unspecified"),
+    VIBER("Viber"),
+    WEBCHAT("WebChat"),
+    WECHAT("WeChat"),
+    WEIBO("Weibo"),
+    WHATSAPP("WhatsApp"),
+    X("X"),
+    YELP("Yelp"),
+    YOUTUBE("YouTube"),
+    ZENDESK("Zendesk"),
+    OPENMESSAGING("OpenMessaging");
+
+    private String value;
+
+    EngagementSourceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EngagementSourceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EngagementSourceEnum value : EngagementSourceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EngagementSourceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<EngagementSourceEnum> engagementSource = null;
 
   public ViewFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -2899,6 +2980,7 @@ public class ViewFilter  implements Serializable {
       sentimentScoreCategories = new ArrayList<SentimentScoreCategoriesEnum>();
       sentimentTrendCategories = new ArrayList<SentimentTrendCategoriesEnum>();
       contentModerationFlags = new ArrayList<ContentModerationFlagsEnum>();
+      engagementSource = new ArrayList<EngagementSourceEnum>();
     }
   }
 
@@ -7097,6 +7179,42 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * Filter to indicate for if session is expired
+   **/
+  public ViewFilter sessionExpired(Boolean sessionExpired) {
+    this.sessionExpired = sessionExpired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate for if session is expired")
+  @JsonProperty("sessionExpired")
+  public Boolean getSessionExpired() {
+    return sessionExpired;
+  }
+  public void setSessionExpired(Boolean sessionExpired) {
+    this.sessionExpired = sessionExpired;
+  }
+
+
+  /**
+   * The engagement sources used to filter the view
+   **/
+  public ViewFilter engagementSource(List<EngagementSourceEnum> engagementSource) {
+    this.engagementSource = engagementSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The engagement sources used to filter the view")
+  @JsonProperty("engagementSource")
+  public List<EngagementSourceEnum> getEngagementSource() {
+    return engagementSource;
+  }
+  public void setEngagementSource(List<EngagementSourceEnum> engagementSource) {
+    this.engagementSource = engagementSource;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -7339,12 +7457,14 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.empathyScoreCategories, viewFilter.empathyScoreCategories) &&
             Objects.equals(this.sentimentScoreCategories, viewFilter.sentimentScoreCategories) &&
             Objects.equals(this.sentimentTrendCategories, viewFilter.sentimentTrendCategories) &&
-            Objects.equals(this.contentModerationFlags, viewFilter.contentModerationFlags);
+            Objects.equals(this.contentModerationFlags, viewFilter.contentModerationFlags) &&
+            Objects.equals(this.sessionExpired, viewFilter.sessionExpired) &&
+            Objects.equals(this.engagementSource, viewFilter.engagementSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds, empathyScoreCategories, sentimentScoreCategories, sentimentTrendCategories, contentModerationFlags);
+    return Objects.hash(mediaTypes, queueIds, skillIds, assignedSkillIds, skillGroups, languageIds, assignedLanguageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardState, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, workitemsStatuses, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds, slideshowIds, conferenced, video, linkedInteraction, recommendationSources, evaluationRole, comparisonQueueIds, viewMetrics, timelineCategories, acw, segmentTypes, programIds, categoryIds, deliveryPushed, socialRatings, virtualAgentIds, empathyScoreCategories, sentimentScoreCategories, sentimentTrendCategories, contentModerationFlags, sessionExpired, engagementSource);
   }
 
   @Override
@@ -7585,6 +7705,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    sentimentScoreCategories: ").append(toIndentedString(sentimentScoreCategories)).append("\n");
     sb.append("    sentimentTrendCategories: ").append(toIndentedString(sentimentTrendCategories)).append("\n");
     sb.append("    contentModerationFlags: ").append(toIndentedString(contentModerationFlags)).append("\n");
+    sb.append("    sessionExpired: ").append(toIndentedString(sessionExpired)).append("\n");
+    sb.append("    engagementSource: ").append(toIndentedString(engagementSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

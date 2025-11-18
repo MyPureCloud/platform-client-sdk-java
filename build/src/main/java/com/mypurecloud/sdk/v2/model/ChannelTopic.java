@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -73,10 +75,12 @@ public class ChannelTopic  implements Serializable {
   }
   private StateEnum state = null;
   private String rejectionReason = null;
+  private List<String> missingPermissions = null;
   private String selfUri = null;
 
   public ChannelTopic() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      missingPermissions = new ArrayList<String>();
     }
   }
 
@@ -132,6 +136,23 @@ public class ChannelTopic  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ChannelTopic missingPermissions(List<String> missingPermissions) {
+    this.missingPermissions = missingPermissions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("missingPermissions")
+  public List<String> getMissingPermissions() {
+    return missingPermissions;
+  }
+  public void setMissingPermissions(List<String> missingPermissions) {
+    this.missingPermissions = missingPermissions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -152,12 +173,13 @@ public class ChannelTopic  implements Serializable {
     return Objects.equals(this.id, channelTopic.id) &&
             Objects.equals(this.state, channelTopic.state) &&
             Objects.equals(this.rejectionReason, channelTopic.rejectionReason) &&
+            Objects.equals(this.missingPermissions, channelTopic.missingPermissions) &&
             Objects.equals(this.selfUri, channelTopic.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, rejectionReason, selfUri);
+    return Objects.hash(id, state, rejectionReason, missingPermissions, selfUri);
   }
 
   @Override
@@ -168,6 +190,7 @@ public class ChannelTopic  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    rejectionReason: ").append(toIndentedString(rejectionReason)).append("\n");
+    sb.append("    missingPermissions: ").append(toIndentedString(missingPermissions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -238,6 +238,8 @@
 | **sentimentScoreCategories** | [**List<SentimentScoreCategoriesEnum>**](#Enum--SentimentScoreCategoriesEnum) | A set of Sentiment Score Categories  for filtering |  [optional] |
 | **sentimentTrendCategories** | [**List<SentimentTrendCategoriesEnum>**](#Enum--SentimentTrendCategoriesEnum) | A set of Sentiment Trend Categories for filtering |  [optional] |
 | **contentModerationFlags** | [**List<ContentModerationFlagsEnum>**](#Enum--ContentModerationFlagsEnum) | A set of Content Moderation Flags for filtering |  [optional] |
+| **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
+| **engagementSource** | [**List<EngagementSourceEnum>**](#Enum--EngagementSourceEnum) | The engagement sources used to filter the view |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -1039,6 +1041,47 @@
 | UNKNOWN | &quot;Unknown&quot; |
 
 
+## Enum: EngagementSourceEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| APPLEMESSAGESFORBUSINESS | &quot;AppleMessagesForBusiness&quot; |
+| DISCORD | &quot;Discord&quot; |
+| EMAIL | &quot;Email&quot; |
+| FACEBOOK | &quot;Facebook&quot; |
+| FACEBOOKMESSENGER | &quot;FacebookMessenger&quot; |
+| GLASSDOOR | &quot;Glassdoor&quot; |
+| GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; |
+| INSTAGRAM | &quot;Instagram&quot; |
+| KAKAOTALK | &quot;KakaoTalk&quot; |
+| LINE | &quot;Line&quot; |
+| LINKEDIN | &quot;LinkedIn&quot; |
+| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; |
+| MOBILECHAT | &quot;MobileChat&quot; |
+| OTHER | &quot;Other&quot; |
+| QQ | &quot;QQ&quot; |
+| REDDIT | &quot;Reddit&quot; |
+| SERVICENOW | &quot;ServiceNow&quot; |
+| SFDC | &quot;SFDC&quot; |
+| SMS | &quot;SMS&quot; |
+| SNAPCHAT | &quot;Snapchat&quot; |
+| TELEGRAM | &quot;Telegram&quot; |
+| THREADS | &quot;Threads&quot; |
+| TRUSTPILOT | &quot;Trustpilot&quot; |
+| UNSPECIFIED | &quot;Unspecified&quot; |
+| VIBER | &quot;Viber&quot; |
+| WEBCHAT | &quot;WebChat&quot; |
+| WECHAT | &quot;WeChat&quot; |
+| WEIBO | &quot;Weibo&quot; |
+| WHATSAPP | &quot;WhatsApp&quot; |
+| X | &quot;X&quot; |
+| YELP | &quot;Yelp&quot; |
+| YOUTUBE | &quot;YouTube&quot; |
+| ZENDESK | &quot;Zendesk&quot; |
+| OPENMESSAGING | &quot;OpenMessaging&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

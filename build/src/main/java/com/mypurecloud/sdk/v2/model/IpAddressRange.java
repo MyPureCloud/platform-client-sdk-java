@@ -54,7 +54,8 @@ public class IpAddressRange  implements Serializable {
     AUDIO_CONNECTOR("audio-connector"),
     BYOT_STT("byot-stt"),
     BOT_CONNECTOR("bot-connector"),
-    BYO_SMPP("byo-smpp");
+    BYO_SMPP("byo-smpp"),
+    ENCRYPTION("encryption");
 
     private String value;
 

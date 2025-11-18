@@ -239,6 +239,7 @@
 | AUTHUSER | &quot;AuthUser&quot; | 
 | ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; | 
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
+| MFAVERIFIER | &quot;MFAVerifier&quot; | 
 | ROLE | &quot;Role&quot; | 
 | ROLESETTINGS | &quot;RoleSettings&quot; | 
 | POLICY | &quot;Policy&quot; | 
@@ -475,4 +476,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

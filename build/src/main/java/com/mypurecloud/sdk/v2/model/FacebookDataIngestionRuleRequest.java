@@ -69,14 +69,14 @@ public class FacebookDataIngestionRuleRequest  implements Serializable {
 
 
   /**
-   * The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource
+   * Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.
    **/
   public FacebookDataIngestionRuleRequest integrationId(String integrationId) {
     this.integrationId = integrationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource")
+  @ApiModelProperty(example = "null", value = "Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.")
   @JsonProperty("integrationId")
   public String getIntegrationId() {
     return integrationId;

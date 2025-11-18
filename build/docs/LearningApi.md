@@ -773,7 +773,7 @@ try {
 # **getLearningModules**
 
 
-> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
+> [LearningModuleList](LearningModuleList) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
 
 Get all learning modules of an organization
 
@@ -817,7 +817,7 @@ String isPublished = "Any"; // String | Specifies if only the Unpublished (isPub
 List<String> statuses = Arrays.asList(null); // List<String> | Specifies the module statuses to filter by
 List<String> externalIds = Arrays.asList(null); // List<String> | Specifies the module external IDs to filter by. Only one ID is allowed
 try {
-    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
+    LearningModuleList result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningModules");
@@ -846,7 +846,7 @@ try {
 
 ### Return type
 
-[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing)
+[**LearningModuleList**](LearningModuleList)
 
 
 # **getLearningModulesAssignments**
@@ -2384,4 +2384,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

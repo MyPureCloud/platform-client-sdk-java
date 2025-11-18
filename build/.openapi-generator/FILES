@@ -160,6 +160,7 @@ docs/AgentScheduleShiftActivity.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
+docs/AgentStateEventTopicAgentStateEventNotification.md
 docs/AgentStateIsOutOfOfficeCount.md
 docs/AgentStatePresenceCount.md
 docs/AgentStateQueryRequest.md
@@ -1194,6 +1195,8 @@ docs/ConversationContentQuickReplyV2.md
 docs/ConversationContentReaction.md
 docs/ConversationContentReceivedReplyMessage.md
 docs/ConversationContentRequiredContactField.md
+docs/ConversationContentRichLink.md
+docs/ConversationContentRichLinkHeader.md
 docs/ConversationContentRoadsideAssistance.md
 docs/ConversationContentStory.md
 docs/ConversationContentText.md
@@ -2257,6 +2260,7 @@ docs/ExternalOrganizationIdentifierClaimRequest.md
 docs/ExternalOrganizationIdentifierListing.md
 docs/ExternalOrganizationListing.md
 docs/ExternalOrganizationTrustorLink.md
+docs/ExternalPageMetadata.md
 docs/ExternalSegment.md
 docs/ExternalSource.md
 docs/FacebookAppCredentials.md
@@ -2732,6 +2736,7 @@ docs/JourneyAppEventsNotificationWebActionMessage.md
 docs/JourneyAsyncAggregateQueryResponse.md
 docs/JourneyAsyncAggregationQuery.md
 docs/JourneyCampaign.md
+docs/JourneyCaseAssociation.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
 docs/JourneyCustomerSession.md
@@ -2804,6 +2809,8 @@ docs/JourneyViewElementFilterRange.md
 docs/JourneyViewElementFilterRangeData.md
 docs/JourneyViewJob.md
 docs/JourneyViewJobListing.md
+docs/JourneyViewJobNotificationTopicJourneyView.md
+docs/JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2.md
 docs/JourneyViewLink.md
 docs/JourneyViewLinkTimeConstraint.md
 docs/JourneyViewListing.md
@@ -3063,6 +3070,7 @@ docs/LearningModuleInformStep.md
 docs/LearningModuleInformStepRequest.md
 docs/LearningModuleJobRequest.md
 docs/LearningModuleJobResponse.md
+docs/LearningModuleList.md
 docs/LearningModulePreviewGetResponse.md
 docs/LearningModulePreviewGetResponseAssignment.md
 docs/LearningModulePreviewGetResponseStep.md
@@ -3081,7 +3089,6 @@ docs/LearningModuleRequest.md
 docs/LearningModuleRule.md
 docs/LearningModuleRuleParts.md
 docs/LearningModuleSummary.md
-docs/LearningModulesDomainEntityListing.md
 docs/LearningScheduleSlotsJobRequest.md
 docs/LearningScheduleSlotsJobResponse.md
 docs/LearningScheduleSlotsJobResult.md
@@ -3262,6 +3269,7 @@ docs/MessageInfo.md
 docs/MessageMedia.md
 docs/MessageMediaAttachment.md
 docs/MessageMediaData.md
+docs/MessageMediaListing.md
 docs/MessageMediaParticipant.md
 docs/MessageMediaPolicy.md
 docs/MessageMediaPolicyConditions.md
@@ -4553,6 +4561,7 @@ docs/SetSmsPhoneNumberActionSettings.md
 docs/SetTimeOffIntegrationStatusRequest.md
 docs/SetTimeOffLimitValuesRequest.md
 docs/SetUuiDataRequest.md
+docs/SetWhatsAppIntegrationActionSettings.md
 docs/SetWrapperDayOfWeek.md
 docs/SetWrapperRoutePathRequest.md
 docs/SetWrapperString.md
@@ -6498,6 +6507,7 @@ docs/getConversationsInternalmessages-example.txt
 docs/getConversationsKeyconfiguration-example.txt
 docs/getConversationsKeyconfigurations-example.txt
 docs/getConversationsMessage-example.txt
+docs/getConversationsMessageCommunicationMessagesMedia-example.txt
 docs/getConversationsMessageCommunicationMessagesMediaMediaId-example.txt
 docs/getConversationsMessageDetails-example.txt
 docs/getConversationsMessageMessage-example.txt
@@ -9713,6 +9723,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsInternalmessage
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsKeyconfigurationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsKeyconfigurationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageCommunicationMessagesMediaMediaIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageCommunicationMessagesMediaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageParticipantCommunicationWrapupRequest.java
@@ -12295,6 +12306,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentScheduleShiftActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateAgentQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateCountsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentStateEventTopicAgentStateEventNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateIsOutOfOfficeCount.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStatePresenceCount.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentStateQueryRequest.java
@@ -13305,6 +13317,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReplyV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentReaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentReceivedReplyMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRequiredContactField.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRichLink.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRichLinkHeader.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRoadsideAssistance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentStory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentText.java
@@ -14352,6 +14366,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationIdentifierClaimRe
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationIdentifierListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationTrustorLink.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalPageMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalSegment.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalSource.java
 src/main/java/com/mypurecloud/sdk/v2/model/FacebookAppCredentials.java
@@ -14805,6 +14820,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationWebAction
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAsyncAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAsyncAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCampaign.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyCaseAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCustomerSession.java
@@ -14877,6 +14893,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementFilterRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementFilterRangeData.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewJobListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewJobNotificationTopicJourneyView.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewLink.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewLinkTimeConstraint.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewListing.java
@@ -15128,6 +15146,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleInformStep.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleInformStepRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleList.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulePreviewGetResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulePreviewGetResponseAssignment.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulePreviewGetResponseStep.java
@@ -15146,7 +15165,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRuleParts.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleSummary.java
-src/main/java/com/mypurecloud/sdk/v2/model/LearningModulesDomainEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsJobResult.java
@@ -15321,6 +15339,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MessageInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMedia.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaAttachment.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaData.java
+src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageMediaPolicyConditions.java
@@ -16574,6 +16593,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SetSmsPhoneNumberActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetTimeOffIntegrationStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetTimeOffLimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetUuiDataRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/SetWhatsAppIntegrationActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperDayOfWeek.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperRoutePathRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperString.java

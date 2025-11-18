@@ -63,7 +63,6 @@ import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemVersion;
 import com.mypurecloud.sdk.v2.model.WorkitemVersionListing;
-import com.mypurecloud.sdk.v2.model.WorkitemWrapup;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupUpdate;
 import com.mypurecloud.sdk.v2.model.Worktype;
@@ -3853,13 +3852,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapupsAsync(PatchTaskmanagementWorkitemUserWrapupsRequest request, final AsyncApiCallback<WorkitemWrapup> callback) {
+  public Future<Void> patchTaskmanagementWorkitemUserWrapupsAsync(PatchTaskmanagementWorkitemUserWrapupsRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<WorkitemWrapup> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemWrapup>() {}, new AsyncApiCallback<ApiResponse<WorkitemWrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<WorkitemWrapup> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3887,13 +3886,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkitemWrapup>> patchTaskmanagementWorkitemUserWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemWrapup>> callback) {
+  public Future<ApiResponse<Void>> patchTaskmanagementWorkitemUserWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<WorkitemWrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WorkitemWrapup>() {}, new AsyncApiCallback<ApiResponse<WorkitemWrapup>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<WorkitemWrapup> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3901,7 +3900,7 @@ public class TaskManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3909,7 +3908,7 @@ public class TaskManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3928,13 +3927,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapupsAsync(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request, final AsyncApiCallback<WorkitemWrapup> callback) {
+  public Future<Void> patchTaskmanagementWorkitemUsersMeWrapupsAsync(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<WorkitemWrapup> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemWrapup>() {}, new AsyncApiCallback<ApiResponse<WorkitemWrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<WorkitemWrapup> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3962,13 +3961,13 @@ public class TaskManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkitemWrapup>> patchTaskmanagementWorkitemUsersMeWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemWrapup>> callback) {
+  public Future<ApiResponse<Void>> patchTaskmanagementWorkitemUsersMeWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<WorkitemWrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WorkitemWrapup>() {}, new AsyncApiCallback<ApiResponse<WorkitemWrapup>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<WorkitemWrapup> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3976,7 +3975,7 @@ public class TaskManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3984,7 +3983,7 @@ public class TaskManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

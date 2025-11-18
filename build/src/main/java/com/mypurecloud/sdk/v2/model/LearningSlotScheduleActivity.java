@@ -52,7 +52,8 @@ public class LearningSlotScheduleActivity  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVITYPLAN("ActivityPlan"),
     COACHING("Coaching"),
-    LEARNING("Learning");
+    LEARNING("Learning"),
+    OPPORTUNITY("Opportunity");
 
     private String value;
 

@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleList;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
@@ -42,7 +43,6 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
@@ -940,13 +940,13 @@ public class LearningApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LearningModulesDomainEntityListing> getLearningModulesAsync(GetLearningModulesRequest request, final AsyncApiCallback<LearningModulesDomainEntityListing> callback) {
+  public Future<LearningModuleList> getLearningModulesAsync(GetLearningModulesRequest request, final AsyncApiCallback<LearningModuleList> callback) {
     try {
-      final SettableFuture<LearningModulesDomainEntityListing> future = SettableFuture.create();
+      final SettableFuture<LearningModuleList> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningModulesDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<LearningModulesDomainEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningModuleList>() {}, new AsyncApiCallback<ApiResponse<LearningModuleList>>() {
         @Override
-        public void onCompleted(ApiResponse<LearningModulesDomainEntityListing> response) {
+        public void onCompleted(ApiResponse<LearningModuleList> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -974,13 +974,13 @@ public class LearningApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LearningModulesDomainEntityListing>> getLearningModulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningModulesDomainEntityListing>> callback) {
+  public Future<ApiResponse<LearningModuleList>> getLearningModulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningModuleList>> callback) {
     try {
-      final SettableFuture<ApiResponse<LearningModulesDomainEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<LearningModuleList>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LearningModulesDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<LearningModulesDomainEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<LearningModuleList>() {}, new AsyncApiCallback<ApiResponse<LearningModuleList>>() {
         @Override
-        public void onCompleted(ApiResponse<LearningModulesDomainEntityListing> response) {
+        public void onCompleted(ApiResponse<LearningModuleList> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -988,7 +988,7 @@ public class LearningApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<LearningModuleList> response = (ApiResponse<LearningModuleList>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -996,7 +996,7 @@ public class LearningApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<LearningModuleList> response = (ApiResponse<LearningModuleList>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

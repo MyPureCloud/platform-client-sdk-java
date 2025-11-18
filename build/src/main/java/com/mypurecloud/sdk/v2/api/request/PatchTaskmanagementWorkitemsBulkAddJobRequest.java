@@ -70,7 +70,6 @@ import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemVersion;
 import com.mypurecloud.sdk.v2.model.WorkitemVersionListing;
-import com.mypurecloud.sdk.v2.model.WorkitemWrapup;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupUpdate;
 import com.mypurecloud.sdk.v2.model.Worktype;

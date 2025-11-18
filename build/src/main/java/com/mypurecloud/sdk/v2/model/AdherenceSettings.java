@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IgnoredActivityCategories;
+import com.mypurecloud.sdk.v2.model.IgnoredActivityCodeIds;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -29,6 +30,7 @@ public class AdherenceSettings  implements Serializable {
   private Boolean nonOnQueueActivitiesEquivalent = null;
   private Boolean trackOnQueueActivity = null;
   private IgnoredActivityCategories ignoredActivityCategories = null;
+  private IgnoredActivityCodeIds ignoredActivityCodeIds = null;
 
   public AdherenceSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -144,6 +146,24 @@ public class AdherenceSettings  implements Serializable {
   }
 
 
+  /**
+   * Activity code IDs that should be ignored for adherence purposes
+   **/
+  public AdherenceSettings ignoredActivityCodeIds(IgnoredActivityCodeIds ignoredActivityCodeIds) {
+    this.ignoredActivityCodeIds = ignoredActivityCodeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Activity code IDs that should be ignored for adherence purposes")
+  @JsonProperty("ignoredActivityCodeIds")
+  public IgnoredActivityCodeIds getIgnoredActivityCodeIds() {
+    return ignoredActivityCodeIds;
+  }
+  public void setIgnoredActivityCodeIds(IgnoredActivityCodeIds ignoredActivityCodeIds) {
+    this.ignoredActivityCodeIds = ignoredActivityCodeIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,12 +179,13 @@ public class AdherenceSettings  implements Serializable {
             Objects.equals(this.adherenceExceptionThresholdSeconds, adherenceSettings.adherenceExceptionThresholdSeconds) &&
             Objects.equals(this.nonOnQueueActivitiesEquivalent, adherenceSettings.nonOnQueueActivitiesEquivalent) &&
             Objects.equals(this.trackOnQueueActivity, adherenceSettings.trackOnQueueActivity) &&
-            Objects.equals(this.ignoredActivityCategories, adherenceSettings.ignoredActivityCategories);
+            Objects.equals(this.ignoredActivityCategories, adherenceSettings.ignoredActivityCategories) &&
+            Objects.equals(this.ignoredActivityCodeIds, adherenceSettings.ignoredActivityCodeIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(severeAlertThresholdMinutes, adherenceTargetPercent, adherenceExceptionThresholdSeconds, nonOnQueueActivitiesEquivalent, trackOnQueueActivity, ignoredActivityCategories);
+    return Objects.hash(severeAlertThresholdMinutes, adherenceTargetPercent, adherenceExceptionThresholdSeconds, nonOnQueueActivitiesEquivalent, trackOnQueueActivity, ignoredActivityCategories, ignoredActivityCodeIds);
   }
 
   @Override
@@ -178,6 +199,7 @@ public class AdherenceSettings  implements Serializable {
     sb.append("    nonOnQueueActivitiesEquivalent: ").append(toIndentedString(nonOnQueueActivitiesEquivalent)).append("\n");
     sb.append("    trackOnQueueActivity: ").append(toIndentedString(trackOnQueueActivity)).append("\n");
     sb.append("    ignoredActivityCategories: ").append(toIndentedString(ignoredActivityCategories)).append("\n");
+    sb.append("    ignoredActivityCodeIds: ").append(toIndentedString(ignoredActivityCodeIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

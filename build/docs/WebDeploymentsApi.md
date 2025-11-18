@@ -1218,4 +1218,4 @@ try {
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

@@ -54,7 +54,8 @@ public class BuAgentScheduleActivity  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVITYPLAN("ActivityPlan"),
     COACHING("Coaching"),
-    LEARNING("Learning");
+    LEARNING("Learning"),
+    OPPORTUNITY("Opportunity");
 
     private String value;
 

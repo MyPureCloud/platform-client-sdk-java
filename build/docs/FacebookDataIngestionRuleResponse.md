@@ -14,7 +14,7 @@
 | **dateModified** | [**Date**](Date) | Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **platform** | **String** | The platform of the data ingestion rule. |  [optional] |
 | **countries** | **List&lt;String&gt;** | The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide. |  [optional] |
-| **integrationId** | **String** | The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource |  [optional] |
+| **integrationId** | **String** | Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -33,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

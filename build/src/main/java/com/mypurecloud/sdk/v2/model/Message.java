@@ -380,7 +380,8 @@ public class Message  implements Serializable {
     X("X"),
     YELP("Yelp"),
     YOUTUBE("YouTube"),
-    ZENDESK("Zendesk");
+    ZENDESK("Zendesk"),
+    OPENMESSAGING("OpenMessaging");
 
     private String value;
 

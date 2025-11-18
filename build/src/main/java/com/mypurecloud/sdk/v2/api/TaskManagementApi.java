@@ -60,7 +60,6 @@ import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemVersion;
 import com.mypurecloud.sdk.v2.model.WorkitemVersionListing;
-import com.mypurecloud.sdk.v2.model.WorkitemWrapup;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemWrapupUpdate;
 import com.mypurecloud.sdk.v2.model.Worktype;
@@ -4166,12 +4165,11 @@ public class TaskManagementApi {
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param body Request body to add/remove a wrapup code for a workitem (required)
-   * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException, ApiException {
-    return  patchTaskmanagementWorkitemUserWrapups(createPatchTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, body));
+  public void patchTaskmanagementWorkitemUserWrapups(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException, ApiException {
+     patchTaskmanagementWorkitemUserWrapups(createPatchTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, body));
   }
 
   /**
@@ -4180,10 +4178,9 @@ public class TaskManagementApi {
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param body Request body to add/remove a wrapup code for a workitem (required)
-   * @return WorkitemWrapup
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException {
+  public ApiResponse<Void> patchTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException {
     return patchTaskmanagementWorkitemUserWrapups(createPatchTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, body).withHttpInfo());
   }
 
@@ -4202,18 +4199,17 @@ public class TaskManagementApi {
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
    * @param request The request object
-   * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(PatchTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
+  public void patchTaskmanagementWorkitemUserWrapups(PatchTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<WorkitemWrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemWrapup>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -4224,13 +4220,13 @@ public class TaskManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
+  public ApiResponse<Void> patchTaskmanagementWorkitemUserWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<WorkitemWrapup>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4241,7 +4237,7 @@ public class TaskManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4251,12 +4247,11 @@ public class TaskManagementApi {
    * 
    * @param workitemId The ID of the Workitem. (required)
    * @param body Request body to add/remove the wrapup code for workitem (required)
-   * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(String workitemId, WorkitemWrapupUpdate body) throws IOException, ApiException {
-    return  patchTaskmanagementWorkitemUsersMeWrapups(createPatchTaskmanagementWorkitemUsersMeWrapupsRequest(workitemId, body));
+  public void patchTaskmanagementWorkitemUsersMeWrapups(String workitemId, WorkitemWrapupUpdate body) throws IOException, ApiException {
+     patchTaskmanagementWorkitemUsersMeWrapups(createPatchTaskmanagementWorkitemUsersMeWrapupsRequest(workitemId, body));
   }
 
   /**
@@ -4264,10 +4259,9 @@ public class TaskManagementApi {
    * 
    * @param workitemId The ID of the Workitem. (required)
    * @param body Request body to add/remove the wrapup code for workitem (required)
-   * @return WorkitemWrapup
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo(String workitemId, WorkitemWrapupUpdate body) throws IOException {
+  public ApiResponse<Void> patchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo(String workitemId, WorkitemWrapupUpdate body) throws IOException {
     return patchTaskmanagementWorkitemUsersMeWrapups(createPatchTaskmanagementWorkitemUsersMeWrapupsRequest(workitemId, body).withHttpInfo());
   }
 
@@ -4284,18 +4278,17 @@ public class TaskManagementApi {
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
    * @param request The request object
-   * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request) throws IOException, ApiException {
+  public void patchTaskmanagementWorkitemUsersMeWrapups(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<WorkitemWrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemWrapup>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -4306,13 +4299,13 @@ public class TaskManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
+  public ApiResponse<Void> patchTaskmanagementWorkitemUsersMeWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<WorkitemWrapup>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4323,7 +4316,7 @@ public class TaskManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<WorkitemWrapup> response = (ApiResponse<WorkitemWrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -30,11 +30,11 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private String firstUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public InboundDomainEntityListing() {
@@ -114,57 +114,6 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
-  public InboundDomainEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public InboundDomainEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public InboundDomainEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public InboundDomainEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -199,6 +148,57 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
+  public InboundDomainEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public InboundDomainEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public InboundDomainEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public InboundDomainEntityListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -228,17 +228,17 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
             Objects.equals(this.pageSize, inboundDomainEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, inboundDomainEntityListing.pageNumber) &&
             Objects.equals(this.total, inboundDomainEntityListing.total) &&
-            Objects.equals(this.firstUri, inboundDomainEntityListing.firstUri) &&
-            Objects.equals(this.lastUri, inboundDomainEntityListing.lastUri) &&
-            Objects.equals(this.selfUri, inboundDomainEntityListing.selfUri) &&
             Objects.equals(this.previousUri, inboundDomainEntityListing.previousUri) &&
             Objects.equals(this.nextUri, inboundDomainEntityListing.nextUri) &&
+            Objects.equals(this.lastUri, inboundDomainEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, inboundDomainEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, inboundDomainEntityListing.selfUri) &&
             Objects.equals(this.pageCount, inboundDomainEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class InboundDomainEntityListing  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

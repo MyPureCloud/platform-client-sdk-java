@@ -125,6 +125,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageMediaListing;
 import com.mypurecloud.sdk.v2.model.MessageMediaUploadData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingConferResponse;
@@ -274,6 +275,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsInternalmessagesReques
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
@@ -6492,6 +6494,100 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param status The status on which to filter the response. (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return MessageMediaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaListing getConversationsMessageCommunicationMessagesMedia(String conversationId, String communicationId, String status, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getConversationsMessageCommunicationMessagesMedia(createGetConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId, status, pageNumber, pageSize));
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param status The status on which to filter the response. (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return MessageMediaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaListing> getConversationsMessageCommunicationMessagesMediaWithHttpInfo(String conversationId, String communicationId, String status, Integer pageNumber, Integer pageSize) throws IOException {
+    return getConversationsMessageCommunicationMessagesMedia(createGetConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId, status, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetConversationsMessageCommunicationMessagesMediaRequest createGetConversationsMessageCommunicationMessagesMediaRequest(String conversationId, String communicationId, String status, Integer pageNumber, Integer pageSize) {
+    return GetConversationsMessageCommunicationMessagesMediaRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withStatus(status)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param request The request object
+   * @return MessageMediaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaListing getConversationsMessageCommunicationMessagesMedia(GetConversationsMessageCommunicationMessagesMediaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageMediaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageMediaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get message media list by status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaListing> getConversationsMessageCommunicationMessagesMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageMediaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaListing> response = (ApiResponse<MessageMediaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaListing> response = (ApiResponse<MessageMediaListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

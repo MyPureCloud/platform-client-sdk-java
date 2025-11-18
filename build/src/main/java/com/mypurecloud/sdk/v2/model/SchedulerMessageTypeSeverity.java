@@ -51,6 +51,7 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     AGENTWITHOUTCAPABILITY("AgentWithoutCapability"),
     NONEEDDAYS("NoNeedDays"),
     UNABLETOPRODUCEAGENTSCHEDULE("UnableToProduceAgentSchedule"),
+    UNABLETOSCHEDULEMINCOVERAGEFORPLANNINGGROUP("UnableToScheduleMinCoverageForPlanningGroup"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS("UnableToScheduleMaxConsecutiveWorkingDays"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS("UnableToScheduleMaxConsecutiveWorkingWeekends"),
     UNABLETOSCHEDULEMAXWEEKLYPAIDTIME("UnableToScheduleMaxWeeklyPaidTime"),

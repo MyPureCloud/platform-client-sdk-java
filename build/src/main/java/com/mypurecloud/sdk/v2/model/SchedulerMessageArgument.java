@@ -43,7 +43,8 @@ public class SchedulerMessageArgument  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENTID("AgentId"),
-    DATE("Date");
+    DATE("Date"),
+    PLANNINGGROUPID("PlanningGroupId");
 
     private String value;
 

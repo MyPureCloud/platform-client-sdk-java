@@ -41,12 +41,13 @@ public class TimeOffLimitRange  implements Serializable {
     }
   }
   /**
-   * Granularity choice for the time off limit
+   * Granularity choice for the time-off limit
    */
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DAILY("Daily");
+    DAILY("Daily"),
+    FIFTEENMINUTES("FifteenMinutes");
 
     private String value;
 
@@ -102,14 +103,14 @@ public class TimeOffLimitRange  implements Serializable {
 
 
   /**
-   * Granularity choice for the time off limit
+   * Granularity choice for the time-off limit
    **/
   public TimeOffLimitRange granularity(GranularityEnum granularity) {
     this.granularity = granularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Granularity choice for the time off limit")
+  @ApiModelProperty(example = "null", required = true, value = "Granularity choice for the time-off limit")
   @JsonProperty("granularity")
   public GranularityEnum getGranularity() {
     return granularity;

@@ -8,6 +8,7 @@
 | **id** | **String** |  |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
 | **rejectionReason** | **String** |  |  [optional] |
+| **missingPermissions** | **List&lt;String&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -22,4 +23,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

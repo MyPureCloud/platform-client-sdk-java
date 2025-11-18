@@ -36,14 +36,14 @@ public class BuShortTermForecastWeekReference  implements Serializable {
 
   
   /**
-   * Forecast id used in this work plan bid
+   * The ID of the forecast
    **/
   public BuShortTermForecastWeekReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Forecast id used in this work plan bid")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the forecast")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -79,14 +79,14 @@ public class BuShortTermForecastWeekReference  implements Serializable {
 
 
   /**
-   * The week number used for this bid. First week starts with number 1
+   * The week number to be used from the selected forecast. First week starts with number 1
    **/
   public BuShortTermForecastWeekReference weekNumber(Integer weekNumber) {
     this.weekNumber = weekNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The week number used for this bid. First week starts with number 1")
+  @ApiModelProperty(example = "null", required = true, value = "The week number to be used from the selected forecast. First week starts with number 1")
   @JsonProperty("weekNumber")
   public Integer getWeekNumber() {
     return weekNumber;

@@ -23,8 +23,10 @@ import java.io.Serializable;
 
 public class ConversationContentReceivedReplyMessage  implements Serializable {
   
+  private String header = null;
   private String title = null;
   private String subtitle = null;
+  private String buttonLabel = null;
   private String imageUrl = null;
 
   public ConversationContentReceivedReplyMessage() {
@@ -33,6 +35,24 @@ public class ConversationContentReceivedReplyMessage  implements Serializable {
   }
 
   
+  /**
+   * Text to show in the header.
+   **/
+  public ConversationContentReceivedReplyMessage header(String header) {
+    this.header = header;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Text to show in the header.")
+  @JsonProperty("header")
+  public String getHeader() {
+    return header;
+  }
+  public void setHeader(String header) {
+    this.header = header;
+  }
+
+
   /**
    * Text to show in the title.
    **/
@@ -70,6 +90,24 @@ public class ConversationContentReceivedReplyMessage  implements Serializable {
 
 
   /**
+   * Text to show on the button label.
+   **/
+  public ConversationContentReceivedReplyMessage buttonLabel(String buttonLabel) {
+    this.buttonLabel = buttonLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Text to show on the button label.")
+  @JsonProperty("buttonLabel")
+  public String getButtonLabel() {
+    return buttonLabel;
+  }
+  public void setButtonLabel(String buttonLabel) {
+    this.buttonLabel = buttonLabel;
+  }
+
+
+  /**
    * URL of an image.
    **/
   public ConversationContentReceivedReplyMessage imageUrl(String imageUrl) {
@@ -97,14 +135,16 @@ public class ConversationContentReceivedReplyMessage  implements Serializable {
     }
     ConversationContentReceivedReplyMessage conversationContentReceivedReplyMessage = (ConversationContentReceivedReplyMessage) o;
 
-    return Objects.equals(this.title, conversationContentReceivedReplyMessage.title) &&
+    return Objects.equals(this.header, conversationContentReceivedReplyMessage.header) &&
+            Objects.equals(this.title, conversationContentReceivedReplyMessage.title) &&
             Objects.equals(this.subtitle, conversationContentReceivedReplyMessage.subtitle) &&
+            Objects.equals(this.buttonLabel, conversationContentReceivedReplyMessage.buttonLabel) &&
             Objects.equals(this.imageUrl, conversationContentReceivedReplyMessage.imageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, subtitle, imageUrl);
+    return Objects.hash(header, title, subtitle, buttonLabel, imageUrl);
   }
 
   @Override
@@ -112,8 +152,10 @@ public class ConversationContentReceivedReplyMessage  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationContentReceivedReplyMessage {\n");
     
+    sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
+    sb.append("    buttonLabel: ").append(toIndentedString(buttonLabel)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("}");
     return sb.toString();

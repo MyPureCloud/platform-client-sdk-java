@@ -30,11 +30,11 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private String firstUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public ReportingExportJobListing() {
@@ -114,57 +114,6 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
 
   /**
    **/
-  public ReportingExportJobListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public ReportingExportJobListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public ReportingExportJobListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public ReportingExportJobListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -199,6 +148,57 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
 
   /**
    **/
+  public ReportingExportJobListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public ReportingExportJobListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public ReportingExportJobListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public ReportingExportJobListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -228,17 +228,17 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
             Objects.equals(this.pageSize, reportingExportJobListing.pageSize) &&
             Objects.equals(this.pageNumber, reportingExportJobListing.pageNumber) &&
             Objects.equals(this.total, reportingExportJobListing.total) &&
-            Objects.equals(this.firstUri, reportingExportJobListing.firstUri) &&
-            Objects.equals(this.lastUri, reportingExportJobListing.lastUri) &&
-            Objects.equals(this.selfUri, reportingExportJobListing.selfUri) &&
             Objects.equals(this.previousUri, reportingExportJobListing.previousUri) &&
             Objects.equals(this.nextUri, reportingExportJobListing.nextUri) &&
+            Objects.equals(this.lastUri, reportingExportJobListing.lastUri) &&
+            Objects.equals(this.firstUri, reportingExportJobListing.firstUri) &&
+            Objects.equals(this.selfUri, reportingExportJobListing.selfUri) &&
             Objects.equals(this.pageCount, reportingExportJobListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

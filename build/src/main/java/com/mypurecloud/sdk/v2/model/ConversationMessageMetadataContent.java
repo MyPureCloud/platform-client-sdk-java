@@ -63,6 +63,7 @@ public class ConversationMessageMetadataContent  implements Serializable {
     PUSH("Push"),
     FORM("Form"),
     ROADSIDEASSISTANCE("RoadsideAssistance"),
+    RICHLINK("RichLink"),
     UNKNOWN("Unknown");
 
     private String value;

@@ -77,6 +77,7 @@ public class WebMessagingButtonResponse  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private String payload = null;
+  private String originatingMessageId = null;
 
   public WebMessagingButtonResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -156,6 +157,24 @@ public class WebMessagingButtonResponse  implements Serializable {
   }
 
 
+  /**
+   * Id of original structured message that this message responds to.
+   **/
+  public WebMessagingButtonResponse originatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Id of original structured message that this message responds to.")
+  @JsonProperty("originatingMessageId")
+  public String getOriginatingMessageId() {
+    return originatingMessageId;
+  }
+  public void setOriginatingMessageId(String originatingMessageId) {
+    this.originatingMessageId = originatingMessageId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -169,12 +188,13 @@ public class WebMessagingButtonResponse  implements Serializable {
     return Objects.equals(this.id, webMessagingButtonResponse.id) &&
             Objects.equals(this.type, webMessagingButtonResponse.type) &&
             Objects.equals(this.text, webMessagingButtonResponse.text) &&
-            Objects.equals(this.payload, webMessagingButtonResponse.payload);
+            Objects.equals(this.payload, webMessagingButtonResponse.payload) &&
+            Objects.equals(this.originatingMessageId, webMessagingButtonResponse.originatingMessageId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, text, payload);
+    return Objects.hash(id, type, text, payload, originatingMessageId);
   }
 
   @Override
@@ -186,6 +206,7 @@ public class WebMessagingButtonResponse  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    originatingMessageId: ").append(toIndentedString(originatingMessageId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

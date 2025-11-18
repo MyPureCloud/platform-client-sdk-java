@@ -12,6 +12,8 @@
 | **contentLengthBytes** | **Integer** | The optional content length of the the media object, in bytes. |  [optional] |
 | **uploadUrl** | **String** | The URL returned to upload an attachment |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **communicationId** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -27,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

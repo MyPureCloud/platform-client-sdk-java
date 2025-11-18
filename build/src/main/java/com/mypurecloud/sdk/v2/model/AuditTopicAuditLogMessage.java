@@ -350,6 +350,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     AUTHUSER("AuthUser"),
     ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
     ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
+    MFAVERIFIER("MFAVerifier"),
     ROLE("Role"),
     ROLESETTINGS("RoleSettings"),
     POLICY("Policy"),

@@ -9,6 +9,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the button that resulted in the Button Response. |  [optional] |
 | **text** | **String** | The response text from the button click. |  |
 | **payload** | **String** | The response payload associated with the clicked button. |  |
+| **originatingMessageId** | **String** | Id of original structured message that this message responds to. |  |
 
 
 ## Enum: TypeEnum
@@ -24,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

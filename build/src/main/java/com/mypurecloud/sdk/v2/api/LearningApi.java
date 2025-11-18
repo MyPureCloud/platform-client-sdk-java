@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleList;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
@@ -39,7 +40,6 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
@@ -1114,11 +1114,11 @@ public class LearningApi {
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @param statuses Specifies the module statuses to filter by (optional)
    * @param externalIds Specifies the module external IDs to filter by. Only one ID is allowed (optional)
-   * @return LearningModulesDomainEntityListing
+   * @return LearningModuleList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException, ApiException {
+  public LearningModuleList getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException, ApiException {
     return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds));
   }
 
@@ -1136,10 +1136,10 @@ public class LearningApi {
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @param statuses Specifies the module statuses to filter by (optional)
    * @param externalIds Specifies the module external IDs to filter by. Only one ID is allowed (optional)
-   * @return LearningModulesDomainEntityListing
+   * @return LearningModuleList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException {
+  public ApiResponse<LearningModuleList> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException {
     return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds).withHttpInfo());
   }
 
@@ -1174,13 +1174,13 @@ public class LearningApi {
    * Get all learning modules of an organization
    * 
    * @param request The request object
-   * @return LearningModulesDomainEntityListing
+   * @return LearningModuleList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulesDomainEntityListing getLearningModules(GetLearningModulesRequest request) throws IOException, ApiException {
+  public LearningModuleList getLearningModules(GetLearningModulesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<LearningModulesDomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModulesDomainEntityListing>() {});
+      ApiResponse<LearningModuleList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModuleList>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1196,13 +1196,13 @@ public class LearningApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulesDomainEntityListing> getLearningModules(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LearningModuleList> getLearningModules(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<LearningModulesDomainEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<LearningModuleList>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<LearningModuleList> response = (ApiResponse<LearningModuleList>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1213,7 +1213,7 @@ public class LearningApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LearningModuleList> response = (ApiResponse<LearningModuleList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

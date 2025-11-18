@@ -27,7 +27,9 @@ import com.mypurecloud.sdk.v2.model.PaymentRequest;
 import com.mypurecloud.sdk.v2.model.PaymentResponse;
 import com.mypurecloud.sdk.v2.model.QuickReply;
 import com.mypurecloud.sdk.v2.model.RecordingContentStory;
+import com.mypurecloud.sdk.v2.model.RecordingForm;
 import com.mypurecloud.sdk.v2.model.RecordingNotificationTemplate;
+import com.mypurecloud.sdk.v2.model.RecordingRoadsideAssistance;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -181,6 +183,8 @@ public class RecordingMessagingMessage  implements Serializable {
   private InteractiveApplication interactiveApplication = null;
   private PaymentRequest paymentRequest = null;
   private PaymentResponse paymentResponse = null;
+  private RecordingForm form = null;
+  private RecordingRoadsideAssistance roadsideAssistance = null;
 
   public RecordingMessagingMessage() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -680,6 +684,42 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * Form content.
+   **/
+  public RecordingMessagingMessage form(RecordingForm form) {
+    this.form = form;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Form content.")
+  @JsonProperty("form")
+  public RecordingForm getForm() {
+    return form;
+  }
+  public void setForm(RecordingForm form) {
+    this.form = form;
+  }
+
+
+  /**
+   * Roadside Assistance content.
+   **/
+  public RecordingMessagingMessage roadsideAssistance(RecordingRoadsideAssistance roadsideAssistance) {
+    this.roadsideAssistance = roadsideAssistance;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Roadside Assistance content.")
+  @JsonProperty("roadsideAssistance")
+  public RecordingRoadsideAssistance getRoadsideAssistance() {
+    return roadsideAssistance;
+  }
+  public void setRoadsideAssistance(RecordingRoadsideAssistance roadsideAssistance) {
+    this.roadsideAssistance = roadsideAssistance;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -716,12 +756,14 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.events, recordingMessagingMessage.events) &&
             Objects.equals(this.interactiveApplication, recordingMessagingMessage.interactiveApplication) &&
             Objects.equals(this.paymentRequest, recordingMessagingMessage.paymentRequest) &&
-            Objects.equals(this.paymentResponse, recordingMessagingMessage.paymentResponse);
+            Objects.equals(this.paymentResponse, recordingMessagingMessage.paymentResponse) &&
+            Objects.equals(this.form, recordingMessagingMessage.form) &&
+            Objects.equals(this.roadsideAssistance, recordingMessagingMessage.roadsideAssistance);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, buttonResponses, story, cards, notificationTemplate, datePicker, listPicker, contentType, socialVisibility, events, interactiveApplication, paymentRequest, paymentResponse, form, roadsideAssistance);
   }
 
   @Override
@@ -756,6 +798,8 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    interactiveApplication: ").append(toIndentedString(interactiveApplication)).append("\n");
     sb.append("    paymentRequest: ").append(toIndentedString(paymentRequest)).append("\n");
     sb.append("    paymentResponse: ").append(toIndentedString(paymentResponse)).append("\n");
+    sb.append("    form: ").append(toIndentedString(form)).append("\n");
+    sb.append("    roadsideAssistance: ").append(toIndentedString(roadsideAssistance)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -551,7 +551,7 @@ public class ObjectsApi {
    * Use \"after\" and \"before\" param to fetch next/previous page}
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Page size (max 200, default 25) (optional, default to 25)
    * @param id Optionally request specific divisions by their IDs (optional)
    * @param name Optionally request specific divisions by division name (optional)
    * @return AuthzDivisionCursorListing
@@ -567,7 +567,7 @@ public class ObjectsApi {
    * Use \"after\" and \"before\" param to fetch next/previous page}
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Page size (max 200, default 25) (optional, default to 25)
    * @param id Optionally request specific divisions by their IDs (optional)
    * @param name Optionally request specific divisions by division name (optional)
    * @return AuthzDivisionCursorListing

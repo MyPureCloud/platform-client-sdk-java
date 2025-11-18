@@ -31,11 +31,11 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
   private Integer pageNumber = null;
   private Long total = null;
   private Long totalNumberOfEntities = null;
-  private String firstUri = null;
-  private String lastUri = null;
-  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
+  private String firstUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public LineBaseEntityListing() {
@@ -133,57 +133,6 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
 
   /**
    **/
-  public LineBaseEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
-  public LineBaseEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public LineBaseEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public LineBaseEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -213,6 +162,57 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public LineBaseEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public LineBaseEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public LineBaseEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -248,17 +248,17 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
             Objects.equals(this.pageNumber, lineBaseEntityListing.pageNumber) &&
             Objects.equals(this.total, lineBaseEntityListing.total) &&
             Objects.equals(this.totalNumberOfEntities, lineBaseEntityListing.totalNumberOfEntities) &&
-            Objects.equals(this.firstUri, lineBaseEntityListing.firstUri) &&
-            Objects.equals(this.lastUri, lineBaseEntityListing.lastUri) &&
-            Objects.equals(this.selfUri, lineBaseEntityListing.selfUri) &&
             Objects.equals(this.previousUri, lineBaseEntityListing.previousUri) &&
             Objects.equals(this.nextUri, lineBaseEntityListing.nextUri) &&
+            Objects.equals(this.lastUri, lineBaseEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, lineBaseEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, lineBaseEntityListing.selfUri) &&
             Objects.equals(this.pageCount, lineBaseEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, lastUri, selfUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
   }
 
   @Override
@@ -271,11 +271,11 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

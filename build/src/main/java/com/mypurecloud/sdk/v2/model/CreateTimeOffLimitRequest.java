@@ -42,7 +42,8 @@ public class CreateTimeOffLimitRequest  implements Serializable {
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DAILY("Daily");
+    DAILY("Daily"),
+    FIFTEENMINUTES("FifteenMinutes");
 
     private String value;
 

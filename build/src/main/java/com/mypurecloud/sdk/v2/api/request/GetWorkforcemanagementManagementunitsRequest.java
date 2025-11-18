@@ -405,7 +405,9 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		WORKPLANBIDS("WorkPlanBids"),
 		WORKPLANBIDGROUPS("WorkPlanBidGroups"),
 		WORKPLANROTATIONS("WorkPlanRotations"),
-		WORKPLANS("WorkPlans");
+		WORKPLANS("WorkPlans"),
+		SCHEDULEBID("ScheduleBid"),
+		SCHEDULEBIDGROUP("ScheduleBidGroup");
 
 		private String value;
 

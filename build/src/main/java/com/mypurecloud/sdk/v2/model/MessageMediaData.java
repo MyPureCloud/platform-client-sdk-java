@@ -78,6 +78,8 @@ public class MessageMediaData  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private String conversationId = null;
+  private String communicationId = null;
   private String selfUri = null;
 
   public MessageMediaData() {
@@ -189,6 +191,40 @@ public class MessageMediaData  implements Serializable {
   }
 
 
+  /**
+   **/
+  public MessageMediaData conversationId(String conversationId) {
+    this.conversationId = conversationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationId")
+  public String getConversationId() {
+    return conversationId;
+  }
+  public void setConversationId(String conversationId) {
+    this.conversationId = conversationId;
+  }
+
+
+  /**
+   **/
+  public MessageMediaData communicationId(String communicationId) {
+    this.communicationId = communicationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("communicationId")
+  public String getCommunicationId() {
+    return communicationId;
+  }
+  public void setCommunicationId(String communicationId) {
+    this.communicationId = communicationId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -213,12 +249,14 @@ public class MessageMediaData  implements Serializable {
             Objects.equals(this.contentLengthBytes, messageMediaData.contentLengthBytes) &&
             Objects.equals(this.uploadUrl, messageMediaData.uploadUrl) &&
             Objects.equals(this.status, messageMediaData.status) &&
+            Objects.equals(this.conversationId, messageMediaData.conversationId) &&
+            Objects.equals(this.communicationId, messageMediaData.communicationId) &&
             Objects.equals(this.selfUri, messageMediaData.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, url, mediaType, contentLengthBytes, uploadUrl, status, selfUri);
+    return Objects.hash(id, name, url, mediaType, contentLengthBytes, uploadUrl, status, conversationId, communicationId, selfUri);
   }
 
   @Override
@@ -233,6 +271,8 @@ public class MessageMediaData  implements Serializable {
     sb.append("    contentLengthBytes: ").append(toIndentedString(contentLengthBytes)).append("\n");
     sb.append("    uploadUrl: ").append(toIndentedString(uploadUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

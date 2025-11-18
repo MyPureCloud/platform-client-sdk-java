@@ -28,6 +28,7 @@
 | BYOT_STT | &quot;byot-stt&quot; | 
 | BOT_CONNECTOR | &quot;bot-connector&quot; | 
 | BYO_SMPP | &quot;byo-smpp&quot; | 
+| ENCRYPTION | &quot;encryption&quot; | 
 
 
 ## Enum: DirectionEnum
@@ -42,4 +43,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_

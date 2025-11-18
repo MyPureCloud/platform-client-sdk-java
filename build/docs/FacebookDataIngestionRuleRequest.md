@@ -7,9 +7,9 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The name of the data ingestion rule. |  |
 | **description** | **String** | A description of the data ingestion rule. |  [optional] |
-| **integrationId** | **String** | The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource |  |
+| **integrationId** | **String** | Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:236.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
