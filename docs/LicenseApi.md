@@ -547,4 +547,4 @@ try {
 **Map&lt;String, Object&gt;**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

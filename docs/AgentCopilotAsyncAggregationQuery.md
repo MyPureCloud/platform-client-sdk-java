@@ -28,11 +28,13 @@
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | CANNEDRESPONSEID | &quot;cannedResponseId&quot; |
 | CANNEDRESPONSELIBRARYID | &quot;cannedResponseLibraryId&quot; |
+| CHUNKCOUNT | &quot;chunkCount&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | ENGAGEMENTTYPE | &quot;engagementType&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | FEEDBACKRATING | &quot;feedbackRating&quot; |
 | HASANSWERHIGHLIGHT | &quot;hasAnswerHighlight&quot; |
+| HASGENERATEDANSWER | &quot;hasGeneratedAnswer&quot; |
 | KNOWLEDGEBASEDOCUMENTID | &quot;knowledgeBaseDocumentId&quot; |
 | KNOWLEDGEBASEDOCUMENTVERSIONID | &quot;knowledgeBaseDocumentVersionId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
@@ -56,6 +58,7 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NCANNEDRESPONSESUGGESTIONS | &quot;nCannedResponseSuggestions&quot; |
 | NDISTINCTSUGGESTIONS | &quot;nDistinctSuggestions&quot; |
+| NKNOWLEDGEANSWERSUGGESTIONS | &quot;nKnowledgeAnswerSuggestions&quot; |
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; |
 | NKNOWLEDGESEARCHSUGGESTIONS | &quot;nKnowledgeSearchSuggestions&quot; |
 | NSCRIPTSUGGESTIONS | &quot;nScriptSuggestions&quot; |
@@ -81,4 +84,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

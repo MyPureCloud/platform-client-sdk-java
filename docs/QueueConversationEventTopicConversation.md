@@ -15,9 +15,11 @@
 | **utilizationLabelId** | **String** |  |  [optional] |
 | **securePause** | **Boolean** |  |  [optional] |
 | **inactivityTimeout** | [**Date**](Date) |  |  [optional] |
+| **associatedConversation** | [**QueueConversationEventTopicDomainEntityRef**](QueueConversationEventTopicDomainEntityRef) |  |  [optional] |
+| **consultationConversations** | [**List&lt;QueueConversationEventTopicDomainEntityRef&gt;**](QueueConversationEventTopicDomainEntityRef) |  |  [optional] |
 | **divisions** | [**List&lt;QueueConversationEventTopicConversationDivisionMembership&gt;**](QueueConversationEventTopicConversationDivisionMembership) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

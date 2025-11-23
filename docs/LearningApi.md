@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLearningAssignmentsBulkremove**](LearningApi#postLearningAssignmentsBulkremove) | Remove multiple Learning Assignments |
 | [**postLearningModuleJobs**](LearningApi#postLearningModuleJobs) | Starts a specified operation on learning module |
 | [**postLearningModulePublish**](LearningApi#postLearningModulePublish) | Publish a Learning module |
+| [**postLearningModuleRuleMigrate**](LearningApi#postLearningModuleRuleMigrate) | Migrate a legacy learning module rule to a users rule. |
 | [**postLearningModules**](LearningApi#postLearningModules) | Create a new learning module |
 | [**postLearningRulesQuery**](LearningApi#postLearningRulesQuery) | Get users for learning module rule |
 | [**postLearningScheduleslotsJobs**](LearningApi#postLearningScheduleslotsJobs) | Start job to retrieve slots where a learning activity can be scheduled. |
@@ -1890,6 +1891,67 @@ try {
 [**LearningModulePublishResponse**](LearningModulePublishResponse)
 
 
+# **postLearningModuleRuleMigrate**
+
+
+> [LearningModuleMigrateResponse](LearningModuleMigrateResponse) postLearningModuleRuleMigrate(moduleId)
+
+Migrate a legacy learning module rule to a users rule.
+
+postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/learning/modules/{moduleId}/rule/migrate  
+
+Requires ANY permissions: 
+
+* learning:module:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String moduleId = "moduleId_example"; // String | The ID of the learning module
+try {
+    LearningModuleMigrateResponse result = apiInstance.postLearningModuleRuleMigrate(moduleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningModuleRuleMigrate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **moduleId** | **String**| The ID of the learning module | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningModuleMigrateResponse**](LearningModuleMigrateResponse)
+
+
 # **postLearningModules**
 
 
@@ -2384,4 +2446,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

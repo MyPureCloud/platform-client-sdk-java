@@ -39,8 +39,9 @@
 | OUTBOUND_MESSAGE_FAILED | &quot;OUTBOUND_MESSAGE_FAILED&quot; | 
 | OUTBOUND_MESSAGE_THROTTLED | &quot;OUTBOUND_MESSAGE_THROTTLED&quot; | 
 | OUTBOUND_MESSAGE_AMBIGUOUS | &quot;OUTBOUND_MESSAGE_AMBIGUOUS&quot; | 
+| ININ_OUTBOUND_CAMPAIGN_FORCED_OFF | &quot;ININ_OUTBOUND_CAMPAIGN_FORCED_OFF&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

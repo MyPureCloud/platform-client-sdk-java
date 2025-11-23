@@ -52,6 +52,7 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AVERAGE | &quot;average&quot; | 
 | COUNT | &quot;count&quot; | 
 | MAX | &quot;max&quot; | 
 | MIN | &quot;min&quot; | 
@@ -60,4 +61,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
