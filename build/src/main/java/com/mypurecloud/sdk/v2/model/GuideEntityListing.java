@@ -30,10 +30,10 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
-  private String firstUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -114,6 +114,23 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
 
   /**
    **/
+  public GuideEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
   public GuideEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -165,23 +182,6 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
 
   /**
    **/
-  public GuideEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public GuideEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -228,17 +228,17 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
             Objects.equals(this.pageSize, guideEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, guideEntityListing.pageNumber) &&
             Objects.equals(this.total, guideEntityListing.total) &&
+            Objects.equals(this.firstUri, guideEntityListing.firstUri) &&
             Objects.equals(this.previousUri, guideEntityListing.previousUri) &&
             Objects.equals(this.nextUri, guideEntityListing.nextUri) &&
             Objects.equals(this.lastUri, guideEntityListing.lastUri) &&
-            Objects.equals(this.firstUri, guideEntityListing.firstUri) &&
             Objects.equals(this.selfUri, guideEntityListing.selfUri) &&
             Objects.equals(this.pageCount, guideEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,10 +250,10 @@ public class GuideEntityListing  implements Serializable, PagedResource<Guide> {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

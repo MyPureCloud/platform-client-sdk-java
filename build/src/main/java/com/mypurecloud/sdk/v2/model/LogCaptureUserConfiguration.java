@@ -83,7 +83,7 @@ public class LogCaptureUserConfiguration  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @ApiModelProperty(example = "null", value = "The ID of the user for which log capture is configured.")
   @JsonProperty("id")
   public String getId() {
     return id;

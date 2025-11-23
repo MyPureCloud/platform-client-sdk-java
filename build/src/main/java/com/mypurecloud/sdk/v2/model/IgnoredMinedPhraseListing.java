@@ -30,10 +30,10 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
-  private String firstUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -114,6 +114,23 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
 
   /**
    **/
+  public IgnoredMinedPhraseListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
   public IgnoredMinedPhraseListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -165,23 +182,6 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
 
   /**
    **/
-  public IgnoredMinedPhraseListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public IgnoredMinedPhraseListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -228,17 +228,17 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
             Objects.equals(this.pageSize, ignoredMinedPhraseListing.pageSize) &&
             Objects.equals(this.pageNumber, ignoredMinedPhraseListing.pageNumber) &&
             Objects.equals(this.total, ignoredMinedPhraseListing.total) &&
+            Objects.equals(this.firstUri, ignoredMinedPhraseListing.firstUri) &&
             Objects.equals(this.previousUri, ignoredMinedPhraseListing.previousUri) &&
             Objects.equals(this.nextUri, ignoredMinedPhraseListing.nextUri) &&
             Objects.equals(this.lastUri, ignoredMinedPhraseListing.lastUri) &&
-            Objects.equals(this.firstUri, ignoredMinedPhraseListing.firstUri) &&
             Objects.equals(this.selfUri, ignoredMinedPhraseListing.selfUri) &&
             Objects.equals(this.pageCount, ignoredMinedPhraseListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, nextUri, lastUri, firstUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,10 +250,10 @@ public class IgnoredMinedPhraseListing  implements Serializable, PagedResource<I
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

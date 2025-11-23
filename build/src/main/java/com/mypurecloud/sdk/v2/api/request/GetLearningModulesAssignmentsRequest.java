@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleList;
+import com.mypurecloud.sdk.v2.model.LearningModuleMigrateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;

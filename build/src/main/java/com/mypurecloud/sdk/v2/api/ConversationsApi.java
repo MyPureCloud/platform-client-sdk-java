@@ -10321,7 +10321,6 @@ public class ConversationsApi {
   /**
    * Gets a record for a given meetingId
    * 
-   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param meetingId meetingId (required)
    * @return MeetingIdRecord
    * @throws ApiException if the request fails on the server
@@ -10334,7 +10333,6 @@ public class ConversationsApi {
   /**
    * Gets a record for a given meetingId
    * 
-   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param meetingId meetingId (required)
    * @return MeetingIdRecord
    * @throws IOException if the request fails to be processed
@@ -10353,7 +10351,6 @@ public class ConversationsApi {
   /**
    * Gets a record for a given meetingId
    * 
-   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return MeetingIdRecord
    * @throws ApiException if the request fails on the server
@@ -10373,7 +10370,6 @@ public class ConversationsApi {
   /**
    * Gets a record for a given meetingId
    * 
-   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -22153,7 +22149,6 @@ public class ConversationsApi {
   /**
    * Generate a meetingId for a given conferenceId
    * 
-   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body MeetingIdRequest (required)
    * @return MeetingIdRecord
    * @throws ApiException if the request fails on the server
@@ -22166,7 +22161,6 @@ public class ConversationsApi {
   /**
    * Generate a meetingId for a given conferenceId
    * 
-   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body MeetingIdRequest (required)
    * @return MeetingIdRecord
    * @throws IOException if the request fails to be processed
@@ -22185,7 +22179,6 @@ public class ConversationsApi {
   /**
    * Generate a meetingId for a given conferenceId
    * 
-   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return MeetingIdRecord
    * @throws ApiException if the request fails on the server
@@ -22205,7 +22198,6 @@ public class ConversationsApi {
   /**
    * Generate a meetingId for a given conferenceId
    * 
-   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

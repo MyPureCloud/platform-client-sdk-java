@@ -246,9 +246,11 @@ import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmAgentHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
@@ -299,6 +301,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistori
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest;
@@ -444,6 +447,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceE
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
@@ -2491,6 +2495,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmAgentHistoricalAdherenceResponse> getWorkforcemanagementAgentsMeAdherenceHistoricalJobAsync(GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest request, final AsyncApiCallback<WfmAgentHistoricalAdherenceResponse> callback) {
+    try {
+      final SettableFuture<WfmAgentHistoricalAdherenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmAgentHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmAgentHistoricalAdherenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmAgentHistoricalAdherenceResponse>> getWorkforcemanagementAgentsMeAdherenceHistoricalJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmAgentHistoricalAdherenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmAgentHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmAgentHistoricalAdherenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13380,6 +13459,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentsIntegrationsListing> response = (ApiResponse<AgentsIntegrationsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmAgentHistoricalAdherenceResponse> postWorkforcemanagementAgentsMeAdherenceHistoricalJobsAsync(PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest request, final AsyncApiCallback<WfmAgentHistoricalAdherenceResponse> callback) {
+    try {
+      final SettableFuture<WfmAgentHistoricalAdherenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmAgentHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmAgentHistoricalAdherenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmAgentHistoricalAdherenceResponse>> postWorkforcemanagementAgentsMeAdherenceHistoricalJobsAsync(ApiRequest<WfmHistoricalAdherenceQueryForAgent> request, final AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmAgentHistoricalAdherenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmAgentHistoricalAdherenceResponse>() {}, new AsyncApiCallback<ApiResponse<WfmAgentHistoricalAdherenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmAgentHistoricalAdherenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -48,6 +48,7 @@ import java.io.Serializable;
 public class Session  implements Serializable {
   
   private String id = null;
+  private AddressableEntityRef externalContact = null;
   private String customerId = null;
   private String customerIdType = null;
   private String type = null;
@@ -76,6 +77,7 @@ public class Session  implements Serializable {
   private Integer pageviewCount = null;
   private Integer screenviewCount = null;
   private SessionLastEvent lastEvent = null;
+  private AddressableEntityRef conversation = null;
   private ConnectedQueue lastConnectedQueue = null;
   private ConnectedUser lastConnectedUser = null;
   private ConversationUserDisposition lastUserDisposition = null;
@@ -252,10 +254,8 @@ public class Session  implements Serializable {
   private String selfUri = null;
   private Date createdDate = null;
   private Date endedDate = null;
-  private AddressableEntityRef externalContact = null;
   private Date awayDate = null;
   private Date idleDate = null;
-  private AddressableEntityRef conversation = null;
 
   public Session() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -283,6 +283,24 @@ public class Session  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   * The external contact associated with this session.
+   **/
+  public Session externalContact(AddressableEntityRef externalContact) {
+    this.externalContact = externalContact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external contact associated with this session.")
+  @JsonProperty("externalContact")
+  public AddressableEntityRef getExternalContact() {
+    return externalContact;
+  }
+  public void setExternalContact(AddressableEntityRef externalContact) {
+    this.externalContact = externalContact;
   }
 
 
@@ -791,6 +809,24 @@ public class Session  implements Serializable {
 
 
   /**
+   * The conversation for this session.
+   **/
+  public Session conversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversation for this session.")
+  @JsonProperty("conversation")
+  public AddressableEntityRef getConversation() {
+    return conversation;
+  }
+  public void setConversation(AddressableEntityRef conversation) {
+    this.conversation = conversation;
+  }
+
+
+  /**
    * The last queue connected to this session.
    **/
   public Session lastConnectedQueue(ConnectedQueue lastConnectedQueue) {
@@ -1032,24 +1068,6 @@ public class Session  implements Serializable {
 
 
   /**
-   * The external contact associated with this session.
-   **/
-  public Session externalContact(AddressableEntityRef externalContact) {
-    this.externalContact = externalContact;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The external contact associated with this session.")
-  @JsonProperty("externalContact")
-  public AddressableEntityRef getExternalContact() {
-    return externalContact;
-  }
-  public void setExternalContact(AddressableEntityRef externalContact) {
-    this.externalContact = externalContact;
-  }
-
-
-  /**
    * Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Session awayDate(Date awayDate) {
@@ -1085,24 +1103,6 @@ public class Session  implements Serializable {
   }
 
 
-  /**
-   * The conversation for this session.
-   **/
-  public Session conversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The conversation for this session.")
-  @JsonProperty("conversation")
-  public AddressableEntityRef getConversation() {
-    return conversation;
-  }
-  public void setConversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1114,6 +1114,7 @@ public class Session  implements Serializable {
     Session session = (Session) o;
 
     return Objects.equals(this.id, session.id) &&
+            Objects.equals(this.externalContact, session.externalContact) &&
             Objects.equals(this.customerId, session.customerId) &&
             Objects.equals(this.customerIdType, session.customerIdType) &&
             Objects.equals(this.type, session.type) &&
@@ -1142,6 +1143,7 @@ public class Session  implements Serializable {
             Objects.equals(this.pageviewCount, session.pageviewCount) &&
             Objects.equals(this.screenviewCount, session.screenviewCount) &&
             Objects.equals(this.lastEvent, session.lastEvent) &&
+            Objects.equals(this.conversation, session.conversation) &&
             Objects.equals(this.lastConnectedQueue, session.lastConnectedQueue) &&
             Objects.equals(this.lastConnectedUser, session.lastConnectedUser) &&
             Objects.equals(this.lastUserDisposition, session.lastUserDisposition) &&
@@ -1156,15 +1158,13 @@ public class Session  implements Serializable {
             Objects.equals(this.selfUri, session.selfUri) &&
             Objects.equals(this.createdDate, session.createdDate) &&
             Objects.equals(this.endedDate, session.endedDate) &&
-            Objects.equals(this.externalContact, session.externalContact) &&
             Objects.equals(this.awayDate, session.awayDate) &&
-            Objects.equals(this.idleDate, session.idleDate) &&
-            Objects.equals(this.conversation, session.conversation);
+            Objects.equals(this.idleDate, session.idleDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, divisionIds, lastScreen, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
+    return Objects.hash(id, externalContact, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, divisionIds, lastScreen, selfUri, createdDate, endedDate, awayDate, idleDate);
   }
 
   @Override
@@ -1173,6 +1173,7 @@ public class Session  implements Serializable {
     sb.append("class Session {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -1201,6 +1202,7 @@ public class Session  implements Serializable {
     sb.append("    pageviewCount: ").append(toIndentedString(pageviewCount)).append("\n");
     sb.append("    screenviewCount: ").append(toIndentedString(screenviewCount)).append("\n");
     sb.append("    lastEvent: ").append(toIndentedString(lastEvent)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    lastConnectedQueue: ").append(toIndentedString(lastConnectedQueue)).append("\n");
     sb.append("    lastConnectedUser: ").append(toIndentedString(lastConnectedUser)).append("\n");
     sb.append("    lastUserDisposition: ").append(toIndentedString(lastUserDisposition)).append("\n");
@@ -1215,10 +1217,8 @@ public class Session  implements Serializable {
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    endedDate: ").append(toIndentedString(endedDate)).append("\n");
-    sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    awayDate: ").append(toIndentedString(awayDate)).append("\n");
     sb.append("    idleDate: ").append(toIndentedString(idleDate)).append("\n");
-    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

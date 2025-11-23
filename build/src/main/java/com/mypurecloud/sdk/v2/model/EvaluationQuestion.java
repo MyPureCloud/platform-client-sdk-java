@@ -89,8 +89,8 @@ public class EvaluationQuestion  implements Serializable {
   private List<AnswerOption> answerOptions = null;
   private List<EvaluationQuestion> multipleSelectOptionQuestions = null;
   private DefaultAnswer defaultAnswer = null;
-  private Boolean isCritical = null;
   private Boolean isKill = null;
+  private Boolean isCritical = null;
 
   public EvaluationQuestion() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -282,23 +282,6 @@ public class EvaluationQuestion  implements Serializable {
 
   /**
    **/
-  public EvaluationQuestion isCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("isCritical")
-  public Boolean getIsCritical() {
-    return isCritical;
-  }
-  public void setIsCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
-  }
-
-
-  /**
-   **/
   public EvaluationQuestion isKill(Boolean isKill) {
     this.isKill = isKill;
     return this;
@@ -311,6 +294,23 @@ public class EvaluationQuestion  implements Serializable {
   }
   public void setIsKill(Boolean isKill) {
     this.isKill = isKill;
+  }
+
+
+  /**
+   **/
+  public EvaluationQuestion isCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isCritical")
+  public Boolean getIsCritical() {
+    return isCritical;
+  }
+  public void setIsCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
   }
 
 
@@ -335,13 +335,13 @@ public class EvaluationQuestion  implements Serializable {
             Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
             Objects.equals(this.multipleSelectOptionQuestions, evaluationQuestion.multipleSelectOptionQuestions) &&
             Objects.equals(this.defaultAnswer, evaluationQuestion.defaultAnswer) &&
-            Objects.equals(this.isCritical, evaluationQuestion.isCritical) &&
-            Objects.equals(this.isKill, evaluationQuestion.isKill);
+            Objects.equals(this.isKill, evaluationQuestion.isKill) &&
+            Objects.equals(this.isCritical, evaluationQuestion.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, defaultAnswer, isCritical, isKill);
+    return Objects.hash(id, contextId, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, multipleSelectOptionQuestions, defaultAnswer, isKill, isCritical);
   }
 
   @Override
@@ -360,8 +360,8 @@ public class EvaluationQuestion  implements Serializable {
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
     sb.append("    multipleSelectOptionQuestions: ").append(toIndentedString(multipleSelectOptionQuestions)).append("\n");
     sb.append("    defaultAnswer: ").append(toIndentedString(defaultAnswer)).append("\n");
-    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
+    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");
     return sb.toString();
   }

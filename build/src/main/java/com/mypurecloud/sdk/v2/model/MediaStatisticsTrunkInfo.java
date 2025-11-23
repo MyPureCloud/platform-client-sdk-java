@@ -53,6 +53,7 @@ public class MediaStatisticsTrunkInfo  implements Serializable {
     TIE_DIRECT("tie.direct"),
     TIE_INDIRECT("tie.indirect"),
     TIE_CLOUD_PROXY("tie.cloud.proxy"),
+    TIE_CLOUD_PROXY_CALLSESSION("tie.cloud.proxy.callsession"),
     STATION("station"),
     STATION_CDM("station.cdm"),
     STATION_CDM_WEBRTC("station.cdm.webrtc");

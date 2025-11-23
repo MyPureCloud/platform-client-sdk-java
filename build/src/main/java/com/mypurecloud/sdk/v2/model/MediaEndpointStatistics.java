@@ -54,7 +54,8 @@ public class MediaEndpointStatistics  implements Serializable {
  @JsonDeserialize(using = SourceTypeEnumDeserializer.class)
   public enum SourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CLIENT("Client");
+    CLIENT("Client"),
+    SERVER("Server");
 
     private String value;
 

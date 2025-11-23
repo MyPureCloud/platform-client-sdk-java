@@ -55,7 +55,8 @@ public class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestio
     ACCEPTED("Accepted"),
     DISMISSED("Dismissed"),
     FAILED("Failed"),
-    RATED("Rated");
+    RATED("Rated"),
+    TRIGGERED("Triggered");
 
     private String value;
 

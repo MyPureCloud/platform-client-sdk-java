@@ -243,9 +243,11 @@ import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmAgentHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
@@ -296,6 +298,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistori
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest;
@@ -441,6 +444,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceE
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesManagementunitsMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
@@ -2598,6 +2602,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId ID of the job to get (required)
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmAgentHistoricalAdherenceResponse getWorkforcemanagementAgentsMeAdherenceHistoricalJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAgentsMeAdherenceHistoricalJob(createGetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest(jobId));
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId ID of the job to get (required)
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmAgentHistoricalAdherenceResponse> getWorkforcemanagementAgentsMeAdherenceHistoricalJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAgentsMeAdherenceHistoricalJob(createGetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest createGetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest(String jobId) {
+    return GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmAgentHistoricalAdherenceResponse getWorkforcemanagementAgentsMeAdherenceHistoricalJob(GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmAgentHistoricalAdherenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmAgentHistoricalAdherenceResponse> getWorkforcemanagementAgentsMeAdherenceHistoricalJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmAgentHistoricalAdherenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14598,6 +14680,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentsIntegrationsListing> response = (ApiResponse<AgentsIntegrationsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param expand Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. (optional)
+   * @param body body (optional)
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmAgentHistoricalAdherenceResponse postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(List<String> expand, WfmHistoricalAdherenceQueryForAgent body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(createPostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest(expand, body));
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param expand Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. (optional)
+   * @param body body (optional)
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmAgentHistoricalAdherenceResponse> postWorkforcemanagementAgentsMeAdherenceHistoricalJobsWithHttpInfo(List<String> expand, WfmHistoricalAdherenceQueryForAgent body) throws IOException {
+    return postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(createPostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest(expand, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest createPostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest(List<String> expand, WfmHistoricalAdherenceQueryForAgent body) {
+    return PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest.builder()
+            .withExpand(expand)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param request The request object
+   * @return WfmAgentHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmAgentHistoricalAdherenceResponse postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(PostWorkforcemanagementAgentsMeAdherenceHistoricalJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmAgentHistoricalAdherenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request an agent historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmAgentHistoricalAdherenceResponse> postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(ApiRequest<WfmHistoricalAdherenceQueryForAgent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmAgentHistoricalAdherenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmAgentHistoricalAdherenceResponse> response = (ApiResponse<WfmAgentHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -115,7 +115,8 @@ public class Metabase  implements Serializable {
     TIE("TIE"),
     TIE_DIRECT("TIE_DIRECT"),
     TIE_INDIRECT("TIE_INDIRECT"),
-    TIE_CLOUD_PROXY("TIE_CLOUD_PROXY");
+    TIE_CLOUD_PROXY("TIE_CLOUD_PROXY"),
+    TIE_CLOUD_PROXY_CALLSESSION("TIE_CLOUD_PROXY_CALLSESSION");
 
     private String value;
 

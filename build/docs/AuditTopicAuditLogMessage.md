@@ -141,6 +141,8 @@
 | UPDATERETENTION | &quot;UpdateRetention&quot; | 
 | APPLYPROTECTION | &quot;ApplyProtection&quot; | 
 | REVOKEPROTECTION | &quot;RevokeProtection&quot; | 
+| START | &quot;Start&quot; | 
+| STOP | &quot;Stop&quot; | 
 | ROTATE | &quot;Rotate&quot; | 
 | DELETEALL | &quot;DeleteAll&quot; | 
 | REASSIGN | &quot;Reassign&quot; | 
@@ -272,6 +274,7 @@
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; | 
 | SNIPPETRECORDINGSETTINGS | &quot;SnippetRecordingSettings&quot; | 
+| SCREENMONITORING | &quot;ScreenMonitoring&quot; | 
 | RECORDINGKEY | &quot;RecordingKey&quot; | 
 | RECORDINGKEYCONFIG | &quot;RecordingKeyConfig&quot; | 
 | TOPIC | &quot;Topic&quot; | 
@@ -476,4 +479,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

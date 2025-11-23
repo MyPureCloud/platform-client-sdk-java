@@ -139,7 +139,8 @@ public class ConversationContentInput  implements Serializable {
     BIRTHDATEMONTH("BirthdateMonth"),
     BIRTHDATEYEAR("BirthdateYear"),
     DATETIME("DateTime"),
-    FLIGHTNUMBER("FlightNumber");
+    FLIGHTNUMBER("FlightNumber"),
+    URL("Url");
 
     private String value;
 

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicConversationDivisionMembership;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicDomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicParticipant;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
@@ -38,12 +39,15 @@ public class ConversationEventTopicConversation  implements Serializable {
   private String utilizationLabelId = null;
   private Boolean securePause = null;
   private Date inactivityTimeout = null;
+  private ConversationEventTopicDomainEntityRef associatedConversation = null;
+  private List<ConversationEventTopicDomainEntityRef> consultationConversations = null;
   private List<ConversationEventTopicConversationDivisionMembership> divisions = null;
 
   public ConversationEventTopicConversation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<ConversationEventTopicParticipant>();
       recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
+      consultationConversations = new ArrayList<ConversationEventTopicDomainEntityRef>();
       divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
     }
   }
@@ -221,6 +225,40 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
+  public ConversationEventTopicConversation associatedConversation(ConversationEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedConversation")
+  public ConversationEventTopicDomainEntityRef getAssociatedConversation() {
+    return associatedConversation;
+  }
+  public void setAssociatedConversation(ConversationEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+  }
+
+
+  /**
+   **/
+  public ConversationEventTopicConversation consultationConversations(List<ConversationEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("consultationConversations")
+  public List<ConversationEventTopicDomainEntityRef> getConsultationConversations() {
+    return consultationConversations;
+  }
+  public void setConsultationConversations(List<ConversationEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+  }
+
+
+  /**
+   **/
   public ConversationEventTopicConversation divisions(List<ConversationEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -256,12 +294,14 @@ public class ConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.utilizationLabelId, conversationEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, conversationEventTopicConversation.securePause) &&
             Objects.equals(this.inactivityTimeout, conversationEventTopicConversation.inactivityTimeout) &&
+            Objects.equals(this.associatedConversation, conversationEventTopicConversation.associatedConversation) &&
+            Objects.equals(this.consultationConversations, conversationEventTopicConversation.consultationConversations) &&
             Objects.equals(this.divisions, conversationEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, associatedConversation, consultationConversations, divisions);
   }
 
   @Override
@@ -279,6 +319,8 @@ public class ConversationEventTopicConversation  implements Serializable {
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
+    sb.append("    associatedConversation: ").append(toIndentedString(associatedConversation)).append("\n");
+    sb.append("    consultationConversations: ").append(toIndentedString(consultationConversations)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

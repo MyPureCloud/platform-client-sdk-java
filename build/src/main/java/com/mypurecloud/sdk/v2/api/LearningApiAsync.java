@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleList;
+import com.mypurecloud.sdk.v2.model.LearningModuleMigrateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
@@ -81,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningModuleRuleMigrateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsJobsRequest;
@@ -2272,6 +2274,83 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningModulePublishResponse> response = (ApiResponse<LearningModulePublishResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningModuleMigrateResponse> postLearningModuleRuleMigrateAsync(PostLearningModuleRuleMigrateRequest request, final AsyncApiCallback<LearningModuleMigrateResponse> callback) {
+    try {
+      final SettableFuture<LearningModuleMigrateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningModuleMigrateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModuleMigrateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModuleMigrateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningModuleMigrateResponse>> postLearningModuleRuleMigrateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningModuleMigrateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningModuleMigrateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningModuleMigrateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModuleMigrateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModuleMigrateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModuleMigrateResponse> response = (ApiResponse<LearningModuleMigrateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModuleMigrateResponse> response = (ApiResponse<LearningModuleMigrateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

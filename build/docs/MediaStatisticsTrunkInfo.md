@@ -24,6 +24,7 @@
 | TIE_DIRECT | &quot;tie.direct&quot; | 
 | TIE_INDIRECT | &quot;tie.indirect&quot; | 
 | TIE_CLOUD_PROXY | &quot;tie.cloud.proxy&quot; | 
+| TIE_CLOUD_PROXY_CALLSESSION | &quot;tie.cloud.proxy.callsession&quot; | 
 | STATION | &quot;station&quot; | 
 | STATION_CDM | &quot;station.cdm&quot; | 
 | STATION_CDM_WEBRTC | &quot;station.cdm.webrtc&quot; | 
@@ -31,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

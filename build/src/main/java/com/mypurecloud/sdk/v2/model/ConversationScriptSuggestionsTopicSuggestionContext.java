@@ -80,6 +80,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
   private String utteranceId = null;
   private String messageId = null;
   private String queryStatement = null;
+  private String language = null;
 
   public ConversationScriptSuggestionsTopicSuggestionContext() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -223,6 +224,23 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
   }
 
 
+  /**
+   **/
+  public ConversationScriptSuggestionsTopicSuggestionContext language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -240,12 +258,13 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
             Objects.equals(this.assistantId, conversationScriptSuggestionsTopicSuggestionContext.assistantId) &&
             Objects.equals(this.utteranceId, conversationScriptSuggestionsTopicSuggestionContext.utteranceId) &&
             Objects.equals(this.messageId, conversationScriptSuggestionsTopicSuggestionContext.messageId) &&
-            Objects.equals(this.queryStatement, conversationScriptSuggestionsTopicSuggestionContext.queryStatement);
+            Objects.equals(this.queryStatement, conversationScriptSuggestionsTopicSuggestionContext.queryStatement) &&
+            Objects.equals(this.language, conversationScriptSuggestionsTopicSuggestionContext.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language);
   }
 
   @Override
@@ -261,6 +280,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
     sb.append("    utteranceId: ").append(toIndentedString(utteranceId)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

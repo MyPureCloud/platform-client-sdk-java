@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicConversationDivisionMembership;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicDomainEntityRef;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicParticipant;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
@@ -38,12 +39,15 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   private String utilizationLabelId = null;
   private Boolean securePause = null;
   private Date inactivityTimeout = null;
+  private QueueConversationVideoEventTopicDomainEntityRef associatedConversation = null;
+  private List<QueueConversationVideoEventTopicDomainEntityRef> consultationConversations = null;
   private List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions = null;
 
   public QueueConversationVideoEventTopicConversation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
       recentTransfers = new ArrayList<QueueConversationVideoEventTopicTransferResponse>();
+      consultationConversations = new ArrayList<QueueConversationVideoEventTopicDomainEntityRef>();
       divisions = new ArrayList<QueueConversationVideoEventTopicConversationDivisionMembership>();
     }
   }
@@ -221,6 +225,40 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
 
   /**
    **/
+  public QueueConversationVideoEventTopicConversation associatedConversation(QueueConversationVideoEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedConversation")
+  public QueueConversationVideoEventTopicDomainEntityRef getAssociatedConversation() {
+    return associatedConversation;
+  }
+  public void setAssociatedConversation(QueueConversationVideoEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+  }
+
+
+  /**
+   **/
+  public QueueConversationVideoEventTopicConversation consultationConversations(List<QueueConversationVideoEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("consultationConversations")
+  public List<QueueConversationVideoEventTopicDomainEntityRef> getConsultationConversations() {
+    return consultationConversations;
+  }
+  public void setConsultationConversations(List<QueueConversationVideoEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+  }
+
+
+  /**
+   **/
   public QueueConversationVideoEventTopicConversation divisions(List<QueueConversationVideoEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -256,12 +294,14 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
             Objects.equals(this.utilizationLabelId, queueConversationVideoEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationVideoEventTopicConversation.securePause) &&
             Objects.equals(this.inactivityTimeout, queueConversationVideoEventTopicConversation.inactivityTimeout) &&
+            Objects.equals(this.associatedConversation, queueConversationVideoEventTopicConversation.associatedConversation) &&
+            Objects.equals(this.consultationConversations, queueConversationVideoEventTopicConversation.consultationConversations) &&
             Objects.equals(this.divisions, queueConversationVideoEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, associatedConversation, consultationConversations, divisions);
   }
 
   @Override
@@ -279,6 +319,8 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
+    sb.append("    associatedConversation: ").append(toIndentedString(associatedConversation)).append("\n");
+    sb.append("    consultationConversations: ").append(toIndentedString(consultationConversations)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

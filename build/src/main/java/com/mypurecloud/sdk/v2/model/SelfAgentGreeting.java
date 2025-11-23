@@ -24,7 +24,6 @@ import java.io.Serializable;
 public class SelfAgentGreeting  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private Prompt inboundPrompt = null;
   private Prompt outboundPrompt = null;
   private String inboundPromptDefaultLanguage = null;
@@ -37,27 +36,10 @@ public class SelfAgentGreeting  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @ApiModelProperty(example = "null", value = "The ID of the associated user.")
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   **/
-  public SelfAgentGreeting name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
 
@@ -151,7 +133,6 @@ public class SelfAgentGreeting  implements Serializable {
     SelfAgentGreeting selfAgentGreeting = (SelfAgentGreeting) o;
 
     return Objects.equals(this.id, selfAgentGreeting.id) &&
-            Objects.equals(this.name, selfAgentGreeting.name) &&
             Objects.equals(this.inboundPrompt, selfAgentGreeting.inboundPrompt) &&
             Objects.equals(this.outboundPrompt, selfAgentGreeting.outboundPrompt) &&
             Objects.equals(this.inboundPromptDefaultLanguage, selfAgentGreeting.inboundPromptDefaultLanguage) &&
@@ -161,7 +142,7 @@ public class SelfAgentGreeting  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, inboundPrompt, outboundPrompt, inboundPromptDefaultLanguage, outboundPromptDefaultLanguage, selfUri);
+    return Objects.hash(id, inboundPrompt, outboundPrompt, inboundPromptDefaultLanguage, outboundPromptDefaultLanguage, selfUri);
   }
 
   @Override
@@ -170,7 +151,6 @@ public class SelfAgentGreeting  implements Serializable {
     sb.append("class SelfAgentGreeting {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    inboundPrompt: ").append(toIndentedString(inboundPrompt)).append("\n");
     sb.append("    outboundPrompt: ").append(toIndentedString(outboundPrompt)).append("\n");
     sb.append("    inboundPromptDefaultLanguage: ").append(toIndentedString(inboundPromptDefaultLanguage)).append("\n");

@@ -48,8 +48,9 @@
 | TIE_DIRECT | &quot;TIE_DIRECT&quot; | 
 | TIE_INDIRECT | &quot;TIE_INDIRECT&quot; | 
 | TIE_CLOUD_PROXY | &quot;TIE_CLOUD_PROXY&quot; | 
+| TIE_CLOUD_PROXY_CALLSESSION | &quot;TIE_CLOUD_PROXY_CALLSESSION&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

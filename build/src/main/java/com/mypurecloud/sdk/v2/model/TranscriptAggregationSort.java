@@ -99,6 +99,7 @@ public class TranscriptAggregationSort  implements Serializable {
  @JsonDeserialize(using = FunctionEnumDeserializer.class)
   public enum FunctionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AVERAGE("average"),
     COUNT("count"),
     MAX("max"),
     MIN("min"),

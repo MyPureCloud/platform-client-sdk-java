@@ -37,8 +37,8 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
   private String baseLicense = null;
   private List<String> addonLicenses = null;
   private Date dateLicenseLastUpdated = null;
-  private Boolean base = null;
   private Boolean _default = null;
+  private Boolean base = null;
   private String selfUri = null;
 
   public DomainOrganizationRoleUpdate() {
@@ -240,23 +240,6 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
 
   /**
    **/
-  public DomainOrganizationRoleUpdate base(Boolean base) {
-    this.base = base;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("base")
-  public Boolean getBase() {
-    return base;
-  }
-  public void setBase(Boolean base) {
-    this.base = base;
-  }
-
-
-  /**
-   **/
   public DomainOrganizationRoleUpdate _default(Boolean _default) {
     this._default = _default;
     return this;
@@ -269,6 +252,23 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
   }
   public void setDefault(Boolean _default) {
     this._default = _default;
+  }
+
+
+  /**
+   **/
+  public DomainOrganizationRoleUpdate base(Boolean base) {
+    this.base = base;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("base")
+  public Boolean getBase() {
+    return base;
+  }
+  public void setBase(Boolean base) {
+    this.base = base;
   }
 
 
@@ -301,14 +301,14 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
             Objects.equals(this.baseLicense, domainOrganizationRoleUpdate.baseLicense) &&
             Objects.equals(this.addonLicenses, domainOrganizationRoleUpdate.addonLicenses) &&
             Objects.equals(this.dateLicenseLastUpdated, domainOrganizationRoleUpdate.dateLicenseLastUpdated) &&
-            Objects.equals(this.base, domainOrganizationRoleUpdate.base) &&
             Objects.equals(this._default, domainOrganizationRoleUpdate._default) &&
+            Objects.equals(this.base, domainOrganizationRoleUpdate.base) &&
             Objects.equals(this.selfUri, domainOrganizationRoleUpdate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, defaultRoleId, permissions, unusedPermissions, permissionPolicies, userCount, roleNeedsUpdate, baseLicense, addonLicenses, dateLicenseLastUpdated, base, _default, selfUri);
+    return Objects.hash(id, name, description, defaultRoleId, permissions, unusedPermissions, permissionPolicies, userCount, roleNeedsUpdate, baseLicense, addonLicenses, dateLicenseLastUpdated, _default, base, selfUri);
   }
 
   @Override
@@ -328,8 +328,8 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     sb.append("    baseLicense: ").append(toIndentedString(baseLicense)).append("\n");
     sb.append("    addonLicenses: ").append(toIndentedString(addonLicenses)).append("\n");
     sb.append("    dateLicenseLastUpdated: ").append(toIndentedString(dateLicenseLastUpdated)).append("\n");
-    sb.append("    base: ").append(toIndentedString(base)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    sb.append("    base: ").append(toIndentedString(base)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

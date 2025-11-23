@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleList;
+import com.mypurecloud.sdk.v2.model.LearningModuleMigrateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
@@ -78,6 +79,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningModuleRuleMigrateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsJobsRequest;
@@ -2596,6 +2598,88 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningModulePublishResponse> response = (ApiResponse<LearningModulePublishResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param moduleId The ID of the learning module (required)
+   * @return LearningModuleMigrateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleMigrateResponse postLearningModuleRuleMigrate(String moduleId) throws IOException, ApiException {
+    return  postLearningModuleRuleMigrate(createPostLearningModuleRuleMigrateRequest(moduleId));
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param moduleId The ID of the learning module (required)
+   * @return LearningModuleMigrateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleMigrateResponse> postLearningModuleRuleMigrateWithHttpInfo(String moduleId) throws IOException {
+    return postLearningModuleRuleMigrate(createPostLearningModuleRuleMigrateRequest(moduleId).withHttpInfo());
+  }
+
+  private PostLearningModuleRuleMigrateRequest createPostLearningModuleRuleMigrateRequest(String moduleId) {
+    return PostLearningModuleRuleMigrateRequest.builder()
+            .withModuleId(moduleId)
+
+            .build();
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return LearningModuleMigrateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleMigrateResponse postLearningModuleRuleMigrate(PostLearningModuleRuleMigrateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModuleMigrateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModuleMigrateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Migrate a legacy learning module rule to a users rule.
+   * 
+   * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleMigrateResponse> postLearningModuleRuleMigrate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModuleMigrateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleMigrateResponse> response = (ApiResponse<LearningModuleMigrateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleMigrateResponse> response = (ApiResponse<LearningModuleMigrateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

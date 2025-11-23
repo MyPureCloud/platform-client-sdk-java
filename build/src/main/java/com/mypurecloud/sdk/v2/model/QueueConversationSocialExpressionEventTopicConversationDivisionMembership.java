@@ -37,13 +37,14 @@ public class QueueConversationSocialExpressionEventTopicConversationDivisionMemb
 
   
   /**
+   * A reference to another domain entity.
    **/
   public QueueConversationSocialExpressionEventTopicConversationDivisionMembership division(QueueConversationSocialExpressionEventTopicDomainEntityRef division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A reference to another domain entity.")
   @JsonProperty("division")
   public QueueConversationSocialExpressionEventTopicDomainEntityRef getDivision() {
     return division;

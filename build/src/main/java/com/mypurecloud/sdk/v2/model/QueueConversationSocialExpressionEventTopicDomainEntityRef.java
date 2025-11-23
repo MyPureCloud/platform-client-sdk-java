@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * A reference to another domain entity.
+ * QueueConversationSocialExpressionEventTopicDomainEntityRef
  */
-@ApiModel(description = "A reference to another domain entity.")
 
 public class QueueConversationSocialExpressionEventTopicDomainEntityRef  implements Serializable {
   

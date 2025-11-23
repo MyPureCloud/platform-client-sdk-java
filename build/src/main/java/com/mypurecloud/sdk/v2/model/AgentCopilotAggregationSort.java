@@ -44,6 +44,7 @@ public class AgentCopilotAggregationSort  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
+    NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),
     NKNOWLEDGESEARCHSUGGESTIONS("nKnowledgeSearchSuggestions"),
     NSCRIPTSUGGESTIONS("nScriptSuggestions");
@@ -93,6 +94,7 @@ public class AgentCopilotAggregationSort  implements Serializable {
  @JsonDeserialize(using = FunctionEnumDeserializer.class)
   public enum FunctionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AVERAGE("average"),
     COUNT("count"),
     MAX("max"),
     MIN("min"),

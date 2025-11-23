@@ -45,6 +45,7 @@ public class AgentCopilotAggregationView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NCANNEDRESPONSESUGGESTIONS("nCannedResponseSuggestions"),
     NDISTINCTSUGGESTIONS("nDistinctSuggestions"),
+    NKNOWLEDGEANSWERSUGGESTIONS("nKnowledgeAnswerSuggestions"),
     NKNOWLEDGEARTICLESUGGESTIONS("nKnowledgeArticleSuggestions"),
     NKNOWLEDGESEARCHSUGGESTIONS("nKnowledgeSearchSuggestions"),
     NSCRIPTSUGGESTIONS("nScriptSuggestions");

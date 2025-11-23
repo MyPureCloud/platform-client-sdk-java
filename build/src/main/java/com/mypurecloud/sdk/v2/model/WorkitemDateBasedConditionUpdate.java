@@ -44,7 +44,8 @@ public class WorkitemDateBasedConditionUpdate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATEDUE("dateDue"),
     DATEEXPIRES("dateExpires"),
-    TTL("ttl");
+    TTL("ttl"),
+    DATECREATED("dateCreated");
 
     private String value;
 

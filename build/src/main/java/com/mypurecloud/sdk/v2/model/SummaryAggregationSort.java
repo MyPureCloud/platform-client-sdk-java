@@ -91,6 +91,7 @@ public class SummaryAggregationSort  implements Serializable {
  @JsonDeserialize(using = FunctionEnumDeserializer.class)
   public enum FunctionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AVERAGE("average"),
     COUNT("count"),
     MAX("max"),
     MIN("min"),

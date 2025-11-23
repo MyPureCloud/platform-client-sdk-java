@@ -37,13 +37,14 @@ public class ConversationEventTopicConversationDivisionMembership  implements Se
 
   
   /**
+   * A reference to another domain entity.
    **/
   public ConversationEventTopicConversationDivisionMembership division(ConversationEventTopicDomainEntityRef division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A reference to another domain entity.")
   @JsonProperty("division")
   public ConversationEventTopicDomainEntityRef getDivision() {
     return division;

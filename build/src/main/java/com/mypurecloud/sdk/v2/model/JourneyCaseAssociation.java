@@ -26,10 +26,10 @@ import java.io.Serializable;
 public class JourneyCaseAssociation  implements Serializable {
   
   private String id = null;
+  private AddressableEntityRef associatedCase = null;
   private String caseReference = null;
   private Date dateAssociated = null;
   private String selfUri = null;
-  private AddressableEntityRef _case = null;
 
   public JourneyCaseAssociation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -52,6 +52,24 @@ public class JourneyCaseAssociation  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   * The case that was associated with the journey session.
+   **/
+  public JourneyCaseAssociation associatedCase(AddressableEntityRef associatedCase) {
+    this.associatedCase = associatedCase;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The case that was associated with the journey session.")
+  @JsonProperty("associatedCase")
+  public AddressableEntityRef getAssociatedCase() {
+    return associatedCase;
+  }
+  public void setAssociatedCase(AddressableEntityRef associatedCase) {
+    this.associatedCase = associatedCase;
   }
 
 
@@ -98,24 +116,6 @@ public class JourneyCaseAssociation  implements Serializable {
   }
 
 
-  /**
-   * The case that was associated with the journey session.
-   **/
-  public JourneyCaseAssociation _case(AddressableEntityRef _case) {
-    this._case = _case;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The case that was associated with the journey session.")
-  @JsonProperty("case")
-  public AddressableEntityRef getCase() {
-    return _case;
-  }
-  public void setCase(AddressableEntityRef _case) {
-    this._case = _case;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -127,15 +127,15 @@ public class JourneyCaseAssociation  implements Serializable {
     JourneyCaseAssociation journeyCaseAssociation = (JourneyCaseAssociation) o;
 
     return Objects.equals(this.id, journeyCaseAssociation.id) &&
+            Objects.equals(this.associatedCase, journeyCaseAssociation.associatedCase) &&
             Objects.equals(this.caseReference, journeyCaseAssociation.caseReference) &&
             Objects.equals(this.dateAssociated, journeyCaseAssociation.dateAssociated) &&
-            Objects.equals(this.selfUri, journeyCaseAssociation.selfUri) &&
-            Objects.equals(this._case, journeyCaseAssociation._case);
+            Objects.equals(this.selfUri, journeyCaseAssociation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, caseReference, dateAssociated, selfUri, _case);
+    return Objects.hash(id, associatedCase, caseReference, dateAssociated, selfUri);
   }
 
   @Override
@@ -144,10 +144,10 @@ public class JourneyCaseAssociation  implements Serializable {
     sb.append("class JourneyCaseAssociation {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    associatedCase: ").append(toIndentedString(associatedCase)).append("\n");
     sb.append("    caseReference: ").append(toIndentedString(caseReference)).append("\n");
     sb.append("    dateAssociated: ").append(toIndentedString(dateAssociated)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    _case: ").append(toIndentedString(_case)).append("\n");
     sb.append("}");
     return sb.toString();
   }

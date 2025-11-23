@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicConversationDivisionMembership;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDomainEntityRef;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicParticipant;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
@@ -38,12 +39,15 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   private String utilizationLabelId = null;
   private Boolean securePause = null;
   private Date inactivityTimeout = null;
+  private QueueConversationSocialExpressionEventTopicDomainEntityRef associatedConversation = null;
+  private List<QueueConversationSocialExpressionEventTopicDomainEntityRef> consultationConversations = null;
   private List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = null;
 
   public QueueConversationSocialExpressionEventTopicConversation() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
       recentTransfers = new ArrayList<QueueConversationSocialExpressionEventTopicTransferResponse>();
+      consultationConversations = new ArrayList<QueueConversationSocialExpressionEventTopicDomainEntityRef>();
       divisions = new ArrayList<QueueConversationSocialExpressionEventTopicConversationDivisionMembership>();
     }
   }
@@ -221,6 +225,40 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
 
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicConversation associatedConversation(QueueConversationSocialExpressionEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedConversation")
+  public QueueConversationSocialExpressionEventTopicDomainEntityRef getAssociatedConversation() {
+    return associatedConversation;
+  }
+  public void setAssociatedConversation(QueueConversationSocialExpressionEventTopicDomainEntityRef associatedConversation) {
+    this.associatedConversation = associatedConversation;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicConversation consultationConversations(List<QueueConversationSocialExpressionEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("consultationConversations")
+  public List<QueueConversationSocialExpressionEventTopicDomainEntityRef> getConsultationConversations() {
+    return consultationConversations;
+  }
+  public void setConsultationConversations(List<QueueConversationSocialExpressionEventTopicDomainEntityRef> consultationConversations) {
+    this.consultationConversations = consultationConversations;
+  }
+
+
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicConversation divisions(List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> divisions) {
     this.divisions = divisions;
     return this;
@@ -256,12 +294,14 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
             Objects.equals(this.utilizationLabelId, queueConversationSocialExpressionEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationSocialExpressionEventTopicConversation.securePause) &&
             Objects.equals(this.inactivityTimeout, queueConversationSocialExpressionEventTopicConversation.inactivityTimeout) &&
+            Objects.equals(this.associatedConversation, queueConversationSocialExpressionEventTopicConversation.associatedConversation) &&
+            Objects.equals(this.consultationConversations, queueConversationSocialExpressionEventTopicConversation.consultationConversations) &&
             Objects.equals(this.divisions, queueConversationSocialExpressionEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, divisions);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, inactivityTimeout, associatedConversation, consultationConversations, divisions);
   }
 
   @Override
@@ -279,6 +319,8 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    inactivityTimeout: ").append(toIndentedString(inactivityTimeout)).append("\n");
+    sb.append("    associatedConversation: ").append(toIndentedString(associatedConversation)).append("\n");
+    sb.append("    consultationConversations: ").append(toIndentedString(consultationConversations)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();

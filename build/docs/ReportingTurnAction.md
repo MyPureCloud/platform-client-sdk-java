@@ -25,6 +25,7 @@
 | ASKSURVEYQUESTIONACTION | &quot;AskSurveyQuestionAction&quot; | 
 | ASKFORNLUNEXTINTENTACTION | &quot;AskForNLUNextIntentAction&quot; | 
 | BOTSTATE | &quot;BotState&quot; | 
+| CALLAGENTICVIRTUALAGENTACTION | &quot;CallAgenticVirtualAgentAction&quot; | 
 | CALLBOTFLOWACTION | &quot;CallBotFlowAction&quot; | 
 | CALLDIGITALBOTFLOWACTION | &quot;CallDigitalBotFlowAction&quot; | 
 | CALLTASKACTION | &quot;CallTaskAction&quot; | 
@@ -95,4 +96,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

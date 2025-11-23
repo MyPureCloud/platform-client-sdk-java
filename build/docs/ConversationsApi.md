@@ -7580,8 +7580,6 @@ try {
 
 Gets a record for a given meetingId
 
-getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/videos/meetings/{meetingId}  
 
 Requires ANY permissions: 
@@ -16484,8 +16482,6 @@ null (empty response body)
 
 Generate a meetingId for a given conferenceId
 
-postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/videos/meetings  
 
 Requires ANY permissions: 
@@ -18023,4 +18019,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_

@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
 | [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentManagementunit) | Get the management unit to which the agent belongs |
+| [**getWorkforcemanagementAgentsMeAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAgentsMeAdherenceHistoricalJob) | Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentsMeManagementunit) | Get the management unit to which the currently logged in agent belongs |
 | [**getWorkforcemanagementAlternativeshiftsOffersJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersJob) | Query the status of an alternative shift offers operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAlternativeshiftsOffersSearchJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersSearchJob) | Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status |
@@ -175,6 +176,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
 | [**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
+| [**postWorkforcemanagementAgentsMeAdherenceHistoricalJobs**](WorkforceManagementApi#postWorkforcemanagementAgentsMeAdherenceHistoricalJobs) | Request an agent historical adherence report |
 | [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi#postWorkforcemanagementAgentsMePossibleworkshifts) | Get agent possible work shifts for requested time frame |
 | [**postWorkforcemanagementAgentschedulesManagementunitsMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesManagementunitsMine) | Fetch agent schedules for the logged in user's management unit |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
@@ -1833,6 +1835,66 @@ try {
 ### Return type
 
 [**AgentManagementUnitReference**](AgentManagementUnitReference)
+
+
+# **getWorkforcemanagementAgentsMeAdherenceHistoricalJob**
+
+
+> [WfmAgentHistoricalAdherenceResponse](WfmAgentHistoricalAdherenceResponse) getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId)
+
+Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | ID of the job to get
+try {
+    WfmAgentHistoricalAdherenceResponse result = apiInstance.getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAgentsMeAdherenceHistoricalJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job to get | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse)
 
 
 # **getWorkforcemanagementAgentsMeManagementunit**
@@ -11071,6 +11133,70 @@ try {
 [**AgentsIntegrationsListing**](AgentsIntegrationsListing)
 
 
+# **postWorkforcemanagementAgentsMeAdherenceHistoricalJobs**
+
+
+> [WfmAgentHistoricalAdherenceResponse](WfmAgentHistoricalAdherenceResponse) postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(expand, body)
+
+Request an agent historical adherence report
+
+The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+
+Wraps POST /api/v2/workforcemanagement/agents/me/adherence/historical/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentHistoricalAdherence:view
+* wfm:agentHistoricalAdherenceConformance:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
+WfmHistoricalAdherenceQueryForAgent body = new WfmHistoricalAdherenceQueryForAgent(); // WfmHistoricalAdherenceQueryForAgent | body
+try {
+    WfmAgentHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(expand, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentsMeAdherenceHistoricalJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. | [optional]<br />**Values**: exceptionInfo, actuals, scheduledActivities, conformance 
+| **body** | [**WfmHistoricalAdherenceQueryForAgent**](WfmHistoricalAdherenceQueryForAgent)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse)
+
+
 # **postWorkforcemanagementAgentsMePossibleworkshifts**
 
 
@@ -16639,4 +16765,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:237.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
