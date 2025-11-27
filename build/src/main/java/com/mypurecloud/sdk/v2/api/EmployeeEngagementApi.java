@@ -12,15 +12,18 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CelebrationStateParam;
 import com.mypurecloud.sdk.v2.model.CreateRecognition;
+import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetCelebrationListing;
 import com.mypurecloud.sdk.v2.model.Recognition;
 import com.mypurecloud.sdk.v2.model.RecognitionBase;
+import com.mypurecloud.sdk.v2.model.Recognitions;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeengagementCelebrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementCelebrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementRecognitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementRecognitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeengagementCelebrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeengagementRecognitionsRequest;
 
@@ -272,6 +275,104 @@ public class EmployeeEngagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Recognition> response = (ApiResponse<Recognition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param direction The direction of the recognitions. (optional, default to received)
+   * @param recipient The ID of the recipient (when direction is sent). (optional)
+   * @param dateStart The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param dateEnd The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return Recognitions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recognitions getEmployeeengagementRecognitions(String direction, String recipient, Date dateStart, Date dateEnd, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getEmployeeengagementRecognitions(createGetEmployeeengagementRecognitionsRequest(direction, recipient, dateStart, dateEnd, pageSize, pageNumber));
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param direction The direction of the recognitions. (optional, default to received)
+   * @param recipient The ID of the recipient (when direction is sent). (optional)
+   * @param dateStart The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param dateEnd The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return Recognitions
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recognitions> getEmployeeengagementRecognitionsWithHttpInfo(String direction, String recipient, Date dateStart, Date dateEnd, Integer pageSize, Integer pageNumber) throws IOException {
+    return getEmployeeengagementRecognitions(createGetEmployeeengagementRecognitionsRequest(direction, recipient, dateStart, dateEnd, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetEmployeeengagementRecognitionsRequest createGetEmployeeengagementRecognitionsRequest(String direction, String recipient, Date dateStart, Date dateEnd, Integer pageSize, Integer pageNumber) {
+    return GetEmployeeengagementRecognitionsRequest.builder()
+            .withDirection(direction)
+
+            .withRecipient(recipient)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param request The request object
+   * @return Recognitions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recognitions getEmployeeengagementRecognitions(GetEmployeeengagementRecognitionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Recognitions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recognitions>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recognitions> getEmployeeengagementRecognitions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recognitions>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recognitions> response = (ApiResponse<Recognitions>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recognitions> response = (ApiResponse<Recognitions>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

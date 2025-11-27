@@ -15,15 +15,18 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CelebrationStateParam;
 import com.mypurecloud.sdk.v2.model.CreateRecognition;
+import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetCelebrationListing;
 import com.mypurecloud.sdk.v2.model.Recognition;
 import com.mypurecloud.sdk.v2.model.RecognitionBase;
+import com.mypurecloud.sdk.v2.model.Recognitions;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeengagementCelebrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementCelebrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementRecognitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeengagementRecognitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeengagementCelebrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeengagementRecognitionsRequest;
 
@@ -259,6 +262,81 @@ public class EmployeeEngagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Recognition> response = (ApiResponse<Recognition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Recognitions> getEmployeeengagementRecognitionsAsync(GetEmployeeengagementRecognitionsRequest request, final AsyncApiCallback<Recognitions> callback) {
+    try {
+      final SettableFuture<Recognitions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recognitions>() {}, new AsyncApiCallback<ApiResponse<Recognitions>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recognitions> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets sent recognitions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Recognitions>> getEmployeeengagementRecognitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recognitions>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Recognitions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recognitions>() {}, new AsyncApiCallback<ApiResponse<Recognitions>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recognitions> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recognitions> response = (ApiResponse<Recognitions>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recognitions> response = (ApiResponse<Recognitions>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

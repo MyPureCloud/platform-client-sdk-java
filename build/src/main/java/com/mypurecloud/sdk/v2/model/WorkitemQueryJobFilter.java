@@ -92,14 +92,14 @@ public class WorkitemQueryJobFilter  implements Serializable {
 
   
   /**
-   * Attribute name.
+   * Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId'
    **/
   public WorkitemQueryJobFilter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Attribute name.")
+  @ApiModelProperty(example = "null", required = true, value = "Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId'")
   @JsonProperty("name")
   public String getName() {
     return name;

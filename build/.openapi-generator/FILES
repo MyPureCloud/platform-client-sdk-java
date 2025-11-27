@@ -4218,6 +4218,7 @@ docs/RecipientListing.md
 docs/RecipientRequest.md
 docs/Recognition.md
 docs/RecognitionBase.md
+docs/Recognitions.md
 docs/Record.md
 docs/RecordersState.md
 docs/Recording.md
@@ -4248,6 +4249,8 @@ docs/RecordingJobEntityListing.md
 docs/RecordingJobFailedRecording.md
 docs/RecordingJobsQuery.md
 docs/RecordingLocation.md
+docs/RecordingMessageReceipt.md
+docs/RecordingMessageReceiptReason.md
 docs/RecordingMessagingMessage.md
 docs/RecordingMetadata.md
 docs/RecordingNotificationTemplate.md
@@ -6598,6 +6601,7 @@ docs/getEmailsSettingsThreading-example.txt
 docs/getEmailsSettingsThreading-example.txt
 docs/getEmployeeengagementCelebrations-example.txt
 docs/getEmployeeengagementRecognition-example.txt
+docs/getEmployeeengagementRecognitions-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
@@ -9829,6 +9833,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmailsSettingsThreadingReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmailsSettingsThreadingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeengagementCelebrationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeengagementRecognitionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeengagementRecognitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactIdentifiersRequest.java
@@ -16313,6 +16318,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RecipientListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecipientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Recognition.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecognitionBase.java
+src/main/java/com/mypurecloud/sdk/v2/model/Recognitions.java
 src/main/java/com/mypurecloud/sdk/v2/model/Record.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordersState.java
 src/main/java/com/mypurecloud/sdk/v2/model/Recording.java
@@ -16341,6 +16347,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/RecordingJobEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingJobFailedRecording.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingJobsQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingLocation.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingMessageReceipt.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingMessageReceiptReason.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingMessagingMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingNotificationTemplate.java

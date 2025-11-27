@@ -7472,12 +7472,13 @@ public class OutboundApi {
    * @param id A list of messaging campaign ids to bulk fetch (optional)
    * @param contentTemplateId Content template ID (optional)
    * @param campaignStatus Campaign Status (optional)
+   * @param ruleSetIds Ruleset ID(s) (optional)
    * @return MessagingCampaignEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessagingCampaignEntityListing getOutboundMessagingcampaigns(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus) throws IOException, ApiException {
-    return  getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus));
+  public MessagingCampaignEntityListing getOutboundMessagingcampaigns(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus, List<String> ruleSetIds) throws IOException, ApiException {
+    return  getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds));
   }
 
   /**
@@ -7495,14 +7496,15 @@ public class OutboundApi {
    * @param id A list of messaging campaign ids to bulk fetch (optional)
    * @param contentTemplateId Content template ID (optional)
    * @param campaignStatus Campaign Status (optional)
+   * @param ruleSetIds Ruleset ID(s) (optional)
    * @return MessagingCampaignEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessagingCampaignEntityListing> getOutboundMessagingcampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus) throws IOException {
-    return getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus).withHttpInfo());
+  public ApiResponse<MessagingCampaignEntityListing> getOutboundMessagingcampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus, List<String> ruleSetIds) throws IOException {
+    return getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds).withHttpInfo());
   }
 
-  private GetOutboundMessagingcampaignsRequest createGetOutboundMessagingcampaignsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus) {
+  private GetOutboundMessagingcampaignsRequest createGetOutboundMessagingcampaignsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id, String contentTemplateId, String campaignStatus, List<String> ruleSetIds) {
     return GetOutboundMessagingcampaignsRequest.builder()
             .withPageSize(pageSize)
 
@@ -7527,6 +7529,8 @@ public class OutboundApi {
             .withContentTemplateId(contentTemplateId)
 
             .withCampaignStatus(campaignStatus)
+
+            .withRuleSetIds(ruleSetIds)
 
             .build();
   }

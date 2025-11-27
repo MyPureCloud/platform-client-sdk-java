@@ -25,6 +25,8 @@
 | ACDLANGUAGE | &quot;ACDLANGUAGE&quot; | 
 | ACDSKILL | &quot;ACDSKILL&quot; | 
 | ACDWRAPUPCODE | &quot;ACDWRAPUPCODE&quot; | 
+| AGENTICVIRTUALAGENT | &quot;AGENTICVIRTUALAGENT&quot; | 
+| AGENTICVIRTUALAGENTVERSION | &quot;AGENTICVIRTUALAGENTVERSION&quot; | 
 | AUDIOCONNECTORBOT | &quot;AUDIOCONNECTORBOT&quot; | 
 | BOTCONNECTORBOT | &quot;BOTCONNECTORBOT&quot; | 
 | BOTCONNECTORINTEGRATION | &quot;BOTCONNECTORINTEGRATION&quot; | 
@@ -104,4 +106,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_

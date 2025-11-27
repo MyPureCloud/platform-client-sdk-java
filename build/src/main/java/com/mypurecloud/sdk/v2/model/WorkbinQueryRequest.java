@@ -125,14 +125,14 @@ public class WorkbinQueryRequest  implements Serializable {
 
 
   /**
-   * List of filter objects to be used in the search.
+   * List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'divisionId', 'dateCreated', 'dateModified', 'modifiedBy'
    **/
   public WorkbinQueryRequest filters(List<WorkitemFilter> filters) {
     this.filters = filters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search.")
+  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'divisionId', 'dateCreated', 'dateModified', 'modifiedBy'")
   @JsonProperty("filters")
   public List<WorkitemFilter> getFilters() {
     return filters;

@@ -5533,7 +5533,7 @@ try {
 # **getOutboundMessagingcampaigns**
 
 
-> [MessagingCampaignEntityListing](MessagingCampaignEntityListing) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus)
+> [MessagingCampaignEntityListing](MessagingCampaignEntityListing) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds)
 
 Query a list of Messaging Campaigns
 
@@ -5579,8 +5579,9 @@ String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender
 List<String> id = Arrays.asList(null); // List<String> | A list of messaging campaign ids to bulk fetch
 String contentTemplateId = "contentTemplateId_example"; // String | Content template ID
 String campaignStatus = "campaignStatus_example"; // String | Campaign Status
+List<String> ruleSetIds = Arrays.asList(null); // List<String> | Ruleset ID(s)
 try {
-    MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus);
+    MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaigns");
@@ -5605,6 +5606,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String)| A list of messaging campaign ids to bulk fetch | [optional] 
 | **contentTemplateId** | **String**| Content template ID | [optional] 
 | **campaignStatus** | **String**| Campaign Status | [optional]<br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping 
+| **ruleSetIds** | [**List&lt;String&gt;**](String)| Ruleset ID(s) | [optional] 
 {: class="table-striped"}
 
 
@@ -10897,4 +10899,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_

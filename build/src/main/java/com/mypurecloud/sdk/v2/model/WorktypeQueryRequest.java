@@ -125,14 +125,14 @@ public class WorktypeQueryRequest  implements Serializable {
 
 
   /**
-   * List of filter objects to be used in the search.
+   * List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy'
    **/
   public WorktypeQueryRequest filters(List<WorkitemFilter> filters) {
     this.filters = filters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search.")
+  @ApiModelProperty(example = "null", required = true, value = "List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy'")
   @JsonProperty("filters")
   public List<WorkitemFilter> getFilters() {
     return filters;

@@ -22,10 +22,12 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.CelebrationStateParam;
 import com.mypurecloud.sdk.v2.model.CreateRecognition;
+import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetCelebrationListing;
 import com.mypurecloud.sdk.v2.model.Recognition;
 import com.mypurecloud.sdk.v2.model.RecognitionBase;
+import com.mypurecloud.sdk.v2.model.Recognitions;
 
 public class PatchEmployeeengagementCelebrationRequest {
 

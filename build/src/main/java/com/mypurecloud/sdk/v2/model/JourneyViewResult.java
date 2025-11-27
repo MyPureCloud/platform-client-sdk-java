@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyViewChartResult;
 import com.mypurecloud.sdk.v2.model.JourneyViewResultElement;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,10 +28,12 @@ import java.io.Serializable;
 public class JourneyViewResult  implements Serializable {
   
   private List<JourneyViewResultElement> elements = null;
+  private List<JourneyViewChartResult> charts = null;
 
   public JourneyViewResult() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       elements = new ArrayList<JourneyViewResultElement>();
+      charts = new ArrayList<JourneyViewChartResult>();
     }
   }
 
@@ -39,6 +42,13 @@ public class JourneyViewResult  implements Serializable {
   @JsonProperty("elements")
   public List<JourneyViewResultElement> getElements() {
     return elements;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The chart results within the journey view result")
+  @JsonProperty("charts")
+  public List<JourneyViewChartResult> getCharts() {
+    return charts;
   }
 
 
@@ -52,12 +62,13 @@ public class JourneyViewResult  implements Serializable {
     }
     JourneyViewResult journeyViewResult = (JourneyViewResult) o;
 
-    return Objects.equals(this.elements, journeyViewResult.elements);
+    return Objects.equals(this.elements, journeyViewResult.elements) &&
+            Objects.equals(this.charts, journeyViewResult.charts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(elements);
+    return Objects.hash(elements, charts);
   }
 
   @Override
@@ -66,6 +77,7 @@ public class JourneyViewResult  implements Serializable {
     sb.append("class JourneyViewResult {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
+    sb.append("    charts: ").append(toIndentedString(charts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

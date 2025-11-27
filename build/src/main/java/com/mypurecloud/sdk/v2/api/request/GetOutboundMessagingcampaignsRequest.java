@@ -404,6 +404,20 @@ public class GetOutboundMessagingcampaignsRequest {
 		}
 	}
 
+	private List<String> ruleSetIds;
+	public List<String> getRuleSetIds() {
+		return this.ruleSetIds;
+	}
+
+	public void setRuleSetIds(List<String> ruleSetIds) {
+		this.ruleSetIds = ruleSetIds;
+	}
+
+	public GetOutboundMessagingcampaignsRequest withRuleSetIds(List<String> ruleSetIds) {
+	    this.setRuleSetIds(ruleSetIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -462,6 +476,9 @@ public class GetOutboundMessagingcampaignsRequest {
         
 
                 .withQueryParameters("campaignStatus", "", campaignStatus)
+        
+
+                .withQueryParameters("ruleSetIds", "multi", ruleSetIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -578,6 +595,11 @@ public class GetOutboundMessagingcampaignsRequest {
 		    request.setCampaignStatus(campaignStatus.toString());
 
 		    return this;
+		}
+
+		public Builder withRuleSetIds(List<String> ruleSetIds) {
+			request.setRuleSetIds(ruleSetIds);
+			return this;
 		}
 
 
