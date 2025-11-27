@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Attribute name. |  |
+| **name** | **String** | Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId' |  |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operator. |  |
 | **values** | **List&lt;String&gt;** | List of values to be used in the filter. |  |
 
@@ -29,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_

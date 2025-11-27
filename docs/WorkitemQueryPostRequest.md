@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. |  [optional] |
 | **select** | [**SelectEnum**](#Enum--SelectEnum) | Specify the value 'Count' for this parameter in order to return only the record count. |  [optional] |
-| **filters** | [**List&lt;WorkitemFilter&gt;**](WorkitemFilter) | List of filter objects to be used in the search. |  |
+| **filters** | [**List&lt;WorkitemFilter&gt;**](WorkitemFilter) | List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>' |  |
 | **attributes** | **List&lt;String&gt;** | List of entity attributes to be retrieved in the result. |  [optional] |
 | **after** | **String** | The cursor that points to the end of the set of entities that has been returned. |  [optional] |
 | **sort** | [**WorkitemQuerySort**](WorkitemQuerySort) | Sort |  [optional] |
@@ -37,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_

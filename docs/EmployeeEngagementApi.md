@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteEmployeeengagementCelebration**](EmployeeEngagementApi#deleteEmployeeengagementCelebration) | Deletes a celebration |
 | [**getEmployeeengagementCelebrations**](EmployeeEngagementApi#getEmployeeengagementCelebrations) | Get all celebrations |
 | [**getEmployeeengagementRecognition**](EmployeeEngagementApi#getEmployeeengagementRecognition) | Gets a single recognition |
+| [**getEmployeeengagementRecognitions**](EmployeeEngagementApi#getEmployeeengagementRecognitions) | Gets sent recognitions |
 | [**patchEmployeeengagementCelebration**](EmployeeEngagementApi#patchEmployeeengagementCelebration) | Set a state for a celebration |
 | [**postEmployeeengagementRecognitions**](EmployeeEngagementApi#postEmployeeengagementRecognitions) | Creates a recognition |
 {: class="table-striped"}
@@ -190,6 +191,75 @@ try {
 [**Recognition**](Recognition)
 
 
+# **getEmployeeengagementRecognitions**
+
+
+> [Recognitions](Recognitions) getEmployeeengagementRecognitions(direction, recipient, dateStart, dateEnd, pageSize, pageNumber)
+
+Gets sent recognitions
+
+Wraps GET /api/v2/employeeengagement/recognitions  
+
+Requires ANY permissions: 
+
+* engagement:recognition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.EmployeeEngagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+EmployeeEngagementApi apiInstance = new EmployeeEngagementApi();
+String direction = "received"; // String | The direction of the recognitions.
+String recipient = "recipient_example"; // String | The ID of the recipient (when direction is sent).
+Date dateStart = new Date(); // Date | The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+Date dateEnd = new Date(); // Date | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+Integer pageSize = 100; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    Recognitions result = apiInstance.getEmployeeengagementRecognitions(direction, recipient, dateStart, dateEnd, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EmployeeEngagementApi#getEmployeeengagementRecognitions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **direction** | **String**| The direction of the recognitions. | [optional] [default to received]<br />**Values**: sent, received 
+| **recipient** | **String**| The ID of the recipient (when direction is sent). | [optional] 
+| **dateStart** | **Date**| The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] 
+| **dateEnd** | **Date**| The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 100] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Recognitions**](Recognitions)
+
+
 # **patchEmployeeengagementCelebration**
 
 
@@ -309,4 +379,4 @@ try {
 [**RecognitionBase**](RecognitionBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:238.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
