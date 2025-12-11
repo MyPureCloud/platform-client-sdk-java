@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | Update a guide version. |
 | [**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | Trigger summary preview event generation. |
 | [**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | Create a summary setting. |
+| [**postGuideSessionTurns**](AIStudioApi#postGuideSessionTurns) | Add a turn to a guide session. |
 | [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | Start the publishing of a guide version. |
 | [**postGuideVersions**](AIStudioApi#postGuideVersions) | Create a guide version. |
 | [**postGuides**](AIStudioApi#postGuides) | Create a guide. |
@@ -904,6 +905,71 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
+# **postGuideSessionTurns**
+
+
+> [GuideSessionTurnResponse](GuideSessionTurnResponse) postGuideSessionTurns(guideId, guideSessionId, body)
+
+Add a turn to a guide session.
+
+Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+
+Wraps POST /api/v2/guides/{guideId}/sessions/{guideSessionId}/turns  
+
+Requires ALL permissions: 
+
+* aiStudio:guideSessionTurn:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AIStudioApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AIStudioApi apiInstance = new AIStudioApi();
+String guideId = "guideId_example"; // String | Guide ID
+String guideSessionId = "guideSessionId_example"; // String | Guide Session ID
+GuideSessionTurnRequest body = new GuideSessionTurnRequest(); // GuideSessionTurnRequest | 
+try {
+    GuideSessionTurnResponse result = apiInstance.postGuideSessionTurns(guideId, guideSessionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AIStudioApi#postGuideSessionTurns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guideId** | **String**| Guide ID | 
+| **guideSessionId** | **String**| Guide Session ID | 
+| **body** | [**GuideSessionTurnRequest**](GuideSessionTurnRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GuideSessionTurnResponse**](GuideSessionTurnResponse)
+
+
 # **postGuideVersionJobs**
 
 
@@ -1215,4 +1281,4 @@ try {
 [**SummarySetting**](SummarySetting)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

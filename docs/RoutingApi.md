@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingEmailOutboundDomain**](RoutingApi#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
 | [**deleteRoutingLanguage**](RoutingApi#deleteRoutingLanguage) | Delete a routing language |
 | [**deleteRoutingPredictor**](RoutingApi#deleteRoutingPredictor) | Delete single predictor. |
+| [**deleteRoutingPredictorsKeyperformanceindicator**](RoutingApi#deleteRoutingPredictorsKeyperformanceindicator) | Delete a custom Key Performance Indicator. |
 | [**deleteRoutingQueue**](RoutingApi#deleteRoutingQueue) | Delete a queue |
 | [**deleteRoutingQueueMember**](RoutingApi#deleteRoutingQueueMember) | Delete a queue member. |
 | [**deleteRoutingQueueUser**](RoutingApi#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
@@ -54,7 +55,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingPredictorModelFeatures**](RoutingApi#getRoutingPredictorModelFeatures) | Retrieve Predictor Model Features. |
 | [**getRoutingPredictorModels**](RoutingApi#getRoutingPredictorModels) | Retrieve Predictor Models and Top Features. |
 | [**getRoutingPredictors**](RoutingApi#getRoutingPredictors) | Retrieve all predictors. |
+| [**getRoutingPredictorsKeyperformanceindicator**](RoutingApi#getRoutingPredictorsKeyperformanceindicator) | Retrieve a single Key Performance Indicator. |
 | [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
+| [**getRoutingPredictorsKeyperformanceindicatortypes**](RoutingApi#getRoutingPredictorsKeyperformanceindicatortypes) | Get a list of Key Performance Indicators Types available. |
 | [**getRoutingQueue**](RoutingApi#getRoutingQueue) | Get details about this queue. |
 | [**getRoutingQueueAssistant**](RoutingApi#getRoutingQueueAssistant) | Get an assistant associated with a queue. |
 | [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
@@ -105,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | Validate domain settings |
 | [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | Update single predictor. |
+| [**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | Update a custom Key Performance Indicator. |
 | [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
 | [**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | Join or unjoin a set of up to 100 users for a queue |
 | [**patchRoutingQueueUser**](RoutingApi#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
@@ -132,6 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
 | [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | Create Language |
 | [**postRoutingPredictors**](RoutingApi#postRoutingPredictors) | Create a predictor. |
+| [**postRoutingPredictorsKeyperformanceindicators**](RoutingApi#postRoutingPredictorsKeyperformanceindicators) | Create a custom Key Performance Indicator. |
 | [**postRoutingQueueMembers**](RoutingApi#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
 | [**postRoutingQueueUsers**](RoutingApi#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
 | [**postRoutingQueueWrapupcodes**](RoutingApi#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
@@ -565,6 +570,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **predictorId** | **String**| Predictor ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteRoutingPredictorsKeyperformanceindicator**
+
+
+> Void deleteRoutingPredictorsKeyperformanceindicator(kpiId)
+
+Delete a custom Key Performance Indicator.
+
+deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+try {
+    apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingPredictorsKeyperformanceindicator");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **kpiId** | **String**| Key Performance Indicator ID | 
 {: class="table-striped"}
 
 
@@ -3167,6 +3232,69 @@ try {
 [**PredictorListing**](PredictorListing)
 
 
+# **getRoutingPredictorsKeyperformanceindicator**
+
+
+> [KeyPerformanceIndicator](KeyPerformanceIndicator) getRoutingPredictorsKeyperformanceindicator(kpiId, expand)
+
+Retrieve a single Key Performance Indicator.
+
+getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+List<String> expand = Arrays.asList(null); // List<String> | Parameter to request additional data to return in KPI payload
+try {
+    KeyPerformanceIndicator result = apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicator");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **kpiId** | **String**| Key Performance Indicator ID | 
+| **expand** | [**List&lt;String&gt;**](String)| Parameter to request additional data to return in KPI payload | [optional]<br />**Values**: queues 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
+
+
 # **getRoutingPredictorsKeyperformanceindicators**
 
 
@@ -3226,6 +3354,63 @@ try {
 ### Return type
 
 [**List&lt;KeyPerformanceIndicator&gt;**](KeyPerformanceIndicator)
+
+
+# **getRoutingPredictorsKeyperformanceindicatortypes**
+
+
+> [List&lt;KeyPerformanceIndicatorType&gt;](KeyPerformanceIndicatorType) getRoutingPredictorsKeyperformanceindicatortypes()
+
+Get a list of Key Performance Indicators Types available.
+
+getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicatortypes  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    List<KeyPerformanceIndicatorType> result = apiInstance.getRoutingPredictorsKeyperformanceindicatortypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicatortypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**List&lt;KeyPerformanceIndicatorType&gt;**](KeyPerformanceIndicatorType)
 
 
 # **getRoutingQueue**
@@ -6413,6 +6598,69 @@ try {
 [**Predictor**](Predictor)
 
 
+# **patchRoutingPredictorsKeyperformanceindicator**
+
+
+> [KeyPerformanceIndicator](KeyPerformanceIndicator) patchRoutingPredictorsKeyperformanceindicator(kpiId, body)
+
+Update a custom Key Performance Indicator.
+
+patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId}  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+UpdateKpiRequest body = new UpdateKpiRequest(); // UpdateKpiRequest | 
+try {
+    KeyPerformanceIndicator result = apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingPredictorsKeyperformanceindicator");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **kpiId** | **String**| Key Performance Indicator ID | 
+| **body** | [**UpdateKpiRequest**](UpdateKpiRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
+
+
 # **patchRoutingQueueMember**
 
 
@@ -8061,6 +8309,67 @@ try {
 ### Return type
 
 [**Predictor**](Predictor)
+
+
+# **postRoutingPredictorsKeyperformanceindicators**
+
+
+> [KeyPerformanceIndicator](KeyPerformanceIndicator) postRoutingPredictorsKeyperformanceindicators(body)
+
+Create a custom Key Performance Indicator.
+
+postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/predictors/keyperformanceindicators  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreateKpiRequest body = new CreateKpiRequest(); // CreateKpiRequest | request
+try {
+    KeyPerformanceIndicator result = apiInstance.postRoutingPredictorsKeyperformanceindicators(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingPredictorsKeyperformanceindicators");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateKpiRequest**](CreateKpiRequest)| request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
 
 
 # **postRoutingQueueMembers**
@@ -10066,4 +10375,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

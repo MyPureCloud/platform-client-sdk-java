@@ -850,7 +850,7 @@ try {
 # **getSocialmediaTopic**
 
 
-> [SocialTopicResponse](SocialTopicResponse) getSocialmediaTopic(topicId, includeDeleted)
+> [SocialTopicWithDataIngestionRuleMetadataResponse](SocialTopicWithDataIngestionRuleMetadataResponse) getSocialmediaTopic(topicId, includeDeleted)
 
 Get a single social topic.
 
@@ -885,7 +885,7 @@ SocialMediaApi apiInstance = new SocialMediaApi();
 String topicId = "topicId_example"; // String | topicId
 Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
 try {
-    SocialTopicResponse result = apiInstance.getSocialmediaTopic(topicId, includeDeleted);
+    SocialTopicWithDataIngestionRuleMetadataResponse result = apiInstance.getSocialmediaTopic(topicId, includeDeleted);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopic");
@@ -905,7 +905,7 @@ try {
 
 ### Return type
 
-[**SocialTopicResponse**](SocialTopicResponse)
+[**SocialTopicWithDataIngestionRuleMetadataResponse**](SocialTopicWithDataIngestionRuleMetadataResponse)
 
 
 # **getSocialmediaTopicDataingestionrules**
@@ -1756,7 +1756,7 @@ try {
 # **getSocialmediaTopics**
 
 
-> [SocialTopicResponseEntityListing](SocialTopicResponseEntityListing) getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted)
+> [SocialTopicResponseEntityListing](SocialTopicResponseEntityListing) getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name)
 
 Retrieve all social topics.
 
@@ -1792,8 +1792,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 List<String> divisionIds = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
 Boolean includeDeleted = true; // Boolean | Determines whether to include soft-deleted items in the result.
+String name = "name_example"; // String | Search for topic by name that contains the given search string, search is case insensitive
 try {
-    SocialTopicResponseEntityListing result = apiInstance.getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted);
+    SocialTopicResponseEntityListing result = apiInstance.getSocialmediaTopics(pageNumber, pageSize, divisionIds, includeDeleted, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialMediaApi#getSocialmediaTopics");
@@ -1810,6 +1811,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **divisionIds** | [**List&lt;String&gt;**](String)| One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. | [optional] 
 | **includeDeleted** | **Boolean**| Determines whether to include soft-deleted items in the result. | [optional] 
+| **name** | **String**| Search for topic by name that contains the given search string, search is case insensitive | [optional] 
 {: class="table-striped"}
 
 
@@ -3174,4 +3176,4 @@ try {
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

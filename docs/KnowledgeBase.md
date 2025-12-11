@@ -70,8 +70,12 @@
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
 | CS_CZ | &quot;cs-CZ&quot; | 
+| FIL_PH | &quot;fil-PH&quot; | 
+| MS_MY | &quot;ms-MY&quot; | 
+| HE_IL | &quot;he-IL&quot; | 
+| EL_GR | &quot;el-GR&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

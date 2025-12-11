@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | Delete/cancel an async request for action aggregates |
 | [**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | Delete/cancel an async request for agent copilot aggregates |
 | [**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | Delete/cancel an async request for bot aggregates |
+| [**deleteAnalyticsCasemanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsCasemanagementAggregatesJob) | Delete/cancel an async request for case management aggregates |
 | [**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | Delete/cancel an async request for conversation aggregates |
 | [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
 | [**deleteAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob) | Delete/cancel an async request for evaluation aggregates |
@@ -31,6 +32,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsBotflowSessions**](AnalyticsApi#getAnalyticsBotflowSessions) | Get Bot Flow Sessions. |
 | [**getAnalyticsBotsAggregatesJob**](AnalyticsApi#getAnalyticsBotsAggregatesJob) | Get status for async query for bot aggregates |
 | [**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi#getAnalyticsBotsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsCasemanagementAggregatesJob**](AnalyticsApi#getAnalyticsCasemanagementAggregatesJob) | Get status for async query for case management aggregates |
+| [**getAnalyticsCasemanagementAggregatesJobResults**](AnalyticsApi#getAnalyticsCasemanagementAggregatesJobResults) | Fetch a page of results for an async case management query |
 | [**getAnalyticsConversationDetails**](AnalyticsApi#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsAggregatesJob**](AnalyticsApi#getAnalyticsConversationsAggregatesJob) | Get status for async query for conversation aggregates |
 | [**getAnalyticsConversationsAggregatesJobResults**](AnalyticsApi#getAnalyticsConversationsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -82,6 +85,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | Retrieve the top 50 agents matching the query filters |
 | [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | Query for bot aggregates asynchronously |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
+| [**postAnalyticsCasemanagementAggregatesJobs**](AnalyticsApi#postAnalyticsCasemanagementAggregatesJobs) | Query for case management aggregates asynchronously |
+| [**postAnalyticsCasemanagementAggregatesQuery**](AnalyticsApi#postAnalyticsCasemanagementAggregatesQuery) | Query for case management aggregates |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsActivityQuery**](AnalyticsApi#postAnalyticsConversationsActivityQuery) | Query for conversation activity observations |
 | [**postAnalyticsConversationsAggregatesJobs**](AnalyticsApi#postAnalyticsConversationsAggregatesJobs) | Query for conversation aggregates asynchronously |
@@ -292,6 +297,66 @@ try {
     apiInstance.deleteAnalyticsBotsAggregatesJob(jobId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsBotsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAnalyticsCasemanagementAggregatesJob**
+
+
+> Void deleteAnalyticsCasemanagementAggregatesJob(jobId)
+
+Delete/cancel an async request for case management aggregates
+
+deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsCasemanagementAggregatesJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsCasemanagementAggregatesJob");
     e.printStackTrace();
 }
 ```
@@ -1802,6 +1867,130 @@ try {
 ### Return type
 
 [**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse)
+
+
+# **getAnalyticsCasemanagementAggregatesJob**
+
+
+> [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsCasemanagementAggregatesJob(jobId)
+
+Get status for async query for case management aggregates
+
+getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsCasemanagementAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsCasemanagementAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+# **getAnalyticsCasemanagementAggregatesJobResults**
+
+
+> [CaseManagementAsyncAggregateQueryResponse](CaseManagementAsyncAggregateQueryResponse) getAnalyticsCasemanagementAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async case management query
+
+getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    CaseManagementAsyncAggregateQueryResponse result = apiInstance.getAnalyticsCasemanagementAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsCasemanagementAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseManagementAsyncAggregateQueryResponse**](CaseManagementAsyncAggregateQueryResponse)
 
 
 # **getAnalyticsConversationDetails**
@@ -4935,6 +5124,128 @@ try {
 [**BotAggregateQueryResponse**](BotAggregateQueryResponse)
 
 
+# **postAnalyticsCasemanagementAggregatesJobs**
+
+
+> [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsCasemanagementAggregatesJobs(body)
+
+Query for case management aggregates asynchronously
+
+postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/casemanagement/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+CaseManagementAsyncAggregationQuery body = new CaseManagementAsyncAggregationQuery(); // CaseManagementAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsCasemanagementAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsCasemanagementAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CaseManagementAsyncAggregationQuery**](CaseManagementAsyncAggregationQuery)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+# **postAnalyticsCasemanagementAggregatesQuery**
+
+
+> [CaseManagementAggregateQueryResponse](CaseManagementAggregateQueryResponse) postAnalyticsCasemanagementAggregatesQuery(body)
+
+Query for case management aggregates
+
+postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/casemanagement/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+CaseManagementAggregationQuery body = new CaseManagementAggregationQuery(); // CaseManagementAggregationQuery | query
+try {
+    CaseManagementAggregateQueryResponse result = apiInstance.postAnalyticsCasemanagementAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsCasemanagementAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CaseManagementAggregationQuery**](CaseManagementAggregationQuery)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CaseManagementAggregateQueryResponse**](CaseManagementAggregateQueryResponse)
+
+
 # **postAnalyticsConversationDetailsProperties**
 
 
@@ -7584,4 +7895,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

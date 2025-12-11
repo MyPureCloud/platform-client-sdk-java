@@ -29,6 +29,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi#getConversation) | Get conversation |
+| [**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | Get checklist info for a single checklist. |
+| [**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | Get inference job status |
+| [**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | Get information of all checklists associated with a conversation. |
 | [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | Get message |
 | [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | Get messages for communication |
 | [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
@@ -182,15 +185,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationAssign**](ConversationsApi#postConversationAssign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages. |
 | [**postConversationBarge**](ConversationsApi#postConversationBarge) | Barge a conversation creating a barged in conference of connected participants. |
 | [**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission. |
+| [**postConversationCommunicationAgentchecklist**](ConversationsApi#postConversationCommunicationAgentchecklist) | Agent Checklist activation API |
+| [**postConversationCommunicationAgentchecklistAgentaction**](ConversationsApi#postConversationCommunicationAgentchecklistAgentaction) | API invoked to capture an agent action. |
+| [**postConversationCommunicationAgentchecklistJobs**](ConversationsApi#postConversationCommunicationAgentchecklistJobs) | Create inference job |
+| [**postConversationCommunicationAgentchecklistsFinalize**](ConversationsApi#postConversationCommunicationAgentchecklistsFinalize) | API invoked to finalize agent checklist evaluation. |
 | [**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | Send internal message |
 | [**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation. |
 | [**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | Sends DTMF to the participant |
 | [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | Setup internal message communication with user |
-| [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | Replace this participant (Deprecated) |
 | [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | Replace this participant with the specified agent |
 | [**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | Replace this participant with the an external contact |
-| [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact |
+| [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact (Deprecated) |
 | [**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | Replace this participant with the specified queue |
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
 | [**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | Replace this participant by another one using the address of the destination. |
@@ -201,10 +208,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | Barge a given participant's call creating a barged in conference of connected participants. |
 | [**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
 | [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
-| [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
+| [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | Initiate and update consult transfer (Deprecated) |
 | [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | Initiate a consult transfer to an agent |
 | [**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | Initiate a consult transfer to an external contact |
-| [**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | Initiate a consult transfer to an external contact |
+| [**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | Initiate a consult transfer to an external contact (Deprecated) |
 | [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | Initiate a consult transfer to a queue |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -1770,6 +1777,195 @@ try {
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+# **getConversationCommunicationAgentchecklist**
+
+
+> [AgentChecklistResponse](AgentChecklistResponse) getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId)
+
+Get checklist info for a single checklist.
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+try {
+    AgentChecklistResponse result = apiInstance.getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCommunicationAgentchecklist");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+# **getConversationCommunicationAgentchecklistJob**
+
+
+> [ChecklistInferenceJobResponse](ChecklistInferenceJobResponse) getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId)
+
+Get inference job status
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+String jobId = "jobId_example"; // String | Inference Job ID
+try {
+    ChecklistInferenceJobResponse result = apiInstance.getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCommunicationAgentchecklistJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+| **jobId** | **String**| Inference Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChecklistInferenceJobResponse**](ChecklistInferenceJobResponse)
+
+
+# **getConversationCommunicationAgentchecklists**
+
+
+> [AgentChecklistResponseList](AgentChecklistResponseList) getConversationCommunicationAgentchecklists(conversationId, communicationId)
+
+Get information of all checklists associated with a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+try {
+    AgentChecklistResponseList result = apiInstance.getConversationCommunicationAgentchecklists(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationCommunicationAgentchecklists");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistResponseList**](AgentChecklistResponseList)
 
 
 # **getConversationCommunicationInternalmessage**
@@ -11215,6 +11411,264 @@ try {
 [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
+# **postConversationCommunicationAgentchecklist**
+
+
+> [AgentChecklistResponse](AgentChecklistResponse) postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body)
+
+Agent Checklist activation API
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+ChecklistActivationPayload body = new ChecklistActivationPayload(); // ChecklistActivationPayload | Agent checklist activation payload
+try {
+    AgentChecklistResponse result = apiInstance.postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCommunicationAgentchecklist");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+| **body** | [**ChecklistActivationPayload**](ChecklistActivationPayload)| Agent checklist activation payload | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+# **postConversationCommunicationAgentchecklistAgentaction**
+
+
+> [AgentChecklistResponse](AgentChecklistResponse) postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body)
+
+API invoked to capture an agent action.
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+AgentActionPayload body = new AgentActionPayload(); // AgentActionPayload | Agent action payload
+try {
+    AgentChecklistResponse result = apiInstance.postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCommunicationAgentchecklistAgentaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+| **body** | [**AgentActionPayload**](AgentActionPayload)| Agent action payload | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+# **postConversationCommunicationAgentchecklistJobs**
+
+
+> [ChecklistInferenceJobCreationResponse](ChecklistInferenceJobCreationResponse) postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body)
+
+Create inference job
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+ChecklistInferenceJobPayload body = new ChecklistInferenceJobPayload(); // ChecklistInferenceJobPayload | Agent checklist inference job payload
+try {
+    ChecklistInferenceJobCreationResponse result = apiInstance.postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCommunicationAgentchecklistJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+| **body** | [**ChecklistInferenceJobPayload**](ChecklistInferenceJobPayload)| Agent checklist inference job payload | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChecklistInferenceJobCreationResponse**](ChecklistInferenceJobCreationResponse)
+
+
+# **postConversationCommunicationAgentchecklistsFinalize**
+
+
+> [AgentChecklistResponseList](AgentChecklistResponseList) postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body)
+
+API invoked to finalize agent checklist evaluation.
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize  
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String communicationId = "communicationId_example"; // String | Communication ID
+ChecklistFinalizePayload body = new ChecklistFinalizePayload(); // ChecklistFinalizePayload | Agent checklist finalize payload
+try {
+    AgentChecklistResponseList result = apiInstance.postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCommunicationAgentchecklistsFinalize");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **communicationId** | **String**| Communication ID | 
+| **body** | [**ChecklistFinalizePayload**](ChecklistFinalizePayload)| Agent checklist finalize payload | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistResponseList**](AgentChecklistResponseList)
+
+
 # **postConversationCommunicationInternalmessages**
 
 
@@ -11529,10 +11983,15 @@ try {
 
 # **postConversationParticipantReplace**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationParticipantReplace(conversationId, participantId, body)
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace  
 
@@ -11659,8 +12118,6 @@ null (empty response body)
 
 Replace this participant with the an external contact
 
-postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external  
 
 Requires ANY permissions: 
@@ -11719,10 +12176,15 @@ null (empty response body)
 
 # **postConversationParticipantReplaceExternal**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationParticipantReplaceExternal(conversationId, participantId, body)
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
+
+This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external  
 
@@ -11911,8 +12373,6 @@ try {
 > Void postConversationParticipantTransfer(conversationId, participantId, body)
 
 Replace this participant by another one using the address of the destination.
-
-postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer  
 
@@ -12405,10 +12865,15 @@ null (empty response body)
 
 # **postConversationsCallParticipantConsult**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsult(conversationId, participantId, body)
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
@@ -12537,8 +13002,6 @@ try {
 
 Initiate a consult transfer to an external contact
 
-postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external  
 
 Requires ANY permissions: 
@@ -12598,10 +13061,15 @@ try {
 
 # **postConversationsCallParticipantConsultExternal**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
+
+This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external  
 
@@ -12852,8 +13320,6 @@ null (empty response body)
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
 
 Initiate voice consult transfer
-
-postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult  
 
@@ -18019,4 +18485,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

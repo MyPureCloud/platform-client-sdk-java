@@ -1,0 +1,13 @@
+# ConversationNotificationTemplateCarousel
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **cards** | [**List&lt;ConversationNotificationTemplateCard&gt;**](ConversationNotificationTemplateCard) | An array of template card objects. |  |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

@@ -27,8 +27,7 @@
 | **supportedLanguages** | [**List&lt;SupportedLanguage&gt;**](SupportedLanguage) | List of supported languages for the published version of the flow. |  [optional] |
 | **compatibleFlowTypes** | [**List<CompatibleFlowTypesEnum>**](#Enum--CompatibleFlowTypesEnum) | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. |  [optional] |
 | **worktypeId** | **String** |  |  [optional] |
-| **virtualAgentEnabled** | **Boolean** |  |  [optional] |
-| **agenticVirtualAgentEnabled** | **Boolean** |  |  [optional] |
+| **virtualAgentEnabled** | **Boolean** | Indicates whether virtual agent is enabled for this flow. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -86,4 +85,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

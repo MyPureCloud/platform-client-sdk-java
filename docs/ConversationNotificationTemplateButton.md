@@ -10,6 +10,7 @@
 | **index** | **Long** | index of the button in the list. |  |
 | **phoneNumber** | **String** | Button phone number. |  [optional] |
 | **url** | **String** | Button URL link. |  [optional] |
+| **payload** | **String** | Content of the payload to be included in the quick reply response when the button is pressed. |  [optional] |
 | **parameters** | [**List&lt;ConversationNotificationTemplateParameter&gt;**](ConversationNotificationTemplateParameter) | Template parameters for placeholders in the button. |  [optional] |
 
 
@@ -25,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

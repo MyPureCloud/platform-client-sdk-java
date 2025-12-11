@@ -1811,7 +1811,7 @@ Retrieve a list of the latest published evaluation form versions by context ids
 
 Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:evaluationForm:view
 
@@ -2065,7 +2065,7 @@ Retrieve a list of survey forms by their ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:surveyForm:view
 
@@ -2124,7 +2124,7 @@ Retrieve a list of the latest form versions by context ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk/contexts  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:surveyForm:view
 
@@ -4100,4 +4100,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

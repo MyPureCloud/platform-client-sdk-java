@@ -25,8 +25,37 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEVER | &quot;NEVER&quot; | 
 | TODAY | &quot;TODAY&quot; | 
+| DAYS_2 | &quot;DAYS_2&quot; | 
+| DAYS_3 | &quot;DAYS_3&quot; | 
+| DAYS_4 | &quot;DAYS_4&quot; | 
+| DAYS_5 | &quot;DAYS_5&quot; | 
+| DAYS_6 | &quot;DAYS_6&quot; | 
+| DAYS_7 | &quot;DAYS_7&quot; | 
+| DAYS_8 | &quot;DAYS_8&quot; | 
+| DAYS_9 | &quot;DAYS_9&quot; | 
+| DAYS_10 | &quot;DAYS_10&quot; | 
+| DAYS_11 | &quot;DAYS_11&quot; | 
+| DAYS_12 | &quot;DAYS_12&quot; | 
+| DAYS_13 | &quot;DAYS_13&quot; | 
+| DAYS_14 | &quot;DAYS_14&quot; | 
+| DAYS_15 | &quot;DAYS_15&quot; | 
+| DAYS_16 | &quot;DAYS_16&quot; | 
+| DAYS_17 | &quot;DAYS_17&quot; | 
+| DAYS_18 | &quot;DAYS_18&quot; | 
+| DAYS_19 | &quot;DAYS_19&quot; | 
+| DAYS_20 | &quot;DAYS_20&quot; | 
+| DAYS_21 | &quot;DAYS_21&quot; | 
+| DAYS_22 | &quot;DAYS_22&quot; | 
+| DAYS_23 | &quot;DAYS_23&quot; | 
+| DAYS_24 | &quot;DAYS_24&quot; | 
+| DAYS_25 | &quot;DAYS_25&quot; | 
+| DAYS_26 | &quot;DAYS_26&quot; | 
+| DAYS_27 | &quot;DAYS_27&quot; | 
+| DAYS_28 | &quot;DAYS_28&quot; | 
+| DAYS_29 | &quot;DAYS_29&quot; | 
+| DAYS_30 | &quot;DAYS_30&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_
