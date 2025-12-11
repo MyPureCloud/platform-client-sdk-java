@@ -133,8 +133,6 @@ null (empty response body)
 
 Delete an access control policy
 
-deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}  
 
 Requires ANY permissions: 
@@ -1017,8 +1015,6 @@ try {
 
 Get a page of access policies for an organization
 
-getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies  
 
 Requires ANY permissions: 
@@ -1079,8 +1075,6 @@ try {
 > [AuthorizationPolicyEntityListing](AuthorizationPolicyEntityListing) getAuthorizationPoliciesSubjectSubjectId(subjectId, after, pageSize)
 
 Get a page of access policies for a given subject
-
-getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/subject/{subjectId}  
 
@@ -1145,8 +1139,6 @@ try {
 
 Get a page of access policies for a given policy target
 
-getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets/{targetName}  
 
 Requires ANY permissions: 
@@ -1210,8 +1202,6 @@ try {
 
 Get an access control policy for a specified resource target and subject
 
-getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}  
 
 Requires ANY permissions: 
@@ -1273,8 +1263,6 @@ try {
 
 Get a map of policy targets to valid attributes for those targets
 
-getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets  
 
 Requires ANY permissions: 
@@ -1329,8 +1317,6 @@ This endpoint does not require any parameters.
 > [AuthorizationPolicy](AuthorizationPolicy) getAuthorizationPolicy(policyId)
 
 Get an access control policy with the specified policy ID
-
-getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/{policyId}  
 
@@ -1390,8 +1376,6 @@ try {
 > [PolicyAttributeSet](PolicyAttributeSet) getAuthorizationPolicyAttributes(policyId)
 
 Get the list of attributes used to evaluate an access control policy with the specified policy ID
-
-getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/{policyId}/attributes  
 
@@ -2510,8 +2494,6 @@ try {
 
 Add an access control policy for a specified resource target and subject
 
-postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/authorization/policies/targets/{targetName}  
 
 Requires ANY permissions: 
@@ -2573,8 +2555,6 @@ try {
 
 Validate the conditions and attributes of an access control policy for a specified resource target
 
-postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/authorization/policies/targets/{targetName}/validate  
 
 Requires ANY permissions: 
@@ -2635,8 +2615,6 @@ try {
 > [PolicyTestResult](PolicyTestResult) postAuthorizationPolicySimulate(policyId, body)
 
 Simulate a request and evaluate the specified policy ID against the provided values
-
-postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/authorization/policies/{policyId}/simulate  
 
@@ -3258,8 +3236,6 @@ try {
 
 Add an access control policy for a specified resource target and subject, overwriting any existing policy
 
-putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/authorization/policies/targets/{targetName}  
 
 Requires ANY permissions: 
@@ -3321,8 +3297,6 @@ try {
 > [AuthorizationPolicy](AuthorizationPolicy) putAuthorizationPolicy(policyId, body)
 
 Update an access control policy with a given ID
-
-putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/authorization/policies/{policyId}  
 
@@ -3745,4 +3719,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

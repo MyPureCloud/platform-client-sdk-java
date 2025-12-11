@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.CarouselParameters;
 import com.mypurecloud.sdk.v2.model.TemplateParameter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class SendMessagingTemplateRequest  implements Serializable {
   private List<TemplateParameter> headerParameters = null;
   private List<TemplateParameter> bodyParameters = null;
   private List<TemplateParameter> buttonUrlParameters = null;
+  private CarouselParameters carouselParameters = null;
 
   public SendMessagingTemplateRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -131,6 +133,24 @@ public class SendMessagingTemplateRequest  implements Serializable {
   }
 
 
+  /**
+   * Template parameters for carousel card components
+   **/
+  public SendMessagingTemplateRequest carouselParameters(CarouselParameters carouselParameters) {
+    this.carouselParameters = carouselParameters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Template parameters for carousel card components")
+  @JsonProperty("carouselParameters")
+  public CarouselParameters getCarouselParameters() {
+    return carouselParameters;
+  }
+  public void setCarouselParameters(CarouselParameters carouselParameters) {
+    this.carouselParameters = carouselParameters;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -145,12 +165,13 @@ public class SendMessagingTemplateRequest  implements Serializable {
             Objects.equals(this.parameters, sendMessagingTemplateRequest.parameters) &&
             Objects.equals(this.headerParameters, sendMessagingTemplateRequest.headerParameters) &&
             Objects.equals(this.bodyParameters, sendMessagingTemplateRequest.bodyParameters) &&
-            Objects.equals(this.buttonUrlParameters, sendMessagingTemplateRequest.buttonUrlParameters);
+            Objects.equals(this.buttonUrlParameters, sendMessagingTemplateRequest.buttonUrlParameters) &&
+            Objects.equals(this.carouselParameters, sendMessagingTemplateRequest.carouselParameters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseId, parameters, headerParameters, bodyParameters, buttonUrlParameters);
+    return Objects.hash(responseId, parameters, headerParameters, bodyParameters, buttonUrlParameters, carouselParameters);
   }
 
   @Override
@@ -163,6 +184,7 @@ public class SendMessagingTemplateRequest  implements Serializable {
     sb.append("    headerParameters: ").append(toIndentedString(headerParameters)).append("\n");
     sb.append("    bodyParameters: ").append(toIndentedString(bodyParameters)).append("\n");
     sb.append("    buttonUrlParameters: ").append(toIndentedString(buttonUrlParameters)).append("\n");
+    sb.append("    carouselParameters: ").append(toIndentedString(carouselParameters)).append("\n");
     sb.append("}");
     return sb.toString();
   }

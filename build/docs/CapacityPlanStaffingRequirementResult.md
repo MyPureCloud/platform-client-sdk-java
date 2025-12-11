@@ -32,6 +32,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
+| MONTHLY | &quot;Monthly&quot; | 
 
 
 ## Enum: ErrorCodeEnum
@@ -48,4 +49,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

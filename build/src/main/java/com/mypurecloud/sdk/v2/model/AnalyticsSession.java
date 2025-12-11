@@ -284,6 +284,7 @@ public class AnalyticsSession  implements Serializable {
     EMAIL("email"),
     INTERNALMESSAGE("internalmessage"),
     MESSAGE("message"),
+    SCREENMONITORING("screenmonitoring"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
     VIDEO("video"),
@@ -435,6 +436,7 @@ public class AnalyticsSession  implements Serializable {
     }
   }
   private RoutingRuleTypeEnum routingRuleType = null;
+  private String screenMonitoredUserId = null;
   private String screenShareAddressSelf = null;
   private String screenShareRoomId = null;
   private String scriptId = null;
@@ -1701,6 +1703,24 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
+   * The user ID for the participant who is being screen monitored.
+   **/
+  public AnalyticsSession screenMonitoredUserId(String screenMonitoredUserId) {
+    this.screenMonitoredUserId = screenMonitoredUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user ID for the participant who is being screen monitored.")
+  @JsonProperty("screenMonitoredUserId")
+  public String getScreenMonitoredUserId() {
+    return screenMonitoredUserId;
+  }
+  public void setScreenMonitoredUserId(String screenMonitoredUserId) {
+    this.screenMonitoredUserId = screenMonitoredUserId;
+  }
+
+
+  /**
    * Direct screen share address
    **/
   public AnalyticsSession screenShareAddressSelf(String screenShareAddressSelf) {
@@ -2135,6 +2155,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.routingRing, analyticsSession.routingRing) &&
             Objects.equals(this.routingRule, analyticsSession.routingRule) &&
             Objects.equals(this.routingRuleType, analyticsSession.routingRuleType) &&
+            Objects.equals(this.screenMonitoredUserId, analyticsSession.screenMonitoredUserId) &&
             Objects.equals(this.screenShareAddressSelf, analyticsSession.screenShareAddressSelf) &&
             Objects.equals(this.screenShareRoomId, analyticsSession.screenShareRoomId) &&
             Objects.equals(this.scriptId, analyticsSession.scriptId) &&
@@ -2159,7 +2180,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryPushed, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, engagementSource, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenMonitoredUserId, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2232,6 +2253,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    routingRing: ").append(toIndentedString(routingRing)).append("\n");
     sb.append("    routingRule: ").append(toIndentedString(routingRule)).append("\n");
     sb.append("    routingRuleType: ").append(toIndentedString(routingRuleType)).append("\n");
+    sb.append("    screenMonitoredUserId: ").append(toIndentedString(screenMonitoredUserId)).append("\n");
     sb.append("    screenShareAddressSelf: ").append(toIndentedString(screenShareAddressSelf)).append("\n");
     sb.append("    screenShareRoomId: ").append(toIndentedString(screenShareRoomId)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");

@@ -124,7 +124,8 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE"),
     MESSAGE("MESSAGE"),
-    INTERNALMESSAGE("INTERNALMESSAGE");
+    INTERNALMESSAGE("INTERNALMESSAGE"),
+    SCREENMONITORING("SCREENMONITORING");
 
     private String value;
 

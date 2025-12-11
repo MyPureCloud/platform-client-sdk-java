@@ -375,6 +375,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     EVALUATION("Evaluation"),
     CALIBRATION("Calibration"),
     SURVEY("Survey"),
+    AGENTSCORINGRULE("AgentScoringRule"),
     EVALUATIONFORM("EvaluationForm"),
     SURVEYFORM("SurveyForm"),
     RECORDING("Recording"),

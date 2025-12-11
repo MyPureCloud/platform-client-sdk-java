@@ -12,7 +12,6 @@
 | **dateModified** | [**Date**](Date) | Timestamp indicating when the social topic was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **divisionId** | **String** | The ID of the division to which the social topic belongs to. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the social topic. |  [optional] |
-| **dataIngestionRulesMetadata** | [**List&lt;DataIngestionRulesMetadata&gt;**](DataIngestionRulesMetadata) | The data ingestion rule metadata. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -28,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

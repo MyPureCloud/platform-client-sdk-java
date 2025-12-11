@@ -28,6 +28,7 @@ public class BulkResponseResultExternalContactExternalContactBulkEntityErrorExte
   private Boolean success = null;
   private ExternalContact entity = null;
   private BulkEntityErrorExternalContact error = null;
+  private Integer status = null;
 
   public BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -107,6 +108,24 @@ public class BulkResponseResultExternalContactExternalContactBulkEntityErrorExte
   }
 
 
+  /**
+   * Status Code for the requested operation.
+   **/
+  public BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status Code for the requested operation.")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,12 +139,13 @@ public class BulkResponseResultExternalContactExternalContactBulkEntityErrorExte
     return Objects.equals(this.id, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.id) &&
             Objects.equals(this.success, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.success) &&
             Objects.equals(this.entity, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.entity) &&
-            Objects.equals(this.error, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.error);
+            Objects.equals(this.error, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.error) &&
+            Objects.equals(this.status, bulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, success, entity, error);
+    return Objects.hash(id, success, entity, error, status);
   }
 
   @Override
@@ -137,6 +157,7 @@ public class BulkResponseResultExternalContactExternalContactBulkEntityErrorExte
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

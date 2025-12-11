@@ -5,14 +5,15 @@ import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
+import java.nio.file.*;
 
 public class ApiMTLSClientInjectionTest {
     private ApiClientConnectorProvider connectorProvider;
     private ApiClient apiClient;
     private String environment;
     private PureCloudRegionHosts region;
-    private String keyStorePath = "resources/sdk/purecloudjava/scripts/mtls-test/clientKeystore.p12";
-    private String trustStorePath = "resources/sdk/purecloudjava/scripts/mtls-test/truststore.jks";
+    private String keyStorePath = "../../../resources/sdk/purecloudjava/scripts/mtls-test/clientKeystore.p12";
+    private String trustStorePath = "../../../resources/sdk/purecloudjava/scripts/mtls-test/truststore.jks";
     private String keyStore = "admin";
     private String trustStore = "apples";
     private String clientId;
@@ -21,6 +22,8 @@ public class ApiMTLSClientInjectionTest {
     @BeforeTest
     public void setUp() {
         // Initialize test configuration
+        String cwd = Path.of("").toAbsolutePath().toString();
+        System.out.println("currentPath=" + cwd);
         clientId = getClientId();
         clientSecret = getClientSecret();
         region = getEnvironment();

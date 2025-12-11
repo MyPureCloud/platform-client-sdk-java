@@ -29,8 +29,8 @@ public class UsersRulesQueryResponse  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private String nextUri = null;
-  private String selfUri = null;
   private String previousUri = null;
+  private String selfUri = null;
 
   public UsersRulesQueryResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -109,23 +109,6 @@ public class UsersRulesQueryResponse  implements Serializable {
 
   /**
    **/
-  public UsersRulesQueryResponse selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public UsersRulesQueryResponse previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -138,6 +121,23 @@ public class UsersRulesQueryResponse  implements Serializable {
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public UsersRulesQueryResponse selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -155,13 +155,13 @@ public class UsersRulesQueryResponse  implements Serializable {
             Objects.equals(this.pageSize, usersRulesQueryResponse.pageSize) &&
             Objects.equals(this.pageNumber, usersRulesQueryResponse.pageNumber) &&
             Objects.equals(this.nextUri, usersRulesQueryResponse.nextUri) &&
-            Objects.equals(this.selfUri, usersRulesQueryResponse.selfUri) &&
-            Objects.equals(this.previousUri, usersRulesQueryResponse.previousUri);
+            Objects.equals(this.previousUri, usersRulesQueryResponse.previousUri) &&
+            Objects.equals(this.selfUri, usersRulesQueryResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, nextUri, selfUri, previousUri);
+    return Objects.hash(entities, pageSize, pageNumber, nextUri, previousUri, selfUri);
   }
 
   @Override
@@ -173,8 +173,8 @@ public class UsersRulesQueryResponse  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -276,6 +276,7 @@ public class FlowActivityEntityData  implements Serializable {
     EMAIL("email"),
     INTERNALMESSAGE("internalmessage"),
     MESSAGE("message"),
+    SCREENMONITORING("screenmonitoring"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
     VIDEO("video"),

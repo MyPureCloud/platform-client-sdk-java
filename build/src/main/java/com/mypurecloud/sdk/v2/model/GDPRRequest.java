@@ -138,11 +138,13 @@ public class GDPRRequest  implements Serializable {
   private StatusEnum status = null;
   private GDPRSubject subject = null;
   private String resultsUrl = null;
+  private List<String> resultsUrls = null;
   private String selfUri = null;
 
   public GDPRRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       replacementTerms = new ArrayList<ReplacementTerm>();
+      resultsUrls = new ArrayList<String>();
     }
   }
 
@@ -253,6 +255,13 @@ public class GDPRRequest  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The locations where the results of the request can be retrieved if multiple archive files created")
+  @JsonProperty("resultsUrls")
+  public List<String> getResultsUrls() {
+    return resultsUrls;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -279,12 +288,13 @@ public class GDPRRequest  implements Serializable {
             Objects.equals(this.status, gDPRRequest.status) &&
             Objects.equals(this.subject, gDPRRequest.subject) &&
             Objects.equals(this.resultsUrl, gDPRRequest.resultsUrl) &&
+            Objects.equals(this.resultsUrls, gDPRRequest.resultsUrls) &&
             Objects.equals(this.selfUri, gDPRRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdBy, replacementTerms, requestType, createdDate, status, subject, resultsUrl, selfUri);
+    return Objects.hash(id, name, createdBy, replacementTerms, requestType, createdDate, status, subject, resultsUrl, resultsUrls, selfUri);
   }
 
   @Override
@@ -301,6 +311,7 @@ public class GDPRRequest  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    resultsUrl: ").append(toIndentedString(resultsUrl)).append("\n");
+    sb.append("    resultsUrls: ").append(toIndentedString(resultsUrls)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

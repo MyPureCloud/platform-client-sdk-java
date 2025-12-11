@@ -13,6 +13,9 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.AdditionalSocialMediaMessage;
 import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
+import com.mypurecloud.sdk.v2.model.AgentActionPayload;
+import com.mypurecloud.sdk.v2.model.AgentChecklistResponse;
+import com.mypurecloud.sdk.v2.model.AgentChecklistResponseList;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
@@ -41,6 +44,11 @@ import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ChecklistActivationPayload;
+import com.mypurecloud.sdk.v2.model.ChecklistFinalizePayload;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobCreationResponse;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobPayload;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobResponse;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
@@ -226,6 +234,9 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
@@ -379,6 +390,10 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistAgentactionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistsFinalizeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
@@ -2440,6 +2455,264 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse getConversationCommunicationAgentchecklist(String conversationId, String communicationId, String agentChecklistId) throws IOException, ApiException {
+    return  getConversationCommunicationAgentchecklist(createGetConversationCommunicationAgentchecklistRequest(conversationId, communicationId, agentChecklistId));
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @return AgentChecklistResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> getConversationCommunicationAgentchecklistWithHttpInfo(String conversationId, String communicationId, String agentChecklistId) throws IOException {
+    return getConversationCommunicationAgentchecklist(createGetConversationCommunicationAgentchecklistRequest(conversationId, communicationId, agentChecklistId).withHttpInfo());
+  }
+
+  private GetConversationCommunicationAgentchecklistRequest createGetConversationCommunicationAgentchecklistRequest(String conversationId, String communicationId, String agentChecklistId) {
+    return GetConversationCommunicationAgentchecklistRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withAgentChecklistId(agentChecklistId)
+
+            .build();
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param request The request object
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse getConversationCommunicationAgentchecklist(GetConversationCommunicationAgentchecklistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> getConversationCommunicationAgentchecklist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param jobId Inference Job ID (required)
+   * @return ChecklistInferenceJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChecklistInferenceJobResponse getConversationCommunicationAgentchecklistJob(String conversationId, String communicationId, String agentChecklistId, String jobId) throws IOException, ApiException {
+    return  getConversationCommunicationAgentchecklistJob(createGetConversationCommunicationAgentchecklistJobRequest(conversationId, communicationId, agentChecklistId, jobId));
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param jobId Inference Job ID (required)
+   * @return ChecklistInferenceJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChecklistInferenceJobResponse> getConversationCommunicationAgentchecklistJobWithHttpInfo(String conversationId, String communicationId, String agentChecklistId, String jobId) throws IOException {
+    return getConversationCommunicationAgentchecklistJob(createGetConversationCommunicationAgentchecklistJobRequest(conversationId, communicationId, agentChecklistId, jobId).withHttpInfo());
+  }
+
+  private GetConversationCommunicationAgentchecklistJobRequest createGetConversationCommunicationAgentchecklistJobRequest(String conversationId, String communicationId, String agentChecklistId, String jobId) {
+    return GetConversationCommunicationAgentchecklistJobRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withAgentChecklistId(agentChecklistId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param request The request object
+   * @return ChecklistInferenceJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChecklistInferenceJobResponse getConversationCommunicationAgentchecklistJob(GetConversationCommunicationAgentchecklistJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChecklistInferenceJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChecklistInferenceJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChecklistInferenceJobResponse> getConversationCommunicationAgentchecklistJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChecklistInferenceJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChecklistInferenceJobResponse> response = (ApiResponse<ChecklistInferenceJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChecklistInferenceJobResponse> response = (ApiResponse<ChecklistInferenceJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @return AgentChecklistResponseList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponseList getConversationCommunicationAgentchecklists(String conversationId, String communicationId) throws IOException, ApiException {
+    return  getConversationCommunicationAgentchecklists(createGetConversationCommunicationAgentchecklistsRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @return AgentChecklistResponseList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponseList> getConversationCommunicationAgentchecklistsWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return getConversationCommunicationAgentchecklists(createGetConversationCommunicationAgentchecklistsRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private GetConversationCommunicationAgentchecklistsRequest createGetConversationCommunicationAgentchecklistsRequest(String conversationId, String communicationId) {
+    return GetConversationCommunicationAgentchecklistsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param request The request object
+   * @return AgentChecklistResponseList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponseList getConversationCommunicationAgentchecklists(GetConversationCommunicationAgentchecklistsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistResponseList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistResponseList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponseList> getConversationCommunicationAgentchecklists(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistResponseList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -15175,6 +15448,362 @@ public class ConversationsApi {
   }
 
   /**
+   * Agent Checklist activation API
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent checklist activation payload (required)
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse postConversationCommunicationAgentchecklist(String conversationId, String communicationId, String agentChecklistId, ChecklistActivationPayload body) throws IOException, ApiException {
+    return  postConversationCommunicationAgentchecklist(createPostConversationCommunicationAgentchecklistRequest(conversationId, communicationId, agentChecklistId, body));
+  }
+
+  /**
+   * Agent Checklist activation API
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent checklist activation payload (required)
+   * @return AgentChecklistResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> postConversationCommunicationAgentchecklistWithHttpInfo(String conversationId, String communicationId, String agentChecklistId, ChecklistActivationPayload body) throws IOException {
+    return postConversationCommunicationAgentchecklist(createPostConversationCommunicationAgentchecklistRequest(conversationId, communicationId, agentChecklistId, body).withHttpInfo());
+  }
+
+  private PostConversationCommunicationAgentchecklistRequest createPostConversationCommunicationAgentchecklistRequest(String conversationId, String communicationId, String agentChecklistId, ChecklistActivationPayload body) {
+    return PostConversationCommunicationAgentchecklistRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withAgentChecklistId(agentChecklistId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Agent Checklist activation API
+   * 
+   * @param request The request object
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse postConversationCommunicationAgentchecklist(PostConversationCommunicationAgentchecklistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Agent Checklist activation API
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> postConversationCommunicationAgentchecklist(ApiRequest<ChecklistActivationPayload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent action payload (required)
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse postConversationCommunicationAgentchecklistAgentaction(String conversationId, String communicationId, String agentChecklistId, AgentActionPayload body) throws IOException, ApiException {
+    return  postConversationCommunicationAgentchecklistAgentaction(createPostConversationCommunicationAgentchecklistAgentactionRequest(conversationId, communicationId, agentChecklistId, body));
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent action payload (required)
+   * @return AgentChecklistResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> postConversationCommunicationAgentchecklistAgentactionWithHttpInfo(String conversationId, String communicationId, String agentChecklistId, AgentActionPayload body) throws IOException {
+    return postConversationCommunicationAgentchecklistAgentaction(createPostConversationCommunicationAgentchecklistAgentactionRequest(conversationId, communicationId, agentChecklistId, body).withHttpInfo());
+  }
+
+  private PostConversationCommunicationAgentchecklistAgentactionRequest createPostConversationCommunicationAgentchecklistAgentactionRequest(String conversationId, String communicationId, String agentChecklistId, AgentActionPayload body) {
+    return PostConversationCommunicationAgentchecklistAgentactionRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withAgentChecklistId(agentChecklistId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param request The request object
+   * @return AgentChecklistResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponse postConversationCommunicationAgentchecklistAgentaction(PostConversationCommunicationAgentchecklistAgentactionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponse> postConversationCommunicationAgentchecklistAgentaction(ApiRequest<AgentActionPayload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent checklist inference job payload (required)
+   * @return ChecklistInferenceJobCreationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChecklistInferenceJobCreationResponse postConversationCommunicationAgentchecklistJobs(String conversationId, String communicationId, String agentChecklistId, ChecklistInferenceJobPayload body) throws IOException, ApiException {
+    return  postConversationCommunicationAgentchecklistJobs(createPostConversationCommunicationAgentchecklistJobsRequest(conversationId, communicationId, agentChecklistId, body));
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Agent checklist inference job payload (required)
+   * @return ChecklistInferenceJobCreationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChecklistInferenceJobCreationResponse> postConversationCommunicationAgentchecklistJobsWithHttpInfo(String conversationId, String communicationId, String agentChecklistId, ChecklistInferenceJobPayload body) throws IOException {
+    return postConversationCommunicationAgentchecklistJobs(createPostConversationCommunicationAgentchecklistJobsRequest(conversationId, communicationId, agentChecklistId, body).withHttpInfo());
+  }
+
+  private PostConversationCommunicationAgentchecklistJobsRequest createPostConversationCommunicationAgentchecklistJobsRequest(String conversationId, String communicationId, String agentChecklistId, ChecklistInferenceJobPayload body) {
+    return PostConversationCommunicationAgentchecklistJobsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withAgentChecklistId(agentChecklistId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param request The request object
+   * @return ChecklistInferenceJobCreationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChecklistInferenceJobCreationResponse postConversationCommunicationAgentchecklistJobs(PostConversationCommunicationAgentchecklistJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChecklistInferenceJobCreationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChecklistInferenceJobCreationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChecklistInferenceJobCreationResponse> postConversationCommunicationAgentchecklistJobs(ApiRequest<ChecklistInferenceJobPayload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChecklistInferenceJobCreationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChecklistInferenceJobCreationResponse> response = (ApiResponse<ChecklistInferenceJobCreationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChecklistInferenceJobCreationResponse> response = (ApiResponse<ChecklistInferenceJobCreationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body Agent checklist finalize payload (required)
+   * @return AgentChecklistResponseList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponseList postConversationCommunicationAgentchecklistsFinalize(String conversationId, String communicationId, ChecklistFinalizePayload body) throws IOException, ApiException {
+    return  postConversationCommunicationAgentchecklistsFinalize(createPostConversationCommunicationAgentchecklistsFinalizeRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @param body Agent checklist finalize payload (required)
+   * @return AgentChecklistResponseList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponseList> postConversationCommunicationAgentchecklistsFinalizeWithHttpInfo(String conversationId, String communicationId, ChecklistFinalizePayload body) throws IOException {
+    return postConversationCommunicationAgentchecklistsFinalize(createPostConversationCommunicationAgentchecklistsFinalizeRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationCommunicationAgentchecklistsFinalizeRequest createPostConversationCommunicationAgentchecklistsFinalizeRequest(String conversationId, String communicationId, ChecklistFinalizePayload body) {
+    return PostConversationCommunicationAgentchecklistsFinalizeRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param request The request object
+   * @return AgentChecklistResponseList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistResponseList postConversationCommunicationAgentchecklistsFinalize(PostConversationCommunicationAgentchecklistsFinalizeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistResponseList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistResponseList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistResponseList> postConversationCommunicationAgentchecklistsFinalize(ApiRequest<ChecklistFinalizePayload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistResponseList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Send internal message
    * Send a new internal message for an existing communication.
    * @param conversationId conversationId (required)
@@ -15591,25 +16220,27 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body));
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -15627,11 +16258,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -15645,11 +16277,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -15759,7 +16392,6 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -15773,7 +16405,6 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -15797,7 +16428,6 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -15816,7 +16446,6 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -15844,25 +16473,27 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplaceExternal(String conversationId, String participantId, TransferToExternalRequest body) throws IOException, ApiException {
      postConversationParticipantReplaceExternal(createPostConversationParticipantReplaceExternalRequest(conversationId, participantId, body));
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplaceExternalWithHttpInfo(String conversationId, String participantId, TransferToExternalRequest body) throws IOException {
     return postConversationParticipantReplaceExternal(createPostConversationParticipantReplaceExternalRequest(conversationId, participantId, body).withHttpInfo());
@@ -15880,11 +16511,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplaceExternal(PostConversationParticipantReplaceExternalRequest request) throws IOException, ApiException {
     try {
@@ -15898,11 +16530,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplaceExternal(ApiRequest<TransferToExternalRequest> request) throws IOException {
     try {
@@ -16098,7 +16731,6 @@ public class ConversationsApi {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -16112,7 +16744,6 @@ public class ConversationsApi {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -16136,7 +16767,6 @@ public class ConversationsApi {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -16155,7 +16785,6 @@ public class ConversationsApi {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -16762,27 +17391,29 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(String conversationId, String participantId, ConsultTransfer body) throws IOException, ApiException {
     return  postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body));
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String conversationId, String participantId, ConsultTransfer body) throws IOException {
     return postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body).withHttpInfo());
@@ -16800,12 +17431,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     try {
@@ -16819,11 +17451,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException {
     try {
@@ -16936,7 +17569,6 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -16951,7 +17583,6 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -16976,7 +17607,6 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
@@ -16996,7 +17626,6 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -17024,27 +17653,29 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsultExternal(String conversationId, String participantId, ConsultTransferToExternal body) throws IOException, ApiException {
     return  postConversationsCallParticipantConsultExternal(createPostConversationsCallParticipantConsultExternalRequest(conversationId, participantId, body));
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultExternalWithHttpInfo(String conversationId, String participantId, ConsultTransferToExternal body) throws IOException {
     return postConversationsCallParticipantConsultExternal(createPostConversationsCallParticipantConsultExternalRequest(conversationId, participantId, body).withHttpInfo());
@@ -17062,12 +17693,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsultExternal(PostConversationsCallParticipantConsultExternalRequest request) throws IOException, ApiException {
     try {
@@ -17081,11 +17713,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultExternal(ApiRequest<ConsultTransferToExternal> request) throws IOException {
     try {
@@ -17360,7 +17993,6 @@ public class ConversationsApi {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -17375,7 +18007,6 @@ public class ConversationsApi {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -17400,7 +18031,6 @@ public class ConversationsApi {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
@@ -17420,7 +18050,6 @@ public class ConversationsApi {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

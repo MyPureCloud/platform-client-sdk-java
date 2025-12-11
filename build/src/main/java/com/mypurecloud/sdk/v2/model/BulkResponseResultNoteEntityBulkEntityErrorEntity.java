@@ -28,6 +28,7 @@ public class BulkResponseResultNoteEntityBulkEntityErrorEntity  implements Seria
   private Boolean success = null;
   private Note entity = null;
   private BulkEntityErrorEntity error = null;
+  private Integer status = null;
 
   public BulkResponseResultNoteEntityBulkEntityErrorEntity() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -107,6 +108,24 @@ public class BulkResponseResultNoteEntityBulkEntityErrorEntity  implements Seria
   }
 
 
+  /**
+   * Status Code for the requested operation.
+   **/
+  public BulkResponseResultNoteEntityBulkEntityErrorEntity status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status Code for the requested operation.")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,12 +139,13 @@ public class BulkResponseResultNoteEntityBulkEntityErrorEntity  implements Seria
     return Objects.equals(this.id, bulkResponseResultNoteEntityBulkEntityErrorEntity.id) &&
             Objects.equals(this.success, bulkResponseResultNoteEntityBulkEntityErrorEntity.success) &&
             Objects.equals(this.entity, bulkResponseResultNoteEntityBulkEntityErrorEntity.entity) &&
-            Objects.equals(this.error, bulkResponseResultNoteEntityBulkEntityErrorEntity.error);
+            Objects.equals(this.error, bulkResponseResultNoteEntityBulkEntityErrorEntity.error) &&
+            Objects.equals(this.status, bulkResponseResultNoteEntityBulkEntityErrorEntity.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, success, entity, error);
+    return Objects.hash(id, success, entity, error, status);
   }
 
   @Override
@@ -137,6 +157,7 @@ public class BulkResponseResultNoteEntityBulkEntityErrorEntity  implements Seria
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

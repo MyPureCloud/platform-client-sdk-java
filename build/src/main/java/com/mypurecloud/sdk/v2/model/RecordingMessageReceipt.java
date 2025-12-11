@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.RecordingMessageReceiptReason;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ import java.io.Serializable;
 public class RecordingMessageReceipt  implements Serializable {
   
   private String id = null;
+  private Date receiptTime = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -107,6 +109,24 @@ public class RecordingMessageReceipt  implements Serializable {
 
 
   /**
+   * Original time of the event (receipt). Example: delivery receipt time, read receipt time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public RecordingMessageReceipt receiptTime(Date receiptTime) {
+    this.receiptTime = receiptTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Original time of the event (receipt). Example: delivery receipt time, read receipt time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("receiptTime")
+  public Date getReceiptTime() {
+    return receiptTime;
+  }
+  public void setReceiptTime(Date receiptTime) {
+    this.receiptTime = receiptTime;
+  }
+
+
+  /**
    * The message receipt status
    **/
   public RecordingMessageReceipt status(StatusEnum status) {
@@ -153,13 +173,14 @@ public class RecordingMessageReceipt  implements Serializable {
     RecordingMessageReceipt recordingMessageReceipt = (RecordingMessageReceipt) o;
 
     return Objects.equals(this.id, recordingMessageReceipt.id) &&
+            Objects.equals(this.receiptTime, recordingMessageReceipt.receiptTime) &&
             Objects.equals(this.status, recordingMessageReceipt.status) &&
             Objects.equals(this.reasons, recordingMessageReceipt.reasons);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, reasons);
+    return Objects.hash(id, receiptTime, status, reasons);
   }
 
   @Override
@@ -168,6 +189,7 @@ public class RecordingMessageReceipt  implements Serializable {
     sb.append("class RecordingMessageReceipt {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    receiptTime: ").append(toIndentedString(receiptTime)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("}");

@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreateKpiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
@@ -39,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorType;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.MailFromResult;
@@ -88,6 +90,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberPatchRequest;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
+import com.mypurecloud.sdk.v2.model.UpdateKpiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -119,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
@@ -162,7 +166,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelFeaturesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatortypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
@@ -213,6 +219,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
@@ -240,6 +247,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
@@ -795,6 +803,85 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingPredictor(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingPredictorsKeyperformanceindicator(String kpiId) throws IOException, ApiException {
+     deleteRoutingPredictorsKeyperformanceindicator(createDeleteRoutingPredictorsKeyperformanceindicatorRequest(kpiId));
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingPredictorsKeyperformanceindicatorWithHttpInfo(String kpiId) throws IOException {
+    return deleteRoutingPredictorsKeyperformanceindicator(createDeleteRoutingPredictorsKeyperformanceindicatorRequest(kpiId).withHttpInfo());
+  }
+
+  private DeleteRoutingPredictorsKeyperformanceindicatorRequest createDeleteRoutingPredictorsKeyperformanceindicatorRequest(String kpiId) {
+    return DeleteRoutingPredictorsKeyperformanceindicatorRequest.builder()
+            .withKpiId(kpiId)
+
+            .build();
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingPredictorsKeyperformanceindicator(DeleteRoutingPredictorsKeyperformanceindicatorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingPredictorsKeyperformanceindicator(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4276,6 +4363,92 @@ public class RoutingApi {
   }
 
   /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @param expand Parameter to request additional data to return in KPI payload (optional)
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator getRoutingPredictorsKeyperformanceindicator(String kpiId, List<String> expand) throws IOException, ApiException {
+    return  getRoutingPredictorsKeyperformanceindicator(createGetRoutingPredictorsKeyperformanceindicatorRequest(kpiId, expand));
+  }
+
+  /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @param expand Parameter to request additional data to return in KPI payload (optional)
+   * @return KeyPerformanceIndicator
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicatorWithHttpInfo(String kpiId, List<String> expand) throws IOException {
+    return getRoutingPredictorsKeyperformanceindicator(createGetRoutingPredictorsKeyperformanceindicatorRequest(kpiId, expand).withHttpInfo());
+  }
+
+  private GetRoutingPredictorsKeyperformanceindicatorRequest createGetRoutingPredictorsKeyperformanceindicatorRequest(String kpiId, List<String> expand) {
+    return GetRoutingPredictorsKeyperformanceindicatorRequest.builder()
+            .withKpiId(kpiId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator getRoutingPredictorsKeyperformanceindicator(GetRoutingPredictorsKeyperformanceindicatorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KeyPerformanceIndicator> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicator(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeyPerformanceIndicator>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of Key Performance Indicators
    * 
    * @param kpiGroup The Group of Key Performance Indicators to return (optional)
@@ -4353,6 +4526,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return List<KeyPerformanceIndicatorType>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<KeyPerformanceIndicatorType> getRoutingPredictorsKeyperformanceindicatortypes() throws IOException, ApiException {
+    return  getRoutingPredictorsKeyperformanceindicatortypes(createGetRoutingPredictorsKeyperformanceindicatortypesRequest());
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return List<KeyPerformanceIndicatorType>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<KeyPerformanceIndicatorType>> getRoutingPredictorsKeyperformanceindicatortypesWithHttpInfo() throws IOException {
+    return getRoutingPredictorsKeyperformanceindicatortypes(createGetRoutingPredictorsKeyperformanceindicatortypesRequest().withHttpInfo());
+  }
+
+  private GetRoutingPredictorsKeyperformanceindicatortypesRequest createGetRoutingPredictorsKeyperformanceindicatortypesRequest() {
+    return GetRoutingPredictorsKeyperformanceindicatortypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<KeyPerformanceIndicatorType>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<KeyPerformanceIndicatorType> getRoutingPredictorsKeyperformanceindicatortypes(GetRoutingPredictorsKeyperformanceindicatortypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<KeyPerformanceIndicatorType>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicatorType>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<KeyPerformanceIndicatorType>> getRoutingPredictorsKeyperformanceindicatortypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<KeyPerformanceIndicatorType>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<KeyPerformanceIndicatorType>> response = (ApiResponse<List<KeyPerformanceIndicatorType>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<KeyPerformanceIndicatorType>> response = (ApiResponse<List<KeyPerformanceIndicatorType>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8722,6 +8973,92 @@ public class RoutingApi {
   }
 
   /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @param body  (optional)
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator patchRoutingPredictorsKeyperformanceindicator(String kpiId, UpdateKpiRequest body) throws IOException, ApiException {
+    return  patchRoutingPredictorsKeyperformanceindicator(createPatchRoutingPredictorsKeyperformanceindicatorRequest(kpiId, body));
+  }
+
+  /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param kpiId Key Performance Indicator ID (required)
+   * @param body  (optional)
+   * @return KeyPerformanceIndicator
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> patchRoutingPredictorsKeyperformanceindicatorWithHttpInfo(String kpiId, UpdateKpiRequest body) throws IOException {
+    return patchRoutingPredictorsKeyperformanceindicator(createPatchRoutingPredictorsKeyperformanceindicatorRequest(kpiId, body).withHttpInfo());
+  }
+
+  private PatchRoutingPredictorsKeyperformanceindicatorRequest createPatchRoutingPredictorsKeyperformanceindicatorRequest(String kpiId, UpdateKpiRequest body) {
+    return PatchRoutingPredictorsKeyperformanceindicatorRequest.builder()
+            .withKpiId(kpiId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator patchRoutingPredictorsKeyperformanceindicator(PatchRoutingPredictorsKeyperformanceindicatorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KeyPerformanceIndicator> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> patchRoutingPredictorsKeyperformanceindicator(ApiRequest<UpdateKpiRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeyPerformanceIndicator>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the ring number OR joined status for a queue member.
    * 
    * @param queueId Queue ID (required)
@@ -10906,6 +11243,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body request (required)
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(CreateKpiRequest body) throws IOException, ApiException {
+    return  postRoutingPredictorsKeyperformanceindicators(createPostRoutingPredictorsKeyperformanceindicatorsRequest(body));
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body request (required)
+   * @return KeyPerformanceIndicator
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> postRoutingPredictorsKeyperformanceindicatorsWithHttpInfo(CreateKpiRequest body) throws IOException {
+    return postRoutingPredictorsKeyperformanceindicators(createPostRoutingPredictorsKeyperformanceindicatorsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingPredictorsKeyperformanceindicatorsRequest createPostRoutingPredictorsKeyperformanceindicatorsRequest(CreateKpiRequest body) {
+    return PostRoutingPredictorsKeyperformanceindicatorsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KeyPerformanceIndicator
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(PostRoutingPredictorsKeyperformanceindicatorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KeyPerformanceIndicator> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KeyPerformanceIndicator> postRoutingPredictorsKeyperformanceindicators(ApiRequest<CreateKpiRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeyPerformanceIndicator>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

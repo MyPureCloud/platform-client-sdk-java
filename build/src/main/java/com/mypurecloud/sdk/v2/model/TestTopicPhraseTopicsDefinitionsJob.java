@@ -77,10 +77,12 @@ public class TestTopicPhraseTopicsDefinitionsJob  implements Serializable {
   }
   private StateEnum state = null;
   private List<TestTopicPhraseTestTopicPhraseResults> testTopicPhraseResults = null;
+  private List<String> genAIPhrasesResults = null;
 
   public TestTopicPhraseTopicsDefinitionsJob() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       testTopicPhraseResults = new ArrayList<TestTopicPhraseTestTopicPhraseResults>();
+      genAIPhrasesResults = new ArrayList<String>();
     }
   }
 
@@ -136,6 +138,23 @@ public class TestTopicPhraseTopicsDefinitionsJob  implements Serializable {
   }
 
 
+  /**
+   **/
+  public TestTopicPhraseTopicsDefinitionsJob genAIPhrasesResults(List<String> genAIPhrasesResults) {
+    this.genAIPhrasesResults = genAIPhrasesResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("genAIPhrasesResults")
+  public List<String> getGenAIPhrasesResults() {
+    return genAIPhrasesResults;
+  }
+  public void setGenAIPhrasesResults(List<String> genAIPhrasesResults) {
+    this.genAIPhrasesResults = genAIPhrasesResults;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -148,12 +167,13 @@ public class TestTopicPhraseTopicsDefinitionsJob  implements Serializable {
 
     return Objects.equals(this.id, testTopicPhraseTopicsDefinitionsJob.id) &&
             Objects.equals(this.state, testTopicPhraseTopicsDefinitionsJob.state) &&
-            Objects.equals(this.testTopicPhraseResults, testTopicPhraseTopicsDefinitionsJob.testTopicPhraseResults);
+            Objects.equals(this.testTopicPhraseResults, testTopicPhraseTopicsDefinitionsJob.testTopicPhraseResults) &&
+            Objects.equals(this.genAIPhrasesResults, testTopicPhraseTopicsDefinitionsJob.genAIPhrasesResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, testTopicPhraseResults);
+    return Objects.hash(id, state, testTopicPhraseResults, genAIPhrasesResults);
   }
 
   @Override
@@ -164,6 +184,7 @@ public class TestTopicPhraseTopicsDefinitionsJob  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    testTopicPhraseResults: ").append(toIndentedString(testTopicPhraseResults)).append("\n");
+    sb.append("    genAIPhrasesResults: ").append(toIndentedString(genAIPhrasesResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -199,7 +199,6 @@ public class AuthorizationApi {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy is applied (required)
    * @param subjectId The ID of the subject to which the policy is applied (required)
    * @throws ApiException if the request fails on the server
@@ -212,7 +211,6 @@ public class AuthorizationApi {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy is applied (required)
    * @param subjectId The ID of the subject to which the policy is applied (required)
    * @throws IOException if the request fails to be processed
@@ -233,7 +231,6 @@ public class AuthorizationApi {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -252,7 +249,6 @@ public class AuthorizationApi {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1398,7 +1394,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
    * @return AuthorizationPolicyEntityListing
@@ -1412,7 +1407,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
    * @return AuthorizationPolicyEntityListing
@@ -1434,7 +1428,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicyEntityListing
    * @throws ApiException if the request fails on the server
@@ -1454,7 +1447,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1484,7 +1476,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param subjectId The ID of the subject to which policies are applied (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -1499,7 +1490,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param subjectId The ID of the subject to which policies are applied (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -1524,7 +1514,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicyEntityListing
    * @throws ApiException if the request fails on the server
@@ -1544,7 +1533,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1574,7 +1562,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action resource target to which policies are applied (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -1589,7 +1576,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action resource target to which policies are applied (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -1614,7 +1600,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicyEntityListing
    * @throws ApiException if the request fails on the server
@@ -1634,7 +1619,6 @@ public class AuthorizationApi {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1664,7 +1648,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action resource target to which the policy is applied (required)
    * @param subjectId The ID of the subject to which the policy is applied (required)
    * @return AuthorizationPolicy
@@ -1678,7 +1661,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action resource target to which the policy is applied (required)
    * @param subjectId The ID of the subject to which the policy is applied (required)
    * @return AuthorizationPolicy
@@ -1700,7 +1682,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -1720,7 +1701,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1750,7 +1730,6 @@ public class AuthorizationApi {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return TargetAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1762,7 +1741,6 @@ public class AuthorizationApi {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return TargetAttributes
    * @throws IOException if the request fails to be processed
    */
@@ -1778,7 +1756,6 @@ public class AuthorizationApi {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TargetAttributes
    * @throws ApiException if the request fails on the server
@@ -1798,7 +1775,6 @@ public class AuthorizationApi {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1828,7 +1804,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to retrieve (required)
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -1841,7 +1816,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to retrieve (required)
    * @return AuthorizationPolicy
    * @throws IOException if the request fails to be processed
@@ -1860,7 +1834,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -1880,7 +1853,6 @@ public class AuthorizationApi {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1910,7 +1882,6 @@ public class AuthorizationApi {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to retrieve attributes (required)
    * @return PolicyAttributeSet
    * @throws ApiException if the request fails on the server
@@ -1923,7 +1894,6 @@ public class AuthorizationApi {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to retrieve attributes (required)
    * @return PolicyAttributeSet
    * @throws IOException if the request fails to be processed
@@ -1942,7 +1912,6 @@ public class AuthorizationApi {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return PolicyAttributeSet
    * @throws ApiException if the request fails on the server
@@ -1962,7 +1931,6 @@ public class AuthorizationApi {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3407,7 +3375,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -3421,7 +3388,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -3443,7 +3409,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -3463,7 +3428,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3493,7 +3457,6 @@ public class AuthorizationApi {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return ValidationErrorListing
@@ -3507,7 +3470,6 @@ public class AuthorizationApi {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return ValidationErrorListing
@@ -3529,7 +3491,6 @@ public class AuthorizationApi {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ValidationErrorListing
    * @throws ApiException if the request fails on the server
@@ -3549,7 +3510,6 @@ public class AuthorizationApi {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3579,7 +3539,6 @@ public class AuthorizationApi {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to test the simulated data against (required)
    * @param body A map of attribute names to type and simulated data value (required)
    * @return PolicyTestResult
@@ -3593,7 +3552,6 @@ public class AuthorizationApi {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to test the simulated data against (required)
    * @param body A map of attribute names to type and simulated data value (required)
    * @return PolicyTestResult
@@ -3615,7 +3573,6 @@ public class AuthorizationApi {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return PolicyTestResult
    * @throws ApiException if the request fails on the server
@@ -3635,7 +3592,6 @@ public class AuthorizationApi {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4404,7 +4360,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -4418,7 +4373,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param targetName The domain:entity:action target to which the policy will be applied (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -4440,7 +4394,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -4460,7 +4413,6 @@ public class AuthorizationApi {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4490,7 +4442,6 @@ public class AuthorizationApi {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to update (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -4504,7 +4455,6 @@ public class AuthorizationApi {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param policyId The ID of the policy to update (required)
    * @param body Access control policy (required)
    * @return AuthorizationPolicy
@@ -4526,7 +4476,6 @@ public class AuthorizationApi {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AuthorizationPolicy
    * @throws ApiException if the request fails on the server
@@ -4546,7 +4495,6 @@ public class AuthorizationApi {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

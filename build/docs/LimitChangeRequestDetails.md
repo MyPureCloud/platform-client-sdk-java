@@ -26,8 +26,9 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| AGENTIC_VIRTUAL_AGENTS | &quot;agentic.virtual.agents&quot; | 
 | ANALYTICS_AGENTS | &quot;analytics.agents&quot; | 
 | ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
 | ANALYTICS_DATA_EXTRACTION | &quot;analytics.data.extraction&quot; | 
@@ -106,7 +107,8 @@
 | WEBCHAT | &quot;webchat&quot; | 
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY | &quot;workforce.management.agent.availability&quot; | 
-| WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
+| WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| WORKFORCE_MANAGEMENT_SHIFT_TRADING | &quot;workforce.management.shift.trading&quot; | 
 | SYSTEM | &quot;system&quot; | 
 
 
@@ -144,4 +146,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

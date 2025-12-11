@@ -36,6 +36,7 @@ public class WorktypeUpdate  implements Serializable {
   private String schemaId = null;
   private Integer serviceLevelTarget = null;
   private WorkitemRuleSettings ruleSettings = null;
+  private Boolean unassignedDivisionContactsEnabled = null;
   private String description = null;
   private String defaultStatusId = null;
   private Integer schemaVersion = null;
@@ -262,6 +263,24 @@ public class WorktypeUpdate  implements Serializable {
 
 
   /**
+   * When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+   **/
+  public WorktypeUpdate unassignedDivisionContactsEnabled(Boolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.")
+  @JsonProperty("unassignedDivisionContactsEnabled")
+  public Boolean getUnassignedDivisionContactsEnabled() {
+    return unassignedDivisionContactsEnabled;
+  }
+  public void setUnassignedDivisionContactsEnabled(Boolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+  }
+
+
+  /**
    * The description of the Worktype. Maximum length of 512 characters.
    **/
   public WorktypeUpdate description(String description) {
@@ -408,6 +427,7 @@ public class WorktypeUpdate  implements Serializable {
             Objects.equals(this.schemaId, worktypeUpdate.schemaId) &&
             Objects.equals(this.serviceLevelTarget, worktypeUpdate.serviceLevelTarget) &&
             Objects.equals(this.ruleSettings, worktypeUpdate.ruleSettings) &&
+            Objects.equals(this.unassignedDivisionContactsEnabled, worktypeUpdate.unassignedDivisionContactsEnabled) &&
             Objects.equals(this.description, worktypeUpdate.description) &&
             Objects.equals(this.defaultStatusId, worktypeUpdate.defaultStatusId) &&
             Objects.equals(this.schemaVersion, worktypeUpdate.schemaVersion) &&
@@ -419,7 +439,7 @@ public class WorktypeUpdate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId, defaultScriptId);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, unassignedDivisionContactsEnabled, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId, defaultScriptId);
   }
 
   @Override
@@ -438,6 +458,7 @@ public class WorktypeUpdate  implements Serializable {
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
     sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
+    sb.append("    unassignedDivisionContactsEnabled: ").append(toIndentedString(unassignedDivisionContactsEnabled)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    defaultStatusId: ").append(toIndentedString(defaultStatusId)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");

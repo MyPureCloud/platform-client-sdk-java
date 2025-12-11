@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class MessageSubtypeSettings  implements Serializable {
   
   private Boolean enableAutoAnswer = null;
+  private Boolean enableInactivityTimeout = null;
 
   public MessageSubtypeSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -48,6 +49,24 @@ public class MessageSubtypeSettings  implements Serializable {
   }
 
 
+  /**
+   * Indicates if inactivity timeout is enabled for the given subtype.
+   **/
+  public MessageSubtypeSettings enableInactivityTimeout(Boolean enableInactivityTimeout) {
+    this.enableInactivityTimeout = enableInactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if inactivity timeout is enabled for the given subtype.")
+  @JsonProperty("enableInactivityTimeout")
+  public Boolean getEnableInactivityTimeout() {
+    return enableInactivityTimeout;
+  }
+  public void setEnableInactivityTimeout(Boolean enableInactivityTimeout) {
+    this.enableInactivityTimeout = enableInactivityTimeout;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -58,12 +77,13 @@ public class MessageSubtypeSettings  implements Serializable {
     }
     MessageSubtypeSettings messageSubtypeSettings = (MessageSubtypeSettings) o;
 
-    return Objects.equals(this.enableAutoAnswer, messageSubtypeSettings.enableAutoAnswer);
+    return Objects.equals(this.enableAutoAnswer, messageSubtypeSettings.enableAutoAnswer) &&
+            Objects.equals(this.enableInactivityTimeout, messageSubtypeSettings.enableInactivityTimeout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer);
+    return Objects.hash(enableAutoAnswer, enableInactivityTimeout);
   }
 
   @Override
@@ -72,6 +92,7 @@ public class MessageSubtypeSettings  implements Serializable {
     sb.append("class MessageSubtypeSettings {\n");
     
     sb.append("    enableAutoAnswer: ").append(toIndentedString(enableAutoAnswer)).append("\n");
+    sb.append("    enableInactivityTimeout: ").append(toIndentedString(enableInactivityTimeout)).append("\n");
     sb.append("}");
     return sb.toString();
   }

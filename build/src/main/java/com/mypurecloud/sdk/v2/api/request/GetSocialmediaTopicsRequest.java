@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.SocialTopicPatchRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialTopicWithDataIngestionRuleMetadataResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetRequest;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleRequest;
@@ -119,6 +120,20 @@ public class GetSocialmediaTopicsRequest {
 	    return this;
 	} 
 
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetSocialmediaTopicsRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -153,6 +168,9 @@ public class GetSocialmediaTopicsRequest {
         
 
                 .withQueryParameters("includeDeleted", "", includeDeleted)
+        
+
+                .withQueryParameters("name", "", name)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -192,6 +210,11 @@ public class GetSocialmediaTopicsRequest {
 
 		public Builder withIncludeDeleted(Boolean includeDeleted) {
 			request.setIncludeDeleted(includeDeleted);
+			return this;
+		}
+
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 

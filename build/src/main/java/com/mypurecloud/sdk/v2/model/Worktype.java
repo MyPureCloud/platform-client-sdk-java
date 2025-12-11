@@ -61,6 +61,7 @@ public class Worktype  implements Serializable {
   private WorkitemRuleSettings ruleSettings = null;
   private WorkitemFlowReference flow = null;
   private WorkitemScriptReference defaultScript = null;
+  private Boolean unassignedDivisionContactsEnabled = null;
   private String selfUri = null;
 
   public Worktype() {
@@ -492,6 +493,24 @@ public class Worktype  implements Serializable {
   }
 
 
+  /**
+   * When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+   **/
+  public Worktype unassignedDivisionContactsEnabled(Boolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.")
+  @JsonProperty("unassignedDivisionContactsEnabled")
+  public Boolean getUnassignedDivisionContactsEnabled() {
+    return unassignedDivisionContactsEnabled;
+  }
+  public void setUnassignedDivisionContactsEnabled(Boolean unassignedDivisionContactsEnabled) {
+    this.unassignedDivisionContactsEnabled = unassignedDivisionContactsEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -533,12 +552,13 @@ public class Worktype  implements Serializable {
             Objects.equals(this.ruleSettings, worktype.ruleSettings) &&
             Objects.equals(this.flow, worktype.flow) &&
             Objects.equals(this.defaultScript, worktype.defaultScript) &&
+            Objects.equals(this.unassignedDivisionContactsEnabled, worktype.unassignedDivisionContactsEnabled) &&
             Objects.equals(this.selfUri, worktype.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, ruleSettings, flow, defaultScript, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, ruleSettings, flow, defaultScript, unassignedDivisionContactsEnabled, selfUri);
   }
 
   @Override
@@ -570,6 +590,7 @@ public class Worktype  implements Serializable {
     sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    defaultScript: ").append(toIndentedString(defaultScript)).append("\n");
+    sb.append("    unassignedDivisionContactsEnabled: ").append(toIndentedString(unassignedDivisionContactsEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

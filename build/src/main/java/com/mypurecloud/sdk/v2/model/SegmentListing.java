@@ -30,11 +30,11 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
-  private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public SegmentListing() {
@@ -114,23 +114,6 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
 
   /**
    **/
-  public SegmentListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public SegmentListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -148,18 +131,18 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
 
   /**
    **/
-  public SegmentListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public SegmentListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -182,18 +165,35 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
 
   /**
    **/
-  public SegmentListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public SegmentListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public SegmentListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -228,17 +228,17 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
             Objects.equals(this.pageSize, segmentListing.pageSize) &&
             Objects.equals(this.pageNumber, segmentListing.pageNumber) &&
             Objects.equals(this.total, segmentListing.total) &&
-            Objects.equals(this.lastUri, segmentListing.lastUri) &&
             Objects.equals(this.firstUri, segmentListing.firstUri) &&
-            Objects.equals(this.selfUri, segmentListing.selfUri) &&
-            Objects.equals(this.nextUri, segmentListing.nextUri) &&
             Objects.equals(this.previousUri, segmentListing.previousUri) &&
+            Objects.equals(this.nextUri, segmentListing.nextUri) &&
+            Objects.equals(this.lastUri, segmentListing.lastUri) &&
+            Objects.equals(this.selfUri, segmentListing.selfUri) &&
             Objects.equals(this.pageCount, segmentListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -250,11 +250,11 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

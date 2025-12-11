@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.InactivityTimeoutSettings;
 import com.mypurecloud.sdk.v2.model.MessageSubtypeSettings;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,8 @@ public class MessageMediaSettings  implements Serializable {
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
   private Map<String, MessageSubtypeSettings> subTypeSettings = null;
+  private Boolean enableInactivityTimeout = null;
+  private InactivityTimeoutSettings inactivityTimeoutSettings = null;
 
   public MessageMediaSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -148,6 +151,42 @@ public class MessageMediaSettings  implements Serializable {
   }
 
 
+  /**
+   * Indicates if inactivity timeout is enabled for all subtypes.
+   **/
+  public MessageMediaSettings enableInactivityTimeout(Boolean enableInactivityTimeout) {
+    this.enableInactivityTimeout = enableInactivityTimeout;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if inactivity timeout is enabled for all subtypes.")
+  @JsonProperty("enableInactivityTimeout")
+  public Boolean getEnableInactivityTimeout() {
+    return enableInactivityTimeout;
+  }
+  public void setEnableInactivityTimeout(Boolean enableInactivityTimeout) {
+    this.enableInactivityTimeout = enableInactivityTimeout;
+  }
+
+
+  /**
+   * Inactivity timeout settings for messages
+   **/
+  public MessageMediaSettings inactivityTimeoutSettings(InactivityTimeoutSettings inactivityTimeoutSettings) {
+    this.inactivityTimeoutSettings = inactivityTimeoutSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Inactivity timeout settings for messages")
+  @JsonProperty("inactivityTimeoutSettings")
+  public InactivityTimeoutSettings getInactivityTimeoutSettings() {
+    return inactivityTimeoutSettings;
+  }
+  public void setInactivityTimeoutSettings(InactivityTimeoutSettings inactivityTimeoutSettings) {
+    this.inactivityTimeoutSettings = inactivityTimeoutSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -163,12 +202,14 @@ public class MessageMediaSettings  implements Serializable {
             Objects.equals(this.serviceLevel, messageMediaSettings.serviceLevel) &&
             Objects.equals(this.autoAnswerAlertToneSeconds, messageMediaSettings.autoAnswerAlertToneSeconds) &&
             Objects.equals(this.manualAnswerAlertToneSeconds, messageMediaSettings.manualAnswerAlertToneSeconds) &&
-            Objects.equals(this.subTypeSettings, messageMediaSettings.subTypeSettings);
+            Objects.equals(this.subTypeSettings, messageMediaSettings.subTypeSettings) &&
+            Objects.equals(this.enableInactivityTimeout, messageMediaSettings.enableInactivityTimeout) &&
+            Objects.equals(this.inactivityTimeoutSettings, messageMediaSettings.inactivityTimeoutSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings, enableInactivityTimeout, inactivityTimeoutSettings);
   }
 
   @Override
@@ -182,6 +223,8 @@ public class MessageMediaSettings  implements Serializable {
     sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
     sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
     sb.append("    subTypeSettings: ").append(toIndentedString(subTypeSettings)).append("\n");
+    sb.append("    enableInactivityTimeout: ").append(toIndentedString(enableInactivityTimeout)).append("\n");
+    sb.append("    inactivityTimeoutSettings: ").append(toIndentedString(inactivityTimeoutSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

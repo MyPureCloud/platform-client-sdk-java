@@ -58,7 +58,8 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE"),
     MESSAGE("MESSAGE"),
-    INTERNALMESSAGE("INTERNALMESSAGE");
+    INTERNALMESSAGE("INTERNALMESSAGE"),
+    SCREENMONITORING("SCREENMONITORING");
 
     private String value;
 

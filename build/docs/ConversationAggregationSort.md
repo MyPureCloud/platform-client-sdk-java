@@ -69,6 +69,7 @@
 | TNOTRESPONDING | &quot;tNotResponding&quot; | 
 | TPARK | &quot;tPark&quot; | 
 | TPARKCOMPLETE | &quot;tParkComplete&quot; | 
+| TSCREENMONITORING | &quot;tScreenMonitoring&quot; | 
 | TTALK | &quot;tTalk&quot; | 
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
@@ -89,4 +90,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

@@ -1211,7 +1211,7 @@ public class JourneyApi {
    * @param filterValue Value to filter by. Requires 'filterValue' to also be set. (optional)
    * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
    * @param queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return ActionMapListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1230,7 +1230,7 @@ public class JourneyApi {
    * @param filterValue Value to filter by. Requires 'filterValue' to also be set. (optional)
    * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
    * @param queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return ActionMapListing
    * @throws IOException if the request fails to be processed
    */
@@ -1710,7 +1710,7 @@ public class JourneyApi {
    * @param mediaType Media type (optional)
    * @param state Action template state. (optional)
    * @param queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return ActionTemplateListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1728,7 +1728,7 @@ public class JourneyApi {
    * @param mediaType Media type (optional)
    * @param state Action template state. (optional)
    * @param queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return ActionTemplateListing
    * @throws IOException if the request fails to be processed
    */
@@ -1991,7 +1991,7 @@ public class JourneyApi {
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
    * @param queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return OutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2008,7 +2008,7 @@ public class JourneyApi {
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
    * @param queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return OutcomeListing
    * @throws IOException if the request fails to be processed
    */
@@ -2484,7 +2484,7 @@ public class JourneyApi {
    * @param isActive Determines whether or not to show only active segments. (optional)
    * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
    * @param queryFields Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return SegmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2502,7 +2502,7 @@ public class JourneyApi {
    * @param isActive Determines whether or not to show only active segments. (optional)
    * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
    * @param queryFields Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
-   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
+   * @param queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
    * @return SegmentListing
    * @throws IOException if the request fails to be processed
    */

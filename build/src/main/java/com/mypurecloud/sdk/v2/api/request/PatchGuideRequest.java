@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.Guide;
 import com.mypurecloud.sdk.v2.model.GuideContentGenerationJob;
 import com.mypurecloud.sdk.v2.model.GuideEntityListing;
 import com.mypurecloud.sdk.v2.model.GuideJob;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnRequest;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnResponse;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;

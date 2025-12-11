@@ -7,6 +7,7 @@
         <classes>
             <class name="com.mypurecloud.sdk.v2.ApiClientRetryTest" />
             <class name="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" />
+            <class name="com.mypurecloud.sdk.v2.ApiMTLSClientInjectionTest" />
         </classes>
     </test>
 </suite>

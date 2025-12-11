@@ -42,6 +42,10 @@ import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.BotAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.CaseManagementAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CaseManagementAggregationQuery;
+import com.mypurecloud.sdk.v2.model.CaseManagementAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CaseManagementAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -134,6 +138,7 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsAgentcopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsBotsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsCasemanagementAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsEvaluationsAggregatesJobRequest;
@@ -158,6 +163,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsReque
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCasemanagementAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCasemanagementAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobResultsRequest;
@@ -209,6 +216,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusCountsRequest
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCasemanagementAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCasemanagementAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesJobsRequest;
@@ -470,6 +479,83 @@ public class AnalyticsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteAnalyticsBotsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteAnalyticsCasemanagementAggregatesJobAsync(DeleteAnalyticsCasemanagementAggregatesJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteAnalyticsCasemanagementAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2330,6 +2416,160 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BotAsyncAggregateQueryResponse> response = (ApiResponse<BotAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsyncQueryStatus> getAnalyticsCasemanagementAggregatesJobAsync(GetAnalyticsCasemanagementAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
+    try {
+      final SettableFuture<AsyncQueryStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsCasemanagementAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsyncQueryStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsyncQueryStatus>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CaseManagementAsyncAggregateQueryResponse> getAnalyticsCasemanagementAggregatesJobResultsAsync(GetAnalyticsCasemanagementAggregatesJobResultsRequest request, final AsyncApiCallback<CaseManagementAsyncAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<CaseManagementAsyncAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CaseManagementAsyncAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<CaseManagementAsyncAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseManagementAsyncAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CaseManagementAsyncAggregateQueryResponse>> getAnalyticsCasemanagementAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CaseManagementAsyncAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CaseManagementAsyncAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CaseManagementAsyncAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<CaseManagementAsyncAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseManagementAsyncAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseManagementAsyncAggregateQueryResponse> response = (ApiResponse<CaseManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseManagementAsyncAggregateQueryResponse> response = (ApiResponse<CaseManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6213,6 +6453,160 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BotAggregateQueryResponse> response = (ApiResponse<BotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsyncQueryResponse> postAnalyticsCasemanagementAggregatesJobsAsync(PostAnalyticsCasemanagementAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
+    try {
+      final SettableFuture<AsyncQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsCasemanagementAggregatesJobsAsync(ApiRequest<CaseManagementAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsyncQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsyncQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CaseManagementAggregateQueryResponse> postAnalyticsCasemanagementAggregatesQueryAsync(PostAnalyticsCasemanagementAggregatesQueryRequest request, final AsyncApiCallback<CaseManagementAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<CaseManagementAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CaseManagementAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<CaseManagementAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseManagementAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CaseManagementAggregateQueryResponse>> postAnalyticsCasemanagementAggregatesQueryAsync(ApiRequest<CaseManagementAggregationQuery> request, final AsyncApiCallback<ApiResponse<CaseManagementAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CaseManagementAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CaseManagementAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<CaseManagementAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CaseManagementAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseManagementAggregateQueryResponse> response = (ApiResponse<CaseManagementAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CaseManagementAggregateQueryResponse> response = (ApiResponse<CaseManagementAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

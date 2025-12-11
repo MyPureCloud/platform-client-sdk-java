@@ -68,6 +68,7 @@
 | IVRCONFIGURATION | &quot;IVRCONFIGURATION&quot; | 
 | KNOWLEDGEBASE | &quot;KNOWLEDGEBASE&quot; | 
 | KNOWLEDGEBASEDOCUMENT | &quot;KNOWLEDGEBASEDOCUMENT&quot; | 
+| KNOWLEDGESETTING | &quot;KNOWLEDGESETTING&quot; | 
 | LANGUAGE | &quot;LANGUAGE&quot; | 
 | LEXBOT | &quot;LEXBOT&quot; | 
 | LEXBOTALIAS | &quot;LEXBOTALIAS&quot; | 
@@ -106,4 +107,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

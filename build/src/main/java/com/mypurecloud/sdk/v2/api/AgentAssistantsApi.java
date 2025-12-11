@@ -10,6 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AgentChecklist;
+import com.mypurecloud.sdk.v2.model.AgentChecklistListing;
 import com.mypurecloud.sdk.v2.model.Assistant;
 import com.mypurecloud.sdk.v2.model.AssistantListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueue;
@@ -19,16 +21,21 @@ import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAssistantQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAssistantQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAssistantsAgentchecklistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantsAgentchecklistRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantsAgentchecklistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAssistantsAgentchecklistsLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAssistantsQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAssistantQueuesRequest;
@@ -36,7 +43,9 @@ import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAssistantsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAssistantsAgentchecklistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAssistantQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAssistantsAgentchecklistRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -267,6 +276,81 @@ public class AgentAssistantsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAssistantQueues(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAssistantsAgentchecklist(String agentChecklistId) throws IOException, ApiException {
+     deleteAssistantsAgentchecklist(createDeleteAssistantsAgentchecklistRequest(agentChecklistId));
+  }
+
+  /**
+   * Delete an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAssistantsAgentchecklistWithHttpInfo(String agentChecklistId) throws IOException {
+    return deleteAssistantsAgentchecklist(createDeleteAssistantsAgentchecklistRequest(agentChecklistId).withHttpInfo());
+  }
+
+  private DeleteAssistantsAgentchecklistRequest createDeleteAssistantsAgentchecklistRequest(String agentChecklistId) {
+    return DeleteAssistantsAgentchecklistRequest.builder()
+            .withAgentChecklistId(agentChecklistId)
+
+            .build();
+  }
+
+  /**
+   * Delete an agent checklist
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAssistantsAgentchecklist(DeleteAssistantsAgentchecklistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an agent checklist
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAssistantsAgentchecklist(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -644,6 +728,260 @@ public class AgentAssistantsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssistantListing> response = (ApiResponse<AssistantListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist getAssistantsAgentchecklist(String agentChecklistId) throws IOException, ApiException {
+    return  getAssistantsAgentchecklist(createGetAssistantsAgentchecklistRequest(agentChecklistId));
+  }
+
+  /**
+   * Get an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @return AgentChecklist
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> getAssistantsAgentchecklistWithHttpInfo(String agentChecklistId) throws IOException {
+    return getAssistantsAgentchecklist(createGetAssistantsAgentchecklistRequest(agentChecklistId).withHttpInfo());
+  }
+
+  private GetAssistantsAgentchecklistRequest createGetAssistantsAgentchecklistRequest(String agentChecklistId) {
+    return GetAssistantsAgentchecklistRequest.builder()
+            .withAgentChecklistId(agentChecklistId)
+
+            .build();
+  }
+
+  /**
+   * Get an agent checklist
+   * 
+   * @param request The request object
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist getAssistantsAgentchecklist(GetAssistantsAgentchecklistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklist> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklist>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an agent checklist
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> getAssistantsAgentchecklist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklist>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of agent checklists
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The max that will be returned is 100. (optional, default to 25)
+   * @param namePrefix The agent checklist name prefix filter applied to the listing. (optional)
+   * @param language The agent checklist language filter applied to the listing. (optional)
+   * @param sortOrder The sort order for the listing (optional)
+   * @param sortBy The field to sort by for the listing. (optional)
+   * @return AgentChecklistListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistListing getAssistantsAgentchecklists(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) throws IOException, ApiException {
+    return  getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy));
+  }
+
+  /**
+   * Get the list of agent checklists
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The max that will be returned is 100. (optional, default to 25)
+   * @param namePrefix The agent checklist name prefix filter applied to the listing. (optional)
+   * @param language The agent checklist language filter applied to the listing. (optional)
+   * @param sortOrder The sort order for the listing (optional)
+   * @param sortBy The field to sort by for the listing. (optional)
+   * @return AgentChecklistListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistListing> getAssistantsAgentchecklistsWithHttpInfo(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) throws IOException {
+    return getAssistantsAgentchecklists(createGetAssistantsAgentchecklistsRequest(before, after, pageSize, namePrefix, language, sortOrder, sortBy).withHttpInfo());
+  }
+
+  private GetAssistantsAgentchecklistsRequest createGetAssistantsAgentchecklistsRequest(String before, String after, String pageSize, String namePrefix, String language, String sortOrder, String sortBy) {
+    return GetAssistantsAgentchecklistsRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withNamePrefix(namePrefix)
+
+            .withLanguage(language)
+
+            .withSortOrder(sortOrder)
+
+            .withSortBy(sortBy)
+
+            .build();
+  }
+
+  /**
+   * Get the list of agent checklists
+   * 
+   * @param request The request object
+   * @return AgentChecklistListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklistListing getAssistantsAgentchecklists(GetAssistantsAgentchecklistsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklistListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklistListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of agent checklists
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklistListing> getAssistantsAgentchecklists(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklistListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistListing> response = (ApiResponse<AgentChecklistListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklistListing> response = (ApiResponse<AgentChecklistListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of supported languages
+   * 
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getAssistantsAgentchecklistsLanguages() throws IOException, ApiException {
+    return  getAssistantsAgentchecklistsLanguages(createGetAssistantsAgentchecklistsLanguagesRequest());
+  }
+
+  /**
+   * Get the list of supported languages
+   * 
+   * @return EntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getAssistantsAgentchecklistsLanguagesWithHttpInfo() throws IOException {
+    return getAssistantsAgentchecklistsLanguages(createGetAssistantsAgentchecklistsLanguagesRequest().withHttpInfo());
+  }
+
+  private GetAssistantsAgentchecklistsLanguagesRequest createGetAssistantsAgentchecklistsLanguagesRequest() {
+    return GetAssistantsAgentchecklistsLanguagesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the list of supported languages
+   * 
+   * @param request The request object
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getAssistantsAgentchecklistsLanguages(GetAssistantsAgentchecklistsLanguagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of supported languages
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getAssistantsAgentchecklistsLanguages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1247,6 +1585,84 @@ public class AgentAssistantsApi {
   }
 
   /**
+   * Create an agent checklist
+   * 
+   * @param body Request body containing details of checklist to be added (required)
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist postAssistantsAgentchecklists(AgentChecklist body) throws IOException, ApiException {
+    return  postAssistantsAgentchecklists(createPostAssistantsAgentchecklistsRequest(body));
+  }
+
+  /**
+   * Create an agent checklist
+   * 
+   * @param body Request body containing details of checklist to be added (required)
+   * @return AgentChecklist
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> postAssistantsAgentchecklistsWithHttpInfo(AgentChecklist body) throws IOException {
+    return postAssistantsAgentchecklists(createPostAssistantsAgentchecklistsRequest(body).withHttpInfo());
+  }
+
+  private PostAssistantsAgentchecklistsRequest createPostAssistantsAgentchecklistsRequest(AgentChecklist body) {
+    return PostAssistantsAgentchecklistsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an agent checklist
+   * 
+   * @param request The request object
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist postAssistantsAgentchecklists(PostAssistantsAgentchecklistsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklist> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklist>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an agent checklist
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> postAssistantsAgentchecklists(ApiRequest<AgentChecklist> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklist>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a queue assistant association.
    * 
    * @param assistantId Assistant ID (required)
@@ -1328,6 +1744,88 @@ public class AgentAssistantsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssistantQueue> response = (ApiResponse<AssistantQueue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Request body containing details of checklist to be updated (required)
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist putAssistantsAgentchecklist(String agentChecklistId, AgentChecklist body) throws IOException, ApiException {
+    return  putAssistantsAgentchecklist(createPutAssistantsAgentchecklistRequest(agentChecklistId, body));
+  }
+
+  /**
+   * Update an agent checklist
+   * 
+   * @param agentChecklistId Agent Checklist ID (required)
+   * @param body Request body containing details of checklist to be updated (required)
+   * @return AgentChecklist
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> putAssistantsAgentchecklistWithHttpInfo(String agentChecklistId, AgentChecklist body) throws IOException {
+    return putAssistantsAgentchecklist(createPutAssistantsAgentchecklistRequest(agentChecklistId, body).withHttpInfo());
+  }
+
+  private PutAssistantsAgentchecklistRequest createPutAssistantsAgentchecklistRequest(String agentChecklistId, AgentChecklist body) {
+    return PutAssistantsAgentchecklistRequest.builder()
+            .withAgentChecklistId(agentChecklistId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an agent checklist
+   * 
+   * @param request The request object
+   * @return AgentChecklist
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentChecklist putAssistantsAgentchecklist(PutAssistantsAgentchecklistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentChecklist> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentChecklist>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an agent checklist
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentChecklist> putAssistantsAgentchecklist(ApiRequest<AgentChecklist> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentChecklist>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentChecklist> response = (ApiResponse<AgentChecklist>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

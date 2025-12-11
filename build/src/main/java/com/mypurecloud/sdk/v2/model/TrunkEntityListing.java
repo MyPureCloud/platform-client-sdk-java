@@ -31,11 +31,11 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
   private Integer pageNumber = null;
   private Long total = null;
   private Long totalNumberOfEntities = null;
-  private String lastUri = null;
   private String firstUri = null;
-  private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public TrunkEntityListing() {
@@ -133,23 +133,6 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
 
   /**
    **/
-  public TrunkEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public TrunkEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -167,18 +150,18 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
 
   /**
    **/
-  public TrunkEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public TrunkEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -201,18 +184,35 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
 
   /**
    **/
-  public TrunkEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public TrunkEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public TrunkEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -248,17 +248,17 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
             Objects.equals(this.pageNumber, trunkEntityListing.pageNumber) &&
             Objects.equals(this.total, trunkEntityListing.total) &&
             Objects.equals(this.totalNumberOfEntities, trunkEntityListing.totalNumberOfEntities) &&
-            Objects.equals(this.lastUri, trunkEntityListing.lastUri) &&
             Objects.equals(this.firstUri, trunkEntityListing.firstUri) &&
-            Objects.equals(this.selfUri, trunkEntityListing.selfUri) &&
-            Objects.equals(this.nextUri, trunkEntityListing.nextUri) &&
             Objects.equals(this.previousUri, trunkEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, trunkEntityListing.nextUri) &&
+            Objects.equals(this.lastUri, trunkEntityListing.lastUri) &&
+            Objects.equals(this.selfUri, trunkEntityListing.selfUri) &&
             Objects.equals(this.pageCount, trunkEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -271,11 +271,11 @@ public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

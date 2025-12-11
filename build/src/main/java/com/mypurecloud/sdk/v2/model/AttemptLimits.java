@@ -56,7 +56,36 @@ public class AttemptLimits  implements Serializable {
   public enum ResetPeriodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NEVER("NEVER"),
-    TODAY("TODAY");
+    TODAY("TODAY"),
+    DAYS_2("DAYS_2"),
+    DAYS_3("DAYS_3"),
+    DAYS_4("DAYS_4"),
+    DAYS_5("DAYS_5"),
+    DAYS_6("DAYS_6"),
+    DAYS_7("DAYS_7"),
+    DAYS_8("DAYS_8"),
+    DAYS_9("DAYS_9"),
+    DAYS_10("DAYS_10"),
+    DAYS_11("DAYS_11"),
+    DAYS_12("DAYS_12"),
+    DAYS_13("DAYS_13"),
+    DAYS_14("DAYS_14"),
+    DAYS_15("DAYS_15"),
+    DAYS_16("DAYS_16"),
+    DAYS_17("DAYS_17"),
+    DAYS_18("DAYS_18"),
+    DAYS_19("DAYS_19"),
+    DAYS_20("DAYS_20"),
+    DAYS_21("DAYS_21"),
+    DAYS_22("DAYS_22"),
+    DAYS_23("DAYS_23"),
+    DAYS_24("DAYS_24"),
+    DAYS_25("DAYS_25"),
+    DAYS_26("DAYS_26"),
+    DAYS_27("DAYS_27"),
+    DAYS_28("DAYS_28"),
+    DAYS_29("DAYS_29"),
+    DAYS_30("DAYS_30");
 
     private String value;
 

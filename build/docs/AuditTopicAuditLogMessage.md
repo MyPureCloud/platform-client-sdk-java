@@ -264,6 +264,7 @@
 | EVALUATION | &quot;Evaluation&quot; | 
 | CALIBRATION | &quot;Calibration&quot; | 
 | SURVEY | &quot;Survey&quot; | 
+| AGENTSCORINGRULE | &quot;AgentScoringRule&quot; | 
 | EVALUATIONFORM | &quot;EvaluationForm&quot; | 
 | SURVEYFORM | &quot;SurveyForm&quot; | 
 | RECORDING | &quot;Recording&quot; | 
@@ -479,4 +480,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

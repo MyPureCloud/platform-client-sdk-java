@@ -374,6 +374,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		AGENTWORKPLANBID("AgentWorkPlanBid"),
+		AGENTSCHEDULEBID("AgentScheduleBid"),
 		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
 		LEARNING("Learning"),

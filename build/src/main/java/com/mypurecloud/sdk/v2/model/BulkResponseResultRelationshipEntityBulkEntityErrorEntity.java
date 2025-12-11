@@ -28,6 +28,7 @@ public class BulkResponseResultRelationshipEntityBulkEntityErrorEntity  implemen
   private Boolean success = null;
   private Relationship entity = null;
   private BulkEntityErrorEntity error = null;
+  private Integer status = null;
 
   public BulkResponseResultRelationshipEntityBulkEntityErrorEntity() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -107,6 +108,24 @@ public class BulkResponseResultRelationshipEntityBulkEntityErrorEntity  implemen
   }
 
 
+  /**
+   * Status Code for the requested operation.
+   **/
+  public BulkResponseResultRelationshipEntityBulkEntityErrorEntity status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status Code for the requested operation.")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,12 +139,13 @@ public class BulkResponseResultRelationshipEntityBulkEntityErrorEntity  implemen
     return Objects.equals(this.id, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.id) &&
             Objects.equals(this.success, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.success) &&
             Objects.equals(this.entity, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.entity) &&
-            Objects.equals(this.error, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.error);
+            Objects.equals(this.error, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.error) &&
+            Objects.equals(this.status, bulkResponseResultRelationshipEntityBulkEntityErrorEntity.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, success, entity, error);
+    return Objects.hash(id, success, entity, error, status);
   }
 
   @Override
@@ -137,6 +157,7 @@ public class BulkResponseResultRelationshipEntityBulkEntityErrorEntity  implemen
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

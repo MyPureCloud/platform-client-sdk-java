@@ -140,6 +140,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     MONITORING("monitoring"),
     PARKED("parked"),
     SCHEDULED("scheduled"),
+    SCREENMONITORING("screenmonitoring"),
     SHARING("sharing"),
     SYSTEM("system"),
     TRANSMITTING("transmitting"),

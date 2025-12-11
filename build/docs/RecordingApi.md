@@ -76,6 +76,9 @@ Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/ann
 Requires ANY permissions: 
 
 * recording:annotation:delete
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -492,6 +495,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -569,6 +573,9 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annota
 Requires ANY permissions: 
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -632,6 +639,9 @@ Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annota
 Requires ANY permissions: 
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -694,6 +704,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -754,6 +765,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -816,6 +828,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -2218,6 +2231,9 @@ Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annot
 Requires ANY permissions: 
 
 * recording:annotation:add
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -2282,6 +2298,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -2991,6 +3008,8 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recording:editRetention
 * recording:screenRecording:editRetention
+* recording:snippetRecording:view
+* recording:snippetRecording:editRetention
 
 ### Example
 
@@ -3058,6 +3077,7 @@ Requires ANY permissions:
 * recording:annotation:edit
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example
 
@@ -3253,6 +3273,7 @@ Requires ALL permissions:
 * recording:job:edit
 * recording:recording:editRetention
 * recording:screenRecording:editRetention
+* recording:snippetRecording:editRetention
 
 ### Example
 
@@ -3607,4 +3628,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

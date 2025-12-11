@@ -16,6 +16,7 @@
 | **schemaId** | **String** | The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **serviceLevelTarget** | **Integer** | The target service level for Workitems created from the Worktype. The default value is 100. |  [optional] |
 | **ruleSettings** | [**WorkitemRuleSettings**](WorkitemRuleSettings) | Settings for the worktypes rules. |  [optional] |
+| **unassignedDivisionContactsEnabled** | **Boolean** | When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true. |  [optional] |
 | **description** | **String** | The description of the Worktype. Maximum length of 512 characters. |  [optional] |
 | **divisionId** | **String** | The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin. |  [optional] |
 | **disableDefaultStatusCreation** | **Boolean** | Set to true to disable default status creation. Default statuses are created with the Worktype by default |  [optional] |
@@ -28,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

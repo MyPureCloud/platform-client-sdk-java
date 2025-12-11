@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.SocialTopicPatchRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialTopicWithDataIngestionRuleMetadataResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetRequest;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleRequest;

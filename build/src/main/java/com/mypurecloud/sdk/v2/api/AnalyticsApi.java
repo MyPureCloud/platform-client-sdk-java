@@ -39,6 +39,10 @@ import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.BotAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.CaseManagementAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CaseManagementAggregationQuery;
+import com.mypurecloud.sdk.v2.model.CaseManagementAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.CaseManagementAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
 import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -131,6 +135,7 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsAgentcopilotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsBotsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsCasemanagementAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsEvaluationsAggregatesJobRequest;
@@ -155,6 +160,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsReque
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCasemanagementAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsCasemanagementAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobResultsRequest;
@@ -206,6 +213,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusCountsRequest
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsAgentsStatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCasemanagementAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsCasemanagementAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesJobsRequest;
@@ -484,6 +493,85 @@ public class AnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAnalyticsBotsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsCasemanagementAggregatesJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsCasemanagementAggregatesJob(createDeleteAnalyticsCasemanagementAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsCasemanagementAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsCasemanagementAggregatesJob(createDeleteAnalyticsCasemanagementAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsCasemanagementAggregatesJobRequest createDeleteAnalyticsCasemanagementAggregatesJobRequest(String jobId) {
+    return DeleteAnalyticsCasemanagementAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsCasemanagementAggregatesJob(DeleteAnalyticsCasemanagementAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request for case management aggregates
+   * 
+   * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsCasemanagementAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2495,6 +2583,174 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BotAsyncAggregateQueryResponse> response = (ApiResponse<BotAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsCasemanagementAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsCasemanagementAggregatesJob(createGetAnalyticsCasemanagementAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsCasemanagementAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsCasemanagementAggregatesJob(createGetAnalyticsCasemanagementAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsCasemanagementAggregatesJobRequest createGetAnalyticsCasemanagementAggregatesJobRequest(String jobId) {
+    return GetAnalyticsCasemanagementAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsCasemanagementAggregatesJob(GetAnalyticsCasemanagementAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for case management aggregates
+   * 
+   * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsCasemanagementAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return CaseManagementAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseManagementAsyncAggregateQueryResponse getAnalyticsCasemanagementAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsCasemanagementAggregatesJobResults(createGetAnalyticsCasemanagementAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return CaseManagementAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseManagementAsyncAggregateQueryResponse> getAnalyticsCasemanagementAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsCasemanagementAggregatesJobResults(createGetAnalyticsCasemanagementAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsCasemanagementAggregatesJobResultsRequest createGetAnalyticsCasemanagementAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsCasemanagementAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseManagementAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseManagementAsyncAggregateQueryResponse getAnalyticsCasemanagementAggregatesJobResults(GetAnalyticsCasemanagementAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseManagementAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseManagementAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async case management query
+   * 
+   * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseManagementAsyncAggregateQueryResponse> getAnalyticsCasemanagementAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseManagementAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseManagementAsyncAggregateQueryResponse> response = (ApiResponse<CaseManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseManagementAsyncAggregateQueryResponse> response = (ApiResponse<CaseManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6726,6 +6982,170 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BotAggregateQueryResponse> response = (ApiResponse<BotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsCasemanagementAggregatesJobs(CaseManagementAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsCasemanagementAggregatesJobs(createPostAnalyticsCasemanagementAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsCasemanagementAggregatesJobsWithHttpInfo(CaseManagementAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsCasemanagementAggregatesJobs(createPostAnalyticsCasemanagementAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsCasemanagementAggregatesJobsRequest createPostAnalyticsCasemanagementAggregatesJobsRequest(CaseManagementAsyncAggregationQuery body) {
+    return PostAnalyticsCasemanagementAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsCasemanagementAggregatesJobs(PostAnalyticsCasemanagementAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for case management aggregates asynchronously
+   * 
+   * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsCasemanagementAggregatesJobs(ApiRequest<CaseManagementAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return CaseManagementAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseManagementAggregateQueryResponse postAnalyticsCasemanagementAggregatesQuery(CaseManagementAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsCasemanagementAggregatesQuery(createPostAnalyticsCasemanagementAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return CaseManagementAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseManagementAggregateQueryResponse> postAnalyticsCasemanagementAggregatesQueryWithHttpInfo(CaseManagementAggregationQuery body) throws IOException {
+    return postAnalyticsCasemanagementAggregatesQuery(createPostAnalyticsCasemanagementAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsCasemanagementAggregatesQueryRequest createPostAnalyticsCasemanagementAggregatesQueryRequest(CaseManagementAggregationQuery body) {
+    return PostAnalyticsCasemanagementAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CaseManagementAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CaseManagementAggregateQueryResponse postAnalyticsCasemanagementAggregatesQuery(PostAnalyticsCasemanagementAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CaseManagementAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CaseManagementAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for case management aggregates
+   * 
+   * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CaseManagementAggregateQueryResponse> postAnalyticsCasemanagementAggregatesQuery(ApiRequest<CaseManagementAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CaseManagementAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseManagementAggregateQueryResponse> response = (ApiResponse<CaseManagementAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CaseManagementAggregateQueryResponse> response = (ApiResponse<CaseManagementAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

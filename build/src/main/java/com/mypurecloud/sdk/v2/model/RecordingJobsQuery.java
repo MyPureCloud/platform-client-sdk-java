@@ -254,14 +254,14 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
+   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.
    **/
   public RecordingJobsQuery conversationQuery(AsyncConversationQuery conversationQuery) {
     this.conversationQuery = conversationQuery;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.")
+  @ApiModelProperty(example = "null", value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.")
   @JsonProperty("conversationQuery")
   public AsyncConversationQuery getConversationQuery() {
     return conversationQuery;

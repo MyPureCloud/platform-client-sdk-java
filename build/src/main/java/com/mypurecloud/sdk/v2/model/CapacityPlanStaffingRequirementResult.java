@@ -99,7 +99,8 @@ public class CapacityPlanStaffingRequirementResult  implements Serializable {
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEEKLY("Weekly");
+    WEEKLY("Weekly"),
+    MONTHLY("Monthly");
 
     private String value;
 

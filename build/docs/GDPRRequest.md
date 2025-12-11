@@ -14,6 +14,7 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the request |  |
 | **subject** | [**GDPRSubject**](GDPRSubject) | The subject of the GDPR request |  |
 | **resultsUrl** | **String** | The location where the results of the request can be retrieved |  [optional] |
+| **resultsUrls** | **List&lt;String&gt;** | The locations where the results of the request can be retrieved if multiple archive files created |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -43,4 +44,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

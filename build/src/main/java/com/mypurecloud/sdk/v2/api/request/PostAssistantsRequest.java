@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AgentChecklist;
+import com.mypurecloud.sdk.v2.model.AgentChecklistListing;
 import com.mypurecloud.sdk.v2.model.Assistant;
 import com.mypurecloud.sdk.v2.model.AssistantListing;
 import com.mypurecloud.sdk.v2.model.AssistantQueue;
@@ -29,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.AssistantQueueUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryRequest;
 import com.mypurecloud.sdk.v2.model.AssistantQueueUsersQueryResponse;
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostAssistantsRequest {

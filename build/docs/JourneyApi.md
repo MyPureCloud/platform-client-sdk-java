@@ -906,7 +906,7 @@ String filterField = "filterField_example"; // String | Field to filter by (e.g.
 String filterValue = "filterValue_example"; // String | Value to filter by. Requires 'filterValue' to also be set.
 List<String> actionMapIds = Arrays.asList(null); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
 List<String> queryFields = Arrays.asList(null); // List<String> | Action Map field(s) to query on. Requires 'queryValue' to also be set.
-String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 try {
     ActionMapListing result = apiInstance.getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue);
     System.out.println(result);
@@ -928,7 +928,7 @@ try {
 | **filterValue** | **String**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional] 
 | **actionMapIds** | [**List&lt;String&gt;**](String)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional] 
 | **queryFields** | [**List&lt;String&gt;**](String)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
-| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -1275,7 +1275,7 @@ String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '
 String mediaType = "mediaType_example"; // String | Media type
 String state = "state_example"; // String | Action template state.
 List<String> queryFields = Arrays.asList(null); // List<String> | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
-String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 try {
     ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue);
     System.out.println(result);
@@ -1296,7 +1296,7 @@ try {
 | **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction 
 | **state** | **String**| Action template state. | [optional]<br />**Values**: Active, Inactive, Deleted 
 | **queryFields** | [**List&lt;String&gt;**](String)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
-| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -1461,7 +1461,7 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 List<String> outcomeIds = Arrays.asList(null); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
 List<String> queryFields = Arrays.asList(null); // List<String> | Outcome field(s) to query on. Requires 'queryValue' to also be set.
-String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 try {
     OutcomeListing result = apiInstance.getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue);
     System.out.println(result);
@@ -1481,7 +1481,7 @@ try {
 | **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
 | **outcomeIds** | [**List&lt;String&gt;**](String)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional] 
 | **queryFields** | [**List&lt;String&gt;**](String)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
-| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -1826,7 +1826,7 @@ Integer pageNumber = 1; // Integer | Page number
 Boolean isActive = true; // Boolean | Determines whether or not to show only active segments.
 List<String> segmentIds = Arrays.asList(null); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
 List<String> queryFields = Arrays.asList(null); // List<String> | Segment field(s) to query on. Requires 'queryValue' to also be set.
-String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 try {
     SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue);
     System.out.println(result);
@@ -1847,7 +1847,7 @@ try {
 | **isActive** | **Boolean**| Determines whether or not to show only active segments. | [optional] 
 | **segmentIds** | [**List&lt;String&gt;**](String)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional] 
 | **queryFields** | [**List&lt;String&gt;**](String)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
-| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -4627,4 +4627,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

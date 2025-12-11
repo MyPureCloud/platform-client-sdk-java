@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.Guide;
 import com.mypurecloud.sdk.v2.model.GuideContentGenerationJob;
 import com.mypurecloud.sdk.v2.model.GuideEntityListing;
 import com.mypurecloud.sdk.v2.model.GuideJob;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnRequest;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnResponse;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
@@ -42,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGuideSessionTurnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesRequest;
@@ -1255,6 +1258,92 @@ public class AIStudioApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param guideId Guide ID (required)
+   * @param guideSessionId Guide Session ID (required)
+   * @param body  (required)
+   * @return GuideSessionTurnResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GuideSessionTurnResponse postGuideSessionTurns(String guideId, String guideSessionId, GuideSessionTurnRequest body) throws IOException, ApiException {
+    return  postGuideSessionTurns(createPostGuideSessionTurnsRequest(guideId, guideSessionId, body));
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param guideId Guide ID (required)
+   * @param guideSessionId Guide Session ID (required)
+   * @param body  (required)
+   * @return GuideSessionTurnResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GuideSessionTurnResponse> postGuideSessionTurnsWithHttpInfo(String guideId, String guideSessionId, GuideSessionTurnRequest body) throws IOException {
+    return postGuideSessionTurns(createPostGuideSessionTurnsRequest(guideId, guideSessionId, body).withHttpInfo());
+  }
+
+  private PostGuideSessionTurnsRequest createPostGuideSessionTurnsRequest(String guideId, String guideSessionId, GuideSessionTurnRequest body) {
+    return PostGuideSessionTurnsRequest.builder()
+            .withGuideId(guideId)
+
+            .withGuideSessionId(guideSessionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param request The request object
+   * @return GuideSessionTurnResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GuideSessionTurnResponse postGuideSessionTurns(PostGuideSessionTurnsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GuideSessionTurnResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GuideSessionTurnResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GuideSessionTurnResponse> postGuideSessionTurns(ApiRequest<GuideSessionTurnRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GuideSessionTurnResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GuideSessionTurnResponse> response = (ApiResponse<GuideSessionTurnResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GuideSessionTurnResponse> response = (ApiResponse<GuideSessionTurnResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

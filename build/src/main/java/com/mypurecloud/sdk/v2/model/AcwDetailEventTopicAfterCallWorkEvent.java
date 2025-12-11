@@ -57,7 +57,8 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE"),
     MESSAGE("MESSAGE"),
-    INTERNALMESSAGE("INTERNALMESSAGE");
+    INTERNALMESSAGE("INTERNALMESSAGE"),
+    SCREENMONITORING("SCREENMONITORING");
 
     private String value;
 

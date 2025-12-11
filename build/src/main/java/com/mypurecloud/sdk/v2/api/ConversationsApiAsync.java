@@ -16,6 +16,9 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.AdditionalSocialMediaMessage;
 import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
+import com.mypurecloud.sdk.v2.model.AgentActionPayload;
+import com.mypurecloud.sdk.v2.model.AgentChecklistResponse;
+import com.mypurecloud.sdk.v2.model.AgentChecklistResponseList;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
@@ -44,6 +47,11 @@ import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ChecklistActivationPayload;
+import com.mypurecloud.sdk.v2.model.ChecklistFinalizePayload;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobCreationResponse;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobPayload;
+import com.mypurecloud.sdk.v2.model.ChecklistInferenceJobResponse;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
@@ -229,6 +237,9 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationAgentchecklistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
@@ -382,6 +393,10 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistAgentactionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationAgentchecklistsFinalizeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCommunicationInternalmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
@@ -2380,6 +2395,231 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentChecklistResponse> getConversationCommunicationAgentchecklistAsync(GetConversationCommunicationAgentchecklistRequest request, final AsyncApiCallback<AgentChecklistResponse> callback) {
+    try {
+      final SettableFuture<AgentChecklistResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get checklist info for a single checklist.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentChecklistResponse>> getConversationCommunicationAgentchecklistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentChecklistResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentChecklistResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChecklistInferenceJobResponse> getConversationCommunicationAgentchecklistJobAsync(GetConversationCommunicationAgentchecklistJobRequest request, final AsyncApiCallback<ChecklistInferenceJobResponse> callback) {
+    try {
+      final SettableFuture<ChecklistInferenceJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChecklistInferenceJobResponse>() {}, new AsyncApiCallback<ApiResponse<ChecklistInferenceJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChecklistInferenceJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get inference job status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChecklistInferenceJobResponse>> getConversationCommunicationAgentchecklistJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChecklistInferenceJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChecklistInferenceJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChecklistInferenceJobResponse>() {}, new AsyncApiCallback<ApiResponse<ChecklistInferenceJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChecklistInferenceJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChecklistInferenceJobResponse> response = (ApiResponse<ChecklistInferenceJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChecklistInferenceJobResponse> response = (ApiResponse<ChecklistInferenceJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentChecklistResponseList> getConversationCommunicationAgentchecklistsAsync(GetConversationCommunicationAgentchecklistsRequest request, final AsyncApiCallback<AgentChecklistResponseList> callback) {
+    try {
+      final SettableFuture<AgentChecklistResponseList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentChecklistResponseList>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponseList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponseList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information of all checklists associated with a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentChecklistResponseList>> getConversationCommunicationAgentchecklistsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentChecklistResponseList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentChecklistResponseList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentChecklistResponseList>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponseList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponseList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13909,6 +14149,306 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Agent Checklist activation API
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentChecklistResponse> postConversationCommunicationAgentchecklistAsync(PostConversationCommunicationAgentchecklistRequest request, final AsyncApiCallback<AgentChecklistResponse> callback) {
+    try {
+      final SettableFuture<AgentChecklistResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent Checklist activation API
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentChecklistResponse>> postConversationCommunicationAgentchecklistAsync(ApiRequest<ChecklistActivationPayload> request, final AsyncApiCallback<ApiResponse<AgentChecklistResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentChecklistResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentChecklistResponse> postConversationCommunicationAgentchecklistAgentactionAsync(PostConversationCommunicationAgentchecklistAgentactionRequest request, final AsyncApiCallback<AgentChecklistResponse> callback) {
+    try {
+      final SettableFuture<AgentChecklistResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * API invoked to capture an agent action.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentChecklistResponse>> postConversationCommunicationAgentchecklistAgentactionAsync(ApiRequest<AgentActionPayload> request, final AsyncApiCallback<ApiResponse<AgentChecklistResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentChecklistResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentChecklistResponse>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponse> response = (ApiResponse<AgentChecklistResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChecklistInferenceJobCreationResponse> postConversationCommunicationAgentchecklistJobsAsync(PostConversationCommunicationAgentchecklistJobsRequest request, final AsyncApiCallback<ChecklistInferenceJobCreationResponse> callback) {
+    try {
+      final SettableFuture<ChecklistInferenceJobCreationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChecklistInferenceJobCreationResponse>() {}, new AsyncApiCallback<ApiResponse<ChecklistInferenceJobCreationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChecklistInferenceJobCreationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create inference job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChecklistInferenceJobCreationResponse>> postConversationCommunicationAgentchecklistJobsAsync(ApiRequest<ChecklistInferenceJobPayload> request, final AsyncApiCallback<ApiResponse<ChecklistInferenceJobCreationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChecklistInferenceJobCreationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChecklistInferenceJobCreationResponse>() {}, new AsyncApiCallback<ApiResponse<ChecklistInferenceJobCreationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChecklistInferenceJobCreationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChecklistInferenceJobCreationResponse> response = (ApiResponse<ChecklistInferenceJobCreationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChecklistInferenceJobCreationResponse> response = (ApiResponse<ChecklistInferenceJobCreationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentChecklistResponseList> postConversationCommunicationAgentchecklistsFinalizeAsync(PostConversationCommunicationAgentchecklistsFinalizeRequest request, final AsyncApiCallback<AgentChecklistResponseList> callback) {
+    try {
+      final SettableFuture<AgentChecklistResponseList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentChecklistResponseList>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponseList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponseList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * API invoked to finalize agent checklist evaluation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentChecklistResponseList>> postConversationCommunicationAgentchecklistsFinalizeAsync(ApiRequest<ChecklistFinalizePayload> request, final AsyncApiCallback<ApiResponse<AgentChecklistResponseList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentChecklistResponseList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentChecklistResponseList>() {}, new AsyncApiCallback<ApiResponse<AgentChecklistResponseList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentChecklistResponseList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentChecklistResponseList> response = (ApiResponse<AgentChecklistResponseList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Send internal message
    * Send a new internal message for an existing communication.
    * @param request the request object
@@ -14284,11 +14824,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationParticipantReplaceAsync(PostConversationParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -14318,11 +14859,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Replace this participant with the specified user and/or address
-   * 
+   * Replace this participant (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -14436,7 +14978,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14471,7 +15012,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14511,11 +15051,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationParticipantReplaceExternalAsync(PostConversationParticipantReplaceExternalRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -14545,11 +15086,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Replace this participant with the an external contact
-   * 
+   * Replace this participant with the an external contact (Deprecated)
+   * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationParticipantReplaceExternalAsync(ApiRequest<TransferToExternalRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -14738,7 +15280,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14773,7 +15314,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant by another one using the address of the destination.
    * 
-   * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15340,11 +15880,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ConsultTransferResponse> postConversationsCallParticipantConsultAsync(PostConversationsCallParticipantConsultRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
     try {
@@ -15374,11 +15915,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Initiate and update consult transfer
-   * 
+   * Initiate and update consult transfer (Deprecated)
+   * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransfer> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
     try {
@@ -15492,7 +16034,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15527,7 +16068,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15567,11 +16107,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ConsultTransferResponse> postConversationsCallParticipantConsultExternalAsync(PostConversationsCallParticipantConsultExternalRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
     try {
@@ -15601,11 +16142,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Initiate a consult transfer to an external contact
-   * 
+   * Initiate a consult transfer to an external contact (Deprecated)
+   * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultExternalAsync(ApiRequest<ConsultTransferToExternal> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
     try {
@@ -15869,7 +16411,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15904,7 +16445,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate voice consult transfer
    * 
-   * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

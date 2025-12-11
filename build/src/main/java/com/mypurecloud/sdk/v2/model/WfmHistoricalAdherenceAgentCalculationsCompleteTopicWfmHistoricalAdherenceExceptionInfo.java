@@ -1,0 +1,559 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo
+ */
+
+public class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo  implements Serializable {
+  
+  private Long startOffsetSeconds = null;
+  private Long endOffsetSeconds = null;
+  private String scheduledActivityCodeId = null;
+
+  private static class ScheduledActivityCategoryEnumDeserializer extends StdDeserializer<ScheduledActivityCategoryEnum> {
+    public ScheduledActivityCategoryEnumDeserializer() {
+      super(ScheduledActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ScheduledActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScheduledActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets scheduledActivityCategory
+   */
+ @JsonDeserialize(using = ScheduledActivityCategoryEnumDeserializer.class)
+  public enum ScheduledActivityCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ONQUEUEWORK("OnQueueWork"),
+    BREAK("Break"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    OFFQUEUEWORK("OffQueueWork"),
+    TIMEOFF("TimeOff"),
+    TRAINING("Training"),
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
+
+    private String value;
+
+    ScheduledActivityCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ScheduledActivityCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ScheduledActivityCategoryEnum value : ScheduledActivityCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ScheduledActivityCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
+  private List<String> scheduledSecondaryPresenceLookupIds = null;
+  private String actualActivityCodeId = null;
+
+  private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
+    public ActualActivityCategoryEnumDeserializer() {
+      super(ActualActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ActualActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActualActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets actualActivityCategory
+   */
+ @JsonDeserialize(using = ActualActivityCategoryEnumDeserializer.class)
+  public enum ActualActivityCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ONQUEUEWORK("OnQueueWork"),
+    BREAK("Break"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    OFFQUEUEWORK("OffQueueWork"),
+    TIMEOFF("TimeOff"),
+    TRAINING("Training"),
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
+
+    private String value;
+
+    ActualActivityCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActualActivityCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActualActivityCategoryEnum value : ActualActivityCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActualActivityCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActualActivityCategoryEnum actualActivityCategory = null;
+
+  private static class SystemPresenceEnumDeserializer extends StdDeserializer<SystemPresenceEnum> {
+    public SystemPresenceEnumDeserializer() {
+      super(SystemPresenceEnumDeserializer.class);
+    }
+
+    @Override
+    public SystemPresenceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SystemPresenceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets systemPresence
+   */
+ @JsonDeserialize(using = SystemPresenceEnumDeserializer.class)
+  public enum SystemPresenceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    AVAILABLE("Available"),
+    AWAY("Away"),
+    BUSY("Busy"),
+    OFFLINE("Offline"),
+    IDLE("Idle"),
+    ONQUEUE("OnQueue"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    BREAK("Break"),
+    TRAINING("Training");
+
+    private String value;
+
+    SystemPresenceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SystemPresenceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SystemPresenceEnum value : SystemPresenceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SystemPresenceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SystemPresenceEnum systemPresence = null;
+
+  private static class RoutingStatusEnumDeserializer extends StdDeserializer<RoutingStatusEnum> {
+    public RoutingStatusEnumDeserializer() {
+      super(RoutingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets routingStatus
+   */
+ @JsonDeserialize(using = RoutingStatusEnumDeserializer.class)
+  public enum RoutingStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    OFF_QUEUE("OFF_QUEUE"),
+    IDLE("IDLE"),
+    INTERACTING("INTERACTING"),
+    NOT_RESPONDING("NOT_RESPONDING"),
+    COMMUNICATING("COMMUNICATING");
+
+    private String value;
+
+    RoutingStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RoutingStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RoutingStatusEnum value : RoutingStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RoutingStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RoutingStatusEnum routingStatus = null;
+
+  private static class ImpactEnumDeserializer extends StdDeserializer<ImpactEnum> {
+    public ImpactEnumDeserializer() {
+      super(ImpactEnumDeserializer.class);
+    }
+
+    @Override
+    public ImpactEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ImpactEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets impact
+   */
+ @JsonDeserialize(using = ImpactEnumDeserializer.class)
+  public enum ImpactEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    POSITIVE("Positive"),
+    NEGATIVE("Negative"),
+    NEUTRAL("Neutral");
+
+    private String value;
+
+    ImpactEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ImpactEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ImpactEnum value : ImpactEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ImpactEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ImpactEnum impact = null;
+  private String secondaryPresenceLookupId = null;
+
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+    }
+  }
+
+  
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo startOffsetSeconds(Long startOffsetSeconds) {
+    this.startOffsetSeconds = startOffsetSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startOffsetSeconds")
+  public Long getStartOffsetSeconds() {
+    return startOffsetSeconds;
+  }
+  public void setStartOffsetSeconds(Long startOffsetSeconds) {
+    this.startOffsetSeconds = startOffsetSeconds;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo endOffsetSeconds(Long endOffsetSeconds) {
+    this.endOffsetSeconds = endOffsetSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endOffsetSeconds")
+  public Long getEndOffsetSeconds() {
+    return endOffsetSeconds;
+  }
+  public void setEndOffsetSeconds(Long endOffsetSeconds) {
+    this.endOffsetSeconds = endOffsetSeconds;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo scheduledActivityCodeId(String scheduledActivityCodeId) {
+    this.scheduledActivityCodeId = scheduledActivityCodeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduledActivityCodeId")
+  public String getScheduledActivityCodeId() {
+    return scheduledActivityCodeId;
+  }
+  public void setScheduledActivityCodeId(String scheduledActivityCodeId) {
+    this.scheduledActivityCodeId = scheduledActivityCodeId;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo scheduledActivityCategory(ScheduledActivityCategoryEnum scheduledActivityCategory) {
+    this.scheduledActivityCategory = scheduledActivityCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduledActivityCategory")
+  public ScheduledActivityCategoryEnum getScheduledActivityCategory() {
+    return scheduledActivityCategory;
+  }
+  public void setScheduledActivityCategory(ScheduledActivityCategoryEnum scheduledActivityCategory) {
+    this.scheduledActivityCategory = scheduledActivityCategory;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo scheduledSecondaryPresenceLookupIds(List<String> scheduledSecondaryPresenceLookupIds) {
+    this.scheduledSecondaryPresenceLookupIds = scheduledSecondaryPresenceLookupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduledSecondaryPresenceLookupIds")
+  public List<String> getScheduledSecondaryPresenceLookupIds() {
+    return scheduledSecondaryPresenceLookupIds;
+  }
+  public void setScheduledSecondaryPresenceLookupIds(List<String> scheduledSecondaryPresenceLookupIds) {
+    this.scheduledSecondaryPresenceLookupIds = scheduledSecondaryPresenceLookupIds;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo actualActivityCodeId(String actualActivityCodeId) {
+    this.actualActivityCodeId = actualActivityCodeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("actualActivityCodeId")
+  public String getActualActivityCodeId() {
+    return actualActivityCodeId;
+  }
+  public void setActualActivityCodeId(String actualActivityCodeId) {
+    this.actualActivityCodeId = actualActivityCodeId;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo actualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
+    this.actualActivityCategory = actualActivityCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("actualActivityCategory")
+  public ActualActivityCategoryEnum getActualActivityCategory() {
+    return actualActivityCategory;
+  }
+  public void setActualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
+    this.actualActivityCategory = actualActivityCategory;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo systemPresence(SystemPresenceEnum systemPresence) {
+    this.systemPresence = systemPresence;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("systemPresence")
+  public SystemPresenceEnum getSystemPresence() {
+    return systemPresence;
+  }
+  public void setSystemPresence(SystemPresenceEnum systemPresence) {
+    this.systemPresence = systemPresence;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo routingStatus(RoutingStatusEnum routingStatus) {
+    this.routingStatus = routingStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("routingStatus")
+  public RoutingStatusEnum getRoutingStatus() {
+    return routingStatus;
+  }
+  public void setRoutingStatus(RoutingStatusEnum routingStatus) {
+    this.routingStatus = routingStatus;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo impact(ImpactEnum impact) {
+    this.impact = impact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("impact")
+  public ImpactEnum getImpact() {
+    return impact;
+  }
+  public void setImpact(ImpactEnum impact) {
+    this.impact = impact;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo secondaryPresenceLookupId(String secondaryPresenceLookupId) {
+    this.secondaryPresenceLookupId = secondaryPresenceLookupId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("secondaryPresenceLookupId")
+  public String getSecondaryPresenceLookupId() {
+    return secondaryPresenceLookupId;
+  }
+  public void setSecondaryPresenceLookupId(String secondaryPresenceLookupId) {
+    this.secondaryPresenceLookupId = secondaryPresenceLookupId;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo = (WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo) o;
+
+    return Objects.equals(this.startOffsetSeconds, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.startOffsetSeconds) &&
+            Objects.equals(this.endOffsetSeconds, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.endOffsetSeconds) &&
+            Objects.equals(this.scheduledActivityCodeId, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.scheduledActivityCodeId) &&
+            Objects.equals(this.scheduledActivityCategory, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.scheduledActivityCategory) &&
+            Objects.equals(this.scheduledSecondaryPresenceLookupIds, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.scheduledSecondaryPresenceLookupIds) &&
+            Objects.equals(this.actualActivityCodeId, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.actualActivityCodeId) &&
+            Objects.equals(this.actualActivityCategory, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.actualActivityCategory) &&
+            Objects.equals(this.systemPresence, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.systemPresence) &&
+            Objects.equals(this.routingStatus, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.routingStatus) &&
+            Objects.equals(this.impact, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.impact) &&
+            Objects.equals(this.secondaryPresenceLookupId, wfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo.secondaryPresenceLookupId);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(startOffsetSeconds, endOffsetSeconds, scheduledActivityCodeId, scheduledActivityCategory, scheduledSecondaryPresenceLookupIds, actualActivityCodeId, actualActivityCategory, systemPresence, routingStatus, impact, secondaryPresenceLookupId);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceExceptionInfo {\n");
+    
+    sb.append("    startOffsetSeconds: ").append(toIndentedString(startOffsetSeconds)).append("\n");
+    sb.append("    endOffsetSeconds: ").append(toIndentedString(endOffsetSeconds)).append("\n");
+    sb.append("    scheduledActivityCodeId: ").append(toIndentedString(scheduledActivityCodeId)).append("\n");
+    sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
+    sb.append("    scheduledSecondaryPresenceLookupIds: ").append(toIndentedString(scheduledSecondaryPresenceLookupIds)).append("\n");
+    sb.append("    actualActivityCodeId: ").append(toIndentedString(actualActivityCodeId)).append("\n");
+    sb.append("    actualActivityCategory: ").append(toIndentedString(actualActivityCategory)).append("\n");
+    sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
+    sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
+    sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
+    sb.append("    secondaryPresenceLookupId: ").append(toIndentedString(secondaryPresenceLookupId)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

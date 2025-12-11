@@ -162,8 +162,9 @@ public class StatusChange  implements Serializable {
  @JsonDeserialize(using = NamespaceEnumDeserializer.class)
   public enum NamespaceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WORKFORCE_MANAGEMENT("workforce.management"),
+    WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
     AGENT_ASSISTANT("agent.assistant"),
+    AGENTIC_VIRTUAL_AGENTS("agentic.virtual.agents"),
     ANALYTICS_AGENTS("analytics.agents"),
     ANALYTICS_ALERTING("analytics.alerting"),
     ANALYTICS_DATA_EXTRACTION("analytics.data.extraction"),
@@ -242,7 +243,8 @@ public class StatusChange  implements Serializable {
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
     WORKFORCE_MANAGEMENT_AGENT_AVAILABILITY("workforce.management.agent.availability"),
-    WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
+    WORKFORCE_MANAGEMENT("workforce.management"),
+    WORKFORCE_MANAGEMENT_SHIFT_TRADING("workforce.management.shift.trading"),
     SYSTEM("system");
 
     private String value;

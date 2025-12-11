@@ -199,7 +199,6 @@ public class AuthorizationApiAsync {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -234,7 +233,6 @@ public class AuthorizationApiAsync {
   /**
    * Delete an access control policy
    * 
-   * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1255,7 +1253,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1290,7 +1287,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for an organization
    * 
-   * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1332,7 +1328,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1367,7 +1362,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for a given subject
    * 
-   * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1409,7 +1403,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1444,7 +1437,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a page of access policies for a given policy target
    * 
-   * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1486,7 +1478,6 @@ public class AuthorizationApiAsync {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1521,7 +1512,6 @@ public class AuthorizationApiAsync {
   /**
    * Get an access control policy for a specified resource target and subject
    * 
-   * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1563,7 +1553,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1598,7 +1587,6 @@ public class AuthorizationApiAsync {
   /**
    * Get a map of policy targets to valid attributes for those targets
    * 
-   * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1640,7 +1628,6 @@ public class AuthorizationApiAsync {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1675,7 +1662,6 @@ public class AuthorizationApiAsync {
   /**
    * Get an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1717,7 +1703,6 @@ public class AuthorizationApiAsync {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1752,7 +1737,6 @@ public class AuthorizationApiAsync {
   /**
    * Get the list of attributes used to evaluate an access control policy with the specified policy ID
    * 
-   * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3069,7 +3053,6 @@ public class AuthorizationApiAsync {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3104,7 +3087,6 @@ public class AuthorizationApiAsync {
   /**
    * Add an access control policy for a specified resource target and subject
    * 
-   * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3146,7 +3128,6 @@ public class AuthorizationApiAsync {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3181,7 +3162,6 @@ public class AuthorizationApiAsync {
   /**
    * Validate the conditions and attributes of an access control policy for a specified resource target
    * 
-   * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3223,7 +3203,6 @@ public class AuthorizationApiAsync {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3258,7 +3237,6 @@ public class AuthorizationApiAsync {
   /**
    * Simulate a request and evaluate the specified policy ID against the provided values
    * 
-   * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3975,7 +3953,6 @@ public class AuthorizationApiAsync {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4010,7 +3987,6 @@ public class AuthorizationApiAsync {
   /**
    * Add an access control policy for a specified resource target and subject, overwriting any existing policy
    * 
-   * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4052,7 +4028,6 @@ public class AuthorizationApiAsync {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4087,7 +4062,6 @@ public class AuthorizationApiAsync {
   /**
    * Update an access control policy with a given ID
    * 
-   * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

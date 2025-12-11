@@ -32,11 +32,11 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
   private Integer pageNumber = null;
   private Long total = null;
   private Integer unfilteredTotal = null;
-  private String lastUri = null;
   private String firstUri = null;
-  private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
+  private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   public LearningAssignmentUserListing() {
@@ -135,23 +135,6 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
 
   /**
    **/
-  public LearningAssignmentUserListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public LearningAssignmentUserListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -169,18 +152,18 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
 
   /**
    **/
-  public LearningAssignmentUserListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public LearningAssignmentUserListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -203,18 +186,35 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
 
   /**
    **/
-  public LearningAssignmentUserListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public LearningAssignmentUserListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public LearningAssignmentUserListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -250,17 +250,17 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
             Objects.equals(this.pageNumber, learningAssignmentUserListing.pageNumber) &&
             Objects.equals(this.total, learningAssignmentUserListing.total) &&
             Objects.equals(this.unfilteredTotal, learningAssignmentUserListing.unfilteredTotal) &&
-            Objects.equals(this.lastUri, learningAssignmentUserListing.lastUri) &&
             Objects.equals(this.firstUri, learningAssignmentUserListing.firstUri) &&
-            Objects.equals(this.selfUri, learningAssignmentUserListing.selfUri) &&
-            Objects.equals(this.nextUri, learningAssignmentUserListing.nextUri) &&
             Objects.equals(this.previousUri, learningAssignmentUserListing.previousUri) &&
+            Objects.equals(this.nextUri, learningAssignmentUserListing.nextUri) &&
+            Objects.equals(this.lastUri, learningAssignmentUserListing.lastUri) &&
+            Objects.equals(this.selfUri, learningAssignmentUserListing.selfUri) &&
             Objects.equals(this.pageCount, learningAssignmentUserListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, unfilteredTotal, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, unfilteredTotal, firstUri, previousUri, nextUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -273,11 +273,11 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    unfilteredTotal: ").append(toIndentedString(unfilteredTotal)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

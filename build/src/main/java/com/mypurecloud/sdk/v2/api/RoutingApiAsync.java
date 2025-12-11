@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreateKpiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
@@ -42,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorType;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.MailFromResult;
@@ -91,6 +93,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberPatchRequest;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
+import com.mypurecloud.sdk.v2.model.UpdateKpiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -122,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
@@ -165,7 +169,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelFeaturesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatortypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
@@ -216,6 +222,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorsKeyperformanceindicatorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
@@ -243,6 +250,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsRequest
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailOutboundDomainsSimulatedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
@@ -787,6 +795,83 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingPredictorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingPredictorsKeyperformanceindicatorAsync(DeleteRoutingPredictorsKeyperformanceindicatorRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a custom Key Performance Indicator.
+   * 
+   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingPredictorsKeyperformanceindicatorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4050,6 +4135,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicatorAsync(GetRoutingPredictorsKeyperformanceindicatorRequest request, final AsyncApiCallback<KeyPerformanceIndicator> callback) {
+    try {
+      final SettableFuture<KeyPerformanceIndicator> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single Key Performance Indicator.
+   * 
+   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KeyPerformanceIndicator>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a list of Key Performance Indicators
    * 
    * @param request the request object
@@ -4113,6 +4275,83 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<KeyPerformanceIndicatorType>> getRoutingPredictorsKeyperformanceindicatortypesAsync(GetRoutingPredictorsKeyperformanceindicatortypesRequest request, final AsyncApiCallback<List<KeyPerformanceIndicatorType>> callback) {
+    try {
+      final SettableFuture<List<KeyPerformanceIndicatorType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicatorType>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicatorType>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<KeyPerformanceIndicatorType>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators Types available.
+   * 
+   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<KeyPerformanceIndicatorType>>> getRoutingPredictorsKeyperformanceindicatortypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicatorType>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<KeyPerformanceIndicatorType>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<KeyPerformanceIndicatorType>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicatorType>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<KeyPerformanceIndicatorType>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<KeyPerformanceIndicatorType>> response = (ApiResponse<List<KeyPerformanceIndicatorType>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<KeyPerformanceIndicatorType>> response = (ApiResponse<List<KeyPerformanceIndicatorType>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7883,6 +8122,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KeyPerformanceIndicator> patchRoutingPredictorsKeyperformanceindicatorAsync(PatchRoutingPredictorsKeyperformanceindicatorRequest request, final AsyncApiCallback<KeyPerformanceIndicator> callback) {
+    try {
+      final SettableFuture<KeyPerformanceIndicator> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a custom Key Performance Indicator.
+   * 
+   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KeyPerformanceIndicator>> patchRoutingPredictorsKeyperformanceindicatorAsync(ApiRequest<UpdateKpiRequest> request, final AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KeyPerformanceIndicator>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the ring number OR joined status for a queue member.
    * 
    * @param request the request object
@@ -9900,6 +10216,83 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KeyPerformanceIndicator> postRoutingPredictorsKeyperformanceindicatorsAsync(PostRoutingPredictorsKeyperformanceindicatorsRequest request, final AsyncApiCallback<KeyPerformanceIndicator> callback) {
+    try {
+      final SettableFuture<KeyPerformanceIndicator> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a custom Key Performance Indicator.
+   * 
+   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KeyPerformanceIndicator>> postRoutingPredictorsKeyperformanceindicatorsAsync(ApiRequest<CreateKpiRequest> request, final AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KeyPerformanceIndicator>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KeyPerformanceIndicator>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicator>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyPerformanceIndicator> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyPerformanceIndicator> response = (ApiResponse<KeyPerformanceIndicator>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

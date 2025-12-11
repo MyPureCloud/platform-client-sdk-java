@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.SocialTopicPatchRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialTopicWithDataIngestionRuleMetadataResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetRequest;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleRequest;
@@ -1178,11 +1179,11 @@ public class SocialMediaApi {
    * 
    * @param topicId topicId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
-   * @return SocialTopicResponse
+   * @return SocialTopicWithDataIngestionRuleMetadataResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SocialTopicResponse getSocialmediaTopic(String topicId, Boolean includeDeleted) throws IOException, ApiException {
+  public SocialTopicWithDataIngestionRuleMetadataResponse getSocialmediaTopic(String topicId, Boolean includeDeleted) throws IOException, ApiException {
     return  getSocialmediaTopic(createGetSocialmediaTopicRequest(topicId, includeDeleted));
   }
 
@@ -1191,10 +1192,10 @@ public class SocialMediaApi {
    * 
    * @param topicId topicId (required)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
-   * @return SocialTopicResponse
+   * @return SocialTopicWithDataIngestionRuleMetadataResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SocialTopicResponse> getSocialmediaTopicWithHttpInfo(String topicId, Boolean includeDeleted) throws IOException {
+  public ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> getSocialmediaTopicWithHttpInfo(String topicId, Boolean includeDeleted) throws IOException {
     return getSocialmediaTopic(createGetSocialmediaTopicRequest(topicId, includeDeleted).withHttpInfo());
   }
 
@@ -1211,13 +1212,13 @@ public class SocialMediaApi {
    * Get a single social topic.
    * 
    * @param request The request object
-   * @return SocialTopicResponse
+   * @return SocialTopicWithDataIngestionRuleMetadataResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SocialTopicResponse getSocialmediaTopic(GetSocialmediaTopicRequest request) throws IOException, ApiException {
+  public SocialTopicWithDataIngestionRuleMetadataResponse getSocialmediaTopic(GetSocialmediaTopicRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<SocialTopicResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SocialTopicResponse>() {});
+      ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SocialTopicWithDataIngestionRuleMetadataResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1233,13 +1234,13 @@ public class SocialMediaApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SocialTopicResponse> getSocialmediaTopic(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> getSocialmediaTopic(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<SocialTopicResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<SocialTopicWithDataIngestionRuleMetadataResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<SocialTopicResponse> response = (ApiResponse<SocialTopicResponse>)(ApiResponse<?>)exception;
+      ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response = (ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1250,7 +1251,7 @@ public class SocialMediaApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<SocialTopicResponse> response = (ApiResponse<SocialTopicResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response = (ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2432,12 +2433,13 @@ public class SocialMediaApi {
    * @param pageSize Page size (optional, default to 25)
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @param name Search for topic by name that contains the given search string, search is case insensitive (optional)
    * @return SocialTopicResponseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SocialTopicResponseEntityListing getSocialmediaTopics(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted) throws IOException, ApiException {
-    return  getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted));
+  public SocialTopicResponseEntityListing getSocialmediaTopics(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) throws IOException, ApiException {
+    return  getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name));
   }
 
   /**
@@ -2447,14 +2449,15 @@ public class SocialMediaApi {
    * @param pageSize Page size (optional, default to 25)
    * @param divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param includeDeleted Determines whether to include soft-deleted items in the result. (optional)
+   * @param name Search for topic by name that contains the given search string, search is case insensitive (optional)
    * @return SocialTopicResponseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SocialTopicResponseEntityListing> getSocialmediaTopicsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted) throws IOException {
-    return getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted).withHttpInfo());
+  public ApiResponse<SocialTopicResponseEntityListing> getSocialmediaTopicsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) throws IOException {
+    return getSocialmediaTopics(createGetSocialmediaTopicsRequest(pageNumber, pageSize, divisionIds, includeDeleted, name).withHttpInfo());
   }
 
-  private GetSocialmediaTopicsRequest createGetSocialmediaTopicsRequest(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted) {
+  private GetSocialmediaTopicsRequest createGetSocialmediaTopicsRequest(Integer pageNumber, Integer pageSize, List<String> divisionIds, Boolean includeDeleted, String name) {
     return GetSocialmediaTopicsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -2463,6 +2466,8 @@ public class SocialMediaApi {
             .withDivisionIds(divisionIds)
 
             .withIncludeDeleted(includeDeleted)
+
+            .withName(name)
 
             .build();
   }

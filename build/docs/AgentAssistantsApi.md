@@ -7,10 +7,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAssistant**](AgentAssistantsApi#deleteAssistant) | Delete an assistant. |
 | [**deleteAssistantQueue**](AgentAssistantsApi#deleteAssistantQueue) | Disassociate a queue from an assistant. |
 | [**deleteAssistantQueues**](AgentAssistantsApi#deleteAssistantQueues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs. |
+| [**deleteAssistantsAgentchecklist**](AgentAssistantsApi#deleteAssistantsAgentchecklist) | Delete an agent checklist |
 | [**getAssistant**](AgentAssistantsApi#getAssistant) | Get an assistant. |
 | [**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | Get queue Information for an assistant. |
 | [**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | Get all the queues associated with an assistant. |
 | [**getAssistants**](AgentAssistantsApi#getAssistants) | Get all assistants. |
+| [**getAssistantsAgentchecklist**](AgentAssistantsApi#getAssistantsAgentchecklist) | Get an agent checklist |
+| [**getAssistantsAgentchecklists**](AgentAssistantsApi#getAssistantsAgentchecklists) | Get the list of agent checklists |
+| [**getAssistantsAgentchecklistsLanguages**](AgentAssistantsApi#getAssistantsAgentchecklistsLanguages) | Get the list of supported languages |
 | [**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | Get all queues assigned to any assistant. |
 | [**patchAssistant**](AgentAssistantsApi#patchAssistant) | Update an assistant. |
 | [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | Update Queues for an Assistant. |
@@ -18,7 +22,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | Bulk remove users from assistant-queue (requires manual assignment mode). |
 | [**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | Query for users in the assistant-queue (requires manual assignment mode). |
 | [**postAssistants**](AgentAssistantsApi#postAssistants) | Create an Assistant. |
+| [**postAssistantsAgentchecklists**](AgentAssistantsApi#postAssistantsAgentchecklists) | Create an agent checklist |
 | [**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | Create a queue assistant association. |
+| [**putAssistantsAgentchecklist**](AgentAssistantsApi#putAssistantsAgentchecklist) | Update an agent checklist |
 {: class="table-striped"}
 
 
@@ -192,6 +198,64 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
 | **queueIds** | **String**| Comma-separated identifiers of the queues that need to be deleted. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteAssistantsAgentchecklist**
+
+
+> Void deleteAssistantsAgentchecklist(agentChecklistId)
+
+Delete an agent checklist
+
+Wraps DELETE /api/v2/assistants/agentchecklists/{agentChecklistId}  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+try {
+    apiInstance.deleteAssistantsAgentchecklist(agentChecklistId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#deleteAssistantsAgentchecklist");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentChecklistId** | **String**| Agent Checklist ID | 
 {: class="table-striped"}
 
 
@@ -458,6 +522,191 @@ try {
 ### Return type
 
 [**AssistantListing**](AssistantListing)
+
+
+# **getAssistantsAgentchecklist**
+
+
+> [AgentChecklist](AgentChecklist) getAssistantsAgentchecklist(agentChecklistId)
+
+Get an agent checklist
+
+Wraps GET /api/v2/assistants/agentchecklists/{agentChecklistId}  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+try {
+    AgentChecklist result = apiInstance.getAssistantsAgentchecklist(agentChecklistId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#getAssistantsAgentchecklist");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
+# **getAssistantsAgentchecklists**
+
+
+> [AgentChecklistListing](AgentChecklistListing) getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy)
+
+Get the list of agent checklists
+
+Wraps GET /api/v2/assistants/agentchecklists  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | The page size for the listing. The max that will be returned is 100.
+String namePrefix = "namePrefix_example"; // String | The agent checklist name prefix filter applied to the listing.
+String language = "language_example"; // String | The agent checklist language filter applied to the listing.
+String sortOrder = "sortOrder_example"; // String | The sort order for the listing
+String sortBy = "sortBy_example"; // String | The field to sort by for the listing.
+try {
+    AgentChecklistListing result = apiInstance.getAssistantsAgentchecklists(before, after, pageSize, namePrefix, language, sortOrder, sortBy);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#getAssistantsAgentchecklists");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| The page size for the listing. The max that will be returned is 100. | [optional] [default to 25] 
+| **namePrefix** | **String**| The agent checklist name prefix filter applied to the listing. | [optional] 
+| **language** | **String**| The agent checklist language filter applied to the listing. | [optional] 
+| **sortOrder** | **String**| The sort order for the listing | [optional]<br />**Values**: asc, desc 
+| **sortBy** | **String**| The field to sort by for the listing. | [optional]<br />**Values**: dateModified, language, name 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklistListing**](AgentChecklistListing)
+
+
+# **getAssistantsAgentchecklistsLanguages**
+
+
+> [EntityListing](EntityListing) getAssistantsAgentchecklistsLanguages()
+
+Get the list of supported languages
+
+Wraps GET /api/v2/assistants/agentchecklists/languages  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+try {
+    EntityListing result = apiInstance.getAssistantsAgentchecklistsLanguages();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#getAssistantsAgentchecklistsLanguages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**EntityListing**](EntityListing)
 
 
 # **getAssistantsQueues**
@@ -899,6 +1148,65 @@ try {
 [**Assistant**](Assistant)
 
 
+# **postAssistantsAgentchecklists**
+
+
+> [AgentChecklist](AgentChecklist) postAssistantsAgentchecklists(body)
+
+Create an agent checklist
+
+Wraps POST /api/v2/assistants/agentchecklists  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+AgentChecklist body = new AgentChecklist(); // AgentChecklist | Request body containing details of checklist to be added
+try {
+    AgentChecklist result = apiInstance.postAssistantsAgentchecklists(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#postAssistantsAgentchecklists");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentChecklist**](AgentChecklist)| Request body containing details of checklist to be added | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
 # **putAssistantQueue**
 
 
@@ -962,4 +1270,65 @@ try {
 [**AssistantQueue**](AssistantQueue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:239.0.0_
+# **putAssistantsAgentchecklist**
+
+
+> [AgentChecklist](AgentChecklist) putAssistantsAgentchecklist(agentChecklistId, body)
+
+Update an agent checklist
+
+Wraps PUT /api/v2/assistants/agentchecklists/{agentChecklistId}  
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AgentAssistantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AgentAssistantsApi apiInstance = new AgentAssistantsApi();
+String agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+AgentChecklist body = new AgentChecklist(); // AgentChecklist | Request body containing details of checklist to be updated
+try {
+    AgentChecklist result = apiInstance.putAssistantsAgentchecklist(agentChecklistId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AgentAssistantsApi#putAssistantsAgentchecklist");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentChecklistId** | **String**| Agent Checklist ID | 
+| **body** | [**AgentChecklist**](AgentChecklist)| Request body containing details of checklist to be updated | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_

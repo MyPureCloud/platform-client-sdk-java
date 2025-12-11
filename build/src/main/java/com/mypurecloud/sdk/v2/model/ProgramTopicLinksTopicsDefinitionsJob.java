@@ -77,10 +77,12 @@ public class ProgramTopicLinksTopicsDefinitionsJob  implements Serializable {
   }
   private StateEnum state = null;
   private List<ProgramTopicLinksTestTopicPhraseResults> testTopicPhraseResults = null;
+  private List<String> genAIPhrasesResults = null;
 
   public ProgramTopicLinksTopicsDefinitionsJob() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       testTopicPhraseResults = new ArrayList<ProgramTopicLinksTestTopicPhraseResults>();
+      genAIPhrasesResults = new ArrayList<String>();
     }
   }
 
@@ -136,6 +138,23 @@ public class ProgramTopicLinksTopicsDefinitionsJob  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ProgramTopicLinksTopicsDefinitionsJob genAIPhrasesResults(List<String> genAIPhrasesResults) {
+    this.genAIPhrasesResults = genAIPhrasesResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("genAIPhrasesResults")
+  public List<String> getGenAIPhrasesResults() {
+    return genAIPhrasesResults;
+  }
+  public void setGenAIPhrasesResults(List<String> genAIPhrasesResults) {
+    this.genAIPhrasesResults = genAIPhrasesResults;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -148,12 +167,13 @@ public class ProgramTopicLinksTopicsDefinitionsJob  implements Serializable {
 
     return Objects.equals(this.id, programTopicLinksTopicsDefinitionsJob.id) &&
             Objects.equals(this.state, programTopicLinksTopicsDefinitionsJob.state) &&
-            Objects.equals(this.testTopicPhraseResults, programTopicLinksTopicsDefinitionsJob.testTopicPhraseResults);
+            Objects.equals(this.testTopicPhraseResults, programTopicLinksTopicsDefinitionsJob.testTopicPhraseResults) &&
+            Objects.equals(this.genAIPhrasesResults, programTopicLinksTopicsDefinitionsJob.genAIPhrasesResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, testTopicPhraseResults);
+    return Objects.hash(id, state, testTopicPhraseResults, genAIPhrasesResults);
   }
 
   @Override
@@ -164,6 +184,7 @@ public class ProgramTopicLinksTopicsDefinitionsJob  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    testTopicPhraseResults: ").append(toIndentedString(testTopicPhraseResults)).append("\n");
+    sb.append("    genAIPhrasesResults: ").append(toIndentedString(genAIPhrasesResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

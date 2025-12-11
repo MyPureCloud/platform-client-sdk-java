@@ -47,6 +47,7 @@ import com.mypurecloud.sdk.v2.model.SocialTopicPatchRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicRequest;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponse;
 import com.mypurecloud.sdk.v2.model.SocialTopicResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.SocialTopicWithDataIngestionRuleMetadataResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetRequest;
 import com.mypurecloud.sdk.v2.model.TwitterDataHistoricalTweetResponse;
 import com.mypurecloud.sdk.v2.model.TwitterDataIngestionRuleRequest;
@@ -1108,13 +1109,13 @@ public class SocialMediaApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SocialTopicResponse> getSocialmediaTopicAsync(GetSocialmediaTopicRequest request, final AsyncApiCallback<SocialTopicResponse> callback) {
+  public Future<SocialTopicWithDataIngestionRuleMetadataResponse> getSocialmediaTopicAsync(GetSocialmediaTopicRequest request, final AsyncApiCallback<SocialTopicWithDataIngestionRuleMetadataResponse> callback) {
     try {
-      final SettableFuture<SocialTopicResponse> future = SettableFuture.create();
+      final SettableFuture<SocialTopicWithDataIngestionRuleMetadataResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SocialTopicResponse>() {}, new AsyncApiCallback<ApiResponse<SocialTopicResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SocialTopicWithDataIngestionRuleMetadataResponse>() {}, new AsyncApiCallback<ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<SocialTopicResponse> response) {
+        public void onCompleted(ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1142,13 +1143,13 @@ public class SocialMediaApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SocialTopicResponse>> getSocialmediaTopicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SocialTopicResponse>> callback) {
+  public Future<ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>> getSocialmediaTopicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<SocialTopicResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<SocialTopicResponse>() {}, new AsyncApiCallback<ApiResponse<SocialTopicResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<SocialTopicWithDataIngestionRuleMetadataResponse>() {}, new AsyncApiCallback<ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<SocialTopicResponse> response) {
+        public void onCompleted(ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1156,7 +1157,7 @@ public class SocialMediaApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<SocialTopicResponse> response = (ApiResponse<SocialTopicResponse>)(ApiResponse<?>)exception;
+            ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response = (ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1164,7 +1165,7 @@ public class SocialMediaApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<SocialTopicResponse> response = (ApiResponse<SocialTopicResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse> response = (ApiResponse<SocialTopicWithDataIngestionRuleMetadataResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

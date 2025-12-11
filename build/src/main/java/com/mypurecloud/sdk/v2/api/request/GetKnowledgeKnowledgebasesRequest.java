@@ -245,7 +245,11 @@ public class GetKnowledgeKnowledgebasesRequest {
 		HU_HU("hu-HU"),
 		VI_VN("vi-VN"),
 		UK_UA("uk-UA"),
-		CS_CZ("cs-CZ");
+		CS_CZ("cs-CZ"),
+		FIL_PH("fil-PH"),
+		MS_MY("ms-MY"),
+		HE_IL("he-IL"),
+		EL_GR("el-GR");
 
 		private String value;
 

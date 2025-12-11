@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.Guide;
 import com.mypurecloud.sdk.v2.model.GuideContentGenerationJob;
 import com.mypurecloud.sdk.v2.model.GuideEntityListing;
 import com.mypurecloud.sdk.v2.model.GuideJob;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnRequest;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnResponse;
 import com.mypurecloud.sdk.v2.model.GuideVersion;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJob;
 import com.mypurecloud.sdk.v2.model.GuideVersionPublishJobRequest;
@@ -45,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchGuideRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGuideVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSummariesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGuideSessionTurnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuideVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGuidesRequest;
@@ -1126,6 +1129,81 @@ public class AIStudioApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SummarySetting> response = (ApiResponse<SummarySetting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GuideSessionTurnResponse> postGuideSessionTurnsAsync(PostGuideSessionTurnsRequest request, final AsyncApiCallback<GuideSessionTurnResponse> callback) {
+    try {
+      final SettableFuture<GuideSessionTurnResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GuideSessionTurnResponse>() {}, new AsyncApiCallback<ApiResponse<GuideSessionTurnResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GuideSessionTurnResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a turn to a guide session.
+   * Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GuideSessionTurnResponse>> postGuideSessionTurnsAsync(ApiRequest<GuideSessionTurnRequest> request, final AsyncApiCallback<ApiResponse<GuideSessionTurnResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GuideSessionTurnResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GuideSessionTurnResponse>() {}, new AsyncApiCallback<ApiResponse<GuideSessionTurnResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GuideSessionTurnResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GuideSessionTurnResponse> response = (ApiResponse<GuideSessionTurnResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GuideSessionTurnResponse> response = (ApiResponse<GuideSessionTurnResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
