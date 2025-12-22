@@ -46,6 +46,7 @@
 | **divisionId** | **String** |  |  [optional] |
 | **scoredAgents** | [**List&lt;WorkitemsUserEventsNotificationScoredAgent&gt;**](WorkitemsUserEventsNotificationScoredAgent) |  |  [optional] |
 | **utilizationLabelId** | **String** |  |  [optional] |
+| **caseId** | **String** |  |  [optional] |
 
 
 ## Enum: StatusCategoryEnum
@@ -109,4 +110,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_

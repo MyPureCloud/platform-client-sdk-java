@@ -475,4 +475,4 @@ try {
 [**FaxConfig**](FaxConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:240.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:241.0.0_

@@ -824,7 +824,7 @@
         </div> <!-- panel SDK_tests -->
         <div panel-name="test-xml-SDK_tests__0_" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/testng-unit.xml</span>
+            <span class="header-content">/workspace/platform-client-sdk-common/output/purecloudjava/build/testng-unit.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -847,7 +847,7 @@
         </div> <!-- panel -->
         <div panel-name="test-xml-SDK_tests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/testng-integration.xml</span>
+            <span class="header-content">/workspace/platform-client-sdk-common/output/purecloudjava/build/testng-integration.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -939,29 +939,29 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(20);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'invokeTestWith_503')
-data.setCell(0, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(0, 3, 40153);
+data.setCell(0, 1, 'invokeAsyncTestWith_503')
+data.setCell(0, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
+data.setCell(0, 3, 40177);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'invokeAsyncTestWith_503')
-data.setCell(1, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
-data.setCell(1, 3, 40147);
+data.setCell(1, 1, 'invokeTestWith_503')
+data.setCell(1, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
+data.setCell(1, 3, 40163);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'invokeTestWith_502')
 data.setCell(2, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(2, 3, 13154);
+data.setCell(2, 3, 13135);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'invokeAsyncTestWith_502')
 data.setCell(3, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
-data.setCell(3, 3, 13133);
+data.setCell(3, 3, 13121);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'invokeTestWith_429')
 data.setCell(4, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(4, 3, 6116);
+data.setCell(4, 3, 6124);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'invokeAsyncTestWith_429')
 data.setCell(5, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
-data.setCell(5, 3, 5321);
+data.setCell(5, 3, 5301);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'shouldRetryTestWith_504_And_No_RetryAfter_Header')
 data.setCell(6, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
@@ -973,43 +973,43 @@ data.setCell(7, 3, 3000);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'invokeAsyncTestWith_504')
 data.setCell(8, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
-data.setCell(8, 3, 2173);
+data.setCell(8, 3, 2192);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'invokeTestWith_504')
 data.setCell(9, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(9, 3, 2163);
+data.setCell(9, 3, 2148);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'shouldRetryTestWith_502')
+data.setCell(10, 1, 'shouldRetryTestWith_429')
 data.setCell(10, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(10, 3, 1000);
+data.setCell(10, 3, 1001);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'shouldRetryTestWith_429')
+data.setCell(11, 1, 'shouldRetryTestWith_502')
 data.setCell(11, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
 data.setCell(11, 3, 1000);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'invokeTestWith_429_And_No_MaxRetryTime')
-data.setCell(12, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(12, 3, 225);
+data.setCell(12, 1, 'testAuthentication')
+data.setCell(12, 2, 'com.mypurecloud.sdk.v2.ApiMTLSClientInjectionTest')
+data.setCell(12, 3, 184);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testAuthentication')
-data.setCell(13, 2, 'com.mypurecloud.sdk.v2.ApiMTLSClientInjectionTest')
-data.setCell(13, 3, 223);
+data.setCell(13, 1, 'invokeTestWith_429_And_No_MaxRetryTime')
+data.setCell(13, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
+data.setCell(13, 3, 149);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'invokeAsyncTestWith_429_And_No_MaxRetryTime')
+data.setCell(14, 1, 'invokeAsyncTestWith_504_And_No_MaxRetryTime')
 data.setCell(14, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
-data.setCell(14, 3, 186);
+data.setCell(14, 3, 140);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'invokeAsyncTestWith_504_And_No_MaxRetryTime')
+data.setCell(15, 1, 'invokeAsyncTestWith_429_And_No_MaxRetryTime')
 data.setCell(15, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest')
 data.setCell(15, 3, 135);
 data.setCell(16, 0, 16)
 data.setCell(16, 1, 'invokeTestWith_504_No_MaxRetryTime')
 data.setCell(16, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
-data.setCell(16, 3, 111);
+data.setCell(16, 3, 124);
 data.setCell(17, 0, 17)
 data.setCell(17, 1, 'testApiClientConfiguration')
 data.setCell(17, 2, 'com.mypurecloud.sdk.v2.ApiMTLSClientInjectionTest')
-data.setCell(17, 3, 44);
+data.setCell(17, 3, 38);
 data.setCell(18, 0, 18)
 data.setCell(18, 1, 'shouldRetryTestWith_200')
 data.setCell(18, 2, 'com.mypurecloud.sdk.v2.ApiClientRetryTest')
@@ -1044,109 +1044,109 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(30);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'authenticate')
+data.setCell(0, 1, 'createUser')
 data.setCell(0, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(0, 3, 987);
+data.setCell(0, 3, 958);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createUser')
+data.setCell(1, 1, 'authenticate')
 data.setCell(1, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(1, 3, 946);
+data.setCell(1, 3, 929);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'createUser')
+data.setCell(2, 1, 'testNotifications')
 data.setCell(2, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(2, 3, 713);
+data.setCell(2, 3, 707);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'createUser')
 data.setCell(3, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(3, 3, 694);
+data.setCell(3, 3, 690);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testNotifications')
+data.setCell(4, 1, 'createUser')
 data.setCell(4, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(4, 3, 660);
+data.setCell(4, 3, 646);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testNotifications')
 data.setCell(5, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(5, 3, 604);
+data.setCell(5, 3, 482);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testNotifications')
+data.setCell(6, 1, 'authenticate')
 data.setCell(6, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(6, 3, 540);
+data.setCell(6, 3, 434);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'authenticate')
+data.setCell(7, 1, 'testNotifications')
 data.setCell(7, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(7, 3, 490);
+data.setCell(7, 3, 414);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'authenticate')
+data.setCell(8, 1, 'updateUser')
 data.setCell(8, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(8, 3, 342);
+data.setCell(8, 3, 330);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'updateUser')
+data.setCell(9, 1, 'deleteUser')
 data.setCell(9, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(9, 3, 337);
+data.setCell(9, 3, 300);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'deleteUser')
+data.setCell(10, 1, 'setProfileSkills')
 data.setCell(10, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(10, 3, 313);
+data.setCell(10, 3, 299);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'updateUser')
+data.setCell(11, 1, 'authenticate')
 data.setCell(11, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(11, 3, 296);
+data.setCell(11, 3, 269);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'deleteUser')
+data.setCell(12, 1, 'updateUser')
 data.setCell(12, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(12, 3, 280);
+data.setCell(12, 3, 259);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'updateUser')
+data.setCell(13, 1, 'setProfileSkills')
 data.setCell(13, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(13, 3, 259);
+data.setCell(13, 3, 237);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'deleteUser')
 data.setCell(14, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(14, 3, 249);
+data.setCell(14, 3, 230);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'setProfileSkills')
 data.setCell(15, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(15, 3, 211);
+data.setCell(15, 3, 207);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'setProfileSkills')
+data.setCell(16, 1, 'updateUser')
 data.setCell(16, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(16, 3, 203);
+data.setCell(16, 3, 192);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'setProfileSkills')
+data.setCell(17, 1, 'deleteUser')
 data.setCell(17, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(17, 3, 175);
+data.setCell(17, 3, 186);
 data.setCell(18, 0, 18)
 data.setCell(18, 1, 'testPreAndPostHooks')
 data.setCell(18, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(18, 3, 106);
+data.setCell(18, 3, 113);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'testPreAndPostHooks')
+data.setCell(19, 1, 'getUser')
 data.setCell(19, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(19, 3, 102);
+data.setCell(19, 3, 104);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'getUser')
+data.setCell(20, 1, 'testPreAndPostHooks')
 data.setCell(20, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(20, 3, 101);
+data.setCell(20, 3, 104);
 data.setCell(21, 0, 21)
 data.setCell(21, 1, 'getUser')
 data.setCell(21, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(21, 3, 100);
+data.setCell(21, 3, 101);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'testPreAndPostHooks')
+data.setCell(22, 1, 'getUser')
 data.setCell(22, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(22, 3, 61);
+data.setCell(22, 3, 47);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'getUser')
+data.setCell(23, 1, 'testPreAndPostHooks')
 data.setCell(23, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(23, 3, 38);
+data.setCell(23, 3, 25);
 data.setCell(24, 0, 24)
 data.setCell(24, 1, 'traceBasicInformation')
 data.setCell(24, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(24, 3, 5);
+data.setCell(24, 3, 7);
 data.setCell(25, 0, 25)
 data.setCell(25, 1, 'testObjectMapperIgnoresUnknownProperties')
 data.setCell(25, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(25, 3, 3);
+data.setCell(25, 3, 2);
 data.setCell(26, 0, 26)
 data.setCell(26, 1, 'testObjectMapperIgnoresUnknownProperties')
 data.setCell(26, 2, 'com.mypurecloud.sdk.v2.SdkTests')
@@ -1158,11 +1158,11 @@ data.setCell(27, 3, 1);
 data.setCell(28, 0, 28)
 data.setCell(28, 1, 'traceBasicInformation')
 data.setCell(28, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(28, 3, 1);
+data.setCell(28, 3, 0);
 data.setCell(29, 0, 29)
 data.setCell(29, 1, 'traceBasicInformation')
 data.setCell(29, 2, 'com.mypurecloud.sdk.v2.SdkTests')
-data.setCell(29, 3, 1);
+data.setCell(29, 3, 0);
 window.suiteTableData['SDK_tests']= { tableData: data, tableDiv: 'times-div-SDK_tests'}
 return data;
 }
@@ -1217,169 +1217,169 @@ return data;
               <div class="chronological-class-name">com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">3 ms</span>
+                <span class="method-start">2 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_429</span>
-                <span class="method-start">1107 ms</span>
+                <span class="method-start">1025 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6431 ms</span>
+                <span class="method-start">6329 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_429_And_No_MaxRetryTime</span>
-                <span class="method-start">6436 ms</span>
+                <span class="method-start">6332 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6625 ms</span>
+                <span class="method-start">6470 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_502</span>
-                <span class="method-start">6629 ms</span>
+                <span class="method-start">6478 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">19764 ms</span>
+                <span class="method-start">19601 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_503</span>
-                <span class="method-start">19767 ms</span>
+                <span class="method-start">19604 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">59915 ms</span>
+                <span class="method-start">59782 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_504</span>
-                <span class="method-start">59918 ms</span>
+                <span class="method-start">59786 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">62093 ms</span>
+                <span class="method-start">61980 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeAsyncTestWith_504_And_No_MaxRetryTime</span>
-                <span class="method-start">62096 ms</span>
+                <span class="method-start">61983 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.mypurecloud.sdk.v2.ApiClientRetryTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">62232 ms</span>
+                <span class="method-start">62124 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_429</span>
-                <span class="method-start">62236 ms</span>
+                <span class="method-start">62128 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">68353 ms</span>
+                <span class="method-start">68253 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_429_And_No_MaxRetryTime</span>
-                <span class="method-start">68356 ms</span>
+                <span class="method-start">68258 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">68582 ms</span>
+                <span class="method-start">68409 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_502</span>
-                <span class="method-start">68585 ms</span>
+                <span class="method-start">68412 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">81740 ms</span>
+                <span class="method-start">81548 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_503</span>
-                <span class="method-start">81744 ms</span>
+                <span class="method-start">81551 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">121898 ms</span>
+                <span class="method-start">121715 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_504</span>
-                <span class="method-start">121902 ms</span>
+                <span class="method-start">121718 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">124066 ms</span>
+                <span class="method-start">123867 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invokeTestWith_504_No_MaxRetryTime</span>
-                <span class="method-start">124070 ms</span>
+                <span class="method-start">123870 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">124182 ms</span>
+                <span class="method-start">123995 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_200</span>
-                <span class="method-start">124184 ms</span>
+                <span class="method-start">123997 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">124186 ms</span>
+                <span class="method-start">124000 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_429</span>
-                <span class="method-start">124188 ms</span>
+                <span class="method-start">124002 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">125190 ms</span>
+                <span class="method-start">125004 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_502</span>
-                <span class="method-start">125192 ms</span>
+                <span class="method-start">125006 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">126193 ms</span>
+                <span class="method-start">126007 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_502_And_0_MaxRetryTime</span>
-                <span class="method-start">126195 ms</span>
+                <span class="method-start">126009 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">126196 ms</span>
+                <span class="method-start">126010 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_503_And_RetryConfig</span>
-                <span class="method-start">126198 ms</span>
+                <span class="method-start">126012 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">129199 ms</span>
+                <span class="method-start">129013 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shouldRetryTestWith_504_And_No_RetryAfter_Header</span>
-                <span class="method-start">129201 ms</span>
+                <span class="method-start">129015 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.mypurecloud.sdk.v2.ApiMTLSClientInjectionTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testApiClientConfiguration</span>
-                <span class="method-start">132203 ms</span>
+                <span class="method-start">132017 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">132250 ms</span>
+                <span class="method-start">132055 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testAuthentication</span>
-                <span class="method-start">132251 ms</span>
+                <span class="method-start">132056 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">132475 ms</span>
+                <span class="method-start">132241 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -1396,143 +1396,143 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">traceBasicInformation</span>
-                <span class="method-start">34 ms</span>
+                <span class="method-start">38 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">authenticate</span>
-                <span class="method-start">44 ms</span>
+                <span class="method-start">51 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createUser</span>
-                <span class="method-start">1034 ms</span>
+                <span class="method-start">982 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUser</span>
-                <span class="method-start">1981 ms</span>
+                <span class="method-start">1941 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">setProfileSkills</span>
-                <span class="method-start">2320 ms</span>
+                <span class="method-start">2273 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testNotifications</span>
-                <span class="method-start">2496 ms</span>
+                <span class="method-start">2512 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getUser</span>
-                <span class="method-start">3157 ms</span>
+                <span class="method-start">3221 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testObjectMapperIgnoresUnknownProperties</span>
-                <span class="method-start">3259 ms</span>
+                <span class="method-start">3326 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testPreAndPostHooks</span>
-                <span class="method-start">3262 ms</span>
+                <span class="method-start">3329 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteUser</span>
-                <span class="method-start">3369 ms</span>
+                <span class="method-start">3443 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">3683 ms</span>
+                <span class="method-start">3745 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest(Ning)</span>
-                <span class="method-start">3703 ms</span>
+                <span class="method-start">3766 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">traceBasicInformation</span>
-                <span class="method-start">3705 ms</span>
+                <span class="method-start">3768 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">authenticate</span>
-                <span class="method-start">3707 ms</span>
+                <span class="method-start">3769 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createUser</span>
-                <span class="method-start">4198 ms</span>
+                <span class="method-start">4204 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUser</span>
-                <span class="method-start">4912 ms</span>
+                <span class="method-start">4895 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">setProfileSkills</span>
-                <span class="method-start">5209 ms</span>
+                <span class="method-start">5155 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testNotifications</span>
-                <span class="method-start">5414 ms</span>
+                <span class="method-start">5363 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getUser</span>
-                <span class="method-start">5956 ms</span>
+                <span class="method-start">5778 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testObjectMapperIgnoresUnknownProperties</span>
-                <span class="method-start">6057 ms</span>
+                <span class="method-start">5880 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testPreAndPostHooks</span>
-                <span class="method-start">6058 ms</span>
+                <span class="method-start">5882 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteUser</span>
-                <span class="method-start">6161 ms</span>
+                <span class="method-start">5987 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">6441 ms</span>
+                <span class="method-start">6218 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest(OkHTTP)</span>
-                <span class="method-start">6445 ms</span>
+                <span class="method-start">6221 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">traceBasicInformation</span>
-                <span class="method-start">6446 ms</span>
+                <span class="method-start">6222 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">authenticate</span>
-                <span class="method-start">6447 ms</span>
+                <span class="method-start">6223 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createUser</span>
-                <span class="method-start">6790 ms</span>
+                <span class="method-start">6493 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUser</span>
-                <span class="method-start">7485 ms</span>
+                <span class="method-start">7140 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">setProfileSkills</span>
-                <span class="method-start">7745 ms</span>
+                <span class="method-start">7333 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testNotifications</span>
-                <span class="method-start">7956 ms</span>
+                <span class="method-start">7633 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getUser</span>
-                <span class="method-start">8561 ms</span>
+                <span class="method-start">8116 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testObjectMapperIgnoresUnknownProperties</span>
-                <span class="method-start">8600 ms</span>
+                <span class="method-start">8164 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testPreAndPostHooks</span>
-                <span class="method-start">8603 ms</span>
+                <span class="method-start">8166 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteUser</span>
-                <span class="method-start">8665 ms</span>
+                <span class="method-start">8192 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">8915 ms</span>
+                <span class="method-start">8379 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

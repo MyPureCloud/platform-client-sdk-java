@@ -98,6 +98,7 @@ public class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContac
   private Boolean isRightPartyContact = null;
   private String callAnalysisDisposition = null;
   private String agentId = null;
+  private Boolean isPreviewAutoEnded = null;
 
   public OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -479,6 +480,23 @@ public class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContac
   }
 
 
+  /**
+   **/
+  public OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent isPreviewAutoEnded(Boolean isPreviewAutoEnded) {
+    this.isPreviewAutoEnded = isPreviewAutoEnded;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isPreviewAutoEnded")
+  public Boolean getIsPreviewAutoEnded() {
+    return isPreviewAutoEnded;
+  }
+  public void setIsPreviewAutoEnded(Boolean isPreviewAutoEnded) {
+    this.isPreviewAutoEnded = isPreviewAutoEnded;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -510,12 +528,13 @@ public class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContac
             Objects.equals(this.conversationId, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.conversationId) &&
             Objects.equals(this.isRightPartyContact, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.isRightPartyContact) &&
             Objects.equals(this.callAnalysisDisposition, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.callAnalysisDisposition) &&
-            Objects.equals(this.agentId, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.agentId);
+            Objects.equals(this.agentId, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.agentId) &&
+            Objects.equals(this.isPreviewAutoEnded, outboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.isPreviewAutoEnded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, voiceAttributes, wrapupCode, outboundCampaignId, dialingMode, agentScriptId, divisionId, outboundContactListId, outboundContactListFilterId, outboundQueueId, outboundContactId, isCampaignAlwaysRunning, isCampaignSkillBased, isCampaignDynamicSorting, isCampaignDynamicFiltering, outboundCampaignHealthMask, isReCall, scheduledDateTime, conversationId, isRightPartyContact, callAnalysisDisposition, agentId);
+    return Objects.hash(eventTime, voiceAttributes, wrapupCode, outboundCampaignId, dialingMode, agentScriptId, divisionId, outboundContactListId, outboundContactListFilterId, outboundQueueId, outboundContactId, isCampaignAlwaysRunning, isCampaignSkillBased, isCampaignDynamicSorting, isCampaignDynamicFiltering, outboundCampaignHealthMask, isReCall, scheduledDateTime, conversationId, isRightPartyContact, callAnalysisDisposition, agentId, isPreviewAutoEnded);
   }
 
   @Override
@@ -545,6 +564,7 @@ public class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContac
     sb.append("    isRightPartyContact: ").append(toIndentedString(isRightPartyContact)).append("\n");
     sb.append("    callAnalysisDisposition: ").append(toIndentedString(callAnalysisDisposition)).append("\n");
     sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+    sb.append("    isPreviewAutoEnded: ").append(toIndentedString(isPreviewAutoEnded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

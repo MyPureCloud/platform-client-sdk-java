@@ -247,6 +247,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private String divisionId = null;
   private List<WorkitemsUserEventsNotificationScoredAgent> scoredAgents = null;
   private String utilizationLabelId = null;
+  private String caseId = null;
 
   public WorkitemsUserEventsNotificationWorkitem() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -957,6 +958,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem caseId(String caseId) {
+    this.caseId = caseId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("caseId")
+  public String getCaseId() {
+    return caseId;
+  }
+  public void setCaseId(String caseId) {
+    this.caseId = caseId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1007,12 +1025,13 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.preferredAgentIds, workitemsUserEventsNotificationWorkitem.preferredAgentIds) &&
             Objects.equals(this.divisionId, workitemsUserEventsNotificationWorkitem.divisionId) &&
             Objects.equals(this.scoredAgents, workitemsUserEventsNotificationWorkitem.scoredAgents) &&
-            Objects.equals(this.utilizationLabelId, workitemsUserEventsNotificationWorkitem.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, workitemsUserEventsNotificationWorkitem.utilizationLabelId) &&
+            Objects.equals(this.caseId, workitemsUserEventsNotificationWorkitem.caseId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, propertyChanges, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId, workbinName, typeName, preferredAgentIds, divisionId, scoredAgents, utilizationLabelId);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, propertyChanges, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId, workbinName, typeName, preferredAgentIds, divisionId, scoredAgents, utilizationLabelId, caseId);
   }
 
   @Override
@@ -1061,6 +1080,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
